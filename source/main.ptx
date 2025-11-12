@@ -907,8 +907,13 @@
     <subsection xml:id="investigation1-1">
       <title>Investigation 1.1: Friend or Foe?</title>
       
-      <p>In a study reported in the November 2007 issue of <em>Nature</em>, researchers investigated whether infants take into account an individual's actions towards others in evaluating that individual as appealing or aversive, 
-      perhaps laying the foundation for social interaction (<url href="https://pubmed.ncbi.nlm.nih.gov/18033298/">Hamlin, Wynn, and Bloom, 2007</url>). In other words, do children who aren't even yet talking still form impressions as to someone's friendliness based on their actions? In one component of the study, sixteen 10-month-old infants were shown a <q>climber</q> character (a piece of wood with <q>googly</q> eyes glued onto it) that could not make it up a hill in two tries. Then the infants were shown two scenarios for the climber's next try, one where the climber was pushed to the top of the hill by another character (the <q>helper</q> toy) and one where the climber was pushed back down the hill by another character (the <q>hinderer</q> toy). The infant was alternately shown these two scenarios several times. Then the child was presented with both pieces of wood (the helper and the hinderer characters) and asked to pick one to play with. Videos demonstrating this component of the study can be found at <url href="http://campuspress.yale.edu/infantlab/media/">http://campuspress.yale.edu/infantlab/media/</url>.</p>
+      <sidebyside widths="65% 30%" margins="0% 5%">
+        <p>In a study reported in the November 2007 issue of <em>Nature</em>, researchers investigated whether infants take into account an individual's actions towards others in evaluating that individual as appealing or aversive, 
+        perhaps laying the foundation for social interaction (<url href="https://pubmed.ncbi.nlm.nih.gov/18033298/">Hamlin, Wynn, and Bloom, 2007</url>). In other words, do children who aren't even yet talking still form impressions as to someone's friendliness based on their actions? In one component of the study, sixteen 10-month-old infants were shown a <q>climber</q> character (a piece of wood with <q>googly</q> eyes glued onto it) that could not make it up a hill in two tries. Then the infants were shown two scenarios for the climber's next try, one where the climber was pushed to the top of the hill by another character (the <q>helper</q> toy) and one where the climber was pushed back down the hill by another character (the <q>hinderer</q> toy). The infant was alternately shown these two scenarios several times. Then the child was presented with both pieces of wood (the helper and the hinderer characters) and asked to pick one to play with. Videos demonstrating this component of the study can be found at <url href="http://campuspress.yale.edu/infantlab/media/">http://campuspress.yale.edu/infantlab/media/</url>.</p>
+        <image source="https://i.imgur.com/udXwvxG.gif" width="100%">
+          <description>Image of infant choosing between two toys</description>
+        </image>
+      </sidebyside>
       
       <paragraphs>
         <title>Collecting the Data</title>
@@ -922,6 +927,9 @@
           <statement>
             <p>Identify the sample in this study.</p>
           </statement>
+          <hint>
+            <p>The sample consists of the observational units from which data were collected.</p>
+          </hint>
           <answer>
             <p>The sample is the observations from the 16 infants.</p>
           </answer>
@@ -963,6 +971,9 @@
           <statement>
             <p>What is the variable we are measuring about each observation? Is it a quantitative variable or a categorical variable?</p>
           </statement>
+          <hint>
+            <p>Think about what information is recorded for each infant. Is it a number or a category?</p>
+          </hint>
           <answer>
             <p>Variable = which toy does the infant choose to play with (categorical).</p>
           </answer>
@@ -978,6 +989,9 @@
           <statement>
             <p>What research question is of interest here?</p>
           </statement>
+          <hint>
+            <p>What question are the researchers trying to answer about infant behavior?</p>
+          </hint>
           <answer>
             <p>The research question is whether infants in general (assuming identical infants from a random process) are more likely to pick the helper toy than the hinderer toy in the long run.</p>
           </answer>
@@ -1007,7 +1021,7 @@
           <answer>
             <p>14/16 = 0.875</p>
             <p>Active title: A majority of infants preferred the helper toy.</p>
-            <image source="http://www.rossmanchance.com/iscam3/solutions/chapter1_files/image008.jpg" width="70%">
+            <image source="ch1solsbargraph.jpg" width="70%">
               <description>Bar graph showing 14 infants chose Helper toy and 2 chose Hinderer toy</description>
             </image>
           </answer>
@@ -1118,7 +1132,7 @@ attach(InfantData)    # Now R knows what the "choice" variable is
             <title>Loading Data - JMP</title>
             <statement>
               <p><alert>Method 1: Copy and Paste</alert></p>
-              <p>Choose <c>File > New > Data table</c>. Open the InfantData.txt (raw data) link from the data files page and select all the observations and the variable name and copy the data into the clipboard. Return to the data table in JMP and select <c>Edit > Paste with Column Names</c>.</p>
+              <p>Choose <c>File > New > Data table</c>. Open the <url href="https://www.rossmanchance.com/iscam2/data/InfantData.txt" target="_blank">InfantData.txt</url> (raw data) link from the <url href="https://www.rossmanchance.com/iscam4/files.html" target="_blank">data files page</url> and select all the observations and the variable name and copy the data into the clipboard. Return to the data table in JMP and select <c>Edit > Paste with Column Names</c>.</p>
               
               <p><alert>Method 2: Open File</alert></p>
               <p>If the .txt file is saved on your computer, you can choose <c>File > Open</c> and use the pull-down menu to change the file type.</p>
@@ -1171,6 +1185,10 @@ choice
             <statement>
               <p>Choose <c>Analyze > Tabulate</c>. In the new window, drag the <c>choice</c> column to either the Drop Zone for columns or for rows. Press <c>Done</c>.</p>
               
+              <image source="tech_images/JMPtabulate.png" width="70%">
+                <description>JMP Tabulate window showing counts: Helper 14, Hinderer 2</description>
+              </image>
+              
               <note>
                 <title>JMP Reminder</title>
                 <p>Look for the red triangle (<q>hot spot</q>) menus in JMP windows - they provide additional options and actions. Dragging variables to different zones (rows vs. columns) changes how your table is organized.</p>
@@ -1184,11 +1202,7 @@ choice
                 <li><p>Total (N): 16</p></li>
               </ul>
               <p>The exact layout depends on whether you placed the variable in rows or columns, but the counts will be the same.</p>
-              <image source="tech_images/JMPtabulate.png" width="70%">
-                <description>JMP Tabulate window showing counts: Helper 14, Hinderer 2</description>
-              </image>
-              <p>Alternatively, you can view the frequency counts in a more compact table format:</p>
-              <image source="tech_images/JMPtable.png" width="70%">
+              <image source="tech_images/JMPtable.png" width="50%">
                 <description>JMP frequency table showing choice categories and their counts</description>
               </image>
             </solution>
@@ -1255,14 +1269,14 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
               <p><alert>Method 1: From Tabulate Window</alert></p>
               <p>In the Tabulate window (from above), use the red down arrow in the upper left corner (<q>hot spot</q>) and select <c>Show Chart</c>. Best when using the Drop zone for rows.</p>
               
-              <image source="tech_images/bargraphJMP1.png" width="70%">
+              <image source="tech_images/bargraphJMP1.png" width="50%">
                 <description>JMP Tabulate window with Show Chart option</description>
               </image>
               
               <p><alert>Method 2: Graph Builder</alert></p>
               <p>If you have the categories and counts in a data window, choose <c>Graph > Graph Builder</c>. Drag the variable names to the x-axis and the counts to the y-axis. Press the 7th icon to convert the chart to a bar graph.</p>
               
-              <image source="tech_images/bargraphJMP2.png" width="70%">
+              <image source="tech_images/bargraphJMP2.png" width="50%">
                 <description>JMP Graph Builder interface for creating bar graphs from summary data</description>
               </image>
               
@@ -1285,33 +1299,25 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
               <p><alert>Method 1: Graph Builder</alert></p>
               <p>From the Data Table window, select <c>Graph > Graph Builder</c>. Drag the Choice variable to the X-axis. Hover until the X-region shows the group labels and then let go. Press the 7th (<q>Bar</q>) icon to convert the chart to a bar graph.</p>
               
-              <image source="tech_images/bargraphJMP3.png" width="70%">
+              <image source="tech_images/bargraphJMP3.png" width="50%">
                 <description>JMP Graph Builder showing dragging variable to X-axis</description>
               </image>
               
-              <image source="tech_images/bargraphJMP4.png" width="70%">
+              <image source="tech_images/bargraphJMP4.png" width="50%">
                 <description>JMP Graph Builder with Bar chart icon selected</description>
               </image>
               
               <p><alert>Method 2: Distribution Platform</alert></p>
               <p>Choose <c>Analyze > Distribution</c>. With the choice column highlighted, press the <c>Y, Columns</c> button (or drag to the white box). Press <c>OK</c>.</p>
               
-              <image source="tech_images/bargraphJMP5.png" width="70%">
-                <description>JMP Distribution dialog window</description>
-              </image>
-              
-              <image source="tech_images/bargraphJMP6.png" width="70%">
+              <image source="tech_images/bargraphJMP6.png" width="50%">
                 <description>JMP Distribution output with frequency chart</description>
               </image>
               
               <p>You have lots of options here (using the hot spots), like turning the graph horizontal, adding an axis (putting it on the left), adding labels, separating bars, etc.</p>
               
-              <image source="tech_images/bargraphJMP7.png" width="70%">
+              <image source="tech_images/bargraphJMP7.png" width="50%">
                 <description>JMP Distribution hot spot menu options</description>
-              </image>
-              
-              <image source="tech_images/bargraphJMP8.png" width="70%">
-                <description>JMP Distribution chart with customization options applied</description>
               </image>
               
               <note>
@@ -1328,6 +1334,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
                 <li><p>Clear axis labels and category names</p></li>
               </ul>
               <p>Using the Distribution platform gives you more statistical output beyond just the graph, including percentages and other summary statistics.</p>
+              <image source="tech_images/JMPbargraph1.png" width="50%">
+                <description>JMP bar graph showing Helper and Hinderer distribution</description>
+              </image>
             </solution>
           </exercise>
         </paragraphs>
@@ -1365,7 +1374,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
             <p>Is it plausible that the observed majority occurred because infants just prefer the color blue?</p>
           </statement>
           <hint>
-            <p>Recall from exercise I1.1.3 why the researchers varied colors, shapes, and positions.</p>
+            <p>Recall why the researchers varied colors, shapes, and positions.</p>
           </hint>
           <answer>
             <p>We are not considering the color, shape, or position of the object as the explanation for the infants' choice as these factors were balanced in the design of the study.</p>
@@ -1457,7 +1466,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           </hint>
           <answer>
             <p>Results will vary by class. Below is one possible set of results:</p>
-            <image source="http://www.rossmanchance.com/iscam3/solutions/chapter1_files/image010.jpg" width="70%">
+            <image source="ch1solsdotplot.jpg" width="70%">
               <description>Dotplot showing distribution of class simulation results for number of heads in 16 coin tosses</description>
             </image>
           </answer>
@@ -1472,7 +1481,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
             <p>Each person in class should contribute one dot to the class dotplot, placed above their number of heads out of 16.</p>
           </hint>
           <answer>
-            <p>Results will vary by class. See image in exercise I1.1.12 for an example dotplot.</p>
+            <p>Results will vary by class. See image in the previous exercise for an example dotplot.</p>
           </answer>
           <response/>
         </exercise>
@@ -1507,7 +1516,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
         
         <exercise xml:id="inv1-1-p" label="I1.1.16">
           <statement>
-            <p>Use the One Proportion Inference applet to simulate these 16 infants making this helper/hinderer choice, still assuming that infants have no real preference and so are equally likely to choose either toy.</p>
+            <p>Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url> to simulate these 16 infants making this helper/hinderer choice, still assuming that infants have no real preference and so are equally likely to choose either toy.</p>
             <p><ul>
               <li><p>Keep the Probability of heads set to 0.5.</p></li>
               <li><p>Set the Number of Tosses to 16.</p></li>
@@ -1594,7 +1603,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
         
         <exercise xml:id="practice-1-1a-b" label="PP1.1A.2">
           <statement>
-            <p>Use the One Proportion Inference applet to decide whether it is plausible that when the googly eyes are removed infants do not have a genuine preference between the two toys. What do you conclude?</p>
+            <p>Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url> to decide whether it is plausible that when the googly eyes are removed infants do not have a genuine preference between the two toys. What do you conclude?</p>
           </statement>
           <response/>
         </exercise>
@@ -1614,7 +1623,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
         
         <exercise xml:id="practice-1-1b-b" label="PP1.1B.2">
           <statement>
-            <p>Use the One Proportion Inference applet to decide whether these data provide convincing statistical evidence that the home team is more likely than the visiting team to win in the long run. Justify your conclusion.</p>
+            <p>Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url> to decide whether these data provide convincing statistical evidence that the home team is more likely than the visiting team to win in the long run. Justify your conclusion.</p>
           </statement>
           <response/>
         </exercise>
@@ -1687,7 +1696,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
       
       <exercise xml:id="inv1-2-f" label="I1.2.6">
         <statement>
-          <p>Use the One Proportion Inference applet to carry out 1,000 repetitions of the simulation. Check the Summary Statistics box and report the mean and standard deviation of your simulated distribution of "could have been" outcomes.</p>
+          <p>Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url> to carry out 1,000 repetitions of the simulation. Check the Summary Statistics box and report the mean and standard deviation of your simulated distribution of "could have been" outcomes.</p>
         </statement>
         <response/>
       </exercise>
@@ -1795,7 +1804,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           
           <exercise xml:id="inv1-2-n" label="I1.2.14">
             <statement>
-              <p>In the One Proportion Inference applet, check the Exact Binomial box. (Optional: See Technology Detour below.) How does the binomial distribution match up to your earlier simulation results? How does the binomial (or "exact") p-value compare to what you simulated earlier? Did everyone in class obtain the same "exact" p-value?</p>
+              <p>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url>, check the Exact Binomial box. (Optional: See Technology Detour below.) How does the binomial distribution match up to your earlier simulation results? How does the binomial (or "exact") p-value compare to what you simulated earlier? Did everyone in class obtain the same "exact" p-value?</p>
             </statement>
             <response/>
           </exercise>
