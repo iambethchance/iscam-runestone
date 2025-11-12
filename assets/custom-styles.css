@@ -44,18 +44,22 @@ figure.figure-like:has(.interactive) {
     padding-right: 1em;
 }
 
-/* Alternative approach: Scale down Random Babies applet to 60% */
-#random-babies-applet {
+/* Force Random Babies applet to be wider and taller - target multiple selectors */
+#random-babies-applet,
+.ptx-content #random-babies-applet,
+div[id="random-babies-applet"] {
     max-width: 1400px !important;
-    width: 100% !important;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
+    width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow: visible !important;
 }
 
-#random-babies-applet iframe {
-    transform: scale(0.6);
-    transform-origin: top center;
-    width: 167% !important; /* Compensate for 0.6 scale */
-    height: 1000px;
+#random-babies-applet iframe,
+.ptx-content #random-babies-applet iframe,
+div[id="random-babies-applet"] iframe {
+    max-width: 1400px !important;
+    width: 1400px !important;
+    min-height: 900px !important;
+    height: 900px !important;
 }
