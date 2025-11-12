@@ -44,10 +44,16 @@ figure.figure-like:has(.interactive) {
     padding-right: 1em;
 }
 
-/* Scale down the Random Babies applet to fit better */
+/* Give Random Babies applet much more width and scale it down to fit */
+#random-babies-applet {
+    max-width: 1400px !important;
+    width: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 #random-babies-applet iframe {
-    transform: scale(0.75);
-    transform-origin: top left;
-    width: 133% !important; /* Compensate for scale to maintain visual width */
-    height: 133% !important;
+    max-width: 1400px !important;
+    width: 100% !important;
+    min-height: 800px;
 }
