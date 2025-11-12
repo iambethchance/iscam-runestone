@@ -912,14 +912,15 @@
         
             <p>In one component of the study, sixteen 10-month-old infants were shown a <q>climber</q> character (a piece of wood with <q>googly</q> eyes glued onto it) that could not make it up a hill in two tries.</p>
             
-            <p>Then the infants were shown two scenarios for the climber's next try, one where the climber was pushed to the top of the hill by another character (the <q>helper</q> toy) and one where the climber was pushed back down the hill by another character (the <q>hinderer</q> toy). The infant was alternately shown these two scenarios several times.</p>
-            
             <aside>
               <title>Video Demonstrations</title>
               <p><url href="https://www.youtube.com/watch?v=WqEV9Otdp58">Video 1: Helper and Hinderer Study</url></p>
               <p><url href="https://www.youtube.com/watch?v=YX6PTixcS5I">Video 2: Additional Demonstration</url></p>
+              <p><url href="https://www.youtube.com/watch?v=dijiqWrUOx0">Video 3: Full Study Overview</url></p>
               <p>More videos: <url href="http://campuspress.yale.edu/infantlab/media/">Yale Infant Lab</url></p>
             </aside>
+            
+            <p>Then the infants were shown two scenarios for the climber's next try, one where the climber was pushed to the top of the hill by another character (the <q>helper</q> toy) and one where the climber was pushed back down the hill by another character (the <q>hinderer</q> toy). The infant was alternately shown these two scenarios several times.</p>
             
        <sidebyside widths="58% 38%" margins="0% 4%" valign="top">
           <stack>
@@ -1613,7 +1614,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
               <li><p>Press Draw Samples.</p></li>
             </ul></p>
             <p>Report the number of heads (i.e., the number of infants who choose the helper toy) for this <q>could have been</q> (under the assumption of no preference) outcome.</p>
-            <p>Number of heads: <fillin characters="10"/></p>
+            <p>Number of heads: <var width="5"/></p>
           </statement>
           <hint>
             <p>The applet will simulate flipping 16 coins and count the number of heads for you automatically.</p>
@@ -1621,33 +1622,73 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           <answer>
             <p>Results will vary.</p>
           </answer>
-          <response/>
         </exercise>
         
         <exercise xml:id="inv1-1-q" label="I1.1.17">
           <statement>
             <p>Uncheck the Show animation box and press Draw Samples four more times, each time recording the number of the 16 infants who choose the helper toy. Did you get the same number of heads all five times?</p>
           </statement>
+          <choices randomize="no">
+            <choice>
+              <statement>
+                <p>Yes</p>
+              </statement>
+              <feedback>
+                <p>Actually, random processes typically produce different results each time. You should see variation in the number of heads across the five repetitions.</p>
+              </feedback>
+            </choice>
+            <choice correct="yes">
+              <statement>
+                <p>No</p>
+              </statement>
+              <feedback>
+                <p>Correct! There should be variation in the results across the repetitions. This variability is a natural characteristic of random processes.</p>
+              </feedback>
+            </choice>
+          </choices>
           <hint>
             <p>Each repetition simulates a new set of 16 coin flips. Think about whether random processes produce identical results every time.</p>
           </hint>
-          <answer>
-            <p>There should be variation in the results across the repetitions.</p>
-          </answer>
-          <response/>
         </exercise>
         
         <exercise xml:id="inv1-1-r" label="I1.1.18">
           <statement>
-            <p>Now change the Number of repetitions to 1995 and press Draw Samples, to produce a total of 2,000 repetitions of this random process of tossing a coin 16 times. For the dotplot you have created, what does each dot represent (i.e., what would you need to do to add another dot to the graph)? Is the graph variable quantitative or categorical?</p>
+            <p>Now change the Number of repetitions to 1995 and press Draw Samples, to produce a total of 2,000 repetitions of this random process of tossing a coin 16 times. For the dotplot you have created, what does each dot represent (i.e., what would you need to do to add another dot to the graph)?</p>
           </statement>
           <hint>
-            <p>Think about what you did to create one dot in the physical coin-flipping activity. What does the horizontal axis represent?</p>
+            <p>Think about what you did to create one dot in the physical coin-flipping activity.</p>
           </hint>
           <answer>
-            <p>Each dot in the dotplot represents the number of heads in 16 coin tosses representing the choices of a set of 16 infants. The variable "number of heads" is quantitative.</p>
+            <p>Each dot in the dotplot represents the number of heads in 16 coin tosses (representing the choices of a set of 16 infants).</p>
           </answer>
           <response/>
+        </exercise>
+        
+        <exercise xml:id="inv1-1-r2" label="I1.1.18b">
+          <statement>
+            <p>Is the graph variable (number of heads) quantitative or categorical?</p>
+          </statement>
+          <choices randomize="no">
+            <choice correct="yes">
+              <statement>
+                <p>Quantitative</p>
+              </statement>
+              <feedback>
+                <p>Correct! The variable "number of heads" is quantitative because it represents a numerical count that can be measured and has meaningful numerical values.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>Categorical</p>
+              </statement>
+              <feedback>
+                <p>Not quite. The number of heads is a count (0, 1, 2, ..., 16), which makes it quantitative rather than categorical. Categorical variables assign observations to categories, not numerical values.</p>
+              </feedback>
+            </choice>
+          </choices>
+          <hint>
+            <p>What does the horizontal axis represent? Is it counting something or assigning categories?</p>
+          </hint>
         </exercise>
         
         <exercise xml:id="inv1-1-s" label="I1.1.19">
@@ -1687,7 +1728,59 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           <statement>
             <p>If you were to use a coin to carry out a simulation analysis to evaluate these results: how many times would you flip the coin for one repetition <mdash/> 6, 8, 10, 12, 16, or 1000?</p>
           </statement>
-          <response/>
+          <choices randomize="no">
+            <choice>
+              <statement>
+                <p>6</p>
+              </statement>
+              <feedback>
+                <p>Not quite. Think about how many infants were in this experiment.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>8</p>
+              </statement>
+              <feedback>
+                <p>Close, but this is the number who chose the push-up toy, not the total number of infants.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>10</p>
+              </statement>
+              <feedback>
+                <p>Not quite. Check the problem statement for the total number of infants in the experiment.</p>
+              </feedback>
+            </choice>
+            <choice correct="yes">
+              <statement>
+                <p>12</p>
+              </statement>
+              <feedback>
+                <p>Correct! You need to flip the coin 12 times to represent the 12 different infants in this experiment, just like we flipped 16 times to represent the 16 infants in the original study.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>16</p>
+              </statement>
+              <feedback>
+                <p>Not quite. That was the sample size in the original study, but this experiment has a different number of infants.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>1000</p>
+              </statement>
+              <feedback>
+                <p>Not quite. 1000 would be the number of repetitions we might do, not the number of coin flips per repetition.</p>
+              </feedback>
+            </choice>
+          </choices>
+          <hint>
+            <p>How many infants participated in this second experiment? Each coin flip represents one infant's choice.</p>
+          </hint>
         </exercise>
         
         <exercise xml:id="practice-1-1a-b" label="PP1.1A.2">
@@ -1729,7 +1822,10 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
     <subsection xml:id="investigation1-2">
       <title>Investigation 1.2: Can Wolves Understand Human Cues?</title>
       
-      <p>Previous research has demonstrated that domesticated dogs can be trained to understand human cues, such as looking or pointing at an object. But it was not clear how the animals would perform with "behavioral cues" showing intent such as reaching for, but not obtaining, or trying to open an object. Lampe et al. (2017) gave captive wolves, pack dogs living in identical conditions to the wolves, and pet dogs living with families a series of "object-choice tasks." A table was placed outside a fenced compartment, and a container was placed at each end of the table, one containing food and one empty. The experimenter would give the cue as to which container had the food and then the animal would touch one of the two targets next to the containers. A 6-year-old female timber wolf, Yukon, chose the intended container in 6 of the 8 trials with behavioral cues.</p>
+      <sidebyside widths="58% 38%">
+        <p>Previous research has demonstrated that domesticated dogs can be trained to understand human cues, such as looking or pointing at an object. But it was not clear how the animals would perform with "behavioral cues" showing intent such as reaching for, but not obtaining, or trying to open an object. <url href="https://www.nature.com/articles/s41598-017-12055-6#MOESM1">Lampe et al. (2017)</url> gave captive wolves, pack dogs living in identical conditions to the wolves, and pet dogs living with families a series of "object-choice tasks." A table was placed outside a fenced compartment, and a container was placed at each end of the table, one containing food and one empty. The experimenter would give the cue as to which container had the food and then the animal would touch one of the two targets next to the containers. A 6-year-old female timber wolf, Yukon, chose the intended container in 6 of the 8 trials with behavioral cues.</p>
+        <image source="images/wolf.jpg" width="100%"/>
+      </sidebyside>
       
       <exercise xml:id="inv1-2-a" label="I1.2.1">
         <statement>
