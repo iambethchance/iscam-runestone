@@ -1012,14 +1012,14 @@
               <p>Open the InfantData.txt (raw data) link from the data files page, select all, copy, and then in R use the following command. Keep in mind that R is case sensitive:</p>
               
               <p><em>PC:</em></p>
-              <program language="r">
+              <program language="r" interactive="yes">
                 <input>
 InfantData = read.table("clipboard", header=TRUE)
                 </input>
               </program>
               
               <p><em>Mac:</em></p>
-              <program language="r">
+              <program language="r" interactive="yes">
                 <input>
 InfantData = read.table(pipe("pbpaste"), header=TRUE)
                 </input>
@@ -1028,14 +1028,14 @@ InfantData = read.table(pipe("pbpaste"), header=TRUE)
               <p>You can also use a URL (in quotes). The <c>header</c> command indicates the variables have names.</p>
               
               <p><alert>Text Files on Your Computer</alert></p>
-              <program language="r">
+              <program language="r" interactive="yes">
                 <input>
 InfantData = read.table(file.choose(), header=T)
                 </input>
               </program>
               
               <p>To see the data, type:</p>
-              <program language="r">
+              <program language="r" interactive="yes">
                 <input>
 View(InfantData)
 # or
@@ -1044,7 +1044,7 @@ head(InfantData)
               </program>
               
               <p>Next you can <q>attach</q> the file to be able to use variable names directly:</p>
-              <program language="r">
+              <program language="r" interactive="yes">
                 <input>
 attach(InfantData)    # Now R knows what the "choice" variable is
                 </input>
@@ -1091,7 +1091,7 @@ attach(InfantData)    # Now R knows what the "choice" variable is
             <title>Tallying the Outcomes - R</title>
             <solution>
               <p>To count the number of correct and incorrect responses, type:</p>
-              <program language="r">
+              <program language="r" interactive="yes">
                 <input>
 table(InfantData)
                 </input>
@@ -1120,7 +1120,7 @@ table(InfantData)
             <title>Bar Graphs - R (raw data)</title>
             <solution>
               <p>You need to pass the tabled data into the barplot function:</p>
-              <program language="r">
+              <program language="r" interactive="yes">
                 <input>
 barplot(table(InfantData), xlab="Choice", ylab="Frequency")
                 </input>
@@ -1138,7 +1138,7 @@ barplot(table(InfantData), xlab="Choice", ylab="Frequency")
             <title>Bar Graphs - R (summary data)</title>
             <solution>
               <p>If you already (or only) have the summarized data (the number of successes and failures), you can type:</p>
-              <program language="r">
+              <program language="r" interactive="yes">
                 <input>
 barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
                 </input>
