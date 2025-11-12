@@ -44,22 +44,25 @@ figure.figure-like:has(.interactive) {
     padding-right: 1em;
 }
 
-/* Force Random Babies applet to be wider and taller - target multiple selectors */
+/* Scale down Random Babies applet to 50% so everything is visible */
 #random-babies-applet,
 .ptx-content #random-babies-applet,
 div[id="random-babies-applet"] {
-    max-width: 1400px !important;
-    width: 1400px !important;
+    max-width: 100% !important;
+    width: 100% !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    overflow: visible !important;
+    overflow: hidden !important;
+    transform-origin: top center !important;
 }
 
 #random-babies-applet iframe,
 .ptx-content #random-babies-applet iframe,
 div[id="random-babies-applet"] iframe {
-    max-width: 1400px !important;
-    width: 1400px !important;
-    min-height: 900px !important;
-    height: 900px !important;
+    transform: scale(0.5) !important;
+    transform-origin: top center !important;
+    width: 200% !important; /* Compensate for 0.5 scale */
+    height: 1600px !important;
+    max-width: none !important;
+    border: 1px solid #ccc !important;
 }
