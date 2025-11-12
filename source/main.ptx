@@ -1130,6 +1130,9 @@ attach(InfantData)    # Now R knows what the "choice" variable is
             </statement>
             <solution>
               <p>After pasting or opening the file, you should see a data table with one column labeled <c>choice</c> containing 16 rows. The column should be recognized as a Character data type. The values should alternate between "Helper" and "Hinderer" entries.</p>
+              <image source="tech_images/JMPdatatable.png" width="70%">
+                <description>JMP data table showing the choice column with 16 rows of Helper and Hinderer values</description>
+              </image>
             </solution>
           </exercise>
         </paragraphs>
@@ -1181,6 +1184,13 @@ choice
                 <li><p>Total (N): 16</p></li>
               </ul>
               <p>The exact layout depends on whether you placed the variable in rows or columns, but the counts will be the same.</p>
+              <image source="tech_images/JMPtabulate.png" width="70%">
+                <description>JMP Tabulate window showing counts: Helper 14, Hinderer 2</description>
+              </image>
+              <p>Alternatively, you can view the frequency counts in a more compact table format:</p>
+              <image source="tech_images/JMPtable.png" width="70%">
+                <description>JMP frequency table showing choice categories and their counts</description>
+              </image>
             </solution>
           </exercise>
         </paragraphs>
@@ -1263,6 +1273,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
             </statement>
             <solution>
               <p>You should see a bar graph showing two bars with the frequency counts clearly labeled. The Helper bar should be noticeably taller (14) than the Hinderer bar (2). The graph should automatically include axis labels and a legend if needed.</p>
+              <image source="tech_images/JMPbargraph2.png" width="70%">
+                <description>JMP bar graph created from summary data showing Helper and Hinderer counts</description>
+              </image>
             </solution>
           </exercise>
           
