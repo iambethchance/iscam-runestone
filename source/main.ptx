@@ -278,6 +278,239 @@
         </exercise>
       </subsection>
     </subsection>
+    
+    <subsection xml:id="invA2">
+      <title>Investigation A2: Hurricanes and Climate Change</title>
+      
+      <p>One of the concerns with climate change is an increased number of tropical storms (including hurricanes and major hurricanes). In particular, in the "Atlantic Basin," scientists have tracked the number of "named storms" since 1851. According to the National Hurricane Center:</p>
+      
+      <figure xml:id="fig-noaa-table">
+        <image source="NOAA.png" width="70%">
+          <description>Snippet from NOAA data table showing storm classifications</description>
+        </image>
+        <caption>Snippet from the NOAA data table</caption>
+      </figure>
+      
+      <ul>
+        <li><term>Tropical Storm</term><idx><h>tropical storm</h><h>a tropical cyclone with maximum sustained winds of 39 to 73 mph</h></idx>: A tropical cyclone with maximum sustained winds of 39 to 73 mph (34 to 63 knots).</li>
+        <li><term>Hurricane</term><idx><h>hurricane</h><h>a tropical cyclone with maximum sustained winds of 74 mph or higher</h></idx>: A tropical cyclone with maximum sustained winds of 74 mph (64 knots) or higher. In the western North Pacific, hurricanes are called typhoons; similar storms in the Indian Ocean and South Pacific Ocean are called cyclones.</li>
+        <li><term>Major Hurricane</term><idx><h>major hurricane</h><h>a tropical cyclone with max sustained winds of 111 mph or higher</h></idx>: A tropical cyclone with max sustained winds of 111 mph (96 knots) or higher.</li>
+      </ul>
+      
+      <p>In 2020, scientists were alarmed because there were 14 recorded hurricanes, compared to 6 in 2019.</p>
+      
+      <figure xml:id="fig-first-graph">
+        <image source="firstgraph.png" width="70%">
+          <description>Graph showing hurricane counts for 2019 and 2020</description>
+        </image>
+      </figure>
+      
+      <exercise xml:id="hurricane-ex-a">
+        <statement>
+          <p>Calculate the percentage change in the number of tropical hurricanes between these two years.</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="hurricane-ex-b">
+        <statement>
+          <p>Does this convince you that climate change is leading to an increase in the number of hurricanes (in the Atlantic)? If so, explain why. If not, explain what additional information you would want to know.</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <p>Below is a dotplot of the annual number of hurricanes from 1851 to 2024 (<m>n = 174</m>).</p>
+      
+      <figure xml:id="fig-hurricane-dotplot">
+        <image source="hurricanedotplot.png" width="80%">
+          <description>Dotplot showing the distribution of annual number of hurricanes from 1851 to 2024</description>
+        </image>
+      </figure>
+      
+      <note>
+        <p>Source: <url href="https://www.stormfax.com/huryear.htm">https://www.stormfax.com/huryear.htm</url></p>
+      </note>
+      
+      <exercise xml:id="hurricane-ex-c">
+        <statement>
+          <p>What does one dot in the above graph represent?</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <p>A year with 14 hurricanes is certainly close to record setting, but we expect there to be some variation from year to year. Below is a timeplot of the number of hurricanes each year.</p>
+      
+      <figure xml:id="fig-hurricane-timeplot">
+        <image source="hurricanetimeplot.png" width="80%">
+          <description>Timeplot showing the number of hurricanes each year from 1851 to 2024</description>
+        </image>
+      </figure>
+      
+      <exercise xml:id="hurricane-ex-d">
+        <statement>
+          <p>What additional information is provided by this graph and why is that helpful?</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="hurricane-ex-e">
+        <statement>
+          <p>The stormfax website reports the mean number of hurricanes between 1991-2020 to be 7. Does that appear consistent with the graph? Why do you think they chose that subset of years?</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <p>Oftentimes a mean or average is reported, but with no measure of spread or variability. If all the years between 1991-2020 had between 6 and 8 hurricanes, we would react very differently to 14 hurricanes in one year than if all the years between 1991-2020 had between 2 and 15 hurricanes.</p>
+      
+      <definition xml:id="def-standard-deviation">
+        <title>Terminology Detour: Standard Deviation</title>
+        <statement>
+          <p>The most common measure of the variability in a distribution of data is the <term>standard deviation</term><idx><h>standard deviation</h><h>the square root of the variance; a measure of spread in the outcomes of a distribution; roughly the average deviation from the mean of the distribution</h></idx>.</p>
+          <p><me>s = \sqrt{\frac{\sum_{i=1}^n (y_i - \bar{y})^2}{n-1}}</me></p>
+          <p>We can roughly interpret the standard deviation as the average "deviation" of the data values in the distribution from the mean of the distribution. Another interpretation: If we were to predict 7 as the number of hurricanes in a year between 1991-2020, the standard deviation would approximate the average "prediction error" for those years.</p>
+        </statement>
+      </definition>
+      
+      <p>Below is a dotplot of the data from 1991-2020 (<m>n = 31</m>).</p>
+      
+      <figure xml:id="fig-hurricane-dotplot-recent">
+        <image source="hurricanedotplot2.png" width="80%">
+          <description>Dotplot showing the distribution of annual number of hurricanes from 1991 to 2020</description>
+        </image>
+      </figure>
+      
+      <exercise xml:id="hurricane-ex-f">
+        <statement>
+          <p>Conjecture: The mean is actually 7.2 hurricanes for this dataset. Do you think that is larger or smaller or quite similar to the mean for the full dataset? Explain your reasoning.</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="hurricane-ex-g">
+        <statement>
+          <p>Conjecture: Provide a guess of the value of the standard deviation of these 31 values.</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="hurricane-ex-h">
+        <statement>
+          <p>Conjecture: How do you think the standard deviation from (g) compares to the standard deviation of the full dataset? Explain your reasoning.</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <p>We will often use the standard deviation as a "ruler" to help us measure distances of observations from the mean of the distribution.</p>
+      
+      <exercise xml:id="hurricane-ex-i">
+        <statement>
+          <p>If we use a mean of 7.2 and a standard deviation of 3.3 hurricanes, how many standard deviations away from the mean is a value of 14 hurricanes? Above or below the mean?</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <definition xml:id="def-standardizing">
+        <title>Terminology Detour: Standardizing</title>
+        <statement>
+          <p>The general formula for standardizing an observation's position in the distribution is:</p>
+          <p><me>\frac{\text{observation value} - \text{mean of distribution}}{\text{standard deviation of distribution}}</me></p>
+          <p>We will often consider a value far from the mean of a distribution if it is more than two standard deviations away.</p>
+        </statement>
+      </definition>
+      
+      <p>In this investigation, you have just touched on one piece of information related to climate change. In fact, scientists are less concerned about the number of storms but in the intensity of the storms and how warming of the surface ocean may be leading to more destructive storms. Looking at a single year in isolation or even a pair of years creates a very incomplete picture of trends over time, and while we expect some natural variation from year-to-year, the question to scientists is whether the overall trend being observed is larger than what we can reasonably attributed to natural variation.</p>
+      
+      <assemblage xml:id="points-to-keep-in-mind-a2">
+        <title>Points to keep in mind</title>
+        <ul>
+          <li>It's important to determine which variables are most relevant to the research question and whether you can collect the data you need to answer the question.</li>
+          <li>Simple graphs can be very informative, but you should also take care in considering the most meaningful variable representation of what you are studying even before you begin graphing.</li>
+          <li>It is imperative to consider variability and to think about possible sources of variation. Sometimes you may be able to explain and "control for" a source of variation. Often you will have to dig deeper into reasons for unusual observations and whether it is appropriate to remove them from the analysis.</li>
+          <li>The quality of your inferences will depend A LOT on the quality of the data that are collected. Not much can be learned from poorly or improperly collected data or data from a completely different time period.</li>
+        </ul>
+      </assemblage>
+      
+      <note>
+        <title>Discussion</title>
+        <p>When exploring a research question, one of the first steps is to define the variable involved, e.g., the number of hurricanes. This is an example of <term>quantitative variables</term>, as opposed to a <term>categorical variable</term> like whether the storm has winds over 74 mph. Dotplots are good choices for visualizing a quantitative variable for a small dataset. When looking at a distribution of a single quantitative variable like this, we are often interested in three key features:</p>
+        <ul>
+          <li><em>Center</em>: What would you consider a "typical" value in the distribution?</li>
+          <li><em>Variability</em>: How clustered together or consistent are the observations? Or are they far apart?</li>
+          <li><em>Shape</em>: Are some values more common than others? Are the values symmetric about the center?</li>
+          <li>Are there any <em>unusual observations</em> that don't follow the overall pattern? Are there any explanations for these values?</li>
+        </ul>
+        <p>To summarize the center of the distribution, we often report the <term>mean</term><idx><h>mean</h><h>the average of all numerical values in the data set</h></idx> (the arithmetic average of all the numerical values in the data set) and/or the <term>median</term><idx><h>median</h><h>a value such that at least 50% of the observations in the data set are smaller than that value and at least 50% of the observations in the data set are larger than that value</h></idx> (a middle value such that 50% of the data values are smaller and 50% are larger).</p>
+      </note>
+      
+      <p>With most investigations we will also provide a follow-up practice problem or two for you to try on your own to assess your understanding of the material.</p>
+      
+      <subsection xml:id="practiceA2">
+        <title>Practice Problem A2.A</title>
+        <p>From the <url href="https://www.rossmanchance.com/iscam3/files.html" target="_blank">ISCAM data files and applets page</url> (Chapter 0), you can view the data in AtlanticStorms.txt. Use your mouse (or ctrl-A) to highlight all four columns and then copy and paste these data to your clipboard. Now open the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm" target="_blank">Descriptive Statistics</url> applet. Clear the existing data (press <em>Clear</em>), click in the Paste data box and paste the data from your clipboard. Press the <em>Use Data</em> button. [Alternatively, this dataset is listed in the Select data pull-down menu as Atlantic Storms.] Use the Quantitative Variable pull-down menu to select the Number of Hurricanes variable (Hurricanes).</p>
+        
+        <definition xml:id="def-skewness">
+          <title>Definitions</title>
+          <statement>
+            <p>The shape of a distribution is often classified as <term>symmetric</term><idx><h>symmetric</h><h>a distribution with a mirror image on each side of the center</h></idx> (mirror image on each side of the center) or <term>skewed</term><idx><h>skewed</h><h>a distribution with a longer tail on one side</h></idx>.</p>
+            <ul>
+              <li>Distributions with a longer right tail are labeled <term>skewed to the right</term></li>
+              <li>Distributions with a longer left tail are labeled <term>skewed to the left</term></li>
+            </ul>
+            <p>The <term>skewness statistic</term> measures the lack of asymmetry in a distribution (due values above the mean extend further than values below the mean on average) using a <m>(y_i-\bar{y})^3</m> term. Positive values indicate a skewed right distribution, negative values indicate skewed left, and values near 0 indicate a symmetric distribution.</p>
+          </statement>
+        </definition>
+        
+        <exercise xml:id="practice-a2a-a">
+          <statement>
+            <p>Based on the graph, would you consider the "number of hurricanes" distribution to be symmetric, skewed to the right or skewed to the left? Check the Skewness statistic box, does the value agree with your judgement from the graph?</p>
+          </statement>
+          <response/>
+        </exercise>
+        
+        <definition xml:id="def-mean-median">
+          <title>Definitions</title>
+          <statement>
+            <p>If there are <m>n</m> numerical values and we refer to them as <m>y_1, y_2, \ldots, y_n</m>,</p>
+            <ul>
+              <li>The <term>mean</term>, <m>\bar{y}</m>, is the average of all numerical values in the data set: <m>\bar{y} = \frac{\sum_{i=1}^n y_i}{n}</m></li>
+              <li>The <term>median</term> is a value such that 50% of the data lies below and 50% of the data lies above that value: median position: <m>(n+1)/2</m></li>
+            </ul>
+            
+            <figure xml:id="fig-hurricane-dotplot-mean-median">
+              <image source="hurricanedotplot3.png" width="80%">
+                <description>Dotplot showing mean and median for hurricane data</description>
+              </image>
+            </figure>
+          </statement>
+        </definition>
+        
+        <exercise xml:id="practice-a2a-b">
+          <statement>
+            <p>Explore the mean and median:</p>
+            <ul>
+              <li>Check the box next to Guess for the Mean. Move the red line to where you think the mean of the distribution is.</li>
+              <li>Check the box next to Guess for the Median. Move the blue line to where you think the median of the distribution is.</li>
+              <li>Now check Actual for both. Which is larger, the mean or the median?</li>
+            </ul>
+          </statement>
+          <response/>
+        </exercise>
+        
+        <exercise xml:id="practice-a2a-c">
+          <statement>
+            <p>Check the box for Guess for the standard deviation. Use your mouse to move one of the edges of the red rectangle to a distance that you think is representative of a "typical distance from the mean" (some values are closer, some are further). Then check the Actual box. How did you do?</p>
+          </statement>
+          <response/>
+        </exercise>
+        
+        <exercise xml:id="practice-a2a-d">
+          <statement>
+            <p>How does the standard deviation of the full dataset compare to the 3.3 value for the years 1991-2020? Summarize what this tells us about the behavior of hurricanes.</p>
+          </statement>
+          <response/>
+        </exercise>
+      </subsection>
+    </subsection>
   </section>
   </article>
 </pretext>
