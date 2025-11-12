@@ -253,15 +253,17 @@
         
         <p>From the <url href="https://www.rossmanchance.com/iscam3/files.html" target="_blank">ISCAM data files and applets page</url> (Chapter 0), you can view the data in <url href="https://www.rossmanchance.com/iscam4/data/AtlanticStorms.txt" target="_blank">AtlanticStorms.txt</url>. Use your mouse (or ctrl-A) to highlight all four columns and then copy and paste these data to your clipboard. In the Descriptive Statistics applet, clear the existing data (press <em>Clear</em>), click in the Paste data box and paste the data from your clipboard. Press the <em>Use Data</em> button. [Alternatively, this dataset is listed in the Select data pull-down menu as Atlantic Storms.] Use the Quantitative Variable pull-down menu to select the Number of Hurricanes variable (Hurricanes).</p>
         
-        <aside>
+        <definition xml:id="def-shape-distributions">
           <title>Shape of Distributions</title>
-          <p>The shape of a distribution is often classified as <term>symmetric</term><idx><h>symmetric</h><h>a distribution with a mirror image on each side of the center</h></idx> (mirror image on each side of the center) or <term>skewed</term><idx><h>skewed</h><h>a distribution with a longer tail on one side</h></idx>.</p>
-          <ul>
-            <li>Distributions with a longer right tail are labeled <term>skewed to the right</term></li>
-            <li>Distributions with a longer left tail are labeled <term>skewed to the left</term></li>
-          </ul>
-          <p>The <term>skewness statistic</term> measures the lack of asymmetry in a distribution (due values above the mean extend further than values below the mean on average) using a <m>(y_i-\bar{y})^3</m> term. Positive values indicate a skewed right distribution, negative values indicate skewed left, and values near 0 indicate a symmetric distribution.</p>
-        </aside>
+          <statement>
+            <p>The shape of a distribution is often classified as <term>symmetric</term><idx><h>symmetric</h><h>a distribution with a mirror image on each side of the center</h></idx> (mirror image on each side of the center) or <term>skewed</term><idx><h>skewed</h><h>a distribution with a longer tail on one side</h></idx>.</p>
+            <ul>
+              <li>Distributions with a longer right tail are labeled <term>skewed to the right</term></li>
+              <li>Distributions with a longer left tail are labeled <term>skewed to the left</term></li>
+            </ul>
+            <p>The <term>skewness statistic</term> measures the lack of asymmetry in a distribution (due values above the mean extend further than values below the mean on average) using a <m>(y_i-\bar{y})^3</m> term. Positive values indicate a skewed right distribution, negative values indicate skewed left, and values near 0 indicate a symmetric distribution.</p>
+          </statement>
+        </definition>
         
         <exercise xml:id="practice-a2a-a" label="PPA.1">
           <statement>
@@ -270,14 +272,16 @@
           <response/>
         </exercise>
         
-        <aside>
+        <definition xml:id="def-mean-median">
           <title>Mean and Median</title>
-          <p>If there are <m>n</m> numerical values and we refer to them as <m>y_1, y_2, \ldots, y_n</m>,</p>
-          <ul>
-            <li>The <term>mean</term>, <m>\bar{y}</m>, is the average of all numerical values in the data set: <me>\bar{y} = \frac{\sum_{i=1}^n y_i}{n}</me></li>
-            <li>The <term>median</term> is a value such that 50% of the data lies below and 50% of the data lies above that value: median position: <m>(n+1)/2</m></li>
-          </ul>
-        </aside>
+          <statement>
+            <p>If there are <m>n</m> numerical values and we refer to them as <m>y_1, y_2, \ldots, y_n</m>,</p>
+            <ul>
+              <li>The <term>mean</term>, <m>\bar{y}</m>, is the average of all numerical values in the data set: <me>\bar{y} = \frac{\sum_{i=1}^n y_i}{n}</me></li>
+              <li>The <term>median</term> is a value such that 50% of the data lies below and 50% of the data lies above that value: median position: <m>(n+1)/2</m></li>
+            </ul>
+          </statement>
+        </definition>
         
         <exercise xml:id="practice-a2a-b" label="PPA.2">
           <image source="hurricanedotplot3.png" width="80%">
@@ -356,22 +360,26 @@
       <paragraphs xml:id="simulation-analysis-b">
         <title>Simulation Analysis</title>
         
-        <aside>
-          <title>Random Babies Applet</title>
-          <image source="randombabies-screenshot.png" width="100%">
-            <description>Click to open Random Babies applet</description>
-            <url href="https://www.rossmanchance.com/applets/2021/randombabies/RandomBabies.html?hideExtras=1" target="_blank"/>
-          </image>
-        </aside>
-        
-        <p>Now let's use technology to simulate this process many more times. <url href="https://www.rossmanchance.com/applets/2021/randombabies/RandomBabies.html?hideExtras=1" target="_blank">Open the Random Babies applet</url> and follow these steps:</p>
-        
-        <ul>
-          <li>Press <alert>Randomize</alert>. Notice that the applet randomly returns babies to mothers and determines how many babies are returned to the correct home (by matching diaper colors). The applet also counts and graphs the resulting number of matches.</li>
-          <li>Uncheck the <alert>Animate</alert> box and press <alert>Randomize</alert> a few more times. You should see the results accumulate in the table and the histogram.</li>
-          <li>Click on the histogram bar representing the outcome of zero mothers receiving the correct baby. This shows you a "time plot" of the proportion of trials with 0 matches vs. the number of trials.</li>
-          <li>Set the <alert>Number of trials</alert> to 100 and press <alert>Randomize</alert> a few times, noticing how the behavior of this graph changes.</li>
-        </ul>
+        <sidebyside widths="60% 35%" margins="0% 5%">
+          <stack>
+            <p>Now let's use technology to simulate this process many more times. <url href="https://www.rossmanchance.com/applets/2021/randombabies/RandomBabies.html?hideExtras=1" target="_blank">Open the Random Babies applet</url> and follow these steps:</p>
+            
+            <ul>
+              <li>Press <alert>Randomize</alert>. Notice that the applet randomly returns babies to mothers and determines how many babies are returned to the correct home (by matching diaper colors). The applet also counts and graphs the resulting number of matches.</li>
+              <li>Uncheck the <alert>Animate</alert> box and press <alert>Randomize</alert> a few more times. You should see the results accumulate in the table and the histogram.</li>
+              <li>Click on the histogram bar representing the outcome of zero mothers receiving the correct baby. This shows you a "time plot" of the proportion of trials with 0 matches vs. the number of trials.</li>
+              <li>Set the <alert>Number of trials</alert> to 100 and press <alert>Randomize</alert> a few times, noticing how the behavior of this graph changes.</li>
+            </ul>
+          </stack>
+          
+          <figure xml:id="fig-random-babies-applet">
+            <caption>Click to open applet</caption>
+            <image source="randombabies-screenshot.png" width="100%">
+              <description>Click to open Random Babies applet</description>
+              <url href="https://www.rossmanchance.com/applets/2021/randombabies/RandomBabies.html?hideExtras=1" target="_blank"/>
+            </image>
+          </figure>
+        </sidebyside>
       </paragraphs>
       
       <exercise xml:id="random-babies-ex-e" label="B.5">
