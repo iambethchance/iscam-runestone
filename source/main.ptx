@@ -984,9 +984,9 @@
         </exercise>
         
         <paragraphs xml:id="tech-detour-tallying">
-          <title>Technology Detour</title>
+          <title>Technology Detour - Tallying the Outcomes</title>
           
-          <exercise xml:id="tech-detour-r" label="Tallying the Outcomes - R">
+          <exercise xml:id="tech-detour-r" label="R">
             <title>Tallying the Outcomes - R</title>
             <solution>
               <p>To count the number of correct and incorrect responses, type:</p>
@@ -995,13 +995,124 @@
 table(InfantData)
                 </input>
               </program>
+              
+              <note>
+                <title>R Reminder</title>
+                <p>The <c>table()</c> function automatically counts the frequency of each unique value in your data. Make sure your data is loaded before running this command.</p>
+              </note>
             </solution>
           </exercise>
           
-          <exercise xml:id="tech-detour-jmp" label="Tallying the Outcomes - JMP">
+          <exercise xml:id="tech-detour-jmp" label="JMP">
             <title>Tallying the Outcomes - JMP</title>
             <solution>
               <p>Choose <c>Analyze > Tabulate</c>. In the new window, drag the <c>choice</c> column to either the Drop Zone for columns or for rows. Press <c>Done</c>.</p>
+              
+              <note>
+                <title>JMP Reminder</title>
+                <p>Look for the red triangle (<q>hot spot</q>) menus in JMP windows - they provide additional options and actions. Dragging variables to different zones (rows vs. columns) changes how your table is organized.</p>
+              </note>
+            </solution>
+          </exercise>
+          
+          <exercise xml:id="tech-detour-r-bargraph-raw" label="Bar Graphs - R (raw data)">
+            <title>Bar Graphs - R (raw data)</title>
+            <solution>
+              <p>You need to pass the tabled data into the barplot function:</p>
+              <program language="r">
+                <input>
+barplot(table(InfantData), xlab="Choice", ylab="Frequency")
+                </input>
+              </program>
+              <p>You may need to toggle to the R Graphics Window to see the graph window. Now you can use R to export the graph to a file or you can Copy and Paste or use a screen capture.</p>
+              
+              <note>
+                <title>R Reminder</title>
+                <p>The <c>xlab</c> and <c>ylab</c> arguments add labels to your axes. Always label your graphs to make them interpretable! You can nest the <c>table()</c> function inside <c>barplot()</c> to go directly from raw data to a graph.</p>
+              </note>
+            </solution>
+          </exercise>
+          
+          <exercise xml:id="tech-detour-r-bargraph-summary" label="Bar Graphs - R (summary data)">
+            <title>Bar Graphs - R (summary data)</title>
+            <solution>
+              <p>If you already (or only) have the summarized data (the number of successes and failures), you can type:</p>
+              <program language="r">
+                <input>
+barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
+                </input>
+              </program>
+              
+              <note>
+                <title>R Reminder</title>
+                <p>The <c>c()</c> function creates a vector (list) of values. The <c>names.arg</c> parameter assigns category labels to each bar. The order matters - the first count gets the first label!</p>
+              </note>
+            </solution>
+          </exercise>
+          
+          <exercise xml:id="tech-detour-jmp-bargraph-summary" label="Bar Graphs - JMP (summary data)">
+            <title>Bar Graphs - JMP (summary data)</title>
+            <solution>
+              <p><alert>Method 1: From Tabulate Window</alert></p>
+              <p>In the Tabulate window (from above), use the red down arrow in the upper left corner (<q>hot spot</q>) and select <c>Show Chart</c>. Best when using the Drop zone for rows.</p>
+              
+              <image source="tech_images/bargraphJMP1.png" width="70%">
+                <description>JMP Tabulate window with Show Chart option</description>
+              </image>
+              
+              <p><alert>Method 2: Graph Builder</alert></p>
+              <p>If you have the categories and counts in a data window, choose <c>Graph > Graph Builder</c>. Drag the variable names to the x-axis and the counts to the y-axis. Press the 7th icon to convert the chart to a bar graph.</p>
+              
+              <image source="tech_images/bargraphJMP2.png" width="70%">
+                <description>JMP Graph Builder interface for creating bar graphs from summary data</description>
+              </image>
+              
+              <note>
+                <title>JMP Reminder</title>
+                <p>Graph Builder is JMP's most flexible graphing tool. The icons at the top let you switch between different graph types. Drag and drop variables to different zones to change what the graph displays.</p>
+              </note>
+            </solution>
+          </exercise>
+          
+          <exercise xml:id="tech-detour-jmp-bargraph-raw" label="Bar Graphs - JMP (raw data)">
+            <title>Bar Graphs - JMP (raw data)</title>
+            <solution>
+              <p><alert>Method 1: Graph Builder</alert></p>
+              <p>From the Data Table window, select <c>Graph > Graph Builder</c>. Drag the Choice variable to the X-axis. Hover until the X-region shows the group labels and then let go. Press the 7th (<q>Bar</q>) icon to convert the chart to a bar graph.</p>
+              
+              <image source="tech_images/bargraphJMP3.png" width="70%">
+                <description>JMP Graph Builder showing dragging variable to X-axis</description>
+              </image>
+              
+              <image source="tech_images/bargraphJMP4.png" width="70%">
+                <description>JMP Graph Builder with Bar chart icon selected</description>
+              </image>
+              
+              <p><alert>Method 2: Distribution Platform</alert></p>
+              <p>Choose <c>Analyze > Distribution</c>. With the choice column highlighted, press the <c>Y, Columns</c> button (or drag to the white box). Press <c>OK</c>.</p>
+              
+              <image source="tech_images/bargraphJMP5.png" width="70%">
+                <description>JMP Distribution dialog window</description>
+              </image>
+              
+              <image source="tech_images/bargraphJMP6.png" width="70%">
+                <description>JMP Distribution output with frequency chart</description>
+              </image>
+              
+              <p>You have lots of options here (using the hot spots), like turning the graph horizontal, adding an axis (putting it on the left), adding labels, separating bars, etc.</p>
+              
+              <image source="tech_images/bargraphJMP7.png" width="70%">
+                <description>JMP Distribution hot spot menu options</description>
+              </image>
+              
+              <image source="tech_images/bargraphJMP8.png" width="70%">
+                <description>JMP Distribution chart with customization options applied</description>
+              </image>
+              
+              <note>
+                <title>JMP Reminder</title>
+                <p>The Distribution platform is great for exploring categorical data. Use the red triangle hot spots to customize your graph - you can make bars horizontal, add counts/percentages, change colors, and more. Experiment with the options to make your graph publication-ready!</p>
+              </note>
             </solution>
           </exercise>
         </paragraphs>
