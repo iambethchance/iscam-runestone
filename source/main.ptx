@@ -907,13 +907,18 @@
     <subsection xml:id="investigation1-1">
       <title>Investigation 1.1: Friend or Foe?</title>
       
-      <sidebyside widths="65% 30%" margins="0% 5%">
-        <p>In a study reported in the November 2007 issue of <em>Nature</em>, researchers investigated whether infants take into account an individual's actions towards others in evaluating that individual as appealing or aversive, 
-        perhaps laying the foundation for social interaction (<url href="https://pubmed.ncbi.nlm.nih.gov/18033298/">Hamlin, Wynn, and Bloom, 2007</url>). In other words, do children who aren't even yet talking still form impressions as to someone's friendliness based on their actions? In one component of the study, sixteen 10-month-old infants were shown a <q>climber</q> character (a piece of wood with <q>googly</q> eyes glued onto it) that could not make it up a hill in two tries. Then the infants were shown two scenarios for the climber's next try, one where the climber was pushed to the top of the hill by another character (the <q>helper</q> toy) and one where the climber was pushed back down the hill by another character (the <q>hinderer</q> toy). The infant was alternately shown these two scenarios several times. Then the child was presented with both pieces of wood (the helper and the hinderer characters) and asked to pick one to play with. Videos demonstrating this component of the study can be found at <url href="http://campuspress.yale.edu/infantlab/media/">http://campuspress.yale.edu/infantlab/media/</url>.</p>
-        <image source="https://i.imgur.com/udXwvxG.gif" width="100%">
-          <description>Image of infant choosing between two toys</description>
-        </image>
-      </sidebyside>
+      <introduction>
+        <p>In a study reported in the November 2007 issue of <em>Nature</em>, researchers investigated whether infants take into account an individual's actions towards others in evaluating that individual as appealing or aversive, perhaps laying the foundation for social interaction (<url href="https://pubmed.ncbi.nlm.nih.gov/18033298/">Hamlin, Wynn, and Bloom, 2007</url>). In other words, do children who aren't even yet talking still form impressions as to someone's friendliness based on their actions?</p>
+        
+        <sidebyside widths="60% 35%" margins="0% 5%" valign="top">
+          <p>In one component of the study, sixteen 10-month-old infants were shown a <q>climber</q> character (a piece of wood with <q>googly</q> eyes glued onto it) that could not make it up a hill in two tries. Then the infants were shown two scenarios for the climber's next try, one where the climber was pushed to the top of the hill by another character (the <q>helper</q> toy) and one where the climber was pushed back down the hill by another character (the <q>hinderer</q> toy). The infant was alternately shown these two scenarios several times. Then the child was presented with both pieces of wood (the helper and the hinderer characters) and asked to pick one to play with.</p>
+          <image source="images/infant.GIF" width="100%">
+            <description>Infant choosing between helper and hinderer toys</description>
+          </image>
+        </sidebyside>
+        
+        <p>Videos demonstrating this component of the study can be found at <url href="http://campuspress.yale.edu/infantlab/media/">http://campuspress.yale.edu/infantlab/media/</url>.</p>
+      </introduction>
       
       <paragraphs>
         <title>Collecting the Data</title>
@@ -969,15 +974,42 @@
         
         <exercise xml:id="inv1-1-d" label="I1.1.4">
           <statement>
-            <p>What is the variable we are measuring about each observation? Is it a quantitative variable or a categorical variable?</p>
+            <p>What is the variable we are measuring about each observation?</p>
           </statement>
           <hint>
-            <p>Think about what information is recorded for each infant. Is it a number or a category?</p>
+            <p>Think about what information is recorded for each infant.</p>
           </hint>
           <answer>
-            <p>Variable = which toy does the infant choose to play with (categorical).</p>
+            <p>Variable = which toy does the infant choose to play with.</p>
           </answer>
           <response/>
+        </exercise>
+        
+        <exercise xml:id="inv1-1-d2" label="I1.1.4b">
+          <statement>
+            <p>Is this variable quantitative or categorical?</p>
+          </statement>
+          <choices randomize="no">
+            <choice correct="yes">
+              <statement>
+                <p>Categorical</p>
+              </statement>
+              <feedback>
+                <p>Correct! The variable records which category (Helper or Hinderer) each infant chose, making it a categorical variable.</p>
+              </feedback>
+            </choice>
+            <choice>
+              <statement>
+                <p>Quantitative</p>
+              </statement>
+              <feedback>
+                <p>Not quite. A quantitative variable would be a numerical measurement. Here we're recording which toy was chosen, which is a category.</p>
+              </feedback>
+            </choice>
+          </choices>
+          <hint>
+            <p>Think about whether the data is a number or a category.</p>
+          </hint>
         </exercise>
         
         <assemblage xml:id="def-research-question">
@@ -1021,7 +1053,7 @@
           <answer>
             <p>14/16 = 0.875</p>
             <p>Active title: A majority of infants preferred the helper toy.</p>
-            <image source="ch1solsbargraph.jpg" width="70%">
+            <image source="tech_images/ch1solsbargraph.jpg" width="70%">
               <description>Bar graph showing 14 infants chose Helper toy and 2 chose Hinderer toy</description>
             </image>
           </answer>
@@ -1353,6 +1385,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           <statement>
             <p>What do the researchers think is true about the value of this probability (e.g., do they think it is larger or smaller than 0.50)?</p>
           </statement>
+          <hint>
+            <p>Consider what the research hypothesis is about infant preferences for the helper toy.</p>
+          </hint>
           <answer>
             <p>Researchers believe the probability is larger than 0.50.</p>
           </answer>
@@ -1466,7 +1501,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           </hint>
           <answer>
             <p>Results will vary by class. Below is one possible set of results:</p>
-            <image source="ch1solsdotplot.jpg" width="70%">
+            <image source="tech_images/ch1solsdotplot.jpg" width="70%">
               <description>Dotplot showing distribution of class simulation results for number of heads in 16 coin tosses</description>
             </image>
           </answer>
