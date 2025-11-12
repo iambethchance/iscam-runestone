@@ -1,43 +1,46 @@
 /* Custom CSS for wider content display */
 
-/* Increase the maximum width of the main content area */
+/* Keep main content at readable width */
 .ptx-content {
-    max-width: 1400px !important;  /* Increased from 1200px */
+    max-width: 1000px !important;
 }
 
-/* Make the page wrapper wider */
+/* Make the page wrapper wider to allow interactive elements to expand */
 .ptx-page {
-    max-width: 1600px !important;  /* Increased from 1400px */
+    max-width: 1600px !important;
 }
 
-/* Adjust the main content section width */
-.ptx-content section.section {
-    max-width: 1400px !important;  /* Increased from 1200px */
-}
-
-/* Make figures and interactive elements use more width */
+/* Make figures and interactive elements break out to wider width */
 figure {
-    max-width: 100% !important;
+    max-width: 1400px !important;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Specifically target iframes to be wider */
+/* Specifically target iframes to be much wider */
 iframe {
-    max-width: 100% !important;
+    max-width: 1400px !important;
+    width: 100% !important;
+    min-height: 600px;
+}
+
+/* Interactive elements should use much more width */
+.ptx-content .interactive {
+    max-width: 1400px !important;
     width: 100% !important;
 }
 
-/* Interactive elements should use full available width */
-.ptx-content .interactive {
-    max-width: 100% !important;
+/* Make interactive figures break out of normal content width */
+figure.figure-like:has(.interactive) {
+    max-width: 1400px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
-/* Reduce margins to use more horizontal space */
+/* Normal content sections stay at readable width */
 .ptx-content section {
     padding-left: 1em;
     padding-right: 1em;
 }
 
-/* Make the container use more width on Runestone */
-.container-fluid {
-    max-width: 95% !important;
-}
