@@ -264,10 +264,11 @@
           <title>Mean and Median</title>
           <p>If there are <m>n</m> numerical values and we refer to them as <m>y_1, y_2, \ldots, y_n</m>,</p>
           <figure xml:id="fig-hurricane-dotplot-recent">
-            <image source="hurricanedotplot3.png" width="80%">
-              <description>Dotplot showing the distribution of annual number of hurricanes from 1991 to 2020</description>
-            </image>
-          </figure>
+        <image source="hurricanedotplot3.png" width="80%">
+          <description>Dotplot showing the distribution of annual number of hurricanes from 1991 to 2020</description>
+        </image>
+      </figure>
+      
           <p>The <term>mean</term>, <m>\bar{y}</m>, is the average of all numerical values in the data set:</p>
           <p><me>\bar{y} = \frac{\sum_{i=1}^n y_i}{n}</me></p>
           <p>The <term>median</term> is a value such that 50% of the data lies below and 50% of the data lies above that value: median position: <m>(n+1)/2</m></p>
@@ -275,6 +276,11 @@
         
         <exercise xml:id="practice-a2a-b" label="PPA.2">
           <statement>
+            <figure>
+              <image source="hurricanedotplot3.png" width="80%">
+                <description>Dotplot showing mean and median for hurricane data</description>
+              </image>
+            </figure>
             <p>Explore the mean and median:</p>
             <ul>
               <li>Check the box next to Guess for the Mean. Move the red line to where you think the mean of the distribution is.</li>
@@ -344,10 +350,16 @@
       <paragraphs xml:id="simulation-analysis-b">
         <title>Simulation Analysis</title>
         
+        <p>Now let's use technology to simulate this process many more times. <url href="https://www.rossmanchance.com/applets/2021/randombabies/RandomBabies.html?hideExtras=1" target="_blank">Open the Random Babies applet</url> and follow these steps:</p>
         
         <sidebyside widths="60% 35%" margins="0% 5%">
           <stack>
-        <p>Now let's use technology to simulate this process many more times. <url href="https://www.rossmanchance.com/applets/2021/randombabies/RandomBabies.html?hideExtras=1" target="_blank">Open the Random Babies applet</url> and follow these steps:</p>
+            <ul>
+              <li>Press <alert>Randomize</alert>. Notice that the applet randomly returns babies to mothers and determines how many babies are returned to the correct home (by matching diaper colors). The applet also counts and graphs the resulting number of matches.</li>
+              <li>Uncheck the <alert>Animate</alert> box and press <alert>Randomize</alert> a few more times. You should see the results accumulate in the table and the histogram.</li>
+              <li>Click on the histogram bar representing the outcome of zero mothers receiving the correct baby. This shows you a "time plot" of the proportion of trials with 0 matches vs. the number of trials.</li>
+              <li>Set the <alert>Number of trials</alert> to 100 and press <alert>Randomize</alert> a few times, noticing how the behavior of this graph changes.</li>
+            </ul>
           </stack>
           
           <image source="randombabies-screenshot.png" width="100%">
@@ -355,12 +367,6 @@
           </image>
         </sidebyside>
       </paragraphs>
-            <ul>
-              <li>Press <alert>Randomize</alert>. Notice that the applet randomly returns babies to mothers and determines how many babies are returned to the correct home (by matching diaper colors). The applet also counts and graphs the resulting number of matches.</li>
-              <li>Uncheck the <alert>Animate</alert> box and press <alert>Randomize</alert> a few more times. You should see the results accumulate in the table and the histogram.</li>
-              <li>Click on the histogram bar representing the outcome of zero mothers receiving the correct baby. This shows you a "time plot" of the proportion of trials with 0 matches vs. the number of trials.</li>
-              <li>Set the <alert>Number of trials</alert> to 100 and press <alert>Randomize</alert> a few times, noticing how the behavior of this graph changes.</li>
-            </ul>
       
       <exercise xml:id="random-babies-ex-e" label="B.5">
         <statement>
