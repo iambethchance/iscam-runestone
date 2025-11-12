@@ -988,7 +988,7 @@
           
           <exercise xml:id="tech-detour-r-loading-rstudio" label="Loading Data - RStudio">
             <title>Loading Data - RStudio</title>
-            <solution>
+            <statement>
               <p>In RStudio, choose <c>Import Dataset > From Text (readr)</c> and enter the URL, then press <c>Import</c>.</p>
               <ul>
                 <li><p>Example URL: <url href="https://www.rossmanchance.com/iscam3/data/InfantData.txt">https://www.rossmanchance.com/iscam3/data/InfantData.txt</url></p></li>
@@ -1002,12 +1002,15 @@
                 <title>RStudio Reminder</title>
                 <p>With other data files, you may need to consider how <q>missing values</q> are coded. The Import Dataset dialog gives you a preview so you can check that the data looks correct before importing.</p>
               </note>
+            </statement>
+            <solution>
+              <p>After importing, you should see the data appear in your Environment pane (upper right) and a data viewer window will open showing the contents of the file. The data table should show one column named <c>choice</c> with 16 rows containing either "Helper" or "Hinderer".</p>
             </solution>
           </exercise>
           
           <exercise xml:id="tech-detour-r-loading" label="Loading Data - R">
             <title>Loading Data - R</title>
-            <solution>
+            <statement>
               <p><alert>Files from the Web</alert></p>
               <p>Open the InfantData.txt (raw data) link from the data files page, select all, copy, and then in R use the following command. Keep in mind that R is case sensitive:</p>
               
@@ -1064,12 +1067,25 @@ attach(InfantData)    # Now R knows what the "choice" variable is
                 <title>R Reminder</title>
                 <p>R is case sensitive! <c>InfantData</c> and <c>infantdata</c> are different objects. Always check your data after loading with <c>View()</c> or <c>head()</c> to make sure it loaded correctly. Using <c>attach()</c> lets you reference column names directly, but be careful - if you have multiple datasets loaded, this can cause confusion.</p>
               </note>
+            </statement>
+            <solution>
+              <p>After running <c>head(InfantData)</c>, you should see output similar to:</p>
+              <pre>
+     choice
+1    Helper
+2    Helper
+3    Helper
+4    Helper
+5    Helper
+6  Hinderer
+              </pre>
+              <p>This shows the first 6 observations of the data. The full dataset contains 16 observations total.</p>
             </solution>
           </exercise>
           
           <exercise xml:id="tech-detour-jmp-loading" label="Loading Data - JMP">
             <title>Loading Data - JMP</title>
-            <solution>
+            <statement>
               <p><alert>Method 1: Copy and Paste</alert></p>
               <p>Choose <c>File > New > Data table</c>. Open the InfantData.txt (raw data) link from the data files page and select all the observations and the variable name and copy the data into the clipboard. Return to the data table in JMP and select <c>Edit > Paste with Column Names</c>.</p>
               
@@ -1080,6 +1096,9 @@ attach(InfantData)    # Now R knows what the "choice" variable is
                 <title>JMP Reminder</title>
                 <p>When using <c>Paste with Column Names</c>, make sure you include the header row (variable names) in your selection. JMP will automatically detect the data types for each column. Always check the data table after importing to ensure everything looks correct.</p>
               </note>
+            </statement>
+            <solution>
+              <p>After pasting or opening the file, you should see a data table with one column labeled <c>choice</c> containing 16 rows. The column should be recognized as a Character data type. The values should alternate between "Helper" and "Hinderer" entries.</p>
             </solution>
           </exercise>
         </paragraphs>
@@ -1089,7 +1108,7 @@ attach(InfantData)    # Now R knows what the "choice" variable is
           
           <exercise xml:id="tech-detour-r" label="R">
             <title>Tallying the Outcomes - R</title>
-            <solution>
+            <statement>
               <p>To count the number of correct and incorrect responses, type:</p>
               <program language="r">
                 <input>
@@ -1101,18 +1120,36 @@ table(InfantData)
                 <title>R Reminder</title>
                 <p>The <c>table()</c> function automatically counts the frequency of each unique value in your data. Make sure your data is loaded before running this command.</p>
               </note>
+            </statement>
+            <solution>
+              <p>The output should show:</p>
+              <pre>
+choice
+  Helper Hinderer 
+      14        2
+              </pre>
+              <p>This indicates that 14 infants chose the Helper toy and 2 chose the Hinderer toy.</p>
             </solution>
           </exercise>
           
           <exercise xml:id="tech-detour-jmp" label="JMP">
             <title>Tallying the Outcomes - JMP</title>
-            <solution>
+            <statement>
               <p>Choose <c>Analyze > Tabulate</c>. In the new window, drag the <c>choice</c> column to either the Drop Zone for columns or for rows. Press <c>Done</c>.</p>
               
               <note>
                 <title>JMP Reminder</title>
                 <p>Look for the red triangle (<q>hot spot</q>) menus in JMP windows - they provide additional options and actions. Dragging variables to different zones (rows vs. columns) changes how your table is organized.</p>
               </note>
+            </statement>
+            <solution>
+              <p>The Tabulate output should display a table showing the counts for each category:</p>
+              <ul>
+                <li><p>Helper: 14</p></li>
+                <li><p>Hinderer: 2</p></li>
+                <li><p>Total (N): 16</p></li>
+              </ul>
+              <p>The exact layout depends on whether you placed the variable in rows or columns, but the counts will be the same.</p>
             </solution>
           </exercise>
         </paragraphs>
@@ -1122,7 +1159,7 @@ table(InfantData)
           
           <exercise xml:id="tech-detour-r-bargraph-raw" label="Bar Graphs - R (raw data)">
             <title>Bar Graphs - R (raw data)</title>
-            <solution>
+            <statement>
               <p>You need to pass the tabled data into the barplot function:</p>
               <program language="r">
                 <input>
@@ -1135,12 +1172,20 @@ barplot(table(InfantData), xlab="Choice", ylab="Frequency")
                 <title>R Reminder</title>
                 <p>The <c>xlab</c> and <c>ylab</c> arguments add labels to your axes. Always label your graphs to make them interpretable! You can nest the <c>table()</c> function inside <c>barplot()</c> to go directly from raw data to a graph.</p>
               </note>
+            </statement>
+            <solution>
+              <p>You should see a bar graph with two bars:</p>
+              <ul>
+                <li><p>A bar for "Helper" with height 14</p></li>
+                <li><p>A bar for "Hinderer" with height 2</p></li>
+              </ul>
+              <p>The x-axis should be labeled "Choice" and the y-axis should be labeled "Frequency". The bars should have gaps between them to indicate these are categorical data.</p>
             </solution>
           </exercise>
           
           <exercise xml:id="tech-detour-r-bargraph-summary" label="Bar Graphs - R (summary data)">
             <title>Bar Graphs - R (summary data)</title>
-            <solution>
+            <statement>
               <p>If you already (or only) have the summarized data (the number of successes and failures), you can type:</p>
               <program language="r">
                 <input>
@@ -1152,12 +1197,20 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
                 <title>R Reminder</title>
                 <p>The <c>c()</c> function creates a vector (list) of values. The <c>names.arg</c> parameter assigns category labels to each bar. The order matters - the first count gets the first label!</p>
               </note>
+            </statement>
+            <solution>
+              <p>You should see a bar graph identical to the one created from raw data:</p>
+              <ul>
+                <li><p>A bar labeled "Helper" with height 14</p></li>
+                <li><p>A bar labeled "Hinderer" with height 2</p></li>
+              </ul>
+              <p>This method is useful when you only have summary statistics rather than the full dataset.</p>
             </solution>
           </exercise>
           
           <exercise xml:id="tech-detour-jmp-bargraph-summary" label="Bar Graphs - JMP (summary data)">
             <title>Bar Graphs - JMP (summary data)</title>
-            <solution>
+            <statement>
               <p><alert>Method 1: From Tabulate Window</alert></p>
               <p>In the Tabulate window (from above), use the red down arrow in the upper left corner (<q>hot spot</q>) and select <c>Show Chart</c>. Best when using the Drop zone for rows.</p>
               
@@ -1176,12 +1229,15 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
                 <title>JMP Reminder</title>
                 <p>Graph Builder is JMP's most flexible graphing tool. The icons at the top let you switch between different graph types. Drag and drop variables to different zones to change what the graph displays.</p>
               </note>
+            </statement>
+            <solution>
+              <p>You should see a bar graph showing two bars with the frequency counts clearly labeled. The Helper bar should be noticeably taller (14) than the Hinderer bar (2). The graph should automatically include axis labels and a legend if needed.</p>
             </solution>
           </exercise>
           
           <exercise xml:id="tech-detour-jmp-bargraph-raw" label="Bar Graphs - JMP (raw data)">
             <title>Bar Graphs - JMP (raw data)</title>
-            <solution>
+            <statement>
               <p><alert>Method 1: Graph Builder</alert></p>
               <p>From the Data Table window, select <c>Graph > Graph Builder</c>. Drag the Choice variable to the X-axis. Hover until the X-region shows the group labels and then let go. Press the 7th (<q>Bar</q>) icon to convert the chart to a bar graph.</p>
               
@@ -1218,6 +1274,16 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
                 <title>JMP Reminder</title>
                 <p>The Distribution platform is great for exploring categorical data. Use the red triangle hot spots to customize your graph - you can make bars horizontal, add counts/percentages, change colors, and more. Experiment with the options to make your graph publication-ready!</p>
               </note>
+            </statement>
+            <solution>
+              <p>Either method should produce a bar graph showing the distribution of choices. You should see:</p>
+              <ul>
+                <li><p>Two distinct bars for Helper and Hinderer</p></li>
+                <li><p>The Helper bar should be approximately 7 times taller than the Hinderer bar (14 vs 2)</p></li>
+                <li><p>Frequency counts labeled on or near the bars</p></li>
+                <li><p>Clear axis labels and category names</p></li>
+              </ul>
+              <p>Using the Distribution platform gives you more statistical output beyond just the graph, including percentages and other summary statistics.</p>
             </solution>
           </exercise>
         </paragraphs>
