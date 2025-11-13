@@ -1892,15 +1892,48 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
         <statement>
           <p>If Yukon was purely guessing, how often would you expect her to identify the correct container?</p>
         </statement>
-        <response>
-          <choices>
-            <choice correct="yes">about 50% of the time</choice>
-            <choice>about 33% of the time</choice>
-            <choice>about 75% of the time</choice>
-            <choice>about 25% of the time</choice>
-            <choice>never</choice>
-          </choices>
-        </response>
+        <choices randomize="no">
+          <choice correct="yes">
+            <statement>
+              <p>about 50% of the time</p>
+            </statement>
+            <feedback>
+              <p>Correct! With two equally likely options, we would expect Yukon to choose correctly about half the time by chance.</p>
+            </feedback>
+          </choice>
+          <choice>
+            <statement>
+              <p>about 33% of the time</p>
+            </statement>
+            <feedback>
+              <p>This would be the probability if there were three equally likely options.</p>
+            </feedback>
+          </choice>
+          <choice>
+            <statement>
+              <p>about 75% of the time</p>
+            </statement>
+            <feedback>
+              <p>This would mean Yukon has some understanding of the cues, not just guessing.</p>
+            </feedback>
+          </choice>
+          <choice>
+            <statement>
+              <p>about 25% of the time</p>
+            </statement>
+            <feedback>
+              <p>This would be the probability if there were four equally likely options.</p>
+            </feedback>
+          </choice>
+          <choice>
+            <statement>
+              <p>never</p>
+            </statement>
+            <feedback>
+              <p>Even when guessing, there's a chance of being correct.</p>
+            </feedback>
+          </choice>
+        </choices>
         <solution>
           <p>About 50% of the time.</p>
         </solution>
@@ -1927,7 +1960,16 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
         <statement>
           <p>Identify the above possibilities as the null and alternative hypotheses.</p>
         </statement>
-        <response/>
+        <matches>
+          <match order="1">
+            <premise>Null Hypothesis</premise>
+            <response>Yukon does not consistently understand behavioral cues and is guessing randomly</response>
+          </match>
+          <match order="2">
+            <premise>Alternative Hypothesis</premise>
+            <response>Yukon can understand behavioral cues</response>
+          </match>
+        </matches>
         <solution>
           <p><b>Null:</b> Yukon does not consistently understand behavioral cues and is guessing randomly between the 2 containers.</p>
           <p><b>Alternative:</b> Yukon can understand behavioral cues.</p>
