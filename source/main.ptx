@@ -2344,7 +2344,7 @@ iscambinomprob(14, 16, .5, FALSE)
         
         <figure xml:id="fig-esp-cards">
           <caption>ESP Test Symbols</caption>
-          <image source="images/esp.png" width="60%">
+          <image source="esp.png" width="60%">
             <description>Five ESP test symbols: circle, plus sign, square, diamond, and wavy lines</description>
           </image>
         </figure>
@@ -2358,9 +2358,6 @@ iscambinomprob(14, 16, .5, FALSE)
             
             <p>Number of hits: <var width="5" /></p>
           </statement>
-          <solution>
-            <p>Results will vary.</p>
-          </solution>
         </exercise>
         
         <exercise xml:id="I1-3-2" label="Sample and variable">
@@ -2390,19 +2387,29 @@ iscambinomprob(14, 16, .5, FALSE)
         </exercise>
       </exercises>
       
-      <paragraphs xml:id="terminology-statistic-parameter">
+      <assemblage xml:id="terminology-statistic-parameter">
         <title>Terminology Detour: Statistic vs. Parameter</title>
         
         <p>In analyzing data, it is important to differentiate between a <term>statistic</term> and the <term>parameter</term>. The observed statistic is a (known) numerical value that summarizes the observed results, whereas the parameter is the same numerical summary but applied to the underlying random process that generated the data. The value of the statistic is what we observe in the study, whereas the value of the parameter is rarely known.</p>
         
         <p>In Investigation 1.1, the statistic could be either the number (14) or the proportion (0.875) of infants who chose the helper toy. The parameter would then be the long-run probability of an infant picking the helper toy. In the case of a binomial random variable, we will use the symbol <m>\pi</m> (lower case Greek letter for <q>p</q>) to represent this unknown process probability.</p>
-      </paragraphs>
+      </assemblage>
       
       <exercises>
-        <exercise xml:id="I1-3-4" label="Parameter of interest">
+        <exercise xml:id="I1-3-4" label="Parameter of interest words">
           <title>Identify the Parameter</title>
           <statement>
-            <p>Identify (in words) the parameter of interest for this study. What symbol will we use to represent this parameter?</p>
+            <p>Identify (in words) the parameter of interest for this study.</p>
+          </statement>
+          <solution>
+            <p>Let <m>\pi</m> represent your probability of correct identification.</p>
+          </solution>
+        </exercise>
+        
+        <exercise xml:id="I1-3-4b" label="Parameter symbol">
+          <title>Parameter Symbol</title>
+          <statement>
+            <p>What symbol will we use to represent this parameter?</p>
           </statement>
           <choices randomize="no">
             <choice>
@@ -2422,9 +2429,6 @@ iscambinomprob(14, 16, .5, FALSE)
               <feedback><p>While <em>p</em> is sometimes used for probability, we use the Greek letter <m>\pi</m> for the process probability parameter.</p></feedback>
             </choice>
           </choices>
-          <solution>
-            <p>Let <m>\pi</m> represent your probability of correct identification.</p>
-          </solution>
         </exercise>
         
         <exercise xml:id="I1-3-5" label="Null hypothesis ESP">
@@ -2482,9 +2486,6 @@ iscambinomprob(14, 16, .5, FALSE)
           <statement>
             <p>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url>, specify the values for <m>\pi</m> and <m>n</m>. Carry out one repetition of the simulation. Explain the simulation process in your own words.</p>
           </statement>
-          <solution>
-            <p>Results will vary. The applet should generate 10 spinners (each a 0.20 probability of success = landing in the blue region) and then record the number of successes in those 10 spins.</p>
-          </solution>
         </exercise>
         
         <exercise xml:id="I1-3-10" label="Theoretical mean SD">
@@ -2517,9 +2518,6 @@ iscambinomprob(14, 16, .5, FALSE)
           <statement>
             <p>Was your statistic from (a) in the direction specified by the alternative hypothesis? If it was, is it in one of the tails (outer edges) of the null distribution in (j)?</p>
           </statement>
-          <solution>
-            <p>Results will vary, but quite possible your results were below the expected value.</p>
-          </solution>
         </exercise>
       </exercises>
       
@@ -2591,19 +2589,31 @@ iscambinomprob(14, 16, .5, FALSE)
             <title>Two Approaches to Significance</title>
             <statement>
               <p>How many hits would someone need to get correct in 25 attempts to convince you they aren't simply guessing? Let's consider two ways to decide:</p>
-              
+            </statement>
+          </exercise>
+          
+          <exercise xml:id="I1-3-17a" label="Approach 1 probability">
+            <title>Approach 1: Using Probability</title>
+            <statement>
               <p><alert>Approach 1:</alert> What value for <m>c</m> would give you a probability below 0.05 of obtaining that many or more hits? In other words, what is the smallest value of <m>c</m> so <m>P(C \geq c) &lt; 0.05</m>?</p>
-              
-              <p><alert>Approach 2:</alert> What is the smallest value of <m>c</m> that is at least 2 standard deviations from the expected value?</p>
             </statement>
             <solution>
-              <p>Approach 1: We need to find <m>c</m> such that <m>P(C \geq c) &lt; 0.05</m>. Using the applet:
+              <p>We need to find <m>c</m> such that <m>P(C \geq c) &lt; 0.05</m>. Using the applet:
                 <ul>
                   <li><p><m>P(C \geq 8) = 0.109</m> (too large)</p></li>
                   <li><p><m>P(C \geq 9) = 0.048</m> (this will work!)</p></li>
                 </ul>
               So if someone had 9 or more correct, we might choose to consider that statistically significant.</p>
-              <p>Approach 2: The observed value would need to be more than <m>5 + 2(2) = 9</m>.</p>
+            </solution>
+          </exercise>
+          
+          <exercise xml:id="I1-3-17b" label="Approach 2 standard deviations">
+            <title>Approach 2: Using Standard Deviations</title>
+            <statement>
+              <p><alert>Approach 2:</alert> What is the smallest value of <m>c</m> that is at least 2 standard deviations from the expected value?</p>
+            </statement>
+            <solution>
+              <p>The observed value would need to be more than <m>5 + 2(2) = 9</m>.</p>
             </solution>
           </exercise>
           
@@ -2646,6 +2656,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>Suppose the test had consisted of 6 symbols instead of 5 (with <m>n = 25</m> still). How will that change the binomial distribution? [You should comment on both the mean and the standard deviation.]</p>
             </statement>
+            <response/>
           </exercise>
           
           <exercise xml:id="PP1-3A-2" label="Six symbols surprise">
@@ -2657,6 +2668,7 @@ iscambinomprob(14, 16, .5, FALSE)
                 <li><p>Will the outcome of 9 be more or fewer standard deviations from the mean than with 5 symbols?</p></li>
               </ul></p>
             </statement>
+            <response/>
           </exercise>
           
           <exercise xml:id="PP1-3A-3" label="Ten symbols">
@@ -2664,6 +2676,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>What about 10 symbols? What are the mean and standard deviation of the binomial distribution? Would an outcome of 9 or more correct identifications be more or less surprising than with 5 symbols?</p>
             </statement>
+            <response/>
           </exercise>
           
           <exercise xml:id="PP1-3A-4" label="Shape changes">
@@ -2671,6 +2684,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>How does the shape of the binomial distribution change as you lower <m>\pi</m>? Explain why.</p>
             </statement>
+            <response/>
           </exercise>
         </exercises>
         
@@ -2686,6 +2700,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>Identify (in words) the parameter and statistic in that study.</p>
             </statement>
+            <response/>
           </exercise>
           
           <exercise xml:id="PP1-3B-2" label="Yukon standardized">
@@ -2693,6 +2708,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>How many standard deviations did the observed statistic fall above the expected value assuming Yukon picks equally between the two containers regardless of the cue in the long run?</p>
             </statement>
+            <response/>
           </exercise>
           
           <exercise xml:id="PP1-3B-3" label="Yukon surprising">
@@ -2700,6 +2716,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>Would her performance be considered a surprising outcome when the null hypothesis is true? Explain.</p>
             </statement>
+            <response/>
           </exercise>
           
           <conclusion>
@@ -2711,6 +2728,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>Identify (in words) the parameter and statistic in that study.</p>
             </statement>
+            <response/>
           </exercise>
           
           <exercise xml:id="PP1-3B-5" label="Infant standardized">
@@ -2718,6 +2736,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>How many standard deviations did the observed statistic fall above the expected value assuming infants choose equally between the two types of toys?</p>
             </statement>
+            <response/>
           </exercise>
           
           <exercise xml:id="PP1-3B-6" label="Infant time parameter">
@@ -2725,6 +2744,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>In the infant study, researchers also looked at the amount of time the infants spent watching the two videos (to see whether one captured their attention more than the other). Identify a possible parameter of interest for this new variable.</p>
             </statement>
+            <response/>
           </exercise>
         </exercises>
         
@@ -2740,6 +2760,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>Identify the random process of interest.</p>
             </statement>
+            <response/>
           </exercise>
           
           <exercise xml:id="PP1-3C-2" label="Sample">
@@ -2747,6 +2768,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>Identify the sample in the study.</p>
             </statement>
+            <response/>
           </exercise>
           
           <exercise xml:id="PP1-3C-3" label="Parameter Coke">
@@ -2754,6 +2776,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>Define the parameter of interest in the study.</p>
             </statement>
+            <response/>
           </exercise>
           
           <exercise xml:id="PP1-3C-4" label="Statistic Coke">
@@ -2761,6 +2784,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>Define the statistic in the study.</p>
             </statement>
+            <response/>
           </exercise>
           
           <exercise xml:id="PP1-3C-5" label="Average states">
@@ -2768,6 +2792,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>Suppose you want to estimate the average number of states visited by students at your school. Define the parameter of interest.</p>
             </statement>
+            <response/>
           </exercise>
         </exercises>
       </paragraphs>
