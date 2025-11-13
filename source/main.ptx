@@ -1836,6 +1836,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           <p>Identify the sample/random process for this study. [Hint: What is the sample size?]</p>
         </statement>
         <response/>
+        <solution>
+          <p>The random process is the repeated trials given to Yukon (<m>n = 8</m>).</p>
+        </solution>
       </exercise>
       
       <exercise xml:id="inv1-2-b" label="I1.2.2">
@@ -1843,6 +1846,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           <p>Identify the variable of interest for this process. [Hint: The variable is the measurements recorded for each observation.] Is the variable quantitative or categorical?</p>
         </statement>
         <response/>
+        <solution>
+          <p>The variable is whether or not Yukon picks the cued container (categorical).</p>
+        </solution>
       </exercise>
       
       <exercise xml:id="inv1-2-c" label="I1.2.3">
@@ -1850,6 +1856,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           <p>If Yukon was purely guessing, how often would you expect her to identify the correct container?</p>
         </statement>
         <response/>
+        <solution>
+          <p>About half the time.</p>
+        </solution>
       </exercise>
       
       <p>We will think of the sample of 8 attempts as identical observations from a random process, and we are choosing between two possibilities:</p>
@@ -1874,6 +1883,10 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           <p>Identify the above possibilities as the null and alternative hypotheses.</p>
         </statement>
         <response/>
+        <solution>
+          <p><b>Null:</b> Yukon does not consistently understand behavioral cues and is guessing randomly between the 2 containers.</p>
+          <p><b>Alternative:</b> Yukon can understand behavioral cues.</p>
+        </solution>
       </exercise>
       
       <exercise xml:id="inv1-2-e" label="I1.2.5">
@@ -1881,6 +1894,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           <p>So our simulation model is going to assume the null hypothesis is true and we will see how unusual it is to find 6 successes and 2 failures in 8 attempts. Can we use "coin tossing" again? How many times will we toss the coin?</p>
         </statement>
         <response/>
+        <solution>
+          <p>Yes, we can use coin tosses again with heads = top side down and tails = top side up. We want to use 8 tosses for each repetition and count how many heads we have.</p>
+        </solution>
       </exercise>
       
       <exercise xml:id="inv1-2-f" label="I1.2.6">
@@ -1888,6 +1904,14 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           <p>Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url> to carry out 1,000 repetitions of the simulation. Check the Summary Statistics box and report the mean and standard deviation of your simulated distribution of "could have been" outcomes.</p>
         </statement>
         <response/>
+        <solution>
+          <p>Example results:</p>
+          <ul>
+            <li>Histogram</li>
+            <li>Description automatically generated with low confidence</li>
+          </ul>
+          <p>The mean number of heads is about 4 (half of 8) and the standard deviation of the number of heads is about 1.5.</p>
+        </solution>
       </exercise>
       
       <exercise xml:id="inv1-2-g" label="I1.2.7">
@@ -1895,6 +1919,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           <p>Based on your simulation results, which assumes Yukon is guessing, should we be very surprised to see 6 correct guesses? Explain/support your reasoning.</p>
         </statement>
         <response/>
+        <solution>
+          <p>An outcome of 6 heads does not appear to be in the tail of the distribution.</p>
+        </solution>
       </exercise>
       
       <paragraphs>
@@ -1908,6 +1935,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
             <p>In 1,000 repetitions, assuming the probability of choosing correctly is 0.50, we found <fillin characters="10"/> % of repetitions of 8 attempts to result in 6 or more successes.</p>
           </statement>
           <response/>
+          <solution>
+            <p>Results will vary but should be around 0.15, or 15% of repetitions resulting in 6 or more heads.</p>
+          </solution>
         </exercise>
         
         <p>Notice that we consider the direction of the alternative hypothesis to help us determine which outcomes we consider "more extreme" than our observed outcome. This tail probability you found in (h) is referred to as the p-value.</p>
@@ -1930,6 +1960,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
             <p>Did everyone in your class obtain the same p-value? If not, are you surprised?</p>
           </statement>
           <response/>
+          <solution>
+            <p>No, the p-value will vary slightly across the simulations.</p>
+          </solution>
         </exercise>
         
         <p>Because we are assuming a random process, we can use probability rules to calculate an "exact" value for the p-value. In fact, we have been assuming a very special random process, a binomial process.</p>
@@ -1962,6 +1995,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
               <p><me>P(\text{SSFSSSFS}) = P(S) \times P(S) \times P(F) \times P(S) \times P(S) \times P(S) \times P(F) \times P(S) = \text{<fillin characters="15"/>}</me></p>
             </statement>
             <response/>
+            <solution>
+              <p>0.58</p>
+            </solution>
           </exercise>
           
           <exercise xml:id="inv1-2-k" label="I1.2.11">
@@ -1971,6 +2007,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
               <p><me>C(8, 6) = \frac{8!}{6!2!} = \text{<fillin characters="10"/>}</me></p>
             </statement>
             <response/>
+            <solution>
+              <p>28</p>
+            </solution>
           </exercise>
           
           <exercise xml:id="inv1-2-l" label="I1.2.12">
@@ -1982,6 +2021,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
               <p>where <m>\binom{n}{k} = \frac{n!}{k!(n-k)!}</m></p>
             </statement>
             <response/>
+            <solution>
+              <p>0.1094</p>
+            </solution>
           </exercise>
           
           <exercise xml:id="inv1-2-m" label="I1.2.13">
@@ -1989,6 +2031,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
               <p>Is the number you found in (l) our p-value for this study? If not, how would we find the p-value?</p>
             </statement>
             <response/>
+            <solution>
+              <p>No, so far we have found P(X = 6), but the p-value is defined as P(X &gt; 6).</p>
+            </solution>
           </exercise>
           
           <exercise xml:id="inv1-2-n" label="I1.2.14">
@@ -1996,6 +2041,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
               <p>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url>, check the Exact Binomial box. (Optional: See Technology Detour below.) How does the binomial distribution match up to your earlier simulation results? How does the binomial (or "exact") p-value compare to what you simulated earlier? Did everyone in class obtain the same "exact" p-value?</p>
             </statement>
             <response/>
+            <solution>
+              <p>0.1445. This should be similar to the simulation results and everyone would obtain the same calculated value.</p>
+            </solution>
           </exercise>
           
           <exercise xml:id="inv1-2-o" label="I1.2.15">
@@ -2003,6 +2051,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
               <p>Write a one-sentence interpretation of this p-value in this context. Key components to include: what random process is being repeated, what is the null hypothesis that we are assuming to be true, what is the observed result we are considering, which outcomes are we considering to be more extreme?</p>
             </statement>
             <response/>
+            <solution>
+              <p>If we were to repeatedly examine samples of 8 attempts from wolves who do not understand the communication cues, we would expect 6 or more wolves to pick the correct container for about 14% of those samples by chance alone.</p>
+            </solution>
           </exercise>
         </paragraphs>
       </paragraphs>
@@ -2015,6 +2066,9 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
             <p>Based on this analysis, do these data provide convincing evidence that wolves can understand behavioral cues?</p>
           </statement>
           <response/>
+          <solution>
+            <p>No, a p-value of 0.14 is not strong evidence against the null hypothesis. It is plausible that Yukon would do as well in 8 trials even if she didn't understand the cue and was simply guessing.</p>
+          </solution>
         </exercise>
       </paragraphs>
       
