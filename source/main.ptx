@@ -2358,6 +2358,7 @@ iscambinomprob(14, 16, .5, FALSE)
             
             <p>Number of hits: <var width="5" /></p>
           </statement>
+          <response/>
           <solution>
             <p>Results will vary.</p>
           </solution>
@@ -2370,10 +2371,11 @@ iscambinomprob(14, 16, .5, FALSE)
             <p>Observational unit: <var width="30" /></p>
             <p>Variable: <var width="30" /></p>
             <p>Sample size: <var width="5" /></p>
-            <hint>
-              <p>What is the sample size? What was measured about each observation?</p>
-            </hint>
           </statement>
+          <response/>
+          <hint>
+            <p>What is the sample size? What was measured about each observation?</p>
+          </hint>
           <solution>
             <p>The random process is the repeated attempts to identify the symbol correctly. The sample size is the 10 trials. Variable = correct/incorrect identification (categorical). The sample size is 10.</p>
           </solution>
@@ -2384,6 +2386,7 @@ iscambinomprob(14, 16, .5, FALSE)
           <statement>
             <p>Do you consider it reasonable to model your observations as coming from a binomial random process? Explain your reasoning.</p>
           </statement>
+          <response/>
           <solution>
             <p>If the target symbols are randomly selected (equally likely), the student uses the same method each time, and the student is not more likely to correctly identify some symbols more than others (e.g., guessing each time) then a binomial process does seem reasonable.</p>
           </solution>
@@ -2432,6 +2435,7 @@ iscambinomprob(14, 16, .5, FALSE)
           <statement>
             <p>The null hypothesis is that you aren't clairvoyant and are guessing every time. State this as a null hypothesis using symbols and words.</p>
           </statement>
+          <response/>
           <solution>
             <p><m>H_0: \pi = 0.20</m> (you have a 1 in 5 chance of guessing correctly)</p>
           </solution>
@@ -2445,6 +2449,7 @@ iscambinomprob(14, 16, .5, FALSE)
               <p>Notice that the hypothesized values for <m>\pi</m> in the null and alternative can't <q>overlap;</q> they are competing statements about <m>\pi</m>.</p>
             </aside>
           </statement>
+          <response/>
           <solution>
             <p><m>H_a: \pi > 0.20</m> (you have a higher probability of predicting correctly)</p>
           </solution>
@@ -2455,6 +2460,7 @@ iscambinomprob(14, 16, .5, FALSE)
           <statement>
             <p>Assume the null hypothesis is true and let the random variable <m>C</m> denote the number of correct identifications (hits) in 10 attempts. If we were to simulate this random process, could we toss coins? If not, suggest another way we could generate simulated results assuming the null hypothesis to be true. (e.g., what would you want an applet to do?)</p>
           </statement>
+          <response/>
           <solution>
             <p>We can model <m>C</m> with the binomial distribution:</p>
             <p><ul>
@@ -2472,6 +2478,7 @@ iscambinomprob(14, 16, .5, FALSE)
           <statement>
             <p>Where do you think your null distribution will be centered? What are the largest and smallest possible values for the number of correct identifications in 10 attempts? What are the largest and smallest values you think you will see in the simulation?</p>
           </statement>
+          <response/>
           <solution>
             <p>On average, if someone is guessing, we would <q>expect</q> to see <m>\frac{1}{5}(10) = 2</m> correct answers (in the long run). <m>E(C) = 10(0.20) = 2</m> if assuming 5 cards.</p>
           </solution>
@@ -2482,6 +2489,7 @@ iscambinomprob(14, 16, .5, FALSE)
           <statement>
             <p>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url>, specify the values for <m>\pi</m> and <m>n</m>. Carry out one repetition of the simulation. Explain the simulation process in your own words.</p>
           </statement>
+          <response/>
           <solution>
             <p>Results will vary. The applet should generate 10 spinners (each a 0.20 probability of success = landing in the blue region) and then record the number of successes in those 10 spins.</p>
           </solution>
@@ -2497,6 +2505,7 @@ iscambinomprob(14, 16, .5, FALSE)
             
             <p>It can be shown that when <m>X</m> is Binomial(<m>n</m>, <m>\pi</m>), the expected value is <m>E(X) = n \times \pi</m> and the variance is <m>V(X) = n\pi(1 - \pi)</m>. (See Exploration B for more discussion of expected value and variance of a random variable.)</p>
           </statement>
+          <response/>
           <solution>
             <p>After pressing Reset to remove the one simulated trial, you should find Mean = 2.000, SD = 1.265.</p>
           </solution>
@@ -2507,6 +2516,7 @@ iscambinomprob(14, 16, .5, FALSE)
           <statement>
             <p>Verify these calculations match the applet output and remember that the standard deviation is the square root of the variance.</p>
           </statement>
+          <response/>
           <solution>
             <p><m>E(C) = 10(0.2) = 2.00</m> and <m>SD(C) = \sqrt{10 \times 0.2 \times 0.8} = 1.265</m>.</p>
           </solution>
@@ -2517,6 +2527,7 @@ iscambinomprob(14, 16, .5, FALSE)
           <statement>
             <p>Was your statistic from (a) in the direction specified by the alternative hypothesis? If it was, is it in one of the tails (outer edges) of the null distribution in (j)?</p>
           </statement>
+          <response/>
           <solution>
             <p>Results will vary, but quite possible your results were below the expected value.</p>
           </solution>
@@ -2530,10 +2541,11 @@ iscambinomprob(14, 16, .5, FALSE)
           <title>Explore p-value Threshold</title>
           <statement>
             <p>Use the applet to explore how many hits a subject would need in 10 attempts for the p-value to be below 0.05.</p>
-            <hint>
-              <p>Use your mouse to drag the red line.</p>
-            </hint>
           </statement>
+          <response/>
+          <hint>
+            <p>Use your mouse to drag the red line.</p>
+          </hint>
         </exercise>
       </exercises>
       
@@ -2561,6 +2573,7 @@ iscambinomprob(14, 16, .5, FALSE)
               
               <p>Again, there are no hard and fast rules for what constitutes a large value here, but generally, when we have a fairly symmetric distribution, values more than 2 standard deviations above or below the expected value (mean) are considered extreme.</p>
             </statement>
+            <response/>
             <solution>
               <p>The standardized statistic expresses the distance in <q>standard deviations away</q> from the hypothesized value of <m>\pi</m>. A negative value means the distance is below the mean; a positive value means the distance is above the mean.</p>
             </solution>
@@ -2571,6 +2584,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>How many standard deviations from the mean (expected value) would 5 hits be?</p>
             </statement>
+            <response/>
             <solution>
               <p>A standardized statistic of 1 means that the sample result is one standard deviation above the mean of 2. Because the SD is 1.265, 1 SD above the mean is at <m>2 + 1.265 = 3.265</m>. Rounding to the nearest whole number, that would correspond to 3 correct identifications. (Or you could solve: <m>(x - 2)/1.265 = 1</m> to find <m>x = 3.265</m>.)</p>
             </solution>
@@ -2581,6 +2595,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>Suppose you don't know whether or not someone is clairvoyant and you plan to give the person 25 attempts. What are the theoretical expected number and standard deviation for the random variable <m>C</m>, the number of hits when <m>n = 25</m> assuming they are just guessing each time? How do they compare to the values you found in (j)?</p>
             </statement>
+            <response/>
             <solution>
               <p>Expected value = <m>5</m>, SD = <m>2</m></p>
               <p>Note: You can check these in the applet. Because the value of <m>n</m> has changed, both have increased. The larger the sample size, the more variability in the distribution.</p>
@@ -2596,6 +2611,7 @@ iscambinomprob(14, 16, .5, FALSE)
               
               <p><alert>Approach 2:</alert> What is the smallest value of <m>c</m> that is at least 2 standard deviations from the expected value?</p>
             </statement>
+            <response/>
             <solution>
               <p>Approach 1: We need to find <m>c</m> such that <m>P(C \geq c) &lt; 0.05</m>. Using the applet:
                 <ul>
@@ -2612,6 +2628,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>How do your answers for these two approaches compare?</p>
             </statement>
+            <response/>
             <solution>
               <p>It is not a coincidence that the value of 9 appears in both and is close to the expected value + 2 SD. It turns out that with a <q>large enough</q> sample size, if a standardized statistic is about 2 SD from the mean, the p-value will be close to 0.05. We will develop this idea much more carefully when we turn to the normal approximation to the binomial.</p>
             </solution>
@@ -2622,6 +2639,7 @@ iscambinomprob(14, 16, .5, FALSE)
             <statement>
               <p>Suppose you changed the test to use only 4 symbols. Does this change the expected number or standard deviation for the number of hits when a subject is guessing? How many would someone need to identify correctly to convince you they could perform better than guessing in the long-run?</p>
             </statement>
+            <response/>
             <solution>
               <p>This would increase the probability of a correct guess to 0.25, and so the probability model would need to change as well. If there are only 4 cards, the probability of a correct guess increases to 0.25. So, with 25 attempts, the expected value would be <m>25(0.25) = 6.25</m> with an SD of <m>\sqrt{25(0.25)(0.75)} = 2.17</m>. So <m>6.25 + 2(2.17) = 10.59 \approx 11</m>. Notice that this <q>cutoff</q> value went up (10 or 11 vs. 9). This is because guessing is more likely to do well so we need more evidence that someone is not guessing. Also, using the applet, <m>P(C \geq 10) = 0.097</m> and <m>P(C \geq 11) = 0.044</m>.</p>
             </solution>
