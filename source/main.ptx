@@ -2102,7 +2102,8 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           <exercise xml:id="inv1-2-j" label="I1.2.10">
             <statement>
               <p>Let S represent Success and F represent Failure. Consider one particular outcome for the 8 trials with 6 successes: SSFSSSFS. Because we are assuming the trials are independent, we can find the probability of this event by multiplying together the probabilities of the individual outcomes in the event.</p>
-              <p><me>P(\text{SSFSSSFS}) = P(S) \times P(S) \times P(F) \times P(S) \times P(S) \times P(S) \times P(F) \times P(S) = \text{<fillin characters="5"/>}</me></p>
+              <p><me>P(\text{SSFSSSFS}) = P(S) \times P(S) \times P(F) \times P(S) \times P(S) \times P(S) \times P(F) \times P(S)</me></p>
+              <p>What is the calculated product? <var width="5"/></p>
             </statement>
             <response/>
             <solution>
@@ -2114,7 +2115,8 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
             <statement>
               <p>But there are other possible outcomes that would also result in 6 successes and 2 failures (for example, SFSSSSSF). How many ways are there to arrange the 6 successes among the 8 slots?</p>
               <p>This is where the binomial coefficient comes in handy. This <term>binomial coefficient</term><idx><h>binomial coefficient</h><h>counts ways to select k items from n</h></idx>, denoted by <m>C(n, k)</m> or <m>\binom{n}{k} = \frac{n!}{k!(n-k)!}</m>, counts the number of ways there are to select <m>k</m> items from a set of <m>n</m> items. In this case, we want to find the number of ways to select 6 spots from the 8 trials for the successes:</p>
-              <p><me>C(8, 6) = \frac{8!}{6!2!} = \text{<fillin characters="5"/>}</me></p>
+              <p><me>C(8, 6) = \frac{8!}{6!2!}</me></p>
+              <p>What is the calculated result? <var width="5"/></p>
             </statement>
             <response/>
             <solution>
@@ -2125,7 +2127,8 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           <exercise xml:id="inv1-2-l" label="I1.2.12">
             <statement>
               <p>Because the 28 outcomes corresponding to 6 successes are mutually exclusive (can't occur simultaneously), we can find the probability of at least one of them happening by adding all of the probabilities together:</p>
-              <p><me>P(\text{SSFSSSFS}) + P(\text{SFSSSSSF}) + \ldots = 28 \times (0.5^8) = \text{<fillin characters="5"/>}</me></p>
+              <p><me>P(\text{SSFSSSFS}) + P(\text{SFSSSSSF}) + \ldots = 28 \times (0.5^8)</me></p>
+              <p>What is the calculated product? <var width="5"/></p>
               <p>In general, the binomial probability of obtaining <m>k</m> successes in a sequence of <m>n</m> independent trials with success probability <m>\pi</m> on each trial is:</p>
               <p><me>P(X = k) = \binom{n}{k} \pi^k (1-\pi)^{n-k}</me></p>
               <p>where <m>\binom{n}{k} = \frac{n!}{k!(n-k)!}</m></p>
