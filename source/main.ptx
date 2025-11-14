@@ -819,14 +819,25 @@
         <title>Calculate Expected Value</title>
         <statement>
           <p>Calculate the expected value <m>E(X)</m> for the number of mothers who receive the correct baby.</p>
+          <p><m>E(X)</m> = <var width="10" /></p>
         </statement>
+        <setup>
+          <var>
+            <condition number="1" tolerance="0.01">
+              <feedback>
+                <p>Correct! <m>E(X) = 0(9/24) + 1(8/24) + 2(6/24) + 4(1/24) = 0 + 8/24 + 12/24 + 4/24 = 24/24 = 1</m>. The expected number of matches is 1.</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Use the formula: <m>E(X) = 0 \times P(X=0) + 1 \times P(X=1) + 2 \times P(X=2) + 4 \times P(X=4)</m></p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <hint>
           <p>Use the formula: <m>E(X) = 0 \times P(X=0) + 1 \times P(X=1) + 2 \times P(X=2) + 4 \times P(X=4)</m></p>
         </hint>
-        <solution>
-          <p><m>E(X) = 0(9/24) + 1(8/24) + 2(6/24) + 4(1/24) = 0 + 8/24 + 12/24 + 4/24 = 24/24 = 1</m>. The expected number of matches is 1.</p>
-        </solution>
-        <response/>
       </exercise>
       
       <exercise xml:id="random-babies-ex-q" label="B.17">
@@ -857,14 +868,25 @@
         <title>Calculate Variance</title>
         <statement>
           <p>Calculate the variance of <m>X</m>.</p>
+          <p><m>\text{Var}(X)</m> = <var width="10" /></p>
         </statement>
+        <setup>
+          <var>
+            <condition number="1" tolerance="0.01">
+              <feedback>
+                <p>Correct! <m>\text{Var}(X) = (0-1)^2(9/24) + (1-1)^2(8/24) + (2-1)^2(6/24) + (4-1)^2(1/24) = 1(9/24) + 0(8/24) + 1(6/24) + 9(1/24) = 9/24 + 6/24 + 9/24 = 24/24 = 1</m></p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Use the formula: <m>\text{Var}(X) = (0-1)^2(9/24) + (1-1)^2(8/24) + (2-1)^2(6/24) + (4-1)^2(1/24)</m></p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <hint>
           <p>Use the formula: <m>\text{Var}(X) = (0-1)^2(9/24) + (1-1)^2(8/24) + (2-1)^2(6/24) + (4-1)^2(1/24)</m></p>
         </hint>
-        <solution>
-          <p><m>\text{Var}(X) = (0-1)^2(9/24) + (1-1)^2(8/24) + (2-1)^2(6/24) + (4-1)^2(1/24) = 1(9/24) + 0(8/24) + 1(6/24) + 9(1/24) = 9/24 + 6/24 + 9/24 = 24/24 = 1</m></p>
-        </solution>
-        <response/>
       </exercise>
       
       <exercise xml:id="random-babies-ex-s" label="B.19">
