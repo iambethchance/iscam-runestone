@@ -281,6 +281,12 @@
           <statement>
             <p>Based on the graph, would you consider the "number of hurricanes" distribution to be symmetric, skewed to the right or skewed to the left? Check the Skewness statistic box, does the value agree with your judgement from the graph?</p>
           </statement>
+          <hint>
+            <p>Look at the tails of the distribution. Which side extends further? A positive skewness value indicates right skew, negative indicates left skew, and values near 0 indicate symmetry.</p>
+          </hint>
+          <solution>
+            <p>The distribution appears to be skewed to the right, with a longer tail extending toward the higher values. The skewness statistic should be positive, confirming this visual assessment.</p>
+          </solution>
           <response/>
         </exercise>
         
@@ -342,11 +348,19 @@
       
       <p>Because it is clearly not feasible to actually carry out this horrible child-returning process over and over again, we will instead <em>simulate</em> the random process to investigate what would happen in the long run. Suppose the four babies were named Murphy Miller, Wallis Williams, Bari Brown, and Shea Smith. Take four index cards and write the first name of each baby on a different card. Now take a sheet of paper and divide it into four regions, one for each mom. Next shuffle the index cards, face down, and randomly deal the babies back to the mothers. Flip the cards over and count the number of moms who received the correct baby.</p>
       
+      <p>Carry out this physical simulation at least 5 times and record your results.</p>
+      
       <exercise xml:id="random-babies-ex-b" label="B.2">
         <title>Conduct Physical Simulation</title>
         <statement>
-          <p>Carry out this physical simulation at least 5 times and record your results. How many mothers received the correct baby in each trial?</p>
+          <p>How many mothers received the correct baby in each trial?</p>
         </statement>
+        <hint>
+          <p>Record the number of matches (0, 1, 2, or 4) for each of your 5 trials.</p>
+        </hint>
+        <solution>
+          <p>Answers will vary, but most trials should result in 0 or 1 match. Zero matches and one match are the most common outcomes.</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -355,6 +369,12 @@
         <statement>
           <p>What was the most common outcome across your trials? What was the least common?</p>
         </statement>
+        <hint>
+          <p>Look at your results from B.2 - which number of matches appeared most frequently?</p>
+        </hint>
+        <solution>
+          <p>The most common outcomes are typically 0 or 1 match. Having all 4 mothers receive the correct baby (4 matches) is very rare, as is having exactly 2 matches.</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -366,6 +386,9 @@
         <hint>
           <p>Think about whether it's even possible for exactly three mothers to get the correct baby.</p>
         </hint>
+        <solution>
+          <p>It is very unlikely that all four mothers received the correct baby in just 5 trials. More importantly, it is <em>impossible</em> for exactly three mothers to receive the correct baby - if three mothers get the right baby, the fourth mother must also get the right baby!</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -395,6 +418,12 @@
         <statement>
           <p>Run the applet for at least 1000 trials total. What proportion of your trials resulted in zero mothers receiving the correct baby?</p>
         </statement>
+        <hint>
+          <p>Count the number of trials with 0 matches and divide by 1000.</p>
+        </hint>
+        <solution>
+          <p>The proportion should be around 0.375 or 37.5%. The exact theoretical probability is 9/24 = 0.375.</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -406,6 +435,9 @@
         <hint>
           <p>Think about the complement: if at least one mother gets the correct baby, that's the opposite of zero mothers getting the correct baby.</p>
         </hint>
+        <solution>
+          <p>If about 37.5% of trials had zero matches, then about 62.5% had at least one match. So <m>P(\text{at least one match}) \approx 1 - 0.375 = 0.625</m> or 62.5%.</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -423,6 +455,12 @@
         <statement>
           <p>How does your empirical estimate from the simulation compare to your initial guess in checkpoint B.1?</p>
         </statement>
+        <hint>
+          <p>Look back at what you predicted in B.1 about whether zero matches or all four matches was more likely.</p>
+        </hint>
+        <solution>
+          <p>Most people initially guess that having all four mothers get the correct baby is less likely than zero matches, and the simulation confirms this intuition. Zero matches occurs about 37.5% of the time, while all four matches occurs only about 4.2% of the time.</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -431,6 +469,12 @@
         <statement>
           <p>If you were to run another 1000 trials, would you expect to get exactly the same proportion of trials with zero matches? Explain.</p>
         </statement>
+        <hint>
+          <p>Think about natural variability in random processes.</p>
+        </hint>
+        <solution>
+          <p>No, we would not expect to get exactly the same proportion. Due to random variability, the proportion will fluctuate somewhat from one set of 1000 trials to another. However, we would expect it to be close to the true probability (around 37.5%).</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -442,6 +486,9 @@
         <hint>
           <p>Does the proportion stabilize or continue to vary wildly?</p>
         </hint>
+        <solution>
+          <p>As the number of trials increases, the running proportion tends to stabilize and converge to the true probability (around 0.375). The proportion varies more with fewer trials but becomes more consistent with more trials.</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -507,6 +554,9 @@
         <hint>
           <p>For each outcome like 1234 or 2143, count how many positions match (first baby to first mother, second to second, etc.)</p>
         </hint>
+        <solution>
+          <p>There are 9 outcomes with 0 matches, 8 outcomes with 1 match, 6 outcomes with 2 matches, and 1 outcome with 4 matches. (Note: 0 outcomes have exactly 3 matches.)</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -519,6 +569,12 @@
         <statement>
           <p>Calculate the exact probability of each possible value of <m>X</m>. Create a probability distribution table showing <m>P(X = 0)</m>, <m>P(X = 1)</m>, <m>P(X = 2)</m>, and <m>P(X = 4)</m>.</p>
         </statement>
+        <hint>
+          <p>Divide the count for each value by 24 (the total number of outcomes).</p>
+        </hint>
+        <solution>
+          <p><m>P(X = 0) = 9/24 = 0.375</m>, <m>P(X = 1) = 8/24 = 0.333</m>, <m>P(X = 2) = 6/24 = 0.25</m>, <m>P(X = 4) = 1/24 = 0.0417</m></p>
+        </solution>
         <response/>
       </exercise>
       
@@ -527,6 +583,12 @@
         <statement>
           <p>How do your exact probabilities compare to the empirical estimates you obtained from the simulation?</p>
         </statement>
+        <hint>
+          <p>Look at the proportions from your 1000 trials - are they close to the theoretical probabilities?</p>
+        </hint>
+        <solution>
+          <p>The simulation results should be fairly close to the exact probabilities, especially with 1000 or more trials. Small differences are expected due to random variability in the simulation.</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -538,6 +600,9 @@
         <hint>
           <p>Use the complement rule: <m>P(\text{at least one match}) = 1 - P(\text{zero matches})</m></p>
         </hint>
+        <solution>
+          <p><m>P(\text{at least one match}) = 1 - P(X = 0) = 1 - 9/24 = 15/24 = 0.625</m> or 62.5%</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -561,6 +626,9 @@
         <hint>
           <p>Use the formula: <m>E(X) = 0 \times P(X=0) + 1 \times P(X=1) + 2 \times P(X=2) + 4 \times P(X=4)</m></p>
         </hint>
+        <solution>
+          <p><m>E(X) = 0(9/24) + 1(8/24) + 2(6/24) + 4(1/24) = 0 + 8/24 + 12/24 + 4/24 = 24/24 = 1</m>. The expected number of matches is 1.</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -569,6 +637,12 @@
         <statement>
           <p>Interpret the expected value in context. Does this mean that in any given trial, we expect this many mothers to receive the correct baby?</p>
         </statement>
+        <hint>
+          <p>Remember that expected value is a long-run average, not a prediction for a single trial.</p>
+        </hint>
+        <solution>
+          <p>The expected value of 1 means that in the long run, on average, 1 mother will receive the correct baby per trial. This does NOT mean that in any single trial we expect exactly 1 match - in fact, we could get 0, 1, 2, or 4 matches. The expected value is the average across many trials.</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -586,6 +660,12 @@
         <statement>
           <p>Calculate the variance of <m>X</m>.</p>
         </statement>
+        <hint>
+          <p>Use the formula: <m>\text{Var}(X) = (0-1)^2(9/24) + (1-1)^2(8/24) + (2-1)^2(6/24) + (4-1)^2(1/24)</m></p>
+        </hint>
+        <solution>
+          <p><m>\text{Var}(X) = (0-1)^2(9/24) + (1-1)^2(8/24) + (2-1)^2(6/24) + (4-1)^2(1/24) = 1(9/24) + 0(8/24) + 1(6/24) + 9(1/24) = 9/24 + 6/24 + 9/24 = 24/24 = 1</m></p>
+        </solution>
         <response/>
       </exercise>
       
@@ -593,6 +673,12 @@
         <statement>
           <p>Calculate the standard deviation of <m>X</m> (the square root of the variance). Interpret this value in context.</p>
         </statement>
+        <hint>
+          <p>The standard deviation is <m>\sqrt{\text{Var}(X)}</m></p>
+        </hint>
+        <solution>
+          <p><m>SD(X) = \sqrt{1} = 1</m>. The standard deviation of 1 means that the number of matches typically varies by about 1 from the expected value of 1 match.</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -603,6 +689,12 @@
         <statement>
           <p>Go back to the Random Babies applet and run a large number of simulations (at least 10,000). Calculate the mean and standard deviation of your simulated results. How do these compare to the theoretical expected value and standard deviation you calculated?</p>
         </statement>
+        <hint>
+          <p>The simulated mean should be close to E(X) = 1, and the simulated SD should be close to SD(X) = 1.</p>
+        </hint>
+        <solution>
+          <p>With a large number of simulations (10,000+), the mean should be very close to 1.0 and the standard deviation should be very close to 1.0, matching the theoretical values.</p>
+        </solution>
         <response/>
       </exercise>
       
