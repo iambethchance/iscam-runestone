@@ -781,14 +781,25 @@
         <title>Calculate Exact Probability</title>
         <statement>
           <p>Calculate the exact probability that at least one mother receives the correct baby.</p>
+          <p>Probability = <var width="10" /></p>
         </statement>
+        <setup>
+          <var>
+            <condition number="0.625" tolerance="0.01">
+              <feedback>
+                <p>Correct! <m>P(\text{at least one match}) = 1 - P(X = 0) = 1 - 9/24 = 15/24 = 0.625</m></p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Use the complement rule: <m>P(\text{at least one match}) = 1 - P(\text{zero matches})</m></p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <hint>
           <p>Use the complement rule: <m>P(\text{at least one match}) = 1 - P(\text{zero matches})</m></p>
         </hint>
-        <solution>
-          <p><m>P(\text{at least one match}) = 1 - P(X = 0) = 1 - 9/24 = 15/24 = 0.625</m> or 62.5%</p>
-        </solution>
-        <response/>
       </exercise>
       
       <assemblage xml:id="probability-rules">
