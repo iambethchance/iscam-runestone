@@ -644,18 +644,73 @@
         <p>When the outcomes in the sample space are equally likely, the probability of any one of a set of outcomes (an event) occurring is the number of outcomes in that set divided by the total number of outcomes in the sample space.</p>
       </assemblage>
       
+      <p>Calculate the exact probability of each possible value of <m>X</m>.</p>
+      
       <exercise xml:id="random-babies-ex-m" label="B.13">
         <title>Create Probability Distribution</title>
         <statement>
-          <p>Calculate the exact probability of each possible value of <m>X</m>. Create a probability distribution table showing <m>P(X = 0)</m>, <m>P(X = 1)</m>, <m>P(X = 2)</m>, and <m>P(X = 4)</m>.</p>
+          <p>Create a probability distribution table showing <m>P(X = 0)</m>, <m>P(X = 1)</m>, <m>P(X = 2)</m>, <m>P(X = 3)</m>, and <m>P(X = 4)</m>.</p>
+          <p>
+            <tabular>
+              <row header="yes">
+                <cell><m>X</m></cell>
+                <cell>0</cell>
+                <cell>1</cell>
+                <cell>2</cell>
+                <cell>3</cell>
+                <cell>4</cell>
+              </row>
+              <row>
+                <cell><m>P(X)</m></cell>
+                <cell><var width="8" /></cell>
+                <cell><var width="8" /></cell>
+                <cell><var width="8" /></cell>
+                <cell><var width="8" /></cell>
+                <cell><var width="8" /></cell>
+              </row>
+            </tabular>
+          </p>
         </statement>
+        <setup>
+          <var>
+            <condition number="0.375" tolerance="0.001">
+              <feedback>
+                <p>Correct! <m>P(X = 0) = 9/24 = 0.375</m></p>
+              </feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="0.333" tolerance="0.001">
+              <feedback>
+                <p>Correct! <m>P(X = 1) = 8/24 \approx 0.333</m></p>
+              </feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="0.25" tolerance="0.001">
+              <feedback>
+                <p>Correct! <m>P(X = 2) = 6/24 = 0.25</m></p>
+              </feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="0">
+              <feedback>
+                <p>Correct! <m>P(X = 3) = 0</m> (impossible to have exactly 3 matches)</p>
+              </feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="0.0417" tolerance="0.001">
+              <feedback>
+                <p>Correct! <m>P(X = 4) = 1/24 \approx 0.0417</m></p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <hint>
           <p>Divide the count for each value by 24 (the total number of outcomes).</p>
         </hint>
-        <solution>
-          <p><m>P(X = 0) = 9/24 = 0.375</m>, <m>P(X = 1) = 8/24 = 0.333</m>, <m>P(X = 2) = 6/24 = 0.25</m>, <m>P(X = 4) = 1/24 = 0.0417</m></p>
-        </solution>
-        <response/>
       </exercise>
       
       <exercise xml:id="random-babies-ex-n" label="B.14">
