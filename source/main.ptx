@@ -526,27 +526,29 @@
       <exercise xml:id="random-babies-ex-j" label="B.10">
         <title>Count Sample Space</title>
         <statement>
-          <p>How many possible outcomes are there in the sample space?</p>
+          <p>How many possible outcomes are there in the sample space? What is the probability of any one specific outcome (e.g., 1234)?</p>
+          <p>Number of outcomes = <var width="5" /></p>
+          <p>Probability = <var width="10" /></p>
         </statement>
+        <setup>
+          <var>
+            <condition number="24">
+              <feedback>
+                <p>Correct! There are 24 possible outcomes in the sample space.</p>
+              </feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="0.0417" tolerance="0.001">
+              <feedback>
+                <p>Correct! Each outcome has probability 1/24 ≈ 0.0417.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <hint>
-          <p>Count the total number of entries in the sample space table above.</p>
+          <p>Count the total number of entries in the sample space table above. If all outcomes are equally likely, divide 1 by the total number of outcomes.</p>
         </hint>
-        <answer>
-          <p>24</p>
-        </answer>
-      </exercise>
-      
-      <exercise xml:id="random-babies-ex-j2" label="B.10b">
-        <title>Calculate Outcome Probability</title>
-        <statement>
-          <p>What is the probability of any one specific outcome (e.g., 1234)?</p>
-        </statement>
-        <hint>
-          <p>If all outcomes are equally likely, divide 1 by the total number of outcomes.</p>
-        </hint>
-        <answer>
-          <p>0.0417</p>
-        </answer>
       </exercise>
       
       <p>You could have determined the number of possible outcomes without having to list them first. For the first mother to receive a baby, she could receive any one of the four babies. Then there are three babies to choose from in giving a baby to the second mother. The third mother receives one of the two remaining babies and then the last baby goes to the fourth mother. Because the number of possibilities at one stage of this process does not depend on the outcome (which baby) of earlier stages, the total number of possibilities is the product <m>4 \times 3 \times 2 \times 1 = 24</m>. This is also known as <m>4!</m>, read "4 factorial." Because the above outcomes are equally likely, the probability of any one of the above outcomes occurring is <m>1/24</m>. Although these 24 outcomes are equally likely, we were more interested above in the probability of 0 matches, 1 match, etc.</p>
