@@ -3521,33 +3521,32 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
           <statement>
             <p>Using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url> (Download this file to your computer and then open the .jrn file to launch JMP.)</p>
             
-            <p><ol>
-              <li><p>Choose Analyze > Distribution</p></li>
-              <li><p>With raw data, drag the variable to the Y, Columns slot. Press OK.</p></li>
-              <li><p>With summarized data, move the column with the category names to the Y, columns slot and move the column with the counts to the Freq slot. Press OK.</p></li>
-              <li><p>From the variable's hot spot, select Test Probabilities.</p></li>
+            <p><ul>
+              <li><p>Choose Analyze > Distribution</p>
+                <p><ul>
+                  <li><p><em>With raw data</em>, drag the variable to the Y, Columns slot. Press OK.</p></li>
+                  <li><p><em>With summarized data</em>, move the column with the category names to the Y, columns slot and move the column with the counts to the Freq slot. Press OK.</p></li>
+                </ul></p>
+              </li>
+              <li><p>From the variable's hot spot, select <term>Test Probabilities</term>.</p></li>
               <li><p>Specify the hypothesized probability of success for the category you want to define as success (only).</p></li>
               <li><p>Then pick a one-sided alternative hypothesis (greater than or less than).</p></li>
-            </ol></p>
+            </ul></p>
             
-            <figure xml:id="fig-jmp-test-probabilities">
-              <caption>JMP Test Probabilities Dialog</caption>
-              <image source="tech_images/JMPTTestp.png" width="50%">
+            <sidebyside widths="45% 50%" margins="0%">
+              <stack>
+                <p>JMP assumes "success" to be the first category alphabetically unless you specify otherwise with <term>Cols > Column Info > Column Properties > Value Ordering</term>.</p>
+                <p><em>Note</em>: "not equal to" alternatives will be discussed in Investigation 1.5.</p>
+              </stack>
+              <image source="assets/tech_images/jmpTestp.png">
                 <description>JMP Test Probabilities dialog showing setup for binomial test</description>
               </image>
-            </figure>
-            
-            <note>
-              <title>JMP Note</title>
-              <p>JMP assumes "success" to be the first category alphabetically unless you specify otherwise with Cols > Column Info > Column Properties > Value Ordering.</p>
-              <p>Note: "not equal to" alternatives will be discussed in Investigation 1.5.</p>
-            </note>
+            </sidebyside>
             
             <p>Press Done.</p>
             
             <figure xml:id="fig-jmp-test-results">
-              <caption>JMP Binomial Test Results</caption>
-              <image source="tech_images/JMPTestp2.png" width="60%">
+              <image source="assets/tech_images/JMPtestp2.png" width="70%">
                 <description>JMP output showing binomial test results with p-value</description>
               </image>
             </figure>
