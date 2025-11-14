@@ -3297,19 +3297,62 @@ iscambinomprob(14, 16, .5, FALSE)
       <p>We need to consider which outcome we will consider "success" and which we will consider "failure." The choice is often arbitrary, though sometimes we may want to focus on the more unusual outcome as success. In fact, in many epidemiology studies, "death" is typically the outcome of interest or "success."</p>
       
       <exercise xml:id="I1-4-2" label="I1.4.2">
-        <title>Define Parameter and Check Binomial</title>
+        <title>Define Parameter</title>
         <statement>
-          <p>Considering death within 30 days as a success, define the parameter of interest in this study (in words), including the symbol we can use to refer to it. Is it reasonable to model this heart transplantation process as a binomial process?</p>
+          <p>Considering death within 30 days as a success, define the parameter of interest in this study (in words).</p>
           <p>Parameter: <var width="50" /></p>
-          <p>Binomial process? <var width="50" /></p>
+        </statement>
+        <response/>
+        <hint>
+          <p>What long-run proportion or probability are we interested in?</p>
+        </hint>
+        <solution>
+          <p>Parameter: The underlying probability of death within 30 days of transplant at this hospital.</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="I1-4-2b" label="I1.4.2b">
+        <title>Parameter Symbol</title>
+        <statement>
+          <p>What symbol should we use to represent this parameter?</p>
+        </statement>
+        <hint>
+          <p>Look for the Greek letter used for a process probability in a binomial distribution.</p>
+        </hint>
+        <choices randomize="no">
+          <choice>
+            <statement><p><m>\hat{p}</m></p></statement>
+            <feedback><p>This is the symbol for the sample proportion (statistic), not the population parameter.</p></feedback>
+          </choice>
+          <choice correct="yes">
+            <statement><p><m>\pi</m></p></statement>
+            <feedback><p>Correct! We use <m>\pi</m> to represent the probability of success in a binomial process.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p><m>\mu</m></p></statement>
+            <feedback><p>This is the symbol for a population mean, not a probability.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p><m>p</m></p></statement>
+            <feedback><p>While <em>p</em> is sometimes used for probability, we use the Greek letter <m>\pi</m> for the process probability parameter.</p></feedback>
+          </choice>
+        </choices>
+        <solution>
+          <p>We use <m>\pi</m> to represent the probability of death within 30 days.</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="I1-4-2c" label="I1.4.2c">
+        <title>Check Binomial Process</title>
+        <statement>
+          <p>Is it reasonable to model this heart transplantation process as a binomial process?</p>
         </statement>
         <response/>
         <hint>
           <p>Check the four conditions for a binomial process: two outcomes, fixed number of trials, independence, and constant probability.</p>
         </hint>
         <solution>
-          <p>Parameter: Let <m>\pi</m> represent the underlying probability of death within 30 days of transplant at this hospital.</p>
-          <p>Binomial process: Yes, this is a binomial process if we assume the transplants are independent and the probability of death is the same for each transplant patient.</p>
+          <p>Yes, this is a binomial process if we assume the transplants are independent and the probability of death is the same for each transplant patient.</p>
         </solution>
       </exercise>
       
@@ -3882,14 +3925,45 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
       <exercise xml:id="I1-5-2" label="I1.5.2">
         <title>Define Parameter</title>
         <statement>
-          <p>Identify the parameter of interest in this study and a symbol you could use to represent it.</p>
+          <p>Identify the parameter of interest in this study (in words).</p>
         </statement>
         <response/>
         <hint>
           <p>What long-run proportion are we interested in?</p>
         </hint>
         <solution>
-          <p>Let <m>\pi</m> represent the probability of a piece of toast landing top side down.</p>
+          <p>The probability of a piece of toast landing top side down.</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="I1-5-2b" label="I1.5.2b">
+        <title>Parameter Symbol</title>
+        <statement>
+          <p>What symbol should we use to represent this parameter?</p>
+        </statement>
+        <hint>
+          <p>Look for the Greek letter used for a process probability in a binomial distribution.</p>
+        </hint>
+        <choices randomize="no">
+          <choice>
+            <statement><p><m>\hat{p}</m></p></statement>
+            <feedback><p>This is the symbol for the sample proportion (statistic), not the population parameter.</p></feedback>
+          </choice>
+          <choice correct="yes">
+            <statement><p><m>\pi</m></p></statement>
+            <feedback><p>Correct! We use <m>\pi</m> to represent the probability of success in a binomial process.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p><m>\mu</m></p></statement>
+            <feedback><p>This is the symbol for a population mean, not a probability.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p><m>p</m></p></statement>
+            <feedback><p>While <em>p</em> is sometimes used for probability, we use the Greek letter <m>\pi</m> for the process probability parameter.</p></feedback>
+          </choice>
+        </choices>
+        <solution>
+          <p>We use <m>\pi</m> to represent the probability of a piece of toast landing top side down.</p>
         </solution>
       </exercise>
       
