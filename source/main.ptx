@@ -3360,8 +3360,39 @@ iscambinomprob(14, 16, .5, FALSE)
         <title>Nothing Unusual Implication</title>
         <statement>
           <p>If there is nothing unusual about the mortality rate for heart transplantations at this hospital (compared to other U.K. hospitals), what does this imply about the value of the probability of "success"?</p>
+          <p><m>\pi</m> <var width="5" /> <var width="10" /></p>
         </statement>
-        <response/>
+        <setup>
+          <var>
+            <condition string="^\s*=\s*$">
+              <feedback>
+                <p>Correct! If nothing is unusual, π equals the benchmark.</p>
+              </feedback>
+            </condition>
+            <condition string="^\s*&lt;\s*$">
+              <feedback>
+                <p>Not quite. If nothing is unusual, the rate should match the benchmark, not be less than it.</p>
+              </feedback>
+            </condition>
+            <condition string="^\s*>\s*$">
+              <feedback>
+                <p>Not quite. If nothing is unusual, the rate should match the benchmark, not be greater than it.</p>
+              </feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="0.15">
+              <feedback>
+                <p>Correct! The benchmark is 0.15 (15%).</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>What was stated as the reasonable benchmark for comparison?</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <hint>
           <p>What was stated as the reasonable benchmark for comparison?</p>
         </hint>
@@ -3374,8 +3405,39 @@ iscambinomprob(14, 16, .5, FALSE)
         <title>Higher Rate Implication</title>
         <statement>
           <p>If the patients at this hospital are indeed dying at a higher rate than the benchmark rate, what does this imply about the value of the probability of "success"?</p>
+          <p><m>\pi</m> <var width="5" /> <var width="10" /></p>
         </statement>
-        <response/>
+        <setup>
+          <var>
+            <condition string="^\s*>\s*$">
+              <feedback>
+                <p>Correct! A higher rate means π is greater than the benchmark.</p>
+              </feedback>
+            </condition>
+            <condition string="^\s*=\s*$">
+              <feedback>
+                <p>Not quite. If the rate is higher, π should be greater than the benchmark, not equal to it.</p>
+              </feedback>
+            </condition>
+            <condition string="^\s*&lt;\s*$">
+              <feedback>
+                <p>Not quite. If the rate is higher, π should be greater than the benchmark, not less than it.</p>
+              </feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="0.15">
+              <feedback>
+                <p>Correct! The benchmark is 0.15 (15%).</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>What is the benchmark rate?</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <hint>
           <p>If the rate is higher than 15%, what inequality would describe <m>\pi</m>?</p>
         </hint>
@@ -3388,17 +3450,21 @@ iscambinomprob(14, 16, .5, FALSE)
         <title>State Hypotheses</title>
         <statement>
           <p>Translate your answers to the previous questions to null and alternative hypothesis statements. Keep in mind, the null hypothesis claims the observed result is "just by chance," whereas the alternative hypothesis translates the research conjecture.</p>
-          <p>Null hypothesis (often denoted H₀): <var width="50" /></p>
-          <p>Alternative hypothesis (often denoted Hₐ): <var width="50" /></p>
+          <p>Match each hypothesis type with the correct statement:</p>
         </statement>
-        <response/>
+        <matches>
+          <match order="1">
+            <premise>Alternative Hypothesis (<m>H_a</m>)</premise>
+            <response><m>\pi > 0.15</m> (the death rate at St. George's is larger than the national average)</response>
+          </match>
+          <match order="2">
+            <premise>Null Hypothesis (<m>H_0</m>)</premise>
+            <response><m>\pi = 0.15</m> (the death rate at St. George's is the same as the national average)</response>
+          </match>
+        </matches>
         <hint>
           <p>The null hypothesis typically states equality, while the alternative states the direction of the research suspicion.</p>
         </hint>
-        <solution>
-          <p><m>H_0: \pi = 0.15</m> (the death rate at St. George's is the same as the national average)</p>
-          <p><m>H_a: \pi > 0.15</m> (the death rate at St. George's is larger than the national average)</p>
-        </solution>
       </exercise>
       
       <exercise xml:id="I1-4-6" label="I1.4.6">
