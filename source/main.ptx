@@ -435,14 +435,25 @@
         <title>Estimate Probability</title>
         <statement>
           <p>Based on your simulation results, estimate the probability that at least one mother receives the correct baby.</p>
+          <p>Probability = <var width="10" /></p>
         </statement>
+        <setup>
+          <var>
+            <condition number="0.625" tolerance="0.05">
+              <feedback>
+                <p>Correct! If about 37.5% of trials had zero matches, then about 62.5% had at least one match. So <m>P(\text{at least one match}) \approx 1 - 0.375 = 0.625</m>.</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Think about the complement: if at least one mother gets the correct baby, that's the opposite of zero mothers getting the correct baby. Use <m>1 - P(\text{zero matches})</m>.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <hint>
           <p>Think about the complement: if at least one mother gets the correct baby, that's the opposite of zero mothers getting the correct baby.</p>
         </hint>
-        <solution>
-          <p>If about 37.5% of trials had zero matches, then about 62.5% had at least one match. So <m>P(\text{at least one match}) \approx 1 - 0.375 = 0.625</m> or 62.5%.</p>
-        </solution>
-        <response/>
       </exercise>
       
       <assemblage xml:id="def-random-process">
