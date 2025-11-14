@@ -3559,23 +3559,45 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
         <title>Does the sample size matter?</title>
         
         <exercise xml:id="I1-4-11" label="I1.4.11">
-          <title>Larger Sample Size</title>
+          <title>Calculate Sample Proportion</title>
           <statement>
             <p>Following up on the suspicion that the sample of size 10 aroused, these researchers proceeded to gather data on the previous 361 patients who received a heart transplant at this hospital dating back to 1986. They found 71 deaths within 30 days among heart transplantations.</p>
             
             <p>Calculate the sample proportion of deaths for these data: <var width="10" /></p>
-            
+          </statement>
+          <response/>
+          <hint>
+            <p>Sample proportion = 71/361.</p>
+          </hint>
+          <solution>
+            <p><m>\hat{p} = 71/361 = 0.197</m></p>
+          </solution>
+        </exercise>
+        
+        <exercise xml:id="I1-4-11b" label="I1.4.11b">
+          <title>Predict Strength of Evidence</title>
+          <statement>
             <p>Predict whether this is more or less convincing evidence that this hospital's death rate exceeds 0.15. Explain your reasoning.</p>
-            
+          </statement>
+          <response/>
+          <hint>
+            <p>Compare the sample proportion (0.197) to 0.15. Also consider that with a larger sample size, we have more information.</p>
+          </hint>
+          <solution>
+            <p>This sample proportion is much closer to 0.15 but also based on a much larger sample size. Predictions will vary by student.</p>
+          </solution>
+        </exercise>
+        
+        <exercise xml:id="I1-4-11c" label="I1.4.11c">
+          <title>Calculate P-value with Technology</title>
+          <statement>
             <p>Use technology to determine the binomial probability of finding at least 71 deaths in a sample of 361 if <m>\pi = 0.15</m>.</p>
           </statement>
           <response/>
           <hint>
-            <p>Sample proportion = 71/361. Compare this to 0.15. Also consider that with a larger sample size, we have more information.</p>
+            <p>Use the One Proportion Inference applet or R with n=361, observed=71, and π=0.15.</p>
           </hint>
           <solution>
-            <p><m>\hat{p} = 71/361 = 0.197</m></p>
-            <p>This sample proportion is much closer to 0.15 but also based on a much larger sample size. Predictions will vary by student.</p>
             <figure>
               <image source="images/inv1.4largen.png" width="60%">
                 <description>Binomial distribution for n=361 with pi=0.15 showing p-value</description>
@@ -3670,8 +3692,6 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
           <p>Expected value when n = 361 and <m>\pi = 0.15</m>: <var width="10" /></p>
           <p>SD when n = 361 and <m>\pi = 0.15</m>: <var width="10" /></p>
           <p>Number of standard deviations 71 is above the expected value: <var width="10" /></p>
-          
-          <p>Does this calculation also provide strong evidence against the null hypothesis? How are you deciding?</p>
         </statement>
         <response/>
         <hint>
@@ -3682,6 +3702,20 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
           <p>Observed 71</p>
           <p>(71 - 54.15)/6.78 ≈ 2.49. This is larger than 2.</p>
           <p>For first data set: (8 - 1.5)/sqrt(10 × 0.15 × 0.85) = 6.5/1.13 = 5.75 (this shows us that the evidence is a fair bit stronger with the first data set)</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="I1-4-16b" label="I1.4.16b">
+        <title>Evaluate Standardized Evidence</title>
+        <statement>
+          <p>Does this calculation also provide strong evidence against the null hypothesis? How are you deciding?</p>
+        </statement>
+        <response/>
+        <hint>
+          <p>Consider whether being 2.49 standard deviations from the expected value is unusual.</p>
+        </hint>
+        <solution>
+          <p>Yes, this provides strong evidence against the null hypothesis. A result more than 2 standard deviations from the expected value is generally considered unusual, and 2.49 SD is quite far from the mean.</p>
         </solution>
       </exercise>
       
