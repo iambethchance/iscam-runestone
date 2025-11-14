@@ -604,11 +604,21 @@
                 <p>Correct! There are 9 outcomes with 0 matches.</p>
               </feedback>
             </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Count how many of the 24 outcomes have 0 matches.</p>
+              </feedback>
+            </condition>
           </var>
           <var>
             <condition number="8">
               <feedback>
                 <p>Correct! There are 8 outcomes with 1 match.</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Count how many of the 24 outcomes have exactly 1 match.</p>
               </feedback>
             </condition>
           </var>
@@ -618,6 +628,11 @@
                 <p>Correct! There are 6 outcomes with 2 matches.</p>
               </feedback>
             </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Count how many of the 24 outcomes have exactly 2 matches.</p>
+              </feedback>
+            </condition>
           </var>
           <var>
             <condition number="0">
@@ -625,11 +640,21 @@
                 <p>Correct! It's impossible to have exactly 3 matches - if 3 mothers get the right baby, the 4th must too!</p>
               </feedback>
             </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Think carefully: if 3 mothers get the right baby, what about the 4th?</p>
+              </feedback>
+            </condition>
           </var>
           <var>
             <condition number="1">
               <feedback>
                 <p>Correct! There is 1 outcome with 4 matches (1234).</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. How many outcomes have all 4 matches? Look for 1234.</p>
               </feedback>
             </condition>
           </var>
@@ -678,11 +703,21 @@
                 <p>Correct! <m>P(X = 0) = 9/24 = 0.375</m></p>
               </feedback>
             </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Divide the count of outcomes with 0 matches by 24.</p>
+              </feedback>
+            </condition>
           </var>
           <var>
             <condition number="0.333" tolerance="0.001">
               <feedback>
                 <p>Correct! <m>P(X = 1) = 8/24 \approx 0.333</m></p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Divide the count of outcomes with 1 match by 24.</p>
               </feedback>
             </condition>
           </var>
@@ -692,6 +727,11 @@
                 <p>Correct! <m>P(X = 2) = 6/24 = 0.25</m></p>
               </feedback>
             </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Divide the count of outcomes with 2 matches by 24.</p>
+              </feedback>
+            </condition>
           </var>
           <var>
             <condition number="0">
@@ -699,11 +739,21 @@
                 <p>Correct! <m>P(X = 3) = 0</m> (impossible to have exactly 3 matches)</p>
               </feedback>
             </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Remember, it's impossible to have exactly 3 matches!</p>
+              </feedback>
+            </condition>
           </var>
           <var>
             <condition number="0.0417" tolerance="0.001">
               <feedback>
                 <p>Correct! <m>P(X = 4) = 1/24 \approx 0.0417</m></p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Divide the count of outcomes with 4 matches by 24.</p>
               </feedback>
             </condition>
           </var>
