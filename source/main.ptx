@@ -2539,7 +2539,10 @@ iscambinomprob(14, 16, .5, FALSE)
           </solution>
         </exercise>
         
-        <p>It can be shown that when <m>X</m> is Binomial(<m>n</m>, <m>\pi</m>), the expected value is <m>E(X) = n \times \pi</m> and the variance is <m>V(X) = n\pi(1 - \pi)</m>. (See Exploration B for more discussion of expected value and variance of a random variable.)</p>
+        <assemblage xml:id="binomial-formulas">
+          <title>Binomial Distribution Formulas</title>
+          <p>It can be shown that when <m>X</m> is Binomial(<m>n</m>, <m>\pi</m>), the expected value is <m>E(X) = n \times \pi</m> and the variance is <m>V(X) = n\pi(1 - \pi)</m>. (See Exploration B for more discussion of expected value and variance of a random variable.)</p>
+        </assemblage>
         
         <exercise xml:id="I1-3-11" label="Verify calculations">
           <title>Verify the Calculations</title>
@@ -2589,7 +2592,7 @@ iscambinomprob(14, 16, .5, FALSE)
         
         <figure xml:id="fig-ruler">
           <caption>A number line showing distances from the null hypothesis mean</caption>
-          <image source="images/ruler.png" width="70%">
+          <image source="ruler.png" width="70%">
             <description>A ruler or number line showing the distance scale for evaluating deviations from the hypothesized mean.</description>
           </image>
         </figure>
@@ -2635,24 +2638,38 @@ iscambinomprob(14, 16, .5, FALSE)
             </solution>
           </exercise>
           
-          <exercise xml:id="I1-3-17" label="Two approaches">
-            <title>Two Approaches to Significance</title>
+          <exercise xml:id="I1-3-17" label="I1.3.17">
+            <title>Approach 1: P-value Threshold</title>
             <statement>
-              <p>How many hits would someone need to get correct in 25 attempts to convince you they aren't simply guessing? Let's consider two ways to decide:</p>
+              <p>How many hits would someone need to get correct in 25 attempts to convince you they aren't simply guessing? Let's consider two ways to decide.</p>
               
               <p><alert>Approach 1:</alert> What value for <m>c</m> would give you a probability below 0.05 of obtaining that many or more hits? In other words, what is the smallest value of <m>c</m> so <m>P(C \geq c) &lt; 0.05</m>?</p>
-              
-              <p><alert>Approach 2:</alert> What is the smallest value of <m>c</m> that is at least 2 standard deviations from the expected value?</p>
             </statement>
             <response/>
+            <hint>
+              <p>Use the applet to find probabilities for different values of c.</p>
+            </hint>
             <solution>
-              <p>Approach 1: We need to find <m>c</m> such that <m>P(C \geq c) &lt; 0.05</m>. Using the applet:
+              <p>We need to find <m>c</m> such that <m>P(C \geq c) &lt; 0.05</m>. Using the applet:
                 <ul>
                   <li><p><m>P(C \geq 8) = 0.109</m> (too large)</p></li>
                   <li><p><m>P(C \geq 9) = 0.048</m> (this will work!)</p></li>
                 </ul>
               So if someone had 9 or more correct, we might choose to consider that statistically significant.</p>
-              <p>Approach 2: The observed value would need to be more than <m>5 + 2(2) = 9</m>.</p>
+            </solution>
+          </exercise>
+          
+          <exercise xml:id="I1-3-17b" label="I1.3.17b">
+            <title>Approach 2: Standard Deviations</title>
+            <statement>
+              <p><alert>Approach 2:</alert> What is the smallest value of <m>c</m> that is at least 2 standard deviations from the expected value?</p>
+            </statement>
+            <response/>
+            <hint>
+              <p>Use the expected value and standard deviation from Checkpoint 3.93.</p>
+            </hint>
+            <solution>
+              <p>The observed value would need to be more than <m>5 + 2(2) = 9</m>.</p>
             </solution>
           </exercise>
           
