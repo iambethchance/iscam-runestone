@@ -2605,6 +2605,9 @@ iscambinomprob(14, 16, .5, FALSE)
             <p>How many standard deviations was your observed result from the expected value for the binomial distribution?</p>
           </statement>
           <response/>
+          <hint>
+            <p>Use the formula: (observed - expected) / standard deviation. Substitute your number of hits for observed, and use the mean and SD from Checkpoint 3.86.</p>
+          </hint>
           <solution>
             <p>The standardized statistic expresses the distance in <q>standard deviations away</q> from the hypothesized value of <m>\pi</m>. A negative value means the distance is below the mean; a positive value means the distance is above the mean.</p>
           </solution>
@@ -2621,6 +2624,9 @@ iscambinomprob(14, 16, .5, FALSE)
               <p>How many standard deviations from the mean (expected value) would 5 hits be?</p>
             </statement>
             <response/>
+            <hint>
+              <p>Use the same formula as the previous question: (5 - 2) / 1.265. What does this value tell you?</p>
+            </hint>
             <solution>
               <p>A standardized statistic of 1 means that the sample result is one standard deviation above the mean of 2. Because the SD is 1.265, 1 SD above the mean is at <m>2 + 1.265 = 3.265</m>. Rounding to the nearest whole number, that would correspond to 3 correct identifications. (Or you could solve: <m>(x - 2)/1.265 = 1</m> to find <m>x = 3.265</m>.)</p>
             </solution>
@@ -2632,6 +2638,9 @@ iscambinomprob(14, 16, .5, FALSE)
               <p>Suppose you don't know whether or not someone is clairvoyant and you plan to give the person 25 attempts. What are the theoretical expected number and standard deviation for the random variable <m>C</m>, the number of hits when <m>n = 25</m> assuming they are just guessing each time? How do they compare to the values you found in (j)?</p>
             </statement>
             <response/>
+            <hint>
+              <p>Use the binomial formulas with n = 25 and pi = 0.20. Expected value = n × pi, and SD = square root of n × pi × (1 - pi).</p>
+            </hint>
             <solution>
               <p>Expected value = <m>5</m>, SD = <m>2</m></p>
               <p>Note: You can check these in the applet. Because the value of <m>n</m> has changed, both have increased. The larger the sample size, the more variability in the distribution.</p>
@@ -2690,6 +2699,9 @@ iscambinomprob(14, 16, .5, FALSE)
               <p>Suppose you changed the test to use only 4 symbols. Does this change the expected number or standard deviation for the number of hits when a subject is guessing? How many would someone need to identify correctly to convince you they could perform better than guessing in the long-run?</p>
             </statement>
             <response/>
+            <hint>
+              <p>With 4 symbols, the probability of guessing correctly changes to 1/4 = 0.25. Recalculate the expected value and SD using this new probability, then find how many hits would be 2 SD above the mean.</p>
+            </hint>
             <solution>
               <p>This would increase the probability of a correct guess to 0.25, and so the probability model would need to change as well. If there are only 4 cards, the probability of a correct guess increases to 0.25. So, with 25 attempts, the expected value would be <m>25(0.25) = 6.25</m> with an SD of <m>\sqrt{25(0.25)(0.75)} = 2.17</m>. So <m>6.25 + 2(2.17) = 10.59 \approx 11</m>. Notice that this <q>cutoff</q> value went up (10 or 11 vs. 9). This is because guessing is more likely to do well so we need more evidence that someone is not guessing. Also, using the applet, <m>P(C \geq 10) = 0.097</m> and <m>P(C \geq 11) = 0.044</m>.</p>
             </solution>
