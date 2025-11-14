@@ -2379,6 +2379,9 @@ iscambinomprob(14, 16, .5, FALSE)
           <p>Do you consider it reasonable to model your observations as coming from a binomial random process? Explain your reasoning.</p>
         </statement>
         <response/>
+        <hint>
+          <p>Consider the four conditions for a binomial process: two outcomes, independence, fixed number of trials, and constant probability.</p>
+        </hint>
         <solution>
           <p>If the target symbols are randomly selected (equally likely), the student uses the same method each time, and the student is not more likely to correctly identify some symbols more than others (e.g., guessing each time) then a binomial process does seem reasonable.</p>
         </solution>
@@ -2398,6 +2401,9 @@ iscambinomprob(14, 16, .5, FALSE)
           <p>Identify (in words) the parameter of interest for this study.</p>
         </statement>
         <response/>
+        <hint>
+          <p>A parameter describes a long-run probability or proportion for the entire process, not just your sample result.</p>
+        </hint>
         <solution>
           <p>The parameter is your probability of correct identification (the long-run probability of correctly identifying the symbol).</p>
         </solution>
@@ -2408,6 +2414,9 @@ iscambinomprob(14, 16, .5, FALSE)
         <statement>
           <p>What symbol will we use to represent this parameter?</p>
         </statement>
+        <hint>
+          <p>Look for the Greek letter used for a process probability in a binomial distribution.</p>
+        </hint>
         <choices randomize="no">
           <choice>
             <statement><p><m>\hat{p}</m></p></statement>
@@ -2438,6 +2447,9 @@ iscambinomprob(14, 16, .5, FALSE)
           <p><em>Tip: Type "pi" for the Greek letter. Format as: H_0: pi = value</em></p>
         </statement>
         <response/>
+        <hint>
+          <p>If guessing randomly among 5 symbols, what is the probability of guessing correctly?</p>
+        </hint>
         <solution>
           <p><m>H_0: \pi = 0.20</m> (you have a 1 in 5 chance of guessing correctly)</p>
         </solution>
@@ -2453,6 +2465,9 @@ iscambinomprob(14, 16, .5, FALSE)
           </aside>
         </statement>
         <response/>
+        <hint>
+          <p>If you are clairvoyant, would your probability of correct identification be higher or lower than random guessing?</p>
+        </hint>
         <solution>
           <p><m>H_a: \pi > 0.20</m> (you have a higher probability of predicting correctly)</p>
         </solution>
@@ -2464,6 +2479,9 @@ iscambinomprob(14, 16, .5, FALSE)
             <p>Assume the null hypothesis is true and let the random variable <m>C</m> denote the number of correct identifications (hits) in 10 attempts. If we were to simulate this random process, could we toss coins? If not, suggest another way we could generate simulated results assuming the null hypothesis to be true. (e.g., what would you want an applet to do?)</p>
           </statement>
           <response/>
+          <hint>
+            <p>Coin tosses give 50/50 probability. Does your null hypothesis assume 50% chance of success?</p>
+          </hint>
           <solution>
             <p>We can model <m>C</m> with the binomial distribution:</p>
             <p><ul>
@@ -2482,6 +2500,9 @@ iscambinomprob(14, 16, .5, FALSE)
             <p>Where do you think your null distribution will be centered? What are the largest and smallest possible values for the number of correct identifications in 10 attempts? What are the largest and smallest values you think you will see in the simulation?</p>
           </statement>
           <response/>
+          <hint>
+            <p>Use the probability from the null hypothesis times the number of attempts to find the expected value.</p>
+          </hint>
           <solution>
             <p>On average, if someone is guessing, we would <q>expect</q> to see <m>\frac{1}{5}(10) = 2</m> correct answers (in the long run). <m>E(C) = 10(0.20) = 2</m> if assuming 5 cards.</p>
           </solution>
@@ -2493,6 +2514,9 @@ iscambinomprob(14, 16, .5, FALSE)
             <p>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url>, specify the values for <m>\pi</m> and <m>n</m>. Carry out one repetition of the simulation. Explain the simulation process in your own words.</p>
           </statement>
           <response/>
+          <hint>
+            <p>Set pi to your null hypothesis value and n to the number of attempts you made.</p>
+          </hint>
           <solution>
             <p>Results will vary. The applet should generate 10 spinners (each a 0.20 probability of success = landing in the blue region) and then record the number of successes in those 10 spins.</p>
           </solution>
@@ -2509,6 +2533,9 @@ iscambinomprob(14, 16, .5, FALSE)
             <p>It can be shown that when <m>X</m> is Binomial(<m>n</m>, <m>\pi</m>), the expected value is <m>E(X) = n \times \pi</m> and the variance is <m>V(X) = n\pi(1 - \pi)</m>. (See Exploration B for more discussion of expected value and variance of a random variable.)</p>
           </statement>
           <response/>
+          <hint>
+            <p>Look for the values displayed in the Summary Statistics section of the applet after pressing Reset.</p>
+          </hint>
           <solution>
             <p>After pressing Reset to remove the one simulated trial, you should find Mean = 2.000, SD = 1.265.</p>
           </solution>
@@ -2520,6 +2547,9 @@ iscambinomprob(14, 16, .5, FALSE)
             <p>Verify these calculations match the applet output and remember that the standard deviation is the square root of the variance.</p>
           </statement>
           <response/>
+          <hint>
+            <p>Use the formulas provided in the previous question with n=10 and pi=0.20.</p>
+          </hint>
           <solution>
             <p><m>E(C) = 10(0.2) = 2.00</m> and <m>SD(C) = \sqrt{10 \times 0.2 \times 0.8} = 1.265</m>.</p>
           </solution>
@@ -2531,6 +2561,9 @@ iscambinomprob(14, 16, .5, FALSE)
             <p>Was your statistic from (a) in the direction specified by the alternative hypothesis? If it was, is it in one of the tails (outer edges) of the null distribution in (j)?</p>
           </statement>
           <response/>
+          <hint>
+            <p>Compare your number of hits to the mean of the distribution. Is it larger (right tail) or smaller (left tail)?</p>
+          </hint>
           <solution>
             <p>Results will vary, but quite possible your results were below the expected value.</p>
           </solution>
