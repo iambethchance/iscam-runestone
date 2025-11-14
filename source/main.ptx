@@ -2357,9 +2357,12 @@ iscambinomprob(14, 16, .5, FALSE)
         <statement>
           <p>How many hits did you get? <var width="10" /></p>
         </statement>
+        <answer>
+          <p>Results will vary.</p>
+        </answer>
       </exercise>
       
-      <activity xml:id="I1-3-2" label="Sample and variable">
+      <exercise xml:id="I1-3-2" label="I1.3.2">
         <title>Identify Sample and Variable</title>
         <statement>
           <p>Identify the sample and variable for this random process.</p>
@@ -2371,9 +2374,9 @@ iscambinomprob(14, 16, .5, FALSE)
         <solution>
           <p>The random process is the repeated attempts to identify the symbol correctly. The sample size is the 10 trials. Variable = correct/incorrect identification (categorical). The sample size is 10.</p>
         </solution>
-      </activity>
+      </exercise>
       
-      <activity xml:id="I1-3-3" label="Binomial model">
+      <exercise xml:id="I1-3-3" label="I1.3.3">
         <title>Binomial Random Process</title>
         <statement>
           <p>Do you consider it reasonable to model your observations as coming from a binomial random process? Explain your reasoning.</p>
@@ -2382,7 +2385,7 @@ iscambinomprob(14, 16, .5, FALSE)
         <solution>
           <p>If the target symbols are randomly selected (equally likely), the student uses the same method each time, and the student is not more likely to correctly identify some symbols more than others (e.g., guessing each time) then a binomial process does seem reasonable.</p>
         </solution>
-      </activity>
+      </exercise>
       
       <paragraphs xml:id="terminology-statistic-parameter">
         <title>Terminology Detour: Statistic vs. Parameter</title>
@@ -2392,7 +2395,7 @@ iscambinomprob(14, 16, .5, FALSE)
         <p>In Investigation 1.1, the statistic could be either the number (14) or the proportion (0.875) of infants who chose the helper toy. The parameter would then be the long-run probability of an infant picking the helper toy. In the case of a binomial random variable, we will use the symbol <m>\pi</m> (lower case Greek letter for <q>p</q>) to represent this unknown process probability.</p>
       </paragraphs>
       
-      <activity xml:id="I1-3-4" label="Parameter of interest">
+      <exercise xml:id="I1-3-4" label="I1.3.4">
         <title>Identify the Parameter</title>
         <statement>
           <p>Identify (in words) the parameter of interest for this study. What symbol will we use to represent this parameter?</p>
@@ -2418,9 +2421,9 @@ iscambinomprob(14, 16, .5, FALSE)
         <solution>
           <p>Let <m>\pi</m> represent your probability of correct identification.</p>
         </solution>
-      </activity>
+      </exercise>
       
-      <activity xml:id="I1-3-5" label="Null hypothesis ESP">
+      <exercise xml:id="I1-3-5" label="I1.3.5">
         <title>State the Null Hypothesis</title>
         <statement>
           <p>The null hypothesis is that you aren't clairvoyant and are guessing every time. State this as a null hypothesis using symbols and words.</p>
@@ -2429,24 +2432,23 @@ iscambinomprob(14, 16, .5, FALSE)
         <solution>
           <p><m>H_0: \pi = 0.20</m> (you have a 1 in 5 chance of guessing correctly)</p>
         </solution>
-      </activity>
+      </exercise>
       
-      <exercises>
-        <exercise xml:id="I1-3-6" label="Alternative hypothesis ESP">
-          <title>State the Alternative Hypothesis</title>
-          <statement>
-            <p>State the alternative hypothesis using symbols and words.</p>
-            <aside>
-              <p>Notice that the hypothesized values for <m>\pi</m> in the null and alternative can't <q>overlap;</q> they are competing statements about <m>\pi</m>.</p>
-            </aside>
-          </statement>
-          <response/>
-          <solution>
-            <p><m>H_a: \pi > 0.20</m> (you have a higher probability of predicting correctly)</p>
-          </solution>
-        </exercise>
-        
-        <exercise xml:id="I1-3-7" label="Simulation method">
+      <exercise xml:id="I1-3-6" label="I1.3.6">
+        <title>State the Alternative Hypothesis</title>
+        <statement>
+          <p>State the alternative hypothesis using symbols and words.</p>
+          <aside>
+            <p>Notice that the hypothesized values for <m>\pi</m> in the null and alternative can't <q>overlap;</q> they are competing statements about <m>\pi</m>.</p>
+          </aside>
+        </statement>
+        <response/>
+        <solution>
+          <p><m>H_a: \pi > 0.20</m> (you have a higher probability of predicting correctly)</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="I1-3-7" label="I1.3.7">
           <title>Simulation Method</title>
           <statement>
             <p>Assume the null hypothesis is true and let the random variable <m>C</m> denote the number of correct identifications (hits) in 10 attempts. If we were to simulate this random process, could we toss coins? If not, suggest another way we could generate simulated results assuming the null hypothesis to be true. (e.g., what would you want an applet to do?)</p>
@@ -2523,22 +2525,19 @@ iscambinomprob(14, 16, .5, FALSE)
             <p>Results will vary, but quite possible your results were below the expected value.</p>
           </solution>
         </exercise>
-      </exercises>
       
       <p>If your observed number of successes was below the mean, then you can conclude that your data do not provide evidence in favor of the alternative hypothesis and you should not start your own psychic hotline! But if your result was above the mean, then we would like to measure the strength of evidence against the null hypothesis. You have already seen how to do that using a p-value.</p>
       
-      <exercises>
-        <exercise xml:id="I1-3-13" label="p-value exploration">
-          <title>Explore p-value Threshold</title>
-          <statement>
-            <p>Use the applet to explore how many hits a subject would need in 10 attempts for the p-value to be below 0.05.</p>
-          </statement>
-          <response/>
-          <hint>
-            <p>Use your mouse to drag the red line.</p>
-          </hint>
-        </exercise>
-      </exercises>
+      <exercise xml:id="I1-3-13" label="I1.3.13">
+        <title>Explore p-value Threshold</title>
+        <statement>
+          <p>Use the applet to explore how many hits a subject would need in 10 attempts for the p-value to be below 0.05.</p>
+        </statement>
+        <response/>
+        <hint>
+          <p>Use your mouse to drag the red line.</p>
+        </hint>
+      </exercise>
       
       <paragraphs xml:id="alternative-measure-rareness">
         <title>An Alternative Measure of Rareness</title>
@@ -2552,25 +2551,24 @@ iscambinomprob(14, 16, .5, FALSE)
         
         <p>As an alternative to the p-value, another measure of where an observation falls in a distribution is <q>how many standard deviations</q> the value is from the mean of the distribution.</p>
         
-        <exercises>
-          <exercise xml:id="I1-3-14" label="Standardizing statistic">
-            <title>Standardize Your Result</title>
-            <statement>
-              <p>How many standard deviations was your observed result from the expected value for the binomial distribution?</p>
-              
-              <p><me>\frac{\text{observed \# of hits} - \text{expected value}}{\text{standard deviation}} = </me></p>
-              
-              <p>This calculation is often referred to as <term>standardizing the statistic</term>.</p>
-              
-              <p>Again, there are no hard and fast rules for what constitutes a large value here, but generally, when we have a fairly symmetric distribution, values more than 2 standard deviations above or below the expected value (mean) are considered extreme.</p>
-            </statement>
-            <response/>
-            <solution>
-              <p>The standardized statistic expresses the distance in <q>standard deviations away</q> from the hypothesized value of <m>\pi</m>. A negative value means the distance is below the mean; a positive value means the distance is above the mean.</p>
-            </solution>
-          </exercise>
-          
-          <exercise xml:id="I1-3-15" label="Five hits standardized">
+        <exercise xml:id="I1-3-14" label="I1.3.14">
+          <title>Standardize Your Result</title>
+          <statement>
+            <p>How many standard deviations was your observed result from the expected value for the binomial distribution?</p>
+            
+            <p><me>\frac{\text{observed \# of hits} - \text{expected value}}{\text{standard deviation}} = </me></p>
+            
+            <p>This calculation is often referred to as <term>standardizing the statistic</term>.</p>
+            
+            <p>Again, there are no hard and fast rules for what constitutes a large value here, but generally, when we have a fairly symmetric distribution, values more than 2 standard deviations above or below the expected value (mean) are considered extreme.</p>
+          </statement>
+          <response/>
+          <solution>
+            <p>The standardized statistic expresses the distance in <q>standard deviations away</q> from the hypothesized value of <m>\pi</m>. A negative value means the distance is below the mean; a positive value means the distance is above the mean.</p>
+          </solution>
+        </exercise>
+        
+        <exercise xml:id="I1-3-15" label="I1.3.15">
             <title>Standardizing 5 Hits</title>
             <statement>
               <p>How many standard deviations from the mean (expected value) would 5 hits be?</p>
@@ -2635,7 +2633,6 @@ iscambinomprob(14, 16, .5, FALSE)
               <p>This would increase the probability of a correct guess to 0.25, and so the probability model would need to change as well. If there are only 4 cards, the probability of a correct guess increases to 0.25. So, with 25 attempts, the expected value would be <m>25(0.25) = 6.25</m> with an SD of <m>\sqrt{25(0.25)(0.75)} = 2.17</m>. So <m>6.25 + 2(2.17) = 10.59 \approx 11</m>. Notice that this <q>cutoff</q> value went up (10 or 11 vs. 9). This is because guessing is more likely to do well so we need more evidence that someone is not guessing. Also, using the applet, <m>P(C \geq 10) = 0.097</m> and <m>P(C \geq 11) = 0.044</m>.</p>
             </solution>
           </exercise>
-        </exercises>
       </paragraphs>
       
       <paragraphs xml:id="investigation-1-3-summary">
