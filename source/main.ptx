@@ -575,15 +575,68 @@
       <exercise xml:id="random-babies-ex-l" label="B.12">
         <title>Count Outcomes for Each Value</title>
         <statement>
-          <p>Go through the sample space and count how many outcomes result in each possible value of <m>X</m> (0, 1, 2, or 4 matches).</p>
+          <p>Go through the sample space and count how many outcomes result in each possible value of <m>X</m> (0, 1, 2, 3, or 4 matches).</p>
+          <p>
+            <tabular>
+              <row header="yes">
+                <cell>Number of Matches</cell>
+                <cell>0</cell>
+                <cell>1</cell>
+                <cell>2</cell>
+                <cell>3</cell>
+                <cell>4</cell>
+              </row>
+              <row>
+                <cell>Count</cell>
+                <cell><var width="3" /></cell>
+                <cell><var width="3" /></cell>
+                <cell><var width="3" /></cell>
+                <cell><var width="3" /></cell>
+                <cell><var width="3" /></cell>
+              </row>
+            </tabular>
+          </p>
         </statement>
+        <setup>
+          <var>
+            <condition number="9">
+              <feedback>
+                <p>Correct! There are 9 outcomes with 0 matches.</p>
+              </feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="8">
+              <feedback>
+                <p>Correct! There are 8 outcomes with 1 match.</p>
+              </feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="6">
+              <feedback>
+                <p>Correct! There are 6 outcomes with 2 matches.</p>
+              </feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="0">
+              <feedback>
+                <p>Correct! It's impossible to have exactly 3 matches - if 3 mothers get the right baby, the 4th must too!</p>
+              </feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="1">
+              <feedback>
+                <p>Correct! There is 1 outcome with 4 matches (1234).</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <hint>
           <p>For each outcome like 1234 or 2143, count how many positions match (first baby to first mother, second to second, etc.)</p>
         </hint>
-        <solution>
-          <p>There are 9 outcomes with 0 matches, 8 outcomes with 1 match, 6 outcomes with 2 matches, and 1 outcome with 4 matches. (Note: 0 outcomes have exactly 3 matches.)</p>
-        </solution>
-        <response/>
       </exercise>
       
       <assemblage xml:id="probability-rule-equally-likely">
