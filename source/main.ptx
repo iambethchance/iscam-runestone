@@ -5283,15 +5283,6 @@ iscambinomtest(80, 124, conf.level = 0.99)
             <p>In this investigation, you took samples of 25 candies. Between what two values should 95% of the sample proportions fall when <m>\pi = 0.50</m>?</p>
           </statement>
           <response/>
-          <hint>
-            <p>Calculate <m>SD(\hat{p}) = \sqrt{\frac{0.50(0.50)}{25}}</m> and then find <m>0.50 \pm 2 \times SD(\hat{p})</m></p>
-          </hint>
-          <solution>
-            <p><m>SD(\hat{p}) = \sqrt{\frac{0.50(0.50)}{25}} = \sqrt{0.01} = 0.10</m></p>
-            <p>Lower bound: <m>0.50 - 2(0.10) = 0.30</m></p>
-            <p>Upper bound: <m>0.50 + 2(0.10) = 0.70</m></p>
-            <p>So 95% of sample proportions should fall between 0.30 and 0.70.</p>
-          </solution>
         </exercise>
         
         <exercise xml:id="practice-1-7B" label="P1.7B">
@@ -5302,18 +5293,6 @@ iscambinomtest(80, 124, conf.level = 0.99)
             <p>(b) If the defendant was the father of the child, what is the probability that the mother could have had the very long (more than 280 days) or the very short (less than 230 days) pregnancy indicated by the testimony?</p>
           </statement>
           <response/>
-          <hint>
-            <p>For part (b), you need to find <m>P(X &lt; 230) + P(X &gt; 280)</m> where X follows a normal distribution with mean 270 and SD 10.</p>
-          </hint>
-          <solution>
-            <p>(a) A normal model might be reasonable for pregnancy lengths as they tend to be symmetric and mound-shaped around 270 days. However, you would want to see actual data to verify this assumption - pregnancy lengths cannot be negative and may have some skewness.</p>
-            <p>(b) First, standardize the values:</p>
-            <p>For 230 days: <m>z = \frac{230 - 270}{10} = -4</m></p>
-            <p>For 280 days: <m>z = \frac{280 - 270}{10} = 1</m></p>
-            <p>Using the empirical rule or normal tables: <m>P(X &lt; 230) \approx 0.00003</m> (very small) and <m>P(X &gt; 280) \approx 0.159</m></p>
-            <p>Combined probability: approximately 0.159, or about 16%.</p>
-            <p>Note: The very short pregnancy (less than 230 days) is extremely unlikely (4 standard deviations below the mean), while the long pregnancy is only 1 standard deviation above the mean and thus more plausible.</p>
-          </solution>
         </exercise>
       </subsection>
     </subsection>
