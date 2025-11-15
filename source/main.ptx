@@ -4695,12 +4695,17 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
         </solution>
       </exercise>
       
-      <exercise xml:id="I1-6-8a" label="I1.6.8a">
-        <title>Identify Plausible Values for 99% CI</title>
+      <exercise xml:id="I1-6-8" label="I1.6.8">
+        <title>Find 99% Confidence Interval</title>
         <statement>
+          <p>Use the One Proportion Inference applet to determine the 99% confidence interval by using 0.01 rather than 0.05 as the criterion for rejection/plausibility (level of significance). [Hints: You can check the Show sliders box in the applet and use the slider or edit the orange number to change the value of <m>\pi_0</m>. Keep in mind that you are changing the conjectured value of <m>\pi</m>, not the observed number of successes, which should stay at 80.]</p>
           <p>Using 0.01 as the significance level, test different values of <m>\pi_0</m> to determine which yield a two-sided p-value greater than 0.01. Check all plausible values (p-value <m>\geq</m> 0.01):</p>
         </statement>
         <choices randomize="no">
+          <choice>
+            <statement><p>0.49</p></statement>
+            <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
+          </choice>
           <choice>
             <statement><p>0.50</p></statement>
             <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
@@ -4722,8 +4727,24 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
             <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
           </choice>
           <choice correct="yes">
+            <statement><p>0.55</p></statement>
+            <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
+          </choice>
+          <choice correct="yes">
+            <statement><p>0.56</p></statement>
+            <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
+          </choice>
+          <choice correct="yes">
             <statement><p>0.645</p></statement>
             <feedback><p>Correct! This is our observed sample proportion, definitely plausible.</p></feedback>
+          </choice>
+          <choice correct="yes">
+            <statement><p>0.72</p></statement>
+            <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
+          </choice>
+          <choice correct="yes">
+            <statement><p>0.73</p></statement>
+            <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
           </choice>
           <choice correct="yes">
             <statement><p>0.74</p></statement>
@@ -4741,16 +4762,20 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
             <statement><p>0.77</p></statement>
             <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
           </choice>
+          <choice>
+            <statement><p>0.78</p></statement>
+            <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
+          </choice>
         </choices>
         <hint>
           <p>Use the applet to find the two-sided p-value for each hypothesized value. Plausible values have p-values <m>\geq</m> 0.01.</p>
         </hint>
       </exercise>
       
-      <exercise xml:id="I1-6-8" label="I1.6.8">
-        <title>Find 99% Confidence Interval</title>
+      <exercise xml:id="I1-6-8b" label="I1.6.8b">
+        <title>Compare 95% and 99% Confidence Intervals</title>
         <statement>
-          <p>Repeat the process but using 0.01 rather than 0.05 as the criterion for rejection/plausibility (level of significance). [Hints: You can check the Show sliders box in the applet and use the slider or edit the orange number to change the value of <m>\pi_0</m>. Keep in mind that you are changing the conjectured value of <m>\pi</m>, not the observed number of successes, which should stay at 80.] Does this "99% confidence interval" include more or fewer values than the 95% confidence interval? Explain why this makes intuitive sense.</p>
+          <p>Does this "99% confidence interval" include more or fewer values than the 95% confidence interval? Explain why this makes intuitive sense.</p>
         </statement>
         <response/>
         <hint>
