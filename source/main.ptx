@@ -4479,7 +4479,7 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
       
       <sidebyside widths="58% 38%">
         <p>Most people are right-handed and even the right eye is dominant for most people. Researchers have long believed that late-stage human embryos tend to turn their heads to the right. German bio-psychologist Onur Güntürkün (<url href="https://www.nature.com/articles/421711a" target="_blank"><em>Nature</em>, 2003</url>) conjectured that this tendency to turn to the right manifests itself in other ways as well, so he studied kissing couples to see whether both people tend to lean their heads to the right more often than to their left (and if so, how strong the tendency is).</p>
-        <image source="assets/images/Inv1.6intro.jpg" width="100%">
+        <image source="images/Inv1.6intro.jpg" width="100%">
           <description>Kissing couples investigation introduction</description>
         </image>
       </sidebyside>
@@ -4556,7 +4556,7 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
       <aside>
         <title>Tic-Tac Ad</title>
         <figure>
-          <image source="assets/images/TicTag.jpg" width="80%">
+          <image source="images/TicTag.jpg" width="80%">
             <description>Tic-Tac advertisement about kissing couples leaning right</description>
           </image>
         </figure>
@@ -4718,7 +4718,7 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
       </assemblage>
       
       <exercise xml:id="I1-6-11" label="I1.6.11">
-        <title>Probability Statement Error</title>
+        <title>Misinterpreting Confidence</title>
         <statement>
           <p>Explain why it is not appropriate to say "There is a 99% probability that between 52.6% and 75.2% of kissing couples lean right when they kiss."</p>
         </statement>
@@ -4831,7 +4831,7 @@ iscambinomtest(80, 124, conf.level = 0.99)
         </ul></p>
         
         <figure>
-          <image source="assets/images/iscambinomtestRoutput.png" width="75%">
+          <image source="images/iscambinomtestRoutput.png" width="75%">
             <description>R output from iscambinomtest showing three graphs - top and middle showing binomial distributions at interval endpoints, bottom showing confidence interval</description>
           </image>
         </figure>
@@ -4881,23 +4881,15 @@ iscambinomtest(80, 124, conf.level = 0.99)
         <p><alert>(100 × C)% Confidence Interval for <m>\pi</m></alert></p>
         <p>The set of values such that the two-sided p-value based on the observed count is larger than the <m>(1 - C)</m> cut-off.</p>
         
-        <exercise xml:id="summary-tech-instructions" label="Summary Tech Instructions">
-          <title>Technology Instructions</title>
-          <statement>
-            <p>Click to see technology instructions for exact binomial inference.</p>
-          </statement>
-          <solution>
-            <p><alert>Technology</alert></p>
-            <p><ul>
-              <li><p>One Proportion Inference applet for approximate and exact binomial probability (p-value)</p></li>
-              <li><p>R, ISCAM Workspace: <c>iscambinomtest(observed, n, hypothesized=π_0, alternative="greater", "less," or "two.sided", conf.level)</c></p>
-                <p>Can enter either sample count or sample proportion for "observed." If you don't specify a hypothesized value and alternative, be sure to label the confidence level.</p></li>
-              <li><p>JMP:</p>
-                <p>For a one-sided p-value: Analyze > Distribution (raw or tallied data using Freq)</p>
-                <p>For a confidence interval: ISCAM Journal file > Confidence Interval for One Proportion using Summary Stats: specify the number of successes and the sample size</p></li>
-            </ul></p>
-          </solution>
-        </exercise>
+        <p><alert>Technology</alert></p>
+        <p><ul>
+          <li><p>One Proportion Inference applet for approximate and exact binomial probability (p-value)</p></li>
+          <li><p>R, ISCAM Workspace: <c>iscambinomtest(observed, n, hypothesized=π_0, alternative="greater", "less," or "two.sided", conf.level)</c></p>
+            <p>Can enter either sample count or sample proportion for "observed." If you don't specify a hypothesized value and alternative, be sure to label the confidence level.</p></li>
+          <li><p>JMP:</p>
+            <p>For a one-sided p-value: Analyze > Distribution (raw or tallied data using Freq)</p>
+            <p>For a confidence interval: ISCAM Journal file > Confidence Interval for One Proportion using Summary Stats: specify the number of successes and the sample size</p></li>
+        </ul></p>
       </assemblage>
       
       <paragraphs>
