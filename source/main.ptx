@@ -5029,6 +5029,294 @@ iscambinomtest(80, 124, conf.level = 0.99)
         </ul></p>
       </paragraphs>
     </subsection>
+    
+    <subsection xml:id="section-2-normal-approximations">
+      <title>Section 2: Normal Approximations for Sample Proportions</title>
+      
+      <p>So far, all the studies you have examined have involved one categorical binary variable and the relevant statistic has been the number of successes, or equivalently the proportion of successes, where "success" is defined as the outcome you count (e.g., number of heart transplantation deaths, number of helper toys, number of correct choices) in a particular sample. You have used simulation from a coin-tossing type process to approximate probabilities (p-value, error probabilities) and you calculated exact probabilities using the binomial distribution.</p>
+      
+      <p>Historically, when computers were less prevalent, these empirical and binomial probabilities were often cumbersome to determine and statisticians instead applied a far more convenient approximation method to estimate the probabilities of interest. In this section, you will see how the normal probability model can be used as a third method to approximate the p-values, confidence intervals, and error probabilities from the previous section. See the Probability Detour for more information about the normal distribution.</p>
+      
+      <subsection xml:id="investigation-1-7">
+        <title>Investigation 1.7: Reese's Pieces (Optional)</title>
+        
+        <p>Manufacturers often perform "quality checks" to ensure that their manufacturing process is operating under certain specifications. Suppose a manager at Hershey's is concerned that his manufacturing process is no longer producing the correct color proportions (orange, yellow, brown) in Reese's candies.</p>
+        
+        <exercise xml:id="I1-7-a" label="I1.7a">
+          <title>Initial Prediction</title>
+          <statement>
+            <p>Prediction: A friend finds 10 orange candies in her bag. Does this convince you that the three colors are not equally likely? What other information would you want to know? What if she tells you these orange pieces were 50% of the candies in her bag?</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>Consider: Knowing the total number of candies in the bag is crucial. What's the difference between 10 out of 20 versus 10 out of 100?</p>
+          </hint>
+        </exercise>
+        
+        <exercise xml:id="I1-7-b" label="I1.7b">
+          <title>Record Your Sample</title>
+          <statement>
+            <p>Take a (presumably representative) sample of n = 25 Reese's Pieces candies and record the number of orange, yellow, and brown candies in your sample.</p>
+            <p>Orange: <var width="5"/> Yellow: <var width="5"/> Brown: <var width="5"/></p>
+          </statement>
+        </exercise>
+        
+        <exercise xml:id="I1-7-c" label="I1.7c">
+          <title>Identify Sample and Variable</title>
+          <statement>
+            <p>Identify the sample/random process and variable for your sample.</p>
+            <p>Sample/Random process: <var width="40"/></p>
+            <p>Variable: <var width="40"/> Type: <var width="20"/></p>
+          </statement>
+          <hint>
+            <p>The random process is selecting candies. The variable is the color of each candy. Is this categorical or quantitative?</p>
+          </hint>
+        </exercise>
+        
+        <exercise xml:id="I1-7-d" label="I1.7d">
+          <title>Assess Binomial Process</title>
+          <statement>
+            <p>Define "success" to be an orange candy and "failure" to be a non-orange candy. Is it reasonable to treat these data as observations from a binomial process? Explain.</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>Consider: Are there two possible outcomes? Fixed number of trials? Independent trials? Constant probability of success?</p>
+          </hint>
+        </exercise>
+        
+        <exercise xml:id="I1-7-e" label="I1.7e">
+          <title>Initial Assessment</title>
+          <statement>
+            <p>Prediction: Based on your data, do you think one-third is a plausible value for the probability Hershey's process produces an orange candy? How are you deciding? What more information do you need?</p>
+          </statement>
+          <response/>
+        </exercise>
+        
+        <p>Reporting the sample proportion as the statistic is often more informative than the sample count, but that means we need to know about the null distribution of sample proportions.</p>
+        
+        <exercise xml:id="I1-7-f" label="I1.7f">
+          <title>Initial Simulation</title>
+          <statement>
+            <p>Open the Reese's Pieces applet. Set the applet to assume a 0.333 process probability of a Reese's Pieces candy being orange. The applet is set to take a sample of n = 25 candies.</p>
+            <p>Click the Draw Samples button.</p>
+            <p>The applet will randomly select a sample of 25 candies, sort them, and report the sample number of orange candies.</p>
+            <p>Click the Draw Samples button again.</p>
+            <p>Did you get the same number of orange candies both times?</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>You should expect different results due to random sampling variability.</p>
+          </hint>
+        </exercise>
+        
+        <exercise xml:id="I1-7-g" label="I1.7g">
+          <title>Interpret Dotplot</title>
+          <statement>
+            <p>Change the Number of samples from 1 to 1998, uncheck the Show animation box, and click the Draw Samples button again. Now select the Proportion of orange radio button. What does each dot in this dotplot represent?</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>Each dot represents the sample proportion of orange candies in one sample of 25 candies.</p>
+          </hint>
+        </exercise>
+        
+        <p>Recall that for a binomial random variable, <m>X</m>, the expected value <m>E(X) = n \times \pi</m> and the standard deviation <m>SD(X) = \sqrt{n \times \pi \times (1-\pi)}</m>. It can also be shown that random variables follow these rules:</p>
+        <p><ul>
+          <li>For any constant <m>c</m>, <m>E(cX) = c \times E(X)</m></li>
+          <li>For any constant <m>c</m>, <m>SD(cX) = |c| \times SD(X)</m></li>
+        </ul></p>
+        
+        <exercise xml:id="I1-7-h" label="I1.7h">
+          <title>Derive Formulas</title>
+          <statement>
+            <p>Use the above information, and the fact that <m>\hat{p} = X/n</m>, to derive formulas for <m>E(\hat{p})</m> and <m>SD(\hat{p})</m>.</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>Start with <m>E(\hat{p}) = E(X/n) = E((1/n) \times X)</m> and apply the rule for constants.</p>
+          </hint>
+          <solution>
+            <p><m>E(\hat{p}) = E(X/n) = (1/n) \times E(X) = (1/n) \times n\pi = \pi</m></p>
+            <p><m>SD(\hat{p}) = SD(X/n) = (1/n) \times SD(X) = (1/n) \times \sqrt{n\pi(1-\pi)} = \sqrt{\frac{\pi(1-\pi)}{n}}</m></p>
+          </solution>
+        </exercise>
+        
+        <exercise xml:id="I1-7-i" label="I1.7i">
+          <title>Verify Formulas</title>
+          <statement>
+            <p>Using <m>\pi = 0.333</m> and <m>n = 25</m>, verify that your formulas match the results from checking the Summary Statistics box in the applet.</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>Calculate <m>E(\hat{p}) = 0.333</m> and <m>SD(\hat{p}) = \sqrt{\frac{0.333(0.667)}{25}}</m></p>
+          </hint>
+        </exercise>
+        
+        <exercise xml:id="I1-7-j" label="I1.7j">
+          <title>Predict Larger Sample</title>
+          <statement>
+            <p>Prediction: If we had instead taken 2,000 samples of size n = 100 candies, how do you think the distribution of the sample proportions would compare to the distribution where n = 25? Explain.</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>Think about how sample size affects variability in sample proportions.</p>
+          </hint>
+        </exercise>
+        
+        <exercise xml:id="I1-7-k" label="I1.7k">
+          <title>Compare Distributions</title>
+          <statement>
+            <p>Without pressing Reset, change the Number of candies in the applet to 100, the Number of samples to 2,000, and press Draw Samples to generate a new distribution. Check the Show previous results box to display the previous distribution in the background in light grey. Describe the behavior (shape, center, variability) of this (new) distribution and how it has changed from the previous. Focus on the most substantial change in the distribution. Is this what you expected?</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>Pay special attention to the spread of the distribution - how has it changed?</p>
+          </hint>
+          <solution>
+            <p>The center remains at approximately 0.333. The shape remains roughly symmetric and mound-shaped. The most substantial change is in variability: the distribution with n = 100 has much less spread than the distribution with n = 25. This makes sense because larger sample sizes lead to less sampling variability.</p>
+          </solution>
+        </exercise>
+        
+        <exercise xml:id="I1-7-l" label="I1.7l">
+          <title>Smaller Sample Size</title>
+          <statement>
+            <p>Repeat parts (i) and (j) for a sample size of n = 5 candies.</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>Calculate the expected value and standard deviation for n = 5, then compare the distribution to n = 25.</p>
+          </hint>
+        </exercise>
+        
+        <exercise xml:id="I1-7-m" label="I1.7m">
+          <title>Calculate Cut-offs</title>
+          <statement>
+            <p>Return to the scenario where n = 25 and <m>\pi = 0.333</m>. Earlier, you predict that in this scenario <m>E(\hat{p}) = 0.333</m> and <m>SD(\hat{p}) = 0.094</m>. Calculate the following "cut-offs":</p>
+            <p><m>\pi - 2 \times SD(\hat{p})</m> = <var width="10"/> and <m>\pi + 2 \times SD(\hat{p})</m> = <var width="10"/></p>
+          </statement>
+          <setup>
+            <var>
+              <condition number="0.145" tolerance="0.005">
+                <feedback><p>Correct! <m>0.333 - 2(0.094) = 0.145</m></p></feedback>
+              </condition>
+            </var>
+            <var>
+              <condition number="0.521" tolerance="0.005">
+                <feedback><p>Correct! <m>0.333 + 2(0.094) = 0.521</m></p></feedback>
+              </condition>
+            </var>
+          </setup>
+        </exercise>
+        
+        <exercise xml:id="I1-7-n" label="I1.7n">
+          <title>Percentage Within Two Standard Deviations</title>
+          <statement>
+            <p>Use the applet to determine the percentage of samples with a sample proportion within 2 standard deviations of the expected value.</p>
+            <p><ul>
+              <li>Set the probability of orange to 0.333 and the number of candies to 25.</li>
+              <li>Generate 2,000 samples.</li>
+              <li>Enter the first value from (m) in the As extreme as box.</li>
+              <li>Check the Two-tailed box and then the between box.</li>
+              <li>Enter the second value in the box that appears.</li>
+            </ul></p>
+            <p>Write a sentence reporting the percentage of samples with a proportion of orange candies between these two values.</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>The percentage should be close to 95%.</p>
+          </hint>
+        </exercise>
+        
+        <exercise xml:id="I1-7-o" label="I1.7o">
+          <title>Compare for n = 100</title>
+          <statement>
+            <p>Repeat (m) and (n) for n = 100 (including using the new SD and new cut-offs). How does the percentage of samples within two standard deviations of 0.333 compare?</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>The percentage should still be close to 95%, regardless of sample size.</p>
+          </hint>
+        </exercise>
+        
+        <assemblage xml:id="empirical-rule">
+          <title>Definition: The Empirical Rule</title>
+          <p>The Empirical Rule or the 68-95-99.7 rule states that for a mound-shaped, symmetric distribution:</p>
+          <p><ul>
+            <li>the interval (mean – SD, mean + SD) should capture approximately 68% of the distribution.</li>
+            <li>the interval (mean – 2 SD, mean + 2 SD) should capture approximately 95% of the distribution.</li>
+            <li>the interval (mean – 3 SD, mean + 3 SD) should capture approximately 99.7% of the distribution.</li>
+          </ul></p>
+        </assemblage>
+        
+        <exercise xml:id="I1-7-p" label="I1.7p">
+          <title>Verify Empirical Rule</title>
+          <statement>
+            <p>Do your simulation results agree with the empirical rule?</p>
+          </statement>
+          <response/>
+        </exercise>
+        
+        <exercise xml:id="I1-7-q" label="I1.7q">
+          <title>Complete Statements</title>
+          <statement>
+            <p>Complete the following statements:</p>
+            <p>Roughly <var width="5"/>% of sample proportions fall within <var width="10"/> of the value of <m>\pi</m>.</p>
+            <p>For roughly <var width="5"/>% of samples, <m>\pi</m> falls within <var width="10"/> of any sample proportion.</p>
+          </statement>
+          <hint>
+            <p>Think about the empirical rule and standard deviations.</p>
+          </hint>
+          <solution>
+            <p>Roughly 95% of sample proportions fall within 2 SD of the value of <m>\pi</m>.</p>
+            <p>For roughly 95% of samples, <m>\pi</m> falls within 2 SD of any sample proportion.</p>
+          </solution>
+        </exercise>
+        
+        <paragraphs xml:id="discussion-1-7">
+          <title>Discussion</title>
+          <p>Notice that if we know the value of <m>\pi</m> and we know the sample size n, we can predict the value of the sample proportion fairly precisely. This will be very helpful to us in deciding whether an observed sample proportion is "far away" from a hypothesized value for <m>\pi</m>.</p>
+        </paragraphs>
+        
+        <exercise xml:id="practice-1-7A" label="P1.7A">
+          <title>Practice Problem 1.7A</title>
+          <statement>
+            <p>In this investigation, you took samples of 25 candies. Between what two values should 95% of the sample proportions fall when <m>\pi = 0.50</m>?</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>Calculate <m>SD(\hat{p}) = \sqrt{\frac{0.50(0.50)}{25}}</m> and then find <m>0.50 \pm 2 \times SD(\hat{p})</m></p>
+          </hint>
+          <solution>
+            <p><m>SD(\hat{p}) = \sqrt{\frac{0.50(0.50)}{25}} = \sqrt{0.01} = 0.10</m></p>
+            <p>Lower bound: <m>0.50 - 2(0.10) = 0.30</m></p>
+            <p>Upper bound: <m>0.50 + 2(0.10) = 0.70</m></p>
+            <p>So 95% of sample proportions should fall between 0.30 and 0.70.</p>
+          </solution>
+        </exercise>
+        
+        <exercise xml:id="practice-1-7B" label="P1.7B">
+          <title>Practice Problem 1.7B</title>
+          <statement>
+            <p>An expert witness in a paternity suit testifies that the length (in days) of pregnancy (the time from conception to delivery of the child) is approximately normally distributed with mean <m>\mu = 270</m> days and standard deviation <m>\sigma = 10</m> days. The defendant in the suit is able to prove that he was out of the country during a period that began 280 days before the birth of the child and ended 230 days before the birth of the child.</p>
+            <p>(a) Does a normal model seem to be a reasonable assumption here? Explain why or why not or how you might decide.</p>
+            <p>(b) If the defendant was the father of the child, what is the probability that the mother could have had the very long (more than 280 days) or the very short (less than 230 days) pregnancy indicated by the testimony?</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>For part (b), you need to find <m>P(X &lt; 230) + P(X &gt; 280)</m> where X follows a normal distribution with mean 270 and SD 10.</p>
+          </hint>
+          <solution>
+            <p>(a) A normal model might be reasonable for pregnancy lengths as they tend to be symmetric and mound-shaped around 270 days. However, you would want to see actual data to verify this assumption - pregnancy lengths cannot be negative and may have some skewness.</p>
+            <p>(b) First, standardize the values:</p>
+            <p>For 230 days: <m>z = \frac{230 - 270}{10} = -4</m></p>
+            <p>For 280 days: <m>z = \frac{280 - 270}{10} = 1</m></p>
+            <p>Using the empirical rule or normal tables: <m>P(X &lt; 230) \approx 0.00003</m> (very small) and <m>P(X &gt; 280) \approx 0.159</m></p>
+            <p>Combined probability: approximately 0.159, or about 16%.</p>
+            <p>Note: The very short pregnancy (less than 230 days) is extremely unlikely (4 standard deviations below the mean), while the long pregnancy is only 1 standard deviation above the mean and thus more plausible.</p>
+          </solution>
+        </exercise>
+      </subsection>
+    </subsection>
   </section>
   </article>
 </pretext>
