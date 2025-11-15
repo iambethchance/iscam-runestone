@@ -4473,9 +4473,16 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
     <subsection xml:id="investigation-1-6">
       <title>Investigation 1.6: Kissing the Right Way</title>
       
-      <p>In the previous investigation, you learned how to decide whether a hypothesized value of the parameter is plausible based on a two-sided p-value. The two-sided p-value is used when you do not have a prior suspicion or interest in whether the hypothesized value is too large or too small. In fact, in many studies we may not even really have a hypothesized value, but are more interested in using the sample data to estimate the value of the parameter. What are all the plausible values for the parameter?</p>
-      
-      <p>Most people are right-handed and even the right eye is dominant for most people. Researchers have long believed that late-stage human embryos tend to turn their heads to the right. German bio-psychologist Onur Güntürkün (Nature, 2003) conjectured that this tendency to turn to the right manifests itself in other ways as well, so he studied kissing couples to see whether both people tend to lean their heads to the right more often than to their left (and if so, how strong the tendency is). He and his researchers observed couples from age 13 to 70 in public places such as airports, train stations, beaches, and parks in the United States, Germany, and Turkey. The observers were careful not to include couples who were holding objects such as luggage that might have affected which direction they turned. We will model the overall decision-making process when kissing as a binomial random process.</p>
+      <sidebyside widths="58% 38%">
+        <stack>
+          <p>In the previous investigation, you learned how to decide whether a hypothesized value of the parameter is plausible based on a two-sided p-value. The two-sided p-value is used when you do not have a prior suspicion or interest in whether the hypothesized value is too large or too small. In fact, in many studies we may not even really have a hypothesized value, but are more interested in using the sample data to estimate the value of the parameter. What are all the plausible values for the parameter?</p>
+          
+          <p>Most people are right-handed and even the right eye is dominant for most people. Researchers have long believed that late-stage human embryos tend to turn their heads to the right. German bio-psychologist Onur Güntürkün (Nature, 2003) conjectured that this tendency to turn to the right manifests itself in other ways as well, so he studied kissing couples to see whether both people tend to lean their heads to the right more often than to their left (and if so, how strong the tendency is). He and his researchers observed couples from age 13 to 70 in public places such as airports, train stations, beaches, and parks in the United States, Germany, and Turkey. The observers were careful not to include couples who were holding objects such as luggage that might have affected which direction they turned. We will model the overall decision-making process when kissing as a binomial random process.</p>
+        </stack>
+        <image source="images/Inv1.6intro.jpg" width="100%">
+          <description>Kissing couples investigation introduction</description>
+        </image>
+      </sidebyside>
       
       <exercise xml:id="I1-6-1" label="I1.6.1">
         <title>Identify Sample, Variable, and Parameter</title>
@@ -4740,6 +4747,12 @@ iscambinomtest(observed, n, conf.level = )
               <li><p>The top graph shows the distribution assuming the lower value of the confidence interval as the process probability. This is as far left as we can shift that null distribution before the area to the right of the observed number of successes, 80, dips below 0.025.</p></li>
               <li><p>The middle graph shows how far we can move that distribution to the right (largest plausible value of <m>\pi</m>) before the probability below 80 dips below 0.025.</p></li>
             </ul></p>
+            
+            <figure>
+              <image source="images/iscambinomtestRoutput.png" width="75%">
+                <description>R output from iscambinomtest showing three graphs - top and middle showing binomial distributions at interval endpoints, bottom showing confidence interval</description>
+              </image>
+            </figure>
           </statement>
         </exercise>
         
@@ -4812,21 +4825,26 @@ iscambinomtest(observed, n, conf.level = )
         <p><alert>(100 × C)% Confidence Interval for <m>\pi</m></alert></p>
         <p>The set of values such that the two-sided p-value based on the observed count is larger than the <m>(1 - C)</m> cut-off.</p>
         
-        <p><alert>Technology</alert></p>
-        <p><ul>
-          <li><p>One Proportion Inference applet for approximate and exact binomial probability (p-value)</p></li>
-          <li><p>R, ISCAM Workspace: <c>iscambinomtest(observed, n, hypothesized=π_0, alternative="greater", "less," or "two.sided", conf.level)</c></p>
-            <p>Can enter either sample count or sample proportion for "observed." If you don't specify a hypothesized value and alternative, be sure to label the confidence level.</p></li>
-          <li><p>JMP:</p>
-            <p>For a one-sided p-value: Analyze > Distribution (raw or tallied data using Freq)</p>
-            <p>For a confidence interval: ISCAM Journal file > Confidence Interval for One Proportion using Summary Stats: specify the number of successes and the sample size</p></li>
-        </ul></p>
-        
-        <p><alert>Handy Reminders</alert></p>
-        <p><ul>
-          <li><p>In R: If you don't remember the inputs for a function, just use ? before the function, e.g., <c>?iscambinomtest</c>. Use the up arrow to return to earlier commands.</p></li>
-          <li><p>In JMP: Remember to look under "hot spots" and that options will change across menu items.</p></li>
-        </ul></p>
+        <paragraphs>
+          <title>Technology Instructions</title>
+          <solution>
+            <p><alert>Technology</alert></p>
+            <p><ul>
+              <li><p>One Proportion Inference applet for approximate and exact binomial probability (p-value)</p></li>
+              <li><p>R, ISCAM Workspace: <c>iscambinomtest(observed, n, hypothesized=π_0, alternative="greater", "less," or "two.sided", conf.level)</c></p>
+                <p>Can enter either sample count or sample proportion for "observed." If you don't specify a hypothesized value and alternative, be sure to label the confidence level.</p></li>
+              <li><p>JMP:</p>
+                <p>For a one-sided p-value: Analyze > Distribution (raw or tallied data using Freq)</p>
+                <p>For a confidence interval: ISCAM Journal file > Confidence Interval for One Proportion using Summary Stats: specify the number of successes and the sample size</p></li>
+            </ul></p>
+            
+            <p><alert>Handy Reminders</alert></p>
+            <p><ul>
+              <li><p>In R: If you don't remember the inputs for a function, just use ? before the function, e.g., <c>?iscambinomtest</c>. Use the up arrow to return to earlier commands.</p></li>
+              <li><p>In JMP: Remember to look under "hot spots" and that options will change across menu items.</p></li>
+            </ul></p>
+          </solution>
+        </paragraphs>
       </assemblage>
     </subsection>
   </section>
