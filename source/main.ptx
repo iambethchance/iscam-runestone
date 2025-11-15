@@ -5051,6 +5051,9 @@ iscambinomtest(80, 124, conf.level = 0.99)
           <hint>
             <p>Consider: Knowing the total number of candies in the bag is crucial. What's the difference between 10 out of 20 versus 10 out of 100?</p>
           </hint>
+          <solution>
+            <p>Conjectures will vary. Knowing the total number of candies (sample size) is crucial. 10 out of 20 (50%) is much different from 10 out of 100 (10%). With 50% orange, this provides some evidence against equal proportions, but we would want more information about sampling variability.</p>
+          </solution>
         </exercise>
         
         <exercise xml:id="I1-7-b" label="I1.7b">
@@ -5059,6 +5062,9 @@ iscambinomtest(80, 124, conf.level = 0.99)
             <p>Take a (presumably representative) sample of n = 25 Reese's Pieces candies and record the number of orange, yellow, and brown candies in your sample.</p>
             <p>Orange: <var width="5"/> Yellow: <var width="5"/> Brown: <var width="5"/></p>
           </statement>
+          <solution>
+            <p>Results will vary. Students should record their data and be prepared to share it with the class.</p>
+          </solution>
         </exercise>
         
         <exercise xml:id="I1-7-c" label="I1.7c">
@@ -5066,11 +5072,18 @@ iscambinomtest(80, 124, conf.level = 0.99)
           <statement>
             <p>Identify the sample/random process and variable for your sample.</p>
             <p>Sample/Random process: <var width="40"/></p>
-            <p>Variable: <var width="40"/> Type: <var width="20"/></p>
+            <p>Variable: <var width="40"/></p>
+            <p>Type: <var width="20"/></p>
           </statement>
+          <response/>
           <hint>
             <p>The random process is selecting candies. The variable is the color of each candy. Is this categorical or quantitative?</p>
           </hint>
+          <solution>
+            <p>Sample/Random process: The random process is selecting Reese's Pieces candies.</p>
+            <p>Variable: The color of each candy</p>
+            <p>Type: Categorical (with three possible values: orange, yellow, brown)</p>
+          </solution>
         </exercise>
         
         <exercise xml:id="I1-7-d" label="I1.7d">
@@ -5082,6 +5095,9 @@ iscambinomtest(80, 124, conf.level = 0.99)
           <hint>
             <p>Consider: Are there two possible outcomes? Fixed number of trials? Independent trials? Constant probability of success?</p>
           </hint>
+          <solution>
+            <p>Yes, this is reasonably a binomial process: There are two possible outcomes (orange/not orange), a fixed number of trials (n = 25), the trials are independent (assuming sampling with replacement or from a very large population), and the probability of success (getting an orange candy) is constant for each trial. The main assumption to consider is whether the candies are well-mixed and randomly selected.</p>
+          </solution>
         </exercise>
         
         <exercise xml:id="I1-7-e" label="I1.7e">
@@ -5090,6 +5106,9 @@ iscambinomtest(80, 124, conf.level = 0.99)
             <p>Prediction: Based on your data, do you think one-third is a plausible value for the probability Hershey's process produces an orange candy? How are you deciding? What more information do you need?</p>
           </statement>
           <response/>
+          <solution>
+            <p>Conjectures will vary. Students need more information about how much variability to expect in sample proportions when the true probability is one-third. A simulation will help determine whether the observed sample proportion is reasonably close to 1/3 or surprisingly far away.</p>
+          </solution>
         </exercise>
         
         <p>Reporting the sample proportion as the statistic is often more informative than the sample count, but that means we need to know about the null distribution of sample proportions.</p>
@@ -5097,27 +5116,45 @@ iscambinomtest(80, 124, conf.level = 0.99)
         <exercise xml:id="I1-7-f" label="I1.7f">
           <title>Initial Simulation</title>
           <statement>
-            <p>Open the Reese's Pieces applet. Set the applet to assume a 0.333 process probability of a Reese's Pieces candy being orange. The applet is set to take a sample of n = 25 candies.</p>
-            <p>Click the Draw Samples button.</p>
-            <p>The applet will randomly select a sample of 25 candies, sort them, and report the sample number of orange candies.</p>
-            <p>Click the Draw Samples button again.</p>
-            <p>Did you get the same number of orange candies both times?</p>
+            <p>Open the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?candy=1&amp;hideExtras=1" visual="rossmanchance.com/applets/2021/oneprop/OneProp.htm">Reese's Pieces applet</url>.</p>
+            <p><ul>
+              <li>Set the applet to assume a 0.333 process probability of a Reese's Pieces candy being orange. The applet is set to take a sample of n = 25 candies.</li>
+              <li>Click the Draw Samples button.</li>
+              <li>The applet will randomly select a sample of 25 candies, sort them, and report the sample number of orange candies.</li>
+              <li>Click the Draw Samples button again.</li>
+              <li>Did you get the same number of orange candies both times?</li>
+            </ul></p>
           </statement>
           <response/>
           <hint>
             <p>You should expect different results due to random sampling variability.</p>
           </hint>
+          <solution>
+            <p>No, you typically get different numbers of orange candies. This demonstrates sampling variability—even when the true probability is 0.333, individual samples produce different results due to random chance.</p>
+          </solution>
         </exercise>
         
         <exercise xml:id="I1-7-g" label="I1.7g">
           <title>Interpret Dotplot</title>
           <statement>
-            <p>Change the Number of samples from 1 to 1998, uncheck the Show animation box, and click the Draw Samples button again. Now select the Proportion of orange radio button. What does each dot in this dotplot represent?</p>
+            <p><ul>
+              <li>Change the Number of samples from 1 to 1998.</li>
+              <li>Uncheck the Show animation box.</li>
+              <li>Click the Draw Samples button again.</li>
+              <li>Select the Proportion of orange radio button.</li>
+              <li>What does each dot in this dotplot represent?</li>
+            </ul></p>
           </statement>
           <response/>
           <hint>
             <p>Each dot represents the sample proportion of orange candies in one sample of 25 candies.</p>
           </hint>
+          <solution>
+            <p>Each dot represents the sample proportion of orange candies in one sample of 25 candies. The entire dotplot shows the distribution of sample proportions across many samples when the true probability is 0.333, illustrating the sampling distribution of the sample proportion.</p>
+            <image source="images/inv1.7-dotplot-n25.png" width="80%">
+              <description>Dotplot showing the distribution of sample proportions for n=25 candies with probability 0.333</description>
+            </image>
+          </solution>
         </exercise>
         
         <p>Recall that for a binomial random variable, <m>X</m>, the expected value <m>E(X) = n \times \pi</m> and the standard deviation <m>SD(X) = \sqrt{n \times \pi \times (1-\pi)}</m>. It can also be shown that random variables follow these rules:</p>
@@ -5138,6 +5175,9 @@ iscambinomtest(80, 124, conf.level = 0.99)
           <solution>
             <p><m>E(\hat{p}) = E(X/n) = (1/n) \times E(X) = (1/n) \times n\pi = \pi</m></p>
             <p><m>SD(\hat{p}) = SD(X/n) = (1/n) \times SD(X) = (1/n) \times \sqrt{n\pi(1-\pi)} = \sqrt{\frac{\pi(1-\pi)}{n}}</m></p>
+            <image source="images/inv1.7-formulas.png" width="60%">
+              <description>Mathematical formulas for expected value and standard deviation of sample proportion</description>
+            </image>
           </solution>
         </exercise>
         
@@ -5150,6 +5190,11 @@ iscambinomtest(80, 124, conf.level = 0.99)
           <hint>
             <p>Calculate <m>E(\hat{p}) = 0.333</m> and <m>SD(\hat{p}) = \sqrt{\frac{0.333(0.667)}{25}}</m></p>
           </hint>
+          <solution>
+            <p><m>E(\hat{p}) = \pi = 0.333</m></p>
+            <p><m>SD(\hat{p}) = \sqrt{\frac{\pi(1-\pi)}{n}} = \sqrt{\frac{0.333(0.667)}{25}} = \sqrt{\frac{0.222}{25}} = \sqrt{0.00888} \approx 0.094</m></p>
+            <p>These values should match the mean and standard deviation shown in the applet's summary statistics.</p>
+          </solution>
         </exercise>
         
         <exercise xml:id="I1-7-j" label="I1.7j">
@@ -5161,12 +5206,22 @@ iscambinomtest(80, 124, conf.level = 0.99)
           <hint>
             <p>Think about how sample size affects variability in sample proportions.</p>
           </hint>
+          <solution>
+            <p>With n = 100, we would expect less variability in the sample proportions compared to n = 25. The distribution should still be centered at 0.333 and roughly symmetric, but with much less spread. Larger sample sizes lead to more precise estimates of the population parameter.</p>
+          </solution>
         </exercise>
         
         <exercise xml:id="I1-7-k" label="I1.7k">
           <title>Compare Distributions</title>
           <statement>
-            <p>Without pressing Reset, change the Number of candies in the applet to 100, the Number of samples to 2,000, and press Draw Samples to generate a new distribution. Check the Show previous results box to display the previous distribution in the background in light grey. Describe the behavior (shape, center, variability) of this (new) distribution and how it has changed from the previous. Focus on the most substantial change in the distribution. Is this what you expected?</p>
+            <p><ul>
+              <li>Without pressing Reset, change the Number of candies in the applet to 100.</li>
+              <li>Change the Number of samples to 2,000.</li>
+              <li>Press Draw Samples to generate a new distribution.</li>
+              <li>Check the Show previous results box to display the previous distribution in the background in light grey.</li>
+              <li>Describe the behavior (shape, center, variability) of this (new) distribution and how it has changed from the previous.</li>
+              <li>Focus on the most substantial change in the distribution. Is this what you expected?</li>
+            </ul></p>
           </statement>
           <response/>
           <hint>
@@ -5174,6 +5229,9 @@ iscambinomtest(80, 124, conf.level = 0.99)
           </hint>
           <solution>
             <p>The center remains at approximately 0.333. The shape remains roughly symmetric and mound-shaped. The most substantial change is in variability: the distribution with n = 100 has much less spread than the distribution with n = 25. This makes sense because larger sample sizes lead to less sampling variability.</p>
+            <image source="images/inv1.7-compare-n25-n100.png" width="80%">
+              <description>Comparison of sampling distributions for n=25 and n=100 showing reduced variability with larger sample size</description>
+            </image>
           </solution>
         </exercise>
         
@@ -5186,6 +5244,12 @@ iscambinomtest(80, 124, conf.level = 0.99)
           <hint>
             <p>Calculate the expected value and standard deviation for n = 5, then compare the distribution to n = 25.</p>
           </hint>
+          <solution>
+            <p>For n = 5:</p>
+            <p><m>E(\hat{p}) = \pi = 0.333</m></p>
+            <p><m>SD(\hat{p}) = \sqrt{\frac{0.333(0.667)}{5}} = \sqrt{0.0444} \approx 0.211</m></p>
+            <p>The distribution with n = 5 has much more variability (SD ≈ 0.211) compared to n = 25 (SD ≈ 0.094). The center remains at 0.333, but smaller sample sizes produce much more spread in the sample proportions.</p>
+          </solution>
         </exercise>
         
         <exercise xml:id="I1-7-m" label="I1.7m">
@@ -5206,6 +5270,11 @@ iscambinomtest(80, 124, conf.level = 0.99)
               </condition>
             </var>
           </setup>
+          <solution>
+            <p><m>\pi - 2 \times SD(\hat{p}) = 0.333 - 2(0.094) = 0.333 - 0.188 = 0.145</m></p>
+            <p><m>\pi + 2 \times SD(\hat{p}) = 0.333 + 2(0.094) = 0.333 + 0.188 = 0.521</m></p>
+            <p>These values represent the boundaries within which approximately 95% of sample proportions should fall when <m>\pi = 0.333</m> and <m>n = 25</m>.</p>
+          </solution>
         </exercise>
         
         <exercise xml:id="I1-7-n" label="I1.7n">
@@ -5225,17 +5294,28 @@ iscambinomtest(80, 124, conf.level = 0.99)
           <hint>
             <p>The percentage should be close to 95%.</p>
           </hint>
+          <solution>
+            <p>Approximately 95-96% of the samples have a sample proportion between 0.145 and 0.521 (within two standard deviations of 0.333). This percentage may vary slightly in different simulations due to random chance, but should consistently be close to 95%.</p>
+            <image source="images/inv1.7-empirical-rule.png" width="80%">
+              <description>Distribution showing approximately 95% of sample proportions falling within two standard deviations of the mean</description>
+            </image>
+          </solution>
         </exercise>
         
         <exercise xml:id="I1-7-o" label="I1.7o">
           <title>Compare for n = 100</title>
           <statement>
-            <p>Repeat (m) and (n) for n = 100 (including using the new SD and new cut-offs). How does the percentage of samples within two standard deviations of 0.333 compare?</p>
+            <p>Repeat the previous two questions (calculating cut-offs and using the applet to find the percentage) for n = 100 (including using the new SD and new cut-offs). How does the percentage of samples within two standard deviations of 0.333 compare?</p>
           </statement>
           <response/>
           <hint>
             <p>The percentage should still be close to 95%, regardless of sample size.</p>
           </hint>
+          <solution>
+            <p>For n = 100: <m>SD(\hat{p}) = \sqrt{\frac{0.333(0.667)}{100}} \approx 0.047</m></p>
+            <p>Cut-offs: <m>0.333 \pm 2(0.047)</m> gives (0.239, 0.427)</p>
+            <p>The percentage of samples within these cut-offs is still approximately 95%. While the standard deviation is smaller (less variability), the percentage within two standard deviations remains consistent regardless of sample size. This demonstrates that the empirical rule applies to the sampling distribution regardless of sample size.</p>
+          </solution>
         </exercise>
         
         <assemblage xml:id="empirical-rule">
@@ -5254,6 +5334,9 @@ iscambinomtest(80, 124, conf.level = 0.99)
             <p>Do your simulation results agree with the empirical rule?</p>
           </statement>
           <response/>
+          <solution>
+            <p>Yes, the simulation results agree well with the empirical rule. Approximately 95% of the sample proportions fall within two standard deviations of the mean (0.333), which is consistent with the empirical rule's prediction for mound-shaped, symmetric distributions.</p>
+          </solution>
         </exercise>
         
         <exercise xml:id="I1-7-q" label="I1.7q">
@@ -5277,12 +5360,21 @@ iscambinomtest(80, 124, conf.level = 0.99)
           <p>Notice that if we know the value of <m>\pi</m> and we know the sample size n, we can predict the value of the sample proportion fairly precisely. This will be very helpful to us in deciding whether an observed sample proportion is "far away" from a hypothesized value for <m>\pi</m>.</p>
         </paragraphs>
         
+        <exercises xml:id="practice-problems-1-7">
+          <title>Practice Problems</title>
+        
         <exercise xml:id="practice-1-7A" label="P1.7A">
           <title>Practice Problem 1.7A</title>
           <statement>
             <p>In this investigation, you took samples of 25 candies. Between what two values should 95% of the sample proportions fall when <m>\pi = 0.50</m>?</p>
           </statement>
           <response/>
+          <solution>
+            <p>First, calculate the standard deviation: <m>SD(\hat{p}) = \sqrt{\frac{0.50(0.50)}{25}} = \sqrt{\frac{0.25}{25}} = \sqrt{0.01} = 0.10</m></p>
+            <p>Using the empirical rule, 95% of sample proportions should fall within two standard deviations of the mean:</p>
+            <p><m>0.50 - 2(0.10) = 0.30</m> to <m>0.50 + 2(0.10) = 0.70</m></p>
+            <p>Therefore, 95% of sample proportions should fall between 0.30 and 0.70 when <m>\pi = 0.50</m> and <m>n = 25</m>.</p>
+          </solution>
         </exercise>
         
         <exercise xml:id="practice-1-7B" label="P1.7B">
@@ -5293,7 +5385,19 @@ iscambinomtest(80, 124, conf.level = 0.99)
             <p>(b) If the defendant was the father of the child, what is the probability that the mother could have had the very long (more than 280 days) or the very short (less than 230 days) pregnancy indicated by the testimony?</p>
           </statement>
           <response/>
+          <solution>
+            <p>(a) A normal model may be reasonable for pregnancy length as it is a biological variable that tends to follow a bell-shaped distribution. However, pregnancy length has a natural lower bound (cannot be too short) and may be slightly skewed. We would want to see actual data to verify the normality assumption. Given that we're told it's "approximately normally distributed," we'll proceed with that assumption.</p>
+            <p>(b) To find this probability, we need to calculate how many standard deviations 280 and 230 are from the mean of 270:</p>
+            <p>For 280 days: <m>z = \frac{280-270}{10} = \frac{10}{10} = 1</m></p>
+            <p>For 230 days: <m>z = \frac{230-270}{10} = \frac{-40}{10} = -4</m></p>
+            <p>The defendant was out of the country when the pregnancy length was between 230 and 280 days. Using the empirical rule and normal distribution tables:</p>
+            <p>• P(X > 280) = P(z > 1) ≈ 0.16 (about 16%)</p>
+            <p>• P(X &lt; 230) = P(z &lt; -4) ≈ 0.00003 (essentially 0, extremely rare)</p>
+            <p>• P(X &lt; 230 or X > 280) ≈ 0.16 (dominated by the probability of being greater than 280)</p>
+            <p>Therefore, if the defendant was the father, there is approximately a 16% probability of a pregnancy lasting more than 280 days, and virtually no chance of one lasting less than 230 days. The probability of either occurring is about 16%. While not extremely unlikely, pregnancies longer than 280 days are less common.</p>
+          </solution>
         </exercise>
+        </exercises>
       </subsection>
 
       <subsection xml:id="investigation1-8">
@@ -5409,6 +5513,9 @@ iscambinomtest(80, 124, conf.level = 0.99)
             <p>
               Because the sample size is large and <m>\pi = 0.5</m>, we expect the distribution to be symmetric and "filled in" (approximately normal).
             </p>
+            <image source="images/inv1.8-null-dist.png" width="80%">
+              <description>Binomial distribution showing approximately normal shape with mean 142 and standard deviation 8.43</description>
+            </image>
           </solution>
         </exercise>
 
@@ -5521,6 +5628,9 @@ iscambinomtest(80, 124, conf.level = 0.99)
             <p>
               Normal approximation: Approximately 0.40 - found by calculating the area under the normal curve below 135 and above 149.
             </p>
+            <image source="images/inv1.8-pvalue-comparison.png" width="80%">
+              <description>Comparison of p-values from simulation, exact binomial, and normal approximation methods</description>
+            </image>
           </solution>
         </exercise>
 
@@ -5688,41 +5798,151 @@ iscambinomtest(80, 124, conf.level = 0.99)
           </solution>
         </exercise>
 
-        <assemblage xml:id="tech-detour-one-prop-z">
-          <title>Technology Detour – One Proportion z-test</title>
-          <p>
-            <term>In Theory-Based Inference applet</term>
-          </p>
-          <p>
-            <ul>
-              <li>Enter the sample size and either the count or the proportion of successes, press Calculate to display sample data.</li>
-              <li>Check the box for Test of significance</li>
-              <li>Specify the hypothesized value</li>
-              <li>Use the button to specify the direction of the alternative.</li>
-              <li>Press the Calculate button.</li>
-            </ul>
-          </p>
-          <p>
-            <term>In R</term>: The <c>iscamonepropztest(observed, n, hypothesized, alternative)</c> takes the following inputs:
-          </p>
-          <p>
-            <ul>
-              <li>observed = the observation of interest</li>
-              <li>n = the sample size</li>
-              <li>hypothesized = the hypothesized process probability (<m>\pi</m>)</li>
-              <li>alternative = "below," "above," or "two.sided"</li>
-            </ul>
-          </p>
-          <p>
-            <term>In JMP</term>: Using the ISCAM Journal file, select Hypothesis Test for One Proportion
-          </p>
-          <p>
-            <ul>
-              <li>Use Raw Data or Summary Stats</li>
-              <li>Remember to specify a direction for the alternative, a hypothesized proportion, and a significance level (e.g., .05)</li>
-            </ul>
-          </p>
-        </assemblage>
+        <exercise xml:id="tech-detour-one-prop-z-applet" label="Tech1.8.applet">
+          <title>Technology Detour – One Proportion z-test (Theory-Based Inference Applet)</title>
+          <statement>
+            <p>
+              Use the Theory-Based Inference applet to conduct a one proportion z-test:
+            </p>
+            <p>
+              <ul>
+                <li>Enter the sample size and either the count or the proportion of successes, press Calculate to display sample data.</li>
+                <li>Check the box for Test of significance</li>
+                <li>Specify the hypothesized value</li>
+                <li>Use the button to specify the direction of the alternative.</li>
+                <li>Press the Calculate button.</li>
+              </ul>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              For the Halloween study, enter n = 284 and either 135 successes or 0.475 as the proportion. Set the hypothesized value to 0.5 and select a two-sided alternative.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              The applet will display:
+            </p>
+            <p>
+              <ul>
+                <li>Sample statistic: <m>\hat{p} = 0.475</m></li>
+                <li>Standardized statistic: <m>z \approx -0.84</m></li>
+                <li>Two-sided p-value: approximately 0.40</li>
+                <li>A normal curve with the shaded rejection regions</li>
+              </ul>
+            </p>
+            <p>
+              The applet confirms that there is not strong evidence against the null hypothesis that children choose equally between toys and candy.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="tech-detour-one-prop-z-r" label="Tech1.8.R">
+          <title>Technology Detour – One Proportion z-test (R)</title>
+          <statement>
+            <p>
+              Use R to conduct a one proportion z-test. The <c>iscamonepropztest(observed, n, hypothesized, alternative)</c> function takes the following inputs:
+            </p>
+            <p>
+              <ul>
+                <li>observed = the observation of interest (count or proportion)</li>
+                <li>n = the sample size</li>
+                <li>hypothesized = the hypothesized process probability (<m>\pi</m>)</li>
+                <li>alternative = "below," "above," or "two.sided"</li>
+              </ul>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              For the Halloween study, you could use:
+            </p>
+            <p>
+              <c>iscamonepropztest(135, 284, 0.5, "two.sided")</c>
+            </p>
+            <p>
+              or
+            </p>
+            <p>
+              <c>iscamonepropztest(0.475, 284, 0.5, "two.sided")</c>
+            </p>
+          </hint>
+          <solution>
+            <p>
+              Running the command:
+            </p>
+            <program language="r">
+              <input>
+library(iscam)
+iscamonepropztest(135, 284, 0.5, "two.sided")
+              </input>
+            </program>
+            <p>
+              Should produce output including:
+            </p>
+            <p>
+              <ul>
+                <li>Sample proportion: 0.4754</li>
+                <li>z-statistic: -0.84</li>
+                <li>Two-sided p-value: 0.40</li>
+              </ul>
+            </p>
+            <p>
+              The function will also display a graph showing the standard normal distribution with the test statistic and shaded p-value region.
+            </p>
+            <image source="images/inv1.8-R-output.png" width="80%">
+              <description>R output showing one proportion z-test results with standard normal curve and shaded p-value regions</description>
+            </image>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="tech-detour-one-prop-z-jmp" label="Tech1.8.JMP">
+          <title>Technology Detour – One Proportion z-test (JMP)</title>
+          <statement>
+            <p>
+              Using the ISCAM Journal file in JMP, select Hypothesis Test for One Proportion:
+            </p>
+            <p>
+              <ul>
+                <li>Use Raw Data or Summary Stats</li>
+                <li>Remember to specify a direction for the alternative, a hypothesized proportion, and a significance level (e.g., .05)</li>
+              </ul>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              For the Halloween study:
+            </p>
+            <p>
+              <ul>
+                <li>Select Summary Stats</li>
+                <li>Enter n = 284, number of successes = 135</li>
+                <li>Hypothesized proportion = 0.5</li>
+                <li>Select "not equal" for two-sided test</li>
+                <li>Significance level = 0.05</li>
+              </ul>
+            </p>
+          </hint>
+          <solution>
+            <p>
+              JMP will display a comprehensive output including:
+            </p>
+            <p>
+              <ul>
+                <li>Sample proportion: 0.475</li>
+                <li>Standard error: 0.0297</li>
+                <li>z-statistic: -0.84</li>
+                <li>Two-sided p-value: 0.40</li>
+                <li>A visual representation of the test</li>
+              </ul>
+            </p>
+            <p>
+              The output will indicate that we fail to reject the null hypothesis at the 0.05 significance level.
+            </p>
+            <image source="images/inv1.8-JMP-output.png" width="80%">
+              <description>JMP output showing one proportion z-test results with test statistics and visual representation</description>
+            </image>
+          </solution>
+        </exercise>
 
         <exercise xml:id="I1-8-n" label="I1.8n">
           <statement>
@@ -5843,28 +6063,89 @@ iscambinomtest(80, 124, conf.level = 0.99)
           Many software programs allow you to apply this continuity correction for a one-sample z-test (e.g., using <m>\hat{p} = (X \pm 0.5)/n</m> as the input) or may do so by default. However, when n is large, you may not see much difference in the values.
         </p>
 
-        <assemblage xml:id="tech-detour-continuity-correction">
-          <title>Technology Detour – Continuity Correction</title>
-          <p>
-            <term>In Theory-Based Inference applet</term>
-          </p>
-          <p>
-            <ul>
-              <li>Check the continuity correction box to apply the continuity correction to the standardized statistic and p-value.</li>
-            </ul>
-          </p>
-          <p>
-            <term>In R</term>: The <c>iscambinomnorm(k, n, prob, direction)</c> function gives a visual of this continuity correction. It takes the following inputs:
-          </p>
-          <p>
-            <ul>
-              <li>k = the observation of interest</li>
-              <li>n = the sample size</li>
-              <li>prob = the process probability (<m>\pi</m>)</li>
-              <li>direction = "below," "above," or "two.sided"</li>
-            </ul>
-          </p>
-        </assemblage>
+        <exercise xml:id="tech-detour-continuity-correction-applet" label="Tech1.8.CC.applet">
+          <title>Technology Detour – Continuity Correction (Theory-Based Inference Applet)</title>
+          <statement>
+            <p>
+              Use the Theory-Based Inference applet to apply a continuity correction:
+            </p>
+            <p>
+              <ul>
+                <li>Check the continuity correction box to apply the continuity correction to the standardized statistic and p-value.</li>
+              </ul>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              For the Halloween study, after entering the data (n = 284, 135 successes), check the continuity correction box and observe how the p-value changes.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              With the continuity correction applied:
+            </p>
+            <p>
+              <ul>
+                <li>The p-value changes from approximately 0.4061 to 0.4382</li>
+                <li>This is much closer to the exact binomial p-value of 0.4405</li>
+                <li>The continuity correction adjusts for the fact that we're using a continuous distribution (normal) to approximate a discrete distribution (binomial)</li>
+              </ul>
+            </p>
+            <image source="images/inv1.8-continuity-correction.png" width="80%">
+              <description>Comparison of normal approximation with and without continuity correction showing improved accuracy</description>
+            </image>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="tech-detour-continuity-correction-r" label="Tech1.8.CC.R">
+          <title>Technology Detour – Continuity Correction (R)</title>
+          <statement>
+            <p>
+              The <c>iscambinomnorm(k, n, prob, direction)</c> function gives a visual of the continuity correction. It takes the following inputs:
+            </p>
+            <p>
+              <ul>
+                <li>k = the observation of interest</li>
+                <li>n = the sample size</li>
+                <li>prob = the process probability (<m>\pi</m>)</li>
+                <li>direction = "below," "above," or "two.sided"</li>
+              </ul>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              For the Halloween study, try:
+            </p>
+            <p>
+              <c>iscambinomnorm(135, 284, 0.5, "two.sided")</c>
+            </p>
+          </hint>
+          <solution>
+            <p>
+              Running the command:
+            </p>
+            <program language="r">
+              <input>
+library(iscam)
+iscambinomnorm(135, 284, 0.5, "two.sided")
+              </input>
+            </program>
+            <p>
+              This function creates a graph showing:
+            </p>
+            <p>
+              <ul>
+                <li>The binomial distribution (bars)</li>
+                <li>The normal approximation (curve)</li>
+                <li>The continuity correction boundaries at 135.5 and 148.5</li>
+                <li>The corrected p-value of approximately 0.4382</li>
+              </ul>
+            </p>
+            <p>
+              The visualization clearly shows how the continuity correction includes more area under the normal curve to better match the binomial probabilities.
+            </p>
+          </solution>
+        </exercise>
 
         <conclusion>
           <title>Study Conclusions</title>
@@ -5895,6 +6176,20 @@ iscambinomtest(80, 124, conf.level = 0.99)
                 (c) Repeat (b) using the continuity correction and compare the results.
               </p>
             </statement>
+            <solution>
+              <p>(a) To check if the normal approximation is valid, we calculate <m>n\pi</m> and <m>n(1-\pi)</m> where <m>n = 124</m> and <m>\pi = 2/3</m>:</p>
+              <p><m>n\pi = 124(2/3) \approx 82.67 \geq 10</m> ✓</p>
+              <p><m>n(1-\pi) = 124(1/3) \approx 41.33 \geq 10</m> ✓</p>
+              <p>Yes, the normal approximation is valid because both values are at least 10.</p>
+              <p>(b) Sample proportion: <m>\hat{p} = 80/124 = 0.645</m></p>
+              <p>Standard error: <m>SE = \sqrt{\frac{(2/3)(1/3)}{124}} = \sqrt{\frac{0.222}{124}} \approx 0.0423</m></p>
+              <p>z-statistic: <m>z = \frac{0.645 - 0.667}{0.0423} = \frac{-0.022}{0.0423} \approx -0.52</m></p>
+              <p>Two-sided p-value: <m>P(|Z| > 0.52) \approx 2(0.301) = 0.602</m></p>
+              <p>The standardized statistic and p-value agree (small |z| corresponds to large p-value). The normal-based p-value should be very close to the exact binomial p-value for this study since the sample size is large enough for the normal approximation to work well.</p>
+              <p>(c) With continuity correction for two-sided test: <m>z = \frac{|0.645 - 0.667| - \frac{1}{2(124)}}{0.0423} = \frac{0.022 - 0.004}{0.0423} = \frac{0.018}{0.0423} \approx 0.43</m></p>
+              <p>Two-sided p-value with continuity correction: <m>P(|Z| > 0.43) \approx 2(0.334) = 0.668</m></p>
+              <p>The continuity correction slightly increases the p-value (from 0.602 to 0.668), making it even more conservative. The correction brings the normal approximation slightly closer to the exact binomial result.</p>
+            </solution>
           </exercise>
 
           <exercise xml:id="P1-8B">
@@ -5919,6 +6214,18 @@ iscambinomtest(80, 124, conf.level = 0.99)
                 (e) How would your answers to the previous questions change if we had used the red ball as success?
               </p>
             </statement>
+            <solution>
+              <p>(a) <m>H_0: \pi = 0.50</m>, where <m>\pi</m> is the long-run proportion of times Muffin chases the blue ball.</p>
+              <p><m>H_a: \pi \neq 0.50</m> (two-sided test, since we're assessing whether Muffin tends to chase one ball more than the other)</p>
+              <p>(b) Sample proportion: <m>\hat{p} = 52/96 = 0.542</m></p>
+              <p>Standard error: <m>SE = \sqrt{\frac{0.50(0.50)}{96}} = \sqrt{\frac{0.25}{96}} \approx 0.051</m></p>
+              <p>With continuity correction: <m>z = \frac{|0.542 - 0.50| - \frac{1}{2(96)}}{0.051} = \frac{0.042 - 0.0052}{0.051} = \frac{0.0368}{0.051} \approx 0.72</m></p>
+              <p>Two-sided p-value: <m>P(|Z| > 0.72) \approx 2(0.236) = 0.472</m></p>
+              <p>The p-value of 0.472 indicates that if Muffin truly has no preference (chases each ball equally often), there is about a 47% chance of observing a result at least as extreme as what we got (52 out of 96 toward one ball).</p>
+              <p>(c) With a p-value of 0.472, we fail to reject the null hypothesis. There is insufficient evidence to conclude that Muffin prefers one ball over the other. The observed difference (52 vs 44) could easily be due to random chance.</p>
+              <p>(d) The reasoning: We assume Muffin has no preference (<m>\pi = 0.50</m>). Under this assumption, we expect about 48 chases of each ball in 96 trials. We observed 52 blue and 44 red, a difference of 8 from equal. The p-value tells us that differences this large or larger would occur about 47% of the time just by random chance. Since this is quite likely under the null hypothesis, we don't have strong evidence against it.</p>
+              <p>(e) If we used the red ball as success, <m>\hat{p} = 44/96 = 0.458</m>. The z-statistic would be <m>z = \frac{|0.458 - 0.50| - \frac{1}{2(96)}}{0.051} \approx 0.72</m> (same magnitude, opposite direction). The p-value would remain 0.472, and the conclusion would be identical. The choice of which outcome to call "success" doesn't affect the two-sided test results.</p>
+            </solution>
           </exercise>
         </exercises>
 
