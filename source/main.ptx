@@ -4470,16 +4470,16 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
       </subsection>
     </subsection>
     
-    <p>In the previous investigation, you learned how to decide whether a hypothesized value of the parameter is plausible based on a two-sided p-value. The two-sided p-value is used when you do not have a prior suspicion or interest in whether the hypothesized value is too large or too small. In fact, in many studies we may not even really have a hypothesized value, but are more interested in using the sample data to estimate the value of the parameter. What are all the plausible values for the parameter?</p>
+    <insight>
+      <p>In the previous investigation, you learned how to decide whether a hypothesized value of the parameter is plausible based on a two-sided p-value. The two-sided p-value is used when you do not have a prior suspicion or interest in whether the hypothesized value is too large or too small. In fact, in many studies we may not even really have a hypothesized value, but are more interested in using the sample data to estimate the value of the parameter. What are all the plausible values for the parameter?</p>
+    </insight>
     
     <subsection xml:id="investigation-1-6">
       <title>Investigation 1.6: Kissing the Right Way</title>
       
       <sidebyside widths="58% 38%">
-        <stack>
-          <p>Most people are right-handed and even the right eye is dominant for most people. Researchers have long believed that late-stage human embryos tend to turn their heads to the right. German bio-psychologist Onur Güntürkün (<url href="https://www.nature.com/articles/421711a" target="_blank">Nature, 2003</url>) conjectured that this tendency to turn to the right manifests itself in other ways as well, so he studied kissing couples to see whether both people tend to lean their heads to the right more often than to their left (and if so, how strong the tendency is).</p>
-        </stack>
-        <image source="images/Inv1.6intro.jpg" width="100%">
+        <p>Most people are right-handed and even the right eye is dominant for most people. Researchers have long believed that late-stage human embryos tend to turn their heads to the right. German bio-psychologist Onur Güntürkün (<url href="https://www.nature.com/articles/421711a" target="_blank"><em>Nature</em>, 2003</url>) conjectured that this tendency to turn to the right manifests itself in other ways as well, so he studied kissing couples to see whether both people tend to lean their heads to the right more often than to their left (and if so, how strong the tendency is).</p>
+        <image source="assets/images/Inv1.6intro.jpg" width="100%">
           <description>Kissing couples investigation introduction</description>
         </image>
       </sidebyside>
@@ -4510,13 +4510,19 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
         <statement>
           <p>If Dr. Güntürkün wants to investigate whether a majority of kissing couples lean right in the long run, is this a one-sided or a two-sided test?</p>
         </statement>
-        <response/>
+        <choices randomize="no">
+          <choice correct="yes">
+            <statement><p>One-sided test</p></statement>
+            <feedback><p>Correct! Testing for a "majority" means <m>\pi > 0.5</m>, which is a one-sided alternative.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p>Two-sided test</p></statement>
+            <feedback><p>Not quite. A "majority" suggests a specific direction (greater than 0.5), so this is one-sided.</p></feedback>
+          </choice>
+        </choices>
         <hint>
           <p>Does "majority" suggest a specific direction?</p>
         </hint>
-        <solution>
-          <p>One-sided test (specifically <m>\pi > 0.5</m>)</p>
-        </solution>
       </exercise>
       
       <exercise xml:id="I1-6-3" label="I1.6.3">
@@ -4524,15 +4530,19 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
         <statement>
           <p>Dr. Güntürkün actually conjectured that 2/3 of kissing couples would lean right in the long run. State appropriate null and alternative hypotheses for his conjecture.</p>
         </statement>
-        <response/>
+        <matches>
+          <match order="1">
+            <premise>Dr. Güntürkün Alternative Hypothesis</premise>
+            <response><m>\pi \neq 0.667</m></response>
+          </match>
+          <match order="2">
+            <premise>Dr. Güntürkün Null Hypothesis</premise>
+            <response><m>\pi = 0.667</m></response>
+          </match>
+        </matches>
         <hint>
-          <p>The conjecture becomes the alternative hypothesis.</p>
+          <p>We're testing whether the data support this specific value of 2/3.</p>
         </hint>
-        <solution>
-          <p><m>H_0: \pi = 2/3</m> (or <m>\pi = 0.667</m>)</p>
-          <p><m>H_a: \pi \neq 2/3</m> (two-sided, since we want to see if the data support this specific value)</p>
-          <p>Or if testing whether it's at least 2/3: <m>H_a: \pi > 2/3</m></p>
-        </solution>
       </exercise>
       
       <exercise xml:id="I1-6-4" label="I1.6.4">
@@ -4540,14 +4550,19 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
         <statement>
           <p>A Tic-Tac ad once claimed 74% of kissing couples lean right. State appropriate null and alternative hypotheses for investigating this ad's claim.</p>
         </statement>
-        <response/>
+        <matches>
+          <match order="1">
+            <premise>Tic-Tac Alternative Hypothesis</premise>
+            <response><m>\pi \neq 0.74</m></response>
+          </match>
+          <match order="2">
+            <premise>Tic-Tac Null Hypothesis</premise>
+            <response><m>\pi = 0.74</m></response>
+          </match>
+        </matches>
         <hint>
-          <p>We want to test if the claim is accurate.</p>
+          <p>We want to test if the claim is accurate using a two-sided test.</p>
         </hint>
-        <solution>
-          <p><m>H_0: \pi = 0.74</m></p>
-          <p><m>H_a: \pi \neq 0.74</m> (two-sided)</p>
-        </solution>
       </exercise>
       
       <exercise xml:id="I1-6-5" label="I1.6.5">
@@ -4742,19 +4757,6 @@ iscambinomtest(observed, n, conf.level = )
             <p>Can enter either sample count or sample proportion for "observed."</p>
             <p>Be sure to label the confidence level. You can enter the proportion or the percentage value.</p>
             
-            <p><alert>Output from R:</alert></p>
-            <p>The <c>iscambinomtest</c> includes some interesting graphs.</p>
-            <p><ul>
-              <li><p>The bottom graph illustrates the 95% confidence interval. The interval is centered at the observed sample proportion <m>\hat{p}</m> and displays the two endpoints of the interval of plausible values for the process probability.</p></li>
-              <li><p>The top graph shows the distribution assuming the lower value of the confidence interval as the process probability. This is as far left as we can shift that null distribution before the area to the right of the observed number of successes, 80, dips below 0.025.</p></li>
-              <li><p>The middle graph shows how far we can move that distribution to the right (largest plausible value of <m>\pi</m>) before the probability below 80 dips below 0.025.</p></li>
-            </ul></p>
-            
-            <figure>
-              <image source="images/iscambinomtestRoutput.png" width="75%">
-                <description>R output from iscambinomtest showing three graphs - top and middle showing binomial distributions at interval endpoints, bottom showing confidence interval</description>
-              </image>
-            </figure>
           </statement>
         </exercise>
         
@@ -4782,6 +4784,22 @@ iscambinomtest(observed, n, conf.level = )
           <p>The Blaker 99% interval is typically narrower than the Clopper-Pearson 99% interval, which is one reason it's gaining favor in practice.</p>
         </solution>
       </exercise>
+      
+      <paragraphs>
+        <title>Output from R</title>
+        <p>The <c>iscambinomtest</c> function includes some interesting graphs.</p>
+        <p><ul>
+          <li><p>The bottom graph illustrates the 95% confidence interval. The interval is centered at the observed sample proportion <m>\hat{p}</m> and displays the two endpoints of the interval of plausible values for the process probability.</p></li>
+          <li><p>The top graph shows the distribution assuming the lower value of the confidence interval as the process probability. This is as far left as we can shift that null distribution before the area to the right of the observed number of successes, 80, dips below 0.025.</p></li>
+          <li><p>The middle graph shows how far we can move that distribution to the right (largest plausible value of <m>\pi</m>) before the probability below 80 dips below 0.025.</p></li>
+        </ul></p>
+        
+        <figure>
+          <image source="assets/images/iscambinomtestRoutput.png" width="75%">
+            <description>R output from iscambinomtest showing three graphs - top and middle showing binomial distributions at interval endpoints, bottom showing confidence interval</description>
+          </image>
+        </figure>
+      </paragraphs>
       
       <subsection xml:id="practice1-6">
         <title>Practice Problem 1.6</title>
