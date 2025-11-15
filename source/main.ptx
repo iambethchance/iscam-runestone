@@ -4320,9 +4320,9 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
       <assemblage xml:id="study-conclusions-1-5">
         <title>Study Conclusions</title>
         <p>These data (19 out of 48) do not provide convincing evidence against the null hypothesis that toast buttered on one side is equally likely to land butter side up or down (two-sided p-value = 0.1934). In other words, it is plausible that this is a 50/50 process. However, this analysis cannot be used as proof that π = 0.50, as other values could be plausible as well. The sample data allow for many (technically, infinitely many) plausible values of this probability, as you will explore in the next investigation.</p>
-        
-        <p><alert>Discussion:</alert> Recall that the process we are using to testing our hypotheses is to first assume the null hypothesis is true. For this reason, we can never use this process as evidence <em>for</em> the null hypothesis, only lack of evidence <em>against</em> it. Keep in mind the saying "Absence of evidence is not evidence of absence." Also, note that our evidence depends on the form of the alternative hypothesis. A more complete statement is that we do not have evidence in favor of the alternative that we specified, and that our strength of evidence could differ if we started with a different alternative hypothesis.</p>
       </assemblage>
+      
+      <p><alert>Discussion:</alert> Recall that the process we are using to testing our hypotheses is to first assume the null hypothesis is true. For this reason, we can never use this process as evidence <em>for</em> the null hypothesis, only lack of evidence <em>against</em> it. Keep in mind the saying "Absence of evidence is not evidence of absence." Also, note that our evidence depends on the form of the alternative hypothesis. A more complete statement is that we do not have evidence in favor of the alternative that we specified, and that our strength of evidence could differ if we started with a different alternative hypothesis.</p>
       
       <paragraphs xml:id="tech-detour-two-sided">
         <title>Technology Detour – Two-sided p-values</title>
@@ -4350,6 +4350,15 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
               </input>
             </program>
           </statement>
+          <solution>
+            <p>The output will show:</p>
+            <ul>
+              <li><p>The observed number of successes (19) and sample size (48)</p></li>
+              <li><p>The hypothesized probability (0.5)</p></li>
+              <li><p>The two-sided p-value: 0.1934</p></li>
+              <li><p>A graph showing the binomial distribution with both tails shaded</p></li>
+            </ul>
+          </solution>
         </exercise>
         
         <exercise xml:id="tech-detour-two-sided-jmp" label="Two-sided - JMP">
@@ -4363,6 +4372,9 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
               </image>
             </figure>
           </statement>
+          <solution>
+            <p>The output table will show the two-sided p-value for the exact binomial test. For the buttered toast example with 19 successes out of 48 trials and hypothesized probability of 0.5, the two-sided p-value should be approximately 0.1934.</p>
+          </solution>
         </exercise>
       </paragraphs>
       
