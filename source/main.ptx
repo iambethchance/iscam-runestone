@@ -4834,7 +4834,7 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
         </solution>
       </exercise>
       
-      <project xml:id="probability-detour-ci-methods">
+      <exploration xml:id="probability-detour-ci-methods">
         <title>Probability Detour – Binomial Confidence Intervals</title>
         
         <p>Probably the most well-known binomial confidence interval method is the <term>Clopper-Pearson method</term> (Biometrika, 1934). Rather than using two-sided p-values, it will consider a value for <m>\pi</m> plausible as long as the one-sided tail probability is smaller than (1 – confidence level)/2. One advantage of the Clopper-Pearson method is there is a simple computer algorithm for finding it, rather than needing to check all values as you have done here.</p>
@@ -4844,7 +4844,7 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
         <p>Another approach would be to use the "smallest p-value" approach for the two-sided p-value, switching to using P(X = x) to find values of x more extreme than observed in finding the two-sided p-value. This method, attributed to <term>Sterne</term> (Biometrika, 1954), has the disadvantage that the interval produced can have holes! For example, a value like 0.12 may be in the interval of plausible values, the value 0.13 may not, and the value 0.14 may be again.</p>
         
         <p>Many prefer the Blaker method to the holes of the Sterne method, and Blaker's method is now gaining favor over Clopper-Pearson because the intervals tend to be shorter. We will see some other methods later in this text as well. For now, keep in mind the likely duality between confidence intervals and tests of significance: The confidence interval is the set of values for which we would fail to reject the null hypothesis in favor of the two-sided alternative. So we can interpret the confidence interval as the set of plausible values for the parameter in that they are the values such that our observed sample result would not be surprising. Keep in mind that saying a value is <em>plausible</em> is not the same as saying a value is <em>probable</em>. We won't make probability statements about parameter values in this text.</p>
-      </project>
+      </exploration>
       
       <exercise xml:id="I1-6-11" label="I1.6.11">
         <title>Misinterpreting Confidence</title>
