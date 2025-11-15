@@ -5122,8 +5122,8 @@ iscambinomtest(80, 124, conf.level = 0.99)
               <li>Click the Draw Samples button.</li>
               <li>The applet will randomly select a sample of 25 candies, sort them, and report the sample number of orange candies.</li>
               <li>Click the Draw Samples button again.</li>
-              <li>Did you get the same number of orange candies both times?</li>
-            </ul></p>
+            </ul>
+            <p>Did you get the same number of orange candies both times?</p>
           </statement>
           <response/>
           <hint>
@@ -5214,14 +5214,14 @@ iscambinomtest(80, 124, conf.level = 0.99)
         <exercise xml:id="I1-7-k" label="I1.7k">
           <title>Compare Distributions</title>
           <statement>
-            <p><ul>
+            <p>In the applet: <ul>
               <li>Without pressing Reset, change the Number of candies in the applet to 100.</li>
               <li>Change the Number of samples to 2,000.</li>
               <li>Press Draw Samples to generate a new distribution.</li>
               <li>Check the Show previous results box to display the previous distribution in the background in light grey.</li>
               <li>Describe the behavior (shape, center, variability) of this (new) distribution and how it has changed from the previous.</li>
-              <li>Focus on the most substantial change in the distribution. Is this what you expected?</li>
             </ul></p>
+            <p>Focus on the most substantial change in the distribution. Is this what you expected?</p>
           </statement>
           <response/>
           <hint>
@@ -5238,7 +5238,7 @@ iscambinomtest(80, 124, conf.level = 0.99)
         <exercise xml:id="I1-7-l" label="I1.7l">
           <title>Smaller Sample Size</title>
           <statement>
-            <p>Repeat parts (i) and (j) for a sample size of n = 5 candies.</p>
+            <p>Repeat the previous two questions (verifying formulas and predicting larger sample) for a sample size of n = 5 candies.</p>
           </statement>
           <response/>
           <hint>
@@ -5369,33 +5369,23 @@ iscambinomtest(80, 124, conf.level = 0.99)
             <p>In this investigation, you took samples of 25 candies. Between what two values should 95% of the sample proportions fall when <m>\pi = 0.50</m>?</p>
           </statement>
           <response/>
-          <solution>
-            <p>First, calculate the standard deviation: <m>SD(\hat{p}) = \sqrt{\frac{0.50(0.50)}{25}} = \sqrt{\frac{0.25}{25}} = \sqrt{0.01} = 0.10</m></p>
-            <p>Using the empirical rule, 95% of sample proportions should fall within two standard deviations of the mean:</p>
-            <p><m>0.50 - 2(0.10) = 0.30</m> to <m>0.50 + 2(0.10) = 0.70</m></p>
-            <p>Therefore, 95% of sample proportions should fall between 0.30 and 0.70 when <m>\pi = 0.50</m> and <m>n = 25</m>.</p>
-          </solution>
         </exercise>
         
         <exercise xml:id="practice-1-7B" label="P1.7B">
           <title>Practice Problem 1.7B</title>
           <statement>
             <p>An expert witness in a paternity suit testifies that the length (in days) of pregnancy (the time from conception to delivery of the child) is approximately normally distributed with mean <m>\mu = 270</m> days and standard deviation <m>\sigma = 10</m> days. The defendant in the suit is able to prove that he was out of the country during a period that began 280 days before the birth of the child and ended 230 days before the birth of the child.</p>
-            <p>(a) Does a normal model seem to be a reasonable assumption here? Explain why or why not or how you might decide.</p>
-            <p>(b) If the defendant was the father of the child, what is the probability that the mother could have had the very long (more than 280 days) or the very short (less than 230 days) pregnancy indicated by the testimony?</p>
+            <p>Does a normal model seem to be a reasonable assumption here? Explain why or why not or how you might decide.</p>
           </statement>
           <response/>
-          <solution>
-            <p>(a) A normal model may be reasonable for pregnancy length as it is a biological variable that tends to follow a bell-shaped distribution. However, pregnancy length has a natural lower bound (cannot be too short) and may be slightly skewed. We would want to see actual data to verify the normality assumption. Given that we're told it's "approximately normally distributed," we'll proceed with that assumption.</p>
-            <p>(b) To find this probability, we need to calculate how many standard deviations 280 and 230 are from the mean of 270:</p>
-            <p>For 280 days: <m>z = \frac{280-270}{10} = \frac{10}{10} = 1</m></p>
-            <p>For 230 days: <m>z = \frac{230-270}{10} = \frac{-40}{10} = -4</m></p>
-            <p>The defendant was out of the country when the pregnancy length was between 230 and 280 days. Using the empirical rule and normal distribution tables:</p>
-            <p>• P(X > 280) = P(z > 1) ≈ 0.16 (about 16%)</p>
-            <p>• P(X &lt; 230) = P(z &lt; -4) ≈ 0.00003 (essentially 0, extremely rare)</p>
-            <p>• P(X &lt; 230 or X > 280) ≈ 0.16 (dominated by the probability of being greater than 280)</p>
-            <p>Therefore, if the defendant was the father, there is approximately a 16% probability of a pregnancy lasting more than 280 days, and virtually no chance of one lasting less than 230 days. The probability of either occurring is about 16%. While not extremely unlikely, pregnancies longer than 280 days are less common.</p>
-          </solution>
+        </exercise>
+        
+        <exercise xml:id="practice-1-7C" label="P1.7C">
+          <title>Practice Problem 1.7C</title>
+          <statement>
+            <p>Continuing with the paternity suit scenario from the previous problem: If the defendant was the father of the child, what is the probability that the mother could have had the very long (more than 280 days) or the very short (less than 230 days) pregnancy indicated by the testimony?</p>
+          </statement>
+          <response/>
         </exercise>
         </exercises>
       </subsection>
