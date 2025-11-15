@@ -3998,6 +3998,12 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
     <subsection xml:id="investigation-1-5">
       <title>Investigation 1.5: Buttered Toast</title>
       
+      <figure>
+        <image source="images/1.5intro.png" width="60%">
+          <description>MythBusters buttered toast investigation introduction</description>
+        </image>
+      </figure>
+      
       <p>The folks at MythBusters, a popular television program on the Discovery Channel, wanted to investigate whether a piece of toast that has been buttered on one side is more likely to land butter/messy side down or butter-side up. First, they wanted to design a toast-dropping rig that would have no built-in bias for unbuttered toast to land on either side when dropped. For this pilot study, they labeled the sides "top" and "bottom" for ten unbuttered pieces of toast and counted how many landed "top-down."</p>
       
       <exercise xml:id="I1-5-1" label="I1.5.1">
@@ -4102,7 +4108,7 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
       <exercise xml:id="I1-5-5" label="I1.5.5">
         <title>Calculate One-Sided Probability</title>
         <statement>
-          <p>In this pilot study, the toast landed top-down 3 times and top-up 7 times. Use the One Proportion Inference applet to calculate the binomial probability of 3 or fewer successes in 10 attempts, assuming the null hypothesis is true (i.e., P(X ≤ 3) where X is the number landing top-down).</p>
+          <p>In this pilot study, the toast landed top-down 3 times and top-up 7 times. Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" target="_blank">One Proportion Inference applet</url> to calculate the binomial probability of 3 or fewer successes in 10 attempts, assuming the null hypothesis is true (i.e., P(X ≤ 3) where X is the number landing top-down).</p>
         </statement>
         <response/>
         <hint>
@@ -4265,6 +4271,12 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
       
       <p>After building a new rig (that they were more confident had no bias), they used the rig to drop buttered toast from the roof of a building. The Mythbusters weren't sure whether the toast would land butter-side down (as in the myth) or whether, like a curved leaf falling from a tree, the toast might try to "right itself" and land with the indented side (from being buttered) down. So again, they wanted to use a two-sided alternative hypothesis, allowing for either possibility to be of interest.</p>
       
+      <figure>
+        <image source="images/inv1.5After.png" width="60%">
+          <description>MythBusters dropping buttered toast from building</description>
+        </image>
+      </figure>
+      
       <p>They dropped 48 pieces of toast, with 19 landing butter-side-down.</p>
       
       <exercise xml:id="I1-5-15" label="I1.5.15">
@@ -4325,6 +4337,12 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
           <title>Two-sided p-values in JMP</title>
           <statement>
             <p><alert>Note:</alert> The default two-sided test under Analyze > Distribution is not an "exact" binomial test.</p>
+            
+            <figure>
+              <image source="images/JMPtwosided.png" width="60%">
+                <description>JMP two-sided binomial test output</description>
+              </image>
+            </figure>
           </statement>
         </exercise>
       </paragraphs>
