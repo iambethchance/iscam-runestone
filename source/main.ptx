@@ -4470,19 +4470,21 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
       </subsection>
     </subsection>
     
+    <p>In the previous investigation, you learned how to decide whether a hypothesized value of the parameter is plausible based on a two-sided p-value. The two-sided p-value is used when you do not have a prior suspicion or interest in whether the hypothesized value is too large or too small. In fact, in many studies we may not even really have a hypothesized value, but are more interested in using the sample data to estimate the value of the parameter. What are all the plausible values for the parameter?</p>
+    
     <subsection xml:id="investigation-1-6">
       <title>Investigation 1.6: Kissing the Right Way</title>
       
       <sidebyside widths="58% 38%">
         <stack>
-          <p>In the previous investigation, you learned how to decide whether a hypothesized value of the parameter is plausible based on a two-sided p-value. The two-sided p-value is used when you do not have a prior suspicion or interest in whether the hypothesized value is too large or too small. In fact, in many studies we may not even really have a hypothesized value, but are more interested in using the sample data to estimate the value of the parameter. What are all the plausible values for the parameter?</p>
-          
-          <p>Most people are right-handed and even the right eye is dominant for most people. Researchers have long believed that late-stage human embryos tend to turn their heads to the right. German bio-psychologist Onur Güntürkün (<url href="https://www.nature.com/articles/421711a" target="_blank">Nature, 2003</url>) conjectured that this tendency to turn to the right manifests itself in other ways as well, so he studied kissing couples to see whether both people tend to lean their heads to the right more often than to their left (and if so, how strong the tendency is). He and his researchers observed couples from age 13 to 70 in public places such as airports, train stations, beaches, and parks in the United States, Germany, and Turkey. The observers were careful not to include couples who were holding objects such as luggage that might have affected which direction they turned. We will model the overall decision-making process when kissing as a binomial random process.</p>
+          <p>Most people are right-handed and even the right eye is dominant for most people. Researchers have long believed that late-stage human embryos tend to turn their heads to the right. German bio-psychologist Onur Güntürkün (<url href="https://www.nature.com/articles/421711a" target="_blank">Nature, 2003</url>) conjectured that this tendency to turn to the right manifests itself in other ways as well, so he studied kissing couples to see whether both people tend to lean their heads to the right more often than to their left (and if so, how strong the tendency is).</p>
         </stack>
         <image source="images/Inv1.6intro.jpg" width="100%">
           <description>Kissing couples investigation introduction</description>
         </image>
       </sidebyside>
+      
+      <p>He and his researchers observed couples from age 13 to 70 in public places such as airports, train stations, beaches, and parks in the United States, Germany, and Turkey. The observers were careful not to include couples who were holding objects such as luggage that might have affected which direction they turned. We will model the overall decision-making process when kissing as a binomial random process.</p>
       
       <exercise xml:id="I1-6-1" label="I1.6.1">
         <title>Identify Sample, Variable, and Parameter</title>
@@ -4660,9 +4662,9 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
         <p>The researchers are assuming they have a representative sample from a binomial random process and want to estimate <m>\pi</m>, the underlying probability that a randomly selected kissing couple leans to the right. Based on this sample of 124 observations, we estimate <m>\pi</m> to be close to <m>\hat{p} = 80/124 = 0.645</m>. However, we know there is some sampling variability, so we want to find an interval of values that appear to be plausible values of <m>\pi</m>. We do this by finding the values of <m>\pi_0</m> for which the two-sided p-value (<m>H_0: \pi = \pi_0</m> vs. <m>H_a: \pi \neq \pi_0</m>) is greater than 0.05. These are all the values of the parameter such that our sample result is not overly surprising. You should have found this "95% confidence interval," using the "smallest tail probability" approach, to be approximately 0.557 to 0.727 (results from using different software or the applet will differ slightly). Thus, based on these sample results, we are "confident" that the actual value of <m>\pi</m>, the probability a random kissing couple leans right, is between 0.56 and 0.73.</p>
         
         <p>A 99% confidence interval for <m>\pi</m> extends from 0.529 to 0.749 (a smaller lower endpoint and a larger upper endpoint, but a similar midpoint) and therefore includes additional plausible values of the parameter compared to the 95% interval. The 99% confidence interval is wider than the 95% interval because a higher level of confidence requires more "room for error." You will learn other methods for calculating confidence intervals for a binomial process in the next section.</p>
-        
-        <p><alert>Discussion:</alert> In this investigation you have learned a second type of "statistical inference": providing an interval of plausible values for the parameter based on an observed sample statistic. Confidence intervals provide a nice companion to tests of significance and are also very useful by themselves. Whereas a test of significance allows you to test the plausibility of a specific hypothesized value, if you reject the null hypothesis, the test of significance provides no information as to how different the actual parameter is from the hypothesized value. If you fail to reject the null hypothesis, you only know that the tested value is one of many plausible values. A confidence interval provides an estimate (with bounds) of the actual value of the parameter. You will learn some additional methods for finding confidence intervals later in this text, but do be aware that some software packages use different methods for finding the "exact" binomial two-sided p-values.</p>
       </assemblage>
+      
+      <p><alert>Discussion:</alert> In this investigation you have learned a second type of "statistical inference": providing an interval of plausible values for the parameter based on an observed sample statistic. Confidence intervals provide a nice companion to tests of significance and are also very useful by themselves. Whereas a test of significance allows you to test the plausibility of a specific hypothesized value, if you reject the null hypothesis, the test of significance provides no information as to how different the actual parameter is from the hypothesized value. If you fail to reject the null hypothesis, you only know that the tested value is one of many plausible values. A confidence interval provides an estimate (with bounds) of the actual value of the parameter. You will learn some additional methods for finding confidence intervals later in this text, but do be aware that some software packages use different methods for finding the "exact" binomial two-sided p-values.</p>
       
       <exercise xml:id="I1-6-11" label="I1.6.11">
         <title>Alternative CI Method</title>
@@ -4680,7 +4682,7 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
         </solution>
       </exercise>
       
-      <paragraphs xml:id="probability-detour-ci-methods">
+      <assemblage xml:id="probability-detour-ci-methods">
         <title>Probability Detour – Binomial Confidence Intervals</title>
         
         <p>Probably the most well-known binomial confidence interval method is the <term>Clopper-Pearson method</term> (Biometrika, 1934). Rather than using two-sided p-values, it will consider a value for <m>\pi</m> plausible as long as the one-sided tail probability is smaller than (1 – confidence level)/2. One advantage of the Clopper-Pearson method is there is a simple computer algorithm for finding it, rather than needing to check all values as you have done here.</p>
@@ -4690,7 +4692,7 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
         <p>Another approach would be to use the "smallest p-value" approach for the two-sided p-value, switching to using P(X = x) to find values of x more extreme than observed in finding the two-sided p-value. This method, attributed to <term>Sterne</term> (Biometrika, 1954), has the disadvantage that the interval produced can have holes! For example, a value like 0.12 may be in the interval of plausible values, the value 0.13 may not, and the value 0.14 may be again.</p>
         
         <p>Many prefer the Blaker method to the holes of the Sterne method, and Blaker's method is now gaining favor over Clopper-Pearson because the intervals tend to be shorter. We will see some other methods later in this text as well. For now, keep in mind the likely duality between confidence intervals and tests of significance: The confidence interval is the set of values for which we would fail to reject the null hypothesis in favor of the two-sided alternative. So we can interpret the confidence interval as the set of plausible values for the parameter in that they are the values such that our observed sample result would not be surprising. Keep in mind that saying a value is <em>plausible</em> is not the same as saying a value is <em>probable</em>. We won't make probability statements about parameter values in this text.</p>
-      </paragraphs>
+      </assemblage>
       
       <exercise xml:id="I1-6-12" label="I1.6.12">
         <title>Probability Statement Error</title>
