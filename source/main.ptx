@@ -5483,46 +5483,46 @@ iscambinomtest(80, 124, conf.level = 0.99)
           There are actually some nice advantages to using the normal distribution rather than the binomial distribution, though less so as computers have become so advanced. For one, tail probabilities can be approximated by finding the area under the normal curve rather than summing binomial probabilities.
         </p>
 
-        <subexercises xml:id="finding-p-value-normal">
+        <paragraphs xml:id="finding-p-value-normal">
           <title>Finding a p-value with the normal approximation</title>
+        </paragraphs>
 
-          <exercise xml:id="I1-8-h" label="I1.8h">
-            <statement>
-              <p>
-                In the sample, 135 children chose the toy and 149 chose the candy. Use the applet to find the following two-sided p-values, and explain briefly how each is found:
-              </p>
-              <p>
-                Simulation:
-              </p>
-              <p>
-                Exact binomial:
-              </p>
-              <p>
-                Normal approximation:
-              </p>
-            </statement>
-            <response/>
-            <hint>
-              <p>
-                Use the One Proportion Inference applet with <m>n = 284</m> and <m>\pi = 0.5</m>.
-              </p>
-            </hint>
-            <solution>
-              <p>
-                With 135 children choosing the toy (fewer than expected under <m>H_0</m>):
-              </p>
-              <p>
-                Simulation: Approximately 0.40 (will vary) - found by simulating many samples from a binomial distribution and counting the proportion as extreme or more extreme than 135.
-              </p>
-              <p>
-                Exact binomial: Approximately 0.40 - found by calculating <m>P(X \leq 135) + P(X \geq 149)</m> using the binomial distribution.
-              </p>
-              <p>
-                Normal approximation: Approximately 0.40 - found by calculating the area under the normal curve below 135 and above 149.
-              </p>
-            </solution>
-          </exercise>
-        </subexercises>
+        <exercise xml:id="I1-8-h" label="I1.8h">
+          <statement>
+            <p>
+              In the sample, 135 children chose the toy and 149 chose the candy. Use the applet to find the following two-sided p-values, and explain briefly how each is found:
+            </p>
+            <p>
+              Simulation:
+            </p>
+            <p>
+              Exact binomial:
+            </p>
+            <p>
+              Normal approximation:
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              Use the One Proportion Inference applet with <m>n = 284</m> and <m>\pi = 0.5</m>.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              With 135 children choosing the toy (fewer than expected under <m>H_0</m>):
+            </p>
+            <p>
+              Simulation: Approximately 0.40 (will vary) - found by simulating many samples from a binomial distribution and counting the proportion as extreme or more extreme than 135.
+            </p>
+            <p>
+              Exact binomial: Approximately 0.40 - found by calculating <m>P(X \leq 135) + P(X \geq 149)</m> using the binomial distribution.
+            </p>
+            <p>
+              Normal approximation: Approximately 0.40 - found by calculating the area under the normal curve below 135 and above 149.
+            </p>
+          </solution>
+        </exercise>
 
         <p>
           The normal approximation is typically applied to the null distribution of sample proportions rather than sample counts.
@@ -5762,87 +5762,82 @@ iscambinomtest(80, 124, conf.level = 0.99)
           </solution>
         </exercise>
 
-        <subexercises xml:id="improving-normal-approximation">
+        <paragraphs xml:id="improving-normal-approximation">
           <title>Improving the normal approximation</title>
+          <p>
+            Even though we passed the "validity conditions" for the normal approximation for this study, we could still use a "continuity correction" to improve the approximation.
+          </p>
+        </paragraphs>
 
-          <introduction>
+        <exercise xml:id="I1-8-p" label="I1.8p">
+          <statement>
             <p>
-              Even though we passed the "validity conditions" for the normal approximation for this study, we could still use a "continuity correction" to improve the approximation.
+              Which p-value in (h) (exact binomial or normal approximation) is closer to your simulated p-value? Is this expected?
             </p>
-          </introduction>
-
-          <exercise xml:id="I1-8-p" label="I1.8p">
-            <statement>
-              <p>
-                Which p-value in (h) (exact binomial or normal approximation) is closer to your simulated p-value? Is this expected?
-              </p>
-            </statement>
-            <response/>
-            <hint>
-              <p>
-                The exact binomial should match the simulation closely.
-              </p>
-            </hint>
-            <solution>
-              <p>
-                The exact binomial p-value should be closer to the simulated p-value. This is expected because the simulation approximates the true binomial distribution, while the normal approximation is just that - an approximation to the binomial.
-              </p>
-            </solution>
-          </exercise>
-
-          <exercise xml:id="I1-8-q" label="I1.8q">
-            <statement>
-              <p>
-                In the binomial distribution <m>P(X = 135) = 0.220</m>. What is <m>P(X = 135)</m> with the normal distribution? How do <m>P(X &lt; 135)</m> and <m>P(X \leq 135)</m> compare in each distribution?
-              </p>
-            </statement>
-            <response/>
-            <hint>
-              <p>
-                For a continuous distribution, the probability of any exact value is 0.
-              </p>
-            </hint>
-            <solution>
-              <p>
-                With the normal distribution (continuous), <m>P(X = 135) = 0</m> because the probability of any exact value is 0 for a continuous distribution.
-              </p>
-              <p>
-                In the binomial distribution (discrete): <m>P(X \leq 135) = P(X &lt; 135) + P(X = 135)</m>, so these are different values.
-              </p>
-              <p>
-                In the normal distribution (continuous): <m>P(X \leq 135) = P(X &lt; 135)</m> because <m>P(X = 135) = 0</m>.
-              </p>
-            </solution>
-          </exercise>
-
-          <conclusion>
+          </statement>
+          <response/>
+          <hint>
             <p>
-              To make the normal probability (which is finding <m>P(X &lt; 135)</m>) closer to the binomial probability, which finds <m>P(X \leq 135) = P(X &lt; 135) + P(X = 135)</m>, we want to include more of the area under the normal curve above 135 in our calculation. A continuity correction does this by using the normal distribution to find <m>P(X &lt; 135.5)</m> instead. This does not change the binomial probability but should enlarge the normal probability.
+              The exact binomial should match the simulation closely.
             </p>
-          </conclusion>
+          </hint>
+          <solution>
+            <p>
+              The exact binomial p-value should be closer to the simulated p-value. This is expected because the simulation approximates the true binomial distribution, while the normal approximation is just that - an approximation to the binomial.
+            </p>
+          </solution>
+        </exercise>
 
-          <exercise xml:id="I1-8-r" label="I1.8r">
-            <statement>
-              <p>
-                In the One Proportion Inference applet, specify 135.5 in the As Extreme As box (if using number of successes as the statistic, otherwise use <m>135.5/284 \approx 0.477</m> instead) and press Count. What does the applet use for the right-side cut-off? Why? How does the p-value change? Is it now more similar to the binomial p-value?
-              </p>
-            </statement>
-            <response/>
-            <hint>
-              <p>
-                By symmetry, what value on the right side corresponds to 135.5 on the left side?
-              </p>
-            </hint>
-            <solution>
-              <p>
-                The applet uses 148.5 for the right-side cut-off. This is because 135.5 is 6.5 below the mean of 142, so by symmetry, we need 6.5 above the mean: <m>142 + 6.5 = 148.5</m>.
-              </p>
-              <p>
-                The p-value should increase slightly (become closer to 0.40) and should now be more similar to the exact binomial p-value. The continuity correction improves the normal approximation by accounting for the fact that the normal distribution is continuous while the binomial is discrete.
-              </p>
-            </solution>
-          </exercise>
-        </subexercises>
+        <exercise xml:id="I1-8-q" label="I1.8q">
+          <statement>
+            <p>
+              In the binomial distribution <m>P(X = 135) = 0.220</m>. What is <m>P(X = 135)</m> with the normal distribution? How do <m>P(X &lt; 135)</m> and <m>P(X \leq 135)</m> compare in each distribution?
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              For a continuous distribution, the probability of any exact value is 0.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              With the normal distribution (continuous), <m>P(X = 135) = 0</m> because the probability of any exact value is 0 for a continuous distribution.
+            </p>
+            <p>
+              In the binomial distribution (discrete): <m>P(X \leq 135) = P(X &lt; 135) + P(X = 135)</m>, so these are different values.
+            </p>
+            <p>
+              In the normal distribution (continuous): <m>P(X \leq 135) = P(X &lt; 135)</m> because <m>P(X = 135) = 0</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <p>
+          To make the normal probability (which is finding <m>P(X &lt; 135)</m>) closer to the binomial probability, which finds <m>P(X \leq 135) = P(X &lt; 135) + P(X = 135)</m>, we want to include more of the area under the normal curve above 135 in our calculation. A continuity correction does this by using the normal distribution to find <m>P(X &lt; 135.5)</m> instead. This does not change the binomial probability but should enlarge the normal probability.
+        </p>
+
+        <exercise xml:id="I1-8-r" label="I1.8r">
+          <statement>
+            <p>
+              In the One Proportion Inference applet, specify 135.5 in the As Extreme As box (if using number of successes as the statistic, otherwise use <m>135.5/284 \approx 0.477</m> instead) and press Count. What does the applet use for the right-side cut-off? Why? How does the p-value change? Is it now more similar to the binomial p-value?
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              By symmetry, what value on the right side corresponds to 135.5 on the left side?
+            </p>
+          </hint>
+          <solution>
+            <p>
+              The applet uses 148.5 for the right-side cut-off. This is because 135.5 is 6.5 below the mean of 142, so by symmetry, we need 6.5 above the mean: <m>142 + 6.5 = 148.5</m>.
+            </p>
+            <p>
+              The p-value should increase slightly (become closer to 0.40) and should now be more similar to the exact binomial p-value. The continuity correction improves the normal approximation by accounting for the fact that the normal distribution is continuous while the binomial is discrete.
+            </p>
+          </solution>
+        </exercise>
 
         <p>
           Many software programs allow you to apply this continuity correction for a one-sample z-test (e.g., using <m>\hat{p} = (X \pm 0.5)/n</m> as the input) or may do so by default. However, when n is large, you may not see much difference in the values.
