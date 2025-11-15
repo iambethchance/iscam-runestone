@@ -4470,12 +4470,12 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
       </subsection>
     </subsection>
     
-    <insight>
-      <p>In the previous investigation, you learned how to decide whether a hypothesized value of the parameter is plausible based on a two-sided p-value. The two-sided p-value is used when you do not have a prior suspicion or interest in whether the hypothesized value is too large or too small. In fact, in many studies we may not even really have a hypothesized value, but are more interested in using the sample data to estimate the value of the parameter. What are all the plausible values for the parameter?</p>
-    </insight>
-    
     <subsection xml:id="investigation-1-6">
       <title>Investigation 1.6: Kissing the Right Way</title>
+      
+      <insight>
+        <p>In the previous investigation, you learned how to decide whether a hypothesized value of the parameter is plausible based on a two-sided p-value. The two-sided p-value is used when you do not have a prior suspicion or interest in whether the hypothesized value is too large or too small. In fact, in many studies we may not even really have a hypothesized value, but are more interested in using the sample data to estimate the value of the parameter. What are all the plausible values for the parameter?</p>
+      </insight>
       
       <sidebyside widths="58% 38%">
         <p>Most people are right-handed and even the right eye is dominant for most people. Researchers have long believed that late-stage human embryos tend to turn their heads to the right. German bio-psychologist Onur Güntürkün (<url href="https://www.nature.com/articles/421711a" target="_blank"><em>Nature</em>, 2003</url>) conjectured that this tendency to turn to the right manifests itself in other ways as well, so he studied kissing couples to see whether both people tend to lean their heads to the right more often than to their left (and if so, how strong the tendency is).</p>
@@ -4556,15 +4556,26 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
       <exercise xml:id="I1-6-4" label="I1.6.4">
         <title>Calculate Sample Proportion</title>
         <statement>
-          <p>Dr. Güntürkün found 80 out of 124 couples leaned right. Calculate the observed sample proportion. Note: We can use the symbol <m>\hat{p}</m> to refer to a sample proportion.</p>
+          <p>Dr. Güntürkün found 80 out of 124 couples leaned right. Calculate the observed sample proportion <m>\hat{p}</m>. Round to three decimal places.</p>
+          <p><m>\hat{p}</m> = <var name="$phat" width="10" /></p>
         </statement>
-        <response/>
+        <setup>
+          <var>
+            <condition number="0.645" tolerance="0.001">
+              <feedback>
+                <p>Correct! <m>\hat{p} = 80/124 = 0.645</m> (about 64.5%)</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Not quite. Calculate sample proportion = (number of successes)/(sample size) = 80/124</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <hint>
           <p>Sample proportion = (number of successes)/(sample size)</p>
         </hint>
-        <solution>
-          <p><m>\hat{p} = 80/124 = 0.645</m> (about 64.5%)</p>
-        </solution>
       </exercise>
       
       <exercise xml:id="I1-6-5" label="I1.6.5">
@@ -4746,6 +4757,23 @@ iscambinomtest(observed, n, conf.level = )
             <p>Be sure to label the confidence level. You can enter the proportion or the percentage value.</p>
             
           </statement>
+          <solution>
+            <p>For the kissing couples example with 80 successes out of 124 trials:</p>
+            <program language="r">
+              <input>
+library(iscam)
+iscambinomtest(80, 124, conf.level = 0.95)
+              </input>
+            </program>
+            <p>This produces a 95% Clopper-Pearson confidence interval of approximately (0.556, 0.725).</p>
+            <p>For a 99% confidence interval:</p>
+            <program language="r">
+              <input>
+iscambinomtest(80, 124, conf.level = 0.99)
+              </input>
+            </program>
+            <p>This produces a 99% confidence interval of approximately (0.528, 0.751).</p>
+          </solution>
         </exercise>
         
         <exercise xml:id="tech-detour-ci-jmp" label="CI - JMP">
@@ -4756,6 +4784,17 @@ iscambinomtest(observed, n, conf.level = )
             <p>(The raw data option does not give an exact binomial confidence interval.)</p>
             <p>With summarized data, specify the count and sample size, and select the Binomial radio button.</p>
           </statement>
+          <solution>
+            <p>For the kissing couples example:</p>
+            <p><ul>
+              <li><p>Enter Number of successes: 80</p></li>
+              <li><p>Enter Sample size: 124</p></li>
+              <li><p>Select the Binomial radio button</p></li>
+              <li><p>The default confidence level is 95%</p></li>
+            </ul></p>
+            <p>The output will show a 95% Clopper-Pearson confidence interval of approximately (0.556, 0.725).</p>
+            <p>You can change the confidence level to 99% in the dialog box to obtain the 99% confidence interval of approximately (0.528, 0.751).</p>
+          </solution>
         </exercise>
       </paragraphs>
       
