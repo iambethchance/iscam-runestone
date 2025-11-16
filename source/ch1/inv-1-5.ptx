@@ -1,0 +1,432 @@
+    <subsection xml:id="investigation-1-5">
+      <title>Investigation 1.5: Buttered Toast</title>
+      
+      <sidebyside widths="58% 38%">
+        <stack>
+          <p>The folks at MythBusters, a popular television program on the Discovery 
+          Channel, wanted to investigate whether a piece of toast that has been 
+          buttered on one side is more likely to land butter/messy side down or 
+          butter-side up. First, they wanted to design a toast-dropping rig that 
+          would have no built-in bias for unbuttered toast to land on either side 
+          when dropped. For this pilot study, they labeled the sides "top" and "bottom" for ten 
+          unbuttered pieces of toast and counted how many landed "top-down."</p>
+        </stack>
+        <image source="images/1.5intro.png" width="100%" decorative="yes">
+          <description>MythBusters buttered toast investigation introduction</description>
+        </image>
+      </sidebyside>
+      
+      <exercise xml:id="I1-5-1" label="I1.5.1">
+        <title>Define Process and Variable</title>
+        <statement>
+          <p>Identify the sample/random process and variable of interest in this study. Which outcome will you consider "success"? Do we have a binomial process?</p>
+          <p>Random process: <var width="50" /></p>
+          <p>Variable: <var width="50" /></p>
+          <p>Success: <var width="30" /></p>
+          <p>Binomial process? <var width="20" /></p>
+        </statement>
+        <response/>
+        <hint>
+          <p>Consider what is being repeated and what outcome is measured each time.</p>
+        </hint>
+        <solution>
+          <p>Random process: Repeated dropping pieces of toast, assuming identical conditions.</p>
+          <p>Variable: Whether the piece of toast lands top side down or top side up</p>
+          <p>Success: Top side down</p>
+          <p>Binomial process: Yes, assuming each drop is independent with the same probability.</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="I1-5-2" label="I1.5.2">
+        <title>Define Parameter</title>
+        <statement>
+          <p>Identify the parameter of interest in this study (in words).</p>
+        </statement>
+        <response/>
+        <hint>
+          <p>What long-run proportion are we interested in?</p>
+        </hint>
+        <solution>
+          <p>The probability of a piece of toast landing top side down.</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="I1-5-2b" label="I1.5.2b">
+        <title>Parameter Symbol</title>
+        <statement>
+          <p>What symbol should we use to represent this parameter?</p>
+        </statement>
+        <hint>
+          <p>Look for the Greek letter used for a process probability in a binomial distribution.</p>
+        </hint>
+        <choices randomize="no">
+          <choice>
+            <statement><p><m>\hat{p}</m></p></statement>
+            <feedback><p>This is the symbol for the sample proportion (statistic), not the population parameter.</p></feedback>
+          </choice>
+          <choice correct="yes">
+            <statement><p><m>\pi</m></p></statement>
+            <feedback><p>Correct! We use <m>\pi</m> to represent the probability of success in a binomial process.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p><m>\mu</m></p></statement>
+            <feedback><p>This is the symbol for a population mean, not a probability.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p><m>p</m></p></statement>
+            <feedback><p>While <em>p</em> is sometimes used for probability, we use the Greek letter <m>\pi</m> for the process probability parameter.</p></feedback>
+          </choice>
+        </choices>
+        <solution>
+          <p>We use <m>\pi</m> to represent the probability of a piece of toast landing top side down.</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="I1-5-3" label="I1.5.3">
+        <title>State Null Hypothesis</title>
+        <statement>
+          <p>State the null hypothesis using symbols and words.</p>
+          <p><m>H_0</m>: <var width="50" /></p>
+        </statement>
+        <response/>
+        <hint>
+          <p>If there's no bias, what should the probability be?</p>
+        </hint>
+        <solution>
+          <p><m>H_0: \pi = 0.5</m> (equally likely to land top down or top up)</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="I1-5-4" label="I1.5.4">
+        <title>Two-Sided Alternative</title>
+        <statement>
+          <p>With 10 pieces of toast, what outcomes for the number of successes would convince you that there was a problem with the rig? Suggest a way of stating the alternative hypothesis that reflects this interest/prior suspicion.</p>
+          <p><m>H_a</m>: <var width="50" /></p>
+        </statement>
+        <response/>
+        <hint>
+          <p>Would you be concerned if the result was extreme in either direction (too many or too few successes)?</p>
+        </hint>
+        <solution>
+          <p><m>H_a: \pi \neq 0.50</m> (one side is more likely)</p>
+          <p>This is a two-sided alternative hypothesis.</p>
+        </solution>
+      </exercise>
+      
+      <p>You have now stated a two-sided alternative hypothesis (rather than a "one-sided" alternative of strictly less than or strictly greater than). So now we need to decide which values we will consider "or more extreme" in calculating the p-value.</p>
+      
+      <interactive platform="html" xml:id="oneprop-applet-1-5">
+        <slate surface="html">
+          <![CDATA[
+          <iframe src="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" 
+                  style="width: 100%; min-width: 900px; height: 750px; border: 1px solid #ccc;" 
+                  title="One Proportion Inference Applet">
+          </iframe>
+          ]]>
+        </slate>
+      </interactive>
+      
+      <exercise xml:id="I1-5-5" label="I1.5.5">
+        <title>Calculate One-Sided Probability</title>
+        <statement>
+          <p>In this pilot study, the toast landed top-down 3 times and top-up 7 times. Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" target="_blank">One Proportion Inference applet</url> to calculate the binomial probability of 3 or fewer successes in 10 attempts, assuming the null hypothesis is true (i.e., P(X ≤ 3) where X is the number landing top-down).</p>
+        </statement>
+        <response/>
+        <hint>
+          <p>Use technology with n=10, π=0.5, and find P(X ≤ 3).</p>
+        </hint>
+        <solution>
+          <p>P(X ≤ 3) = 0.1719</p>
+          <figure>
+            <image source="images/inv1.5After.png" width="60%">
+              <description>Binomial distribution for n=10, pi=0.5 showing P(X less than or equal to 3)</description>
+            </image>
+          </figure>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="I1-5-6" label="I1.5.6">
+        <title>Identify More Extreme Outcomes</title>
+        <statement>
+          <p>Conjecture: What other outcomes would you consider "as or more surprising" as 3 or fewer successes?</p>
+        </statement>
+        <response/>
+        <hint>
+          <p>Think about the symmetry of the distribution when π = 0.5.</p>
+        </hint>
+        <solution>
+          <p>Reasonable conjectures include X ≥ 7</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="I1-5-7" label="I1.5.7">
+        <title>Calculate Two-Sided P-value</title>
+        <statement>
+          <p>If we calculate the two-sided p-value as P(X ≤ 3) + P(X ≥ 7), what would you report for the p-value? Would you find this p-value to be convincing evidence in favor of the two-sided alternative hypothesis?</p>
+        </statement>
+        <response/>
+        <hint>
+          <p>When the distribution is symmetric, P(X ≥ 7) = P(X ≤ 3).</p>
+        </hint>
+        <solution>
+          <p>The applet tells us P(X ≥ 7) also equals 0.1719, so the two-sided p-value = 2(0.1719) = 0.3438</p>
+          <p>This p-value is quite large, so we would not have convincing evidence against the null hypothesis.</p>
+        </solution>
+      </exercise>
+      
+      <paragraphs>
+        <title>What if our original hypotheses had been <m>H_0: \pi = 0.55</m> vs. <m>H_a: \pi \neq 0.55</m>?</title>
+        
+        <exercise xml:id="I1-5-8" label="I1.5.8">
+          <title>Alternative Null Hypothesis</title>
+          <statement>
+            <p>Restate the alternative hypothesis in words. How will the null distribution change?</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>How does changing π from 0.5 to 0.55 affect the center of the distribution?</p>
+          </hint>
+          <solution>
+            <p>Now we think the long-run proportion of toast drops landing top side down is not 0.55. This will shift the null distribution to center at 5.5 rather than at 5 successes.</p>
+          </solution>
+        </exercise>
+        
+        <exercise xml:id="I1-5-9" label="I1.5.9">
+          <title>Left Tail Probability</title>
+          <statement>
+            <p>Make this change in the applet and find the binomial probability of 3 or fewer successes.</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>Use n=10, π=0.55, and find P(X ≤ 3).</p>
+          </hint>
+          <solution>
+            <p>P(X ≤ 3 when π = 0.55) = 0.1020</p>
+          </solution>
+        </exercise>
+        
+        <exercise xml:id="I1-5-10" label="I1.5.10">
+          <title>Right Tail Comparison</title>
+          <statement>
+            <p>Now find P(X ≥ 7) when π = 0.55. How does it compare to P(X ≤ 3)? Why does this make sense?</p>
+          </statement>
+          <response/>
+          <hint>
+            <p>Is 7 further from the expected value than 3 is?</p>
+          </hint>
+          <solution>
+            <p>P(X ≥ 7) increases to 0.2660 because now an outcome of 7 is closer to the expected value of the null distribution.</p>
+          </solution>
+        </exercise>
+      </paragraphs>
+      
+      <p>In this text, we will consider outcomes "more extreme" than the observed outcome if the "tail probability" is less than or equal to the tail probability of the observed outcome. So for this null hypothesis (π = 0.55), because P(X ≥ 7) > P(X ≤ 3), we would not consider x = 7 to be "more extreme" than x = 3. Therefore, we would not include x = 7 in the p-value calculation. Notice, this distinction arose once our binomial distribution was not symmetric (π ≠ 0.50).</p>
+      
+      <exercise xml:id="I1-5-11" label="I1.5.11">
+        <title>Find More Extreme Value</title>
+        <statement>
+          <p>Find P(X ≥ 8). Is x = 8 considered more extreme than x = 3?</p>
+        </statement>
+        <response/>
+        <hint>
+          <p>Compare P(X ≥ 8) to P(X ≤ 3) = 0.1020.</p>
+        </hint>
+        <solution>
+          <p>P(X ≥ 8) = 0.0996 which is now smaller than P(X ≤ 3) so we could consider x = 8 a more extreme observation compared to x = 3.</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="I1-5-12" label="I1.5.12">
+        <title>Two-Sided P-value for π=0.55</title>
+        <statement>
+          <p>Calculate the two-sided p-value as P(X ≤ 3) + P(X ≥ 8)</p>
+        </statement>
+        <response/>
+        <hint>
+          <p>Add the two tail probabilities you found.</p>
+        </hint>
+        <solution>
+          <p>0.1020 + 0.0996 = 0.2016</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="I1-5-13" label="I1.5.13">
+        <title>Verify with Applet</title>
+        <statement>
+          <p>Verify your result in the applet: Start with 3 and use the "Tails" option, then check the <strong>Two-sided</strong> box.</p>
+        </statement>
+        <response/>
+        <hint>
+          <p>Use the "Tails" option in the pull-down menu.</p>
+        </hint>
+        <solution>
+          <p>Results match if you start with P(X ≤ 3) and use the pull-down menu to select "Tails" for the two-sided p-value.</p>
+          <figure>
+            <image source="images/inv1.5pilot2.png" width="60%">
+              <description>Two-sided binomial test for n=10, pi=0.55 showing two-sided p-value</description>
+            </image>
+          </figure>
+        </solution>
+      </exercise>
+      
+      <p>There are other ways to define "more extreme" as well, and results will vary across different software packages (see Practice Problem 1.5). But the results will be more similar the more symmetric the null distribution is, and when the null distribution is skewed, adjusting for the asymmetry is generally preferred to going "the same distance" on each side or doubling the one-sided p-value.</p>
+      
+      <assemblage xml:id="def-two-sided-pvalue">
+        <title>Definition: Two-sided p-values</title>
+        <p>Two-sided p-values are used with two-sided alternative hypotheses (≠, not equal to). A two-sided p-value considers outcomes in both tails that are at least as rare as the observed result, where <em>at least as rare</em> could be defined as having a smaller tail probability of occurring as the observed statistic. If the null distribution is symmetric, the approaches are equivalent and the two-sided p-value will be double the one-sided p-value.</p>
+      </assemblage>
+      
+      <exercise xml:id="I1-5-14" label="I1.5.14">
+        <title>Evaluate Pilot Study Conclusion</title>
+        <statement>
+          <p>The MythBusters decided a 3/7 split was "way outside a random sample" and so they needed to build a different toast-dropping rig. Do you agree with their conclusion from the pilot study? Write a short paragraph to the MythBusters justifying your answer. Include appropriate numerical evidence to support your argument.</p>
+        </statement>
+        <response/>
+        <hint>
+          <p>Consider both p-values you calculated (for π=0.50 and π=0.55).</p>
+        </hint>
+        <solution>
+          <p>Based on the two-sided p-values, both 0.50 and 0.55 are plausible values for the probability of a piece of toast landing top side down. Because 0.50 is plausible (p-value = 0.3438), these data do not provide convincing evidence that there is a built-in bias with the mechanism and they could have continued to use it.</p>
+        </solution>
+      </exercise>
+      
+      <sidebyside widths="58% 38%">
+        <stack>
+          <p>After building a new rig (that they were more confident had no bias), they used the rig to drop buttered toast from the roof of a building. The Mythbusters weren't sure whether the toast would land butter-side down (as in the myth) or whether, like a curved leaf falling from a tree, the toast might try to "right itself" and land with the indented side (from being buttered) down. So again, they wanted to use a two-sided alternative hypothesis, allowing for either possibility to be of interest.</p>
+        </stack>
+        <image source="images/inv1.5After.png" width="100%" decorative="yes">
+          <description>MythBusters dropping buttered toast from building</description>
+        </image>
+      </sidebyside>
+      
+      <p>They dropped 48 pieces of toast, with 19 landing butter-side-down.</p>
+      
+      <exercise xml:id="I1-5-15" label="I1.5.15">
+        <title>Buttered Toast Two-Sided Test</title>
+        <statement>
+          <p>Use the applet to find the two-sided p-value for testing <m>H_0: \pi = 0.5</m> vs. <m>H_a: \pi \neq 0.50</m>. Do you have strong enough evidence to reject the null hypothesis and conclude π differs from 0.5? Why are you making this decision?</p>
+        </statement>
+        <response/>
+        <hint>
+          <p>Use n=48, observed=19, π=0.5, and check the two-sided box.</p>
+        </hint>
+        <solution>
+          <figure>
+            <image source="images/inv1.5buttered.png" width="60%">
+              <description>Two-sided binomial test for n=48, pi=0.5, observed=19</description>
+            </image>
+          </figure>
+          <p>The p-value is not small (p-value = 0.1934, which is larger than 0.05), so we fail to reject the null hypothesis that π = 0.50. We conclude it is plausible that buttered toast is equally likely to land up or down when dropped from the top of a building.</p>
+        </solution>
+      </exercise>
+      
+      <assemblage xml:id="study-conclusions-1-5">
+        <title>Study Conclusions</title>
+        <p>These data (19 out of 48) do not provide convincing evidence against the null hypothesis that toast buttered on one side is equally likely to land butter side up or down (two-sided p-value = 0.1934). In other words, it is plausible that this is a 50/50 process. However, this analysis cannot be used as proof that π = 0.50, as other values could be plausible as well. The sample data allow for many (technically, infinitely many) plausible values of this probability, as you will explore in the next investigation.</p>
+      </assemblage>
+      
+      <p><alert>Discussion:</alert> Recall that the process we are using to testing our hypotheses is to first assume the null hypothesis is true. For this reason, we can never use this process as evidence <em>for</em> the null hypothesis, only lack of evidence <em>against</em> it. Keep in mind the saying "Absence of evidence is not evidence of absence." Also, note that our evidence depends on the form of the alternative hypothesis. A more complete statement is that we do not have evidence in favor of the alternative that we specified, and that our strength of evidence could differ if we started with a different alternative hypothesis.</p>
+      
+      <p class="horizontal-rule"> </p>
+      
+      <paragraphs xml:id="tech-detour-two-sided">
+        <title>Technology Detour – Two-sided p-values</title>
+        
+        <exercise xml:id="tech-detour-two-sided-applet" label="Two-sided - Applet">
+          <title>Two-sided p-values in One Proportion Inference applet</title>
+          <statement>
+            <p><ul>
+              <li><p>Check the two-sided box</p></li>
+              <li><p>For the "smallest tail probability" approach, set the pull-down menu to "Tails" (finds tail value on other side that is first below the one-sided p-value)</p></li>
+              <li><p>For the "smallest p-value" approach, set the pull-down menu to "Individual" (sums all probabilities smaller than the observed)</p></li>
+              <li><p>(These will match when the distribution is symmetric.)</p></li>
+            </ul></p>
+          </statement>
+        </exercise>
+        
+        <exercise xml:id="tech-detour-two-sided-r" label="Two-sided - R">
+          <title>Two-sided p-values in R</title>
+          <statement>
+            <p>Using the <c>iscambinomtest</c> function, specify <c>alternative = "two.sided"</c></p>
+            <p>(Smallest p-value method)</p>
+            <program language="r" interactive="sage">
+              <input>
+iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
+              </input>
+            </program>
+          </statement>
+          <solution>
+            <p>The output will show:</p>
+            <ul>
+              <li><p>The observed number of successes (19) and sample size (48)</p></li>
+              <li><p>The hypothesized probability (0.5)</p></li>
+              <li><p>The two-sided p-value: 0.1934</p></li>
+              <li><p>A graph showing the binomial distribution with both tails shaded</p></li>
+            </ul>
+          </solution>
+        </exercise>
+        
+        <exercise xml:id="tech-detour-two-sided-jmp" label="Two-sided - JMP">
+          <title>Two-sided p-values in JMP</title>
+          <statement>
+            <p><alert>Note:</alert> The default two-sided test under Analyze > Distribution is not an "exact" binomial test.</p>
+            
+            <figure>
+              <image source="images/JMPtwosided.png" width="60%">
+                <description>JMP two-sided binomial test output</description>
+              </image>
+            </figure>
+          </statement>
+          <solution>
+            <p>The output table will show the two-sided p-value for the exact binomial test. For the buttered toast example with 19 successes out of 48 trials and hypothesized probability of 0.5, the two-sided p-value should be approximately 0.1934.</p>
+          </solution>
+        </exercise>
+      </paragraphs>
+      
+      <p class="horizontal-rule"> </p>
+      
+      <subsection xml:id="practice1-5">
+        <title>Practice Problem 1.5</title>
+        
+        <p>There are other approaches for calculating the two-sided p-value. For example, we could consider an outcome k more extreme than the observed, if P(X = k) &lt; P(X = observed).</p>
+        
+        <exercise xml:id="PP1-5-1" label="PP1.5.1">
+          <title>Explain Alternative Approach</title>
+          <statement>
+            <p>Explain the distinction in this approach and the one used above.</p>
+          </statement>
+          <response/>
+        </exercise>
+        
+        <exercise xml:id="PP1-5-2" label="PP1.5.2">
+          <title>Apply Alternative Method</title>
+          <statement>
+            <p>Return to the pilot study with 3 successes out of n = 10 drops. Based on this new approach, which values above 5 would you consider more extreme than 3 when π = 0.55? Document your justification. What is the resulting two-sided p-value? [Hints: Use <em>As extreme as =</em> in the applet. Confirm your results by changing the pull-down menu from "tails" to "individual."]</p>
+          </statement>
+          <response/>
+        </exercise>
+        
+        <exercise xml:id="PP1-5-3" label="PP1.5.3">
+          <title>Strange Behavior with Extreme Observations</title>
+          <statement>
+            <p>Suppose n = 20 and you observed 0 successes. Find the two-sided p-values using the approach suggested in (b) for π = 0.13, π = 0.145, and π = 0.15. According to the two-sided p-values, which of these values are plausible for π at the 10% level of significance? What strange behavior do you observe?</p>
+          </statement>
+          <response/>
+        </exercise>
+        
+        <exercise xml:id="PP1-5-4" label="PP1.5.4">
+          <title>Why Not Other Methods?</title>
+          <statement>
+            <p>Or we could choose to use x values that are the same number (or more) of standard deviations above the mean or double the one-sided p-value. Why do you think these methods are not recommended in general?</p>
+          </statement>
+          <response/>
+        </exercise>
+        
+        <exercise xml:id="PP1-5-5" label="PP1.5.5">
+          <title>When to Use One-Sided Tests</title>
+          <statement>
+            <p>It's interesting that the one-sided p-value for the pilot study is also not statistically significant. If it had been, would it be reasonable for the Mythbusters to use the one-sided p-value instead to support their conclusion? Explain.</p>
+          </statement>
+          <response/>
+        </exercise>
+      </subsection>

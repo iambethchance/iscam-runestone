@@ -1,0 +1,921 @@
+      <subsection xml:id="investigation1-8">
+        <title>Investigation 1.8: Halloween Treat Choices</title>
+        
+        <p>
+          Obesity has become a widespread health concern, especially in children. Researchers believe that giving children easy access to food increases their likelihood of consuming extra calories. <url href="https://pubmed.ncbi.nlm.nih.gov/12859885/" visual="pubmed.ncbi.nlm.nih.gov/12859885">Schwartz, Chen, and Brownell (2003)</url> examined whether children would be willing to take a small toy instead of candy at when trick-or-treating on Halloween. They had seven homes in 5 different towns in Connecticut present children with a plate of 4 toys (stretch pumpkin men, large glow-in-the-dark insects, Halloween theme stickers, and Halloween theme pencils) and a plate of 4 different name brand candies (lollipops, fruit-flavored chewy candies, fruit-flavored crunchy wafers, and "sweet and tart" hard candies) to see whether children were more likely to choose the candy or the toy. The houses alternated whether the toys were on the left or on the right. Data were recorded for 284 children between the ages of 3 and 14 (who did not ask for both types of treats).
+        </p>
+
+        <exercise xml:id="I1-8-a" label="I1.8a">
+          <title>Identify Sample and Variable</title>
+          <statement>
+            <p>
+              Identify the sample/random process and variable of interest. Which outcome do you want to consider "success"?
+            </p>
+            <p>
+              Sample/random process: <var width="40"/>
+            </p>
+            <p>
+              Variable: <var width="40"/>
+            </p>
+            <p>
+              Success: <var width="40"/>
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              Think about what is being randomly determined in this study - the choice each child makes when presented with toys and candy.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              Sample/random process: The 284 children who were trick-or-treating and presented with a choice between toys and candy.
+            </p>
+            <p>
+              Variable: Whether the child chose a toy or candy (categorical).
+            </p>
+            <p>
+              Success: Choosing a toy (or choosing candy - either can be defined as success).
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="I1-8-b" label="I1.8b">
+          <title>Define Parameter</title>
+          <statement>
+            <p>
+              Define (in words) the parameter of interest in this study.
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              What long-run proportion are we interested in learning about?
+            </p>
+          </hint>
+          <solution>
+            <p>
+              The parameter of interest is the probability (or long-run proportion) that a child, when presented with a choice between toys and candy while trick-or-treating, will choose the toy.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="I1-8-c" label="I1.8c">
+          <title>State Hypotheses</title>
+          <statement>
+            <p>
+              State an appropriate null and alternative hypothesis involving this parameter (in symbols and in words), for testing whether there is strong evidence of a preference for either the toys or the candy.
+            </p>
+            <p>
+              <m>H_0</m>:
+            </p>
+            <p>
+              <m>H_a</m>:
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              If there is no preference, what would you expect the probability to be? What would indicate a preference?
+            </p>
+          </hint>
+          <solution>
+            <p>
+              <m>H_0: \pi = 0.5</m>. The probability that a child chooses a toy is 0.5 (no preference).
+            </p>
+            <p>
+              <m>H_a: \pi \neq 0.5</m>. The probability that a child chooses a toy is not 0.5 (there is a preference).
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="I1-8-d" label="I1.8d">
+          <title>Predict Distribution</title>
+          <statement>
+            <p>
+              What does "theory" predict for the mean and standard deviation of the distribution of "number of successes" under the null hypothesis if we model this experiment as a binomial process? Do you expect this distribution to be symmetric and "filled in" or skewed and "gappy"?
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              For a binomial distribution, the mean is <m>n\pi</m> and the standard deviation is <m>\sqrt{n\pi(1-\pi)}</m>.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              Under the null hypothesis with <m>n = 284</m> and <m>\pi = 0.5</m>:
+            </p>
+            <p>
+              Mean: <m>n\pi = 284(0.5) = 142</m>
+            </p>
+            <p>
+              Standard deviation: <m>\sqrt{n\pi(1-\pi)} = \sqrt{284(0.5)(0.5)} = \sqrt{71} \approx 8.43</m>
+            </p>
+            <p>
+              Because the sample size is large and <m>\pi = 0.5</m>, we expect the distribution to be symmetric and "filled in" (approximately normal).
+            </p>
+            <image source="images/inv1.8-null-dist.png" width="80%">
+              <description>Binomial distribution showing approximately normal shape with mean 142 and standard deviation 8.43</description>
+            </image>
+          </solution>
+        </exercise>
+
+        <p>
+          The normal distribution has many, many applications to quantitative variables in general (e.g., many biological variables like height are assumed to follow a normal distribution). For now, we will focus on using this mathematical model as an approximation to the null distribution.
+        </p>
+
+        <assemblage xml:id="central-limit-theorem">
+          <title>Central Limit Theorem</title>
+          <p>
+            If the sample size is large enough, then the distribution of "number of successes" for a binomial random variable will be well-modeled by the normal probability distribution. The sample size is considered large enough if <m>n\times\pi\geq 10</m> and <m>n\times(1-\pi)\geq 10</m>.
+          </p>
+        </assemblage>
+
+        <exercise xml:id="I1-8-e" label="I1.8e">
+          <statement>
+            <p>
+              Why does the value of the process probability (<m>\pi</m>) matter when we check this condition?
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              Think about what happens when <m>\pi</m> is very close to 0 or 1.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              When <m>\pi</m> is close to 0 or 1, the binomial distribution becomes more skewed. We need both <m>n\pi</m> and <m>n(1-\pi)</m> to be large enough to ensure the distribution is symmetric enough to be well-approximated by a normal distribution. If <m>\pi</m> is very small, even with a large <m>n</m>, we might not have enough expected successes for the normal approximation to work well.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="I1-8-f" label="I1.8f">
+          <statement>
+            <p>
+              Does the Central Limit Theorem appear applicable for the Halloween study?
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              Check both conditions: <m>n\pi \geq 10</m> and <m>n(1-\pi) \geq 10</m>.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              Yes, the Central Limit Theorem is applicable.
+            </p>
+            <p>
+              <m>n\pi = 284(0.5) = 142 \geq 10</m> ✓
+            </p>
+            <p>
+              <m>n(1-\pi) = 284(0.5) = 142 \geq 10</m> ✓
+            </p>
+            <p>
+              Both conditions are satisfied.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="I1-8-g" label="I1.8g">
+          <statement>
+            <p>
+              Use the One Proportion Inference applet to verify your answers to (d). Check the Normal Approximation box to verify your answer to (f).
+            </p>
+          </statement>
+          <response/>
+        </exercise>
+
+        <p>
+          There are actually some nice advantages to using the normal distribution rather than the binomial distribution, though less so as computers have become so advanced. For one, tail probabilities can be approximated by finding the area under the normal curve rather than summing binomial probabilities.
+        </p>
+
+        <paragraphs xml:id="finding-p-value-normal">
+          <title>Finding a p-value with the normal approximation</title>
+        </paragraphs>
+
+        <exercise xml:id="I1-8-h" label="I1.8h">
+          <statement>
+            <p>
+              In the sample, 135 children chose the toy and 149 chose the candy. Use the applet to find the following two-sided p-values, and explain briefly how each is found:
+            </p>
+            <p>
+              Simulation:
+            </p>
+            <p>
+              Exact binomial:
+            </p>
+            <p>
+              Normal approximation:
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              Use the One Proportion Inference applet with <m>n = 284</m> and <m>\pi = 0.5</m>.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              With 135 children choosing the toy (fewer than expected under <m>H_0</m>):
+            </p>
+            <p>
+              Simulation: Approximately 0.40 (will vary) - found by simulating many samples from a binomial distribution and counting the proportion as extreme or more extreme than 135.
+            </p>
+            <p>
+              Exact binomial: Approximately 0.40 - found by calculating <m>P(X \leq 135) + P(X \geq 149)</m> using the binomial distribution.
+            </p>
+            <p>
+              Normal approximation: Approximately 0.40 - found by calculating the area under the normal curve below 135 and above 149.
+            </p>
+            <image source="images/inv1.8-pvalue-comparison.png" width="80%">
+              <description>Comparison of p-values from simulation, exact binomial, and normal approximation methods</description>
+            </image>
+          </solution>
+        </exercise>
+
+        <p>
+          The normal approximation is typically applied to the null distribution of sample proportions rather than sample counts.
+        </p>
+
+        <exercise xml:id="I1-8-i" label="I1.8i">
+          <statement>
+            <p>
+              Use the radio button to toggle the Choice of Statistic to Proportion of heads. What changes about the null distribution? What is the observed value of the statistic?
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              Convert the count to a proportion: <m>135/284</m>.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              When switching to proportions, the null distribution is centered at <m>\pi = 0.5</m> instead of 142, and the standard deviation becomes <m>\sqrt{\pi(1-\pi)/n} = \sqrt{0.5(0.5)/284} \approx 0.0297</m> instead of 8.43.
+            </p>
+            <p>
+              The observed value of the statistic is <m>\hat{p} = 135/284 \approx 0.475</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <assemblage xml:id="sd-sample-proportion">
+          <title>Key Result</title>
+          <p>
+            When the Central Limit Theorem applies, the distribution of sample proportions is approximately normal with mean equal to <m>\pi</m> and standard deviation equal to <m>SD(\hat{p}) = \sqrt{\pi(1-\pi)/n}</m>.
+          </p>
+        </assemblage>
+
+        <p>
+          When we are using the normal distribution, it is even more common to work with the "standardized statistic" by calculating how many standard deviations the statistic is from the expected value (mean) of the null distribution.
+        </p>
+
+        <exercise xml:id="I1-8-j" label="I1.8j">
+          <statement>
+            <p>
+              Standardize the value of the statistic for the Halloween study by comparing to the mean and standard deviation of the distribution of sample proportions. Interpret your result in context.
+            </p>
+            <p>
+              Standardized statistic <m>z = \frac{\text{observed statistic} - \text{expected value}}{SD \text{ of statistic}} = </m> <var width="10"/>
+            </p>
+            <p>
+              Interpretation:
+            </p>
+          </statement>
+          <setup>
+            <var>
+              <condition number="-0.84" tolerance="0.02">
+                <feedback>
+                  <p>
+                    Correct! <m>z = \frac{0.475 - 0.5}{0.0297} \approx -0.84</m>
+                  </p>
+                </feedback>
+              </condition>
+            </var>
+          </setup>
+          <response/>
+          <hint>
+            <p>
+              Use the formula: <m>z = \frac{\hat{p} - \pi_0}{\sqrt{\pi_0(1-\pi_0)/n}}</m>
+            </p>
+          </hint>
+          <solution>
+            <p>
+              <m>z = \frac{0.475 - 0.5}{\sqrt{0.5(0.5)/284}} = \frac{-0.025}{0.0297} \approx -0.84</m>
+            </p>
+            <p>
+              Interpretation: The observed sample proportion of 0.475 is 0.84 standard deviations below the expected value of 0.5 under the null hypothesis. This is not particularly unusual.
+            </p>
+          </solution>
+        </exercise>
+
+        <p>
+          (What if we had used the sample count instead?)
+        </p>
+
+        <assemblage xml:id="one-proportion-z-test-definition">
+          <title>Definition</title>
+          <p>
+            The One Proportion z-test calculates the standardized statistic as <m>z_0 = \frac{\hat{p} - \pi_0}{\sqrt{\pi_0(1-\pi_0)/n}}</m> and uses the standard normal distribution (mean 0, std dev 1) to find the p-value.
+          </p>
+        </assemblage>
+
+        <exercise xml:id="I1-8-k" label="I1.8k">
+          <statement>
+            <p>
+              What does the "zero" subscript tell you?
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              The subscript indicates this value is calculated under a specific assumption.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              The "zero" subscript indicates that this is the value calculated under the null hypothesis (using <m>\pi_0</m>, the hypothesized value of the parameter).
+            </p>
+          </solution>
+        </exercise>
+
+        <assemblage xml:id="two-sd-guideline-normal">
+          <title>Key Result</title>
+          <p>
+            In any normal distribution with mean <m>\mu</m> and standard deviation <m>\sigma</m>, we expect the interval <m>(\mu - 2\sigma, \mu + 2\sigma)</m> to capture approximately 95% of the distribution. In other words, 95% of sample proportions should fall within <m>2 \times \sqrt{\pi(1-\pi)/n}</m> of <m>\pi</m>. So with a normal distribution, the two-standard deviation guideline matches up with a two-sided p-value below 0.05.
+          </p>
+        </assemblage>
+
+        <exercise xml:id="I1-8-l" label="I1.8l">
+          <statement>
+            <p>
+              What do you conclude about the plausibility of the null hypothesis based on this standardized statistic?
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              Is <m>|z| > 2</m>?
+            </p>
+          </hint>
+          <solution>
+            <p>
+              Since <m>|z| = 0.84 &lt; 2</m>, the observed result is within 2 standard deviations of the expected value under the null hypothesis. This suggests the null hypothesis is plausible - we do not have strong evidence against it. The p-value should be greater than 0.05.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="I1-8-m" label="I1.8m">
+          <statement>
+            <p>
+              Use technology to find the corresponding p-value. [Hints: You can calculate the probability from the z-value using standard normal distribution (mean 0, SD 1), e.g., Normal Probability Calculator applet; or use the Technology Detour below to carry out a one-sample z-test.]
+            </p>
+            <p>
+              p-value = <var width="10"/>
+            </p>
+          </statement>
+          <setup>
+            <var>
+              <condition number="0.40" tolerance="0.02">
+                <feedback>
+                  <p>
+                    Correct! For a two-sided test with <m>z = -0.84</m>, the p-value is approximately 0.40.
+                  </p>
+                </feedback>
+              </condition>
+            </var>
+          </setup>
+          <hint>
+            <p>
+              For a two-sided test, find <m>2P(Z &lt; -0.84)</m> or <m>2P(Z > 0.84)</m>.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              Using technology (Normal Probability Calculator or z-test function), the p-value is approximately 0.40 (or 0.401). This confirms our conclusion that the result is not statistically significant.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="tech-detour-one-prop-z-applet" label="Tech1.8.applet">
+          <title>Technology Detour – One Proportion z-test (Theory-Based Inference Applet)</title>
+          <statement>
+            <p>
+              Use the Theory-Based Inference applet to conduct a one proportion z-test:
+            </p>
+            <p>
+              <ul>
+                <li>Enter the sample size and either the count or the proportion of successes, press Calculate to display sample data.</li>
+                <li>Check the box for Test of significance</li>
+                <li>Specify the hypothesized value</li>
+                <li>Use the button to specify the direction of the alternative.</li>
+                <li>Press the Calculate button.</li>
+              </ul>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              For the Halloween study, enter n = 284 and either 135 successes or 0.475 as the proportion. Set the hypothesized value to 0.5 and select a two-sided alternative.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              The applet will display:
+            </p>
+            <p>
+              <ul>
+                <li>Sample statistic: <m>\hat{p} = 0.475</m></li>
+                <li>Standardized statistic: <m>z \approx -0.84</m></li>
+                <li>Two-sided p-value: approximately 0.40</li>
+                <li>A normal curve with the shaded rejection regions</li>
+              </ul>
+            </p>
+            <p>
+              The applet confirms that there is not strong evidence against the null hypothesis that children choose equally between toys and candy.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="tech-detour-one-prop-z-r" label="Tech1.8.R">
+          <title>Technology Detour – One Proportion z-test (R)</title>
+          <statement>
+            <p>
+              Use R to conduct a one proportion z-test. The <c>iscamonepropztest(observed, n, hypothesized, alternative)</c> function takes the following inputs:
+            </p>
+            <p>
+              <ul>
+                <li>observed = the observation of interest (count or proportion)</li>
+                <li>n = the sample size</li>
+                <li>hypothesized = the hypothesized process probability (<m>\pi</m>)</li>
+                <li>alternative = "below," "above," or "two.sided"</li>
+              </ul>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              For the Halloween study, you could use:
+            </p>
+            <p>
+              <c>iscamonepropztest(135, 284, 0.5, "two.sided")</c>
+            </p>
+            <p>
+              or
+            </p>
+            <p>
+              <c>iscamonepropztest(0.475, 284, 0.5, "two.sided")</c>
+            </p>
+          </hint>
+          <solution>
+            <p>
+              Running the command:
+            </p>
+            <program language="r">
+              <input>
+library(iscam)
+iscamonepropztest(135, 284, 0.5, "two.sided")
+              </input>
+            </program>
+            <p>
+              Should produce output including:
+            </p>
+            <p>
+              <ul>
+                <li>Sample proportion: 0.4754</li>
+                <li>z-statistic: -0.84</li>
+                <li>Two-sided p-value: 0.40</li>
+              </ul>
+            </p>
+            <p>
+              The function will also display a graph showing the standard normal distribution with the test statistic and shaded p-value region.
+            </p>
+            <image source="images/inv1.8-R-output.png" width="80%">
+              <description>R output showing one proportion z-test results with standard normal curve and shaded p-value regions</description>
+            </image>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="tech-detour-one-prop-z-jmp" label="Tech1.8.JMP">
+          <title>Technology Detour – One Proportion z-test (JMP)</title>
+          <statement>
+            <p>
+              Using the ISCAM Journal file in JMP, select Hypothesis Test for One Proportion:
+            </p>
+            <p>
+              <ul>
+                <li>Use Raw Data or Summary Stats</li>
+                <li>Remember to specify a direction for the alternative, a hypothesized proportion, and a significance level (e.g., .05)</li>
+              </ul>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              For the Halloween study:
+            </p>
+            <p>
+              <ul>
+                <li>Select Summary Stats</li>
+                <li>Enter n = 284, number of successes = 135</li>
+                <li>Hypothesized proportion = 0.5</li>
+                <li>Select "not equal" for two-sided test</li>
+                <li>Significance level = 0.05</li>
+              </ul>
+            </p>
+          </hint>
+          <solution>
+            <p>
+              JMP will display a comprehensive output including:
+            </p>
+            <p>
+              <ul>
+                <li>Sample proportion: 0.475</li>
+                <li>Standard error: 0.0297</li>
+                <li>z-statistic: -0.84</li>
+                <li>Two-sided p-value: 0.40</li>
+                <li>A visual representation of the test</li>
+              </ul>
+            </p>
+            <p>
+              The output will indicate that we fail to reject the null hypothesis at the 0.05 significance level.
+            </p>
+            <image source="images/inv1.8-JMP-output.png" width="80%">
+              <description>JMP output showing one proportion z-test results with test statistics and visual representation</description>
+            </image>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="I1-8-n" label="I1.8n">
+          <statement>
+            <p>
+              Provide a one sentence interpretation of this p-value in context.
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              What does the p-value tell you about how unusual the observed result would be if the null hypothesis were true?
+            </p>
+          </hint>
+          <solution>
+            <p>
+              If children were equally likely to choose toys or candy, we would observe a result as extreme as or more extreme than 135 out of 284 children choosing toys in about 40% of samples.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="I1-8-o" label="I1.8o">
+          <statement>
+            <p>
+              Do you think the researchers are pleased by the lack of significance in this test? Explain, in the context of the study, why such a result might be good news for them.
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              Consider what the researchers were hoping to demonstrate about offering toys as an alternative to candy.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              Yes, the researchers should be pleased! The lack of significance means there's no strong evidence that children prefer candy over toys. This is good news because it suggests that offering toys as an alternative to candy is viable - children are willing to accept toys instead of candy. If there had been strong evidence of a preference for candy, it would suggest that offering toys wouldn't be an effective strategy to reduce candy consumption.
+            </p>
+          </solution>
+        </exercise>
+
+        <paragraphs xml:id="improving-normal-approximation">
+          <title>Improving the normal approximation</title>
+          <p>
+            Even though we passed the "validity conditions" for the normal approximation for this study, we could still use a "continuity correction" to improve the approximation.
+          </p>
+        </paragraphs>
+
+        <exercise xml:id="I1-8-p" label="I1.8p">
+          <title>Compare P-values</title>
+          <statement>
+            <p>
+              Which p-value from the earlier comparison (exact binomial or normal approximation) is closer to your simulated p-value? Is this expected?
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              The exact binomial should match the simulation closely.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              The exact binomial p-value should be closer to the simulated p-value. This is expected because the simulation approximates the true binomial distribution, while the normal approximation is just that - an approximation to the binomial.
+            </p>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="I1-8-q" label="I1.8q">
+          <title>Compare Discrete and Continuous</title>
+          <statement>
+            <p>
+              In the binomial distribution <m>P(X = 135) = 0.220</m>. What is <m>P(X = 135)</m> with the normal distribution? How do <m>P(X &lt; 135)</m> and <m>P(X \leq 135)</m> compare in each distribution?
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              For a continuous distribution, the probability of any exact value is 0.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              With the normal distribution (continuous), <m>P(X = 135) = 0</m> because the probability of any exact value is 0 for a continuous distribution.
+            </p>
+            <p>
+              In the binomial distribution (discrete): <m>P(X \leq 135) = P(X &lt; 135) + P(X = 135)</m>, so these are different values.
+            </p>
+            <p>
+              In the normal distribution (continuous): <m>P(X \leq 135) = P(X &lt; 135)</m> because <m>P(X = 135) = 0</m>.
+            </p>
+          </solution>
+        </exercise>
+
+        <p>
+          To make the normal probability (which is finding <m>P(X &lt; 135)</m>) closer to the binomial probability, which finds <m>P(X \leq 135) = P(X &lt; 135) + P(X = 135)</m>, we want to include more of the area under the normal curve above 135 in our calculation. A continuity correction does this by using the normal distribution to find <m>P(X &lt; 135.5)</m> instead. This does not change the binomial probability but should enlarge the normal probability.
+        </p>
+
+        <exercise xml:id="I1-8-r" label="I1.8r">
+          <title>Apply Continuity Correction</title>
+          <statement>
+            <p>
+              In the One Proportion Inference applet, specify 135.5 in the As Extreme As box (if using number of successes as the statistic, otherwise use <m>135.5/284 \approx 0.477</m> instead) and press Count. What does the applet use for the right-side cut-off? Why? How does the p-value change? Is it now more similar to the binomial p-value?
+            </p>
+          </statement>
+          <response/>
+          <hint>
+            <p>
+              By symmetry, what value on the right side corresponds to 135.5 on the left side?
+            </p>
+          </hint>
+          <solution>
+            <p>
+              The applet uses 148.5 for the right-side cut-off. This is because 135.5 is 6.5 below the mean of 142, so by symmetry, we need 6.5 above the mean: <m>142 + 6.5 = 148.5</m>.
+            </p>
+            <p>
+              The p-value should increase slightly (become closer to 0.40) and should now be more similar to the exact binomial p-value. The continuity correction improves the normal approximation by accounting for the fact that the normal distribution is continuous while the binomial is discrete.
+            </p>
+          </solution>
+        </exercise>
+
+        <p>
+          Many software programs allow you to apply this continuity correction for a one-sample z-test (e.g., using <m>\hat{p} = (X \pm 0.5)/n</m> as the input) or may do so by default. However, when n is large, you may not see much difference in the values.
+        </p>
+
+        <exercise xml:id="tech-detour-continuity-correction-applet" label="Tech1.8.CC.applet">
+          <title>Technology Detour – Continuity Correction (Theory-Based Inference Applet)</title>
+          <statement>
+            <p>
+              Use the Theory-Based Inference applet to apply a continuity correction:
+            </p>
+            <p>
+              <ul>
+                <li>Check the continuity correction box to apply the continuity correction to the standardized statistic and p-value.</li>
+              </ul>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              For the Halloween study, after entering the data (n = 284, 135 successes), check the continuity correction box and observe how the p-value changes.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              With the continuity correction applied:
+            </p>
+            <p>
+              <ul>
+                <li>The p-value changes from approximately 0.4061 to 0.4382</li>
+                <li>This is much closer to the exact binomial p-value of 0.4405</li>
+                <li>The continuity correction adjusts for the fact that we're using a continuous distribution (normal) to approximate a discrete distribution (binomial)</li>
+              </ul>
+            </p>
+            <image source="images/inv1.8-continuity-correction.png" width="80%">
+              <description>Comparison of normal approximation with and without continuity correction showing improved accuracy</description>
+            </image>
+          </solution>
+        </exercise>
+
+        <exercise xml:id="tech-detour-continuity-correction-r" label="Tech1.8.CC.R">
+          <title>Technology Detour – Continuity Correction (R)</title>
+          <statement>
+            <p>
+              The <c>iscambinomnorm(k, n, prob, direction)</c> function gives a visual of the continuity correction. It takes the following inputs:
+            </p>
+            <p>
+              <ul>
+                <li>k = the observation of interest</li>
+                <li>n = the sample size</li>
+                <li>prob = the process probability (<m>\pi</m>)</li>
+                <li>direction = "below," "above," or "two.sided"</li>
+              </ul>
+            </p>
+          </statement>
+          <hint>
+            <p>
+              For the Halloween study, try:
+            </p>
+            <p>
+              <c>iscambinomnorm(135, 284, 0.5, "two.sided")</c>
+            </p>
+          </hint>
+          <solution>
+            <p>
+              Running the command:
+            </p>
+            <program language="r">
+              <input>
+library(iscam)
+iscambinomnorm(135, 284, 0.5, "two.sided")
+              </input>
+            </program>
+            <p>
+              This function creates a graph showing:
+            </p>
+            <p>
+              <ul>
+                <li>The binomial distribution (bars)</li>
+                <li>The normal approximation (curve)</li>
+                <li>The continuity correction boundaries at 135.5 and 148.5</li>
+                <li>The corrected p-value of approximately 0.4382</li>
+              </ul>
+            </p>
+            <p>
+              The visualization clearly shows how the continuity correction includes more area under the normal curve to better match the binomial probabilities.
+            </p>
+          </solution>
+        </exercise>
+
+        <assemblage xml:id="study-conclusions-1-8">
+          <title>Study Conclusions</title>
+          <p>
+            If we define <m>\pi</m> to be the probability that, when presented with a choice of candy or a toy while trick-or-treating, a child chooses the toy, and if we assume the null hypothesis (<m>H_0: \pi = 0.5</m>) is true, the above calculations tell us that we would observe at most 135 children choosing candy (or at least 149 choosing toy) or at most 135 of the 284 children choosing the toy in about 40% of all possible samples from such a process. Thus, this is not a surprising outcome when <m>\pi = 0.5</m>. We fail to reject the null hypothesis and conclude that it's plausible that children are equally likely to choose the toy or the candy.
+          </p>
+          <p>
+            We do have some cautions with this study as it was conducted in only a few households in Connecticut, a "convenience sample," so we cannot claim that these results are representative of children in other neighborhoods. We also don't know if the children found the toys "novel" and whether their preference for toys could decrease as the novelty wears off (or if "better" candy choices were offered). Furthermore, when the children approached the door they were asked their age and gender, and for a description of their Halloween costume. The researchers caution that this may have cued the children that their behavior was being observed (even though their responses were recorded by another research member who was out of sight) or that they should behave a certain way. Still, these researchers were optimistic that alternatives could be presented to children, even at Halloween, to lessen their exposure to large amounts of candy.
+          </p>
+        </assemblage>
+
+      </subsection>
+      
+      <subsection xml:id="practice1-8A">
+        <title>Practice Problem 1.8A</title>
+        
+        <p>In Investigation 1.6, Dr. Güntürkün conjectured that 2/3 of kissing couples lean right.</p>
+        
+        <exercise xml:id="PP1-8A-1" label="PP1.8A.1">
+          <title>Normal Approximation Validity</title>
+          <statement>
+            <p>Would the normal approximation (Central Limit Theorem) be valid for the kissing study in Investigation 1.6? Justify your answer.</p>
+          </statement>
+          <response/>
+        </exercise>
+        
+        <exercise xml:id="PP1-8A-2" label="PP1.8A.2">
+          <title>Z-test and P-value</title>
+          <statement>
+            <p>Dr. Güntürkün found 80 out of 124 couples leaned right in his sample. Find the one-proportion z-test statistic and normal-based two-sided p-value. Do the standardized statistic and p-value agree? How does the normal-based p-value compare to the exact binomial p-value for this study?</p>
+          </statement>
+          <response/>
+        </exercise>
+        
+        <exercise xml:id="PP1-8A-3" label="PP1.8A.3">
+          <title>Continuity Correction</title>
+          <statement>
+            <p>Repeat the previous calculation using the continuity correction and compare the results.</p>
+          </statement>
+          <response/>
+        </exercise>
+      </subsection>
+      
+      <subsection xml:id="practice1-8B">
+        <title>Practice Problem 1.8B</title>
+        
+        <p>A student wanted to assess whether her dog Muffin tends to chase her blue ball and her red ball equally often when they are rolled at the same time. The student rolled both balls a total of 96 times, each time keeping track of which ball Muffin chased. The student found that Muffin chased the blue ball 52 times and the red ball 44 times. Let's treat the blue ball as "success."</p>
+        
+        <exercise xml:id="PP1-8B-1" label="PP1.8B.1">
+          <title>State Hypotheses</title>
+          <statement>
+            <p>State the appropriate null and alternative hypotheses in symbols. (Be sure to describe what the symbol represents in this context.)</p>
+          </statement>
+          <response/>
+        </exercise>
+        
+        <exercise xml:id="PP1-8B-2" label="PP1.8B.2">
+          <title>Calculate Test Statistic</title>
+          <statement>
+            <p>Report and interpret the values of the z-test statistic and normal-based p-value using a continuity correction.</p>
+          </statement>
+          <response/>
+        </exercise>
+        
+        <exercise xml:id="PP1-8B-3" label="PP1.8B.3">
+          <title>Conclusion</title>
+          <statement>
+            <p>Summarize your conclusion about the student's question concerning her dog Muffin.</p>
+          </statement>
+          <response/>
+        </exercise>
+        
+        <exercise xml:id="PP1-8B-4" label="PP1.8B.4">
+          <title>Explain Reasoning</title>
+          <statement>
+            <p>Explain the reasoning process behind your conclusion.</p>
+          </statement>
+          <response/>
+        </exercise>
+        
+        <exercise xml:id="PP1-8B-5" label="PP1.8B.5">
+          <title>Alternate Definition</title>
+          <statement>
+            <p>How would your answers to the previous questions change if we had used the red ball as success?</p>
+          </statement>
+          <response/>
+        </exercise>
+      </subsection>
+
+      <subsection xml:id="summary1-8">
+        <title>Summary</title>
+        
+        <assemblage xml:id="summary-one-proportion-z-test">
+          <title>Summary of One Proportion z-test (Sampling from Binomial Process)</title>
+          <p>
+            Let <m>\pi</m> represent the (constant) probability of success for the binomial random process assumed by the null hypothesis.
+          </p>
+          <p>
+            To test <m>H_0: \pi = \pi_0</m>
+          </p>
+          <p>
+            We can calculate a p-value based on the normal distribution with mean equal to <m>\pi_0</m> and standard deviation equal to <m>\sqrt{\pi_0(1-\pi_0)/n}</m>
+          </p>
+          <p>
+            <term>Standardized (Test) Statistic</term>: <m>z_0 = \frac{\hat{p} - \pi_0}{\sqrt{\pi_0(1-\pi_0)/n}}</m> which follows a <m>N(0,1)</m> distribution
+          </p>
+          <p>
+            <term>p-value</term>:
+          </p>
+          <p>
+            <ul>
+              <li>if <m>H_a: \pi > \pi_0</m>: p-value = <m>P(Z > z_0)</m></li>
+              <li>if <m>H_a: \pi &lt; \pi_0</m>: p-value = <m>P(Z &lt; z_0)</m></li>
+              <li>if <m>H_a: \pi \neq \pi_0</m>: p-value = <m>2P(Z > |z_0|)</m></li>
+            </ul>
+          </p>
+          <p>
+            <term>Validity</term>: This procedure is considered valid as long as the sample size is large relative to the hypothesized probability (<m>n \times \pi_0 > 10</m> and <m>n \times (1 - \pi_0) > 10</m>), and you have a representative sample from the process of interest.
+          </p>
+          <p>
+            <term>Technology</term>:
+          </p>
+          <p>
+            <ul>
+              <li>Theory-Based Inference applet: Specify the hypothesized value, use the button to specify the direction of the alternative (<m>&lt;</m>, <m>></m>, or <m>\neq</m> for not equal), enter the sample size and either the count or the proportion of successes. Press the Calculate button.</li>
+              <li>R, ISCAM Workspace: <c>iscamonepropztest(observed, n, hypothesized = π_0, alternative="greater","less", or "two.sided", conf.level)</c>. You can enter either the number of successes or the proportion of successes (<m>\hat{p}</m>) for the "observed" value.</li>
+              <li>JMP: Using the ISCAM Journal file, select Hypothesis Test for One Proportion (with Normal Approximation radio button).</li>
+            </ul>
+          </p>
+        </assemblage>
+
+        <assemblage xml:id="prob-detour-normal-random-vars">
+          <title>Probability Detour – Normal Random Variables</title>
+          <p>
+            Many quantitative variables have a distribution that can be reasonably modeled with a normal probability curve. This is a continuous probability distribution (as opposed to the binomial, which is a discrete distribution) that is specified by two quantities:
+          </p>
+          <p>
+            <ul>
+              <li>Mean, denoted by <m>\mu</m> ("mu"), which is the peak and point of symmetry</li>
+              <li>Standard deviation, denoted by <m>\sigma</m> ("sigma"), which is the distance between the mean and each inflection point</li>
+            </ul>
+          </p>
+          <p>
+            In other words, the mean determines the center of the distribution, and the standard deviation controls how variable (spread out) the distribution is. The standard deviation can be loosely interpreted as a typical distance of the observations from the mean.
+          </p>
+          <p>
+            This normal curve is given by the following function:
+          </p>
+          <p>
+            <m>N(\mu, \sigma): f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}</m>, <m>-\infty &lt; x &lt; \infty</m>
+          </p>
+          <p>
+            <term>Notes</term>: The symbol <m>\pi</m> is used here to refer to the irrational number <m>\approx 3.14159\ldots</m>. The constant in front of the exponential term ensures that the total area under any normal curve equals one.
+          </p>
+          <p>
+            <term>Probability calculations</term>: Then the probability of an observation falling in any particular interval on the x-axis is determined by the area under the normal curve over that interval. In principle, this area could be determined by integrating the function <m>f(x)</m> above the interval. However, this particular function has no closed form anti-derivative, so we rely on technology to approximate these areas and therefore these normal probabilities.
+          </p>
+          <p>
+            <term>The empirical rule</term>: For a mound-shaped, symmetric distribution (like the normal) with mean <m>\mu</m> and standard deviation <m>\sigma</m>,
+          </p>
+          <p>
+            <ul>
+              <li>the interval <m>(\mu - \sigma, \mu + \sigma)</m> should capture approximately 68% of the distribution.</li>
+              <li>the interval <m>(\mu - 2\sigma, \mu + 2\sigma)</m> should capture approximately 95% of the distribution.</li>
+              <li>the interval <m>(\mu - 3\sigma, \mu + 3\sigma)</m> should capture approximately 99.7% of the distribution.</li>
+            </ul>
+          </p>
+        </assemblage>
