@@ -984,7 +984,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           <p>The variable is the measurements recorded for each observation.</p>
         </hint>
         <solution>
-          <p>The variable is whether or not Yukon picks the cued container.</p>
+          <p>The variable is whether or not Yukon  picks the cued container.</p>
         </solution>
       </exercise>
 
@@ -1125,6 +1125,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
       </exercise>
       
       <exercise xml:id="inv1-2-f" label="I1.2.6">
+<title>Null distribution</title>
         <statement>
           <p>Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url> to carry out 1,000 repetitions of the simulation. Check the Summary Statistics box and report the mean and standard deviation of your simulated distribution of "could have been" outcomes.</p>
           <p>Mean: <var width="5"/> <br/>
@@ -1283,7 +1284,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           </exercise>
           
           <exercise xml:id="inv1-2-m" label="I1.2.13">
-            <title>Calculate Complete P-value</title>
+            <title>Calculate the P-value</title>
             <statement>
               <p>Is the number you found in (l) our p-value for this study? If not, how would we find the p-value?</p>
             </statement>
@@ -1294,6 +1295,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
           </exercise>
           
           <exercise xml:id="inv1-2-n" label="I1.2.14">
+          <title>Confirm with Technology</title>
             <statement>
               <p>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url>, check the Exact Binomial box. (Optional: See Technology Detour below.) How does the binomial distribution match up to your earlier simulation results? How does the binomial (or "exact") p-value compare to what you simulated earlier? Did everyone in class obtain the same "exact" p-value?</p>
             </statement>
@@ -1794,7 +1796,7 @@ iscambinomprob(14, 16, .5, FALSE)
             </statement>
             <response/>
             <hint>
-              <p>Use the binomial formulas with n = 25 and pi = 0.20. Expected value = n Ã— pi, and SD = square root of n Ã— pi Ã— (1 - pi).</p>
+              <p>Use the binomial formulas with n = 25 and pi = 0.20. Expected value = n × pi, and SD = square root of n × pi × (1 - pi).</p>
             </hint>
             <solution>
               <p>Expected value = <m>5</m>, SD = <m>2</m></p>
@@ -1927,7 +1929,7 @@ iscambinomprob(14, 16, .5, FALSE)
         <exercise xml:id="PP1-3B-2" label="PP1.3B.2">
           <title>Standardized Result</title>
           <statement>
-            <p>How many standard deviations did the observed statistic fall above the expected value assuming Yukon picks equally between the two containers regardless of the cue in the long run?</p>
+            <p>How many standard deviations did the observed statistic fall above the expected value assuming Yukon  picks equally between the two containers regardless of the cue in the long run?</p>
           </statement>
           <response/>
         </exercise>
@@ -2264,7 +2266,7 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
             <ul>
               <li><p>The observed number of successes (8) and sample size (10)</p></li>
               <li><p>The hypothesized probability (0.15)</p></li>
-              <li><p>The p-value: P(X â‰¥ 8) = 0.00000866 (or 8.665 Ã— 10<m>^{-6}</m>)</p></li>
+              <li><p>The p-value: P(X â‰¥ 8) = 0.00000866 (or 8.665  10<m>^{-6}</m>)</p></li>
               <li><p>A graph showing the binomial distribution with the upper tail shaded</p></li>
             </ul>
           </solution>
@@ -2296,7 +2298,7 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
                 <p><ul>
                   <li><p>From the variable's hot spot, select <term>Test Probabilities</term>.</p></li>
                   <li><p>Specify the hypothesized probability of success for the category you want to define as success (only).</p></li>
-                  <li><p>Then pick a one-sided alternative hypothesis (greater than or less than).</p></li>
+                  <li><p>Then  pick a one-sided alternative hypothesis (greater than or less than).</p></li>
                   <li><p>Press Done.</p></li>
                 </ul></p>
               </stack>
@@ -2533,7 +2535,7 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
           </statement>
           <response/>
           <hint>
-            <p>Use the formula E(X) = n Ã— Ï€ where Ï€ = 0.15.</p>
+            <p>Use the formula E(X) = n  Ï€ where Ï€ = 0.15.</p>
           </hint>
           <solution>
             <p>E(X) = 10(0.15) = 1.5 or 361(0.15) = 54.15</p>
@@ -2541,7 +2543,7 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
         </exercise>
       </paragraphs>
       
-      <p>The following graphs display the two theoretical probability distributions (for sample sizes n = 10 and n = 361), both assuming the null hypothesis (<m>\pi = 0.15</m>) is true. These graphs show just how far the observed values (8 and 71) are from the expected value of the number of deaths (0.15 Ã— 10 = 1.5 and 0.15 Ã— 361 = 54.15) in each case. You should also note that the shape, center, and variability of the probability distribution for number of successes are all affected by the sample size n.</p>
+      <p>The following graphs display the two theoretical probability distributions (for sample sizes n = 10 and n = 361), both assuming the null hypothesis (<m>\pi = 0.15</m>) is true. These graphs show just how far the observed values (8 and 71) are from the expected value of the number of deaths (0.15 × 10 = 1.5 and 0.15 × 361 = 54.15) in each case. You should also note that the shape, center, and variability of the probability distribution for number of successes are all affected by the sample size n.</p>
       
       <figure xml:id="fig-heart-transplant-distributions">
         <caption>Binomial distributions for n=10 and n=361, both with Ï€=0.15</caption>
@@ -2582,13 +2584,13 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
         </statement>
         <response/>
         <hint>
-          <p>Use E(X) = n Ã— Ï€ and SD(X) = âˆš(n Ã— Ï€ Ã— (1-Ï€)). Then calculate (71 - E(X))/SD(X).</p>
+          <p>Use E(X) = n  Ï€ and SD(X) = âˆš(n  Ï€  (1-Ï€)). Then calculate (71 - E(X))/SD(X).</p>
         </hint>
         <solution>
-          <p>SD(X) = sqrt(361 Ã— 0.15 Ã— 0.85) = 6.78</p>
+          <p>SD(X) = sqrt(361 × 0.15 × 0.85) = 6.78</p>
           <p>Observed 71</p>
           <p>(71 - 54.15)/6.78 â‰ˆ 2.49. This is larger than 2.</p>
-          <p>For first data set: (8 - 1.5)/sqrt(10 Ã— 0.15 Ã— 0.85) = 6.5/1.13 = 5.75 (this shows us that the evidence is a fair bit stronger with the first data set)</p>
+          <p>For first data set: (8 - 1.5)/sqrt(10 × 0.15 × 0.85) = 6.5/1.13 = 5.75 (this shows us that the evidence is a fair bit stronger with the first data set)</p>
         </solution>
       </exercise>
       
@@ -3711,7 +3713,7 @@ iscambinomtest(80, 124, conf.level = 0.99)
           <li><p>If <m>H_a: \pi \neq \pi_0</m>: p-value = sum of both tail probabilities using a method like "small p-values"</p></li>
         </ul></p>
         
-        <p><alert>(100 Ã— C)% Confidence Interval for <m>\pi</m></alert></p>
+        <p><alert>(100  C)% Confidence Interval for <m>\pi</m></alert></p>
         <p>The set of values such that the two-sided p-value based on the observed count is larger than the <m>(1 - C)</m> cut-off.</p>
         
         <p><alert>Technology</alert></p>
