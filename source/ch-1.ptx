@@ -3763,7 +3763,7 @@ iscambinomtest(80, 124, conf.level = 0.99)
         <exercise xml:id="I1-7-b" label="I1.7b">
           <title>(b) Record Your Sample</title>
           <statement>
-            <p>Take a (presumably representative) sample of n = 25 Reese's Pieces candies and record the number of orange, yellow, and brown candies in your sample.</p>
+            <p>Take a (presumably representative) sample of <em>n</em> = 25 Reese's Pieces candies and record the number of orange, yellow, and brown candies in your sample.</p>
             <p>Orange: <var width="5"/> Yellow: <var width="5"/> Brown: <var width="5"/></p>
           </statement>
           <solution>
@@ -3823,10 +3823,10 @@ iscambinomtest(80, 124, conf.level = 0.99)
             <p>Open the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?candy=1&amp;hideExtras=1" visual="rossmanchance.com/applets/2021/oneprop/OneProp.htm">Reese's Pieces applet</url>.</p>
             <image source="images/reesesapplet.png" width="70%"/>
             <p><ul>
-              <li>Set the applet to assume a 0.333 process probability of a Reese's Pieces candy being orange. The applet is set to take a sample of n = 25 candies.</li>
-              <li>Click the Draw Samples button.</li>
+              <li>Set the applet to assume a 0.333 process probability of a Reese's Pieces candy being orange. The applet is set to take a sample of <em>n</em> = 25 candies.</li>
+              <li>Click the <strong>Draw Samples</strong> button.</li>
               <li>The applet will randomly select a sample of 25 candies, sort them, and report the sample number of orange candies.</li>
-              <li>Click the Draw Samples button again.</li>
+              <li>Click the <strong>Draw Samples</strong> button again.</li>
             </ul></p>
             <p>Did you get the same number of orange candies both times?</p>
           </statement>
@@ -3851,12 +3851,12 @@ iscambinomtest(80, 124, conf.level = 0.99)
           <title>(g) Interpret Dotplot</title>
           <statement>
             <p><ul>
-              <li>Change the Number of samples from 1 to 1998.</li>
-              <li>Uncheck the Show animation box.</li>
-              <li>Click the Draw Samples button again.</li>
-              <li>Select the Proportion of orange radio button.</li>
-              <li>What does each dot in this dotplot represent?</li>
+              <li>Change the <strong>Number of samples</strong> from 1 to 1998.</li>
+              <li>Uncheck the <strong>Show animation</strong> box.</li>
+              <li>Click the <strong>Draw Samples</strong> button again.</li>
+              <li>Select the <strong>Proportion of orange</strong> radio button.</li>
             </ul></p>
+            <p>What does each dot in this dotplot represent?</p>
           </statement>
           <response/>
           <hint>
@@ -3900,7 +3900,7 @@ iscambinomtest(80, 124, conf.level = 0.99)
         <exercise xml:id="I1-7-i" label="I1.7i">
           <title>(i) Verify Formulas</title>
           <statement>
-            <p>Using <m>\pi = 0.333</m> and <m>n = 25</m>, verify that your formulas match the results from checking the Summary Statistics box in the applet.</p>
+            <p>Using <m>\pi = 0.333</m> and <m>n = 25</m>, verify that your formulas match the results from checking the <strong>Summary Statistics</strong> box in the applet.</p>
           </statement>
           <response/>
           <hint>
@@ -4076,7 +4076,6 @@ iscambinomtest(80, 124, conf.level = 0.99)
           <title>Discussion</title>
           <p>Notice that if we know the value of <m>\pi</m> and we know the sample size n, we can predict the value of the sample proportion fairly precisely. This will be very helpful to us in deciding whether an observed sample proportion is "far away" from a hypothesized value for <m>\pi</m>.</p>
         </paragraphs>
-      </subsection>
       
       <subsection xml:id="practice1-7A">
         <title>Practice Problem 1.7A</title>
@@ -4084,9 +4083,14 @@ iscambinomtest(80, 124, conf.level = 0.99)
         <exercise xml:id="PP1-7A-1" label="PP1.7A.1">
           <title>Sample Proportions Range</title>
           <statement>
-            <p>In this investigation, you took samples of 25 candies. Between what two values should 95% of the sample proportions fall when <m>\pi = 0.50</m>?</p>
+            <p>In this investigation, you took samples of 25 candies. 95% of the sample proportions should fall between <var width="10"/> and <var width="10"/> when <m>\pi = 0.50</m>.</p>
           </statement>
-          <response/>
+          <hint>
+            <p>Use the empirical rule: approximately 95% of values fall within 2 standard deviations of the mean.</p>
+          </hint>
+          <solution>
+            <p>With n = 25 and π = 0.50, the standard deviation is sqrt(0.50 × 0.50 / 25) = 0.10. Using the empirical rule, 95% of sample proportions should fall between 0.50 - 2(0.10) = 0.30 and 0.50 + 2(0.10) = 0.70.</p>
+          </solution>
         </exercise>
       </subsection>
       
@@ -4111,6 +4115,7 @@ iscambinomtest(80, 124, conf.level = 0.99)
           <response/>
         </exercise>
       </subsection>
+    </subsection>
 
       <subsection xml:id="investigation1-8">
         <title>Investigation 1.8: Halloween Treat Choices</title>
