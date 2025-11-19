@@ -1,0 +1,42 @@
+<subsection xml:id="summary1-8">
+    <title>Summary of One Proportion z-test</title>
+    
+    <assemblage xml:id="summary-one-proportion-z-test">
+      <title>Summary of One Proportion z-test (Sampling from Binomial Process)</title>
+      <p>
+        Let <m>\pi</m> represent the (constant) probability of success for the binomial random process assumed by the null hypothesis.
+      </p>
+      <p>
+        To test <m>H_0: \pi = \pi_0</m>
+      </p>
+      <p>
+        We can calculate a p-value based on the normal distribution with mean equal to <m>\pi_0</m> and standard deviation equal to <m>\sqrt{\pi_0(1-\pi_0)/n}</m>
+      </p>
+      <p>
+        <term>Standardized (Test) Statistic</term>: <m>z_0 = \frac{\hat{p} - \pi_0}{\sqrt{\pi_0(1-\pi_0)/n}}</m> which follows a <m>N(0,1)</m> distribution
+      </p>
+      <p>
+        <term>p-value</term>:
+      </p>
+      <p>
+        <ul>
+          <li>if <m>H_a: \pi > \pi_0</m>: p-value = <m>P(Z > z_0)</m></li>
+          <li>if <m>H_a: \pi &lt; \pi_0</m>: p-value = <m>P(Z &lt; z_0)</m></li>
+          <li>if <m>H_a: \pi \neq \pi_0</m>: p-value = <m>2P(Z > |z_0|)</m></li>
+        </ul>
+      </p>
+      <p>
+        <term>Validity</term>: This procedure is considered valid as long as the sample size is large relative to the hypothesized probability (<m>n \times \pi_0 > 10</m> and <m>n \times (1 - \pi_0) > 10</m>), and you have a representative sample from the process of interest.
+      </p>
+      <p>
+        <term>Technology</term>:
+      </p>
+      <p>
+        <ul>
+          <li>Theory-Based Inference applet: Specify the hypothesized value, use the button to specify the direction of the alternative (<m>&lt;</m>, <m>></m>, or <m>\neq</m> for not equal), enter the sample size and either the count or the proportion of successes. Press the Calculate button.</li>
+          <li>R, ISCAM Workspace: <c>iscamonepropztest(observed, n, hypothesized = π_0, alternative="greater","less", or "two.sided", conf.level)</c>. You can enter either the number of successes or the proportion of successes (<m>\hat{p}</m>) for the "observed" value.</li>
+          <li>JMP: Using the ISCAM Journal file, select Hypothesis Test for One Proportion (with Normal Approximation radio button).</li>
+        </ul>
+      </p>
+    </assemblage>
+  </subsection>

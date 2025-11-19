@@ -1,0 +1,41 @@
+<subsection xml:id="prob-detour-normal-vars">
+    <title>Probability Detour: Normal Random Variables</title>
+    
+    <assemblage xml:id="prob-detour-normal-random-vars">
+      <title>Probability Detour - Normal Random Variables</title>
+      <p>
+        Many quantitative variables have a distribution that can be reasonably modeled with a normal probability curve. This is a continuous probability distribution (as opposed to the binomial, which is a discrete distribution) that is specified by two quantities:
+      </p>
+      <p>
+        <ul>
+          <li>Mean, denoted by <m>\mu</m> ("mu"), which is the peak and point of symmetry</li>
+          <li>Standard deviation, denoted by <m>\sigma</m> ("sigma"), which is the distance between the mean and each inflection point</li>
+        </ul>
+      </p>
+      <p>
+        In other words, the mean determines the center of the distribution, and the standard deviation controls how variable (spread out) the distribution is. The standard deviation can be loosely interpreted as a typical distance of the observations from the mean.
+      </p>
+      <p>
+        This normal curve is given by the following function:
+      </p>
+      <p>
+        <m>N(\mu, \sigma): f(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}</m>, <m>-\infty &lt; x &lt; \infty</m>
+      </p>
+      <p>
+        <term>Notes</term>: The symbol <m>\pi</m> is used here to refer to the irrational number <m>\approx 3.14159\ldots</m>. The constant in front of the exponential term ensures that the total area under any normal curve equals one.
+      </p>
+      <p>
+        <term>Probability calculations</term>: Then the probability of an observation falling in any particular interval on the x-axis is determined by the area under the normal curve over that interval. In principle, this area could be determined by integrating the function <m>f(x)</m> above the interval. However, this particular function has no closed form anti-derivative, so we rely on technology to approximate these areas and therefore these normal probabilities.
+      </p>
+      <p>
+        <term>The empirical rule</term>: For a mound-shaped, symmetric distribution (like the normal) with mean <m>\mu</m> and standard deviation <m>\sigma</m>,
+      </p>
+      <p>
+        <ul>
+          <li>the interval <m>(\mu - \sigma, \mu + \sigma)</m> should capture approximately 68% of the distribution.</li>
+          <li>the interval <m>(\mu - 2\sigma, \mu + 2\sigma)</m> should capture approximately 95% of the distribution.</li>
+          <li>the interval <m>(\mu - 3\sigma, \mu + 3\sigma)</m> should capture approximately 99.7% of the distribution.</li>
+        </ul>
+      </p>
+    </assemblage>
+  </subsection>

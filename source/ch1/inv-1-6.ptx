@@ -1,558 +1,559 @@
-    <subsection xml:id="investigation-1-6">
-      <title>Investigation 1.6: Kissing the Right Way</title>
-      
-      <insight>
-        <p>In the previous investigation, you learned how to decide whether a hypothesized value of the parameter is plausible based on a two-sided p-value. The two-sided p-value is used when you do not have a prior suspicion or interest in whether the hypothesized value is too large or too small. In fact, in many studies we may not even really have a hypothesized value, but are more interested in using the sample data to estimate the value of the parameter. What are all the plausible values for the parameter?</p>
-      </insight>
-      
-      <sidebyside widths="58% 38%">
-        <p>Most people are right-handed and even the right eye is dominant for most people. Researchers have long believed that late-stage human embryos tend to turn their heads to the right. German bio-psychologist Onur Güntürkün (<url href="https://www.nature.com/articles/421711a" target="_blank"><em>Nature</em>, 2003</url>) conjectured that this tendency to turn to the right manifests itself in other ways as well, so he studied kissing couples to see whether both people tend to lean their heads to the right more often than to their left (and if so, how strong the tendency is).</p>
-        <image source="images/kissing-couples-intro.jpg" width="100%">
-          <description>Kissing couples investigation introduction</description>
-        </image>
-      </sidebyside>
-      
-      <p>He and his researchers observed couples from age 13 to 70 in public places such as airports, train stations, beaches, and parks in the United States, Germany, and Turkey. The observers were careful not to include couples who were holding objects such as luggage that might have affected which direction they turned. We will model the overall decision-making process when kissing as a binomial random process.</p>
-      
-      <exercise xml:id="I1-6-1" label="I1.6.1">
-        <title>Identify Sample, Variable, and Parameter</title>
-        <statement>
-          <p>Identify the sample and variable in this study, as well as the parameter of interest.</p>
-          <p>Sample: <var width="50" /></p>
-          <p>Variable: <var width="50" /></p>
-          <p>Parameter: <var width="50" /></p>
-        </statement>
-        <response/>
-        <hint>
-          <p>What group was observed, what was measured, and what long-run proportion are we interested in?</p>
-        </hint>
-        <solution>
-          <p>Sample: 124 observed kissing couples in public places</p>
-          <p>Variable: Whether the couple leaned right or left</p>
-          <p>Parameter: <m>\pi</m> = the long-run probability (proportion) that a kissing couple leans right</p>
-        </solution>
-      </exercise>
-      
-      <exercise xml:id="I1-6-2" label="I1.6.2">
-        <title>One-Sided or Two-Sided?</title>
-        <statement>
-          <p>If Dr. Güntürkün wants to investigate whether a majority of kissing couples lean right in the long run, is this a one-sided or a two-sided test?</p>
-        </statement>
-        <choices randomize="no">
-          <choice correct="yes">
-            <statement><p>One-sided test</p></statement>
-            <feedback><p>Correct! Testing for a "majority" means <m>\pi > 0.5</m>, which is a one-sided alternative.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>Two-sided test</p></statement>
-            <feedback><p>Not quite. A "majority" suggests a specific direction (greater than 0.5), so this is one-sided.</p></feedback>
-          </choice>
-        </choices>
-        <hint>
-          <p>Does "majority" suggest a specific direction?</p>
-        </hint>
-      </exercise>
-      
-      <exercise xml:id="I1-6-3" label="I1.6.3">
-        <title>State Hypotheses for Two Conjectures</title>
-        <statement>
-          <sidebyside widths="60% 35%" margins="0% 5%">
-            <stack>
-              <p>Dr. Güntürkün actually conjectured that 2/3 of kissing couples would lean right in the long run. A Tic-Tac ad once claimed 74% of kissing couples lean right. State appropriate null and alternative hypotheses for each conjecture.</p>
-            </stack>
-            <figure>
-              <image source="images/tictac-ad.jpg">
-                <description>Tic-Tac advertisement about kissing couples leaning right</description>
-              </image>
-            </figure>
-          </sidebyside>
-        </statement>
-        <matches>
-          <match order="1">
-            <premise>Dr. Güntürkün Alternative Hypothesis</premise>
-            <response><m>\pi \neq 0.667</m></response>
-          </match>
-          <match order="2">
-            <premise>Dr. Güntürkün Null Hypothesis</premise>
-            <response><m>\pi = 0.667</m></response>
-          </match>
-          <match order="3">
-            <premise>Tic-Tac Alternative Hypothesis</premise>
-            <response><m>\pi \neq 0.74</m></response>
-          </match>
-          <match order="4">
-            <premise>Tic-Tac Null Hypothesis</premise>
-            <response><m>\pi = 0.74</m></response>
-          </match>
-        </matches>
-        <hint>
-          <p>For each conjecture, we're testing whether the data support the specific claimed value using two-sided tests.</p>
-        </hint>
-      </exercise>
-      
-      <exercise xml:id="I1-6-4" label="I1.6.4">
-        <title>Calculate Sample Proportion</title>
-        <statement>
-          <p>Dr. Güntürkün found 80 out of 124 couples leaned right. Calculate the observed sample proportion <m>\hat{p}</m>. Round to three decimal places.</p>
-          <p><m>\hat{p}</m> = <var name="$phat" width="10" /></p>
-        </statement>
-        <setup>
-          <var>
-            <condition number="0.645" tolerance="0.001">
-              <feedback>
-                <p>Correct! <m>\hat{p} = 80/124 = 0.645</m> (about 64.5%)</p>
-              </feedback>
-            </condition>
-            <condition string=".*">
-              <feedback>
-                <p>Not quite. Calculate sample proportion = (number of successes)/(sample size) = 80/124</p>
-              </feedback>
-            </condition>
-          </var>
-        </setup>
-        <hint>
-          <p>Sample proportion = (number of successes)/(sample size)</p>
-        </hint>
-      </exercise>
-      
-      <exercise xml:id="I1-6-5" label="I1.6.5">
-        <title>Predict Plausible Values</title>
-        <statement>
-          <p>Based on Dr. Güntürkün's result, what is your best guess for <m>\pi</m>, the long-run probability a kissing couple leans right? Do you think 0.50 will be a plausible value for <m>\pi</m>? 2/3? 0.74? Explain your reasoning.</p>
-        </statement>
-        <response/>
-        <hint>
-          <p>The sample proportion provides a point estimate. Consider how far each hypothesized value is from the observed proportion.</p>
-        </hint>
-        <solution>
-          <p>Best guess: <m>\pi \approx 0.645</m> (the sample proportion)</p>
-          <p>0.50 seems too low - likely not plausible</p>
-          <p>2/3 (0.667) is quite close - likely plausible</p>
-          <p>0.74 is somewhat higher - might be plausible, but less certain</p>
-        </solution>
-      </exercise>
-      
-      <p>We could employ a "trial-and-error" type of approach to determine which values of <m>\pi</m> appear plausible based on what we observed in the sample. This involves testing different values of <m>\pi</m> and seeing whether the corresponding two-sided p-value is larger than some pre-specified cut-off, typically 0.05. (This cut-off is often called the level of significance.) That is, we will consider <m>\pi_0</m> a plausible value for <m>\pi</m> if assuming <m>\pi = \pi_0</m> does not make our sample statistic look surprising (yielding a small p-value).</p>
-      
-      <exercise xml:id="I1-6-6a" label="I1.6.6a">
-        <title>Identify Plausible Values on Number Line</title>
-        <statement>
-          <p>Use the One Proportion Inference applet to test different values of <m>\pi_0</m> (multiples of 0.01). For each value below, determine if observing 80 of 124 successes yields a two-sided p-value greater than 0.05. Check all plausible values (p-value <m>\geq</m> 0.05):</p>
-        </statement>
-        <choices randomize="no">
-          <choice>
-            <statement><p>0.50</p></statement>
-            <feedback><p>The p-value for <m>\pi_0 = 0.50</m> is very small (less than 0.05), so this is not plausible.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>0.51</p></statement>
-            <feedback><p>The p-value is still less than 0.05.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>0.52</p></statement>
-            <feedback><p>The p-value is still less than 0.05.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>0.53</p></statement>
-            <feedback><p>The p-value is still less than 0.05.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>0.54</p></statement>
-            <feedback><p>The p-value is still less than 0.05.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>0.55</p></statement>
-            <feedback><p>The p-value is still less than 0.05.</p></feedback>
-          </choice>
-          <choice correct="yes">
-            <statement><p>0.56</p></statement>
-            <feedback><p>Correct! The p-value is greater than 0.05, making this plausible.</p></feedback>
-          </choice>
-          <choice correct="yes">
-            <statement><p>0.645</p></statement>
-            <feedback><p>Correct! This is our observed sample proportion, definitely plausible.</p></feedback>
-          </choice>
-          <choice correct="yes">
-            <statement><p>0.72</p></statement>
-            <feedback><p>Correct! The p-value is greater than 0.05, making this plausible.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>0.73</p></statement>
-            <feedback><p>The p-value is less than 0.05, so this is not plausible.</p></feedback>
-          </choice>
-        </choices>
-        <hint>
-          <p>Use the applet to find the two-sided p-value for each hypothesized value. Plausible values have p-values <m>\geq</m> 0.05.</p>
-        </hint>
-      </exercise>
-      
-      <exercise xml:id="I1-6-6" label="I1.6.6">
-        <title>Find 95% Confidence Interval</title>
-        <statement>
-          <p>Use the One Proportion Inference applet to determine the values of <m>\pi_0</m> such that observing 80 of 124 successes or a result more extreme occurs in at least 5% of samples. [Hints: Use values of <m>\pi</m> that are multiples of 0.01 until you can find the boundaries where the exact two-sided p-values (using the tails of the binomial distribution) change from below 0.05 to above 0.05. Then feel free to "zoom in" to three decimal places of accuracy if you'd like.] On a number line, indicate which values are rejected (not plausible) and which values are not rejected and therefore considered plausible.</p>
-        </statement>
-        <response/>
-        <hint>
-          <p>Test values systematically: start with values like 0.50, 0.55, 0.60, etc., and find where the p-value crosses 0.05.</p>
-        </hint>
-        <solution>
-          <p>The 95% confidence interval using the "smallest tail probability" (Blaker) approach is approximately <m>0.557</m> to <m>0.727</m>.</p>
-          <p>Values below 0.557 and above 0.727 would have two-sided p-values less than 0.05 and would be rejected.</p>
-          <p>Values between 0.557 and 0.727 would have two-sided p-values greater than 0.05 and are considered plausible.</p>
-        </solution>
-      </exercise>
-      
-      <assemblage xml:id="def-confidence-interval">
-        <title>Definition: Confidence Interval</title>
-        <p>A <term>confidence interval (CI)</term> specifies the plausible values of the parameter based on the sample result.</p>
-      </assemblage>
-      
-      <p>What you found in the previous exercise will be called a "95% confidence interval" as it was derived using the <m>1 - 0.95 = 0.05</m> cut-off value/significance level.</p>
-      
-      <exercise xml:id="I1-6-7" label="I1.6.7">
-        <title>Interpret 95% CI</title>
-        <statement>
-          <p>Interpret the confidence interval from the previous exercise. What are you 95% confident of?</p>
-        </statement>
-        <response/>
-        <hint>
-          <p>A confidence interval gives a range of plausible values for the parameter.</p>
-        </hint>
-        <solution>
-          <p>We are 95% confident that the true probability that a kissing couple leans right is between 0.557 and 0.727 (or approximately 56% to 73%).</p>
-        </solution>
-      </exercise>
-      
-      <exercise xml:id="I1-6-8" label="I1.6.8">
-        <title>Find 99% Confidence Interval</title>
-        <statement>
-          <p>Use the One Proportion Inference applet to determine the 99% confidence interval by using 0.01 rather than 0.05 as the criterion for rejection/plausibility (level of significance). [Hints: You can check the Show sliders box in the applet and use the slider or edit the orange number to change the value of <m>\pi_0</m>. Keep in mind that you are changing the conjectured value of <m>\pi</m>, not the observed number of successes, which should stay at 80.]</p>
-          <p>Using 0.01 as the significance level, test different values of <m>\pi_0</m> to determine which yield a two-sided p-value greater than 0.01. Check all plausible values (p-value <m>\geq</m> 0.01):</p>
-        </statement>
-        <choices randomize="no">
-          <choice>
-            <statement><p>0.49</p></statement>
-            <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>0.50</p></statement>
-            <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>0.51</p></statement>
-            <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>0.52</p></statement>
-            <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
-          </choice>
-          <choice correct="yes">
-            <statement><p>0.53</p></statement>
-            <feedback><p>Correct! The p-value is greater than 0.01, making this plausible in the 99% CI.</p></feedback>
-          </choice>
-          <choice correct="yes">
-            <statement><p>0.54</p></statement>
-            <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
-          </choice>
-          <choice correct="yes">
-            <statement><p>0.55</p></statement>
-            <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
-          </choice>
-          <choice correct="yes">
-            <statement><p>0.56</p></statement>
-            <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
-          </choice>
-          <choice correct="yes">
-            <statement><p>0.645</p></statement>
-            <feedback><p>Correct! This is our observed sample proportion, definitely plausible.</p></feedback>
-          </choice>
-          <choice correct="yes">
-            <statement><p>0.72</p></statement>
-            <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
-          </choice>
-          <choice correct="yes">
-            <statement><p>0.73</p></statement>
-            <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
-          </choice>
-          <choice correct="yes">
-            <statement><p>0.74</p></statement>
-            <feedback><p>Correct! The p-value is greater than 0.01, making this plausible in the 99% CI.</p></feedback>
-          </choice>
-          <choice correct="yes">
-            <statement><p>0.75</p></statement>
-            <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>0.76</p></statement>
-            <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>0.77</p></statement>
-            <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>0.78</p></statement>
-            <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
-          </choice>
-        </choices>
-        <hint>
-          <p>Use the applet to find the two-sided p-value for each hypothesized value. Plausible values have p-values <m>\geq</m> 0.01.</p>
-        </hint>
-      </exercise>
-      
-      <exercise xml:id="I1-6-8b" label="I1.6.8b">
-        <title>Compare 95% and 99% Confidence Intervals</title>
-        <statement>
-          <p>Does this "99% confidence interval" include more or fewer values than the 95% confidence interval? Explain why this makes intuitive sense.</p>
-        </statement>
-        <response/>
-        <hint>
-          <p>A higher confidence level means we want to be more certain, so we need a wider interval.</p>
-        </hint>
-        <solution>
-          <p>The 99% confidence interval is approximately <m>0.529</m> to <m>0.749</m>.</p>
-          <p>This interval includes <em>more</em> values than the 95% confidence interval (it's wider).</p>
-          <p>Explanation: To be more confident (99% vs. 95%) that we've captured the true parameter value, we need to include more values, making the interval wider.</p>
-        </solution>
-      </exercise>
-      
-      <exercise xml:id="I1-6-9" label="I1.6.9">
-        <title>Compare Intervals</title>
-        <statement>
-          <p>Identify a value that is captured in the 99% confidence interval but not the 95% confidence interval. Interpret the meaning of this observation. Explain what your analysis reveals about this value as a plausible value of <m>\pi</m>.</p>
-        </statement>
-        <response/>
-        <hint>
-          <p>Look at values near the endpoints of the 95% interval.</p>
-        </hint>
-        <solution>
-          <p>For example, <m>\pi = 0.54</m> is in the 99% CI (0.529 to 0.749) but not in the 95% CI (0.557 to 0.727).</p>
-          <p>This means that if we tested <m>H_0: \pi = 0.54</m> vs. <m>H_a: \pi \neq 0.54</m>:</p>
-          <p><ul>
-            <li><p>The two-sided p-value would be between 0.01 and 0.05</p></li>
-            <li><p>We would reject <m>H_0</m> at the 0.05 significance level</p></li>
-            <li><p>We would fail to reject <m>H_0</m> at the 0.01 significance level</p></li>
-          </ul></p>
-          <p>So 0.54 is "somewhat" plausible but not highly plausible.</p>
-        </solution>
-      </exercise>
-      
-      <assemblage xml:id="study-conclusions-1-6">
-        <title>Study Conclusions</title>
-        <p>The researchers are assuming they have a representative sample from a binomial random process and want to estimate <m>\pi</m>, the underlying probability that a randomly selected kissing couple leans to the right. Based on this sample of 124 observations, we estimate <m>\pi</m> to be close to <m>\hat{p} = 80/124 = 0.645</m>. However, we know there is some sampling variability, so we want to find an interval of values that appear to be plausible values of <m>\pi</m>. We do this by finding the values of <m>\pi_0</m> for which the two-sided p-value (<m>H_0: \pi = \pi_0</m> vs. <m>H_a: \pi \neq \pi_0</m>) is greater than 0.05. These are all the values of the parameter such that our sample result is not overly surprising. You should have found this "95% confidence interval," using the "smallest tail probability" approach, to be approximately 0.557 to 0.727 (results from using different software or the applet will differ slightly). Thus, based on these sample results, we are "confident" that the actual value of <m>\pi</m>, the probability a random kissing couple leans right, is between 0.56 and 0.73.</p>
-        
-        <p>A 99% confidence interval for <m>\pi</m> extends from 0.529 to 0.749 (a smaller lower endpoint and a larger upper endpoint, but a similar midpoint) and therefore includes additional plausible values of the parameter compared to the 95% interval. The 99% confidence interval is wider than the 95% interval because a higher level of confidence requires more "room for error." You will learn other methods for calculating confidence intervals for a binomial process in the next section.</p>
-      </assemblage>
-      
-      <p><alert>Discussion:</alert> In this investigation you have learned a second type of "statistical inference": providing an interval of plausible values for the parameter based on an observed sample statistic. Confidence intervals provide a nice companion to tests of significance and are also very useful by themselves. Whereas a test of significance allows you to test the plausibility of a specific hypothesized value, if you reject the null hypothesis, the test of significance provides no information as to how different the actual parameter is from the hypothesized value. If you fail to reject the null hypothesis, you only know that the tested value is one of many plausible values. A confidence interval provides an estimate (with bounds) of the actual value of the parameter. You will learn some additional methods for finding confidence intervals later in this text, but do be aware that some software packages use different methods for finding the "exact" binomial two-sided p-values.</p>
-      
-      <exercise xml:id="I1-6-10" label="I1.6.10">
-        <title>Alternative CI Method</title>
-        <statement>
-          <p>Alternatively, another way to define a binomial confidence interval is to find all the values of <m>\pi</m> such that P(X &lt; observed) &lt; (1 – confidence level)/2 and P(X > observed) &lt; (1 – confidence level)/2. Use the applet to find the 95% confidence interval using this approach. [Hints: Remember to use the one-sided p-value and change the direction of the tail probability between &lt; and >, but not =.]</p>
-          <p>How does the resulting 95% confidence interval compare to the previous one? Which interval is "better"? Explain.</p>
-        </statement>
-        <response/>
-        <hint>
-          <p>This is the Clopper-Pearson method. For 95% confidence, use 0.025 as the cutoff for each tail.</p>
-        </hint>
-        <solution>
-          <p>The Clopper-Pearson 95% confidence interval will be slightly different (typically slightly wider) than the Blaker interval.</p>
-          <p>Neither is definitively "better" - they use different definitions of "more extreme." The Blaker method tends to produce slightly shorter intervals and is increasingly preferred.</p>
-        </solution>
-      </exercise>
-      
-      <assemblage xml:id="probability-detour-ci-methods">
-        <title>Probability Detour – Binomial Confidence Intervals</title>
-        
-        <p>Probably the most well-known binomial confidence interval method is the <term>Clopper-Pearson method</term> (Biometrika, 1934). Rather than using two-sided p-values, it will consider a value for <m>\pi</m> plausible as long as the one-sided tail probability is smaller than (1 – confidence level)/2. One advantage of the Clopper-Pearson method is there is a simple computer algorithm for finding it, rather than needing to check all values as you have done here.</p>
-        
-        <p>The method we first showed you (keeping all values of <m>\pi</m> with a two-sided p-value larger than (1 – confidence level) using the two-sided p-value based on the tail probabilities) is attributed to <term>Blaker</term> (The Canadian Journal of Statistics, 2000). We could refer to this as the "smallest tail probability" method.</p>
-        
-        <p>Another approach would be to use the "smallest p-value" approach for the two-sided p-value, switching to using P(X = x) to find values of x more extreme than observed in finding the two-sided p-value. This method, attributed to <term>Sterne</term> (Biometrika, 1954), has the disadvantage that the interval produced can have holes! For example, a value like 0.12 may be in the interval of plausible values, the value 0.13 may not, and the value 0.14 may be again.</p>
-        
-        <p>Many prefer the Blaker method to the holes of the Sterne method, and Blaker's method is now gaining favor over Clopper-Pearson because the intervals tend to be shorter. We will see some other methods later in this text as well. For now, keep in mind the likely duality between confidence intervals and tests of significance: The confidence interval is the set of values for which we would fail to reject the null hypothesis in favor of the two-sided alternative. So we can interpret the confidence interval as the set of plausible values for the parameter in that they are the values such that our observed sample result would not be surprising. Keep in mind that saying a value is <em>plausible</em> is not the same as saying a value is <em>probable</em>. We won't make probability statements about parameter values in this text.</p>
-      </assemblage>
-      
-      <exercise xml:id="I1-6-11" label="I1.6.11">
-        <title>Misinterpreting Confidence</title>
-        <statement>
-          <p>Explain why it is not appropriate to say "There is a 99% probability that between 52.6% and 75.2% of kissing couples lean right when they kiss."</p>
-        </statement>
-        <response/>
-        <hint>
-          <p>The parameter is fixed (not random), but the interval is random.</p>
-        </hint>
-        <solution>
-          <p>The parameter <m>\pi</m> is a fixed value - it either is or isn't in the interval. The 99% refers to the confidence in our <em>method</em>: if we were to repeat this process many times, about 99% of the intervals we construct would contain the true parameter value. We cannot make a probability statement about this specific interval containing the parameter.</p>
-        </solution>
-      </exercise>
-      
-      <exercise xml:id="I1-6-12" label="I1.6.12">
-        <title>Technology Comparison</title>
-        <statement>
-          <p>Use technology (see Technology Detour below) to determine the 95% and 99% Clopper-Pearson confidence intervals for the probability that a kissing couple leans to the right. Comment on how the 99% confidence interval compares to the 95% interval, examining both midpoints and widths. [Hint: Average the endpoints to find the midpoint; subtract the endpoints to find the width.]</p>
-        </statement>
-        <response/>
-        <hint>
-          <p>Use R's iscambinomtest function or JMP with the ISCAM Journal file.</p>
-        </hint>
-        <solution>
-          <p>Using technology (e.g., R with <c>iscambinomtest(80, 124, conf.level=0.95)</c>):</p>
-          <p>95% CI: approximately 0.556 to 0.725</p>
-          <p>99% CI: approximately 0.528 to 0.751</p>
-          <p>The 99% interval is wider (width ≈ 0.223 vs. 0.169 for 95%) but has a similar midpoint (approximately 0.64).</p>
-        </solution>
-      </exercise>
-      
-      <paragraphs xml:id="tech-detour-exact-ci">
-        <title>Technology Detour – Exact Confidence Intervals</title>
-        
-        <p>Different software packages use different confidence interval methods, but you shouldn't see much distinction when the sample size is large.</p>
-        
-        <exercise xml:id="tech-detour-ci-r" label="CI - R">
-          <title>Confidence Intervals in R</title>
-          <statement>
-            <p><alert>In R: Clopper-Pearson</alert> (tail probability &lt; (1-confidence)/2)</p>
-            <program language="r" interactive="sage">
-              <input>
-iscambinomtest(observed, n, conf.level = )
-              </input>
-            </program>
-            <p>Can enter either sample count or sample proportion for "observed."</p>
-            <p>Be sure to label the confidence level. You can enter the proportion or the percentage value.</p>
-            
-          </statement>
-          <solution>
-            <p>For the kissing couples example with 80 successes out of 124 trials:</p>
-            <program language="r">
-              <input>
-library(iscam)
-iscambinomtest(80, 124, conf.level = 0.95)
-              </input>
-            </program>
-            <p>This produces a 95% Clopper-Pearson confidence interval of approximately (0.556, 0.725).</p>
-            <p>For a 99% confidence interval:</p>
-            <program language="r">
-              <input>
-iscambinomtest(80, 124, conf.level = 0.99)
-              </input>
-            </program>
-            <p>This produces a 99% confidence interval of approximately (0.528, 0.751).</p>
-          </solution>
-        </exercise>
-        
-        <exercise xml:id="tech-detour-ci-jmp" label="CI - JMP">
-          <title>Confidence Intervals in JMP</title>
-          <statement>
-            <p><alert>In JMP: Clopper-Pearson</alert> (tail probability &lt; (1-confidence)/2)</p>
-            <p>Using the ISCAM Journal file, select <em>Confidence Interval for One Proportion (with Summary Stats)</em>.</p>
-            <p>(The raw data option does not give an exact binomial confidence interval.)</p>
-            <p>With summarized data, specify the count and sample size, and select the Binomial radio button.</p>
-          </statement>
-          <solution>
-            <p>For the kissing couples example:</p>
-            <p><ul>
-              <li><p>Enter Number of successes: 80</p></li>
-              <li><p>Enter Sample size: 124</p></li>
-              <li><p>Select the Binomial radio button</p></li>
-              <li><p>The default confidence level is 95%</p></li>
-            </ul></p>
-            <p>The output will show a 95% Clopper-Pearson confidence interval of approximately (0.556, 0.725).</p>
-            <p>You can change the confidence level to 99% in the dialog box to obtain the 99% confidence interval of approximately (0.528, 0.751).</p>
-          </solution>
-        </exercise>
-      </paragraphs>
-      
-      <exercise xml:id="I1-6-13" label="I1.6.13">
-        <title>Optional: Compare Methods</title>
-        <statement>
-          <p>Optional: Compare the Clopper-Pearson 99% interval to the Blaker 99% interval. Which is narrower?</p>
-        </statement>
-        <response/>
-        <hint>
-          <p>The Blaker method typically produces shorter intervals.</p>
-        </hint>
-        <solution>
-          <p>The Blaker 99% interval is typically narrower than the Clopper-Pearson 99% interval, which is one reason it's gaining favor in practice.</p>
-        </solution>
-      </exercise>
-      
-      <paragraphs>
-        <title>Output from R</title>
-        <p>The <c>iscambinomtest</c> function includes some interesting graphs.</p>
-        <p><ul>
-          <li><p>The bottom graph illustrates the 95% confidence interval. The interval is centered at the observed sample proportion <m>\hat{p}</m> and displays the two endpoints of the interval of plausible values for the process probability.</p></li>
-          <li><p>The top graph shows the distribution assuming the lower value of the confidence interval as the process probability. This is as far left as we can shift that null distribution before the area to the right of the observed number of successes, 80, dips below 0.025.</p></li>
-          <li><p>The middle graph shows how far we can move that distribution to the right (largest plausible value of <m>\pi</m>) before the probability below 80 dips below 0.025.</p></li>
-        </ul></p>
-        
+<subsection xml:id="investigation-1-6">
+  <title>Investigation 1.6: Kissing the Right Way</title>
+  
+  <insight>
+    <p>In the previous investigation, you learned how to decide whether a hypothesized value of the parameter is plausible based on a two-sided p-value. The two-sided p-value is used when you do not have a prior suspicion or interest in whether the hypothesized value is too large or too small. In fact, in many studies we may not even really have a hypothesized value, but are more interested in using the sample data to estimate the value of the parameter. What are all the plausible values for the parameter?</p>
+  </insight>
+  
+  <sidebyside widths="58% 38%">
+    <p>Most people are right-handed and even the right eye is dominant for most people. Researchers have long believed that late-stage human embryos tend to turn their heads to the right. German bio-psychologist Onur Güntürkün (<url href="https://www.nature.com/articles/421711a" target="_blank"><em>Nature</em>, 2003</url>) conjectured that this tendency to turn to the right manifests itself in other ways as well, so he studied kissing couples to see whether both people tend to lean their heads to the right more often than to their left (and if so, how strong the tendency is).</p>
+    <image source="images/kissing-couples-intro.jpg" width="100%">
+      <description>Kissing couples investigation introduction</description>
+    </image>
+  </sidebyside>
+  
+  <p>He and his researchers observed couples from age 13 to 70 in public places such as airports, train stations, beaches, and parks in the United States, Germany, and Turkey. The observers were careful not to include couples who were holding objects such as luggage that might have affected which direction they turned. We will model the overall decision-making process when kissing as a binomial random process.</p>
+  
+  <exercise xml:id="I1-6-1" label="I1.6.1">
+    <title>Identify Sample, Variable, and Parameter</title>
+    <statement>
+      <p>Identify the sample and variable in this study, as well as the parameter of interest.</p>
+      <p>Sample: <var width="50" /></p>
+      <p>Variable: <var width="50" /></p>
+      <p>Parameter: <var width="50" /></p>
+    </statement>
+    <response/>
+    <hint>
+      <p>What group was observed, what was measured, and what long-run proportion are we interested in?</p>
+    </hint>
+    <solution>
+      <p>Sample: 124 observed kissing couples in public places</p>
+      <p>Variable: Whether the couple leaned right or left</p>
+      <p>Parameter: <m>\pi</m> = the long-run probability (proportion) that a kissing couple leans right</p>
+    </solution>
+  </exercise>
+  
+  <exercise xml:id="I1-6-2" label="I1.6.2">
+    <title>One-Sided or Two-Sided?</title>
+    <statement>
+      <p>If Dr. Güntürkün wants to investigate whether a majority of kissing couples lean right in the long run, is this a one-sided or a two-sided test?</p>
+    </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><p>One-sided test</p></statement>
+        <feedback><p>Correct! Testing for a "majority" means <m>\pi > 0.5</m>, which is a one-sided alternative.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Two-sided test</p></statement>
+        <feedback><p>Not quite. A "majority" suggests a specific direction (greater than 0.5), so this is one-sided.</p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p>Does "majority" suggest a specific direction?</p>
+    </hint>
+  </exercise>
+  
+  <exercise xml:id="I1-6-3" label="I1.6.3">
+    <title>State Hypotheses for Two Conjectures</title>
+    <statement>
+      <sidebyside widths="60% 35%" margins="0% 5%">
+        <stack>
+          <p>Dr. Güntürkün actually conjectured that 2/3 of kissing couples would lean right in the long run. A Tic-Tac ad once claimed 74% of kissing couples lean right. State appropriate null and alternative hypotheses for each conjecture.</p>
+        </stack>
         <figure>
-          <image source="images/r-binom-output.png" width="75%">
-            <description>R output from iscambinomtest showing three graphs - top and middle showing binomial distributions at interval endpoints, bottom showing confidence interval</description>
+          <image source="images/tictac-ad.jpg">
+            <description>Tic-Tac advertisement about kissing couples leaning right</description>
           </image>
         </figure>
-      </paragraphs>
-      
-      <subsection xml:id="practice1-6">
-        <title>Practice Problem 1.6</title>
+      </sidebyside>
+    </statement>
+    <matches>
+      <match order="1">
+        <premise>Dr. Güntürkün Alternative Hypothesis</premise>
+        <response><m>\pi \neq 0.667</m></response>
+      </match>
+      <match order="2">
+        <premise>Dr. Güntürkün Null Hypothesis</premise>
+        <response><m>\pi = 0.667</m></response>
+      </match>
+      <match order="3">
+        <premise>Tic-Tac Alternative Hypothesis</premise>
+        <response><m>\pi \neq 0.74</m></response>
+      </match>
+      <match order="4">
+        <premise>Tic-Tac Null Hypothesis</premise>
+        <response><m>\pi = 0.74</m></response>
+      </match>
+    </matches>
+    <hint>
+      <p>For each conjecture, we're testing whether the data support the specific claimed value using two-sided tests.</p>
+    </hint>
+  </exercise>
+  
+  <exercise xml:id="I1-6-4" label="I1.6.4">
+    <title>Calculate Sample Proportion</title>
+    <statement>
+      <p>Dr. Güntürkün found 80 out of 124 couples leaned right. Calculate the observed sample proportion <m>\hat{p}</m>. Round to three decimal places.</p>
+      <p><m>\hat{p}</m> = <var name="$phat" width="10" /></p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="0.645" tolerance="0.001">
+          <feedback>
+            <p>Correct! <m>\hat{p} = 80/124 = 0.645</m> (about 64.5%)</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Not quite. Calculate sample proportion = (number of successes)/(sample size) = 80/124</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <hint>
+      <p>Sample proportion = (number of successes)/(sample size)</p>
+    </hint>
+  </exercise>
+  
+  <exercise xml:id="I1-6-5" label="I1.6.5">
+    <title>Predict Plausible Values</title>
+    <statement>
+      <p>Based on Dr. Güntürkün's result, what is your best guess for <m>\pi</m>, the long-run probability a kissing couple leans right? Do you think 0.50 will be a plausible value for <m>\pi</m>? 2/3? 0.74? Explain your reasoning.</p>
+    </statement>
+    <response/>
+    <hint>
+      <p>The sample proportion provides a point estimate. Consider how far each hypothesized value is from the observed proportion.</p>
+    </hint>
+    <solution>
+      <p>Best guess: <m>\pi \approx 0.645</m> (the sample proportion)</p>
+      <p>0.50 seems too low - likely not plausible</p>
+      <p>2/3 (0.667) is quite close - likely plausible</p>
+      <p>0.74 is somewhat higher - might be plausible, but less certain</p>
+    </solution>
+  </exercise>
+  
+  <p>We could employ a "trial-and-error" type of approach to determine which values of <m>\pi</m> appear plausible based on what we observed in the sample. This involves testing different values of <m>\pi</m> and seeing whether the corresponding two-sided p-value is larger than some pre-specified cut-off, typically 0.05. (This cut-off is often called the level of significance.) That is, we will consider <m>\pi_0</m> a plausible value for <m>\pi</m> if assuming <m>\pi = \pi_0</m> does not make our sample statistic look surprising (yielding a small p-value).</p>
+  
+  <exercise xml:id="I1-6-6a" label="I1.6.6a">
+    <title>Identify Plausible Values on Number Line</title>
+    <statement>
+      <p>Use the One Proportion Inference applet to test different values of <m>\pi_0</m> (multiples of 0.01). For each value below, determine if observing 80 of 124 successes yields a two-sided p-value greater than 0.05. Check all plausible values (p-value <m>\geq</m> 0.05):</p>
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement><p>0.50</p></statement>
+        <feedback><p>The p-value for <m>\pi_0 = 0.50</m> is very small (less than 0.05), so this is not plausible.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>0.51</p></statement>
+        <feedback><p>The p-value is still less than 0.05.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>0.52</p></statement>
+        <feedback><p>The p-value is still less than 0.05.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>0.53</p></statement>
+        <feedback><p>The p-value is still less than 0.05.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>0.54</p></statement>
+        <feedback><p>The p-value is still less than 0.05.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>0.55</p></statement>
+        <feedback><p>The p-value is still less than 0.05.</p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>0.56</p></statement>
+        <feedback><p>Correct! The p-value is greater than 0.05, making this plausible.</p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>0.645</p></statement>
+        <feedback><p>Correct! This is our observed sample proportion, definitely plausible.</p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>0.72</p></statement>
+        <feedback><p>Correct! The p-value is greater than 0.05, making this plausible.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>0.73</p></statement>
+        <feedback><p>The p-value is less than 0.05, so this is not plausible.</p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p>Use the applet to find the two-sided p-value for each hypothesized value. Plausible values have p-values <m>\geq</m> 0.05.</p>
+    </hint>
+  </exercise>
+  
+  <exercise xml:id="I1-6-6" label="I1.6.6">
+    <title>Find 95% Confidence Interval</title>
+    <statement>
+      <p>Use the One Proportion Inference applet to determine the values of <m>\pi_0</m> such that observing 80 of 124 successes or a result more extreme occurs in at least 5% of samples. [Hints: Use values of <m>\pi</m> that are multiples of 0.01 until you can find the boundaries where the exact two-sided p-values (using the tails of the binomial distribution) change from below 0.05 to above 0.05. Then feel free to "zoom in" to three decimal places of accuracy if you'd like.] On a number line, indicate which values are rejected (not plausible) and which values are not rejected and therefore considered plausible.</p>
+    </statement>
+    <response/>
+    <hint>
+      <p>Test values systematically: start with values like 0.50, 0.55, 0.60, etc., and find where the p-value crosses 0.05.</p>
+    </hint>
+    <solution>
+      <p>The 95% confidence interval using the "smallest tail probability" (Blaker) approach is approximately <m>0.557</m> to <m>0.727</m>.</p>
+      <p>Values below 0.557 and above 0.727 would have two-sided p-values less than 0.05 and would be rejected.</p>
+      <p>Values between 0.557 and 0.727 would have two-sided p-values greater than 0.05 and are considered plausible.</p>
+    </solution>
+  </exercise>
+  
+  <assemblage xml:id="def-confidence-interval">
+    <title>Definition: Confidence Interval</title>
+    <p>A <term>confidence interval (CI)</term> specifies the plausible values of the parameter based on the sample result.</p>
+  </assemblage>
+  
+  <p>What you found in the previous exercise will be called a "95% confidence interval" as it was derived using the <m>1 - 0.95 = 0.05</m> cut-off value/significance level.</p>
+  
+  <exercise xml:id="I1-6-7" label="I1.6.7">
+    <title>Interpret 95% CI</title>
+    <statement>
+      <p>Interpret the confidence interval from the previous exercise. What are you 95% confident of?</p>
+    </statement>
+    <response/>
+    <hint>
+      <p>A confidence interval gives a range of plausible values for the parameter.</p>
+    </hint>
+    <solution>
+      <p>We are 95% confident that the true probability that a kissing couple leans right is between 0.557 and 0.727 (or approximately 56% to 73%).</p>
+    </solution>
+  </exercise>
+  
+  <exercise xml:id="I1-6-8" label="I1.6.8">
+    <title>Find 99% Confidence Interval</title>
+    <statement>
+      <p>Use the One Proportion Inference applet to determine the 99% confidence interval by using 0.01 rather than 0.05 as the criterion for rejection/plausibility (level of significance). [Hints: You can check the Show sliders box in the applet and use the slider or edit the orange number to change the value of <m>\pi_0</m>. Keep in mind that you are changing the conjectured value of <m>\pi</m>, not the observed number of successes, which should stay at 80.]</p>
+      <p>Using 0.01 as the significance level, test different values of <m>\pi_0</m> to determine which yield a two-sided p-value greater than 0.01. Check all plausible values (p-value <m>\geq</m> 0.01):</p>
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement><p>0.49</p></statement>
+        <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>0.50</p></statement>
+        <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>0.51</p></statement>
+        <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>0.52</p></statement>
+        <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>0.53</p></statement>
+        <feedback><p>Correct! The p-value is greater than 0.01, making this plausible in the 99% CI.</p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>0.54</p></statement>
+        <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>0.55</p></statement>
+        <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>0.56</p></statement>
+        <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>0.645</p></statement>
+        <feedback><p>Correct! This is our observed sample proportion, definitely plausible.</p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>0.72</p></statement>
+        <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>0.73</p></statement>
+        <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>0.74</p></statement>
+        <feedback><p>Correct! The p-value is greater than 0.01, making this plausible in the 99% CI.</p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>0.75</p></statement>
+        <feedback><p>Correct! The p-value is greater than 0.01, making this plausible.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>0.76</p></statement>
+        <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>0.77</p></statement>
+        <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>0.78</p></statement>
+        <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
+      </choice>
+    </choices>
+    <hint>
+      <p>Use the applet to find the two-sided p-value for each hypothesized value. Plausible values have p-values <m>\geq</m> 0.01.</p>
+    </hint>
+  </exercise>
+  
+  <exercise xml:id="I1-6-8b" label="I1.6.8b">
+    <title>Compare 95% and 99% Confidence Intervals</title>
+    <statement>
+      <p>Does this "99% confidence interval" include more or fewer values than the 95% confidence interval? Explain why this makes intuitive sense.</p>
+    </statement>
+    <response/>
+    <hint>
+      <p>A higher confidence level means we want to be more certain, so we need a wider interval.</p>
+    </hint>
+    <solution>
+      <p>The 99% confidence interval is approximately <m>0.529</m> to <m>0.749</m>.</p>
+      <p>This interval includes <em>more</em> values than the 95% confidence interval (it's wider).</p>
+      <p>Explanation: To be more confident (99% vs. 95%) that we've captured the true parameter value, we need to include more values, making the interval wider.</p>
+    </solution>
+  </exercise>
+  
+  <exercise xml:id="I1-6-9" label="I1.6.9">
+    <title>Compare Intervals</title>
+    <statement>
+      <p>Identify a value that is captured in the 99% confidence interval but not the 95% confidence interval. Interpret the meaning of this observation. Explain what your analysis reveals about this value as a plausible value of <m>\pi</m>.</p>
+    </statement>
+    <response/>
+    <hint>
+      <p>Look at values near the endpoints of the 95% interval.</p>
+    </hint>
+    <solution>
+      <p>For example, <m>\pi = 0.54</m> is in the 99% CI (0.529 to 0.749) but not in the 95% CI (0.557 to 0.727).</p>
+      <p>This means that if we tested <m>H_0: \pi = 0.54</m> vs. <m>H_a: \pi \neq 0.54</m>:</p>
+      <p><ul>
+        <li><p>The two-sided p-value would be between 0.01 and 0.05</p></li>
+        <li><p>We would reject <m>H_0</m> at the 0.05 significance level</p></li>
+        <li><p>We would fail to reject <m>H_0</m> at the 0.01 significance level</p></li>
+      </ul></p>
+      <p>So 0.54 is "somewhat" plausible but not highly plausible.</p>
+    </solution>
+  </exercise>
+  
+  <assemblage xml:id="study-conclusions-1-6">
+    <title>Study Conclusions</title>
+    <p>The researchers are assuming they have a representative sample from a binomial random process and want to estimate <m>\pi</m>, the underlying probability that a randomly selected kissing couple leans to the right. Based on this sample of 124 observations, we estimate <m>\pi</m> to be close to <m>\hat{p} = 80/124 = 0.645</m>. However, we know there is some sampling variability, so we want to find an interval of values that appear to be plausible values of <m>\pi</m>. We do this by finding the values of <m>\pi_0</m> for which the two-sided p-value (<m>H_0: \pi = \pi_0</m> vs. <m>H_a: \pi \neq \pi_0</m>) is greater than 0.05. These are all the values of the parameter such that our sample result is not overly surprising. You should have found this "95% confidence interval," using the "smallest tail probability" approach, to be approximately 0.557 to 0.727 (results from using different software or the applet will differ slightly). Thus, based on these sample results, we are "confident" that the actual value of <m>\pi</m>, the probability a random kissing couple leans right, is between 0.56 and 0.73.</p>
+    
+    <p>A 99% confidence interval for <m>\pi</m> extends from 0.529 to 0.749 (a smaller lower endpoint and a larger upper endpoint, but a similar midpoint) and therefore includes additional plausible values of the parameter compared to the 95% interval. The 99% confidence interval is wider than the 95% interval because a higher level of confidence requires more "room for error." You will learn other methods for calculating confidence intervals for a binomial process in the next section.</p>
+  </assemblage>
+  
+  <p><alert>Discussion:</alert> In this investigation you have learned a second type of "statistical inference": providing an interval of plausible values for the parameter based on an observed sample statistic. Confidence intervals provide a nice companion to tests of significance and are also very useful by themselves. Whereas a test of significance allows you to test the plausibility of a specific hypothesized value, if you reject the null hypothesis, the test of significance provides no information as to how different the actual parameter is from the hypothesized value. If you fail to reject the null hypothesis, you only know that the tested value is one of many plausible values. A confidence interval provides an estimate (with bounds) of the actual value of the parameter. You will learn some additional methods for finding confidence intervals later in this text, but do be aware that some software packages use different methods for finding the "exact" binomial two-sided p-values.</p>
+  
+  <exercise xml:id="I1-6-10" label="I1.6.10">
+    <title>Alternative CI Method</title>
+    <statement>
+      <p>Alternatively, another way to define a binomial confidence interval is to find all the values of <m>\pi</m> such that P(X &lt; observed) &lt; (1 – confidence level)/2 and P(X > observed) &lt; (1 – confidence level)/2. Use the applet to find the 95% confidence interval using this approach. [Hints: Remember to use the one-sided p-value and change the direction of the tail probability between &lt; and >, but not =.]</p>
+      <p>How does the resulting 95% confidence interval compare to the previous one? Which interval is "better"? Explain.</p>
+    </statement>
+    <response/>
+    <hint>
+      <p>This is the Clopper-Pearson method. For 95% confidence, use 0.025 as the cutoff for each tail.</p>
+    </hint>
+    <solution>
+      <p>The Clopper-Pearson 95% confidence interval will be slightly different (typically slightly wider) than the Blaker interval.</p>
+      <p>Neither is definitively "better" - they use different definitions of "more extreme." The Blaker method tends to produce slightly shorter intervals and is increasingly preferred.</p>
+    </solution>
+  </exercise>
+  
+  <assemblage xml:id="probability-detour-ci-methods">
+    <title>Probability Detour – Binomial Confidence Intervals</title>
+    
+    <p>Probably the most well-known binomial confidence interval method is the <term>Clopper-Pearson method</term> (Biometrika, 1934). Rather than using two-sided p-values, it will consider a value for <m>\pi</m> plausible as long as the one-sided tail probability is smaller than (1 – confidence level)/2. One advantage of the Clopper-Pearson method is there is a simple computer algorithm for finding it, rather than needing to check all values as you have done here.</p>
+    
+    <p>The method we first showed you (keeping all values of <m>\pi</m> with a two-sided p-value larger than (1 – confidence level) using the two-sided p-value based on the tail probabilities) is attributed to <term>Blaker</term> (The Canadian Journal of Statistics, 2000). We could refer to this as the "smallest tail probability" method.</p>
+    
+    <p>Another approach would be to use the "smallest p-value" approach for the two-sided p-value, switching to using P(X = x) to find values of x more extreme than observed in finding the two-sided p-value. This method, attributed to <term>Sterne</term> (Biometrika, 1954), has the disadvantage that the interval produced can have holes! For example, a value like 0.12 may be in the interval of plausible values, the value 0.13 may not, and the value 0.14 may be again.</p>
+    
+    <p>Many prefer the Blaker method to the holes of the Sterne method, and Blaker's method is now gaining favor over Clopper-Pearson because the intervals tend to be shorter. We will see some other methods later in this text as well. For now, keep in mind the likely duality between confidence intervals and tests of significance: The confidence interval is the set of values for which we would fail to reject the null hypothesis in favor of the two-sided alternative. So we can interpret the confidence interval as the set of plausible values for the parameter in that they are the values such that our observed sample result would not be surprising. Keep in mind that saying a value is <em>plausible</em> is not the same as saying a value is <em>probable</em>. We won't make probability statements about parameter values in this text.</p>
+  </assemblage>
+  
+  <exercise xml:id="I1-6-11" label="I1.6.11">
+    <title>Misinterpreting Confidence</title>
+    <statement>
+      <p>Explain why it is not appropriate to say "There is a 99% probability that between 52.6% and 75.2% of kissing couples lean right when they kiss."</p>
+    </statement>
+    <response/>
+    <hint>
+      <p>The parameter is fixed (not random), but the interval is random.</p>
+    </hint>
+    <solution>
+      <p>The parameter <m>\pi</m> is a fixed value - it either is or isn't in the interval. The 99% refers to the confidence in our <em>method</em>: if we were to repeat this process many times, about 99% of the intervals we construct would contain the true parameter value. We cannot make a probability statement about this specific interval containing the parameter.</p>
+    </solution>
+  </exercise>
+  
+  <exercise xml:id="I1-6-12" label="I1.6.12">
+    <title>Technology Comparison</title>
+    <statement>
+      <p>Use technology (see Technology Detour below) to determine the 95% and 99% Clopper-Pearson confidence intervals for the probability that a kissing couple leans to the right. Comment on how the 99% confidence interval compares to the 95% interval, examining both midpoints and widths. [Hint: Average the endpoints to find the midpoint; subtract the endpoints to find the width.]</p>
+    </statement>
+    <response/>
+    <hint>
+      <p>Use R's iscambinomtest function or JMP with the ISCAM Journal file.</p>
+    </hint>
+    <solution>
+      <p>Using technology (e.g., R with <c>iscambinomtest(80, 124, conf.level=0.95)</c>):</p>
+      <p>95% CI: approximately 0.556 to 0.725</p>
+      <p>99% CI: approximately 0.528 to 0.751</p>
+      <p>The 99% interval is wider (width ≈ 0.223 vs. 0.169 for 95%) but has a similar midpoint (approximately 0.64).</p>
+    </solution>
+  </exercise>
+  
+  <paragraphs xml:id="tech-detour-exact-ci">
+    <title>Technology Detour – Exact Confidence Intervals</title>
+    
+    <p>Different software packages use different confidence interval methods, but you shouldn't see much distinction when the sample size is large.</p>
+    
+    <exercise xml:id="tech-detour-ci-r" label="CI - R">
+      <title>Confidence Intervals in R</title>
+      <statement>
+        <p><alert>In R: Clopper-Pearson</alert> (tail probability &lt; (1-confidence)/2)</p>
+        <program language="r" interactive="sage">
+          <input>
+iscambinomtest(observed, n, conf.level = )
+          </input>
+        </program>
+        <p>Can enter either sample count or sample proportion for "observed."</p>
+        <p>Be sure to label the confidence level. You can enter the proportion or the percentage value.</p>
         
-        <exercise xml:id="PP1-6-1" label="PP1.6.1">
-          <title>St. George's Hospital CI</title>
-          <statement>
-            <p>Recall the 8 out of 10 statistic for St. George's Hospital (Investigation 1.4). Based on this result, what is an interval of plausible values for the underlying mortality rate at St. George's? [Hint: You can use a 95% confidence level if none is stated.] Describe how you found the interval and name the method used. Report the midpoint and width of this interval.</p>
-          </statement>
-          <response/>
-        </exercise>
-        
-        <exercise xml:id="PP1-6-2" label="PP1.6.2">
-          <title>Larger Sample CI</title>
-          <statement>
-            <p>Use technology to calculate the 95% confidence interval based on the 71 deaths among 361 patients. Comment on how the width and midpoint of this interval differ from the interval in (a). Explain why these changes make sense.</p>
-          </statement>
-          <response/>
-        </exercise>
-        
-        <exercise xml:id="PP1-6-3" label="PP1.6.3">
-          <title>CI and Hypothesis Test Duality</title>
-          <statement>
-            <p>Based on the interval in (b), if you were to test <m>H_0: \pi = 0.20</m> vs. <m>H_a: \pi \neq 0.20</m>, would you reject or fail to reject the null hypothesis? Explain how you know the conclusion based on the confidence interval without actually conducting the test.</p>
-          </statement>
-          <response/>
-        </exercise>
-      </subsection>
-      
-      <assemblage xml:id="summary-exact-binomial">
-        <title>Summary of Exact Binomial Inference (Sampling from a Binomial Process)</title>
-        
-        <p>Let X represent the number of successes in the sample and <m>\pi</m> the probability of success for a binomial random process.</p>
-        
-        <p><alert>To test <m>H_0: \pi = \pi_0</m></alert></p>
-        <p>We can calculate a p-value based on the binomial distribution with parameters n and <m>\pi_0</m>. The p-value can be one-sided or two-sided based on the statement of the research conjecture.</p>
+      </statement>
+      <solution>
+        <p>For the kissing couples example with 80 successes out of 124 trials:</p>
+        <program language="r">
+          <input>
+library(iscam)
+iscambinomtest(80, 124, conf.level = 0.95)
+          </input>
+        </program>
+        <p>This produces a 95% Clopper-Pearson confidence interval of approximately (0.556, 0.725).</p>
+        <p>For a 99% confidence interval:</p>
+        <program language="r">
+          <input>
+iscambinomtest(80, 124, conf.level = 0.99)
+          </input>
+        </program>
+        <p>This produces a 99% confidence interval of approximately (0.528, 0.751).</p>
+      </solution>
+    </exercise>
+    
+    <exercise xml:id="tech-detour-ci-jmp" label="CI - JMP">
+      <title>Confidence Intervals in JMP</title>
+      <statement>
+        <p><alert>In JMP: Clopper-Pearson</alert> (tail probability &lt; (1-confidence)/2)</p>
+        <p>Using the ISCAM Journal file, select <em>Confidence Interval for One Proportion (with Summary Stats)</em>.</p>
+        <p>(The raw data option does not give an exact binomial confidence interval.)</p>
+        <p>With summarized data, specify the count and sample size, and select the Binomial radio button.</p>
+      </statement>
+      <solution>
+        <p>For the kissing couples example:</p>
         <p><ul>
-          <li><p>If <m>H_a: \pi > \pi_0</m>: p-value = P(X ≥ observed)</p></li>
-          <li><p>If <m>H_a: \pi &lt; \pi_0</m>: p-value = P(X ≤ observed)</p></li>
-          <li><p>If <m>H_a: \pi \neq \pi_0</m>: p-value = sum of both tail probabilities using a method like "small p-values"</p></li>
+          <li><p>Enter Number of successes: 80</p></li>
+          <li><p>Enter Sample size: 124</p></li>
+          <li><p>Select the Binomial radio button</p></li>
+          <li><p>The default confidence level is 95%</p></li>
         </ul></p>
-        
-        <p><alert>(100 × C)% Confidence Interval for <m>\pi</m></alert></p>
-        <p>The set of values such that the two-sided p-value based on the observed count is larger than the <m>(1 - C)</m> cut-off.</p>
-        
-        <p><alert>Technology</alert></p>
-        <p><ul>
-          <li><p>One Proportion Inference applet for approximate and exact binomial probability (p-value)</p></li>
-          <li><p>R, ISCAM Workspace: <c>iscambinomtest(observed, n, hypothesized=π_0, alternative="greater", "less," or "two.sided", conf.level)</c></p>
-            <p>Can enter either sample count or sample proportion for "observed." If you don't specify a hypothesized value and alternative, be sure to label the confidence level.</p></li>
-          <li><p>JMP:</p>
-            <p>For a one-sided p-value: Analyze > Distribution (raw or tallied data using Freq)</p>
-            <p>For a confidence interval: ISCAM Journal file > Confidence Interval for One Proportion using Summary Stats: specify the number of successes and the sample size</p></li>
-        </ul></p>
-      </assemblage>
-      
-      <paragraphs>
-        <title>Handy Reminders</title>
-        <p><ul>
-          <li><p>In R: If you don't remember the inputs for a function, just use ? before the function, e.g., <c>?iscambinomtest</c>. Use the up arrow to return to earlier commands.</p></li>
-          <li><p>In JMP: Remember to look under "hot spots" and that options will change across menu items.</p></li>
-        </ul></p>
-      </paragraphs>
+        <p>The output will show a 95% Clopper-Pearson confidence interval of approximately (0.556, 0.725).</p>
+        <p>You can change the confidence level to 99% in the dialog box to obtain the 99% confidence interval of approximately (0.528, 0.751).</p>
+      </solution>
+    </exercise>
+  </paragraphs>
+  
+  <exercise xml:id="I1-6-13" label="I1.6.13">
+    <title>Optional: Compare Methods</title>
+    <statement>
+      <p>Optional: Compare the Clopper-Pearson 99% interval to the Blaker 99% interval. Which is narrower?</p>
+    </statement>
+    <response/>
+    <hint>
+      <p>The Blaker method typically produces shorter intervals.</p>
+    </hint>
+    <solution>
+      <p>The Blaker 99% interval is typically narrower than the Clopper-Pearson 99% interval, which is one reason it's gaining favor in practice.</p>
+    </solution>
+  </exercise>
+  
+  <paragraphs>
+    <title>Output from R</title>
+    <p>The <c>iscambinomtest</c> function includes some interesting graphs.</p>
+    <p><ul>
+      <li><p>The bottom graph illustrates the 95% confidence interval. The interval is centered at the observed sample proportion <m>\hat{p}</m> and displays the two endpoints of the interval of plausible values for the process probability.</p></li>
+      <li><p>The top graph shows the distribution assuming the lower value of the confidence interval as the process probability. This is as far left as we can shift that null distribution before the area to the right of the observed number of successes, 80, dips below 0.025.</p></li>
+      <li><p>The middle graph shows how far we can move that distribution to the right (largest plausible value of <m>\pi</m>) before the probability below 80 dips below 0.025.</p></li>
+    </ul></p>
+    
+    <figure>
+      <image source="images/r-binom-output.png" width="75%">
+        <description>R output from iscambinomtest showing three graphs - top and middle showing binomial distributions at interval endpoints, bottom showing confidence interval</description>
+      </image>
+    </figure>
+  </paragraphs>
+  
+  <subsection xml:id="practice1-6">
+    <title>Practice Problem 1.6</title>
+    
+    <exercise xml:id="PP1-6-1" label="PP1.6.1">
+      <title>St. George's Hospital CI</title>
+      <statement>
+        <p>Recall the 8 out of 10 statistic for St. George's Hospital (Investigation 1.4). Based on this result, what is an interval of plausible values for the underlying mortality rate at St. George's? [Hint: You can use a 95% confidence level if none is stated.] Describe how you found the interval and name the method used. Report the midpoint and width of this interval.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="PP1-6-2" label="PP1.6.2">
+      <title>Larger Sample CI</title>
+      <statement>
+        <p>Use technology to calculate the 95% confidence interval based on the 71 deaths among 361 patients. Comment on how the width and midpoint of this interval differ from the interval in (a). Explain why these changes make sense.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="PP1-6-3" label="PP1.6.3">
+      <title>CI and Hypothesis Test Duality</title>
+      <statement>
+        <p>Based on the interval in (b), if you were to test <m>H_0: \pi = 0.20</m> vs. <m>H_a: \pi \neq 0.20</m>, would you reject or fail to reject the null hypothesis? Explain how you know the conclusion based on the confidence interval without actually conducting the test.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+  
+  <assemblage xml:id="summary-exact-binomial">
+    <title>Summary of Exact Binomial Inference (Sampling from a Binomial Process)</title>
+    
+    <p>Let X represent the number of successes in the sample and <m>\pi</m> the probability of success for a binomial random process.</p>
+    
+    <p><alert>To test <m>H_0: \pi = \pi_0</m></alert></p>
+    <p>We can calculate a p-value based on the binomial distribution with parameters n and <m>\pi_0</m>. The p-value can be one-sided or two-sided based on the statement of the research conjecture.</p>
+    <p><ul>
+      <li><p>If <m>H_a: \pi > \pi_0</m>: p-value = P(X ≥ observed)</p></li>
+      <li><p>If <m>H_a: \pi &lt; \pi_0</m>: p-value = P(X ≤ observed)</p></li>
+      <li><p>If <m>H_a: \pi \neq \pi_0</m>: p-value = sum of both tail probabilities using a method like "small p-values"</p></li>
+    </ul></p>
+    
+    <p><alert>(100 × C)% Confidence Interval for <m>\pi</m></alert></p>
+    <p>The set of values such that the two-sided p-value based on the observed count is larger than the <m>(1 - C)</m> cut-off.</p>
+    
+    <p><alert>Technology</alert></p>
+    <p><ul>
+      <li><p>One Proportion Inference applet for approximate and exact binomial probability (p-value)</p></li>
+      <li><p>R, ISCAM Workspace: <c>iscambinomtest(observed, n, hypothesized=π_0, alternative="greater", "less," or "two.sided", conf.level)</c></p>
+        <p>Can enter either sample count or sample proportion for "observed." If you don't specify a hypothesized value and alternative, be sure to label the confidence level.</p></li>
+      <li><p>JMP:</p>
+        <p>For a one-sided p-value: Analyze > Distribution (raw or tallied data using Freq)</p>
+        <p>For a confidence interval: ISCAM Journal file > Confidence Interval for One Proportion using Summary Stats: specify the number of successes and the sample size</p></li>
+    </ul></p>
+  </assemblage>
+  
+  <paragraphs>
+    <title>Handy Reminders</title>
+    <p><ul>
+      <li><p>In R: If you don't remember the inputs for a function, just use ? before the function, e.g., <c>?iscambinomtest</c>. Use the up arrow to return to earlier commands.</p></li>
+      <li><p>In JMP: Remember to look under "hot spots" and that options will change across menu items.</p></li>
+    </ul></p>
+  </paragraphs>
+</subsection>
