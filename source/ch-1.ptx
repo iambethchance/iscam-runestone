@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <chapter xml:id="chapter1">
   <title>Chapter 1: Analyzing One Categorical Variable</title>
 
@@ -1216,7 +1216,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
       </paragraphs>
       
       <paragraphs>
-        <title>Probability Detour â€“ Binomial Random Variables</title>
+        <title>Probability Detour - Binomial Random Variables</title>
         
         <assemblage xml:id="def-binomial-random-variable">
           <title>Definition: Binomial Random Variable</title>
@@ -1424,7 +1424,7 @@ barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
       </subsection>
       
       <paragraphs xml:id="tech-detour-binomial">
-        <title>Technology Detour â€“ Calculating Binomial Probabilities</title>
+        <title>Technology Detour - Calculating Binomial Probabilities</title>
         
         <exercise xml:id="tech-detour-r-binomial" label="Binomial Probabilities - R">
           <title>Calculating Binomial Probabilities in R</title>
@@ -2230,7 +2230,7 @@ iscambinomprob(14, 16, .5, FALSE)
       <p>You could use the One Proportion Inference applet to use simulation or the binomial distribution to find the p-value. Many statistical software packages will carry out a "Binomial test" directly.</p>
       
       <paragraphs xml:id="tech-detour-binomial-test">
-        <title>Technology Detour â€“ Binomial Test of Significance</title>
+        <title>Technology Detour - Binomial Test of Significance</title>
         
         <exercise xml:id="tech-detour-r-binomtest" label="Binomial Test - R">
           <title>Conducting a Binomial Test in R (Summarized Data)</title>
@@ -2609,7 +2609,7 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
       <exercise xml:id="I1-4-17" label="I1.4.17">
         <title>Which Dataset is More Valid?</title>
         <statement>
-          <p>In your opinion, which data set do you think is more valid to use â€“ the larger sample size or the more recent data? Explain how you are deciding.</p>
+          <p>In your opinion, which data set do you think is more valid to use - the larger sample size or the more recent data? Explain how you are deciding.</p>
         </statement>
         <response/>
         <hint>
@@ -3072,7 +3072,7 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
       <p class="horizontal-rule"> </p>
       
       <paragraphs xml:id="tech-detour-two-sided">
-        <title>Technology Detour â€“ Two-sided p-values</title>
+        <title>Technology Detour - Two-sided p-values</title>
         
         <exercise xml:id="tech-detour-two-sided-applet" label="Two-sided - Applet">
           <title>Two-sided p-values in One Proportion Inference applet</title>
@@ -3525,7 +3525,7 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
       <exercise xml:id="I1-6-10" label="I1.6.10">
         <title>Alternative CI Method</title>
         <statement>
-          <p>Alternatively, another way to define a binomial confidence interval is to find all the values of <m>\pi</m> such that P(X &lt; observed) &lt; (1 â€“ confidence level)/2 and P(X > observed) &lt; (1 â€“ confidence level)/2. Use the applet to find the 95% confidence interval using this approach. [Hints: Remember to use the one-sided p-value and change the direction of the tail probability between &lt; and >, but not =.]</p>
+          <p>Alternatively, another way to define a binomial confidence interval is to find all the values of <m>\pi</m> such that P(X &lt; observed) &lt; (1 - confidence level)/2 and P(X > observed) &lt; (1 - confidence level)/2. Use the applet to find the 95% confidence interval using this approach. [Hints: Remember to use the one-sided p-value and change the direction of the tail probability between &lt; and >, but not =.]</p>
           <p>How does the resulting 95% confidence interval compare to the previous one? Which interval is "better"? Explain.</p>
         </statement>
         <response/>
@@ -3539,11 +3539,11 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
       </exercise>
       
       <assemblage xml:id="probability-detour-ci-methods">
-        <title>Probability Detour â€“ Binomial Confidence Intervals</title>
+        <title>Probability Detour - Binomial Confidence Intervals</title>
         
-        <p>Probably the most well-known binomial confidence interval method is the <term>Clopper-Pearson method</term> (Biometrika, 1934). Rather than using two-sided p-values, it will consider a value for <m>\pi</m> plausible as long as the one-sided tail probability is smaller than (1 â€“ confidence level)/2. One advantage of the Clopper-Pearson method is there is a simple computer algorithm for finding it, rather than needing to check all values as you have done here.</p>
+        <p>Probably the most well-known binomial confidence interval method is the <term>Clopper-Pearson method</term> (Biometrika, 1934). Rather than using two-sided p-values, it will consider a value for <m>\pi</m> plausible as long as the one-sided tail probability is smaller than (1 - confidence level)/2. One advantage of the Clopper-Pearson method is there is a simple computer algorithm for finding it, rather than needing to check all values as you have done here.</p>
         
-        <p>The method we first showed you (keeping all values of <m>\pi</m> with a two-sided p-value larger than (1 â€“ confidence level) using the two-sided p-value based on the tail probabilities) is attributed to <term>Blaker</term> (The Canadian Journal of Statistics, 2000). We could refer to this as the "smallest tail probability" method.</p>
+        <p>The method we first showed you (keeping all values of <m>\pi</m> with a two-sided p-value larger than (1 - confidence level) using the two-sided p-value based on the tail probabilities) is attributed to <term>Blaker</term> (The Canadian Journal of Statistics, 2000). We could refer to this as the "smallest tail probability" method.</p>
         
         <p>Another approach would be to use the "smallest p-value" approach for the two-sided p-value, switching to using P(X = x) to find values of x more extreme than observed in finding the two-sided p-value. This method, attributed to <term>Sterne</term> (Biometrika, 1954), has the disadvantage that the interval produced can have holes! For example, a value like 0.12 may be in the interval of plausible values, the value 0.13 may not, and the value 0.14 may be again.</p>
         
@@ -3582,7 +3582,7 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
       </exercise>
       
       <paragraphs xml:id="tech-detour-exact-ci">
-        <title>Technology Detour â€“ Exact Confidence Intervals</title>
+        <title>Technology Detour - Exact Confidence Intervals</title>
         
         <p>Different software packages use different confidence interval methods, but you shouldn't see much distinction when the sample size is large.</p>
         
@@ -4036,9 +4036,9 @@ iscambinomtest(80, 124, conf.level = 0.99)
           <title>Definition: The Empirical Rule</title>
           <p>The Empirical Rule or the 68-95-99.7 rule states that for a mound-shaped, symmetric distribution:</p>
           <p><ul>
-            <li>the interval (mean â€“ SD, mean + SD) should capture approximately 68% of the distribution.</li>
-            <li>the interval (mean â€“ 2 SD, mean + 2 SD) should capture approximately 95% of the distribution.</li>
-            <li>the interval (mean â€“ 3 SD, mean + 3 SD) should capture approximately 99.7% of the distribution.</li>
+            <li>the interval (mean - SD, mean + SD) should capture approximately 68% of the distribution.</li>
+            <li>the interval (mean - 2 SD, mean + 2 SD) should capture approximately 95% of the distribution.</li>
+            <li>the interval (mean - 3 SD, mean + 3 SD) should capture approximately 99.7% of the distribution.</li>
           </ul></p>
           <image source="images/emprule1.png" width="80%"/>
         </assemblage>
@@ -4513,7 +4513,7 @@ iscambinomtest(80, 124, conf.level = 0.99)
         </exercise>
 
         <exercise xml:id="tech-detour-one-prop-z-applet" label="Tech1.8.applet">
-          <title>Technology Detour â€“ One Proportion z-test (Theory-Based Inference Applet)</title>
+          <title>Technology Detour - One Proportion z-test (Theory-Based Inference Applet)</title>
           <statement>
             <p>
               Use the Theory-Based Inference applet to conduct a one proportion z-test:
@@ -4552,7 +4552,7 @@ iscambinomtest(80, 124, conf.level = 0.99)
         </exercise>
 
         <exercise xml:id="tech-detour-one-prop-z-r" label="Tech1.8.R">
-          <title>Technology Detour â€“ One Proportion z-test (R)</title>
+          <title>Technology Detour - One Proportion z-test (R)</title>
           <statement>
             <p>
               Use R to conduct a one proportion z-test. The <c>iscamonepropztest(observed, n, hypothesized, alternative)</c> function takes the following inputs:
@@ -4610,7 +4610,7 @@ iscamonepropztest(135, 284, 0.5, "two.sided")
         </exercise>
 
         <exercise xml:id="tech-detour-one-prop-z-jmp" label="Tech1.8.JMP">
-          <title>Technology Detour â€“ One Proportion z-test (JMP)</title>
+          <title>Technology Detour - One Proportion z-test (JMP)</title>
           <statement>
             <p>
               Using the ISCAM Journal file in JMP, select Hypothesis Test for One Proportion:
@@ -4781,7 +4781,7 @@ iscamonepropztest(135, 284, 0.5, "two.sided")
         </p>
 
         <exercise xml:id="tech-detour-continuity-correction-applet" label="Tech1.8.CC.applet">
-          <title>Technology Detour â€“ Continuity Correction (Theory-Based Inference Applet)</title>
+          <title>Technology Detour - Continuity Correction (Theory-Based Inference Applet)</title>
           <statement>
             <p>
               Use the Theory-Based Inference applet to apply a continuity correction:
@@ -4815,7 +4815,7 @@ iscamonepropztest(135, 284, 0.5, "two.sided")
         </exercise>
 
         <exercise xml:id="tech-detour-continuity-correction-r" label="Tech1.8.CC.R">
-          <title>Technology Detour â€“ Continuity Correction (R)</title>
+          <title>Technology Detour - Continuity Correction (R)</title>
           <statement>
             <p>
               The <c>iscambinomnorm(k, n, prob, direction)</c> function gives a visual of the continuity correction. It takes the following inputs:
@@ -4995,7 +4995,7 @@ iscambinomnorm(135, 284, 0.5, "two.sided")
         </assemblage>
 
         <assemblage xml:id="prob-detour-normal-random-vars">
-          <title>Probability Detour â€“ Normal Random Variables</title>
+          <title>Probability Detour - Normal Random Variables</title>
           <p>
             Many quantitative variables have a distribution that can be reasonably modeled with a normal probability curve. This is a continuous probability distribution (as opposed to the binomial, which is a discrete distribution) that is specified by two quantities:
           </p>
