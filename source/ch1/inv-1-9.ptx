@@ -23,7 +23,16 @@
       </hint>
       <solution>
         <p>
-          Yes. With 124 couples and a sample proportion of 0.645, we have 80 successes (couples leaning right) and 44 failures (couples leaning left). Both are at least 10, so the CLT validity condition is satisfied.
+          <m>n\pi \geq 10</m> and <m>n(1-\pi) \geq 10</m>. Since we don't have an estimate for <m>\pi</m>, use <m>\hat{p}</m>:
+        </p>
+        <p>
+          <m>n\hat{p} = 124(0.645) = 80 > 10</m>
+        </p>
+        <p>
+          <m>n(1-\hat{p}) = 124(0.355) = 44 > 10</m>
+        </p>
+        <p>
+          Yes! Both conditions are satisfied, so the CLT validity condition is met.
         </p>
       </solution>
     </exercise>
@@ -52,7 +61,7 @@
       </hint>
       <solution>
         <p>
-          We don't have complete information. The CLT tells us the distribution should be approximately normal with mean <m>\pi</m> (the unknown process probability) and standard deviation <m>\sqrt{\pi(1-\pi)/n}</m>. However, we don't know the value of <m>\pi</m>, so we cannot fully describe this distribution without estimating it from the sample data.
+          No, you do not have enough information to sketch the distribution predicted by the CLT. We need <m>\text{SD}(\hat{p}) = \sqrt{\pi(1-\pi)/n}</m>, but we don't know <m>\pi</m>.
         </p>
       </solution>
     </exercise>
@@ -78,10 +87,10 @@
       </hint>
       <solution>
         <p>
-          Method: Use the sample proportion <m>\hat{p} = 0.645</m> in place of <m>\pi</m> in the standard deviation formula.
+          Method: Use <m>\text{SE}(\hat{p}) = \sqrt{\hat{p}(1-\hat{p})/n}</m>
         </p>
         <p>
-          Estimate: <m>\sqrt{0.645(1-0.645)/124} = \sqrt{0.645(0.355)/124} = \sqrt{0.001846} \approx 0.043</m>
+          Estimate: <m>\text{SE}(\hat{p}) = \sqrt{0.645(0.355)/124} = \sqrt{0.001846} = 0.043</m>
         </p>
       </solution>
     </exercise>
@@ -112,7 +121,7 @@
       </hint>
       <solution>
         <p>
-          For a normal distribution, approximately 95% of observations fall within 2 standard deviations of the mean. Therefore, the largest plausible distance is approximately <m>2 \times 0.043 = 0.086</m> (or about 8.6 percentage points).
+          Max plausible distance = <m>2 \times 0.043 = 0.086</m> (95% of the time)
         </p>
       </solution>
     </exercise>
@@ -135,10 +144,10 @@
       </hint>
       <solution>
         <p>
-          <m>0.645 \pm 0.086 = (0.559, 0.731)</m>
+          <m>\pi</m> should fall within 2 standard deviations of the observed sample proportion. So <m>\pi</m> is at least <m>0.645 - 2(0.043) = 0.559</m> and at most <m>0.645 + 2(0.043) = 0.731</m>
         </p>
         <p>
-          We are approximately 95% confident that the probability a kissing couple leans to the right is between 0.559 and 0.731.
+          I'm 95% confident that the probability a kissing couple leans right is between 0.559 and 0.731.
         </p>
       </solution>
     </exercise>
@@ -243,7 +252,7 @@
           <m>z^* = 1.96</m>
         </p>
         <p>
-          Using technology, we find that to capture the middle 95% of the standard normal distribution, we need to go approximately 1.96 standard deviations on each side of the mean.
+          So the interval would be <m>0.645 \pm 1.96(0.043) \approx (0.561, 0.729)</m>
         </p>
       </solution>
     </exercise>
@@ -272,7 +281,7 @@
           <m>0.645 \pm 1.96 \times 0.043 = 0.645 \pm 0.084 = (0.561, 0.729)</m>
         </p>
         <p>
-          Interpretation: We are 95% confident that the probability a kissing couple leans to the right is between 0.561 and 0.729. That is, if we were to repeat this study many times and construct 95% confidence intervals each time, approximately 95% of those intervals would contain the true value of <m>\pi</m>.
+          Interpretation: We are 95% confident that the probability a kissing couple leans to the right is between 0.561 and 0.729.
         </p>
       </solution>
     </exercise>
@@ -298,10 +307,10 @@
       </hint>
       <solution>
         <p>
-          <m>z^* = 1.645</m> for 90% confidence.
+          <m>z^*(90) = 1.645 &lt; 1.96</m>
         </p>
         <p>
-          This is smaller than the 95% critical value of 1.96. This makes sense because if we want to be less confident that we've captured the parameter (90% instead of 95%), we can use a narrower interval. A narrower interval requires a smaller multiplier.
+          This makes sense because we are only capturing the middle 90% so don't have to extend as far from the middle.
         </p>
       </solution>
     </exercise>
@@ -339,7 +348,7 @@
           Midpoint: <m>\hat{p}</m>
         </p>
         <p>
-          Width: <m>2 \times z^* \sqrt{\hat{p}(1-\hat{p})/n}</m> or equivalently <m>2 \times z^* \times \text{SE}(\hat{p})</m>
+          Width: <m>2 \times z^* \sqrt{\hat{p}(1-\hat{p})/n}</m>
         </p>
       </solution>
     </exercise>
@@ -362,7 +371,7 @@
       </hint>
       <solution>
         <p>
-          Increasing the confidence level increases the width of the interval. As we require more confidence that we've captured the parameter, we need a larger critical value <m>z^*</m>, which increases the margin of error and thus the width of the interval.
+          Increasing the Confidence Level <m>\Rightarrow</m> increase <m>z^*</m> <m>\Rightarrow</m> wider interval
         </p>
       </solution>
     </exercise>
@@ -385,7 +394,7 @@
       </hint>
       <solution>
         <p>
-          Increasing the sample size decreases the width of the interval. As <m>n</m> increases, the standard error <m>\sqrt{\hat{p}(1-\hat{p})/n}</m> decreases, which decreases the margin of error and thus the width of the interval. Larger samples provide more precise estimates.
+          Increasing <m>n</m> <m>\Rightarrow</m> smaller width (<m>n</m> is in the denominator)
         </p>
       </solution>
     </exercise>
@@ -445,10 +454,25 @@
       </hint>
       <solution>
         <p>
-          <m>0.645 \pm 1.645 \times 0.043 = 0.645 \pm 0.071 = (0.574, 0.716)</m>
+          If the confidence level is 90%, then use <m>z^* = 1.645</m>
         </p>
         <p>
-          The midpoint is the same (<m>\hat{p} = 0.645</m>) for both intervals. The width of the 90% interval (0.142) is narrower than the width of the 95% interval (0.168). This is expected because we are requiring less confidence, so we can use a narrower interval.
+          <m>0.645 - 1.645 \times 0.043 = 0.5743</m>
+        </p>
+        <p>
+          <m>0.645 + 1.645 \times 0.043 = 0.7157</m>
+        </p>
+        <p>
+          I am 90% confident that between 57.43% and 71.57% of kissing couples turn to the right.
+        </p>
+        <p>
+          Midpoint = <m>(0.5743 + 0.7157)/2 = 0.645</m> (same as with the 95% confidence interval)
+        </p>
+        <p>
+          Width = <m>0.7157 - 0.5743 = 0.142</m> (smaller than for the 95% confidence interval)
+        </p>
+        <p>
+          <m>2(1.645)(0.043) = 0.142</m>
         </p>
       </solution>
     </exercise>
@@ -528,21 +552,7 @@
       </hint>
       <solution>
         <p>
-          For 90% confidence:
-          <ul>
-            <li><p><m>z</m>-interval width: <m>0.716 - 0.574 = 0.142</m></p></li>
-            <li><p>Exact binomial width: <m>0.7166 - 0.5684 = 0.1482</m></p></li>
-          </ul>
-        </p>
-        <p>
-          For 95% confidence:
-          <ul>
-            <li><p><m>z</m>-interval width: <m>0.729 - 0.561 = 0.168</m></p></li>
-            <li><p>Exact binomial width: <m>0.7290 - 0.5542 = 0.1748</m></p></li>
-          </ul>
-        </p>
-        <p>
-          The <m>z</m>-intervals are slightly narrower than the exact binomial intervals. The normal approximation intervals tend to be a bit more liberal (slightly narrower) than the exact binomial intervals, which are conservative.
+          The binomial confidence intervals are a bit longer (and even a bit more to the left).
         </p>
       </solution>
     </exercise>
@@ -580,31 +590,19 @@
         </hint>
         <solution>
           <p>
-            <em>Approach 1:</em> Using <m>\hat{p} = 0.645</m> and <m>z^* = 1.96</m>:
+            <m>z^* \sqrt{\hat{p}(1-\hat{p})/n} = 0.03</m>
           </p>
           <p>
-            <md>
-              <mrow>1.96\sqrt{\frac{0.645(0.355)}{n}} &amp;= 0.03</mrow>
-              <mrow>\sqrt{\frac{0.645(0.355)}{n}} &amp;= \frac{0.03}{1.96}</mrow>
-              <mrow>\frac{0.645(0.355)}{n} &amp;= \left(\frac{0.03}{1.96}\right)^2</mrow>
-              <mrow>n &amp;= \frac{0.645(0.355)}{\left(\frac{0.03}{1.96}\right)^2}</mrow>
-              <mrow>n &amp;\approx 984.7</mrow>
-            </md>
+            <em>Approach 1:</em> Use the previous <m>\hat{p} = 0.645</m>.
           </p>
           <p>
-            Round up to <m>n = 985</m>.
+            Solving for <m>n</m>, we would get <m>(1.96^2)(0.645)(0.355)/(0.03^2) = 977.4</m> or 978
           </p>
           <p>
-            <em>Approach 2:</em> Using <m>\pi = 0.5</m>:
+            <em>Approach 2:</em> Using 0.50
           </p>
           <p>
-            <md>
-              <mrow>n &amp;= \frac{0.5(0.5)}{\left(\frac{0.03}{1.96}\right)^2}</mrow>
-              <mrow>n &amp;\approx 1067.1</mrow>
-            </md>
-          </p>
-          <p>
-            Round up to <m>n = 1068</m>.
+            Solving for <m>n</m>, we would get <m>(1.96^2)(0.5)(0.5)/(0.03^2) = 1067.1</m> or 1068.
           </p>
         </solution>
       </exercise>
@@ -627,7 +625,7 @@
         </hint>
         <solution>
           <p>
-            The sample size required using Approach 2 (1068) is larger than with Approach 1 (985). Approach 2 is considered "conservative" because <m>\pi = 0.5</m> produces the largest possible value for <m>\pi(1-\pi)</m>, which maximizes the margin of error for any given sample size. By using 0.5, we ensure that regardless of the true value of <m>\pi</m>, our sample will be large enough to achieve the desired margin of error. This approach errs on the side of caution by potentially collecting more data than necessary, but it guarantees the margin of error won't exceed our specification.
+            The value of <m>n</m> increases for probabilities closer to 0.50. If the process probability is not 0.50, the recommended <m>n</m> value will result in a smaller margin of error than requested.
           </p>
         </solution>
       </exercise>
