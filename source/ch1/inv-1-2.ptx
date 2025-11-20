@@ -518,19 +518,31 @@ iscambinomprob(14, 16, .5, FALSE)
     <exercise xml:id="tech-detour-jmp-binomial" label="Binomial Probabilities - JMP">
       <title>Calculating Binomial Probabilities in JMP</title>
       <statement>
-        <p>Using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url> (Download this file to your computer and then open the .jrn file to launch JMP.)</p>
-        <p><ol>
-          <li><p>Select Binomial from the Distribution pull down menu.</p></li>
-          <li><p>Specify the values of the probability of success (<m>\pi</m>) and n (the sample size).</p></li>
-          <li><p>Leave the Type of Calculation as is.</p></li>
-          <li><p>Select Probability Option <m>X \geq Q_a</m> but specify <m>Q_a</m> to equal <m>k-1</m> (e.g., 13).</p></li>
-          <li><p>Press Enter.</p></li>
-        </ol></p>
-        
-        <note>
-          <title>JMP Reminder</title>
-          <p>In JMP's Distribution Calculator, you need to subtract 1 from your observed value when using the <m>\geq</m> option because JMP calculates <m>P(X > Q_a)</m> as <m>P(X \geq Q_a + 1)</m>. So to get <m>P(X \geq 14)</m>, you enter 13 as <m>Q_a</m>.</p>
-        </note>
+        <sidebyside widths="55% 40%" valign="top">
+          <stack>
+            <p>Using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url> (Download this file to your computer and then open the .jrn file to launch JMP.)</p>
+            <p><ol>
+              <li><p>Select Binomial from the Distribution pull down menu.</p></li>
+              <li><p>Specify the values of the probability of success (<m>\pi</m>) and n (the sample size).</p></li>
+              <li><p>Leave the Type of Calculation as is.</p></li>
+              <li><p>Select Probability Option <m>X \geq Q_a</m> but specify <m>Q_a</m> to equal <m>k-1</m> (e.g., 13).</p></li>
+              <li><p>Press Enter.</p></li>
+            </ol></p>
+            
+            <note>
+              <title>JMP Reminder</title>
+              <p>In JMP's Distribution Calculator, you need to subtract 1 from your observed value when using the <m>\geq</m> option because JMP calculates <m>P(X > Q_a)</m> as <m>P(X \geq Q_a + 1)</m>. So to get <m>P(X \geq 14)</m>, you enter 13 as <m>Q_a</m>.</p>
+            </note>
+          </stack>
+          <stack>
+            <image source="images/Inv1.2JMPa.png">
+              <description>JMP Distribution Calculator input screen for binomial probabilities</description>
+            </image>
+            <image source="images/Inv1.2JMPb.png">
+              <description>JMP Distribution Calculator output screen showing binomial distribution</description>
+            </image>
+          </stack>
+        </sidebyside>
       </statement>
       <solution>
         <p>The JMP Distribution Calculator will display both the probability value and a visual representation of the binomial distribution with the tail area shaded. For finding <m>P(X \geq 14)</m> when <m>n=16</m> and <m>\pi=0.5</m>, enter 13 for <m>Q_a</m> to get the correct p-value of approximately 0.0021.</p>
