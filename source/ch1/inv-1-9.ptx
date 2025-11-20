@@ -631,88 +631,144 @@
       </p>
     </paragraphs>
 
-    <paragraphs xml:id="practice-1-9">
-      <title>Practice Problems</title>
+  <subsection xml:id="practice1-9A">
+    <title>Practice Problem 1.9A</title>
 
-      <exercise xml:id="practice-1-9-A" label="Practice1.9A">
-        <title>Practice Problem 1.9A: Muffin's Ball Choices</title>
-        <statement>
-          <p>
-            Recall from Practice Problem 1.8B that a student wanted to assess whether her dog Muffin tends to chase her blue ball and her red ball equally often when they are rolled at the same time. The student rolled both balls a total of 96 times, each time keeping track of which ball Muffin chased. The student found that Muffin chased the blue ball 52 times and the red ball 44 times. We arbitrarily decided to treat the blue ball as "success."
-          </p>
-          <p>
-            (a) Is using theory-based <m>z</m>-procedures valid in this study? How are you deciding?
-          </p>
-          <p>
-            (b) Determine and interpret a 95% <m>z</m>-confidence interval.
-          </p>
-          <p>
-            (c) Report the margin of error of your interval. Determine and compare to the margin of error change if with a 99% confidence level.
-          </p>
-          <p>
-            (d) What would be the necessary sample size if we wanted a margin of error of 0.01 for a confidence level of 95%? Explain how you are finding this.
-          </p>
-        </statement>
-        <response/>
-        <solution>
-          <p>
-            (a) Yes, <m>z</m>-procedures are valid. We have 52 successes and 44 failures, both at least 10, so the validity condition is satisfied.
-          </p>
-          <p>
-            (b) <m>\hat{p} = 52/96 = 0.542</m>, <m>\text{SE}(\hat{p}) = \sqrt{0.542(0.458)/96} = 0.051</m>
-          </p>
-          <p>
-            95% CI: <m>0.542 \pm 1.96(0.051) = 0.542 \pm 0.100 = (0.442, 0.642)</m>
-          </p>
-          <p>
-            We are 95% confident that the probability Muffin chases the blue ball is between 0.442 and 0.642.
-          </p>
-          <p>
-            (c) Margin of error for 95%: 0.100
-          </p>
-          <p>
-            For 99% (<m>z^* = 2.576</m>): <m>2.576(0.051) = 0.131</m>
-          </p>
-          <p>
-            The margin of error increases when we require more confidence (99% vs 95%).
-          </p>
-          <p>
-            (d) Using <m>\pi = 0.542</m>:
-          </p>
-          <p>
-            <m>n = \frac{0.542(0.458)}{(0.01/1.96)^2} \approx 9552</m>
-          </p>
-          <p>
-            We would need approximately 9,552 trials to achieve a margin of error of 0.01 (1 percentage point) with 95% confidence.
-          </p>
-        </solution>
-      </exercise>
+    <p>
+      Recall from Practice Problem 1.8B that a student wanted to assess whether her dog Muffin tends to chase her blue ball and her red ball equally often when they are rolled at the same time. The student rolled both balls a total of 96 times, each time keeping track of which ball Muffin chased. The student found that Muffin chased the blue ball 52 times and the red ball 44 times. We arbitrarily decided to treat the blue ball as "success."
+    </p>
 
-      <exercise xml:id="practice-1-9-B" label="Practice1.9B">
-        <title>Practice Problem 1.9B: Conceptual Understanding</title>
-        <statement>
-          <p>
-            (a) In an actual study, how do you know whether your interval actually contains the value of the unknown parameter?
-          </p>
-          <p>
-            (b) What is the distinction between standard deviation and standard error?
-          </p>
-          <p>
-            (c) Reconsider Muffin and suppose our confidence interval is (0.2689, 0.4811). Which of the following interpretations are valid? If not valid, why not?
-          </p>
-          <p>
-            <ul>
-              <li><p>You are 95% confident that the interval (0.2689, 0.4811) contains the sample proportion of blue balls chased by Muffin.</p></li>
-              <li><p>There is a 95% chance that the interval (0.2689, 0.4811) captures the probability Muffin chasing the blue ball.</p></li>
-              <li><p>95% of the time the interval (0.2689, 0.4811) contains the probability of Muffin chasing the blue ball</p></li>
-              <li><p>In the long run, 95% of sample proportions fall in between 0.2689 and 0.4811.</p></li>
-              <li><p>If the null hypothesis is true, there is a 95% chance the interval contains the parameter.</p></li>
-              <li><p>I am 95% confident that Muffin chased the blue ball between 27% and 48% of the time.</p></li>
-            </ul>
-          </p>
-        </statement>
-        <response/>
-        <solution>
+    <exercise xml:id="practice-1-9a-a" label="PP1.9A.1">
+      <title>Check Validity of <m>z</m>-procedures</title>
+      <statement>
+        <p>
+          Is using theory-based <m>z</m>-procedures valid in this study? How are you deciding?
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          Yes, <m>z</m>-procedures are valid. We have 52 successes and 44 failures, both at least 10, so the validity condition is satisfied.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-9a-b" label="PP1.9A.2">
+      <title>Calculate 95% Confidence Interval</title>
+      <statement>
+        <p>
+          Determine and interpret a 95% <m>z</m>-confidence interval.
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          <m>\hat{p} = 52/96 = 0.542</m>, <m>\text{SE}(\hat{p}) = \sqrt{0.542(0.458)/96} = 0.051</m>
+        </p>
+        <p>
+          95% CI: <m>0.542 \pm 1.96(0.051) = 0.542 \pm 0.100 = (0.442, 0.642)</m>
+        </p>
+        <p>
+          We are 95% confident that the probability Muffin chases the blue ball is between 0.442 and 0.642.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-9a-c" label="PP1.9A.3">
+      <title>Compare Margins of Error</title>
+      <statement>
+        <p>
+          Report the margin of error of your interval. Determine and compare to the margin of error change if with a 99% confidence level.
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          Margin of error for 95%: 0.100
+        </p>
+        <p>
+          For 99% (<m>z^* = 2.576</m>): <m>2.576(0.051) = 0.131</m>
+        </p>
+        <p>
+          The margin of error increases when we require more confidence (99% vs 95%).
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-9a-d" label="PP1.9A.4">
+      <title>Determine Required Sample Size</title>
+      <statement>
+        <p>
+          What would be the necessary sample size if we wanted a margin of error of 0.01 for a confidence level of 95%? Explain how you are finding this.
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          Using <m>\pi = 0.542</m>:
+        </p>
+        <p>
+          <m>n = \frac{0.542(0.458)}{(0.01/1.96)^2} \approx 9552</m>
+        </p>
+        <p>
+          We would need approximately 9,552 trials to achieve a margin of error of 0.01 (1 percentage point) with 95% confidence.
+        </p>
+      </solution>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice1-9B">
+    <title>Practice Problem 1.9B</title>
+
+    <exercise xml:id="practice-1-9b-a" label="PP1.9B.1">
+      <title>Understanding Confidence Intervals</title>
+      <statement>
+        <p>
+          In an actual study, how do you know whether your interval actually contains the value of the unknown parameter?
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          In an actual study, you never know for certain whether your specific interval contains the unknown parameter. The parameter is a fixed value, and your interval either contains it or doesn't. The confidence level refers to the long-run proportion of intervals that would contain the parameter if we repeated the study many times.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-9b-b" label="PP1.9B.2">
+      <title>Standard Deviation vs Standard Error</title>
+      <statement>
+        <p>
+          What is the distinction between standard deviation and standard error?
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          Standard deviation refers to the actual variability in the distribution (e.g., <m>\text{SD}(\hat{p}) = \sqrt{\pi(1-\pi)/n}</m>), which depends on the unknown parameter <m>\pi</m>. Standard error is an estimate of the standard deviation calculated from the sample data (e.g., <m>\text{SE}(\hat{p}) = \sqrt{\hat{p}(1-\hat{p})/n}</m>), where we substitute the sample proportion for the unknown parameter.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-9b-c" label="PP1.9B.3">
+      <title>Interpreting Confidence Intervals</title>
+      <statement>
+        <p>
+          Reconsider Muffin and suppose our confidence interval is (0.2689, 0.4811). Which of the following interpretations are valid? If not valid, why not?
+        </p>
+        <p>
+          <ul>
+            <li><p>You are 95% confident that the interval (0.2689, 0.4811) contains the sample proportion of blue balls chased by Muffin.</p></li>
+            <li><p>There is a 95% chance that the interval (0.2689, 0.4811) captures the probability Muffin chasing the blue ball.</p></li>
+            <li><p>95% of the time the interval (0.2689, 0.4811) contains the probability of Muffin chasing the blue ball</p></li>
+            <li><p>In the long run, 95% of sample proportions fall in between 0.2689 and 0.4811.</p></li>
+            <li><p>If the null hypothesis is true, there is a 95% chance the interval contains the parameter.</p></li>
+            <li><p>I am 95% confident that Muffin chased the blue ball between 27% and 48% of the time.</p></li>
+          </ul>
+        </p>
+      </statement>
+      <response/>
+      <solution>
           <p>
             (a) In an actual study, you never know for certain whether your specific interval contains the unknown parameter. The parameter is a fixed value, and your interval either contains it or doesn't. The confidence level refers to the long-run proportion of intervals that would contain the parameter if we repeated the study many times.
           </p>
