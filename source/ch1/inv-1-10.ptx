@@ -549,14 +549,213 @@
     <subsection xml:id="practice1-10A">
       <title>Practice Problem 1.10A</title>
 
-      <p>[Practice Problem 1.10A content to be added]</p>
+      <p>
+        Return to your exploration using the Simulating Confidence Intervals applet. Assume that <m>\pi = 0.667</m> is the probability that a kissing couple leans to the right.
+      </p>
+
+      <exercise xml:id="practice-1-10a-a" label="PP1.10A.1">
+        <title>Evaluate Score Interval Method</title>
+        <statement>
+          <p>
+            From the Method pull-down menu select the Score interval method. Evaluate the performance of this interval method, clearly explaining your steps. [<em>Hint:</em> Does the performance depend on the value of <m>n</m> that you use? What if you change the value of <m>\pi</m> to something closer to 0 or 1? Average widths?]
+          </p>
+        </statement>
+        <response/>
+        <solution>
+          <p>
+            The Score interval method performs well across different sample sizes and parameter values. The <alert>coverage rate</alert> is close to the nominal 95% confidence level even for small sample sizes and extreme values of <m>\pi</m>. As sample size increases, the average width of the intervals decreases while maintaining the appropriate coverage rate.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise xml:id="practice-1-10a-b" label="PP1.10A.2">
+        <title>Derive Score Interval Formula</title>
+        <statement>
+          <p>
+            Starting with <m>z = \frac{\hat{p} - \pi}{\sqrt{\pi(1-\pi)/n}}</m>, use the quadratic formula to solve for <m>\pi</m> and verify the first formula for the Score interval.
+          </p>
+        </statement>
+        <response/>
+        <solution>
+          <p>
+            Starting with <m>z = \frac{\hat{p} - \pi}{\sqrt{\pi(1-\pi)/n}}</m>, square both sides and rearrange to get a quadratic equation in <m>\pi</m>. Using the quadratic formula yields the Score interval formula:
+          </p>
+          <p>
+            <m>\frac{\hat{p} + \frac{z^2}{2n} \pm z\sqrt{\frac{\hat{p}(1-\hat{p})}{n} + \frac{z^2}{4n^2}}}{1 + \frac{z^2}{n}}</m>
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise xml:id="practice-1-10a-c" label="PP1.10A.3">
+        <title>Compare Score and Adjusted Wald Midpoints</title>
+        <statement>
+          <p>
+            Show that the midpoint of the Score formula found in (b) simplifies to the midpoint of the Adjusted Wald procedure.
+          </p>
+        </statement>
+        <response/>
+        <solution>
+          <p>
+            The midpoint of the Score interval is <m>\frac{\hat{p} + \frac{z^2}{2n}}{1 + \frac{z^2}{n}}</m>. With <m>z^* = 1.96 \approx 2</m>, this becomes approximately <m>\frac{\hat{p} + \frac{4}{2n}}{1 + \frac{4}{n}} = \frac{\hat{p} + \frac{2}{n}}{1 + \frac{4}{n}}</m>, which matches the midpoint of the Adjusted Wald (Plus Four) procedure.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise xml:id="practice-1-10a-d" label="PP1.10A.4">
+        <title>Relate Adjusted Wald to Plus Four</title>
+        <statement>
+          <p>
+            Show that with 95% confidence the midpoint of the Adjusted Wald procedure can be approximated with <m>\frac{X + 2}{n + 4}</m>, the Plus Four method.
+          </p>
+        </statement>
+        <response/>
+        <solution>
+          <p>
+            With <m>z^* = 1.96 \approx 2</m> for 95% confidence, the Adjusted Wald midpoint <m>\frac{\hat{p} + \frac{z^{*2}}{2n}}{1 + \frac{z^{*2}}{n}}</m> becomes <m>\frac{\hat{p} + \frac{4}{2n}}{1 + \frac{4}{n}} = \frac{\hat{p} + \frac{2}{n}}{1 + \frac{4}{n}}</m>. Since <m>\hat{p} = \frac{X}{n}</m>, this equals <m>\frac{\frac{X}{n} + \frac{2}{n}}{1 + \frac{4}{n}} = \frac{\frac{X+2}{n}}{\frac{n+4}{n}} = \frac{X+2}{n+4}</m>, which is the Plus Four method.
+          </p>
+        </solution>
+      </exercise>
 
     </subsection>
 
     <subsection xml:id="practice1-10B">
       <title>Practice Problem 1.10B</title>
 
-      <p>[Practice Problem 1.10B content to be added]</p>
+      <exercise xml:id="practice-1-10b-a" label="PP1.10B.1">
+        <title>Probability of Selecting Capturing Interval</title>
+        <statement>
+          <p>
+            Suppose that you take 1000 samples from a random process and generate a 95% confidence interval for <m>\pi</m> with each sample. If you randomly select one of these intervals, what is the probability that you will select an interval that captures <m>\pi</m>?
+          </p>
+        </statement>
+        <response/>
+        <solution>
+          <p>
+            The probability is approximately 0.95 (or 95%). Since these are 95% confidence intervals, in the long run about 95% of the intervals will capture the true parameter value <m>\pi</m>. Therefore, randomly selecting one interval gives you about a 95% chance of selecting one that captures <m>\pi</m>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise xml:id="practice-1-10b-b" label="PP1.10B.2">
+        <title>Probability for Specific Interval</title>
+        <statement>
+          <p>
+            Suppose you take one sample from a random process and generate a 95% confidence interval to be (0.15, 0.25). What is the probability that this interval captures <m>\pi</m>?
+          </p>
+        </statement>
+        <response/>
+        <solution>
+          <p>
+            The probability is either 0 or 1 - we just don't know which! Once a specific interval is constructed, the parameter <m>\pi</m> either is or isn't in that interval. The "95% confidence" refers to the method, not to any particular interval. If we were to use this method repeatedly, about 95% of the intervals constructed would contain <m>\pi</m>.
+          </p>
+        </solution>
+      </exercise>
+
+      <exercise xml:id="practice-1-10b-c" label="PP1.10B.3">
+        <title>Effect of Confidence Level</title>
+        <statement>
+          <p>
+            In general, how does increasing the confidence level impact the width and <alert>coverage rate</alert> of a confidence interval procedure?
+          </p>
+          <p>
+            Width:
+          </p>
+        </statement>
+        <choices randomize="no">
+          <choice>
+            <statement><p>Decreases</p></statement>
+            <feedback><p>Incorrect. To be more confident, we need a wider interval.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p>No change</p></statement>
+            <feedback><p>Incorrect. The width is affected by the confidence level.</p></feedback>
+          </choice>
+          <choice correct="yes">
+            <statement><p>Increases</p></statement>
+            <feedback><p>Correct! Increasing confidence level requires a larger critical value, which increases the margin of error and makes the interval wider.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p>Can't be predicted</p></statement>
+            <feedback><p>Incorrect. The effect is predictable - higher confidence requires wider intervals.</p></feedback>
+          </choice>
+        </choices>
+        <statement>
+          <p>
+            Coverage rate:
+          </p>
+        </statement>
+        <choices randomize="no">
+          <choice>
+            <statement><p>Decreases</p></statement>
+            <feedback><p>Incorrect. Higher confidence level means we capture the parameter more often.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p>No change</p></statement>
+            <feedback><p>Incorrect. The coverage rate changes with confidence level.</p></feedback>
+          </choice>
+          <choice correct="yes">
+            <statement><p>Increases</p></statement>
+            <feedback><p>Correct! Increasing the confidence level increases the <alert>coverage rate</alert> - a higher percentage of intervals will capture the true parameter.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p>Can't be predicted</p></statement>
+            <feedback><p>Incorrect. The effect is predictable - higher confidence level means higher coverage rate.</p></feedback>
+          </choice>
+        </choices>
+      </exercise>
+
+      <exercise xml:id="practice-1-10b-d" label="PP1.10B.4">
+        <title>Effect of Sample Size</title>
+        <statement>
+          <p>
+            In general, how does increasing the sample size impact the width and <alert>coverage rate</alert> of a confidence interval procedure?
+          </p>
+          <p>
+            Width:
+          </p>
+        </statement>
+        <choices randomize="no">
+          <choice correct="yes">
+            <statement><p>Decreases</p></statement>
+            <feedback><p>Correct! Larger sample sizes reduce the standard error, which decreases the margin of error and makes intervals narrower.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p>No change</p></statement>
+            <feedback><p>Incorrect. Sample size affects the width through the standard error.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p>Increases</p></statement>
+            <feedback><p>Incorrect. Larger samples give more precise estimates with narrower intervals.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p>Can't be predicted</p></statement>
+            <feedback><p>Incorrect. The effect is predictable - larger samples produce narrower intervals.</p></feedback>
+          </choice>
+        </choices>
+        <statement>
+          <p>
+            Coverage rate:
+          </p>
+        </statement>
+        <choices randomize="no">
+          <choice>
+            <statement><p>Decreases</p></statement>
+            <feedback><p>Incorrect. Sample size doesn't negatively affect coverage rate.</p></feedback>
+          </choice>
+          <choice correct="yes">
+            <statement><p>No change</p></statement>
+            <feedback><p>Correct! For a valid confidence interval procedure, the <alert>coverage rate</alert> should remain at the stated confidence level (e.g., 95%) regardless of sample size. Sample size affects width but not the long-run <alert>coverage rate</alert>.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p>Increases</p></statement>
+            <feedback><p>Incorrect. While larger samples are better, the coverage rate should match the confidence level regardless of sample size for a valid procedure.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p>Can't be predicted</p></statement>
+            <feedback><p>Incorrect. For a valid procedure, the coverage rate should consistently match the stated confidence level.</p></feedback>
+          </choice>
+        </choices>
+      </exercise>
 
     </subsection>
   </subsection>
