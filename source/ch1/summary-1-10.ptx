@@ -5,8 +5,96 @@
       <alert>Discussion</alert> As you can tell, there are several ways to obtain a confidence interval for a process probability. When the sample size is large, they will yield very similar results for the endpoints and the coverage rate. When the sample size is small, the Adjusted Wald method is preferred. You can use the Clopper-Pearson confidence interval method when the sample size is small, but the Binomial intervals tend to be wider and don't have the estimate <m>\pm</m> margin-of-error simplicity), but is more computationally efficient than the Blaker method. Below we compare the 95% confidence intervals for the 8 of 10 and 71 of 361 studies for these methods plus a fourth, the "Score interval" which is a more direct inversion of the one sample proportion <m>z</m>-test; as well as the adjusted Blaker method discussed in Investigation 1.6.
     </p>
 
+    <table>
+      <title>Comparison of 95% Confidence Interval Methods</title>
+      <tabular halign="left">
+        <row header="yes" bottom="major">
+          <cell>Method</cell>
+          <cell><m>n = 10</m></cell>
+          <cell><m>n = 361</m></cell>
+        </row>
+        <row>
+          <cell><alert>Wald interval</alert> (aka normal approximation aka asymptotic)
+          <line/>Finds the values of <m>\pi</m> so that <m>P(z &lt; \pi &lt; z) = C</m>
+          <line/>Formula: <m>\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</m>
+          <line/>Tendency for poor coverage properties if small <m>n</m> or extreme <m>\pi</m>
+          <line/>TBI applet or JMP or R (iscamonepropztest)</cell>
+          <cell>(0.5521, 1.048)</cell>
+          <cell>(0.1557, 0.2377)</cell>
+        </row>
+        <row>
+          <cell><alert>Plus Four</alert> (special case of Adjusted Wald)
+          <line/>(95%) Add two successes and two failures to sample results
+          <line/>Formula: <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{n}}</m>; where <m>\tilde{p} = (X + 2)/(n + 4)</m> and <m>\tilde{n} = n + 4</m>
+          <line/>Very good coverage properties
+          <line/>TBI applet or JMP or R after adjust sample data</cell>
+          <cell>(0.4776, 0.9509)</cell>
+          <cell>(0.1590, 0.2410)</cell>
+        </row>
+        <row>
+          <cell><alert>Adjusted Wald</alert> (aka Agresti-Coull)
+          <line/><m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{\tilde{n}}}</m>; <m>\tilde{p} = (X + 0.5z^{*2})/(n + z^{*2})</m>, <m>\tilde{n} = n + z^{*2}</m>
+          <line/>Very good coverage properties.</cell>
+          <cell>(0.4794, 0.9541)</cell>
+          <cell>(0.1588, 0.2409)</cell>
+        </row>
+        <row>
+          <cell><alert>Wilson interval</alert> (aka Score interval)
+          <line/>Finds the values of <m>\pi</m> so that <m>P(z &lt; \pi &lt; z) = C</m>
+          <line/>Can have poor coverage properties with <m>\pi</m> near 0 or 1.</cell>
+          <cell>(0.4902, 0.9433)</cell>
+          <cell>(0.1590, 0.2408)</cell>
+        </row>
+        <row>
+          <cell>JMP (Analyze > Distribution) or R prop.test w/o continuity corr.</cell>
+          <cell>(0.4422, 0.9646)</cell>
+          <cell>(0.1577, 0.2423)</cell>
+        </row>
+        <row>
+          <cell>R prop.test w/ continuity corr.</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><alert>Exact Binomial</alert> (Clopper-Pearson)
+          <line/>Finds the values of <m>\pi</m> so <m>P(X &lt; k) &gt; (1 - C)/2</m> and <m>P(X &gt; k) &gt; (1 - C)/2</m> where <m>k</m> is observed number of successes
+          <line/>Tends to be "conservative" (longer than necessary)
+          <line/>JMP (summary stats) or R using iscambinomtest</cell>
+          <cell>(0.4439, 0.9748)</cell>
+          <cell>(0.1569, 0.2415)</cell>
+        </row>
+        <row>
+          <cell><alert>Blaker</alert> (Inv 1.6)
+          <line/>Finds the values of <m>\pi</m> so the two-sided p-value (using tail probabilities) is less <m>(1 - C)/2</m>.
+          <line/>Tends to be shorter than the Clopper-Pearson interval.
+          <line/>R (blakerCI)</cell>
+          <cell>(0.4445, 0.9632)</cell>
+          <cell>(0.1570, 0.2403)</cell>
+        </row>
+      </tabular>
+    </table>
+
     <p>
-      <em>Also note:</em> In 2013, two statisticians, Agresti and Gottard, introduced a new approach to address the Wald's method underperforming for extreme sample proportions, and found that the method was superior to the Plus Four in terms of coverage while maintaining similar interval lengths.
+      Whatever procedure is used to determine the confidence interval, you interpret a (valid) interval the same way – as the interval of plausible values for the parameter. For example, we are 95% confident that the underlying probability of death within 30 days of a heart transplant operation at St. George's Hospital is between 0.16 and 0.24; where by "95% confident," we mean that if we were to use this procedure to construct intervals from thousands of representative samples, roughly 95% of those intervals will succeed in capturing the actual (but unknown) value of the parameter of interest.
     </p>
+
+    <assemblage>
+      <title>Keep in Mind</title>
+      <p>
+        The main things you should focus on in your study of confidence intervals are:
+      </p>
+      <p>
+        <ul>
+          <li><p>What parameter is the interval estimating (in context)?</p></li>
+          <li><p>What are the effects of sample size, confidence level, and the sample statistic on the width and midpoint of the interval?</p></li>
+          <li><p>What do we mean by "confidence"?</p></li>
+          <li><p>What are the effects (if any!) of sample size, confidence level, and the actual parameter value on the coverage rate of the method?</p></li>
+          <li><p>Why might one confidence interval method be preferred over another?</p></li>
+        </ul>
+      </p>
+      <p>
+        Also note how to use technology to perform these calculations. You should NOT use the Simulating Confidence Intervals applet to construct a confidence interval for a particular sample of data.
+      </p>
+    </assemblage>
 
   </subsection>
