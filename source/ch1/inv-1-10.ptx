@@ -110,7 +110,7 @@
       <title>Explore Simulating Confidence Intervals Applet</title>
       <statement>
         <p>
-          Open the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html" visual="rossmanchance.com/applets/2021/confsim/ConfSim.html">Simulating Confidence Intervals applet</url>.
+          Open the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1" visual="rossmanchance.com/applets/2021/confsim/ConfSim.html">Simulating Confidence Intervals applet</url>.
         </p>
         <p>
           Suppose the actual process probability of death is 0.15 and you plan to take a sample of 10 operations and apply the <m>z</m>-interval (aka Wald) method. Set the value of <m>\pi</m> to 0.15 and the Sample size (n) to 10. Press Sample. Click on the interval to see the endpoint(s), midpoint, and width (verify).
@@ -130,6 +130,9 @@
         <p>
           [Solution to be added]
         </p>
+        <image source="images/Inv1.10applet1.png" width="80%">
+          <description>Simulating Confidence Intervals applet showing single interval for pi=0.15, n=10</description>
+        </image>
       </solution>
     </exercise>
 
@@ -173,6 +176,12 @@
         <p>
           [Solution to be added]
         </p>
+        <image source="images/inv1.10applet2.png" width="80%">
+          <description>Simulating Confidence Intervals applet showing Exact Binomial method results</description>
+        </image>
+        <image source="images/inv1.10applet3.png" width="80%">
+          <description>Simulating Confidence Intervals applet showing Exact Binomial coverage rate</description>
+        </image>
       </solution>
     </exercise>
 
@@ -195,7 +204,7 @@
     </exercise>
 
     <p>
-      The Clopper-Pearson method will have a coverage rate of at least 95%, but tends to be "conservative," meaning the coverage rate is higher than 95% so the intervals are longer than they need to be. The method is also fairly complicated (as opposed to: "go two standard deviations on each side"). An alternative method that has been receiving much attention of late is often called the Plus Four procedure:
+      The Clopper-Pearson method will have a coverage rate of at least 95%, but tends to be "conservative," meaning the coverage rate is higher than 95% so the intervals are longer than they need to be. The method is also fairly complicated (as opposed to: "go two standard deviations on each side"). An alternative method that has been receiving much attention of late is often called the <term>Plus Four procedure</term>:
     </p>
 
     <assemblage xml:id="plus-four-definition">
@@ -236,6 +245,12 @@
         <p>
           [Solution to be added]
         </p>
+        <image source="images/inv1.10applet4.png" width="80%">
+          <description>Simulating Confidence Intervals applet showing Plus Four method results</description>
+        </image>
+        <image source="images/inv1.10applet5.png" width="80%">
+          <description>Simulating Confidence Intervals applet showing Plus Four coverage rate</description>
+        </image>
       </solution>
     </exercise>
 
@@ -331,16 +346,6 @@
         </p>
       </solution>
     </exercise>
-
-    <assemblage xml:id="plus-four-key-idea">
-      <title>Key Idea</title>
-      <p>
-        The Plus Four method is more likely to be a 95% confidence interval method than the one-sample <m>z</m>-interval method. It is never a bad idea to use the Plus Four method.
-      </p>
-      <p>
-        "Fudging our data" may seem like cheating, but there is actually some nice theory behind this method. The plus four adjustment is not that different in principle from the continuity correction we suggested with p-values. Many statisticians now recommend using this procedure over the one proportion <m>z</m>-interval procedure because it achieves the stated confidence level for any sample size and over the Clopper-Pearson binomial interval procedure because the intervals tend to be shorter (narrower). In fact, the more general case (something other than 95%) is becoming the default in many software packages. (The Blaker method in others.)
-      </p>
-    </assemblage>
 
     <exercise xml:id="I1-10-o" label="I1.10o">
       <title>Plus Four Interval for St. George's Hospital</title>
