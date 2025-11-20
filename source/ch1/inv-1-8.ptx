@@ -279,7 +279,7 @@
     </paragraphs>
 
     <exercise xml:id="I1-8-h" label="I1.8h">
-      <title>Find P-values</title>
+      <title>Find p-values</title>
       <statement>
         <p>
           In the sample, 135 children chose the toy and 149 chose the candy. Use the applet to find the following two-sided p-values, and explain briefly how each is found:
@@ -439,7 +439,7 @@
       (What if we had used the sample count instead?)
     </p>
 
-    <assemblage xml:id="one-proportion-z-test-definition">
+    <assemblage xml:id="one-proportion-<em>z</em>-test-definition">
       <title>Definition</title>
       <p>
         The <term>One Proportion <em>z</em>-test</term><idx><h>One Proportion <em>z</em>-test</h><h>calculates standardized statistic using standard normal distribution</h></idx> calculates the standardized statistic as <m>z_0 = \frac{\hat{p} - \pi_0}{\sqrt{\pi_0(1-\pi_0)/n}}</m> and uses the standard normal distribution (mean 0, std dev 1) to find the p-value.
@@ -499,10 +499,10 @@
     </exercise>
 
     <exercise xml:id="I1-8-m" label="I1.8m">
-      <title>Calculate P-value from Z-statistic</title>
+      <title>Calculate p-value from <em>z</em>-statistic</title>
       <statement>
         <p>
-          Use technology to find the corresponding p-value. [Hints: You can calculate the probability from the z-value using standard normal distribution (mean 0, SD 1), e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="rossmanchance.com/applets/2021/normcalc/NormCalc.html">Normal Probability Calculator</url> applet; or use the Technology Detour below to carry out a one-sample z-test.]
+          Use technology to find the corresponding p-value. [Hints: You can calculate the probability from the z-value using standard normal distribution (mean 0, SD 1), e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="rossmanchance.com/applets/2021/normcalc/NormCalc.html">Normal Probability Calculator</url> applet; or use the Technology Detour below to carry out a one-sample <em>z</em>-test.]
         </p>
         <p>
           p-value = <var width="10"/>
@@ -526,7 +526,7 @@
       </hint>
       <solution>
         <p>
-          Using technology (Normal Probability Calculator or z-test function), the p-value is approximately 0.40 (or 0.401). This confirms our conclusion that the result is not statistically significant.
+          Using technology (Normal Probability Calculator or <em>z</em>-test function), the p-value is approximately 0.40 (or 0.401). This confirms our conclusion that the result is not statistically significant.
         </p>
       </solution>
     </exercise>
@@ -535,7 +535,7 @@
       <title>Technology Detour – One Proportion <em>z</em>-test (Theory-Based Inference Applet)</title>
       <statement>
         <p>
-          Use the Theory-Based Inference applet to conduct a one proportion z-test:
+          Use the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url> to conduct a one proportion <em>z</em>-test:
         </p>
         <p>
           <ul>
@@ -574,7 +574,7 @@
       <title>Technology Detour – One Proportion <em>z</em>-test (R)</title>
       <statement>
         <p>
-          Use R to conduct a one proportion z-test. The <c>iscamonepropztest(observed, n, hypothesized, alternative)</c> function takes the following inputs:
+          Use R to conduct a one proportion <em>z</em>-test. The <c>iscamonepropztest(observed, n, hypothesized, alternative)</c> function takes the following inputs:
         </p>
         <p>
           <ul>
@@ -615,7 +615,7 @@ iscamonepropztest(135, 284, 0.5, "two.sided")
         <p>
           <ul>
             <li>Sample proportion: 0.4754</li>
-            <li>z-statistic: -0.84</li>
+            <li><em>z</em>-statistic: -0.84</li>
             <li>Two-sided p-value: 0.40</li>
           </ul>
         </p>
@@ -623,7 +623,7 @@ iscamonepropztest(135, 284, 0.5, "two.sided")
           The function will also display a graph showing the standard normal distribution with the test statistic and shaded p-value region.
         </p>
         <image source="images/inv1.8-R-output.png" width="80%">
-          <description>R output showing one proportion z-test results with standard normal curve and shaded p-value regions</description>
+          <description>R output showing one proportion <em>z</em>-test results with standard normal curve and shaded p-value regions</description>
         </image>
       </solution>
     </exercise>
@@ -663,7 +663,7 @@ iscamonepropztest(135, 284, 0.5, "two.sided")
           <ul>
             <li>Sample proportion: 0.475</li>
             <li>Standard error: 0.0297</li>
-            <li>z-statistic: -0.84</li>
+            <li><em>z</em>-statistic: -0.84</li>
             <li>Two-sided p-value: 0.40</li>
             <li>A visual representation of the test</li>
           </ul>
@@ -672,13 +672,13 @@ iscamonepropztest(135, 284, 0.5, "two.sided")
           The output will indicate that we fail to reject the null hypothesis at the 0.05 significance level.
         </p>
         <image source="images/inv1.8-JMP-output.png" width="80%">
-          <description>JMP output showing one proportion z-test results with test statistics and visual representation</description>
+          <description>JMP output showing one proportion <em>z</em>-test results with test statistics and visual representation</description>
         </image>
       </solution>
     </exercise>
 
     <exercise xml:id="I1-8-n" label="I1.8n">
-      <title>Interpret P-value</title>
+      <title>Interpret p-value</title>
       <statement>
         <p>
           Provide a one sentence interpretation of this p-value in context.
@@ -725,7 +725,7 @@ iscamonepropztest(135, 284, 0.5, "two.sided")
     </paragraphs>
 
     <exercise xml:id="I1-8-p" label="I1.8p">
-      <title>Compare P-values</title>
+      <title>Compare p-values</title>
       <statement>
         <p>
           Which p-value from the earlier comparison (exact binomial or normal approximation) is closer to your simulated p-value? Is this expected?
@@ -798,7 +798,7 @@ iscamonepropztest(135, 284, 0.5, "two.sided")
     </exercise>
 
     <p>
-      Many software programs allow you to apply this continuity correction for a one-sample z-test (e.g., using <m>\hat{p} = (X \pm 0.5)/n</m> as the input) or may do so by default. However, when n is large, you may not see much difference in the values.
+      Many software programs allow you to apply this continuity correction for a one-sample <em>z</em>-test (e.g., using <m>\hat{p} = (X \pm 0.5)/n</m> as the input) or may do so by default. However, when n is large, you may not see much difference in the values.
     </p>
 
     <exercise xml:id="tech-detour-continuity-correction-applet" label="Tech1.8.CC.applet">
@@ -909,9 +909,9 @@ iscambinomnorm(135, 284, 0.5, "two.sided")
     </exercise>
     
     <exercise xml:id="PP1-8A-2" label="PP1.8A.2">
-      <title><em>Z</em>-test and P-value</title>
+      <title><em>Z</em>-test and p-value</title>
       <statement>
-        <p>Dr. Güntürkün found 80 out of 124 couples leaned right in his sample. Find the one-proportion z-test statistic and normal-based two-sided p-value. Do the standardized statistic and p-value agree? How does the normal-based p-value compare to the exact binomial p-value for this study?</p>
+        <p>Dr. Güntürkün found 80 out of 124 couples leaned right in his sample. Find the one-proportion <em>z</em>-test statistic and normal-based two-sided p-value. Do the standardized statistic and p-value agree? How does the normal-based p-value compare to the exact binomial p-value for this study?</p>
       </statement>
       <response/>
     </exercise>
@@ -941,7 +941,7 @@ iscambinomnorm(135, 284, 0.5, "two.sided")
     <exercise xml:id="PP1-8B-2" label="PP1.8B.2">
       <title>Calculate Test Statistic</title>
       <statement>
-        <p>Report and interpret the values of the z-test statistic and normal-based p-value using a continuity correction.</p>
+        <p>Report and interpret the values of the <em>z</em>-test statistic and normal-based p-value using a continuity correction.</p>
       </statement>
       <response/>
     </exercise>
@@ -972,3 +972,4 @@ iscambinomnorm(135, 284, 0.5, "two.sided")
   </subsection>
 
   </subsection>
+
