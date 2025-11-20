@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<subsection xml:id="investigation1-11">
+    <title>Investigation 1.11: Ganzfeld Experiments</title>
+    
+    <p>
+      Statistician Jessica Utts has conducted extensive analysis of studies that have investigated psychic functioning. (Combining results across multiple studies, often to increase power, is called meta-analysis.) Utts (1995) cites research from Bem and Honorton (1994) that analyzed studies that used a technique called ganzfeld.
+    </p>
+    
+    <p>
+      In a typical ganzfeld experiment, a "receiver" is placed in a room relaxing in a comfortable chair with halved ping-pong balls over the eyes, having a red light shone on them. The receiver also wears a set of headphones through which [static] noise is played. The receiver is in this state of mild sensory deprivation for half an hour. During this time, a "sender" observes a randomly chosen target and tries to mentally send this information to the receiver <ellipsis/> The receiver is taken out of the ganzfeld state and given a set of [four] possible targets, from which they must decide which one most resembled the images they witnessed. Most commonly there are three decoys along with a copy of the target itself. [Wikipedia]
+    </p>
+    
+    <p>
+      Utts has stated that she believes there is convincing evidence of ESP but that the effect is small.
+    </p>
+
+    <exercise xml:id="I1-11-a" label="I1.11a">
+      <title>State Hypotheses</title>
+      <statement>
+        <p>
+          Suppose you want to test whether the subjects in these studies have ESP, with <m>\pi</m> equal to the actual probability that receivers identify the correct image among the four possible targets. State appropriate null and alternative hypotheses, in symbols and in words.
+        </p>
+        <p>
+          <m>H_0</m>: <var width="60"/>
+        </p>
+        <p>
+          <m>H_a</m>: <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <hint>
+        <p>
+          If there is no ESP, what would be the probability of correctly identifying the image by chance alone?
+        </p>
+      </hint>
+      <solution>
+        <p>
+          <m>H_0: \pi = 0.25</m> (The receivers are just guessing among the four targets)
+        </p>
+        <p>
+          <m>H_a: \pi > 0.25</m> (The receivers have some psychic ability to identify the correct target)
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-11-b" label="I1.11b">
+      <title>Check CLT and Describe Null Distribution</title>
+      <statement>
+        <p>
+          The Bem and Honorton study reports on 329 sessions. Is this a large enough sample size to employ the Central Limit Theorem? If so, sketch the predicted behavior of the null distribution of sample proportions. Report the predicted mean and standard deviation.
+        </p>
+        <p>
+          Large enough for CLT? <var width="60"/>
+        </p>
+        <p>
+          Mean: <var width="20"/>
+        </p>
+        <p>
+          Standard deviation: <var width="20"/>
+        </p>
+      </statement>
+      <response/>
+      <hint>
+        <p>
+          Check whether <m>n\pi \geq 10</m> and <m>n(1-\pi) \geq 10</m>.
+        </p>
+      </hint>
+      <solution>
+        <p>
+          <m>n\pi = 329(0.25) = 82.25 \geq 10</m>
+        </p>
+        <p>
+          <m>n(1-\pi) = 329(0.75) = 246.75 \geq 10</m>
+        </p>
+        <p>
+          Yes, the sample size is large enough to use the CLT.
+        </p>
+        <p>
+          Mean: <m>\mu = \pi = 0.25</m>
+        </p>
+        <p>
+          Standard deviation: <m>\text{SD}(\hat{p}) = \sqrt{\frac{0.25(0.75)}{329}} = \sqrt{\frac{0.1875}{329}} \approx 0.0239</m>
+        </p>
+      </solution>
+    </exercise>
+
+    <p>
+      In <xref ref="investigation-1-3" text="custom">Investigation 1.3</xref>, you determined that if someone was asked to choose among 5 symbols in 10 rounds, they would need to correctly identify 5 or more of the symbols to produce a p-value below 0.05 and be at least two standard deviations away from the expected 2 correct identifications. The result "5 or more correct" is often called the rejection region (the values of the statistic that lead us to reject the null hypothesis).
+    </p>
+
+    <assemblage xml:id="rejection-region-definition">
+      <title>Definition</title>
+      <p>
+        The <term>rejection region</term> consists of the values we would need to observe for the statistic in the study in order to be willing to reject the null hypothesis.
+      </p>
+    </assemblage>
+
+    <exercise xml:id="I1-11-c" label="I1.11c">
+      <title>Find Rejection Region</title>
+      <statement>
+        <p>
+          According to the distribution in (b), what proportion of the 329 sessions would need to be successful ("hits"), in order to reject the null hypothesis in (a) in favor of the alternative hypothesis in (a) at the 5% level of significance?
+        </p>
+        <p>
+          In the <url href="https://www.rossmanchance.com/applets/2021/power/Power.html" visual="rossmanchance.com/applets/2021/power/Power.html">Power Simulation applet</url>, specify the Hypothesized probability of success (0.25) and the sample size (329). Specify 1000 for the Number of samples and press Draw Samples. Choose the Proportion of successes as the statistic. Use the pull-down menu to set the Level of Significance to 0.05 and press Count. Check the Normal Approximation and Summary Stats boxes to verify (b).
+        </p>
+        <p>
+          Draw a sketch of the null distribution and report the rejection region found by the applet. Include a one-sentence interpretation of this region.
+        </p>
+        <p>
+          Rejection region: <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          The rejection region is approximately <m>\hat{p} \geq 0.289</m>.
+        </p>
+        <p>
+          Interpretation: If the sample proportion of correct identifications is 0.289 or higher, we will reject the null hypothesis at the 0.05 significance level and conclude there is evidence of ESP.
+        </p>
+      </solution>
+    </exercise>
+
+    <assemblage xml:id="type-i-error-definition">
+      <title>Definition</title>
+      <p>
+        A <term>Type I error</term> in a test of significance occurs when the null hypothesis is true but we decide to reject the null hypothesis. This type of error is sometimes referred to as a false positive or a "false alarm."
+      </p>
+    </assemblage>
+
+    <exercise xml:id="I1-11-d" label="I1.11d">
+      <title>Probability of Type I Error</title>
+      <statement>
+        <p>
+          According to the applet, what is the (normal approximation) probability of making a Type I error in this study? How could you have known this in advance? (Note that the normal approximation is not required to correspond to an integer value for the rejection region.)
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <hint>
+        <p>
+          What is the relationship between the Type I error probability and the significance level?
+        </p>
+      </hint>
+      <solution>
+        <p>
+          The probability of making a Type I error is 0.05 (or 5%). We could have known this in advance because the probability of a Type I error equals the significance level (<m>\alpha = 0.05</m>) that we chose when setting up the test.
+        </p>
+      </solution>
+    </exercise>
+
+    <p>
+      While a Type I error focuses on the null hypothesis being true, what if the null hypothesis is false – how likely are we to make the correct decision to reject the null hypothesis?
+    </p>
+
+    <assemblage xml:id="type-ii-error-power-definitions">
+      <title>Definitions</title>
+      <p>
+        A <term>Type II error</term> occurs when we fail to reject the null hypothesis even though the null hypothesis is false. This type of error is sometimes referred to as a false negative or a "missed opportunity."
+      </p>
+      <p>
+        The <term>power</term> of a test when <m>\pi = \pi_a</m> is defined as the probability of (correctly) rejecting the null hypothesis assuming this specific alternative value for the parameter. Thus, power reveals how likely our test is to detect a specific difference (or improvement or effect) that really is there.
+      </p>
+      <p>
+        Note: Power = 1 – P(Type II error)
+      </p>
+    </assemblage>
+
+    <exercise xml:id="I1-11-e" label="I1.11e">
+      <title>Describe Alternative Distribution</title>
+      <statement>
+        <p>
+          Suppose the probability of identifying the correct symbol is actually 0.30. Describe how the distribution of sample proportions will differ from (b).
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <hint>
+        <p>
+          What will the mean and standard deviation be when <m>\pi = 0.30</m>?
+        </p>
+      </hint>
+      <solution>
+        <p>
+          The distribution will be centered at 0.30 instead of 0.25. The standard deviation will be <m>\sqrt{\frac{0.30(0.70)}{329}} \approx 0.0253</m>, which is slightly larger than when <m>\pi = 0.25</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-11-f" label="I1.11f">
+      <title>Calculate Power for π = 0.30</title>
+      <statement>
+        <p>
+          In the applet, change the Alternative probability of success value to 0.30, and check the Show alternative box. Press Draw Samples and Count. Review the applet output and provide a one-sentence interpretation of the normal approximation value, 0.6645. Is this value the probability of a Type II error or the power of the test?
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          This is the power of the test. Interpretation: If the actual probability of correctly identifying the target is 0.30, there is approximately a 66.45% chance that we will correctly reject the null hypothesis (that <m>\pi = 0.25</m>) at the 0.05 significance level.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-11-g" label="I1.11g">
+      <title>Calculate Power for π = 0.35</title>
+      <statement>
+        <p>
+          Now find the probability of rejecting the null hypothesis that <m>\pi = 0.25</m> when in reality <m>\pi = 0.35</m>? Explain your steps. How has the probability changed and why?
+        </p>
+        <p>
+          Power: <var width="20"/>
+        </p>
+        <p>
+          Explanation: <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          Change the Alternative probability to 0.35 in the applet and press Count. The power is approximately 0.9789 (or about 98%).
+        </p>
+        <p>
+          The power has increased from about 66% to about 98%. This makes sense because when the true probability is further from the null hypothesis value (0.35 vs 0.30), it is easier to detect the difference and reject the null hypothesis.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-11-h" label="I1.11h">
+      <title>Effect of Changing Significance Level</title>
+      <statement>
+        <p>
+          Change the level of significance from 0.05 to 0.01 and press Count. How does lowering the level of significance influence the:
+        </p>
+        <p>
+          Rejection region: <var width="60"/>
+        </p>
+        <p>
+          Probability of Type I Error: <var width="60"/>
+        </p>
+        <p>
+          Probability of Type II Error: <var width="60"/>
+        </p>
+        <p>
+          Power (assuming <m>\pi_a = 0.35</m>): <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          Rejection region: The rejection region becomes more extreme (requires <m>\hat{p} \geq 0.305</m> instead of <m>\hat{p} \geq 0.289</m>).
+        </p>
+        <p>
+          Probability of Type I Error: Decreases from 0.05 to 0.01.
+        </p>
+        <p>
+          Probability of Type II Error: Increases (it's harder to reject the null hypothesis with a more stringent criterion).
+        </p>
+        <p>
+          Power: Decreases from about 0.9789 to about 0.9226.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-11-i" label="I1.11i">
+      <title>Small Sample Size with Exact Binomial</title>
+      <statement>
+        <p>
+          Suppose the study had only involved 35 sessions. Because the sample size is small, use of the Central Limit Theorem is questionable. Uncheck the Normal Approximation box and check the Exact Binomial box. Specify a hypothesized probability of 0.25, an alternative probability of 0.35, and a level of significance of 0.05. Report the following:
+        </p>
+        <p>
+          Rejection region: <var width="60"/>
+        </p>
+        <p>
+          Probability of Type I Error: <var width="20"/>
+        </p>
+        <p>
+          Power (assuming <m>\pi_a = 0.35</m>): <var width="20"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          Rejection region: 13 or more correct identifications out of 35.
+        </p>
+        <p>
+          Probability of Type I Error: approximately 0.0407
+        </p>
+        <p>
+          Power: approximately 0.1557
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-11-j" label="I1.11j">
+      <title>Compare Power for Different Sample Sizes</title>
+      <statement>
+        <p>
+          How does the power in (i) compare to what you found for power earlier [Hint: see (g)]? Explain why this relationship makes intuitive sense.
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          The power with <m>n = 35</m> (about 15.6%) is much lower than the power with <m>n = 329</m> (about 98%). This makes sense because with a larger sample size, we have more information and are more likely to detect a real difference when it exists. The larger sample size makes it easier to distinguish between <m>\pi = 0.25</m> and <m>\pi = 0.35</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <p>
+      Many software packages will calculate power for you, especially with the normal approximation to the binomial.
+    </p>
+
+    <paragraphs xml:id="tech-detour-power">
+      <title>Technology Detour <mdash/> Calculating Power</title>
+      
+      <p>
+        Keep in mind the results will differ a bit if you use the binomial distribution/only allow discrete values to find the rejection region.
+      </p>
+
+      <exercise xml:id="tech-detour-r-power" label="Power - R">
+        <title>Calculating Power in R</title>
+        <statement>
+          <p>
+            In R: The <c>iscambinompower</c> and <c>iscamnormpower</c> functions use the following inputs:
+          </p>
+          <p>
+            <ul>
+              <li><p>LOS = the desired level of significance (<m>\alpha</m>)</p></li>
+              <li><p>n = the sample size (number of trials)</p></li>
+              <li><p>prob1 = the process probability (<m>\pi</m>) under the null hypothesis</p></li>
+              <li><p>alternative = "less", "greater", or "two.sided"</p></li>
+              <li><p>prob2 = the alternative probability of success</p></li>
+            </ul>
+          </p>
+          <p>
+            For example: <c>iscamnormpower(LOS=.05, n=20, prob1=.25, alternative="greater", prob2=0.333)</c>
+          </p>
+          <p>
+            should reveal both distributions and report the rejection region to achieve the level of significance, the observed level of significance, and the power.
+          </p>
+        </statement>
+      </exercise>
+
+      <exercise xml:id="tech-detour-jmp-power" label="Power - JMP">
+        <title>Calculating Power in JMP</title>
+        <statement>
+          <p>
+            In JMP:
+          </p>
+          <p>
+            <ol>
+              <li><p>Choose DOE > Sample Size Explorers > Power > Power for One Sample Proportion</p></li>
+              <li><p>Specify the form of the alternative, the level of significance (Alpha), an alternative probability of success, and set the Test Method to Normal Approximation.</p></li>
+              <li><p>Specify the Sample Size, the null probability of success (Assumed Proportion), and alternative probability of success (Alternative Proportion).</p></li>
+              <li><p>Press Enter.</p></li>
+            </ol>
+          </p>
+        </statement>
+      </exercise>
+    </paragraphs>
+
+    <p>
+      In fact, the most common application is to specify the desired power and solve for the necessary sample size before conducting the study to determine how many observations you should take.
+    </p>
+
+    <exercise xml:id="I1-11-k" label="I1.11k">
+      <title>Sample Size for 80% Power at π = 0.30</title>
+      <statement>
+        <p>
+          If your technology allows (or use trial and error), see how many sessions would be needed in the ganzfeld study to have at least an 80% chance of rejecting the null hypothesis if the actual probability of success is <m>\pi = 0.30</m>.
+        </p>
+        <p>
+          Sample size needed: <var width="20"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          Approximately 500 sessions would be needed to achieve 80% power when <m>\pi = 0.30</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-11-l" label="I1.11l">
+      <title>Sample Size for 80% Power at π = 0.35</title>
+      <statement>
+        <p>
+          How will your answer to (k) change if the actual probability of success is <m>\pi = 0.35</m>? Determine the number of sessions needed in this case.
+        </p>
+        <p>
+          Sample size needed: <var width="20"/>
+        </p>
+        <p>
+          Explanation: <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          Approximately 180 sessions would be needed to achieve 80% power when <m>\pi = 0.35</m>.
+        </p>
+        <p>
+          This is much smaller than when <m>\pi = 0.30</m> because the effect is larger (further from the null value of 0.25), making it easier to detect.
+        </p>
+      </solution>
+    </exercise>
+
+    <assemblage xml:id="type-i-ii-errors-key-idea">
+      <title>Key Ideas</title>
+      <p>
+        In any test of significance, we need to guard against two types of errors:
+      </p>
+      <p>
+        <ul>
+          <li><p><term>Type I error</term> = falsely rejecting a true null hypothesis ("false alarm")</p></li>
+          <li><p><term>Type II error</term> = failing to reject a false null hypothesis ("missed opportunity")</p></li>
+        </ul>
+      </p>
+      <p>
+        We control the probability of a Type I error by stating a level of significance before we collect any data. We chiefly control the probability of a Type II error by determining what sample size is needed in a study to achieve a desired level of power. To do so, you need to establish in advance how false you think the null hypothesis is/what size of a difference you want to be able to detect. This is often done through subject-matter knowledge or prior study results.
+      </p>
+    </assemblage>
+
+    <paragraphs xml:id="study-conclusions">
+      <title>Study Conclusions</title>
+      
+      <p>
+        If the researchers believe there is a genuine but small effect (say 5 percentage points) of ESP, then with a sample size of 329, there is about a 65% chance that, when the probability of a correct identification equals 0.30, they will obtain a sample result that convinces them to reject the null hypothesis that <m>\pi = 0.250</m>. With a sample size of around 500, there is over 80% chance that the researchers will find evidence of ESP when <m>\pi = 0.30</m>. Keep in mind that with a large sample size, we can often find a statistically significant result that we may not consider practically significant.
+      </p>
+
+      <p>
+        <em>Discussion:</em> When the sample size is small, the binomial distribution can be used for power calculations, but notice that the discreteness of the binomial probability distribution can complicate matters. This is another example where the normal distribution is simpler, but do keep in mind use of the normal approximation is not always valid.
+      </p>
+    </paragraphs>
+
+  <subsection xml:id="practice1-11A">
+    <title>Practice Problem 1.11A</title>
+
+    <p>
+      For the research study on the mortality rate at St. George's hospital (<xref ref="investigation-1-4" text="custom">Investigation 1.4</xref>), the goal was to compare the mortality rate of that hospital to the national benchmark of 0.15.
+    </p>
+
+    <exercise xml:id="practice-1-11a-a" label="PP1.11A.1">
+      <title>Identify Type of Error (Exceeding Benchmark)</title>
+      <statement>
+        <p>
+          If you were to conclude that the hospital's death rate exceeds the national benchmark when it really does not, what type of error would you be committing?
+        </p>
+      </statement>
+      <choices randomize="no">
+        <choice correct="yes">
+          <statement><p>Type I</p></statement>
+        </choice>
+        <choice>
+          <statement><p>Type II</p></statement>
+        </choice>
+        <choice>
+          <statement><p>Both</p></statement>
+        </choice>
+        <choice>
+          <statement><p>Neither</p></statement>
+        </choice>
+      </choices>
+      <solution>
+        <p>
+          Type I error. This would be rejecting the null hypothesis (that <m>\pi = 0.15</m>) when it is actually true.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-11a-b" label="PP1.11A.2">
+      <title>Identify Type of Error (Not Exceeding Benchmark)</title>
+      <statement>
+        <p>
+          If you were to conclude that the hospital's death rate does not exceed the national benchmark when it really does, which type of error would you be committing?
+        </p>
+      </statement>
+      <choices randomize="no">
+        <choice>
+          <statement><p>Type I</p></statement>
+        </choice>
+        <choice correct="yes">
+          <statement><p>Type II</p></statement>
+        </choice>
+        <choice>
+          <statement><p>Both</p></statement>
+        </choice>
+        <choice>
+          <statement><p>Neither</p></statement>
+        </choice>
+      </choices>
+      <solution>
+        <p>
+          Type II error. This would be failing to reject the null hypothesis when it is actually false (the death rate really does exceed 0.15).
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-11a-c" label="PP1.11A.3">
+      <title>More Critical Error</title>
+      <statement>
+        <p>
+          Which error, Type I or Type II, would you consider more critical here? Explain.
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          A Type II error might be considered more critical because failing to detect that the hospital has a higher death rate than the benchmark means patients may continue to receive substandard care. However, a Type I error could also be serious as it might unfairly damage the hospital's reputation. The answer may depend on the consequences of each type of error.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-11a-d" label="PP1.11A.4">
+      <title>Compare Power for Different Alternatives</title>
+      <statement>
+        <p>
+          Suppose you wanted to know the power of the test when the mortality rate at this hospital was 0.20 and when the mortality rate at this hospital was 0.25. For which alternative probability would you have a lower chance of committing a Type II error? Explain.
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          You would have a lower chance of committing a Type II error when <m>\pi = 0.25</m>. The power is higher when the true parameter value is further from the null hypothesis value (0.25 is further from 0.15 than 0.20 is), making it easier to detect the difference and reject the null hypothesis. Higher power means lower probability of Type II error.
+        </p>
+      </solution>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice1-11B">
+    <title>Practice Problem 1.11B</title>
+
+    <exercise xml:id="practice-1-11b-a" label="PP1.11B.1">
+      <title>Compare Type I Error Probabilities</title>
+      <statement>
+        <p>
+          If Abe were to use a significance level of 0.05 and Bianca were to use a significance level of 0.01, who would have a smaller probability of Type I error? Explain briefly.
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          Bianca would have a smaller probability of Type I error. The probability of a Type I error equals the significance level, so Bianca's probability (0.01) is smaller than Abe's (0.05).
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-11b-b" label="PP1.11B.2">
+      <title>Compare Type II Error Probabilities</title>
+      <statement>
+        <p>
+          If Abe were to use a significance level of 0.05 and Bianca were to use a significance level of 0.01, who would have a smaller probability of Type II error? Explain briefly.
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          Abe would have a smaller probability of Type II error. With a less stringent significance level (0.05 vs 0.01), it's easier to reject the null hypothesis, which means higher power and therefore lower probability of Type II error.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-11b-c" label="PP1.11B.3">
+      <title>Compare Type I Error with Different Sample Sizes</title>
+      <statement>
+        <p>
+          If Abe were to use a significance level of 0.05 with a sample size of <m>n = 50</m> and Bianca were to use a significance level of 0.01 with a sample size of <m>n = 100</m>, who would have a smaller probability of a Type I error?
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          Bianca would have a smaller probability of Type I error. The probability of Type I error is determined solely by the significance level (not by sample size), and Bianca's significance level (0.01) is smaller than Abe's (0.05).
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-11b-d" label="PP1.11B.4">
+      <title>Compare Power with Different Sample Sizes</title>
+      <statement>
+        <p>
+          If Abe were to use a significance level of 0.05 with a sample size of <m>n = 50</m> and Bianca were to use a significance level of 0.01 with a sample size of <m>n = 100</m>, whose test would have more power?
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          This depends on the specific alternative being considered, but in general, Bianca's test might have more power despite the lower significance level, because her larger sample size (100 vs 50) substantially increases power. However, Abe's higher significance level also increases power. The net effect would depend on the specific parameter values.
+        </p>
+      </solution>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice1-11C">
+    <title>Practice Problem 1.11C</title>
+
+    <p>
+      For the research study on the mortality rate at St. George's hospital (<xref ref="investigation-1-4" text="custom">Investigation 1.4</xref>), the goal was to decide whether the mortality rate of that hospital exceeds the national benchmark of 0.15. Suppose you plan to monitor the next 20 operations, using a level of significance of 0.05. Also suppose the actual death rate at this hospital equals 0.20.
+    </p>
+
+    <exercise xml:id="practice-1-11c-a" label="PP1.11C.1">
+      <title>Rejection Region and Power for π = 0.20</title>
+      <statement>
+        <p>
+          Determine the rejection region and the power of this test.
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          Use technology with <m>n = 20</m>, <m>\pi_0 = 0.15</m>, <m>\pi_a = 0.20</m>, and <m>\alpha = 0.05</m> (one-sided greater).
+        </p>
+        <p>
+          Rejection region: 7 or more deaths out of 20 operations.
+        </p>
+        <p>
+          Power: approximately 0.13
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-11c-b" label="PP1.11C.2">
+      <title>Rejection Region and Power for π = 0.25</title>
+      <statement>
+        <p>
+          Repeat assuming the actual death rate at this hospital equals 0.25. How does the power compare, and why does this make sense?
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          Rejection region: Still 7 or more deaths (this doesn't depend on the alternative).
+        </p>
+        <p>
+          Power: approximately 0.27
+        </p>
+        <p>
+          The power has increased because the true parameter value (0.25) is further from the null value (0.15), making it easier to detect the difference.
+        </p>
+      </solution>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice1-11D">
+    <title>Practice Problem 1.11D</title>
+
+    <p>
+      Suppose you want to test a person's ability to discriminate between two types of soda. You fill one cup with Soda A and two cups with Soda B. The subject tastes all 3 cups and is asked to identify the odd soda. You record the number of correct identifications in 10 attempts. Assume level of significance <m>\alpha = 0.05</m> and a one-sided alternative.
+    </p>
+
+    <exercise xml:id="practice-1-11d-a" label="PP1.11D.1">
+      <title>Calculate Power</title>
+      <statement>
+        <p>
+          If the subject's actual probability of a correct identification is 0.50, what is the power of this test for a level of significance of <m>\alpha = 0.05</m>? [Hint: What is the null hypothesis?]
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          The null hypothesis is <m>\pi = 1/3</m> (guessing among 3 cups). Use technology with <m>n = 10</m>, <m>\pi_0 = 1/3</m>, <m>\pi_a = 0.50</m>, and <m>\alpha = 0.05</m>.
+        </p>
+        <p>
+          Power: approximately 0.38
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-11d-b" label="PP1.11D.2">
+      <title>Interpret Power</title>
+      <statement>
+        <p>
+          Write a one-sentence interpretation of the power you calculated in (a) in context.
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          If the subject can correctly identify the odd soda 50% of the time, there is approximately a 38% chance that we will correctly reject the null hypothesis (that they are just guessing) with 10 trials at the 0.05 significance level.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-11d-c" label="PP1.11D.3">
+      <title>Power with 20 Attempts</title>
+      <statement>
+        <p>
+          What is the power if you give the subject 20 attempts?
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          With <m>n = 20</m>, the power increases to approximately 0.63. The larger sample size makes it easier to detect the subject's ability if they truly can identify the odd soda 50% of the time.
+        </p>
+      </solution>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice1-11E">
+    <title>Practice Problem 1.11E</title>
+
+    <p>
+      Suppose that you want to re-conduct the kissing study in a large city with a sample of 100 kissing couples. You want to test the null hypothesis <m>H_0: \pi = 0.667</m> against a one-sided alternative <m>H_a: \pi &lt; 0.667</m> using a significance level of <m>\alpha = 0.05</m>, and you are concerned about the power of your test when <m>\pi = 0.5</m>.
+    </p>
+
+    <p>
+      Consider the following graphs:
+    </p>
+    
+    <p>
+      [Note: Graphs would show two normal distributions - one centered at 0.667 (null) and one at 0.5 (alternative), with regions labeled I, II, III, and IV]
+    </p>
+
+    <exercise xml:id="practice-1-11e-a" label="PP1.11E.1">
+      <title>Type I Error Region</title>
+      <statement>
+        <p>
+          Which region(s) represents the probability of making a Type I error?
+        </p>
+      </statement>
+      <choices randomize="no">
+        <choice correct="yes">
+          <statement><p>I</p></statement>
+        </choice>
+        <choice>
+          <statement><p>II</p></statement>
+        </choice>
+        <choice>
+          <statement><p>III</p></statement>
+        </choice>
+        <choice>
+          <statement><p>IV</p></statement>
+        </choice>
+      </choices>
+      <solution>
+        <p>
+          Region I represents the Type I error probability - the area in the left tail of the null distribution (centered at 0.667) that falls in the rejection region.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-11e-b" label="PP1.11E.2">
+      <title>Type II Error Region</title>
+      <statement>
+        <p>
+          Which region(s) represents the probability of making a Type II error?
+        </p>
+      </statement>
+      <choices randomize="no">
+        <choice>
+          <statement><p>I</p></statement>
+        </choice>
+        <choice correct="yes">
+          <statement><p>II</p></statement>
+        </choice>
+        <choice>
+          <statement><p>III</p></statement>
+        </choice>
+        <choice>
+          <statement><p>IV</p></statement>
+        </choice>
+      </choices>
+      <solution>
+        <p>
+          Region II represents the Type II error probability - the area under the alternative distribution (centered at 0.5) that does not fall in the rejection region.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-11e-c" label="PP1.11E.3">
+      <title>Power Region</title>
+      <statement>
+        <p>
+          Which region(s) represents the power of the test?
+        </p>
+      </statement>
+      <choices randomize="no">
+        <choice>
+          <statement><p>I</p></statement>
+        </choice>
+        <choice>
+          <statement><p>II</p></statement>
+        </choice>
+        <choice correct="yes">
+          <statement><p>III</p></statement>
+        </choice>
+        <choice>
+          <statement><p>IV</p></statement>
+        </choice>
+      </choices>
+      <solution>
+        <p>
+          Region III represents the power - the area under the alternative distribution (centered at 0.5) that falls in the rejection region.
+        </p>
+      </solution>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice1-11F">
+    <title>Practice Problem 1.11F</title>
+
+    <exercise xml:id="practice-1-11f" label="PP1.11F.1">
+      <title>Error Types Table</title>
+      <statement>
+        <p>
+          The table below shows the possible states of the world and the possible decisions we can make. Indicate where the types of errors fall in this table and where the test makes the correct decision.
+        </p>
+        <table>
+          <title>Test Decisions and Errors</title>
+          <tabular>
+            <row header="yes">
+              <cell></cell>
+              <cell colspan="2" halign="center">State of the world</cell>
+            </row>
+            <row header="yes">
+              <cell>Test decision</cell>
+              <cell><m>H_0</m> true</cell>
+              <cell><m>H_0</m> false</cell>
+            </row>
+            <row>
+              <cell>Reject <m>H_0</m></cell>
+              <cell><var width="30"/></cell>
+              <cell><var width="30"/></cell>
+            </row>
+            <row>
+              <cell>Fail to reject <m>H_0</m></cell>
+              <cell><var width="30"/></cell>
+              <cell><var width="30"/></cell>
+            </row>
+          </tabular>
+        </table>
+      </statement>
+      <response/>
+      <solution>
+        <table>
+          <title>Test Decisions and Errors - Solution</title>
+          <tabular>
+            <row header="yes">
+              <cell></cell>
+              <cell colspan="2" halign="center">State of the world</cell>
+            </row>
+            <row header="yes">
+              <cell>Test decision</cell>
+              <cell><m>H_0</m> true</cell>
+              <cell><m>H_0</m> false</cell>
+            </row>
+            <row>
+              <cell>Reject <m>H_0</m></cell>
+              <cell>Type I error</cell>
+              <cell>Correct decision (Power)</cell>
+            </row>
+            <row>
+              <cell>Fail to reject <m>H_0</m></cell>
+              <cell>Correct decision</cell>
+              <cell>Type II error</cell>
+            </row>
+          </tabular>
+        </table>
+      </solution>
+    </exercise>
+  </subsection>
+
+</subsection>
