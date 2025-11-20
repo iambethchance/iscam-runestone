@@ -2,11 +2,11 @@
     <title>Investigation 1.10: Heart Transplant Mortality (cont.)</title>
     
     <p>
-      Recall Investigation 1.4, where you learned that 8 of the 10 most recent heart transplantation operations at St. George's Hospital resulted in a death.
+      Recall <xref ref="investigation-1-4" text="custom">Investigation 1.4</xref>, where you learned that 8 of the 10 most recent heart transplantation operations at St. George's Hospital resulted in a death.
     </p>
 
     <exercise xml:id="I1-10-a" label="I1.10a">
-      <title>Exact Binomial 95% Confidence Interval</title>
+      <title>Exact Binomial Technology - R</title>
       <statement>
         <p>
           Use technology to find the "exact binomial" (Clopper-Pearson) 95% confidence interval for the probability of death in the heart transplantation process at St. George's Hospital.
@@ -15,8 +15,47 @@
           In R: use <c>iscambinomtest(...., conf.level = .95)</c>
         </p>
         <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <paragraphs>
+          <title>R:</title>
+          <image source="images/image086.jpg" width="80%">
+            <description>R output showing exact binomial confidence interval</description>
+          </image>
+        </paragraphs>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-a2" label="I1.10a2">
+      <title>Exact Binomial Technology - JMP</title>
+      <statement>
+        <p>
+          Use technology to find the "exact binomial" (Clopper-Pearson) 95% confidence interval for the probability of death in the heart transplantation process at St. George's Hospital.
+        </p>
+        <p>
           In JMP: use Journal File <ellipsis/> confidence interval (Summary Stats) <ellipsis/> binomial
         </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <paragraphs>
+          <title>JMP:</title>
+          <image source="images/1.10JMP.PNG" width="80%">
+            <description>JMP output showing exact binomial confidence interval</description>
+          </image>
+        </paragraphs>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-a3" label="I1.10a3">
+      <title>Report Exact Binomial Interval</title>
+      <statement>
         <p>
           Report the interval, including the midpoint ((upper endpoint+lower endpoint)/2) and width ((upper endpoint-lower endpoint)).
         </p>
@@ -33,18 +72,6 @@
           </image>
           <image source="images/1.10MinB.PNG" width="80%">
             <description>Minitab output showing Blaker confidence interval</description>
-          </image>
-        </paragraphs>
-        <paragraphs>
-          <title>JMP:</title>
-          <image source="images/1.10JMP.PNG" width="80%">
-            <description>JMP output showing exact binomial confidence interval</description>
-          </image>
-        </paragraphs>
-        <paragraphs>
-          <title>R:</title>
-          <image source="images/image086.jpg" width="80%">
-            <description>R output showing exact binomial confidence interval</description>
           </image>
         </paragraphs>
         <p>
@@ -78,13 +105,34 @@
     </exercise>
 
     <exercise xml:id="I1-10-c" label="I1.10c">
-      <title>Verify z-Interval with Technology</title>
+      <title>Verify z-Interval with Technology - R</title>
       <statement>
         <p>
           Use technology to verify your calculation of the one proportion <m>z</m>-interval (also called the Wald interval)
         </p>
         <p>
           In R: use <c>iscamoneproptest(...., conf.level = .95)</c>
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <paragraphs>
+          <title>R:</title>
+          <image source="images/image088.jpg" width="80%">
+            <description>R output showing z-interval</description>
+          </image>
+        </paragraphs>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-c2" label="I1.10c2">
+      <title>Verify z-Interval with Technology - JMP</title>
+      <statement>
+        <p>
+          Use technology to verify your calculation of the one proportion <m>z</m>-interval (also called the Wald interval)
         </p>
         <p>
           In JMP: use Journal File <ellipsis/> confidence interval <ellipsis/>
@@ -96,21 +144,30 @@
       <response/>
       <solution>
         <paragraphs>
-          <title>Minitab:</title>
-          <image source="images/1.10normMin.PNG" width="80%">
-            <description>Minitab output showing z-interval</description>
-          </image>
-        </paragraphs>
-        <paragraphs>
           <title>JMP:</title>
           <image source="images/1.10normJMP.PNG" width="80%">
             <description>JMP output showing z-interval</description>
           </image>
         </paragraphs>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-c3" label="I1.10c3">
+      <title>Report z-Interval Results</title>
+      <statement>
+        <p>
+          Report your z-interval results.
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
         <paragraphs>
-          <title>R:</title>
-          <image source="images/image088.jpg" width="80%">
-            <description>R output showing z-interval</description>
+          <title>Minitab:</title>
+          <image source="images/1.10normMin.PNG" width="80%">
+            <description>Minitab output showing z-interval</description>
           </image>
         </paragraphs>
       </solution>
@@ -137,10 +194,10 @@
     <assemblage xml:id="confidence-level-key-idea">
       <title>Key Idea</title>
       <p>
-        The confidence level of an interval procedure is supposed to indicate the long-run percentage of intervals that capture the actual parameter value, if repeated random samples were taken from the identical process. As such, the confidence level presents a measure of the reliability of the method. A confidence interval procedure is considered valid when the achieved long-run coverage rate matches (or comes close to) the stated (aka nominal) confidence level.
+        The <term>confidence level</term> of an interval procedure is supposed to indicate the long-run percentage of intervals that capture the actual parameter value, if repeated random samples were taken from the identical process. As such, the confidence level presents a measure of the <em>reliability</em> of the <em>method</em>. A <term>confidence interval</term> procedure is considered valid when the achieved long-run coverage rate matches (or comes close to) the stated (aka <em>nominal</em>) confidence level.
       </p>
       <p>
-        Statistical confidence is a statement about the method, not a probability statement about an individual interval.
+        <term>Statistical confidence</term> is a statement about the <em>method</em>, not a probability statement about an individual interval.
       </p>
     </assemblage>
 
@@ -246,11 +303,11 @@
     </exercise>
 
     <p>
-      The Clopper-Pearson method will have a coverage rate of at least 95%, but tends to be "conservative," meaning the coverage rate is higher than 95% so the intervals are longer than they need to be. The method is also fairly complicated (as opposed to: "go two standard deviations on each side"). An alternative method that has been receiving much attention of late is often called the <term>Plus Four procedure</term>:
+      The Clopper-Pearson method will have a coverage rate of at least 95%, but tends to be "conservative," meaning the coverage rate is higher than 95% so the intervals are longer than they need to be. The method is also fairly complicated (as opposed to: "go two standard deviations on each side"). An alternative method that has been receiving much attention of late is often called the <term>Plus Four</term> procedure:
     </p>
 
     <assemblage xml:id="plus-four-definition">
-      <title>Definition: Plus Four 95% Confidence Interval for <m>\pi</m></title>
+      <title>Definition: <term>Plus Four</term> 95% Confidence Interval for <m>\pi</m></title>
       <p>
         <ol>
           <li><p>Determine the number of successes (<m>X</m>) and sample size (<m>n</m>) in the study</p></li>
@@ -259,7 +316,7 @@
         </ol>
       </p>
       <p>
-        In short, with 95% confidence, the idea is to pretend you have 2 more successes and 2 more failures than you really did. For confidence levels other than 95%, researchers have recommended using the Adjusted Wald method: <m>\tilde{p} = (X + 0.5(z^*)^2)/(n + (z^*)^2)</m> and <m>\tilde{n} = n + (z^*)^2</m> so the interval becomes <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{\tilde{n}}}</m>.
+        In short, with 95% confidence, the idea is to pretend you have 2 more successes and 2 more failures than you really did. For confidence levels other than 95%, researchers have recommended using the <em>Adjusted Wald</em> method: <m>\tilde{p} = (X + 0.5(z^*)^2)/(n + (z^*)^2)</m> and <m>\tilde{n} = n + (z^*)^2</m> so the interval becomes <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{\tilde{n}}}</m>.
       </p>
     </assemblage>
 
