@@ -2,74 +2,91 @@
     <title>Summary: Confidence Interval Methods</title>
 
     <p>
-      <alert>Discussion</alert> As you can tell, there are several ways to obtain a confidence interval for a process probability. When the sample size is large, they will yield very similar results for the endpoints and the coverage rate. When the sample size is small, the Adjusted Wald method is preferred. You can use the Clopper-Pearson confidence interval method when the sample size is small, but the Binomial intervals tend to be wider and don't have the estimate <m>\pm</m> margin-of-error simplicity), but is more computationally efficient than the Blaker method. Below we compare the 95% confidence intervals for the 8 of 10 and 71 of 361 studies for these methods plus a fourth, the "Score interval" which is a more direct inversion of the one sample proportion <m>z</m>-test; as well as the adjusted Blaker method discussed in Investigation 1.6.
+       As you can tell, there are several ways to obtain a confidence interval for a process probability. When the sample size is large, they will yield very similar results for the endpoints and the coverage rate. When the sample size is small, the Adjusted Wald method is preferred. You can use the Clopper-Pearson confidence interval method when the sample size is small, but the Binomial intervals tend to be wider and don't have the estimate <m>\pm</m> margin-of-error simplicity), but is more computationally efficient than the Blaker method. Below we compare the 95% confidence intervals for the 8 of 10 and 71 of 361 studies for these methods plus a fourth, the "Score interval" which is a more direct inversion of the one sample proportion <m>z</m>-test; as well as the adjusted Blaker method discussed in Investigation 1.6.
     </p>
 
     <table>
       <title>Comparison of 95% Confidence Interval Methods</title>
       <tabular halign="left">
         <row header="yes" bottom="major">
-          <cell>Method</cell>
-          <cell><m>n = 10</m></cell>
+          <cell></cell>
+          <cell right="minor"><m>n = 10</m></cell>
           <cell><m>n = 361</m></cell>
         </row>
         <row>
           <cell><alert>Wald interval</alert> (aka normal approximation aka asymptotic)
-          <line/>Finds the values of <m>\pi</m> so that <m>P(z &lt; \pi &lt; z) = C</m>
+          <line/>Finds the values of <m>\pi</m> so that <m>P(-z \le \frac{\hat{p} - \pi}{\sqrt{\hat{p}(1-\hat{p})/n}} \le z) = C</m>
           <line/>Formula: <m>\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</m>
-          <line/>Tendency for poor coverage properties if small <m>n</m> or extreme <m>\pi</m>
-          <line/>TBI applet or JMP or R (iscamonepropztest)</cell>
-          <cell>(0.5521, 1.048)</cell>
-          <cell>(0.1557, 0.2377)</cell>
+          <line/>Tendency for poor coverage properties if small <m>n</m> or extreme <m>\pi</m></cell>
+          <cell right="minor">(.5521, 1.048)</cell>
+          <cell>(.1557, .2377)</cell>
+        </row>
+        <row bottom="minor">
+          <cell>TBI applet or JMP or R (iscamonepropztest)</cell>
+          <cell right="minor"></cell>
+          <cell></cell>
         </row>
         <row>
           <cell><alert>Plus Four</alert> (special case of Adjusted Wald)
           <line/>(95%) Add two successes and two failures to sample results
           <line/>Formula: <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{n}}</m>; where <m>\tilde{p} = (X + 2)/(n + 4)</m> and <m>\tilde{n} = n + 4</m>
-          <line/>Very good coverage properties
-          <line/>TBI applet or JMP or R after adjust sample data</cell>
-          <cell>(0.4776, 0.9509)</cell>
-          <cell>(0.1590, 0.2410)</cell>
+          <line/>Very good coverage properties</cell>
+          <cell right="minor">(.4776, .9509)</cell>
+          <cell>(.1590, .2410)</cell>
+        </row>
+        <row bottom="minor">
+          <cell>TBI applet or JMP or R after adjust sample data</cell>
+          <cell right="minor"></cell>
+          <cell></cell>
         </row>
         <row>
           <cell><alert>Adjusted Wald</alert> (aka Agresti-Coull)
           <line/><m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{\tilde{n}}}</m>; <m>\tilde{p} = (X + 0.5z^{*2})/(n + z^{*2})</m>, <m>\tilde{n} = n + z^{*2}</m>
           <line/>Very good coverage properties.</cell>
-          <cell>(0.4794, 0.9541)</cell>
-          <cell>(0.1588, 0.2409)</cell>
+          <cell right="minor">(.4794, .9541)</cell>
+          <cell>(.1588, .2409)</cell>
         </row>
         <row>
           <cell><alert>Wilson interval</alert> (aka Score interval)
-          <line/>Finds the values of <m>\pi</m> so that <m>P(z &lt; \pi &lt; z) = C</m>
+          <line/>Finds the values of <m>\pi</m> so that <m>P(-z \le \frac{\hat{p} - \pi}{\sqrt{\pi(1-\pi)/n}} \le z) = C</m>
+          <line/>Formula: <m>\frac{\hat{p} + \frac{1}{2n}z^2 \pm z \sqrt{\frac{\hat{p}(1-\hat{p})}{n} + \frac{z^2}{4n^2}}}{1 + z^2/n}</m>
           <line/>Can have poor coverage properties with <m>\pi</m> near 0 or 1.</cell>
-          <cell>(0.4902, 0.9433)</cell>
-          <cell>(0.1590, 0.2408)</cell>
+          <cell right="minor">(.4902, .9433)</cell>
+          <cell>(.1590, .2408)</cell>
         </row>
         <row>
           <cell>JMP (Analyze > Distribution) or R prop.test w/o continuity corr.</cell>
-          <cell>(0.4422, 0.9646)</cell>
-          <cell>(0.1577, 0.2423)</cell>
+          <cell right="minor">(.4422, .9646)</cell>
+          <cell>(.1577, .2423)</cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>R prop.test w/ continuity corr.</cell>
-          <cell></cell>
+          <cell right="minor"></cell>
           <cell></cell>
         </row>
         <row>
           <cell><alert>Exact Binomial</alert> (Clopper-Pearson)
-          <line/>Finds the values of <m>\pi</m> so <m>P(X &lt; k) &gt; (1 - C)/2</m> and <m>P(X &gt; k) &gt; (1 - C)/2</m> where <m>k</m> is observed number of successes
-          <line/>Tends to be "conservative" (longer than necessary)
-          <line/>JMP (summary stats) or R using iscambinomtest</cell>
-          <cell>(0.4439, 0.9748)</cell>
-          <cell>(0.1569, 0.2415)</cell>
+          <line/>Finds the values of <m>\pi</m> so <m>P(X \le k) \ge (1 - C)/2</m> and <m>P(X \ge k) \ge (1 - C)/2</m> where <m>k</m> is observed number of successes
+          <line/>Tends to be "conservative" (longer than necessary)</cell>
+          <cell right="minor">(.4439, .9748)</cell>
+          <cell>(.1569, .2415)</cell>
+        </row>
+        <row bottom="minor">
+          <cell>JMP (summary stats) or R using iscambinomtest</cell>
+          <cell right="minor"></cell>
+          <cell></cell>
         </row>
         <row>
           <cell><alert>Blaker</alert> (Inv 1.6)
           <line/>Finds the values of <m>\pi</m> so the two-sided p-value (using tail probabilities) is less <m>(1 - C)/2</m>.
-          <line/>Tends to be shorter than the Clopper-Pearson interval.
-          <line/>R (blakerCI)</cell>
-          <cell>(0.4445, 0.9632)</cell>
-          <cell>(0.1570, 0.2403)</cell>
+          <line/>Tends to be shorter than the Clopper-Pearson interval.</cell>
+          <cell right="minor">(.4445, .9632)</cell>
+          <cell>(.1570, .2403)</cell>
+        </row>
+        <row bottom="minor">
+          <cell>R (blakerCI)</cell>
+          <cell right="minor"></cell>
+          <cell></cell>
         </row>
       </tabular>
     </table>
