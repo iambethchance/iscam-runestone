@@ -26,8 +26,29 @@
       </statement>
       <response/>
       <solution>
+        <paragraphs>
+          <title>Minitab (CP and Blaker):</title>
+          <image source="images/1.10Min.PNG" width="80%">
+            <description>Minitab output showing Clopper-Pearson confidence interval</description>
+          </image>
+          <image source="images/1.10MinB.PNG" width="80%">
+            <description>Minitab output showing Blaker confidence interval</description>
+          </image>
+        </paragraphs>
+        <paragraphs>
+          <title>JMP:</title>
+          <image source="images/1.10JMP.PNG" width="80%">
+            <description>JMP output showing exact binomial confidence interval</description>
+          </image>
+        </paragraphs>
+        <paragraphs>
+          <title>R:</title>
+          <image source="images/image086.jpg" width="80%">
+            <description>R output showing exact binomial confidence interval</description>
+          </image>
+        </paragraphs>
         <p>
-          [Solution to be added]
+          The midpoint of this interval is (.4439 + .9748)/2 = 0.709 which is lower than <m>\hat{p}</m> = 0.80. This makes sense as if we observed <m>\hat{p}</m> = 0.80, the largest <m>\pi</m> could be is 1.0 (.20 away) but <m>\pi</m> could conceivably be as small as 0.0 (.80 away), so we don't want an interval that is symmetric around 0.80. The width is .9748 - .4439 = 0.531.
         </p>
       </solution>
     </exercise>
@@ -45,7 +66,13 @@
       <response/>
       <solution>
         <p>
-          [Solution to be added]
+          SE(<m>\hat{p}</m>) = sqrt(.8(.2)/10)) = 0.1265
+        </p>
+        <p>
+          0.8 ± 1.96 sqrt(0.8(0.2)/10) <m>\Rightarrow</m> (0.552, 1.05)
+        </p>
+        <p>
+          Midpoint is 0.80 and the width is 0.498.
         </p>
       </solution>
     </exercise>
@@ -68,9 +95,24 @@
       </statement>
       <response/>
       <solution>
-        <p>
-          [Solution to be added]
-        </p>
+        <paragraphs>
+          <title>Minitab:</title>
+          <image source="images/1.10normMin.PNG" width="80%">
+            <description>Minitab output showing z-interval</description>
+          </image>
+        </paragraphs>
+        <paragraphs>
+          <title>JMP:</title>
+          <image source="images/1.10normJMP.PNG" width="80%">
+            <description>JMP output showing z-interval</description>
+          </image>
+        </paragraphs>
+        <paragraphs>
+          <title>R:</title>
+          <image source="images/image088.jpg" width="80%">
+            <description>R output showing z-interval</description>
+          </image>
+        </paragraphs>
       </solution>
     </exercise>
 
@@ -87,7 +129,7 @@
       <response/>
       <solution>
         <p>
-          [Solution to be added]
+          No, we do not pass the validity conditions for this procedure and get a result that includes values for <m>\pi</m> above 1.
         </p>
       </solution>
     </exercise>
@@ -128,7 +170,7 @@
       <response/>
       <solution>
         <p>
-          [Solution to be added]
+          Results will vary
         </p>
         <image source="images/Inv1.10applet1.png" width="80%">
           <description>Simulating Confidence Intervals applet showing single interval for pi=0.15, n=10</description>
@@ -149,7 +191,7 @@
       <response/>
       <solution>
         <p>
-          [Solution to be added]
+          The coverage rate is not close to 95%, but closer to 80%.
         </p>
       </solution>
     </exercise>
@@ -174,7 +216,7 @@
       <response/>
       <solution>
         <p>
-          [Solution to be added]
+          Now the coverage rate is much closer to 95%.
         </p>
         <image source="images/inv1.10applet2.png" width="80%">
           <description>Simulating Confidence Intervals applet showing Exact Binomial method results</description>
@@ -198,7 +240,7 @@
       <response/>
       <solution>
         <p>
-          [Solution to be added]
+          The average width is about 0.46.
         </p>
       </solution>
     </exercise>
@@ -243,7 +285,7 @@
       <response/>
       <solution>
         <p>
-          [Solution to be added]
+          The coverage rate is again close to 95%, much better than the Wald procedure.
         </p>
         <image source="images/inv1.10applet4.png" width="80%">
           <description>Simulating Confidence Intervals applet showing Plus Four method results</description>
@@ -267,7 +309,7 @@
       <response/>
       <solution>
         <p>
-          [Solution to be added]
+          The average width is about 0.44, better than the Exact Binomial.
         </p>
       </solution>
     </exercise>
@@ -285,7 +327,7 @@
       <response/>
       <solution>
         <p>
-          [Solution to be added]
+          The midpoints shift towards 0.5, this moves the midpoints off of zero and gives all intervals a positive length.
         </p>
       </solution>
     </exercise>
@@ -306,7 +348,7 @@
       <response/>
       <solution>
         <p>
-          [Solution to be added]
+          The running total should be very close to 95% and the average width close to 0.45.
         </p>
       </solution>
     </exercise>
@@ -324,7 +366,7 @@
       <response/>
       <solution>
         <p>
-          [Solution to be added]
+          Yes, especially if look at a few hundred, about 95% of the intervals appear to capture the parameter.
         </p>
       </solution>
     </exercise>
@@ -342,7 +384,7 @@
       <response/>
       <solution>
         <p>
-          [Solution to be added]
+          Opinions may vary but the binomial intervals tend to be wider on average.
         </p>
       </solution>
     </exercise>
@@ -360,7 +402,10 @@
       <response/>
       <solution>
         <p>
-          [Solution to be added]
+          10/14 = 0.714; 0.714 ± 1.96 sqrt(0.714(1 - 0.714)/14) = 0.714 ± 0.2367 <m>\Rightarrow</m> (0.477, 0.951)
+        </p>
+        <p>
+          I am 95% confident that the underlying mortality rate at St. George's Hospital is between 0.477 and 0.951.
         </p>
       </solution>
     </exercise>
@@ -384,8 +429,47 @@
       <response/>
       <solution>
         <p>
-          [Solution to be added]
+          With the larger sample size, the intervals are more similar.
         </p>
+        <p>
+          Wald: (0.156, 0.238); Plus four: (0.160, 0.241)
+        </p>
+        <paragraphs>
+          <title>Minitab (Wald):</title>
+          <image source="images/inv1.10_Min.PNG" width="80%">
+            <description>Minitab Wald interval for larger study</description>
+          </image>
+        </paragraphs>
+        <paragraphs>
+          <title>Minitab (Plus Four):</title>
+          <image source="images/inv1.10B_Min.PNG" width="80%">
+            <description>Minitab Plus Four interval for larger study</description>
+          </image>
+        </paragraphs>
+        <paragraphs>
+          <title>R (Wald):</title>
+          <image source="images/image094.jpg" width="80%">
+            <description>R Wald interval for larger study</description>
+          </image>
+        </paragraphs>
+        <paragraphs>
+          <title>R (Plus Four):</title>
+          <image source="images/image096.jpg" width="80%">
+            <description>R Plus Four interval for larger study</description>
+          </image>
+        </paragraphs>
+        <paragraphs>
+          <title>JMP (Wald):</title>
+          <image source="images/image097.png" width="80%">
+            <description>JMP Wald interval for larger study</description>
+          </image>
+        </paragraphs>
+        <paragraphs>
+          <title>JMP (Plus Four):</title>
+          <image source="images/image098.png" width="80%">
+            <description>JMP Plus Four interval for larger study</description>
+          </image>
+        </paragraphs>
       </solution>
     </exercise>
 
