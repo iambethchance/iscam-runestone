@@ -58,7 +58,13 @@
           Report the interval, including the midpoint ((upper endpoint+lower endpoint)/2) and width ((upper endpoint-lower endpoint)).
         </p>
         <p>
-          <var width="60"/>
+          Interval: (<var width="10"/>, <var width="10"/>)
+        </p>
+        <p>
+          Midpoint: <var width="10"/>
+        </p>
+        <p>
+          Width: <var width="10"/>
         </p>
       </statement>
       <response/>
@@ -424,11 +430,25 @@
         <p>
           Does this appear to be a 95% confidence interval procedure?
         </p>
-        <p>
-          <var width="60"/>
-        </p>
       </statement>
-      <response/>
+      <choices randomize="no">
+        <choice correct="yes">
+          <statement>
+            <p>Yes</p>
+          </statement>
+          <feedback>
+            <p>Correct! Especially if you look at a few hundred, about 95% of the intervals appear to capture the parameter.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>No</p>
+          </statement>
+          <feedback>
+            <p>Not quite. Look at the running total - it should be very close to 95%.</p>
+          </feedback>
+        </choice>
+      </choices>
       <solution>
         <p>
           Yes, especially if look at a few hundred, about 95% of the intervals appear to capture the parameter.
@@ -442,11 +462,33 @@
         <p>
           In your simulations, which method appears to have the shortest intervals? (Pick one.)
         </p>
-        <p>
-          <var width="60"/>
-        </p>
       </statement>
-      <response/>
+      <choices randomize="no">
+        <choice>
+          <statement>
+            <p>Binomial</p>
+          </statement>
+          <feedback>
+            <p>Not quite. The binomial intervals tend to be wider on average.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>Plus Four</p>
+          </statement>
+          <feedback>
+            <p>Correct! The Plus Four and Blaker methods tend to have shorter intervals than the binomial method.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>Blaker</p>
+          </statement>
+          <feedback>
+            <p>Correct! The Plus Four and Blaker methods tend to have shorter intervals than the binomial method.</p>
+          </feedback>
+        </choice>
+      </choices>
       <solution>
         <p>
           Opinions may vary but the binomial intervals tend to be wider on average.
@@ -472,7 +514,10 @@
           Determine and then interpret a Plus Four confidence interval for the probability of a death during a heart transplant operation at St. George's hospital. [<em>Hints:</em> You can do the calculation either by hand, first finding <m>\tilde{p}</m> and <m>z^*</m>, or with software (e.g., the Theory-Based Inference applet) by telling the technology there were 4 more operations consisting of two more deaths than in the actual sample. Note: You can't use the Simulating Confidence Intervals applet to answer this question.]
         </p>
         <p>
-          <var width="60"/>
+          Plus Four interval: (<var width="10"/>, <var width="10"/>)
+        </p>
+        <p>
+          Interpretation: <var width="60"/>
         </p>
       </statement>
       <response/>
