@@ -68,19 +68,10 @@
       </hint>
       <solution>
         <p>
-          <m>n\pi = 329(0.25) = 82.25 \geq 10</m>
+          The sample size is large enough because <m>n\pi = 329(0.25) = 82.25 > 10</m> and <m>n(1-\pi) = 329(0.75) = 246.75 > 10</m>.
         </p>
         <p>
-          <m>n(1-\pi) = 329(0.75) = 246.75 \geq 10</m>
-        </p>
-        <p>
-          Yes, the sample size is large enough to use the CLT.
-        </p>
-        <p>
-          Mean: <m>\mu = \pi = 0.25</m>
-        </p>
-        <p>
-          Standard deviation: <m>\text{SD}(\hat{p}) = \sqrt{\frac{0.25(0.75)}{329}} = \sqrt{\frac{0.1875}{329}} \approx 0.0239</m>
+          We expect the distribution of sample proportions to be approximately normal with mean <m>\mu_{\hat{p}} = 0.25</m> and standard deviation <m>\text{SD}(\hat{p}) = \sqrt{\frac{0.25(0.75)}{329}} \approx 0.02387</m>.
         </p>
       </solution>
     </exercise>
@@ -115,10 +106,10 @@
       <response/>
       <solution>
         <p>
-          The rejection region is approximately <m>\hat{p} \geq 0.289</m>.
+          Rejection region: <m>\hat{p} \geq 0.289</m>
         </p>
         <p>
-          Interpretation: If the sample proportion of correct identifications is 0.289 or higher, we will reject the null hypothesis at the 0.05 significance level and conclude there is evidence of ESP.
+          Someone would have to get at least 28.9% of the trials correct to be in the top 5% of the distribution.
         </p>
       </solution>
     </exercise>
@@ -148,7 +139,7 @@
       </hint>
       <solution>
         <p>
-          The probability of making a Type I error is 0.05 (or 5%). We could have known this in advance because the probability of a Type I error equals the significance level (<m>\alpha = 0.05</m>) that we chose when setting up the test.
+          By setting the level of significance to 0.05, we ensure the probability of a Type I error is at most 0.05.
         </p>
       </solution>
     </exercise>
@@ -188,7 +179,7 @@
       </hint>
       <solution>
         <p>
-          The distribution will be centered at 0.30 instead of 0.25. The standard deviation will be <m>\sqrt{\frac{0.30(0.70)}{329}} \approx 0.0253</m>, which is slightly larger than when <m>\pi = 0.25</m>.
+          With <m>\pi = 0.30</m>, the mean changes to 0.30 and the standard deviation changes to <m>\sqrt{0.30(0.70)/329} \approx 0.0253</m>.
         </p>
       </solution>
     </exercise>
@@ -206,7 +197,10 @@
       <response/>
       <solution>
         <p>
-          This is the power of the test. Interpretation: If the actual probability of correctly identifying the target is 0.30, there is approximately a 66.45% chance that we will correctly reject the null hypothesis (that <m>\pi = 0.25</m>) at the 0.05 significance level.
+          If we test <m>\pi = 0.25</m> but in reality <m>\pi = 0.30</m>, we will correctly reject the null hypothesis in favor of the one-sided alternative in about 66% of random samples of size n = 329. So the power of this test is approximately 0.66.
+        </p>
+        <p>
+          This value is the power of the test.
         </p>
       </solution>
     </exercise>
@@ -227,10 +221,10 @@
       <response/>
       <solution>
         <p>
-          Change the Alternative probability to 0.35 in the applet and press Count. The power is approximately 0.9789 (or about 98%).
+          Power when <m>\pi = 0.35</m>: approximately 0.99
         </p>
         <p>
-          The power has increased from about 66% to about 98%. This makes sense because when the true probability is further from the null hypothesis value (0.35 vs 0.30), it is easier to detect the difference and reject the null hypothesis.
+          If the alternative value changes to 0.35, then the power increases to about 0.99. This makes sense because when the true parameter is farther from the null hypothesis value (0.35 vs 0.30), it becomes easier to detect the difference, so we have a higher probability of correctly rejecting the null hypothesis.
         </p>
       </solution>
     </exercise>
@@ -257,16 +251,16 @@
       <response/>
       <solution>
         <p>
-          Rejection region: The rejection region becomes more extreme (requires <m>\hat{p} \geq 0.305</m> instead of <m>\hat{p} \geq 0.289</m>).
+          Rejection region: becomes more extreme (larger); approximately <m>\hat{p} \geq 0.3055</m>
         </p>
         <p>
-          Probability of Type I Error: Decreases from 0.05 to 0.01.
+          Probability of Type I Error: decreases to match 0.01
         </p>
         <p>
-          Probability of Type II Error: Increases (it's harder to reject the null hypothesis with a more stringent criterion).
+          Probability of Type II Error: increases slightly to about 0.05
         </p>
         <p>
-          Power: Decreases from about 0.9789 to about 0.9226.
+          Power (assuming <m>\pi_a = 0.35</m>): decreases slightly from about 0.99 to about 0.95
         </p>
       </solution>
     </exercise>
@@ -290,13 +284,16 @@
       <response/>
       <solution>
         <p>
-          Rejection region: 13 or more correct identifications out of 35.
+          Rejection region: <m>\hat{p} > 0.40</m> (or 15 or more successes out of 35)
         </p>
         <p>
-          Probability of Type I Error: approximately 0.0407
+          Probability of Type I Error: approximately 0.036
         </p>
         <p>
-          Power: approximately 0.1557
+          Power (assuming <m>\pi_a = 0.35</m>): approximately 0.32
+        </p>
+        <p>
+          Note: The probability of a Type II error is approximately 0.68.
         </p>
       </solution>
     </exercise>
@@ -314,7 +311,7 @@
       <response/>
       <solution>
         <p>
-          The power with <m>n = 35</m> (about 15.6%) is much lower than the power with <m>n = 329</m> (about 98%). This makes sense because with a larger sample size, we have more information and are more likely to detect a real difference when it exists. The larger sample size makes it easier to distinguish between <m>\pi = 0.25</m> and <m>\pi = 0.35</m>.
+          The power is much smaller with the smaller sample size (about 32% vs 99%). This makes sense as there will be more sample-to-sample variation by chance alone with the smaller sample size, making it more difficult to distinguish observations coming from the two different distributions. In other words, there is more overlap in the two distributions and the probability of finding a sample proportion to convince us to reject the null hypothesis is smaller.
         </p>
       </solution>
     </exercise>
@@ -389,7 +386,7 @@
       <response/>
       <solution>
         <p>
-          Approximately 500 sessions would be needed to achieve 80% power when <m>\pi = 0.30</m>.
+          We would need a sample size close to 500 (approximately 490) to achieve 80% power when <m>\pi = 0.30</m>.
         </p>
       </solution>
     </exercise>
@@ -410,10 +407,10 @@
       <response/>
       <solution>
         <p>
-          Approximately 180 sessions would be needed to achieve 80% power when <m>\pi = 0.35</m>.
+          Approximately 170-180 sessions would be needed to achieve 80% power when <m>\pi = 0.35</m>.
         </p>
         <p>
-          This is much smaller than when <m>\pi = 0.30</m> because the effect is larger (further from the null value of 0.25), making it easier to detect.
+          If the actual probability of success is even further away from the hypothesized value (0.35 vs 0.30), then we won't need as large a sample size to achieve the same power. The effect size is larger, making it easier to detect the difference with fewer observations.
         </p>
       </solution>
     </exercise>
