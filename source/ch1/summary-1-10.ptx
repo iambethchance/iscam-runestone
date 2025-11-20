@@ -18,8 +18,10 @@
           <line/>Finds the values of <m>\pi</m> so that <m>P(-z \le \frac{\hat{p} - \pi}{\sqrt{\hat{p}(1-\hat{p})/n}} \le z) = C</m>
           <line/>Formula: <m>\hat{p} \pm z^* \sqrt{\hat{p}(1-\hat{p})/n}</m>
           <line/>Tendency for poor coverage properties if small <m>n</m> or extreme <m>\pi</m></cell>
-          <cell right="minor">(.5521, 1.048)</cell>
-          <cell>(.1557, .2377)</cell>
+          <cell right="minor">(.5521,
+          <line/>1.048)</cell>
+          <cell>(.1557,
+          <line/>.2377)</cell>
         </row>
         <row bottom="minor">
           <cell>TBI applet or JMP or R (iscamonepropztest)</cell>
@@ -31,8 +33,10 @@
           <line/>(95%) Add two successes and two failures to sample results
           <line/>Formula: <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{n}}</m>; where <m>\tilde{p} = (X + 2)/(n + 4)</m> and <m>\tilde{n} = n + 4</m>
           <line/>Very good coverage properties</cell>
-          <cell right="minor">(.4776, .9509)</cell>
-          <cell>(.1590, .2410)</cell>
+          <cell right="minor">(.4776,
+          <line/>.9509)</cell>
+          <cell>(.1590,
+          <line/>.2410)</cell>
         </row>
         <row bottom="minor">
           <cell>TBI applet or JMP or R after adjust sample data</cell>
@@ -43,21 +47,27 @@
           <cell><alert>Adjusted Wald</alert> (aka Agresti-Coull)
           <line/><m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{\tilde{n}}}</m>; <m>\tilde{p} = (X + 0.5z^{*2})/(n + z^{*2})</m>, <m>\tilde{n} = n + z^{*2}</m>
           <line/>Very good coverage properties.</cell>
-          <cell right="minor">(.4794, .9541)</cell>
-          <cell>(.1588, .2409)</cell>
+          <cell right="minor">(.4794,
+          <line/>.9541)</cell>
+          <cell>(.1588,
+          <line/>.2409)</cell>
         </row>
         <row>
           <cell><alert>Wilson interval</alert> (aka Score interval)
           <line/>Finds the values of <m>\pi</m> so that <m>P(-z \le \frac{\hat{p} - \pi}{\sqrt{\pi(1-\pi)/n}} \le z) = C</m>
           <line/>Formula: <m>\frac{\hat{p} + \frac{1}{2n}z^2 \pm z \sqrt{\frac{\hat{p}(1-\hat{p})}{n} + \frac{z^2}{4n^2}}}{1 + z^2/n}</m>
           <line/>Can have poor coverage properties with <m>\pi</m> near 0 or 1.</cell>
-          <cell right="minor">(.4902, .9433)</cell>
-          <cell>(.1590, .2408)</cell>
+          <cell right="minor">(.4902,
+          <line/>.9433)</cell>
+          <cell>(.1590,
+          <line/>.2408)</cell>
         </row>
         <row>
           <cell>JMP (Analyze > Distribution) or R prop.test w/o continuity corr.</cell>
-          <cell right="minor">(.4422, .9646)</cell>
-          <cell>(.1577, .2423)</cell>
+          <cell right="minor">(.4422,
+          <line/>.9646)</cell>
+          <cell>(.1577,
+          <line/>.2423)</cell>
         </row>
         <row bottom="minor">
           <cell>R prop.test w/ continuity corr.</cell>
@@ -68,8 +78,10 @@
           <cell><alert>Exact Binomial</alert> (Clopper-Pearson)
           <line/>Finds the values of <m>\pi</m> so <m>P(X \le k) \ge (1 - C)/2</m> and <m>P(X \ge k) \ge (1 - C)/2</m> where <m>k</m> is observed number of successes
           <line/>Tends to be "conservative" (longer than necessary)</cell>
-          <cell right="minor">(.4439, .9748)</cell>
-          <cell>(.1569, .2415)</cell>
+          <cell right="minor">(.4439,
+          <line/>.9748)</cell>
+          <cell>(.1569,
+          <line/>.2415)</cell>
         </row>
         <row bottom="minor">
           <cell>JMP (summary stats) or R using iscambinomtest</cell>
@@ -80,8 +92,10 @@
           <cell><alert>Blaker</alert> (Inv 1.6)
           <line/>Finds the values of <m>\pi</m> so the two-sided p-value (using tail probabilities) is less <m>(1 - C)/2</m>.
           <line/>Tends to be shorter than the Clopper-Pearson interval.</cell>
-          <cell right="minor">(.4445, .9632)</cell>
-          <cell>(.1570, .2403)</cell>
+          <cell right="minor">(.4445,
+          <line/>.9632)</cell>
+          <cell>(.1570,
+          <line/>.2403)</cell>
         </row>
         <row bottom="minor">
           <cell>R (blakerCI)</cell>
