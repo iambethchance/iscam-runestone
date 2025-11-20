@@ -1,10 +1,15 @@
   <subsection xml:id="investigation1-8">
     <title>Investigation 1.8: Halloween Treat Choices</title>
     
-    <p>
-      Obesity has become a widespread health concern, especially in children. Researchers believe that giving children easy access to food increases their likelihood of consuming extra calories. <url href="https://pubmed.ncbi.nlm.nih.gov/12859885/" visual="pubmed.ncbi.nlm.nih.gov/12859885">Schwartz, Chen, and Brownell (2003)</url> examined whether children would be willing to take a small toy instead of candy at when trick-or-treating on Halloween. They had seven homes in 5 different towns in Connecticut present children with a plate of 4 toys (stretch pumpkin men, large glow-in-the-dark insects, Halloween theme stickers, and Halloween theme pencils) and a plate of 4 different name brand candies (lollipops, fruit-flavored chewy candies, fruit-flavored crunchy wafers, and "sweet and tart" hard candies) to see whether children were more likely to choose the candy or the toy. The houses alternated whether the toys were on the left or on the right. Data were recorded for 284 children between the ages of 3 and 14 (who did not ask for both types of treats).
-    </p>
-
+    <sidebyside widths="75% 20%" valign="top">
+      <p>
+        Obesity has become a widespread health concern, especially in children. Researchers believe that giving children easy access to food increases their likelihood of consuming extra calories.</p>
+      <image source="images/inv1-8intro.jpeg" width="100%">
+        <description>Halloween treats and toys</description>
+      </image>
+    </sidebyside>
+<p><url href="https://pubmed.ncbi.nlm.nih.gov/12859885/" visual="pubmed.ncbi.nlm.nih.gov/12859885">Schwartz, Chen, and Brownell (2003)</url> examined whether children would be willing to take a small toy instead of candy at when trick-or-treating on Halloween. They had seven homes in 5 different towns in Connecticut present children with a plate of 4 toys (stretch pumpkin men, large glow-in-the-dark insects, Halloween theme stickers, and Halloween theme pencils) and a plate of 4 different name brand candies (lollipops, fruit-flavored chewy candies, fruit-flavored crunchy wafers, and "sweet and tart" hard candies) to see whether children were more likely to choose the candy or the toy. The houses alternated whether the toys were on the left or on the right. Data were recorded for 284 children between the ages of 3 and 14 (who did not ask for both types of treats).
+      </p>
     <exercise xml:id="I1-8-a" label="I1.8a">
       <title>Identify Sample and Variable</title>
       <statement>
@@ -47,7 +52,8 @@
           Define (in words) the parameter of interest in this study.
         </p>
       </statement>
-      <response/>
+      <response>
+      </response>
       <hint>
         <p>
           What long-run proportion are we interested in learning about?
@@ -67,13 +73,86 @@
           State an appropriate null and alternative hypothesis involving this parameter (in symbols and in words), for testing whether there is strong evidence of a preference for either the toys or the candy.
         </p>
         <p>
-          <m>H_0</m>:
+          <m>H_0: </m> <var width="5"/> <var width="5"/> <var width="5"/>
         </p>
         <p>
-          <m>H_a</m>:
+          <m>H_a: </m> <var width="5"/> <var width="5"/> <var width="5"/>
         </p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition string="^\s*[πpi]+\s*$">
+            <feedback>
+              <p>Correct! Use <m>\pi</m> to represent the parameter.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. What symbol represents the population parameter?</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string="^\s*=\s*$">
+            <feedback>
+              <p>Correct! The null hypothesis uses equals.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. What symbol is used for the null hypothesis?</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string="^\s*0?\.5\s*$">
+            <feedback>
+              <p>Correct! Under the null hypothesis, there is no preference, so <m>\pi = 0.5</m>.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. If there's no preference between toys and candy, what would the probability be?</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string="^\s*[πpi]+\s*$">
+            <feedback>
+              <p>Correct! Use <m>\pi</m> to represent the parameter.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. What symbol represents the population parameter?</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string="^\s*(!=|≠|&lt;&gt;|not equal|not equals)\s*$">
+            <feedback>
+              <p>Correct! The alternative hypothesis uses not equals.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. What symbol is used for a two-sided alternative hypothesis?</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string="^\s*0?\.5\s*$">
+            <feedback>
+              <p>Correct! The alternative hypothesis is that the probability differs from 0.5.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. We're testing whether there's a preference (different from no preference).</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <hint>
         <p>
           If there is no preference, what would you expect the probability to be? What would indicate a preference?
@@ -133,6 +212,7 @@
     </assemblage>
 
     <exercise xml:id="I1-8-e" label="I1.8e">
+      <title>Process Probability and Sample Size</title>
       <statement>
         <p>
           Why does the value of the process probability (<m>\pi</m>) matter when we check this condition?
@@ -152,6 +232,7 @@
     </exercise>
 
     <exercise xml:id="I1-8-f" label="I1.8f">
+      <title>Check Validity Conditions</title>
       <statement>
         <p>
           Does the Central Limit Theorem appear applicable for the Halloween study?
@@ -180,9 +261,10 @@
     </exercise>
 
     <exercise xml:id="I1-8-g" label="I1.8g">
+      <title>Verify with Applet</title>
       <statement>
         <p>
-          Use the One Proportion Inference applet to verify your answers to (d). Check the Normal Approximation box to verify your answer to (f).
+          Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" visual="rossmanchance.com/applets/2021/oneprop/OneProp.htm">One Proportion Inference applet</url> to verify your answers to <xref ref="I1-8-d"/>. Check the <alert>Normal Approximation</alert> box to verify your answer to <xref ref="I1-8-f"/>.
         </p>
       </statement>
       <response/>
@@ -197,20 +279,59 @@
     </paragraphs>
 
     <exercise xml:id="I1-8-h" label="I1.8h">
+      <title>Find P-values</title>
       <statement>
         <p>
           In the sample, 135 children chose the toy and 149 chose the candy. Use the applet to find the following two-sided p-values, and explain briefly how each is found:
         </p>
         <p>
-          Simulation:
+          Simulation: <var width="10"/>
         </p>
         <p>
-          Exact binomial:
+          Exact binomial: <var width="10"/>
         </p>
         <p>
-          Normal approximation:
+          Normal approximation: <var width="10"/>
         </p>
       </statement>
+      <setup>
+        <var>
+          <condition number="0.40" tolerance="0.05">
+            <feedback>
+              <p>Correct! The simulation p-value should be around 0.40.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Use the applet to simulate many samples and find the proportion as extreme as 135 or more extreme.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.40" tolerance="0.05">
+            <feedback>
+              <p>Correct! The exact binomial p-value is approximately 0.40.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Use the applet's binomial calculation feature.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.40" tolerance="0.05">
+            <feedback>
+              <p>Correct! The normal approximation p-value is approximately 0.40.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Check the Normal Approximation box in the applet.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
       <hint>
         <p>
@@ -241,6 +362,7 @@
     </p>
 
     <exercise xml:id="I1-8-i" label="I1.8i">
+      <title>Switch to Proportions</title>
       <statement>
         <p>
           Use the radio button to toggle the Choice of Statistic to Proportion of heads. What changes about the null distribution? What is the observed value of the statistic?
@@ -274,6 +396,7 @@
     </p>
 
     <exercise xml:id="I1-8-j" label="I1.8j">
+      <title>Calculate Standardized Statistic</title>
       <statement>
         <p>
           Standardize the value of the statistic for the Halloween study by comparing to the mean and standard deviation of the distribution of sample proportions. Interpret your result in context.
@@ -324,6 +447,7 @@
     </assemblage>
 
     <exercise xml:id="I1-8-k" label="I1.8k">
+      <title>Interpret Subscript Notation</title>
       <statement>
         <p>
           What does the "zero" subscript tell you?
@@ -350,6 +474,7 @@
     </assemblage>
 
     <exercise xml:id="I1-8-l" label="I1.8l">
+      <title>Draw Conclusion</title>
       <statement>
         <p>
           What do you conclude about the plausibility of the null hypothesis based on this standardized statistic?
@@ -369,6 +494,7 @@
     </exercise>
 
     <exercise xml:id="I1-8-m" label="I1.8m">
+      <title>Calculate P-value from Z-statistic</title>
       <statement>
         <p>
           Use technology to find the corresponding p-value. [Hints: You can calculate the probability from the z-value using standard normal distribution (mean 0, SD 1), e.g., Normal Probability Calculator applet; or use the Technology Detour below to carry out a one-sample z-test.]
