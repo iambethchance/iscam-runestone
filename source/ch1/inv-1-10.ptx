@@ -672,6 +672,9 @@
           <p>
             Suppose that you take 1000 samples from a random process and generate a 95% confidence interval for <m>\pi</m> with each sample. If you randomly select one of these intervals, what is the probability that you will select an interval that captures <m>\pi</m>?
           </p>
+          <p>
+            Probability: <var width="10"/>
+          </p>
         </statement>
         <response/>
         <solution>
@@ -686,6 +689,9 @@
         <statement>
           <p>
             Suppose you take one sample from a random process and generate a 95% confidence interval to be (0.15, 0.25). What is the probability that this interval captures <m>\pi</m>?
+          </p>
+          <p>
+            Probability: <var width="10"/>
           </p>
         </statement>
         <response/>
@@ -702,49 +708,23 @@
           <p>
             In general, how does increasing the confidence level impact the width and <term>coverage rate</term> of a confidence interval procedure?
           </p>
-          <p>
-            Width:
-          </p>
         </statement>
         <choices randomize="no">
           <choice>
-            <statement><p>Decreases</p></statement>
-            <feedback><p>Incorrect. To be more confident, we need a wider interval.</p></feedback>
+            <statement><p>Width decreases, coverage rate decreases</p></statement>
+            <feedback><p>Incorrect. To be more confident, we need a wider interval and higher coverage rate.</p></feedback>
           </choice>
           <choice>
-            <statement><p>No change</p></statement>
-            <feedback><p>Incorrect. The width is affected by the confidence level.</p></feedback>
+            <statement><p>Width decreases, coverage rate increases</p></statement>
+            <feedback><p>Incorrect. Higher confidence level requires a wider interval.</p></feedback>
           </choice>
           <choice correct="yes">
-            <statement><p>Increases</p></statement>
-            <feedback><p>Correct! Increasing confidence level requires a larger critical value, which increases the margin of error and makes the interval wider.</p></feedback>
+            <statement><p>Width increases, coverage rate increases</p></statement>
+            <feedback><p>Correct! Increasing confidence level requires a larger critical value, which increases the margin of error and makes the interval wider. It also increases the <term>coverage rate</term> - a higher percentage of intervals will capture the true parameter.</p></feedback>
           </choice>
           <choice>
-            <statement><p>Can't be predicted</p></statement>
-            <feedback><p>Incorrect. The effect is predictable - higher confidence requires wider intervals.</p></feedback>
-          </choice>
-        </choices>
-        <statement>
-          <p>
-            Coverage rate:
-          </p>
-        </statement>
-        <choices randomize="no">
-          <choice>
-            <statement><p>Decreases</p></statement>
-            <feedback><p>Incorrect. Higher confidence level means we capture the parameter more often.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>No change</p></statement>
-            <feedback><p>Incorrect. The coverage rate changes with confidence level.</p></feedback>
-          </choice>
-          <choice correct="yes">
-            <statement><p>Increases</p></statement>
-            <feedback><p>Correct! Increasing the confidence level increases the <term>coverage rate</term> - a higher percentage of intervals will capture the true parameter.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>Can't be predicted</p></statement>
-            <feedback><p>Incorrect. The effect is predictable - higher confidence level means higher coverage rate.</p></feedback>
+            <statement><p>Width increases, coverage rate decreases</p></statement>
+            <feedback><p>Incorrect. Higher confidence level means we capture the parameter more often, not less.</p></feedback>
           </choice>
         </choices>
       </exercise>
@@ -755,49 +735,23 @@
           <p>
             In general, how does increasing the sample size impact the width and <term>coverage rate</term> of a confidence interval procedure?
           </p>
-          <p>
-            Width:
-          </p>
         </statement>
         <choices randomize="no">
           <choice correct="yes">
-            <statement><p>Decreases</p></statement>
-            <feedback><p>Correct! Larger sample sizes reduce the standard error, which decreases the margin of error and makes intervals narrower.</p></feedback>
+            <statement><p>Width decreases, coverage rate stays the same</p></statement>
+            <feedback><p>Correct! Larger sample sizes reduce the standard error, which decreases the margin of error and makes intervals narrower. For a valid confidence interval procedure, the <term>coverage rate</term> should remain at the stated confidence level (e.g., 95%) regardless of sample size.</p></feedback>
           </choice>
           <choice>
-            <statement><p>No change</p></statement>
+            <statement><p>Width decreases, coverage rate increases</p></statement>
+            <feedback><p>Incorrect. While larger samples produce narrower intervals, the coverage rate should match the confidence level regardless of sample size for a valid procedure.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p>Width stays the same, coverage rate stays the same</p></statement>
             <feedback><p>Incorrect. Sample size affects the width through the standard error.</p></feedback>
           </choice>
           <choice>
-            <statement><p>Increases</p></statement>
-            <feedback><p>Incorrect. Larger samples give more precise estimates with narrower intervals.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>Can't be predicted</p></statement>
-            <feedback><p>Incorrect. The effect is predictable - larger samples produce narrower intervals.</p></feedback>
-          </choice>
-        </choices>
-        <statement>
-          <p>
-            Coverage rate:
-          </p>
-        </statement>
-        <choices randomize="no">
-          <choice>
-            <statement><p>Decreases</p></statement>
-            <feedback><p>Incorrect. Sample size doesn't negatively affect coverage rate.</p></feedback>
-          </choice>
-          <choice correct="yes">
-            <statement><p>No change</p></statement>
-            <feedback><p>Correct! For a valid confidence interval procedure, the <term>coverage rate</term> should remain at the stated confidence level (e.g., 95%) regardless of sample size. Sample size affects width but not the long-run <term>coverage rate</term>.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>Increases</p></statement>
-            <feedback><p>Incorrect. While larger samples are better, the coverage rate should match the confidence level regardless of sample size for a valid procedure.</p></feedback>
-          </choice>
-          <choice>
-            <statement><p>Can't be predicted</p></statement>
-            <feedback><p>Incorrect. For a valid procedure, the coverage rate should consistently match the stated confidence level.</p></feedback>
+            <statement><p>Width increases, coverage rate stays the same</p></statement>
+            <feedback><p>Incorrect. Larger samples give more precise estimates with narrower intervals, not wider.</p></feedback>
           </choice>
         </choices>
       </exercise>
