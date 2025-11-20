@@ -1,0 +1,387 @@
+  <subsection xml:id="investigation1-10">
+    <title>Investigation 1.10: Heart Transplant Mortality (cont.)</title>
+    
+    <p>
+      Recall Investigation 1.4, where you learned that 8 of the 10 most recent heart transplantation operations at St. George's Hospital resulted in a death.
+    </p>
+
+    <exercise xml:id="I1-10-a" label="I1.10a">
+      <title>Exact Binomial 95% Confidence Interval</title>
+      <statement>
+        <p>
+          Use technology to find the "exact binomial" (Clopper-Pearson) 95% confidence interval for the probability of death in the heart transplantation process at St. George's Hospital.
+        </p>
+        <p>
+          In R: use <c>iscambinomtest(...., conf.level = .95)</c>
+        </p>
+        <p>
+          In JMP: use Journal File <ellipsis/> confidence interval (Summary Stats) <ellipsis/> binomial
+        </p>
+        <p>
+          Report the interval, including the midpoint ((upper endpoint+lower endpoint)/2) and width ((upper endpoint-lower endpoint)).
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-b" label="I1.10b">
+      <title>Calculate 95% z-Confidence Interval</title>
+      <statement>
+        <p>
+          Use your calculator to calculate the 95% one proportion <m>z</m> confidence interval <m>\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</m>. (Show the values substituted into the formula.) Also report the midpoint and width.
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-c" label="I1.10c">
+      <title>Verify z-Interval with Technology</title>
+      <statement>
+        <p>
+          Use technology to verify your calculation of the one proportion <m>z</m>-interval (also called the Wald interval)
+        </p>
+        <p>
+          In R: use <c>iscamoneproptest(...., conf.level = .95)</c>
+        </p>
+        <p>
+          In JMP: use Journal File <ellipsis/> confidence interval <ellipsis/>
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-d" label="I1.10d">
+      <title>Assess Validity of z-Interval</title>
+      <statement>
+        <p>
+          Do you consider the one proportion <m>z</m>-interval valid for these data? Explain how you are deciding.
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+    <assemblage xml:id="confidence-level-key-idea">
+      <title>Key Idea</title>
+      <p>
+        The confidence level of an interval procedure is supposed to indicate the long-run percentage of intervals that capture the actual parameter value, if repeated random samples were taken from the identical process. As such, the confidence level presents a measure of the reliability of the method. A confidence interval procedure is considered valid when the achieved long-run coverage rate matches (or comes close to) the stated (aka nominal) confidence level.
+      </p>
+      <p>
+        Statistical confidence is a statement about the method, not a probability statement about an individual interval.
+      </p>
+    </assemblage>
+
+    <p>
+      To consider whether the one sample <m>z</m>-interval is valid for this study, we can pretend we know the process probability, generate many random samples from that process, calculate confidence intervals from the simulated samples, and see what percentage of these confidence intervals capture the actual value of the process probability that we specified.
+    </p>
+
+    <exercise xml:id="I1-10-e" label="I1.10e">
+      <title>Explore Simulating Confidence Intervals Applet</title>
+      <statement>
+        <p>
+          Open the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html" visual="rossmanchance.com/applets/2021/confsim/ConfSim.html">Simulating Confidence Intervals applet</url>.
+        </p>
+        <p>
+          Suppose the actual process probability of death is 0.15 and you plan to take a sample of 10 operations and apply the <m>z</m>-interval (aka Wald) method. Set the value of <m>\pi</m> to 0.15 and the Sample size (n) to 10. Press Sample. Click on the interval to see the endpoint(s), midpoint, and width (verify).
+        </p>
+        <p>
+          Did you obtain the same interval as in (c)? Why or why not?
+        </p>
+        <p>
+          Did the interval succeed in capturing the value of <m>\pi</m>, which we set to be 0.15? How can you tell?
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-f" label="I1.10f">
+      <title>Evaluate z-Interval Coverage Rate</title>
+      <statement>
+        <p>
+          Change the Number of intervals to 100 and press Sample until you have at least 1,000 intervals in the Running total. How many of these random intervals succeed in capturing the actual value of the process probability (0.15)? Does this method appear to succeed in capturing the value of the parameter (which we assumed to be equal to 0.15) 95% "of the time"?
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+    <p>
+      Because the <m>z</m>-interval procedure has the sample size conditions of the Central Limit Theorem, there are scenarios where we should not use this <m>z</m>-procedure to determine the confidence interval. In these cases, one option is to use the Exact Binomial distribution (Clopper-Pearson) method.
+    </p>
+
+    <exercise xml:id="I1-10-g" label="I1.10g">
+      <title>Evaluate Exact Binomial Coverage Rate</title>
+      <statement>
+        <p>
+          Use the Method pull-down menu to select Exact Binomial and continue to press Sample until you generate at least 1,000 confidence intervals from a process with <m>\pi = 0.15</m> and <m>n = 10</m>.
+        </p>
+        <p>
+          Does this appear to be a 95% confidence interval method?
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-h" label="I1.10h">
+      <title>Average Width of Exact Binomial Intervals</title>
+      <statement>
+        <p>
+          What is the average width of these intervals? (See the Mean of the "(CI Widths)" graph.)
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+    <p>
+      The Clopper-Pearson method will have a coverage rate of at least 95%, but tends to be "conservative," meaning the coverage rate is higher than 95% so the intervals are longer than they need to be. The method is also fairly complicated (as opposed to: "go two standard deviations on each side"). An alternative method that has been receiving much attention of late is often called the Plus Four procedure:
+    </p>
+
+    <assemblage xml:id="plus-four-definition">
+      <title>Definition: Plus Four 95% Confidence Interval for <m>\pi</m></title>
+      <p>
+        <ol>
+          <li><p>Determine the number of successes (<m>X</m>) and sample size (<m>n</m>) in the study</p></li>
+          <li><p>Increase the number of successes by two and the sample size by four, and calculate a new proportion: <m>\tilde{p} = (X + 2)/(n + 4)</m>. Make this value the midpoint of the interval.</p></li>
+          <li><p>Use the <m>z</m>-interval procedure as above for the augmented sample size of <m>(n + 4)</m>: <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{n+4}}</m></p></li>
+        </ol>
+      </p>
+      <p>
+        In short, with 95% confidence, the idea is to pretend you have 2 more successes and 2 more failures than you really did. For confidence levels other than 95%, researchers have recommended using the Adjusted Wald method: <m>\tilde{p} = (X + 0.5(z^*)^2)/(n + (z^*)^2)</m> and <m>\tilde{n} = n + (z^*)^2</m> so the interval becomes <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{\tilde{n}}}</m>.
+      </p>
+    </assemblage>
+
+    <exercise xml:id="I1-10-i" label="I1.10i">
+      <title>Evaluate Plus Four Coverage Rate</title>
+      <statement>
+        <p>
+          Investigate the reliability of the Plus Four procedure:
+        </p>
+        <p>
+          <ul>
+            <li><p>Use the Method pull-down menu to change from Exact Binomial to Plus Four (95%).</p></li>
+            <li><p>Generate at least 1,000 confidence intervals from a process with <m>\pi = 0.15</m> and <m>n = 10</m>.</p></li>
+          </ul>
+        </p>
+        <p>
+          Is this coverage rate close to 95%? Is this an improvement over the (Wald) <m>z</m>-interval?
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-j" label="I1.10j">
+      <title>Average Width of Plus Four Intervals</title>
+      <statement>
+        <p>
+          What is the average width of the Plus Four intervals? Do these intervals tend to be narrower than intervals calculated using the Exact Binomial interval procedure?
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-k" label="I1.10k">
+      <title>Compare Interval Midpoints</title>
+      <statement>
+        <p>
+          Use the Method pull-down menu to toggle between the Wald and Plus Four intervals. [<em>Hint:</em> You can Sort the intervals first.] What do you notice about how the midpoints of the intervals compare? (Also think how <m>\tilde{p}</m> and <m>\hat{p}</m> differ, these are the values shown in the "Sample statistics (CI Midpoints)" graph.) Why is the change in the midpoints of the intervals useful in this scenario?
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-l" label="I1.10l">
+      <title>Evaluate Blaker Method</title>
+      <statement>
+        <p>
+          In the applet, change the number of intervals to 100. Press Reset. Use the pull-down menu to select the Blaker method (the Exact Binomial using the tail probabilities), and wait a bit. (If it's just 100 at a time, it's not too bad to hit Sample a few more times.) Report the percentage of intervals that capture the parameter AND the average width of these 100 intervals.
+        </p>
+        <p>
+          Running Total: <var width="20"/>
+        </p>
+        <p>
+          Average width: <var width="20"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-m" label="I1.10m">
+      <title>Assess Blaker Method</title>
+      <statement>
+        <p>
+          Does this appear to be a 95% confidence interval procedure?
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-n" label="I1.10n">
+      <title>Shortest Intervals</title>
+      <statement>
+        <p>
+          In your simulations, which method appears to have the shortest intervals? (Pick one.)
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+    <assemblage xml:id="plus-four-key-idea">
+      <title>Key Idea</title>
+      <p>
+        The Plus Four method is more likely to be a 95% confidence interval method than the one-sample <m>z</m>-interval method. It is never a bad idea to use the Plus Four method.
+      </p>
+      <p>
+        "Fudging our data" may seem like cheating, but there is actually some nice theory behind this method. The plus four adjustment is not that different in principle from the continuity correction we suggested with p-values. Many statisticians now recommend using this procedure over the one proportion <m>z</m>-interval procedure because it achieves the stated confidence level for any sample size and over the Clopper-Pearson binomial interval procedure because the intervals tend to be shorter (narrower). In fact, the more general case (something other than 95%) is becoming the default in many software packages. (The Blaker method in others.)
+      </p>
+    </assemblage>
+
+    <exercise xml:id="I1-10-o" label="I1.10o">
+      <title>Plus Four Interval for St. George's Hospital</title>
+      <statement>
+        <p>
+          Determine and then interpret a Plus Four confidence interval for the probability of a death during a heart transplant operation at St. George's hospital. [<em>Hints:</em> You can do the calculation either by hand, first finding <m>\tilde{p}</m> and <m>z^*</m>, or with software (e.g., the Theory-Based Inference applet) by telling the technology there were 4 more operations consisting of two more deaths than in the actual sample. Note: You can't use the Simulating Confidence Intervals applet to answer this question.]
+        </p>
+        <p>
+          <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-p" label="I1.10p">
+      <title>Compare Intervals for Larger Study</title>
+      <statement>
+        <p>
+          Repeat for the larger study at St. George's that revealed 71 deaths out of 361 operations. How do the 95% Wald and Plus Four intervals compare in this case (compare the centers and widths)?
+        </p>
+        <p>
+          Wald interval: <var width="40"/>
+        </p>
+        <p>
+          Plus Four interval: <var width="40"/>
+        </p>
+        <p>
+          Comparison: <var width="60"/>
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <p>
+          [Solution to be added]
+        </p>
+      </solution>
+    </exercise>
+
+  </subsection>
