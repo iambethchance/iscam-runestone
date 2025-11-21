@@ -45,7 +45,7 @@
       <p>Count the number of words with 3 or fewer letters, then divide by 10.</p>
     </hint>
     <solution>
-      <p>Answers will vary depending on which words were selected. The proportion should be calculated as (number of short words) / 10.</p>
+      <p>Answers will vary.</p>
     </solution>
   </exercise>
 
@@ -65,9 +65,9 @@
       <p>What are the individual entities being measured? What characteristic are we recording about each one?</p>
     </hint>
     <solution>
-      <p>Observational units: words (from the Gettysburg Address)</p>
-      <p>Variable: whether or not the word is short (3 or fewer letters)</p>
-      <p>Type: Categorical (with two categories: short or not short)</p>
+      <p>Observational units: words</p>
+      <p>Variable: Is the word short or long?</p>
+      <p>Type: (binary) categorical</p>
     </solution>
   </exercise>
 
@@ -81,7 +81,7 @@
   <exercise xml:id="I1-12-d">
     <title>Sample statistic vs. population parameter</title>
     <statement>
-      <p>Is the proportion of short words you calculated in <xref ref="I1-12-b" text="local">checkpoint (b)</xref> a parameter or a statistic? What symbol can we use to refer to it?</p>
+      <p>Is the proportion of short words you calculated in <xref ref="I1-12-b"/> a parameter or a statistic? What symbol can we use to refer to it?</p>
 
       <p>Parameter or statistic? <var form="buttons">
         <li>Parameter</li>
@@ -98,7 +98,7 @@
       <p>Were you calculating from a sample or from the entire population?</p>
     </hint>
     <solution>
-      <p>Statistic. The proportion was calculated from a sample of 10 words, not from the entire population of 268 words. We use the symbol <m>\hat{p}</m> for a sample proportion.</p>
+      <p>Statistic, calculated from a sample of ten words, <m>\hat{p}</m>. This is the value we observe from our sample.</p>
     </solution>
   </exercise>
 
@@ -122,7 +122,7 @@
       <p>This proportion is calculated from all 268 words, not just a sample.</p>
     </hint>
     <solution>
-      <p>Parameter. This proportion is calculated from the entire population of 268 words in the Gettysburg Address. We use the symbol <m>\pi</m> for a population proportion.</p>
+      <p>Parameter, <m>\pi</m>.</p>
     </solution>
   </exercise>
 
@@ -142,7 +142,7 @@
       <p>Think about what the distribution of many sample proportions would look like if the method is unbiased.</p>
     </hint>
     <solution>
-      <p>No, not everyone obtained the same sample proportion because different students selected different words. To decide if the sampling method is representative, we can create a graph of all the class sample proportions and see if the distribution is centered near the population proportion of 0.41. If the method is unbiased, the sample proportions should cluster around the true population value.</p>
+      <p>Answers will vary but no student's sample proportion could be 0.41 exactly, and it is unlikely that everyone obtained the same sample proportion. To decide whether this sampling method tends to produce samples that are representative we could plot the sample averages and compare the center of the distribution to 0.41.</p>
     </solution>
   </exercise>
 
@@ -183,10 +183,11 @@
       <p>Look at where the center of the distribution is. Is it close to the population proportion of 0.41?</p>
     </hint>
     <solution>
-      <p>The distribution  of samplek proportions is likely centered below 0.41, suggesting that the "circle 10 words" method tends to underestimate the population proportion of short words. This indicates the sampling method is biased.</p>
-      Example class results: <image source="images/Inv1.12(h)sols.jpg" width="80%">
-        <description>Solution graph for checkpoint h showing sampling distribution</description>
+      <p>Example results. Each dot in the graph represents the proportion of short words in a random sample of 10 words.</p>
+      <image source="images/Inv1.12(h)sols.jpg" width="80%">
+        <description>Solution graph for checkpoint h showing sampling distribution - Mean = 0.2019, SD = 0.1704, median = 0.20, n = 53</description>
       </image>
+      <p>Mean = 0.2019, SD = 0.1704, median = 0.20, n = 53.</p>
     </solution>
   </exercise>
 
@@ -215,7 +216,8 @@
       <p>Think about what types of words people tend to notice or select when choosing "representative" words.</p>
     </hint>
     <solution>
-      <p>The class results likely show a tendency to underestimate the population proportion. Yes, this could have been predicted because when people try to select "representative" words, they tend to choose longer, more meaningful words and overlook short words like "a," "to," "we," etc. Longer words are more noticeable and memorable, so the convenience sampling method is biased toward longer words.</p>
+      <p>Because most of the sample proportions are less than 0.41, this sampling method tends to under-estimate the population proportion and is therefore not representative.</p>
+      <p>The class results indicate a tendency to underestimate <m>\pi</m> = 0.41. This could have been predicted in advance - we all tend to select longer words because we tend to overlook short words like "a", "the" and "of".</p>
     </solution>
   </exercise>
 
@@ -242,7 +244,8 @@
       <p>Think about whether longer words are easier to point at than shorter words.</p>
     </hint>
     <solution>
-      <p>Yes, this method would be biased toward overestimating the proportion of short words is biased toward underestimating. Longer words take up more space on the page, so you are more likely to point at a longer word than a shorter word. This means you would select fewer short words than their true proportion in the population. Increasing the sample size to 20 words would not eliminate this bias - it would still systematically favor longer words. Increasing sample size does not fix a biased sampling method.</p>
+      <p>This sampling method would also be biased - longer words take up more space on the page and are therefore more likely to be "hit" by your pen. This sampling method would also tend to under-estimate the proportion of short words in the Gettysburg Address.</p>
+      <p>Taking samples of 20 words would have no effect on the bias of this sampling method. We would just end up with samples of 20 long words.</p>
     </solution>
   </exercise>
 
@@ -353,15 +356,16 @@ sample(ids, 5)
   <exercise xml:id="I1-12-o">
     <title>Comparing distributions</title>
     <statement>
-      <p>Combine your results with your classmates to produce a dotplot of the proportions of short words. Comment on the distribution and particularly how it compares to the one in <xref ref="I1-12-h">checkpoint (h)</xref>.</p>
+      <p>Combine your results with your classmates to produce a dotplot of the proportions of short words. Comment on the distribution and particularly how it compares to the one in <xref ref="I1-12-h"/>.</p>
 
       <p>Comparison: <var width="60"/></p>
     </statement>
     <solution>
-      <p>Example results: Mean = 0.494, SD = 0.53294, median = 0.40, n = 53. This graph is centered much closer to 0.41, with a standard deviation that is about half as large.</p>
+      <p>Example results:</p>
       <image source="images/Inv1.12(o)sols.jpg" width="80%">
         <description>Solution graph for checkpoint o comparing distributions</description>
       </image>
+      <p>Mean = 0.494, SD = 0.53294, median = 0.40, n = 53. This graph is centered much closer to 0.41, with a standard deviation that is about half as large.</p>
     </solution>
   </exercise>
 
@@ -403,13 +407,14 @@ sample(ids, 5)
       <p><var width="60"/></p>
     </statement>
     <solution>
-      <p>Example results: The distribution is fairly symmetric, centered at 0.4 with a standard deviation of 0.216. The computer appears to be using an unbiased sampling method because the sample proportions are not systematically over or under 0.41.</p>
+      <p>Example results:</p>
       <image source="images/Inv1.12(r)sols1.jpg" width="80%">
-        <description>Solution graph 1 for checkpoint r showing sampling distribution behavior</description>
+        <description>In class dotplots for both methods</description>
       </image>
       <image source="images/Inv1.12(r)sols2.jpg" width="80%">
-        <description>Solution graph 2 for checkpoint r showing sampling distribution behavior</description>
+        <description>Solution graph showing sampling distribution behavior</description>
       </image>
+      <p>The distribution is fairly symmetric, centered at 0.4 with a standard deviation of 0.216. The computer appears to be using an unbiased sampling method because the sample proportions are not systematically over or under 0.41.</p>
     </solution>
   </exercise>
 
@@ -445,10 +450,11 @@ sample(ids, 5)
       <p><var width="60"/></p>
     </statement>
     <solution>
-      <p>Example results: The center has not changed (0.40), nor has the symmetric shape. But the standard deviation has decreased to 0.154.</p>
+      <p>Example results:</p>
       <image source="images/Inv1.12(u)sols.jpg" width="80%">
         <description>Solution graph for checkpoint u showing effect of larger sample size</description>
       </image>
+      <p>The center has not changed (0.40), nor has the symmetric shape. But the standard deviation has decreased to 0.154.</p>
     </solution>
   </exercise>
 
