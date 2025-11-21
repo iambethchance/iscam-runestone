@@ -44,9 +44,6 @@
     <hint>
       <p>Count the number of words with 3 or fewer letters, then divide by 10.</p>
     </hint>
-    <solution>
-      <p>Answers will vary.</p>
-    </solution>
   </exercise>
 
   <exercise xml:id="I1-12-c">
@@ -185,9 +182,9 @@
     <solution>
       <p>Example results. Each dot in the graph represents the proportion of short words in a random sample of 10 words.</p>
       <image source="images/Inv1.12(h)sols.jpg" width="80%">
-        <description>Solution graph for checkpoint h showing sampling distribution - Mean = 0.2019, SD = 0.1704, median = 0.20, n = 53</description>
+        <description>Solution graph for checkpoint h showing sampling distribution - Mean = 0.2019, SD = 0.1704, median = 0.20, <m>n</m> = 53</description>
       </image>
-      <p>Mean = 0.2019, SD = 0.1704, median = 0.20, n = 53.</p>
+      <p>Mean = 0.2019, SD = 0.1704, median = 0.20, <m>n</m> = 53.</p>
     </solution>
   </exercise>
 
@@ -331,15 +328,15 @@ sample(ids, 5)
     </exercise>
   </paragraphs>
 
-  <exercise xml:id="I1-12-m">
-    <title>Using the Sampling Words applet</title>
-    <statement>
-      <p>Instead, we will use the <url href="https://www.rossmanchance.com/applets/OneSample.html?population=gettysburg">Sampling Words applet</url>.</p>
-      <ul>
-        <li><p>Several variables on the words in the Gettysburg Address have already been preloaded. Use the <c>Choose variable</c> pull-down menu to change the variable to <c>Short</c>. Verify our claim about the value of the population proportion.</p></li>
-        <li><p>Check the <c>Show Sampling Options</c> box. Specify 5 as the Sample size. Press <c>Draw Samples</c>.</p></li>
-      </ul>
+  <p>Instead, we will use the <url href="https://www.rossmanchance.com/applets/OneSample.html?population=gettysburg">Sampling Words applet</url>.</p>
+  <ul>
+    <li><p>Several variables on the words in the Gettysburg Address have already been preloaded. Use the <c>Choose variable</c> pull-down menu to change the variable to <c>Short</c>. Verify our claim about the value of the population proportion.</p></li>
+    <li><p>Check the <c>Show Sampling Options</c> box. Specify 5 as the Sample size. Press <c>Draw Samples</c>.</p></li>
+  </ul>
 
+  <exercise xml:id="I1-12-m">
+    <title>Recording sample results</title>
+    <statement>
       <p>Write down the resulting ID numbers, the selected words, and whether the word is short.</p>
       <p>Record your results (ID number, Word, Short?): <var width="60"/></p>
     </statement>
@@ -366,7 +363,7 @@ sample(ids, 5)
       <image source="images/Inv1.12(o)sols.jpg" width="80%">
         <description>Solution graph for checkpoint o comparing distributions</description>
       </image>
-      <p>Mean = 0.494, SD = 0.53294, median = 0.40, n = 53. This graph is centered much closer to 0.41, with a standard deviation that is about half as large.</p>
+      <p>Mean = 0.494, SD = 0.53294, median = 0.40, <m>n</m> = 53. This graph is centered much closer to 0.41, with a standard deviation that is about half as large.</p>
     </solution>
   </exercise>
 
@@ -378,7 +375,7 @@ sample(ids, 5)
       <p><var width="60"/></p>
     </statement>
     <solution>
-      <p>No one obtained a sample proportion equal to the population proportion (it is impossible to obtain a sample proportion of 0.41 when n = 5), but there was definitely sample to sample variation. Everyone did not get the same sample proportion of short words.</p>
+      <p>No one obtained a sample proportion equal to the population proportion (it is impossible to obtain a sample proportion of 0.41 when <m>n</m> = 5), but there was definitely sample to sample variation. Everyone did not get the same sample proportion of short words.</p>
     </solution>
   </exercise>
 
@@ -395,6 +392,8 @@ sample(ids, 5)
   </exercise>
 
   <p>Of course, to really see the long-term pattern to the sampling distribution of the statistic, we would like to take many more random samples from this population.</p>
+  
+  <p>In the Sampling Words applet,</p>
   <ul>
     <li><p>Change the Number of Samples from 1 to 999 (for 1,000 total)</p></li>
     <li><p>Press <c>Draw Samples</c>.</p></li>
@@ -407,22 +406,12 @@ sample(ids, 5)
 
       <p><var width="60"/></p>
     </statement>
-    <solution>
-      <p>Example results:</p>
-      <image source="images/Inv1.12(r)sols1.jpg" width="80%">
-        <description>In class dotplots for both methods</description>
-      </image>
-      <image source="images/Inv1.12(r)sols2.jpg" width="80%">
-        <description>Solution graph showing sampling distribution behavior</description>
-      </image>
-      <p>The distribution is fairly symmetric, centered at 0.4 with a standard deviation of 0.216. The computer appears to be using an unbiased sampling method because the sample proportions are not systematically over or under 0.41.</p>
-    </solution>
   </exercise>
 
   <exercise xml:id="I1-12-s">
     <title>Comparing sampling methods</title>
     <statement>
-      <p>Notice that you took a smaller sample (n = 5) with the applet than when you circled the words (n = 10). Which sampling method was less biased?</p>
+      <p>Notice that you took a smaller sample (<m>n</m> = 5) with the applet than when you circled the words (<m>n</m> = 10). Which sampling method was less biased?</p>
 
       <p><var width="60"/></p>
     </statement>
@@ -452,7 +441,7 @@ sample(ids, 5)
     </statement>
     <solution>
       <p>Example results:</p>
-      <image source="images/Inv1.12(u)sols.jpg" width="80%">
+      <image source="images/Inv1.12(u)sols.jpg" width="50%">
         <description>Solution graph for checkpoint u showing effect of larger sample size</description>
       </image>
       <p>The center has not changed (0.40), nor has the symmetric shape. But the standard deviation has decreased to 0.154.</p>
@@ -461,7 +450,7 @@ sample(ids, 5)
 
   <p><term>Discussion:</term> Even with randomly drawn samples, sampling variability still exists (random sampling errors). Although not every random sample produces the same characteristics as the population, random sampling has the property that the sample statistics do not consistently overestimate the value of the parameter or consistently underestimate the value of the parameter (which is not changing). The means of the above distributions of sample proportions (the statistics) are both very close to 0.41, the population proportion (the parameter). Because the distributions of the sample statistic (as a random variable) are centered at the value of the population parameter, both graphs are considered to demonstrate an unbiased sampling method. With random samples, <m>E(\hat{p}) = \pi</m>, even when sampling from a finite population.</p>
 
-  <p>Notice that in judging bias we are concerned only with the mean of the distribution, not the shape or variability. However, if we do take larger samples (n = 10 rather than n = 5), we improve the precision of our statistics as they will tend to cluster even more tightly around the population proportion. In designing a study, it is critical to first make sure there is no sampling bias (use random sampling), then the sample size (not the number of samples) will determine how close the statistic can be expected to be to the parameter.</p>
+  <p>Notice that in judging bias we are concerned only with the mean of the distribution, not the shape or variability. However, if we do take larger samples (<m>n</m> = 10 rather than <m>n</m> = 5), we improve the precision of our statistics as they will tend to cluster even more tightly around the population proportion. In designing a study, it is critical to first make sure there is no sampling bias (use random sampling), then the sample size (not the number of samples) will determine how close the statistic can be expected to be to the parameter.</p>
 
   <assemblage>
     <title>Summary</title>
