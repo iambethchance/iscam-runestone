@@ -58,11 +58,20 @@
 
       <p>Observational units: <var width="40"/></p>
       <p>Variable: <var width="40"/></p>
-      <p>Type: <var form="buttons">
-        <li>Categorical</li>
-        <li>Quantitative</li>
-      </var></p>
+      <p>Type:</p>
     </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement>
+          <p>Categorical</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Quantitative</p>
+        </statement>
+      </choice>
+    </choices>
     <hint>
       <p>What are the individual entities being measured? What characteristic are we recording about each one?</p>
     </hint>
@@ -85,17 +94,20 @@
     <statement>
       <p>Is the proportion of short words you calculated in <xref ref="I1-12-b"/> a parameter or a statistic? What symbol can we use to refer to it?</p>
 
-      <p>Parameter or statistic? <var form="buttons">
-        <li>Parameter</li>
-        <li>Statistic</li>
-      </var></p>
-      <p>Symbol: <var form="buttons">
-        <li><m>\pi</m></li>
-        <li><m>\mu</m></li>
-        <li><m>\hat{p}</m></li>
-        <li><m>\bar{x}</m></li>
-      </var></p>
+      <p>Parameter or statistic?</p>
     </statement>
+    <choices randomize="no">
+      <choice>
+        <statement>
+          <p>Parameter</p>
+        </statement>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>Statistic</p>
+        </statement>
+      </choice>
+    </choices>
     <hint>
       <p>Were you calculating from a sample or from the entire population?</p>
     </hint>
@@ -104,22 +116,54 @@
     </solution>
   </exercise>
 
+  <exercise xml:id="I1-12-d2">
+    <title>Symbol for sample statistic</title>
+    <statement>
+      <p>What symbol should we use for the sample statistic?</p>
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement>
+          <p><m>\pi</m></p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p><m>\mu</m></p>
+        </statement>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p><m>\hat{p}</m></p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p><m>\bar{x}</m></p>
+        </statement>
+      </choice>
+    </choices>
+  </exercise>
+
   <exercise xml:id="I1-12-e">
     <title>Identifying the population parameter</title>
     <statement>
       <p>The proportion of all 268 words in this population that are short is 0.41. Is this number a parameter or a statistic? What symbol can we use to refer to it?</p>
 
-      <p>Parameter or statistic? <var form="buttons">
-        <li>Parameter</li>
-        <li>Statistic</li>
-      </var></p>
-      <p>Symbol: <var form="buttons">
-        <li><m>\pi</m></li>
-        <li><m>\mu</m></li>
-        <li><m>\hat{p}</m></li>
-        <li><m>\bar{x}</m></li>
-      </var></p>
+      <p>Parameter or statistic?</p>
     </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement>
+          <p>Parameter</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Statistic</p>
+        </statement>
+      </choice>
+    </choices>
     <hint>
       <p>This proportion is calculated from all 268 words, not just a sample.</p>
     </hint>
@@ -128,24 +172,66 @@
     </solution>
   </exercise>
 
+  <exercise xml:id="I1-12-e2">
+    <title>Symbol for population parameter</title>
+    <statement>
+      <p>What symbol should we use for this population parameter?</p>
+    </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement>
+          <p><m>\pi</m></p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p><m>\mu</m></p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p><m>\hat{p}</m></p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p><m>\bar{x}</m></p>
+        </statement>
+      </choice>
+    </choices>
+  </exercise>
+
   <exercise xml:id="I1-12-f">
     <title>Sampling variability</title>
     <statement>
       <p>Did everyone in your class obtain the same sample proportion?</p>
-      <p><var form="buttons">
-        <li>Yes</li>
-        <li>No</li>
-      </var></p>
-      
-      <p>Describe a way for deciding whether this sampling method tends to produce samples that are representative of the larger population for this parameter.</p>
-      <p><var width="60"/></p>
     </statement>
+    <choices randomize="no">
+      <choice>
+        <statement>
+          <p>Yes</p>
+        </statement>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>No</p>
+        </statement>
+      </choice>
+    </choices>
     <hint>
       <p>Think about what the distribution of many sample proportions would look like if the method is unbiased.</p>
     </hint>
     <solution>
       <p>Answers will vary but no student's sample proportion could be 0.41 exactly, and it is unlikely that everyone obtained the same sample proportion. To decide whether this sampling method tends to produce samples that are representative we could plot the sample averages and compare the center of the distribution to 0.41.</p>
     </solution>
+  </exercise>
+
+  <exercise xml:id="I1-12-f2">
+    <title>Describing representative sampling</title>
+    <statement>
+      <p>Describe a way for deciding whether this sampling method tends to produce samples that are representative of the larger population for this parameter.</p>
+      <p><var width="60"/></p>
+    </statement>
   </exercise>
 
   <exercise xml:id="I1-12-g">
@@ -206,14 +292,19 @@
     <title>Direction of bias</title>
     <statement>
       <p>Do your class results indicate a tendency to overestimate or to underestimate the population proportion <m>\pi</m>?</p>
-      <p><var form="buttons">
-        <li>Overestimate</li>
-        <li>Underestimate</li>
-      </var></p>
-      
-      <p>Could you have predicted that in advance? Explain.</p>
-      <p><var width="60"/></p>
     </statement>
+    <choices randomize="no">
+      <choice>
+        <statement>
+          <p>Overestimate</p>
+        </statement>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>Underestimate</p>
+        </statement>
+      </choice>
+    </choices>
     <hint>
       <p>Think about what types of words people tend to notice or select when choosing "representative" words.</p>
     </hint>
@@ -223,25 +314,31 @@
     </solution>
   </exercise>
 
+  <exercise xml:id="I1-12-i2">
+    <title>Predicting bias</title>
+    <statement>
+      <p>Could you have predicted that in advance? Explain.</p>
+      <p><var width="60"/></p>
+    </statement>
+  </exercise>
+
   <exercise xml:id="I1-12-j">
     <title>Alternative sampling method</title>
     <statement>
       <p>Consider another sampling method: you close your eyes, point at the passage of words, select whatever word your pen lands on, and repeat this 10 times. Would this sampling method be biased?</p>
-      <p><var form="buttons">
-        <li>Yes, biased</li>
-        <li>No, unbiased</li>
-      </var></p>
-      
-      <p>If so, in which direction?</p>
-      <p><var form="buttons">
-        <li>Overestimate</li>
-        <li>Underestimate</li>
-        <li>Not biased</li>
-      </var></p>
-      
-      <p>Explain. What if you looked at 20 words instead of 10?</p>
-      <p><var width="60"/></p>
     </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement>
+          <p>Yes, biased</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>No, unbiased</p>
+        </statement>
+      </choice>
+    </choices>
     <hint>
       <p>Think about whether longer words are easier to point at than shorter words.</p>
     </hint>
@@ -249,6 +346,38 @@
       <p>This sampling method would also be biased - longer words take up more space on the page and are therefore more likely to be "hit" by your pen. This sampling method would also tend to under-estimate the proportion of short words in the Gettysburg Address.</p>
       <p>Taking samples of 20 words would have no effect on the bias of this sampling method. We would just end up with samples of 20 long words.</p>
     </solution>
+  </exercise>
+
+  <exercise xml:id="I1-12-j2">
+    <title>Direction of bias in alternative method</title>
+    <statement>
+      <p>If so, in which direction?</p>
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement>
+          <p>Overestimate</p>
+        </statement>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>Underestimate</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Not biased</p>
+        </statement>
+      </choice>
+    </choices>
+  </exercise>
+
+  <exercise xml:id="I1-12-j3">
+    <title>Effect of sample size on bias</title>
+    <statement>
+      <p>Explain. What if you looked at 20 words instead of 10?</p>
+      <p><var width="60"/></p>
+    </statement>
   </exercise>
 
   <exercise xml:id="I1-12-k">
