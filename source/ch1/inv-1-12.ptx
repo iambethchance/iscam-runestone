@@ -183,8 +183,8 @@
       <p>Look at where the center of the distribution is. Is it close to the population proportion of 0.41?</p>
     </hint>
     <solution>
-      <p>The distribution is likely centered below 0.41, suggesting that the "circle 10 words" method tends to underestimate the population proportion of short words. This indicates the sampling method is biased.</p>
-      <image source="images/Inv1.12(h)sols.jpg" width="80%">
+      <p>The distribution  of samplek proportions is likely centered below 0.41, suggesting that the "circle 10 words" method tends to underestimate the population proportion of short words. This indicates the sampling method is biased.</p>
+      Example class results: <image source="images/Inv1.12(h)sols.jpg" width="80%">
         <description>Solution graph for checkpoint h showing sampling distribution</description>
       </image>
     </solution>
@@ -274,32 +274,57 @@
 
   <technology>
     <title>Technology Detour – Selecting a Simple Random Sample</title>
-    
-    <p><term>In applet:</term> You may use <url href="https://www.random.org">random.org</url> or our Generate Random Numbers applet to select a simple random sample of integers by specifying the range of integers (e.g., 1 to 268) and, if an option, how many numbers you want to generate.</p>
 
-    <p><term>In R:</term></p>
-    <p>Create a vector of integers from 1 to 268 in the Console window:</p>
-    <program language="r">
-      <code>
+    <exercise xml:id="tech-detour-srs-applet" label="Tech1.12.applet">
+      <title>Technology Detour (Applet)</title>
+      <statement>
+        <p>You may use <url href="https://www.random.org">random.org</url> or our Generate Random Numbers applet to select a simple random sample of integers by specifying the range of integers (e.g., 1 to 268) and, if an option, how many numbers you want to generate.</p>
+      </statement>
+      <hint>
+        <p>To generate 5 random numbers between 1 and 268, specify those values in the random number generator.</p>
+      </hint>
+    </exercise>
+
+    <exercise xml:id="tech-detour-srs-r" label="Tech1.12.R">
+      <title>Technology Detour (R)</title>
+      <statement>
+        <p>Create a vector of integers from 1 to 268 in the Console window:</p>
+        <program language="r">
+          <code>
 ids = 1:268
-      </code>
-    </program>
-    <p>Take a simple random sample of 5 ID numbers:</p>
-    <program language="r">
-      <code>
+          </code>
+        </program>
+        <p>Take a simple random sample of 5 ID numbers:</p>
+        <program language="r">
+          <code>
 sample(ids, 5)
-      </code>
-    </program>
-    <p>[Use the up arrow to repeat this command if you are sharing computers. If you are using the ISCAM workspace, you should also reset the random number seed: <c>rm(.Random.seed)</c>]</p>
+          </code>
+        </program>
+      </statement>
+      <hint>
+        <p>Use the up arrow to repeat this command if you are sharing computers. If you are using the ISCAM workspace, you should also reset the random number seed: <c>rm(.Random.seed)</c></p>
+      </hint>
+      <solution>
+        <p>Each time you run <c>sample(ids, 5)</c>, you will get 5 different random numbers between 1 and 268. Example output: 45, 162, 3, 210, 97</p>
+      </solution>
+    </exercise>
 
-    <p><term>In JMP:</term></p>
-    <ol>
-      <li><p>Choose <c>File > New > Data Table</c>.</p></li>
-      <li><p>From the <c>Rows</c> menu, select <c>Add Rows</c>. Add 5 rows to the table. Press <c>OK</c>.</p></li>
-      <li><p>Right click the column heading. Select <c>Formula</c>.</p></li>
-      <li><p>Under <c>Random</c> select <c>Random Integer</c>.</p></li>
-      <li><p>Enter 1 and 268 as the bounds. Click <c>OK</c>.</p></li>
-    </ol>
+    <exercise xml:id="tech-detour-srs-jmp" label="Tech1.12.JMP">
+      <title>Technology Detour (JMP)</title>
+      <statement>
+        <p>To select a simple random sample in JMP:</p>
+        <ol>
+          <li><p>Choose <c>File > New > Data Table</c>.</p></li>
+          <li><p>From the <c>Rows</c> menu, select <c>Add Rows</c>. Add 5 rows to the table. Press <c>OK</c>.</p></li>
+          <li><p>Right click the column heading. Select <c>Formula</c>.</p></li>
+          <li><p>Under <c>Random</c> select <c>Random Integer</c>.</p></li>
+          <li><p>Enter 1 and 268 as the bounds. Click <c>OK</c>.</p></li>
+        </ol>
+      </statement>
+      <hint>
+        <p>The Random Integer function will generate random integers within the specified range for each row in your data table.</p>
+      </hint>
+    </exercise>
   </technology>
 
   <exercise xml:id="I1-12-m">
