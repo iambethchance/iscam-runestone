@@ -462,63 +462,180 @@ sample(ids, 5)
   </assemblage>
 
   <p>Simple random samples are not as simple as they sound. They require a complete sampling frame and 100% response rate. This can be quite a challenge, especially if you are interested in individuals throughout the country for example. There are other probability sampling methods that are typically unbiased. See this discussion for a brief introduction to cluster sampling, multistage sampling, stratified sampling, and systematic sample. These techniques will come up later in the text and can be much more practical to carry out.</p>
-
-  <exercises>
-    <title>Practice Problems</title>
-
-    <exercise xml:id="PP1-12A">
-      <title>Practice Problem 1.12A</title>
-      <statement>
-        <p>Suppose that you take many random samples (i.e., thousands) from a population and graph the distribution of the resulting sample statistics.</p>
-
-        <p>(a) If the distribution of sample statistics is centered at the value of the population parameter, then is the sampling method unbiased?</p>
-        <p><var form="buttons">
-          <li>Yes, definitely</li>
-          <li>Maybe or maybe not</li>
-          <li>No, definitely not</li>
-        </var></p>
-
-        <p>(b) If the distribution of sample statistics appears to be normally distributed, then is the sampling method unbiased?</p>
-        <p><var form="buttons">
-          <li>Yes, definitely</li>
-          <li>Maybe or maybe not</li>
-          <li>No, definitely not</li>
-        </var></p>
-
-        <p>(c) If most of the sample statistics are close to the value of the population parameter, then is the sampling method unbiased?</p>
-        <p><var form="buttons">
-          <li>Yes, definitely</li>
-          <li>Maybe or maybe not</li>
-          <li>No, definitely not</li>
-        </var></p>
-
-        <p>(d) If the sampling method is biased, then will increasing the sample size reduce the bias?</p>
-        <p><var form="buttons">
-          <li>Yes, definitely</li>
-          <li>Maybe or maybe not</li>
-          <li>No, definitely not</li>
-        </var></p>
-      </statement>
-    </exercise>
-
-    <exercise xml:id="PP1-12B">
-      <title>Practice Problem 1.12B</title>
-      <statement>
-        <p>Explain the distinctions between the following pairs of terms:</p>
-
-        <p>(a) parameter and statistic</p>
-        <p><var width="60"/></p>
-
-        <p>(b) bias and precision</p>
-        <p><var width="60"/></p>
-
-        <p>(c) sample size and number of samples</p>
-        <p><var width="60"/></p>
-
-        <p>(d) sampling error and random sampling error</p>
-        <p><var width="60"/></p>
-      </statement>
-    </exercise>
-  </exercises>
-
 </section>
+
+<subsection xml:id="practice1-12A">
+  <title>Practice Problem 1.12A</title>
+  
+  <p>Suppose that you take many random samples (i.e., thousands) from a population and graph the distribution of the resulting sample statistics.</p>
+
+  <exercise xml:id="practice-1-12a-a" label="PP1.12A.1">
+    <title>Centered Distribution</title>
+    <statement>
+      <p>If the distribution of sample statistics is centered at the value of the population parameter, then is the sampling method unbiased?</p>
+    </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement>
+          <p>Yes, definitely</p>
+        </statement>
+        <feedback>
+          <p>Correct! When the distribution is centered at the parameter value, the method is unbiased by definition.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Maybe or maybe not</p>
+        </statement>
+        <feedback>
+          <p>Not quite. If the distribution is centered at the parameter, that's the definition of unbiased.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>No, definitely not</p>
+        </statement>
+        <feedback>
+          <p>Incorrect. A distribution centered at the parameter value indicates an unbiased method.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </exercise>
+
+  <exercise xml:id="practice-1-12a-b" label="PP1.12A.2">
+    <title>Normal Distribution</title>
+    <statement>
+      <p>If the distribution of sample statistics appears to be normally distributed, then is the sampling method unbiased?</p>
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement>
+          <p>Yes, definitely</p>
+        </statement>
+        <feedback>
+          <p>Not quite. Normal shape doesn't guarantee the distribution is centered at the parameter.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>Maybe or maybe not</p>
+        </statement>
+        <feedback>
+          <p>Correct! The shape doesn't tell us about bias - we need to know where it's centered.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>No, definitely not</p>
+        </statement>
+        <feedback>
+          <p>Not quite. A normal distribution could be unbiased if centered at the parameter.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </exercise>
+
+  <exercise xml:id="practice-1-12a-c" label="PP1.12A.3">
+    <title>Close to Parameter</title>
+    <statement>
+      <p>If most of the sample statistics are close to the value of the population parameter, then is the sampling method unbiased?</p>
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement>
+          <p>Yes, definitely</p>
+        </statement>
+        <feedback>
+          <p>Not quite. Being close doesn't guarantee the center (mean) equals the parameter.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>Maybe or maybe not</p>
+        </statement>
+        <feedback>
+          <p>Correct! Small variability doesn't guarantee the method is unbiased - we need to check the center.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>No, definitely not</p>
+        </statement>
+        <feedback>
+          <p>Not quite. If the statistics cluster around the parameter, the method could be unbiased.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </exercise>
+
+  <exercise xml:id="practice-1-12a-d" label="PP1.12A.4">
+    <title>Sample Size and Bias</title>
+    <statement>
+      <p>If the sampling method is biased, then will increasing the sample size reduce the bias?</p>
+    </statement>
+    <choices randomize="no">
+      <choice>
+        <statement>
+          <p>Yes, definitely</p>
+        </statement>
+        <feedback>
+          <p>Incorrect. Increasing sample size reduces variability but doesn't fix bias.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>Maybe or maybe not</p>
+        </statement>
+        <feedback>
+          <p>Not quite. Sample size affects precision, not bias.</p>
+        </feedback>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>No, definitely not</p>
+        </statement>
+        <feedback>
+          <p>Correct! Increasing sample size doesn't fix a biased sampling method - it just gives more precise biased estimates.</p>
+        </feedback>
+      </choice>
+    </choices>
+  </exercise>
+</subsection>
+
+<subsection xml:id="practice1-12B">
+  <title>Practice Problem 1.12B</title>
+  
+  <p>Explain the distinctions between the following pairs of terms:</p>
+
+  <exercise xml:id="practice-1-12b-a" label="PP1.12B.1">
+    <title>Parameter vs. Statistic</title>
+    <statement>
+      <p>Explain the distinction between a parameter and a statistic.</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="practice-1-12b-b" label="PP1.12B.2">
+    <title>Bias vs. Precision</title>
+    <statement>
+      <p>Explain the distinction between bias and precision.</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="practice-1-12b-c" label="PP1.12B.3">
+    <title>Sample Size vs. Number of Samples</title>
+    <statement>
+      <p>Explain the distinction between sample size and number of samples.</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="practice-1-12b-d" label="PP1.12B.4">
+    <title>Sampling Error vs. Random Sampling Error</title>
+    <statement>
+      <p>Explain the distinction between sampling error and random sampling error.</p>
+    </statement>
+    <response/>
+  </exercise>
+</subsection>
