@@ -68,67 +68,93 @@
   </exercise>
 
   <exercise xml:id="I1-14-b">
-    <title>State null hypothesis</title>
+    <title>State hypotheses</title>
     <statement>
-      <p>State the null hypothesis for deciding whether these data provide convincing evidence against the headline "1 in 5 U.S. teens has hearing loss."</p>
-      <p><m>H_0</m>:</p>
+      <p>State the null and alternative hypotheses for deciding whether these data provide convincing evidence against the headline "1 in 5 U.S. teens has hearing loss."</p>
+      <p><m>H_0: </m> <var width="5"/> <var width="5"/> <var width="5"/></p>
+      <p><m>H_a: </m> <var width="5"/> <var width="5"/> <var width="5"/></p>
     </statement>
-    <choices randomize="no">
-      <choice correct="yes">
-        <statement><p><m>\pi = 0.20</m></p></statement>
-      </choice>
-      <choice>
-        <statement><p><m>\pi \neq 0.20</m></p></statement>
-      </choice>
-      <choice>
-        <statement><p><m>\pi > 0.20</m></p></statement>
-      </choice>
-    </choices>
-  </exercise>
-
-  <exercise xml:id="I1-14-b2">
-    <title>State null hypothesis in words</title>
-    <statement>
-      <p>State the null hypothesis in words.</p>
-      <p><var width="60"/></p>
-    </statement>
+    <setup>
+      <var>
+        <condition string="^\s*[πpi]+\s*$">
+          <feedback>
+            <p>Correct! Use <m>\pi</m> to represent the parameter.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. What symbol represents the population parameter?</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="^\s*=\s*$">
+          <feedback>
+            <p>Correct! The null hypothesis uses equals.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. What symbol is used for the null hypothesis?</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="^\s*0?\.20?\s*$">
+          <feedback>
+            <p>Correct! The headline claims "1 in 5" which is 0.20.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. What proportion does "1 in 5" represent?</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="^\s*[πpi]+\s*$">
+          <feedback>
+            <p>Correct! Use <m>\pi</m> to represent the parameter.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. What symbol represents the population parameter?</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="^\s*(!=|≠|&lt;&gt;|not equal|not equals)\s*$">
+          <feedback>
+            <p>Correct! The alternative hypothesis uses not equals for a two-sided test.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. What symbol is used for a two-sided alternative hypothesis?</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="^\s*0?\.20?\s*$">
+          <feedback>
+            <p>Correct! We're testing against the headline claim of 0.20.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. What value are we testing against?</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <hint>
-      <p>The headline claims "1 in 5" which is 0.20 or 20%.</p>
+      <p>The headline claims "1 in 5" which is 0.20 or 20%. We're testing whether the data provide evidence against this claim.</p>
     </hint>
     <solution>
+      <p><m>H_0: \pi = 0.20</m></p>
       <p>The proportion of all U.S. teens with hearing loss is 0.20 (1 in 5).</p>
-    </solution>
-  </exercise>
-
-  <exercise xml:id="I1-14-b3">
-    <title>State alternative hypothesis</title>
-    <statement>
-      <p>State the alternative hypothesis.</p>
-      <p><m>H_a</m>:</p>
-    </statement>
-    <choices randomize="no">
-      <choice>
-        <statement><p><m>\pi = 0.20</m></p></statement>
-      </choice>
-      <choice correct="yes">
-        <statement><p><m>\pi \neq 0.20</m></p></statement>
-      </choice>
-      <choice>
-        <statement><p><m>\pi > 0.20</m></p></statement>
-      </choice>
-      <choice>
-        <statement><p><m>\pi \lt 0.20</m></p></statement>
-      </choice>
-    </choices>
-  </exercise>
-
-  <exercise xml:id="I1-14-b4">
-    <title>State alternative hypothesis in words</title>
-    <statement>
-      <p>State the alternative hypothesis in words.</p>
-      <p><var width="60"/></p>
-    </statement>
-    <solution>
+      <p><m>H_a: \pi \neq 0.20</m></p>
       <p>The proportion of all U.S. teens with hearing loss is different from 0.20.</p>
     </solution>
   </exercise>
@@ -164,7 +190,7 @@
   <exercise xml:id="I1-14-d">
     <title>Carry out <m>z</m>-test</title>
     <statement>
-      <p>Use technology (see <xref ref="summary-z-procedures"/>) to carry out a <m>z</m>-test of the hypotheses you specified in checkpoints <xref ref="I1-14-b"/> through <xref ref="I1-14-b4"/>. Report the standardized statistic and p-value, and confirm how you would calculate the standardized statistic by hand.</p>
+      <p>Use technology (see <xref ref="summary-z-procedures"/>) to carry out a <m>z</m>-test of the hypotheses you specified in checkpoint <xref ref="I1-14-b"/>. Report the standardized statistic and p-value, and confirm how you would calculate the standardized statistic by hand.</p>
 
       <p>Sample proportion: <var width="15"/></p>
       <p>Standardized statistic (<m>z</m>): <var width="15"/></p>
@@ -223,10 +249,12 @@
       <p><var width="60"/></p>
     </statement>
     <hint>
-      <p>Consider whether the sample was representative and whether the technical conditions were met.</p>
+      <p>Consider whether the sample was representative</p>
     </hint>
     <solution>
-      <p>Yes, we should feel comfortable generalizing because: (1) The NHANES claims to use nationally representative sampling methods, presumably using probability sampling; (2) The population size is quite large compared to the sample size; (3) The sample size is very large relative to the hypothesized proportion; (4) All technical conditions for the normal approximation were met.</p>
+      <p>Yes, we should feel comfortable generalizing because the 
+      NHANES claims to use nationally representative sampling methods, 
+      presumably using probability sampling.</p>
     </solution>
   </exercise>
 
