@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-1-13" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Investigation 1.13: Sampling Words (cont.)</title>
+
+  <p>In the previous investigation, we saw that if we take random samples from a finite population, the mean of the sampling distribution of sample proportions should equal the population proportion, i.e., <m>E(\hat{p}) = \pi</m>. But what about the standard deviation of the distribution of sample proportions?</p>
+
+  <p>One option is the same formula we used before: <m>SD(\hat{p}) = \sqrt{\frac{\pi(1-\pi)}{n}}</m>.</p>
+
+  <exercise xml:id="I1-13-a">
+    <title>Predicted standard deviation for <m>n</m> = 10</title>
+    <statement>
+      <p>For the variable whether the word is short, <m>\pi = 0.41</m>. If we take samples of size 10, what does the above formula predict for the standard deviation of the sampling distribution?</p>
+
+      <p>Predicted standard deviation: <var width="15"/></p>
+    </statement>
+    <hint>
+      <p>Substitute <m>\pi = 0.41</m> and <m>n = 10</m> into the formula.</p>
+    </hint>
+    <solution>
+      <p><m>SD(\hat{p}) = \sqrt{\frac{0.41(1-0.41)}{10}} = \sqrt{\frac{0.41(0.59)}{10}} = \sqrt{0.02419} \approx 0.156</m></p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-13-b">
+    <title>Simulated standard deviation for <m>n</m> = 10</title>
+    <statement>
+      <p>Using the <url href="https://www.rossmanchance.com/applets/OneSample.html?population=gettysburg">Sampling Words applet</url>, generate a distribution of 10,000 random samples of size <m>n = 10</m>, calculating the sample proportion of words that are short each time. What does the applet report for the standard deviation of the sample proportions? Is it close to the theoretical value you calculated in <xref ref="I1-13-a"/>?</p>
+
+      <p>Applet standard deviation: <var width="15"/></p>
+      <p>Comparison: <var width="60"/></p>
+    </statement>
+    <hint>
+      <p>Set the sample size to 10, change Number of Samples to 9999 (for 10,000 total), and press Draw Samples.</p>
+    </hint>
+  </exercise>
+
+  <exercise xml:id="I1-13-c">
+    <title>Comparing formula and simulation for <m>n</m> = 100</title>
+    <statement>
+      <p>Repeat <xref ref="I1-13-a"/> and <xref ref="I1-13-b"/> using <m>n = 100</m> as the sample size. Are the theoretical and simulation-based standard deviations still similar?</p>
+
+      <p>Formula prediction: <var width="15"/></p>
+      <p>Applet simulation: <var width="15"/></p>
+      <p>Comparison: <var width="60"/></p>
+    </statement>
+    <hint>
+      <p>Use the same formula with <m>n = 100</m>, then simulate in the applet.</p>
+    </hint>
+    <solution>
+      <p>Formula: <m>SD(\hat{p}) = \sqrt{\frac{0.41(0.59)}{100}} = \sqrt{0.002419} \approx 0.049</m></p>
+      <p>The applet simulation will show a smaller standard deviation than predicted by the formula.</p>
+    </solution>
+  </exercise>
+
+  <p><term>Discussion:</term> The theoretical formula we've been using for the standard deviation of sample proportions assumes that the probability of success is constant and the trials are independent (properties of a binomial random variable). Now that we are sampling without replacement from a finite population, the population characteristics do change slightly as we remove observations. The probability the first word is short will be <m>110/268 \approx 0.410</m>, but if that word is short, the probability the next one will also be short is now <m>109/267 \approx 0.408</m>. And if the first word is not short, the probability the second one will be is <m>110/267 \approx 0.412</m>. In other words, the probability of success (short word) for the 2nd trial depends on what we obtained in the first trial.</p>
+
+  <assemblage>
+    <title>Key Result: Sampling Without Replacement</title>
+    <p>When sampling without replacement from a finite population, the observations are not independent.</p>
+  </assemblage>
+
+  <p>This means we can no longer use the binomial distribution to calculate a theoretical standard deviation. This impacts our p-value calculations and our confidence intervals. In particular, the predicted standard deviation is too large, and our confidence intervals will have higher coverage rates than we need.</p>
+
+  <p>However, we can use a slightly different formula that corrects for the lack of independence. (The explanation for this formula is in Investigation 1.15.)</p>
+
+  <assemblage>
+    <title>Definition: Finite Population Correction Factor</title>
+    <p>Using the finite population correction factor, a better estimate of the sample-to-sample variation in sample proportions is</p>
+    <p><me>SD(\hat{p}) = \sqrt{\frac{N-n}{N-1}} \cdot \sqrt{\frac{\pi(1-\pi)}{n}}</me></p>
+    <p>where <m>n</m> is the sample size and <m>N</m> is the population size.</p>
+  </assemblage>
+
+  <exercise xml:id="I1-13-d">
+    <title>Using the finite population correction</title>
+    <statement>
+      <p>Compute this formula for the samples of size <m>n = 100</m>. How does the prediction of the standard deviation change? Why? How does it compare to the standard deviation of the sample proportions simulated by the applet?</p>
+
+      <p>Corrected prediction: <var width="15"/></p>
+      <p>Explanation: <var width="60"/></p>
+    </statement>
+    <hint>
+      <p>Use <m>N = 268</m>, <m>n = 100</m>, and <m>\pi = 0.41</m> in the formula.</p>
+    </hint>
+    <solution>
+      <p><m>SD(\hat{p}) = \sqrt{\frac{268-100}{268-1}} \cdot \sqrt{\frac{0.41(0.59)}{100}} = \sqrt{\frac{168}{267}} \cdot 0.049 \approx 0.791 \cdot 0.049 \approx 0.039</m></p>
+      <p>The finite population correction factor decreases the predicted value of the standard deviation (always multiplying by a value less than one) and gives a value that is closer to the simulation results.</p>
+    </solution>
+  </exercise>
+
+  <p><term>Discussion:</term> The finite population correction factor should decrease the predicted value of the standard deviation (always multiplying by a value less than one) and give a value that is closer to the simulation results.</p>
+
+  <p>Suppose we have a very large population, how does this impact our calculation of the standard deviation of the sample proportions?</p>
+
+  <exercise xml:id="I1-13-e">
+    <title>Population proportion with larger population</title>
+    <statement>
+      <p>In the applet, change the population size by selecting the <c>x100</c> button. What is the population proportion of words that are short?</p>
+
+      <p>Population proportion: <var width="15"/></p>
+    </statement>
+    <hint>
+      <p>The x100 button creates a population that is 100 times larger but maintains the same proportion.</p>
+    </hint>
+    <solution>
+      <p>The population proportion remains 0.41.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-13-f">
+    <title>Effect of larger population size</title>
+    <statement>
+      <p>Generate 10,000 samples of size <m>n = 100</m> from this population. How does the mean and standard deviation compare to <xref ref="I1-13-c"/>?</p>
+
+      <p>Mean: <var width="15"/></p>
+      <p>Standard deviation: <var width="15"/></p>
+      <p>Comparison: <var width="60"/></p>
+    </statement>
+    <solution>
+      <p>The mean remains close to 0.41. The standard deviation is now very close to 0.049, matching the original formula without the finite population correction.</p>
+    </solution>
+  </exercise>
+
+  <p>Because we are now sampling a much smaller fraction of the population, the original formula provides a reasonable prediction of the sample-to-sample variation in the sample proportions. Note that the correction factor <m>\sqrt{\frac{N-n}{N-1}}</m> is very close to one when <m>N</m> is large and so it can be ignored!</p>
+
+  <assemblage>
+    <title>Key Result: Large Population Approximation</title>
+    <p>When the population size is much larger than the sample size, we can model sampling from a finite population as sampling from an infinite process as before. The population size (<m>N</m>) is considered much larger than the sample size (<m>n</m>) if <m>N > 20 \times n</m>.</p>
+  </assemblage>
+
+  <p>If the population size is not large, we use the "finite population correction factor." Probability sampling methods other than simple random sampling would also require calculating a different standard deviation. You can learn more appropriate techniques in a course on sampling design and methods.</p>
+
+  <p><term>Discussion:</term> Once again you see the fundamental principle of sampling variability. Fortunately, this variability follows a predictable pattern in the long run. With random sampling, we expect the sample proportion to be "representative" of the population proportion. The second key advantage of random sampling is we now know how to estimate the size of the sample-to-sample variation. Sample proportions that are based on larger samples will tend to fall even closer to the population proportion as there is less variability among the sample proportions. So first, select randomly to avoid bias, and then if we can increase the sample size, this will improve the precision of the sample results. Once we know the precision of the sample results in repeated samples, then we can decide whether any one particular sample result can be considered statistically significant or unlikely to happen by chance – by the random sampling process – alone. A small p-value does not guarantee that the sample result did not happen just by chance, but it does allow you to measure how unlikely such a result is.</p>
+
+  <p>In Investigation 1.15, you will consider a method for computing an "exact" p-value, taking the population size into account. However, in many situations we don't know the size of the population, just that it is large, and instead we will proceed directly to the binomial or normal-based method, as long as the technical conditions are met.</p>
+
+  <subsection xml:id="practice1-13A">
+    <title>Practice Problem 1.13A</title>
+
+    <exercise xml:id="practice-1-13a-a" label="PP1.13A.1">
+      <title>Advantages of Larger Sample Size</title>
+      <statement>
+        <p>Which of the following are advantages of studies with a larger sample size? (Check all that apply)</p>
+      </statement>
+      <choices>
+        <choice>
+          <statement>
+            <p>Better represent the population (reduce sampling bias)</p>
+          </statement>
+          <feedback>
+            <p>Not quite. Sample size doesn't affect bias - only the sampling method does.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>To more precisely estimate the parameter</p>
+          </statement>
+          <feedback>
+            <p>Correct! Larger samples reduce variability and improve precision.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>To decrease sampling variability</p>
+          </statement>
+          <feedback>
+            <p>Correct! Larger samples have less sample-to-sample variability.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>To make simulation results more precise</p>
+          </statement>
+          <feedback>
+            <p>Not quite. This refers to the number of samples in the simulation, not sample size.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </exercise>
+
+    <exercise xml:id="practice-1-13a-b" label="PP1.13A.2">
+      <title>Larger Number of Samples</title>
+      <statement>
+        <p>In conducting a simulation analysis, why might we take a larger number of samples? (Check all that apply)</p>
+      </statement>
+      <choices>
+        <choice>
+          <statement>
+            <p>Better represent the population (reduce sampling bias)</p>
+          </statement>
+          <feedback>
+            <p>Not quite. Number of samples doesn't affect bias.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>To more precisely estimate the parameter</p>
+          </statement>
+          <feedback>
+            <p>Not quite. Sample size, not number of samples, affects parameter estimation.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>To decrease sampling variability</p>
+          </statement>
+          <feedback>
+            <p>Not quite. Sample size, not number of samples, affects sampling variability.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>To make simulation results more precise</p>
+          </statement>
+          <feedback>
+            <p>Correct! More samples in the simulation give a better picture of the sampling distribution.</p>
+          </feedback>
+        </choice>
+      </choices>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice1-13B">
+    <title>Practice Problem 1.13B</title>
+
+    <exercise xml:id="practice-1-13b-a" label="PP1.13B.1">
+      <title>Finite Population Correction with <m>n</m> = 40</title>
+      <statement>
+        <p>Standardized statistics and confidence intervals can take the finite population correction into account. In the Simulating Confidence Intervals applet, use the Method pull-down menu to select Finite Population. Set <m>\pi = 0.410</m>, <m>N = 268</m>, and <m>n = 40</m>. Sample 2000 intervals and determine the coverage rate.</p>
+        <p>In this case, is the coverage rate close to the desired 95%?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-1-13b-b" label="PP1.13B.2">
+      <title>Finite Population Correction with <m>n</m> = 100</title>
+      <statement>
+        <p>But now try <m>n = 100</m>. What is the coverage rate? What is the average interval width? What is the problem with the performance of the method?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-1-13b-c" label="PP1.13B.3">
+      <title>Comparing Methods</title>
+      <statement>
+        <p>Now change the method from Wald to Finite Correction. How does the width of the intervals change? How does the coverage rate change?</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+</section>

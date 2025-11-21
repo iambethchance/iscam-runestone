@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-1-14" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Investigation 1.14: Teen Hearing Loss</title>
+
+  <p>Shargorodsky, Curhan, Curhan, and Eavey (2010) examined hearing loss data for 1771 participants from the National Health and Nutrition Examination Survey (NHANES, 2005-6), aged 12<ndash/>19 years. ("NHANES provides nationally representative cross-sectional data on the health status of the civilian, non-institutionalized U.S. population.") A standardized health exam was given along with the survey and through audiometric measurements, 333 teens were found to have at least some level of hearing loss (average hearing threshold level at least 15 dB in either ear). News of this study spread quickly, many blaming the prevalence of hearing loss on the higher use of ear buds by teens. At MSNBC.com (8/17/2010), Carla Johnson summarized the study with the headline "1 in 5 U.S. teens has hearing loss, study says." We will first decide whether we consider this an appropriate headline. According to the 2008 U.S. Census, there were 21,469,780 teens in America between the ages of 15 and 19.</p>
+
+  <exercise xml:id="I1-14-a">
+    <title>Define population and parameter</title>
+    <statement>
+      <p>Define the population and parameter of interest in this study (in symbols and in words).</p>
+
+      <p>Population: <var width="60"/></p>
+      <p>Parameter (in words): <var width="60"/></p>
+      <p>Parameter (in symbols): <var width="30"/></p>
+    </statement>
+    <hint>
+      <p>The population is the group we want to generalize to. The parameter is the numerical characteristic of that population.</p>
+    </hint>
+    <solution>
+      <p>Population: All U.S. teens aged 12-19 years (or 15-19 per Census data)</p>
+      <p>Parameter: <m>\pi</m> = the proportion of all U.S. teens who have at least some level of hearing loss</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-14-b">
+    <title>State hypotheses</title>
+    <statement>
+      <p>State the null and alternative hypotheses for deciding whether these data provide convincing evidence against this headline (in symbols and in words).</p>
+
+      <p>Null hypothesis (symbols): <var width="30"/></p>
+      <p>Null hypothesis (words): <var width="60"/></p>
+      <p>Alternative hypothesis (symbols): <var width="30"/></p>
+      <p>Alternative hypothesis (words): <var width="60"/></p>
+    </statement>
+    <hint>
+      <p>The headline claims "1 in 5" which is 0.20 or 20%.</p>
+    </hint>
+    <solution>
+      <p><m>H_0: \pi = 0.20</m></p>
+      <p>The proportion of all U.S. teens with hearing loss is 0.20 (1 in 5).</p>
+      <p><m>H_a: \pi \neq 0.20</m></p>
+      <p>The proportion of all U.S. teens with hearing loss is different from 0.20.</p>
+    </solution>
+  </exercise>
+
+  <assemblage>
+    <title>Key Result: Central Limit Theorem for Sample Proportions (Expanded)</title>
+    <p>Combining what we have learned in the last few investigations, we can expand the Central Limit Theorem for a sample proportion: When drawing random samples from a large but finite population with a large enough sample size, then the sampling distribution of the sample proportion <m>\hat{p}</m> will be well modeled by a normal distribution with mean equal to <m>\pi</m>, the population proportion of successes, and standard deviation equal to <m>SD(\hat{p}) = \sqrt{\frac{\pi(1-\pi)}{n}}</m>.</p>
+    
+    <p>We consider the sample size large enough if <m>n \times \pi > 10</m> and <m>n \times (1 - \pi) > 10</m>.</p>
+    
+    <p>We consider the population size (<m>N</m>) large if it is more than 20 times the size of the sample.</p>
+  </assemblage>
+
+  <exercise xml:id="I1-14-c">
+    <title>Check technical conditions</title>
+    <statement>
+      <p>Assuming the null hypothesis is true, is the normal model appropriate for the distribution of sample proportions based on this sample size and on this population size? Justify your answers numerically.</p>
+
+      <p>Sample size condition: <var width="60"/></p>
+      <p>Population size condition: <var width="60"/></p>
+      <p>Conclusion: <var width="60"/></p>
+    </statement>
+    <hint>
+      <p>Check whether <m>n \pi > 10</m>, <m>n(1-\pi) > 10</m>, and <m>N > 20n</m>.</p>
+    </hint>
+    <solution>
+      <p>Sample size: <m>1771 \times 0.20 = 354.2 > 10</m> and <m>1771 \times 0.80 = 1416.8 > 10</m> ✓</p>
+      <p>Population size: <m>21,469,780 > 20 \times 1771 = 35,420</m> ✓</p>
+      <p>Yes, the normal model is appropriate because both conditions are met.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-14-d">
+    <title>Carry out z-test</title>
+    <statement>
+      <p>Use technology to carry out a z-test of the hypotheses you specified in <xref ref="I1-14-b"/>. Report the standardized statistic and p-value, and confirm how you would calculate the standardized statistic by hand.</p>
+
+      <p>Sample proportion: <var width="15"/></p>
+      <p>Standardized statistic (z): <var width="15"/></p>
+      <p>p-value: <var width="15"/></p>
+      <p>Calculation by hand: <var width="60"/></p>
+    </statement>
+    <hint>
+      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=2">Theory-Based Inference applet</url> or calculate <m>z = \frac{\hat{p} - \pi_0}{\sqrt{\frac{\pi_0(1-\pi_0)}{n}}}</m></p>
+    </hint>
+    <solution>
+      <p><m>\hat{p} = \frac{333}{1771} = 0.188</m></p>
+      <p><m>z = \frac{0.188 - 0.20}{\sqrt{\frac{0.20(0.80)}{1771}}} = \frac{-0.012}{\sqrt{0.0000903}} = \frac{-0.012}{0.0095} \approx -1.26</m></p>
+      <p>Two-sided p-value: 0.2068</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-14-e">
+    <title>Interpret test results</title>
+    <statement>
+      <p>Does this p-value provide convincing evidence (level of significance <m>\alpha = 0.05</m>) against the headline? Justify your answer (in context) and explain the reasoning behind your evidence or lack thereof.</p>
+
+      <p><var width="60"/></p>
+    </statement>
+    <hint>
+      <p>Compare the p-value to 0.05. What does the p-value tell you about observing a sample proportion as extreme as 0.188?</p>
+    </hint>
+    <solution>
+      <p>No, this p-value (0.2068) is not small and does not provide convincing evidence against the claim that <m>\pi = 0.20</m>. We would get sample proportions as or more extreme as 0.188 (meaning at least as far from 0.20) in about 21% of random samples from a population where 20% of teens have some hearing loss. Therefore, the headline seems appropriate.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-14-f">
+    <title>Calculate confidence interval</title>
+    <statement>
+      <p>Calculate and interpret a 95% confidence interval for the parameter. Is this interval consistent with your test decision? Explain.</p>
+
+      <p>95% Confidence interval: <var width="30"/></p>
+      <p>Interpretation: <var width="60"/></p>
+      <p>Consistency with test: <var width="60"/></p>
+    </statement>
+    <hint>
+      <p>Use the formula <m>\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</m> where <m>z^* = 1.96</m> for 95% confidence.</p>
+    </hint>
+    <solution>
+      <p>95% CI: (0.170, 0.206) or 17.0% to 20.6%</p>
+      <p>We are 95% confident that between 17.0% and 20.6% of all U.S. teens have some form of hearing loss.</p>
+      <p>Yes, this is consistent with the test decision because 0.20 is contained in the confidence interval, so it is a plausible value for <m>\pi</m>.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-14-g">
+    <title>Evaluate generalizability</title>
+    <statement>
+      <p>Do you feel comfortable with generalizing the findings from your test and confidence interval to the population of all American teens in 2005-06? Explain.</p>
+
+      <p><var width="60"/></p>
+    </statement>
+    <hint>
+      <p>Consider whether the sample was representative and whether the technical conditions were met.</p>
+    </hint>
+    <solution>
+      <p>Yes, we should feel comfortable generalizing because: (1) The NHANES claims to use nationally representative sampling methods, presumably using probability sampling; (2) The population size is quite large compared to the sample size; (3) The sample size is very large relative to the hypothesized proportion; (4) All technical conditions for the normal approximation were met.</p>
+    </solution>
+  </exercise>
+
+  <assemblage>
+    <title>Study Conclusions</title>
+    <p>We have no reason to doubt that the NHANES sample will be representative of the larger population of U.S. teens. Although we are not told how they selected the sample, they claim it was nationally representative, and presumably was collected using a probability sampling method. The population size (~21 million teens) is quite large compared to the sample size of nearly 1,800 teens, so that condition for using the normal model for the sampling distribution of the sample proportions is met. The sample size is also very large relative to the hypothesized population proportion of 0.20 (0.20 × 1771 = 354.2 and 0.80 × 1771 = 1416.8; both easily exceed 10). Therefore, calculations from the binomial probability model and the normal probability model will be quite similar. Under the null hypothesis that 20% of U.S. teens have some hearing loss, the sampling distribution of the sample proportion will be approximately normal, with a mean of 0.20 and a standard deviation of 0.0095. Therefore, our sample proportion, <m>\hat{p} = 333/1771 = 0.188</m> lies 1.26 standard deviations below the hypothesized population proportion, yielding a two-sided p-value of 0.2068 (Theory-Based Inference (TBI) applet). This p-value is not small and does not provide convincing evidence against the claim that <m>\pi = 0.20</m>. We would get sample proportions as or more extreme as 0.188 (meaning at least as far from 0.20) in about 21% of random samples from a population where 20% of teens have some hearing loss. Therefore, the headline seems appropriate. The confidence interval (TBI applet) tells us that we are 95% confident that between 17.0% and 20.6% of all U.S. teens have some form of hearing loss. (Do keep in mind that 0.20 is just one plausible value of <m>\pi</m>.) It is difficult to evaluate these values without knowing whether this percentage is increasing over time which we will investigate later.</p>
+  </assemblage>
+
+  <subsection xml:id="practice1-14">
+    <title>Practice Problem 1.14</title>
+
+    <p>In 2018, the General Social Survey (GSS) used probability sampling methods to randomly select more than 2,000 adult Americans. One of the questions they asked was:</p>
+
+    <blockquote>
+      <p>In 2016, you remember that Clinton ran for president on the Democratic ticket against Trump for the Republicans. Do you remember for sure whether or not you voted in that election?</p>
+    </blockquote>
+
+    <p>Of the 2,181 respondents who were eligible to vote and remembered whether they had voted, 1523 (69.8%) said they voted. Let <m>\pi</m> represent the proportion of all eligible voters who would claim to have voted in the 2016 election. The United States Election Project (<url href="http://www.electproject.org/">http://www.electproject.org/</url>), reports that 136,753,936 ballots were cast for president that year, with 230,931,921 citizens eligible to vote, corresponding to 59.2% voter turnout. If we test <m>H_0: \pi = 0.592</m> vs. <m>H_a: \pi \neq 0.592</m>, what do we conclude?</p>
+
+    <exercise xml:id="practice-1-14-a" label="PP1.14.1">
+      <title>GSS Voter Turnout Analysis</title>
+      <statement>
+        <p>Test the hypotheses and state your conclusion in context.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="summary-z-procedures">
+    <title>Summary of One Proportion z-Procedures for Proportion of Large Population</title>
+
+    <p>Let <m>\pi</m> be the (unknown) population proportion of successes and given that you have a representative sample from the population of interest.</p>
+
+    <assemblage>
+      <title>Test of <m>H_0: \pi = \pi_0</m></title>
+      <p>Standardized statistic: <m>z_0 = \frac{\hat{p} - \pi_0}{\sqrt{\frac{\pi_0(1-\pi_0)}{n}}}</m></p>
+      
+      <p>p-value:</p>
+      <ul>
+        <li><p>If <m>H_a: \pi > \pi_0</m>, the p-value is <m>P(Z > z_0)</m>.</p></li>
+        <li><p>If <m>H_a: \pi \lt \pi_0</m>, the p-value is <m>P(Z \lt z_0)</m>.</p></li>
+        <li><p>If <m>H_a: \pi \neq \pi_0</m>, the p-value is <m>2P(Z > |z_0|)</m></p></li>
+      </ul>
+    </assemblage>
+
+    <assemblage>
+      <title>C% Confidence Interval for <m>\pi</m></title>
+      
+      <p><term>Wald Interval:</term> <m>\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</m></p>
+      <p>where <m>z^*</m> is the <m>100 \times \frac{1-C}{2}</m>th percentile of the standard normal distribution.</p>
+      
+      <p>Technical conditions: <m>n\hat{p} > 10</m> and <m>n(1 - \hat{p}) > 10</m> (which means there are at least 10 successes and 10 failures in the sample) and population size <m>> 20n</m>.</p>
+      
+      <p><term>Adjusted Wald Interval:</term> <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{\tilde{n}}}</m></p>
+      <p>where <m>\tilde{p} = \frac{X + 0.5z^{*2}}{n + z^{*2}}</m> and <m>\tilde{n} = n + z^{*2}</m></p>
+      <p>(For 95% confidence, add two successes and two failures, aka Plus Four Method.)</p>
+      
+      <p>Technical conditions: population size <m>> 20n</m></p>
+    </assemblage>
+
+    <assemblage>
+      <title>Technology</title>
+      
+      <p><term>Theory-Based Inference applet: One Proportion</term></p>
+      <ul>
+        <li><p>Specify the sample size and either the sample count or the sample proportion</p></li>
+        <li><p>Remember to adjust these values if performing the Adjusted Wald interval</p></li>
+        <li><p>Check the Test of Significance box and/or the Confidence Interval box</p></li>
+        <li><p>Specify the value of <m>\pi_0</m>, use the <m>\lt</m> button to change the direction of the alternative</p></li>
+        <li><p>Specify the confidence level</p></li>
+      </ul>
+      
+      <p><term>R:</term> <c>iscamonepropztest(observed, n, hypothesized, alternative, conf.level)</c></p>
+      <ul>
+        <li><p>Specify the number of successes or <m>\hat{p}</m>, <m>n</m>, <m>\pi_0</m>, alternative, and confidence level (in that order)</p></li>
+        <li><p>Remember to adjust inputs if performing the Adjusted Wald interval</p></li>
+        <li><p>For the alternative, choose "two.sided" or "less" or "greater" (with the quotes)</p></li>
+        <li><p>If no alternative is specified, be sure to label the confidence level (conf.level)</p></li>
+      </ul>
+      
+      <p><term>JMP:</term> Analyze > Distribution</p>
+      <ul>
+        <li><p>Use a column of data or Tabled data (column of outcomes, column of counts)</p></li>
+        <li><p>Use the hot spot to select Test Probabilities (specify the hypothesized probability for success) and select the alternative hypothesis (the "Pearson" two-sided p-value matches the normal approximation, the one-sided p-value is the exact binomial) and press Done.</p></li>
+        <li><p>Use the hot spot to select Confidence Interval and select the confidence level for the Score confidence interval</p></li>
+      </ul>
+    </assemblage>
+  </subsection>
+
+</section>
