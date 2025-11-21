@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-1-12" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Investigation 1.12: Sampling Words</title>
+
+  <introduction>
+    <p>The authorship of literary works is often a topic for debate. Were some of the works attributed to Shakespeare actually written by Bacon or Marlowe? Which of the anonymously published Federalist Papers were written by Hamilton, which by Madison, which by Jay? Who were the authors of the writings contained in the Bible? The fields of "literary computing" and "forensic stylometry" examine ways of numerically analyzing authors' works, looking at variables such as sentence length and rates of occurrence of specific words.</p>
+
+    <p>The following passage is of course Abraham Lincoln's Gettysburg Address, given November 19, 1863 on the battlefield near Gettysburg, PA. In characterizing this passage, we would ideally examine every word. However, often it is much more convenient and even more efficient to only examine a subset of words.</p>
+
+    <p><term>Definition:</term> The <term>population</term> is the entire collection of observational units that we are interested in. A <term>sample</term> is the subset of the population for which we collect data. A study's <term>sample size</term> is the number of observational units in the study.</p>
+
+    <p>In this case you will examine data for just 10 of the words. We are considering this passage to be a population of 268 words, and the 10 words you select are therefore a sample from this population. Now we define the sample as a collection of individuals or observational units that have distinct characteristics, rather than a finite set of repeated realizations of a random process.</p>
+
+    <p>In most statistical studies, we do not have access to the entire population and can consider only data for a sample from that population. Our ultimate goal is to make (appropriate) conclusions about the larger population, based on only the sample data.</p>
+
+    <p>Up until now, we have generally been assuming we have a representative sample from an infinite on-going process (e.g., toast drops, hospital transplant operations, candy manufacturing). We made some assumptions, like the process is not changing over time and that there is no tendency to select some types of outcomes more than others (e.g., getting the first 5 candies from the manufacturing process rather than throughout the day). In fact, a binomial process assumes you have repeat observations from the exact same process but with randomness in the actual outcome that occurs (sometimes an infant chooses the helper toy, sometimes not; the randomness is in the choice).</p>
+
+    <p>In this investigation, instead of sampling from an on-going process we are sampling from a finite population (the 268 words). In fact, we actually have access to the entire population. But what if we didn't? We still need some way of convincing people that our sample is likely to be representative of the population. Let's use this population to explore how samples behave when the "random chance" arises from which observational units are selected to be in the sample, rather than from "random choices" made by the observational units.</p>
+  </introduction>
+
+  <exercise xml:id="I1-12-a">
+    <title>Selecting a sample of words</title>
+    <statement>
+      <p>Visit the <url href="https://www.rossmanchance.com/gettysburgDataCollection.html">Gettysburg Data Collection page</url> and select 10 representative words from the Gettysburg Address.</p>
+      
+      <p>Record the 10 word ID numbers you selected (e.g., 23, 45, 67, ...): <var width="60"/></p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="I1-12-b">
+    <title>Classifying words as short or not</title>
+    <statement>
+      <p>Consider the sample you selected in <xref ref="I1-12-a" text="local">the previous checkpoint</xref>. Suppose I wanted to focus on whether the word is short (if the sample is truly representative, it shouldn't matter what variable I end up recording). Define "short" to be 3 or fewer letters. Record Y or N for each word you selected.</p>
+
+      <p>Enter your Y/N responses for your 10 words (e.g., Y, N, Y, Y, N, ...): <var width="60"/></p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="I1-12-c">
+    <title>Identifying observational units and variables</title>
+    <statement>
+      <p>Identify the observational units (objects being studied) and variable for this sample.</p>
+
+      <p>Observational units: <var width="40"/></p>
+      <p>Variable: <var width="40"/></p>
+      <p>Type: <var width="40"/></p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="I1-12-d">
+    <title>Assessing representativeness</title>
+    <statement>
+      <p>Do you think the words you selected are representative of the population of 268 words in this passage? How are you deciding?</p>
+
+      <p><var width="60"/></p>
+    </statement>
+  </exercise>
+
+  <p><term>Definition:</term> The term <term>parameter</term>, before considered the process probability, is also used to refer to a numerical characteristic of a population. We will continue to denote population parameters with Greek letters, for example <m>\pi</m> or <m>\mu</m> for a population proportion or population mean, respectively. A <term>statistic</term> continues to be the corresponding number but calculated from sample data. We denote the statistics for a sample proportion and a sample mean by <m>\hat{p}</m> and <m>\bar{x}</m>, respectively.</p>
+
+  <exercise xml:id="I1-12-e">
+    <title>Calculating sample proportion</title>
+    <statement>
+      <p>Calculate the proportion of short words in your sample. Is this number a parameter or a statistic? What symbol can we use to refer to it?</p>
+
+      <p>Proportion short: <var width="10"/></p>
+      <p>Parameter or statistic? <var width="20"/></p>
+      <p>Symbol: <var width="10"/></p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="I1-12-f">
+    <title>Identifying the population parameter</title>
+    <statement>
+      <p>The proportion of all 268 words in this population that are short is 0.41. Is this number a parameter or a statistic? What symbol can we use to refer to it?</p>
+
+      <p>Parameter or statistic? <var width="20"/></p>
+      <p>Symbol: <var width="10"/></p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="I1-12-g">
+    <title>Comparing sample to population</title>
+    <statement>
+      <p>Is your sample proportion similar to the population proportion? Did everyone in your class obtain the same sample proportion? Describe a way for deciding whether this sampling method tends to produce samples that are representative of the larger population for this parameter.</p>
+
+      <p><var width="60"/></p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="I1-12-h">
+    <title>Creating a dotplot of class results</title>
+    <statement>
+      <p>Construct a dotplot displaying the proportion of words in your sample that are short and those of your classmates.</p>
+
+      <p>[Space for dotplot - could use applet here]</p>
+
+      <p>What does each dot in this dotplot represent?</p>
+      <p><var width="60"/></p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="I1-12-i">
+    <title>Interpreting the sampling distribution</title>
+    <statement>
+      <p>What does the graph in <xref ref="I1-12-h" text="local">the previous checkpoint</xref> tell you about whether this sampling method tends to produce representative samples?</p>
+
+      <p><var width="60"/></p>
+    </statement>
+  </exercise>
+
+  <p><term>Discussion:</term> You have again witnessed the fundamental principle of <term>sampling variability</term>: Values of sample statistics vary when one takes different samples from the same population. The distribution of statistics from a repeated sampling is often called a <term>sampling distribution</term>. In this case, we are treating each sample as an observational unit and the sample statistics as the variable of interest (so the graph label should be something like "sample proportion short"). Although we clearly expect there to be sample-to-sample variation in the statistic, there is a problem if there is a tendency to over or underestimate the parameter of interest.</p>
+
+  <p><term>Definition:</term> When characteristics of the resulting samples are systematically different from characteristics of the population, we say that the sampling method is <term>biased</term>. When the distribution of the sample statistics, under repeated sampling from the same population, is centered at the value of the population parameter, the sampling method is said to be <term>unbiased</term>.</p>
+
+  <p>For example, we suspect that your class repeatedly and consistently underestimated the proportion of short words. Not everyone has to underestimate, but if there is a tendency to err in the same direction time and time again, then the sampling method is biased. In other words, sampling bias is evident if we repeatedly draw samples from the population and the distribution of the sample statistics is not centered at the population parameter of interest. Note that bias is a property of a sampling method, not of a single sample. Studies have shown that human judgment or "convenience sampling" (e.g., selecting the most readily available observational units) is not a good basis for selecting representative samples, so we will rely on other techniques to do the sampling for us.</p>
+
+  <exercise xml:id="I1-12-j">
+    <title>Direction of bias</title>
+    <statement>
+      <p>Do your class results indicate a tendency to overestimate or to underestimate the population proportion <m>\pi</m>? Could you have predicted that in advance? Explain.</p>
+
+      <p><var width="60"/></p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="I1-12-k">
+    <title>Alternative sampling method</title>
+    <statement>
+      <p>Consider another sampling method: you close your eyes, point at the passage of words, select whatever word your pen lands on, and repeat this 10 times. Would this sampling method be biased? If so, in which direction? Explain. What if you looked at 20 words instead of 10?</p>
+
+      <p><var width="60"/></p>
+    </statement>
+  </exercise>
+
+  <exercise xml:id="I1-12-l">
+    <title>Suggesting a better method</title>
+    <statement>
+      <p>Suggest a better method for selecting a sample of 10 words from this population that is likely to be representative of the population.</p>
+
+      <p><var width="60"/></p>
+    </statement>
+  </exercise>
+
+  <p><term>Definition:</term> A <term>simple random sample</term> gives every observational unit in the population the same chance of being selected. In fact, it gives every sample of size n the same chance of being selected.</p>
+
+  <p>So, with a simple random sample of size 10, any set of 10 words is equally likely to end up as our sample.</p>
+
+  <p>The first step is to obtain a list of every member of your population (this list is called a <term>sampling frame</term>). Then, give each observational unit on the list a unique ID number.</p>
+
+  <p>The following is a sampling frame for the Gettysburg address, with each word in the population numbered. You can use technology to select a 3-digit number at random, and then match it to the word in the population with that ID number. Then repeat to randomly select additional (unique) IDs (words).</p>
+
+  <p>Visit the <url href="https://www.rossmanchance.com/gettysburgDataCollection.html">Gettysburg Data Collection page</url> to see the numbered sampling frame and use the random sampling tool.</p>
+
+</section>
