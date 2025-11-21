@@ -205,22 +205,6 @@
 
       <p><var width="60"/></p>
     </statement>
-  </exercise>
-
-  <assemblage>
-    <title>Definition: Simple Random Sample</title>
-    <p>A <term>simple random sample</term> gives every observational unit in the population the same chance of being selected. In fact, it gives every sample of size n the same chance of being selected.</p>
-    
-    <p>So, with a simple random sample of size 10, any set of 10 words is equally likely to end up as our sample.</p>
-  </assemblage>
-
-  <exercise xml:id="I1-12-k">
-    <title>Suggesting a better method</title>
-    <statement>
-      <p>Suggest a better method for selecting a sample of 10 words from this population that is likely to be representative of the population.</p>
-
-      <p><var width="60"/></p>
-    </statement>
     <solution>
       <p>Randomly!</p>
     </solution>
@@ -245,15 +229,15 @@
     <p><term>In R:</term></p>
     <p>Create a vector of integers from 1 to 268 in the Console window:</p>
     <program language="r">
-      <input>
+      <code>
 ids = 1:268
-      </input>
+      </code>
     </program>
     <p>Take a simple random sample of 5 ID numbers:</p>
     <program language="r">
-      <input>
+      <code>
 sample(ids, 5)
-      </input>
+      </code>
     </program>
     <p>[Use the up arrow to repeat this command if you are sharing computers. If you are using the ISCAM workspace, you should also reset the random number seed: <c>rm(.Random.seed)</c>]</p>
 
