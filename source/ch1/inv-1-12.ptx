@@ -14,7 +14,12 @@
 
   <p>The authorship of literary works is often a topic for debate. Were some of the works attributed to Shakespeare actually written by Bacon or Marlowe? Which of the anonymously published Federalist Papers were written by Hamilton, which by Madison, which by Jay? Who were the authors of the writings contained in the Bible? The fields of "literary computing" and "forensic stylometry" examine ways of numerically analyzing authors' works, looking at variables such as sentence length and rates of occurrence of specific words.</p>
 
-  <p>The passage you selected words from is Abraham Lincoln's Gettysburg Address, given November 19, 1863 on the battlefield near Gettysburg, PA. In characterizing this passage, we would ideally examine every word. However, often it is much more convenient and even more efficient to only examine a subset of words.</p>
+  <sidebyside widths="60% 35%" valign="top">
+    <p>The passage you selected words from is Abraham Lincoln's Gettysburg Address, given November 19, 1863 on the battlefield near Gettysburg, PA. In characterizing this passage, we would ideally examine every word. However, often it is much more convenient and even more efficient to only examine a subset of words.</p>
+    <image source="images/address.jpg">
+      <description>Image of the Gettysburg Address</description>
+    </image>
+  </sidebyside>
 
   <assemblage>
     <title>Definitions: Population, Sample, and Sample Size</title>
@@ -45,7 +50,10 @@
 
       <p>Observational units: <var width="40"/></p>
       <p>Variable: <var width="40"/></p>
-      <p>Type: <var width="40"/></p>
+      <p>Type: <var form="buttons">
+        <li>Categorical</li>
+        <li>Quantitative</li>
+      </var></p>
     </statement>
   </exercise>
 
@@ -61,8 +69,16 @@
     <statement>
       <p>Is the proportion of short words you calculated in <xref ref="I1-12-b" text="local">checkpoint (b)</xref> a parameter or a statistic? What symbol can we use to refer to it?</p>
 
-      <p>Parameter or statistic? <var width="20"/></p>
-      <p>Symbol (choose from: <m>\pi</m>, <m>\mu</m>, <m>\hat{p}</m>, <m>\bar{x}</m>): <var width="10"/></p>
+      <p>Parameter or statistic? <var form="buttons">
+        <li>Parameter</li>
+        <li>Statistic</li>
+      </var></p>
+      <p>Symbol: <var form="buttons">
+        <li><m>\pi</m></li>
+        <li><m>\mu</m></li>
+        <li><m>\hat{p}</m></li>
+        <li><m>\bar{x}</m></li>
+      </var></p>
     </statement>
   </exercise>
 
@@ -71,16 +87,29 @@
     <statement>
       <p>The proportion of all 268 words in this population that are short is 0.41. Is this number a parameter or a statistic? What symbol can we use to refer to it?</p>
 
-      <p>Parameter or statistic? <var width="20"/></p>
-      <p>Symbol (choose from: <m>\pi</m>, <m>\mu</m>, <m>\hat{p}</m>, <m>\bar{x}</m>): <var width="10"/></p>
+      <p>Parameter or statistic? <var form="buttons">
+        <li>Parameter</li>
+        <li>Statistic</li>
+      </var></p>
+      <p>Symbol: <var form="buttons">
+        <li><m>\pi</m></li>
+        <li><m>\mu</m></li>
+        <li><m>\hat{p}</m></li>
+        <li><m>\bar{x}</m></li>
+      </var></p>
     </statement>
   </exercise>
 
   <exercise xml:id="I1-12-f">
     <title>Sampling variability</title>
     <statement>
-      <p>Did everyone in your class obtain the same sample proportion? Describe a way for deciding whether this sampling method tends to produce samples that are representative of the larger population for this parameter.</p>
-
+      <p>Did everyone in your class obtain the same sample proportion?</p>
+      <p><var form="buttons">
+        <li>Yes</li>
+        <li>No</li>
+      </var></p>
+      
+      <p>Describe a way for deciding whether this sampling method tends to produce samples that are representative of the larger population for this parameter.</p>
       <p><var width="60"/></p>
     </statement>
   </exercise>
@@ -132,8 +161,13 @@
   <exercise xml:id="I1-12-i">
     <title>Direction of bias</title>
     <statement>
-      <p>Do your class results indicate a tendency to overestimate or to underestimate the population proportion <m>\pi</m>? Could you have predicted that in advance? Explain.</p>
-
+      <p>Do your class results indicate a tendency to overestimate or to underestimate the population proportion <m>\pi</m>?</p>
+      <p><var form="buttons">
+        <li>Overestimate</li>
+        <li>Underestimate</li>
+      </var></p>
+      
+      <p>Could you have predicted that in advance? Explain.</p>
       <p><var width="60"/></p>
     </statement>
   </exercise>
@@ -141,8 +175,20 @@
   <exercise xml:id="I1-12-j">
     <title>Alternative sampling method</title>
     <statement>
-      <p>Consider another sampling method: you close your eyes, point at the passage of words, select whatever word your pen lands on, and repeat this 10 times. Would this sampling method be biased? If so, in which direction? Explain. What if you looked at 20 words instead of 10?</p>
-
+      <p>Consider another sampling method: you close your eyes, point at the passage of words, select whatever word your pen lands on, and repeat this 10 times. Would this sampling method be biased?</p>
+      <p><var form="buttons">
+        <li>Yes, biased</li>
+        <li>No, unbiased</li>
+      </var></p>
+      
+      <p>If so, in which direction?</p>
+      <p><var form="buttons">
+        <li>Overestimate</li>
+        <li>Underestimate</li>
+        <li>Not biased</li>
+      </var></p>
+      
+      <p>Explain. What if you looked at 20 words instead of 10?</p>
       <p><var width="60"/></p>
     </statement>
   </exercise>
@@ -219,7 +265,7 @@ sample(ids, 5)
   <exercise xml:id="I1-12-m">
     <title>Using the Sampling Words applet</title>
     <statement>
-      <p>Instead, we will use the Sampling Words applet.</p>
+      <p>Instead, we will use the <url href="https://www.rossmanchance.com/applets/OneSample.html?population=gettysburg">Sampling Words applet</url>.</p>
       <ul>
         <li><p>Several variables on the words in the Gettysburg Address have already been preloaded. Use the <c>Choose variable</c> pull-down menu to change the variable to <c>Short</c>. Verify our claim about the value of the population proportion.</p></li>
         <li><p>Check the <c>Show Sampling Options</c> box. Specify 5 as the Sample size. Press <c>Draw Samples</c>.</p></li>
@@ -353,31 +399,31 @@ sample(ids, 5)
         <p>Suppose that you take many random samples (i.e., thousands) from a population and graph the distribution of the resulting sample statistics.</p>
 
         <p>(a) If the distribution of sample statistics is centered at the value of the population parameter, then is the sampling method unbiased?</p>
-        <p><var form="buttons" width="30">
-          <li>Yes definitely</li>
+        <p><var form="buttons">
+          <li>Yes, definitely</li>
           <li>Maybe or maybe not</li>
-          <li>No definitely not</li>
+          <li>No, definitely not</li>
         </var></p>
 
         <p>(b) If the distribution of sample statistics appears to be normally distributed, then is the sampling method unbiased?</p>
-        <p><var form="buttons" width="30">
-          <li>Yes definitely</li>
+        <p><var form="buttons">
+          <li>Yes, definitely</li>
           <li>Maybe or maybe not</li>
-          <li>No definitely not</li>
+          <li>No, definitely not</li>
         </var></p>
 
         <p>(c) If most of the sample statistics are close to the value of the population parameter, then is the sampling method unbiased?</p>
-        <p><var form="buttons" width="30">
-          <li>Yes definitely</li>
+        <p><var form="buttons">
+          <li>Yes, definitely</li>
           <li>Maybe or maybe not</li>
-          <li>No definitely not</li>
+          <li>No, definitely not</li>
         </var></p>
 
         <p>(d) If the sampling method is biased, then will increasing the sample size reduce the bias?</p>
-        <p><var form="buttons" width="30">
-          <li>Yes definitely</li>
+        <p><var form="buttons">
+          <li>Yes, definitely</li>
           <li>Maybe or maybe not</li>
-          <li>No definitely not</li>
+          <li>No, definitely not</li>
         </var></p>
       </statement>
     </exercise>
