@@ -204,34 +204,27 @@
     <p>(Compare these to a binomial with <m>\pi = M/N</m>.)</p>
   </assemblage>
 
-  <paragraphs>
+  <assemblage>
     <title>Technology Detour <mdash/> Calculating Hypergeometric Probabilities</title>
     
     <p>R: <c>iscamhyperprob</c> function</p>
-    <hint>
-      <title>R instructions</title>
-      <p>The iscamhyperprob function takes the following inputs:</p>
-      <p><ul>
-        <li><p><c>k</c>, the observed value of interest (or the difference in conditional proportions, assumed if value is less than one, including negative)</p></li>
-        <li><p><c>total</c>, the total number of observations in the population</p></li>
-        <li><p><c>succ</c>, the overall number of successes in the population</p></li>
-        <li><p><c>n</c>, the sample size</p></li>
-        <li><p><c>lower.tail</c>, a Boolean which is TRUE or FALSE</p></li>
-      </ul></p>
-      <p>For example: <c>iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)</c></p>
-    </hint>
+    <p><ul>
+      <li><p><c>k</c>, the observed value of interest (or the difference in conditional proportions, assumed if value is less than one, including negative)</p></li>
+      <li><p><c>total</c>, the total number of observations in the population</p></li>
+      <li><p><c>succ</c>, the overall number of successes in the population</p></li>
+      <li><p><c>n</c>, the sample size</p></li>
+      <li><p><c>lower.tail</c>, a Boolean which is TRUE or FALSE</p></li>
+    </ul></p>
+    <p>For example: <c>iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)</c></p>
     
     <p>JMP: Distribution Calculator</p>
-    <hint>
-      <title>JMP instructions</title>
-      <p><ul>
-        <li><p>Select Hypergeometric from the Distribution menu.</p></li>
-        <li><p>Specify the Population Size, the number of successes in the population (Number of items) and the sample size.</p></li>
-        <li><p>Choose the tail probability and specify the number of interest (e.g., 12)</p></li>
-      </ul></p>
-      <p>Note: To find <m>P(X \geq 12)</m>, we use <m>P(X > 11)</m>.</p>
-    </hint>
-  </paragraphs>
+    <p><ul>
+      <li><p>Select Hypergeometric from the Distribution menu.</p></li>
+      <li><p>Specify the Population Size, the number of successes in the population (Number of items) and the sample size.</p></li>
+      <li><p>Choose the tail probability and specify the number of interest (e.g., 12)</p></li>
+    </ul></p>
+    <p>Note: To find <m>P(X \geq 12)</m>, we use <m>P(X > 11)</m>.</p>
+  </assemblage>
 
   <exercise xml:id="I1-15-g">
     <title>Calculate hypergeometric probability</title>
