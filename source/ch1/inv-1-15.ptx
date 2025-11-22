@@ -187,7 +187,7 @@
   <assemblage xml:id="prob-detour-hypergeometric">
     <title>Probability Detour <mdash/> Hypergeometric Random Variables</title>
     
-    <p>To be a Hypergeometric random variable, a random process must have the following properties:</p>
+    <p>To be a <term>Hypergeometric random variable</term><idx>Hypergeometric random variable</idx>, a random process must have the following properties:</p>
     <p><ul>
       <li><p><m>n</m> observations are drawn without replacement from a population of <m>N</m> objects.</p></li>
       <li><p>There are two distinct types of objects in the population, <m>M</m> successes and <m>N - M</m> failures.</p></li>
@@ -204,27 +204,45 @@
     <p>(Compare these to a binomial with <m>\pi = M/N</m>.)</p>
   </assemblage>
 
-  <assemblage>
+  <paragraphs xml:id="tech-detour-hypergeometric">
     <title>Technology Detour <mdash/> Calculating Hypergeometric Probabilities</title>
-    
-    <p>R: <c>iscamhyperprob</c> function</p>
-    <p><ul>
-      <li><p><c>k</c>, the observed value of interest (or the difference in conditional proportions, assumed if value is less than one, including negative)</p></li>
-      <li><p><c>total</c>, the total number of observations in the population</p></li>
-      <li><p><c>succ</c>, the overall number of successes in the population</p></li>
-      <li><p><c>n</c>, the sample size</p></li>
-      <li><p><c>lower.tail</c>, a Boolean which is TRUE or FALSE</p></li>
-    </ul></p>
-    <p>For example: <c>iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)</c></p>
-    
-    <p>JMP: Distribution Calculator</p>
-    <p><ul>
-      <li><p>Select Hypergeometric from the Distribution menu.</p></li>
-      <li><p>Specify the Population Size, the number of successes in the population (Number of items) and the sample size.</p></li>
-      <li><p>Choose the tail probability and specify the number of interest (e.g., 12)</p></li>
-    </ul></p>
-    <p>Note: To find <m>P(X \geq 12)</m>, we use <m>P(X > 11)</m>.</p>
-  </assemblage>
+
+    <exercise xml:id="tech-detour-r-hyper" label="Hypergeometric - R">
+      <title>Calculating Hypergeometric Probabilities in R</title>
+      <statement>
+        <p>In R: The <c>iscamhyperprob</c> function takes the following inputs:</p>
+        <p><ul>
+          <li><p><c>k</c>, the observed value of interest (or the difference in conditional proportions, assumed if value is less than one, including negative)</p></li>
+          <li><p><c>total</c>, the total number of observations in the population</p></li>
+          <li><p><c>succ</c>, the overall number of successes in the population</p></li>
+          <li><p><c>n</c>, the sample size</p></li>
+          <li><p><c>lower.tail</c>, a Boolean which is TRUE or FALSE</p></li>
+        </ul></p>
+        <p>For example: <c>iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)</c></p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="tech-detour-jmp-hyper" label="Hypergeometric - JMP">
+      <title>Calculating Hypergeometric Probabilities in JMP</title>
+      <statement>
+        <p>In JMP using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam3/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url>:</p>
+        <p><ol>
+          <li><p>Select Hypergeometric from the Distribution menu.</p></li>
+          <li><p>Specify the Population Size, the number of successes in the population (Number of items) and the sample size.</p></li>
+          <li><p>Choose the tail probability and specify the number of interest (e.g., 12)</p></li>
+        </ol></p>
+        <p>Note: To find <m>P(X \geq 12)</m>, we use <m>P(X > 11)</m>.</p>
+        <sidebyside widths="45% 45%">
+          <image source="images/Inv1.15JMP1.png">
+            <description>JMP Distribution Calculator setup for hypergeometric distribution</description>
+          </image>
+          <image source="images/Inv1.15JMP2.png">
+            <description>JMP Distribution Calculator output for hypergeometric probability</description>
+          </image>
+        </sidebyside>
+      </statement>
+    </exercise>
+  </paragraphs>
 
   <exercise xml:id="I1-15-g">
     <title>Calculate hypergeometric probability</title>
@@ -284,10 +302,17 @@
   <assemblage>
     <title>Probability Detour <mdash/> Binomial Approximation to Hypergeometric Distribution</title>
     
-    <p>If we instead used the binomial distribution to approximate probability of selecting an e-word from the Gettysburg Address, we would find</p>
-    <me>P(X = 1) = \binom{5}{1}(125/268)^1(143/268)^4 \approx 0.1890</me>
-    
-    <p>These probability calculations work out to be very similar! This happens when the finite population we are sampling from is large compared to our sample size (e.g., <m>N > 20 \times n</m>). This means we can continue to use the binomial distribution to determine such probabilities and the expected number of successes <m>5(0.466) \approx 2.33</m> with <m>SD(X) \approx 1.115</m> successes. And when the sample size is large relative to the probability of success, we can approximate the binomial with the normal distribution.</p>
+    <sidebyside widths="65% 30%" valign="top">
+      <stack>
+        <p>If we instead used the binomial distribution to approximate probability of selecting an e-word from the Gettysburg Address, we would find</p>
+        <me>P(X = 1) = \binom{5}{1}(125/268)^1(143/268)^4 \approx 0.1890</me>
+        
+        <p>These probability calculations work out to be very similar! This happens when the finite population we are sampling from is large compared to our sample size (e.g., <m>N > 20 \times n</m>). This means we can continue to use the binomial distribution to determine such probabilities and the expected number of successes <m>5(0.466) \approx 2.33</m> with <m>SD(X) \approx 1.115</m> successes. And when the sample size is large relative to the probability of success, we can approximate the binomial with the normal distribution.</p>
+      </stack>
+      <image source="images/binomhyper.png">
+        <description>Comparison of binomial and hypergeometric distributions</description>
+      </image>
+    </sidebyside>
   </assemblage>
 
   <assemblage>
