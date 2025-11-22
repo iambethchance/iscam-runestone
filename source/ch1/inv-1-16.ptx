@@ -3,26 +3,26 @@
 <section xml:id="investigation1-16">
   <title>Investigation 1.16: Literary Digest</title>
 
-  <p>Literary Digest was a well-respected political magazine founded in 1890. Using sampling, they correctly predicted the presidential outcomes from 1916–1932. In 1936, they conducted the most extensive (to that date) public opinion poll in history. They mailed out questionnaires (postcards) to over 10 million people (about one-fourth of voters), hand addressing more than a quarter million postcards per day) whose names and addresses they obtained from club rosters, city directories, and (mostly) vehicle registration lists and telephone books.</p>
+  <p><em>Literary Digest</em> was a well-respected political magazine founded in 1890. Using sampling, they correctly predicted the presidential outcomes from 1916–1932. In 1936, they conducted the most extensive (to that date) public opinion poll in history. They mailed out questionnaires (postcards) to over 10 million people (about one-fourth of voters), hand addressing more than a quarter million postcards per day) whose names and addresses they obtained from club rosters, city directories, and (mostly) vehicle registration lists and telephone books.</p>
 
-  <figure xml:id="fig-litdigest1">
-    <caption>Literary Digest Poll 1</caption>
-    <image source="images/LitDigest1.png" width="60%">
-      <description>Literary Digest poll image 1</description>
-    </image>
-  </figure>
+  <sidebyside widths="25% 60%" valign="top">
+    <figure xml:id="fig-litdigest1">
+      <image source="images/LitDigest1.png">
+        <description>Literary Digest poll thumbnail</description>
+      </image>
+    </figure>
+    <figure xml:id="fig-litdigest2">
+      <image source="images/LitDigest2.png">
+        <description>Literary Digest poll image</description>
+      </image>
+    </figure>
+  </sidebyside>
+  <p><em>Literary Digest</em> Poll images</p>
 
-  <figure xml:id="fig-litdigest2">
-    <caption>Literary Digest Poll 2</caption>
-    <image source="images/LitDigest2.png" width="60%">
-      <description>Literary Digest poll image 2</description>
-    </image>
-  </figure>
-
-  <p>Based on almost 2.4 million responses (2,376,523), the Literary Digest predicted that 54% of voters would vote for Republican Alf Landon (then governor of Kansas) in the upcoming presidential election, and only 41% would vote for Democrat Franklin Roosevelt (the incumbent).</p>
+  <p>Based on almost 2.4 million responses (2,376,523), the <em>Literary Digest</em> predicted that 54% of voters would vote for Republican Alf Landon (then governor of Kansas) in the upcoming presidential election, and only 41% would vote for Democrat Franklin Roosevelt (the incumbent).</p>
 
   <figure xml:id="fig-litdigest3">
-    <caption>Literary Digest Poll Results</caption>
+    <caption><em>Literary Digest</em> Poll Results</caption>
     <image source="images/LitDigest3.png" width="60%">
       <description>Literary Digest poll results</description>
     </image>
@@ -36,7 +36,7 @@
       <p>Population of interest: <var width="40"/> Sample: <var width="40"/></p>
       <p>Sampling frame: <var width="60"/></p>
       <p>Parameter: <var width="60"/></p>
-      <p>Statistic: <var width="60"/></p>
+      <p>Statistic: <var width="60" height="3"/></p>
     </statement>
     <response/>
     <solution>
@@ -66,8 +66,8 @@
   <exercise xml:id="I1-16-c">
     <title>Explain polling error</title>
     <statement>
-      <p>Give two plausible explanations why the Literary Digest prediction was so much in error. In particular, talk about the direction of the bias – why was this sampling method vulnerable to producing an overestimate of the parameter?</p>
-      <p><var width="80"/></p>
+      <p>Give two plausible explanations why the <em>Literary Digest</em> prediction was so much in error. In particular, talk about the direction of the bias – why was this sampling method vulnerable to producing an overestimate of the parameter?</p>
+      <p><var width="60" height="5"/></p>
     </statement>
     <response/>
     <solution>
@@ -128,36 +128,40 @@
 
   <assemblage>
     <title>Post Stratification</title>
-    <p>In the 1936 poll, about 51% of respondents said they voted Republican in 1932, but only about 40% of the actual voters in 1932 voted Republican, a ratio of 0.78. So the Digest's sample appear to overrepresent the Republican voters. Similarly, persons who said they voted Democrat or Other in the 1932 election were unrepresented in the 1936 poll (ratios: 1.197, 2.23 respectively). (Lohr and Brick, 2017, also estimated the ratio for the non-voters and missing to be 1.1275 for Democrats and 0.871 for Republicans.)</p>
+    <p>In the 1936 poll, about 51% of respondents said they voted Republican in 1932, but only about 40% of the actual voters in 1932 voted Republican, a ratio of 0.78. So the <em>Digest</em>'s sample appear to overrepresent the Republican voters. Similarly, persons who said they voted Democrat or Other in the 1932 election were unrepresented in the 1936 poll (ratios: 1.197, 2.23 respectively). (Lohr and Brick, 2017, also estimated the ratio for the non-voters and missing to be 1.1275 for Democrats and 0.871 for Republicans.)</p>
     
-    <tabular halign="center">
-      <row header="yes">
-        <cell></cell>
+    <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+      <row header="yes" bottom="major">
+        <cell>1932 Vote</cell>
         <cell>Republican</cell>
         <cell>Democrat</cell>
-        <cell>Socialist, Other</cell>
+        <cell>Soc./Other</cell>
         <cell>Non-voters</cell>
         <cell>Missing</cell>
       </row>
       <row>
-        <cell>Ratio (actual/claimed)</cell>
+        <cell>Ratio</cell>
         <cell>0.782</cell>
         <cell>1.197</cell>
         <cell>2.228</cell>
-        <cell>Dem: 1.1275<lb/>Repub: 0.871</cell>
-        <cell>Dem: 1.1275<lb/>Repub: 0.871</cell>
+        <cell>D: 1.1275<lb/>R: 0.871</cell>
+        <cell>D: 1.1275<lb/>R: 0.871</cell>
       </row>
     </tabular>
     
-    <p>This means we want to lower the number of Republican votes in the Digest poll by multiplying by 0.78, to adjust for the overrepresentation in the sample, and increase the number of Democrat votes in the poll by multiplying by 1.197 and so forth.</p>
+    <p>This means we want to lower the number of Republican votes in the <em>Digest</em> poll by multiplying by 0.78, to adjust for the overrepresentation in the sample, and increase the number of Democrat votes in the poll by multiplying by 1.197 and so forth.</p>
   </assemblage>
 
   <exercise xml:id="I1-16-g">
     <title>Adjust Landon votes</title>
     <statement>
-      <p>Start with the Landon voters in the Digest poll, using the breakdown by how they voted in 1932, adjust the counts using the above ratios <em>[Hint: Set up a formula using these weights and the breakdown of the planned Landon voters by the 1932 vote, columns D-I, to find a new count. Using 0.871 for non-voters and missing.]</em></p>
+      <p>Start with the Landon voters in the <em>Digest</em> poll, using the breakdown by how they voted in 1932, adjust the counts using the above ratios.</p>
       <p><var width="30"/></p>
     </statement>
+    <hint>
+      <title>Hint</title>
+      <p>Set up a formula using these weights and the breakdown of the planned Landon voters by the 1932 vote, columns D-I, to find a new count. Using 0.871 for non-voters and missing.</p>
+    </hint>
     <response/>
     <solution>
       <p>Using 0.78 as the first multiplier (so watch for rounding discrepancies):</p>
@@ -171,6 +175,10 @@
       <p>Repeat for Roosevelt (columns L-Q, 1.1275 for non-voters, missing)</p>
       <p><var width="30"/></p>
     </statement>
+    <hint>
+      <title>Hint</title>
+      <p>Use columns L-Q, with 1.1275 for non-voters and missing.</p>
+    </hint>
     <response/>
     <solution>
       <p>111494.76 + 854890.218 + 41039.76 + 1608.616 + 64617.025 + 44320.8975 = 1,117,971.277</p>
@@ -180,7 +188,7 @@
   <exercise xml:id="I1-16-i">
     <title>Calculate adjusted percentage</title>
     <statement>
-      <p>Between these two candidates, what is the adjusted percentage voting for Roosevelt? Is this larger or smaller than the original Literary Digest prediction?</p>
+      <p>Between these two candidates, what is the adjusted percentage voting for Roosevelt? Is this larger or smaller than the original <em>Literary Digest</em> prediction?</p>
       <p><var width="60"/></p>
     </statement>
     <response/>
@@ -192,21 +200,41 @@
 
   <p>Although this is still much lower than the actual vote share for Roosevelt between these two candidates (62%), you can see how this process tries to account for the sampling bias in the original poll. There are still a lot of assumptions, e.g., respondents accurately reported their 1932 vote, and non-respondents to the LD survey had the same relationship between the 1932 and 1936 votes as the respondents. But if you apply this technique to the individual states, 10 states change from Landon to Roosevelt, including California and New York, and Roosevelt is predicted to win 26 states (276 electoral votes), rather than 16 states (161 electoral votes).</p>
 
-  <p>So using this one other piece of information would have at least predicted the correct outcome, though still way underestimating the margin of victory. More complicated weighting schemes further adjust based on the size of the error in the 1928 LD poll or use a regression model based on the previous two elections. The Literary Digest also collected but did not publish data on postmarks of returned ballots and could have adjusted for rural/urban differences or county-level demographics from the 1930 census.</p>
+  <figure xml:id="fig-inv116compare1">
+    <caption>Comparison of correction methods</caption>
+    <image source="images/Inv1.16compare.png" width="70%">
+      <description>Comparison chart 1 for different correction methods</description>
+    </image>
+  </figure>
+
+  <p>So using this one other piece of information would have at least predicted the correct outcome, though still way underestimating the margin of victory. More complicated weighting schemes further adjust based on the size of the error in the 1928 LD poll or use a regression model based on the previous two elections. The <em>Literary Digest</em> also collected but did not publish data on postmarks of returned ballots and could have adjusted for rural/urban differences or county-level demographics from the 1930 census.</p>
 
   <exercise xml:id="I1-16-j">
     <title>Compare correction methods</title>
     <statement>
-      <p>Below are state by state results for some different possible adjustments for the 1936 poll. Which correction method seems to help the most? How are you deciding?</p>
-      <p><ul>
-        <li><p>Actual state by state results</p></li>
-        <li><p>Using the relationship between predicted and actual votes from 1928 and 1932 to predict the results for 1936</p></li>
-        <li><p>Weighting the 1936 poll responses by the reported 1932 party breakdowns</p></li>
-        <li><p>Adding the LD error in the predicted Democrat proportion in 1932 to the 1936 LD prediction</p></li>
-        <li><p>Original LD predictions</p></li>
-      </ul></p>
-      <p><var width="60"/></p>
+      <sidebyside widths="65% 30%" valign="top">
+        <stack>
+          <p>Below are state by state results for some different possible adjustments for the 1936 poll. Which correction method seems to help the most? How are you deciding?</p>
+          <p><ul>
+            <li><p>Actual state by state results</p></li>
+            <li><p>Using the relationship between predicted and actual votes from 1928 and 1932 to predict the results for 1936</p></li>
+            <li><p>Weighting the 1936 poll responses by the reported 1932 party breakdowns</p></li>
+            <li><p>Adding the LD error in the predicted Democrat proportion in 1932 to the 1936 LD prediction</p></li>
+            <li><p>Original LD predictions</p></li>
+          </ul></p>
+          <p><var width="60"/></p>
+        </stack>
+        <figure xml:id="fig-inv116compare2">
+          <image source="images/Inv1.16compare2.png">
+            <description>Comparison chart 2 for correction methods</description>
+          </image>
+        </figure>
+      </sidebyside>
     </statement>
+    <hint>
+      <title>Hint</title>
+      <p>Look at which method's distribution is most centered around the actual country proportion.</p>
+    </hint>
     <response/>
     <solution>
       <p>In this case, the method using data from 1928 and 1932 seems to be the best as the center of the state by state proportions is at least centered around the country proportion, rather than most of the states being too low.</p>
@@ -215,14 +243,14 @@
 
   <paragraphs>
     <title>Discussion</title>
-    <p>There were two main issues in the Literary Digest poll. One, the sampling frame did not include all members of the population of interest and in particular failed to include those that were poorer (and at that time likely to be Democrats). Second, the voluntary response nature of the poll implies the surveyors were more likely to hear from those unhappy with the status quo (incumbent candidate) or with more time on their hands to complete such surveys (e.g., retired folks), and even those more willing to pay for a stamp. Both of these probably point to an overrepresentation of Republicans. Bad sampling frames and voluntary response bias are perhaps the most common sources of sampling error. By the way, a fledgling pollster of the time, George Gallup, actually bet that he would predict the percentages more accurately. Not only did he correctly predict the Digest result with only 3,000 respondents, he also correctly predicted a Roosevelt victory! The issues with the Literary Digest poll were evident in earlier elections (overpredicting the popular vote for the winner in 1924 and 1928, but the results were so one-sided, the bias didn't matter), and even though they could have weighted the results, they chose not to and let readers "draw their own conclusions." But Lohr and Brick (2017) point out that the largest issue was probably failing to accurately assess the uncertainty in their estimates.</p>
+    <p>There were two main issues in the <em>Literary Digest</em> poll. One, the sampling frame did not include all members of the population of interest and in particular failed to include those that were poorer (and at that time likely to be Democrats). Second, the voluntary response nature of the poll implies the surveyors were more likely to hear from those unhappy with the status quo (incumbent candidate) or with more time on their hands to complete such surveys (e.g., retired folks), and even those more willing to pay for a stamp. Both of these probably point to an overrepresentation of Republicans. Bad sampling frames and voluntary response bias are perhaps the most common sources of sampling error. By the way, a fledgling pollster of the time, George Gallup, actually bet that he would predict the percentages more accurately. Not only did he correctly predict the <em>Digest</em> result with only 3,000 respondents, he also correctly predicted a Roosevelt victory! The issues with the <em>Literary Digest</em> poll were evident in earlier elections (overpredicting the popular vote for the winner in 1924 and 1928, but the results were so one-sided, the bias didn't matter), and even though they could have weighted the results, they chose not to and let readers "draw their own conclusions." But Lohr and Brick (2017) point out that the largest issue was probably failing to accurately assess the uncertainty in their estimates.</p>
   </paragraphs>
 
   <paragraphs>
     <title>References</title>
     <p><ul>
-      <li><p>Lohr &amp; Brick (2007). "Roosevelt Predicted to Win: Revisiting the 1936 Literary Digest Poll," <em>Stat Polit Pol</em>, 8(1): 65-85.</p></li>
-      <li><p>Lusinchi, D. (2012). "'President' Landon and the 1936 Literary Digest Poll: Were Automobile and Telephone Owners to Blame?" <em>Social Science History</em>, 36:23–54.</p></li>
+      <li><p>Lohr &amp; Brick (2007). "Roosevelt Predicted to Win: Revisiting the 1936 <em>Literary Digest</em> Poll," <em>Stat Polit Pol</em>, 8(1): 65-85.</p></li>
+      <li><p>Lusinchi, D. (2012). "'President' Landon and the 1936 <em>Literary Digest</em> Poll: Were Automobile and Telephone Owners to Blame?" <em>Social Science History</em>, 36:23–54.</p></li>
       <li><p>Robinson, C. (1932). <em>Straw Votes</em>. New York, NY: Columbia University Press.</p></li>
     </ul></p>
   </paragraphs>
@@ -230,7 +258,7 @@
   <subsection xml:id="practice1-16A">
     <title>Practice Problem 1.16A</title>
 
-    <p>In the mid-1980s, Dr. Shere Hite, actress and writer, and subject of a 2023 documentary, undertook a survey of women's attitudes toward relationships, love, and sex by distributing 100,000 questionnaires in women's groups. Of the 4500 who returned the questionnaire, 96% said that they gave more emotional support than they received from their husbands or boyfriends. An ABC News/Washington Post poll surveyed a random sample of 767 women, finding that 44% claimed to give more emotional support than they received.</p>
+    <p>In the mid-1980s, Dr. Shere Hite, actress and writer, and subject of a 2023 documentary, undertook a survey of women's attitudes toward relationships, love, and sex by distributing 100,000 questionnaires in women's groups. Of the 4500 who returned the questionnaire, 96% said that they gave more emotional support than they received from their husbands or boyfriends. An <em>ABC News/Washington Post</em> poll surveyed a random sample of 767 women, finding that 44% claimed to give more emotional support than they received.</p>
 
     <exercise xml:id="practice-1-16-a" label="PP1.16A">
       <statement>
@@ -259,7 +287,7 @@
     <exercise xml:id="practice-1-16-a2" label="PP1.16A.2">
       <statement>
         <p>Which poll's results do you think are more representative of the population of all American women? Explain.</p>
-        <p><var width="80"/></p>
+        <p><var width="60" height="4"/></p>
       </statement>
       <response/>
     </exercise>
@@ -317,13 +345,17 @@
   <subsection xml:id="practice1-16C">
     <title>Practice Problem 1.16C</title>
 
-    <p>History Matters (https://historymatters.gmu.edu/d/5168/) includes a report on the vote totals. Examine the data provided on that webpage.</p>
+    <p><url href="https://historymatters.gmu.edu/d/5168/">History Matters</url> includes a report on the vote totals. Examine the data provided on that webpage.</p>
 
     <exercise xml:id="practice-1-16-c-a" label="PP1.16C.1">
       <statement>
-        <p>If you check the totals, they don't quite match up. Can you find the data entry errors? <em>[Hint: Do any numerical values look suspicious to you? Do any states behave unusually?]</em></p>
+        <p>If you check the totals, they don't quite match up. Can you find the data entry errors?</p>
         <p><var width="60"/></p>
       </statement>
+      <hint>
+        <title>Hint</title>
+        <p>Do any numerical values look suspicious to you? Do any states behave unusually?</p>
+      </hint>
       <response/>
     </exercise>
 
