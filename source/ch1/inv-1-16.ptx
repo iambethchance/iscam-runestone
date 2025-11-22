@@ -5,7 +5,28 @@
 
   <p>Literary Digest was a well-respected political magazine founded in 1890. Using sampling, they correctly predicted the presidential outcomes from 1916–1932. In 1936, they conducted the most extensive (to that date) public opinion poll in history. They mailed out questionnaires (postcards) to over 10 million people (about one-fourth of voters), hand addressing more than a quarter million postcards per day) whose names and addresses they obtained from club rosters, city directories, and (mostly) vehicle registration lists and telephone books.</p>
 
+  <figure xml:id="fig-litdigest1">
+    <caption>Literary Digest Poll 1</caption>
+    <image source="images/LitDigest1.png" width="60%">
+      <description>Literary Digest poll image 1</description>
+    </image>
+  </figure>
+
+  <figure xml:id="fig-litdigest2">
+    <caption>Literary Digest Poll 2</caption>
+    <image source="images/LitDigest2.png" width="60%">
+      <description>Literary Digest poll image 2</description>
+    </image>
+  </figure>
+
   <p>Based on almost 2.4 million responses (2,376,523), the Literary Digest predicted that 54% of voters would vote for Republican Alf Landon (then governor of Kansas) in the upcoming presidential election, and only 41% would vote for Democrat Franklin Roosevelt (the incumbent).</p>
+
+  <figure xml:id="fig-litdigest3">
+    <caption>Literary Digest Poll Results</caption>
+    <image source="images/LitDigest3.png" width="60%">
+      <description>Literary Digest poll results</description>
+    </image>
+  </figure>
 
   <exercise xml:id="I1-16-a">
     <title>Identify study components</title>
@@ -57,12 +78,18 @@
 
   <p>Still, a 24% response rate is much higher than current polls and this was the Digest's largest poll yet, shouldn't this improve their prediction? How are current polls with smaller response rates and smaller sample sizes able to be more accurate? One reason suggested for the error in 1936 was that the Digest had consistently been having more Republican voters responding to their straw vote. Does the data support this argument?</p>
 
+  <p>Open the <url href="https://www.rossmanchance.com/iscam3/data/LitDigest1936.xlsx">LitDigest1936.xlsx</url> file in Excel or Google Sheets. This contains the raw counts for the three main candidates (including William Lemke, Union Party), as well as an overall total number of straw votes cast in each state.</p>
+
   <exercise xml:id="I1-16-d">
     <title>Calculate 1936 poll proportion</title>
     <statement>
-      <p>Open the LitDigest1936.xls file in Excel or Google Sheets. This contains the raw counts for the three main candidates (including William Lemke, Union Party), as well as an overall total number of straw votes cast in each state. For these 3 candidates, what percentage of the poll respondents said they would vote for Republican Landon in the 1936 election? <em>[Hint: Set up a column formula in row 52, using columns C and AA.]</em></p>
+      <p>For these 3 candidates, what percentage of the poll respondents said they would vote for Republican Landon in the 1936 election?</p>
       <p><var width="20"/></p>
     </statement>
+    <hint>
+      <title>Hint</title>
+      <p>Set up a column formula in row 52, using columns C and AA.</p>
+    </hint>
     <response/>
     <solution>
       <p>C52/AA52 = 0.544 (approximately 54.4%)</p>
@@ -72,9 +99,13 @@
   <exercise xml:id="I1-16-e">
     <title>Calculate 1932 voting breakdown</title>
     <statement>
-      <p>Set up a formula for determining the number of respondents to the 1936 poll who said they voted in 1932 for either the Republican, Democratic, or Socialist or Other candidate. <em>[Hint: Use columns D-G, L-O, and T-W.]</em> What proportion of these voted for the Republican candidate?</p>
+      <p>Set up a formula for determining the number of respondents to the 1936 poll who said they voted in 1932 for either the Republican, Democratic, or Socialist or Other candidate. What proportion of these voted for the Republican candidate?</p>
       <p>Sum: <var width="20"/> Proportion: <var width="20"/></p>
     </statement>
+    <hint>
+      <title>Hint</title>
+      <p>Use columns D-G, L-O, and T-W.</p>
+    </hint>
     <response/>
     <solution>
       <p>Formula: (c52 + l52 + t52)/(sum(c52:g52)+sum(l52:o52)+sum(t52:w52))</p>
@@ -85,7 +116,7 @@
   <exercise xml:id="I1-16-f">
     <title>Compare to actual 1932 results</title>
     <statement>
-      <p>Now find the actual 1932 election results, what proportion of voters voted for the Republican (Hoover) candidate (among the three major candidates)? Did the Literary Digest poll have too many or too few Republican voters? How could we account for this in our estimates of vote count?</p>
+      <p>Now find the <url href="https://en.wikipedia.org/wiki/1932_United_States_presidential_election">actual 1932 election results</url>, what proportion of voters voted for the Republican (Hoover) candidate (among the three major candidates)? Did the Literary Digest poll have too many or too few Republican voters? How could we account for this in our estimates of vote count?</p>
       <p><var width="60"/></p>
     </statement>
     <response/>
