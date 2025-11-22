@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="investigation1-17">
+  <title>Investigation 1.17: Cat Households</title>
+
+  <p>The American Veterinary Medical Association (AVMA) has conducted a Pet Demographics Survey about every five years since the early 1980s. In spring 2024, a total of 7,539 people completed an opt-in, online survey. After "results have been weighted based on certain demographic and other variables to match their distribution in the U.S. population and household information reported by the U.S. Census Bureau," the AVMA reported that 32.1% of households owned at least one cat.</p>
+
+  <exercise xml:id="I1-17-a">
+    <title>Identify observational units and variable</title>
+    <statement>
+      <p>Identify the observational units and variable of interest.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>Observational units: U.S. households</p>
+      <p>Variable: Whether the household owns at least one cat (categorical, binary)</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-17-b">
+    <title>Identify parameter or statistic</title>
+    <statement>
+      <p>Is 32.1% a parameter or a statistic? Indicate the symbol used to represent 0.321.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>32.1% is a statistic (from the sample). Symbol: <m>\hat{p} = 0.321</m></p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-17-c">
+    <title>Conduct hypothesis test</title>
+    <statement>
+      <p>Conduct a test of whether the sample data provide evidence that the population proportion who own a pet cat differs from 1/3. State the hypotheses, and report the standardized statistic and p-value. State your test decision at the <m>\alpha = 0.05</m> level, and summarize your conclusion in the context of this study.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>Hypotheses: <m>H_0: \pi = 1/3</m> vs. <m>H_a: \pi \neq 1/3</m></p>
+      <p>Sample proportion: <m>\hat{p} = 0.321</m>, <m>n = 7539</m></p>
+      <p>Standard error: <m>SE = \sqrt{\frac{1/3(2/3)}{7539}} \approx 0.00543</m></p>
+      <p>Test statistic: <m>z = \frac{0.321 - 0.333}{0.00543} \approx -2.21</m></p>
+      <p>P-value: <m>\approx 0.027</m> (two-sided)</p>
+      <p>Decision: Since p-value <m>&lt; 0.05</m>, we reject <m>H_0</m>.</p>
+      <p>Conclusion: The sample provides statistically significant evidence that the population proportion of households with cats differs from 1/3.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-17-d">
+    <title>Explain small p-value</title>
+    <statement>
+      <p>Explain why the p-value turns out to be so small, when the sample proportion of households with a cat seems to be quite close to one-third.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>The large sample size (<m>n = 7539</m>) means the standard error is very small. Even a small difference (0.321 vs 0.333) can be statistically significant when the sample size is large enough, because we have high precision in our estimate.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-17-e">
+    <title>Calculate confidence interval</title>
+    <statement>
+      <p>Produce a 95% confidence interval (CI) for the population proportion who own a pet cat. Interpret this interval.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>Using <m>\hat{p} = 0.321</m> and <m>n = 7539</m>:</p>
+      <p><m>SE(\hat{p}) = \sqrt{\frac{0.321(0.679)}{7539}} \approx 0.00538</m></p>
+      <p>95% CI: <m>0.321 \pm 1.96(0.00538) = 0.321 \pm 0.0105 = (0.310, 0.332)</m></p>
+      <p>Interpretation: We are 95% confident that between 31.0% and 33.2% of all U.S. households own at least one cat.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-17-f">
+    <title>Compare CI to test decision</title>
+    <statement>
+      <p>Is the confidence interval consistent with the test decision about 1/3? Explain.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>Yes, the confidence interval (0.310, 0.332) does not contain 1/3 = 0.333, which is consistent with rejecting the null hypothesis at the 0.05 level.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-17-g">
+    <title>Strong evidence not one-third?</title>
+    <statement>
+      <p>Do the sample data provide very strong evidence that the population proportion who own a pet cat is not one-third? Explain whether the p-value or the CI helps you to decide.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>The p-value (0.027) shows statistical significance but is not extremely small. The evidence is moderate, not "very strong." The p-value helps us assess the strength of evidence against the null hypothesis.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-17-h">
+    <title>Very different from one-third?</title>
+    <statement>
+      <p>Do the sample data provide strong evidence that the population proportion who own a pet cat is very different from one-third? Explain whether the p-value or the CI helps you to decide.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>The confidence interval helps here. The interval (0.310, 0.332) shows the population proportion is close to 1/3, differing by at most about 2.3 percentage points. This is statistically significant but not practically very different. The CI helps us assess practical significance.</p>
+    </solution>
+  </exercise>
+
+  <paragraphs>
+    <title>Discussion</title>
+    <p>Keep in mind the difference between <term>statistical significance</term> and <term>practical significance</term><idx>practical significance</idx>. With large sample sizes, sample proportions will vary little from sample to sample, and so even small differences (that may seem minor to most of us) will be statistically significant. Saying that a sample result is unlikely to happen by chance (and therefore is statistically significant) is not the same as saying the result is important or even noteworthy (practically significant), depending on the context involved.</p>
+  </paragraphs>
+
+</section>

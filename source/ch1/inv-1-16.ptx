@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="investigation1-16">
+  <title>Investigation 1.16: Literary Digest</title>
+
+  <p>Literary Digest was a well-respected political magazine founded in 1890. Using sampling, they correctly predicted the presidential outcomes from 1916–1932. In 1936, they conducted the most extensive (to that date) public opinion poll in history. They mailed out questionnaires (postcards) to over 10 million people (about one-fourth of voters), hand addressing more than a quarter million postcards per day) whose names and addresses they obtained from club rosters, city directories, and (mostly) vehicle registration lists and telephone books.</p>
+
+  <p>Based on almost 2.4 million responses (2,376,523), the Literary Digest predicted that 54% of voters would vote for Republican Alf Landon (then governor of Kansas) in the upcoming presidential election, and only 41% would vote for Democrat Franklin Roosevelt (the incumbent).</p>
+
+  <exercise xml:id="I1-16-a">
+    <title>Identify study components</title>
+    <statement>
+      <p>Identify the variable and population of interest, the sample, and the sampling frame in this study. Also define the parameter and statistic, in words and symbols, and indicate any values that you know.</p>
+      <p>Variable: <var width="40"/> Type: <var width="20"/></p>
+      <p>Population of interest: <var width="40"/> Sample: <var width="40"/></p>
+      <p>Sampling frame: <var width="60"/></p>
+      <p>Parameter: <var width="60"/></p>
+      <p>Statistic: <var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>Variable: Presidential vote preference; Type: Categorical (binary)</p>
+      <p>Population of interest: All U.S. voters in 1936; Sample: 2,376,523 respondents to the Literary Digest poll</p>
+      <p>Sampling frame: People with names/addresses from club rosters, city directories, vehicle registration lists, and telephone books</p>
+      <p>Parameter: <m>\pi</m> = proportion of all 1936 voters who would vote for Landon (unknown)</p>
+      <p>Statistic: <m>\hat{p}</m> = 0.54, proportion of poll respondents who said they would vote for Landon</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-16-b">
+    <title>Calculate actual proportion</title>
+    <statement>
+      <p>Why is <m>1293669/(1293669 + 972897) = 0.57</m> not equal to 0.54?</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>The 0.57 is the proportion among the two main candidates (Landon and Roosevelt only), while 0.54 includes all candidates in the poll.</p>
+    </solution>
+  </exercise>
+
+  <p>Have you ever heard of Alf Landon? He lost. By a landslide. Incumbent Democrat Franklin Roosevelt won the election, carrying 60.8% of the popular vote to Landon's 36.5%.</p>
+
+  <exercise xml:id="I1-16-c">
+    <title>Explain polling error</title>
+    <statement>
+      <p>Give two plausible explanations why the Literary Digest prediction was so much in error. In particular, talk about the direction of the bias – why was this sampling method vulnerable to producing an overestimate of the parameter?</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>1. The sampling frame (vehicle registration and telephone book lists) excluded poorer Americans who couldn't afford cars or phones, and these voters tended to be Democrats.</p>
+      <p>2. Voluntary response bias - those who chose to respond may have been more dissatisfied with the incumbent (Roosevelt) or had more time/resources to complete and mail surveys, potentially overrepresenting Republicans.</p>
+    </solution>
+  </exercise>
+
+  <p>Still, a 24% response rate is much higher than current polls and this was the Digest's largest poll yet, shouldn't this improve their prediction? How are current polls with smaller response rates and smaller sample sizes able to be more accurate? One reason suggested for the error in 1936 was that the Digest had consistently been having more Republican voters responding to their straw vote. Does the data support this argument?</p>
+
+  <exercise xml:id="I1-16-d">
+    <title>Calculate 1936 poll proportion</title>
+    <statement>
+      <p>Open the LitDigest1936.xls file in Excel or Google Sheets. This contains the raw counts for the three main candidates (including William Lemke, Union Party), as well as an overall total number of straw votes cast in each state. For these 3 candidates, what percentage of the poll respondents said they would vote for Republican Landon in the 1936 election? [Hint: Set up a column formula in row 52, using columns C and AA.]</p>
+      <p><var width="20"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>Approximately 57% (the exact calculation depends on which rows are summed)</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-16-e">
+    <title>Calculate 1932 voting breakdown</title>
+    <statement>
+      <p>Set up a formula for determining the number of respondents to the 1936 poll who said they voted in 1932 for either the Republican, Democratic, or Socialist or Other candidate. [Hint: Use columns D-G, L-O, and T-W.] What proportion of these voted for the Republican candidate?</p>
+      <p>Sum: <var width="20"/> Proportion: <var width="20"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>Sum: approximately 2,266,566 respondents; Proportion: approximately 0.51 (51% voted Republican in 1932)</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-16-f">
+    <title>Compare to actual 1932 results</title>
+    <statement>
+      <p>Now find the actual 1932 election results, what proportion of voters voted for the Republican (Hoover) candidate (among the three major candidates)? Did the Literary Digest poll have too many or too few Republican voters? How could we account for this in our estimates of vote count?</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>In the actual 1932 election, approximately 40% voted for Republican Hoover. The Literary Digest poll had too many Republican voters (51% vs 40%). We could weight the responses to adjust for this overrepresentation.</p>
+    </solution>
+  </exercise>
+
+  <assemblage>
+    <title>Post Stratification</title>
+    <p>In the 1936 poll, about 51% of respondents said they voted Republican in 1932, but only about 40% of the actual voters in 1932 voted Republican, a ratio of 0.78. So the Digest's sample appear to overrepresent the Republican voters. Similarly, persons who said they voted Democrat or Other in the 1932 election were unrepresented in the 1936 poll (ratios: 1.197, 2.23 respectively). (Lohr and Brick, 2017, also estimated the ratio for the non-voters and missing to be 1.1275 for Democrats and 0.871 for Republicans.)</p>
+    
+    <tabular halign="center">
+      <row header="yes">
+        <cell></cell>
+        <cell>Republican</cell>
+        <cell>Democrat</cell>
+        <cell>Socialist, Other</cell>
+        <cell>Non-voters</cell>
+        <cell>Missing</cell>
+      </row>
+      <row>
+        <cell>Ratio (actual/claimed)</cell>
+        <cell>0.782</cell>
+        <cell>1.197</cell>
+        <cell>2.228</cell>
+        <cell>Dem: 1.1275<lb/>Repub: 0.871</cell>
+        <cell>Dem: 1.1275<lb/>Repub: 0.871</cell>
+      </row>
+    </tabular>
+    
+    <p>This means we want to lower the number of Republican votes in the Digest poll by multiplying by 0.78, to adjust for the overrepresentation in the sample, and increase the number of Democrat votes in the poll by multiplying by 1.197 and so forth.</p>
+  </assemblage>
+
+  <exercise xml:id="I1-16-g">
+    <title>Adjust Landon votes</title>
+    <statement>
+      <p>Start with the Landon voters in the Digest poll, using the breakdown by how they voted in 1932, adjust the counts using the above ratios [Hint: Set up a formula using these weights and the breakdown of the planned Landon voters by the 1932 vote, columns D-I, to find a new count. Using 0.871 for non-voters and missing.]</p>
+      <p><var width="30"/></p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="I1-16-h">
+    <title>Adjust Roosevelt votes</title>
+    <statement>
+      <p>Repeat for Roosevelt (columns L-Q, 1.1275 for non-voters, missing)</p>
+      <p><var width="30"/></p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="I1-16-i">
+    <title>Calculate adjusted percentage</title>
+    <statement>
+      <p>Between these two candidates, what is the adjusted percentage voting for Roosevelt? Is this larger or smaller than the original Literary Digest prediction?</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>The adjusted percentage for Roosevelt is approximately 48-50% (between these two candidates), which is larger than the original Literary Digest prediction of 41%.</p>
+    </solution>
+  </exercise>
+
+  <p>Although this is still much lower than the actual vote share for Roosevelt between these two candidates (62%), you can see how this process tries to account for the sampling bias in the original poll. There are still a lot of assumptions, e.g., respondents accurately reported their 1932 vote, and non-respondents to the LD survey had the same relationship between the 1932 and 1936 votes as the respondents. But if you apply this technique to the individual states, 10 states change from Landon to Roosevelt, including California and New York, and Roosevelt is predicted to win 26 states (276 electoral votes), rather than 16 states (161 electoral votes).</p>
+
+  <p>So using this one other piece of information would have at least predicted the correct outcome, though still way underestimating the margin of victory. More complicated weighting schemes further adjust based on the size of the error in the 1928 LD poll or use a regression model based on the previous two elections. The Literary Digest also collected but did not publish data on postmarks of returned ballots and could have adjusted for rural/urban differences or county-level demographics from the 1930 census.</p>
+
+  <exercise xml:id="I1-16-j">
+    <title>Compare correction methods</title>
+    <statement>
+      <p>Below are state by state results for some different possible adjustments for the 1936 poll. Which correction method seems to help the most? How are you deciding?</p>
+      <p><ul>
+        <li><p>Actual state by state results</p></li>
+        <li><p>Using the relationship between predicted and actual votes from 1928 and 1932 to predict the results for 1936</p></li>
+        <li><p>Weighting the 1936 poll responses by the reported 1932 party breakdowns</p></li>
+        <li><p>Adding the LD error in the predicted Democrat proportion in 1932 to the 1936 LD prediction</p></li>
+        <li><p>Original LD predictions</p></li>
+      </ul></p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <paragraphs>
+    <title>Discussion</title>
+    <p>There were two main issues in the Literary Digest poll. One, the sampling frame did not include all members of the population of interest and in particular failed to include those that were poorer (and at that time likely to be Democrats). Second, the voluntary response nature of the poll implies the surveyors were more likely to hear from those unhappy with the status quo (incumbent candidate) or with more time on their hands to complete such surveys (e.g., retired folks), and even those more willing to pay for a stamp. Both of these probably point to an overrepresentation of Republicans. Bad sampling frames and voluntary response bias are perhaps the most common sources of sampling error. By the way, a fledgling pollster of the time, George Gallup, actually bet that he would predict the percentages more accurately. Not only did he correctly predict the Digest result with only 3,000 respondents, he also correctly predicted a Roosevelt victory! The issues with the Literary Digest poll were evident in earlier elections (overpredicting the popular vote for the winner in 1924 and 1928, but the results were so one-sided, the bias didn't matter), and even though they could have weighted the results, they chose not to and let readers "draw their own conclusions." But Lohr and Brick (2017) point out that the largest issue was probably failing to accurately assess the uncertainty in their estimates.</p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>References</title>
+    <p><ul>
+      <li><p>Lohr &amp; Brick (2007). "Roosevelt Predicted to Win: Revisiting the 1936 Literary Digest Poll," <em>Stat Polit Pol</em>, 8(1): 65-85.</p></li>
+      <li><p>Lusinchi, D. (2012). "'President' Landon and the 1936 Literary Digest Poll: Were Automobile and Telephone Owners to Blame?" <em>Social Science History</em>, 36:23–54.</p></li>
+      <li><p>Robinson, C. (1932). <em>Straw Votes</em>. New York, NY: Columbia University Press.</p></li>
+    </ul></p>
+  </paragraphs>
+
+  <subsection xml:id="practice1-16A">
+    <title>Practice Problem 1.16A</title>
+
+    <exercise xml:id="practice-1-16-a" label="PP1.16A">
+      <statement>
+        <p>In the mid-1980s, Dr. Shere Hite, actress and writer, and subject of a 2023 documentary, undertook a survey of women's attitudes toward relationships, love, and sex by distributing 100,000 questionnaires in women's groups. Of the 4500 who returned the questionnaire, 96% said that they gave more emotional support than they received from their husbands or boyfriends. An ABC News/Washington Post poll surveyed a random sample of 767 women, finding that 44% claimed to give more emotional support than they received. Which of the following is the "parameter" of interest in these studies?</p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement><p>Those who said they gave more emotional support</p></statement>
+        </choice>
+        <choice correct="yes">
+          <statement><p>All American women</p></statement>
+        </choice>
+        <choice>
+          <statement><p>The 4500 women who responded</p></statement>
+        </choice>
+        <choice>
+          <statement><p>The proportion who said they received less emotional support</p></statement>
+        </choice>
+        <choice>
+          <statement><p>Other</p></statement>
+        </choice>
+      </choices>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-1-16-a2" label="PP1.16A.2">
+      <statement>
+        <p>Which poll's results do you think are more representative of the population of all American women? Explain.</p>
+        <p><var width="60"/></p>
+      </statement>
+      <response/>
+      <solution>
+        <p>The ABC News/Washington Post poll is more representative because it used a random sample, while the Hite survey suffered from voluntary response bias (only 4.5% response rate) and a biased sampling frame (women's groups).</p>
+      </solution>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice1-16B">
+    <title>Practice Problem 1.16B</title>
+
+    <p>An article published in the June 6, 2006 issue of the journal <em>Pediatrics</em> describes a survey on the topic of college students intentionally injuring themselves. Researchers invited 8300 undergraduate and graduate students at Cornell University and Princeton University to participate in the survey. A total of 2875 students responded, with 17% of them saying that they have purposefully injured themselves. Suppose we are interested in the proportion of self-injuries in the population of all college students.</p>
+
+    <exercise xml:id="practice-1-16-b-a" label="PP1.16B.1">
+      <statement>
+        <p>Identify the observational units and variable in this study. Also classify the variable as categorical (also binary?) or quantitative.</p>
+        <p><var width="60"/></p>
+      </statement>
+      <response/>
+      <solution>
+        <p>Observational units: College students at Cornell and Princeton who responded to the survey</p>
+        <p>Variable: Whether the student has purposefully injured themselves (categorical, binary: yes/no)</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-16-b-b" label="PP1.16B.2">
+      <statement>
+        <p>Identify the parameter and statistic. Also indicate appropriate symbols.</p>
+        <p><var width="60"/></p>
+      </statement>
+      <response/>
+      <solution>
+        <p>Parameter: <m>\pi</m> = proportion of all college students who have purposefully injured themselves</p>
+        <p>Statistic: <m>\hat{p} = 0.17</m> = proportion of survey respondents who said they have purposefully injured themselves</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-16-b-c" label="PP1.16B.3">
+      <statement>
+        <p>Do you think it likely that this sample is representative of the population of all college students in the world? What about all college students in the U.S.? Explain.</p>
+        <p><var width="60"/></p>
+      </statement>
+      <response/>
+      <solution>
+        <p>Not likely representative of all college students in the world or even the U.S. The sample comes from only two highly selective universities and has voluntary response bias (only 34.6% response rate).</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-16-b-d" label="PP1.16B.4">
+      <statement>
+        <p>Describe a population to which you might be willing to generalize the results.</p>
+        <p><var width="60"/></p>
+      </statement>
+      <response/>
+      <solution>
+        <p>Perhaps students at highly selective private universities in the northeastern U.S., though voluntary response bias remains a concern.</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="practice-1-16-b-e" label="PP1.16B.5">
+      <statement>
+        <p>For which of the following variables would you suspect this sample would be representative of the population of all U.S. college students? Justify your answer.</p>
+        <p>Favorite TV show: <var width="40"/></p>
+        <p>Height: <var width="40"/></p>
+        <p>Parental education: <var width="40"/></p>
+        <p>Eye color: <var width="40"/></p>
+      </statement>
+      <response/>
+      <solution>
+        <p>Height and eye color are most likely to be representative, as these biological traits are less likely to vary systematically between students at selective universities and all U.S. college students. Favorite TV show might differ due to cultural/regional differences. Parental education is likely much higher at selective universities than the general college population.</p>
+      </solution>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice1-16C">
+    <title>Practice Problem 1.16C</title>
+
+    <p>History Matters includes a report on the vote totals. Examine the data provided on that webpage.</p>
+
+    <exercise xml:id="practice-1-16-c-a" label="PP1.16C.1">
+      <statement>
+        <p>If you check the totals, they don't quite match up. Can you find the data entry errors? [Hint: Do any numerical values look suspicious to you? Do any states behave unusually?]</p>
+        <p><var width="60"/></p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-1-16-c-b" label="PP1.16C.2">
+      <statement>
+        <p>Notice the State Unknown row. If we don't know the state, how do we know the electoral count for those states… Based on the values given in that row, what do you think the counts for Landon and Roosevelt for individuals with unknown states actually were?</p>
+        <p><var width="60"/></p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice1-16D">
+    <title>Practice Problem 1.16D</title>
+
+    <exercise xml:id="practice-1-16-d-a" label="PP1.16D.1">
+      <statement>
+        <p>Does your class constitute a random sample of students from your school? Explain why or why not.</p>
+        <p><var width="60"/></p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-1-16-d-b" label="PP1.16D.2">
+      <statement>
+        <p>Suggest a variable for which your class should not be considered a representative sample of all students at your school. Explain why not.</p>
+        <p><var width="60"/></p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-1-16-d-c" label="PP1.16D.3">
+      <statement>
+        <p>Suggest a variable for which it might be reasonable to consider your class to be representative of all students at your school. Justify your choice.</p>
+        <p><var width="60"/></p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+</section>

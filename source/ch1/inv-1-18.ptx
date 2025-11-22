@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="investigation1-18">
+  <title>Investigation 1.18: Women Senators</title>
+
+  <p>Suppose that an alien lands on Earth, notices different sexes among humans, and sets out to estimate the proportion of humans that identify as women. Fortunately, the alien had a good statistics course on its home planet, so it knows to take a sample of human beings and produce a confidence interval. Suppose that the alien happened upon the members of the 2024 U.S. Senate as its sample of human beings, so the alien finds 25 women in its sample.</p>
+
+  <exercise xml:id="I1-18-a">
+    <title>Calculate confidence interval</title>
+    <statement>
+      <p>Use this sample information to form a 95% confidence interval for the actual proportion of all humans who are female.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>Sample: <m>n = 100</m>, <m>\hat{p} = 25/100 = 0.25</m></p>
+      <p><m>SE(\hat{p}) = \sqrt{\frac{0.25(0.75)}{100}} = \sqrt{0.001875} \approx 0.0433</m></p>
+      <p>95% CI: <m>0.25 \pm 1.96(0.0433) = 0.25 \pm 0.085 = (0.165, 0.335)</m></p>
+      <p>Or (16.5%, 33.5%)</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-18-b">
+    <title>Evaluate reasonableness</title>
+    <statement>
+      <p>Is this confidence interval a reasonable estimate of the actual proportion of all humans who are female?</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>No, this confidence interval is not a reasonable estimate. We know that approximately 50% of humans are female, which is well outside this interval.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-18-c">
+    <title>Explain why procedure fails</title>
+    <statement>
+      <p>Explain why the confidence interval procedure fails to produce an accurate estimate of the population parameter in this situation.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>The confidence interval procedure assumes the sample is randomly selected from the population. The U.S. Senate is not a random sample of all humans - it's a highly biased sample. Women are underrepresented in the Senate compared to the general population. Statistical procedures cannot correct for biased sampling.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-18-d">
+    <title>Interval for U.S. Senate</title>
+    <statement>
+      <p>It clearly does not make sense to use the confidence interval in (a) to estimate the proportion of women on Earth or even the U.S., but does the interval make sense for estimating the proportion of women in the 2024 U.S. Senate? Explain your answer.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+    <solution>
+      <p>No, it doesn't make sense to construct a confidence interval for the 2024 U.S. Senate because we have data on the entire population (all 100 senators). We know exactly that 25% of the 2024 U.S. Senate are women - there's no uncertainty and no need for an interval estimate. Confidence intervals are only useful when estimating an unknown parameter from a sample.</p>
+    </solution>
+  </exercise>
+
+  <paragraphs>
+    <title>Discussion</title>
+    <p><ul>
+      <li><p>First, statistical tests and confidence intervals do not compensate for the problems of a biased sampling procedure. If the sample is collected from the population in a biased manner, the ensuing confidence interval will be a biased, and potentially misleading, estimate of the population parameter of interest.</p></li>
+      <li><p>A second important point to remember is that confidence intervals and significance tests use sample statistics to estimate population or process parameters. When the data at hand constitute the entire population of interest (i.e., you have a census), then constructing a confidence interval from these data is meaningless. In this case, you know precisely that the proportion of women in the population of the 2024 U.S. Senators is 0.25 (exactly! no margin-of-error!), so it is senseless to construct a confidence interval from these data.</p></li>
+    </ul></p>
+  </paragraphs>
+
+</section>
