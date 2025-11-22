@@ -298,12 +298,15 @@
   <assemblage>
     <title>Probability Detour <mdash/> Binomial Approximation to Hypergeometric Distribution</title>
     
-    <p>If we instead used the binomial distribution to approximate probability of selecting an e-word from the Gettysburg Address, we would find</p>
-    <me>P(X = 1) = \binom{5}{1}(125/268)^1(143/268)^4 \approx 0.1890</me>
-    
-    <image source="images/binomhyper.png" width="40%">
-      <description>Comparison of binomial and hypergeometric distributions</description>
-    </image>
+    <sidebyside widths="65% 30%" valign="top">
+      <stack>
+        <p>If we instead used the binomial distribution to approximate probability of selecting an e-word from the Gettysburg Address, we would find</p>
+        <p><m>P(X = 1) = \binom{5}{1}(125/268)^1(143/268)^4 \approx 0.1890</m></p>
+      </stack>
+      <image source="images/binomhyper.png">
+        <description>Comparison of binomial and hypergeometric distributions</description>
+      </image>
+    </sidebyside>
     
     <p>These probability calculations work out to be very similar! This happens when the finite population we are sampling from is large compared to our sample size (e.g., <m>N > 20 \times n</m>). This means we can continue to use the binomial distribution to determine such probabilities and the expected number of successes <m>5(0.466) \approx 2.33</m> with <m>SD(X) \approx 1.115</m> successes. And when the sample size is large relative to the probability of success, we can approximate the binomial with the normal distribution.</p>
   </assemblage>
