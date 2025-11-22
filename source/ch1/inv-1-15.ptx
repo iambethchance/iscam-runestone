@@ -2,16 +2,52 @@
 <section xml:id="inv-1-15" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Investigation 1.15: Counting Concussions</title>
 
-  <p>Concussions, particularly among high school and collegiate athletes, have been given increased attention in recent years. A 2017 national Youth Risk Behavior Survey found about 15.1% of U.S. high school students reported having at least one concussion in the previous year. Prevalence was higher among those who played on a sports team. A student project group was interested in the probability of concussion among the male soccer and football players at their university. They sent a survey to the team rosters and found that 12 of the 33 respondents reported at least one concussion in the previous two years (2017<ndash/>2019). The anonymous survey was emailed to all 110 players, and included a list of injuries asking "yes or no questions about various injuries, in order to distract the athletes of the true purpose of our survey." Based on these data, is there evidence that the proportion of all 110 male soccer and football players at this university who had at least one concussion in the last 2 years is larger than 0.15?</p>
+  <sidebyside widths="65% 30%" valign="top">
+    <p>Concussions, particularly among high school and collegiate athletes, have been given increased attention in recent years. A 2017 national Youth Risk Behavior Survey found about 15.1% of U.S. high school students reported having at least one concussion in the previous year. Prevalence was higher among those who played on a sports team.</p>
+    <image source="images/Inv1.15intro.jpg">
+      <description>Image related to concussion study</description>
+    </image>
+  </sidebyside>
+  
+  <p>A student project group was interested in the probability of concussion among the male soccer and football players at their university. They sent a survey to the team rosters and found that 12 of the 33 respondents reported at least one concussion in the previous two years (2017<ndash/>2019). The anonymous survey was emailed to all 110 players, and included a list of injuries asking "yes or no questions about various injuries, in order to distract the athletes of the true purpose of our survey." Based on these data, is there evidence that the proportion of all 110 male soccer and football players at this university who had at least one concussion in the last 2 years is larger than 0.15?</p>
 
   <exercise xml:id="I1-15-a">
-    <title>Identify study components</title>
+    <title>Identify observational units</title>
     <statement>
-      <p>Identify the observational units and response variable in this study. Is the response variable quantitative or categorical? How are you defining a "success"?</p>
+      <p>Identify the observational units in this study.</p>
       <p><var width="60"/></p>
     </statement>
     <solution>
-      <p>The observational units are the 33 male soccer and football players who responded to the survey. The response variable is Did the player have at least one concussion in the past 2 years? This is a binary categorical variable. A "success" is having a concussion (or not having one - either is fine as long as you are consistent throughout the Investigation).</p>
+      <p>The 33 male soccer and football players who responded to the survey</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-15-a2">
+    <title>Identify response variable</title>
+    <statement>
+      <p>Identify the response variable in this study. How are you defining a "success"?</p>
+      <p><var width="60"/></p>
+    </statement>
+    <solution>
+      <p>The response variable is Did the player have at least one concussion in the past 2 years? A "success" is having a concussion (or not having one - either is fine as long as you are consistent throughout the Investigation).</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-15-a3">
+    <title>Variable type</title>
+    <statement>
+      <p>Is the response variable quantitative or categorical?</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement><p>Quantitative</p></statement>
+      </choice>
+      <choice correct="yes">
+        <statement><p>Categorical</p></statement>
+      </choice>
+    </choices>
+    <solution>
+      <p>This is a binary categorical variable.</p>
     </solution>
   </exercise>
 
@@ -49,13 +85,52 @@
   </exercise>
 
   <exercise xml:id="I1-15-d">
-    <title>Analyze sample proportion</title>
+    <title>Calculate sample proportion</title>
     <statement>
-      <p>What proportion of students in the sample reported a concussion? Is this larger than 0.15? Do you think it is likely to be representative of all varsity team football and soccer players at this school? Explain why or why not.</p>
+      <p>What proportion of students in the sample reported a concussion (rounded to 3 decimal places)?</p>
+      <p><var width="15"/></p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="0.364" tolerance="0.001">
+          <feedback>
+            <p>Correct! The sample proportion is <m>\hat{p} = 12/33 \approx 0.364</m>.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Not quite. Calculate 12 ÷ 33 and round to 3 decimal places.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <hint>
+      <p>Divide the number who reported a concussion by the total number of respondents.</p>
+    </hint>
+    <solution>
+      <p><m>12/33 \approx 0.364</m></p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-15-d2">
+    <title>Compare to 0.15</title>
+    <statement>
+      <p>Is this sample proportion larger than 0.15?</p>
+      <p><var width="30"/></p>
+    </statement>
+    <solution>
+      <p>Yes, 0.364 is clearly larger than 0.15.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="I1-15-d3">
+    <title>Assess representativeness</title>
+    <statement>
+      <p>Do you think it is likely to be representative of all varsity team football and soccer players at this school? Explain why or why not.</p>
       <p><var width="60"/></p>
     </statement>
     <solution>
-      <p><m>12/33 \approx 0.364</m>, which is clearly larger than 0.15. It is unlikely to be representative of all football and soccer players at this university. The responses were voluntary and therefore this was not a random sample, and the response rate was low (0.3).</p>
+      <p>It is unlikely to be representative of all football and soccer players at this university. The responses were voluntary and therefore this was not a random sample, and the response rate was low (0.3).</p>
     </solution>
   </exercise>
 
@@ -91,7 +166,7 @@
     </solution>
   </exercise>
 
-  <p>You should find your answers in (f) are not quite the same. This illustrates a violation of the independence assumption of our binomial model. However, if the population is large compared to the size of the sample, then the conditional probabilities are almost equal, and we can approximate with a binomial distribution. But when the population is not large, we need to take that lack of independence into account.</p>
+  <p>You should find your answers in <xref ref="I1-15-f"/> are not quite the same. This illustrates a violation of the independence assumption of our binomial model. However, if the population is large compared to the size of the sample, then the conditional probabilities are almost equal, and we can approximate with a binomial distribution. But when the population is not large, we need to take that lack of independence into account.</p>
 
   <assemblage>
     <title>Key Result: Sampling Without Replacement</title>
@@ -129,11 +204,12 @@
     <p>(Compare these to a binomial with <m>\pi = M/N</m>.)</p>
   </assemblage>
 
-  <assemblage>
+  <paragraphs>
     <title>Technology Detour <mdash/> Calculating Hypergeometric Probabilities</title>
     
+    <p>R: <c>iscamhyperprob</c> function</p>
     <hint>
-      <title>R: <c>iscamhyperprob</c> function</title>
+      <title>R instructions</title>
       <p>The iscamhyperprob function takes the following inputs:</p>
       <p><ul>
         <li><p><c>k</c>, the observed value of interest (or the difference in conditional proportions, assumed if value is less than one, including negative)</p></li>
@@ -145,8 +221,9 @@
       <p>For example: <c>iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)</c></p>
     </hint>
     
+    <p>JMP: Distribution Calculator</p>
     <hint>
-      <title>JMP: Distribution Calculator</title>
+      <title>JMP instructions</title>
       <p><ul>
         <li><p>Select Hypergeometric from the Distribution menu.</p></li>
         <li><p>Specify the Population Size, the number of successes in the population (Number of items) and the sample size.</p></li>
@@ -154,14 +231,28 @@
       </ul></p>
       <p>Note: To find <m>P(X \geq 12)</m>, we use <m>P(X > 11)</m>.</p>
     </hint>
-  </assemblage>
+  </paragraphs>
 
   <exercise xml:id="I1-15-g">
     <title>Calculate hypergeometric probability</title>
     <statement>
       <p>Continuing to suppose 17 of the 110 athletes had a concussion, use technology to find the probability that a random sample of 33 would have 12 or more successes.</p>
-      <p><var width="30"/></p>
+      <p><var width="15"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="0.0002" tolerance="0.00005">
+          <feedback>
+            <p>Correct! For <m>X</m> hypergeometric with <m>N = 110</m>, <m>M = 17</m>, <m>n = 33</m>, <m>P(X \geq 12) = 0.0002</m>.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Not quite. Use technology with the hypergeometric distribution: N=110, M=17, n=33. Find P(X ≥ 12).</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <hint>
       <p>Use the hypergeometric distribution with <m>N = 110</m>, <m>M = 17</m>, <m>n = 33</m>. Find <m>P(X \geq 12)</m>.</p>
     </hint>
@@ -184,7 +275,7 @@
   <exercise xml:id="I1-15-i">
     <title>Generalization to larger population</title>
     <statement>
-      <p>What does the p-value in (g) tell you about the proportion of all U.S. collegiate football and soccer players with a concussion?</p>
+      <p>What does the p-value in <xref ref="I1-15-g"/> tell you about the proportion of all U.S. collegiate football and soccer players with a concussion?</p>
       <p><var width="60"/></p>
     </statement>
     <solution>
@@ -225,7 +316,7 @@
     <exercise xml:id="practice-1-15-b" label="PP1.15B">
       <title>GSS non-sampling errors</title>
       <statement>
-        <p>Recall the GSS survey in Practice Problem 1.14. Identify potential non-sampling errors in such a study. What are some steps the GSS has taken/could take to avoid non-sampling errors?</p>
+        <p>Recall the GSS survey in <xref ref="practice-1-14-a"/>. Identify potential non-sampling errors in such a study. What are some steps the GSS has taken/could take to avoid non-sampling errors?</p>
       </statement>
       <response/>
     </exercise>
