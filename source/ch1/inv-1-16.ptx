@@ -20,10 +20,11 @@
     <response/>
     <solution>
       <p>Variable: Presidential vote preference; Type: Categorical (binary)</p>
-      <p>Population of interest: All U.S. voters in 1936; Sample: 2,376,523 respondents to the Literary Digest poll</p>
-      <p>Sampling frame: People with names/addresses from club rosters, city directories, vehicle registration lists, and telephone books</p>
-      <p>Parameter: <m>\pi</m> = proportion of all 1936 voters who would vote for Landon (unknown)</p>
-      <p>Statistic: <m>\hat{p}</m> = 0.54, proportion of poll respondents who said they would vote for Landon</p>
+      <p>Population of interest: All U.S. voters in 1936</p>
+      <p>Sample: 2.4 million respondents</p>
+      <p>Sampling frame: Telephone books and vehicle registration lists</p>
+      <p>Parameter: <m>\pi</m> = proportion of all U.S. voters who actually voted for Alf Landon</p>
+      <p>Statistic: <m>\hat{p} = 0.57</m> = proportion of sample who responded they would vote for Landon</p>
     </solution>
   </exercise>
 
@@ -35,7 +36,7 @@
     </statement>
     <response/>
     <solution>
-      <p>The 0.57 is the proportion among the two main candidates (Landon and Roosevelt only), while 0.54 includes all candidates in the poll.</p>
+      <p>The 0.57 represents the proportion among just Landon and Roosevelt (the two main candidates), while 0.54 includes other candidates like William Lemke (Union Party) in the denominator.</p>
     </solution>
   </exercise>
 
@@ -49,8 +50,8 @@
     </statement>
     <response/>
     <solution>
-      <p>1. The sampling frame (vehicle registration and telephone book lists) excluded poorer Americans who couldn't afford cars or phones, and these voters tended to be Democrats.</p>
-      <p>2. Voluntary response bias - those who chose to respond may have been more dissatisfied with the incumbent (Roosevelt) or had more time/resources to complete and mail surveys, potentially overrepresenting Republicans.</p>
+      <p>1. Oversampled Republicans because Republicans tended to have more money for cars, phones, etc. in 1936 (bad sampling frame)</p>
+      <p>2. Voluntary response bias. More likely to hear from unhappy people (vs. supporting the incumbent)</p>
     </solution>
   </exercise>
 
@@ -64,7 +65,7 @@
     </statement>
     <response/>
     <solution>
-      <p>Approximately 57% (the exact calculation depends on which rows are summed)</p>
+      <p>C52/AA52 = 0.544 (approximately 54.4%)</p>
     </solution>
   </exercise>
 
@@ -76,7 +77,8 @@
     </statement>
     <response/>
     <solution>
-      <p>Sum: approximately 2,266,566 respondents; Proportion: approximately 0.51 (51% voted Republican in 1932)</p>
+      <p>Formula: (c52 + l52 + t52)/(sum(c52:g52)+sum(l52:o52)+sum(t52:w52))</p>
+      <p>Proportion: 0.507 (approximately 50.7% voted Republican in 1932)</p>
     </solution>
   </exercise>
 
@@ -88,7 +90,8 @@
     </statement>
     <response/>
     <solution>
-      <p>In the actual 1932 election, approximately 40% voted for Republican Hoover. The Literary Digest poll had too many Republican voters (51% vs 40%). We could weight the responses to adjust for this overrepresentation.</p>
+      <p>15,761,254/(15,761,254 + 22,821,277 + 73,158) = 0.399</p>
+      <p>The proportion who claimed to vote Republican in the survey (0.507) is noticeably larger than the proportion that actually voted Republican (0.399). This supports the suspicion that the survey overrepresented Republicans compared to the voting population.</p>
     </solution>
   </exercise>
 
@@ -125,6 +128,10 @@
       <p><var width="30"/></p>
     </statement>
     <response/>
+    <solution>
+      <p>Using 0.78 as the first multiplier (so watch for rounding discrepancies):</p>
+      <p>717775.5 + 299320.623 + 12541.412 + 1838.1 + 53412.333 + 48434.568 = 1,133,322.536</p>
+    </solution>
   </exercise>
 
   <exercise xml:id="I1-16-h">
@@ -134,6 +141,9 @@
       <p><var width="30"/></p>
     </statement>
     <response/>
+    <solution>
+      <p>111494.76 + 854890.218 + 41039.76 + 1608.616 + 64617.025 + 44320.8975 = 1,117,971.277</p>
+    </solution>
   </exercise>
 
   <exercise xml:id="I1-16-i">
@@ -144,7 +154,8 @@
     </statement>
     <response/>
     <solution>
-      <p>The adjusted percentage for Roosevelt is approximately 48-50% (between these two candidates), which is larger than the original Literary Digest prediction of 41%.</p>
+      <p>Proportion (for these two) voting Roosevelt is now about 0.497 (49.7%), up from 0.429 for the 2 candidates (though still below half).</p>
+      <p>This is larger than the original Literary Digest prediction.</p>
     </solution>
   </exercise>
 
@@ -166,6 +177,9 @@
       <p><var width="60"/></p>
     </statement>
     <response/>
+    <solution>
+      <p>In this case, the method using data from 1928 and 1932 seems to be the best as the center of the state by state proportions is at least centered around the country proportion, rather than most of the states being too low.</p>
+    </solution>
   </exercise>
 
   <paragraphs>
