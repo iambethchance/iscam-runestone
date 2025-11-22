@@ -17,12 +17,9 @@
           <cell><m>n = 361</m></cell>
         </row>
         <row>
-          <cell><p><alert>Wald interval</alert> (aka normal approximation aka asymptotic)</p>
-          <p>Finds the values of <m>\pi</m> so that <m>P(-z \le \frac{\hat{p} - \pi}{\sqrt{\hat{p}(1-\hat{p})/n}} \le z) = C</m></p>
-          <p>Formula: <m>\hat{p} \pm z^* \sqrt{\hat{p}(1-\hat{p})/n}</m></p>
-          <p>Tendency for poor coverage properties if small <m>n</m> or extreme <m>\pi</m></p></cell>
-          <cell right="minor"><p>(.5521,</p><p>1.048)</p></cell>
-          <cell><p>(.1557,</p><p>.2377)</p></cell>
+          <cell><alert>Wald interval</alert> (aka normal approximation aka asymptotic). Finds the values of <m>\pi</m> so that <m>P(-z \le \frac{\hat{p} - \pi}{\sqrt{\hat{p}(1-\hat{p})/n}} \le z) = C</m>. Formula: <m>\hat{p} \pm z^* \sqrt{\hat{p}(1-\hat{p})/n}</m>. Tendency for poor coverage properties if small <m>n</m> or extreme <m>\pi</m></cell>
+          <cell right="minor">(.5521, 1.048)</cell>
+          <cell>(.1557, .2377)</cell>
         </row>
         <row bottom="minor">
           <cell>TBI applet or JMP or R (iscamonepropztest)</cell>
@@ -30,12 +27,9 @@
           <cell></cell>
         </row>
         <row>
-          <cell><p><alert>Plus Four</alert> (special case of Adjusted Wald)</p>
-          <p>(95%) Add two successes and two failures to sample results</p>
-          <p>Formula: <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{n}}</m>; where <m>\tilde{p} = (X + 2)/(n + 4)</m> and <m>\tilde{n} = n + 4</m></p>
-          <p>Very good coverage properties</p></cell>
-          <cell right="minor"><p>(.4776,</p><p>.9509)</p></cell>
-          <cell><p>(.1590,</p><p>.2410)</p></cell>
+          <cell><alert>Plus Four</alert> (special case of Adjusted Wald). (95%) Add two successes and two failures to sample results. Formula: <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{n}}</m>; where <m>\tilde{p} = (X + 2)/(n + 4)</m> and <m>\tilde{n} = n + 4</m>. Very good coverage properties</cell>
+          <cell right="minor">(.4776, .9509)</cell>
+          <cell>(.1590, .2410)</cell>
         </row>
         <row bottom="minor">
           <cell>TBI applet or JMP or R after adjust sample data</cell>
@@ -43,24 +37,19 @@
           <cell></cell>
         </row>
         <row bottom="minor">
-          <cell><p><alert>Adjusted Wald</alert> (aka Agresti-Coull)</p>
-          <p><m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{\tilde{n}}}</m>; <m>\tilde{p} = (X + 0.5z^{*2})/(n + z^{*2})</m>, <m>\tilde{n} = n + z^{*2}</m></p>
-          <p>Very good coverage properties.</p></cell>
-          <cell right="minor"><p>(.4794,</p><p>.9541)</p></cell>
-          <cell><p>(.1588,</p><p>.2409)</p></cell>
+          <cell><alert>Adjusted Wald</alert> (aka Agresti-Coull). <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{\tilde{n}}}</m>; <m>\tilde{p} = (X + 0.5z^{*2})/(n + z^{*2})</m>, <m>\tilde{n} = n + z^{*2}</m>. Very good coverage properties.</cell>
+          <cell right="minor">(.4794, .9541)</cell>
+          <cell>(.1588, .2409)</cell>
         </row>
         <row>
-          <cell><p><alert>Wilson interval</alert> (aka Score interval)</p>
-          <p>Finds the values of <m>\pi</m> so that <m>P(-z \le \frac{\hat{p} - \pi}{\sqrt{\pi(1-\pi)/n}} \le z) = C</m></p>
-          <p>Formula: <m>\frac{\hat{p} + \frac{1}{2n}z^2 \pm z \sqrt{\frac{\hat{p}(1-\hat{p})}{n} + \frac{z^2}{4n^2}}}{1 + z^2/n}</m></p>
-          <p>Can have poor coverage properties with <m>\pi</m> near 0 or 1.</p></cell>
-          <cell right="minor"><p>(.4902,</p><p>.9433)</p></cell>
-          <cell><p>(.1590,</p><p>.2408)</p></cell>
+          <cell><alert>Wilson interval</alert> (aka Score interval). Finds the values of <m>\pi</m> so that <m>P(-z \le \frac{\hat{p} - \pi}{\sqrt{\pi(1-\pi)/n}} \le z) = C</m>. Formula: <m>\frac{\hat{p} + \frac{1}{2n}z^2 \pm z \sqrt{\frac{\hat{p}(1-\hat{p})}{n} + \frac{z^2}{4n^2}}}{1 + z^2/n}</m>. Can have poor coverage properties with <m>\pi</m> near 0 or 1.</cell>
+          <cell right="minor">(.4902, .9433)</cell>
+          <cell>(.1590, .2408)</cell>
         </row>
         <row>
           <cell>JMP (Analyze > Distribution) or R prop.test w/o continuity corr.</cell>
-          <cell right="minor"><p>(.4422,</p><p>.9646)</p></cell>
-          <cell><p>(.1577,</p><p>.2423)</p></cell>
+          <cell right="minor">(.4422, .9646)</cell>
+          <cell>(.1577, .2423)</cell>
         </row>
         <row bottom="minor">
           <cell>R prop.test w/ continuity corr.</cell>
@@ -68,11 +57,9 @@
           <cell></cell>
         </row>
         <row>
-          <cell><p><alert>Exact Binomial</alert> (Clopper-Pearson)</p>
-          <p>Finds the values of <m>\pi</m> so <m>P(X \le k) \ge (1 - C)/2</m> and <m>P(X \ge k) \ge (1 - C)/2</m> where <m>k</m> is observed number of successes</p>
-          <p>Tends to be "conservative" (longer than necessary)</p></cell>
-          <cell right="minor"><p>(.4439,</p><p>.9748)</p></cell>
-          <cell><p>(.1569,</p><p>.2415)</p></cell>
+          <cell><alert>Exact Binomial</alert> (Clopper-Pearson). Finds the values of <m>\pi</m> so <m>P(X \le k) \ge (1 - C)/2</m> and <m>P(X \ge k) \ge (1 - C)/2</m> where <m>k</m> is observed number of successes. Tends to be "conservative" (longer than necessary)</cell>
+          <cell right="minor">(.4439, .9748)</cell>
+          <cell>(.1569, .2415)</cell>
         </row>
         <row bottom="minor">
           <cell>JMP (summary stats) or R using iscambinomtest</cell>
@@ -80,11 +67,9 @@
           <cell></cell>
         </row>
         <row>
-          <cell><p><alert>Blaker</alert> (Inv 1.6)</p>
-          <p>Finds the values of <m>\pi</m> so the two-sided p-value (using tail probabilities) is less <m>(1 - C)/2</m>.</p>
-          <p>Tends to be shorter than the Clopper-Pearson interval.</p></cell>
-          <cell right="minor"><p>(.4445,</p><p>.9632)</p></cell>
-          <cell><p>(.1570,</p><p>.2403)</p></cell>
+          <cell><alert>Blaker</alert> (Inv 1.6). Finds the values of <m>\pi</m> so the two-sided p-value (using tail probabilities) is less <m>(1 - C)/2</m>. Tends to be shorter than the Clopper-Pearson interval.</cell>
+          <cell right="minor">(.4445, .9632)</cell>
+          <cell>(.1570, .2403)</cell>
         </row>
         <row bottom="minor">
           <cell>R (blakerCI)</cell>
