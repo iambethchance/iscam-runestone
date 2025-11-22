@@ -13,9 +13,9 @@
         
         <p>p-value:</p>
         <ul>
-          <li><p>If <m>H_a: \pi > \pi_0</m>, the p-value is <m>P(Z > z_0)</m>.</p></li>
-          <li><p>If <m>H_a: \pi \lt \pi_0</m>, the p-value is <m>P(Z \lt z_0)</m>.</p></li>
-          <li><p>If <m>H_a: \pi \neq \pi_0</m>, the p-value is <m>2P(Z > |z_0|)</m></p></li>
+          <li><p>If <m>H_a: \pi > \pi_0</m>, the p-value is <m>P(Z \geq z_0)</m>.</p></li>
+          <li><p>If <m>H_a: \pi \lt \pi_0</m>, the p-value is <m>P(Z \leq z_0)</m>.</p></li>
+          <li><p>If <m>H_a: \pi \neq \pi_0</m>, the p-value is <m>2P(Z \geq |z_0|)</m></p></li>
         </ul>
       </stack>
       
@@ -44,34 +44,34 @@
     <title>Technology</title>
     
     <p><term><url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=2">Theory-Based Inference applet: One Proportion</url></term></p>
-    <ul>
+    <p><ul>
       <li><p>Specify the sample size and either the sample count or the sample proportion</p>
-        <ul>
+        <p><ul>
           <li><p>Remember to adjust these values if performing the Adjusted Wald interval</p></li>
-        </ul>
+        </ul></p>
       </li>
       <li><p>Check the Test of Significance box and/or the Confidence Interval box</p></li>
       <li><p>Specify the value of <m>\pi_0</m>, use the <m>\lt</m> button to change the direction of the alternative</p></li>
       <li><p>Specify the confidence level</p></li>
-    </ul>
+    </ul></p>
     
     <p><term>R:</term> <c>iscamonepropztest(observed, n, hypothesized, alternative, conf.level)</c></p>
-    <ul>
+    <p><ul>
       <li><p>Specify the number of successes or <m>\hat{p}</m>, <m>n</m>, <m>\pi_0</m>, alternative, and confidence level (in that order)</p>
-        <ul>
+        <p><ul>
           <li><p>Remember to adjust inputs if performing the Adjusted Wald interval</p></li>
-        </ul>
+        </ul></p>
       </li>
       <li><p>For the alternative, choose "two.sided" or "less" or "greater" (with the quotes)</p></li>
       <li><p>If no alternative is specified, be sure to label the confidence level (conf.level)</p></li>
-    </ul>
+    </ul></p>
     
     <p><term>JMP:</term> Analyze > Distribution</p>
-    <ul>
+    <p><ul>
       <li><p>Use a column of data or Tabled data (column of outcomes, column of counts)</p></li>
       <li><p>Use the hot spot to select Test Probabilities (specify the hypothesized probability for success) and select the alternative hypothesis (the "Pearson" two-sided p-value matches the normal approximation, the one-sided p-value is the exact binomial) and press Done.</p></li>
       <li><p>Use the hot spot to select Confidence Interval and select the confidence level for the Score confidence interval</p></li>
-    </ul>
+    </ul></p>
   </assemblage>
 
 </section>
