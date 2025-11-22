@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="chapter1-wrap-up" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Chapter 1 Wrap-Up</title>
+
+  <introduction>
+    <p>This section provides guided examples for practice, followed by a comprehensive chapter summary and technology reference guides.</p>
+  </introduction>
+
+  <xi:include href="./example-1-1.ptx"/>
+  <xi:include href="./example-1-2.ptx"/>
+  <xi:include href="./example-1-3.ptx"/>
+
+  <subsection xml:id="chapter1-summary">
+    <title>Chapter 1 Summary</title>
+
+    <p>In this chapter, you have focused on making inferences based on a representative sample from a random process that can be repeated indefinitely under identical conditions or from a finite population, for a single binary variable. You have learned how to model the chance variation in the binary outcomes that arise from such a sampling process.</p>
+
+    <p>You utilized simulation as a powerful tool for assessing the behavior of the outcomes and estimating the likelihood of different results for the sample proportion. In particular, you saw you could estimate the p-value of a test to measure how unlikely we are to get a sample proportion at least as extreme as what was observed under certain conjectures (the null hypothesis) about the process or population from which the sample was drawn.</p>
+
+    <p>Then you used the binomial distribution to calculate one-sided and two-sided p-values exactly.</p>
+
+    <p>As a third alternative for estimating p-values and confidence intervals, you considered the normal approximation to the binomial distribution (the Central Limit Theorem for a sample proportion). In this case, we also found z-score values (test statistics). These are informative in accompanying p-value calculations to provide another assessment of how unusual an observation is. We often flag an observation as surprising or unusual if the |z-score| value exceeds 2.</p>
+
+    <p>In each case, when the p-value is small, we have evidence that the observed result did not happen solely due to the random chance inherent in the sampling process (a "statistically significant result"). The smaller the p-value, the stronger the evidence against the null hypothesis.</p>
+
+    <p>Still, we must keep in mind that we are merely measuring the strength of evidence – we may be making a mistake whenever we decide whether or not to reject a null hypothesis. If we decide the observed result did not happen by chance and so reject the null hypothesis, there is still a small probability that the null hypothesis is true and that the observed result did occur by chance (the probability of committing a Type I error). If we decide the result did happen by chance, there is still a probability that something other than random chance was involved (a Type II error). It is important to consider the probabilities of these errors when completing your assessment of a study. In particular, the sample size of the study can influence the probability of a Type II error and the related idea of power, which is the probability of correctly rejecting a null hypothesis when it is false.</p>
+
+    <p>You began your study of confidence intervals as specifying an interval of plausible values for the process probability based on what you observed in the sample. These were the hypothesized parameter values that generated two-sided p-values above the level of significance <m>\alpha</m>. In other words, they were the parameter values for which your sample result would not be surprising. When the sample size is large (large enough for the normal approximation to be valid), we saw that these confidence intervals have a very convenient form: statistic ± margin-of-error where margin-of-error = critical value × standard error of statistic. The critical value is the number of standard errors you want to use corresponding to a specified confidence level. Keep in mind that the level of confidence provides a measure of how reliable the procedure will be in the long-run (which can vary by procedure and sample conditions).</p>
+
+    <p>Finally, you saw that this reasoning process holds equally well when the sampling is from a finite population, where the randomness in our model comes from the selection of the observational units, not from the observational units' individual outcomes. In which case, use of random sampling allows us to believe that our sample is representative of (has similar characteristics as) the larger population. [But still be on the look out for possible non-sampling errors (e.g., wording of a question).] Use of simple random samples also allows us to estimate the sample-to-sample variation in our statistic. Technically we should use the hypergeometric distribution to model the behavior of the statistic. But if the population is large compared to the size of the sample (e.g., more than 20 times larger), then we can still use the binomial distribution; and if the sample size is also large we can use normal-based methods to determine p-values and confidence intervals (as well as power and sample size calculations). The interpretation of the p-value is essentially the same but now applies to the randomness inherent in the sampling process. Also keep in mind that the confidence interval aims to capture the proportion of the population having the characteristic of interest (which is equivalent to the probability of selecting one individual from the population with that characteristic when the population is large).</p>
+  </subsection>
+
+  <subsection xml:id="what-you-learned">
+    <title>Summary of What You Have Learned in This Chapter</title>
+
+    <p><ul>
+      <li><p>The reasoning process of statistical inference</p></li>
+      <li><p>The terms <term>parameter</term> to describe a numerical characteristic of a population or process and <term>statistic</term> to describe a numerical characteristic of a sample</p></li>
+      <li><p>The symbol <m>\pi</m> to represent the probability of success for a process or the population proportion and <m>\hat{p}</m> to represent a sample proportion of successes</p></li>
+      <li><p>The fundamental notion of sampling variability and how to simulate empirical sampling (null) distributions "by hand" (e.g., using cards) and using technology (e.g., with an applet)</p></li>
+      <li><p>How to estimate and interpret a p-value</p></li>
+      <li><p>How to use technology to calculate binomial probabilities, as well as exact p-values and confidence intervals (see Example 1.1)</p></li>
+      <li><p>When and how to apply the Central Limit Theorem for a sample proportion to approximate the binomial distribution (for the values of <m>n</m> and <m>\pi</m>) with a normal distribution (and how to determine the mean and standard deviation of this distribution)</p></li>
+      <li><p>How to use the technology to estimate p-values and confidence intervals using the normal approximation to the binomial distribution</p></li>
+      <li><p>The formal structure of a test of significance about a process/population parameter (define the parameter, state null and alternative hypotheses, determine which probability model to use, calculate the p-value as specified by the alternative hypothesis under the assumption that the null hypothesis is true, decide to reject or fail to reject the null hypothesis for the stated level of significance, and state the conclusion in context)</p></li>
+      <li><p>How to calculate and interpret z-scores</p></li>
+      <li><p>What factors affect the size of the p-value</p></li>
+      <li><p>Type I and Type II errors, Power: what they mean, how their probabilities are determined, and how they are affected by sample size and each other</p></li>
+      <li><p>Either through Binomial or Normal calculations (see Example 1.2)</p></li>
+      <li><p>The idea of a confidence interval as the set of plausible values of the parameter that could have reasonably led to the sample result that was observed</p></li>
+      <li><p>How to interpret the "confidence level" of an interval procedure</p></li>
+      <li><p>What factors affect the width, midpoint, and coverage rate of a confidence interval procedure</p></li>
+      <li><p>The logic and trade-offs behind different confidence interval procedures</p></li>
+      <li><p>The distinction between statistical and practical significance and how we assess each</p></li>
+      <li><p>Biased sampling methods systematically over-estimate or under-estimate the parameter; the sampling distribution of a statistic from an unbiased sampling method will center at the value of the parameter of interest</p></li>
+      <li><p>Random sampling eliminates sampling bias and allows us to use results from our sample to represent the population</p></li>
+      <li><p>Ways to try to avoid non-sampling errors in a sample survey (see Investigation 1.15; Example 1.3)</p></li>
+    </ul></p>
+  </subsection>
+
+  <subsection xml:id="technology-summary">
+    <title>Technology Summary</title>
+
+    <p>You used applets to explore sampling distributions:</p>
+    <p><ul>
+      <li><p>The "One Proportion Inference" applet allowed you to explore properties of the binomial distribution. This applet provides both empirical and exact binomial probability calculations. This is similar to what you can do with the "Reese's Pieces" applet.</p></li>
+      <li><p>The "Simulating Power" applet allowed you to compare the distribution under the null hypothesis to the distribution under an alternative hypothesis and consider the probabilities of Type I and Type II errors and how they are controlled.</p></li>
+      <li><p>The "Simulating Confidence Intervals" applet allowed you to compare the coverage rates of the Wald, Plus Four/Adjusted Wald, Blaker, and Score intervals</p></li>
+    </ul></p>
+
+    <p>You used applets to perform normal probability calculations:</p>
+    <p><ul>
+      <li><p>The "Normal Probability Calculator" applet allowed you to sketch, label, and find areas under a normal curve</p></li>
+      <li><p>The "Theory-Based Inference" applet allowed you to carry out a test of significance for a process probability and to find a two-sided confidence interval using the normal approximation to the binomial.</p></li>
+    </ul></p>
+  </subsection>
+
+  <subsection xml:id="r-quick-reference">
+    <title>Quick Reference to ISCAM R Workspace Functions</title>
+
+    <table>
+      <title>R Commands for One Proportion Analysis</title>
+      <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
+        <row header="yes" bottom="major">
+          <cell>Procedure Desired</cell>
+          <cell>Command/Menu</cell>
+        </row>
+        <row>
+          <cell>Loading data into R</cell>
+          <cell><p>RStudio: Import Dataset</p><p>PC: read.table("clipboard", header = T)</p><p>Mac: read.table("pipe("pbpaste"), header = T)</p></cell>
+        </row>
+        <row>
+          <cell>Tallying outcomes</cell>
+          <cell>table(data)</cell>
+        </row>
+        <row>
+          <cell>Create a Bar Graph</cell>
+          <cell><p>barplot(table(data), xlab = "", ylab = "")</p><p>barplot(c(c1, c2), names.arg = c("", ""))</p></cell>
+        </row>
+        <row>
+          <cell>Calculate Binomial probabilities and quantiles</cell>
+          <cell><p>iscambinomprob(k, n, pi, lower.tail =)</p><p>iscaminvbinom(prob, n, pi, lower.tail = )</p></cell>
+        </row>
+        <row>
+          <cell>Carry out an exact binomial test or confidence interval</cell>
+          <cell>iscambinomtest(k, n, pi, direction = "greater", "less", "two.sided", conf.level = c(90, 95))</cell>
+        </row>
+        <row>
+          <cell>Calculate Normal probabilities and quantiles</cell>
+          <cell><p>iscamnormprob(x, mu, sigma, "above", "x-axis-label", x2)</p><p>iscaminvnormprob(prob, direction = "above")</p></cell>
+        </row>
+        <row>
+          <cell>Carry out the One Proportion z-procedures</cell>
+          <cell>iscamonepropztest(k or k/n, n, pi, direction = "greater", conf.level = .90)</cell>
+        </row>
+        <row>
+          <cell>Binomial/Normal with continuity correction</cell>
+          <cell>iscambinomnorm(k, n, pi, "two.sided")</cell>
+        </row>
+      </tabular>
+    </table>
+  </subsection>
+
+  <subsection xml:id="jmp-quick-reference">
+    <title>Quick Reference to JMP Commands</title>
+
+    <table>
+      <title>JMP Commands for One Proportion Analysis</title>
+      <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
+        <row header="yes" bottom="major">
+          <cell>Procedure Desired</cell>
+          <cell>Menu</cell>
+        </row>
+        <row>
+          <cell>Tallying outcomes</cell>
+          <cell>Analyze > Tabulate</cell>
+        </row>
+        <row>
+          <cell>Create a Bar Graph</cell>
+          <cell><p>Analyze > Tabulate > Show Chart</p><p>or Graph > Graph Builder or Analyze > Distribution</p></cell>
+        </row>
+        <row>
+          <cell>Calculate Binomial probabilities and quantiles</cell>
+          <cell>Distribution Calculator (ISCAM Journal file)</cell>
+        </row>
+        <row>
+          <cell>Carry out an exact binomial test</cell>
+          <cell><p>Analyze > Distribution, Test Probabilities (one-sided)</p><p>Journal file: Confidence Interval for One Proportion (Summary Stats)</p></cell>
+        </row>
+        <row>
+          <cell>Calculate Normal probabilities and quantiles</cell>
+          <cell>Distribution Calculator (ISCAM Journal file)</cell>
+        </row>
+        <row>
+          <cell>One proportion z procedures</cell>
+          <cell><p>Journal file: Hypothesis Test for One Proportion</p><p>Journal file: Confidence Interval for One Proportion</p></cell>
+        </row>
+        <row>
+          <cell>Calculate Hypergeometric probabilities</cell>
+          <cell>Distribution Calculator (ISCAM Journal file)</cell>
+        </row>
+      </tabular>
+    </table>
+  </subsection>
+
+  <subsection xml:id="procedure-choice">
+    <title>Choice of Procedures for Analyzing One Proportion</title>
+
+    <table>
+      <title>Statistical Procedures Summary</title>
+      <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
+        <row header="yes" bottom="major">
+          <cell>Aspect</cell>
+          <cell>Random Process</cell>
+          <cell>Finite Population</cell>
+        </row>
+        <row>
+          <cell>Study design</cell>
+          <cell colspan="2">One binary variable</cell>
+        </row>
+        <row>
+          <cell>Parameter</cell>
+          <cell><m>\pi</m> = probability of success</cell>
+          <cell><m>\pi</m> = population proportion</cell>
+        </row>
+        <row>
+          <cell>Null Hypothesis</cell>
+          <cell colspan="2"><m>H_0: \pi = \pi_0</m></cell>
+        </row>
+        <row>
+          <cell>Simulation</cell>
+          <cell>Random sample from binomial process</cell>
+          <cell>Random sample from a finite population</cell>
+        </row>
+        <row>
+          <cell>Exact distribution</cell>
+          <cell><p>Binomial distribution (<m>n</m>, <m>\pi_0</m>)</p><p><m>E(\hat{p}) = \pi</m></p><p><m>SD(\hat{p}) = \sqrt{\pi(1-\pi)/n}</m></p></cell>
+          <cell><p>Hypergeometric (<m>N</m>, <m>M</m>, <m>n</m>)</p><p><m>E(\hat{p}) = M/N</m></p><p><m>SD(\hat{p}) = \sqrt{\pi(1-\pi)/n}\sqrt{(N-n)/(N-1)}</m></p></cell>
+        </row>
+        <row>
+          <cell>Valid when (for z procedures)</cell>
+          <cell>At least 10 successes and 10 failures</cell>
+          <cell>Population size > 20n; At least 10 successes and 10 failures</cell>
+        </row>
+        <row>
+          <cell>Standardized statistic</cell>
+          <cell colspan="2"><m>z_0 = (\hat{p} - \pi_0)/\sqrt{\pi_0(1-\pi_0)/n}</m></cell>
+        </row>
+        <row>
+          <cell>Confidence interval</cell>
+          <cell colspan="2"><p>Exact Binomial: all plausible values with two-sided p-value > 0.05</p><p>Wald: <m>\hat{p} \pm z^*\sqrt{\hat{p}(1-\hat{p})/n}</m></p><p>Adjusted Wald: <m>\tilde{p} \pm z^*\sqrt{\tilde{p}(1-\tilde{p})/\tilde{n}}</m></p><p>where <m>\tilde{p} = (X + 0.5z^{*2})/(n + z^{*2})</m> and <m>\tilde{n} = n + z^{*2}</m></p><p>(For 95% confidence, add two successes and two failures.)</p></cell>
+        </row>
+      </tabular>
+    </table>
+  </subsection>
+
+  <subsection xml:id="appendix-stratified">
+    <title>Chapter 1 Appendix: Stratified Random Sampling</title>
+
+    <p>Another way to reduce variability without taking larger samples is to take even more care in our sampling. For example, a stratified sampling method splits the population into homogenous groups first, and then samples a preset proportion from each subgroup. In the Gettysburg Address example, if we suspect nouns tend to be longer than non-nouns but worry that with only 16% nouns in the population we could easily end up with a sample without nouns, we can force the sample to contain 3 nouns and 17 non-nouns. This method will again be unbiased and if we stratify on a useful variable, we should find even less random sampling variability. Below we see in this case that in stratified random samples of size 20, there is a little bit less variability in the distribution of sample means (though not much here).</p>
+
+    <figure xml:id="fig-stratified-comparison">
+      <caption>Comparison of Simple Random Samples vs. Stratified Samples</caption>
+      <sidebyside widths="45% 45%">
+        <figure>
+          <caption>Simple random samples (n = 20)</caption>
+          <image source="images/simple-random-sample.png">
+            <description>Distribution of sample means from simple random sampling</description>
+          </image>
+        </figure>
+        <figure>
+          <caption>Stratified samples (3 nouns, 17 non-nouns)</caption>
+          <image source="images/stratified-sample.png">
+            <description>Distribution of sample means from stratified sampling</description>
+          </image>
+        </figure>
+      </sidebyside>
+    </figure>
+  </subsection>
+
+</section>
