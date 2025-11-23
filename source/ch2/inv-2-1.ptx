@@ -336,8 +336,12 @@ hist(births2$birthweight, xlab="birth weight")
   <exercise xml:id="inv2-1-h" label="I2.1h">
     <title>Subset by gestation period</title>
     <statement>
-      <p>Now, further subset the births2 data based on whether or not the pregnancy lasted at least 37 weeks (i.e., <c>OEG == 2</c>). [R Hints: Edit the previous command, using births2 (two places). Use "==" for an equality comparison.] How many observations do you end up with?</p>
+      <p>Now, further subset the births2 data based on whether or not the pregnancy lasted at least 37 weeks (i.e., <c>OEG == 2</c>). How many observations do you end up with?</p>
     </statement>
+    <hint>
+      <title>R Hints</title>
+      <p>Edit the previous command, using births2 (two places). Use "==" for an equality comparison.</p>
+    </hint>
     <response/>
   </exercise>
   
@@ -352,7 +356,7 @@ hist(births2$birthweight, xlab="birth weight")
   <paragraphs>
     <title>Numerical Summaries</title>
     
-    <p>Let's use this as our final dataset and use technology to calculate some helpful numerical summaries of the distribution, namely ones that describe the center (e.g., mean, median), variability (e.g., standard deviation), and skewness. The "skewness statistic" involves <m>\Sigma((y_i-\bar{y})/s)^3</m>, so positive values indicate a distribution that is skewed right, negative values indicate a distribution that is skewed left, and values near zero indicate a symmetric distribution.</p>
+    <p>Let's use this as our final dataset and use technology to calculate some helpful numerical summaries of the distribution, namely ones that describe the center (e.g., mean, median), variability (e.g., standard deviation), and skewness. The <term>skewness statistic</term> involves <m>\Sigma((y_i-\bar{y})/s)^3</m>, so positive values indicate a distribution that is skewed right, negative values indicate a distribution that is skewed left, and values near zero indicate a symmetric distribution.</p>
   </paragraphs>
   
   <paragraphs xml:id="tech-detour-numerical-summaries">
@@ -384,7 +388,18 @@ iscamsummary(births3$birthweight, digits=2)
   <exercise xml:id="inv2-1-j" label="I2.1j">
     <title>Interpret numerical summaries</title>
     <statement>
-      <p>Determine and interpret the mean, standard deviation, and skewness of these data.</p>
+      <p>Determine the mean, standard deviation, and skewness of these data.</p>
+      <p>Mean: <var width="10"/></p>
+      <p>Standard deviation: <var width="10"/></p>
+      <p>Skewness: <var width="10"/></p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-1-j2" label="I2.1j2">
+    <title>Interpret numerical summaries</title>
+    <statement>
+      <p>Interpret the mean, standard deviation, and skewness values in context.</p>
     </statement>
     <response/>
   </exercise>
@@ -411,61 +426,80 @@ iscamsummary(births3$birthweight, digits=2)
     <response/>
   </exercise>
   
-  <paragraphs>
-    <title>Normal Distribution Overlay</title>
+  <paragraphs xml:id="tech-detour-normal-overlay">
+    <title>Technology Detour – Normal Distribution Overlay</title>
     
     <p>Many software programs will allow you to overlay a theoretical normal distribution to see how well it matches your data, using the mean and standard deviation from the observed data.</p>
+    
+    <exercise xml:id="tech-detour-r-normal-overlay" label="Normal Overlay - R">
+      <title>Add Normal Overlay in R</title>
+      <statement>
+        <p>Add an overlay of a normal model on the distribution of birthweight data. (First create the histogram as above.)</p>
+        <program language="r" interactive="sage">
+          <input>
+iscamaddnorm(births3$birthweight, main, xlab, bins)
+          </input>
+        </program>
+      </statement>
+    </exercise>
+    
+    <exercise xml:id="tech-detour-jmp-normal-overlay" label="Normal Overlay - JMP">
+      <title>Add Normal Overlay in JMP</title>
+      <statement>
+        <p>Add an overlay of a normal model on the distribution of birthweight data.</p>
+        <p>Use the hot spot and select Continuous Fit &gt; Normal.</p>
+      </statement>
+    </exercise>
   </paragraphs>
   
   <exercise xml:id="inv2-1-m" label="I2.1m">
-    <title>Add normal overlay</title>
+    <title>Assess normal overlay fit</title>
     <statement>
-      <p>Add an overlay of a normal model on the distribution of birthweight data and comment on how well the model fits the data. (First create the histogram as above.)</p>
-      
-      <p><alert>In R</alert></p>
-      <program language="r" interactive="sage">
-        <input>
-iscamaddnorm(births3$birthweight, main, xlab, bins)
-        </input>
-      </program>
-      
-      <p><alert>In JMP</alert></p>
-      <p>Use the hot spot and select Continuous Fit &gt; Normal.</p>
-      
       <p>Discuss any deviations from the pattern of a normal distribution.</p>
     </statement>
     <response/>
   </exercise>
   
-  <paragraphs>
-    <title>Checking Normal Distribution Properties</title>
+  <paragraphs xml:id="tech-detour-within-2sd">
+    <title>Technology Detour – Checking Normal Distribution Properties</title>
     
     <p>Another method for comparing your data to a theoretical normal distribution is to see whether certain properties of a normal distribution hold true. In Chapter 1, you learned that 95% of observations in a normal distribution should fall within two standard deviations of the mean.</p>
-  </paragraphs>
-  
-  <exercise xml:id="inv2-1-n" label="I2.1n">
-    <title>Calculate percentage within 2 SD</title>
-    <statement>
-      <p>Calculate the percentage of the birthweights that fall within 2 standard deviations of the mean by creating a Boolean (true/false) variable:</p>
-      
-      <p><alert>In R (after attaching births3)</alert></p>
-      <program language="r" interactive="sage">
-        <input>
+    
+    <exercise xml:id="tech-detour-r-within-2sd" label="Within 2 SD - R">
+      <title>Calculate Percentage Within 2 SD in R</title>
+      <statement>
+        <p>Calculate the percentage of the birthweights that fall within 2 standard deviations of the mean by creating a Boolean (true/false) variable.</p>
+        <program language="r" interactive="sage">
+          <input>
 within2sd = (birthweight &gt; mean(birthweight) - 2*sd(birthweight)) &amp; 
             (birthweight &lt; mean(birthweight) + 2*sd(birthweight))
 # Note: Make sure you copy this code with no line breaks (and assumes data is attached)
 table(within2sd)/length(birthweight)
-        </input>
-      </program>
-      
-      <p><alert>In JMP</alert></p>
-      <p><ol>
-        <li><p>Calculate (by hand) the mean + 2SD limits (e.g., 2415 and 4258).</p></li>
-        <li><p>In the data window, double click on an empty column to activate it and name it "within2sd"</p></li>
-        <li><p>Right click on the column name and select Formula</p></li>
-        <li><p>From Functions (grouped) select Conditional. Enter conditions for birth weight &lt; 4258 &amp; birth weight &gt; 2415 to equal 1, 0 otherwise.</p></li>
-        <li><p>Then use Analyze &gt; Distribution on this column and report the mean, the proportion of ones.</p></li>
-      </ol></p>
+          </input>
+        </program>
+      </statement>
+    </exercise>
+    
+    <exercise xml:id="tech-detour-jmp-within-2sd" label="Within 2 SD - JMP">
+      <title>Calculate Percentage Within 2 SD in JMP</title>
+      <statement>
+        <p>Calculate the percentage of the birthweights that fall within 2 standard deviations of the mean.</p>
+        <p><ol>
+          <li><p>Calculate (by hand) the mean + 2SD limits (e.g., 2415 and 4258).</p></li>
+          <li><p>In the data window, double click on an empty column to activate it and name it "within2sd"</p></li>
+          <li><p>Right click on the column name and select Formula</p></li>
+          <li><p>From Functions (grouped) select Conditional. Enter conditions for birth weight &lt; 4258 &amp; birth weight &gt; 2415 to equal 1, 0 otherwise.</p></li>
+          <li><p>Then use Analyze &gt; Distribution on this column and report the mean, the proportion of ones.</p></li>
+        </ol></p>
+      </statement>
+    </exercise>
+  </paragraphs>
+  
+  <exercise xml:id="inv2-1-n" label="I2.1n">
+    <title>Percentage within 2 SD</title>
+    <statement>
+      <p>Report the percentage of the birthweights that fall within 2 standard deviations of the mean.</p>
+      <p>Percentage: <var width="10"/>%</p>
     </statement>
     <response/>
   </exercise>
@@ -478,30 +512,41 @@ table(within2sd)/length(birthweight)
     <response/>
   </exercise>
   
-  <paragraphs>
-    <title>Normal Probability Plots</title>
+  <paragraphs xml:id="tech-detour-normal-probability-plot">
+    <title>Technology Detour – Normal Probability Plots</title>
     
     <p>Another way to assess the "fit" of a probability model to the data is with a probability plot (aka quantile plot). Probability plots work roughly like this: The computer determines how many observations are in the data set, and then reports the z-scores it would expect for the 1/nth percentiles (also called quantiles) for the probability model. The plot compares these z-scores to the observed data; if the z-scores "line up" with the observed data, then the probability plot supports that the data are behaving like the candidate distribution. The theory is that whether or not the observations follow a line can be easier to judge than whether a histogram follows a curve.</p>
+    
+    <exercise xml:id="tech-detour-r-normal-probability-plot" label="Normal Probability Plot - R">
+      <title>Create Normal Probability Plot in R</title>
+      <statement>
+        <p>Use technology to create a normal probability plot for the subsetted birth weight data.</p>
+        <program language="r" interactive="sage">
+          <input>
+qqnorm(birthweight, datax=TRUE)    # "datax=T" puts observed values on x-axis
+qqline(birthweight, datax=T)
+          </input>
+        </program>
+      </statement>
+    </exercise>
+    
+    <exercise xml:id="tech-detour-jmp-normal-probability-plot" label="Normal Probability Plot - JMP">
+      <title>Create Normal Probability Plot in JMP</title>
+      <statement>
+        <p>Use technology to create a normal probability plot for the subsetted birth weight data.</p>
+        <p>In the Distributions window, Use the hot spot to select Normal Quantile Plot.</p>
+      </statement>
+    </exercise>
   </paragraphs>
   
   <exercise xml:id="inv2-1-p" label="I2.1p">
-    <title>Create normal probability plot</title>
+    <title>Assess normal probability plot</title>
     <statement>
-      <p>Use technology to create a normal probability plot for the subsetted birth weight data.</p>
-      
-      <p><alert>In R (after attaching births3)</alert></p>
-      <program language="r" interactive="sage">
-        <input>
-qqnorm(birthweight, datax=TRUE)    # "datax=T" puts observed values on x-axis
-qqline(birthweight, datax=T)
-        </input>
-      </program>
-      
-      <p><alert>In JMP</alert></p>
-      <p>In the Distributions window, Use the hot spot to select Normal Quantile Plot.</p>
-      
-      <p>Do the observations deviate much from a line? If so how? [Hints: What does this suggest about how the birth weight data values differ from what we would predict for a normal distribution (e.g., smallest values are smaller than expected or larger than expected)? Is this consistent with what you saw in the histogram?]</p>
+      <p>Do the observations deviate much from a line? If so how?</p>
     </statement>
+    <hint>
+      <p>What does this suggest about how the birth weight data values differ from what we would predict for a normal distribution (e.g., smallest values are smaller than expected or larger than expected)? Is this consistent with what you saw in the histogram?</p>
+    </hint>
     <response/>
   </exercise>
   
@@ -512,7 +557,7 @@ qqline(birthweight, datax=T)
   <exercise xml:id="inv2-1-q" label="I2.1q">
     <title>Calculate low birth weight probability</title>
     <statement>
-      <p>Use technology (e.g., Normal Probability Calculator applet) to calculate the normal distribution probability that a randomly selected baby will be of low birth weight. Include a well-labeled sketch with the shaded area of interest.</p>
+      <p>Use technology (e.g., <url href="http://www.rossmanchance.com/applets/2021/normprobcalc/NormProbCalc.html">Normal Probability Calculator applet</url>) to calculate the normal distribution probability that a randomly selected baby will be of low birth weight. Include a well-labeled sketch with the shaded area of interest.</p>
     </statement>
     <response/>
   </exercise>
@@ -529,26 +574,56 @@ qqline(birthweight, datax=T)
     <p><alert>Discussion:</alert> We can often use a theoretical model to predict how data will behave. However, it is often unclear whether the model we are using is appropriate. Sometimes we have to consider the context (e.g., biological characteristic) and presume a particular model. We can also use existing data to create a model but we need to consider what population the data are representative of and how stable we think the data generating process is (e.g., not changing over time). In this case, a normal distribution appears to underestimate the likelihood of both smaller and heavier babies (3.2% beyond 2SD rather than 5%), but overall the model is performing well, allowing us to make predictions like we did in (r).</p>
   </conclusion>
   
-  <paragraphs xml:id="practice-2-1">
-    <title>Practice Problems</title>
+  <subsection xml:id="practice2-1A">
+    <title>Practice Problem 2.1A</title>
     
-    <exercise xml:id="PP2-1A" label="PP2.1A">
-      <title>Practice Problem 2.1A</title>
+    <p>The data in <c>MLB_FCI_22.txt</c>, compiled by Team Marketing Report, includes various costs for attending a Major League Baseball game in the 2022 season. The "Fan Cost Index" is defined as the price of a family of four to attend a game, assuming 4 adult average-price tickets, parking for one car, and the cheapest (at that park) price for two draft beers, four soft drinks, four hot dogs, and two caps.</p>
+    
+    <p><em>Note: Make sure the columns parse correctly (e.g., Data &gt; Text to Columns in Excel?) and remove the last row before you start analyzing the data.</em></p>
+    
+    <exercise xml:id="practice-2-1a-a" label="PP2.1A.1">
+      <title>Compare dotplot and histogram</title>
       <statement>
-        <p>The data in <c>MLB_FCI_22.txt</c>, compiled by Team Marketing Report, includes various costs for attending a Major League Baseball game in the 2022 season. The "Fan Cost Index" is defined as the price of a family of four to attend a game, assuming 4 adult average-price tickets, parking for one car, and the cheapest (at that park) price for two draft beers, four soft drinks, four hot dogs, and two caps.</p>
-        
-        <p><em>Note: Make sure the columns parse correctly (e.g., Data &gt; Text to Columns in Excel?) and remove the last row before you start analyzing the data.</em></p>
-        
-        <p><ol marker="(a)">
-          <li><p>Create and include a dotplot and a histogram of the FCI values. Which graph do you prefer? Why?</p></li>
-          <li><p>Create and include a normal probability plot of the FCI values. What do you conclude from this graph? Explain your reasoning.</p></li>
-          <li><p>Create and include a dotplot of the FCIPctChange values which represent the percentage change in the FCI values from the previous year. Also report and summarize what you learn from the median.</p></li>
-          <li><p>The distribution of the FCIPctChange values shows a low visual outlier. Identify this team by name. What is special about this team?</p></li>
-          <li><p>Examine and include a stemplot of the cap prices. We see one team with an unusual value. Identify this team by name and suggest an explanation for its unusual cap price. [Hint: We are not talking about the largest or smallest value this time!]</p></li>
-        </ol></p>
+        <p>Create and include a dotplot and a histogram of the FCI values. Which graph do you prefer? Why?</p>
       </statement>
       <response/>
     </exercise>
+    
+    <exercise xml:id="practice-2-1a-b" label="PP2.1A.2">
+      <title>Assess normality with probability plot</title>
+      <statement>
+        <p>Create and include a normal probability plot of the FCI values. What do you conclude from this graph? Explain your reasoning.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-1a-c" label="PP2.1A.3">
+      <title>Analyze FCIPctChange distribution</title>
+      <statement>
+        <p>Create and include a dotplot of the FCIPctChange values which represent the percentage change in the FCI values from the previous year. Also report and summarize what you learn from the median.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-1a-d" label="PP2.1A.4">
+      <title>Identify outlier team</title>
+      <statement>
+        <p>The distribution of the FCIPctChange values shows a low visual outlier. Identify this team by name. What is special about this team?</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-1a-e" label="PP2.1A.5">
+      <title>Identify unusual cap price</title>
+      <statement>
+        <p>Examine and include a stemplot of the cap prices. We see one team with an unusual value. Identify this team by name and suggest an explanation for its unusual cap price.</p>
+      </statement>
+      <hint>
+        <p>We are not talking about the largest or smallest value this time!</p>
+      </hint>
+      <response/>
+    </exercise>
+  </subsection>
     
     <exercise xml:id="PP2-1B" label="PP2.1B">
       <title>Practice Problem 2.1B</title>
