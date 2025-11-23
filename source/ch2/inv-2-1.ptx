@@ -11,13 +11,9 @@
       <li><p>According to this documentation file, how many total "positions" are there in the data file? What information is in the first 8 positions? What information is in the next 4 positions? How would you determine the birth month?</p></li>
     </ul></p>
     
-    <image source="images/codebooksnippet.png" width="80%">
-      <description>Snippet from CDC codebook showing data positions</description>
-    </image>
-    
     <p><alert>Discussion:</alert> If you were to download this file, it could take a minute. You would then need to unzip the file, which is then 5GB. This can be problematic to work with, especially if you were most interested in just a few of the variables. It can also be cumbersome to deal with all of the rows, especially if you just want to see general patterns. Most packages can now work with datafiles this large, but we are still pushing the limit a bit. JMP and R take a couple minutes to read in the data, and each row is still a single string (not separated into columns or tabs). One approach is to preprocess the data a bit before loading into the software package. Using a program like "awk" you can read in the data from specific positions (e.g., just the birth weights) or in R use read.fwf. Then a comma or tab delimited file would be much easier for the software to handle. <url href="https://www.rossmanchance.com/iscam4/in/CDCBirths.html">Guide for recreating the 2023 datafile</url>.</p>
     
-    <p>The file <c>USbirthsJan2024.txt</c> contains information on the 297,798 births in January 2024, including birth weight (in grams), whether the baby was full term (gestation over 36 weeks), the 5 minute <url href="http://en.wikipedia.org/wiki/Apgar_score">apgar score</url> (an immediate measure of the infant's health), and the amount of weight gained by the mother during pregnancy (in lbs). The goal of this investigation is to build a model of how birth weights can be expected to behave in the future. In particular, we will ask questions such as: Can we use that model to make predictions about certain kinds of birth weights? How reliable will our estimates be?</p>
+    <p>The file <url href="http://www.rossmanchance.com/iscam4/data/USbirthsJan2024.txt">USbirthsJan2024.txt</url> contains information on the 297,798 births in January 2024, including birth weight (in grams), whether the baby was full term (gestation over 36 weeks), the 5 minute <url href="http://en.wikipedia.org/wiki/Apgar_score">apgar score</url> (an immediate measure of the infant's health), and the amount of weight gained by the mother during pregnancy (in lbs). The goal of this investigation is to build a model of how birth weights can be expected to behave in the future. In particular, we will ask questions such as: Can we use that model to make predictions about certain kinds of birth weights? How reliable will our estimates be?</p>
   </introduction>
   
   <paragraphs>
@@ -36,7 +32,24 @@
       <statement>
         <p>Is the variable birthweight quantitative or categorical?</p>
       </statement>
-      <response/>
+      <choices randomize="no">
+        <choice correct="yes">
+          <statement>
+            <p>Quantitative</p>
+          </statement>
+          <feedback>
+            <p>Correct! Birth weight is measured in grams, making it a numerical (quantitative) variable.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>Categorical</p>
+          </statement>
+          <feedback>
+            <p>Not quite. Birth weight is a numerical measurement in grams, not a category.</p>
+          </feedback>
+        </choice>
+      </choices>
     </exercise>
     
     <p>Our next step is to look at the data! As in Chapter 1, we will want to consider which graphical and numerical summaries reveal the most information about the distribution.</p>
@@ -45,7 +58,7 @@
   <paragraphs xml:id="tech-detour-access-quantitative">
     <title>Technology Detour - Accessing Quantitative Data</title>
     
-    <p>See the Technology Detour after Investigation 1.1 for instructions on how to load data into your software. You may be able to copy and paste from the webpage, or download the file to your computer and open as tab delimited. Remember to search the help menus for more information if you have more complicated data files in the future.</p>
+    <p>See the <xref ref="tech-detour-loading" text="custom">Technology Detour after Investigation 1.1</xref> for instructions on how to load data into your software. You may be able to copy and paste from the webpage, or download the file to your computer and open as tab delimited. Remember to search the help menus for more information if you have more complicated data files in the future.</p>
     
     <aside>
       <title>R Notes</title>
@@ -57,7 +70,7 @@
       <p>Remember to paste in the column names (e.g., hold down the shift key) when using ctrl-V. Also make sure you don't end up with an extra row. For this data set, we recommend you save the file and use File &gt; Open and use the pull-down menu to specify the .txt format.</p>
     </aside>
     
-    <p>Check that you have 297,798 rows of data. Now use technology to create a dotplot of the birth weights.</p>
+    <p>Access the data file and check that you have 297,798 rows of data. Now use technology to create a dotplot of the birth weights.</p>
   </paragraphs>
   
   <paragraphs xml:id="tech-detour-dotplots">
@@ -77,6 +90,12 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
           </input>
         </program>
       </statement>
+      <solution>
+        <p>Expected output:</p>
+        <image source="images/firstRdotplot.png" width="60%">
+          <description>R dotplot of birth weights showing distribution</description>
+        </image>
+      </solution>
     </exercise>
     
     <exercise xml:id="tech-detour-jmp-dotplot" label="Dotplot - JMP">
@@ -89,10 +108,16 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
           <li><p>Use the pull-down menu to change the Jitter style to Positive Grid.</p></li>
         </ol></p>
         
-        <image source="images/JMPdotplot.png" width="60%">
+        <image source="images/JMPdotplot.png" width="40%">
           <description>JMP Graph Builder interface for creating dotplots</description>
         </image>
       </statement>
+      <solution>
+        <p>Expected output:</p>
+        <image source="images/firstJMPdotplot.png" width="60%">
+          <description>JMP dotplot of birth weights showing distribution</description>
+        </image>
+      </solution>
     </exercise>
     
     <p>A dotplot shows each numerical value individually (and is best with smaller datasets), some packages may actually "bin" the values if the data set is large. If the dataset includes many distinct (non-repeated) values, this can make it more difficult to see the "clumping" in the data.</p>
@@ -110,11 +135,27 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
     <title>Discussion: Handling Missing Data</title>
     
     <p><alert>Discussion:</alert> The observations at 9999 don't seem to belong. The User Guide or "codebook" for these data states that the largest birth weight is 8165 grams and for other variables it lists 99, 999, or 9999 as values for "not stated" or unknown.</p>
+
+    <image source="images/codebooksnippet.png" width="80%">
+      <description>Snippet from CDC codebook showing data positions</description>
+    </image>
     
-    <p>You could convert these observations to the missing value designator in your software (e.g., <c>•</c> in JMP and <c>NaN</c> in R) or you can create a new data set that does not include those rows (subsetting the data).</p>
-  </paragraphs>
-  
-  <paragraphs xml:id="tech-detour-subsetting">
+    <sidebyside widths="58% 38%" margins="0% 4%" valign="top">
+      <stack>
+        <p>You could convert these observations to the missing value designator in your software or you can create a new data set that does not include those rows (subsetting the data).</p>
+      </stack>
+      <stack>
+        <aside>
+          <title>R Note</title>
+          <p>Missing values are represented as <c>NaN</c> in R.</p>
+        </aside>
+        <aside>
+          <title>JMP Note</title>
+          <p>Missing values are represented as <c>•</c> in JMP.</p>
+        </aside>
+      </stack>
+    </sidebyside>
+  </paragraphs>  <paragraphs xml:id="tech-detour-subsetting">
     <title>Technology Detour – Subsetting the Data</title>
     
     <exercise xml:id="tech-detour-r-subset" label="Subsetting - R">
@@ -153,6 +194,18 @@ nrow(births2)
     <statement>
       <p>Recreate the dotplot with the subsetted data and describe what you see.</p>
     </statement>
+    <hint>
+      <title>R Output</title>
+      <image source="images/secondRdotplot.png" width="60%">
+        <description>R dotplot of subsetted birth weights</description>
+      </image>
+    </hint>
+    <hint>
+      <title>JMP Output</title>
+      <image source="images/secondJMPdotplot.png" width="60%">
+        <description>JMP dotplot of subsetted birth weights</description>
+      </image>
+    </hint>
     <response/>
   </exercise>
   
@@ -201,6 +254,18 @@ hist(births2$birthweight, xlab="birth weight")
     <statement>
       <p>Create a histogram for the subsetted data (births2) and compare the information revealed by the dotplots and the histograms. Do you feel one display is more effective at displaying information about birth weights than the other? Explain.</p>
     </statement>
+    <hint>
+      <title>R Output</title>
+      <image source="images/histogramR.png" width="60%">
+        <description>R histogram of birth weights</description>
+      </image>
+    </hint>
+    <hint>
+      <title>JMP Output</title>
+      <image source="images/histogramJMP.png" width="60%">
+        <description>JMP histogram of birth weights</description>
+      </image>
+    </hint>
     <response/>
   </exercise>
   
@@ -215,19 +280,19 @@ hist(births2$birthweight, xlab="birth weight")
       <sidebyside widths="30% 30% 30%">
         <stack>
           <p><alert>Symmetric</alert></p>
-          <image source="images/symmetric_dist.png" width="100%">
+          <image source="images/symmetric.png" width="100%">
             <description>Example of a symmetric distribution</description>
           </image>
         </stack>
         <stack>
           <p><alert>Skewed to the Right</alert></p>
-          <image source="images/right_skewed_dist.png" width="100%">
+          <image source="images/skewedright.png" width="100%">
             <description>Example of a right-skewed distribution</description>
           </image>
         </stack>
         <stack>
           <p><alert>Skewed to the Left</alert></p>
-          <image source="images/left_skewed_dist.png" width="100%">
+          <image source="images/skewedleft.png" width="100%">
             <description>Example of a left-skewed distribution</description>
           </image>
         </stack>
