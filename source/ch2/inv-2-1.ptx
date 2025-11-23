@@ -168,6 +168,12 @@ nrow(births2)
           </input>
         </program>
       </statement>
+      <solution>
+        <p>Expected output:</p>
+        <image source="images/Inv2.1(h)solsR.jpg" width="60%">
+          <description>R output showing number of rows after subsetting</description>
+        </image>
+      </solution>
     </exercise>
     
     <exercise xml:id="tech-detour-jmp-subset" label="Subsetting - JMP">
@@ -184,6 +190,15 @@ nrow(births2)
           <description>JMP Row Selection dialog for subsetting data</description>
         </image>
       </statement>
+      <solution>
+        <p>Expected output:</p>
+        <image source="images/Inv2.1(h)solsJMP.png" width="60%">
+          <description>JMP output showing selected rows</description>
+        </image>
+        <image source="images/Inv2.1(h)solsJMP2.png" width="60%">
+          <description>JMP data table with excluded rows</description>
+        </image>
+      </solution>
     </exercise>
   </paragraphs>
   
@@ -336,11 +351,11 @@ hist(births2$birthweight, xlab="birth weight")
   <exercise xml:id="inv2-1-h" label="I2.1h">
     <title>Subset by gestation period</title>
     <statement>
-      <p>Now, further subset the births2 data based on whether or not the pregnancy lasted at least 37 weeks (i.e., <c>OEG == 2</c>). How many observations do you end up with?</p>
+      <p>Now, further subset the births2 data based on whether or not the pregnancy lasted at least 37 weeks. How many observations do you end up with?</p>
     </statement>
     <hint>
       <title>R Hints</title>
-      <p>Edit the previous command, using births2 (two places). Use "==" for an equality comparison.</p>
+      <p>Edit the previous command, using births2 (two places). Use "==" for an equality comparison (i.e., <c>OEG == 2</c>).</p>
     </hint>
     <response/>
   </exercise>
@@ -348,7 +363,8 @@ hist(births2$birthweight, xlab="birth weight")
   <exercise xml:id="inv2-1-i" label="I2.1i">
     <title>Assess symmetry after subsetting</title>
     <statement>
-      <p>After this step do we have a more symmetric distribution? What is a downside to subsetting the dataset in this way?</p>
+      <p>After this step do we have a more symmetric distribution? <var width="30"/></p>
+      <p>What is a downside to subsetting the dataset in this way? <var width="50"/></p>
     </statement>
     <response/>
   </exercise>
@@ -375,6 +391,12 @@ iscamsummary(births3$birthweight, digits=2)
           </input>
         </program>
       </statement>
+      <solution>
+        <p>Expected output:</p>
+        <image source="images/Inv2.1(j)solsR.jpg" width="60%">
+          <description>R numerical summaries for birth weights</description>
+        </image>
+      </solution>
     </exercise>
     
     <exercise xml:id="tech-detour-jmp-summaries" label="Numerical Summaries - JMP">
@@ -382,11 +404,17 @@ iscamsummary(births3$birthweight, digits=2)
       <statement>
         <p>See the Analyze &gt; Distribution output from creating the histogram and/or Analyze &gt; Tabulate.</p>
       </statement>
+      <solution>
+        <p>Expected output:</p>
+        <image source="images/Inv2.1(j)solsJMP.png" width="60%">
+          <description>JMP numerical summaries for birth weights</description>
+        </image>
+      </solution>
     </exercise>
   </paragraphs>
   
   <exercise xml:id="inv2-1-j" label="I2.1j">
-    <title>Interpret numerical summaries</title>
+    <title>Report numerical summaries</title>
     <statement>
       <p>Determine the mean, standard deviation, and skewness of these data.</p>
       <p>Mean: <var width="10"/></p>
@@ -441,6 +469,12 @@ iscamaddnorm(births3$birthweight, main, xlab, bins)
           </input>
         </program>
       </statement>
+      <solution>
+        <p>Expected output:</p>
+        <image source="images/Inv2.1(m)solsR.jpg" width="60%">
+          <description>R histogram with normal overlay for birth weights</description>
+        </image>
+      </solution>
     </exercise>
     
     <exercise xml:id="tech-detour-jmp-normal-overlay" label="Normal Overlay - JMP">
@@ -449,6 +483,12 @@ iscamaddnorm(births3$birthweight, main, xlab, bins)
         <p>Add an overlay of a normal model on the distribution of birthweight data.</p>
         <p>Use the hot spot and select Continuous Fit &gt; Normal.</p>
       </statement>
+      <solution>
+        <p>Expected output:</p>
+        <image source="images/Inv2.1(m)solsJMP.png" width="60%">
+          <description>JMP histogram with normal overlay for birth weights</description>
+        </image>
+      </solution>
     </exercise>
   </paragraphs>
   
@@ -528,6 +568,12 @@ qqline(birthweight, datax=T)
           </input>
         </program>
       </statement>
+      <solution>
+        <p>Expected output:</p>
+        <image source="images/Inv2.1(p)solsR.jpg" width="60%">
+          <description>R normal probability plot for birth weights</description>
+        </image>
+      </solution>
     </exercise>
     
     <exercise xml:id="tech-detour-jmp-normal-probability-plot" label="Normal Probability Plot - JMP">
@@ -536,6 +582,12 @@ qqline(birthweight, datax=T)
         <p>Use technology to create a normal probability plot for the subsetted birth weight data.</p>
         <p>In the Distributions window, Use the hot spot to select Normal Quantile Plot.</p>
       </statement>
+      <solution>
+        <p>Expected output:</p>
+        <image source="images/Inv2.1(p)solsJMP.png" width="60%">
+          <description>JMP normal probability plot for birth weights</description>
+        </image>
+      </solution>
     </exercise>
   </paragraphs>
   
@@ -559,6 +611,12 @@ qqline(birthweight, datax=T)
     <statement>
       <p>Use technology (e.g., <url href="http://www.rossmanchance.com/applets/2021/normprobcalc/NormProbCalc.html">Normal Probability Calculator applet</url>) to calculate the normal distribution probability that a randomly selected baby will be of low birth weight. Include a well-labeled sketch with the shaded area of interest.</p>
     </statement>
+    <hint>
+      <p>Expected output:</p>
+      <image source="images/Inv2.1(q)sols.jpg" width="60%">
+        <description>Normal probability calculation for low birth weight</description>
+      </image>
+    </hint>
     <response/>
   </exercise>
   
@@ -567,6 +625,12 @@ qqline(birthweight, datax=T)
     <statement>
       <p>Now examine the births3 data: What percentage of the birth weights in this data set were at most 2500 grams? [Hint: Create a Boolean variable?] How does this compare to the prediction in (q)? Does this surprise you? Explain.</p>
     </statement>
+    <hint>
+      <p>Expected output:</p>
+      <image source="images/Inv2.1(r)sols.png" width="60%">
+        <description>Calculation showing percentage of low birth weights in data</description>
+      </image>
+    </hint>
     <response/>
   </exercise>
   
