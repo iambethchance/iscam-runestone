@@ -33,22 +33,24 @@
           
           <li><p>We can use several methods because the population (all adults) is much larger than <m>20 \times 1987 = 39,740</m>. (<m>X = 0.91 \times 1987 \approx 1808</m>)</p>
           
-          <p><term>TBI applet (One proportion):</term></p>
-          <ul>
-            <li><p>Wald interval: Valid because 1808 and 179 > 10. Result: (0.89646, 0.92214)</p></li>
-            <li><p>Plus Four (with 1810 and 181): Result: (0.89731, 0.92249)</p></li>
-          </ul>
+          <p>For example, the Plus Four Method gives us (0.897, 0.922).</p>
           
-          <figure xml:id="fig-ex-1-3-tbi">
-            <caption>TBI applet output for seat belt confidence intervals</caption>
-            <image source="images/ex1-3-tbi.png" width="70%">
+          <aside>
+            <title>TBI Applet Output</title>
+            <p>Using the Theory-Based Inference applet (One proportion):</p>
+            <ul>
+              <li><p>Wald interval: Valid because 1808 and 179 > 10. Result: (0.89646, 0.92214)</p></li>
+              <li><p>Plus Four (with 1810 and 181): Result: (0.89731, 0.92249)</p></li>
+            </ul>
+            <image source="images/example1.3applet.png" width="90%">
               <description>Theory-based inference output showing confidence intervals</description>
             </image>
-          </figure>
+          </aside>
           
-          <p><term>R:</term></p>
-          <program language="r">
-            <input>
+          <aside>
+            <title>R Output</title>
+            <program language="r">
+              <input>
 # Exact binomial
 iscambinomtest(1808, 1987, conf.level=.95)
 # Result: (0.89647, 0.92173)
@@ -64,22 +66,22 @@ iscamonepropztest(1810, 1991, conf.level=.95)
 # Score interval with prop.test
 prop.test(1808, 1987, conf.level=.95)
 # Result: (0.89626, 0.92196)
-            </input>
-          </program>
+              </input>
+            </program>
+          </aside>
           
-          <p><term>JMP:</term></p>
-          <ul>
-            <li><p>Exact binomial (Journal File, with Summary Stats)</p></li>
-            <li><p>Wald interval (Journal File)</p></li>
-            <li><p>Plus Four (with 1810 and 181)</p></li>
-          </ul>
-          
-          <figure xml:id="fig-ex-1-3-jmp">
-            <caption>JMP output for seat belt confidence intervals</caption>
-            <image source="images/ex1-3-jmp.png" width="70%">
+          <aside>
+            <title>JMP Output</title>
+            <p>Using JMP:</p>
+            <ul>
+              <li><p>Exact binomial (Journal File, with Summary Stats)</p></li>
+              <li><p>Wald interval (Journal File)</p></li>
+              <li><p>Plus Four (with 1810 and 181)</p></li>
+            </ul>
+            <image source="images/example1.3JMP.png" width="90%">
               <description>JMP statistical software output</description>
             </image>
-          </figure>
+          </aside>
           
           <p>The intervals are very similar to each other as we would expect with the large sample size, though the binomial interval is a bit wider than the others.</p>
           
