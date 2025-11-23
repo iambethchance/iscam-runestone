@@ -9,200 +9,139 @@
     <p>A teacher doubted whether his students could distinguish between the tastes of different brands of cola, so he presented each of his 21 students with three cups. Two cups contained one brand of cola, and the third cup contained a different brand. Which cup contained which brand was randomly determined for each student. Each student was asked to identify which cup contained the cola that was different from the other two. It turned out that 12 of the students successfully identified the "odd" cola.</p>
   </introduction>
 
-  <exercise xml:id="ex-1-2-a">
-    <title>Test of significance</title>
-    <statement>
-      <p>Does this result provide strong evidence that these students do better than guessing in discriminating among the colas? Address this question with an appropriate test of significance, including a statement of the hypotheses and a p-value calculation or estimation. Be sure to clarify which procedure you used to determine the p-value and why. Summarize your conclusion, and explain the reasoning process by which it follows.</p>
-    </statement>
-    <response>
-    </response>
-    <solution>
-      <p>We can define <m>\pi</m> to be the probability that these students correctly identify the odd soda. (In other words, if this group of students were to repeat this process under identical conditions indefinitely, <m>\pi</m> represents the long-term fraction that they would identify correctly.) The null hypothesis asserts that the students are just guessing, which means that their success probability is one-third (<m>H_0: \pi = 1/3</m>). The alternative hypothesis is that students do better than guessing, which means that their success probability is greater than one-third (<m>H_a: \pi > 1/3</m>).</p>
-      
-      <p>Under the null hypothesis that the students are just guessing among the three cups, <m>X</m> (the number of correct identifications) has a binomial distribution with parameters <m>n = 21</m> and <m>\pi = 1/3</m>. The normal distribution would probably not be valid here as we do not satisfy the conditions: <m>n \times \pi = 21(1/3) = 7 &lt; 10</m>. We could simulate observations from this Binomial process using the One Proportion Inference applet, and see how often we observe 12 or more correct identifications just by chance:</p>
-      
-      <figure xml:id="fig-ex-1-2-simulation">
-        <caption>Simulation results for cola discrimination</caption>
-        <image source="images/ex1-2-simulation.png" width="70%">
-          <description>Simulation distribution for cola test</description>
-        </image>
-      </figure>
-      
-      <p>Or we could calculate the exact Binomial probability using software:</p>
-      <program language="r">
-        <input>
+  <p><ol label="(a)">
+    <li><p>Does this result provide strong evidence that these students do better than guessing in discriminating among the colas? Address this question with an appropriate test of significance, including a statement of the hypotheses and a p-value calculation or estimation. Be sure to clarify which procedure you used to determine the p-value and why. Summarize your conclusion, and explain the reasoning process by which it follows.</p></li>
+    
+    <li><p>Calculate a 95% confidence interval based on these sample data. Clearly define the parameter that this interval estimates, and interpret the interval.</p></li>
+    
+    <li><p>Would this teacher be convinced that his students do better than guessing if he uses the 0.05 significance level?</p></li>
+    
+    <li><p>Describe what Type I and Type II errors mean in this situation. Which type of error might you have made in (c)?</p></li>
+    
+    <li><p>Suppose the students want to redo the study with 100 students. Would a normal approximation be valid in this case? Justify your answer.</p></li>
+    
+    <li><p>Using the 0.05 significance level and a sample size of 100 students, calculate the power of the test when the underlying probability equals 0.5, and interpret your result.</p>
+    <p>[Hint: Remember our two-step process: 1) Find the rejection region under the null hypothesis, now using the normal distribution; 2) Determine the probability of being in the rejection region under an alternative value of the parameter.]</p></li>
+    
+    <li><p>If the underlying probability of identifying the odd soda equals 2/3, will the power calculated in (f) be larger or smaller in this case? Explain without performing any calculations.</p></li>
+    
+    <li><p>If the teacher uses a 0.01 significance level (with an alternative probability of 0.50), will the power calculated in (f) be larger or smaller in this case? Explain without performing any calculations.</p></li>
+  </ol></p>
+
+  <conclusion>
+    <p><term>Solutions:</term> <m>\text{ }</m>
+      <answer>
+        <p><ol label="(a)">
+          <li><p>We can define <m>\pi</m> to be the probability that these students correctly identify the odd soda. (In other words, if this group of students were to repeat this process under identical conditions indefinitely, <m>\pi</m> represents the long-term fraction that they would identify correctly.) The null hypothesis asserts that the students are just guessing, which means that their success probability is one-third (<m>H_0: \pi = 1/3</m>). The alternative hypothesis is that students do better than guessing, which means that their success probability is greater than one-third (<m>H_a: \pi > 1/3</m>).</p>
+          
+          <p>Under the null hypothesis that the students are just guessing among the three cups, <m>X</m> (the number of correct identifications) has a binomial distribution with parameters <m>n = 21</m> and <m>\pi = 1/3</m>. The normal distribution would probably not be valid here as we do not satisfy the conditions: <m>n \times \pi = 21(1/3) = 7 &lt; 10</m>. We could simulate observations from this Binomial process using the One Proportion Inference applet, and see how often we observe 12 or more correct identifications just by chance:</p>
+          
+          <figure xml:id="fig-ex-1-2-simulation">
+            <caption>Simulation results for cola discrimination</caption>
+            <image source="images/ex1-2-simulation.png" width="70%">
+              <description>Simulation distribution for cola test</description>
+            </image>
+          </figure>
+          
+          <p>Or we could calculate the exact Binomial probability using software:</p>
+          <program language="r">
+            <input>
 iscambinomprob(k=12, n=21, prob=.3333, lower.tail=FALSE)
 # Probability 12 and above = 0.02117713
 
 iscambinomtest(observed=12, n=21, hyp=.3333, alternative="greater")
 # p-value: 0.021177
-        </input>
-      </program>
-      
-      <figure xml:id="fig-ex-1-2-output">
-        <caption>Statistical software output</caption>
-        <image source="images/ex1-2-output.png" width="70%">
-          <description>JMP output for cola discrimination test</description>
-        </image>
-      </figure>
-      
-      <p>Notice the normal approximation (using R) does not provide a great estimate of this p-value:</p>
-      <program language="r">
-        <input>
+            </input>
+          </program>
+          
+          <figure xml:id="fig-ex-1-2-output">
+            <caption>Statistical software output</caption>
+            <image source="images/ex1-2-output.png" width="70%">
+              <description>JMP output for cola discrimination test</description>
+            </image>
+          </figure>
+          
+          <p>Notice the normal approximation (using R) does not provide a great estimate of this p-value:</p>
+          <program language="r">
+            <input>
 iscamonepropztest(observed=12, n=21, hyp=.3333, alternative="greater")
 # z-statistic: 2.31, p-value: 0.01031
-        </input>
-      </program>
-      
-      <p>But the normal approximation does improve with the continuity correction:</p>
-      <program language="r">
-        <input>
+            </input>
+          </program>
+          
+          <p>But the normal approximation does improve with the continuity correction:</p>
+          <program language="r">
+            <input>
 iscambinomnorm(k=12, n=21, prob=.3333, direction="above")
 # binomial: 0.02118
 # normal approx: 0.01031
 # normal approx with continuity: 0.01860
-        </input>
-      </program>
-      
-      <p>This p-value reveals that if the students were just guessing, there's only about a 2% probability of "by chance" getting 12 or more correct identifications among 21 trials. In other words, if we repeated this study over and over, and if students were just guessing each time, then a result at least this favorable would occur in only about 2% of the studies. Because this probability is quite small, we have fairly strong evidence that these students' process in fact is better than guessing in discriminating among the colas (i.e., that <m>\pi > 1/3</m>). Because the sodas were randomly placed in the cups and (presumably) the teacher kept other variables (e.g., temperature, age) constant, this study attempted to isolate the taste and appearance of the sodas as the sole reasons for their selection.</p>
-    </solution>
-  </exercise>
-
-  <exercise xml:id="ex-1-2-b">
-    <title>Confidence interval</title>
-    <statement>
-      <p>Calculate a 95% confidence interval based on these sample data. Clearly define the parameter that this interval estimates, and interpret the interval.</p>
-    </statement>
-    <response>
-    </response>
-    <solution>
-      <p>If we calculate the default binomial interval we find (e.g., in R):</p>
-      <program language="r">
-        <input>
+            </input>
+          </program>
+          
+          <p>This p-value reveals that if the students were just guessing, there's only about a 2% probability of "by chance" getting 12 or more correct identifications among 21 trials. In other words, if we repeated this study over and over, and if students were just guessing each time, then a result at least this favorable would occur in only about 2% of the studies. Because this probability is quite small, we have fairly strong evidence that these students' process in fact is better than guessing in discriminating among the colas (i.e., that <m>\pi > 1/3</m>). Because the sodas were randomly placed in the cups and (presumably) the teacher kept other variables (e.g., temperature, age) constant, this study attempted to isolate the taste and appearance of the sodas as the sole reasons for their selection.</p></li>
+          
+          <li><p>If we calculate the default binomial interval we find (e.g., in R):</p>
+          <program language="r">
+            <input>
 iscambinomtest(12, 21, conf.level=95)
 # 95% Confidence interval for pi: (0.34021, 0.7818)
-        </input>
-      </program>
-      <p>So we are 95% confident that the underlying probability of a correct identification for these students is between 0.340 and 0.782.</p>
-    </solution>
-  </exercise>
-
-  <exercise xml:id="ex-1-2-c">
-    <title>Apply significance level</title>
-    <statement>
-      <p>Would this teacher be convinced that his students do better than guessing if he uses the 0.05 significance level?</p>
-    </statement>
-    <response>
-    </response>
-    <solution>
-      <p>Yes, the p-value is less than 0.05, so with that significance level, the teacher would be convinced that his students do better than guessing in discriminating among the colas. Notice also that 1/3 is not captured in the 95% confidence interval.</p>
-    </solution>
-  </exercise>
-
-  <exercise xml:id="ex-1-2-d">
-    <title>Type I and Type II errors</title>
-    <statement>
-      <p>Describe what Type I and Type II errors mean in this situation. Which type of error might you have made in (c)?</p>
-    </statement>
-    <response>
-    </response>
-    <solution>
-      <p>A Type I error would mean that these students are actually just guessing, but we erroneously conclude that they do better than guessing. A Type II error would mean that the students are not just guessing, but we do not consider the evidence strong enough to conclude that. With this small p-value we might have made a Type I error, but it would be impossible for us to have made a Type II error.</p>
-    </solution>
-  </exercise>
-
-  <exercise xml:id="ex-1-2-e">
-    <title>Validity of normal approximation</title>
-    <statement>
-      <p>Suppose the students want to redo the study with 100 students. Would a normal approximation be valid in this case? Justify your answer.</p>
-    </statement>
-    <response>
-    </response>
-    <solution>
-      <p>Now the normal approximation should be valid. If we assume <m>\pi = 1/3</m>, then <m>n\pi = 100(1/3) \approx 33.3 > 10</m> and <m>n(1-\pi) = 100(2/3) \approx 66.7 > 10</m>. (If <m>\pi</m> is larger than 1/3 as we suggested above, this approximation is even more valid.)</p>
-    </solution>
-  </exercise>
-
-  <exercise xml:id="ex-1-2-f">
-    <title>Calculate power</title>
-    <statement>
-      <p>Using the 0.05 significance level and a sample size of 100 students, calculate the power of the test when the underlying probability equals 0.5, and interpret your result.</p>
-      <p>[Hint: Remember our two-step process: 1) Find the rejection region under the null hypothesis, now using the normal distribution; 2) Determine the probability of being in the rejection region under an alternative value of the parameter.]</p>
-    </statement>
-    <response>
-    </response>
-    <solution>
-      <p>If we want to test <m>H_0: \pi = 1/3</m> vs. <m>H_a: \pi > 1/3</m> for a sample size of <m>n = 100</m>, then the rejection region will be the values of <m>\hat{p}</m> so that <m>P(\hat{p} > \text{cut-off}) \leq 0.05</m> when <m>\pi = 1/3</m>. Because we are comfortable using the normal approximation with this sample size, we can use the Theory-Based Inference applet to find this cut-off (enter the hypothesized value, the direction of the alternative, the sample size, then change the count input until the p-value dips below 0.05).</p>
-      
-      <figure xml:id="fig-ex-1-2-cutoff">
-        <caption>Finding rejection region cutoff</caption>
-        <image source="images/ex1-2-cutoff.png" width="70%">
-          <description>Graph showing cutoff for rejection region</description>
-        </image>
-      </figure>
-      
-      <p>This says a <m>\hat{p}</m> of 0.420 or larger would lead us to reject this null hypothesis that <m>\pi = 0.5</m> at the 5% level of significance.</p>
-      
-      <p>So now we need to find the probability <m>P(\hat{p} \geq 0.420)</m> when the underlying process probability is actually 0.5. When <m>\pi = 0.5</m>, we have an approximately normal distribution with mean equal to 0.5 and standard deviation equal to <m>\sqrt{.5(.5)/100} = 0.05</m>. Using the TBI applet, we can enter 0.5 as the hypothesized probability and 0.420 as the observed sample proportion with a > alternative. This gives us an appropriate power of 0.9452.</p>
-      
-      <figure xml:id="fig-ex-1-2-power">
-        <caption>Power calculation visualization</caption>
-        <image source="images/ex1-2-power.png" width="70%">
-          <description>Graphs showing power calculation with overlapping distributions</description>
-        </image>
-      </figure>
-      
-      <p>Thus, the probability of rejecting <m>H_0: \pi = 1/3</m> when <m>n = 100</m> and <m>\pi</m> is actually 0.5 equals 0.9452. Therefore, in about 95% of samples from a process with <m>\pi = 0.5</m> we will correctly reject that <m>\pi = 1/3</m>.</p>
-      
-      <p>Power is the proportion of the green area that lies to the right of the blue line.</p>
-    </solution>
-  </exercise>
-
-  <exercise xml:id="ex-1-2-g">
-    <title>Power with larger probability</title>
-    <statement>
-      <p>If the underlying probability of identifying the odd soda equals 2/3, will the power calculated in (f) be larger or smaller in this case? Explain without performing any calculations.</p>
-    </statement>
-    <response>
-    </response>
-    <solution>
-      <p>If the underlying process probability is even larger at <m>\pi = 2/3</m>, this will shift the alternative distribution to the right and even more of the distribution will lie in the rejection region. Our power will increase as it will be even easier for us to obtain a sample that will convince us that the hypothesized value of 1/3 is incorrect.</p>
-      
-      <figure xml:id="fig-ex-1-2-power-larger">
-        <caption>Power with larger alternative probability</caption>
-        <image source="images/ex1-2-power-larger.png" width="70%">
-          <description>Graph showing increased power with larger probability</description>
-        </image>
-      </figure>
-    </solution>
-  </exercise>
-
-  <exercise xml:id="ex-1-2-h">
-    <title>Power with stricter significance level</title>
-    <statement>
-      <p>If the teacher uses a 0.01 significance level (with an alternative probability of 0.50), will the power calculated in (f) be larger or smaller in this case? Explain without performing any calculations.</p>
-    </statement>
-    <response>
-    </response>
-    <solution>
-      <p>If the level of significance is lowered from 0.05 to 0.01, this will move the red line to the right. We will need a larger sample proportion to convince us and this will slightly reduce our power (less than 0.90).</p>
-      
-      <figure xml:id="fig-ex-1-2-power-stricter">
-        <caption>Power with stricter significance level</caption>
-        <image source="images/ex1-2-power-stricter.png" width="70%">
-          <description>Graph showing reduced power with stricter alpha level</description>
-        </image>
-      </figure>
-    </solution>
-  </exercise>
-
-  <conclusion>
-    <title>Video Walkthrough</title>
-    <p>Watch a complete walkthrough of this example:</p>
-    <p>[Video to be embedded here]</p>
-    <!--
-    <video youtube="YOUR_VIDEO_ID" width="80%" />
-    -->
+            </input>
+          </program>
+          <p>So we are 95% confident that the underlying probability of a correct identification for these students is between 0.340 and 0.782.</p></li>
+          
+          <li><p>Yes, the p-value is less than 0.05, so with that significance level, the teacher would be convinced that his students do better than guessing in discriminating among the colas. Notice also that 1/3 is not captured in the 95% confidence interval.</p></li>
+          
+          <li><p>A Type I error would mean that these students are actually just guessing, but we erroneously conclude that they do better than guessing. A Type II error would mean that the students are not just guessing, but we do not consider the evidence strong enough to conclude that. With this small p-value we might have made a Type I error, but it would be impossible for us to have made a Type II error.</p></li>
+          
+          <li><p>Now the normal approximation should be valid. If we assume <m>\pi = 1/3</m>, then <m>n\pi = 100(1/3) \approx 33.3 > 10</m> and <m>n(1-\pi) = 100(2/3) \approx 66.7 > 10</m>. (If <m>\pi</m> is larger than 1/3 as we suggested above, this approximation is even more valid.)</p></li>
+          
+          <li><p>If we want to test <m>H_0: \pi = 1/3</m> vs. <m>H_a: \pi > 1/3</m> for a sample size of <m>n = 100</m>, then the rejection region will be the values of <m>\hat{p}</m> so that <m>P(\hat{p} > \text{cut-off}) \leq 0.05</m> when <m>\pi = 1/3</m>. Because we are comfortable using the normal approximation with this sample size, we can use the Theory-Based Inference applet to find this cut-off (enter the hypothesized value, the direction of the alternative, the sample size, then change the count input until the p-value dips below 0.05).</p>
+          
+          <figure xml:id="fig-ex-1-2-cutoff">
+            <caption>Finding rejection region cutoff</caption>
+            <image source="images/ex1-2-cutoff.png" width="70%">
+              <description>Graph showing cutoff for rejection region</description>
+            </image>
+          </figure>
+          
+          <p>This says a <m>\hat{p}</m> of 0.420 or larger would lead us to reject this null hypothesis that <m>\pi = 0.5</m> at the 5% level of significance.</p>
+          
+          <p>So now we need to find the probability <m>P(\hat{p} \geq 0.420)</m> when the underlying process probability is actually 0.5. When <m>\pi = 0.5</m>, we have an approximately normal distribution with mean equal to 0.5 and standard deviation equal to <m>\sqrt{.5(.5)/100} = 0.05</m>. Using the TBI applet, we can enter 0.5 as the hypothesized probability and 0.420 as the observed sample proportion with a > alternative. This gives us an appropriate power of 0.9452.</p>
+          
+          <figure xml:id="fig-ex-1-2-power">
+            <caption>Power calculation visualization</caption>
+            <image source="images/ex1-2-power.png" width="70%">
+              <description>Graphs showing power calculation with overlapping distributions</description>
+            </image>
+          </figure>
+          
+          <p>Thus, the probability of rejecting <m>H_0: \pi = 1/3</m> when <m>n = 100</m> and <m>\pi</m> is actually 0.5 equals 0.9452. Therefore, in about 95% of samples from a process with <m>\pi = 0.5</m> we will correctly reject that <m>\pi = 1/3</m>.</p>
+          
+          <p>Power is the proportion of the green area that lies to the right of the blue line.</p></li>
+          
+          <li><p>If the underlying process probability is even larger at <m>\pi = 2/3</m>, this will shift the alternative distribution to the right and even more of the distribution will lie in the rejection region. Our power will increase as it will be even easier for us to obtain a sample that will convince us that the hypothesized value of 1/3 is incorrect.</p>
+          
+          <figure xml:id="fig-ex-1-2-power-larger">
+            <caption>Power with larger alternative probability</caption>
+            <image source="images/ex1-2-power-larger.png" width="70%">
+              <description>Graph showing increased power with larger probability</description>
+            </image>
+          </figure></li>
+          
+          <li><p>If the level of significance is lowered from 0.05 to 0.01, this will move the red line to the right. We will need a larger sample proportion to convince us and this will slightly reduce our power (less than 0.90).</p>
+          
+          <figure xml:id="fig-ex-1-2-power-stricter">
+            <caption>Power with stricter significance level</caption>
+            <image source="images/ex1-2-power-stricter.png" width="70%">
+              <description>Graph showing reduced power with stricter alpha level</description>
+            </image>
+          </figure></li>
+        </ol></p>
+      </answer>
+    </p>
+    
+    <p><url href="https://www.youtube.com/watch?v=PLACEHOLDER">Watch video walkthrough</url> of this example.</p>
   </conclusion>
 
 </section>
