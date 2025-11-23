@@ -624,46 +624,83 @@ qqline(birthweight, datax=T)
       <response/>
     </exercise>
   </subsection>
+  
+  <subsection xml:id="practice2-1B">
+    <title>Practice Problem 2.1B</title>
     
-    <exercise xml:id="PP2-1B" label="PP2.1B">
-      <title>Practice Problem 2.1B</title>
+    <p>The <c>AnthemTimes2025.txt</c> file has data on the length of the performance of the national anthem preceding the National Football League's Super Bowl for games from 1980 (Super Bowl 14) to 2025 (Super Bowl 58). Note: There are two columns for times (the first is from a colleague of mine watching and timing each one, the second one is from sportsbettingdime). Using sbdTime:</p>
+    
+    <exercise xml:id="practice-2-1b-a" label="PP2.1B.1">
+      <title>Create dotplot with active title</title>
       <statement>
-        <p>The <c>AnthemTimes2025.txt</c> file has data on the length of the performance of the national anthem preceding the National Football League's Super Bowl for games from 1980 (Super Bowl 14) to 2025 (Super Bowl 58). Note: There are two columns for times (the first is from a colleague of mine watching and timing each one, the second one is from sportsbettingdime). Using sbdTime:</p>
+        <p>Create and include a well-labeled dotplot of the performance lengths. Include an "active title."</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-1b-b" label="PP2.1B.2">
+      <title>Describe distribution</title>
+      <statement>
+        <p>Give a brief description, in context, of the distribution, as if to someone who can't see your graph.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-1b-c" label="PP2.1B.3">
+      <title>Create boxplot and identify outliers</title>
+      <statement>
+        <p>Create and include a modified boxplot of the performance lengths. Identify any outliers shown in the boxplot by name.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-1b-d" label="PP2.1B.4">
+      <title>Report summary statistics</title>
+      <statement>
+        <p>Report the mean, median, and standard deviation. Include measurement units.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-1b-e" label="PP2.1B.5">
+      <title>Predict next Super Bowl length</title>
+      <statement>
+        <p>Give one number to predict the performance length in the next Super Bowl. Also include some indication of how accurate you think your prediction will be. (Cite any external information/additional analysis that you use.)</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+  
+  <subsection xml:id="practice2-1C">
+    <title>Practice Problem 2.1C</title>
+    
+    <exercise xml:id="practice-2-1c-a" label="PP2.1C.1">
+      <title>Generate random normal data and create probability plot</title>
+      <statement>
+        <p>Use statistical software to generate a random sample of 100 observations from a normal distribution with mean 2 and standard deviation 5.</p>
         
-        <p><ol marker="(a)">
-          <li><p>Create and include a well-labeled dotplot of the performance lengths. Include an "active title."</p></li>
-          <li><p>Give a brief description, in context, of the distribution, as if to someone who can't see your graph.</p></li>
-          <li><p>Create and include a modified boxplot of the performance lengths. Identify any outliers shown in the boxplot by name.</p></li>
-          <li><p>Report the mean, median, and standard deviation. Include measurement units.</p></li>
-          <li><p>Give one number to predict the performance length in the next Super Bowl. Also include some indication of how accurate you think your prediction will be. (Cite any external information/additional analysis that you use.)</p></li>
-        </ol></p>
+        <p><alert>In R:</alert> <c>mydata = rnorm(100, 2, 5)</c></p>
+        
+        <p><alert>In JMP:</alert> In new worksheet, choose Columns &gt; New Column. Under Initialize Data set the Number of rows to 100. Under Column Properties, select Formula. Then select Random &gt; Random Normal and specify (2,5).</p>
+        
+        <p>Create a normal probability plot of the generated data. Do the data follow a straight line?</p>
       </statement>
       <response/>
     </exercise>
     
-    <exercise xml:id="PP2-1C" label="PP2.1C">
-      <title>Practice Problem 2.1C</title>
+    <exercise xml:id="practice-2-1c-b" label="PP2.1C.2">
+      <title>Generate skewed data and compare probability plot</title>
       <statement>
-        <p><ol marker="(a)">
-          <li><p>Use statistical software to generate a random sample of 100 observations from a normal distribution with mean 2 and standard deviation 5.</p>
-          
-          <p><alert>In R:</alert> <c>mydata = rnorm(100, 2, 5)</c></p>
-          
-          <p><alert>In JMP:</alert> In new worksheet, choose Columns &gt; New Column. Under Initialize Data set the Number of rows to 100. Under Column Properties, select Formula. Then select Random &gt; Random Normal and specify (2,5).</p>
-          
-          <p>Create a normal probability plot of the generated data. Do the data follow a straight line?</p></li>
-          
-          <li><p>Repeat (a) for data that is skewed to the right.</p>
-          
-          <p><alert>In R:</alert> <c>mydata = rchisq(100, 2)</c></p>
-          
-          <p><alert>In JMP:</alert> Select Random &gt; Random ChiSquare and enter 2 as the "df"</p>
-          
-          <p>How does the behavior of the probability plot change? How would you interpret this plot without looking at the histogram?</p></li>
-        </ol></p>
+        <p>Repeat (a) for data that is skewed to the right.</p>
+        
+        <p><alert>In R:</alert> <c>mydata = rchisq(100, 2)</c></p>
+        
+        <p><alert>In JMP:</alert> Select Random &gt; Random ChiSquare and enter 2 as the "df"</p>
+        
+        <p>How does the behavior of the probability plot change? How would you interpret this plot without looking at the histogram?</p>
       </statement>
       <response/>
     </exercise>
-  </paragraphs>
+  </subsection>
   
 </subsection>
