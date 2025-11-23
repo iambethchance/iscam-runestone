@@ -92,7 +92,7 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
       </statement>
       <solution>
         <p>Expected output:</p>
-        <image source="images/firstRdotplot.png" width="60%">
+        <image source="images/firstRdotplot.jpg" width="60%">
           <description>R dotplot of birth weights showing distribution</description>
         </image>
       </solution>
@@ -114,7 +114,7 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
       </statement>
       <solution>
         <p>Expected output:</p>
-        <image source="images/firstJMPdotplot.png" width="60%">
+        <image source="images/firstJMPdotplot.jpg" width="60%">
           <description>JMP dotplot of birth weights showing distribution</description>
         </image>
       </solution>
@@ -132,15 +132,12 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
   </exercise>
   
   <paragraphs>
-    <title>Discussion: Handling Missing Data</title>
-    
     <p><alert>Discussion:</alert> The observations at 9999 don't seem to belong. The User Guide or "codebook" for these data states that the largest birth weight is 8165 grams and for other variables it lists 99, 999, or 9999 as values for "not stated" or unknown.</p>
 
-    <image source="images/codebooksnippet.png" width="80%">
+    <image source="images/codebooksnippet.png" width="100%">
       <description>Snippet from CDC codebook showing data positions</description>
     </image>
     
-    <sidebyside widths="58% 38%" margins="0% 4%" valign="top">
       <stack>
         <p>You could convert these observations to the missing value designator in your software or you can create a new data set that does not include those rows (subsetting the data).</p>
       </stack>
@@ -196,7 +193,7 @@ nrow(births2)
     </statement>
     <hint>
       <title>R Output</title>
-      <image source="images/secondRdotplot.png" width="60%">
+      <image source="images/secondRdotplot.jpg" width="60%">
         <description>R dotplot of subsetted birth weights</description>
       </image>
     </hint>
@@ -256,7 +253,7 @@ hist(births2$birthweight, xlab="birth weight")
     </statement>
     <hint>
       <title>R Output</title>
-      <image source="images/histogramR.png" width="60%">
+      <image source="images/histogramR.jpg" width="60%">
         <description>R histogram of birth weights</description>
       </image>
     </hint>
@@ -280,7 +277,7 @@ hist(births2$birthweight, xlab="birth weight")
       <sidebyside widths="30% 30% 30%">
         <stack>
           <p><alert>Symmetric</alert></p>
-          <image source="images/symmetric.png" width="100%">
+          <image source="images/symm1.png" width="100%">
             <description>Example of a symmetric distribution</description>
           </image>
         </stack>
