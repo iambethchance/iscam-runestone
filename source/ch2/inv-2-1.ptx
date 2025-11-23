@@ -132,12 +132,15 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
   </exercise>
   
   <paragraphs>
+    <title>Discussion: Handling Missing Data</title>
+    
     <p><alert>Discussion:</alert> The observations at 9999 don't seem to belong. The User Guide or "codebook" for these data states that the largest birth weight is 8165 grams and for other variables it lists 99, 999, or 9999 as values for "not stated" or unknown.</p>
 
-    <image source="images/codebooksnippet.png" width="100%">
+    <image source="images/codebooksnippet.png" width="80%">
       <description>Snippet from CDC codebook showing data positions</description>
     </image>
     
+    <sidebyside widths="58% 38%" margins="0% 4%" valign="top">
       <stack>
         <p>You could convert these observations to the missing value designator in your software or you can create a new data set that does not include those rows (subsetting the data).</p>
       </stack>
@@ -152,7 +155,9 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
         </aside>
       </stack>
     </sidebyside>
-  </paragraphs>  <paragraphs xml:id="tech-detour-subsetting">
+  </paragraphs>
+  
+  <paragraphs xml:id="tech-detour-subsetting">
     <title>Technology Detour – Subsetting the Data</title>
     
     <exercise xml:id="tech-detour-r-subset" label="Subsetting - R">
