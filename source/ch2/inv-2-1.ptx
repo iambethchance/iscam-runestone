@@ -5,59 +5,50 @@
   <introduction>
     <p>The CDC's Vital Statistics Online Data Portal allows you to download birth records for all births in the U.S. in a particular year.</p>
     
-    <exercise xml:id="I2-1-intro-a" label="I2.1.intro.a">
-      <title>Check file size</title>
-      <statement>
-        <p>Open this website and follow the Downloadable Data Files link for Birth. How large is the zip file for the U.S. data in 2024?</p>
-      </statement>
-    </exercise>
-    
-    <exercise xml:id="I2-1-intro-b" label="I2.1.intro.b">
-      <title>Check number of births</title>
-      <statement>
-        <p>Open the User's Guide for 2024. How many births were recorded for the U.S. in 2024?</p>
-      </statement>
-    </exercise>
-    
-    <exercise xml:id="I2-1-intro-c" label="I2.1.intro.c">
-      <title>Understanding data positions</title>
-      <statement>
-        <p>According to this documentation file, how many total "positions" are there in the data file? What information is in the first 8 positions? What information is in the next 4 positions? How would you determine the birth month?</p>
-      </statement>
-    </exercise>
+    <p><ul>
+      <li><p>Open this website and follow the Downloadable Data Files link for Birth. How large is the zip file for the U.S. data in 2024?</p></li>
+      <li><p>Open the User's Guide for 2024. How many births were recorded for the U.S. in 2024?</p></li>
+      <li><p>According to this documentation file, how many total "positions" are there in the data file? What information is in the first 8 positions? What information is in the next 4 positions? How would you determine the birth month?</p></li>
+    </ul></p>
     
     <p><alert>Discussion:</alert> If you were to download this file, it could take a minute. You would then need to unzip the file, which is then 5GB. This can be problematic to work with, especially if you were most interested in just a few of the variables. It can also be cumbersome to deal with all of the rows, especially if you just want to see general patterns. Most packages can now work with datafiles this large, but we are still pushing the limit a bit. JMP and R take a couple minutes to read in the data, and each row is still a single string (not separated into columns or tabs). One approach is to preprocess the data a bit before loading into the software package. Using a program like "awk" you can read in the data from specific positions (e.g., just the birth weights) or in R use read.fwf. Then a comma or tab delimited file would be much easier for the software to handle. Guide for recreating the 2023 datafile.</p>
     
     <p>The file <c>USbirthsJan2024.txt</c> contains information on the 297,798 births in January 2024, including birth weight (in grams), whether the baby was full term (gestation over 36 weeks), the 5 minute apgar score (an immediate measure of the infant's health), and the amount of weight gained by the mother during pregnancy (in lbs). The goal of this investigation is to build a model of how birth weights can be expected to behave in the future. In particular, we will ask questions such as: Can we use that model to make predictions about certain kinds of birth weights? How reliable will our estimates be?</p>
   </introduction>
   
-  <exercise xml:id="I2-1-a" label="I2.1a">
-    <title>Representativeness of data</title>
-    <statement>
-      <p>Are these data likely to be representative of birth weights for all 3,638,436 U.S. births in 2024? Explain.</p>
-    </statement>
-  </exercise>
-  
-  <exercise xml:id="I2-1-b" label="I2.1b">
-    <title>Variable type</title>
-    <statement>
-      <p>Is the variable birthweight quantitative or categorical?</p>
-    </statement>
-  </exercise>
-  
-  <p>Our next step is to look at the data! As in Chapter 1, we will want to consider which graphical and numerical summaries reveal the most information about the distribution.</p>
+  <paragraphs>
+    <title>Exploring the Data</title>
+    
+    <exercise xml:id="inv2-1-a" label="I2.1a">
+      <title>Representativeness of data</title>
+      <statement>
+        <p>Are these data likely to be representative of birth weights for all 3,638,436 U.S. births in 2024? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="inv2-1-b" label="I2.1b">
+      <title>Variable type</title>
+      <statement>
+        <p>Is the variable birthweight quantitative or categorical?</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <p>Our next step is to look at the data! As in Chapter 1, we will want to consider which graphical and numerical summaries reveal the most information about the distribution.</p>
+  </paragraphs>
   
   <paragraphs xml:id="tech-detour-access-quantitative">
-    <title>Accessing quantitative data</title>
+    <title>Technology Detour - Accessing Quantitative Data</title>
     
     <p>See the Technology Detour after Investigation 1.1 for instructions on how to load data into your software. You may be able to copy and paste from the webpage, or download the file to your computer and open as tab delimited. Remember to search the help menus for more information if you have more complicated data files in the future.</p>
     
     <p><alert>R Notes:</alert> In the instructions below, recall that the + sign comes up in R after you hit Enter when R is expecting the next line to be a continuation of the previous line. You can alternatively continue the command on the same line. In the instructions below, some steps are optional.</p>
     
     <p><alert>JMP Notes:</alert> Remember to paste in the column names (e.g., hold down the shift key) when using ctrl-V. Also make sure you don't end up with an extra row. For this data set, we recommend you save the file and use File &gt; Open and use the pull-down menu to specify the .txt format.</p>
+    
+    <p>Check that you have 297,798 rows of data. Now use technology to create a dotplot of the birth weights.</p>
   </paragraphs>
-  
-  <p>Check that you have 297,798 rows of data. Now use technology to create a dotplot of the birth weights.</p>
   
   <paragraphs xml:id="tech-detour-dotplots">
     <title>Technology Detour – Dotplots</title>
@@ -66,7 +57,7 @@
       <title>Creating Dotplots in R</title>
       <statement>
         <p>Assuming you imported the data into "births"</p>
-        <program language="r">
+        <program language="r" interactive="sage">
           <input>
 nrow(births)           # Counts the number of observations
 names(births)          # Shows the variable names for your data
@@ -93,16 +84,21 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
     <p>A dotplot shows each numerical value individually (and is best with smaller datasets), some packages may actually "bin" the values if the data set is large. If the dataset includes many distinct (non-repeated) values, this can make it more difficult to see the "clumping" in the data.</p>
   </paragraphs>
   
-  <exercise xml:id="I2-1-c" label="I2.1c">
+  <exercise xml:id="inv2-1-c" label="I2.1c">
     <title>Describe dotplot</title>
     <statement>
       <p>Describe what you see.</p>
     </statement>
+    <response/>
   </exercise>
   
-  <p><alert>Discussion:</alert> The observations at 9999 don't seem to belong. The User Guide or "codebook" for these data states that the largest birth weight is 8165 grams and for other variables it lists 99, 999, or 9999 as values for "not stated" or unknown.</p>
-  
-  <p>You could convert these observations to the missing value designator in your software (e.g., <c>•</c> in JMP and <c>NaN</c> in R) or you can create a new data set that does not include those rows (subsetting the data).</p>
+  <paragraphs>
+    <title>Discussion: Handling Missing Data</title>
+    
+    <p><alert>Discussion:</alert> The observations at 9999 don't seem to belong. The User Guide or "codebook" for these data states that the largest birth weight is 8165 grams and for other variables it lists 99, 999, or 9999 as values for "not stated" or unknown.</p>
+    
+    <p>You could convert these observations to the missing value designator in your software (e.g., <c>•</c> in JMP and <c>NaN</c> in R) or you can create a new data set that does not include those rows (subsetting the data).</p>
+  </paragraphs>
   
   <paragraphs xml:id="tech-detour-subsetting">
     <title>Technology Detour – Subsetting the Data</title>
@@ -110,7 +106,7 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
     <exercise xml:id="tech-detour-r-subset" label="Subsetting - R">
       <title>Subsetting Data in R</title>
       <statement>
-        <program language="r">
+        <program language="r" interactive="sage">
           <input>
 births2 = births[which(births$birthweight &lt; 9999), ]  # selects rows that satisfy condition
                                                          # notice the comma!
@@ -134,14 +130,19 @@ nrow(births2)
     </exercise>
   </paragraphs>
   
-  <exercise xml:id="I2-1-d" label="I2.1d">
+  <exercise xml:id="inv2-1-d" label="I2.1d">
     <title>Recreate dotplot with subsetted data</title>
     <statement>
       <p>Recreate the dotplot with the subsetted data and describe what you see.</p>
     </statement>
+    <response/>
   </exercise>
   
-  <p>It may still be difficult to see much in the dotplot with such a large data set, especially if there are many distinct (non-repeated) values. One solution is to "bin" the observations. Some software packages (e.g., Minitab) will do that automatically even with a dotplot. Another approach is to use a different type of graph, a histogram, that groups the data into intervals of equal width (e.g., 1000-2000, 2000-3000, …) and then construct a bar for each interval with the height of the bar representing the number or proportion of observations in that interval. Notice these bars will be touching, unlike in a bar graph, to represent the continuous rather than categorical nature of the data.</p>
+  <paragraphs>
+    <title>Using Histograms</title>
+    
+    <p>It may still be difficult to see much in the dotplot with such a large data set, especially if there are many distinct (non-repeated) values. One solution is to "bin" the observations. Some software packages (e.g., Minitab) will do that automatically even with a dotplot. Another approach is to use a different type of graph, a histogram, that groups the data into intervals of equal width (e.g., 1000-2000, 2000-3000, …) and then construct a bar for each interval with the height of the bar representing the number or proportion of observations in that interval. Notice these bars will be touching, unlike in a bar graph, to represent the continuous rather than categorical nature of the data.</p>
+  </paragraphs>
   
   <paragraphs xml:id="tech-detour-histograms">
     <title>Technology Detour – Histograms</title>
@@ -149,7 +150,7 @@ nrow(births2)
     <exercise xml:id="tech-detour-r-histogram" label="Histogram - R">
       <title>Creating Histograms in R</title>
       <statement>
-        <program language="r">
+        <program language="r" interactive="sage">
           <input>
 hist(births2$birthweight, xlab="birth weight")
 # Note you can also use breaks=x to change the number of intervals to x.
@@ -173,11 +174,12 @@ hist(births2$birthweight, xlab="birth weight")
     </exercise>
   </paragraphs>
   
-  <exercise xml:id="I2-1-e" label="I2.1e">
+  <exercise xml:id="inv2-1-e" label="I2.1e">
     <title>Compare dotplot and histogram</title>
     <statement>
       <p>Create a histogram for the subsetted data (births2) and compare the information revealed by the dotplots and the histograms. Do you feel one display is more effective at displaying information about birth weights than the other? Explain.</p>
     </statement>
+    <response/>
   </exercise>
   
   <assemblage xml:id="describing-distributions">
@@ -209,35 +211,43 @@ hist(births2$birthweight, xlab="birth weight")
     <p>It is also very important to note any observations that do not follow the overall pattern (e.g., "outliers") as they may reveal errors in the data or other important features to pay attention to.</p>
   </assemblage>
   
-  <exercise xml:id="I2-1-f" label="I2.1f">
+  <exercise xml:id="inv2-1-f" label="I2.1f">
     <title>Characterize the distribution</title>
     <statement>
       <p>How would you characterize the shape, center, and variability of these birthweights? (Remember to put your comments in context, e.g., "The distribution of January birthweights in 2024 was …")</p>
     </statement>
+    <response/>
   </exercise>
   
-  <exercise xml:id="I2-1-g" label="I2.1g">
+  <exercise xml:id="inv2-1-g" label="I2.1g">
     <title>Explain lower weight babies</title>
     <statement>
       <p>You may have noticed a few more lower weight babies than we might have expected (if we assume a "random" biological characteristic will be fairly symmetric and bell-shaped). Can you suggest an explanation for the excess of lower birth weights seen in this distribution?</p>
     </statement>
+    <response/>
   </exercise>
   
-  <exercise xml:id="I2-1-h" label="I2.1h">
+  <exercise xml:id="inv2-1-h" label="I2.1h">
     <title>Subset by gestation period</title>
     <statement>
       <p>Now, further subset the births2 data based on whether or not the pregnancy lasted at least 37 weeks (i.e., <c>OEG == 2</c>). [R Hints: Edit the previous command, using births2 (two places). Use "==" for an equality comparison.] How many observations do you end up with?</p>
     </statement>
+    <response/>
   </exercise>
   
-  <exercise xml:id="I2-1-i" label="I2.1i">
+  <exercise xml:id="inv2-1-i" label="I2.1i">
     <title>Assess symmetry after subsetting</title>
     <statement>
       <p>After this step do we have a more symmetric distribution? What is a downside to subsetting the dataset in this way?</p>
     </statement>
+    <response/>
   </exercise>
   
-  <p>Let's use this as our final dataset and use technology to calculate some helpful numerical summaries of the distribution, namely ones that describe the center (e.g., mean, median), variability (e.g., standard deviation), and skewness. The "skewness statistic" involves <m>\Sigma((y_i-\bar{y})/s)^3</m>, so positive values indicate a distribution that is skewed right, negative values indicate a distribution that is skewed left, and values near zero indicate a symmetric distribution.</p>
+  <paragraphs>
+    <title>Numerical Summaries</title>
+    
+    <p>Let's use this as our final dataset and use technology to calculate some helpful numerical summaries of the distribution, namely ones that describe the center (e.g., mean, median), variability (e.g., standard deviation), and skewness. The "skewness statistic" involves <m>\Sigma((y_i-\bar{y})/s)^3</m>, so positive values indicate a distribution that is skewed right, negative values indicate a distribution that is skewed left, and values near zero indicate a symmetric distribution.</p>
+  </paragraphs>
   
   <paragraphs xml:id="tech-detour-numerical-summaries">
     <title>Technology Detour – Numerical Summaries</title>
@@ -246,7 +256,7 @@ hist(births2$birthweight, xlab="birth weight")
       <title>Numerical Summaries in R</title>
       <statement>
         <p><alert>R note:</alert> This is our final dataset, so we can "attach" the datafile and then not need to use "births3$" for R to know which dataset we are using.</p>
-        <program language="r">
+        <program language="r" interactive="sage">
           <input>
 attach(births3)    # Optional step if this is final data to work with
 iscamsummary(births3$birthweight, digits=2)
@@ -265,18 +275,20 @@ iscamsummary(births3$birthweight, digits=2)
     </exercise>
   </paragraphs>
   
-  <exercise xml:id="I2-1-j" label="I2.1j">
+  <exercise xml:id="inv2-1-j" label="I2.1j">
     <title>Interpret numerical summaries</title>
     <statement>
       <p>Determine and interpret the mean, standard deviation, and skewness of these data.</p>
     </statement>
+    <response/>
   </exercise>
   
-  <exercise xml:id="I2-1-k" label="I2.1k">
+  <exercise xml:id="inv2-1-k" label="I2.1k">
     <title>Effect of outliers</title>
     <statement>
       <p>How would the mean and standard deviations values compare if we had not removed the 9999 and low birthweight values?</p>
     </statement>
+    <response/>
   </exercise>
   
   <paragraphs xml:id="fitting-model">
@@ -285,22 +297,27 @@ iscamsummary(births3$birthweight, digits=2)
     <p>Recall from Chapter 1 the normal probability distribution has some very nice properties and allows us to predict the behavior of our variable. For example, we might want to assume birth weights follow a normal distribution and estimate how often a baby will be of low birth weight (under 2500 grams according to the International Statistical Classification of Diseases, 10th revision, World Health Organization, 2011) based on these data.</p>
   </paragraphs>
   
-  <exercise xml:id="I2-1-l" label="I2.1l">
+  <exercise xml:id="inv2-1-l" label="I2.1l">
     <title>Assess normality</title>
     <statement>
       <p>Do these birth weight data appear to behave like a normal distribution? How are you deciding?</p>
     </statement>
+    <response/>
   </exercise>
   
-  <p>Many software programs will allow you to overlay a theoretical normal distribution to see how well it matches your data, using the mean and standard deviation from the observed data.</p>
+  <paragraphs>
+    <title>Normal Distribution Overlay</title>
+    
+    <p>Many software programs will allow you to overlay a theoretical normal distribution to see how well it matches your data, using the mean and standard deviation from the observed data.</p>
+  </paragraphs>
   
-  <exercise xml:id="I2-1-m" label="I2.1m">
+  <exercise xml:id="inv2-1-m" label="I2.1m">
     <title>Add normal overlay</title>
     <statement>
       <p>Add an overlay of a normal model on the distribution of birthweight data and comment on how well the model fits the data. (First create the histogram as above.)</p>
       
       <p><alert>In R</alert></p>
-      <program language="r">
+      <program language="r" interactive="sage">
         <input>
 iscamaddnorm(births3$birthweight, main, xlab, bins)
         </input>
@@ -311,17 +328,22 @@ iscamaddnorm(births3$birthweight, main, xlab, bins)
       
       <p>Discuss any deviations from the pattern of a normal distribution.</p>
     </statement>
+    <response/>
   </exercise>
   
-  <p>Another method for comparing your data to a theoretical normal distribution is to see whether certain properties of a normal distribution hold true. In Chapter 1, you learned that 95% of observations in a normal distribution should fall within two standard deviations of the mean.</p>
+  <paragraphs>
+    <title>Checking Normal Distribution Properties</title>
+    
+    <p>Another method for comparing your data to a theoretical normal distribution is to see whether certain properties of a normal distribution hold true. In Chapter 1, you learned that 95% of observations in a normal distribution should fall within two standard deviations of the mean.</p>
+  </paragraphs>
   
-  <exercise xml:id="I2-1-n" label="I2.1n">
+  <exercise xml:id="inv2-1-n" label="I2.1n">
     <title>Calculate percentage within 2 SD</title>
     <statement>
       <p>Calculate the percentage of the birthweights that fall within 2 standard deviations of the mean by creating a Boolean (true/false) variable:</p>
       
       <p><alert>In R (after attaching births3)</alert></p>
-      <program language="r">
+      <program language="r" interactive="sage">
         <input>
 within2sd = (birthweight &gt; mean(birthweight) - 2*sd(birthweight)) &amp; 
             (birthweight &lt; mean(birthweight) + 2*sd(birthweight))
@@ -339,24 +361,30 @@ table(within2sd)/length(birthweight)
         <li><p>Then use Analyze &gt; Distribution on this column and report the mean, the proportion of ones.</p></li>
       </ol></p>
     </statement>
+    <response/>
   </exercise>
   
-  <exercise xml:id="I2-1-o" label="I2.1o">
+  <exercise xml:id="inv2-1-o" label="I2.1o">
     <title>Compare to normal prediction</title>
     <statement>
       <p>How well does this percentage match to what would be predicted if the data were behaving like a normal distribution?</p>
     </statement>
+    <response/>
   </exercise>
   
-  <p>Another way to assess the "fit" of a probability model to the data is with a probability plot (aka quantile plot). Probability plots work roughly like this: The computer determines how many observations are in the data set, and then reports the z-scores it would expect for the 1/nth percentiles (also called quantiles) for the probability model. The plot compares these z-scores to the observed data; if the z-scores "line up" with the observed data, then the probability plot supports that the data are behaving like the candidate distribution. The theory is that whether or not the observations follow a line can be easier to judge than whether a histogram follows a curve.</p>
+  <paragraphs>
+    <title>Normal Probability Plots</title>
+    
+    <p>Another way to assess the "fit" of a probability model to the data is with a probability plot (aka quantile plot). Probability plots work roughly like this: The computer determines how many observations are in the data set, and then reports the z-scores it would expect for the 1/nth percentiles (also called quantiles) for the probability model. The plot compares these z-scores to the observed data; if the z-scores "line up" with the observed data, then the probability plot supports that the data are behaving like the candidate distribution. The theory is that whether or not the observations follow a line can be easier to judge than whether a histogram follows a curve.</p>
+  </paragraphs>
   
-  <exercise xml:id="I2-1-p" label="I2.1p">
+  <exercise xml:id="inv2-1-p" label="I2.1p">
     <title>Create normal probability plot</title>
     <statement>
       <p>Use technology to create a normal probability plot for the subsetted birth weight data.</p>
       
       <p><alert>In R (after attaching births3)</alert></p>
-      <program language="r">
+      <program language="r" interactive="sage">
         <input>
 qqnorm(birthweight, datax=TRUE)    # "datax=T" puts observed values on x-axis
 qqline(birthweight, datax=T)
@@ -368,24 +396,27 @@ qqline(birthweight, datax=T)
       
       <p>Do the observations deviate much from a line? If so how? [Hints: What does this suggest about how the birth weight data values differ from what we would predict for a normal distribution (e.g., smallest values are smaller than expected or larger than expected)? Is this consistent with what you saw in the histogram?]</p>
     </statement>
+    <response/>
   </exercise>
   
   <p><alert>Discussion:</alert> Some software packages report a p-value with the normal probability plot. The null hypothesis here is that the data do follow a normal distribution, so if you fail to reject this null hypothesis you can say that the data do not provide strong evidence that they do not arise from a normally distributed population. (But keep in mind that large sample sizes will drive the p-value down, regardless of the actual shape of the population.) There are several different types of significance tests for normality, but in this text, we will focus on the visual judgement of whether the probability plot appears to follow a straight line.</p>
   
   <p>Suppose we were willing to assume that in general birth weights are approximately normally distributed with mean 3339 grams and standard deviation 462 grams. We can use this model to make predictions, like how often a baby will be of low birth weight, defined as 2500 grams or less.</p>
   
-  <exercise xml:id="I2-1-q" label="I2.1q">
+  <exercise xml:id="inv2-1-q" label="I2.1q">
     <title>Calculate low birth weight probability</title>
     <statement>
       <p>Use technology (e.g., Normal Probability Calculator applet) to calculate the normal distribution probability that a randomly selected baby will be of low birth weight. Include a well-labeled sketch with the shaded area of interest.</p>
     </statement>
+    <response/>
   </exercise>
   
-  <exercise xml:id="I2-1-r" label="I2.1r">
+  <exercise xml:id="inv2-1-r" label="I2.1r">
     <title>Compare to actual data</title>
     <statement>
       <p>Now examine the births3 data: What percentage of the birth weights in this data set were at most 2500 grams? [Hint: Create a Boolean variable?] How does this compare to the prediction in (q)? Does this surprise you? Explain.</p>
     </statement>
+    <response/>
   </exercise>
   
   <conclusion>
@@ -410,6 +441,7 @@ qqline(birthweight, datax=T)
           <li><p>Examine and include a stemplot of the cap prices. We see one team with an unusual value. Identify this team by name and suggest an explanation for its unusual cap price. [Hint: We are not talking about the largest or smallest value this time!]</p></li>
         </ol></p>
       </statement>
+      <response/>
     </exercise>
     
     <exercise xml:id="PP2-1B" label="PP2.1B">
@@ -425,6 +457,7 @@ qqline(birthweight, datax=T)
           <li><p>Give one number to predict the performance length in the next Super Bowl. Also include some indication of how accurate you think your prediction will be. (Cite any external information/additional analysis that you use.)</p></li>
         </ol></p>
       </statement>
+      <response/>
     </exercise>
     
     <exercise xml:id="PP2-1C" label="PP2.1C">
@@ -448,6 +481,7 @@ qqline(birthweight, datax=T)
           <p>How does the behavior of the probability plot change? How would you interpret this plot without looking at the histogram?</p></li>
         </ol></p>
       </statement>
+      <response/>
     </exercise>
   </paragraphs>
   
