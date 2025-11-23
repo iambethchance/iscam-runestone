@@ -43,23 +43,29 @@
             </image>
           </figure>
           
-          <p>Or we could calculate the exact Binomial probability using software:</p>
-          <program language="r">
-            <input>
+          <aside>
+            <title>R Output</title>
+            <p>Or we could calculate the exact Binomial probability using R:</p>
+            <program language="r">
+              <input>
 iscambinomprob(k=12, n=21, prob=.3333, lower.tail=FALSE)
 # Probability 12 and above = 0.02117713
 
 iscambinomtest(observed=12, n=21, hyp=.3333, alternative="greater")
 # p-value: 0.021177
-            </input>
-          </program>
+              </input>
+            </program>
+          </aside>
           
-          <figure xml:id="fig-ex-1-2-output">
-            <caption>Statistical software output</caption>
-            <image source="images/ex1-2-output.png" width="70%">
-              <description>JMP output for cola discrimination test</description>
-            </image>
-          </figure>
+          <aside>
+            <title>JMP Output</title>
+            <figure xml:id="fig-ex-1-2-output">
+              <caption>Statistical software output</caption>
+              <image source="images/ex1-2-output.png" width="70%">
+                <description>JMP output for cola discrimination test</description>
+              </image>
+            </figure>
+          </aside>
           
           <p>Notice the normal approximation (using R) does not provide a great estimate of this p-value:</p>
           <program language="r">
