@@ -3,15 +3,381 @@
   <title>Investigation 2.4: The Ethan Allen</title>
   
   <introduction>
-    <p>In October, 2005, a tour boat named the Ethan Allen capsized on Lake George in New York with 47 passengers aboard. In the inquiries that followed, it was suggested that the tour operators should have realized that the combined weight of so many passengers was likely to exceed the weight capacity of the boat. Let's explore whether they could have predicted this.</p>
+    <p>On October 2, 2005, the tour boat <em>Ethan Allen</em> capsized on Lake George in upstate New York. All 47 passengers on board were thrown into the lake, and 20 of them drowned. Although there were some claims that a large wave had hit the boat, an investigation by New York State Police (2006) concluded that the boat had been overloaded with heavy passengers. In fact, the average weight of the 47 passengers was found to be 174 pounds; whereas the boat was designed with the assumption that passengers would average 140 pounds.</p>
   </introduction>
   
   <exercise xml:id="inv2-4-a" label="I6.4.1">
-    <title>Conjecture about distribution of passenger weights</title>
+    <title>Conjecture about weight distribution</title>
     <statement>
-      <p>The variable of interest in this study is weight of a passenger. For a sample of 47 passengers, make a conjecture as to the behavior of the distribution (shape, center, variability) of this variable. Include a well-labeled sketch of your conjecture below (e.g., represent 47 dots or sketch an outline of the general pattern). Include a guess of the values of the sample mean <m>\bar{x}</m> and the sample standard deviation <m>s</m>. [Hint: Think about the size of a typical deviation from the mean, as well as the Empirical (95%) Rule.]</p>
+      <p>Do you think the distribution of the weights of 47 passengers might vary from boat to boat, even if they were randomly selected from the same (large) population of American adults?</p>
     </statement>
     <response/>
   </exercise>
+  
+  <exercise xml:id="inv2-4-b" label="I6.4.2">
+    <title>Sketch population distribution</title>
+    <statement>
+      <p>Data from the Centers for Disease Control and Prevention indicate that weights of American adults in 2005 had a mean of 167 pounds and a standard deviation of 35 pounds. (To convey that these are population values, we will use Greek letters to represent their values, <m>\mu = 167</m> and <m>\sigma = 35</m>.) Use this information to sketch a possible distribution of the weights of the population of adult Americans.</p>
+      
+      <p>Engineers estimated the maximum weight capacity of passengers that the Ethan Allen could accommodate to be 7500 pounds. If the tour boat company consistently accepted 47 passengers, what we want to know is the probability that the combined weight of the 47 passengers would exceed this capacity.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-c" label="I6.4.3">
+    <title>Identify observational units and variable</title>
+    <statement>
+      <p>What are the observational units and variable for this research question? Is this variable quantitative or categorical? [Hint: Notice that the probability of interest does not pertain to individual passengers.]</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-d" label="I6.4.4">
+    <title>Convert total weight to average weight</title>
+    <statement>
+      <p>Instead of focusing on the total weight of the 47 passengers, we can instead work with the average weight of the 47 passengers. Complete the following to indicate how these are equivalent:</p>
+      
+      <p>Total weight of passengers <m>&gt; 7500</m> lbs when average weight of 47 passengers <m>&gt;</m> <var width="10"/>.</p>
+      
+      <p>So, to see how often the boat was sent out with too much weight, we need to know about the distribution of the average weight of 47 passengers from different boats (samples). Think about a distribution of sample mean weights from different random samples of 47 passengers, repeatedly selected from the population of adult Americans.</p>
+    </statement>
+    <solution>
+      <p>7500/47 = 159.574 pounds</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-e" label="I6.4.5">
+    <title>Center of sample means distribution</title>
+    <statement>
+      <p>Where do you think the distribution of sample means will be centered?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-f" label="I6.4.6">
+    <title>Variability of sample means</title>
+    <statement>
+      <p>Do you think the distribution of sample means would have more variability, less variability, or the same variability as the distribution of weights of individual people? Explain your answer.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-g" label="I6.4.7">
+    <title>Compare probabilities</title>
+    <statement>
+      <p>Do you think the probability of having the average weight exceed 159.574 pounds is larger or smaller than the probability of the weight of any one passenger exceeding 159.574 pounds?</p>
+      
+      <p><m>P(\text{average weight} &gt; 159.574)</m> <var form="buttons" width="15"/> <m>P(\text{weight} &gt; 159.574)</m></p>
+    </statement>
+    <choices randomize="no">
+      <choice><statement><p>LARGER</p></statement></choice>
+      <choice><statement><p>SMALLER</p></statement></choice>
+      <choice><statement><p>EQUAL</p></statement></choice>
+    </choices>
+    <response/>
+  </exercise>
+  
+  <paragraphs>
+    <title>Simulation Analysis</title>
+    
+    <p>To investigate this probability, we will generate random samples from a hypothetical population of adults' weights. Open the <url href="https://www.rossmanchance.com/iscam4/data/WeightPopulations.txt">WeightPopulations.txt</url> data file and pretend each column is a different population of 20,000 adult tourists, each with a population mean weight (<m>\mu</m>) of 167 lbs and a population standard deviation (<m>\sigma</m>) of 35 lbs.</p>
+    
+    <p>Copy the data to the clipboard and then open the <url href="https://www.rossmanchance.com/applets/2021/samplingdist/SamplingFromPop.html">Sampling from Finite Population applet</url>: Press Clear, click inside the Paste population data box, and paste the data from the clipboard. Press Use Data.</p>
+  </paragraphs>
+  
+  <exercise xml:id="inv2-4-h" label="I6.4.8">
+    <title>Describe population distribution</title>
+    <statement>
+      <p>Describe the shape, mean (<m>\mu</m>) and standard deviation (<m>\sigma</m>) of pop1 (shown in the histogram under Population Data). You can also check the Show skewness box.</p>
+      
+      <p>Check the Show Sampling Options box. Keep the Number of Samples at 1 and specify the Sample Size to be 47 and press the Draw Samples button.</p>
+      
+      <p>The weights for this random sample of 47 passengers from this population are displayed in blue and in the Most Recent Sample graph.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-i" label="I6.4.9">
+    <title>Describe sample distribution</title>
+    <statement>
+      <p>Describe the shape, center, and variability of this distribution. How does this sample distribution compare to the population distribution?</p>
+      
+      <p>Most Recent Sample distribution:</p>
+      <p>Shape: <var width="20"/></p>
+      <p>Mean: <var width="10"/></p>
+      <p>Standard deviation: <var width="10"/></p>
+      <p>Comparison (sample vs. population): <var width="40"/></p>
+      
+      <p>Notice that the mean of this sample (an <m>\bar{x}</m>) has also been added to the graph in the lower right Sampled Statistics graph.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-j" label="I6.4.10">
+    <title>Generate second sample</title>
+    <statement>
+      <p>Press Draw Samples again. [Option: Check the "Vertical layout" box in the applet.] Did you obtain the same sample of 47 weights? Did you obtain the same sample mean? Do either of the two sample means generated thus far equal the population mean?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-k" label="I6.4.11">
+    <title>Generate 10 samples total</title>
+    <statement>
+      <p>Continue to press Draw Samples 8 more times (for 10 samples total), and notice the variability in the resulting sample means from sample to sample. Is a pattern beginning to emerge in the Sampled Statistics distribution graph?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-l" label="I6.4.12">
+    <title>Generate 1000 samples</title>
+    <statement>
+      <p>Now set the Number of Samples to 990 (for 1,000 total) and press Draw Samples. Describe the shape, center, and variability of the distribution of the sample means (lower right). How do these features compare to the population distribution? Which one of these features has changed the most vs. the population, and how has it changed? [Hints: Note the change in scaling. You can check the Population scale box to rescale back to the original population scaling and add the location of the population mean.]</p>
+      
+      <p>Distribution of sample means (aka "sampling distribution"):</p>
+      <p>Shape: <var width="20"/></p>
+      <p>Mean: <var width="10"/></p>
+      <p>Standard deviation: <var width="10"/></p>
+      <p>Comparison (sample means vs. population): <var width="40"/></p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-m" label="I6.4.13">
+    <title>Use simulation for probability</title>
+    <statement>
+      <p>How can we use your simulated distribution of sample means to decide whether it is surprising that a boat with 47 passengers would exceed the (average) weight limit by chance (random sampling error) alone?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-n" label="I6.4.14">
+    <title>Count samples exceeding limit</title>
+    <statement>
+      <p>To investigate the question posed in (m), specify the sample mean of interest (159.574) in the Count Samples box, use the pull-down menu to specify whether you want to count samples Greater Than, Less Than, or Beyond (both directions). Press Count. What conclusions can you draw from this answer?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <paragraphs>
+    <title>Non-normal Population</title>
+    
+    <p>To carry out the preceding simulation analysis, we assumed that the population distribution had a normal shape. But what if the population of adult weights has a different, non-normal distribution? Will that change our findings?</p>
+  </paragraphs>
+  
+  <exercise xml:id="inv2-4-o" label="I6.4.15">
+    <title>Analyze skewed population</title>
+    <statement>
+      <p>Now choose the data from the second column (pop2) with the Choose variable pull-down menu on the left side. Describe the shape of this population and what it means for the variable to have this shape in this context. How do the values of <m>\mu</m> and <m>\sigma</m> compare to the pop1 (rounding a bit)?</p>
+      
+      <p>Shape: <var width="20"/></p>
+      <p>Mean: <var width="10"/></p>
+      <p>Standard deviation: <var width="10"/></p>
+      <p>Comparison to previous population: <var width="40"/></p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-p" label="I6.4.16">
+    <title>Sample from skewed population</title>
+    <statement>
+      <p>Generate 1,000 random samples of 47 individuals from this population. Produce a well-labeled sketch of the distribution of sample means below and note the values for the mean and standard deviation of the sampling distribution. How does this distribution compare to the distribution in (l)?</p>
+      
+      <p>Sketch: <var width="30"/></p>
+      <p>Mean: <var width="10"/></p>
+      <p>SD: <var width="10"/></p>
+      <p>Comparison: <var width="40"/></p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-q" label="I6.4.17">
+    <title>Probability for skewed population</title>
+    <statement>
+      <p>Use the applet to approximate the probability of obtaining a sample mean weight of at least 159.574 lbs for a random sample of 47 passengers from population 2. Has this probability changed considerably with the change in the shape of the distribution of the population of weights?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-r" label="I6.4.18">
+    <title>Compare three populations</title>
+    <statement>
+      <p>Repeat this analysis using the other population distribution (pop3) in the data file and summarize your observations for the three populations in the table below.</p>
+      
+      <table>
+        <title>Distribution of sample means comparison</title>
+        <tabular>
+          <row header="yes">
+            <cell>Distribution of sample means</cell>
+            <cell>Shape (Skew)</cell>
+            <cell>Mean</cell>
+            <cell>Standard deviation</cell>
+          </row>
+          <row>
+            <cell>Normal (<m>\mu = 167, \sigma = 35</m>)</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>Skewed right (<m>\mu = 167, \sigma = 35</m>)</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>Uniform (<m>a = 106.4, b = 227.6</m>)</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </table>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <paragraphs>
+    <title>Changing the Sample Size</title>
+  </paragraphs>
+  
+  <exercise xml:id="inv2-4-s" label="I6.4.19">
+    <title>Predict effect of larger sample size</title>
+    <statement>
+      <p>Prediction: Now consider changing the sample size from 47 to 188 (four times larger). Make a prediction for how the shape, mean, and SD of the distribution of sample means would change (if at all).</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-t" label="I6.4.20">
+    <title>Test prediction with larger sample</title>
+    <statement>
+      <p>Make this change of sample size from 47 to 188, and generate 1000 random samples (from the uniformly distributed population, pop3). Did the shape of the sample means change very much? What about the mean of the sample means? What about the SD of the sample means? How were your predictions in (s)?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <p><alert>Discussion:</alert> You should see that, as with the Gettysburg Address investigation, the shape of the population is not having much effect on the distribution of the sample means! In fact, you can show that the mean of the distribution of sample means from random samples is always equal to the mean of the population (any discrepancies you find are from not simulating enough random samples) and that, assuming the population is large compared to the size of the sample, the standard deviation of the distribution of sample means is equal to <m>\sigma/\sqrt{n}</m>. This standard deviation formula applies when the population size is large (more than 20 times the size of the sample) or infinite (so the randomly selected observations can be considered independent).</p>
+  
+  <exercise xml:id="inv2-4-u" label="I6.4.21">
+    <title>Explain standard deviation formula</title>
+    <statement>
+      <p>Explain why the formula for the standard deviation of the sample mean (<m>\sigma/\sqrt{n}</m>) makes intuitive sense (both the <m>\sigma</m> component and the <m>\sqrt{n}</m> component).</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <assemblage xml:id="key-result-clt">
+    <title>Key Result: Central Limit Theorem</title>
+    
+    <p>If all possible samples of size <m>n</m> are selected from a large population or an infinite random process with mean <m>\mu</m> and standard deviation <m>\sigma</m>, then the sampling distribution of these sample means will have the following characteristics:</p>
+    
+    <p><ul>
+      <li><p>The mean will be equal to <m>\mu</m>.</p></li>
+      <li><p>The standard deviation will be equal to <m>\sigma/\sqrt{n}</m> (we can call this <m>SD(\bar{x})</m> or <m>\sigma_{\bar{x}}</m>).</p></li>
+      <li><p><term>Central Limit Theorem:</term> The shape will be normal if the population distribution is normal, or approximately normal if the sample size is large regardless of the shape of the population distribution.</p></li>
+    </ul></p>
+    
+    <p>The convention is to consider the sample size large enough if <m>n &gt; 30</m>. However, this rule really depends on the shape of the population. The more non-symmetric the population distribution, the larger the sample size necessary before the distribution of sample means is reasonably modeled by a normal distribution.</p>
+    
+    <p>The population is considered large if it is more than 20 times the size of the sample.</p>
+  </assemblage>
+  
+  <p><alert>Discussion:</alert> In general, the shape of the distribution of sample means does not depend on the shape of the population distribution, unless you have small sample sizes. So if the population distribution itself follows a normal distribution, then we will always be willing to model the distribution of sample means with a normal distribution. However, we typically don't know the distribution of the population (that's why we need to collect data), but we can make a judgment based on the nature of the variable (e.g., biological characteristics, repeated measurements) or based on the information conveyed to us by the shape of the distribution of the sample data (e.g., normal probability plot).</p>
+  
+  <p>In this example, a sample size of 47 appears large enough to result in a normal distribution for the distribution of sample means. However, you may have noticed a bit of a right skew when the population was skewed and in such a situation you would want a larger sample size before you were willing to model the distribution of sample means with a normal distribution.</p>
+  
+  <p>Keep in mind that the results about the mean and standard deviation always hold for random samples: sample means cluster around the population mean and are less variable than individual observations! If the population size is not large, then a "finite population correction factor" can be applied as in Ch. 1.</p>
+  
+  <exercise xml:id="inv2-4-v" label="I6.4.22">
+    <title>Standardize the value</title>
+    <statement>
+      <p>Use the theoretical results for the mean and standard deviation of a sample mean to standardize the value of 159.57 lbs. [Hint: Start with a well-labeled sketch.] How might you interpret this value?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-w" label="I6.4.23">
+    <title>Apply Central Limit Theorem</title>
+    <statement>
+      <p>Use the result from the Central Limit Theorem and technology (e.g., the Normal Probability Calculator applet) to estimate the probability of a sample mean weight exceeding 159.57 lbs for a random sample of 47 passengers from a population with mean <m>\mu = 167</m> lbs and standard deviation <m>\sigma = 35</m> lbs. [Hint: Shade the area of interest in your sketch in (v).] How does this estimated probability compare to what you found with repeated sampling from the hypothetical populations?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-4-x" label="I6.4.24">
+    <title>Identify concerns</title>
+    <statement>
+      <p>Identify one concern you might have with this analysis. [Hint: What other assumption, apart from the shape of the population, was made in these simulations that may not be true in this study? Do you think this is a reasonable assumption for this study?]</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <assemblage xml:id="study-conclusions-2-4">
+    <title>Study Conclusions</title>
+    
+    <p>Assuming the CDC values for the mean and standard deviation of adult Americans' weights, <m>\mu = 167</m> lbs and <m>\sigma = 35</m> lbs, we believe that the distribution of sample mean weights will be well modeled by a normal distribution (based both on the not extremely skewed nature of the variable and the moderately large sample size of 47, which is larger than 30). Therefore, the Central Limit Theorem allows us to predict that the distribution of <m>\bar{x}</m> is approximately normal with mean 167 lbs and standard deviation <m>35/\sqrt{47} \approx 5.105</m> lbs. From this information, assuming the CDC data is representative of the population of Ethan Allen travelers, we can estimate the probability of obtaining a sample mean of 159.57 lbs or higher to be 0.9264. Therefore, it is not at all surprising that a boat carrying 47 American adults capsized. In fact, the surprising part might be that it didn't happen sooner!</p>
+  </assemblage>
+  
+  <subsection xml:id="practice2-4A">
+    <title>Practice Problem 2.4A</title>
+    
+    <exercise xml:id="practice-2-4a-a" label="PP2.4A.1">
+      <title>Probability for 20 passengers</title>
+      <statement>
+        <p>Use the Sampling from Finite Population applet or the Central Limit Theorem to estimate the probability that the sample mean of 20 randomly selected passengers exceeds 159.57lbs, assuming a normal population with mean 167lbs and standard deviation 35lbs.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-4a-b" label="PP2.4A.2">
+      <title>Compare probabilities</title>
+      <statement>
+        <p>Is the probability you found in (a) larger or smaller than the probability you found for 47 passengers? Explain why your answer makes intuitive sense.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-4a-c" label="PP2.4A.3">
+      <title>Uniform population</title>
+      <statement>
+        <p>Repeat (a) assuming a uniformly distributed population of weights. How do these two probabilities compare? [Hint: Think about whether it is more appropriate to use the Sampling from Finite Population applet or the CLT to answer this question.]</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-4a-d" label="PP2.4A.4">
+      <title>Explain limitation</title>
+      <statement>
+        <p>Explain why the calculation in (a) does not estimate the probability of the Ethan Allen sinking with 20 passengers.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+  
+  <subsection xml:id="practice2-4B">
+    <title>Practice Problem 2.4B</title>
+    
+    <exercise xml:id="practice-2-4b" label="PP2.4B.1">
+      <title>Finite population</title>
+      <statement>
+        <p>Use the Sampling from Finite Population applet or the Central Limit Theorem to estimate the probability that the sample mean of 47 randomly selected passengers would exceed 159.57lbs, assuming that random samples are repeatedly selected from a population of 80,000 individuals with mean 167 lbs and standard deviation 35 lbs. State any assumptions you need to make and support your answer statistically.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+  
+  <subsection xml:id="practice2-4C">
+    <title>Practice Problem 2.4C</title>
+    
+    <exercise xml:id="practice-2-4c" label="PP2.4C.1">
+      <title>Explain averages</title>
+      <statement>
+        <p>In this investigation, we found that the average of the sample average is near the population average. Explain what each use of the term "average" means in this statement.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
   
 </section>
