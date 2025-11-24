@@ -3,8 +3,16 @@
   <title>Investigation 2.2: Honking Reaction Times</title>
   
   <introduction>
-    <p>In this investigation, we will explore data on reaction times when drivers are blocked and examine how to model non-normal distributions.</p>
+    <p>Diekmann, Krassnig, and Lorenz (1996) conducted a field study to explore whether driver characteristics are related to an aggressive response (Thanks to Jeff Sklar for pointing us to this article). The study was conducted at a busy intersection in Munich, West Germany, on two afternoons (Sunday and Monday) in 1986. The experimenters sat in a Volkswagen Jetta (the "blocking car") and did not accelerate after the traffic light turned green, and timed how long before the driver of the blocked car reacted (either by honking or flashing headlights). The response time (in seconds) is our variable of interest. Some values were "censored" in that the researcher stopped timing before the driver actually honked. This can happen if there is a time limit to the observation period and "success" has not been observed within that time period.</p>
   </introduction>
+  
+  <exercise xml:id="inv2-2-a" label="I2.2a">
+    <title>Predict your reaction time</title>
+    <statement>
+      <p>How long do you think you would wait before you honked?</p>
+    </statement>
+    <response/>
+  </exercise>
   
   <exercise xml:id="inv2-2-b" label="I2.2b">
     <title>Explore honking reaction time data</title>
@@ -23,26 +31,20 @@
     <response/>
   </exercise>
   
-  <paragraphs>
-    <title>Resistant Statistics</title>
-    
-    <definition xml:id="def-resistant-statistic">
-      <statement>
-        <p>A numerical summary (statistic) is said to be <term>resistant</term> when it is not strongly influenced by a change in one or two extreme data values.</p>
-      </statement>
-    </definition>
-    
-    <p>When data are skewed to the right/left, the mean will be pulled in the direction of the longer tail.</p>
-    
-    <p>When data are skewed, we might often prefer to report the median as a "typical" value in the data set, rather than the mean because the mean is pulled in the direction of the longer tail. In addition, you might not want to cite the standard deviation as a measure of spread in a skewed distribution.</p>
-    
-    <definition xml:id="def-iqr">
-      <statement>
-        <p><term>Interquartile range (IQR)</term> = upper quartile – lower quartile</p>
-        <p>The lower quartile is a value such that roughly one-fourth of all the observations fall below it; the upper quartile is a value such that roughly one-fourth of all the observations fall above it. The IQR then measures the width of the interval containing the middle 50% of the observations.</p>
-      </statement>
-    </definition>
-  </paragraphs>
+  <assemblage xml:id="def-resistant-statistic">
+    <title>Definition: Resistant Statistic</title>
+    <p>A numerical summary (statistic) is said to be <term>resistant</term> when it is not strongly influenced by a change in one or two extreme data values.</p>
+  </assemblage>
+  
+  <p>When data are skewed to the right/left, the mean will be pulled in the direction of the longer tail.</p>
+  
+  <p>When data are skewed, we might often prefer to report the median as a "typical" value in the data set, rather than the mean because the mean is pulled in the direction of the longer tail. In addition, you might not want to cite the standard deviation as a measure of spread in a skewed distribution.</p>
+  
+  <assemblage xml:id="def-iqr">
+    <title>Definition: Interquartile Range (IQR)</title>
+    <p><term>Interquartile range (IQR)</term> = upper quartile – lower quartile</p>
+    <p>The lower quartile is a value such that roughly one-fourth of all the observations fall below it; the upper quartile is a value such that roughly one-fourth of all the observations fall above it. The IQR then measures the width of the interval containing the middle 50% of the observations.</p>
+  </assemblage>
   
   <exercise xml:id="inv2-2-d" label="I2.2d">
     <title>Compute interquartile range</title>
@@ -52,17 +54,12 @@
     <response/>
   </exercise>
   
-  <paragraphs>
-    <title>Boxplots</title>
-    
-    <p>When the data are skewed, the median and interquartile range are often considered better numerical summaries of the center and variability of the distribution than the mean and standard deviation. When working with the median and interquartile range, we often report the five number summary which consists of the minimum, lower quartile, median, upper quartile, and maximum values.</p>
-    
-    <definition xml:id="def-boxplot">
-      <statement>
-        <p>Another graph is based on the five-number summary, called a <term>boxplot</term> (invented by John Tukey in 1970). The box extends from the lower quartile to the upper quartile with a vertical line inside the box at the location of the median. Whiskers then typically extend to the min and max values.</p>
-      </statement>
-    </definition>
-  </paragraphs>
+  <p>When the data are skewed, the median and interquartile range are often considered better numerical summaries of the center and variability of the distribution than the mean and standard deviation. When working with the median and interquartile range, we often report the five number summary which consists of the minimum, lower quartile, median, upper quartile, and maximum values.</p>
+  
+  <assemblage xml:id="def-boxplot">
+    <title>Definition: Boxplot</title>
+    <p>Another graph is based on the five-number summary, called a <term>boxplot</term> (invented by John Tukey in 1970). The box extends from the lower quartile to the upper quartile with a vertical line inside the box at the location of the median. Whiskers then typically extend to the min and max values.</p>
+  </assemblage>
   
   <exercise xml:id="inv2-2-e" label="I2.2e">
     <title>Create boxplot by hand</title>
@@ -72,21 +69,16 @@
     <response/>
   </exercise>
   
-  <paragraphs>
-    <title>Modified Boxplots</title>
-    
-    <p>Although boxplots are a nice visual of the five-number summary, they can sometimes miss interesting features in a data set. In particular, shape can be more difficult to judge in a boxplot, and they usually don't provide information about the size of a data set.</p>
-    
-    <p>Another application of the inter-quartile range is as a way to measure how far an observation is from the bulk of the distribution.</p>
-    
-    <definition xml:id="def-outlier-criterion">
-      <statement>
-        <p>A value is an <term>outlier according to the 1.5IQR criterion</term> if the value is larger than the upper quartile + 1.5 × box length or smaller than the lower quartile – 1.5 × box length.</p>
-        <p><alert>Note:</alert> The box length = upper quartile – lower quartile, is the interquartile range.</p>
-        <p>A <term>modified boxplot</term> will display such outliers separately and then extend the whiskers to the most extreme non-outlier observation.</p>
-      </statement>
-    </definition>
-  </paragraphs>
+  <p>Although boxplots are a nice visual of the five-number summary, they can sometimes miss interesting features in a data set. In particular, shape can be more difficult to judge in a boxplot, and they usually don't provide information about the size of a data set.</p>
+  
+  <p>Another application of the inter-quartile range is as a way to measure how far an observation is from the bulk of the distribution.</p>
+  
+  <assemblage xml:id="def-outlier-criterion">
+    <title>Definition: Outlier Criterion and Modified Boxplot</title>
+    <p>A value is an <term>outlier according to the 1.5IQR criterion</term> if the value is larger than the upper quartile + 1.5 × box length or smaller than the lower quartile – 1.5 × box length.</p>
+    <p><alert>Note:</alert> The box length = upper quartile – lower quartile, is the interquartile range.</p>
+    <p>A <term>modified boxplot</term> will display such outliers separately and then extend the whiskers to the most extreme non-outlier observation.</p>
+  </assemblage>
   
   <exercise xml:id="inv2-2-f" label="I2.2f">
     <title>Create modified boxplot</title>
@@ -132,17 +124,12 @@ iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
     </exercise>
   </paragraphs>
   
-  <paragraphs>
-    <title>Modelling Non-Normal Data</title>
-    
-    <p>These data are not well modelled by a normal distribution. So can we still make predictions? There are a couple of strategies. One would be to consider whether a rescaling or transformation of the data might create a more normal-looking distribution, allowing us to use the methods from Investigation 2.1. In this case, we need a transformation that will downsize the large values more than the small values. Log transformations are often very helpful in this regard.</p>
-    
-    <definition xml:id="def-data-transformation">
-      <statement>
-        <p>A <term>data transformation</term> applies a mathematical function to each value to re-express the data on an alternative scale. Data transformations can also make the data more closely modeled with a normal distribution, which could then satisfy the conditions the Central Limit Theorem.</p>
-      </statement>
-    </definition>
-  </paragraphs>
+  <p>These data are not well modelled by a normal distribution. So can we still make predictions? There are a couple of strategies. One would be to consider whether a rescaling or transformation of the data might create a more normal-looking distribution, allowing us to use the methods from Investigation 2.1. In this case, we need a transformation that will downsize the large values more than the small values. Log transformations are often very helpful in this regard.</p>
+  
+  <assemblage xml:id="def-data-transformation">
+    <title>Definition: Data Transformation</title>
+    <p>A <term>data transformation</term> applies a mathematical function to each value to re-express the data on an alternative scale. Data transformations can also make the data more closely modeled with a normal distribution, which could then satisfy the conditions the Central Limit Theorem.</p>
+  </assemblage>
   
   <exercise xml:id="inv2-2-g" label="I2.2g">
     <title>Log transformation</title>
