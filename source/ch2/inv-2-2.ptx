@@ -12,15 +12,17 @@
       <p>How long do you think you would wait before you honked? (in seconds)</p>
       <p><var width="10"/></p>
     </statement>
-    <solution>
-      <p>Answers will vary.</p>
-    </solution>
   </exercise>
   
   <exercise xml:id="inv2-2-b" label="I6.2.2">
     <title>Explore honking reaction time data</title>
     <statement>
-      <p>The data can be found in <url href="https://www.rossmanchance.com/iscam4/data/honking.txt" visual="rossmanchance.com/iscam4/data/honking.txt">honking.txt</url>. Use technology to create a histogram and describe the behavior of the data – shape, center, spread, outliers (suggest an explanation?). Then overlay a normal probability model. Do these data behave like a normal distribution? If not, how do they deviate from normality? Does the shape make sense in this context? Also examine a normal probability plot and discuss how deviations from the line correspond to the nonnormal shape you are observing.</p>
+      <p>The data can be found in <url href="https://www.rossmanchance.com/iscam4/data/honking.txt" visual="rossmanchance.com/iscam4/data/honking.txt">honking.txt</url>.</p>
+      <p><ul>
+        <li><p>Use technology to create a histogram and describe the behavior of the data – shape, center, spread, outliers (suggest an explanation?).</p></li>
+        <li><p>Then overlay a normal probability model. Do these data behave like a normal distribution? If not, how do they deviate from normality? Does the shape make sense in this context?</p></li>
+        <li><p>Also examine a normal probability plot and discuss how deviations from the line correspond to the nonnormal shape you are observing.</p></li>
+      </ul></p>
     </statement>
     <hint>
       <p>Were the observed response times/quantiles placed on the vertical or the horizontal axis?</p>
@@ -163,27 +165,10 @@
     <p>A <term>modified boxplot</term> will display such outliers separately and then extend the whiskers to the most extreme non-outlier observation.</p>
   </assemblage>
   
-  <exercise xml:id="inv2-2-f" label="I6.2.6">
-    <title>Create modified boxplot</title>
-    <statement>
-      <p>Use the following Technology Detour to create a "modified" boxplot for these data. Are there any outliers according to these criteria?</p>
-    </statement>
-    <solution>
-      <p>Minitab/R/JMP identify four outliers.</p>
-      <p>R output:</p>
-      <image source="images/Inv2-2f-sols1.jpg" width="60%">
-        <description>R modified boxplot showing outliers</description>
-      </image>
-      <p>Minitab output:</p>
-      <image source="images/Inv2-2f-sols2.jpg" width="60%">
-        <description>Minitab modified boxplot showing outliers</description>
-      </image>
-    </solution>
-    <response/>
-  </exercise>
-  
   <paragraphs xml:id="tech-detour-modified-boxplots">
     <title>Technology Detour – Modified Boxplots</title>
+    
+    <p>Use the following Technology Detour to create a "modified" boxplot for these data.</p>
     
     <exercise xml:id="tech-detour-applet-boxplot" label="Modified Boxplot - Applet">
       <title>Modified Boxplot in Descriptive Statistics Applet</title>
@@ -218,6 +203,25 @@ iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
       </statement>
     </exercise>
   </paragraphs>
+  
+  <exercise xml:id="inv2-2-f" label="I6.2.6">
+    <title>Create modified boxplot</title>
+    <statement>
+      <p>Are there any outliers according to these criteria?</p>
+    </statement>
+    <solution>
+      <p>Minitab/R/JMP identify four outliers.</p>
+      <p>R output:</p>
+      <image source="images/Inv2-2f-sols1.jpg" width="60%">
+        <description>R modified boxplot showing outliers</description>
+      </image>
+      <p>Minitab output:</p>
+      <image source="images/Inv2-2f-sols2.jpg" width="60%">
+        <description>Minitab modified boxplot showing outliers</description>
+      </image>
+    </solution>
+    <response/>
+  </exercise>
   
   <p>These data are not well modelled by a normal distribution. So can we still make predictions? There are a couple of strategies. One would be to consider whether a rescaling or transformation of the data might create a more normal-looking distribution, allowing us to use the methods from Investigation 2.1. In this case, we need a transformation that will downsize the large values more than the small values. Log transformations are often very helpful in this regard.</p>
   
@@ -272,7 +276,7 @@ iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
   <exercise xml:id="inv2-2-i" label="I6.2.9">
     <title>Compare prediction to observed data</title>
     <statement>
-      <p>How does this prediction in (h) compare to the observed percentage honking within the first 2 seconds in the data set?</p>
+      <p>How does this prediction in <xref ref="inv2-2-h"/> compare to the observed percentage honking within the first 2 seconds in the data set?</p>
     </statement>
     <solution>
       <p>In the original distribution, 6 of the 57 observations are below 2 (10.5%).</p>
@@ -325,7 +329,7 @@ iscamaddexp(responsetime)          # overlay exponential model
     <title>Calculate probability using exponential distribution</title>
     <statement>
       <p>Use technology to calculate the probability of a wait time under 2 seconds using the exponential distribution with mean 4.25 sec</p>
-      <p>How does it compare to your estimate in (h) and the result in (i)?</p>
+      <p>How does it compare to your estimate in <xref ref="inv2-2-h"/> and the result in <xref ref="inv2-2-i"/>?</p>
     </statement>
     <hint>
       <title>In R</title>
