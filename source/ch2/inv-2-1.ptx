@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="investigation2-1">
+<subsection xml:id="investigation2-1">
   <title>Investigation 2.1: Birth Weights</title>
   
   <introduction>
@@ -20,8 +20,9 @@
         <description>Birth weights introduction image</description>
       </image>
     </sidebyside>
-    
+  
     <p><alert>Discussion:</alert> If you were to download this file, it could take a minute. You would then need to unzip the file, which is then 5GB. This can be problematic to work with, especially if you were most interested in just a few of the variables. It can also be cumbersome to deal with all of the rows, especially if you just want to see general patterns. Most packages can now work with datafiles this large, but we are still pushing the limit a bit. JMP and R take a couple minutes to read in the data, and each row is still a single string (not separated into columns or tabs). One approach is to preprocess the data a bit before loading into the software package. Using a program like "awk" you can read in the data from specific positions (e.g., just the birth weights) or in R use read.fwf. Then a comma or tab delimited file would be much easier for the software to handle. <url href="https://www.rossmanchance.com/iscam4/in/CDCBirths.html">Guide for recreating the 2023 datafile</url>.</p>
+    
   </introduction>
 
   <paragraphs>
@@ -832,4 +833,4 @@ qqline(birthweight, datax=T)
     </exercise>
   </subsection>
   
-</section>
+</subsection>
