@@ -27,7 +27,17 @@
     </hint>
     <solution>
       <p>The distribution of response times are skewed to the right. Most people waited less than 5 seconds, but a couple waited more than 15 seconds. There is one outlier 17.15 seconds.</p>
+      <p>Example output:</p>
+      <image source="images/Inv2-2b-sols1.jpg" width="60%">
+        <description>Histogram of honking response times</description>
+      </image>
+      <image source="images/Inv2-2b-sols2.jpg" width="60%">
+        <description>Histogram with normal overlay for response times</description>
+      </image>
       <p>The data do not behave like a normal distribution. The probability plot confirms that the largest response times are larger than we would expect from a normal distribution and the lowest response times are larger than we would expect.</p>
+      <image source="images/Inv2-2b-sols3.jpg" width="60%">
+        <description>Normal probability plot for response times</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -133,6 +143,10 @@
       <p>Create by hand a boxplot for these data. Which display do you prefer, the boxplot or the histogram? Why?</p>
     </statement>
     <solution>
+      <p>Example boxplot:</p>
+      <image source="images/Inv2-2e-sols.jpg" width="60%">
+        <description>Boxplot of response times</description>
+      </image>
       <p>Preference will vary, but we do lose a fair bit of information in the boxplot.</p>
     </solution>
     <response/>
@@ -156,6 +170,14 @@
     </statement>
     <solution>
       <p>Minitab/R/JMP identify four outliers.</p>
+      <p>R output:</p>
+      <image source="images/Inv2-2f-sols1.jpg" width="60%">
+        <description>R modified boxplot showing outliers</description>
+      </image>
+      <p>Minitab output:</p>
+      <image source="images/Inv2-2f-sols2.jpg" width="60%">
+        <description>Minitab modified boxplot showing outliers</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -220,6 +242,12 @@ iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
     </hint>
     <solution>
       <p>This histogram of the ln response times is more symmetric and the normal probability plot is more linear. This is definitely more normal looking than before (but we might be able to do better). The mean is 1.292 and the SD = 0.5285. The skewness statistic is closer to zero (0.676).</p>
+      <image source="images/Inv2-2g-sols1.jpg" width="60%">
+        <description>Histogram of log-transformed response times</description>
+      </image>
+      <image source="images/Inv2-2g-sols2.jpg" width="60%">
+        <description>Normal probability plot of log-transformed response times</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -234,6 +262,9 @@ iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
     </hint>
     <solution>
       <p>Using ln(2) ≈ 0.693 as the observed result, we find about 13% of the model distribution falls below.</p>
+      <image source="images/Inv2-2h-sols.jpg" width="60%">
+        <description>Normal distribution calculation for log scale</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -280,6 +311,12 @@ iscamaddexp(responsetime)          # overlay exponential model
     </hint>
     <solution>
       <p>The exponential is skewed to the right with its peak at zero. This does not appear to be as good of a fit. We have more observations around 4-5 seconds than the exponential distribution would predict and fewer observations less than 1 second (we don't have any, the times could be rounded in the dataset?).</p>
+      <image source="images/Inv2-2j-sols1.jpg" width="60%">
+        <description>Histogram with exponential distribution overlay</description>
+      </image>
+      <image source="images/Inv2-2j-sols2.jpg" width="60%">
+        <description>Exponential probability plot</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -300,6 +337,9 @@ iscamaddexp(responsetime)          # overlay exponential model
     </hint>
     <solution>
       <p>This way overpredicts how often we will get a response time less than 2 seconds (0.3754).</p>
+      <image source="images/Inv2-2k-sols.jpg" width="60%">
+        <description>Exponential distribution probability calculation</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -326,6 +366,15 @@ plnorm(2, meanlog = 1.292, sdlog = 0.5238)
     </hint>
     <solution>
       <p>The log normal has the skewed right behavior but not as severely as the exponential and provides a better fit to our data. Now the prediction is 0.1326.</p>
+      <image source="images/Inv2-2l-sols1.jpg" width="60%">
+        <description>Histogram with lognormal distribution overlay</description>
+      </image>
+      <image source="images/Inv2-2l-sols2.jpg" width="60%">
+        <description>Lognormal probability plot</description>
+      </image>
+      <image source="images/Inv2-2l-sols3.jpg" width="60%">
+        <description>Lognormal distribution probability calculation</description>
+      </image>
     </solution>
     <response/>
   </exercise>
