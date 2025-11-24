@@ -6,29 +6,51 @@
     <p>Diekmann, Krassnig, and Lorenz (1996) conducted a field study to explore whether driver characteristics are related to an aggressive response (Thanks to Jeff Sklar for pointing us to this article). The study was conducted at a busy intersection in Munich, West Germany, on two afternoons (Sunday and Monday) in 1986. The experimenters sat in a Volkswagen Jetta (the "blocking car") and did not accelerate after the traffic light turned green, and timed how long before the driver of the blocked car reacted (either by honking or flashing headlights). The response time (in seconds) is our variable of interest. Some values were "censored" in that the researcher stopped timing before the driver actually honked. This can happen if there is a time limit to the observation period and "success" has not been observed within that time period.</p>
   </introduction>
   
-  <exercise xml:id="inv2-2-a" label="I2.2a">
+  <exercise xml:id="inv2-2-a" label="I6.2.1">
     <title>Predict your reaction time</title>
     <statement>
-      <p>How long do you think you would wait before you honked?</p>
+      <p>How long do you think you would wait before you honked? (in seconds)</p>
+      <p><var width="10"/></p>
     </statement>
-    <response/>
   </exercise>
   
-  <exercise xml:id="inv2-2-b" label="I2.2b">
+  <exercise xml:id="inv2-2-b" label="I6.2.2">
     <title>Explore honking reaction time data</title>
     <statement>
-      <p>The data can be found in <url href="https://www.rossmanchance.com/iscam4/data/honking.txt" visual="rossmanchance.com/iscam4/data/honking.txt">honking.txt</url>. Use technology to create a histogram and describe the behavior of the data – shape, center, spread, outliers (suggest an explanation?). Then overlay a normal probability model. Do these data behave like a normal distribution? If not, how do they deviate from normality? Does the shape make sense in this context? Also examine a normal probability plot and discuss how deviations from the line correspond to the nonnormal shape you are observing. [Hint: Were the observed response times/quantiles placed on the vertical or the horizontal axis?]</p>
+      <p>The data can be found in <url href="https://www.rossmanchance.com/iscam4/data/honking.txt" visual="rossmanchance.com/iscam4/data/honking.txt">honking.txt</url>. Use technology to create a histogram and describe the behavior of the data – shape, center, spread, outliers (suggest an explanation?). Then overlay a normal probability model. Do these data behave like a normal distribution? If not, how do they deviate from normality? Does the shape make sense in this context? Also examine a normal probability plot and discuss how deviations from the line correspond to the nonnormal shape you are observing.</p>
     </statement>
+    <hint>
+      <p>Were the observed response times/quantiles placed on the vertical or the horizontal axis?</p>
+    </hint>
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-2-c" label="I2.2c">
+  <exercise xml:id="inv2-2-c" label="I6.2.3">
     <title>Compare mean and median</title>
     <statement>
-      <p>Determine and compare the mean and median wait times. Which is larger? Why is it larger?</p>
-      <p>Recall that the mean is the numerical average and the median has 50% of the observations on each side.</p>
+      <p>Determine and compare the mean and median wait times.</p>
+      <p>Mean: <var width="10"/> seconds</p>
+      <p>Median: <var width="10"/> seconds</p>
+      <p>Which is larger?</p>
     </statement>
-    <response/>
+    <choices randomize="no">
+      <choice>
+        <statement>
+          <p>Mean</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>Median</p>
+        </statement>
+      </choice>
+    </choices>
+    <hint>
+      <p>Recall that the mean is the numerical average and the median has 50% of the observations on each side.</p>
+    </hint>
+    <response>
+      <p>Why is it larger?</p>
+    </response>
   </exercise>
   
   <assemblage xml:id="def-resistant-statistic">
@@ -46,12 +68,40 @@
     <p>The lower quartile is a value such that roughly one-fourth of all the observations fall below it; the upper quartile is a value such that roughly one-fourth of all the observations fall above it. The IQR then measures the width of the interval containing the middle 50% of the observations.</p>
   </assemblage>
   
-  <exercise xml:id="inv2-2-d" label="I2.2d">
+  <exercise xml:id="inv2-2-d" label="I6.2.4">
     <title>Compute interquartile range</title>
     <statement>
-      <p>Use technology to compute the interquartile range [Hint: Run the descriptive statistics command and report the lower and upper quartiles and then subtract.] Write a one-sentence interpretation of this value. Would you consider the IQR a resistant measure of spread? Explain.</p>
+      <p>Use technology to compute the interquartile range.</p>
+      <p>IQR: <var width="10"/> seconds</p>
     </statement>
-    <response/>
+    <hint>
+      <p>Run the descriptive statistics command and report the lower and upper quartiles and then subtract.</p>
+    </hint>
+    <response>
+      <p>Write a one-sentence interpretation of this value:</p>
+    </response>
+  </exercise>
+  
+  <exercise xml:id="inv2-2-d2" label="I6.2.4b">
+    <title>IQR as resistant measure</title>
+    <statement>
+      <p>Would you consider the IQR a resistant measure of spread?</p>
+    </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement>
+          <p>Yes</p>
+        </statement>
+      </choice>
+      <choice>
+        <statement>
+          <p>No</p>
+        </statement>
+      </choice>
+    </choices>
+    <response>
+      <p>Explain:</p>
+    </response>
   </exercise>
   
   <p>When the data are skewed, the median and interquartile range are often considered better numerical summaries of the center and variability of the distribution than the mean and standard deviation. When working with the median and interquartile range, we often report the five number summary which consists of the minimum, lower quartile, median, upper quartile, and maximum values.</p>
@@ -61,7 +111,7 @@
     <p>Another graph is based on the five-number summary, called a <term>boxplot</term> (invented by John Tukey in 1970). The box extends from the lower quartile to the upper quartile with a vertical line inside the box at the location of the median. Whiskers then typically extend to the min and max values.</p>
   </assemblage>
   
-  <exercise xml:id="inv2-2-e" label="I2.2e">
+  <exercise xml:id="inv2-2-e" label="I6.2.5">
     <title>Create boxplot by hand</title>
     <statement>
       <p>Create by hand a boxplot for these data. Which display do you prefer, the boxplot or the histogram? Why?</p>
@@ -80,7 +130,7 @@
     <p>A <term>modified boxplot</term> will display such outliers separately and then extend the whiskers to the most extreme non-outlier observation.</p>
   </assemblage>
   
-  <exercise xml:id="inv2-2-f" label="I2.2f">
+  <exercise xml:id="inv2-2-f" label="I6.2.6">
     <title>Create modified boxplot</title>
     <statement>
       <p>Use the following Technology Detour to create a "modified" boxplot for these data. Are there any outliers according to these criteria?</p>
@@ -94,6 +144,7 @@
     <exercise xml:id="tech-detour-applet-boxplot" label="Modified Boxplot - Applet">
       <title>Modified Boxplot in Descriptive Statistics Applet</title>
       <statement>
+        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm" visual="rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url>.</p>
         <p><ol>
           <li><p>Paste in data.</p></li>
           <li><p>Check the Add Boxplot box.</p></li>
@@ -131,28 +182,35 @@ iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
     <p>A <term>data transformation</term> applies a mathematical function to each value to re-express the data on an alternative scale. Data transformations can also make the data more closely modeled with a normal distribution, which could then satisfy the conditions the Central Limit Theorem.</p>
   </assemblage>
   
-  <exercise xml:id="inv2-2-g" label="I2.2g">
+  <exercise xml:id="inv2-2-g" label="I6.2.7">
     <title>Log transformation</title>
     <statement>
       <p>Create a new variable which is log(responsetime). (You can use either natural log or log base 10, but so we all do the same thing, let's use natural log here, which is the default in most software when you say "log.")</p>
-      <p><ul>
-        <li><p><alert>In R:</alert> <c>lnresponsetime = log(responsetime)</c></p></li>
-        <li><p><alert>In JMP:</alert> Create a new column and edit the formula. Type or use your mouse to select Transcendental > Log to create Log(responsetime). Press OK.</p></li>
-      </ul></p>
       <p>Create a histogram of these data and a normal probability plot. Does log(responsetime) approximately follow a normal distribution? What are the mean and standard deviation of this distribution?</p>
     </statement>
+    <hint>
+      <title>In R</title>
+      <p><c>lnresponsetime = log(responsetime)</c></p>
+    </hint>
+    <hint>
+      <title>In JMP</title>
+      <p>Create a new column and edit the formula. Type or use your mouse to select Transcendental > Log to create Log(responsetime). Press OK.</p>
+    </hint>
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-2-h" label="I2.2h">
+  <exercise xml:id="inv2-2-h" label="I6.2.8">
     <title>Predict using normal distribution on log scale</title>
     <statement>
-      <p>Use a normal distribution with mean 1.29 ln-sec and standard deviation 0.53 ln-seconds for the logged response times and predict how often someone will honk within the first 2 seconds. [Hint: What are you going to use for the observation of interest?]</p>
+      <p>Use a normal distribution with mean 1.29 ln-sec and standard deviation 0.53 ln-seconds for the logged response times and predict how often someone will honk within the first 2 seconds.</p>
     </statement>
+    <hint>
+      <p>What are you going to use for the observation of interest?</p>
+    </hint>
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-2-i" label="I2.2i">
+  <exercise xml:id="inv2-2-i" label="I6.2.9">
     <title>Compare prediction to observed data</title>
     <statement>
       <p>How does this prediction in (h) compare to the observed percentage honking within the first 2 seconds in the data set?</p>
@@ -166,58 +224,69 @@ iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
     <p>Another approach is to fit a different mathematical model to the original data:</p>
   </paragraphs>
   
-  <exercise xml:id="inv2-2-j" label="I2.2j">
+  <exercise xml:id="inv2-2-j" label="I6.2.10">
     <title>Exponential probability model</title>
     <statement>
       <p>Use technology to overlay an exponential probability model (often used to model wait times) to these data and/or create a probability plot using the exponential distribution as the reference distribution.</p>
-      <p><ul>
-        <li><p><alert>In R</alert> (for the qqplot we have to first get the quantiles):</p>
-        <program language="r" interactive="sage">
-          <input>
+      <p>Describe the behavior of the exponential distribution. Does it appear to be a reasonable fit for these data? Describe any deviations.</p>
+    </statement>
+    <hint>
+      <title>In R</title>
+      <p>For the qqplot we have to first get the quantiles:</p>
+      <program language="r" interactive="sage">
+        <input>
 theoquant = qexp(ppoints(12))      # Generates 1/n quantiles for 12 observations
                                     # from exponential distribution
 hist(theoquant)                     
 qqplot(responsetime, theoquant)    # Your data vs. quantiles. Look for a line.
 iscamaddexp(responsetime)          # overlay exponential model
-          </input>
-        </program></li>
-        <li><p><alert>In JMP:</alert> In the Distribution window, use the hot spot to select Continuous Fit > Exponential.</p></li>
-      </ul></p>
-      <p>Describe the behavior of the exponential distribution. Does it appear to be a reasonable fit for these data? Describe any deviations.</p>
-    </statement>
+        </input>
+      </program>
+    </hint>
+    <hint>
+      <title>In JMP</title>
+      <p>In the Distribution window, use the hot spot to select Continuous Fit > Exponential.</p>
+    </hint>
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-2-k" label="I2.2k">
+  <exercise xml:id="inv2-2-k" label="I6.2.11">
     <title>Calculate probability using exponential distribution</title>
     <statement>
       <p>Use technology to calculate the probability of a wait time under 2 seconds using the exponential distribution with mean 4.25 sec</p>
-      <p><ul>
-        <li><p><alert>In R:</alert> <c>pexp(2, rate = 1/4.25)</c> calculates P(X &lt; 2) when X ~ Exp(mean = 4.25)</p></li>
-        <li><p><alert>In JMP:</alert> Using the Distribution Calculator and select the Exponential distribution. Specify a scale parameter of 1/4.25. Choose X &lt;= Qa and enter 2 for Qa (we don't need to worry about strict vs. non-strict inequalities here)</p></li>
-      </ul></p>
       <p>How does it compare to your estimate in (h) and the result in (i)?</p>
     </statement>
+    <hint>
+      <title>In R</title>
+      <p><c>pexp(2, rate = 1/4.25)</c> calculates P(X &lt; 2) when X ~ Exp(mean = 4.25)</p>
+    </hint>
+    <hint>
+      <title>In JMP</title>
+      <p>Using the Distribution Calculator and select the Exponential distribution. Specify a scale parameter of 1/4.25. Choose X &lt;= Qa and enter 2 for Qa (we don't need to worry about strict vs. non-strict inequalities here)</p>
+    </hint>
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-2-l" label="I2.2l">
+  <exercise xml:id="inv2-2-l" label="I6.2.12">
     <title>Lognormal distribution</title>
     <statement>
       <p>Repeat (j) and (k) with a "lognormal" distribution.</p>
-      <p><ul>
-        <li><p><alert>In R:</alert></p>
-        <program language="r" interactive="sage">
-          <input>
+      <p><alert>Note:</alert> This is equivalent to fitting the normal distribution on the log-transformed data!</p>
+    </statement>
+    <hint>
+      <title>In R</title>
+      <program language="r" interactive="sage">
+        <input>
 qqplot(responsetime, qlnorm(ppoints(12)))
 iscamaddlnorm(responsetime)
 plnorm(2, meanlog = 1.292, sdlog = 0.5238)
-          </input>
-        </program></li>
-        <li><p><alert>In JMP:</alert> Scroll down the Distribution list and choose the Lognormal distribution with location = 1.292 and scale = 0.5238.</p></li>
-      </ul></p>
-      <p><alert>Note:</alert> This is equivalent to fitting the normal distribution on the log-transformed data!</p>
-    </statement>
+        </input>
+      </program>
+    </hint>
+    <hint>
+      <title>In JMP</title>
+      <p>Scroll down the Distribution list and choose the Lognormal distribution with location = 1.292 and scale = 0.5238.</p>
+    </hint>
     <response/>
   </exercise>
   
@@ -227,15 +296,18 @@ plnorm(2, meanlog = 1.292, sdlog = 0.5238)
     <p>There are of course, many other probability models we could look into. One limitation of the exponential distribution is that it assumes the same value for the mean and the standard deviation, clearly not the case for these data. There are other more flexible distributions (e.g., Gamma and Weibull) that use two parameters to characterize the distribution rather than only one.</p>
   </paragraphs>
   
-  <exercise xml:id="inv2-2-m" label="I2.2m">
+  <exercise xml:id="inv2-2-m" label="I6.2.13">
     <title>Generalization of results</title>
     <statement>
-      <p>To what population are you willing to generalize these results? Explain. [Hint: Think about how the data were collected and what you learned about sampling methods in Chapter 1.]</p>
+      <p>To what population are you willing to generalize these results? Explain.</p>
     </statement>
+    <hint>
+      <p>Think about how the data were collected and what you learned about sampling methods in Chapter 1.</p>
+    </hint>
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-2-n" label="I2.2n">
+  <exercise xml:id="inv2-2-n" label="I6.2.14">
     <title>Future research directions</title>
     <statement>
       <p>If you were to continue to explore this research area/data set, what would you be interested in investigating next?</p>
