@@ -3,17 +3,24 @@
   <title>Investigation 2.1: Birth Weights</title>
   
   <introduction>
-    <p>The <url href="http://www.cdc.gov/nchs/data_access/Vitalstatsonline.htm">CDC's Vital Statistics Online Data Portal</url> allows you to download birth records for all births in the U.S. in a particular year.</p>
-    
-    <p><ul>
-      <li><p>Open this website and follow the Downloadable Data Files link for Birth. How large is the zip file for the U.S. data in 2024?</p></li>
-      <li><p>Open the <url href="https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2023.pdf">User's Guide for 2024</url>. How many births were recorded for the U.S. in 2024?</p></li>
-      <li><p>According to this documentation file, how many total "positions" are there in the data file? What information is in the first 8 positions? What information is in the next 4 positions? How would you determine the birth month?</p></li>
-    </ul></p>
-    
-    <p><alert>Discussion:</alert> If you were to download this file, it could take a minute. You would then need to unzip the file, which is then 5GB. This can be problematic to work with, especially if you were most interested in just a few of the variables. It can also be cumbersome to deal with all of the rows, especially if you just want to see general patterns. Most packages can now work with datafiles this large, but we are still pushing the limit a bit. JMP and R take a couple minutes to read in the data, and each row is still a single string (not separated into columns or tabs). One approach is to preprocess the data a bit before loading into the software package. Using a program like "awk" you can read in the data from specific positions (e.g., just the birth weights) or in R use read.fwf. Then a comma or tab delimited file would be much easier for the software to handle. <url href="https://www.rossmanchance.com/iscam4/in/CDCBirths.html">Guide for recreating the 2023 datafile</url>.</p>
-    
-    <p>The file <url href="http://www.rossmanchance.com/iscam4/data/USbirthsJan2024.txt">USbirthsJan2024.txt</url> contains information on the 297,798 births in January 2024, including birth weight (in grams), whether the baby was full term (gestation over 36 weeks), the 5 minute <url href="http://en.wikipedia.org/wiki/Apgar_score">apgar score</url> (an immediate measure of the infant's health), and the amount of weight gained by the mother during pregnancy (in lbs). The goal of this investigation is to build a model of how birth weights can be expected to behave in the future. In particular, we will ask questions such as: Can we use that model to make predictions about certain kinds of birth weights? How reliable will our estimates be?</p>
+    <sidebyside widths="60% 35%" margins="auto" valign="top">
+      <stack>
+        <p>The <url href="http://www.cdc.gov/nchs/data_access/Vitalstatsonline.htm">CDC's Vital Statistics Online Data Portal</url> allows you to download birth records for all births in the U.S. in a particular year.</p>
+        
+        <p><ul>
+          <li><p>Open this website and follow the Downloadable Data Files link for Birth. How large is the zip file for the U.S. data in 2024?</p></li>
+          <li><p>Open the <url href="https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2023.pdf">User's Guide for 2024</url>. How many births were recorded for the U.S. in 2024?</p></li>
+          <li><p>According to this documentation file, how many total "positions" are there in the data file? What information is in the first 8 positions? What information is in the next 4 positions? How would you determine the birth month?</p></li>
+        </ul></p>
+        
+        <p><alert>Discussion:</alert> If you were to download this file, it could take a minute. You would then need to unzip the file, which is then 5GB. This can be problematic to work with, especially if you were most interested in just a few of the variables. It can also be cumbersome to deal with all of the rows, especially if you just want to see general patterns. Most packages can now work with datafiles this large, but we are still pushing the limit a bit. JMP and R take a couple minutes to read in the data, and each row is still a single string (not separated into columns or tabs). One approach is to preprocess the data a bit before loading into the software package. Using a program like "awk" you can read in the data from specific positions (e.g., just the birth weights) or in R use read.fwf. Then a comma or tab delimited file would be much easier for the software to handle. <url href="https://www.rossmanchance.com/iscam4/in/CDCBirths.html">Guide for recreating the 2023 datafile</url>.</p>
+        
+        <p>The file <url href="http://www.rossmanchance.com/iscam4/data/USbirthsJan2024.txt">USbirthsJan2024.txt</url> contains information on the 297,798 births in January 2024, including birth weight (in grams), whether the baby was full term (gestation over 36 weeks), the 5 minute <url href="http://en.wikipedia.org/wiki/Apgar_score">apgar score</url> (an immediate measure of the infant's health), and the amount of weight gained by the mother during pregnancy (in lbs). The goal of this investigation is to build a model of how birth weights can be expected to behave in the future. In particular, we will ask questions such as: Can we use that model to make predictions about certain kinds of birth weights? How reliable will our estimates be?</p>
+      </stack>
+      <image source="images/Inv2.1intro.jpg" width="100%">
+        <description>Birth weights introduction image</description>
+      </image>
+    </sidebyside>
   </introduction>
   
   <paragraphs>
@@ -810,7 +817,7 @@ qqline(birthweight, datax=T)
     <exercise xml:id="practice-2-1c-b" label="PP2.1C.2">
       <title>Generate skewed data and compare probability plot</title>
       <statement>
-        <p>Repeat (a) for data that is skewed to the right. How does the behavior of the probability plot change? How would you interpret this plot without looking at the histogram?</p>
+        <p>Repeat the previous question for data that are skewed to the right. How does the behavior of the probability plot change? How would you interpret this plot without looking at the histogram?</p>
       </statement>
       <hint>
         <title>In R</title>
