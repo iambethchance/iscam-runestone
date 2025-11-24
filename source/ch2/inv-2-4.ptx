@@ -87,7 +87,7 @@
   <exercise xml:id="inv2-4-g" label="I6.4.7">
     <title>Compare probabilities</title>
     <statement>
-      <p><m>P(\text{average weight} &gt; 159.574)</m> <var form="buttons" width="15"/> <m>P(\text{weight} &gt; 159.574)</m></p>
+      <p><m>P(\text{average weight} &gt; 159.6)</m> <var form="buttons" width="10"/> <m>P(\text{weight} &gt; 159.6)</m></p>
     </statement>
     <choices randomize="no">
       <choice><statement><p>LARGER</p></statement></choice>
@@ -102,11 +102,12 @@
     
     <p>To investigate this probability, we will generate random samples from a hypothetical population of adults' weights. Open the <url href="https://www.rossmanchance.com/iscam4/data/WeightPopulations.txt">WeightPopulations.txt</url> data file and pretend each column is a different population of 20,000 adult tourists, each with a population mean weight (<m>\mu</m>) of 167 lbs and a population standard deviation (<m>\sigma</m>) of 35 lbs.</p>
     
-    <p>Copy the data to the clipboard and then open the <url href="https://www.rossmanchance.com/applets/2021/samplingdist/SamplingFromPop.html">Sampling from Finite Population applet</url>:</p>
+    <p>Copy the data to the clipboard and then open the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample.html?hideExtras=1">Sampling from Finite Population applet</url>:</p>
     <p><ul>
       <li><p>Press Clear</p></li>
-      <li><p>Click inside the Paste population data box and paste the data from the clipboard</p></li>
+      <li><p>Click inside the Paste population data box and paste the data from the clipboard (or type WeightPopulations.txt and press Use Data).</p></li>
       <li><p>Press Use Data</p></li>
+      <li><p>To count samples, specify the sample mean of interest (159.6) in the Count Samples box, use the pull-down menu to specify whether you want to count samples Greater Than, Less Than, or Beyond (both directions), then press Count.</p></li>
     </ul></p>
   </paragraphs>
   
@@ -157,14 +158,17 @@
   <exercise xml:id="inv2-4-l" label="I6.4.12">
     <title>Generate 1000 samples</title>
     <statement>
-      <p>Now set the Number of Samples to 990 (for 1,000 total) and press Draw Samples. Describe the shape, center, and variability of the distribution of the sample means (lower right). How do these features compare to the population distribution? Which one of these features has changed the most vs. the population, and how has it changed? [Hints: Note the change in scaling. You can check the Population scale box to rescale back to the original population scaling and add the location of the population mean.]</p>
+      <p>Now set the Number of Samples to 990 (for 1,000 total) and press Draw Samples. Describe the shape, center, and variability of the distribution of the sample means (lower right). How do these features compare to the population distribution? Which one of these features has changed the most vs. the population, and how has it changed?</p>
       
-      <p>Distribution of sample means (aka "sampling distribution"):</p>
+      <p><strong>Distribution of sample means (aka "sampling distribution"):</strong></p>
       <p>Shape: <var width="20"/></p>
       <p>Mean: <var width="10"/></p>
       <p>Standard deviation: <var width="10"/></p>
       <p>Comparison (sample means vs. population): <var width="40"/></p>
     </statement>
+    <hint>
+      <p>Note the change in scaling. You can check the Population scale box to rescale back to the original population scaling and add the location of the population mean.</p>
+    </hint>
     <response/>
   </exercise>
   
@@ -179,7 +183,7 @@
   <exercise xml:id="inv2-4-n" label="I6.4.14">
     <title>Count samples exceeding limit</title>
     <statement>
-      <p>To investigate the question posed in (m), specify the sample mean of interest (159.574) in the Count Samples box, use the pull-down menu to specify whether you want to count samples Greater Than, Less Than, or Beyond (both directions). Press Count. What conclusions can you draw from this answer?</p>
+      <p>To investigate the question posed in <xref ref="inv2-4-m"/>, what conclusions can you draw from the count displayed by the applet?</p>
     </statement>
     <response/>
   </exercise>
