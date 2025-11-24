@@ -673,7 +673,7 @@ qqline(birthweight, datax=T)
   <exercise xml:id="inv2-1-r" label="I2.1r">
     <title>Compare to actual data</title>
     <statement>
-      <p>Now examine the births3 data: What percentage of the birth weights in this data set were at most 2500 grams? [Hint: Create a Boolean variable?] How does this compare to <xref ref="inv2-1-q" text="custom">the prediction in checkpoint q</xref>? Does this surprise you? Explain.</p>
+      <p>Now examine the births3 data: What percentage of the birth weights in this data set were at most 2500 grams? [Hint: Create a Boolean variable?] How does this compare to <xref ref="inv2-1-q" text="custom">the prediction in the previous checkpoint</xref>? Does this surprise you? Explain.</p>
     </statement>
     <hint>
       <p>Expected output:</p>
@@ -694,7 +694,7 @@ qqline(birthweight, datax=T)
   <subsection xml:id="practice2-1A">
     <title>Practice Problem 2.1A</title>
     
-    <p>The data in <c>MLB_FCI_22.txt</c>, compiled by Team Marketing Report, includes various costs for attending a Major League Baseball game in the 2022 season. The "Fan Cost Index" is defined as the price of a family of four to attend a game, assuming 4 adult average-price tickets, parking for one car, and the cheapest (at that park) price for two draft beers, four soft drinks, four hot dogs, and two caps.</p>
+    <p>The data in <url href="https://www.rossmanchance.com/chance/stat301W24/data/MLB_FCI_22.txt" visual="rossmanchance.com/chance/stat301W24/data/MLB_FCI_22.txt">MLB_FCI_22.txt</url>, compiled by <url href="https://mailchi.mp/teammarketing/2022-mlb-fan-cost-index" visual="mailchi.mp/teammarketing/2022-mlb-fan-cost-index">Team Marketing Report</url>, includes various costs for attending a Major League Baseball game in the 2022 season. The "Fan Cost Index" is defined as the price of a family of four to attend a game, assuming 4 adult average-price tickets, parking for one car, and the cheapest (at that park) price for two draft beers, four soft drinks, four hot dogs, and two caps.</p>
     
     <p><em>Note: Make sure the columns parse correctly (e.g., Data &gt; Text to Columns in Excel?) and remove the last row before you start analyzing the data.</em></p>
     
@@ -745,7 +745,7 @@ qqline(birthweight, datax=T)
   <subsection xml:id="practice2-1B">
     <title>Practice Problem 2.1B</title>
     
-    <p>The <c>AnthemTimes2025.txt</c> file has data on the length of the performance of the national anthem preceding the National Football League's Super Bowl for games from 1980 (Super Bowl 14) to 2025 (Super Bowl 58). Note: There are two columns for times (the first is from a colleague of mine watching and timing each one, the second one is from sportsbettingdime). Using sbdTime:</p>
+    <p>The <url href="https://www.rossmanchance.com/iscam4/data/AnthemTimes2025.txt" visual="rossmanchance.com/iscam4/data/AnthemTimes2025.txt">AnthemTimes2025.txt</url> file has data on the length of the performance of the national anthem preceding the National Football League's Super Bowl for games from 1980 (Super Bowl 14) to 2025 (Super Bowl 58). Note: There are two columns for times (the first is from a colleague of mine watching and timing each one, the second one is from <url href="https://www.sportsbettingdime.com/guides/resources/super-bowl-national-anthem-lengths-over-under-betting-results/" visual="sportsbettingdime.com">sportsbettingdime</url>). Using sbdTime:</p>
     
     <exercise xml:id="practice-2-1b-a" label="PP2.1B.1">
       <title>Create dotplot with active title</title>
@@ -794,28 +794,32 @@ qqline(birthweight, datax=T)
     <exercise xml:id="practice-2-1c-a" label="PP2.1C.1">
       <title>Generate random normal data and create probability plot</title>
       <statement>
-        <p>Use statistical software to generate a random sample of 100 observations from a normal distribution with mean 2 and standard deviation 5.</p>
-        
-        <p><alert>In R:</alert> <c>mydata = rnorm(100, 2, 5)</c></p>
-        
-        <p><alert>In JMP:</alert> In new worksheet, choose Columns &gt; New Column. Under Initialize Data set the Number of rows to 100. Under Column Properties, select Formula. Then select Random &gt; Random Normal and specify (2,5).</p>
-        
-        <p>Create a normal probability plot of the generated data. Do the data follow a straight line?</p>
+        <p>Use statistical software to generate a random sample of 100 observations from a normal distribution with mean 2 and standard deviation 5. Create a normal probability plot of the generated data. Do the data follow a straight line?</p>
       </statement>
+      <hint>
+        <title>In R</title>
+        <p><c>mydata = rnorm(100, 2, 5)</c></p>
+      </hint>
+      <hint>
+        <title>In JMP</title>
+        <p>In new worksheet, choose Columns &gt; New Column. Under Initialize Data set the Number of rows to 100. Under Column Properties, select Formula. Then select Random &gt; Random Normal and specify (2,5).</p>
+      </hint>
       <response/>
     </exercise>
     
     <exercise xml:id="practice-2-1c-b" label="PP2.1C.2">
       <title>Generate skewed data and compare probability plot</title>
       <statement>
-        <p>Repeat (a) for data that is skewed to the right.</p>
-        
-        <p><alert>In R:</alert> <c>mydata = rchisq(100, 2)</c></p>
-        
-        <p><alert>In JMP:</alert> Select Random &gt; Random ChiSquare and enter 2 as the "df"</p>
-        
-        <p>How does the behavior of the probability plot change? How would you interpret this plot without looking at the histogram?</p>
+        <p>Repeat (a) for data that is skewed to the right. How does the behavior of the probability plot change? How would you interpret this plot without looking at the histogram?</p>
       </statement>
+      <hint>
+        <title>In R</title>
+        <p><c>mydata = rchisq(100, 2)</c></p>
+      </hint>
+      <hint>
+        <title>In JMP</title>
+        <p>Select Random &gt; Random ChiSquare and enter 2 as the "df"</p>
+      </hint>
       <response/>
     </exercise>
   </subsection>
