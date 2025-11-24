@@ -19,15 +19,16 @@
   <paragraphs>
     <title>Exploring the Data</title>
     
-    <exercise xml:id="inv2-1-a" label="I2.1a">
-      <title>Representativeness of data</title>
-      <statement>
-        <p>Are these data likely to be representative of birth weights for all 3,638,436 U.S. births in 2024? Explain.</p>
-      </statement>
-      <response/>
-    </exercise>
-    
-    <exercise xml:id="inv2-1-b" label="I2.1b">
+  <exercise xml:id="inv2-1-a" label="I2.1a">
+    <title>Representativeness of data</title>
+    <statement>
+      <p>Are these data likely to be representative of birth weights for all 3,638,436 U.S. births in 2024? Explain.</p>
+    </statement>
+    <solution>
+      <p>If time of year or season is related to characteristics of babies when they are born, then this may not be representative for the rest of the year.</p>
+    </solution>
+    <response/>
+  </exercise>    <exercise xml:id="inv2-1-b" label="I2.1b">
       <title>Variable type</title>
       <statement>
         <p>Is the variable birthweight quantitative or categorical?</p>
@@ -128,6 +129,9 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
     <statement>
       <p>Describe what you see.</p>
     </statement>
+    <solution>
+      <p>There are too many observations to display well in the dotplot, but we do notice a "stack" by itself around 10,000.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -170,7 +174,7 @@ nrow(births2)
       </statement>
       <solution>
         <p>Expected output:</p>
-        <image source="images/Inv2.1(h)solsR.jpg" width="60%">
+        <image source="images/Inv2-1h-solsR.jpg" width="60%">
           <description>R output showing number of rows after subsetting</description>
         </image>
       </solution>
@@ -192,10 +196,10 @@ nrow(births2)
       </statement>
       <solution>
         <p>Expected output:</p>
-        <image source="images/Inv2.1(h)solsJMP.png" width="60%">
+        <image source="images/Inv2-1h-solsJMP.png" width="60%">
           <description>JMP output showing selected rows</description>
         </image>
-        <image source="images/Inv2.1(h)solsJMP2.png" width="60%">
+        <image source="images/Inv2-1h-solsJMP2.png" width="60%">
           <description>JMP data table with excluded rows</description>
         </image>
       </solution>
@@ -219,6 +223,9 @@ nrow(births2)
         <description>JMP dotplot of subsetted birth weights</description>
       </image>
     </hint>
+    <solution>
+      <p>We now have 297,558 observations. The stack is gone and we see a distribution with a center around 3000 grams and most of the observations between 1800 and 4500 grams.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -291,6 +298,9 @@ hist(births2$birthweight, xlab="birth weight")
         <description>JMP histogram of birth weights</description>
       </image>
     </hint>
+    <solution>
+      <p>The histogram is more effective; the dataset is too large to show individual dots.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -337,6 +347,9 @@ hist(births2$birthweight, xlab="birth weight")
     <statement>
       <p>How would you characterize the shape, center, and variability of these birthweights? (Remember to put your comments in context, e.g., "The distribution of January birthweights in 2024 was …")</p>
     </statement>
+    <solution>
+      <p>The distribution of January 2024 birthweights was slightly skewed to the left. Most of the weights are between 2000 and 5000 grams, with a peak around 3200 grams.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -345,6 +358,9 @@ hist(births2$birthweight, xlab="birth weight")
     <statement>
       <p>You may have noticed a few more lower weight babies than we might have expected (if we assume a "random" biological characteristic will be fairly symmetric and bell-shaped). Can you suggest an explanation for the excess of lower birth weights seen in this distribution?</p>
     </statement>
+    <solution>
+      <p>Premature births?</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -357,6 +373,10 @@ hist(births2$birthweight, xlab="birth weight")
       <title>R Hints</title>
       <p>Edit the previous command, using births2 (two places). Use "==" for an equality comparison (i.e., <c>OEG == 2</c>).</p>
     </hint>
+    <solution>
+      <p>265,676 observations</p>
+      <p>R command: <c>births3=births2[which(births2$OEG == 2 ), ]</c></p>
+    </solution>
     <response/>
   </exercise>
   
@@ -366,6 +386,9 @@ hist(births2$birthweight, xlab="birth weight")
       <p>After this step do we have a more symmetric distribution? <var width="30"/></p>
       <p>What is a downside to subsetting the dataset in this way? <var width="50"/></p>
     </statement>
+    <solution>
+      <p>The distribution does look more symmetric, however we can no longer generalize any of our conclusions to premature babies.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -393,7 +416,7 @@ iscamsummary(births3$birthweight, digits=2)
       </statement>
       <solution>
         <p>Expected output:</p>
-        <image source="images/Inv2.1(j)solsR.jpg" width="60%">
+        <image source="images/Inv2-1h-solsR.jpg" width="60%">
           <description>R numerical summaries for birth weights</description>
         </image>
       </solution>
@@ -406,7 +429,7 @@ iscamsummary(births3$birthweight, digits=2)
       </statement>
       <solution>
         <p>Expected output:</p>
-        <image source="images/Inv2.1(j)solsJMP.png" width="60%">
+        <image source="images/Inv2-1h-solsJMP2.png" width="60%">
           <description>JMP numerical summaries for birth weights</description>
         </image>
       </solution>
@@ -429,6 +452,11 @@ iscamsummary(births3$birthweight, digits=2)
     <statement>
       <p>Interpret the mean, standard deviation, and skewness values in context.</p>
     </statement>
+    <solution>
+      <p>The mean tells us the average birthweight of these full term babies was 3336.6 grams.</p>
+      <p>The standard deviation tells us that a "typical" deviation from the mean was 460.6 grams.</p>
+      <p>The skewness statistic is slightly positive indicating a few larger observations.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -437,6 +465,9 @@ iscamsummary(births3$birthweight, digits=2)
     <statement>
       <p>How would the mean and standard deviations values compare if we had not removed the 9999 and low birthweight values?</p>
     </statement>
+    <solution>
+      <p>The 9999 values would enlarge the mean and the standard deviation. The low birthweight babies would lower the mean but enlarge the standard deviation. A large number of low birthweight babies could even create a negative skewness statistic.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -451,6 +482,9 @@ iscamsummary(births3$birthweight, digits=2)
     <statement>
       <p>Do these birth weight data appear to behave like a normal distribution? How are you deciding?</p>
     </statement>
+    <solution>
+      <p>Discussion may vary.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -471,7 +505,7 @@ iscamaddnorm(births3$birthweight, main, xlab, bins)
       </statement>
       <solution>
         <p>Expected output:</p>
-        <image source="images/Inv2.1(m)solsR.jpg" width="60%">
+        <image source="images/Inv2-1j-solsR.jpg" width="60%">
           <description>R histogram with normal overlay for birth weights</description>
         </image>
       </solution>
@@ -485,7 +519,7 @@ iscamaddnorm(births3$birthweight, main, xlab, bins)
       </statement>
       <solution>
         <p>Expected output:</p>
-        <image source="images/Inv2.1(m)solsJMP.png" width="60%">
+        <image source="images/Inv2-1j-solsJMP.png" width="60%">
           <description>JMP histogram with normal overlay for birth weights</description>
         </image>
       </solution>
@@ -497,6 +531,9 @@ iscamaddnorm(births3$birthweight, main, xlab, bins)
     <statement>
       <p>Discuss any deviations from the pattern of a normal distribution.</p>
     </statement>
+    <solution>
+      <p>The fit or agreement looks pretty good. Hard to see from this graph any obvious non-normal behavior, but we do notice some observations much further out in the tails than we might expect with a normal distribution.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -541,6 +578,10 @@ table(within2sd)/length(birthweight)
       <p>Report the percentage of the birthweights that fall within 2 standard deviations of the mean.</p>
       <p>Percentage: <var width="10"/>%</p>
     </statement>
+    <solution>
+      <p>Using the mean of 3339.1 and the standard deviation of 461.6, our 2SD limits would be 2415.9 and 4262.3. So then our ratio is 252915/265676 ≈ 0.95</p>
+      <p>So about 95% of these birthweights fall within two standard deviations of the mean birthweight, just as we would predict for a normal distribution.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -549,6 +590,9 @@ table(within2sd)/length(birthweight)
     <statement>
       <p>How well does this percentage match to what would be predicted if the data were behaving like a normal distribution?</p>
     </statement>
+    <solution>
+      <p>Very close.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -570,7 +614,7 @@ qqline(birthweight, datax=T)
       </statement>
       <solution>
         <p>Expected output:</p>
-        <image source="images/Inv2.1(p)solsR.jpg" width="60%">
+        <image source="images/Inv2-1p-solsR.jpg" width="60%">
           <description>R normal probability plot for birth weights</description>
         </image>
       </solution>
@@ -584,7 +628,7 @@ qqline(birthweight, datax=T)
       </statement>
       <solution>
         <p>Expected output:</p>
-        <image source="images/Inv2.1(p)solsJMP.png" width="60%">
+        <image source="images/Inv2-1p-solsJMP.png" width="60%">
           <description>JMP normal probability plot for birth weights</description>
         </image>
       </solution>
@@ -599,6 +643,9 @@ qqline(birthweight, datax=T)
     <hint>
       <p>What does this suggest about how the birth weight data values differ from what we would predict for a normal distribution (e.g., smallest values are smaller than expected or larger than expected)? Is this consistent with what you saw in the histogram?</p>
     </hint>
+    <solution>
+      <p>The graph is fairly linear except for the ends. The lowest values seem smaller than they should be and the largest values seem larger than they should be. You may or may not have seen these "heavier tails" as easily in the histogram.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -613,10 +660,13 @@ qqline(birthweight, datax=T)
     </statement>
     <hint>
       <p>Expected output:</p>
-      <image source="images/Inv2.1(q)sols.jpg" width="60%">
+      <image source="images/Inv2-1q-sols.jpg" width="60%">
         <description>Normal probability calculation for low birth weight</description>
       </image>
     </hint>
+    <solution>
+      <p>We estimate that in the long run about 3.3% of full term babies will be of low birth weight.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -627,10 +677,13 @@ qqline(birthweight, datax=T)
     </statement>
     <hint>
       <p>Expected output:</p>
-      <image source="images/Inv2.1(r)sols.png" width="60%">
+      <image source="images/Inv2-1r-sols.png" width="60%">
         <description>Calculation showing percentage of low birth weights in data</description>
       </image>
     </hint>
+    <solution>
+      <p>In this sample, 3.2% of the full term babies were of low birth weight. Using the normal distribution very slightly overpredicted how often this would happen. We might have expected the normal distribution to underpredict based on the heavier tails in the sample we saw earlier, though it is less about the percentage "out there" and more about how far out there based on 95% of the distribution falling within 2SD but still seeing the heavier tails in the normal probability plot.</p>
+    </solution>
     <response/>
   </exercise>
   
