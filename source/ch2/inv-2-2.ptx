@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subsection xml:id="investigation2-2">
+  <title>Investigation 2.2: Honking Reaction Times</title>
+  
+  <introduction>
+    <p>In this investigation, we will explore data on reaction times when drivers are blocked and examine how to model non-normal distributions.</p>
+  </introduction>
+  
+  <exercise xml:id="inv2-2-b" label="I2.2b">
+    <title>Explore honking reaction time data</title>
+    <statement>
+      <p>The data can be found in <url href="https://www.rossmanchance.com/iscam4/data/honking.txt" visual="rossmanchance.com/iscam4/data/honking.txt">honking.txt</url>. Use technology to create a histogram and describe the behavior of the data – shape, center, spread, outliers (suggest an explanation?). Then overlay a normal probability model. Do these data behave like a normal distribution? If not, how do they deviate from normality? Does the shape make sense in this context? Also examine a normal probability plot and discuss how deviations from the line correspond to the nonnormal shape you are observing. [Hint: Were the observed response times/quantiles placed on the vertical or the horizontal axis?]</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-2-c" label="I2.2c">
+    <title>Compare mean and median</title>
+    <statement>
+      <p>Determine and compare the mean and median wait times. Which is larger? Why is it larger?</p>
+      <p>Recall that the mean is the numerical average and the median has 50% of the observations on each side.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <paragraphs>
+    <title>Resistant Statistics</title>
+    
+    <definition xml:id="def-resistant-statistic">
+      <statement>
+        <p>A numerical summary (statistic) is said to be <term>resistant</term> when it is not strongly influenced by a change in one or two extreme data values.</p>
+      </statement>
+    </definition>
+    
+    <p>When data are skewed to the right/left, the mean will be pulled in the direction of the longer tail.</p>
+    
+    <p>When data are skewed, we might often prefer to report the median as a "typical" value in the data set, rather than the mean because the mean is pulled in the direction of the longer tail. In addition, you might not want to cite the standard deviation as a measure of spread in a skewed distribution.</p>
+    
+    <definition xml:id="def-iqr">
+      <statement>
+        <p><term>Interquartile range (IQR)</term> = upper quartile – lower quartile</p>
+        <p>The lower quartile is a value such that roughly one-fourth of all the observations fall below it; the upper quartile is a value such that roughly one-fourth of all the observations fall above it. The IQR then measures the width of the interval containing the middle 50% of the observations.</p>
+      </statement>
+    </definition>
+  </paragraphs>
+  
+  <exercise xml:id="inv2-2-d" label="I2.2d">
+    <title>Compute interquartile range</title>
+    <statement>
+      <p>Use technology to compute the interquartile range [Hint: Run the descriptive statistics command and report the lower and upper quartiles and then subtract.] Write a one-sentence interpretation of this value. Would you consider the IQR a resistant measure of spread? Explain.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <paragraphs>
+    <title>Boxplots</title>
+    
+    <p>When the data are skewed, the median and interquartile range are often considered better numerical summaries of the center and variability of the distribution than the mean and standard deviation. When working with the median and interquartile range, we often report the five number summary which consists of the minimum, lower quartile, median, upper quartile, and maximum values.</p>
+    
+    <definition xml:id="def-boxplot">
+      <statement>
+        <p>Another graph is based on the five-number summary, called a <term>boxplot</term> (invented by John Tukey in 1970). The box extends from the lower quartile to the upper quartile with a vertical line inside the box at the location of the median. Whiskers then typically extend to the min and max values.</p>
+      </statement>
+    </definition>
+  </paragraphs>
+  
+  <exercise xml:id="inv2-2-e" label="I2.2e">
+    <title>Create boxplot by hand</title>
+    <statement>
+      <p>Create by hand a boxplot for these data. Which display do you prefer, the boxplot or the histogram? Why?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <paragraphs>
+    <title>Modified Boxplots</title>
+    
+    <p>Although boxplots are a nice visual of the five-number summary, they can sometimes miss interesting features in a data set. In particular, shape can be more difficult to judge in a boxplot, and they usually don't provide information about the size of a data set.</p>
+    
+    <p>Another application of the inter-quartile range is as a way to measure how far an observation is from the bulk of the distribution.</p>
+    
+    <definition xml:id="def-outlier-criterion">
+      <statement>
+        <p>A value is an <term>outlier according to the 1.5IQR criterion</term> if the value is larger than the upper quartile + 1.5 × box length or smaller than the lower quartile – 1.5 × box length.</p>
+        <p><alert>Note:</alert> The box length = upper quartile – lower quartile, is the interquartile range.</p>
+        <p>A <term>modified boxplot</term> will display such outliers separately and then extend the whiskers to the most extreme non-outlier observation.</p>
+      </statement>
+    </definition>
+  </paragraphs>
+  
+  <exercise xml:id="inv2-2-f" label="I2.2f">
+    <title>Create modified boxplot</title>
+    <statement>
+      <p>Use the following Technology Detour to create a "modified" boxplot for these data. Are there any outliers according to these criteria?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <paragraphs xml:id="tech-detour-modified-boxplots">
+    <title>Technology Detour – Modified Boxplots</title>
+    
+    <exercise xml:id="tech-detour-applet-boxplot" label="Modified Boxplot - Applet">
+      <title>Modified Boxplot in Descriptive Statistics Applet</title>
+      <statement>
+        <p><ol>
+          <li><p>Paste in data.</p></li>
+          <li><p>Check the Add Boxplot box.</p></li>
+          <li><p>Check the Show outliers box.</p></li>
+        </ol></p>
+      </statement>
+    </exercise>
+    
+    <exercise xml:id="tech-detour-r-boxplot" label="Modified Boxplot - R">
+      <title>Modified Boxplot in R</title>
+      <statement>
+        <program language="r" interactive="sage">
+          <input>
+boxplot(responsetime, ylab="time until reaction",    # Adds labels
+        horizontal=TRUE)                              # Makes horizontal
+# OR
+iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
+          </input>
+        </program>
+      </statement>
+    </exercise>
+    
+    <exercise xml:id="tech-detour-jmp-boxplot" label="Modified Boxplot - JMP">
+      <title>Modified Boxplot in JMP</title>
+      <statement>
+        <p>In the Distributions window, use the hot spot to select Outlier Boxplot.</p>
+      </statement>
+    </exercise>
+  </paragraphs>
+  
+  <paragraphs>
+    <title>Modelling Non-Normal Data</title>
+    
+    <p>These data are not well modelled by a normal distribution. So can we still make predictions? There are a couple of strategies. One would be to consider whether a rescaling or transformation of the data might create a more normal-looking distribution, allowing us to use the methods from Investigation 2.1. In this case, we need a transformation that will downsize the large values more than the small values. Log transformations are often very helpful in this regard.</p>
+    
+    <definition xml:id="def-data-transformation">
+      <statement>
+        <p>A <term>data transformation</term> applies a mathematical function to each value to re-express the data on an alternative scale. Data transformations can also make the data more closely modeled with a normal distribution, which could then satisfy the conditions the Central Limit Theorem.</p>
+      </statement>
+    </definition>
+  </paragraphs>
+  
+  <exercise xml:id="inv2-2-g" label="I2.2g">
+    <title>Log transformation</title>
+    <statement>
+      <p>Create a new variable which is log(responsetime). (You can use either natural log or log base 10, but so we all do the same thing, let's use natural log here, which is the default in most software when you say "log.")</p>
+      <p><ul>
+        <li><p><alert>In R:</alert> <c>lnresponsetime = log(responsetime)</c></p></li>
+        <li><p><alert>In JMP:</alert> Create a new column and edit the formula. Type or use your mouse to select Transcendental > Log to create Log(responsetime). Press OK.</p></li>
+      </ul></p>
+      <p>Create a histogram of these data and a normal probability plot. Does log(responsetime) approximately follow a normal distribution? What are the mean and standard deviation of this distribution?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-2-h" label="I2.2h">
+    <title>Predict using normal distribution on log scale</title>
+    <statement>
+      <p>Use a normal distribution with mean 1.29 ln-sec and standard deviation 0.53 ln-seconds for the logged response times and predict how often someone will honk within the first 2 seconds. [Hint: What are you going to use for the observation of interest?]</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-2-i" label="I2.2i">
+    <title>Compare prediction to observed data</title>
+    <statement>
+      <p>How does this prediction in (h) compare to the observed percentage honking within the first 2 seconds in the data set?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <paragraphs>
+    <title>Alternative Probability Models</title>
+    
+    <p>Another approach is to fit a different mathematical model to the original data:</p>
+  </paragraphs>
+  
+  <exercise xml:id="inv2-2-j" label="I2.2j">
+    <title>Exponential probability model</title>
+    <statement>
+      <p>Use technology to overlay an exponential probability model (often used to model wait times) to these data and/or create a probability plot using the exponential distribution as the reference distribution.</p>
+      <p><ul>
+        <li><p><alert>In R</alert> (for the qqplot we have to first get the quantiles):</p>
+        <program language="r" interactive="sage">
+          <input>
+theoquant = qexp(ppoints(12))      # Generates 1/n quantiles for 12 observations
+                                    # from exponential distribution
+hist(theoquant)                     
+qqplot(responsetime, theoquant)    # Your data vs. quantiles. Look for a line.
+iscamaddexp(responsetime)          # overlay exponential model
+          </input>
+        </program></li>
+        <li><p><alert>In JMP:</alert> In the Distribution window, use the hot spot to select Continuous Fit > Exponential.</p></li>
+      </ul></p>
+      <p>Describe the behavior of the exponential distribution. Does it appear to be a reasonable fit for these data? Describe any deviations.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-2-k" label="I2.2k">
+    <title>Calculate probability using exponential distribution</title>
+    <statement>
+      <p>Use technology to calculate the probability of a wait time under 2 seconds using the exponential distribution with mean 4.25 sec</p>
+      <p><ul>
+        <li><p><alert>In R:</alert> <c>pexp(2, rate = 1/4.25)</c> calculates P(X &lt; 2) when X ~ Exp(mean = 4.25)</p></li>
+        <li><p><alert>In JMP:</alert> Using the Distribution Calculator and select the Exponential distribution. Specify a scale parameter of 1/4.25. Choose X &lt;= Qa and enter 2 for Qa (we don't need to worry about strict vs. non-strict inequalities here)</p></li>
+      </ul></p>
+      <p>How does it compare to your estimate in (h) and the result in (i)?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-2-l" label="I2.2l">
+    <title>Lognormal distribution</title>
+    <statement>
+      <p>Repeat (j) and (k) with a "lognormal" distribution.</p>
+      <p><ul>
+        <li><p><alert>In R:</alert></p>
+        <program language="r" interactive="sage">
+          <input>
+qqplot(responsetime, qlnorm(ppoints(12)))
+iscamaddlnorm(responsetime)
+plnorm(2, meanlog = 1.292, sdlog = 0.5238)
+          </input>
+        </program></li>
+        <li><p><alert>In JMP:</alert> Scroll down the Distribution list and choose the Lognormal distribution with location = 1.292 and scale = 0.5238.</p></li>
+      </ul></p>
+      <p><alert>Note:</alert> This is equivalent to fitting the normal distribution on the log-transformed data!</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <paragraphs>
+    <title>Discussion</title>
+    
+    <p>There are of course, many other probability models we could look into. One limitation of the exponential distribution is that it assumes the same value for the mean and the standard deviation, clearly not the case for these data. There are other more flexible distributions (e.g., Gamma and Weibull) that use two parameters to characterize the distribution rather than only one.</p>
+  </paragraphs>
+  
+  <exercise xml:id="inv2-2-m" label="I2.2m">
+    <title>Generalization of results</title>
+    <statement>
+      <p>To what population are you willing to generalize these results? Explain. [Hint: Think about how the data were collected and what you learned about sampling methods in Chapter 1.]</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-2-n" label="I2.2n">
+    <title>Future research directions</title>
+    <statement>
+      <p>If you were to continue to explore this research area/data set, what would you be interested in investigating next?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <paragraphs>
+    <title>Study Conclusions</title>
+    
+    <p>In this study, we found that the amount of time a blocked driver waits before responding follows a skewed right distribution with a mean of 4.25 seconds and a median of 3.24 seconds, with a few drivers waiting more than 10 seconds. Although the dataset is small, we might consider using these data to build a mathematical model for these skewed data, either using a transformation or a probability model other than the normal distribution, to help predict future results (e.g., a wait time of less than 2 seconds). These researchers were actually interested in whether the "social status" of the blocked car was related to how long it took before people honked. They found that "the mean and median response times decreased monotonically with the status of car, except when the blocked car was very small." Similar results had been found in an earlier study by Doob and Gross in the United States (1968) which varied the status of the blocking car. However, neither study was replicated by a Swiss study (Jann, Suhner, <ampersand/> Marioni, 1995), perhaps due to cultural differences.</p>
+  </paragraphs>
+  
+  <subsection xml:id="practice2-2A">
+    <title>Practice Problem 2.2A</title>
+    
+    <p>A group of Cal Poly students (Sasscer, Mease, Tanenbaum, and Hansen, 2009) conducted the following study: volunteers were to say "go," and then to say "stop" when they believed 30 seconds had passed. The researchers asked the participants to not count in their heads and recorded how much time had actually passed. The data are in <url href="https://www.rossmanchance.com/iscam4/data/30seconds.txt" visual="rossmanchance.com/iscam4/data/30seconds.txt">30seconds.txt</url>.</p>
+    
+    <exercise xml:id="practice-2-2a-a" label="PP2.2A.1">
+      <title>Examine distribution of 30-second estimates</title>
+      <statement>
+        <p>Examine graphical and numerical summaries of these data. Describe the shape of the distribution. How do the mean and median compare? Is the skewness statistic positive or negative? What does this tell you about whether people tend to over or underestimate the length of 30 seconds?</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-2a-b" label="PP2.2A.2">
+      <title>Assess normal model appropriateness</title>
+      <statement>
+        <p>Does a normal model seem appropriate here?</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-2a-c" label="PP2.2A.3">
+      <title>Evaluate log transformation</title>
+      <statement>
+        <p>Does a log transformation succeed in creating a normal distribution? Explain how you might have predicted this answer based on the first graph you looked at in part (a).</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-2a-d" label="PP2.2A.4">
+      <title>Generalization of results</title>
+      <statement>
+        <p>To what population would you be willing to generalize these data?</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+  
+  <subsection xml:id="practice2-2B">
+    <title>Practice Problem 2.2B</title>
+    
+    <p>Below are distribution fits for the honking data with a Weibull distribution and a Gamma distribution.</p>
+    
+    <exercise xml:id="practice-2-2b" label="PP2.2B.1">
+      <title>Compare Weibull and Gamma fits</title>
+      <statement>
+        <p>Which do you think indicates a better fit for these data? Explain how you are deciding.</p>
+        <p><alert>Note:</alert> Images for Weibull and Gamma distribution fits will need to be added.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+  
+</subsection>
