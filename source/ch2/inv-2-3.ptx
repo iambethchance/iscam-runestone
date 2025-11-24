@@ -7,71 +7,71 @@
     
     <p>The following tables indicate the number of patients at each reading level and the number of pamphlets at each readability level:</p>
     
-    <table>
+    <table xml:id="table-patients-reading-level">
       <title>Patient's Reading Level</title>
-      <tabular>
-        <row header="yes">
-          <cell>Patient's reading level</cell>
-          <cell>&lt; 3</cell>
-          <cell>3</cell>
-          <cell>4</cell>
-          <cell>5</cell>
-          <cell>6</cell>
-          <cell>7</cell>
-          <cell>8</cell>
-          <cell>9</cell>
-          <cell>10</cell>
-          <cell>11</cell>
-          <cell>12</cell>
-          <cell>&gt;12</cell>
+      <tabular top="medium" bottom="medium" left="medium" right="medium">
+        <row header="yes" bottom="medium">
+          <cell right="medium">Patient's reading level</cell>
+          <cell right="medium">&lt;<nbsp/>3</cell>">&lt;<nbsp/>3</cell>
+          <cell right="medium">3</cell>
+          <cell right="medium">4</cell>
+          <cell right="medium">5</cell>
+          <cell right="medium">6</cell>
+          <cell right="medium">7</cell>
+          <cell right="medium">8</cell>
+          <cell right="medium">9</cell>
+          <cell right="medium">10</cell>
+          <cell right="medium">11</cell>
+          <cell right="medium">12</cell>
+          <cell>&gt;<nbsp/>12</cell>
         </row>
         <row>
-          <cell>Count</cell>
-          <cell>6</cell>
-          <cell>4</cell>
-          <cell>4</cell>
-          <cell>3</cell>
-          <cell>3</cell>
-          <cell>2</cell>
-          <cell>6</cell>
-          <cell>5</cell>
-          <cell>4</cell>
-          <cell>7</cell>
-          <cell>2</cell>
+          <cell right="medium">Count</cell>m">Count</cell>
+          <cell right="medium">6</cell>
+          <cell right="medium">4</cell>
+          <cell right="medium">4</cell>
+          <cell right="medium">3</cell>
+          <cell right="medium">3</cell>
+          <cell right="medium">2</cell>
+          <cell right="medium">6</cell>
+          <cell right="medium">5</cell>
+          <cell right="medium">4</cell>
+          <cell right="medium">7</cell>
+          <cell right="medium">2</cell>
           <cell>17</cell>
         </row>
       </tabular>
     </table>
     
-    <table>
+    <table xml:id="table-pamphlets-readability-level">
       <title>Pamphlet's Readability Level</title>
-      <tabular>
-        <row header="yes">
-          <cell>Pamphlet's readability level</cell>
-          <cell>6</cell>
-          <cell>7</cell>
-          <cell>8</cell>
-          <cell>9</cell>
-          <cell>10</cell>
-          <cell>11</cell>
-          <cell>12</cell>
-          <cell>13</cell>
-          <cell>14</cell>
-          <cell>15</cell>
+      <tabular top="medium" bottom="medium" left="medium" right="medium">
+        <row header="yes" bottom="medium">
+          <cell right="medium">Pamphlet's readability level</cell>
+          <cell right="medium">6</cell>
+          <cell right="medium">7</cell>
+          <cell right="medium">8</cell>
+          <cell right="medium">9</cell>
+          <cell right="medium">10</cell>
+          <cell right="medium">11</cell>
+          <cell right="medium">12</cell>
+          <cell right="medium">13</cell>
+          <cell right="medium">14</cell>
+          <cell right="medium">15</cell>
           <cell>16</cell>
         </row>
         <row>
-          <cell>Count</cell>
-          <cell>3</cell>
-          <cell>3</cell>
-          <cell>8</cell>
-          <cell>4</cell>
-          <cell>1</cell>
-          <cell>1</cell>
-          <cell>4</cell>
-          <cell>2</cell>
-          <cell>1</cell>
-          <cell>2</cell>
+          <cell right="medium">Count</cell>
+          <cell right="medium">3</cell>
+          <cell right="medium">3</cell>
+          <cell right="medium">8</cell>
+          <cell right="medium">4</cell>
+          <cell right="medium">1</cell>
+          <cell right="medium">1</cell>
+          <cell right="medium">4</cell>
+          <cell right="medium">2</cell>
+          <cell right="medium">1</cell>
+          <cell right="medium">2</cell>
           <cell>1</cell>
         </row>
       </tabular>
@@ -97,25 +97,90 @@
   <exercise xml:id="inv2-3-c" label="I6.3.3">
     <title>Median reading level for patients</title>
     <statement>
-      <p>Determine median reading level for these patients. [Hint: Consider the counts, and remember there are 63 patients.]</p>
+      <p>The median reading level is <var width="5"/> grade.</p>
     </statement>
-    <response/>
+    <setup>
+      <var>
+        <condition number="9">
+          <feedback>
+            <p>Correct! The 32nd patient (middle of 63) falls in the 9th grade reading level.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. Consider the counts and remember there are 63 patients.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <hint>
+      <p>Consider the counts, and remember there are 63 patients. Find the middle value (32nd patient).</p>
+    </hint>
   </exercise>
   
   <exercise xml:id="inv2-3-d" label="I6.3.4">
     <title>Median readability level for pamphlets</title>
     <statement>
-      <p>Determine the median readability level of these pamphlets.</p>
+      <p>The median readability level is <var width="5"/> grade.</p>
     </statement>
-    <response/>
+    <setup>
+      <var>
+        <condition number="9">
+          <feedback>
+            <p>Correct! With 30 pamphlets, the median is the average of the 15th and 16th values, both at grade 9.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. There are 30 pamphlets, so find the average of the 15th and 16th values.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <hint>
+      <p>With 30 pamphlets, find the average of the 15th and 16th values when arranged in order.</p>
+    </hint>
   </exercise>
   
   <exercise xml:id="inv2-3-e" label="I6.3.5">
     <title>Comparing medians</title>
     <statement>
-      <p>How do these medians compare? Are the values fairly close?</p>
+      <p>How do these medians compare?</p>
     </statement>
-    <response/>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement>
+          <p>The medians are the same (both 9th grade), so the values are very close.</p>
+        </statement>
+        <feedback>
+          <p>Correct! Both medians are at the 9th grade level.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>The patient median is higher than the pamphlet median.</p>
+        </statement>
+        <feedback>
+          <p>Incorrect. Check your calculations for both medians.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>The pamphlet median is higher than the patient median.</p>
+        </statement>
+        <feedback>
+          <p>Incorrect. Check your calculations for both medians.</p>
+        </feedback>
+      </choice>
+      <choice>
+        <statement>
+          <p>The medians are several grades apart.</p>
+        </statement>
+        <feedback>
+          <p>Incorrect. Calculate both medians carefully.</p>
+        </feedback>
+      </choice>
+    </choices>
   </exercise>
   
   <exercise xml:id="inv2-3-f" label="I6.3.6">
