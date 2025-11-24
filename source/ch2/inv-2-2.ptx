@@ -3,7 +3,7 @@
   <title>Investigation 2.2: Honking Reaction Times</title>
   
   <introduction>
-    <p>Diekmann, Krassnig, and Lorenz (1996) conducted a field study to explore whether driver characteristics are related to an aggressive response (Thanks to Jeff Sklar for pointing us to this article). The study was conducted at a busy intersection in Munich, West Germany, on two afternoons (Sunday and Monday) in 1986. The experimenters sat in a Volkswagen Jetta (the "blocking car") and did not accelerate after the traffic light turned green, and timed how long before the driver of the blocked car reacted (either by honking or flashing headlights). The response time (in seconds) is our variable of interest. Some values were "censored" in that the researcher stopped timing before the driver actually honked. This can happen if there is a time limit to the observation period and "success" has not been observed within that time period.</p>
+    <p>Diekmann, Krassnig, and Lorenz (<url = "https://pubmed.ncbi.nlm.nih.gov/9043205/">1996</url) conducted a field study to explore whether driver characteristics are related to an aggressive response (Thanks to Jeff Sklar for pointing us to this article). The study was conducted at a busy intersection in Munich, West Germany, on two afternoons (Sunday and Monday) in 1986. The experimenters sat in a Volkswagen Jetta (the "blocking car") and did not accelerate after the traffic light turned green, and timed how long before the driver of the blocked car reacted (either by honking or flashing headlights). The response time (in seconds) is our variable of interest. Some values were "censored" in that the researcher stopped timing before the driver actually honked. This can happen if there is a time limit to the observation period and "success" has not been observed within that time period.</p>
   </introduction>
   
   <exercise xml:id="inv2-2-a" label="I6.2.1">
@@ -13,11 +13,11 @@
       <p><var width="10"/></p>
     </statement>
   </exercise>
+      <p>The data for the above study can be found in <url href="https://www.rossmanchance.com/iscam2/data/honking.txt" visual="rossmanchance.com/iscam4/data/honking.txt">honking.txt</url>.</p>
   
   <exercise xml:id="inv2-2-b" label="I6.2.2">
     <title>Explore honking reaction time data</title>
     <statement>
-      <p>The data can be found in <url href="https://www.rossmanchance.com/iscam4/data/honking.txt" visual="rossmanchance.com/iscam4/data/honking.txt">honking.txt</url>.</p>
       <p><ul>
         <li><p>Use technology to create a histogram and describe the behavior of the data – shape, center, spread, outliers (suggest an explanation?).</p></li>
         <li><p>Then overlay a normal probability model. Do these data behave like a normal distribution? If not, how do they deviate from normality? Does the shape make sense in this context?</p></li>
@@ -100,7 +100,7 @@
       <p>Run the descriptive statistics command and report the lower and upper quartiles and then subtract.</p>
     </hint>
     <solution>
-      <p>The interquartile range is 4.835 - 2.590 (Minitab) gives 2.245 seconds. The width of the middle 50% of wait times is 2.245 seconds.</p>
+      <p>The interquartile range is 4.835 - 2.590 (Applet) gives 2.245 seconds. The width of the middle 50% of wait times is 2.245 seconds.</p>
     </solution>
     <response>
       <p>Write a one-sentence interpretation of this value:</p>
@@ -183,7 +183,7 @@
       <solution>
         <p>Example output:</p>
         <image source="images/Inv2-2f-sols1.jpg" width="60%">
-          <description>Modified boxplot showing outliers</description>
+          <description>Applet modified boxplot showing outliers</description>
         </image>
       </solution>
     </exercise>
@@ -201,10 +201,7 @@ iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
         </program>
       </statement>
       <solution>
-        <p>R output:</p>
-        <image source="images/Inv2-2f-sols1.jpg" width="60%">
-          <description>R modified boxplot showing outliers</description>
-        </image>
+        <p>Output will show a modified boxplot with outliers marked separately.</p>
       </solution>
     </exercise>
     
@@ -214,10 +211,11 @@ iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
         <p>In the Distributions window, use the hot spot to select Outlier Boxplot.</p>
       </statement>
       <solution>
-        <p>Minitab/JMP output:</p>
+        <p>JMP output:</p>
         <image source="images/Inv2-2f-sols2.jpg" width="60%">
-          <description>Minitab/JMP modified boxplot showing outliers</description>
+          <description>JMP modified boxplot showing outliers</description>
         </image>
+      </solution>
       </solution>
     </exercise>
   </paragraphs>
@@ -228,7 +226,7 @@ iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
       <p>Are there any outliers according to these criteria?</p>
     </statement>
     <solution>
-      <p>Minitab/R/JMP identify four outliers.</p>
+      <p>Applet/R/JMP identify four ("high") outliers.</p>
     </solution>
     <response/>
   </exercise>
