@@ -9,11 +9,11 @@
       <image source="images/Inv2.5Intro.png">
         <description>Introduction image for Healthy Body Temperatures investigation</description>
       </image>
-      <p>What is a healthy body temperature? German physician Carl Wunderlich analyzed a million temperatures from 25,000 patients and in 1869 published that the normal human-body temperature is 98.6°F. But several more recent studies have found that number to be too high, leading to speculation that Dr. Wunderlich was wrong, or that human body temperature has changed over time. In a <url href="https://jamanetwork.com/journals/jama/article-abstract/400116">study published by Mackowiak, Wasserman, <ampersand/> Levine (Journal of the American Medical Association, 1992)</url>, body temperatures (oral temperatures using a digital thermometer) were recorded for healthy men and women, aged 18-40 years, who were volunteers in Shigella vaccine trials at the University of Maryland Center for Vaccine Development, Baltimore. For these adults, the mean body temperature was found to be 98.249°F with a standard deviation of 0.733°F.</p>
+      <p>What is a healthy body temperature? German physician Carl Wunderlich analyzed a million temperatures from 25,000 patients and in 1869 published that the normal human-body temperature is 98.6°F. But several more recent studies have found that number to be too high, leading to speculation that Dr. Wunderlich was wrong, or that human body temperature has changed over time. In a study published by Mackowiak, Wasserman, <ampersand/> Levine <url href="https://jamanetwork.com/journals/jama/article-abstract/400116">(Journal of the American Medical Association, 1992)</url>, body temperatures (oral temperatures using a digital thermometer) were recorded for healthy men and women, aged 18-40 years, who were volunteers in Shigella vaccine trials at the University of Maryland Center for Vaccine Development, Baltimore. For these adults, the mean body temperature was found to be 98.249°F with a standard deviation of 0.733°F.</p>
     </sidebyside>
   </introduction>
   
-  <exercise xml:id="inv2-5-a" label="I6.5.1">
+  <exercise xml:id="inv2-5-a" label="I7.2.1">
     <title>Define symbols in context</title>
     <statement>
       <p>Explain (in words, in context) what is meant by the following symbols as applied to this study: <m>n</m>, <m>\bar{x}</m>, <m>s</m>, <m>\mu</m>, <m>\sigma</m>. If you know a value, report it. Otherwise, define the symbol in words.</p>
@@ -30,7 +30,7 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-5-b" label="I6.5.2">
+  <exercise xml:id="inv2-5-b" label="I7.2.2">
     <title>Write hypotheses</title>
     <statement>
       <p>Write a null hypothesis and an alternative hypothesis for testing Wunderlich's axiom using appropriate symbols.</p>
@@ -46,7 +46,7 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-5-c" label="I6.5.3">
+  <exercise xml:id="inv2-5-c" label="I7.2.3">
     <title>Apply Central Limit Theorem</title>
     <statement>
       <p>Suppose the axiom is correct and many different random samples of 13 adults are taken from a large normally distributed population with mean 98.6°F. What does the Central Limit Theorem tell you about the theoretical distribution of sample means? (Indicate any necessary information that is missing.)</p>
@@ -59,7 +59,7 @@
   
   <p>If we assume the null hypothesis is true, then we have a value to use for the population mean. However, we don't have a value to use for the population standard deviation (sometimes called a "nuisance parameter" because we need its value to be able to use <m>SD(\bar{x})</m>, but it is not the parameter of interest).</p>
   
-  <exercise xml:id="inv2-5-d" label="I6.5.4">
+  <exercise xml:id="inv2-5-d" label="I7.2.4">
     <title>Estimate population standard deviation</title>
     <statement>
       <p>Suggest a method for estimating the population standard deviation from the sample data.</p>
@@ -110,7 +110,7 @@
     <title>Calculate standardized statistic</title>
     <statement>
       <p>Determine how many standard errors the sample mean (98.249) falls from the hypothesized value of 98.6 (the standardized statistic).</p>
-      <p><m>t</m> = <var name="$tstat" width="8"/></p>
+      <p><var name="$tstat" width="8"/> standard errors</p>
     </statement>
     <setup>
       <var>
@@ -149,6 +149,10 @@
   
   <p>Previously, we compared our standardized statistics (z-scores) to the normal distribution and said (absolute) values larger than two were considered rare. But we don't really have a z-score here because we had to estimate the standard deviation of the sample mean. This creates even more "uncertainty" in our standardized statistic and more random variation. Is that still true that two standard errors is unusual? Let's explore the method you just used to standardize the sample mean in more detail.</p>
   
+  <paragraphs>
+    <title>Explore with simulation</title>
+  </paragraphs>
+  
   <p>Open the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample.html?population=finitepop">Sampling from a Finite Population applet</url> and paste the hypothetical population body temperature data from the <url href="https://www.rossmanchance.com/iscam4/data/BodyTempPop.txt">BodyTempPop.txt</url> file.</p>
   
   <exercise xml:id="inv2-5-h" label="I7.2.8">
@@ -176,7 +180,7 @@
     <response/>
   </exercise>
   
-  <p>But what about the statistic suggested in Checkpoint 6; does this standardized statistic behave nicely and is this distribution again well modeled by a normal distribution?</p>
+  <p>But what about the statistic suggested in <xref ref="inv2-5-f" text="custom">Checkpoint 6</xref>; does this standardized statistic behave nicely and is this distribution again well modeled by a normal distribution?</p>
   
   <exercise xml:id="inv2-5-j" label="I7.2.10">
     <title>Examine <m>t</m>-statistic distribution</title>
@@ -195,7 +199,7 @@
       <p>Check the box to Overlay Normal Distribution; does this appear to be a reasonable fit? What p-value does this normal approximation produce?</p>
     </statement>
     <hint>
-      <p>Enter your answer to Checkpoint 6 as the observed result for the <m>t</m>-statistic and count beyond.</p>
+      <p>Enter your answer to <xref ref="inv2-5-f" text="custom">Checkpoint 6</xref> as the observed result for the <m>t</m>-statistic and count beyond.</p>
     </hint>
     <solution>
       <p>The fit seems good, but not perfect. The normal distribution is perhaps a bit too "skinny" in the middle and doesn't go out far enough in the ends.</p>
@@ -218,7 +222,7 @@
   </exercise>
   
   <paragraphs>
-    <title>Student's t-distribution</title>
+    <title>Student's <m>t</m>-distribution</title>
     
     <p>If we zoom in on the tails of the distribution, we see that more of the simulated distribution lies in those tails than the normal distribution would predict.</p>
     
@@ -287,7 +291,12 @@
   <exercise xml:id="inv2-5-o" label="I7.2.15">
     <title>Examine z with sigma intervals</title>
     <statement>
-      <p>Turn to the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1">Simulating Confidence Intervals applet</url>. Change the Statistic to Means, but keep the Distribution set to Normal and the Method as z with sigma. Set the population mean to 98.6, the population standard deviation to 0.733, and the sample size to 13. Generate 1000 random samples from this population and examine the running total for the percentage of 95% confidence intervals (<m>\bar{x} \pm 1.96\sigma/\sqrt{n}</m>) that successfully capture the actual value of the population mean <m>\mu</m>. Is this 95% confident "z with sigma" procedure behaving as it should? How are you deciding? Press Sort. In what situations can an interval fail to capture <m>\mu</m>?</p>
+      <p>Turn to the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1">Simulating Confidence Intervals applet</url>.</p>
+      <ul>
+        <li><p>Change the Statistic to Means, but keep the Distribution set to Normal and the Method as z with sigma.</p></li>
+        <li><p>Set the population mean to 98.6, the population standard deviation to 0.733, and the sample size to 13.</p></li>
+      </ul>
+      <p>Generate 1000 random samples from this population and examine the running total for the percentage of 95% confidence intervals (<m>\bar{x} \pm 1.96\sigma/\sqrt{n}</m>) that successfully capture the actual value of the population mean <m>\mu</m>. Is this 95% confident "z with sigma" procedure behaving as it should? How are you deciding? Press Sort. In what situations can an interval fail to capture <m>\mu</m>?</p>
     </statement>
     <solution>
       <p>Results will vary, but should be close to 95%, indicating that the method does achieve the claimed confidence level.</p>
