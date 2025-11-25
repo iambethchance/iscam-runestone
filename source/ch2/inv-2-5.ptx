@@ -5,7 +5,12 @@
   <introduction>
     <p>In the previous investigation, we assumed random sampling from a finite population to predict the distribution of sample means and help us evaluate whether a particular value is an unlikely value for the sample mean by chance alone. However, this method is not realistic in practice as we had to make up a population to sample from and we had to make some assumptions about that population (e.g., shape). Luckily, the Central Limit Theorem also predicts how that distribution would behave for most population shapes. But the CLT does require us to know certain characteristics about the population.</p>
     
-    <p>What is a healthy body temperature? German physician Carl Wunderlich analyzed a million temperatures from 25,000 patients and in 1869 published that the normal human-body temperature is 98.6°F. But several more recent studies have found that number to be too high, leading to speculation that Dr. Wunderlich was wrong, or that human body temperature has changed over time. In a study published by Mackowiak, Wasserman, <ampersand/> Levine (Journal of the American Medical Association, 1992), body temperatures (oral temperatures using a digital thermometer) were recorded for healthy men and women, aged 18-40 years, who were volunteers in Shigella vaccine trials at the University of Maryland Center for Vaccine Development, Baltimore. For these adults, the mean body temperature was found to be 98.249°F with a standard deviation of 0.733°F.</p>
+    <sidebyside widths="30% 65%" margins="auto" valign="top">
+      <image source="images/Inv2.5Intro.png">
+        <description>Introduction image for Healthy Body Temperatures investigation</description>
+      </image>
+      <p>What is a healthy body temperature? German physician Carl Wunderlich analyzed a million temperatures from 25,000 patients and in 1869 published that the normal human-body temperature is 98.6°F. But several more recent studies have found that number to be too high, leading to speculation that Dr. Wunderlich was wrong, or that human body temperature has changed over time. In a <url href="https://jamanetwork.com/journals/jama/article-abstract/400116">study published by Mackowiak, Wasserman, <ampersand/> Levine (Journal of the American Medical Association, 1992)</url>, body temperatures (oral temperatures using a digital thermometer) were recorded for healthy men and women, aged 18-40 years, who were volunteers in Shigella vaccine trials at the University of Maryland Center for Vaccine Development, Baltimore. For these adults, the mean body temperature was found to be 98.249°F with a standard deviation of 0.733°F.</p>
+    </sidebyside>
   </introduction>
   
   <exercise xml:id="inv2-5-a" label="I6.5.1">
@@ -71,30 +76,68 @@
     <p><me>SE(\bar{x}) = \frac{s}{\sqrt{n}}</me></p>
   </assemblage>
   
-  <exercise xml:id="inv2-5-e" label="I6.5.5">
+  <exercise xml:id="inv2-5-e" label="I7.2.5">
     <title>Calculate standard error</title>
     <statement>
       <p>Calculate the value of the standard error of the sample mean body temperature for this study when <m>n = 13</m>.</p>
+      <p>SE(<m>\bar{x}</m>) = <var name="$se" width="8"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="0.203" tolerance="0.001">
+          <feedback>
+            <p>Correct! SE(<m>\bar{x}</m>) = <m>s/\sqrt{n} = 0.733/\sqrt{13} \approx 0.203</m></p>
+          </feedback>
+        </condition>
+        <condition number="0.733">
+          <feedback>
+            <p>That's the value of <m>s</m>. You need to divide by <m>\sqrt{n}</m>.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. Use the formula SE(<m>\bar{x}</m>) = <m>s/\sqrt{n}</m>.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m>s/\sqrt{n} = 0.733/\sqrt{13} \approx 0.203</m></p>
     </solution>
-    <response/>
   </exercise>
   
-  <exercise xml:id="inv2-5-f" label="I6.5.6">
+  <exercise xml:id="inv2-5-f" label="I7.2.6">
     <title>Calculate standardized statistic</title>
     <statement>
       <p>Determine how many standard errors the sample mean (98.249) falls from the hypothesized value of 98.6 (the standardized statistic).</p>
+      <p><m>t</m> = <var name="$tstat" width="8"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="-1.73" tolerance="0.02">
+          <feedback>
+            <p>Correct! <m>t = (98.249 - 98.6)/0.203 \approx -1.73</m> standard errors</p>
+          </feedback>
+        </condition>
+        <condition number="1.73" tolerance="0.02">
+          <feedback>
+            <p>Close, but pay attention to the sign. The sample mean is <em>below</em> the hypothesized value.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. Use the formula <m>t = (\bar{x} - \mu_0)/\text{SE}(\bar{x})</m>.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m>(98.249 - 98.6)/0.203 \approx -1.73</m> standard errors</p>
     </solution>
-    <response/>
   </exercise>
   
-  <exercise xml:id="inv2-5-g" label="I6.5.7">
-    <title>Interpret standardized statistic</title>
+  <exercise xml:id="inv2-5-g" label="I7.2.7">
+    <title>Evaluate standardized statistic</title>
     <statement>
       <p>Based on this calculation, would you consider the value of the sample mean (98.249) to be surprising, if the population mean were really equal to 98.6? Explain how you are deciding.</p>
     </statement>
@@ -106,10 +149,12 @@
   
   <p>Previously, we compared our standardized statistics (z-scores) to the normal distribution and said (absolute) values larger than two were considered rare. But we don't really have a z-score here because we had to estimate the standard deviation of the sample mean. This creates even more "uncertainty" in our standardized statistic and more random variation. Is that still true that two standard errors is unusual? Let's explore the method you just used to standardize the sample mean in more detail.</p>
   
-  <exercise xml:id="inv2-5-h" label="I6.5.8">
+  <p>Open the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample.html?population=finitepop">Sampling from a Finite Population applet</url> and paste the hypothetical population body temperature data from the <url href="https://www.rossmanchance.com/iscam4/data/BodyTempPop.txt">BodyTempPop.txt</url> file.</p>
+  
+  <exercise xml:id="inv2-5-h" label="I7.2.8">
     <title>Examine population distribution</title>
     <statement>
-      <p>Open the Sampling from a Finite Population applet and paste the hypothetical population body temperature data from the <url href="https://www.rossmanchance.com/iscam4/data/BodyTempPop.txt">BodyTempPop.txt</url> file. Does this appear to be a normally distributed population? What are the values of the population mean and the population standard deviation?</p>
+      <p>Does this appear to be a normally distributed population? What are the values of the population mean and the population standard deviation?</p>
     </statement>
     <solution>
       <p>Yes, the population distribution of body temperatures appears normally distributed with mean about 98.6 degrees and standard deviation 0.733 degrees.</p>
@@ -117,23 +162,26 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-5-i" label="I6.5.9">
+  <exercise xml:id="inv2-5-i" label="I7.2.9">
     <title>Verify Central Limit Theorem</title>
     <statement>
-      <p>Use the applet to select 10,000 samples of 13 adults from this hypothetical population. Confirm that the behavior of the distribution of sample means is consistent with the Central Limit Theorem? [Hint: Discuss shape, center, and variability; compare the CLT predictions to the simulation results.]</p>
+      <p>Use the applet to select 10,000 samples of 13 adults from this hypothetical population. Confirm that the behavior of the distribution of sample means is consistent with the Central Limit Theorem?</p>
     </statement>
+    <hint>
+      <p>Discuss shape, center, and variability; compare the CLT predictions to the simulation results.</p>
+    </hint>
     <solution>
       <p>This is consistent with the central limit theorem as the shape is approximately normal, the mean is the same as the population mean, and the standard deviation is predicted by <m>0.733/\sqrt{13} = 0.203</m>.</p>
     </solution>
     <response/>
   </exercise>
   
-  <p>But what about the statistic suggested in (f); does this standardized statistic behave nicely and is this distribution again well modeled by a normal distribution?</p>
+  <p>But what about the statistic suggested in Checkpoint 6; does this standardized statistic behave nicely and is this distribution again well modeled by a normal distribution?</p>
   
-  <exercise xml:id="inv2-5-j" label="I6.5.10">
-    <title>Examine t-statistic distribution</title>
+  <exercise xml:id="inv2-5-j" label="I7.2.10">
+    <title>Examine <m>t</m>-statistic distribution</title>
     <statement>
-      <p>In the applet, change the Statistic option (above the graph) to t-statistic, the name for the standardized sample mean using the standard error of the sample mean. Describe the shape of the distribution of these t-statistics from your 10,000 random samples.</p>
+      <p>In the applet, change the Statistic option (above the graph) to <m>t</m>-statistic, the name for the standardized sample mean using the standard error of the sample mean. Describe the shape of the distribution of these <m>t</m>-statistics from your 10,000 random samples.</p>
     </statement>
     <solution>
       <p>The shape is symmetric and bell-shaped, with mean roughly zero and standard deviation a little larger than 1.</p>
@@ -141,22 +189,28 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-5-k" label="I6.5.11">
+  <exercise xml:id="inv2-5-k" label="I7.2.11">
     <title>Compare to normal distribution</title>
     <statement>
-      <p>Check the box to Overlay Normal Distribution; does this appear to be a reasonable fit? What p-value does this normal approximation produce? [Hint: Enter your answer to (f) as the observed result for the t-statistic and count beyond.]</p>
+      <p>Check the box to Overlay Normal Distribution; does this appear to be a reasonable fit? What p-value does this normal approximation produce?</p>
     </statement>
+    <hint>
+      <p>Enter your answer to Checkpoint 6 as the observed result for the <m>t</m>-statistic and count beyond.</p>
+    </hint>
     <solution>
       <p>The fit seems good, but not perfect. The normal distribution is perhaps a bit too "skinny" in the middle and doesn't go out far enough in the ends.</p>
     </solution>
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-5-l" label="I6.5.12">
+  <exercise xml:id="inv2-5-l" label="I7.2.12">
     <title>Evaluate normal approximation</title>
     <statement>
-      <p>Does the theory-based p-value from the normal distribution accurately predict how often we would simulate a standardized statistic at least as extreme (in either direction) as the observed value of 1.73? Does it over predict or underpredict? [Hint: How does the behavior of the distribution of the standardized statistics most differ from a normal model?]</p>
+      <p>Does the theory-based p-value from the normal distribution accurately predict how often we would simulate a standardized statistic at least as extreme (in either direction) as the observed value of 1.73? Does it over predict or underpredict?</p>
     </statement>
+    <hint>
+      <p>How does the behavior of the distribution of the standardized statistics most differ from a normal model?</p>
+    </hint>
     <solution>
       <p>The normal distribution underpredicts how often the sample mean falls 1.73 SEs from the population mean.</p>
     </solution>
@@ -171,8 +225,8 @@
     <p>To model the sampling distribution of the standardized statistic <m>\frac{\bar{x} - \mu}{s/\sqrt{n}}</m>, we need a density curve with heavier tails than the standard normal distribution. William S. Gosset, a chemist turned statistician, showed in 1908, while working for the Guinness Breweries in Dublin, that a "t probability curve" provides a better model for the sampling distribution of this standardized statistic when the population of observations follows a normal distribution.</p>
   </paragraphs>
   
-  <exercise xml:id="inv2-5-m" label="I6.5.13">
-    <title>Compare t-distribution to normal</title>
+  <exercise xml:id="inv2-5-m" label="I7.2.13">
+    <title>Compare <m>t</m>-distribution to normal</title>
     <statement>
       <p>Check the Overlay t-distribution box. What is the main visual difference in the t-distribution model compared to the normal distribution model? Does this t-distribution appear to be a better model for the simulated sampling distribution? Is the theory-based p-value using the t-distribution closer to the empirical p-value than the theory-based p-value using the normal distribution?</p>
     </statement>
@@ -182,10 +236,10 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-5-n" label="I6.5.14">
+  <exercise xml:id="inv2-5-n" label="I7.2.14">
     <title>Analyze with larger sample size</title>
     <statement>
-      <p>The actual body temperature study involved a sample of <m>n = 130</m> adults. Use the applet to generate a sampling distribution of t-statistics for this sample size. Toggle between the normal and t probability distributions. Do you see much difference between them? What is the actual value of the observed t-statistic with this sample size? Where does it fall in this distribution? What do you conclude about the null hypothesis?</p>
+      <p>The actual body temperature study involved a sample of <m>n = 130</m> adults. Use the applet to generate a sampling distribution of <m>t</m>-statistics for this sample size. Toggle between the normal and <m>t</m> probability distributions. Do you see much difference between them? What is the actual value of the observed <m>t</m>-statistic with this sample size? Where does it fall in this distribution? What do you conclude about the null hypothesis?</p>
     </statement>
     <solution>
       <p>With a sample size of 130, we don't see as much distinction between the normal and t distributions. With <m>n = 130</m>, <m>SE = 0.733/\sqrt{130} \approx 0.0643</m> and <m>t = (98.249 - 98.6)/0.0643 \approx -5.459</m>. The sample mean of 98.249 is 5.459 standard errors below the population mean of 98.6, which implies 98.249 would be very surprising to observe for the sample mean if the population mean were really 98.6. This is far out in the tail of the simulated sampling distribution and gives strong evidence against the null hypothesis that the population mean is equal to 98.6. (We would reject the null hypothesis.)</p>
@@ -230,10 +284,10 @@
     <title>But what about confidence intervals?</title>
   </paragraphs>
   
-  <exercise xml:id="inv2-5-o" label="I6.5.15">
+  <exercise xml:id="inv2-5-o" label="I7.2.15">
     <title>Examine z with sigma intervals</title>
     <statement>
-      <p>Turn to the Simulating Confidence Intervals applet. Change the Statistic to Means, but keep the Distribution set to Normal and the Method as z with sigma. Set the population mean to 98.6, the population standard deviation to 0.733, and the sample size to 13. Generate 1000 random samples from this population and examine the running total for the percentage of 95% confidence intervals (<m>\bar{x} \pm 1.96\sigma/\sqrt{n}</m>) that successfully capture the actual value of the population mean <m>\mu</m>. Is this 95% confident "z with sigma" procedure behaving as it should? How are you deciding? Press Sort. In what situations can an interval fail to capture <m>\mu</m>?</p>
+      <p>Turn to the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1">Simulating Confidence Intervals applet</url>. Change the Statistic to Means, but keep the Distribution set to Normal and the Method as z with sigma. Set the population mean to 98.6, the population standard deviation to 0.733, and the sample size to 13. Generate 1000 random samples from this population and examine the running total for the percentage of 95% confidence intervals (<m>\bar{x} \pm 1.96\sigma/\sqrt{n}</m>) that successfully capture the actual value of the population mean <m>\mu</m>. Is this 95% confident "z with sigma" procedure behaving as it should? How are you deciding? Press Sort. In what situations can an interval fail to capture <m>\mu</m>?</p>
     </statement>
     <solution>
       <p>Results will vary, but should be close to 95%, indicating that the method does achieve the claimed confidence level.</p>
@@ -241,18 +295,21 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-5-p" label="I6.5.16">
+  <exercise xml:id="inv2-5-p" label="I7.2.16">
     <title>Predict effect of using s</title>
     <statement>
-      <p>But more realistically, we don't know <m>\sigma</m> and will use <m>s</m> in calculating our confidence interval (<m>\bar{x} \pm 1.96s/\sqrt{n}</m>). Predict what will change about the resulting confidence intervals from different random samples if we use each sample standard deviation in place of <m>\sigma</m>. [Hint: Think of two main properties of confidence intervals.]</p>
+      <p>But more realistically, we don't know <m>\sigma</m> and will use <m>s</m> in calculating our confidence interval (<m>\bar{x} \pm 1.96s/\sqrt{n}</m>). Predict what will change about the resulting confidence intervals from different random samples if we use each sample standard deviation in place of <m>\sigma</m>.</p>
     </statement>
+    <hint>
+      <p>Think of two main properties of confidence intervals.</p>
+    </hint>
     <solution>
       <p>Predictions will vary, but should think about how lengths of intervals will change from sample to sample. (The centers will be the same for both CI simulations.)</p>
     </solution>
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-5-q" label="I6.5.17">
+  <exercise xml:id="inv2-5-q" label="I7.2.17">
     <title>Test z with s method</title>
     <statement>
       <p>Change the Method now to z with s. What percentage of these 1000 confidence intervals succeed in capturing the population mean of 98.6? Is this close to 95%? If not, is it larger or smaller?</p>
@@ -263,7 +320,7 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-5-r" label="I6.5.18">
+  <exercise xml:id="inv2-5-r" label="I7.2.18">
     <title>Repeat with smaller sample size</title>
     <statement>
       <p>Repeat (q) with a sample size of <m>n = 5</m>.</p>
@@ -277,11 +334,11 @@
   <paragraphs>
     <title>Discussion</title>
     
-    <p>This "z with s" procedure produces a coverage rate (for successfully capturing the value of the population mean) that is less than 95%, because again the normal distribution doesn't account for the additional uncertainty resulting from sample to sample when we need to use both <m>\bar{x}</m> and <m>s</m>. The fix will be to multiply the standard error by a critical value larger than 1.96 to compensate for the additional uncertainty introduced by estimating <m>\sigma</m> with <m>s</m>. The t-distribution will come to our rescue. Which t-distribution do we use? That will depend on our sample size; with smaller samples we need heavier tails and with larger samples we need a distribution more like the normal probability model. The heaviness of the tails will be determined by the "degrees of freedom" of the t-distribution.</p>
+    <p>This "z with s" procedure produces a coverage rate (for successfully capturing the value of the population mean) that is less than 95%, because again the normal distribution doesn't account for the additional uncertainty resulting from sample to sample when we need to use both <m>\bar{x}</m> and <m>s</m>. The fix will be to multiply the standard error by a critical value larger than 1.96 to compensate for the additional uncertainty introduced by estimating <m>\sigma</m> with <m>s</m>. The <m>t</m>-distribution will come to our rescue. Which <m>t</m>-distribution do we use? That will depend on our sample size; with smaller samples we need heavier tails and with larger samples we need a distribution more like the normal probability model. The heaviness of the tails will be determined by the "degrees of freedom" of the <m>t</m>-distribution.</p>
   </paragraphs>
   
-  <exercise xml:id="inv2-5-s" label="I6.5.19">
-    <title>Test t-interval method</title>
+  <exercise xml:id="inv2-5-s" label="I7.2.19">
+    <title>Test <m>t</m>-interval method</title>
     <statement>
       <p>Change the Method to t. How do the intervals visibly change? Is the coverage rate indeed closer to 95%?</p>
     </statement>
@@ -324,8 +381,8 @@
     </ul>
   </paragraphs>
   
-  <exercise xml:id="inv2-5-t" label="I6.5.20">
-    <title>Find t* for n=5</title>
+  <exercise xml:id="inv2-5-t" label="I7.2.20">
+    <title>Find <m>t^*</m> for n=5</title>
     <statement>
       <p>Find the <m>t^*</m> value corresponding to a 95% confidence level and a sample size of <m>n = 5</m>.</p>
       
@@ -337,8 +394,8 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-5-u" label="I6.5.21">
-    <title>Compare t* to z*</title>
+  <exercise xml:id="inv2-5-u" label="I7.2.21">
+    <title>Compare <m>t^*</m> to <m>z^*</m></title>
     <statement>
       <p>How does this critical value compare to the corresponding <m>z^*</m> value for 95% confidence?</p>
     </statement>
@@ -348,8 +405,8 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-5-v" label="I6.5.22">
-    <title>Find t* for n=13</title>
+  <exercise xml:id="inv2-5-v" label="I7.2.22">
+    <title>Find <m>t^*</m> for n=13</title>
     <statement>
       <p>Repeat (t) for the sample size of <m>n = 13</m>. How do the t-critical values compare for these different sample sizes? Is this what you expected? Explain.</p>
     </statement>
@@ -359,8 +416,8 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-5-w" label="I6.5.23">
-    <title>Find t* for n=130</title>
+  <exercise xml:id="inv2-5-w" label="I7.2.23">
+    <title>Find <m>t^*</m> for n=130</title>
     <statement>
       <p>Repeat (v) for the sample size of <m>n = 130</m>. How does this value compare to the earlier <m>t^*</m> and <m>z^*</m> values?</p>
     </statement>
@@ -370,7 +427,7 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-5-x" label="I6.5.24">
+  <exercise xml:id="inv2-5-x" label="I7.2.24">
     <title>Calculate confidence interval</title>
     <statement>
       <p>Use the critical value from (w) to calculate a 95% confidence interval for the mean body temperature of a healthy adult based on our sample (<m>\bar{x} = 98.249</m>, <m>s = 0.733</m>, <m>n = 130</m>). Is this interval consistent with your conclusion about the null hypothesis in (n)? Explain.</p>
@@ -416,7 +473,7 @@
     </ul>
   </paragraphs>
   
-  <exercise xml:id="inv2-5-y" label="I6.5.25">
+  <exercise xml:id="inv2-5-y" label="I7.2.25">
     <title>Use technology to verify calculations</title>
     <statement>
       <p>Use technology to verify your by-hand calculations and summarize the conclusions you would draw from this study (both from the p-value and the confidence interval, including the population you are willing to generalize to). Also include interpretations, in context, of your p-value and your confidence level.</p>
