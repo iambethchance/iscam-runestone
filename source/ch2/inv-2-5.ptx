@@ -3,14 +3,15 @@
   <title>Investigation 2.5: Healthy Body Temperatures</title>
   
   <introduction>
-    <p>In the previous investigation, we assumed random sampling from a finite population to predict the distribution of sample means and help us evaluate whether a particular value is an unlikely value for the sample mean by chance alone. However, this method is not realistic in practice as we had to make up a population to sample from and we had to make some assumptions about that population (e.g., shape). Luckily, the Central Limit Theorem also predicts how that distribution would behave for most population shapes. But the CLT does require us to know certain characteristics about the population.</p>
-    
     <sidebyside widths="30% 65%" margins="auto" valign="top">
+    <p>In the previous investigation, we assumed random sampling from a finite population to predict the distribution of sample means and help us evaluate whether a particular value is an unlikely value for the sample mean by chance alone. However, this method is not realistic in practice as we had to make up a population to sample from and we had to make some assumptions about that population (e.g., shape). Luckily, the Central Limit Theorem also predicts how that distribution would behave for most population shapes. But the CLT does require us to know certain characteristics about the population.</p>
+   <stack>
       <image source="images/Inv2.5Intro.png">
         <description>Introduction image for Healthy Body Temperatures investigation</description>
       </image>
-      <p>What is a healthy body temperature? German physician Carl Wunderlich analyzed a million temperatures from 25,000 patients and in 1869 published that the normal human-body temperature is 98.6°F. But several more recent studies have found that number to be too high, leading to speculation that Dr. Wunderlich was wrong, or that human body temperature has changed over time. In a study published by Mackowiak, Wasserman, <ampersand/> Levine <url href="https://jamanetwork.com/journals/jama/article-abstract/400116">(Journal of the American Medical Association, 1992)</url>, body temperatures (oral temperatures using a digital thermometer) were recorded for healthy men and women, aged 18-40 years, who were volunteers in Shigella vaccine trials at the University of Maryland Center for Vaccine Development, Baltimore. For these adults, the mean body temperature was found to be 98.249°F with a standard deviation of 0.733°F.</p>
+      </stack>
     </sidebyside>
+      <p>What is a healthy body temperature? German physician Carl Wunderlich analyzed a million temperatures from 25,000 patients and in 1869 published that the normal human-body temperature is 98.6°F. But several more recent studies have found that number to be too high, leading to speculation that Dr. Wunderlich was wrong, or that human body temperature has changed over time. In a study published by Mackowiak, Wasserman, <ampersand/> Levine (<em>Journal of the American Medical Association</em>, <url href="https://jamanetwork.com/journals/jama/article-abstract/400116"> 1992)</url>, body temperatures (oral temperatures using a digital thermometer) were recorded for healthy men and women, aged 18-40 years, who were volunteers in Shigella vaccine trials at the University of Maryland Center for Vaccine Development, Baltimore. For these adults, the mean body temperature was found to be 98.249°F with a standard deviation of 0.733°F.</p>
   </introduction>
   
   <exercise xml:id="inv2-5-a" label="I7.2.1">
@@ -199,7 +200,7 @@
       <p>Check the box to Overlay Normal Distribution; does this appear to be a reasonable fit? What p-value does this normal approximation produce?</p>
     </statement>
     <hint>
-      <p>Enter your answer to <xref ref="inv2-5-f" text="custom">Checkpoint 6</xref> as the observed result for the <m>t</m>-statistic and count beyond.</p>
+      <p>Enter your answer to <xref ref="inv2-5-f" text="custom">Checkpoint 7.2.6</xref> as the observed result for the <m>t</m>-statistic and count beyond.</p>
     </hint>
     <solution>
       <p>The fit seems good, but not perfect. The normal distribution is perhaps a bit too "skinny" in the middle and doesn't go out far enough in the ends.</p>
@@ -281,7 +282,7 @@
   <assemblage xml:id="probability-detour-df">
     <title>Probability Detour – Degrees of Freedom</title>
     
-    <p>Recall the formula for the sample standard deviation <m>s</m> (Investigation A), compares each observed data value <m>x_i</m> to the sample mean <m>\bar{x}</m>. But <m>\bar{x}</m> is calculated by averaging those same data values. So if I know <m>n - 1</m> of those data values and I know <m>\bar{x}</m>, then that last observation is forced to be a particular value. So we say the calculation has <m>n - 1</m> degrees of freedom, and that's why that formula divides by <m>n - 1</m>.</p>
+    <p>Recall the formula for the sample standard deviation <m>s</m> (<xref ref="invA" text="custom">Investigation A</xref>), compares each observed data value <m>x_i</m> to the sample mean <m>\bar{x}</m>. But <m>\bar{x}</m> is calculated by averaging those same data values. So if I know <m>n - 1</m> of those data values and I know <m>\bar{x}</m>, then that last observation is forced to be a particular value. So we say the calculation has <m>n - 1</m> degrees of freedom, and that's why that formula divides by <m>n - 1</m>.</p>
   </assemblage>
   
   <paragraphs>
@@ -289,14 +290,14 @@
   </paragraphs>
   
   <exercise xml:id="inv2-5-o" label="I7.2.15">
-    <title>Examine z with sigma intervals</title>
+    <title>Examine <m>z</m> with sigma intervals</title>
     <statement>
       <p>Turn to the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1">Simulating Confidence Intervals applet</url>.</p>
       <ul>
-        <li><p>Change the Statistic to Means, but keep the Distribution set to Normal and the Method as z with sigma.</p></li>
+        <li><p>Change the Statistic to Means, but keep the Distribution set to Normal and the Method as <m>z</m> with sigma.</p></li>
         <li><p>Set the population mean to 98.6, the population standard deviation to 0.733, and the sample size to 13.</p></li>
       </ul>
-      <p>Generate 1000 random samples from this population and examine the running total for the percentage of 95% confidence intervals (<m>\bar{x} \pm 1.96\sigma/\sqrt{n}</m>) that successfully capture the actual value of the population mean <m>\mu</m>. Is this 95% confident "z with sigma" procedure behaving as it should? How are you deciding? Press Sort. In what situations can an interval fail to capture <m>\mu</m>?</p>
+      <p>Generate 1000 random samples from this population and examine the running total for the percentage of 95% confidence intervals (<m>\bar{x} \pm 1.96\sigma/\sqrt{n}</m>) that successfully capture the actual value of the population mean <m>\mu</m>. Is this 95% confident "<m>z</m> with sigma" procedure behaving as it should? How are you deciding? Press Sort. In what situations can an interval fail to capture <m>\mu</m>?</p>
     </statement>
     <solution>
       <p>Results will vary, but should be close to 95%, indicating that the method does achieve the claimed confidence level.</p>
@@ -319,9 +320,9 @@
   </exercise>
   
   <exercise xml:id="inv2-5-q" label="I7.2.17">
-    <title>Test z with s method</title>
+    <title>Test <m>z</m> with <m>s</m> method</title>
     <statement>
-      <p>Change the Method now to z with s. What percentage of these 1000 confidence intervals succeed in capturing the population mean of 98.6? Is this close to 95%? If not, is it larger or smaller?</p>
+      <p>Change the Method now to <m>z</m> with <m>s</m>. What percentage of these 1000 confidence intervals succeed in capturing the population mean of 98.6? Is this close to 95%? If not, is it larger or smaller?</p>
     </statement>
     <solution>
       <p>Percentage drops to 91 or 92%.</p>
@@ -343,7 +344,7 @@
   <paragraphs>
     <title>Discussion</title>
     
-    <p>This "z with s" procedure produces a coverage rate (for successfully capturing the value of the population mean) that is less than 95%, because again the normal distribution doesn't account for the additional uncertainty resulting from sample to sample when we need to use both <m>\bar{x}</m> and <m>s</m>. The fix will be to multiply the standard error by a critical value larger than 1.96 to compensate for the additional uncertainty introduced by estimating <m>\sigma</m> with <m>s</m>. The <m>t</m>-distribution will come to our rescue. Which <m>t</m>-distribution do we use? That will depend on our sample size; with smaller samples we need heavier tails and with larger samples we need a distribution more like the normal probability model. The heaviness of the tails will be determined by the "degrees of freedom" of the <m>t</m>-distribution.</p>
+    <p>This "<m>z</m> with <m>s</m>" procedure produces a coverage rate (for successfully capturing the value of the population mean) that is less than 95%, because again the normal distribution doesn't account for the additional uncertainty resulting from sample to sample when we need to use both <m>\bar{x}</m> and <m>s</m>. The fix will be to multiply the standard error by a critical value larger than 1.96 to compensate for the additional uncertainty introduced by estimating <m>\sigma</m> with <m>s</m>. The <m>t</m>-distribution will come to our rescue. Which <m>t</m>-distribution do we use? That will depend on our sample size; with smaller samples we need heavier tails and with larger samples we need a distribution more like the normal probability model. The heaviness of the tails will be determined by the "degrees of freedom" of the <m>t</m>-distribution.</p>
   </paragraphs>
   
   <exercise xml:id="inv2-5-s" label="I7.2.19">
@@ -369,26 +370,28 @@
     <p>Keep in mind that the critical value <m>t^*</m> tells us how many standard errors we need to extend from the sample mean (in each direction) based on how confident we want to be. Our goal is to develop a <m>100 \times C\%</m> confidence interval method that will capture the population parameter <m>(100 \times C)\%</m> of the time in the long run.</p>
   </assemblage>
   
-  <paragraphs>
-    <title>Technology Detour – Finding t*</title>
-    
-    <p><alert>t Probability Calculator applet:</alert></p>
-    <ul>
-      <li><p>Specify the degrees of freedom</p></li>
-      <li><p>Check the box next to the less than symbol and then enter <m>(1-C)/2</m> (e.g., 0.025 for 95% confidence) in the probability box and press Return. The t-value box should fill in.</p></li>
-    </ul>
-    
-    <p><alert>In R:</alert> Assuming 95% with df = 4</p>
-    <pre>iscaminvt(.95, 4, "between")</pre>
-    
-    <p><alert>In JMP:</alert> using the Distribution Calculator</p>
-    <ul>
-      <li><p>Use the Distribution menu to select t</p></li>
-      <li><p>Specify the degrees of freedom</p></li>
-      <li><p>Choose Input probability and calculate quantiles</p></li>
-      <li><p>Specify Central Probability and enter the confidence level (e.g., .95).</p></li>
-    </ul>
-  </paragraphs>
+  <exercise xml:id="inv2-5-t-tech" label="I7.2.20tech">
+    <title>Technology Detour <mdash/> Finding <m>t^*</m></title>
+    <statement>
+      <p><alert><m>t</m> Probability Calculator applet:</alert></p>
+      <ul>
+        <li><p>Specify the degrees of freedom</p></li>
+        <li><p>Check the box next to the less than symbol and then enter <m>(1-C)/2</m> (e.g., 0.025 for 95% confidence) in the probability box and press Return. The <m>t</m>-value box should fill in.</p></li>
+      </ul>
+      
+      <p><alert>In R:</alert> Assuming 95% with df = 4</p>
+      <pre>iscaminvt(.95, 4, "between")</pre>
+      
+      <p><alert>In JMP:</alert> using the Distribution Calculator</p>
+      <ul>
+        <li><p>Use the Distribution menu to select <m>t</m></p></li>
+        <li><p>Specify the degrees of freedom</p></li>
+        <li><p>Choose Input probability and calculate quantiles</p></li>
+        <li><p>Specify Central Probability and enter the confidence level (e.g., .95).</p></li>
+      </ul>
+    </statement>
+    <response/>
+  </exercise>
   
   <exercise xml:id="inv2-5-t" label="I7.2.20">
     <title>Find <m>t^*</m> for n=5</title>
@@ -447,40 +450,42 @@
     <response/>
   </exercise>
   
-  <paragraphs>
-    <title>Technology Detour – One Sample t-procedures</title>
-    
-    <p><alert>In Theory-Based Inference applet:</alert></p>
-    <ul>
-      <li><p>Select One mean from the Scenario pull-down menu</p></li>
-      <li><p>You can check Paste data to copy and paste in the raw data, or type in the sample size, mean, and standard deviation. Press Calculate.</p></li>
-      <li><p>Check the box for Test of significance and enter the hypothesized value of <m>\mu</m> and set the direction of the alternative. Press Calculate.</p></li>
-      <li><p>Check the box for Confidence interval, enter the confidence level and press Calculate CI.</p></li>
-    </ul>
-    
-    <p><alert>In R:</alert> you can use the t.test command with raw data ("x") or iscamonesamplet with summary data</p>
-    <pre>t.test(x, mu = hypothesized_value, alternative="two.sided", conf.level = .95)</pre>
-    <p>OR</p>
-    <pre>iscamonesamplet(xbar=98.249, sd=.733, n=130, hypothesized=98.6, 
+  <exercise xml:id="inv2-5-y-tech" label="I7.2.25tech">
+    <title>Technology Detour <mdash/> One Sample <m>t</m>-procedures</title>
+    <statement>
+      <p><alert>In Theory-Based Inference applet:</alert></p>
+      <ul>
+        <li><p>Select One mean from the Scenario pull-down menu</p></li>
+        <li><p>You can check Paste data to copy and paste in the raw data, or type in the sample size, mean, and standard deviation. Press Calculate.</p></li>
+        <li><p>Check the box for Test of significance and enter the hypothesized value of <m>\mu</m> and set the direction of the alternative. Press Calculate.</p></li>
+        <li><p>Check the box for Confidence interval, enter the confidence level and press Calculate CI.</p></li>
+      </ul>
+      
+      <p><alert>In R:</alert> you can use the t.test command with raw data ("x") or iscamonesamplet with summary data</p>
+      <pre>t.test(x, mu = hypothesized_value, alternative="two.sided", conf.level = .95)</pre>
+      <p>OR</p>
+      <pre>iscamonesamplet(xbar=98.249, sd=.733, n=130, hypothesized=98.6, 
                 alternative="two.sided", conf.level=95)</pre>
-    <p>where sd = sample standard deviation, <m>s</m>.</p>
-    
-    <p><alert>In JMP:</alert> you can use raw data or summary data (see second option)</p>
-    <ul>
-      <li><p>In the Data window, choose Analyze > Distribution</p></li>
-      <li><p>Specify the variable in the Y, Columns box</p></li>
-      <li><p>The 95% confidence interval will be shown in the Summary Statistics box. If you want to change the confidence level, use the variable hot spot and select Confidence interval.</p></li>
-      <li><p>To perform the test of significance, use the variable hot spot, select Test Mean. Then enter the hypothesized value of <m>\mu</m> and press OK.</p></li>
-    </ul>
-    <p>OR</p>
-    <ul>
-      <li><p>Open the ISCAM Journal file > Hypothesis Test for One Mean</p></li>
-      <li><p>Choose Raw Data (and pick the column) or Summary Statistics (and then specify the sample size, sample mean, and sample standard deviation)</p></li>
-      <li><p>Be sure to choose the t-test Test Type and specify the alternative hypothesis</p></li>
-      <li><p>In the ISCAM Journal file > Confidence Interval for One Mean</p></li>
-      <li><p>Choose the t interval type and specify confidence level</p></li>
-    </ul>
-  </paragraphs>
+      <p>where sd = sample standard deviation, <m>s</m>.</p>
+      
+      <p><alert>In JMP:</alert> you can use raw data or summary data (see second option)</p>
+      <ul>
+        <li><p>In the Data window, choose Analyze > Distribution</p></li>
+        <li><p>Specify the variable in the Y, Columns box</p></li>
+        <li><p>The 95% confidence interval will be shown in the Summary Statistics box. If you want to change the confidence level, use the variable hot spot and select Confidence interval.</p></li>
+        <li><p>To perform the test of significance, use the variable hot spot, select Test Mean. Then enter the hypothesized value of <m>\mu</m> and press OK.</p></li>
+      </ul>
+      <p>OR</p>
+      <ul>
+        <li><p>Open the ISCAM Journal file > Hypothesis Test for One Mean</p></li>
+        <li><p>Choose Raw Data (and pick the column) or Summary Statistics (and then specify the sample size, sample mean, and sample standard deviation)</p></li>
+        <li><p>Be sure to choose the <m>t</m>-test Test Type and specify the alternative hypothesis</p></li>
+        <li><p>In the ISCAM Journal file > Confidence Interval for One Mean</p></li>
+        <li><p>Choose the <m>t</m> interval type and specify confidence level</p></li>
+      </ul>
+    </statement>
+    <response/>
+  </exercise>
   
   <exercise xml:id="inv2-5-y" label="I7.2.25">
     <title>Use technology to verify calculations</title>
