@@ -27,7 +27,7 @@
     </statement>
     <solution>
       <p><m>98.249 \pm 2(0.733) = (96.783, 99.715)</m>. We would expect approximately 95% of healthy human temperatures to fall in this interval.</p>
-      <image source="images/Inv2.6(b).png" width="60%">
+      <image source="images/Inv2.6bsols.png" width="60%">
         <description>Empirical Rule calculation showing 95% interval</description>
       </image>
     </solution>
@@ -116,24 +116,17 @@
     <p>This procedure is valid as long as the sample observations are randomly selected from a normally distributed population. Note that prediction intervals are not robust to violations from the normality condition even with large sample sizes.</p>
   </assemblage>
   
-  <sidebyside widths="55% 40%" margins="auto">
-    <exercise xml:id="inv2-6-g" label="I7.3.7">
-      <title>Find <m>t^*</m> critical value</title>
-      <statement>
-        <p>Notice the critical value will be the same as in <xref ref="inv2-5-w" text="custom">Checkpoint 7.2.23</xref>. Recall or use technology to determine the critical value with <m>n = 130</m> and 95% confidence.</p>
-        <p><m>t_{129}^*</m> = <var width="10"/></p>
-      </statement>
-      <solution>
-        <p><m>t_{129}^* = 1.979</m></p>
-      </solution>
-      <response/>
-    </exercise>
-    
-    <aside>
-      <title><m>t</m> Probability Calculator</title>
-      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/tcalc/tCalc.htm?hideExtras=1" visual="rossmanchance.com/applets/2021/tcalc/tCalc.htm"><m>t</m> Probability Calculator applet</url> to find critical values.</p>
-    </aside>
-  </sidebyside>
+  <exercise xml:id="inv2-6-g" label="I7.3.7">
+    <title>Find <m>t^*</m> critical value</title>
+    <statement>
+      <p>Notice the critical value will be the same as in <xref ref="inv2-5-w" text="custom">Checkpoint 7.2.23</xref>. Recall or use technology to determine the critical value with <m>n = 130</m> and 95% confidence.</p>
+      <p><m>t_{129}^*</m> = <var width="10"/></p>
+    </statement>
+    <solution>
+      <p><m>t_{129}^* = 1.979</m></p>
+    </solution>
+    <response/>
+  </exercise>
   
   <exercise xml:id="inv2-6-h" label="I7.3.8">
     <title>Calculate prediction interval</title>
@@ -163,47 +156,52 @@
   </exercise>
   
   <exercise xml:id="inv2-6-j" label="I7.3.10">
-    <title>Compare intervals - center</title>
+    <title>Compare intervals</title>
     <statement>
       <p>How do the center and width of this prediction interval compare to the 95% confidence interval for the population mean body temperature found in <xref ref="inv2-5-x" text="custom">Checkpoint 7.2.24</xref>?</p>
-      
-      <p>Center:</p>
     </statement>
-    <choices randomize="yes">
-      <choice>
-        <statement><p>Smaller</p></statement>
-      </choice>
-      <choice correct="yes">
-        <statement><p>The same</p></statement>
-      </choice>
-      <choice>
-        <statement><p>Larger</p></statement>
-      </choice>
-    </choices>
-    <hint>
-      <p>Both intervals are centered at <m>\bar{x}</m>.</p>
-    </hint>
-  </exercise>
-  
-  <exercise xml:id="inv2-6-j2" label="I7.3.10-2">
-    <title>Compare intervals - width</title>
-    <statement>
-      <p>Width:</p>
-    </statement>
-    <choices randomize="yes">
-      <choice>
-        <statement><p>Smaller</p></statement>
-      </choice>
-      <choice>
-        <statement><p>The same</p></statement>
-      </choice>
-      <choice correct="yes">
-        <statement><p>Larger</p></statement>
-      </choice>
-    </choices>
-    <hint>
-      <p>The prediction interval accounts for both sampling variability and individual variability.</p>
-    </hint>
+    
+    <task xml:id="inv2-6-j-center" label="I7.3.10a">
+      <title>Center</title>
+      <statement>
+        <p>Center:</p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement><p>Smaller</p></statement>
+        </choice>
+        <choice correct="yes">
+          <statement><p>The same</p></statement>
+        </choice>
+        <choice>
+          <statement><p>Larger</p></statement>
+        </choice>
+      </choices>
+      <hint>
+        <p>Both intervals are centered at <m>\bar{x}</m>.</p>
+      </hint>
+    </task>
+    
+    <task xml:id="inv2-6-j-width" label="I7.3.10b">
+      <title>Width</title>
+      <statement>
+        <p>Width:</p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement><p>Smaller</p></statement>
+        </choice>
+        <choice>
+          <statement><p>The same</p></statement>
+        </choice>
+        <choice correct="yes">
+          <statement><p>Larger</p></statement>
+        </choice>
+      </choices>
+      <hint>
+        <p>The prediction interval accounts for both sampling variability and individual variability.</p>
+      </hint>
+    </task>
   </exercise>
   
   <exercise xml:id="inv2-6-k" label="I7.3.11">
