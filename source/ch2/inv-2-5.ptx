@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="investigation2-5">
   <title>Investigation 2.5: Healthy Body Temperatures</title>
-  
+
+    <p>In the previous investigation, we assumed random sampling from a finite population to predict the distribution of sample means and help us evaluate whether a particular value is an unlikely value for the sample mean by chance alone. </p>
+
   <introduction>
-    <sidebyside widths="15% 80%" margins="auto" valign="top">
-   <stack>
+    <sidebyside widths="50% 50%" margins="auto" valign="top">
+ <p>What is a healthy body temperature? German physician Carl Wunderlich analyzed a million temperatures from 25,000 patients and in 1869 published that the normal human-body temperature is 98.6°F. But several more recent studies have found that number to be too high, leading to speculation that Dr. Wunderlich was wrong, or that human body temperature has changed over time. In a study published by Mackowiak, Wasserman, <ampersand/> Levine (<em>Journal of the American Medical Association</em>, <url href="https://jamanetwork.com/journals/jama/article-abstract/400116"> 1992)</url>, body temperatures (oral temperatures using a digital thermometer) were recorded for healthy men and women, aged 18-40 years, who were volunteers in Shigella vaccine trials at the University of Maryland Center for Vaccine Development, Baltimore. For these adults, the mean body temperature was found to be 98.249°F with a standard deviation of 0.733°F.</p>   <stack>
       <image source="images/Inv2.5Intro.png">
         <description>Introduction image for Healthy Body Temperatures investigation</description>
       </image>
       </stack>
-    <p>In the previous investigation, we assumed random sampling from a finite population to predict the distribution of sample means and help us evaluate whether a particular value is an unlikely value for the sample mean by chance alone. However, this method is not realistic in practice as we had to make up a population to sample from and we had to make some assumptions about that population (e.g., shape). Luckily, the Central Limit Theorem also predicts how that distribution would behave for most population shapes. But the CLT does require us to know certain characteristics about the population.</p>
     </sidebyside>
-      <p>What is a healthy body temperature? German physician Carl Wunderlich analyzed a million temperatures from 25,000 patients and in 1869 published that the normal human-body temperature is 98.6°F. But several more recent studies have found that number to be too high, leading to speculation that Dr. Wunderlich was wrong, or that human body temperature has changed over time. In a study published by Mackowiak, Wasserman, <ampersand/> Levine (<em>Journal of the American Medical Association</em>, <url href="https://jamanetwork.com/journals/jama/article-abstract/400116"> 1992)</url>, body temperatures (oral temperatures using a digital thermometer) were recorded for healthy men and women, aged 18-40 years, who were volunteers in Shigella vaccine trials at the University of Maryland Center for Vaccine Development, Baltimore. For these adults, the mean body temperature was found to be 98.249°F with a standard deviation of 0.733°F.</p>
+<p>However, this method is not realistic in practice as we had to make up a population to sample from and we had to make some assumptions about that population (e.g., shape). Luckily, the Central Limit Theorem also predicts how that distribution would behave for most population shapes. But the CLT does require us to know certain characteristics about the population.</p>     
   </introduction>
   
   <exercise xml:id="inv2-5-a" label="I7.2.1">
@@ -154,7 +155,7 @@
     <title>Explore with simulation</title>
   </paragraphs>
   
-  <p>Open the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample.html?population=finitepop">Sampling from a Finite Population applet</url> and paste the hypothetical population body temperature data from the <url href="https://www.rossmanchance.com/iscam4/data/BodyTempPop.txt">BodyTempPop.txt</url> file.</p>
+  <p>Open the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample.html?population=finitepop">Sampling from a Finite Population applet</url> and paste the hypothetical population body temperature data from the <url href="https://www.rossmanchance.com/iscam4/data/BodyTempPop.txt">BodyTempPop.txt</url> file (or type the file name into the empty Population data window).</p>
   
   <exercise xml:id="inv2-5-h" label="I7.2.8">
     <title>Examine population distribution</title>
@@ -177,6 +178,9 @@
     </hint>
     <solution>
       <p>This is consistent with the central limit theorem as the shape is approximately normal, the mean is the same as the population mean, and the standard deviation is predicted by <m>0.733/\sqrt{13} = 0.203</m>.</p>
+      <image source="images/Inv2.5isols.png" width="60%">
+        <description>Sampling distribution showing consistency with Central Limit Theorem</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -190,6 +194,9 @@
     </statement>
     <solution>
       <p>The shape is symmetric and bell-shaped, with mean roughly zero and standard deviation a little larger than 1.</p>
+      <image source="images/Inv2.5jsols.jpg" width="60%">
+        <description>Distribution of t-statistics from 10,000 random samples</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -204,6 +211,12 @@
     </hint>
     <solution>
       <p>The fit seems good, but not perfect. The normal distribution is perhaps a bit too "skinny" in the middle and doesn't go out far enough in the ends.</p>
+      <image source="images/Inv2.5ksols1.jpg" width="60%">
+        <description>t-distribution with normal overlay showing fit comparison</description>
+      </image>
+      <image source="images/Inv2.5ksols2.jpg" width="60%">
+        <description>p-value calculation using normal approximation</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -227,7 +240,7 @@
     
     <p>If we zoom in on the tails of the distribution, we see that more of the simulated distribution lies in those tails than the normal distribution would predict.</p>
     
-    <p>To model the sampling distribution of the standardized statistic <m>\frac{\bar{x} - \mu}{s/\sqrt{n}}</m>, we need a density curve with heavier tails than the standard normal distribution. William S. Gosset, a chemist turned statistician, showed in 1908, while working for the Guinness Breweries in Dublin, that a "t probability curve" provides a better model for the sampling distribution of this standardized statistic when the population of observations follows a normal distribution.</p>
+    <p>To model the sampling distribution of the standardized statistic <m>\frac{\bar{x} - \mu}{s/\sqrt{n}}</m>, we need a density curve with <em>heavier tails</em> than the standard normal distribution. William S. Gosset, a chemist turned statistician, showed in 1908, while working for the Guinness Breweries in Dublin, that a "t probability curve" provides a better model for the sampling distribution of this standardized statistic when the population of observations follows a normal distribution.</p>
   </paragraphs>
   
   <exercise xml:id="inv2-5-m" label="I7.2.13">
@@ -248,6 +261,9 @@
     </statement>
     <solution>
       <p>With a sample size of 130, we don't see as much distinction between the normal and t distributions. With <m>n = 130</m>, <m>SE = 0.733/\sqrt{130} \approx 0.0643</m> and <m>t = (98.249 - 98.6)/0.0643 \approx -5.459</m>. The sample mean of 98.249 is 5.459 standard errors below the population mean of 98.6, which implies 98.249 would be very surprising to observe for the sample mean if the population mean were really 98.6. This is far out in the tail of the simulated sampling distribution and gives strong evidence against the null hypothesis that the population mean is equal to 98.6. (We would reject the null hypothesis.)</p>
+      <image source="images/Inv2.5nsols.jpg" width="60%">
+        <description>Sampling distribution of t-statistics for n=130 with observed value</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -264,7 +280,7 @@
     <p>The t probability density curve is described by the following function:</p>
     <p><me>f(x) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\sqrt{\nu\pi}\,\Gamma\left(\frac{\nu}{2}\right)}\left(1+\frac{x^2}{\nu}\right)^{-\frac{\nu+1}{2}}</me> where <m>-\infty &lt; x &lt; \infty</m></p>
     
-    <p>An impressive function indeed! But you should notice that this function only depends on the parameter <m>\nu</m>, referred to as the degrees of freedom.</p>
+    <p>An impressive function indeed! But you should notice that this function only depends on the parameter <m>\nu</m>, referred to as the <em>degrees of freedom</em>.</p>
     
     <p>This symmetric distribution has heavier tails than the standard normal distribution. We get a different t-distribution for each value of the degrees of freedom. As the degrees of freedom increase, the t-distribution approaches the standard normal distribution.</p>
   </assemblage>
@@ -288,19 +304,26 @@
   <paragraphs>
     <title>But what about confidence intervals?</title>
   </paragraphs>
-  
-  <exercise xml:id="inv2-5-o" label="I7.2.15">
-    <title>Examine <m>z</m> with sigma intervals</title>
-    <statement>
       <p>Turn to the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1">Simulating Confidence Intervals applet</url>.</p>
       <ul>
         <li><p>Change the Statistic to Means, but keep the Distribution set to Normal and the Method as <m>z</m> with sigma.</p></li>
         <li><p>Set the population mean to 98.6, the population standard deviation to 0.733, and the sample size to 13.</p></li>
       </ul>
-      <p>Generate 1000 random samples from this population and examine the running total for the percentage of 95% confidence intervals (<m>\bar{x} \pm 1.96\sigma/\sqrt{n}</m>) that successfully capture the actual value of the population mean <m>\mu</m>. Is this 95% confident "<m>z</m> with sigma" procedure behaving as it should? How are you deciding? Press Sort. In what situations can an interval fail to capture <m>\mu</m>?</p>
+  
+  <exercise xml:id="inv2-5-o" label="I7.2.15">
+    <title>Examine <m>z</m> with sigma intervals</title>
+    <statement>
+      <p>Generate 1000 random samples from this population and examine the running total for the percentage of 95% confidence intervals <m>(\bar{x} \pm 1.96\sigma/\sqrt{n})</m> that successfully capture the actual value of the population mean <m>\mu</m>.</p>
+      <p><ol>
+        <li><p>Is this 95% confident "<m>z</m> with sigma" procedure behaving as it should? How are you deciding?</p></li>
+        <li><p>Press Sort. In what situations can an interval fail to capture <m>\mu</m>?</p></li>
+      </ol></p>
     </statement>
     <solution>
-      <p>Results will vary, but should be close to 95%, indicating that the method does achieve the claimed confidence level.</p>
+      <p>Results will vary, but should be close to 95%, indicating that the method does achieve the claimed confidence level. After sorting, we can see that intervals fail to capture <m>\mu</m> when the sample mean is unusually far from the population mean.</p>
+      <image source="images/Inv2.5osols.png" width="60%">
+        <description>Confidence interval simulation showing 95% coverage rate</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -326,6 +349,9 @@
     </statement>
     <solution>
       <p>Percentage drops to 91 or 92%.</p>
+      <image source="images/Inv2.5qsols.png" width="60%">
+        <description>Confidence interval simulation using z with s method showing reduced coverage</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -333,10 +359,13 @@
   <exercise xml:id="inv2-5-r" label="I7.2.18">
     <title>Repeat with smaller sample size</title>
     <statement>
-      <p>Repeat (q) with a sample size of <m>n = 5</m>.</p>
+      <p>Repeat the previous question with a sample size of <m>n = 5</m>.</p>
     </statement>
     <solution>
       <p>With a sample size of 5, the percentage will be closer to or even below 90% indicating that the method does not work as it should.</p>
+      <image source="images/Inv2.5rsols.png" width="60%">
+        <description>Confidence interval simulation with n=5 showing poor coverage rate</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -354,11 +383,14 @@
     </statement>
     <solution>
       <p>The intervals become longer and now the overall percentage is closer to 95%.</p>
+      <image source="images/Inv2.5ssols.png" width="60%">
+        <description>Confidence interval simulation using t method showing improved coverage</description>
+      </image>
     </solution>
     <response/>
   </exercise>
   
-  <p>This leads to a confidence interval formula with the same general form as in the previous chapter: sample statistic <m>\pm</m> (critical value) <times/> (SE of statistic), where the critical value now comes from the <m>t_{n-1}</m> distribution (degrees of freedom = <m>n - 1</m>) instead of from the standard normal distribution.</p>
+  <p>This leads to a confidence interval formula with the same general form as in the previous chapter:  <m>sample\ statistic \pm  (critical value) <times/> (SE of statistic)</m>, where the critical value now comes from the <m>t_{n-1}</m> distribution (degrees of freedom = <m>n - 1)</m> instead of from the standard normal distribution.</p>
   
   <assemblage xml:id="one-sample-t-interval">
     <title>One-sample t-interval for <m>\mu</m></title>
@@ -376,6 +408,7 @@
     <exercise xml:id="inv2-5-t-tech-applet" label="I7.2.20tech.applet">
       <title><m>t</m> Probability Calculator applet</title>
       <statement>
+        <p>Using the <url href="https://www.rossmanchance.com/applets/2021/tcalc/tCalc.htm?hideExtras=1" visual="rossmanchance.com/applets/2021/tcalc/tCalc.htm"><m>t</m> Probability Calculator applet</url>:</p>
         <p><ol>
           <li><p>Specify the degrees of freedom</p></li>
           <li><p>Check the box next to the less than symbol and then enter <m>(1-C)/2</m> (e.g., 0.025 for 95% confidence) in the probability box and press Return. The <m>t</m>-value box should fill in.</p></li>
@@ -408,12 +441,15 @@
   <exercise xml:id="inv2-5-t" label="I7.2.20">
     <title>Find <m>t^*</m> for n=5</title>
     <statement>
-      <p>Find the <m>t^*</m> value corresponding to a 95% confidence level and a sample size of <m>n = 5</m>.</p>
+      <p>Using one of the above technology detours, find the <m>t^*</m> value corresponding to a 95% confidence level and a sample size of <m>n = 5</m>.</p>
       
       <p><m>t_4^*</m> = <var width="10"/></p>
     </statement>
     <solution>
       <p><m>t_4^* = 2.776</m></p>
+      <image source="images/Inv2.5tsols.png" width="60%">
+        <description>t probability calculator showing t* value for df=4</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -432,21 +468,27 @@
   <exercise xml:id="inv2-5-v" label="I7.2.22">
     <title>Find <m>t^*</m> for n=13</title>
     <statement>
-      <p>Repeat (t) for the sample size of <m>n = 13</m>. How do the t-critical values compare for these different sample sizes? Is this what you expected? Explain.</p>
+      <p>Find the <m>t^*</m> value for the sample size of <m>n = 13</m>. How do the t-critical values compare for these different sample sizes? Is this what you expected? Explain.</p>
     </statement>
     <solution>
       <p>The t critical value of 2.179 is much closer to the z critical value of 1.96 with a larger sample size. Compared to the t critical value from part t, the current critical value has decreased suggesting that the t critical value will approach the z critical value as the sample size increases. (By <m>n = 130</m>, <m>t^* = 1.98</m>.)</p>
+      <image source="images/Inv2.5vsols.png" width="60%">
+        <description>t probability calculator showing t* value for df=12</description>
+      </image>
     </solution>
     <response/>
   </exercise>
   
   <exercise xml:id="inv2-5-w" label="I7.2.23">
-    <title>Find <m>t^*</m> for n=130</title>
+    <title>Find <m>t^*</m> for <m>n</m>=130</title>
     <statement>
-      <p>Repeat (v) for the sample size of <m>n = 130</m>. How does this value compare to the earlier <m>t^*</m> and <m>z^*</m> values?</p>
+      <p>Find <m>t^*</m> for the sample size of <m>n = 130</m>. How does this value compare to the earlier <m>t^*</m> and <m>z^*</m> values?</p>
     </statement>
     <solution>
       <p>For <m>n = 130</m> (df = 129), <m>t^* = 1.979</m>, getting pretty close to 1.96</p>
+      <image source="images/Inv2.5wsols.png" width="60%">
+        <description>t probability calculator showing t* value for df=129</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -454,7 +496,7 @@
   <exercise xml:id="inv2-5-x" label="I7.2.24">
     <title>Calculate confidence interval</title>
     <statement>
-      <p>Use the critical value from (w) to calculate a 95% confidence interval for the mean body temperature of a healthy adult based on our sample (<m>\bar{x} = 98.249</m>, <m>s = 0.733</m>, <m>n = 130</m>). Is this interval consistent with your conclusion about the null hypothesis in (n)? Explain.</p>
+      <p>Use the critical value from the previous question to calculate a 95% confidence interval for the mean body temperature of a healthy adult based on our sample <m>(\bar{x} = 98.249</m>, <m>s = 0.733</m>, <m>n = 130</m>. Is this interval consistent with your conclusion about the null hypothesis in <xref ref="inv2-5-n" text="custom">Checkpoint 7.2.14</xref>? Explain.</p>
     </statement>
     <solution>
       <p>95% confidence interval = <m>98.249 \pm 1.979 \times \frac{0.733}{\sqrt{130}} = 98.249 \pm 0.127 = (98.122, 98.376)</m>. This interval does not contain 98.6, which is consistent with our rejection of 98.6 as a plausible value for the population mean.</p>
@@ -468,6 +510,7 @@
     <exercise xml:id="inv2-5-y-tech-applet" label="I7.2.25tech.applet">
       <title>One Sample <m>t</m> with Theory-Based Inference applet</title>
       <statement>
+        <p>Using the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url>:</p>
         <p><ol>
           <li><p>Select One mean from the Scenario pull-down menu</p></li>
           <li><p>You can check Paste data to copy and paste in the raw data, or type in the sample size, mean, and standard deviation. Press Calculate.</p></li>
@@ -475,6 +518,11 @@
           <li><p>Check the box for Confidence interval, enter the confidence level and press Calculate CI.</p></li>
         </ol></p>
       </statement>
+      <solution>
+        <image source="images/Inv2.5ysolsApplet.png" width="60%">
+          <description>Theory-Based Inference applet output for one sample t-test and confidence interval</description>
+        </image>
+      </solution>
     </exercise>
 
     <exercise xml:id="inv2-5-y-tech-r" label="I7.2.25tech.R">
@@ -487,6 +535,11 @@
                 alternative="two.sided", conf.level=95)</pre>
         <p>where sd = sample standard deviation, <m>s</m>.</p>
       </statement>
+      <solution>
+        <image source="images/Inv2.5ysolsR.jpg" width="60%">
+          <description>R output for one sample t-test and confidence interval</description>
+        </image>
+      </solution>
     </exercise>
 
     <exercise xml:id="inv2-5-y-tech-jmp" label="I7.2.25tech.JMP">
@@ -508,6 +561,11 @@
           <li><p>Choose the <m>t</m> interval type and specify confidence level</p></li>
         </ol></p>
       </statement>
+      <solution>
+        <image source="images/Inv2.5ysolsJMP.jpg" width="60%">
+          <description>JMP output for one sample t-test and confidence interval</description>
+        </image>
+      </solution>
     </exercise>
   </paragraphs>
   
@@ -529,13 +587,13 @@
     <title>Practice Problem 2.5A</title>
     
     <introduction>
-      <p>Explore the last statements in the above results box using t confidence intervals:</p>
+      <p>Explore the last statements in the above results box using <m>t</m> confidence intervals:</p>
     </introduction>
     
     <exercise xml:id="practice-2-5a-a" label="PP2.5A.1">
       <title>Coverage rate for skewed population</title>
       <statement>
-        <p>Continue with the Simulating Confidence Intervals applet. Explore the coverage rate of the t-procedure with random samples from an Exponential (skewed) population for <m>n = 5</m>, <m>n = 100</m>, and <m>n = 200</m>. Assess and summarize the performance of this t-procedure in each case.</p>
+        <p>Continue with the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1">Simulating Confidence Intervals applet</url>. Simulating Confidence Intervals applet. Explore the coverage rate of the t-procedure with random samples from an Exponential (skewed) population for <m>n = 5</m>, <m>n = 100</m>, and <m>n = 200</m>. Assess and summarize the performance of this t-procedure in each case.</p>
       </statement>
       <response/>
     </exercise>
@@ -543,7 +601,7 @@
     <exercise xml:id="practice-2-5a-b" label="PP2.5A.2">
       <title>Coverage rate for uniform population</title>
       <statement>
-        <p>Repeat (a) for a Uniform population distribution with endpoints <m>a = 80</m> and <m>b = 85</m>.</p>
+        <p>Repeat the previous question for a Uniform population distribution with endpoints <m>a = 80</m> and <m>b = 85</m>.</p>
       </statement>
       <response/>
     </exercise>
@@ -581,9 +639,9 @@
     </exercise>
     
     <exercise xml:id="practice-2-5b-d" label="PP2.5B.4">
-      <title>Justify t-distribution</title>
+      <title>Justify <m>t</m>-distribution</title>
       <statement>
-        <p>Give two reasons why a t-distribution is likely to be an appropriate model for these data.</p>
+        <p>Give two reasons why a <m>t</m> [Hint: Click on the slider handle and use the arrow keys on your keyboard.] -distribution is likely to be an appropriate model for these data.</p>
       </statement>
       <response/>
     </exercise>
@@ -619,7 +677,7 @@
     <exercise xml:id="practice-2-5c-a" label="PP2.5C.1">
       <title>Evaluate observed mean</title>
       <statement>
-        <p>As in question (i), use the applet to select 10,000 samples of 13 adults from the hypothetical population of 10,000 body temperatures. Based on the generated distribution of sample means, is the observed mean of 98.249 (or more extreme in either direction) a surprising outcome for this population?</p>
+        <p>As in <xref ref="inv2-5-i" text="custom">Checkpoint 7.2.9</xref>, use the applet to select 10,000 samples of 13 adults from the hypothetical population of 10,000 body temperatures. Based on the generated distribution of sample means, is the observed mean of 98.249 (or more extreme in either direction) a surprising outcome for this population?</p>
       </statement>
       <response/>
     </exercise>
@@ -627,15 +685,18 @@
     <exercise xml:id="practice-2-5c-b" label="PP2.5C.2">
       <title>Find interval of plausible values</title>
       <statement>
-        <p>Check the Fixed radio button and use the Shift center slider on the left-hand side to (slowly) raise the population mean. Stop when you find a value of the population mean that you first consider surprising. [Hint: Click on the slider handle and use the arrow keys on your keyboard.] Now use the slider to lower the population mean. What is the smallest value for <m>\mu</m> that you consider plausible based on this sample mean? In other words, report your interval of plausible values.</p>
+        <p>Check the Fixed radio button and use the Shift center slider on the left-hand side to (slowly) raise the population mean. Stop when you find a value of the population mean that you first consider surprising. Now use the slider to lower the population mean. What is the smallest value for <m>\mu</m> that you consider plausible based on this sample mean? In other words, report your interval of plausible values.</p>
       </statement>
+      <hint>
+        <p>Click on the slider handle and use the arrow keys on your keyboard.</p>
+      </hint>
       <response/>
     </exercise>
     
     <exercise xml:id="practice-2-5c-c" label="PP2.5C.3">
-      <title>Repeat for n=130</title>
+      <title>Repeat for <m>n</m>=130</title>
       <statement>
-        <p>Repeat (b) using the sample size of <m>n = 130</m>.</p>
+        <p>Repeat using the sample size of <m>n = 130</m>.</p>
       </statement>
       <response/>
     </exercise>
