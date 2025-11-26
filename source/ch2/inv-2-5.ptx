@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="investigation2-5">
-  <insight>
+  <remark>
     <p>In the previous investigation, we assumed random sampling from a finite population to predict the distribution of sample means and help us evaluate whether a particular value is an unlikely value for the sample mean by chance alone. However, this method is not realistic in practice as we had to make up a population to sample from and we had to make some assumptions about that population (e.g., shape). Luckily, the Central Limit Theorem also predicts how that distribution would behave for most population shapes. But the CLT does require us to know certain characteristics about the population.</p>
-  </insight>
+  </remark>
   
   <title>Investigation 2.5: Healthy Body Temperatures</title>
 
   <introduction>
-    <sidebyside widths="70% 20%" margins="auto" valign="top">
+    <sidebyside widths="65% 30%" margins="auto" valign="top">
  <p>What is a healthy body temperature? German physician Carl Wunderlich analyzed a million temperatures from 25,000 patients and in 1869 published that the normal human-body temperature is 98.6°F. But several more recent studies have found that number to be too high, leading to speculation that Dr. Wunderlich was wrong, or that human body temperature has changed over time. </p>   <stack>
       <image source="images/Inv2.5Intro.png">
         <description>Introduction image for Healthy Body Temperatures investigation</description>
@@ -244,15 +244,6 @@
     
     <p>If we zoom in on the tails of the distribution, we see that more of the simulated distribution lies in those tails than the normal distribution would predict.</p>
     
-    <sidebyside widths="45% 45%" margins="auto">
-      <image source="images/inv2.5dis1.jpg">
-        <description>Comparison of simulated t-distribution with normal distribution, showing heavier tails</description>
-      </image>
-      <image source="images/inv2.5dis2.jpg">
-        <description>Zoomed view of distribution tails showing excess probability</description>
-      </image>
-    </sidebyside>
-    
     <p>To model the sampling distribution of the standardized statistic <m>\frac{\bar{x} - \mu}{s/\sqrt{n}}</m>, we need a density curve with <em>heavier tails</em> than the standard normal distribution. William S. Gosset, a chemist turned statistician, showed in 1908, while working for the Guinness Breweries in Dublin, that a "t probability curve" provides a better model for the sampling distribution of this standardized statistic when the population of observations follows a normal distribution.</p>
   </paragraphs>
   
@@ -274,7 +265,7 @@
       <p>The actual body temperature study involved a sample of <m>n = 130</m> adults. Use the applet to generate a sampling distribution of <m>t</m>-statistics for this sample size. Toggle between the normal and <m>t</m> probability distributions. Do you see much difference between them? What is the actual value of the observed <m>t</m>-statistic with this sample size? Where does it fall in this distribution? What do you conclude about the null hypothesis?</p>
     </statement>
     <solution>
-      <p>With a sample size of 130, we don't see as much distinction between the normal and t distributions. With <m>n = 130</m>, <m>SE = 0.733/\sqrt{130} \approx 0.0643</m> and <m>t = (98.249 - 98.6)/0.0643 \approx -5.459</m>. The sample mean of 98.249 is 5.459 standard errors below the population mean of 98.6, which implies 98.249 would be very surprising to observe for the sample mean if the population mean were really 98.6. This is far out in the tail of the simulated sampling distribution and gives strong evidence against the null hypothesis that the population mean is equal to 98.6. (We would reject the null hypothesis.)</p>
+      <p>With a sample size of 130, we don't see as much distinction between the normal and <m>t</m> distributions. With <m>n = 130</m>, <m>SE = 0.733/\sqrt{130} \approx 0.0643</m> and <m>t = (98.249 - 98.6)/0.0643 \approx -5.459</m>. The sample mean of 98.249 is 5.459 standard errors below the population mean of 98.6, which implies 98.249 would be very surprising to observe for the sample mean if the population mean were really 98.6. This is far out in the tail of the simulated sampling distribution and gives strong evidence against the null hypothesis that the population mean is equal to 98.6. (We would reject the null hypothesis.)</p>
       <image source="images/Inv2.5nsols.jpg" width="60%">
         <description>Sampling distribution of t-statistics for n=130 with observed value</description>
       </image>
@@ -285,27 +276,18 @@
   <paragraphs>
     <title>Discussion</title>
     
-    <p>The consequence of this exploration is that when we are estimating both the population mean and the population standard deviation, we will compare our standardized statistic for the sample mean to the t-distribution instead of to the normal distribution to approximate p-values and confidence intervals. Although with larger sample sizes, the distinction will be quite minor.</p>
+    <p>The consequence of this exploration is that when we are estimating both the population mean and the population standard deviation, we will compare our standardized statistic for the sample mean to the <m>t</m>-distribution instead of to the normal distribution to approximate p-values and confidence intervals. Although with larger sample sizes, the distinction will be quite minor.</p>
   </paragraphs>
   
   <assemblage xml:id="probability-detour-t-distribution">
-    <title>Probability Detour – Student's t-distribution</title>
+    <title>Probability Detour – Student's <m>t</m>-distribution</title>
     
-    <p>The t probability density curve is described by the following function:</p>
+    <p>The <m>t</m> probability density curve is described by the following function:</p>
     <p><me>f(x) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\sqrt{\nu\pi}\,\Gamma\left(\frac{\nu}{2}\right)}\left(1+\frac{x^2}{\nu}\right)^{-\frac{\nu+1}{2}}</me> where <m>-\infty &lt; x &lt; \infty</m></p>
     
     <p>An impressive function indeed! But you should notice that this function only depends on the parameter <m>\nu</m>, referred to as the <em>degrees of freedom</em>.</p>
     
     <p>This symmetric distribution has heavier tails than the standard normal distribution. We get a different t-distribution for each value of the degrees of freedom. As the degrees of freedom increase, the t-distribution approaches the standard normal distribution.</p>
-    
-    <sidebyside widths="45% 45%" margins="auto">
-      <image source="images/Inv2.5t1.jpg">
-        <description>t-distribution curves with different degrees of freedom</description>
-      </image>
-      <image source="images/Inv2.5t2.jpg">
-        <description>t-distribution approaching normal distribution as degrees of freedom increase</description>
-      </image>
-    </sidebyside>
   </assemblage>
   
   <assemblage xml:id="one-sample-t-test">
@@ -495,7 +477,7 @@
       <p>Find the <m>t^*</m> value for the sample size of <m>n = 13</m>. How do the t-critical values compare for these different sample sizes? Is this what you expected? Explain.</p>
     </statement>
     <solution>
-      <p>The t critical value of 2.179 is much closer to the z critical value of 1.96 with a larger sample size. Compared to the t critical value from part t, the current critical value has decreased suggesting that the t critical value will approach the <m>z</m> critical value as the sample size increases. (By <m>n = 130</m>, <m>t^* = 1.98</m>.)</p>
+      <p>The t critical value of 2.179 is much closer to the z critical value of 1.96 with a larger sample size. Compared to the <m>t</m> critical value from <xref ref="inv2-5-t" text="custom">Checkpoint 7.2.20</xref>, the current critical value has decreased suggesting that the t critical value will approach the <m>z</m> critical value as the sample size increases. (By <m>n = 130</m>, <m>t^* = 1.98</m>.)</p>
       <image source="images/Inv2.5vsols.png" width="60%">
         <description>t probability calculator showing t* value for df=12</description>
       </image>
