@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv2-6" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Investigation 2.6: Healthy Body Temperatures (cont.)</title>
+
+  <exercise xml:id="inv2-6-a" label="I7.2.26">
+    <title>Interpret temperature concerns</title>
+    <statement>
+      <p>So if you recorded a body temperature of 98.6°F would you be convinced you were sick? What temperature values would you be concerned about?</p>
+      <p><var form="essay"/></p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-6-b" label="I7.2.27">
+    <title>Apply Empirical Rule</title>
+    <statement>
+      <p>According to the Empirical Rule, if <m>\mu = 98.6</m>°F and <m>\sigma = 0.733</m>°F, between what two values should approximately 95% of healthy temperatures fall?</p>
+      <p><var form="essay"/></p>
+    </statement>
+    <solution>
+      <p><m>98.249 \pm 2(0.733) = (96.783, 99.715)</m>. We would expect approximately 95% of healthy human temperatures to fall in this interval.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-6-c" label="I7.2.28">
+    <title>Compare to confidence interval</title>
+    <statement>
+      <p>Is your answer to <xref ref="inv2-6-b" text="custom">Checkpoint 7.2.27</xref> similar to the confidence interval from <xref ref="inv2-5-x" text="custom">Checkpoint 7.2.24</xref>? Explain the difference in how the endpoints of the confidence interval are constructed and how we interpret the confidence interval.</p>
+      <p><var form="essay"/></p>
+    </statement>
+    <solution>
+      <p>The interval in <xref ref="inv2-6-b" text="custom">Checkpoint 7.2.27</xref> is much wider than a 95% confidence interval. A 95% confidence interval would be <m>98.249 \pm 1.96 (0.733/\sqrt{130}) = (98.12, 98.38)</m>. This interval uses the sample size, and estimates the average human body temperature, not an individual body temperature. We are 95% confident the average human body temperature is between 98.12 and 98.38°F.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <paragraphs>
+    <title>Prediction Intervals</title>
+    
+    <p>It is very important to keep in mind that the confidence interval reported above only makes statements about the population mean, not individual body temperatures. But what if we instead wanted an interval to estimate the body temperature of a single randomly selected healthy adult rather than the population mean body temperature? Can we improve upon the Empirical Rule calculation?</p>
+  </paragraphs>
+  
+  <exercise xml:id="inv2-6-d" label="I7.2.29">
+    <title>Predict individual temperature</title>
+    <statement>
+      <p>Still using our same sample results, what one number would you use to predict a healthy body temperature? If you then considered the uncertainty (margin-of-error) in this estimate for predicting one person's body temperature, would you expect this margin-of-error to be larger or smaller when predicting one person's temperature than for predicting the population mean body temperature? Explain.</p>
+      
+      <p>Estimate: <var width="10"/></p>
+      
+      <p>Margin-of-error comparison: <var form="essay"/></p>
+    </statement>
+    <solution>
+      <p>We could still use the sample mean as the best one number prediction of a person's healthy body temperature. But we would expect more uncertainty in this estimate of an individual person as there is a lot of person to person variation in body temperatures.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <p>To construct such a confidence interval (often called a <term>prediction interval</term> to indicate that it will predict an individual outcome rather than the population mean), we need to consider both the sample-to-sample variation in sample means as well as the individual-to-individual variation in body temperatures around the mean.</p>
+  
+  <p><me>\text{Var in temp} = \text{var in } \bar{x} + \text{var about } \bar{x} = \frac{s^2}{n} + s^2</me></p>
+  
+  <exercise xml:id="inv2-6-e" label="I7.2.30">
+    <title>Compare standard errors</title>
+    <statement>
+      <p>We will estimate this combined standard error of an individual value by <m>s\sqrt{1+\frac{1}{n}}</m>. Using this formula, how will this compare to the standard error of the sample mean (larger or smaller)? Explain.</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement><p>Smaller</p></statement>
+      </choice>
+      <choice correct="yes">
+        <statement><p>Larger</p></statement>
+      </choice>
+      <choice>
+        <statement><p>The same</p></statement>
+      </choice>
+    </choices>
+    <hint>
+      <p>Consider the extra <m>1+</m> under the square root.</p>
+    </hint>
+  </exercise>
+  
+  <exercise xml:id="inv2-6-f" label="I7.2.31">
+    <title>Calculate combined standard error</title>
+    <statement>
+      <p>Calculate <m>s\sqrt{1+\frac{1}{n}}</m> for the body temperature data.</p>
+      <p><var width="10"/></p>
+    </statement>
+    <solution>
+      <p><m>0.733\sqrt{1+\frac{1}{130}} \approx 0.735</m></p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <p>If we are willing to assume that the population follows a normal distribution (note this is more restrictive than what we need to apply the Central Limit Theorem for a sample mean), then we can construct a 95% prediction interval for an individual outcome using the <m>t</m>-distribution.</p>
+  
+  <assemblage xml:id="prediction-interval-definition">
+    <title>Prediction Interval</title>
+    
+    <p>To predict an individual value, we can calculate a <term>prediction interval (PI)</term>. We construct the interval using the sample mean as our estimate, but we adjust the standard error to take into account the additional variability of an individual value from the population mean:</p>
+    
+    <p><me>\bar{x} \pm t_{n-1}^* s\sqrt{1+\frac{1}{n}}</me></p>
+    
+    <p>This procedure is valid as long as the sample observations are randomly selected from a normally distributed population. Note that prediction intervals are not robust to violations from the normality condition even with large sample sizes.</p>
+  </assemblage>
+  
+  <exercise xml:id="inv2-6-g" label="I7.2.32">
+    <title>Find <m>t^*</m> critical value</title>
+    <statement>
+      <p>Notice the critical value will be the same as in <xref ref="inv2-5-w" text="custom">Checkpoint 7.2.23</xref>. Recall or use technology to determine the critical value with <m>n = 130</m> and 95% confidence.</p>
+      <p><m>t_{129}^*</m> = <var width="10"/></p>
+    </statement>
+    <solution>
+      <p><m>t_{129}^* = 1.979</m></p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-6-h" label="I7.2.33">
+    <title>Calculate prediction interval</title>
+    <statement>
+      <p>Using your answer to <xref ref="inv2-6-g" text="custom">Checkpoint 7.2.32</xref>, calculate a 95% prediction interval for an individual healthy adult body temperature.</p>
+      <p><var form="essay"/></p>
+    </statement>
+    <solution>
+      <p>95% prediction interval = <m>98.249 \pm 1.979(0.735) = 98.249 \pm 1.455 = (96.79, 99.70)</m></p>
+      <image source="images/Inv2.6hsols.png" width="60%">
+        <description>JMP output showing prediction interval calculation</description>
+      </image>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-6-i" label="I7.2.34">
+    <title>Interpret prediction interval</title>
+    <statement>
+      <p>Provide a one-sentence interpretation of the interval calculated in <xref ref="inv2-6-h" text="custom">Checkpoint 7.2.33</xref>.</p>
+      <p><var form="essay"/></p>
+    </statement>
+    <solution>
+      <p>We are 95% confident that an individual randomly selected healthy adult will have a body temperature that is between 96.79°F to 99.71°F.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-6-j" label="I7.2.35">
+    <title>Compare intervals</title>
+    <statement>
+      <p>How do the center and width of this prediction interval compare to the 95% confidence interval for the population mean body temperature found in <xref ref="inv2-5-x" text="custom">Checkpoint 7.2.24</xref>?</p>
+      
+      <p>Center:</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement><p>Smaller</p></statement>
+      </choice>
+      <choice correct="yes">
+        <statement><p>The same</p></statement>
+      </choice>
+      <choice>
+        <statement><p>Larger</p></statement>
+      </choice>
+    </choices>
+    <hint>
+      <p>Both intervals are centered at <m>\bar{x}</m>.</p>
+    </hint>
+  </exercise>
+  
+  <exercise xml:id="inv2-6-j2" label="I7.2.36">
+    <title>Compare interval widths</title>
+    <statement>
+      <p>Width:</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement><p>Smaller</p></statement>
+      </choice>
+      <choice>
+        <statement><p>The same</p></statement>
+      </choice>
+      <choice correct="yes">
+        <statement><p>Larger</p></statement>
+      </choice>
+    </choices>
+    <hint>
+      <p>The prediction interval accounts for both sampling variability and individual variability.</p>
+    </hint>
+  </exercise>
+  
+  <exercise xml:id="inv2-6-k" label="I7.2.37">
+    <title>Compare to Empirical Rule interval</title>
+    <statement>
+      <p>How does this prediction interval compare to the interval from <xref ref="inv2-6-b" text="custom">Checkpoint 7.2.27</xref>?</p>
+      <p><var form="essay"/></p>
+    </statement>
+    <solution>
+      <p>The prediction interval is more similar to the answer from <xref ref="inv2-6-b" text="custom">Checkpoint 7.2.27</xref>.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-6-l" label="I7.2.38">
+    <title>Assess normality assumption</title>
+    <statement>
+      <p>The <em>JAMA</em> article only reported the summary statistics and did not provide the individual temperature values. If you had access to the individual data values, what could you do to assess whether the normality assumption is reasonable?</p>
+      <p><var form="essay"/></p>
+    </statement>
+    <solution>
+      <p>To assess whether the normality assumption is reasonable, we can create a normal probability plot and judge whether the observations follow along the diagonal well. We can also look at a histogram.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv2-6-m" label="I7.2.39">
+    <title>Evaluate plausibility of normality</title>
+    <statement>
+      <p>Without access to the individual data values but considering the context (body temperatures of healthy adults), do you have any thoughts about how plausible it is that the population is normally distributed?</p>
+      <p><var form="essay"/></p>
+    </statement>
+    <solution>
+      <p>It is highly plausible that the population distribution is normally distributed because we would expect the majority of people to have a "regular" body temperature and fewer people who have body temperatures that are far from being regular.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <paragraphs>
+    <title>Study Conclusions</title>
+    
+    <p>For one person to determine whether they have an unusual body temperature, we need a prediction interval rather than a confidence interval for the population mean. A 95% prediction interval for the body temperature of a healthy adult turns out to be (96.79, 99.71), a fairly wide interval. We are 95% confident that a randomly selected healthy adult will have a body temperature between 96.79 and 99.71 degrees Fahrenheit. This prediction interval procedure is valid only if the population of healthy body temperatures follows a normal distribution, which seems like a reasonable assumption in this context.</p>
+  </paragraphs>
+
+  <subsection xml:id="practice2-6A">
+    <title>Practice Problem 2.6A</title>
+    
+    <exercise xml:id="practice-2-6a-a" label="PP2.6A.1">
+      <title>Confidence interval width as <m>n</m> increases</title>
+      <statement>
+        <p>Examine the expression for a confidence interval for a population mean <m>\bar{x} \pm t_{n-1}^* \frac{s}{\sqrt{n}}</m>. What happens to the half-width of the interval as the sample size <m>n</m> increases? Does it approach a value as <m>n</m> increases?</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-6a-b" label="PP2.6A.2">
+      <title>Prediction interval width as <m>n</m> increases</title>
+      <statement>
+        <p>Examine the expression for a prediction interval for an individual observation <m>\bar{x} \pm t_{n-1}^* s\sqrt{1+\frac{1}{n}}</m>. What happens to the half-width of the interval as the sample size <m>n</m> increases? Does it approach a value as <m>n</m> increases?</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-6a-c" label="PP2.6A.3">
+      <title>Explain differences</title>
+      <statement>
+        <p>Explain why the differences in your answers to parts (a) and (b) make sense.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice2-6B">
+    <title>Practice Problem 2.6B</title>
+    
+    <p>A study conducted by Stanford researchers asked children in two elementary schools in San Jose, CA to keep track of how much television they watch per week (<url href="https://jamanetwork.com/journals/jama/fullarticle/192031" visual="jamanetwork.com/journals/jama/fullarticle/192031">Robinson, 1999</url>). The sample consisted of 198 children. The mean time spent watching television per week in the sample was 15.41 hours with a standard deviation of 14.16 hours.</p>
+    
+    <exercise xml:id="practice-2-6b-a" label="PP2.6B.1">
+      <title>Calculate prediction interval</title>
+      <statement>
+        <p>Use this information to calculate a 95% prediction interval.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-6b-b" label="PP2.6B.2">
+      <title>Interpret prediction interval</title>
+      <statement>
+        <p>Provide a one-sentence interpretation of this interval.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-6b-c" label="PP2.6B.3">
+      <title>Evaluate validity</title>
+      <statement>
+        <p>Do you think this interval procedure is valid for these data? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-2-6b-d" label="PP2.6B.4">
+      <title>Compare to tolerance interval</title>
+      <statement>
+        <p>A tolerance interval claims to capture at least <m>k\%</m> of the population with <m>C\%</m> confidence. A 95% tolerance interval for these data with <m>k = 95</m> is (-14.95, 45.77). How does this interval compare to the prediction interval? Do these differences make sense? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+</section>

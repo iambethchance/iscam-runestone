@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-2-summary" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Summary of One-sample <m>t</m> Procedures</title>
+
+  <assemblage xml:id="one-sample-t-summary">
+    <title>One-sample <m>t</m> Procedures</title>
+    
+    <p><alert>Parameter:</alert> <m>\mu</m> = the population mean</p>
+    
+    <p><alert>To test <m>H_0: \mu = \mu_0</m></alert></p>
+    <p>Standardized (test) statistic: <me>t_0 = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}</me></p>
+    <p>Degrees of freedom = <m>n - 1</m></p>
+    
+    <p><alert><m>t</m>-Confidence interval for <m>\mu</m></alert></p>
+    <p><me>\bar{x} \pm t_{n-1}^* \frac{s}{\sqrt{n}}</me></p>
+    
+    <p><alert>Technical conditions:</alert> These procedures are considered valid if the sample distribution is reasonably symmetric or the sample size is at least 30.</p>
+  </assemblage>
+
+  <paragraphs xml:id="one-sample-t-technology">
+    <title>Technology</title>
+    
+    <aside>
+      <title>R</title>
+      <p>Raw data:</p>
+      <pre>t.test(data, mu = hypothesized, alt = "greater", "less", or "two.sided", conf.level)</pre>
+      
+      <p>Summary data:</p>
+      <pre>iscamonesamplet(xbar, sd, n, hypothesized, alternative, conf.level)</pre>
+    </aside>
+    
+    <aside>
+      <title>JMP</title>
+      <p>Raw data: <c>Analyze > Distribution</c></p>
+      <p>Summary data: Use ISCAM Journal file: <em>Hypothesis Test for One Mean</em> and <em>Confidence Interval for One Mean</em>. You can specify a column of data (raw data) or summary statistics (summary data); select the <m>t</m>-test and <m>t</m> interval radio buttons.</p>
+    </aside>
+    
+    <aside>
+      <title>Theory-Based Inference applet</title>
+      <p>Use the pull-down menu to select <em>One Mean</em>. Specify the summary statistics (the sample size, sample mean, and sample standard deviation <m>s</m>) or paste in the raw data. Check the box for <em>test of significance</em> and specify the hypothesized value, use the <m>\neq</m> button to specify the direction of the alternative (<m>&lt;</m> <m>&gt;</m> for not equal) and press <em>Calculate</em> and/or check the box for <em>confidence interval</em>, specify the confidence level and press <em>Calculate CI</em>. The applet can report both the confidence interval and the prediction interval.</p>
+    </aside>
+  </paragraphs>
+
+  <assemblage xml:id="prediction-interval-summary">
+    <title>Prediction Intervals for Individual Observations</title>
+    
+    <p><alert>Prediction Interval:</alert></p>
+    <p><me>\bar{x} \pm t_{n-1}^* s\sqrt{1+\frac{1}{n}}</me></p>
+    
+    <p><alert>Valid only with normal population of observations</alert></p>
+  </assemblage>
+
+  <paragraphs xml:id="prediction-interval-technology">
+    <title>Technology</title>
+    
+    <aside>
+      <title>Theory-Based Inference applet</title>
+      <p>Check the box for the <em>Prediction interval</em></p>
+    </aside>
+    
+    <aside>
+      <title>R</title>
+      <pre>predict(lm(y ~ 1), newdata = data.frame(var = 0), interval = "predict")</pre>
+    </aside>
+    
+    <aside>
+      <title>JMP</title>
+      <p>Raw data: From <c>Analyze > Distribution</c>, use the hot spot to select <em>Prediction Interval</em></p>
+    </aside>
+  </paragraphs>
+
+</section>
