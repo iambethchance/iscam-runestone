@@ -8,12 +8,13 @@
 
   <introduction>
     <sidebyside widths="70% 20%" margins="auto" valign="top">
- <p>What is a healthy body temperature? German physician Carl Wunderlich analyzed a million temperatures from 25,000 patients and in 1869 published that the normal human-body temperature is 98.6°F. But several more recent studies have found that number to be too high, leading to speculation that Dr. Wunderlich was wrong, or that human body temperature has changed over time. In a study published by Mackowiak, Wasserman, <ampersand/> Levine (<em>Journal of the American Medical Association</em>, <url href="https://jamanetwork.com/journals/jama/article-abstract/400116"> 1992)</url>, body temperatures (oral temperatures using a digital thermometer) were recorded for healthy men and women, aged 18-40 years, who were volunteers in Shigella vaccine trials at the University of Maryland Center for Vaccine Development, Baltimore. For these adults, the mean body temperature was found to be 98.249°F with a standard deviation of 0.733°F.</p>   <stack>
+ <p>What is a healthy body temperature? German physician Carl Wunderlich analyzed a million temperatures from 25,000 patients and in 1869 published that the normal human-body temperature is 98.6°F. But several more recent studies have found that number to be too high, leading to speculation that Dr. Wunderlich was wrong, or that human body temperature has changed over time. </p>   <stack>
       <image source="images/Inv2.5Intro.png">
         <description>Introduction image for Healthy Body Temperatures investigation</description>
       </image>
       </stack>
     </sidebyside>
+    <p>In a study published by Mackowiak, Wasserman, <ampersand/> Levine (<em>Journal of the American Medical Association</em>, <url href="https://jamanetwork.com/journals/jama/article-abstract/400116"> 1992)</url>, body temperatures (oral temperatures using a digital thermometer) were recorded for healthy men and women, aged 18-40 years, who were volunteers in Shigella vaccine trials at the University of Maryland Center for Vaccine Development, Baltimore. For these adults, the mean body temperature was found to be 98.249°F with a standard deviation of 0.733°F.</p>
   </introduction>
   
   <exercise xml:id="inv2-5-a" label="I7.2.1">
@@ -243,6 +244,15 @@
     
     <p>If we zoom in on the tails of the distribution, we see that more of the simulated distribution lies in those tails than the normal distribution would predict.</p>
     
+    <sidebyside widths="45% 45%" margins="auto">
+      <image source="images/inv2.5dis1.jpg">
+        <description>Comparison of simulated t-distribution with normal distribution, showing heavier tails</description>
+      </image>
+      <image source="images/inv2.5dis2.jpg">
+        <description>Zoomed view of distribution tails showing excess probability</description>
+      </image>
+    </sidebyside>
+    
     <p>To model the sampling distribution of the standardized statistic <m>\frac{\bar{x} - \mu}{s/\sqrt{n}}</m>, we need a density curve with <em>heavier tails</em> than the standard normal distribution. William S. Gosset, a chemist turned statistician, showed in 1908, while working for the Guinness Breweries in Dublin, that a "t probability curve" provides a better model for the sampling distribution of this standardized statistic when the population of observations follows a normal distribution.</p>
   </paragraphs>
   
@@ -287,6 +297,15 @@
     <p>An impressive function indeed! But you should notice that this function only depends on the parameter <m>\nu</m>, referred to as the <em>degrees of freedom</em>.</p>
     
     <p>This symmetric distribution has heavier tails than the standard normal distribution. We get a different t-distribution for each value of the degrees of freedom. As the degrees of freedom increase, the t-distribution approaches the standard normal distribution.</p>
+    
+    <sidebyside widths="45% 45%" margins="auto">
+      <image source="images/Inv2.5t1.jpg">
+        <description>t-distribution curves with different degrees of freedom</description>
+      </image>
+      <image source="images/Inv2.5t2.jpg">
+        <description>t-distribution approaching normal distribution as degrees of freedom increase</description>
+      </image>
+    </sidebyside>
   </assemblage>
   
   <assemblage xml:id="one-sample-t-test">
@@ -394,7 +413,7 @@
     <response/>
   </exercise>
   
-  <p>This leads to a confidence interval formula with the same general form as in the previous chapter:  <m>sample\ statistic \pm  (critical\ value) <times/> (SE\ of\ statistic)</m>, where the critical value now comes from the <m>t_{n-1}</m> distribution (degrees of freedom = <m>n - 1)</m> instead of from the standard normal distribution.</p>
+  <p>This leads to a confidence interval formula with the same general form as in the previous chapter:  <m>sample\ statistic \pm  (critical\ value) \times (SE\ of\ statistic)</m>, where the critical value now comes from the <m>t_{n-1}</m> distribution (degrees of freedom = <m>n - 1)</m> instead of from the standard normal distribution.</p>
   
   <assemblage xml:id="one-sample-t-interval">
     <title>One-sample t-interval for <m>\mu</m></title>
@@ -412,11 +431,12 @@
     <exercise xml:id="inv2-5-t-tech-applet" label="I7.2.20tech.applet">
       <title><m>t</m> Probability Calculator applet</title>
       <statement>
-        <p>Using the <url href="https://www.rossmanchance.com/applets/2021/tcalc/tCalc.htm?hideExtras=1" visual="rossmanchance.com/applets/2021/tcalc/tCalc.htm"><m>t</m> Probability Calculator applet</url>:</p>
+        <p>Using the <m>t</m> Probability Calculator applet below:</p>
         <p><ol>
           <li><p>Specify the degrees of freedom</p></li>
           <li><p>Check the box next to the less than symbol and then enter <m>(1-C)/2</m> (e.g., 0.025 for 95% confidence) in the probability box and press Return. The <m>t</m>-value box should fill in.</p></li>
         </ol></p>
+        <interactive iframe="https://www.rossmanchance.com/applets/2021/tcalc/tCalc.htm?hideExtras=1" width="100%" aspect="4:3"/>
       </statement>
     </exercise>
 
@@ -443,7 +463,7 @@
   </paragraphs>
   
   <exercise xml:id="inv2-5-t" label="I7.2.20">
-    <title>Find <m>t^*</m> for n=5</title>
+    <title>Find <m>t^*</m> for <m>n\ =\ 5</m></title>
     <statement>
       <p>Using one of the above technology detours, find the <m>t^*</m> value corresponding to a 95% confidence level and a sample size of <m>n = 5</m>.</p>
       
@@ -475,7 +495,7 @@
       <p>Find the <m>t^*</m> value for the sample size of <m>n = 13</m>. How do the t-critical values compare for these different sample sizes? Is this what you expected? Explain.</p>
     </statement>
     <solution>
-      <p>The t critical value of 2.179 is much closer to the z critical value of 1.96 with a larger sample size. Compared to the t critical value from part t, the current critical value has decreased suggesting that the t critical value will approach the z critical value as the sample size increases. (By <m>n = 130</m>, <m>t^* = 1.98</m>.)</p>
+      <p>The t critical value of 2.179 is much closer to the z critical value of 1.96 with a larger sample size. Compared to the t critical value from part t, the current critical value has decreased suggesting that the t critical value will approach the <m>z</m> critical value as the sample size increases. (By <m>n = 130</m>, <m>t^* = 1.98</m>.)</p>
       <image source="images/Inv2.5vsols.png" width="60%">
         <description>t probability calculator showing t* value for df=12</description>
       </image>
@@ -484,7 +504,7 @@
   </exercise>
   
   <exercise xml:id="inv2-5-w" label="I7.2.23">
-    <title>Find <m>t^*</m> for <m>n</m>=130</title>
+    <title>Find <m>t^*</m> for <m>n = 130</m></title>
     <statement>
       <p>Find <m>t^*</m> for the sample size of <m>n = 130</m>. How does this value compare to the earlier <m>t^*</m> and <m>z^*</m> values?</p>
     </statement>
@@ -557,19 +577,19 @@
           <li><p>To perform the test of significance, use the variable hot spot, select Test Mean. Then enter the hypothesized value of <m>\mu</m> and press OK.</p></li>
         </ol></p>
         <p>OR</p>
-        <stack>
-          <p><ol>
-            <li><p>Open the ISCAM Journal file > Hypothesis Test for One Mean</p></li>
-            <li><p>Choose Raw Data (and pick the column) or Summary Statistics (and then specify the sample size, sample mean, and sample standard deviation)</p></li>
-            <li><p>Be sure to choose the <m>t</m>-test Test Type and specify the alternative hypothesis</p></li>
-            <li><p>In the ISCAM Journal file > Confidence Interval for One Mean</p></li>
-            <li><p>Choose the <m>t</m> interval type and specify confidence level</p></li>
-          </ol></p>
-          <image source="images/Inv2.5ysolsJMP.jpg" width="60%">
-            <description>JMP output for one sample t-test and confidence interval</description>
-          </image>
-        </stack>
+        <p><ol>
+          <li><p>Open the ISCAM Journal file > Hypothesis Test for One Mean</p></li>
+          <li><p>Choose Raw Data (and pick the column) or Summary Statistics (and then specify the sample size, sample mean, and sample standard deviation)</p></li>
+          <li><p>Be sure to choose the <m>t</m>-test Test Type and specify the alternative hypothesis</p></li>
+          <li><p>In the ISCAM Journal file > Confidence Interval for One Mean</p></li>
+          <li><p>Choose the <m>t</m> interval type and specify confidence level</p></li>
+        </ol></p>
       </statement>
+      <solution>
+        <image source="images/Inv2.5ysolsJMP.jpg" width="60%">
+          <description>JMP output for one sample t-test and confidence interval</description>
+        </image>
+      </solution>
     </exercise>
   </paragraphs>
   
