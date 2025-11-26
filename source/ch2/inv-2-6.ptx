@@ -2,7 +2,13 @@
 <section xml:id="inv2-6" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Investigation 2.6: Healthy Body Temperatures (cont.)</title>
 
-  <exercise xml:id="inv2-6-a" label="I7.2.26">
+  <p>Reconsider the research question of Investigation 2.5 where a "one-sample <m>t</m>-test" found convincing evidence with a sample mean body temperature of <m>\bar{x} = 98.249</m>°F and a sample standard deviation of <m>s = 0.733</m>°F against the hypothesis that <m>\mu = 98.6</m> in the population of healthy adults. In fact, we were 95% confident that <m>\mu</m> actually fell between 98.122 and 98.376 degrees (so not all that far from 98.6) based on an estimated standard error of <m>SE(\bar{x}) = 0.064</m>.</p>
+  
+  <image source="images/Inv2.6intro.png" width="80%">
+    <description>Summary of Investigation 2.5 results showing confidence interval</description>
+  </image>
+
+  <exercise xml:id="inv2-6-a" label="I7.3.1">
     <title>Interpret temperature concerns</title>
     <statement>
       <p>So if you recorded a body temperature of 98.6°F would you be convinced you were sick? What temperature values would you be concerned about?</p>
@@ -11,7 +17,7 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-6-b" label="I7.2.27">
+  <exercise xml:id="inv2-6-b" label="I7.3.2">
     <title>Apply Empirical Rule</title>
     <statement>
       <p>According to the Empirical Rule, if <m>\mu = 98.6</m>°F and <m>\sigma = 0.733</m>°F, between what two values should approximately 95% of healthy temperatures fall?</p>
@@ -23,14 +29,14 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-6-c" label="I7.2.28">
+  <exercise xml:id="inv2-6-c" label="I7.3.3">
     <title>Compare to confidence interval</title>
     <statement>
-      <p>Is your answer to <xref ref="inv2-6-b" text="custom">Checkpoint 7.2.27</xref> similar to the confidence interval from <xref ref="inv2-5-x" text="custom">Checkpoint 7.2.24</xref>? Explain the difference in how the endpoints of the confidence interval are constructed and how we interpret the confidence interval.</p>
+      <p>Is your answer to <xref ref="inv2-6-b" text="custom">Checkpoint 7.3.2</xref> similar to the confidence interval from <xref ref="inv2-5-x" text="custom">Checkpoint 7.2.24</xref>? Explain the difference in how the endpoints of the confidence interval are constructed and how we interpret the confidence interval.</p>
       <p><var form="essay"/></p>
     </statement>
     <solution>
-      <p>The interval in <xref ref="inv2-6-b" text="custom">Checkpoint 7.2.27</xref> is much wider than a 95% confidence interval. A 95% confidence interval would be <m>98.249 \pm 1.96 (0.733/\sqrt{130}) = (98.12, 98.38)</m>. This interval uses the sample size, and estimates the average human body temperature, not an individual body temperature. We are 95% confident the average human body temperature is between 98.12 and 98.38°F.</p>
+      <p>The interval in <xref ref="inv2-6-b" text="custom">Checkpoint 7.3.2</xref> is much wider than a 95% confidence interval. A 95% confidence interval would be <m>98.249 \pm 1.96 (0.733/\sqrt{130}) = (98.12, 98.38)</m>. This interval uses the sample size, and estimates the average human body temperature, not an individual body temperature. We are 95% confident the average human body temperature is between 98.12 and 98.38°F.</p>
     </solution>
     <response/>
   </exercise>
@@ -41,7 +47,7 @@
     <p>It is very important to keep in mind that the confidence interval reported above only makes statements about the population mean, not individual body temperatures. But what if we instead wanted an interval to estimate the body temperature of a single randomly selected healthy adult rather than the population mean body temperature? Can we improve upon the Empirical Rule calculation?</p>
   </paragraphs>
   
-  <exercise xml:id="inv2-6-d" label="I7.2.29">
+  <exercise xml:id="inv2-6-d" label="I7.3.4">
     <title>Predict individual temperature</title>
     <statement>
       <p>Still using our same sample results, what one number would you use to predict a healthy body temperature? If you then considered the uncertainty (margin-of-error) in this estimate for predicting one person's body temperature, would you expect this margin-of-error to be larger or smaller when predicting one person's temperature than for predicting the population mean body temperature? Explain.</p>
@@ -60,7 +66,7 @@
   
   <p><me>\text{Var in temp} = \text{var in } \bar{x} + \text{var about } \bar{x} = \frac{s^2}{n} + s^2</me></p>
   
-  <exercise xml:id="inv2-6-e" label="I7.2.30">
+  <exercise xml:id="inv2-6-e" label="I7.3.5">
     <title>Compare standard errors</title>
     <statement>
       <p>We will estimate this combined standard error of an individual value by <m>s\sqrt{1+\frac{1}{n}}</m>. Using this formula, how will this compare to the standard error of the sample mean (larger or smaller)? Explain.</p>
@@ -81,7 +87,7 @@
     </hint>
   </exercise>
   
-  <exercise xml:id="inv2-6-f" label="I7.2.31">
+  <exercise xml:id="inv2-6-f" label="I7.3.6">
     <title>Calculate combined standard error</title>
     <statement>
       <p>Calculate <m>s\sqrt{1+\frac{1}{n}}</m> for the body temperature data.</p>
@@ -105,7 +111,7 @@
     <p>This procedure is valid as long as the sample observations are randomly selected from a normally distributed population. Note that prediction intervals are not robust to violations from the normality condition even with large sample sizes.</p>
   </assemblage>
   
-  <exercise xml:id="inv2-6-g" label="I7.2.32">
+  <exercise xml:id="inv2-6-g" label="I7.3.7">
     <title>Find <m>t^*</m> critical value</title>
     <statement>
       <p>Notice the critical value will be the same as in <xref ref="inv2-5-w" text="custom">Checkpoint 7.2.23</xref>. Recall or use technology to determine the critical value with <m>n = 130</m> and 95% confidence.</p>
@@ -117,10 +123,10 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-6-h" label="I7.2.33">
+  <exercise xml:id="inv2-6-h" label="I7.3.8">
     <title>Calculate prediction interval</title>
     <statement>
-      <p>Using your answer to <xref ref="inv2-6-g" text="custom">Checkpoint 7.2.32</xref>, calculate a 95% prediction interval for an individual healthy adult body temperature.</p>
+      <p>Using your answer to <xref ref="inv2-6-g" text="custom">Checkpoint 7.3.7</xref>, calculate a 95% prediction interval for an individual healthy adult body temperature.</p>
       <p><var form="essay"/></p>
     </statement>
     <solution>
@@ -132,10 +138,10 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-6-i" label="I7.2.34">
+  <exercise xml:id="inv2-6-i" label="I7.3.9">
     <title>Interpret prediction interval</title>
     <statement>
-      <p>Provide a one-sentence interpretation of the interval calculated in <xref ref="inv2-6-h" text="custom">Checkpoint 7.2.33</xref>.</p>
+      <p>Provide a one-sentence interpretation of the interval calculated in <xref ref="inv2-6-h" text="custom">Checkpoint 7.3.8</xref>.</p>
       <p><var form="essay"/></p>
     </statement>
     <solution>
@@ -144,7 +150,7 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-6-j" label="I7.2.35">
+  <exercise xml:id="inv2-6-j" label="I7.3.10">
     <title>Compare intervals</title>
     <statement>
       <p>How do the center and width of this prediction interval compare to the 95% confidence interval for the population mean body temperature found in <xref ref="inv2-5-x" text="custom">Checkpoint 7.2.24</xref>?</p>
@@ -167,7 +173,7 @@
     </hint>
   </exercise>
   
-  <exercise xml:id="inv2-6-j2" label="I7.2.36">
+  <exercise xml:id="inv2-6-j2" label="I7.3.11">
     <title>Compare interval widths</title>
     <statement>
       <p>Width:</p>
@@ -188,19 +194,19 @@
     </hint>
   </exercise>
   
-  <exercise xml:id="inv2-6-k" label="I7.2.37">
+  <exercise xml:id="inv2-6-k" label="I7.3.12">
     <title>Compare to Empirical Rule interval</title>
     <statement>
       <p>How does this prediction interval compare to the interval from <xref ref="inv2-6-b" text="custom">Checkpoint 7.2.27</xref>?</p>
       <p><var form="essay"/></p>
     </statement>
     <solution>
-      <p>The prediction interval is more similar to the answer from <xref ref="inv2-6-b" text="custom">Checkpoint 7.2.27</xref>.</p>
+      <p>The prediction interval is more similar to the answer from <xref ref="inv2-6-b" text="custom">Checkpoint 7.3.2</xref>.</p>
     </solution>
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-6-l" label="I7.2.38">
+  <exercise xml:id="inv2-6-l" label="I7.3.13">
     <title>Assess normality assumption</title>
     <statement>
       <p>The <em>JAMA</em> article only reported the summary statistics and did not provide the individual temperature values. If you had access to the individual data values, what could you do to assess whether the normality assumption is reasonable?</p>
@@ -212,7 +218,7 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-6-m" label="I7.2.39">
+  <exercise xml:id="inv2-6-m" label="I7.3.14">
     <title>Evaluate plausibility of normality</title>
     <statement>
       <p>Without access to the individual data values but considering the context (body temperatures of healthy adults), do you have any thoughts about how plausible it is that the population is normally distributed?</p>
