@@ -240,11 +240,11 @@
   </exercise>
   
   <paragraphs>
-    <title>Student's <m>t</m>-distribution</title>
+    <title>Discussion</title>
     
     <p>If we zoom in on the tails of the distribution, we see that more of the simulated distribution lies in those tails than the normal distribution would predict.</p>
     
-    <sidebyside widths="45% 45%" margins="auto">
+    <sidebyside widths="50% 50%" margins="auto">
       <image source="images/inv2.5dis1.png">
         <description>Comparison of simulated t-distribution with normal distribution, showing heavier tails</description>
       </image>
@@ -298,7 +298,7 @@
     
     <p>This symmetric distribution has heavier tails than the standard normal distribution. We get a different t-distribution for each value of the degrees of freedom. As the degrees of freedom increase, the t-distribution approaches the standard normal distribution.</p>
     
-    <sidebyside widths="45% 45%" margins="auto">
+    <sidebyside widths="50% 50%" margins="auto">
       <image source="images/Inv2.5t1.png">
         <description>t-distribution curves with different degrees of freedom</description>
       </image>
@@ -309,13 +309,13 @@
   </assemblage>
   
   <assemblage xml:id="one-sample-t-test">
-    <title>One-sample t-test for <m>\mu</m></title>
+    <title>One-sample <m>t</m>-test for <m>\mu</m></title>
     
     <p>To test a null hypothesis about a population mean <m>H_0: \mu = \mu_0</m>, when we don't know the population standard deviation (pretty much always), we will use the sample standard deviation to calculate the standard error <m>SE(\bar{x})</m> and compare the standardized statistic</p>
     
     <p><me>t = \frac{\bar{x} - \mu_0}{SE(\bar{x})} = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}</me></p>
     
-    <p>to a t-distribution with <m>n - 1</m> degrees of freedom. Theoretically, this approximation requires the population to follow a normal distribution. However, statisticians have found this approximation to also be reasonable for other population distributions whenever the sample size is large. How large the sample size needs to be depends on how skewed the population distribution is. Consequently, we will consider the t procedures valid when either the population distribution is symmetric or the sample size is large (e.g., larger than 30).</p>
+    <p>to a <m>t</m>-distribution with <m>n - 1</m> degrees of freedom. Theoretically, this approximation requires the population to follow a normal distribution. However, statisticians have found this approximation to also be reasonable for other population distributions whenever the sample size is large. How large the sample size needs to be depends on how skewed the population distribution is. Consequently, we will consider the <m>t</m> procedures valid when either the population distribution is symmetric or the sample size is large (e.g., larger than 30).</p>
   </assemblage>
   
   <assemblage xml:id="probability-detour-df">
@@ -436,7 +436,7 @@
           <li><p>Specify the degrees of freedom</p></li>
           <li><p>Check the box next to the less than symbol and then enter <m>(1-C)/2</m> (e.g., 0.025 for 95% confidence) in the probability box and press Return. The <m>t</m>-value box should fill in.</p></li>
         </ol></p>
-        <interactive iframe="https://www.rossmanchance.com/applets/2021/tcalc/tCalc.htm?hideExtras=1" width="100%" aspect="4:3"/>
+        <interactive iframe="https://www.rossmanchance.com/applets/2021/tcalc/tCalc.htm?hideExtras=1" width="100%" aspect="5:3"/>
       </statement>
     </exercise>
 
@@ -730,7 +730,7 @@
     </exercise>
     
     <exercise xml:id="practice-2-5c-c" label="PP2.5C.3">
-      <title>Repeat for <m>n</m>=130</title>
+      <title>Repeat for <m>n = 130</m></title>
       <statement>
         <p>Repeat using the sample size of <m>n = 130</m>.</p>
       </statement>
