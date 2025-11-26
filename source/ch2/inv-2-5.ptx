@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="investigation2-5">
+  <insight>
+    <p>In the previous investigation, we assumed random sampling from a finite population to predict the distribution of sample means and help us evaluate whether a particular value is an unlikely value for the sample mean by chance alone. However, this method is not realistic in practice as we had to make up a population to sample from and we had to make some assumptions about that population (e.g., shape). Luckily, the Central Limit Theorem also predicts how that distribution would behave for most population shapes. But the CLT does require us to know certain characteristics about the population.</p>
+  </insight>
+  
   <title>Investigation 2.5: Healthy Body Temperatures</title>
 
-    <p>In the previous investigation, we assumed random sampling from a finite population to predict the distribution of sample means and help us evaluate whether a particular value is an unlikely value for the sample mean by chance alone. </p>
-
   <introduction>
-    <sidebyside widths="50% 50%" margins="auto" valign="top">
+    <sidebyside widths="70% 20%" margins="auto" valign="top">
  <p>What is a healthy body temperature? German physician Carl Wunderlich analyzed a million temperatures from 25,000 patients and in 1869 published that the normal human-body temperature is 98.6°F. But several more recent studies have found that number to be too high, leading to speculation that Dr. Wunderlich was wrong, or that human body temperature has changed over time. In a study published by Mackowiak, Wasserman, <ampersand/> Levine (<em>Journal of the American Medical Association</em>, <url href="https://jamanetwork.com/journals/jama/article-abstract/400116"> 1992)</url>, body temperatures (oral temperatures using a digital thermometer) were recorded for healthy men and women, aged 18-40 years, who were volunteers in Shigella vaccine trials at the University of Maryland Center for Vaccine Development, Baltimore. For these adults, the mean body temperature was found to be 98.249°F with a standard deviation of 0.733°F.</p>   <stack>
       <image source="images/Inv2.5Intro.png">
         <description>Introduction image for Healthy Body Temperatures investigation</description>
       </image>
       </stack>
     </sidebyside>
-<p>However, this method is not realistic in practice as we had to make up a population to sample from and we had to make some assumptions about that population (e.g., shape). Luckily, the Central Limit Theorem also predicts how that distribution would behave for most population shapes. But the CLT does require us to know certain characteristics about the population.</p>     
   </introduction>
   
   <exercise xml:id="inv2-5-a" label="I7.2.1">
@@ -211,12 +212,14 @@
     </hint>
     <solution>
       <p>The fit seems good, but not perfect. The normal distribution is perhaps a bit too "skinny" in the middle and doesn't go out far enough in the ends.</p>
-      <image source="images/Inv2.5ksols1.jpg" width="60%">
-        <description>t-distribution with normal overlay showing fit comparison</description>
-      </image>
-      <image source="images/Inv2.5ksols2.jpg" width="60%">
-        <description>p-value calculation using normal approximation</description>
-      </image>
+      <sidebyside widths="45% 45%" margins="auto">
+        <image source="images/Inv2.5ksols1.jpg">
+          <description>t-distribution with normal overlay showing fit comparison</description>
+        </image>
+        <image source="images/Inv2.5ksols2.jpg">
+          <description>p-value calculation using normal approximation</description>
+        </image>
+      </sidebyside>
     </solution>
     <response/>
   </exercise>
@@ -246,10 +249,11 @@
   <exercise xml:id="inv2-5-m" label="I7.2.13">
     <title>Compare <m>t</m>-distribution to normal</title>
     <statement>
-      <p>Check the Overlay t-distribution box. What is the main visual difference in the t-distribution model compared to the normal distribution model? Does this t-distribution appear to be a better model for the simulated sampling distribution? Is the theory-based p-value using the t-distribution closer to the empirical p-value than the theory-based p-value using the normal distribution?</p>
+      <p>Check the Overlay <m>t</m>-distribution box. 
+      What is the main visual difference in the  <m>t</m>-distribution model compared to the normal distribution model? Does this  <m>t</m>-distribution appear to be a better model for the simulated sampling distribution? Is the theory-based p-value using the t-distribution closer to the empirical p-value than the theory-based p-value using the normal distribution?</p>
     </statement>
     <solution>
-      <p>The t distribution has heavier tails, more area out there, giving us a better prediction. The p-value from the t distribution is much closer to the simulation results.</p>
+      <p>The <m>t</m> distribution has heavier tails, more area out there, giving us a better prediction. The p-value from the  <m>t</m> distribution is much closer to the simulation results.</p>
     </solution>
     <response/>
   </exercise>
@@ -390,7 +394,7 @@
     <response/>
   </exercise>
   
-  <p>This leads to a confidence interval formula with the same general form as in the previous chapter:  <m>sample\ statistic \pm  (critical value) <times/> (SE of statistic)</m>, where the critical value now comes from the <m>t_{n-1}</m> distribution (degrees of freedom = <m>n - 1)</m> instead of from the standard normal distribution.</p>
+  <p>This leads to a confidence interval formula with the same general form as in the previous chapter:  <m>sample\ statistic \pm  (critical\ value) <times/> (SE\ of\ statistic)</m>, where the critical value now comes from the <m>t_{n-1}</m> distribution (degrees of freedom = <m>n - 1)</m> instead of from the standard normal distribution.</p>
   
   <assemblage xml:id="one-sample-t-interval">
     <title>One-sample t-interval for <m>\mu</m></title>
@@ -466,7 +470,7 @@
   </exercise>
   
   <exercise xml:id="inv2-5-v" label="I7.2.22">
-    <title>Find <m>t^*</m> for n=13</title>
+    <title>Find <m>t^*</m> for <m>n = 13</m></title>
     <statement>
       <p>Find the <m>t^*</m> value for the sample size of <m>n = 13</m>. How do the t-critical values compare for these different sample sizes? Is this what you expected? Explain.</p>
     </statement>
@@ -536,7 +540,7 @@
         <p>where sd = sample standard deviation, <m>s</m>.</p>
       </statement>
       <solution>
-        <image source="images/Inv2.5ysolsR.jpg" width="60%">
+        <image source="images/Inv2.5ysolsR.jpg" width="80%">
           <description>R output for one sample t-test and confidence interval</description>
         </image>
       </solution>
@@ -553,19 +557,19 @@
           <li><p>To perform the test of significance, use the variable hot spot, select Test Mean. Then enter the hypothesized value of <m>\mu</m> and press OK.</p></li>
         </ol></p>
         <p>OR</p>
-        <p><ol>
-          <li><p>Open the ISCAM Journal file > Hypothesis Test for One Mean</p></li>
-          <li><p>Choose Raw Data (and pick the column) or Summary Statistics (and then specify the sample size, sample mean, and sample standard deviation)</p></li>
-          <li><p>Be sure to choose the <m>t</m>-test Test Type and specify the alternative hypothesis</p></li>
-          <li><p>In the ISCAM Journal file > Confidence Interval for One Mean</p></li>
-          <li><p>Choose the <m>t</m> interval type and specify confidence level</p></li>
-        </ol></p>
+        <stack>
+          <p><ol>
+            <li><p>Open the ISCAM Journal file > Hypothesis Test for One Mean</p></li>
+            <li><p>Choose Raw Data (and pick the column) or Summary Statistics (and then specify the sample size, sample mean, and sample standard deviation)</p></li>
+            <li><p>Be sure to choose the <m>t</m>-test Test Type and specify the alternative hypothesis</p></li>
+            <li><p>In the ISCAM Journal file > Confidence Interval for One Mean</p></li>
+            <li><p>Choose the <m>t</m> interval type and specify confidence level</p></li>
+          </ol></p>
+          <image source="images/Inv2.5ysolsJMP.jpg" width="60%">
+            <description>JMP output for one sample t-test and confidence interval</description>
+          </image>
+        </stack>
       </statement>
-      <solution>
-        <image source="images/Inv2.5ysolsJMP.jpg" width="60%">
-          <description>JMP output for one sample t-test and confidence interval</description>
-        </image>
-      </solution>
     </exercise>
   </paragraphs>
   
@@ -611,7 +615,7 @@
     <title>Practice Problem 2.5B</title>
     
     <introduction>
-      <p>Stanford researchers (e.g., Protsiv et al., 2020) claim that average normal human-body temperature is closer to 97.5 degrees Fahrenheit (McGinty, Wall Street Journal, 2020). Part of the Stanford study was to use digital oral instruments to take temperature readings from 150,280 individuals 2007-2017 (578,222 measurements). They found a mean of 98.04 °F and a standard deviation of 0.502 °F.</p>
+      <p>Stanford researchers (e.g., <url href="https://med.stanford.edu/news/all-news/2020/01/human-body-temperature-has-decreased-in-united-states.html">Protsiv et al., 2020</url>) claim that average normal human-body temperature is closer to 97.5 degrees Fahrenheit (<url href="https://www.wsj.com/articles/98-6-degrees-fahrenheit-isnt-the-average-any-more-11579257001">McGinty, Wall Street Journal, 2020</url>). Part of the Stanford study was to use digital oral instruments to take temperature readings from 150,280 individuals 2007-2017 (578,222 measurements). They found a mean of 98.04 °F and a standard deviation of 0.502 °F.</p>
     </introduction>
     
     <exercise xml:id="practice-2-5b-a" label="PP2.5B.1">
