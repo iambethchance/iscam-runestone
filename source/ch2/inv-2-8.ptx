@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-2-8" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Investigation 2.8: Turbidity</title>
+
+  <p>Another measure of water quality is turbidity, the degree of opaqueness produced in water by suspended particulate matter. Turbidity can be measured by seeing how light is scattered and/or absorbed by organic and inorganic material. Larger nephelometric turbidity units (NTU) indicate increased turbidity and decreased light penetration. If there is too much turbidity, then not enough light may be penetrating the water, affecting photosynthesis to the surface and leading to less dissolved oxygen. Riggs (2002) provides 244 turbidity monthly readings that were recorded between 1980-2000 from a reach of the Mermentau River in Southwest Louisiana (<c>MermentauTurbidity.txt</c>). The unit of analysis was the monthly mean turbidity (NTU) computed from each month's systematic sample of 21 turbidity measurements. The investigators wanted to determine whether the mean turbidity was greater than the local criterion value of 150 NTU.</p>
+
+  <exercise xml:id="inv2-8-a">
+    <statement>
+      <p>Find the mean and median of the turbidity measurements and confirm that a normal probability is not reasonable for these data.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv2-8-b">
+    <statement>
+      <p>Carry out a log transformation (See Investigation 2.2) and report the mean, median, and standard deviation of the transformed data. Verify that a log-normal probability model is reasonable for these data.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv2-8-c">
+    <statement>
+      <p>Are the mean and median values in (b) similar to each other? Is the mean of the logged turbidity values similar to the log of the mean of the turbidity values? Is the median of the logged turbidity values similar to the log of the median of the turbidity values?</p>
+      
+      <table>
+        <title>Comparison of Original and Transformed Values</title>
+        <tabular>
+          <row header="yes">
+            <cell>Original scale</cell>
+            <cell>Log of original values</cell>
+            <cell>Transformed scale</cell>
+          </row>
+          <row>
+            <cell>Mean = </cell>
+            <cell>Log (mean) = </cell>
+            <cell>Mean (log turbidity) = </cell>
+          </row>
+          <row>
+            <cell>Median = </cell>
+            <cell>Log (median) = </cell>
+            <cell>Median (log turbidity) = </cell>
+          </row>
+        </tabular>
+      </table>
+      
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv2-8-d">
+    <statement>
+      <p>Explain why the median(log(turbidity)) is expected to be the same as log(median(turbidity)), but this interchangeability is not expected to work for the mean.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv2-8-e">
+    <statement>
+      <p>Use a one-sample t-confidence interval to estimate the mean of the log-turbidity value for this river.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv2-8-f">
+    <statement>
+      <p>Back-transform the endpoints of this interval to return to the original units and interpret the interval in context.</p>
+      <p><var width="60"/></p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <assemblage>
+    <title>Discussion: Transformations and Back-Transformation</title>
+    <p>Once you create a symmetric distribution, the mean and median will be similar. However, although transforming the data does not affect the ordering of the observations, it does impact the scaling of the values. So whereas the median of the transformed data is equal to taking the log of the median of the original data (at least with an odd number of observations), this does not hold for the mean. So when we back-transform our interval for the center of the population distribution, we will interpret this in terms of the median value rather than the mean value.</p>
+  </assemblage>
+
+  <assemblage>
+    <title>Study Conclusions</title>
+    <p>A 95% confidence interval based on the transformed data equals (4.20, 4.40). Therefore, we will say we are 95% confident that the median turbidity in this river is between 66.69 NTU and 81.45 NTU, clearly less than the 150 NTU regulation. However, another condition for the validity of this procedure is that the observations are independent. Further examination of these data reveals seasonal trends. Adjustments need to be made to account for the seasonality before these data are analyzed.</p>
+  </assemblage>
+
+  <subsection xml:id="practice2-8">
+    <title>Practice Problem 2.8</title>
+
+    <p>Return to the <c>honking.txt</c> data from Investigation 2.2.</p>
+
+    <exercise xml:id="practice-2-8-a">
+      <statement>
+        <p>Use the log transformation to calculate a 95% confidence interval for the mean log response time.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-2-8-b">
+      <statement>
+        <p>Back-transform and interpret the interval.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-2-8-c">
+      <statement>
+        <p>Outline a method for verifying that this procedure results in a 95% confidence interval for the population median. [Hint: Think about the Simulating Confidence Intervals applet.]</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+</section>
