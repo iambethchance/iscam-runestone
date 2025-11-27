@@ -12,19 +12,26 @@
       <p>
         We can calculate a p-value based on the normal distribution with mean equal to <m>\pi_0</m> and standard deviation equal to <m>\sqrt{\pi_0(1-\pi_0)/n}</m>
       </p>
-      <p>
-        <term>Standardized (Test) Statistic</term>: <m>z_0 = \frac{\hat{p} - \pi_0}{\sqrt{\pi_0(1-\pi_0)/n}}</m> which follows a <m>N(0,1)</m> distribution
-      </p>
-      <p>
-        <term>p-value</term>:
-      </p>
-      <p>
-        <ul>
-          <li>if <m>H_a: \pi > \pi_0</m>: p-value = <m>P(Z > z_0)</m></li>
-          <li>if <m>H_a: \pi &lt; \pi_0</m>: p-value = <m>P(Z &lt; z_0)</m></li>
-          <li>if <m>H_a: \pi \neq \pi_0</m>: p-value = <m>2P(Z > |z_0|)</m></li>
-        </ul>
-      </p>
+      <sidebyside widths="65% 30%" valign="top">
+        <stack>
+          <p>
+            <term>Standardized (Test) Statistic</term>: <m>z_0 = \frac{\hat{p} - \pi_0}{\sqrt{\pi_0(1-\pi_0)/n}}</m> which follows a <m>N(0,1)</m> distribution
+          </p>
+          <p>
+            <term>p-value</term>:
+          </p>
+          <p>
+            <ul>
+              <li>if <m>H_a: \pi > \pi_0</m>: p-value = <m>P(Z > z_0)</m></li>
+              <li>if <m>H_a: \pi &lt; \pi_0</m>: p-value = <m>P(Z &lt; z_0)</m></li>
+              <li>if <m>H_a: \pi \neq \pi_0</m>: p-value = <m>2P(Z > |z_0|)</m></li>
+            </ul>
+          </p>
+        </stack>
+        <image source="images/ch1SampleProportions.png">
+          <description>Diagram showing sample proportions distribution</description>
+        </image>
+      </sidebyside>
       <p>
         <term>Validity</term>: This procedure is considered valid as long as the sample size is large relative to the hypothesized probability (<m>n \times \pi_0 > 10</m> and <m>n \times (1 - \pi_0) > 10</m>), and you have a representative sample from the process of interest.
       </p>
