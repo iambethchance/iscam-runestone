@@ -2,13 +2,16 @@
 <section xml:id="inv-2-7" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Investigation 2.7: Water Oxygen Levels</title>
 
-  <p>Scientists often monitor the "health" of water systems to determine the impact of different changes in the environment. For example, Riggs (2002) reports on a case study that monitored the dissolved oxygen downstream from a commercial hog operation. There had been problems at this site for several years (e.g., manure lagoon overflow), including several fish deaths in the previous three years just downstream of a large swale through which runoff from the hog facility had escaped. The state pollution control agency decided to closely monitor dissolved oxygen downstream of the swale for the next three years to determine whether the problem had been resolved. In particular, they wanted to see whether there was a tendency for the dissolved oxygen level in the river to be less than the 5.0 mg/l standard. Sampling was scheduled to commence in January of 2000 and run through December of 2002. The monitors took measurements at a single point in the river, approximately six tenths of a mile from the swale, once every 11 days.</p>
+  <p>Scientists often monitor the "health" of water systems to determine the impact of different changes in the environment. For example, <url href="https://archive.epa.gov/nheerl/arm/web/pdf/calm_appc.pdf">Riggs (2002)</url> reports on a case study that monitored the dissolved oxygen downstream from a commercial hog operation. There had been problems at this site for several years (e.g., manure lagoon overflow), including several fish deaths in the previous three years just downstream of a large swale through which runoff from the hog facility had escaped. The state pollution control agency decided to closely monitor dissolved oxygen downstream of the swale for the next three years to determine whether the problem had been resolved. In particular, they wanted to see whether there was a tendency for the dissolved oxygen level in the river to be less than the 5.0 mg/l standard. Sampling was scheduled to commence in January of 2000 and run through December of 2002. The monitors took measurements at a single point in the river, approximately six tenths of a mile from the swale, once every 11 days.</p>
 
   <exercise xml:id="inv2-7-a">
     <statement>
       <p>Would you consider this sampling from a population or from a random process? Identify the observations.</p>
       <p><var width="60"/></p>
     </statement>
+    <solution>
+      <p>The individual water "samples" are the observational units. This is probably better thought of as sampling from a never ending process.</p>
+    </solution>
     <response/>
   </exercise>
 
@@ -17,6 +20,9 @@
       <p>Because the dissolved oxygen measurements were taken in the same location at fixed time intervals, would you consider this a simple random sample? Do you think the sample is likely to be representative of the river conditions? Explain.</p>
       <p><var width="60"/></p>
     </statement>
+    <solution>
+      <p>This is more like a systematic sample but is likely to be representative as long as there aren't major changes in the river during the time period.</p>
+    </solution>
     <response/>
   </exercise>
 
@@ -27,9 +33,12 @@
 
   <exercise xml:id="inv2-7-c">
     <statement>
-      <p>Examine the data from the first year in <c>WaterQuality.txt</c>. Describe the shape, center, and variability of the distribution. In particular, how do the mean and median compare? Do these data appear to be well-modelled by a normal distribution?</p>
+      <p>Examine the data from the first year in <url href="http://www.rossmanchance.com/iscam2/data/WaterQuality.txt" visual="rossmanchance.com/iscam2/data/WaterQuality.txt"><c>WaterQuality.txt</c></url>. Describe the shape, center, and variability of the distribution. In particular, how do the mean and median compare? Do these data appear to be well-modelled by a normal distribution?</p>
       <p><var width="60"/></p>
     </statement>
+    <solution>
+      <p>The distribution of dissolved oxygen is skewed to the right, centered around 5, with most of the observations between 3 and 8 (<m>s = 2.39</m> mg/l). The mean (4.735) is larger than the median (4.300). The data are not normally distributed.</p>
+    </solution>
     <response/>
   </exercise>
 
@@ -46,6 +55,9 @@
       <p>Is the one-sample t-test likely to be valid for these data? Explain why or why not.</p>
       <p><var width="60"/></p>
     </statement>
+    <solution>
+      <p>The sample size is 34 and the data are not severely skewed so perhaps the t procedures will be valid (but not a prediction interval).</p>
+    </solution>
     <response/>
   </exercise>
 
@@ -55,6 +67,9 @@
       <p>[Hint: What do you want to do with the observation that is equal to 5.0?]</p>
       <p><var width="60"/></p>
     </statement>
+    <solution>
+      <p>Nineteen of the 34 measurements are less than 5 (56% "non-compliant"). One observation is equal to 5 (need to decide whether you want to count that as compliant or not).</p>
+    </solution>
     <response/>
   </exercise>
 
@@ -63,6 +78,13 @@
       <p>Carry out a test for deciding whether the proportion of measurements that fall below 5.0 mg/l is statistically significantly larger than 0.50 (one-half).</p>
       <p><var width="60"/></p>
     </statement>
+    <solution>
+      <p>Let <m>p</m> refer to the probability of a non-compliant measurement in this river.</p>
+      <p><m>H_0: p = 0.50</m> vs. <m>H_a: p > 0.50</m>.</p>
+      <p>Assuming independent observations (systematic sample) and a constant probability of success (under the null <m>p = 0.50</m> for this observation period), we can model this with the binomial distribution (<m>n = 34</m> and <m>p = 0.50</m>).</p>
+      <p><m>P(X \geq 19) \approx 0.3038</m>.</p>
+      <p>We do not have a small p-value, so we do not have evidence that the probability of non-compliance exceeds 0.50.</p>
+    </solution>
     <response/>
   </exercise>
 
@@ -71,6 +93,9 @@
       <p>If you decide that more than half of the time the river is non-compliant (that is, more than 50% of measurements are below 5.0 mg/l), what does that imply about the long-run median dissolved oxygen level? Explain.</p>
       <p><var width="60"/></p>
     </statement>
+    <solution>
+      <p>If more than half of the observations are less than 5.0, this implies that the median is less than 5.0.</p>
+    </solution>
     <response/>
   </exercise>
 
@@ -79,6 +104,9 @@
       <p>Identify one advantage to this analysis over the one-sample t-test. Identify one disadvantage of this analysis over the one-sample t-test.</p>
       <p><var width="60"/></p>
     </statement>
+    <solution>
+      <p>We do not have to worry about the shape of the sample distribution or the sample size to use the binomial test. However, we only get to talk about whether or not they are non-compliant, not how small the actual observed oxygen levels are.</p>
+    </solution>
     <response/>
   </exercise>
 
@@ -87,6 +115,9 @@
       <p>The researchers actually wanted to decide whether the river was non-compliant more than 10% of the time. How would that change your analysis in (g) and would the p-value be larger or smaller?</p>
       <p><var width="60"/></p>
     </statement>
+    <solution>
+      <p>Now our hypotheses would be <m>H_0: p = 0.10</m> vs. <m>H_a: p > 0.10</m>. With a sample proportion of 0.5588, our p-value would be much, much smaller in this case.</p>
+    </solution>
     <response/>
   </exercise>
 
@@ -103,7 +134,7 @@
   <subsection xml:id="practice2-7">
     <title>Practice Problem 2.7</title>
 
-    <p>Return to Practice Problem 2.2A and the <c>30seconds.txt</c> data. Carry out a test to determine whether there is convincing evidence that the median student estimate of 30 seconds differs from 30. (State your hypothesis, statistic and/or standardized statistic, and p-value.)</p>
+    <p>Return to Practice Problem 2.2A and the <url href="http://www.rossmanchance.com/iscam3/data/30seconds.txt" visual="rossmanchance.com/iscam3/data/30seconds.txt"><c>30seconds.txt</c></url> data. Carry out a test to determine whether there is convincing evidence that the median student estimate of 30 seconds differs from 30. (State your hypothesis, statistic and/or standardized statistic, and p-value.)</p>
 
     <exercise xml:id="practice-2-7-a">
       <statement>
