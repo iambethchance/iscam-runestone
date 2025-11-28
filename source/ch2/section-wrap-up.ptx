@@ -15,9 +15,9 @@
 
     <p>In this chapter, you focused on distributions of quantitative data, following up earlier discussion in Investigation A. In exploring quantitative data, we start with a graph displaying the distribution, such as a dotplot or a histogram. The most relevant features include shape, center, and variability, as well as deviations from the overall pattern. The appropriate numerical summaries of center include the mean and median, but keep in mind that the median is more resistant than the mean to outliers and skewness. The appropriate numerical summaries of variability include interquartile range (IQR) and standard deviation, with the IQR also more resistant to outliers and skewness. Remember when examining the variability of a data set, you are interested in the spread of the values that the variable takes (along the horizontal axis). In summarizing data, the five-number summary can be very descriptive and you were also introduced to boxplots, a graphical display of the five-number summary.</p>
 
-    <p>After examining the sample distribution, it may be appropriate to ask whether a sample statistic differs significantly from some claim about the population. For example, whether the sample mean is far enough from a conjectured population mean to convince you that the discrepancy did not arise “by chance alone.” You explored some simulation models, mostly to convince you that the t-distribution provides a very convenient approximation to the sampling distribution of the standardized statistic of a sample mean. This allowed us to approximate p-values and calculate confidence intervals. Keep in mind that the logic of statistical significance hasn’t changed – we assume the null hypothesis is true and determine how often we would get a sample statistic at least as extreme as what was observed. You saw that this likelihood is strongly affected by not only the sample size but also how much variability is inherent in the data. You also learned about prediction intervals, as opposed to confidence intervals, for estimating individual values rather than the population mean.</p>
+    <p>After examining the sample distribution, it may be appropriate to ask whether a sample statistic differs significantly from some claim about the population. For example, whether the sample mean is far enough from a conjectured population mean to convince you that the discrepancy did not arise “by chance alone.” You explored some simulation models, mostly to convince you that the <m>t</m>-distribution provides a very convenient approximation to the sampling distribution of the standardized statistic of a sample mean. This allowed us to approximate p-values and calculate confidence intervals. Keep in mind that the logic of statistical significance hasn’t changed – we assume the null hypothesis is true and determine how often we would get a sample statistic at least as extreme as what was observed. You saw that this likelihood is strongly affected by not only the sample size but also how much variability is inherent in the data. You also learned about prediction intervals, as opposed to confidence intervals, for estimating individual values rather than the population mean.</p>
 
-    <p>These t procedures do come with some technical conditions and should be applied with extreme caution with small sample sizes or extreme skewness in the distribution. In this case, you could consider transforming the variable to rescale the observations to a known probability distribution such as the normal distribution. You can also apply the sign test which looks at the sign of the values rather than the numerical outcome and allows you to apply the binomial distribution. Other approaches such as bootstrapping are very flexible in the choice of statistic.</p>
+    <p>These <m>t</m>-procedures do come with some technical conditions and should be applied with extreme caution with small sample sizes or extreme skewness in the distribution. In this case, you could consider transforming the variable to rescale the observations to a known probability distribution such as the normal distribution. You can also apply the sign test which looks at the sign of the values rather than the numerical outcome and allows you to apply the binomial distribution. Other approaches such as bootstrapping are very flexible in the choice of statistic.</p>
   </subsection>
 
   <subsection xml:id="what-you-learned-ch2">
@@ -30,7 +30,7 @@
       <li><p>How to describe, measure, and interpret variability of a quantitative variable</p></li>
       <li><p>Identifying and considering potential explanations for outliers</p></li>
       <li><p>Stating hypotheses in terms of a population mean</p></li>
-      <li><p>One-sample t-procedures</p></li>
+      <li><p>One-sample <m>t</m>-procedures</p></li>
       <li><p>When appropriate to apply; Why helpful</p></li>
       <li><p>How to interpret results</p></li>
       <li><p>Alternative approaches if not valid (e.g., data transformations)</p></li>
@@ -45,7 +45,7 @@
     <p><ul>
       <li><p>Summarizing data (dotplots, histograms, boxplots, mean, standard deviation, five-number summary)</p></li>
       <li><p>Simulating a sampling distribution from a finite population</p></li>
-      <li><p>One-sample t-procedures</p></li>
+      <li><p>One-sample <m>t</m>-procedures</p></li>
       <li><p>Transforming data</p></li>
     </ul></p>
   </subsection>
@@ -77,11 +77,11 @@
           <c>qqline(x, datax = T)</c></cell>
         </row>
         <row>
-          <cell>Critical values from t-distribution</cell>
+          <cell>Critical values from <m>t</m>-distribution</cell>
           <cell><c>iscaminvt(prob, df, direction)</c></cell>
         </row>
         <row>
-          <cell>Carry out the One Sample t procedures</cell>
+          <cell>Carry out the One Sample <m>t</m>-procedures</cell>
           <cell><c>t.test(x, mu, alternative, conf.level)</c>
           <c>iscamonesamplet(xbar, sd, n, hypothesized, alternative, conf.level)</c></cell>
         </row>
@@ -119,11 +119,11 @@
           <cell>Analyze > Distribution Hot spot > Normal Quantile Plot</cell>
         </row>
         <row>
-          <cell>Critical values from t-distribution</cell>
+          <cell>Critical values from <m>t</m>-distribution</cell>
           <cell>Distribution Calculator</cell>
         </row>
         <row>
-          <cell>Carry out the One Sample t procedures</cell>
+          <cell>Carry out the One Sample <m>t</m>-procedures</cell>
           <cell>Analyze > Distribution
           Or ISCAM Journal File</cell>
         </row>
