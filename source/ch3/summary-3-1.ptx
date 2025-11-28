@@ -73,7 +73,20 @@
     
     <hint>
       <title>JMP instructions</title>
-      <p>From the Analyze menu, select Fit Y by X. Put the categorical response in the Y, Response box and the group membership variable in the X, Factor box. Click OK. Next to the contingency table and mosaic plot, click on the red triangle next to Contingency Analysis and select Two Sample Test for Proportions. This will provide a test of <m>H_0: \pi_1 - \pi_2 = 0</m>, as well as confidence intervals for <m>\pi_1 - \pi_2</m>.</p>
+      <p><ul>
+        <li><p>With raw data or after specifying the two-way table in column format, select Analyze > Fit Y by X and specify the categorical response variable (Y, Response) and the categorical explanatory variable (X, Factor)</p>
+        <ul>
+          <li><p>Specify the counts if using a two-way table (and "year" is seen as a categorical variable)</p></li>
+        </ul></li>
+        <li><p>Press OK.</p></li>
+        <li><p>The p-value in the Pearson row matches a two-sided z-test.</p></li>
+        <li><p>For a confidence interval, use the hot spot to select Two Sample Test for Proportions</p>
+        <p>Note: Here you can change which outcome is considered success. This also reports an "adjusted Wald" p-value</p></li>
+        <li><p>With summary data use the ISCAM Journal file: Hypothesis Test for Two Proportions</p></li>
+        <li><p>Specify the form of the alternative hypothesis</p></li>
+        <li><p>Enter the number of successes and the sample sizes</p>
+        <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use "pooled estimate of variance." This reports the z-score as well.)</p></li>
+      </ul></p>
       <sidebyside>
         <image source="images/Inv3.1JMP1.png" width="45%">
           <description>JMP instructions screenshot 1</description>

@@ -393,7 +393,8 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <p>However, to calculate these values we would need to know <m>\pi_1</m>, <m>\pi_2</m>, or <m>\pi</m>. So again we estimate the standard deviation of our statistic using the sample data.</p>
 
-    <p><term>Case 1:</term> When testing whether the null hypothesis is true, we are assuming the samples come from the same population, so we "pool" the two samples together to estimate the common population proportion of successes. That is, we estimate <m>\pi</m> by looking at the ratio of the total number of successes to the total sample size:</p>
+   <title>Case 1</title> 
+    <p>When testing whether the null hypothesis is true, we are assuming the samples come from the same population, so we "pool" the two samples together to estimate the common population proportion of successes. That is, we estimate <m>\pi</m> by looking at the ratio of the total number of successes to the total sample size:</p>
     <p><m>\hat{p} = \frac{X_1+X_2}{n_1+n_2} = \frac{n_1\hat{p}_1+n_2\hat{p}_2}{n_1+n_2} = \frac{\text{total number of successes}}{\text{total sample size}}</m></p>
 
     <p>Then use we use this value to calculate the standard error of <m>\hat{p}_1 - \hat{p}_2</m> to be:</p>
@@ -457,8 +458,8 @@ barplot(hearingprop, legend=T, ylab="proportion")
   </paragraphs>
 
   <paragraphs>
-    <title>Confidence Interval</title>
-    <p><term>Case 2:</term> When calculating confidence intervals, we make no assumptions about the populations (for example, when we are not testing a particular null hypothesis but only estimating the parameter, we do not assume a common value for <m>\pi</m>). So we will use a different formula to approximate the standard deviation of <m>\hat{p}_1 - \hat{p}_2</m>:</p>
+    <title>Case 2</title>
+    <p> When calculating confidence intervals, we make no assumptions about the populations (for example, when we are not testing a particular null hypothesis but only estimating the parameter, we do not assume a common value for <m>\pi</m>). So we will use a different formula to approximate the standard deviation of <m>\hat{p}_1 - \hat{p}_2</m>:</p>
     <p><m>SE(\hat{p}_1 - \hat{p}_2) = \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m></p>
 
     <exercise xml:id="inv3-1-y">
@@ -579,14 +580,17 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <exercise xml:id="tech-detour-applet-z">
         <title>Theory-Based Inference Applet</title>
         <statement>
+          <p>In <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Theory-Based Inference applet</url></p>
           <p><ul>
             <li><p>Select Two proportions</p></li>
             <li><p>Check the box to paste in 2 columns of data (stacked or unstacked) and press Use data or specify the sample sizes and either the sample counts or the sample proportions and press Calculate.</p></li>
             <li><p>For the test, check the box for Test of Significance Keep the hypothesized difference at zero and set the direction of the alternative, press Calculate.</p></li>
             <li><p>For the confidence interval, check the box, specify the confidence level and press Calculate CI</p></li>
           </ul></p>
-          <image source="images/Inv3.1TBI1.png" width="80%"/>
-          <image source="images/Inv3.1TBI2.png" width="80%"/>
+          <sidebyside widths="45% 45%">
+            <image source="images/Inv3.1TBI1.png"/>
+            <image source="images/Inv3.1TBI2.png"/>
+          </sidebyside>
         </statement>
       </exercise>
 
@@ -614,22 +618,31 @@ iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)
       <exercise xml:id="tech-detour-jmp-z">
         <title>JMP</title>
         <statement>
-          <p><ul>
-            <li><p>With raw data or after specifying the two-way table in column format, select Analyze > Fit Y by X and specify the categorical response variable (Y, Response) and the categorical explanatory variable (X, Factor)</p></li>
-            <li><p>Specify the counts if using a two-way table (and "year" is seen as a categorical variable)</p></li>
-            <li><p>Press OK.</p></li>
-            <li><p>The p-value in the Pearson row matches a two-sided z-test.</p></li>
-            <li><p>For a confidence interval, use the hot spot to select Two Sample Test for Proportions</p></li>
-          </ul></p>
-          <p>Note: Here you can change with outcome is considered success. This also reports an "adjusted Wald" p-value</p>
-          <p><ul>
-            <li><p>With summary data use the <url href="http://www.rossmanchance.com/iscam3/data/ISCAM_Journal.jrn">ISCAM Journal file</url>: Hypothesis Test for Two Proportions</p></li>
-            <li><p>Specify the form of the alternative hypothesis</p></li>
-            <li><p>Enter the number of successes and the sample sizes,</p></li>
-          </ul></p>
-          <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use "pooled estimate of variance." This reports the z-score as well.)</p>
-          <image source="images/Inv3.1JMP1.png" width="80%"/>
-          <image source="images/Inv3.1JMP2.png" width="80%"/>
+          <sidebyside widths="50% 45%" valign="top">
+            <stack>
+              <p><ul>
+                <li><p><em>With raw data or after specifying the two-way table in column format</em>, select Analyze > Fit Y by X and specify the categorical response variable (Y, Response) and the categorical explanatory variable (X, Factor)</p></li>
+                <li><p><ul><li>Specify the counts if using a two-way table (and "year" is seen as a categorical variable)</li></ul></p></li>
+                <li><p>Press OK.</p></li>
+                <li><p>The p-value in the Pearson row matches a two-sided z-test.</p></li>
+                <li><p>For a confidence interval, use the hot spot to select Two Sample Test for Proportions</p>
+                <p><em>Note:</em> Here you can change with outcome is considered success. This also reports an "adjusted Wald" p-value</p></li>
+              </ul></p>
+            </stack>
+            <image source="images/Inv3.1JMP1.png"/>
+          </sidebyside>
+          
+          <sidebyside widths="50% 45%" valign="top">
+            <stack>
+              <p><ul>
+                <li><p><em>With summary data</em> use the <url href="http://www.rossmanchance.com/iscam3/data/ISCAM_Journal.jrn">ISCAM Journal file</url>: Hypothesis Test for Two Proportions</p></li>
+                <li><p>Specify the form of the alternative hypothesis</p></li>
+                <li><p>Enter the number of successes and the sample sizes,</p>
+                <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use "pooled estimate of variance." This reports the z-score as well.)</p></li>
+              </ul></p>
+            </stack>
+            <image source="images/Inv3.1JMP2.png"/>
+          </sidebyside>
         </statement>
       </exercise>
     </paragraphs>
