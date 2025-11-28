@@ -44,7 +44,7 @@
     <exercise xml:id="inv3-1-c">
       <title>Two-Way Table</title>
       <statement>
-        <p>When we have two samples for a binary categorical variable, it is often useful to organize the data using a two-way table. Complete the following 2 � 2 table of counts.</p>
+        <p>When we have two samples for a binary categorical variable, it is often useful to organize the data using a two-way table. Complete the following 2 × 2 table of counts.</p>
         <table>
         <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
           <row header="yes">
@@ -123,7 +123,7 @@
 
     <assemblage>
       <title>Definition: Conditional Proportions</title>
-      <p>The simplest statistic for comparing a binary variable between two groups is the difference in the proportion of �successes� for each group. These proportions, calculated separately for each group rather than looking at the overall proportion, are called <term>conditional proportions</term><idx><h>conditional proportions</h></idx>.</p>
+      <p>The simplest statistic for comparing a binary variable between two groups is the difference in the proportion of "successes" for each group. These proportions, calculated separately for each group rather than looking at the overall proportion, are called <term>conditional proportions</term><idx><h>conditional proportions</h></idx>.</p>
     </assemblage>
 
     <p>In this case, we compute the difference in the proportion of teens with some level of hearing loss between the two years (<m>\hat{p}_{94} - \hat{p}_{06} = 480/2928 - 333/1771</m>).</p>
@@ -131,7 +131,7 @@
     <p>The next step is to examine an effective graphical summary for comparing the two groups.</p>
 
     <paragraphs>
-      <title>Technology Detour � Segmented Bar Graphs</title>
+      <title>Technology Detour – Segmented Bar Graphs</title>
       
       <exercise xml:id="tech-detour-r-segmented">
         <title>Segmented Bar Graphs - R</title>
@@ -163,7 +163,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <exercise xml:id="tech-detour-jmp-segmented">
         <title>Segmented Bar Graphs - JMP</title>
         <statement>
-          <p>You can specify the counts from the two-way table, but you have to do so in �column format� (each row is a combination of the two variables and the counts are all in one column)</p>
+          <p>You can specify the counts from the two-way table, but you have to do so in "column format" (each row is a combination of the two variables and the counts are all in one column)</p>
           <p><ul>
             <li><p>Select Analyze > Fit Y by X.</p></li>
             <li><p>Click Hearing Loss then click the Y, Response button (or drag).</p></li>
@@ -173,7 +173,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
           </ul></p>
         </statement>
         <solution>
-          <p>JMP creates a �Mosaic Plot� (the column widths also reflect the relative sample sizes). An extended two-way table is shown below the Mosaic Plot although the rows and columns are reversed. Click the red Contingency Table arrow and uncheck Col% and Total% to see a less cluttered table.</p>
+          <p>JMP creates a "Mosaic Plot" (the column widths also reflect the relative sample sizes). An extended two-way table is shown below the Mosaic Plot although the rows and columns are reversed. Click the red Contingency Table arrow and uncheck Col% and Total% to see a less cluttered table.</p>
         </solution>
       </exercise>
     </paragraphs>
@@ -203,7 +203,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
   <paragraphs>
     <title>Inferential Statistics</title>
-    <p>As we�ve said before, it certainly is possible to obtain sample proportions this far apart, just by random chance, even if the population proportions (of teens with some hearing loss) were the same. The question now is how likely such a difference would be if the population proportions were the same. We can answer this question by modeling the sampling variability, arising from taking random samples from these populations, for the difference in two sample proportions. Investigating this sampling variability will help us to assess whether this particular difference in sample proportions is strong evidence that the population proportions actually differ.</p>
+    <p>As we've said before, it certainly is possible to obtain sample proportions this far apart, just by random chance, even if the population proportions (of teens with some hearing loss) were the same. The question now is how likely such a difference would be if the population proportions were the same. We can answer this question by modeling the sampling variability, arising from taking random samples from these populations, for the difference in two sample proportions. Investigating this sampling variability will help us to assess whether this particular difference in sample proportions is strong evidence that the population proportions actually differ.</p>
 
     <exercise xml:id="inv3-1-h">
       <title>Hypotheses</title>
@@ -235,7 +235,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <exercise xml:id="inv3-1-j">
       <title>Pooled Estimate</title>
-      <statement><p>So under the null hypothesis we really only have one value of <m>\pi</m> to estimate � the common population proportion with hearing loss for these two years. What is your best estimate for <m>\pi</m> from the sample data?</p></statement>
+      <statement><p>So under the null hypothesis we really only have one value of <m>\pi</m> to estimate – the common population proportion with hearing loss for these two years. What is your best estimate for <m>\pi</m> from the sample data?</p></statement>
       <hint>
         <p>Think about combining the two years together.</p>
       </hint>
@@ -246,7 +246,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <exercise xml:id="inv3-1-k">
       <title>Simulation Design</title>
       <statement><p>Describe how you could carry out a simulation analysis to investigate whether the observed difference in sample proportions provides strong evidence that the population proportions with hearing loss differed between these two time periods. How will you estimate the p-value?</p></statement>
-      <solution><p>We could take random samples of 2928 and 1771 from two populations that have the same population proportion of successes. Then see how often 1 - 2 � -0.024 when 94 - 06 = 0 by random sampling alone.</p></solution>
+      <solution><p>We could take random samples of 2928 and 1771 from two populations that have the same population proportion of successes. Then see how often 1 - 2 ≈ -0.024 when 94 - 06 = 0 by random sampling alone.</p></solution>
       <response/>
     </exercise>
 
@@ -326,7 +326,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <exercise xml:id="inv3-1-q">
       <title>Normal Approximation</title>
-      <statement><p>Check the Normal Approximation box to overlay a normal curve on your null distribution to evaluate whether the simulated differences appear to �line up� with observations from a standard normal distribution. Does the normal model appear to be a reasonable approximation to the null distribution?</p></statement>
+      <statement><p>Check the Normal Approximation box to overlay a normal curve on your null distribution to evaluate whether the simulated differences appear to "line up" with observations from a standard normal distribution. Does the normal model appear to be a reasonable approximation to the null distribution?</p></statement>
       <solution>
         <p>Yes, example results below</p>
         <image source="images/Inv3.1solsq.jpg" width="60%"/>
@@ -361,7 +361,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <response/>
     </exercise>
 
-    <p>Two additional �rules for random variables� is, for two random variables <m>X</m> and <m>Y</m>,</p>
+    <p>Two additional "rules for random variables" is, for two random variables <m>X</m> and <m>Y</m>,</p>
     <p><m>E(X \pm Y) = E(X) \pm E(Y)</m></p>
     <p><m>Var(X \pm Y) = Var(X) + Var(Y)</m>, as long as <m>X</m> and <m>Y</m> are independent</p>
 
@@ -393,7 +393,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <p>However, to calculate these values we would need to know <m>\pi_1</m>, <m>\pi_2</m>, or <m>\pi</m>. So again we estimate the standard deviation of our statistic using the sample data.</p>
 
-    <p><term>Case 1:</term> When testing whether the null hypothesis is true, we are assuming the samples come from the same population, so we �pool� the two samples together to estimate the common population proportion of successes. That is, we estimate <m>\pi</m> by looking at the ratio of the total number of successes to the total sample size:</p>
+    <p><term>Case 1:</term> When testing whether the null hypothesis is true, we are assuming the samples come from the same population, so we "pool" the two samples together to estimate the common population proportion of successes. That is, we estimate <m>\pi</m> by looking at the ratio of the total number of successes to the total sample size:</p>
     <p><m>\hat{p} = \frac{X_1+X_2}{n_1+n_2} = \frac{n_1\hat{p}_1+n_2\hat{p}_2}{n_1+n_2} = \frac{\text{total number of successes}}{\text{total sample size}}</m></p>
 
     <p>Then use we use this value to calculate the standard error of <m>\hat{p}_1 - \hat{p}_2</m> to be:</p>
@@ -446,7 +446,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <exercise xml:id="inv3-1-x">
       <title>Theoretical p-value</title>
       <statement><p>Use technology to compute the p-value for this standardized statistic using the standard normal distribution and compare it to your simulation results.</p></statement>
-      <solution><p>P(Z &lt; -2.12) � 0.017, should be in the ballpark of your simulation results</p></solution>
+      <solution><p>P(Z &lt; -2.12) ≈ 0.017, should be in the ballpark of your simulation results</p></solution>
       <response/>
     </exercise>
 
@@ -464,8 +464,8 @@ barplot(hearingprop, legend=T, ylab="proportion")
         <p><var width="60" height="5"/></p>
       </statement>
       <solution>
-        <p>estimate � (critical value)(standard error)</p>
-        <p>1 - 2 � z* </p>
+        <p>estimate ± (critical value)(standard error)</p>
+        <p>1 - 2 ± z* </p>
       </solution>
       <response/>
     </exercise>
@@ -474,20 +474,20 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <title>95% Confidence Interval</title>
       <statement><p>Calculate and interpret a 95% confidence interval to compare hearing loss of American teenagers in these two years. Is this confidence interval consistent with your test of significance? Why is it theoretically possible the interval would not be consistent with the test of significance?</p></statement>
       <solution>
-        <p>-0.024 - � 1.96= (-0.047, -0.001)</p>
+        <p>-0.024 ± 1.96= (-0.047, -0.001)</p>
         <p>We are 95% confident that the population proportion with at least some hearing loss in 2006 is 0.001 to 0.047 larger than the population proportion with at least some hearing loss in 1994. This interval is consistent with our test because all of the values are negative (we rejected zero as a plausible value for the difference in population proportions in favor of the alternative that the probability of hearing loss was now larger). Technically we should adjust this comparison for the one-sided nature of the significance test. For example, the two-sided p-value would be 0.034, so we expect zero to not be included in the confidence interval for any confidence level of 96.6% or less.</p>
       </solution>
       <response/>
     </exercise>
 
-    <p>Note: It is technically incorrect to say there has been a 0.15% to 4.67% increase in hearing loss from 1994 to 2006, because �percentage change� implies a multiplication of values, not an addition or subtraction as we are considering here. It would be acceptable to say that the increase is between 0.15 and 4.67 percentage points.</p>
+    <p>Note: It is technically incorrect to say there has been a 0.15% to 4.67% increase in hearing loss from 1994 to 2006, because "percentage change" implies a multiplication of values, not an addition or subtraction as we are considering here. It would be acceptable to say that the increase is between 0.15 and 4.67 percentage points.</p>
 
     <assemblage>
       <title>Technical Conditions</title>
       <p>The above Central Limit Theorem holds when the populations are much larger than the samples (e.g., more than 20 times the sample size) and when the sample size is large. We will consider the latter condition met when we have at least 5 successes and at least 5 failures in each sample (so there are four numbers to check).</p>
     </assemblage>
 
-    <p>Note: A �Wilson adjustment� can be used with this confidence interval similar to the Plus Four Method from Chapter 1, this time putting one additional success and one additional failure in each sample. This adjustment will be most useful when the sample proportions are close to 0 or 1 (that is when the sample size conditions above are not met).</p>
+    <p>Note: A "Wilson adjustment" can be used with this confidence interval similar to the Plus Four Method from Chapter 1, this time putting one additional success and one additional failure in each sample. This adjustment will be most useful when the sample proportions are close to 0 or 1 (that is when the sample size conditions above are not met).</p>
 
     <exercise xml:id="inv3-1-aa">
       <title>Conclusion</title>
@@ -503,7 +503,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <assemblage>
       <title>Study Conclusions</title>
-      <p>We have moderate evidence against the null hypothesis (p-value <m>\approx 0.02</m>, meaning we would get a difference in sample proportions <m>\hat{p}_1 - \hat{p}_2</m> as small as <m>-0.024</m> or smaller in about 1.7% of random samples from two populations with <m>\pi_1 = \pi_2</m>). We are 95% confident that the population proportion with some hearing loss is between 0.0015 and 0.047 higher �now� than ten years ago. We feel comfortable drawing these conclusions about the populations the NHANES samples were selected from as they were random samples from each population (and there was no overlap in the populations between these two time periods). However, there are many things that have changed during this time period, and it would not be reasonable to attribute this increase in hearing loss exclusively to the use of ear buds.</p>
+      <p>We have moderate evidence against the null hypothesis (p-value <m>\approx 0.02</m>, meaning we would get a difference in sample proportions <m>\hat{p}_1 - \hat{p}_2</m> as small as <m>-0.024</m> or smaller in about 1.7% of random samples from two populations with <m>\pi_1 = \pi_2</m>). We are 95% confident that the population proportion with some hearing loss is between 0.0015 and 0.047 higher "now" than ten years ago. We feel comfortable drawing these conclusions about the populations the NHANES samples were selected from as they were random samples from each population (and there was no overlap in the populations between these two time periods). However, there are many things that have changed during this time period, and it would not be reasonable to attribute this increase in hearing loss exclusively to the use of ear buds.</p>
     </assemblage>
 
   <subsection xml:id="practice3-1A">
@@ -524,7 +524,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <p>In Practice Problem 1.1B, you considered data on the first 3 months of the Premier soccer league in 2019 (pre-Covid) and in 2020 (during Covid, when no fans were allowed). Consider these observations as random samples from independent processes. In 2019, the home team won 54 of the first 88 games and in 2020, the home team won 40 of 87 matches.</p>
 
-    <p>Note: Data are �stacked� if each column represents a different variable (e.g., year surveyed and hearing condition) and they are �unstacked� if each column represents a different group (e.g., 1998 and 2002).</p>
+    <p>Note: Data are "stacked" if each column represents a different variable (e.g., year surveyed and hearing condition) and they are "unstacked" if each column represents a different group (e.g., 1998 and 2002).</p>
 
     <exercise xml:id="practice-3-1-b">
       <statement>
@@ -541,7 +541,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
   </subsection>
 
     <paragraphs>
-      <title>Technology Detour � Two-sample z-procedures</title>
+      <title>Technology Detour – Two-sample z-procedures</title>
       
       <exercise xml:id="tech-detour-applet-z">
         <title>Theory-Based Inference Applet</title>
@@ -561,7 +561,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
           <p>Use <c>iscamtwopropztest</c> which takes the following inputs:</p>
           <p><ul>
             <li><p>observed1 (either the number of successes or sample proportion for first group), n1 (sample size for first group, observed2 (count or proportion), and n2</p></li>
-            <li><p>Optional: hypothesized difference and alternative (�less�, �greater�, or �two.sided�)</p></li>
+            <li><p>Optional: hypothesized difference and alternative ("less", "greater", or "two.sided")</p></li>
             <li><p>Optional: conf.level</p></li>
           </ul></p>
           <p>For example:</p>
@@ -581,24 +581,24 @@ iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)
         <statement>
           <p><ul>
             <li><p>With raw data or after specifying the two-way table in column format, select Analyze > Fit Y by X and specify the categorical response variable (Y, Response) and the categorical explanatory variable (X, Factor)</p></li>
-            <li><p>Specify the counts if using a two-way table (and �year� is seen as a categorical variable)</p></li>
+            <li><p>Specify the counts if using a two-way table (and "year" is seen as a categorical variable)</p></li>
             <li><p>Press OK.</p></li>
             <li><p>The p-value in the Pearson row matches a two-sided z-test.</p></li>
             <li><p>For a confidence interval, use the hot spot to select Two Sample Test for Proportions</p></li>
           </ul></p>
-          <p>Note: Here you can change with outcome is considered success. This also reports an �adjusted Wald� p-value</p>
+          <p>Note: Here you can change with outcome is considered success. This also reports an "adjusted Wald" p-value</p>
           <p><ul>
             <li><p>With summary data use the ISCAM Journal file: Hypothesis Test for Two Proportions</p></li>
             <li><p>Specify the form of the alternative hypothesis</p></li>
             <li><p>Enter the number of successes and the sample sizes,</p></li>
           </ul></p>
-          <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use �pooled estimate of variance.� This reports the z-score as well.)</p>
+          <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use "pooled estimate of variance." This reports the z-score as well.)</p>
         </statement>
       </exercise>
     </paragraphs>
 
     <paragraphs>
-      <title>Technology Detour � Simulating Proportions from Independent Random Samples</title>
+      <title>Technology Detour – Simulating Proportions from Independent Random Samples</title>
       
       <exercise xml:id="tech-detour-sim-steps">
         <title>Simulation Steps</title>
