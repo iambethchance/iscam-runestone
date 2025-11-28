@@ -10,8 +10,9 @@
 
     <p>A histogram and summary statistics of the sample data are below:</p>
     
-    <!-- Placeholder for image if available, or just text description if not -->
-    <p>[Histogram and summary statistics would appear here]</p>
+    <image source="images/example2.1hist.png" width="60%">
+      <description>Histogram and summary statistics of push-up data</description>
+    </image>
   </introduction>
 
   <p><ol label="(a)">
@@ -39,19 +40,46 @@
       
       <p>Because we are working with a quantitative response variable and the sample size is large, we will model the sampling distribution of the standardized statistic with the t distribution with <m>80 - 1 = 79</m> degrees of freedom.</p>
 
-      <p><m>t = \frac{15.49 - 20}{7.74/\sqrt{80}} = -5.21</m></p>
-
-      <p>p-value = <m>2P(T_{79} &lt; -5.21) = 2(0.0000007) = 0.0000014</m></p>
+      <sidebyside widths="60% 35%" valign="middle">
+        <p>
+          <m>t = \frac{15.49 - 20}{7.74/\sqrt{80}} = -5.21</m>
+          <br/><br/>
+          p-value = <m>2P(T_{79} &lt; -5.21) = 2(0.0000007) = 0.0000014</m>
+        </p>
+        <image source="images/example2.1sols1.png">
+          <description>t-distribution showing p-value area</description>
+        </image>
+      </sidebyside>
       
       <p>With such a small p-value, we easily reject the null hypothesis and conclude that the population mean number of push-ups differs from 20.</p>
       
-      <p>Confidence Intervals:</p>
-      <p>To construct a 95% confidence interval for <m>\mu</m>, we will use <m>t^*_{79} = 1.990</m></p>
-      <p><m>\bar{x} \pm t^*_{79} \frac{s}{\sqrt{n}} = 15.49 \pm 1.990 \frac{7.74}{\sqrt{80}} = 15.49 \pm 1.72 = (13.76, 17.21)</m></p>
+      <p><em>Confidence Intervals:</em></p>
+      <sidebyside widths="60% 35%" valign="middle">
+        <p>
+          To construct a 95% confidence interval for <m>\mu</m>, we will use <m>t^*_{79} = 1.990</m>
+          <br/><br/>
+          <m>\bar{x} \pm t^*_{79} \frac{s}{\sqrt{n}} = 15.49 \pm 1.990 \frac{7.74}{\sqrt{80}} = 15.49 \pm 1.72 = (13.76, 17.21)</m>
+        </p>
+        <image source="images/example2.1sols2.png">
+          <description>Confidence interval visualization</description>
+        </image>
+      </sidebyside>
       
       <p>Verifying these calculations with software, we would find:</p>
-      <p>R</p>
-      <p>JMP</p>
+      
+      <aside>
+        <title>R Output</title>
+        <image source="images/example2.1R.png">
+          <description>R output for t-test</description>
+        </image>
+      </aside>
+
+      <aside>
+        <title>JMP Output</title>
+        <image source="images/example2.1JMP.png">
+          <description>JMP output for t-test</description>
+        </image>
+      </aside>
       
       <p>Based on this sample, assuming it represents the larger population, we are 95% confident that the average number of push-ups completed by all 7th graders in the population is between 13.76 and 17.21, so 20 is rejected as a plausible value at the 0.05 level of significance. We could also find 99% and 99.9% confidence intervals for <m>\mu</m> to be:</p>
       <p>95%: <m>\bar{x} \pm t^*_{n-1} s/\sqrt{n} = 15.49 \pm 2.640(7.74/\sqrt{80}) = 15.49 \pm 2.28 = (13.21, 17.77)</m></p>
