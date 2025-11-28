@@ -2,34 +2,50 @@
 <section xml:id="inv-2-8" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Investigation 2.8: Turbidity</title>
 
-  <p>Another measure of water quality is turbidity, the degree of opaqueness produced in water by suspended particulate matter. Turbidity can be measured by seeing how light is scattered and/or absorbed by organic and inorganic material. Larger nephelometric turbidity units (NTU) indicate increased turbidity and decreased light penetration. If there is too much turbidity, then not enough light may be penetrating the water, affecting photosynthesis to the surface and leading to less dissolved oxygen. <url href="https://archive.epa.gov/nheerl/arm/web/pdf/calm_appc.pdf">Riggs (2002)</url> provides 244 turbidity monthly readings that were recorded between 1980-2000 from a reach of the Mermentau River in Southwest Louisiana (<url href="http://www.rossmanchance.com/iscam2/data/turbidity.txt" visual="rossmanchance.com/iscam2/data/turbidity.txt"><c>MermentauTurbidity.txt</c></url>). The unit of analysis was the monthly mean turbidity (NTU) computed from each month's systematic sample of 21 turbidity measurements. The investigators wanted to determine whether the mean turbidity was greater than the local criterion value of 150 NTU.</p>
+  <sidebyside widths="65% 30%" valign="top">
+    <p>Another measure of water quality is turbidity, the degree of opaqueness produced in water by suspended particulate matter. Turbidity can be measured by seeing how light is scattered and/or absorbed by organic and inorganic material. Larger nephelometric turbidity units (NTU) indicate increased turbidity and decreased light penetration. If there is too much turbidity, then not enough light may be penetrating the water, affecting photosynthesis to the surface and leading to less dissolved oxygen. <url href="https://archive.epa.gov/nheerl/arm/web/pdf/calm_appc.pdf">Riggs (2002)</url> provides 244 turbidity monthly readings that were recorded between 1980-2000 from a reach of the Mermentau River in Southwest Louisiana (<url href="http://www.rossmanchance.com/iscam2/data/turbidity.txt" visual="rossmanchance.com/iscam2/data/turbidity.txt"><c>MermentauTurbidity.txt</c></url>). The unit of analysis was the monthly mean turbidity (NTU) computed from each month's systematic sample of 21 turbidity measurements. The investigators wanted to determine whether the mean turbidity was greater than the local criterion value of 150 NTU.</p>
+    <image source="images/Inv2.8intro.jpg">
+      <description>Water turbidity measurement</description>
+    </image>
+  </sidebyside>
 
   <exercise xml:id="inv2-8-a">
+    <title>Analyze original turbidity distribution</title>
     <statement>
       <p>Find the mean and median of the turbidity measurements and confirm that a normal probability is not reasonable for these data.</p>
-      <p><var width="60"/></p>
+      <p>Mean: <var width="15"/> NTU</p>
+      <p>Median: <var width="15"/> NTU</p>
+      <p>Is a normal distribution reasonable? <var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>The mean is 100.31 NTU and the median is 75.50 NTU. The distribution is skewed to the right and not well modelled by a normal distribution.</p>
+      <image source="images/Inv2.8solsa.jpg" width="70%">
+        <description>Descriptive statistics and histogram for turbidity data</description>
+      </image>
     </solution>
     <response/>
   </exercise>
 
   <exercise xml:id="inv2-8-b">
+    <title>Apply log transformation</title>
     <statement>
       <p>Carry out a log transformation (See Investigation 2.2) and report the mean, median, and standard deviation of the transformed data. Verify that a log-normal probability model is reasonable for these data.</p>
-      <p><var width="60"/></p>
+      <p><var width="60" height="5"/></p>
     </statement>
     <solution>
       <p>The log-turbidity values are reasonably well modeled by a normal distribution, with mean 4.3011 log NTU and median 4.3241 log NTU.</p>
       <p>(We could also compare the original observations to the log normal distribution.)</p>
+      <image source="images/Inv2.8solsb.jpg" width="70%">
+        <description>Descriptive statistics and histogram for log-transformed turbidity data</description>
+      </image>
     </solution>
     <response/>
   </exercise>
 
   <exercise xml:id="inv2-8-c">
+    <title>Compare original and transformed statistics</title>
     <statement>
-      <p>Are the mean and median values in (b) similar to each other? Is the mean of the logged turbidity values similar to the log of the mean of the turbidity values? Is the median of the logged turbidity values similar to the log of the median of the turbidity values?</p>
+      <p>Are the mean and median values in <xref ref="inv2-8-b" text="custom">checkpoint (b)</xref> similar to each other? Is the mean of the logged turbidity values similar to the log of the mean of the turbidity values? Is the median of the logged turbidity values similar to the log of the median of the turbidity values?</p>
       
       <table>
         <title>Comparison of Original and Transformed Values</title>
@@ -40,19 +56,19 @@
             <cell>Transformed scale</cell>
           </row>
           <row>
-            <cell>Mean = </cell>
-            <cell>Log (mean) = </cell>
-            <cell>Mean (log turbidity) = </cell>
+            <cell>Mean = <var width="10"/></cell>
+            <cell>Log (mean) = <var width="10"/></cell>
+            <cell>Mean (log turbidity) = <var width="10"/></cell>
           </row>
           <row>
-            <cell>Median = </cell>
-            <cell>Log (median) = </cell>
-            <cell>Median (log turbidity) = </cell>
+            <cell>Median = <var width="10"/></cell>
+            <cell>Log (median) = <var width="10"/></cell>
+            <cell>Median (log turbidity) = <var width="10"/></cell>
           </row>
         </tabular>
       </table>
       
-      <p><var width="60"/></p>
+      <p>Explanation: <var width="60" height="5"/></p>
     </statement>
     <solution>
       <p>The mean and median values in (b) are similar as we would expect with the transformed data now being symmetric.</p>
@@ -84,9 +100,10 @@
   </exercise>
 
   <exercise xml:id="inv2-8-d">
+    <title>Explain median vs. mean transformation</title>
     <statement>
       <p>Explain why the median(log(turbidity)) is expected to be the same as log(median(turbidity)), but this interchangeability is not expected to work for the mean.</p>
-      <p><var width="60"/></p>
+      <p><var width="60" height="5"/></p>
     </statement>
     <solution>
       <p>We expect the medians to match because the median is essentially the middle value (slightly untrue with an even number of observations) and the same observation will still be the median value after the log transformation. However, the mean utilizes the numerical values and the relative distances between observations is changed with the log transformation.</p>
@@ -95,20 +112,25 @@
   </exercise>
 
   <exercise xml:id="inv2-8-e">
+    <title>Calculate confidence interval for transformed data</title>
     <statement>
-      <p>Use a one-sample t-confidence interval to estimate the mean of the log-turbidity value for this river.</p>
-      <p><var width="60"/></p>
+      <p>Use a one-sample <em>t</em>-confidence interval to estimate the mean of the log-turbidity value for this river.</p>
+      <p><var width="60" height="5"/></p>
     </statement>
     <solution>
       <p>We are 95% confident the population mean (so also the population median with symmetric data) is in this interval.</p>
+      <image source="images/Inv2.8solse.jpg" width="70%">
+        <description>Confidence interval calculation output</description>
+      </image>
     </solution>
     <response/>
   </exercise>
 
   <exercise xml:id="inv2-8-f">
+    <title>Back-transform and interpret interval</title>
     <statement>
       <p>Back-transform the endpoints of this interval to return to the original units and interpret the interval in context.</p>
-      <p><var width="60"/></p>
+      <p><var width="60" height="5"/></p>
     </statement>
     <solution>
       <p>(exp population median ln turbidity) = (exp ln population median turbidity) = population median turbidity</p>
@@ -150,8 +172,11 @@
 
     <exercise xml:id="practice-2-8-c">
       <statement>
-        <p>Outline a method for verifying that this procedure results in a 95% confidence interval for the population median. [Hint: Think about the Simulating Confidence Intervals applet.]</p>
+        <p>Outline a method for verifying that this procedure results in a 95% confidence interval for the population median.</p>
       </statement>
+      <hint>
+        <p>Think about the Simulating Confidence Intervals applet.</p>
+      </hint>
       <response/>
     </exercise>
   </subsection>
