@@ -341,18 +341,22 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <exercise xml:id="inv3-1-r">
       <title>Variability Comparison</title>
-      <statement>
-        <p>How does the variability (SD) of the difference in <m>\hat{p}</m> values compare to the variability of the individual <m>\hat{p}</m> distributions?</p>
-      </statement>
-      <choices>
-        <choice><statement>Similar</statement></choice>
-        <choice correct="yes"><statement>Larger</statement></choice>
-        <choice><statement>Smaller</statement></choice>
-      </choices>
-      <statement>
-        <p>Explain why this makes intuitive sense.</p>
-        <p><var width="60" height="5"/></p>
-      </statement>
+      <task>
+        <statement>
+          <p>How does the variability (SD) of the difference in <m>\hat{p}</m> values compare to the variability of the individual <m>\hat{p}</m> distributions?</p>
+        </statement>
+        <choices>
+          <choice><statement>Similar</statement></choice>
+          <choice correct="yes"><statement>Larger</statement></choice>
+          <choice><statement>Smaller</statement></choice>
+        </choices>
+      </task>
+      <task>
+        <statement>
+          <p>Explain why this makes intuitive sense.</p>
+          <p><var width="60" height="5"/></p>
+        </statement>
+      </task>
       <solution><p>Larger. This makes sense because we now have two sources of variability and the overall amount of variation will grow. (For example, we could get two extreme results, in opposite directions, and end up with a large difference.)</p></solution>
       <response/>
     </exercise>
@@ -381,7 +385,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <assemblage>
       <title>Central Limit Theorem for the difference in two sample proportions</title>
-      <p>When taking two independent samples (of sizes <m>n_1</m> and <m>n_2</m>) from large populations, the distribution of the difference in the sample proportions (<m>\hat{p}_1 - \hat{p}_2</m>) is approximately normal with mean equal to <m>\pi_1 - \pi_2</m> and standard deviation equal to <m>SD(\hat{p}_1 - \hat{p}_2) = \sqrt{\frac{\pi_1(1-\pi_1)}{n_1} + \frac{\pi_2(1-\pi_2)}{n_2}}</m>.</p>
+      <p>When taking two independent samples (of sizes <m>n_1</m> and <m>n_2</m>) from large populations, the distribution of the difference in the sample proportions <m>(\hat{p}_1 - \hat{p}_2)</m> is approximately normal with mean equal to <m>\pi_1 - \pi_2</m> and standard deviation equal to <m>SD(\hat{p}_1 - \hat{p}_2) = \sqrt{\frac{\pi_1(1-\pi_1)}{n_1} + \frac{\pi_2(1-\pi_2)}{n_2}}</m>.</p>
       <p>Under the null hypothesis <m>H_0: \pi_1 - \pi_2 = 0</m>, the standard deviation simplifies to <m>\sqrt{\pi(1-\pi)(\frac{1}{n_1} + \frac{1}{n_2})}</m> where <m>\pi</m> is the common population proportion.</p>
     </assemblage>
 
