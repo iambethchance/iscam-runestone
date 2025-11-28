@@ -27,8 +27,7 @@
     </solution>
   </exercise>
 
-  <subsection>
-    <title>Descriptive Statistics</title>
+  <p><term>Descriptive Statistics</term></p>
     
     <exercise label="inv3-1-c">
       <title>Two-Way Table</title>
@@ -184,10 +183,8 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <solution><p>Judgements will vary, but we should still consider random sampling "error"</p></solution>
       <response/>
     </exercise>
-  </subsection>
 
-  <subsection>
-    <title>Inferential Statistics</title>
+  <p><term>Inferential Statistics</term></p>
     <p>As we’ve said before, it certainly is possible to obtain sample proportions this far apart, just by random chance, even if the population proportions (of teens with some hearing loss) were the same. The question now is how likely such a difference would be if the population proportions were the same. We can answer this question by modeling the sampling variability, arising from taking random samples from these populations, for the difference in two sample proportions. Investigating this sampling variability will help us to assess whether this particular difference in sample proportions is strong evidence that the population proportions actually differ.</p>
 
     <exercise label="inv3-1-h">
@@ -204,10 +201,8 @@ barplot(hearingprop, legend=T, ylab="proportion")
       </solution>
       <response/>
     </exercise>
-  </subsection>
 
-  <subsection>
-    <title>Simulation</title>
+  <p><term>Simulation</term></p>
     <p>Because the population sizes are very large compared to the sample sizes, we will model this by treating the populations as infinite and sampling from binomial processes.</p>
     
     <exercise label="inv3-1-i">
@@ -283,10 +278,8 @@ barplot(hearingprop, legend=T, ylab="proportion")
       </solution>
       <response/>
     </exercise>
-  </subsection>
 
-  <subsection>
-    <title>Mathematical Model</title>
+  <p><term>Mathematical Model</term></p>
     
     <exercise label="inv3-1-p">
       <title>Distribution Shape</title>
@@ -401,10 +394,8 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <solution><p>P(Z &lt; -2.12) ≈ 0.017, should be in the ballpark of your simulation results</p></solution>
       <response/>
     </exercise>
-  </subsection>
 
-  <subsection>
-    <title>Confidence Interval</title>
+  <p><term>Confidence Interval</term></p>
     <p><term>Case 2:</term> When calculating confidence intervals, we make no assumptions about the populations (for example, when we are not testing a particular null hypothesis but only estimating the parameter, we do not assume a common value for <m>\pi</m>). So we will use a different formula to approximate the standard deviation of <m>\hat{p}_1 - \hat{p}_2</m>:</p>
     <p><m>SE(\hat{p}_1 - \hat{p}_2) = \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m></p>
 
@@ -550,5 +541,4 @@ iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)
         <response/>
       </exercise>
     </paragraphs>
-  </subsection>
 </section>
