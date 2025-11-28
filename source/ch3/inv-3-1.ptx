@@ -434,7 +434,10 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <exercise xml:id="inv3-1-w">
       <title>Compare SE</title>
-      <statement><p>Is the standard error close to the empirical standard deviation from your simulation results?</p></statement>
+      <statement>
+        <p>Is the standard error close to the empirical standard deviation from your simulation results?</p>
+        <p><var width="60" height="3"/></p>
+      </statement>
       <solution><p>yes (.0113 vs. .011 for example)</p></solution>
       <response/>
     </exercise>
@@ -465,8 +468,8 @@ barplot(hearingprop, legend=T, ylab="proportion")
         <p><var width="60" height="5"/></p>
       </statement>
       <solution>
-        <p>estimate ± (critical value)(standard error)</p>
-        <p><m>\hat{p}_1 - \hat{p}_2 \pm z^*\sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m></p>
+        <p>SE(<m>\hat{p}_{94} - \hat{p}_{06}</m>) = <m>\sqrt{\frac{.164(1-.164)}{2928} + \frac{.188(1-.188)}{1771}}</m> = 0.0115</p>
+        <p>This is very similar to the pooled SE of 0.0113.</p>
       </solution>
       <response/>
     </exercise>
@@ -475,6 +478,8 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <title>95% Confidence Interval</title>
       <statement><p>Calculate and interpret a 95% confidence interval to compare hearing loss of American teenagers in these two years. Is this confidence interval consistent with your test of significance? Why is it theoretically possible the interval would not be consistent with the test of significance?</p></statement>
       <solution>
+        <p>estimate ± (critical value)(standard error)</p>
+        <p><m>\hat{p}_1 - \hat{p}_2 \pm z^*\sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m></p>
         <p>-0.024 ± 1.96<m>\sqrt{\frac{.163(1-.163)}{2928} + \frac{.188(1-.188)}{1771}}</m> = (-0.047, -0.001)</p>
         <p>We are 95% confident that the population proportion with at least some hearing loss in 2006 is 0.001 to 0.047 larger than the population proportion with at least some hearing loss in 1994. This interval is consistent with our test because all of the values are negative (we rejected zero as a plausible value for the difference in population proportions in favor of the alternative that the probability of hearing loss was now larger). Technically we should adjust this comparison for the one-sided nature of the significance test. For example, the two-sided p-value would be 0.034, so we expect zero to not be included in the confidence interval for any confidence level of 96.6% or less.</p>
       </solution>
@@ -526,6 +531,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <p>In Practice Problem 1.1B, you considered data on the first 3 months of the Premier soccer league in 2019 (pre-Covid) and in 2020 (during Covid, when no fans were allowed). Consider these observations as random samples from independent processes. In 2019, the home team won 54 of the first 88 games and in 2020, the home team won 40 of 87 matches.</p>
 
     <exercise xml:id="practice-3-1-b-a">
+      <title>Two-Way Table</title>
       <statement>
         <p>Create the two-way table for comparing these samples to each other. Calculate and interpret the difference in conditional proportions.</p>
       </statement>
@@ -533,6 +539,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     </exercise>
 
     <exercise xml:id="practice-3-1-b-b">
+      <title>Hypotheses</title>
       <statement>
         <p>Specify appropriate null and alternative hypothesis, being clear how these hypotheses change from Chapter 1. Are you using a one-sided or two-sided alternative?</p>
       </statement>
@@ -540,6 +547,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     </exercise>
 
     <exercise xml:id="practice-3-1-b-c">
+      <title>Simulation</title>
       <statement>
         <p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url> to carry out a simulation. What are you using for the common probability of success? Which values do you count for the p-value? What do you conclude?</p>
       </statement>
@@ -547,6 +555,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     </exercise>
 
     <exercise xml:id="practice-3-1-b-d">
+      <title>Technical Conditions</title>
       <statement>
         <p>Are the technical conditions met to calculate the two-sample z-interval for these data? Explain.</p>
       </statement>
@@ -554,6 +563,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     </exercise>
 
     <exercise xml:id="practice-3-1-b-e">
+      <title>Confidence Interval</title>
       <statement>
         <p>Calculate and interpret a 95% confidence interval from these data.</p>
       </statement>
@@ -634,8 +644,8 @@ iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)
           <p>You should explore the individual <m>\hat{p}</m> distributions but most focus on the distribution of <m>\hat{p}_1 - \hat{p}_2</m>, including the mean, standard deviation, and whether the distribution behaves like a normal distribution.</p>
 
           <p>In Applet: <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions</url></p>
-          <p>In R: IndependentBinomialsR.html</p>
-          <p>In JMP: IndependentBinomialsJMP.html</p>
+          <p>In R: <url href="https://www.rossmanchance.com/iscam3/data/IndependentBinomialsR.html">IndependentBinomialsR.html</url></p>
+          <p>In JMP: <url href="https://www.rossmanchance.com/iscam3/data/IndependentBinomialsJMP.html">IndependentBinomialsJMP.html</url></p>
         </statement>
       </exercise>
     </paragraphs>
