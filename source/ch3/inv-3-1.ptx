@@ -550,7 +550,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <exercise xml:id="practice-3-1-b-c">
       <title>Simulation</title>
       <statement>
-        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url> to carry out a simulation. What are you using for the common probability of success? Which values do you count for the p-value? What do you conclude?</p>
+        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1">Comparing Two Population Proportions applet</url> to carry out a simulation. What are you using for the common probability of success? Which values do you count for the p-value? What do you conclude?</p>
       </statement>
       <response/>
     </exercise>
@@ -580,7 +580,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <exercise xml:id="tech-detour-applet-z">
         <title>Theory-Based Inference Applet</title>
         <statement>
-          <p>In <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Theory-Based Inference applet</url></p>
+          <p>In <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1">Theory-Based Inference applet</url></p>
           <p><ul>
             <li><p>Select Two proportions</p></li>
             <li><p>Check the box to paste in 2 columns of data (stacked or unstacked) and press Use data or specify the sample sizes and either the sample counts or the sample proportions and press Calculate.</p></li>
@@ -624,25 +624,28 @@ iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)
                 <li><p><em>With raw data or after specifying the two-way table in column format</em>, select Analyze > Fit Y by X and specify the categorical response variable (Y, Response) and the categorical explanatory variable (X, Factor)</p></li>
                 <li><p><ul><li>Specify the counts if using a two-way table (and "year" is seen as a categorical variable)</li></ul></p></li>
                 <li><p>Press OK.</p></li>
-                <li><p>The p-value in the Pearson row matches a two-sided z-test.</p></li>
-                <li><p>For a confidence interval, use the hot spot to select Two Sample Test for Proportions</p>
-                <p><em>Note:</em> Here you can change with outcome is considered success. This also reports an "adjusted Wald" p-value</p></li>
               </ul></p>
             </stack>
             <image source="images/Inv3.1JMP1.png"/>
           </sidebyside>
+          
+          <p><ul>
+            <li><p>The p-value in the Pearson row matches a two-sided z-test.</p></li>
+            <li><p>For a confidence interval, use the hot spot to select Two Sample Test for Proportions</p></li>
+          </ul></p>
+          <p><em>Note:</em> Here you can change which outcome is considered success. This also reports an "adjusted Wald" p-value</p>
           
           <sidebyside widths="50% 45%" valign="top">
             <stack>
               <p><ul>
                 <li><p><em>With summary data</em> use the <url href="http://www.rossmanchance.com/iscam3/data/ISCAM_Journal.jrn">ISCAM Journal file</url>: Hypothesis Test for Two Proportions</p></li>
                 <li><p>Specify the form of the alternative hypothesis</p></li>
-                <li><p>Enter the number of successes and the sample sizes,</p>
-                <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use "pooled estimate of variance." This reports the z-score as well.)</p></li>
+                <li><p>Enter the number of successes and the sample sizes,</p></li>
               </ul></p>
             </stack>
             <image source="images/Inv3.1JMP2.png"/>
           </sidebyside>
+          <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use "pooled estimate of variance." This reports the <em>z</em>-score as well.)
         </statement>
       </exercise>
     </paragraphs>
@@ -660,7 +663,7 @@ iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)
           <p>Step 5: Repeat steps 1-4 a large number of times.</p>
           <p>You should explore the individual <m>\hat{p}</m> distributions but most focus on the distribution of <m>\hat{p}_1 - \hat{p}_2</m>, including the mean, standard deviation, and whether the distribution behaves like a normal distribution.</p>
 
-          <p>In Applet: <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions</url></p>
+          <p>In Applet: <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1">Comparing Two Population Proportions</url></p>
           <p>In R: <url href="https://www.rossmanchance.com/iscam3/data/IndependentBinomialsR.html">IndependentBinomialsR.html</url></p>
           <p>In JMP: <url href="https://www.rossmanchance.com/iscam3/data/IndependentBinomialsJMP.html">IndependentBinomialsJMP.html</url></p>
         </statement>
