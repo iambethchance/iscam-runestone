@@ -336,14 +336,14 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <assemblage>
       <title>Probability Detour</title>
-      <p>There is a theoretical result that the difference in two normal distributions will also follow a normal distribution. When our sample sizes (<m>n_1</m> and <m>n_2</m>) are large, we know the individual binomial distributions are well approximated by normal distributions. Consequently, the difference of the sample proportions will be well approximated by a normal distribution as well. The mean of this distribution is simply the difference in the means of the individual normal distributions.</p>
+      <p>There is a theoretical result that the <em>difference</em> in two normal distributions will also follow a normal distribution. When our sample sizes (<m>n_1</m> and <m>n_2</m>) are large, we know the individual binomial distributions are well approximated by normal distributions. Consequently, the difference of the sample proportions will be well approximated by a normal distribution as well. The mean of this distribution is simply the difference in the means of the individual normal distributions.</p>
     </assemblage>
 
     <exercise xml:id="inv3-1-r">
       <title>Variability Comparison</title>
       <task>
         <statement>
-          <p>How does the variability (SD) of the difference in <m>\hat{p}</m> values compare to the variability of the individual <m>\hat{p}</m> distributions?</p>
+          <p>How does the variability (SD) of the <em>difference</em> in <m>\hat{p}</m> values compare to the variability of the individual <m>\hat{p}</m> distributions?</p>
         </statement>
         <choices>
           <choice><statement>Similar</statement></choice>
@@ -413,8 +413,10 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <exercise xml:id="inv3-1-v">
       <title>Calculate <m>z</m>-statistic</title>
       <statement>
-        <p>Calculate and interpret the value of the standardized statistic specified in (t) as applied to the hearing loss study.</p>
-        <p><m>\hat{p}_{94} - \hat{p}_{06} =</m> <var width="10"/> <m>\hat{p} =</m> <var width="10"/> <m>SE(\hat{p}_{94} - \hat{p}_{06}) =</m> <var width="10"/></p>
+        <p>Calculate and interpret the value of the standardized statistic specified in <xref ref="inv3-1-u" text="custom">checkpoint 23</xref> as applied to the hearing loss study.</p>
+        <p><m>\hat{p}_{94} - \hat{p}_{06} =</m> <var width="10"/></p>
+        <p><m>\hat{p} =</m> <var width="10"/></p>
+        <p><m>SE(\hat{p}_{94} - \hat{p}_{06}) =</m> <var width="10"/></p>
         <p>standardized statistic: <m>z =</m> <var width="10"/></p>
         <p>interpretation:</p>
         <p><var width="60" height="3"/></p>
@@ -437,7 +439,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     </exercise>
 
     <exercise xml:id="inv3-1-x">
-      <title>Theoretical P-value</title>
+      <title>Theoretical p-value</title>
       <statement><p>Use technology to compute the p-value for this standardized statistic using the standard normal distribution and compare it to your simulation results.</p></statement>
       <solution><p>P(Z &lt; -2.12) ≈ 0.017, should be in the ballpark of your simulation results</p></solution>
       <response/>
