@@ -10,26 +10,40 @@
 
   <exercise label="inv3-1-a">
     <title>Study Design Difference</title>
-    <statement><p>What is the primary difference between this study and those examined in Chapters 1 and 2?</p></statement>
+    <statement><p>What is the primary difference between this study and those examined in Chapters 1 and 2? <fillin characters="50"/></p></statement>
     <solution><p>different: compare 2 proportions to each other</p></solution>
-    <response/>
   </exercise>
 
   <exercise label="inv3-1-b">
     <title>Identify Populations and Variable</title>
-    <statement>
-      <p>Identify the two populations and the variable being considered in this study.</p>
-      <p>Populations:</p>
-      <p>Variable: <fillin characters="20"/> Type: <fillin characters="20"/></p>
-    </statement>
+    <task>
+      <statement>
+        <p>Identify the two populations.</p>
+        <p>Population 1: <fillin characters="20"/></p>
+        <p>Population 2: <fillin characters="20"/></p>
+      </statement>
+    </task>
+    <task>
+      <statement>
+        <p>Identify the variable.</p>
+        <p>Variable: <fillin characters="20"/></p>
+      </statement>
+    </task>
+    <task>
+      <statement><p>Identify the variable type.</p></statement>
+      <choices>
+        <choice correct="yes"><statement>Categorical</statement></choice>
+        <choice><statement>Quantitative</statement></choice>
+      </choices>
+    </task>
     <solution>
       <p>populations: (1) 2005-6 teens; (2) 88-94 teens</p>
       <p>Variable: whether/not some hearing loss. Binary categorical</p>
     </solution>
-    <response/>
   </exercise>
 
-  <p><term>Descriptive Statistics</term></p>
+  <paragraphs>
+    <title>Descriptive Statistics</title>
     
     <exercise label="inv3-1-c">
       <title>Two-Way Table</title>
@@ -45,14 +59,14 @@
           </row>
           <row>
             <cell>Some hearing loss</cell>
-            <cell>480</cell>
-            <cell>333</cell>
+            <cell><fillin characters="5"/></cell>
+            <cell><fillin characters="5"/></cell>
             <cell></cell>
           </row>
           <row>
             <cell>No hearing loss</cell>
-            <cell></cell>
-            <cell></cell>
+            <cell><fillin characters="5"/></cell>
+            <cell><fillin characters="5"/></cell>
             <cell></cell>
           </row>
           <row>
@@ -94,7 +108,6 @@
         </tabular>
       </table>
       </solution>
-      <response/>
     </exercise>
 
     <exercise label="inv3-1-d">
@@ -148,7 +161,6 @@ barplot(hearingprop, legend=T, ylab="proportion")
             </input>
           </program>
         </statement>
-        <response/>
       </exercise>
 
       <exercise label="tech-detour-jmp-segmented">
@@ -166,13 +178,14 @@ barplot(hearingprop, legend=T, ylab="proportion")
         <solution>
           <p>JMP creates a “Mosaic Plot” (the column widths also reflect the relative sample sizes). An extended two-way table is shown below the Mosaic Plot although the rows and columns are reversed. Click the red Contingency Table arrow and uncheck Col% and Total% to see a less cluttered table.</p>
         </solution>
-        <response/>
       </exercise>
     </paragraphs>
 
+    <p>Use technology to create numerical and graphical summaries for these summarized data.</p>
+
     <exercise label="inv3-1-f">
       <title>Descriptive Statistics</title>
-      <statement><p>Use technology to create numerical and graphical summaries for these summarized data. Write a sentence or two comparing the distributions of hearing loss between these two studies. Be sure to report an appropriate statistic.</p></statement>
+      <statement><p>Write a sentence or two comparing the distributions of hearing loss between these two studies. Be sure to report an appropriate statistic.</p></statement>
       <solution>
         <p>A slightly higher proportion of teens (0.024) had some level of hearing loss in the 2005/6 data than in 1998-94.</p>
         <image source="images/Inv3.1solsf.jpg" width="60%"/>
@@ -187,7 +200,10 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <response/>
     </exercise>
 
-  <p><term>Inferential Statistics</term></p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Inferential Statistics</title>
     <p>As we’ve said before, it certainly is possible to obtain sample proportions this far apart, just by random chance, even if the population proportions (of teens with some hearing loss) were the same. The question now is how likely such a difference would be if the population proportions were the same. We can answer this question by modeling the sampling variability, arising from taking random samples from these populations, for the difference in two sample proportions. Investigating this sampling variability will help us to assess whether this particular difference in sample proportions is strong evidence that the population proportions actually differ.</p>
 
     <exercise label="inv3-1-h">
@@ -205,7 +221,10 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <response/>
     </exercise>
 
-  <p><term>Simulation</term></p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Simulation</title>
     <p>Because the population sizes are very large compared to the sample sizes, we will model this by treating the populations as infinite and sampling from binomial processes.</p>
     
     <exercise label="inv3-1-i">
@@ -282,7 +301,10 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <response/>
     </exercise>
 
-  <p><term>Mathematical Model</term></p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Mathematical Model</title>
     
     <exercise label="inv3-1-p">
       <title>Distribution Shape</title>
@@ -398,7 +420,10 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <response/>
     </exercise>
 
-  <p><term>Confidence Interval</term></p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Confidence Interval</title>
     <p><term>Case 2:</term> When calculating confidence intervals, we make no assumptions about the populations (for example, when we are not testing a particular null hypothesis but only estimating the parameter, we do not assume a common value for <m>\pi</m>). So we will use a different formula to approximate the standard deviation of <m>\hat{p}_1 - \hat{p}_2</m>:</p>
     <p><m>SE(\hat{p}_1 - \hat{p}_2) = \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m></p>
 
@@ -441,6 +466,8 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <response/>
     </exercise>
 
+  </paragraphs>
+
     <assemblage>
       <title>Study Conclusions</title>
       <p>We have moderate evidence against the null hypothesis (p-value <m>\approx 0.02</m>, meaning we would get a difference in sample proportions <m>\hat{p}_1 - \hat{p}_2</m> as small as <m>-0.024</m> or smaller in about 1.7% of random samples from two populations with <m>\pi_1 = \pi_2</m>). We are 95% confident that the population proportion with some hearing loss is between 0.0015 and 0.047 higher “now” than ten years ago. We feel comfortable drawing these conclusions about the populations the NHANES samples were selected from as they were random samples from each population (and there was no overlap in the populations between these two time periods). However, there are many things that have changed during this time period, and it would not be reasonable to attribute this increase in hearing loss exclusively to the use of ear buds.</p>
@@ -477,7 +504,6 @@ barplot(hearingprop, legend=T, ylab="proportion")
             <li><p>For the confidence interval, check the box, specify the confidence level and press Calculate CI</p></li>
           </ul></p>
         </statement>
-        <response/>
       </exercise>
 
       <exercise label="tech-detour-r-z">
@@ -499,7 +525,6 @@ iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)
         <solution>
           <p>finds the p-value for a one-sided alternative as well as a 95% confidence interval for <m>\pi_1-\pi_2</m>.</p>
         </solution>
-        <response/>
       </exercise>
 
       <exercise label="tech-detour-jmp-z">
@@ -520,7 +545,6 @@ iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)
           </ul></p>
           <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use “pooled estimate of variance.” This reports the z-score as well.)</p>
         </statement>
-        <response/>
       </exercise>
     </paragraphs>
 
@@ -541,7 +565,6 @@ iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)
           <p>In R: IndependentBinomialsR.html</p>
           <p>In JMP: IndependentBinomialsJMP.html</p>
         </statement>
-        <response/>
       </exercise>
     </paragraphs>
 </section>
