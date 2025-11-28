@@ -3,12 +3,13 @@
   <title>Investigation 2.7: Water Oxygen Levels</title>
 
   <sidebyside widths="65% 30%" valign="top">
-    <p>Scientists often monitor the "health" of water systems to determine the impact of different changes in the environment. For example, <url href="https://archive.epa.gov/nheerl/arm/web/pdf/calm_appc.pdf">Riggs (2002)</url> reports on a case study that monitored the dissolved oxygen downstream from a commercial hog operation. There had been problems at this site for several years (e.g., manure lagoon overflow), including several fish deaths in the previous three years just downstream of a large swale through which runoff from the hog facility had escaped. The state pollution control agency decided to closely monitor dissolved oxygen downstream of the swale for the next three years to determine whether the problem had been resolved. In particular, they wanted to see whether there was a tendency for the dissolved oxygen level in the river to be less than the 5.0 mg/l standard. Sampling was scheduled to commence in January of 2000 and run through December of 2002. The monitors took measurements at a single point in the river, approximately six tenths of a mile from the swale, once every 11 days.</p>
+    <p>Scientists often monitor the "health" of water systems to determine the impact of different changes in the environment. For example, <url href="https://archive.epa.gov/nheerl/arm/web/pdf/calm_appc.pdf">Riggs (2002)</url> reports on a case study that monitored the dissolved oxygen downstream from a commercial hog operation. </p>
     <image source="images/Inv2.7intro.jpg">
       <description>Water quality monitoring</description>
     </image>
   </sidebyside>
-
+<p>There had been problems at this site for several years (e.g., manure lagoon overflow), including several fish deaths in the previous three years just downstream of a large swale through which runoff from the hog facility had escaped. The state pollution control agency decided to closely monitor dissolved oxygen downstream of the swale for the next three years to determine whether the problem had been resolved. In particular, they wanted to see whether there was a tendency for the dissolved oxygen level in the river to be less than the 5.0 mg/l standard. Sampling was scheduled to commence in January of 2000 and run through December of 2002. The monitors took measurements at a single point in the river, approximately six tenths of a mile from the swale, once every 11 days.</p>
+  
   <exercise xml:id="inv2-7-a">
     <title>Identify sampling method</title>
     <statement>
@@ -16,7 +17,6 @@
     </statement>
     
     <task xml:id="inv2-7-a-1">
-      <title>Population or process?</title>
       <statement>
         <p>Is this sampling from a population or from a random process?</p>
       </statement>
@@ -31,7 +31,6 @@
     </task>
     
     <task xml:id="inv2-7-a-2">
-      <title>Identify observations</title>
       <statement>
         <p>What are the observational units?</p>
         <p><var width="60"/></p>
@@ -39,6 +38,7 @@
       <solution>
         <p>The individual water "samples" are the observational units. This is probably better thought of as sampling from a never ending process.</p>
       </solution>
+      <response/>
     </task>
   </exercise>
 
@@ -72,6 +72,9 @@
     </statement>
     <solution>
       <p>The distribution of dissolved oxygen is skewed to the right, centered around 5, with most of the observations between 3 and 8 (<m>s = 2.39</m> mg/l). The mean (4.735) is larger than the median (4.300). The data are not normally distributed.</p>
+      <image source="images/Inv2.7solsc.jpt.jpg" width="70%">
+        <description>Descriptive statistics and histogram for water quality data</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -120,11 +123,14 @@
       <p><var width="60" height="5"/></p>
     </statement>
     <solution>
-      <p>Let <m>p</m> refer to the probability of a non-compliant measurement in this river.</p>
-      <p><m>H_0: p = 0.50</m> vs. <m>H_a: p > 0.50</m>.</p>
-      <p>Assuming independent observations (systematic sample) and a constant probability of success (under the null <m>p = 0.50</m> for this observation period), we can model this with the binomial distribution (<m>n = 34</m> and <m>p = 0.50</m>).</p>
+      <p>Let <m>\pi</m> refer to the probability of a non-compliant measurement in this river.</p>
+      <p><m>H_0: \pi = 0.50</m> vs. <m>H_a: \pi > 0.50</m>.</p>
+      <p>Assuming independent observations (systematic sample) and a constant probability of success (under the null <m>\pi = 0.50</m> for this observation period), we can model this with the binomial distribution (<m>n = 34</m> and <m>\pi = 0.50</m>).</p>
       <p><m>P(X \geq 19) \approx 0.3038</m>.</p>
       <p>We do not have a small p-value, so we do not have evidence that the probability of non-compliance exceeds 0.50.</p>
+      <image source="images/Inv2.7solsg.jpg" width="70%">
+        <description>Binomial probability calculation output</description>
+      </image>
     </solution>
     <response/>
   </exercise>
@@ -145,7 +151,8 @@
     <title>Compare to <em>t</em>-test</title>
     <statement>
       <p>Identify one advantage to this analysis over the one-sample <em>t</em>-test. Identify one disadvantage of this analysis over the one-sample <em>t</em>-test.</p>
-      <p><var width="60" height="5"/></p>
+      <p>Advantage: <var width="60" height="5"/></p>
+      <p>Disadvantage: <var width="60" height="5"/></p>
     </statement>
     <solution>
       <p>We do not have to worry about the shape of the sample distribution or the sample size to use the binomial test. However, we only get to talk about whether or not they are non-compliant, not how small the actual observed oxygen levels are.</p>
@@ -156,11 +163,11 @@
   <exercise xml:id="inv2-7-j">
     <title>Alternative criterion</title>
     <statement>
-      <p>The researchers actually wanted to decide whether the river was non-compliant more than 10% of the time. How would that change your analysis in (g) and would the p-value be larger or smaller?</p>
+      <p>The researchers actually wanted to decide whether the river was non-compliant more than 10% of the time. How would that change your analysis in <xref ref="inv2-7-g" text="custom">checkpoint (g)</xref> and would the p-value be larger or smaller?</p>
       <p><var width="60" height="5"/></p>
     </statement>
     <solution>
-      <p>Now our hypotheses would be <m>H_0: p = 0.10</m> vs. <m>H_a: p > 0.10</m>. With a sample proportion of 0.5588, our p-value would be much, much smaller in this case.</p>
+      <p>Now our hypotheses would be <m>H_0: \pi = 0.10</m> vs. <m>H_a: \pi > 0.10</m>. With a sample proportion of 0.5588, our p-value would be much, much smaller in this case.</p>
     </solution>
     <response/>
   </exercise>
@@ -178,7 +185,7 @@
   <subsection xml:id="practice2-7">
     <title>Practice Problem 2.7</title>
 
-    <p>Return to Practice Problem 2.2A and the <url href="http://www.rossmanchance.com/iscam3/data/30seconds.txt" visual="rossmanchance.com/iscam3/data/30seconds.txt"><c>30seconds.txt</c></url> data. Carry out a test to determine whether there is convincing evidence that the median student estimate of 30 seconds differs from 30. (State your hypothesis, statistic and/or standardized statistic, and p-value.)</p>
+    <p>Return to <xref ref="practice2-2A" text="custom">Practice Problem 2.2A</xref> and the <url href="http://www.rossmanchance.com/iscam3/data/30seconds.txt" visual="rossmanchance.com/iscam3/data/30seconds.txt"><c>30seconds.txt</c></url> data. Carry out a test to determine whether there is convincing evidence that the median student estimate of 30 seconds differs from 30. (State your hypothesis, statistic and/or standardized statistic, and p-value.)</p>
 
     <exercise xml:id="practice-2-7-a">
       <statement>
