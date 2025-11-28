@@ -469,7 +469,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       </statement>
       <solution>
         <p>SE(<m>\hat{p}_{94} - \hat{p}_{06}</m>) = <m>\sqrt{\frac{.164(1-.164)}{2928} + \frac{.188(1-.188)}{1771}}</m> = 0.0115</p>
-        <p>This is very similar to the pooled SE of 0.0113.</p>
+        <p>This is  similar to the pooled SE of 0.0113.</p>
       </solution>
       <response/>
     </exercise>
@@ -528,7 +528,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
   <subsection xml:id="practice3-1B">
     <title>Practice Problem 3.1B</title>
 
-    <p>In Practice Problem 1.1B, you considered data on the first 3 months of the Premier soccer league in 2019 (pre-Covid) and in 2020 (during Covid, when no fans were allowed). Consider these observations as random samples from independent processes. In 2019, the home team won 54 of the first 88 games and in 2020, the home team won 40 of 87 matches.</p>
+    <p>In <xref ref="practice1-1B">Practice Problem 1.1B</xref>, you considered data on the first 3 months of the Premier soccer league in 2019 (pre-Covid) and in 2020 (during Covid, when no fans were allowed). Consider these observations as random samples from independent processes. In 2019, the home team won 54 of the first 88 games and in 2020, the home team won 40 of 87 matches.</p>
 
     <exercise xml:id="practice-3-1-b-a">
       <title>Two-Way Table</title>
@@ -557,7 +557,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <exercise xml:id="practice-3-1-b-d">
       <title>Technical Conditions</title>
       <statement>
-        <p>Are the technical conditions met to calculate the two-sample z-interval for these data? Explain.</p>
+        <p>Are the technical conditions met to calculate the two-sample <m>z</m>-interval for these data? Explain.</p>
       </statement>
       <response/>
     </exercise>
@@ -585,6 +585,8 @@ barplot(hearingprop, legend=T, ylab="proportion")
             <li><p>For the test, check the box for Test of Significance Keep the hypothesized difference at zero and set the direction of the alternative, press Calculate.</p></li>
             <li><p>For the confidence interval, check the box, specify the confidence level and press Calculate CI</p></li>
           </ul></p>
+          <image source="images/Inv3.1TBI1.png" width="80%"/>
+          <image source="images/Inv3.1TBI2.png" width="80%"/>
         </statement>
       </exercise>
 
@@ -621,11 +623,13 @@ iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)
           </ul></p>
           <p>Note: Here you can change with outcome is considered success. This also reports an "adjusted Wald" p-value</p>
           <p><ul>
-            <li><p>With summary data use the ISCAM Journal file: Hypothesis Test for Two Proportions</p></li>
+            <li><p>With summary data use the <url href="http://www.rossmanchance.com/iscam3/data/ISCAM_Journal.jrn">ISCAM Journal file</url>: Hypothesis Test for Two Proportions</p></li>
             <li><p>Specify the form of the alternative hypothesis</p></li>
             <li><p>Enter the number of successes and the sample sizes,</p></li>
           </ul></p>
           <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use "pooled estimate of variance." This reports the z-score as well.)</p>
+          <image source="images/Inv3.1JMP1.png" width="80%"/>
+          <image source="images/Inv3.1JMP2.png" width="80%"/>
         </statement>
       </exercise>
     </paragraphs>

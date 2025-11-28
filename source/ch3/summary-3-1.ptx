@@ -1,31 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="summary-3-1">
-  <title>Summary of Comparing Two Population Proportions</title>
+<section xml:id="summary-3-1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Summary of Two Proportion <m>z</m>-Procedures for Comparing Two Populations</title>
 
-  <p><term>Parameter:</term> <m>\pi_1 - \pi_2</m> = the difference in the population proportions of success</p>
+  <p>Let <m>\pi_1</m> and <m>\pi_2</m> be the (unknown) population proportions of successes for two independent groups, and given that you have representative samples from the populations of interest.</p>
 
-  <p><term>To test <m>H_0: \pi_1 - \pi_2 = 0</m></term></p>
-  <p><ol>
-    <li><p>Simulation: Random samples from binomial processes with common <m>\pi</m></p></li>
-    <li><p>Two-sample z-test:</p>
-    <p>The standardized statistic <m>z_0 = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1} + \frac{1}{n_2})}}</m> where <m>\hat{p} = \frac{X_1+X_2}{n_1+n_2} = \frac{\text{total number of successes}}{\text{total number in study}}</m></p>
-    <p>is well approximated by the standard normal distribution when <m>n_1\hat{p} > 5</m>, <m>n_1(1 - \hat{p}) > 5</m>, <m>n_2\hat{p} > 5</m> and <m>n_2(1 - \hat{p}) > 5</m>, where <m>\hat{p}</m> is the proportion of successes combining the 2 groups.</p></li>
-  </ol></p>
+  <assemblage>
+    <title>Test of <m>H_0: \pi_1 - \pi_2 = 0</m></title>
+    
+    <sidebyside widths="60% 35%" valign="top">
+      <stack>
+        <p>Standardized statistic: <m>z_0 = \frac{(\hat{p}_1 - \hat{p}_2) - 0}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1} + \frac{1}{n_2})}}</m></p>
+        <p>where <m>\hat{p} = \frac{X_1+X_2}{n_1+n_2} = \frac{\text{total number of successes}}{\text{total sample size}}</m></p>
+        
+        <p>p-value:</p>
+        <ul>
+          <li><p>If <m>H_a: \pi_1 - \pi_2 > 0</m>, the p-value is <m>P(Z \geq z_0)</m>.</p></li>
+          <li><p>If <m>H_a: \pi_1 - \pi_2 \lt 0</m>, the p-value is <m>P(Z \leq z_0)</m>.</p></li>
+          <li><p>If <m>H_a: \pi_1 - \pi_2 \neq 0</m>, the p-value is <m>2P(Z \geq |z_0|)</m></p></li>
+        </ul>
+        
+        <p>Technical conditions: <m>n_1\hat{p} > 5</m>, <m>n_1(1 - \hat{p}) > 5</m>, <m>n_2\hat{p} > 5</m>, and <m>n_2(1 - \hat{p}) > 5</m></p>
+      </stack>
+      
+      <image source="images/SampleProps.png">
+        <description>Sampling distribution showing test statistic and p-value</description>
+      </image>
+    </sidebyside>
+  </assemblage>
 
-  <p><term>Approximate (100 × C)% Confidence interval for <m>\pi_1 - \pi_2</m>:</term></p>
-  <p><ol>
-    <li><p>Two-sample z-interval:</p>
-    <p>An approximate (100 × C)% interval: <m>(\hat{p}_1 - \hat{p}_2) \pm z^* \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m></p>
-    <p>where <m>z^*</m> is the <m>100 \times (1 - C)/2</m>th percentile from the standard normal distribution.</p>
-    <p>This method is considered valid when <m>n_1\hat{p}_1 > 5</m>, <m>n_1(1 - \hat{p}_1) > 5</m>, <m>n_2\hat{p}_2 > 5</m>, and <m>n_2(1 - \hat{p}_2) > 5</m>.</p></li>
-    <li><p>Or the Wilson or Wald adjustment can be made on the sample proportions and sample sizes first.</p></li>
-  </ol></p>
+  <assemblage>
+    <title>C% Confidence Interval for <m>\pi_1 - \pi_2</m></title>
+    
+    <p><term>Two-Sample z-Interval:</term> <m>(\hat{p}_1 - \hat{p}_2) \pm z^* \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m></p>
+    <p>where <m>z^*</m> is the <m>100 \times \frac{1-C}{2}</m>th percentile of the standard normal distribution.</p>
+    
+    <p>Technical conditions: <m>n_1\hat{p}_1 > 5</m>, <m>n_1(1 - \hat{p}_1) > 5</m>, <m>n_2\hat{p}_2 > 5</m>, and <m>n_2(1 - \hat{p}_2) > 5</m></p>
+    
+    <p><term>Adjusted Interval:</term> A Wilson or Wald adjustment can be made on the sample proportions and sample sizes first (add one success and one failure to each sample).</p>
+  </assemblage>
 
-  <p>Note: We can simplify the technical conditions by verifying that you have independent random samples from two processes or large populations (or one random sample classified by a binary variable) and at least 5 successes and 5 failures in each group.</p>
-
-  <p><term>Technology:</term> To perform the calculations for these two-sample z-procedures you can use</p>
-  <p><ul>
-    <li><p>Theory-Based Inference applet: two proportions</p></li>
-    <li><p>R: <c>iscamtwopropztest</c></p></li>
-  </ul></p>
+  <paragraphs>
+    <title>Technology Instructions</title>
+    <p></p>
+    
+    <hint>
+      <title>Theory-Based Inference applet: Two Proportions instructions</title>
+      <p><url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Theory-Based Inference applet: Two Proportions</url></p>
+      <p><ul>
+        <li><p>Check the box to paste in 2 columns of data (stacked or unstacked) and press Use data or specify the sample sizes and either the sample counts or the sample proportions and press Calculate.</p></li>
+        <li><p>For the test, check the box for Test of Significance. Keep the hypothesized difference at zero and set the direction of the alternative, press Calculate.</p></li>
+        <li><p>For the confidence interval, check the box, specify the confidence level and press Calculate CI</p></li>
+      </ul></p>
+    </hint>
+    
+    <hint>
+      <title>R instructions</title>
+      <p>Use <c>iscamtwopropztest</c> which takes the following inputs:</p>
+      <p><ul>
+        <li><p>observed1 (either the number of successes or sample proportion for first group), n1 (sample size for first group), observed2 (count or proportion), and n2</p></li>
+        <li><p>Optional: hypothesized difference and alternative ("less", "greater", or "two.sided")</p></li>
+        <li><p>Optional: conf.level</p></li>
+      </ul></p>
+      <p>For example:</p>
+      <p><c>iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)</c></p>
+      <p>finds the p-value for a one-sided alternative as well as a 95% confidence interval for <m>\pi_1-\pi_2</m>.</p>
+    </hint>
+  </paragraphs>
 </section>
