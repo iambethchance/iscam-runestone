@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="summary-3-1">
+  <title>Summary of Comparing Two Population Proportions</title>
+
+  <p><term>Parameter:</term> <m>\pi_1 - \pi_2</m> = the difference in the population proportions of success</p>
+
+  <p><term>To test <m>H_0: \pi_1 - \pi_2 = 0</m></term></p>
+  <p><ol>
+    <li><p>Simulation: Random samples from binomial processes with common <m>\pi</m></p></li>
+    <li><p>Two-sample z-test:</p>
+    <p>The standardized statistic <m>z_0 = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1} + \frac{1}{n_2})}}</m> where <m>\hat{p} = \frac{X_1+X_2}{n_1+n_2} = \frac{\text{total number of successes}}{\text{total number in study}}</m></p>
+    <p>is well approximated by the standard normal distribution when <m>n_1\hat{p} > 5</m>, <m>n_1(1 - \hat{p}) > 5</m>, <m>n_2\hat{p} > 5</m> and <m>n_2(1 - \hat{p}) > 5</m>, where <m>\hat{p}</m> is the proportion of successes combining the 2 groups.</p></li>
+  </ol></p>
+
+  <p><term>Approximate (100 × C)% Confidence interval for <m>\pi_1 - \pi_2</m>:</term></p>
+  <p><ol>
+    <li><p>Two-sample z-interval:</p>
+    <p>An approximate (100 × C)% interval: <m>(\hat{p}_1 - \hat{p}_2) \pm z^* \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m></p>
+    <p>where <m>z^*</m> is the <m>100 \times (1 - C)/2</m>th percentile from the standard normal distribution.</p>
+    <p>This method is considered valid when <m>n_1\hat{p}_1 > 5</m>, <m>n_1(1 - \hat{p}_1) > 5</m>, <m>n_2\hat{p}_2 > 5</m>, and <m>n_2(1 - \hat{p}_2) > 5</m>.</p></li>
+    <li><p>Or the Wilson or Wald adjustment can be made on the sample proportions and sample sizes first.</p></li>
+  </ol></p>
+
+  <p>Note: We can simplify the technical conditions by verifying that you have independent random samples from two processes or large populations (or one random sample classified by a binary variable) and at least 5 successes and 5 failures in each group.</p>
+
+  <p><term>Technology:</term> To perform the calculations for these two-sample z-procedures you can use</p>
+  <p><ul>
+    <li><p>Theory-Based Inference applet: two proportions</p></li>
+    <li><p>R: <c>iscamtwopropztest</c></p></li>
+  </ul></p>
+</section>

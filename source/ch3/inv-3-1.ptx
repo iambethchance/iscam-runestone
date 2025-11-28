@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-3-1">
+  <title>Investigation 3.1: Teen Hearing Loss (cont.)</title>
+
+  <introduction>
+    <p>The Shargorodsky, Curhan, Curhan, and Eavey (2010) study from Investigation 1.14 actually focused on comparing the current hearing loss rate among teens (12-19 years) to previous years to see whether teen hearing loss is increasing, possibly due to heavier use of ear buds. In addition to the 1771 participants in the NHANES 2005-6 study (333 with some level of hearing loss), they also had hearing loss data on 2928 teens from NHANES III (1988-1994), with 480 showing some level of hearing loss. Our goal is to assess whether the difference between these two groups can be considered statistically significant.</p>
+  </introduction>
+
+  <p><ol label="(a)">
+    <li><p>What is the primary difference between this study and those examined in Chapters 1 and 2?</p></li>
+
+    <li><p>Identify the two populations and the variable being considered in this study.</p>
+    <p>Populations:</p>
+    <p>Variable: <fillin characters="20"/> Type: <fillin characters="20"/></p></li>
+  </ol></p>
+
+  <subsection>
+    <title>Descriptive Statistics</title>
+    <p><ol label="(a)">
+      <li><p>When we have two samples for a binary categorical variable, it is often useful to organize the data using a two-way table. Complete the following 2 × 2 table of counts.</p>
+      <table>
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+          <row header="yes">
+            <cell></cell>
+            <cell>1988-1994</cell>
+            <cell>2005-2006</cell>
+            <cell>Total</cell>
+          </row>
+          <row>
+            <cell>Some hearing loss</cell>
+            <cell>480</cell>
+            <cell>333</cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>No hearing loss</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>Total</cell>
+            <cell>2928</cell>
+            <cell>1771</cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </table></li>
+
+      <li><p>Explain why it does not make sense to conclude that hearing loss was more prevalent in 1988-1994 than in 2005-2006 based only on the comparison that 480 > 333.</p></li>
+
+      <li><p>Suggest a better way to compare the prevalence of hearing loss between the two studies. Calculate one number as the statistic for this study (what symbols are you using?). Does your statistic seem large enough to convince you that there has been an increase in hearing loss?</p></li>
+    </ol></p>
+
+    <definition>
+      <title>Conditional Proportions</title>
+      <p>The simplest statistic for comparing a binary variable between two groups is the difference in the proportion of “successes” for each group. These proportions, calculated separately for each group rather than looking at the overall proportion, are called <term>conditional proportions</term>.</p>
+    </definition>
+
+    <p>In this case, we compute the difference in the proportion of teens with some level of hearing loss between the two years (<m>\hat{p}_{94} - \hat{p}_{06} = 480/2928 - 333/1771</m>).</p>
+
+    <p>The next step is to examine an effective graphical summary for comparing the two groups.</p>
+
+    <assemblage>
+      <title>Technology Detour – Segmented Bar Graphs</title>
+      <p><term>In R</term></p>
+      <p>Create (and view) a matrix in R to store the counts from the two-way table</p>
+      <pre>
+> hearing = matrix(c(480, 2448, 333, 1438), nrow=2,
++ dimnames = list(c("some loss", "no loss"), c("94", "06")))
+> hearing
+      </pre>
+      <p>Convert to a matrix of conditional proportions (margin =1 for row proportions, margin = 2 for column proportions)</p>
+      <pre>
+> hearingprop = prop.table(hearing, margin=2)
+> hearingprop
+      </pre>
+      <p>Create a segmented bar graph</p>
+      <pre>
+> barplot(hearingprop, legend=T, ylab="proportion")
+      </pre>
+
+      <p><term>In JMP</term></p>
+      <p>You can specify the counts from the two-way table, but you have to do so in “column format” (each row is a combination of the two variables and the counts are all in one column)</p>
+      <p><ul>
+        <li><p>Select Analyze > Fit Y by X.</p></li>
+        <li><p>Click Hearing Loss then click the Y, Response button (or drag).</p></li>
+        <li><p>Click Year then click the X, Factor button (or drag). (With raw data, you would be done here.)</p></li>
+        <li><p>Finally click Count then the Freq button. Click OK.</p></li>
+        <li><p>Right-click on one of the bars and select Cell Labelling > Show Percents.</p></li>
+      </ul></p>
+      <p>JMP creates a “Mosaic Plot” (the column widths also reflect the relative sample sizes). An extended two-way table is shown below the Mosaic Plot although the rows and columns are reversed. Click the red Contingency Table arrow and uncheck Col% and Total% to see a less cluttered table.</p>
+    </assemblage>
+
+    <p><ol label="(a)">
+      <li><p>Use technology to create numerical and graphical summaries for these summarized data. Write a sentence or two comparing the distributions of hearing loss between these two studies. Be sure to report an appropriate statistic.</p></li>
+
+      <li><p>Do these data convince you that there is a difference in the population proportions? If not, what could be another explanation for the difference you see in these numerical and graphical summaries for these two samples?</p></li>
+    </ol></p>
+  </subsection>
+
+  <subsection>
+    <title>Inferential Statistics</title>
+    <p>As we’ve said before, it certainly is possible to obtain sample proportions this far apart, just by random chance, even if the population proportions (of teens with some hearing loss) were the same. The question now is how likely such a difference would be if the population proportions were the same. We can answer this question by modeling the sampling variability, arising from taking random samples from these populations, for the difference in two sample proportions. Investigating this sampling variability will help us to assess whether this particular difference in sample proportions is strong evidence that the population proportions actually differ.</p>
+
+    <p><ol label="(a)">
+      <li><p>Let <m>\pi_{94}</m> represent the proportion of all American teenagers in 1994 with at least some hearing loss, and similarly for <m>\pi_{06}</m>. Define the parameter of interest to be <m>\pi_{94} - \pi_{06}</m>, the difference in the population proportions between these two years. State appropriate null and alternative hypotheses about this parameter to reflect the researchers’ conjecture that hearing loss by teens is becoming more prevalent.</p>
+      <p><m>H_0:</m></p>
+      <p><m>H_a:</m></p></li>
+    </ol></p>
+  </subsection>
+
+  <subsection>
+    <title>Simulation</title>
+    <p>Because the population sizes are very large compared to the sample sizes, we will model this by treating the populations as infinite and sampling from binomial processes.</p>
+    <p><ol label="(a)">
+      <li><p>How do we model the null hypothesis being true?</p></li>
+
+      <li><p>So under the null hypothesis we really only have one value of <m>\pi</m> to estimate – the common population proportion with hearing loss for these two years. What is your best estimate for <m>\pi</m> from the sample data? [Hint: Think about combining the two years together.]</p></li>
+
+      <li><p>Describe how you could carry out a simulation analysis to investigate whether the observed difference in sample proportions provides strong evidence that the population proportions with hearing loss differed between these two time periods. How will you estimate the p-value?</p></li>
+    </ol></p>
+
+    <p>We will begin our simulation analysis by assuming the population proportion is actually this value (<m>\pi = (480 + 333)/(2928 + 1771) = 0.173</m>). We simulate the drawing of two different random samples from this population, one to represent the 1994 study and the other for the 2006 study. Then we examine the distribution of the difference in the conditional proportions with some hearing loss between these two years. Finally, we repeat this random sampling process for many trials. [Note: We can assume <m>\pi = 0.173</m> without loss of generality, but you might want to verify this with other values for <m>\pi</m> as well.]</p>
+
+    <p><ol label="(a)">
+      <li><p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url> to randomly sample one “could have been” difference in conditional proportions assuming the null hypothesis is true. [See Technology Detour for carrying out these simulations in other software packages.]</p>
+      <p><ul>
+        <li><p>Specify .173 as the process probability for both populations.</p></li>
+        <li><p>Specify 2928 and 1771 as the two sample sizes.</p></li>
+        <li><p>Leave the Number of samples set to 1.</p></li>
+        <li><p>Press Draw Samples.</p></li>
+      </ul></p>
+      <p>Report the values you found for <m>\hat{p}_1</m>, <m>\hat{p}_2</m>, and <m>\hat{p}_1 - \hat{p}_2</m>.</p></li>
+
+      <li><p>Will everyone in the class get the same answers to (l)? Explain.</p></li>
+    </ol></p>
+
+    <p>To learn about the pattern of variation in our statistic, we want to generate many more outcomes assuming the null hypothesis to be true.</p>
+
+    <p><ol label="(a)">
+      <li><p>Change the Number of samples from 1 to 999 and press Draw Samples for a total of 1,000 independent random samples. Describe the distribution of <m>\hat{p}_1</m> values, the distribution of <m>\hat{p}_2</m> values, and the distribution of <m>\hat{p}_1 - \hat{p}_2</m> values. Does the distribution of difference in proportions behave as you expected? In particular, does the mean of this distribution make sense? (How does it compare to the means of the individual <m>\hat{p}</m> distributions?) Explain.</p></li>
+
+      <li><p>Now determine the empirical p-value by counting how often the simulated difference in conditional proportions is at least as extreme as the actual value observed in the study by entering the observed value in the Count Samples box and pressing the Count button. (Make sure the direction matches the alternative hypothesis.) Report your empirical p-value and indicate what conclusion you would draw from it.</p></li>
+    </ol></p>
+  </subsection>
+
+  <subsection>
+    <title>Mathematical Model</title>
+    <p><ol label="(a)">
+      <li><p>It turns out that there is no “exact” method for calculating the p-value here, because the difference in two binomial variables does not have a binomial, or any other known, probability distribution. However, did the histogram of <m>\hat{p}_1 - \hat{p}_2</m> values you examined remind you of any other probability distribution?</p></li>
+
+      <li><p>Check the Normal Approximation box to overlay a normal curve on your null distribution to evaluate whether the simulated differences appear to “line up” with observations from a standard normal distribution. Does the normal model appear to be a reasonable approximation to the null distribution?</p></li>
+    </ol></p>
+
+    <assemblage>
+      <title>Probability Detour</title>
+      <p>There is a theoretical result that the difference in two normal distributions will also follow a normal distribution. When our sample sizes (<m>n_1</m> and <m>n_2</m>) are large, we know the individual binomial distributions are well approximated by normal distributions. Consequently, the difference of the sample proportions will be well approximated by a normal distribution as well. The mean of this distribution is simply the difference in the means of the individual normal distributions.</p>
+    </assemblage>
+
+    <p><ol label="(a)">
+      <li><p>How does the variability (SD) of the difference in <m>\hat{p}</m> values compare to the variability of the individual <m>\hat{p}</m> distributions? Explain why this makes intuitive sense.</p>
+      <p>SIMILAR <fillin characters="10"/> LARGER <fillin characters="10"/> SMALLER <fillin characters="10"/></p>
+      <p>Explanation:</p></li>
+    </ol></p>
+
+    <p>Two additional “rules for random variables” is, for two random variables <m>X</m> and <m>Y</m>,</p>
+    <p><m>E(X \pm Y) = E(X) \pm E(Y)</m></p>
+    <p><m>Var(X \pm Y) = Var(X) + Var(Y)</m>, as long as <m>X</m> and <m>Y</m> are independent</p>
+
+    <p><ol label="(a)">
+      <li><p>Use these rules to suggest a way to calculate <m>E(\hat{p}_1 - \hat{p}_2)</m> and <m>Var(\hat{p}_1 - \hat{p}_2)</m>.</p></li>
+
+      <li><p>Suggest two different methods for calculating <m>SE(\hat{p}_1 - \hat{p}_2)</m> using the observed data.</p></li>
+    </ol></p>
+
+    <assemblage>
+      <title>Central Limit Theorem for the difference in two sample proportions</title>
+      <p>When taking two independent samples (of sizes <m>n_1</m> and <m>n_2</m>) from large populations, the distribution of the difference in the sample proportions (<m>\hat{p}_1 - \hat{p}_2</m>) is approximately normal with mean equal to <m>\pi_1 - \pi_2</m> and standard deviation equal to <m>SD(\hat{p}_1 - \hat{p}_2) = \sqrt{\frac{\pi_1(1-\pi_1)}{n_1} + \frac{\pi_2(1-\pi_2)}{n_2}}</m>.</p>
+      <p>Under the null hypothesis <m>H_0: \pi_1 - \pi_2 = 0</m>, the standard deviation simplifies to <m>\sqrt{\pi(1-\pi)(\frac{1}{n_1} + \frac{1}{n_2})}</m> where <m>\pi</m> is the common population proportion.</p>
+    </assemblage>
+
+    <p><term>Technical Conditions:</term> We will consider the normal model appropriate if the sample sizes are large, namely <m>n_1\pi_1 > 5</m>, <m>n_1(1 - \pi_1) > 5</m>, <m>n_2\pi_2 > 5</m>, <m>n_2(1 - \pi_2) > 5</m>, and the populations are large compared to the sample sizes.</p>
+    <p>Note: The variability in the differences in sample proportions is larger than the variability of individual sample proportions. In fact, the variances (standard deviation squared) add, and then we take the square root of the sum of variances to find the standard deviation.</p>
+
+    <p>However, to calculate these values we would need to know <m>\pi_1</m>, <m>\pi_2</m>, or <m>\pi</m>. So again we estimate the standard deviation of our statistic using the sample data.</p>
+
+    <p><term>Case 1:</term> When testing whether the null hypothesis is true, we are assuming the samples come from the same population, so we “pool” the two samples together to estimate the common population proportion of successes. That is, we estimate <m>\pi</m> by looking at the ratio of the total number of successes to the total sample size:</p>
+    <p><m>\hat{p} = \frac{X_1+X_2}{n_1+n_2} = \frac{n_1\hat{p}_1+n_2\hat{p}_2}{n_1+n_2} = \frac{\text{total number of successes}}{\text{total sample size}}</m></p>
+
+    <p>Then use we use this value to calculate the standard error of <m>\hat{p}_1 - \hat{p}_2</m> to be:</p>
+    <p><m>SE(\hat{p}_1 - \hat{p}_2) = \sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1} + \frac{1}{n_2})}</m></p>
+
+    <p><ol label="(a)">
+      <li><p>Use these theoretical results to suggest the general formula for a standardized statistic and a method for calculating a p-value to test <m>H_0: \pi_1 - \pi_2 = 0</m> (also expressed as <m>H_0: \pi_1 = \pi_2</m>) versus the alternative <m>H_a: \pi_1 - \pi_2 &lt; 0</m> (or <m>H_a: \pi_1 &lt; \pi_2</m>). (This is referred to as the two-sample z-test or two proportion z-test.)</p>
+      <p>standardized statistic = z = (observed-hypothesized)/(standard error) =</p></li>
+
+      <li><p>Calculate and interpret the value of the standardized statistic specified in (t) as applied to the hearing loss study.</p>
+      <p><m>\hat{p}_{94} - \hat{p}_{06} =</m> <fillin characters="10"/> <m>\hat{p} =</m> <fillin characters="10"/> <m>SE(\hat{p}_{94} - \hat{p}_{06}) =</m> <fillin characters="10"/></p>
+      <p>standardized statistic: <m>z =</m></p>
+      <p>interpretation:</p></li>
+
+      <li><p>Is the standard error close to the empirical standard deviation from your simulation results?</p></li>
+
+      <li><p>Use technology to compute the p-value for this standardized statistic using the standard normal distribution and compare it to your simulation results.</p></li>
+    </ol></p>
+  </subsection>
+
+  <subsection>
+    <title>Confidence Interval</title>
+    <p><term>Case 2:</term> When calculating confidence intervals, we make no assumptions about the populations (for example, when we are not testing a particular null hypothesis but only estimating the parameter, we do not assume a common value for <m>\pi</m>). So we will use a different formula to approximate the standard deviation of <m>\hat{p}_1 - \hat{p}_2</m>:</p>
+    <p><m>SE(\hat{p}_1 - \hat{p}_2) = \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m></p>
+
+    <p><ol label="(a)">
+      <li><p>Calculate this version of the standard error. Is it much different from what you calculated in (v)?</p></li>
+
+      <li><p>Calculate and interpret a 95% confidence interval to compare hearing loss of American teenagers in these two years. Is this confidence interval consistent with your test of significance? Why is it theoretically possible the interval would not be consistent with the test of significance?</p></li>
+    </ol></p>
+
+    <p>Note: It is technically incorrect to say there has been a 0.15% to 4.67% increase in hearing loss from 1994 to 2006, because “percentage change” implies a multiplication of values, not an addition or subtraction as we are considering here. It would be acceptable to say that the increase is between 0.15 and 4.67 percentage points.</p>
+
+    <assemblage>
+      <title>Technical Conditions</title>
+      <p>The above Central Limit Theorem holds when the populations are much larger than the samples (e.g., more than 20 times the sample size) and when the sample size is large. We will consider the latter condition met when we have at least 5 successes and at least 5 failures in each sample (so there are four numbers to check).</p>
+    </assemblage>
+
+    <p>Note: A “Wilson adjustment” can be used with this confidence interval similar to the Plus Four Method from Chapter 1, this time putting one additional success and one additional failure in each sample. This adjustment will be most useful when the sample proportions are close to 0 or 1 (that is when the sample size conditions above are not met).</p>
+
+    <p><ol label="(a)">
+      <li><p>Summarize your conclusions from this study. Be sure to address statistical significance, statistical confidence, and the populations you are willing to generalize the results to. Also, are you willing to conclude that the change in the prevalence of hearing loss is due to the increased use of ear buds among teenagers between 1994 and 2006? Explain why or why not.</p></li>
+    </ol></p>
+
+    <assemblage>
+      <title>Study Conclusions</title>
+      <p>We have moderate evidence against the null hypothesis (p-value <m>\approx 0.02</m>, meaning we would get a difference in sample proportions <m>\hat{p}_1 - \hat{p}_2</m> as small as <m>-0.024</m> or smaller in about 1.7% of random samples from two populations with <m>\pi_1 = \pi_2</m>). We are 95% confident that the population proportion with some hearing loss is between 0.0015 and 0.047 higher “now” than ten years ago. We feel comfortable drawing these conclusions about the populations the NHANES samples were selected from as they were random samples from each population (and there was no overlap in the populations between these two time periods). However, there are many things that have changed during this time period, and it would not be reasonable to attribute this increase in hearing loss exclusively to the use of ear buds.</p>
+    </assemblage>
+
+    <exercise>
+      <title>Practice Problem 3.1A</title>
+      <p>In a follow-up study, <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Su &amp; Chan (2017)</url> examined hearing loss data for 1165 participants from the 2009-2010 National Health and Nutrition Examination Survey to see whether this trend has continued. They estimate the prevalence (after adjusting for a non-simple random sample and weighting the data to be representative of the population) of some hearing loss to be 0.152. If we treat this as a sample proportion, is this significantly different from the 2005-6 data?</p>
+    </exercise>
+
+    <exercise>
+      <title>Practice Problem 3.1B</title>
+      <p>In Practice Problem 1.1B, you considered data on the first 3 months of the Premier soccer league in 2019 (pre-Covid) and in 2020 (during Covid, when no fans were allowed). Consider these observations as random samples from independent processes. In 2019, the home team won 54 of the first 88 games and in 2020, the home team won 40 of 87 matches.</p>
+      <p><ol label="(a)">
+        <li><p>Create the two-way table for comparing these samples to each other. Calculate and interpret the difference in conditional proportions.</p></li>
+        <li><p>Specify appropriate null and alternative hypothesis, being clear how these hypotheses change from Chapter 1. Are you using a one-sided or two-sided alternative?</p></li>
+        <li><p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url> to carry out a simulation. What are you using for the common probability of success? Which values do you count for the p-value? What do you conclude?</p></li>
+        <li><p>Are the technical conditions met to calculate the two-sample z-interval for these data? Explain.</p></li>
+        <li><p>Calculate and interpret a 95% confidence interval from these data.</p></li>
+      </ol></p>
+      <p>Note: Data are “stacked” if each column represents a different variable (e.g., year surveyed and hearing condition) and they are “unstacked” if each column represents a different group (e.g., 1998 and 2002).</p>
+    </exercise>
+
+    <assemblage>
+      <title>Technology Detour – Two-sample z-procedures</title>
+      <p><term>In Theory-Based Inference applet</term></p>
+      <p><ul>
+        <li><p>Select Two proportions</p></li>
+        <li><p>Check the box to paste in 2 columns of data (stacked or unstacked) and press Use data or specify the sample sizes and either the sample counts or the sample proportions and press Calculate.</p></li>
+        <li><p>For the test, check the box for Test of Significance Keep the hypothesized difference at zero and set the direction of the alternative, press Calculate.</p></li>
+        <li><p>For the confidence interval, check the box, specify the confidence level and press Calculate CI</p></li>
+      </ul></p>
+
+      <p><term>In R</term></p>
+      <p>Use <c>iscamtwopropztest</c> which takes the following inputs:</p>
+      <p><ul>
+        <li><p>observed1 (either the number of successes or sample proportion for first group), n1 (sample size for first group, observed2 (count or proportion), and n2</p></li>
+        <li><p>Optional: hypothesized difference and alternative (“less”, “greater”, or “two.sided”)</p></li>
+        <li><p>Optional: conf.level</p></li>
+      </ul></p>
+      <p>For example: <c>> iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)</c></p>
+      <p>finds the p-value for a one-sided alternative as well as a 95% confidence interval for <m>\pi_1-\pi_2</m>.</p>
+
+      <p><term>In JMP</term></p>
+      <p><ul>
+        <li><p>With raw data or after specifying the two-way table in column format, select Analyze > Fit Y by X and specify the categorical response variable (Y, Response) and the categorical explanatory variable (X, Factor)</p></li>
+        <li><p>Specify the counts if using a two-way table (and “year” is seen as a categorical variable)</p></li>
+        <li><p>Press OK.</p></li>
+        <li><p>The p-value in the Pearson row matches a two-sided z-test.</p></li>
+        <li><p>For a confidence interval, use the hot spot to select Two Sample Test for Proportions</p></li>
+      </ul></p>
+      <p>Note: Here you can change with outcome is considered success. This also reports an “adjusted Wald” p-value</p>
+      <p><ul>
+        <li><p>With summary data use the ISCAM Journal file: Hypothesis Test for Two Proportions</p></li>
+        <li><p>Specify the form of the alternative hypothesis</p></li>
+        <li><p>Enter the number of successes and the sample sizes,</p></li>
+      </ul></p>
+      <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use “pooled estimate of variance.” This reports the z-score as well.)</p>
+    </assemblage>
+
+    <assemblage>
+      <title>Technology Detour – Simulating Proportions from Independent Random Samples</title>
+      <p>Step 1: Generate a random sample of 2928 observations from a binomial process with <m>\pi = .173</m></p>
+      <p>Step 2: Generate a random sample of 1771 observations from a binomial process with <m>\pi = .173</m></p>
+      <p>Step 3: Convert the sample counts into sample proportions</p>
+      <p>Step 4: Calculate the difference in the sample proportions</p>
+      <p>Step 5: Repeat steps 1-4 a large number of times.</p>
+      <p>You should explore the individual <m>\hat{p}</m> distributions but most focus on the distribution of <m>\hat{p}_1 - \hat{p}_2</m>, including the mean, standard deviation, and whether the distribution behaves like a normal distribution.</p>
+
+      <p>In Applet: <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions</url></p>
+      <p>In R: IndependentBinomialsR.html</p>
+      <p>In JMP: IndependentBinomialsJMP.html</p>
+    </assemblage>
+  </subsection>
+</section>
