@@ -7,25 +7,22 @@
   <assemblage>
     <title>Test of <m>H_0: \pi_1 - \pi_2 = 0</m></title>
     
-    <sidebyside widths="60% 35%" valign="top">
-      <stack>
-        <p>Standardized statistic: <m>z_0 = \frac{(\hat{p}_1 - \hat{p}_2) - 0}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1} + \frac{1}{n_2})}}</m></p>
-        <p>where <m>\hat{p} = \frac{X_1+X_2}{n_1+n_2} = \frac{\text{total number of successes}}{\text{total sample size}}</m></p>
-        
-        <p>p-value:</p>
-        <ul>
-          <li><p>If <m>H_a: \pi_1 - \pi_2 > 0</m>, the p-value is <m>P(Z \geq z_0)</m>.</p></li>
-          <li><p>If <m>H_a: \pi_1 - \pi_2 \lt 0</m>, the p-value is <m>P(Z \leq z_0)</m>.</p></li>
-          <li><p>If <m>H_a: \pi_1 - \pi_2 \neq 0</m>, the p-value is <m>2P(Z \geq |z_0|)</m></p></li>
-        </ul>
-        
-        <p>Technical conditions: <m>n_1\hat{p} > 5</m>, <m>n_1(1 - \hat{p}) > 5</m>, <m>n_2\hat{p} > 5</m>, and <m>n_2(1 - \hat{p}) > 5</m></p>
-      </stack>
+    <p><ol>
+      <li><p><term>Simulation:</term> Random samples from binomial processes with common <m>\pi</m></p></li>
+      <li><p><term>Two-sample z-test:</term></p>
+      <p>Standardized statistic: <m>z_0 = \frac{(\hat{p}_1 - \hat{p}_2) - 0}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1} + \frac{1}{n_2})}}</m></p>
+      <p>where <m>\hat{p} = \frac{X_1+X_2}{n_1+n_2} = \frac{\text{total number of successes}}{\text{total sample size}}</m></p>
       
-      <image source="images/SampleProps.png">
-        <description>Sampling distribution showing test statistic and p-value</description>
-      </image>
-    </sidebyside>
+      <p>p-value:</p>
+      <ul>
+        <li><p>If <m>H_a: \pi_1 - \pi_2 > 0</m>, the p-value is <m>P(Z \geq z_0)</m>.</p></li>
+        <li><p>If <m>H_a: \pi_1 - \pi_2 \lt 0</m>, the p-value is <m>P(Z \leq z_0)</m>.</p></li>
+        <li><p>If <m>H_a: \pi_1 - \pi_2 \neq 0</m>, the p-value is <m>2P(Z \geq |z_0|)</m></p></li>
+      </ul>
+      
+      <p>Technical conditions: <m>n_1\hat{p} \geq 5</m>, <m>n_1(1 - \hat{p}) \geq 5</m>, <m>n_2\hat{p} \geq 5</m>, and <m>n_2(1 - \hat{p}) \geq 5</m></p>
+      </li>
+    </ol></p>
   </assemblage>
 
   <assemblage>
@@ -34,7 +31,7 @@
     <p><term>Two-Sample z-Interval:</term> <m>(\hat{p}_1 - \hat{p}_2) \pm z^* \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m></p>
     <p>where <m>z^*</m> is the <m>100 \times \frac{1-C}{2}</m>th percentile of the standard normal distribution.</p>
     
-    <p>Technical conditions: <m>n_1\hat{p}_1 > 5</m>, <m>n_1(1 - \hat{p}_1) > 5</m>, <m>n_2\hat{p}_2 > 5</m>, and <m>n_2(1 - \hat{p}_2) > 5</m></p>
+    <p>Technical conditions: <m>n_1\hat{p}_1 \geq 5</m>, <m>n_1(1 - \hat{p}_1) \geq 5</m>, <m>n_2\hat{p}_2 \geq 5</m>, and <m>n_2(1 - \hat{p}_2) \geq 5</m></p>
     
     <p><term>Adjusted Interval:</term> A Wilson or Wald adjustment can be made on the sample proportions and sample sizes first (add one success and one failure to each sample).</p>
   </assemblage>
@@ -51,6 +48,14 @@
         <li><p>For the test, check the box for Test of Significance. Keep the hypothesized difference at zero and set the direction of the alternative, press Calculate.</p></li>
         <li><p>For the confidence interval, check the box, specify the confidence level and press Calculate CI</p></li>
       </ul></p>
+      <sidebyside>
+        <image source="images/Inv3.1TBI1.png" width="45%">
+          <description>Theory-Based Inference applet screenshot 1</description>
+        </image>
+        <image source="images/Inv3.1TBI2.png" width="45%">
+          <description>Theory-Based Inference applet screenshot 2</description>
+        </image>
+      </sidebyside>
     </hint>
     
     <hint>
@@ -64,6 +69,19 @@
       <p>For example:</p>
       <p><c>iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)</c></p>
       <p>finds the p-value for a one-sided alternative as well as a 95% confidence interval for <m>\pi_1-\pi_2</m>.</p>
+    </hint>
+    
+    <hint>
+      <title>JMP instructions</title>
+      <p>From the Analyze menu, select Fit Y by X. Put the categorical response in the Y, Response box and the group membership variable in the X, Factor box. Click OK. Next to the contingency table and mosaic plot, click on the red triangle next to Contingency Analysis and select Two Sample Test for Proportions. This will provide a test of <m>H_0: \pi_1 - \pi_2 = 0</m>, as well as confidence intervals for <m>\pi_1 - \pi_2</m>.</p>
+      <sidebyside>
+        <image source="images/Inv3.1JMP1.png" width="45%">
+          <description>JMP instructions screenshot 1</description>
+        </image>
+        <image source="images/Inv3.1JMP2.png" width="45%">
+          <description>JMP instructions screenshot 2</description>
+        </image>
+      </sidebyside>
     </hint>
   </paragraphs>
 </section>
