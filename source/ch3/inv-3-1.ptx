@@ -109,45 +109,62 @@
       <response/>
     </exercise>
 
-    <definition>
-      <title>Conditional Proportions</title>
-      <p>The simplest statistic for comparing a binary variable between two groups is the difference in the proportion of “successes” for each group. These proportions, calculated separately for each group rather than looking at the overall proportion, are called <term>conditional proportions</term>.</p>
-    </definition>
+    <assemblage>
+      <title>Definition: Conditional Proportions</title>
+      <p>The simplest statistic for comparing a binary variable between two groups is the difference in the proportion of “successes” for each group. These proportions, calculated separately for each group rather than looking at the overall proportion, are called <term>conditional proportions</term><idx><h>conditional proportions</h></idx>.</p>
+    </assemblage>
 
     <p>In this case, we compute the difference in the proportion of teens with some level of hearing loss between the two years (<m>\hat{p}_{94} - \hat{p}_{06} = 480/2928 - 333/1771</m>).</p>
 
     <p>The next step is to examine an effective graphical summary for comparing the two groups.</p>
 
-    <assemblage>
+    <paragraphs>
       <title>Technology Detour – Segmented Bar Graphs</title>
-      <p><term>In R</term></p>
-      <p>Create (and view) a matrix in R to store the counts from the two-way table</p>
-      <pre>
-> hearing = matrix(c(480, 2448, 333, 1438), nrow=2,
-+ dimnames = list(c("some loss", "no loss"), c("94", "06")))
-> hearing
-      </pre>
-      <p>Convert to a matrix of conditional proportions (margin =1 for row proportions, margin = 2 for column proportions)</p>
-      <pre>
-> hearingprop = prop.table(hearing, margin=2)
-> hearingprop
-      </pre>
-      <p>Create a segmented bar graph</p>
-      <pre>
-> barplot(hearingprop, legend=T, ylab="proportion")
-      </pre>
+      
+      <exercise label="tech-detour-r-segmented">
+        <title>Segmented Bar Graphs - R</title>
+        <statement>
+          <p>Create (and view) a matrix in R to store the counts from the two-way table</p>
+          <program language="r">
+            <input>
+hearing = matrix(c(480, 2448, 333, 1438), nrow=2,
+dimnames = list(c("some loss", "no loss"), c("94", "06")))
+hearing
+            </input>
+          </program>
+          <p>Convert to a matrix of conditional proportions (margin =1 for row proportions, margin = 2 for column proportions)</p>
+          <program language="r">
+            <input>
+hearingprop = prop.table(hearing, margin=2)
+hearingprop
+            </input>
+          </program>
+          <p>Create a segmented bar graph</p>
+          <program language="r">
+            <input>
+barplot(hearingprop, legend=T, ylab="proportion")
+            </input>
+          </program>
+        </statement>
+      </exercise>
 
-      <p><term>In JMP</term></p>
-      <p>You can specify the counts from the two-way table, but you have to do so in “column format” (each row is a combination of the two variables and the counts are all in one column)</p>
-      <p><ul>
-        <li><p>Select Analyze > Fit Y by X.</p></li>
-        <li><p>Click Hearing Loss then click the Y, Response button (or drag).</p></li>
-        <li><p>Click Year then click the X, Factor button (or drag). (With raw data, you would be done here.)</p></li>
-        <li><p>Finally click Count then the Freq button. Click OK.</p></li>
-        <li><p>Right-click on one of the bars and select Cell Labelling > Show Percents.</p></li>
-      </ul></p>
-      <p>JMP creates a “Mosaic Plot” (the column widths also reflect the relative sample sizes). An extended two-way table is shown below the Mosaic Plot although the rows and columns are reversed. Click the red Contingency Table arrow and uncheck Col% and Total% to see a less cluttered table.</p>
-    </assemblage>
+      <exercise label="tech-detour-jmp-segmented">
+        <title>Segmented Bar Graphs - JMP</title>
+        <statement>
+          <p>You can specify the counts from the two-way table, but you have to do so in “column format” (each row is a combination of the two variables and the counts are all in one column)</p>
+          <p><ul>
+            <li><p>Select Analyze > Fit Y by X.</p></li>
+            <li><p>Click Hearing Loss then click the Y, Response button (or drag).</p></li>
+            <li><p>Click Year then click the X, Factor button (or drag). (With raw data, you would be done here.)</p></li>
+            <li><p>Finally click Count then the Freq button. Click OK.</p></li>
+            <li><p>Right-click on one of the bars and select Cell Labelling > Show Percents.</p></li>
+          </ul></p>
+        </statement>
+        <solution>
+          <p>JMP creates a “Mosaic Plot” (the column widths also reflect the relative sample sizes). An extended two-way table is shown below the Mosaic Plot although the rows and columns are reversed. Click the red Contingency Table arrow and uncheck Col% and Total% to see a less cluttered table.</p>
+        </solution>
+      </exercise>
+    </paragraphs>
 
     <exercise label="inv3-1-f">
       <title>Descriptive Statistics</title>
@@ -451,55 +468,81 @@
       <p>Note: Data are “stacked” if each column represents a different variable (e.g., year surveyed and hearing condition) and they are “unstacked” if each column represents a different group (e.g., 1998 and 2002).</p>
     </exercise>
 
-    <assemblage>
+    <paragraphs>
       <title>Technology Detour – Two-sample z-procedures</title>
-      <p><term>In Theory-Based Inference applet</term></p>
-      <p><ul>
-        <li><p>Select Two proportions</p></li>
-        <li><p>Check the box to paste in 2 columns of data (stacked or unstacked) and press Use data or specify the sample sizes and either the sample counts or the sample proportions and press Calculate.</p></li>
-        <li><p>For the test, check the box for Test of Significance Keep the hypothesized difference at zero and set the direction of the alternative, press Calculate.</p></li>
-        <li><p>For the confidence interval, check the box, specify the confidence level and press Calculate CI</p></li>
-      </ul></p>
+      
+      <exercise label="tech-detour-applet-z">
+        <title>Theory-Based Inference Applet</title>
+        <statement>
+          <p><ul>
+            <li><p>Select Two proportions</p></li>
+            <li><p>Check the box to paste in 2 columns of data (stacked or unstacked) and press Use data or specify the sample sizes and either the sample counts or the sample proportions and press Calculate.</p></li>
+            <li><p>For the test, check the box for Test of Significance Keep the hypothesized difference at zero and set the direction of the alternative, press Calculate.</p></li>
+            <li><p>For the confidence interval, check the box, specify the confidence level and press Calculate CI</p></li>
+          </ul></p>
+        </statement>
+      </exercise>
 
-      <p><term>In R</term></p>
-      <p>Use <c>iscamtwopropztest</c> which takes the following inputs:</p>
-      <p><ul>
-        <li><p>observed1 (either the number of successes or sample proportion for first group), n1 (sample size for first group, observed2 (count or proportion), and n2</p></li>
-        <li><p>Optional: hypothesized difference and alternative (“less”, “greater”, or “two.sided”)</p></li>
-        <li><p>Optional: conf.level</p></li>
-      </ul></p>
-      <p>For example: <c>> iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)</c></p>
-      <p>finds the p-value for a one-sided alternative as well as a 95% confidence interval for <m>\pi_1-\pi_2</m>.</p>
+      <exercise label="tech-detour-r-z">
+        <title>R</title>
+        <statement>
+          <p>Use <c>iscamtwopropztest</c> which takes the following inputs:</p>
+          <p><ul>
+            <li><p>observed1 (either the number of successes or sample proportion for first group), n1 (sample size for first group, observed2 (count or proportion), and n2</p></li>
+            <li><p>Optional: hypothesized difference and alternative (“less”, “greater”, or “two.sided”)</p></li>
+            <li><p>Optional: conf.level</p></li>
+          </ul></p>
+          <p>For example:</p>
+          <program language="r">
+            <input>
+iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)
+            </input>
+          </program>
+        </statement>
+        <solution>
+          <p>finds the p-value for a one-sided alternative as well as a 95% confidence interval for <m>\pi_1-\pi_2</m>.</p>
+        </solution>
+      </exercise>
 
-      <p><term>In JMP</term></p>
-      <p><ul>
-        <li><p>With raw data or after specifying the two-way table in column format, select Analyze > Fit Y by X and specify the categorical response variable (Y, Response) and the categorical explanatory variable (X, Factor)</p></li>
-        <li><p>Specify the counts if using a two-way table (and “year” is seen as a categorical variable)</p></li>
-        <li><p>Press OK.</p></li>
-        <li><p>The p-value in the Pearson row matches a two-sided z-test.</p></li>
-        <li><p>For a confidence interval, use the hot spot to select Two Sample Test for Proportions</p></li>
-      </ul></p>
-      <p>Note: Here you can change with outcome is considered success. This also reports an “adjusted Wald” p-value</p>
-      <p><ul>
-        <li><p>With summary data use the ISCAM Journal file: Hypothesis Test for Two Proportions</p></li>
-        <li><p>Specify the form of the alternative hypothesis</p></li>
-        <li><p>Enter the number of successes and the sample sizes,</p></li>
-      </ul></p>
-      <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use “pooled estimate of variance.” This reports the z-score as well.)</p>
-    </assemblage>
+      <exercise label="tech-detour-jmp-z">
+        <title>JMP</title>
+        <statement>
+          <p><ul>
+            <li><p>With raw data or after specifying the two-way table in column format, select Analyze > Fit Y by X and specify the categorical response variable (Y, Response) and the categorical explanatory variable (X, Factor)</p></li>
+            <li><p>Specify the counts if using a two-way table (and “year” is seen as a categorical variable)</p></li>
+            <li><p>Press OK.</p></li>
+            <li><p>The p-value in the Pearson row matches a two-sided z-test.</p></li>
+            <li><p>For a confidence interval, use the hot spot to select Two Sample Test for Proportions</p></li>
+          </ul></p>
+          <p>Note: Here you can change with outcome is considered success. This also reports an “adjusted Wald” p-value</p>
+          <p><ul>
+            <li><p>With summary data use the ISCAM Journal file: Hypothesis Test for Two Proportions</p></li>
+            <li><p>Specify the form of the alternative hypothesis</p></li>
+            <li><p>Enter the number of successes and the sample sizes,</p></li>
+          </ul></p>
+          <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use “pooled estimate of variance.” This reports the z-score as well.)</p>
+        </statement>
+      </exercise>
+    </paragraphs>
 
-    <assemblage>
+    <paragraphs>
       <title>Technology Detour – Simulating Proportions from Independent Random Samples</title>
-      <p>Step 1: Generate a random sample of 2928 observations from a binomial process with <m>\pi = .173</m></p>
-      <p>Step 2: Generate a random sample of 1771 observations from a binomial process with <m>\pi = .173</m></p>
-      <p>Step 3: Convert the sample counts into sample proportions</p>
-      <p>Step 4: Calculate the difference in the sample proportions</p>
-      <p>Step 5: Repeat steps 1-4 a large number of times.</p>
-      <p>You should explore the individual <m>\hat{p}</m> distributions but most focus on the distribution of <m>\hat{p}_1 - \hat{p}_2</m>, including the mean, standard deviation, and whether the distribution behaves like a normal distribution.</p>
+      
+      <exercise label="tech-detour-sim-steps">
+        <title>Simulation Steps</title>
+        <statement>
+          <p>Step 1: Generate a random sample of 2928 observations from a binomial process with <m>\pi = .173</m></p>
+          <p>Step 2: Generate a random sample of 1771 observations from a binomial process with <m>\pi = .173</m></p>
+          <p>Step 3: Convert the sample counts into sample proportions</p>
+          <p>Step 4: Calculate the difference in the sample proportions</p>
+          <p>Step 5: Repeat steps 1-4 a large number of times.</p>
+          <p>You should explore the individual <m>\hat{p}</m> distributions but most focus on the distribution of <m>\hat{p}_1 - \hat{p}_2</m>, including the mean, standard deviation, and whether the distribution behaves like a normal distribution.</p>
 
-      <p>In Applet: <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions</url></p>
-      <p>In R: IndependentBinomialsR.html</p>
-      <p>In JMP: IndependentBinomialsJMP.html</p>
-    </assemblage>
+          <p>In Applet: <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions</url></p>
+          <p>In R: IndependentBinomialsR.html</p>
+          <p>In JMP: IndependentBinomialsJMP.html</p>
+        </statement>
+      </exercise>
+    </paragraphs>
   </subsection>
 </section>
