@@ -8,7 +8,7 @@
     <image source="images/Inv3.1intro.png" width="80%"/>
   </introduction>
 
-  <exercise label="inv3-1-a">
+  <exercise xml:id="inv3-1-a">
     <title>Study Design Difference</title>
     <statement>
       <p>What is the primary difference between this study and those examined in Chapters 1 and 2?</p>
@@ -18,7 +18,7 @@
     <response/>
   </exercise>
 
-  <exercise label="inv3-1-b">
+  <exercise xml:id="inv3-1-b">
     <title>Identify Populations and Variable</title>
     <task>
       <statement>
@@ -50,7 +50,7 @@
   <paragraphs>
     <title>Descriptive Statistics</title>
     
-    <exercise label="inv3-1-c">
+    <exercise xml:id="inv3-1-c">
       <title>Two-Way Table</title>
       <statement>
         <p>When we have two samples for a binary categorical variable, it is often useful to organize the data using a two-way table. Complete the following 2 × 2 table of counts.</p>
@@ -116,14 +116,14 @@
       <response/>
     </exercise>
 
-    <exercise label="inv3-1-d">
+    <exercise xml:id="inv3-1-d">
       <title>Comparing Counts vs Proportions</title>
       <statement><p>Explain why it does not make sense to conclude that hearing loss was more prevalent in 1988-1994 than in 2005-2006 based only on the comparison that 480 > 333.</p></statement>
       <solution><p>Because the sample sizes for the two surveys are not the same</p></solution>
       <response/>
     </exercise>
 
-    <exercise label="inv3-1-e">
+    <exercise xml:id="inv3-1-e">
       <title>Comparing Proportions</title>
       <statement><p>Suggest a better way to compare the prevalence of hearing loss between the two studies. Calculate one number as the statistic for this study (what symbols are you using?). Does your statistic seem large enough to convince you that there has been an increase in hearing loss?</p></statement>
       <solution><p>88 - 05 = 480/2928 - 333/1771 = -0.024 (judgements of the impressiveness of this number will vary; it seems on the small side but the sample sizes are large)</p></solution>
@@ -142,7 +142,7 @@
     <paragraphs>
       <title>Technology Detour – Segmented Bar Graphs</title>
       
-      <exercise label="tech-detour-r-segmented">
+      <exercise xml:id="tech-detour-r-segmented">
         <title>Segmented Bar Graphs - R</title>
         <statement>
           <p>Create (and view) a matrix in R to store the counts from the two-way table</p>
@@ -169,7 +169,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
         </statement>
       </exercise>
 
-      <exercise label="tech-detour-jmp-segmented">
+      <exercise xml:id="tech-detour-jmp-segmented">
         <title>Segmented Bar Graphs - JMP</title>
         <statement>
           <p>You can specify the counts from the two-way table, but you have to do so in “column format” (each row is a combination of the two variables and the counts are all in one column)</p>
@@ -189,7 +189,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <p>Use technology to create numerical and graphical summaries for these summarized data.</p>
 
-    <exercise label="inv3-1-f">
+    <exercise xml:id="inv3-1-f">
       <title>Descriptive Statistics</title>
       <statement>
         <p>Write a sentence or two comparing the distributions of hearing loss between these two studies. Be sure to report an appropriate statistic.</p>
@@ -202,7 +202,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <response/>
     </exercise>
 
-    <exercise label="inv3-1-g">
+    <exercise xml:id="inv3-1-g">
       <title>Initial Conclusion</title>
       <statement><p>Do these data convince you that there is a difference in the population proportions? If not, what could be another explanation for the difference you see in these numerical and graphical summaries for these two samples?</p></statement>
       <solution><p>Judgements will vary, but we should still consider random sampling "error"</p></solution>
@@ -215,7 +215,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <title>Inferential Statistics</title>
     <p>As we’ve said before, it certainly is possible to obtain sample proportions this far apart, just by random chance, even if the population proportions (of teens with some hearing loss) were the same. The question now is how likely such a difference would be if the population proportions were the same. We can answer this question by modeling the sampling variability, arising from taking random samples from these populations, for the difference in two sample proportions. Investigating this sampling variability will help us to assess whether this particular difference in sample proportions is strong evidence that the population proportions actually differ.</p>
 
-    <exercise label="inv3-1-h">
+    <exercise xml:id="inv3-1-h">
       <title>Hypotheses</title>
       <statement>
         <p>Let <m>\pi_{94}</m> represent the proportion of all American teenagers in 1994 with at least some hearing loss, and similarly for <m>\pi_{06}</m>. Define the parameter of interest to be <m>\pi_{94} - \pi_{06}</m>, the difference in the population proportions between these two years. State appropriate null and alternative hypotheses about this parameter to reflect the researchers' conjecture that hearing loss by teens is becoming more prevalent.</p>
@@ -236,21 +236,21 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <title>Simulation</title>
     <p>Because the population sizes are very large compared to the sample sizes, we will model this by treating the populations as infinite and sampling from binomial processes.</p>
     
-    <exercise label="inv3-1-i">
+    <exercise xml:id="inv3-1-i">
       <title>Modeling Null Hypothesis</title>
       <statement><p>How do we model the null hypothesis being true?</p></statement>
       <solution><p>We sample from two random processes but we keep the process probability the same between them.</p></solution>
       <response/>
     </exercise>
 
-    <exercise label="inv3-1-j">
+    <exercise xml:id="inv3-1-j">
       <title>Pooled Estimate</title>
       <statement><p>So under the null hypothesis we really only have one value of <m>\pi</m> to estimate – the common population proportion with hearing loss for these two years. What is your best estimate for <m>\pi</m> from the sample data? [Hint: Think about combining the two years together.]</p></statement>
       <solution><p>= 813/4699 = 0.173</p></solution>
       <response/>
     </exercise>
 
-    <exercise label="inv3-1-k">
+    <exercise xml:id="inv3-1-k">
       <title>Simulation Design</title>
       <statement><p>Describe how you could carry out a simulation analysis to investigate whether the observed difference in sample proportions provides strong evidence that the population proportions with hearing loss differed between these two time periods. How will you estimate the p-value?</p></statement>
       <solution><p>We could take random samples of 2928 and 1771 from two populations that have the same population proportion of successes. Then see how often 1 - 2 ≈ -0.024 when 94 - 06 = 0 by random sampling alone.</p></solution>
@@ -259,7 +259,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <p>We will begin our simulation analysis by assuming the population proportion is actually this value (<m>\pi = (480 + 333)/(2928 + 1771) = 0.173</m>). We simulate the drawing of two different random samples from this population, one to represent the 1994 study and the other for the 2006 study. Then we examine the distribution of the difference in the conditional proportions with some hearing loss between these two years. Finally, we repeat this random sampling process for many trials. [Note: We can assume <m>\pi = 0.173</m> without loss of generality, but you might want to verify this with other values for <m>\pi</m> as well.]</p>
 
-    <exercise label="inv3-1-l">
+    <exercise xml:id="inv3-1-l">
       <title>One Repetition</title>
       <statement>
         <p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url> to randomly sample one "could have been" difference in conditional proportions assuming the null hypothesis is true.</p>
@@ -281,7 +281,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <response/>
     </exercise>
 
-    <exercise label="inv3-1-m">
+    <exercise xml:id="inv3-1-m">
       <title>Variability</title>
       <statement>
         <p>Will everyone in the class get the same answers to <xref ref="inv3-1-l" text="custom">checkpoint 14</xref>? Explain.</p>
@@ -293,7 +293,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <p>To learn about the pattern of variation in our statistic, we want to generate many more outcomes assuming the null hypothesis to be true.</p>
 
-    <exercise label="inv3-1-n">
+    <exercise xml:id="inv3-1-n">
       <title>Many Repetitions</title>
       <statement><p>Change the Number of samples from 1 to 999 and press Draw Samples for a total of 1,000 independent random samples. Describe the distribution of <m>\hat{p}_1</m> values, the distribution of <m>\hat{p}_2</m> values, and the distribution of <m>\hat{p}_1 - \hat{p}_2</m> values. Does the distribution of difference in proportions behave as you expected? In particular, does the mean of this distribution make sense? (How does it compare to the means of the individual <m>\hat{p}</m> distributions?) Explain.</p></statement>
       <solution>
@@ -305,7 +305,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <response/>
     </exercise>
 
-    <exercise label="inv3-1-o">
+    <exercise xml:id="inv3-1-o">
       <title>Empirical P-value</title>
       <statement><p>Now determine the empirical p-value by counting how often the simulated difference in conditional proportions is at least as extreme as the actual value observed in the study by entering the observed value in the Count Samples box and pressing the Count button. (Make sure the direction matches the alternative hypothesis.) Report your empirical p-value and indicate what conclusion you would draw from it.</p></statement>
       <solution>
@@ -321,7 +321,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
   <paragraphs>
     <title>Mathematical Model</title>
     
-    <exercise label="inv3-1-p">
+    <exercise xml:id="inv3-1-p">
       <title>Distribution Shape</title>
       <statement>
         <p>It turns out that there is no "exact" method for calculating the p-value here, because the difference in two binomial variables does not have a binomial, or any other known, probability distribution. However, did the histogram of <m>\hat{p}_1 - \hat{p}_2</m> values you examined remind you of any other probability distribution?</p>
@@ -331,7 +331,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <response/>
     </exercise>
 
-    <exercise label="inv3-1-q">
+    <exercise xml:id="inv3-1-q">
       <title>Normal Approximation</title>
       <statement><p>Check the Normal Approximation box to overlay a normal curve on your null distribution to evaluate whether the simulated differences appear to “line up” with observations from a standard normal distribution. Does the normal model appear to be a reasonable approximation to the null distribution?</p></statement>
       <solution>
@@ -346,7 +346,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <p>There is a theoretical result that the difference in two normal distributions will also follow a normal distribution. When our sample sizes (<m>n_1</m> and <m>n_2</m>) are large, we know the individual binomial distributions are well approximated by normal distributions. Consequently, the difference of the sample proportions will be well approximated by a normal distribution as well. The mean of this distribution is simply the difference in the means of the individual normal distributions.</p>
     </assemblage>
 
-    <exercise label="inv3-1-r">
+    <exercise xml:id="inv3-1-r">
       <title>Variability Comparison</title>
       <statement>
         <p>How does the variability (SD) of the difference in <m>\hat{p}</m> values compare to the variability of the individual <m>\hat{p}</m> distributions?</p>
@@ -368,7 +368,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <p><m>E(X \pm Y) = E(X) \pm E(Y)</m></p>
     <p><m>Var(X \pm Y) = Var(X) + Var(Y)</m>, as long as <m>X</m> and <m>Y</m> are independent</p>
 
-    <exercise label="inv3-1-s">
+    <exercise xml:id="inv3-1-s">
       <title>Expected Value and Variance</title>
       <statement><p>Use these rules to suggest a way to calculate <m>E(\hat{p}_1 - \hat{p}_2)</m> and <m>Var(\hat{p}_1 - \hat{p}_2)</m>.</p></statement>
       <solution>
@@ -379,7 +379,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <response/>
     </exercise>
 
-    <exercise label="inv3-1-t">
+    <exercise xml:id="inv3-1-t">
       <title>Standard Error Calculation</title>
       <statement><p>Suggest two different methods for calculating <m>SE(\hat{p}_1 - \hat{p}_2)</m> using the observed data.</p></statement>
       <solution><p>When the null hypothesis is true, we are assuming , so we can substitute in the same number for both values. Otherwise, we can substitute in  and .</p></solution>
@@ -403,7 +403,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <p>Then use we use this value to calculate the standard error of <m>\hat{p}_1 - \hat{p}_2</m> to be:</p>
     <p><m>SE(\hat{p}_1 - \hat{p}_2) = \sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1} + \frac{1}{n_2})}</m></p>
 
-    <exercise label="inv3-1-u">
+    <exercise xml:id="inv3-1-u">
       <title>Standardized Statistic Formula</title>
       <statement>
         <p>Use these theoretical results to suggest the general formula for a standardized statistic and a method for calculating a p-value to test <m>H_0: \pi_1 - \pi_2 = 0</m> (also expressed as <m>H_0: \pi_1 = \pi_2</m>) versus the alternative <m>H_a: \pi_1 - \pi_2 &lt; 0</m> (or <m>H_a: \pi_1 &lt; \pi_2</m>). (This is referred to as the <term>two-sample z-test</term><idx><h>two-sample z-test</h></idx> or <term>two proportion z-test</term><idx><h>two proportion z-test</h></idx>.)</p>
@@ -413,7 +413,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <response/>
     </exercise>
 
-    <exercise label="inv3-1-v">
+    <exercise xml:id="inv3-1-v">
       <title>Calculate <m>z</m>-statistic</title>
       <statement>
         <p>Calculate and interpret the value of the standardized statistic specified in (t) as applied to the hearing loss study.</p>
@@ -431,14 +431,14 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <response/>
     </exercise>
 
-    <exercise label="inv3-1-w">
+    <exercise xml:id="inv3-1-w">
       <title>Compare SE</title>
       <statement><p>Is the standard error close to the empirical standard deviation from your simulation results?</p></statement>
       <solution><p>yes (.0113 vs. .011 for example)</p></solution>
       <response/>
     </exercise>
 
-    <exercise label="inv3-1-x">
+    <exercise xml:id="inv3-1-x">
       <title>Theoretical P-value</title>
       <statement><p>Use technology to compute the p-value for this standardized statistic using the standard normal distribution and compare it to your simulation results.</p></statement>
       <solution><p>P(Z &lt; -2.12) ≈ 0.017, should be in the ballpark of your simulation results</p></solution>
@@ -452,7 +452,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <p><term>Case 2:</term> When calculating confidence intervals, we make no assumptions about the populations (for example, when we are not testing a particular null hypothesis but only estimating the parameter, we do not assume a common value for <m>\pi</m>). So we will use a different formula to approximate the standard deviation of <m>\hat{p}_1 - \hat{p}_2</m>:</p>
     <p><m>SE(\hat{p}_1 - \hat{p}_2) = \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m></p>
 
-    <exercise label="inv3-1-y">
+    <exercise xml:id="inv3-1-y">
       <title>CI Standard Error</title>
       <statement>
         <p>Calculate this version of the standard error. Is it much different from what you calculated in <xref ref="inv3-1-v" text="custom">checkpoint 23</xref>?</p>
@@ -465,7 +465,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <response/>
     </exercise>
 
-    <exercise label="inv3-1-z">
+    <exercise xml:id="inv3-1-z">
       <title>95% Confidence Interval</title>
       <statement><p>Calculate and interpret a 95% confidence interval to compare hearing loss of American teenagers in these two years. Is this confidence interval consistent with your test of significance? Why is it theoretically possible the interval would not be consistent with the test of significance?</p></statement>
       <solution>
@@ -484,7 +484,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <p>Note: A “Wilson adjustment” can be used with this confidence interval similar to the Plus Four Method from Chapter 1, this time putting one additional success and one additional failure in each sample. This adjustment will be most useful when the sample proportions are close to 0 or 1 (that is when the sample size conditions above are not met).</p>
 
-    <exercise label="inv3-1-aa">
+    <exercise xml:id="inv3-1-aa">
       <title>Conclusion</title>
       <statement><p>Summarize your conclusions from this study. Be sure to address statistical significance, statistical confidence, and the populations you are willing to generalize the results to. Also, are you willing to conclude that the change in the prevalence of hearing loss is due to the increased use of ear buds among teenagers between 1994 and 2006? Explain why or why not.</p></statement>
       <solution>
@@ -522,7 +522,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <paragraphs>
       <title>Technology Detour – Two-sample z-procedures</title>
       
-      <exercise label="tech-detour-applet-z">
+      <exercise xml:id="tech-detour-applet-z">
         <title>Theory-Based Inference Applet</title>
         <statement>
           <p><ul>
@@ -534,7 +534,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
         </statement>
       </exercise>
 
-      <exercise label="tech-detour-r-z">
+      <exercise xml:id="tech-detour-r-z">
         <title>R</title>
         <statement>
           <p>Use <c>iscamtwopropztest</c> which takes the following inputs:</p>
@@ -555,7 +555,7 @@ iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)
         </solution>
       </exercise>
 
-      <exercise label="tech-detour-jmp-z">
+      <exercise xml:id="tech-detour-jmp-z">
         <title>JMP</title>
         <statement>
           <p><ul>
@@ -579,7 +579,7 @@ iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)
     <paragraphs>
       <title>Technology Detour – Simulating Proportions from Independent Random Samples</title>
       
-      <exercise label="tech-detour-sim-steps">
+      <exercise xml:id="tech-detour-sim-steps">
         <title>Simulation Steps</title>
         <statement>
           <p>Step 1: Generate a random sample of 2928 observations from a binomial process with <m>\pi = .173</m></p>
