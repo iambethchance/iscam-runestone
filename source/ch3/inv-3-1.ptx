@@ -346,7 +346,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
           <p>How does the variability (SD) of the <em>difference</em> in <m>\hat{p}</m> values compare to the variability of the individual <m>\hat{p}</m> distributions?</p>
         </statement>
         <choices>
-          <choice><statement>Similar</statement></choice>
+          <choice><statement>equal</statement></choice>
           <choice correct="yes"><statement>Larger</statement></choice>
           <choice><statement>Smaller</statement></choice>
         </choices>
@@ -369,9 +369,9 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <title>Expected Value and Variance</title>
       <statement><p>Use these rules to suggest a way to calculate <m>E(\hat{p}_1 - \hat{p}_2)</m> and <m>Var(\hat{p}_1 - \hat{p}_2)</m>.</p></statement>
       <solution>
-        <p>E( = E() = E(= - </p>
-        <p>Var( = Var() + (-1)2V( = </p>
-        <p>So SD( = </p>
+        <p>E(<m>\hat{p}_1 - \hat{p}_2</m>) = E(<m>\hat{p}_1</m>) - E(<m>\hat{p}_2</m>) = <m>\pi_1 - \pi_2</m></p>
+        <p>Var(<m>\hat{p}_1 - \hat{p}_2</m>) = Var(<m>\hat{p}_1</m>) + (-1)<m>^2</m>Var(<m>\hat{p}_2</m>) = <m>\pi_1(1-\pi_1)/n_1 + \pi_2(1-\pi_2)/n_2</m></p>
+        <p>So SD(<m>\hat{p}_1 - \hat{p}_2</m>) = <m>\sqrt{\frac{\pi_1(1-\pi_1)}{n_1} + \frac{\pi_2(1-\pi_2)}{n_2}}</m></p>
       </solution>
       <response/>
     </exercise>
@@ -379,7 +379,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <exercise xml:id="inv3-1-t">
       <title>Standard Error Formula</title>
       <statement><p>Suggest two different methods for calculating <m>SE(\hat{p}_1 - \hat{p}_2)</m> using the observed data.</p></statement>
-      <solution><p>When the null hypothesis is true, we are assuming , so we can substitute in the same number for both values. Otherwise, we can substitute in  and .</p></solution>
+      <solution><p>When the null hypothesis is true, we are assuming <m>\pi_1 = \pi_2</m>, so we can substitute in the same number for both values. Otherwise, we can substitute in <m>\hat{p}_1</m> and <m>\hat{p}_2</m>.</p></solution>
       <response/>
     </exercise>
 
@@ -406,7 +406,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <statement>
         <p>standardized statistic = z = (observed-hypothesized)/(standard error) =</p>
       </statement>
-      <solution><p>z = </p></solution>
+      <solution><p>z = <m>\frac{\hat{p}_1 - \hat{p}_2 - 0}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1} + \frac{1}{n_2})}}</m></p></solution>
       <response/>
     </exercise>
 
@@ -423,11 +423,11 @@ barplot(hearingprop, legend=T, ylab="proportion")
         <p><var width="60" height="3"/></p>
       </statement>
       <solution>
-        <p>94 - 06 = -0.024</p>
-        <p>0.173</p>
-        <p>SE(94 - 06) =  = 0.0113</p>
-        <p>standardized statistic: z =</p>
-        <p>Interpretation: Our 1 - 2 (-0.024) is 2.12 standard errors below the mean (1 - 2 = 0)</p>
+        <p><m>\hat{p}_{94} - \hat{p}_{06}</m> = -0.024</p>
+        <p><m>\hat{p}</m> = 0.173</p>
+        <p>SE(<m>\hat{p}_{94} - \hat{p}_{06}</m>) = <m>\sqrt{.173(1-.173)(\frac{1}{2928} + \frac{1}{1771})}</m> = 0.0113</p>
+        <p>standardized statistic: z = <m>\frac{-0.024-0}{0.0113}</m> = -2.12</p>
+        <p>Interpretation: Our <m>\hat{p}_1 - \hat{p}_2</m> (-0.024) is 2.12 standard errors below the mean (<m>\pi_1 - \pi_2 = 0</m>)</p>
       </solution>
       <response/>
     </exercise>
@@ -461,12 +461,12 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <exercise xml:id="inv3-1-y">
       <title>CI Standard Error</title>
       <statement>
-        <p>Calculate this version of the standard error. Is it much different from what you calculated in <xref ref="inv3-1-v" text="custom">checkpoint 23</xref>?</p>
+        <p>Calculate this version of the standard error. Is it much different from what you calculated in <xref ref="inv3-1-v" text="custom">checkpoint 27</xref>?</p>
         <p><var width="60" height="5"/></p>
       </statement>
       <solution>
         <p>estimate ± (critical value)(standard error)</p>
-        <p>1 - 2 ± z* </p>
+        <p><m>\hat{p}_1 - \hat{p}_2 \pm z^*\sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m></p>
       </solution>
       <response/>
     </exercise>
@@ -475,7 +475,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <title>95% Confidence Interval</title>
       <statement><p>Calculate and interpret a 95% confidence interval to compare hearing loss of American teenagers in these two years. Is this confidence interval consistent with your test of significance? Why is it theoretically possible the interval would not be consistent with the test of significance?</p></statement>
       <solution>
-        <p>-0.024 ± 1.96= (-0.047, -0.001)</p>
+        <p>-0.024 ± 1.96<m>\sqrt{\frac{.163(1-.163)}{2928} + \frac{.188(1-.188)}{1771}}</m> = (-0.047, -0.001)</p>
         <p>We are 95% confident that the population proportion with at least some hearing loss in 2006 is 0.001 to 0.047 larger than the population proportion with at least some hearing loss in 1994. This interval is consistent with our test because all of the values are negative (we rejected zero as a plausible value for the difference in population proportions in favor of the alternative that the probability of hearing loss was now larger). Technically we should adjust this comparison for the one-sided nature of the significance test. For example, the two-sided p-value would be 0.034, so we expect zero to not be included in the confidence interval for any confidence level of 96.6% or less.</p>
       </solution>
       <response/>
@@ -525,20 +525,42 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <p>In Practice Problem 1.1B, you considered data on the first 3 months of the Premier soccer league in 2019 (pre-Covid) and in 2020 (during Covid, when no fans were allowed). Consider these observations as random samples from independent processes. In 2019, the home team won 54 of the first 88 games and in 2020, the home team won 40 of 87 matches.</p>
 
-    <p>Note: Data are "stacked" if each column represents a different variable (e.g., year surveyed and hearing condition) and they are "unstacked" if each column represents a different group (e.g., 1998 and 2002).</p>
-
-    <exercise xml:id="practice-3-1-b">
+    <exercise xml:id="practice-3-1-b-a">
       <statement>
-        <p><ol label="(a)">
-          <li><p>Create the two-way table for comparing these samples to each other. Calculate and interpret the difference in conditional proportions.</p></li>
-          <li><p>Specify appropriate null and alternative hypothesis, being clear how these hypotheses change from Chapter 1. Are you using a one-sided or two-sided alternative?</p></li>
-          <li><p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url> to carry out a simulation. What are you using for the common probability of success? Which values do you count for the p-value? What do you conclude?</p></li>
-          <li><p>Are the technical conditions met to calculate the two-sample z-interval for these data? Explain.</p></li>
-          <li><p>Calculate and interpret a 95% confidence interval from these data.</p></li>
-        </ol></p>
+        <p>Create the two-way table for comparing these samples to each other. Calculate and interpret the difference in conditional proportions.</p>
       </statement>
       <response/>
     </exercise>
+
+    <exercise xml:id="practice-3-1-b-b">
+      <statement>
+        <p>Specify appropriate null and alternative hypothesis, being clear how these hypotheses change from Chapter 1. Are you using a one-sided or two-sided alternative?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-1-b-c">
+      <statement>
+        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url> to carry out a simulation. What are you using for the common probability of success? Which values do you count for the p-value? What do you conclude?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-1-b-d">
+      <statement>
+        <p>Are the technical conditions met to calculate the two-sample z-interval for these data? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-1-b-e">
+      <statement>
+        <p>Calculate and interpret a 95% confidence interval from these data.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <p>Note: Data are "stacked" if each column represents a different variable (e.g., year surveyed and hearing condition) and they are "unstacked" if each column represents a different group (e.g., 1998 and 2002).</p>
   </subsection>
 
     <paragraphs>
