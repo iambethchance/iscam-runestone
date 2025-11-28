@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="chapter2-wrap-up" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Chapter 2 Wrap-Up</title>
+
+  <introduction>
+    <p>This section provides guided examples for practice, followed by a comprehensive summary and technology reference guides for Chapter 2 concepts.</p>
+  </introduction>
+
+  <xi:include href="./example-2-1.ptx"/>
+  <xi:include href="./example-2-2.ptx"/>
+
+  <subsection xml:id="chapter2-summary">
+    <title>Chapter 2 Summary</title>
+
+    <p>In this chapter, you focused on distributions of quantitative data, following up earlier discussion in Investigation A. In exploring quantitative data, we start with a graph displaying the distribution, such as a dotplot or a histogram. The most relevant features include shape, center, and variability, as well as deviations from the overall pattern. The appropriate numerical summaries of center include the mean and median, but keep in mind that the median is more resistant than the mean to outliers and skewness. The appropriate numerical summaries of variability include interquartile range (IQR) and standard deviation, with the IQR also more resistant to outliers and skewness. Remember when examining the variability of a data set, you are interested in the spread of the values that the variable takes (along the horizontal axis). In summarizing data, the five-number summary can be very descriptive and you were also introduced to boxplots, a graphical display of the five-number summary.</p>
+
+    <p>After examining the sample distribution, it may be appropriate to ask whether a sample statistic differs significantly from some claim about the population. For example, whether the sample mean is far enough from a conjectured population mean to convince you that the discrepancy did not arise “by chance alone.” You explored some simulation models, mostly to convince you that the t-distribution provides a very convenient approximation to the sampling distribution of the standardized statistic of a sample mean. This allowed us to approximate p-values and calculate confidence intervals. Keep in mind that the logic of statistical significance hasn’t changed – we assume the null hypothesis is true and determine how often we would get a sample statistic at least as extreme as what was observed. You saw that this likelihood is strongly affected by not only the sample size but also how much variability is inherent in the data. You also learned about prediction intervals, as opposed to confidence intervals, for estimating individual values rather than the population mean.</p>
+
+    <p>These t procedures do come with some technical conditions and should be applied with extreme caution with small sample sizes or extreme skewness in the distribution. In this case, you could consider transforming the variable to rescale the observations to a known probability distribution such as the normal distribution. You can also apply the sign test which looks at the sign of the values rather than the numerical outcome and allows you to apply the binomial distribution. Other approaches such as bootstrapping are very flexible in the choice of statistic.</p>
+  </subsection>
+
+  <subsection xml:id="what-you-learned-ch2">
+    <title>Summary of What You Have Learned in This Chapter</title>
+
+    <p><ul>
+      <li><p>Numerical and graphical summaries for describing the distribution of a quantitative variable</p></li>
+      <li><p>Focus on shape, center, and variability of the distribution, and deviations from overall pattern</p></li>
+      <li><p>Properties of numerical summaries (resistance)</p></li>
+      <li><p>How to describe, measure, and interpret variability of a quantitative variable</p></li>
+      <li><p>Identifying and considering potential explanations for outliers</p></li>
+      <li><p>Stating hypotheses in terms of a population mean</p></li>
+      <li><p>One-sample t-procedures</p></li>
+      <li><p>When appropriate to apply; Why helpful</p></li>
+      <li><p>How to interpret results</p></li>
+      <li><p>Alternative approaches if not valid (e.g., data transformations)</p></li>
+      <li><p>Factors that affect the significance of the comparison (e.g., sample size, sample variability)</p></li>
+      <li><p>Prediction intervals</p></li>
+    </ul></p>
+  </subsection>
+
+  <subsection xml:id="technology-summary-ch2">
+    <title>Technology Summary</title>
+
+    <p><ul>
+      <li><p>Summarizing data (dotplots, histograms, boxplots, mean, standard deviation, five-number summary)</p></li>
+      <li><p>Simulating a sampling distribution from a finite population</p></li>
+      <li><p>One-sample t-procedures</p></li>
+      <li><p>Transforming data</p></li>
+    </ul></p>
+  </subsection>
+
+  <subsection xml:id="r-quick-reference-ch2">
+    <title>Quick Reference to ISCAM R Workspace Functions and R Commands</title>
+
+    <table>
+      <title>R Commands</title>
+      <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
+        <row header="yes" bottom="major">
+          <cell>Procedure Desired</cell>
+          <cell>Menu</cell>
+        </row>
+        <row>
+          <cell>Graphs of quantitative data</cell>
+          <cell><c>iscamdotplot(x, xlab, main)</c>
+          <c>hist(x, xlab, main)</c>
+          <c>boxplot(x, ylab, horizontal=T)</c> or <c>iscamboxplot</c></cell>
+        </row>
+        <row>
+          <cell>Numerical summaries</cell>
+          <cell><c>iscamsummary(x, digits)</c></cell>
+        </row>
+        <row>
+          <cell>Normal probability plots</cell>
+          <cell><c>iscamaddnorm(x, xlab, main, breaks)</c>
+          <c>qqnorm(x, datax = T)</c>
+          <c>qqline(x, datax = T)</c></cell>
+        </row>
+        <row>
+          <cell>Critical values from t-distribution</cell>
+          <cell><c>iscaminvt(prob, df, direction)</c></cell>
+        </row>
+        <row>
+          <cell>Carry out the One Sample t procedures</cell>
+          <cell><c>t.test(x, mu, alternative, conf.level)</c>
+          <c>iscamonesamplet(xbar, sd, n, hypothesized, alternative, conf.level)</c></cell>
+        </row>
+        <row>
+          <cell>Prediction interval</cell>
+          <cell><c>predict(lm(y ~ 1), newdata = data.frame(var = 0), interval = "predict")</c></cell>
+        </row>
+      </tabular>
+    </table>
+  </subsection>
+
+  <subsection xml:id="jmp-quick-reference-ch2">
+    <title>Quick Reference to JMP Commands</title>
+
+    <table>
+      <title>JMP Commands</title>
+      <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
+        <row header="yes" bottom="major">
+          <cell>Procedure Desired</cell>
+          <cell>Menu</cell>
+        </row>
+        <row>
+          <cell>Graphs of quantitative data</cell>
+          <cell>Graph > Graph Builder
+          For a dotplot: change the Jitter style to Positive grid
+          Analyze > Distribution
+          For a boxplot use the hot spot to select Outlier Boxplot</cell>
+        </row>
+        <row>
+          <cell>Numerical summaries</cell>
+          <cell>Analyze > Distribution or Analyze > Tabulate</cell>
+        </row>
+        <row>
+          <cell>Normal probability plots</cell>
+          <cell>Analyze > Distribution Hot spot > Normal Quantile Plot</cell>
+        </row>
+        <row>
+          <cell>Critical values from t-distribution</cell>
+          <cell>Distribution Calculator</cell>
+        </row>
+        <row>
+          <cell>Carry out the One Sample t procedures</cell>
+          <cell>Analyze > Distribution
+          Or ISCAM Journal File</cell>
+        </row>
+      </tabular>
+    </table>
+  </subsection>
+
+  <subsection xml:id="choice-of-procedures-ch2">
+    <title>Choice of Procedures for Analyzing One Mean</title>
+
+    <table>
+      <title>Analyzing One Mean</title>
+      <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
+        <row>
+          <cell>Study design</cell>
+          <cell>One quantitative variable from large population or process</cell>
+        </row>
+        <row>
+          <cell>Parameter</cell>
+          <cell><m>\mu</m> = population mean or process mean (or use sign test or bootstrapping)</cell>
+        </row>
+        <row>
+          <cell>Null Hypothesis</cell>
+          <cell><m>H_0: \mu = \mu_0</m></cell>
+        </row>
+        <row>
+          <cell>Simulation</cell>
+          <cell>Random sample from finite population or bootstrapping</cell>
+        </row>
+        <row>
+          <cell>Can use t procedures if</cell>
+          <cell>Normal population (symmetric sample distribution) or large sample size (e.g., larger than 30)</cell>
+        </row>
+        <row>
+          <cell>Standardized (test) statistic</cell>
+          <cell><m>t_0 = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}</m></cell>
+        </row>
+        <row>
+          <cell>Confidence interval</cell>
+          <cell><m>\bar{x} \pm t_{n-1}^* \frac{s}{\sqrt{n}}</m></cell>
+        </row>
+        <row>
+          <cell>Prediction interval</cell>
+          <cell><m>\bar{x} \pm t_{n-1}^* s\sqrt{1+\frac{1}{n}}</m> (with normally distributed population)</cell>
+        </row>
+        <row>
+          <cell>R Commands</cell>
+          <cell><c>t.test(x, alternative="two.sided", mu=0, conf.level = 0.95)</c> raw data in “x”
+          <c>iscamonesamplet</c> summary statistics
+          xbar (<m>\bar{x}</m>, sample mean)
+          sd (s, sample standard deviation)
+          n (sample size)
+          hypothesized mean (<m>\mu_0</m>)
+          alternative (“less”, “greater”, or “two.sided”)
+          Optional: conf.level(s)</cell>
+        </row>
+        <row>
+          <cell>JMP</cell>
+          <cell>Analyze > Distribution with a quantitative variable
+          Input variable column or summary statistics
+          (Prediction interval)</cell>
+        </row>
+        <row>
+          <cell>TBI Applet</cell>
+          <cell>One mean</cell>
+        </row>
+      </tabular>
+    </table>
+  </subsection>
+
+</chapter>
