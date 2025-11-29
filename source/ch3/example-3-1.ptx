@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="example-3-1">
+  <title>Example 3.1: Wording of Questions</title>
+
+  <introduction>
+    <p>Try these questions yourself before you use the solutions following to check your answers.</p>
+
+    <p>Researchers have conjectured that the use of the words "forbid" and "allow" can affect people's responses to survey questions. Students in an introductory statistics class were randomly assigned to answer one of the following questions:</p>
+    <p><ul>
+      <li>Should your college allow speeches on campus that might incite violence?</li>
+      <li>Should your college forbid speeches on campus that might incite violence?</li>
+    </ul></p>
+
+    <p>Of the 11 students who received the first question, 8 responded yes. Of the 14 students who received the second question, 12 said no.</p>
+  </introduction>
+
+  <exercise xml:id="example3-1-a">
+    <title>Identify Variables</title>
+    <statement>
+      <p>(a) Identify the observational units and the explanatory and response variables.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="example3-1-b">
+    <title>Study Type and Design</title>
+    <statement>
+      <p>(b) Is this an observational study or an experiment? If an observational study, suggest a potential confounding variable. If an experiment, explain the roles of randomization and blinding in this study.</p>
+      <p><var width="60" height="5"/></p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="example3-1-c">
+    <title>Two-Way Table</title>
+    <statement>
+      <p>(c) Construct a two-way table to summarize these results.</p>
+      <p><var width="60" height="6"/></p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="example3-1-d">
+    <title>Segmented Bar Graph</title>
+    <statement>
+      <p>(d) Construct a segmented bar graph to display these results and comment on the relationship revealed by this graph.</p>
+      <p><var width="60" height="8"/></p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="example3-1-e">
+    <title>Test of Significance</title>
+    <statement>
+      <p>(e) Based on earlier studies, researchers expected people to be less likely to agree to "forbid" the speeches, leading to more no responses (and thus appearing to be in favor of having the speeches), whereas they expected people to be comparatively less likely to agree to "allow" the speeches. Do these data provide strong evidence that these students responded more positively toward having such speeches if their question was phrased in terms of "forbid" rather than "allow"? Carry out a test of significance and explain the decision you would make based on the p-value. Write a paragraph summarizing your conclusions including whether a cause-and-effect conclusion can be drawn and the population you are willing to generalize these results to.</p>
+      <p><var width="60" height="10"/></p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="example3-1-f">
+    <title>Larger Study</title>
+    <statement>
+      <p>(f) In a 1976 study, one group of subjects was asked, "Do you think the United States should forbid public speeches in favor of communism?", whereas another group was asked, "Do you think the United States should allow public speeches in favor of communism?" Of the 409 subjects randomly asked the "forbid" version, 161 favored the forbidding of communist speeches. Of the 432 subjects asked the "allow" version, 189 favored allowing the speeches. Construct a segmented bar graph for these data and comment on whether you believe the p-value for this table will be larger or smaller than that in (e). Explain your reasoning.</p>
+      <p><var width="60" height="8"/></p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <paragraphs>
+    <title>Analysis</title>
+
+    <p><em>(a)</em> The observational units in this study are the statistics students. The explanatory variable is the word choice in the question they responded to (categorical) and the response variable is whether their response was in favor of the speeches ("yes" with the allow question and "no" with the forbid question, categorical).</p>
+
+    <p><em>(b)</em> This was an experiment because the word choice in the question was randomly assigned to the students. Presumably the instructor mixed up the order of the questionnaires prior to passing them out to the students. This is important to equalize other variables between these two groups such as political inclinations and gender. The students did not know that there were two different forms of the questions, so the study was blind. If they had realized that the instructor was focusing on how they responded to the two words, they probably would have responded differently eliminating any subconscious effect of the word choice.</p>
+
+    <p><em>(c)</em> Two-way table, with the explanatory variable, word choice, as the column variable, and defining a "success" to mean that the student is in favor of such speeches:</p>
+
+    <table>
+      <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <row header="yes">
+          <cell></cell>
+          <cell>Allow</cell>
+          <cell>Forbid</cell>
+          <cell>Total</cell>
+        </row>
+        <row>
+          <cell>Success</cell>
+          <cell>8</cell>
+          <cell>12</cell>
+          <cell>20</cell>
+        </row>
+        <row>
+          <cell>Failures</cell>
+          <cell>3</cell>
+          <cell>2</cell>
+          <cell>5</cell>
+        </row>
+        <row>
+          <cell>Total</cell>
+          <cell>11</cell>
+          <cell>14</cell>
+          <cell>25</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p><em>(d)</em> We see that most of these students were in favor of the speeches (80%). There was a slight tendency for those responding to the forbid question to appear more in favor (more likely to say no, do not forbid the speeches), 0.857 versus 0.727. However, the distribution within the bars look fairly similar and the association does not appear to be strong.</p>
+
+    <p><em>(e)</em> The null hypothesis will be that there is no effect due to wording of the question. So if <m>\pi_{allow}</m> is the probability someone says "yes" to the allow question and if <m>\pi_{forbid}</m> is the probability someone says no to the forbid question:</p>
+    <p>H<subscript>0</subscript>: <m>\pi_{allow}</m> - <m>\pi_{forbid}</m> = 0</p>
+    <p>and based on the prior research:</p>
+    <p>H<subscript>a</subscript>: <m>\pi_{allow}</m> - <m>\pi_{forbid}</m> &lt; 0</p>
+
+    <p>Fisher's Exact Test indicates how often we expect to see as few as 8 or fewer successes in the allow group (equivalently, at least as many as 12 successes in the forbid group). So if we define X to be the number in the allow group in favor of the speeches, X follows a hypergeometric distribution with N = 25, M = 20, and n = 11. The p-value will be P(X ≤ 8).</p>
+
+    <p>P(X ≤ 8) = P(X = 0) + P(X = 1) + ... + P(X = 8)</p>
+    <p>= [C(20,0)×C(5,11) + C(20,1)×C(5,10) + ... + C(20,8)×C(5,3)] / C(25,11)</p>
+    <p>= 0.3783</p>
+
+    <p>Note, it would NOT be valid to use the normal approximation here because we do not have at least 5 failures in both groups (normal approx. p-value equals 0.2149, with continuity correction equals 0.384).</p>
+
+    <p>Thus, if the word choice in the question had no effect, we would get experimental results at least this extreme in about 38% of random assignments. This indicates that our experimental data is not surprising and does not provide evidence that the wording of the question had an effect on these students. Thus, we will not say the word choice in the question made a difference (though if the p-value had been small, because this was a randomized experiment, a cause-and-effect conclusion would have been valid). Furthermore, we should be hesitant in generalizing these results beyond introductory statistics students at this school. We do not know how these students were selected from this school nor whether these students might be representative of other college students. Perhaps this is a private school or the students tend to be more liberal than at other schools.</p>
+
+    <p><em>(f)</em> In this larger study, individuals were less likely to be in favor of the speeches in general (52%). More importantly, the difference between the two groups is a bit larger (0.606 - 0.438 = 0.169 in this study, compared to a difference of 0.130 before), providing stronger evidence that such a difference would not happen due to chance alone and thus a smaller p-value.</p>
+
+    <p>We must also take into account the fact that the group sizes are much, much larger in this study. With such large sample sizes, even small differences between the groups may appear statistically significant. Thus, with the larger samples and the slightly larger difference in success proportions, the p-value from this study will be much smaller than that from the original study.</p>
+  </paragraphs>
+
+</section>

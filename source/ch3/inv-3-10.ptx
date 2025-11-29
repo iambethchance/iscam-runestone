@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-3-10">
+  <title>Investigation 3.10: Sleepy Drivers</title>
+
+  <introduction>
+    <p>Connor et al. (British Medical Journal, May 2002) reported on a study that investigated whether sleeplessness is related to car crashes. The researchers identified all drivers or passengers of eligible light vehicles who were admitted to a hospital or died as a result of a car crash on public roads in the Auckland, New Zealand region between April 1998 and July 1999. Through cluster sampling, they identified a sample of 571 drivers who had been involved in a crash resulting in injury and a sample of 588 drivers who had not been involved in such a crash as representative of people driving on the region's roads during the study period. The researchers asked the individuals (or proxy interviewees) whether they had a full night's sleep (at least seven hours mostly between 11pm and 7am) any night during the previous week. The researchers found that 61 of the 535 crash drivers who responded and 44 of the 588 "no crash" drivers had not gotten at least one full night's sleep in the previous week.</p>
+  </introduction>
+
+  <exercise xml:id="inv3-10-a">
+    <title>Identify Study Components</title>
+    <statement>
+      <p>Identify the observational units and variables in this study. Which variable would you consider the explanatory variable and which the response variable? Was this an observational study or an experiment? If observational, would it be considered a case-control, cohort, or cross-classified design?</p>
+      <p>Observational units: <var width="50"/></p>
+      <p>Explanatory variable: <var width="50"/></p>
+      <p>Response variable: <var width="50"/></p>
+      <p>Type of study: <var width="50"/></p>
+    </statement>
+    <solution>
+      <p>Observational units: Drivers in Auckland, New Zealand</p>
+      <p>Explanatory variable: Whether had full night's sleep in past week (categorical)</p>
+      <p>Response variable: Whether involved in crash (categorical)</p>
+      <p>Type of study: Observational study, case-control design (researchers selected drivers who had crashes and drivers who had not, then looked at their sleep patterns)</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-10-b">
+    <title>Create Two-Way Table</title>
+    <statement>
+      <p>Organize these sample data into a 2 × 2 table:</p>
+
+      <table>
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+          <row header="yes">
+            <cell></cell>
+            <cell>No full night's sleep in past week ("sleep deprived")</cell>
+            <cell>At least one full night's sleep in past week ("not sleep deprived")</cell>
+            <cell>Sample sizes</cell>
+          </row>
+          <row>
+            <cell>Crash</cell>
+            <cell><var width="8"/></cell>
+            <cell><var width="8"/></cell>
+            <cell>535</cell>
+          </row>
+          <row>
+            <cell>No crash</cell>
+            <cell><var width="8"/></cell>
+            <cell><var width="8"/></cell>
+            <cell>588</cell>
+          </row>
+          <row>
+            <cell>Total</cell>
+            <cell><var width="8"/></cell>
+            <cell><var width="8"/></cell>
+            <cell>1123</cell>
+          </row>
+        </tabular>
+      </table>
+    </statement>
+    <solution>
+      <table>
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+          <row header="yes">
+            <cell></cell>
+            <cell>No full night's sleep</cell>
+            <cell>At least one full night's sleep</cell>
+            <cell>Sample sizes</cell>
+          </row>
+          <row>
+            <cell>Crash</cell>
+            <cell>61</cell>
+            <cell>474</cell>
+            <cell>535</cell>
+          </row>
+          <row>
+            <cell>No crash</cell>
+            <cell>44</cell>
+            <cell>544</cell>
+            <cell>588</cell>
+          </row>
+          <row>
+            <cell>Total</cell>
+            <cell>105</cell>
+            <cell>1018</cell>
+            <cell>1123</cell>
+          </row>
+        </tabular>
+      </table>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-10-c">
+    <title>Calculate Appropriate Statistic</title>
+    <statement>
+      <p>Which statistic (odds ratio or relative risk) is most appropriate to calculate from this table, considering how the data were collected? Calculate and interpret this statistic. Does the value of this statistic support the researchers' conjecture? Explain.</p>
+      <p><var width="60" height="6"/></p>
+    </statement>
+    <solution>
+      <p>Because this is a case-control study, the odds ratio is more appropriate. The researchers controlled the number of crash and no-crash drivers, so we cannot meaningfully calculate the risk of having a crash.</p>
+      <p>Odds ratio = (61/474) / (44/544) = 0.129 / 0.081 = 1.59</p>
+      <p>The odds of being sleep deprived are 1.59 times higher for crash drivers than for no-crash drivers. Equivalently, the odds of having a crash are 1.59 times higher for sleep-deprived drivers than for well-rested drivers.</p>
+      <p>This does support the conjecture that sleeplessness is related to car crashes, as the odds ratio is greater than 1.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <paragraphs>
+    <title>Statistical Inference</title>
+  </paragraphs>
+
+  <exercise xml:id="inv3-10-d">
+    <title>Simulation Design</title>
+    <statement>
+      <p>Outline the steps of a simulation that models the randomness in this study and helps you assess how unusual the statistic is that you calculated in <xref ref="inv3-10-c" text="custom">(c)</xref> when the null hypothesis is true. Include a statement of the null and alternative hypotheses for your choice of parameter.</p>
+      <p><var width="60" height="8"/></p>
+    </statement>
+    <solution>
+      <p>Let <m>\tau</m> represent the population odds ratio.</p>
+      <p>H<subscript>0</subscript>: <m>\tau</m> = 1 (the odds of being sleep deprived are the same for crash and no-crash drivers)</p>
+      <p>H<subscript>a</subscript>: <m>\tau</m> > 1 (the odds of being sleep deprived are higher for crash drivers)</p>
+      <p>Simulation steps:</p>
+      <p>1. Assume the null hypothesis is true, so the probability of being sleep deprived is the same for both groups: 105/1123 = 0.0935</p>
+      <p>2. For the crash group, simulate 535 observations with success probability 0.0935</p>
+      <p>3. For the no-crash group, simulate 588 observations with success probability 0.0935</p>
+      <p>4. Calculate the odds ratio for this simulated sample</p>
+      <p>5. Repeat steps 2-4 many times (e.g., 10,000 times)</p>
+      <p>6. Find the proportion of simulated odds ratios that are at least as large as the observed value of 1.59</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-10-e">
+    <title>Carry Out Simulation</title>
+    <statement>
+      <p>Use technology to carry out your simulation and draw your conclusions. [Hint: Be careful of rounding issues in finding your p-value, make sure you are including observations as extreme as the observed in your count.]</p>
+      <p><var width="60" height="5"/></p>
+    </statement>
+    <solution>
+      <p>Using the Analyzing Two-way Tables applet or the Comparing Two Population Proportions applet with odds ratio as the statistic, the empirical p-value is approximately 0.016 to 0.025, depending on the simulation.</p>
+      <p>Fisher's Exact Test gives a one-sided p-value of 0.016.</p>
+      <p>This small p-value provides evidence against the null hypothesis, suggesting that the odds of having a crash are higher for sleep-deprived drivers than for well-rested drivers.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-10-f">
+    <title>Confidence Interval</title>
+    <statement>
+      <p>Calculate and interpret a 95% confidence interval for your choice of parameter.</p>
+      <p><var width="60" height="5"/></p>
+    </statement>
+    <solution>
+      <p>For the odds ratio:</p>
+      <p>ln(1.59) = 0.464</p>
+      <p>SE(ln odds ratio) = <m>\sqrt{1/61 + 1/474 + 1/44 + 1/544}</m> = <m>\sqrt{0.0164 + 0.0021 + 0.0227 + 0.0018}</m> = <m>\sqrt{0.043}</m> = 0.207</p>
+      <p>95% CI for ln(odds ratio): 0.464 ± 1.96(0.207) = 0.464 ± 0.406 = (0.058, 0.870)</p>
+      <p>95% CI for odds ratio: (e<superscript>0.058</superscript>, e<superscript>0.870</superscript>) = (1.06, 2.39)</p>
+      <p>We are 95% confident that the odds of having a crash are 1.06 to 2.39 times higher for sleep-deprived drivers than for well-rested drivers.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-10-g">
+    <title>Overall Conclusions</title>
+    <statement>
+      <p>Summarize (with justification) the conclusions you would draw from this study (using both the p-value and a confidence interval, and addressing both the population you are willing to generalize to and whether or not you are drawing a cause-and-effect conclusion).</p>
+      <p><var width="60" height="8"/></p>
+    </statement>
+    <solution>
+      <p>The p-value of approximately 0.016 provides moderately strong evidence that the odds of having a crash are higher for sleep-deprived drivers than for well-rested drivers. The 95% confidence interval (1.06, 2.39) indicates that the odds are about 1 to 2.5 times higher for sleepy drivers.</p>
+      <p>However, because this was an observational case-control study, we cannot conclude that lack of sleep causes crashes. There could be confounding variables (e.g., driving conditions, time of day, driver experience, alcohol use). We can only say there is an association between sleep deprivation and car crashes.</p>
+      <p>We should be cautious about generalizing these results beyond drivers in Auckland, New Zealand during the study period. The sample was designed to be representative of drivers in that region, but may not represent drivers in other countries or time periods.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <assemblage>
+    <title>Study Conclusions</title>
+    <p>The proportions of drivers who had not gotten a full night's sleep in the previous week were 0.107 for the case group of drivers who had been involved in a crash, compared to 0.075 for the control group who had not. Because these proportions are small, and because of the awkward roles of the explanatory and response variables in this study (we would much rather make a statement about the proportion of sleepless drivers who are involved in crashes), the odds ratio is a more meaningful statistic to calculate. The sample odds of having missed out on a full night's sleep were 1.59 times higher for the case group than for the control group. By the invariance of the odds ratio, we can also state that the sample odds of having an accident are 1.59 times (almost 60%) higher for those who do not get a full night sleep than those who do. The empirical p-value (less than 5%) provides moderately strong evidence that such an extreme value for the sample odds ratio is unlikely to have arisen by chance alone if the proportion of drivers with sleepless nights was 0.09 for both the population of "cases" and the population of "controls." (Using a one-sided Fisher's Exact Test, we get p-value = 0.016.) A 95% confidence interval for the population odds ratio extends from 1.06 to 2.39 (1.04 to 2.45 with R). This interval provides statistically significant evidence that the population odds ratio exceeds 1.0 and that, with 95% confidence, the odds of having an accident are about 1 to 2.5 times higher for the sleepy drivers than for well rested drivers. We cannot attribute this association to a cause-and-effect relationship because this was an observational (case-control) study. We might also want to restrict our conclusions to New Zealand drivers.</p>
+  </assemblage>
+
+  <subsection xml:id="practice3-10">
+    <title>Practice Problem 3.10</title>
+
+    <exercise xml:id="practice-3-10-a">
+      <title>Hammond and Horn Study</title>
+      <statement>
+        <p>Another landmark study on smoking began in 1952 (Hammond and Horn, 1958, "Smoking and death rates—Report on forty-four months of follow-up of 187,783 men: II. Death rates by cause," JAMA). They used 22,000 American Cancer Society volunteers as interviewers. Each interviewer was to ask 10 healthy white men between the ages of 50 and 69 to complete a questionnaire on smoking habits. Each year during the 44-month follow-up, the interviewer reported whether or not the man had died, and if so, how. They ended up tracking 187,783 men in nine states (CA, IL, IA, MI, MN, NJ, NY, PA, WI). Almost 188,000 were followed up by the volunteers through October 1955, during which time about 11,870 of the men had died, 488 from lung cancer. The following table classifies the men as having a history of regular cigarette smoking or not and whether or not they died from lung cancer. In this study, nonsmokers are grouped with occasional smokers, including pipe- and cigar-only smokers.</p>
+
+        <table>
+          <title>Hammond and Horn Study</title>
+          <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+            <row header="yes">
+              <cell></cell>
+              <cell>Not regular smoker</cell>
+              <cell>Regular smoker</cell>
+              <cell>Total</cell>
+            </row>
+            <row>
+              <cell>Lung cancer death</cell>
+              <cell>51</cell>
+              <cell>397</cell>
+              <cell>448</cell>
+            </row>
+            <row>
+              <cell>Alive or other cause of death</cell>
+              <cell>108,778</cell>
+              <cell>78,557</cell>
+              <cell>187,335</cell>
+            </row>
+            <row>
+              <cell>Total</cell>
+              <cell>108,829</cell>
+              <cell>78,954</cell>
+              <cell>187,783</cell>
+            </row>
+          </tabular>
+        </table>
+
+        <p>(a) Is this a case-control, cohort, or cross-classified study?</p>
+        <p><var width="60" height="2"/></p>
+
+        <p>(b) Calculate and interpret an odds ratio from the two-way table.</p>
+        <p><var width="60" height="3"/></p>
+
+        <p>(c) Produce and interpret a 95% confidence interval for the population odds ratio.</p>
+        <p><var width="60" height="4"/></p>
+
+        <p>(d) Are these results consistent with the Wynder and Graham study? Explain.</p>
+        <p><var width="60" height="4"/></p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+</section>
