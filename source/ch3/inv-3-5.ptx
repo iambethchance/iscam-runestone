@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-3-5">
+  <title>Investigation 3.5: Dolphin Therapy</title>
+
+  <introduction>
+    <p>Antonioli and Reveley (2005) investigated whether swimming with dolphins was therapeutic for patients suffering from clinical depression. The researchers recruited 30 subjects aged 18-65 with a clinical diagnosis of mild to moderate depression through announcements on the internet, radio, newspapers, and hospitals in the U.S. and Honduras. Subjects were required to discontinue use of any antidepressant drugs or psychotherapy four weeks prior to the experiment, and throughout the experiment. These 30 subjects went to an island off the coast of Honduras, where they were randomly assigned to one of two treatment groups. Both groups engaged in one hour of swimming and snorkeling each day, but one group (Dolphin Therapy) did so in the presence of bottlenose dolphins and the other group (Control) did not. At the end of two weeks, each subject's level of depression was evaluated, as it had been at the beginning of the study, and each subject was categorized as experiencing substantial improvement in their depression symptoms or not. (Afterwards, the control group had 1-day session with the dolphins.)</p>
+  </introduction>
+
+  <exercise xml:id="inv3-5-a">
+    <title>Identify Study Components</title>
+    <statement>
+      <p>Identify the observational units and variables in this study. Also indicate which variable is being considered the explanatory variable and which the response variable.</p>
+      <p>Observational units: <var width="40"/></p>
+      <p>Explanatory variable: <var width="40"/></p>
+      <p>Response variable: <var width="40"/></p>
+    </statement>
+    <solution>
+      <p>Observational units: 30 subjects with clinical depression</p>
+      <p>Explanatory variable: Treatment group (dolphin therapy or control)</p>
+      <p>Response variable: Whether or not the subject showed substantial improvement</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-b">
+    <title>Study Type</title>
+    <statement>
+      <p>Was this an observational study or an experiment? Explain how you are deciding.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>This was an experiment because the researchers randomly assigned subjects to the treatment groups (dolphin therapy vs. control).</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <paragraphs>
+    <p>The following two-way table summarizes the results of this experiment:</p>
+    <table>
+      <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <row header="yes">
+          <cell></cell>
+          <cell>Dolphin Therapy</cell>
+          <cell>Control Group</cell>
+          <cell>Total</cell>
+        </row>
+        <row>
+          <cell>Showed substantial improvement</cell>
+          <cell>10</cell>
+          <cell>3</cell>
+          <cell>13</cell>
+        </row>
+        <row>
+          <cell>Did not show substantial improvement</cell>
+          <cell>5</cell>
+          <cell>12</cell>
+          <cell>17</cell>
+        </row>
+        <row>
+          <cell>Total</cell>
+          <cell>15</cell>
+          <cell>15</cell>
+          <cell>30</cell>
+        </row>
+      </tabular>
+    </table>
+    <p><term>Quick Check:</term> What proportion of all subjects showed substantial improvement? What proportion of subjects who were given dolphin therapy improved?</p>
+  </paragraphs>
+
+  <exercise xml:id="inv3-5-c">
+    <title>Calculate Difference in Proportions</title>
+    <statement>
+      <p>Calculate the difference in the conditional proportions of substantial improvement between the two explanatory variable groups.</p>
+      <p><var width="40"/></p>
+    </statement>
+    <solution>
+      <p>Dolphin therapy: 10/15 = 0.667; Control: 3/15 = 0.200; Difference: 0.667 - 0.200 = 0.467</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-d">
+    <title>Initial Assessment</title>
+    <statement>
+      <p>Do the data appear to support the claim that dolphin therapy is more effective than the control program?</p>
+      <p><var width="60" height="2"/></p>
+    </statement>
+    <solution>
+      <p>Yes, a much higher proportion improved in the dolphin therapy group (66.7%) compared to the control group (20%).</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-e">
+    <title>Alternative Explanation</title>
+    <statement>
+      <p>Suppose swimming with dolphins is no more effective than swimming alone. What could be another possible explanation for the difference in these two sample proportions?</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>Random chance from the random assignment process could have placed more of the people who were going to improve anyway into the dolphin therapy group.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <paragraphs>
+    <p>We must ask the same questions we have asked before – is it possible that this difference has arisen by random chance alone if there was no effect of the dolphin therapy? If so, how surprising would it be to observe such an extreme difference between the two groups?</p>
+    <p>One way to define a parameter in this case is to let π<subscript>dolphin</subscript> - π<subscript>control</subscript> denote the difference in the underlying probability of substantial improvement between the two treatment conditions.</p>
+  </paragraphs>
+
+  <exercise xml:id="inv3-5-f">
+    <title>State Hypotheses</title>
+    <statement>
+      <p>State appropriate null and alternative hypotheses to reflect the researchers' conjecture in terms of this parameter.</p>
+      <p>H<subscript>0</subscript>: <var width="50"/></p>
+      <p>H<subscript>a</subscript>: <var width="50"/></p>
+    </statement>
+    <solution>
+      <p>H<subscript>0</subscript>: π<subscript>dolphin</subscript> - π<subscript>control</subscript> = 0 (no difference in probability of improvement)</p>
+      <p>H<subscript>a</subscript>: π<subscript>dolphin</subscript> - π<subscript>control</subscript> > 0 (dolphin therapy has higher probability of improvement)</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-g">
+    <title>Design Simulation</title>
+    <statement>
+      <p>So under the null hypothesis, we are assuming that there is no difference in the treatment effect between the two treatments. In other words, whether or not people improved is not related to which group they are put in. Explain how you could design a simulation to help address this question, keeping in mind that this study involved random assignment not random sampling. Also keep in mind that this simulation will assume the null hypothesis is true.</p>
+      <p><var width="60" height="5"/></p>
+    </statement>
+    <solution>
+      <p>We could assume that 13 of the 30 people were going to improve regardless of treatment, and 17 were not going to improve. Then we could randomly assign these 30 people to the two groups (15 in each) many times and see how often we get a difference as large as 0.467 or larger.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <paragraphs>
+    <p>One way to model this situation is by assuming 13 of the 30 people were going to demonstrate substantial improvement regardless of whether they swam with or without dolphins. Then the key question is how unlikely is it for the random assignment process alone to randomly place 10 or more of these 13 improvers into the dolphin therapy group (that is, a difference in the conditional proportions that improve of 0.467 or larger)? If the answer is that this observed difference would be very surprising if the dolphin and control therapies were equally effective, then we would have strong evidence to conclude that dolphin therapy is more effective.</p>
+  </paragraphs>
+
+  <exercise xml:id="inv3-5-h">
+    <title>Physical Simulation</title>
+    <statement>
+      <p>To model the chance variability inherent in the random assignment process, under the null hypothesis, take a set of 30 playing cards or index cards, one for each participant in the study. Designate 13 of them to represent improvements (e.g., red suited cards, blue colored index cards, or S-labeled index cards) and then mark 17 of them to represent non-improvements (e.g., black suited cards, green colored index cards, or F-labeled index cards). Shuffle the cards and deal out two groups: 15 of the "subjects" to the dolphin therapy group and 15 to the control group. Complete the following two-way table to show your "could have been" result under the null hypothesis.</p>
+      <p>Simulation Repetition #1:</p>
+      <table>
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+          <row header="yes">
+            <cell></cell>
+            <cell>Dolphin Therapy</cell>
+            <cell>Control Group</cell>
+            <cell>Total</cell>
+          </row>
+          <row>
+            <cell>Showed substantial improvement</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell>13 (blue)</cell>
+          </row>
+          <row>
+            <cell>Did not show substantial improvement</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell>17 (green)</cell>
+          </row>
+          <row>
+            <cell>Total</cell>
+            <cell>15</cell>
+            <cell>15</cell>
+            <cell>30</cell>
+          </row>
+        </tabular>
+      </table>
+      <p>Also calculate the difference in the conditional proportions (dolphin – control) from this first simulated repetition, and indicate whether this simulated result is as extreme as the observed result:</p>
+      <p><var width="60" height="2"/></p>
+    </statement>
+    <solution>
+      <p>Results will vary.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-i">
+    <title>Additional Repetitions</title>
+    <statement>
+      <p>Repeat this hypothetical random assignment two more times and record the "could have been" tables:</p>
+      <p>Repetition 2:</p>
+      <table>
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+          <row header="yes">
+            <cell></cell>
+            <cell>Dolphin</cell>
+            <cell>Control</cell>
+          </row>
+          <row>
+            <cell>Yes</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+          <row>
+            <cell>No</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+        </tabular>
+      </table>
+      <p>Repetition 3:</p>
+      <table>
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+          <row header="yes">
+            <cell></cell>
+            <cell>Dolphin</cell>
+            <cell>Control</cell>
+          </row>
+          <row>
+            <cell>Yes</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+          <row>
+            <cell>No</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+        </tabular>
+      </table>
+      <p><term>Note:</term> You may have noticed that once you entered the number of improvers in the Dolphin Group into the table, the other entries in the table were pre-determined due to the "fixed margins." So for our statistic, we could either report the difference in the conditional proportions or the number of successes (improvers) in the Dolphin group as these give equivalent information.</p>
+    </statement>
+    <solution>
+      <p>Results will vary.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-j">
+    <title>Class Results</title>
+    <statement>
+      <p>Pool your results for the number of successes (blue index cards) assigned to the Dolphin Group for your 3 repetitions with the rest of your class and produce a well-labeled dotplot of the null distribution.</p>
+      <p><var width="60" height="4"/></p>
+    </statement>
+    <solution>
+      <p>Results will vary but should center around 6.5 successes in the dolphin group.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-k">
+    <title>Interpret Dotplot</title>
+    <statement>
+      <p>What does each dot in the above graph represent? [Hint: Think about what you would have to do to add another dot to the graph. How should you label the horizontal axis?]</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>Each dot represents one simulated random assignment of the 30 subjects to the two groups, showing the number of improvers that ended up in the dolphin therapy group. The horizontal axis should be labeled "Number of improvers in dolphin therapy group."</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-l">
+    <title>Preliminary Assessment</title>
+    <statement>
+      <p>Granted, we have not done an extensive number of repetitions, but how's it looking so far? Does it seem like the actual experimental results (the observed 10/3 split) would be surprising to arise purely from the random assignment process under the null hypothesis that dolphin therapy is not effective? Explain.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>Results will vary, but students should notice that getting 10 or more improvers in the dolphin group appears to be unusual/rare.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <paragraphs>
+    <p>We really need to do this simulated random assignment process hundreds, preferably thousands of times. This would be very tedious and time-consuming with cards, so let's turn to technology.</p>
+    <p>Open the Dolphin Study applet.</p>
+    <p><ul>
+      <li>Confirm that the two-way table displayed by the applet matches that of the research study.</li>
+      <li>Check Show Shuffle Options and confirm that there are 30 total "people": 13 blue and 17 green.</li>
+      <li>Press Shuffle.</li>
+    </ul></p>
+    <p>Watch as the applet repeats what you did: Shuffle the 30 cards and deal out 15 for the "Dolphin therapy" group, separating blue cards (successes) from green cards (failures), and 15 for the "Control Group"; create the table of "could have been" simulated results; add a dot to the dotplot for the number of improvers (blue cards) randomly assigned to the "Dolphin therapy" group (GroupA successes).</p>
+  </paragraphs>
+
+  <exercise xml:id="inv3-5-m">
+    <title>Applet Exploration</title>
+    <statement>
+      <p>Now press Shuffle four more times. Does the number of successes vary among the repetitions?</p>
+      <p><var width="60" height="2"/></p>
+    </statement>
+    <solution>
+      <p>Yes, the number of successes in the dolphin group varies from repetition to repetition.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-n">
+    <title>Null Distribution</title>
+    <statement>
+      <p>Enter 995 for the Number of shuffles. This produces a total of 1,000 repetitions of the simulated random assignment process under the null hypothesis (the "null distribution" or a "randomization distribution"). What is the value of the mean of this null distribution? Explain why this center makes intuitive sense.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>The mean should be around 6.5. This makes sense because if we randomly assign 15 of the 30 subjects to the dolphin group, we would expect about half of the 13 improvers (6.5) to end up in that group on average.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-o">
+    <title>Compare to Observed Result</title>
+    <statement>
+      <p>Now we want to compare the observed result from the research study to these "could have been" results under the null hypothesis.</p>
+      <p>How many improvers were there in the Dolphin therapy group in the actual study? <var width="10"/></p>
+      <p>Based on the resulting dotplot, does it seem like the actual experimental results would be surprising to arise solely from the random assignment process under the null hypothesis that dolphin therapy is not effective? Explain.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>There were 10 improvers in the dolphin therapy group. Yes, this appears to be in the upper tail of the distribution, suggesting it would be surprising to get this result by chance alone.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-p">
+    <title>Calculate P-value</title>
+    <statement>
+      <p>In the Count Samples box, enter the observed statistic from the actual study and press Count to have the applet count the number of repetitions with 10 or more successes in the Dolphin group. In what proportion of your 1000 simulated random assignments were the results as (or more) extreme as the actual study?</p>
+      <p><var width="20"/></p>
+    </statement>
+    <solution>
+      <p>The p-value should be approximately 0.02 to 0.04 (will vary slightly due to randomness).</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-q">
+    <title>Difference in Proportions</title>
+    <statement>
+      <p>We said above that it would be equivalent to look at the difference in the conditional proportions. Use the Statistic pull-down menu to select Difference in proportions. How does the null distribution (including the mean) change? Does this make sense? How would you estimate the p-value now? How does the p-value change?</p>
+      <p><var width="60" height="4"/></p>
+    </statement>
+    <solution>
+      <p>The null distribution is now centered at 0 (since we expect no difference under the null hypothesis). The shape is similar but the scale has changed. The p-value is estimated by counting how many repetitions have a difference of 0.467 or larger, and should be approximately the same as before.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-r">
+    <title>Interpret P-value</title>
+    <statement>
+      <p>Interpret the p-value you found [Hint: Same reasoning as in Investigation 3.1, but now also focus on the source of randomness that was modelled in the simulation.]</p>
+      <p><var width="60" height="4"/></p>
+    </statement>
+    <solution>
+      <p>The p-value represents the probability of obtaining a difference in proportions as large as 0.467 (or 10 or more improvers in the dolphin group) purely by chance from the random assignment process, assuming that dolphin therapy has no effect on improvement.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-s">
+    <title>Strength of Evidence</title>
+    <statement>
+      <p>Is this empirical p-value small enough to convince you that the experimental data that the researchers obtained provide strong evidence that dolphin therapy is effective (i.e., that the null hypothesis is not correct)?</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>Yes, a p-value between 0.01 and 0.05 provides moderate to strong evidence against the null hypothesis, suggesting that dolphin therapy is effective.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-t">
+    <title>Confounding Variables</title>
+    <statement>
+      <p>Is it reasonable to attribute the observed difference in success proportions to the dolphin therapy, or could the difference be due to a confounding variable? Explain.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>Yes, it is reasonable to attribute the difference to dolphin therapy because this was a randomized experiment. Random assignment tends to balance out potential confounding variables between the two groups.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-5-u">
+    <title>Generalizability</title>
+    <statement>
+      <p>To what population is it reasonable to generalize these results? Justify your answer.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>Because this was not a random sample, we should be cautious about generalizing beyond people similar to those who volunteered for this study – people aged 18-65 with mild to moderate depression who could afford to travel to Honduras for two weeks.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <assemblage>
+    <title>Discussion</title>
+    <p>This procedure of randomly reassigning the response variable outcomes to the explanatory variable groups is often called a "randomization test." The goal is to assess the chance variability from the random assignment process (as opposed to random sampling), though it is sometimes used to approximate the random chance arising from random sampling as well. Use of this procedure models the two-way table with fixed row and column totals (e.g., people were going to improve or not regardless of which treatment they received).</p>
+  </assemblage>
+
+  <assemblage>
+    <title>Study Conclusions</title>
+    <p>Due to the small p-value (0.01 &lt; p-value &lt; 0.05) from our "randomization test," we have moderately strong evidence that "luck of the draw" of the random assignment process alone is not a reasonable explanation for the higher proportion of subjects who substantially improved in the dolphin therapy group compared to the control group. Thus the researchers have moderate evidence that subjects aged 18–65 with a clinical diagnosis of mild to moderate depression (who would apply for such a study and fit the inclusion criteria) will have a higher probability of substantially reducing their depression symptoms if they are allowed to swim with dolphins rather than simply visiting and swimming in Honduras. Because this was a randomized comparative experiment, we can conclude that there is moderately strong evidence that swimming with dolphins causes a higher probability of experiencing substantial improvement in depression symptoms. But with this volunteer sample, we should be cautious about generalizing this conclusion beyond the population of people suffering from mild-to-moderate depression who could afford to take the time to travel to Honduras for two weeks.</p>
+  </assemblage>
+
+  <subsection xml:id="practice3-5">
+    <title>Practice Problems 3.5</title>
+
+    <exercise xml:id="practice-3-5-a">
+      <title>Practice Problem 3.5A: Physician Gifts Study</title>
+      <statement>
+        <p>A recent study compared two groups: One group was reminded of the sacrifices that physicians have to make as part of their training, and the other group was given no such reminder. All physicians in the study were then asked whether they consider it acceptable for physicians to receive free gifts from industry representatives. It turned out that 57/120 in the "sacrifice reminders" group answered that gifts are acceptable, compared to 13/60 in the "no reminder" group.</p>
+        <p>(a) Identify the explanatory and response variables in this study.</p>
+        <p><var width="60" height="2"/></p>
+        <p>(b) Do you believe this study used random assignment? What would that involve?</p>
+        <p><var width="60" height="2"/></p>
+        <p>(c) Do you believe this study used random sampling? What would that involve?</p>
+        <p><var width="60" height="2"/></p>
+        <p>(d) Explain how you would carry out a simulation analysis to approximate a p-value for this study. [Hint: How many cards? How many of each type? How many would you deal out? What would you record? How would you find the p-value?]</p>
+        <p><var width="60" height="4"/></p>
+        <p>(e) A colleague points out that the sample sizes are not equal in this study, so we can't draw meaningful conclusions. How should you respond?</p>
+        <p><var width="60" height="3"/></p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-5-b">
+      <title>Practice Problem 3.5B: Two-Sided P-value</title>
+      <statement>
+        <p>How would you find a two-sided p-value for the dolphin study?</p>
+        <p><var width="60" height="3"/></p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+</section>
