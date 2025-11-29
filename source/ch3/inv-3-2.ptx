@@ -3,12 +3,12 @@
   <title>Investigation 3.2: Nightlights and Near-sightedness</title>
 
   <introduction>
-    <sidebyside widths="55% 40%" valign="top">
-      <stack>
-        <p>Myopia, or near-sightedness, typically develops during the childhood years. Several studies have explored whether there is an association between development of myopia and the use of night-lights with infants. <url href="https://www.researchgate.net/publication/12962583_Myopia_and_ambient_lighting_at_night">Quinn, Shin, Maguire, and Stone (1999)</url> examined the type of light children aged 2-16 were exposed to. Between January and June 1998, the parents of 479 children who were seen as outpatients in a university pediatric ophthalmology clinic completed a questionnaire (children who had already developed serious eye conditions were excluded). One of the questions asked was "Under which lighting condition did/does your child sleep at night?" before the age of 2 years. The following two-way table classifies the children's eye condition and whether or not they slept with some kind of light (e.g., a night light or full room light) or in darkness.</p>
-      </stack>
+    <sidebyside widths="75% 20%" valign="top">
+      <p>Myopia, or near-sightedness, typically develops during the childhood years. Several studies have explored whether there is an association between development of myopia and the use of night-lights with infants. <url href="https://www.researchgate.net/publication/12962583_Myopia_and_ambient_lighting_at_night">Quinn, Shin, Maguire, and Stone (1999)</url> examined the type of light children aged 2-16 were exposed to. The following two-way table classifies the children's eye condition and whether or not they slept with some kind of light (e.g., a night light or full room light) or in darkness.</p>
       <image source="images/Inv3.2Intro.png"/>
     </sidebyside>
+
+    <p>Between January and June 1998, the parents of 479 children who were seen as outpatients in a university pediatric ophthalmology clinic completed a questionnaire (children who had already developed serious eye conditions were excluded). One of the questions asked was "Under which lighting condition did/does your child sleep at night?" before the age of 2 years.</p>
 
     <table>
       <title>Lighting Condition and Eye Condition</title>
@@ -62,29 +62,6 @@
   </exercise>
 
   <exercise xml:id="inv3-2-b">
-    <title>Identify Variables</title>
-    <statement>
-      <p>Which variable, lighting condition or eye condition, would you consider the explanatory variable in this study and which the response variable?</p>
-    </statement>
-    <matches>
-      <match order="1">
-        <premise>Lighting condition</premise>
-        <response>Explanatory variable</response>
-      </match>
-      <match order="2">
-        <premise>Eye condition</premise>
-        <response>Response variable</response>
-      </match>
-    </matches>
-    <hint>
-      <p>What can you assume when data are collected over time?</p>
-    </hint>
-    <solution>
-      <p>Explanatory variable: Lighting condition; Response variable: Eye condition. The lighting condition came first in time (before age 2) and we are interested in whether it affects later eye condition.</p>
-    </solution>
-  </exercise>
-
-  <exercise xml:id="inv3-2-c">
     <title>Conditional Proportions and Graph</title>
     <statement>
       <p>Calculate conditional proportions to measure the difference in the rate of near sightedness between the children with and without lighted rooms in this sample. (Use appropriate symbols.) Also produce a segmented bar graph to compare the eye condition of the two lighting groups. Comment on what this graph reveals about differences in eye condition between these lighting groups. Do you think this difference will be statistically significant? Explain.</p>
@@ -110,7 +87,7 @@
     <p>where <m>\pi_i</m> represents the probability of a near-sighted child in population <m>i</m>.</p>
   </paragraphs>
 
-  <exercise xml:id="inv3-2-d">
+  <exercise xml:id="inv3-2-c">
     <title>Simulation Procedure</title>
     <statement>
       <p>Briefly discuss how you could modify the simulation procedure used in Investigation 3.1 to reflect the changes in the study design.</p>
@@ -126,10 +103,13 @@
     <p>It turns out, it will be valid to use the same inferential analysis procedures here as in Investigation 3.1 as long as the samples (e.g., room light, darkness) can be considered independent of each other. One counter example would be if the observational units had been paired in some way (e.g., brothers and sisters). But if we don't believe the responses of particular children in lit rooms in this study in any way relate to the responses of particular children in the dark rooms, we consider the samples independent, even though they weren't literally sampled separately. So we can use the same Central Limit Theorem to specify a normal distribution as a model of the sampling distribution of the difference in the two sample proportions.</p>
   </paragraphs>
 
-  <exercise xml:id="inv3-2-e">
+  <exercise xml:id="inv3-2-d">
     <title>Two-Sample <m>z</m>-Test</title>
     <statement>
       <p>Use technology to perform a two-sample <m>z</m>-test to compare the proportion with near sightedness between these two groups. Report the standardized statistic and p-value. Also report and interpret a 95% confidence interval from these data.</p>
+      <aside>
+        <p>You can use the <url href="http://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm">Theory-Based Inference applet</url> to perform this analysis.</p>
+      </aside>
       <p>Standardized statistic: <var width="10"/></p>
       <p>p-value: <var width="10"/></p>
       <p>95% confidence interval: <var width="30"/></p>
@@ -144,7 +124,7 @@
     <response/>
   </exercise>
 
-  <exercise xml:id="inv3-2-f">
+  <exercise xml:id="inv3-2-e">
     <title>Causation vs. Association</title>
     <statement>
       <p>Because the p-value is so small, would you be willing to conclude that the use of lights causes an increase in the probability of near-sightedness in children? Explain. If not, suggest a possible alternative explanation for the significantly higher likelihood of near sightedness for children with lighting in their rooms.</p>
@@ -164,14 +144,20 @@
       <p>In some studies, we may consider one variable the explanatory variable that we suspect has an effect on the response variable. However, in some studies often there may be other <term>confounding variables</term><idx><h>confounding variable</h></idx> that also differ between the explanatory variable groups and have a potential effect on the response variable.</p>
     </assemblage>
 
-    <p>Your alternative explanation in <xref ref="inv3-2-f" text="custom">checkpoint (f)</xref> probably identified a potential confounding variable. For example, eye condition of the parents may be related to the explanatory variable (parents with poorer sight are more likely to use room lighting) and to the response variable (children of near-sighted parents are more likely to be near-sighted themselves). Because this confounding variable changes with the explanatory variable, we have no way of separating out the effects of this variable and those of the explanatory variable. This prevents us from drawing a cause-and-effect conclusion between lighting condition and eye condition.</p>
+    <p>Your alternative explanation in <xref ref="inv3-2-e" text="custom">checkpoint 10.3.6</xref> probably identified a potential confounding variable. For example, eye condition of the parents may be related to the explanatory variable (parents with poorer sight are more likely to use room lighting) and to the response variable (children of near-sighted parents are more likely to be near-sighted themselves). Because this confounding variable changes with the explanatory variable, we have no way of separating out the effects of this variable and those of the explanatory variable. This prevents us from drawing a cause-and-effect conclusion between lighting condition and eye condition.</p>
 
     <p>One way to visualize confounding is to examine a diagram of the study design. For the night-light and eye condition study we considered lighting the explanatory variable and eye condition the response.</p>
 
-    <p>But we are conjecturing the parents' eye condition might also be changing across the two groups. So when those who had lighting in their room develop near-sightedness, there are two equally plausible explanations because two things have changed for that group and we can't separate them out.</p>
+    <image source="images/Inv3.2confounding.png" width="60%"/>
+
+    <p>But we are conjecturing the parents' eye condition might also be changing across the two groups.</p>
+
+    <image source="images/Inv3.2coufounding2.png" width="60%"/>
+
+    <p>So when those who had lighting in their room develop near-sightedness, there are two equally plausible explanations because two things have changed for that group and we can't separate them out.</p>
   </paragraphs>
 
-  <exercise xml:id="inv3-2-g">
+  <exercise xml:id="inv3-2-f">
     <title>Low Birth Weight as Confounding Variable</title>
     <statement>
       <p>It has been suggested that "low birth weight" is a possible confounding variable in this study. Does this seem plausible to you? Describe circumstances under which this would be a confounding variable.</p>
@@ -182,7 +168,7 @@
     <response/>
   </exercise>
 
-  <exercise xml:id="inv3-2-h">
+  <exercise xml:id="inv3-2-g">
     <title>Race and Region</title>
     <statement>
       <p>In this study, 70% of the children were Caucasian. Does this mean "race" is a possible confounding variable? Could the region of the country where the clinic was located be a confounding variable? If these aren't issues of confounding, what do they impact?</p>
@@ -195,7 +181,7 @@
 
   <paragraphs>
     <title>Discussion</title>
-    <p>Keep in mind that the issue of confounding, and whether you can draw a cause-and-effect conclusion between explanatory and response variables, is very different from the issue of generalizability. We are willing to generalize to a larger population when the study design involves random sampling of observational units from the population. This is a separate question from how the observational units were formed into subgroups.</p>
+    <p>Keep in mind that the issue of confounding, and whether you can draw a cause-and-effect conclusion between explanatory and response variables, is very different from the issue of <em>generalizability</em>. We are willing to generalize to a larger population when the study design involves <em>random sampling</em> of observational units from the population. This is a separate question from how the observational units were formed into subgroups.</p>
   </paragraphs>
 
   <assemblage>
