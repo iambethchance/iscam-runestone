@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-3-8">
+  <title>Investigation 3.8: Peanut Allergies</title>
+
+  <introduction>
+    <p>Peanut allergies have increased in prevalence in the last decade, but can they be prevented? Even among infants with a high risk of allergy? Is it better to avoid the problematic food or to encourage early introduction? Du Toit et al. (<em>New England Journal of Medicine</em>, Feb. 2015) randomly assigned U.K. infants (4-11 months old) with pre-existing sensitivity to peanut extract to either consume 6 g of peanut protein per week or to avoid peanuts until 60 months of age. The table below shows the results for infants who were not initially sensitized to peanuts and whether or not the child had developed a peanut allergy at 60 months.</p>
+    
+    <table>
+      <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <row header="yes">
+          <cell></cell>
+          <cell>Peanut avoidance</cell>
+          <cell>Peanut consumption</cell>
+          <cell>Total</cell>
+        </row>
+        <row>
+          <cell>Peanut allergy</cell>
+          <cell>11</cell>
+          <cell>2</cell>
+          <cell>13</cell>
+        </row>
+        <row>
+          <cell>No allergy</cell>
+          <cell>172</cell>
+          <cell>193</cell>
+          <cell>365</cell>
+        </row>
+        <row>
+          <cell>Total</cell>
+          <cell>183</cell>
+          <cell>195</cell>
+          <cell>378</cell>
+        </row>
+      </tabular>
+    </table>
+  </introduction>
+
+  <exercise xml:id="inv3-8-a">
+    <title>Calculate Proportions</title>
+    <statement>
+      <p>Calculate the proportion of children who developed a peanut allergy. Then calculate the proportion of children developing a peanut allergy in each group. Does this appear to be a large difference to you?</p>
+      <p><var width="60" height="4"/></p>
+    </statement>
+    <solution>
+      <p>Overall: 13/378 = 0.034 or 3.4%</p>
+      <p>Avoidance: 11/183 = 0.060 or 6.0%</p>
+      <p>Consumption: 2/195 = 0.010 or 1.0%</p>
+      <p>The difference is 5 percentage points, which may not seem large numerically but represents a 6-fold difference.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-b">
+    <title>Fisher's Exact Test</title>
+    <statement>
+      <p>Use Fisher's Exact Test to investigate whether these data provide convincing evidence that the probability of developing a peanut allergy is larger among children who avoid peanuts for the first 60 months. [Hint: State the hypotheses in symbols and in words. Define the random variable and outcomes of interest in computing your p-value.] Do you consider this strong evidence that the peanut consumption effectively deters development of a peanut allergy in this population?</p>
+      <p><var width="60" height="6"/></p>
+    </statement>
+    <solution>
+      <p>H<subscript>0</subscript>: π<subscript>avoid</subscript> = π<subscript>consume</subscript> (no difference in allergy probability)</p>
+      <p>H<subscript>a</subscript>: π<subscript>avoid</subscript> > π<subscript>consume</subscript> (higher allergy probability with avoidance)</p>
+      <p>Let X = number with peanut allergy in avoidance group. p-value = P(X ≥ 11) where X ~ Hypergeometric(N=378, M=13, n=183)</p>
+      <p>p-value ≈ 0.0074, which provides strong evidence that avoiding peanuts increases the probability of developing an allergy.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-c">
+    <title>Context of Proportions</title>
+    <statement>
+      <p>Would you feel any differently about the magnitude of the difference in proportions if the conditional proportions developing a peanut allergy had been 0.500 and 0.55? Explain.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>Yes, a difference of 0.05 (5 percentage points) seems much less impressive when the base rates are 50% and 55% compared to 1% and 6%. The absolute difference is the same, but the relative change is quite different.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <assemblage>
+    <title>Discussion</title>
+    <p>When the baseline rate (probability) of success is small, an alternative statistic to consider rather than the difference in the conditional proportions (which will also have to be small by the nature of the data) is the ratio of the conditional proportions. First used with medical studies where "success" is often defined to be an unpleasant event (e.g., death), this ratio was termed the relative risk.</p>
+  </assemblage>
+
+  <assemblage>
+    <title>Definition: Relative Risk</title>
+    <p>The <term>relative risk</term><idx><h>relative risk</h></idx> is the ratio of the conditional proportions, often intentionally set up so that the value is larger than one:</p>
+    <p>Relative risk = Proportion of successes in group 1 (the larger proportion) / Proportion of successes in group 2 (the smaller proportion)</p>
+    <p>The relative risk tells us how many times higher the "risk" or "likelihood" of "success" is in group 1 compared to group 2.</p>
+  </assemblage>
+
+  <exercise xml:id="inv3-8-d">
+    <title>Calculate Relative Risk</title>
+    <statement>
+      <p>Determine and interpret the ratio of the conditional proportions who developed peanut allergy between the peanut avoiders and the peanut consumers in this study.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>Relative risk = 0.060 / 0.010 = 5.85</p>
+      <p>Children who avoided peanuts were about 5.85 times more likely to develop a peanut allergy than children who consumed peanuts.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-e">
+    <title>Percentage Change</title>
+    <statement>
+      <p>Because we are now working with a ratio, we can also interpret this statistic in terms of percentage change. Subtract one from the relative risk value and multiply by 100% to determine what percentage higher the proportion who developed a peanut allergy is in the avoidance group compared to the consumption group.</p>
+      <p><var width="40"/></p>
+    </statement>
+    <solution>
+      <p>(5.85 - 1) × 100% = 485%</p>
+      <p>The proportion who developed a peanut allergy is 485% higher in the avoidance group.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <paragraphs>
+    <p>Of course, now we would also like a confidence interval for the corresponding parameter, the ratio of the underlying probabilities of allergy between these two treatments. When we produced confidence intervals for other parameters, we examined the sampling distribution of the corresponding statistic to see how values of that statistic varied under repeated random sampling. So now let's examine the behavior of the relative risk of conditional proportions using the Analyzing Two-Way Tables applet to simulate the random assignment process (as opposed to simulating the random sampling from a binomial process) under the (null) assumption that there's no difference between the two treatments. [See the Technology Detour below for software instructions.]</p>
+  </paragraphs>
+
+  <exercise xml:id="inv3-8-f">
+    <title>Generate Null Distribution</title>
+    <statement>
+      <p>Generate a null distribution for Relative Risks:</p>
+      <p><ul>
+        <li>Check the 2×2 box</li>
+        <li>Enter the two-way table into the applet and press Use Table.</li>
+        <li>Generate 10,000 random shuffles.</li>
+        <li>Use the Statistic pull-down menu to select Relative Risk.</li>
+      </ul></p>
+      <p>Describe the behavior of the null distribution of relative risk values.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>The distribution should be centered around 1 (no difference) and skewed to the right.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-g">
+    <title>Observed Value in Null Distribution</title>
+    <statement>
+      <p>Where does the observed value of the relative risk from the actual study fall in the null distribution of the relative risks? What proportion of the simulated relative risks are at least this extreme?</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>The observed value (5.85) should be far out in the right tail. Very few (less than 1%) of the simulated values should be this extreme or more.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <paragraphs>
+    <p>But can we apply a mathematical model to this distribution?</p>
+  </paragraphs>
+
+  <exercise xml:id="inv3-8-h">
+    <title>Mean Near 1</title>
+    <statement>
+      <p>Why does it make sense that the mean of the simulated relative risks is close to the value 1? [Hint: Remember the assumption behind your simulation analysis.]</p>
+      <p><var width="60" height="2"/></p>
+    </statement>
+    <solution>
+      <p>Under the null hypothesis, the two treatments are equally effective, so the ratio of the probabilities should be 1 (no difference).</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-i">
+    <title>Skewness</title>
+    <statement>
+      <p>You should notice skewness in the distribution of relative risk values. Explain why it is not surprising for the distribution of this statistic to be skewed to the right (especially with smaller sample sizes). Note: If the number of successes in either group equals zero, the applet adds 0.5 to each cell of the table before calculating the relative risk in order to avoid dividing by zero.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>A ratio can be any positive value. Values close to 1 are restricted to fall between 0 and 2, but large ratios can extend far to the right (e.g., 5, 10, 100, etc.). This creates right skewness.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-j">
+    <title>Log Transformation</title>
+    <statement>
+      <p>In fact, this distribution is usually well modeled by a log normal distribution. To verify this, check the ln relative risk box (in the lower left corner, or choose from pull-down menu) to take the natural log of each relative risk value and display a new histogram of these transformed values. Describe the shape of this distribution. Is the distribution of the lnrelrisk well modeled by a normal distribution?</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>After taking the natural log, the distribution should be approximately symmetric and bell-shaped (normal).</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-k">
+    <title>Mean of Log Relative Risk</title>
+    <statement>
+      <p>What is the mean of the simulated lnrelrisk values? Why does this value make sense?</p>
+      <p><var width="60" height="2"/></p>
+    </statement>
+    <solution>
+      <p>The mean should be close to 0, which makes sense because ln(1) = 0.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-l">
+    <title>Standard Deviation</title>
+    <statement>
+      <p>What is the standard deviation of the lnrelrisk values?</p>
+      <p><var width="20"/></p>
+    </statement>
+    <solution>
+      <p>Results will vary but should be around 0.8-1.0.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-m">
+    <title>Observed Log Relative Risk</title>
+    <statement>
+      <p>Calculate the observed value of ln(p̂<subscript>1</subscript>/p̂<subscript>2</subscript>) for this study (but don't round up). Where does this value fall (near in the middle or in the tail) of this simulated distribution of lnrelrisk values? Find the empirical p-value by counting the number of lnrelrisk values at least as extreme.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>ln(5.85) = 1.767. This should fall far in the right tail of the distribution, with a p-value around 0.007-0.008.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-n">
+    <title>P-value Unchanged</title>
+    <statement>
+      <p>Has the empirical p-value changed? Explain why this makes sense. [Hint: What does change about the distribution when you take the natural log of every value?]</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>No, the p-value has not changed. Taking the log is a monotonic transformation, so it doesn't change the ranking of values or which ones are extreme.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <paragraphs>
+    <p>While the log transformation does not impact the p-value, it does impact the confidence interval. So far you have seen the standard deviation of the null distribution, but that assumes the probability of success is the same for both treatments. Instead, we want to find a standard deviation of the ln rel risk values without making that assumption.</p>
+  </paragraphs>
+
+  <assemblage>
+    <title>Theoretical Result</title>
+    <p>It can be shown that the standard error of the ln relative risk is approximated by:</p>
+    <p>SE(ln rel risk) = √[(1/A - 1/(A+B)) + (1/C - 1/(C+D))]</p>
+    <p>where A, B, C, and D are the observed counts in the 2×2 table of data, with A and C representing the number of "successes" in the two groups. Having this formula allows us to determine the variability from sample to sample without conducting the simulation first.</p>
+  </assemblage>
+
+  <exercise xml:id="inv3-8-o">
+    <title>Calculate Standard Error</title>
+    <statement>
+      <p>Calculate the value of this standard error of the ln(rel risk) for this study. Interpret this value and compare it to the standard deviation from your simulated lnrelrisk values.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>SE = √[(1/11 - 1/183) + (1/2 - 1/195)] = √[0.0854 + 0.4949] = √0.5803 = 0.762</p>
+      <p>This should be reasonably close to (but somewhat different from) the simulation SD, as we're not assuming the null hypothesis is true.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <paragraphs>
+    <p>Note: The variability in the statistic under the null hypothesis (as estimated by the simulation) should be in the ballpark but not all that close to the variability in the statistic estimated from the data. If we used a pooled p̂, modelling the null hypothesis to be true, the results are usually a bit more similar: Assuming null hypothesis is true: √(1/6.34 - 1/183 + 1/6.76 - 1/195) ≈ 0.543. In a case like this where we have strong evidence against the null hypothesis, using the observed counts is more appropriate.</p>
+  </paragraphs>
+
+  <exercise xml:id="inv3-8-p">
+    <title>Confidence Interval Formula</title>
+    <statement>
+      <p>Now that you have a statistic (ln rel risk) that has a sampling distribution that is approximately normal and you have a value for the standard deviation of the statistic from (o), what general formula can we use to determine a confidence interval for the parameter?</p>
+      <p><var width="60" height="2"/></p>
+    </statement>
+    <solution>
+      <p>statistic ± (critical value) × SE</p>
+      <p>For 95% CI: ln(rel risk) ± 1.96 × SE(ln rel risk)</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-q">
+    <title>Calculate Confidence Interval</title>
+    <statement>
+      <p>Calculate the midpoint, 95% margin-of-error, and 95% confidence interval endpoints using the observed value of ln(rel risk) as the statistic and using the standard error calculated in (o).</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>Midpoint: ln(5.85) = 1.767</p>
+      <p>Margin of error: 1.96 × 0.762 = 1.494</p>
+      <p>95% CI: (1.767 - 1.494, 1.767 + 1.494) = (0.273, 3.261)</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-r">
+    <title>Parameter Estimated</title>
+    <statement>
+      <p>What parameter does the confidence interval in (q) estimate?</p>
+      <p><var width="40"/></p>
+    </statement>
+    <solution>
+      <p>ln(π<subscript>avoid</subscript> / π<subscript>consume</subscript>), the natural log of the relative risk</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-s">
+    <title>Exponentiate Endpoints</title>
+    <statement>
+      <p>Exponentiate the endpoints of this interval to obtain a confidence interval for the ratio of the probabilities of developing a peanut allergy between these two treatments. Interpret this interval.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>95% CI for relative risk: (e^0.273, e^3.261) = (1.31, 26.08)</p>
+      <p>We are 95% confident that children who avoid peanuts are between 1.31 and 26.08 times more likely to develop a peanut allergy than children who consume peanuts.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-t">
+    <title>Zero in Interval?</title>
+    <statement>
+      <p>Is zero in this interval? Do we care? What value is of interest instead?</p>
+      <p><var width="60" height="2"/></p>
+    </statement>
+    <solution>
+      <p>No, zero is not in the interval, but that's not relevant. For relative risk, the value of interest is 1 (no difference). Since 1 is not in the interval, we have evidence of a difference.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-u">
+    <title>Midpoint of CI</title>
+    <statement>
+      <p>Is the midpoint of this confidence interval for the population relative risk equal to the observed value of the sample relative risk? Explain why this makes sense.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>No, the midpoint is e^1.767 = 5.85, which equals the observed relative risk. But the interval (1.31, 26.08) is not symmetric around 5.85 because we're working on the log scale and then exponentiating back.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-v">
+    <title>Compare to Applet</title>
+    <statement>
+      <p>Compare the confidence interval you just calculated to the one given by the applet if you now check the 95% CI for relative risk box. Note: The confidence interval for the relative risk will not necessarily be symmetric around the statistic.</p>
+      <p><var width="60" height="2"/></p>
+    </statement>
+    <solution>
+      <p>The intervals should match closely.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-8-w">
+    <title>Coverage Probability</title>
+    <statement>
+      <p>Suppose you used this method to construct a confidence interval for each of the 1,000 simulated random samples that you generated in (f). Because our simulation assumes the null hypothesis to be true, do you expect the value 1 to be in these intervals? All of them? Most of them? What percentage of them? Explain.</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>We would expect about 95% of the intervals to contain the value 1, because under the null hypothesis, the true relative risk is 1, and we're using 95% confidence intervals.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <assemblage>
+    <title>Study Conclusions</title>
+    <p>This study provided strong evidence that children with pre-existing sensitivity to peanut extract are more likely to develop a peanut allergy by 5 years of age if they avoid consuming peanuts than if they consume peanuts (exact one-sided p-value = 0.0074, z-score = 2.66). To estimate the size of the difference, focusing on the difference in "success" probabilities has some limitations. In particular, if the probabilities are small it may be difficult for us to interpret the magnitude of the difference between the values. Also, we have to be very careful with our language, focusing on the difference in the allergy probabilities and not the percentage change. An alternative is to construct a confidence interval for the relative risk (ratio of conditional probabilities). An approximation exists (even with rather small sample sizes) for a z-interval for the ln(relative risk) which can then be back-transformed to an interval for long-run relative risk. Many practitioners prefer focusing on this ratio parameter rather than the difference. From this study, we are 95% confident that ratio of the probabilities of peanut allergy is between 1.32 and 26.08. This means that avoiding peanuts rather than consuming some 6g/week raises the probability of developing a peanut allergy by between 32% and 2500%.</p>
+    <p>Note: It can be risky to interpret the relative risk in isolation without considering the absolute risks (conditional proportions) as well. For example, doubling a very small probability may not be noteworthy, depending on the context. You should also note that the percentage change calculation and interpretation depends on which group (e.g., treatment or control) is used as the reference group.</p>
+    <p>Note: Efficacy is defined as 1 – risk of vaccinated group/risk of unvaccinated group × 100%.</p>
+  </assemblage>
+
+  <subsection xml:id="practice3-8">
+    <title>Practice Problems 3.8</title>
+
+    <exercise xml:id="practice-3-8-a">
+      <title>Practice Problem 3.8A</title>
+      <statement>
+        <p>(a) For the peanut allergy study, find a 95% confidence interval for the probability of not developing a peanut allergy comparing the consumption treatment to the avoidance treatment.</p>
+        <p><var width="60" height="2"/></p>
+        <p>(b) Provide a one-sentence interpretation of the interval in (a).</p>
+        <p><var width="60" height="2"/></p>
+        <p>(c) Is the interval the same or closely related to the one you found in Investigation 3.8? Does one interval provide strong evidence of a treatment effect? Which interval would you report to new parents?</p>
+        <p><var width="60" height="3"/></p>
+        <p>(d) The article reports that "the power to detect a difference in risk of 30 percentage points was 80.0%." Explain what this means in your own words.</p>
+        <p><var width="60" height="3"/></p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-8-b">
+      <title>Practice Problem 3.8B: Knee Surgery Study</title>
+      <statement>
+        <p>A multicenter, randomized, double-blind trial involved patients aged 36-65 years who had knee injuries consistent with a degenerative medial meniscus tear (Shivonen et al., <em>New England Journal of Medicine</em>, 2013). Patients received either the most common orthopedic procedure (arthroscopic partial meniscectomy, n<subscript>1</subscript> = 70) or sham surgery that simulated the sounds, sensations, and timing of the real surgery (n<subscript>2</subscript> = 76). After 12 months, 54 of those in the treatment group reported satisfaction, compared to 53 in the sham surgery.</p>
+        <p>(a) Calculate and interpret a confidence interval for the ratio of the probabilities (relative risk) of satisfaction for these two procedures.</p>
+        <p><var width="60" height="4"/></p>
+        <p>(b) What does your interval in (a) indicate about whether those receiving the orthopedic surgery are significantly more likely that those receiving a sham surgery to report satisfaction after 12 months? Explain your reasoning.</p>
+        <p><var width="60" height="3"/></p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+</section>

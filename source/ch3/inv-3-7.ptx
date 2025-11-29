@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-3-7">
+  <title>Investigation 3.7: CPR vs. Chest Compressions</title>
+
+  <introduction>
+    <p>For many years, if a person experienced a heart attack and a bystander called 911, the dispatcher instructed the bystander in how to administer chest compression plus mouth-to-mouth ventilation (a combination known as CPR) until the emergency team arrived. Some researchers believe that giving instruction in chest compression alone (CC) would be a more effective approach. In the 1990s, a randomized comparative experiment was conducted in Seattle involving 518 cases (Hallstrom, Cobb, Johnson, &amp; Copass, <em>New England Journal of Medicine</em>, 2000): In 278 cases, the dispatcher gave instructions in standard CPR to the bystander, and in the remaining 240 cases the dispatcher gave instructions in CC alone. A total of 64 patients survived to discharge from the hospital: 29 in the CPR group and 35 in the CC group.</p>
+  </introduction>
+
+  <exercise xml:id="inv3-7-a">
+    <title>Identify Study Components</title>
+    <statement>
+      <p>Identify the observational units, explanatory variable, and response variable. Is this an observational study or an experiment?</p>
+      <p>Observational units: <var width="40"/></p>
+      <p>Explanatory: <var width="40"/></p>
+      <p>Response: <var width="40"/></p>
+      <p>Type of study: (circle one) Observational    Experimental</p>
+    </statement>
+    <solution>
+      <p>Observational units: 518 heart attack patients</p>
+      <p>Explanatory: Type of instruction (CPR or CC alone)</p>
+      <p>Response: Whether or not the patient survived to discharge</p>
+      <p>Type of study: Experimental (random assignment of instruction type)</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-7-b">
+    <title>Construct Two-Way Table</title>
+    <statement>
+      <p>Construct a two-way table to summarize the results of this study. Remember to put the explanatory variable in the columns.</p>
+      <table>
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+          <row header="yes">
+            <cell></cell>
+            <cell>CPR</cell>
+            <cell>CC alone</cell>
+            <cell>Total</cell>
+          </row>
+          <row>
+            <cell>Survived</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+          <row>
+            <cell>Did not survive</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+          <row>
+            <cell>Total</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+        </tabular>
+      </table>
+    </statement>
+    <solution>
+      <table>
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+          <row header="yes">
+            <cell></cell>
+            <cell>CPR</cell>
+            <cell>CC alone</cell>
+            <cell>Total</cell>
+          </row>
+          <row>
+            <cell>Survived</cell>
+            <cell>29</cell>
+            <cell>35</cell>
+            <cell>64</cell>
+          </row>
+          <row>
+            <cell>Did not survive</cell>
+            <cell>249</cell>
+            <cell>205</cell>
+            <cell>454</cell>
+          </row>
+          <row>
+            <cell>Total</cell>
+            <cell>278</cell>
+            <cell>240</cell>
+            <cell>518</cell>
+          </row>
+        </tabular>
+      </table>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-7-c">
+    <title>Calculate Difference</title>
+    <statement>
+      <p>Calculate the difference in the conditional proportions who survived (CC – CPR). Does this seem to be a noteworthy difference to you?</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>CC: 35/240 = 0.146; CPR: 29/278 = 0.104; Difference: 0.146 - 0.104 = 0.042 or 4.2 percentage points. This may seem small but could be important in a life-or-death situation.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-7-d">
+    <title>Fisher's Exact Test</title>
+    <statement>
+      <p>Use technology to carry out Fisher's Exact Test (by calculating the corresponding hypergeometric probability) to assess the strength of evidence that the probability of survival is higher with CC alone as compared to standard CPR. Write out how to calculate this probability, report the p-value, and interpret what it is the probability of.</p>
+      <p>Let X represent <var width="40"/></p>
+      <p>p-value = P(X <var width="5"/> <var width="5"/>) = <var width="15"/></p>
+      <p>where X follows a hypergeometric distribution with N = <var width="5"/>, M = <var width="5"/>, and n = <var width="5"/></p>
+      <p>Interpretation: <var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>Let X represent the number of survivors in the CC group</p>
+      <p>p-value = P(X ≥ 35) where X ~ Hypergeometric(N = 518, M = 64, n = 240)</p>
+      <p>p-value ≈ 0.062</p>
+      <p>Interpretation: If CC and CPR were equally effective, there is about a 6.2% chance of randomly assigning 35 or more of the 64 survivors to the CC group.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <paragraphs>
+    <p>Because the sample sizes are large in this study, you should not be surprised that the probability distribution in (d) is approximately normal. The large sample sizes allow us to approximate the hypergeometric distribution with a normal distribution. Thus, with large samples sizes (e.g., at least 5 successes and at least 5 failures in each group), an alternative to Fisher's Exact Test is the two-sample z-test that you studied in Section 3.1.</p>
+  </paragraphs>
+
+  <exercise xml:id="inv3-7-e">
+    <title>Two-Sample Z-test</title>
+    <statement>
+      <p>Use technology to obtain the two-sample z-test statistic and p-value for this study. Compare this p-value to the one from Fisher's Exact Test; are they similar?</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>The z-test should give a p-value around 0.073, which is similar to (slightly larger than) the Fisher's Exact Test p-value of 0.062.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-7-f">
+    <title>Improving Approximation</title>
+    <statement>
+      <p>Suggest a way of improving the approximation of the p-value.</p>
+      <p><var width="60" height="2"/></p>
+    </statement>
+    <solution>
+      <p>Use a continuity correction by treating 35 successes as 34.5 when calculating the z-statistic.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-7-g">
+    <title>Optional: Continuity Correction</title>
+    <statement>
+      <p>(Optional): Compare the normal approximation with a continuity correction to the hypergeometric calculation. [Hints: e.g., Use the Analyzing Two-way Tables applet to compare the normal approximation to Fisher's Exact Test. In R, use iscamhypernorm(29, 518, 64, 278, TRUE)]</p>
+      <p><var width="60" height="3"/></p>
+    </statement>
+    <solution>
+      <p>With continuity correction, the p-value should be very close to the Fisher's Exact Test result.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-7-h">
+    <title>Significance at Different Levels</title>
+    <statement>
+      <p>Do the data from this study provide convincing evidence that CC alone is better than standard CPR at the 10% significance level? Explain. How about the 5% level of significance?</p>
+      <p><var width="60" height="4"/></p>
+    </statement>
+    <solution>
+      <p>At the 10% level: Yes, since the p-value (≈0.062) is less than 0.10, we have moderate evidence that CC alone is better.</p>
+      <p>At the 5% level: No, since the p-value is greater than 0.05, we do not have strong evidence at this stricter significance level.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-7-i">
+    <title>Confidence Interval</title>
+    <statement>
+      <p>An advantage to using the z-procedures is being able to easily produce a confidence interval for the parameter. Use technology to determine a 95% confidence interval for the parameter of interest, and then interpret this interval. [Hint: Think carefully about what the relevant parameter is in this study.]</p>
+      <p><var width="60" height="4"/></p>
+    </statement>
+    <solution>
+      <p>95% CI for π<subscript>CC</subscript> - π<subscript>CPR</subscript>: approximately (-0.002, 0.086)</p>
+      <p>We are 95% confident that the difference in survival probabilities (CC - CPR) is between -0.2 percentage points and 8.6 percentage points.</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-7-j">
+    <title>Reversing the Subtraction</title>
+    <statement>
+      <p>Suppose you had defined the parameter by subtracting in the other direction (e.g., CPR – CC instead of CC – CPR). How would that change:</p>
+      <p>(i) the observed statistic? <var width="30"/></p>
+      <p>(ii) the standardized statistic? <var width="30"/></p>
+      <p>(iii) the alternative hypothesis? <var width="40"/></p>
+      <p>(iv) the p-value? <var width="30"/></p>
+      <p>(v) confidence interval? <var width="40"/></p>
+    </statement>
+    <solution>
+      <p>(i) Changes sign: -0.042</p>
+      <p>(ii) Changes sign</p>
+      <p>(iii) Would be H<subscript>a</subscript>: π<subscript>CPR</subscript> - π<subscript>CC</subscript> &lt; 0</p>
+      <p>(iv) Same p-value</p>
+      <p>(v) Changes signs of endpoints: (-0.086, 0.002)</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <subsection xml:id="practice3-7">
+    <title>Practice Problem 3.7</title>
+
+    <exercise xml:id="practice-3-7-a">
+      <title>Other Response Variables</title>
+      <statement>
+        <p>(a) Researchers in the CPR study also examined other response variables. For example, the 911 dispatcher's instructions were completely delivered in 62% of episodes assigned to chest compression plus mouth-to-mouth compared to 81% of the episodes assigned to chest compression alone.</p>
+        <p>(i) Calculate the difference in conditional proportions and compare it to the original study.</p>
+        <p><var width="60" height="2"/></p>
+        <p>(ii) Without calculating, do you suspect the p-value for comparing this new response variable between the two groups will be larger or smaller or about the same as the p-value you determined above? Explain your reasoning.</p>
+        <p><var width="60" height="3"/></p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-7-b">
+      <title>Combined Study</title>
+      <statement>
+        <p>(b) The above study was operationally identical to that of another study and the results of the two studies were combined. Of the 399 combined patients randomly assigned to standard CPR, 44 survived to discharge from the hospital. Of the 351 combined patients randomly assigned to chest compression alone, 47 survived to discharge.</p>
+        <p>(i) Calculate the difference in conditional proportions and compare it to the original study.</p>
+        <p><var width="60" height="2"/></p>
+        <p>(ii) Without calculating, do you suspect the p-value for this comparison will be larger, smaller, or the same as the p-value you determined? Explain your reasoning.</p>
+        <p><var width="60" height="3"/></p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+</section>
