@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="summary-relative-risk">
+  <title>Summary of Inference for Relative Risk</title>
+
+  <assemblage>
+    <title>Relative Risk Procedures</title>
+
+    <p><alert>Statistic:</alert> ratio of conditional proportions (typically set up to be larger than one) = <m>\hat{p}_1/\hat{p}_2</m></p>
+
+    <p><alert>Hypotheses:</alert> H<subscript>0</subscript>: <m>\pi_1/\pi_2 = 1</m>; H<subscript>a</subscript>: <m>\pi_1/\pi_2</m> &lt;, >, or ≠ 1</p>
+
+    <p><alert>p-value:</alert> Fisher's Exact Test or normal approximation on ln(<m>\hat{p}_1/\hat{p}_2</m>)</p>
+
+    <p><alert>Confidence interval for <m>\pi_1/\pi_2</m>:</alert> exponentiate endpoints of</p>
+    <p><me>\ln(\hat{p}_1/\hat{p}_2) \pm z^*\sqrt{\frac{1}{A}-\frac{1}{A+C}+\frac{1}{B}-\frac{1}{B+D}}</me></p>
+
+    <p><alert>Technology:</alert></p>
+    <p><ul>
+      <li>In R: You can install the fmsb package and use the riskratio command.</li>
+      <li>fmsb::riskratio(A, B, A+C, B+D, conf.level, p.calc.by.independence = TRUE)</li>
+      <li>In JMP: From the Contingency Analysis hot spot, choose Relative Risk</li>
+    </ul></p>
+  </assemblage>
+
+</section>
