@@ -28,7 +28,6 @@
     <title>Study Type</title>
     <statement>
       <p>Was this an observational study or an experiment? Explain how you are deciding.</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>This was an experiment because the researchers randomly assigned subjects to the treatment groups (dolphin therapy vs. control).</p>
@@ -39,7 +38,11 @@
   <paragraphs>
     <p>The following two-way table summarizes the results of this experiment:</p>
     <table>
-      <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+      <tabular top="minor" bottom="minor" left="minor" right="minor">
+        <col halign="left"/>
+        <col halign="center"/>
+        <col halign="center"/>
+        <col halign="center"/>
         <row header="yes">
           <cell></cell>
           <cell>Dolphin Therapy</cell>
@@ -66,14 +69,15 @@
         </row>
       </tabular>
     </table>
-    <p><term>Quick Check:</term> What proportion of all subjects showed substantial improvement? What proportion of subjects who were given dolphin therapy improved?</p>
+    <p><term>For practice:</term> What proportion of all subjects showed substantial improvement? <var width="10"/> What proportion of subjects who were given dolphin therapy improved? <var width="10"/></p>
   </paragraphs>
 
   <exercise xml:id="inv3-5-c">
     <title>Calculate Difference in Proportions</title>
     <statement>
-      <p>Calculate the difference in the conditional proportions of substantial improvement between the two explanatory variable groups.</p>
-      <p><var width="40"/></p>
+      <p>Calculate the conditional proportion of substantial improvement for the dolphin therapy group: <var width="10"/></p>
+      <p>Calculate the conditional proportion of substantial improvement for the control group: <var width="10"/></p>
+      <p>Calculate the difference in the conditional proportions (dolphin therapy - control): <var width="10"/></p>
     </statement>
     <solution>
       <p>Dolphin therapy: 10/15 = 0.667; Control: 3/15 = 0.200; Difference: 0.667 - 0.200 = 0.467</p>
@@ -85,7 +89,6 @@
     <title>Initial Assessment</title>
     <statement>
       <p>Do the data appear to support the claim that dolphin therapy is more effective than the control program?</p>
-      <p><var width="60" height="2"/></p>
     </statement>
     <solution>
       <p>Yes, a much higher proportion improved in the dolphin therapy group (66.7%) compared to the control group (20%).</p>
@@ -97,7 +100,6 @@
     <title>Alternative Explanation</title>
     <statement>
       <p>Suppose swimming with dolphins is no more effective than swimming alone. What could be another possible explanation for the difference in these two sample proportions?</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>Random chance from the random assignment process could have placed more of the people who were going to improve anyway into the dolphin therapy group.</p>
@@ -114,12 +116,12 @@
     <title>State Hypotheses</title>
     <statement>
       <p>State appropriate null and alternative hypotheses to reflect the researchers' conjecture in terms of this parameter.</p>
-      <p>H<subscript>0</subscript>: <var width="50"/></p>
-      <p>H<subscript>a</subscript>: <var width="50"/></p>
+      <p>H<sub>0</sub>: <var width="15"/> <var width="5"/> <var width="10"/></p>
+      <p>H<sub>a</sub>: <var width="15"/> <var width="5"/> <var width="10"/></p>
     </statement>
     <solution>
-      <p>H<subscript>0</subscript>: π<subscript>dolphin</subscript> - π<subscript>control</subscript> = 0 (no difference in probability of improvement)</p>
-      <p>H<subscript>a</subscript>: π<subscript>dolphin</subscript> - π<subscript>control</subscript> > 0 (dolphin therapy has higher probability of improvement)</p>
+      <p>H<sub>0</sub>: π<subscript>dolphin</subscript> - π<subscript>control</subscript> = 0 (no difference in probability of improvement)</p>
+      <p>H<sub>a</sub>: π<subscript>dolphin</subscript> - π<subscript>control</subscript> > 0 (dolphin therapy has higher probability of improvement)</p>
     </solution>
     <response/>
   </exercise>
@@ -128,7 +130,6 @@
     <title>Design Simulation</title>
     <statement>
       <p>So under the null hypothesis, we are assuming that there is no difference in the treatment effect between the two treatments. In other words, whether or not people improved is not related to which group they are put in. Explain how you could design a simulation to help address this question, keeping in mind that this study involved random assignment not random sampling. Also keep in mind that this simulation will assume the null hypothesis is true.</p>
-      <p><var width="60" height="5"/></p>
     </statement>
     <solution>
       <p>We could assume that 13 of the 30 people were going to improve regardless of treatment, and 17 were not going to improve. Then we could randomly assign these 30 people to the two groups (15 in each) many times and see how often we get a difference as large as 0.467 or larger.</p>
@@ -234,23 +235,17 @@
     <response/>
   </exercise>
 
-  <exercise xml:id="inv3-5-j">
-    <title>Class Results</title>
-    <statement>
-      <p>Pool your results for the number of successes (blue index cards) assigned to the Dolphin Group for your 3 repetitions with the rest of your class and produce a well-labeled dotplot of the null distribution.</p>
-      <p><var width="60" height="4"/></p>
-    </statement>
-    <solution>
-      <p>Results will vary but should center around 6.5 successes in the dolphin group.</p>
-    </solution>
-    <response/>
-  </exercise>
+  <paragraphs>
+    <p>Pool your results for the number of successes (blue index cards) assigned to the Dolphin Group for your 3 repetitions with the rest of your class and produce a well-labeled dotplot of the null distribution.</p>
+  </paragraphs>
 
   <exercise xml:id="inv3-5-k">
     <title>Interpret Dotplot</title>
     <statement>
-      <p>What does each dot in the above graph represent? [Hint: Think about what you would have to do to add another dot to the graph. How should you label the horizontal axis?]</p>
-      <p><var width="60" height="3"/></p>
+      <p>What does each dot in the above graph represent?</p>
+      <hint>
+        <p>Think about what you would have to do to add another dot to the graph. How should you label the horizontal axis?</p>
+      </hint>
     </statement>
     <solution>
       <p>Each dot represents one simulated random assignment of the 30 subjects to the two groups, showing the number of improvers that ended up in the dolphin therapy group. The horizontal axis should be labeled "Number of improvers in dolphin therapy group."</p>
@@ -262,7 +257,6 @@
     <title>Preliminary Assessment</title>
     <statement>
       <p>Granted, we have not done an extensive number of repetitions, but how's it looking so far? Does it seem like the actual experimental results (the observed 10/3 split) would be surprising to arise purely from the random assignment process under the null hypothesis that dolphin therapy is not effective? Explain.</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>Results will vary, but students should notice that getting 10 or more improvers in the dolphin group appears to be unusual/rare.</p>
@@ -272,7 +266,7 @@
 
   <paragraphs>
     <p>We really need to do this simulated random assignment process hundreds, preferably thousands of times. This would be very tedious and time-consuming with cards, so let's turn to technology.</p>
-    <p>Open the Dolphin Study applet.</p>
+    <p>Open the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?dolphins=1">Dolphin Study applet</url>.</p>
     <p><ul>
       <li>Confirm that the two-way table displayed by the applet matches that of the research study.</li>
       <li>Check Show Shuffle Options and confirm that there are 30 total "people": 13 blue and 17 green.</li>
@@ -285,7 +279,6 @@
     <title>Applet Exploration</title>
     <statement>
       <p>Now press Shuffle four more times. Does the number of successes vary among the repetitions?</p>
-      <p><var width="60" height="2"/></p>
     </statement>
     <solution>
       <p>Yes, the number of successes in the dolphin group varies from repetition to repetition.</p>
@@ -297,7 +290,6 @@
     <title>Null Distribution</title>
     <statement>
       <p>Enter 995 for the Number of shuffles. This produces a total of 1,000 repetitions of the simulated random assignment process under the null hypothesis (the "null distribution" or a "randomization distribution"). What is the value of the mean of this null distribution? Explain why this center makes intuitive sense.</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>The mean should be around 6.5. This makes sense because if we randomly assign 15 of the 30 subjects to the dolphin group, we would expect about half of the 13 improvers (6.5) to end up in that group on average.</p>
@@ -311,7 +303,6 @@
       <p>Now we want to compare the observed result from the research study to these "could have been" results under the null hypothesis.</p>
       <p>How many improvers were there in the Dolphin therapy group in the actual study? <var width="10"/></p>
       <p>Based on the resulting dotplot, does it seem like the actual experimental results would be surprising to arise solely from the random assignment process under the null hypothesis that dolphin therapy is not effective? Explain.</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>There were 10 improvers in the dolphin therapy group. Yes, this appears to be in the upper tail of the distribution, suggesting it would be surprising to get this result by chance alone.</p>
@@ -320,7 +311,7 @@
   </exercise>
 
   <exercise xml:id="inv3-5-p">
-    <title>Calculate P-value</title>
+    <title>Calculate p-value</title>
     <statement>
       <p>In the Count Samples box, enter the observed statistic from the actual study and press Count to have the applet count the number of repetitions with 10 or more successes in the Dolphin group. In what proportion of your 1000 simulated random assignments were the results as (or more) extreme as the actual study?</p>
       <p><var width="20"/></p>
@@ -335,7 +326,6 @@
     <title>Difference in Proportions</title>
     <statement>
       <p>We said above that it would be equivalent to look at the difference in the conditional proportions. Use the Statistic pull-down menu to select Difference in proportions. How does the null distribution (including the mean) change? Does this make sense? How would you estimate the p-value now? How does the p-value change?</p>
-      <p><var width="60" height="4"/></p>
     </statement>
     <solution>
       <p>The null distribution is now centered at 0 (since we expect no difference under the null hypothesis). The shape is similar but the scale has changed. The p-value is estimated by counting how many repetitions have a difference of 0.467 or larger, and should be approximately the same as before.</p>
@@ -344,10 +334,12 @@
   </exercise>
 
   <exercise xml:id="inv3-5-r">
-    <title>Interpret P-value</title>
+    <title>Interpret p-value</title>
     <statement>
-      <p>Interpret the p-value you found [Hint: Same reasoning as in Investigation 3.1, but now also focus on the source of randomness that was modelled in the simulation.]</p>
-      <p><var width="60" height="4"/></p>
+      <p>Interpret the p-value you found.</p>
+      <hint>
+        <p>Same reasoning as in Investigation 3.1, but now also focus on the source of randomness that was modelled in the simulation.</p>
+      </hint>
     </statement>
     <solution>
       <p>The p-value represents the probability of obtaining a difference in proportions as large as 0.467 (or 10 or more improvers in the dolphin group) purely by chance from the random assignment process, assuming that dolphin therapy has no effect on improvement.</p>
@@ -359,7 +351,6 @@
     <title>Strength of Evidence</title>
     <statement>
       <p>Is this empirical p-value small enough to convince you that the experimental data that the researchers obtained provide strong evidence that dolphin therapy is effective (i.e., that the null hypothesis is not correct)?</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>Yes, a p-value between 0.01 and 0.05 provides moderate to strong evidence against the null hypothesis, suggesting that dolphin therapy is effective.</p>
@@ -371,7 +362,6 @@
     <title>Confounding Variables</title>
     <statement>
       <p>Is it reasonable to attribute the observed difference in success proportions to the dolphin therapy, or could the difference be due to a confounding variable? Explain.</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>Yes, it is reasonable to attribute the difference to dolphin therapy because this was a randomized experiment. Random assignment tends to balance out potential confounding variables between the two groups.</p>
@@ -383,7 +373,6 @@
     <title>Generalizability</title>
     <statement>
       <p>To what population is it reasonable to generalize these results? Justify your answer.</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>Because this was not a random sample, we should be cautious about generalizing beyond people similar to those who volunteered for this study – people aged 18-65 with mild to moderate depression who could afford to travel to Honduras for two weeks.</p>
@@ -402,31 +391,57 @@
   </assemblage>
 
   <subsection xml:id="practice3-5">
-    <title>Practice Problems 3.5</title>
+    <title>Practice Problem 3.5</title>
+
+    <p>A recent study compared two groups: One group was reminded of the sacrifices that physicians have to make as part of their training, and the other group was given no such reminder. All physicians in the study were then asked whether they consider it acceptable for physicians to receive free gifts from industry representatives. It turned out that 57/120 in the "sacrifice reminders" group answered that gifts are acceptable, compared to 13/60 in the "no reminder" group.</p>
 
     <exercise xml:id="practice-3-5-a">
-      <title>Practice Problem 3.5A: Physician Gifts Study</title>
+      <title>Identify Variables</title>
       <statement>
-        <p>A recent study compared two groups: One group was reminded of the sacrifices that physicians have to make as part of their training, and the other group was given no such reminder. All physicians in the study were then asked whether they consider it acceptable for physicians to receive free gifts from industry representatives. It turned out that 57/120 in the "sacrifice reminders" group answered that gifts are acceptable, compared to 13/60 in the "no reminder" group.</p>
-        <p>(a) Identify the explanatory and response variables in this study.</p>
-        <p><var width="60" height="2"/></p>
-        <p>(b) Do you believe this study used random assignment? What would that involve?</p>
-        <p><var width="60" height="2"/></p>
-        <p>(c) Do you believe this study used random sampling? What would that involve?</p>
-        <p><var width="60" height="2"/></p>
-        <p>(d) Explain how you would carry out a simulation analysis to approximate a p-value for this study. [Hint: How many cards? How many of each type? How many would you deal out? What would you record? How would you find the p-value?]</p>
-        <p><var width="60" height="4"/></p>
-        <p>(e) A colleague points out that the sample sizes are not equal in this study, so we can't draw meaningful conclusions. How should you respond?</p>
-        <p><var width="60" height="3"/></p>
+        <p>Identify the explanatory and response variables in this study.</p>
       </statement>
       <response/>
     </exercise>
 
     <exercise xml:id="practice-3-5-b">
-      <title>Practice Problem 3.5B: Two-Sided P-value</title>
+      <title>Random Assignment</title>
+      <statement>
+        <p>Do you believe this study used random assignment? What would that involve?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-5-c">
+      <title>Random Sampling</title>
+      <statement>
+        <p>Do you believe this study used random sampling? What would that involve?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-5-d">
+      <title>Simulation Analysis</title>
+      <statement>
+        <p>Explain how you would carry out a simulation analysis to approximate a p-value for this study.</p>
+        <hint>
+          <p>How many cards? How many of each type? How many would you deal out? What would you record? How would you find the p-value?</p>
+        </hint>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-5-e">
+      <title>Unequal Sample Sizes</title>
+      <statement>
+        <p>A colleague points out that the sample sizes are not equal in this study, so we can't draw meaningful conclusions. How should you respond?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-5-f">
+      <title>Two-Sided p-value</title>
       <statement>
         <p>How would you find a two-sided p-value for the dolphin study?</p>
-        <p><var width="60" height="3"/></p>
       </statement>
       <response/>
     </exercise>
