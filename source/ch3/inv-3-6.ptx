@@ -140,7 +140,7 @@
   </exercise>
 
   <exercise xml:id="inv3-6-f">
-    <title>Calculate P-value</title>
+    <title>Calculate p-value</title>
     <statement>
       <p>Specify the observed number of successes in the Count Samples box. Then indicate whether the research conjecture expected a larger or smaller number of successes in the seed treatment by choosing Greater Than or Less Than from the pull-down menu. Then press the Count button. Report your p-value.</p>
       <p><var width="30"/></p>
@@ -199,7 +199,7 @@
   </exercise>
 
   <exercise xml:id="inv3-6-j">
-    <title>Why Not the P-value?</title>
+    <title>Why Not the p-value?</title>
     <statement>
       <p>Explain why your answer to (i) is not yet the p-value for this study.</p>
       <p><var width="60" height="3"/></p>
@@ -217,7 +217,7 @@
     <p>where C(N, n) = N!/[n!(N - n)!] is the number of ways to choose n items from a group of N items, and X represents the number of successes randomly selected for group A. X is a hypergeometric random variable. Also note E(X) = n(M/N) and SD(X) = √[n(M/N)(1 - M/N)(N - n)/(N - 1)].</p>
     <p>In this study, we had N = 50 subjects and we defined yawning to be success so M = 14. We also arbitrarily chose to focus on the yawn-seed group, so n = 34. This calculation works out the same if you had defined "not yawning" to be a success and/or if you had focused on the 16 people in the no-yawn-seed group. You just need to make sure you count consistently.</p>
     <p>We will continue to define the p-value to be the probability of obtaining results at least as extreme as those observed in the actual study. Because we expected more yawners in the yawn-seed group, the p-value is the probability of randomly assigning at least 10 of the yawners in the yawn-seed group.</p>
-    <p>So far you have found P(X = 10) = C(14, 10) × C(36, 24) / C(50, 34) = 0.2545.</p>
+    <p>So far you have found p(X = 10) = C(14, 10) × C(36, 24) / C(50, 34) = 0.2545.</p>
   </assemblage>
 
   <exercise xml:id="inv3-6-k">
@@ -239,7 +239,7 @@
   </exercise>
 
   <exercise xml:id="inv3-6-l">
-    <title>Exact P-value and Interpretation</title>
+    <title>Exact p-value and Interpretation</title>
     <statement>
       <p>Sum all five probabilities together (including P(X = 10)) to determine the exact p-value for the yawning study. How does this p-value compare to the empirical p-value from the applet simulation? Write a one or two sentence interpretation of this p-value.</p>
       <p>Exact p-value: <var width="15"/></p>
@@ -369,80 +369,140 @@
     <p>With a large p-value of 0.513 (Fisher's Exact Test), we do not have any evidence that the difference between the two groups (with and without yawn seed) was created from something other than the random assignment process. If there was nothing to the theory that yawning is contagious, by "luck of the draw" alone, we would expect 10 or more of the yawners to end up in the yawn seed group in more than 50% of random assignments. Although the study results were in the conjectured direction, the difference between the yawning proportions was not large enough to convince us that the probability of yawning is truly larger when a yawn seed is planted. The researchers could try the study again with a larger sample size to increase the power of their test. The researchers also may want to be cautious in generalizing these results beyond the population of volunteers at a local flea market or how naturalistic the setting of leading individuals to a small room to wait is.</p>
   </assemblage>
 
-  <subsection xml:id="practice3-6">
-    <title>Practice Problems 3.6</title>
+  <subsection xml:id="practice3-6A">
+    <title>Practice Problem 3.6A</title>
 
-    <exercise xml:id="practice-3-6-a">
-      <title>Practice Problem 3.6A</title>
+    <exercise xml:id="practice-3-6-a-a">
+      <title>Evidence Against Contagious Yawning</title>
       <statement>
-        <p>(a) For the MythBusters' study (p-value > 0.5), is it reasonable to conclude from this study that we have strong evidence that yawning is not contagious? Explain.</p>
-        <p><var width="60" height="3"/></p>
-        <p>(b) Explain, in this context, what is meant in the Study Conclusions box by "the researchers could try the study again with a larger sample size to increase the power of their test" and why that is a reasonable recommendation here.</p>
-        <p><var width="60" height="4"/></p>
-        <p>(c) To calculate the p-value here, why are we using the hypergeometric distribution instead of the binomial distribution?</p>
-        <p><var width="60" height="3"/></p>
+        <p>For the MythBusters' study (p-value > 0.5), is it reasonable to conclude from this study that we have strong evidence that yawning is not contagious? Explain.</p>
       </statement>
       <response/>
     </exercise>
 
-    <exercise xml:id="practice-3-6-b">
-      <title>Practice Problem 3.6B: Dolphin Therapy Revisited</title>
+    <exercise xml:id="practice-3-6-a-b">
+      <title>Sample Size and Power</title>
       <statement>
-        <p>Reconsider the Dolphin Therapy study (Investigation 3.5).</p>
-        <table>
-          <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
-            <row header="yes">
-              <cell></cell>
-              <cell>Dolphin Therapy</cell>
-              <cell>Control Group</cell>
-              <cell>Total</cell>
-            </row>
-            <row>
-              <cell>Showed substantial improvement</cell>
-              <cell>10</cell>
-              <cell>3</cell>
-              <cell>13</cell>
-            </row>
-            <row>
-              <cell>Did not show substantial improvement</cell>
-              <cell>5</cell>
-              <cell>12</cell>
-              <cell>17</cell>
-            </row>
-            <row>
-              <cell>Total</cell>
-              <cell>15</cell>
-              <cell>15</cell>
-              <cell>30</cell>
-            </row>
-          </tabular>
-        </table>
-        <p>Continue to focus on the number of improvers randomly assigned to the dolphin group, and represent this value by X.</p>
-        <p>(a) When the null hypothesis is true, the random variable X has a hypergeometric distribution. Specify the values of N, M, and n.</p>
-        <p><var width="60" height="2"/></p>
-        <p>(b) Calculating the exact p-value involves finding P(X __________). [Hint: Fill in the blank with an inequality symbol and a number.]</p>
-        <p><var width="30"/></p>
-        <p>(c) Calculate this exact p-value, either by hand or with technology. Comment on whether this p-value is similar to the approximate one from your simulation results. (Be sure it's clear how you calculated this value.)</p>
-        <p><var width="60" height="4"/></p>
-        <p>(d) Suppose that the dolphin study had involved twice as many subjects, again with half randomly assigned to each group, and with the same proportion of improvers in each group. Determine the exact p-value in this case, and comment on whether/how it changes from the p-value with the real data. Explain why this makes sense.</p>
-        <p><var width="60" height="4"/></p>
+        <p>Explain, in this context, what is meant in the Study Conclusions box by "the researchers could try the study again with a larger sample size to increase the power of their test" and why that is a reasonable recommendation here.</p>
       </statement>
       <response/>
     </exercise>
 
-    <exercise xml:id="practice-3-6-c">
-      <title>Practice Problem 3.6C: Alternative Setups</title>
+    <exercise xml:id="practice-3-6-a-c">
+      <title>Hypergeometric vs Binomial</title>
       <statement>
-        <p>(a) Suppose I wanted to treat "not yawning" as a success. Consider Y = number of non-yawners in the yawn seed group. Show how to set up the hypergeometric calculation of P(Y = 24) = C(_, _) × C(_, _) / C(_, _).</p>
-        <p><var width="60" height="2"/></p>
-        <p>(b) Use technology to calculate the probability of 24 or fewer non-yawners in the YawnSeed group using the hypergeometric distribution. (Include output.) How does this compare to the probability of 10 or more yawners in the YawnSeed group?</p>
-        <p><var width="60" height="3"/></p>
-        <p>(c) Suppose I want to find the probability of 4 or fewer yawners in the No Seed group. Identify the values of N, M, n, and k. Use technology to calculate the probability of 4 or fewer yawners in the No Seed group using the hypergeometric distribution. (Include readable output.)</p>
-        <p><var width="60" height="4"/></p>
-        <p>(d) In the Yawning study, why was it important that the subjects didn't know what the study was about when they were led into the room?</p>
-        <p><var width="60" height="3"/></p>
-        <p>(e) In the Yawning study, is it a problem that the sample sizes for the Yawn seed and the No Yawn seed group aren't equal? Explain.</p>
-        <p><var width="60" height="3"/></p>
+        <p>To calculate the p-value here, why are we using the hypergeometric distribution instead of the binomial distribution?</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice3-6B">
+    <title>Practice Problem 3.6B</title>
+
+    <p>Reconsider the Dolphin Therapy study (Investigation 3.5).</p>
+    <table>
+      <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <row header="yes">
+          <cell></cell>
+          <cell>Dolphin Therapy</cell>
+          <cell>Control Group</cell>
+          <cell>Total</cell>
+        </row>
+        <row>
+          <cell>Showed substantial improvement</cell>
+          <cell>10</cell>
+          <cell>3</cell>
+          <cell>13</cell>
+        </row>
+        <row>
+          <cell>Did not show substantial improvement</cell>
+          <cell>5</cell>
+          <cell>12</cell>
+          <cell>17</cell>
+        </row>
+        <row>
+          <cell>Total</cell>
+          <cell>15</cell>
+          <cell>15</cell>
+          <cell>30</cell>
+        </row>
+      </tabular>
+    </table>
+    <p>Continue to focus on the number of improvers randomly assigned to the dolphin group, and represent this value by X.</p>
+
+    <exercise xml:id="practice-3-6-b-a">
+      <title>Hypergeometric Parameters</title>
+      <statement>
+        <p>When the null hypothesis is true, the random variable X has a hypergeometric distribution. Specify the values of N, M, and n.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-6-b-b">
+      <title>Setup for Exact p-value</title>
+      <statement>
+        <p>Calculating the exact p-value involves finding p(X __________). [Hint: Fill in the blank with an inequality symbol and a number.]</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-6-b-c">
+      <title>Calculate Exact p-value</title>
+      <statement>
+        <p>Calculate this exact p-value, either by hand or with technology. Comment on whether this p-value is similar to the approximate one from your simulation results. (Be sure it's clear how you calculated this value.)</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-6-b-d">
+      <title>Double Sample Size</title>
+      <statement>
+        <p>Suppose that the dolphin study had involved twice as many subjects, again with half randomly assigned to each group, and with the same proportion of improvers in each group. Determine the exact p-value in this case, and comment on whether/how it changes from the p-value with the real data. Explain why this makes sense.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice3-6C">
+    <title>Practice Problem 3.6C</title>
+
+    <exercise xml:id="practice-3-6-c-a">
+      <title>Alternative Setup - Not Yawning</title>
+      <statement>
+        <p>Suppose I wanted to treat "not yawning" as a success. Consider Y = number of non-yawners in the yawn seed group. Show how to set up the hypergeometric calculation of p(Y = 24) = C(_, _) × C(_, _) / C(_, _).</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-6-c-b">
+      <title>Technology Calculation - Non-yawners</title>
+      <statement>
+        <p>Use technology to calculate the probability of 24 or fewer non-yawners in the YawnSeed group using the hypergeometric distribution. (Include output.) How does this compare to the probability of 10 or more yawners in the YawnSeed group?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-6-c-c">
+      <title>No Seed Group Probability</title>
+      <statement>
+        <p>Suppose I want to find the probability of 4 or fewer yawners in the No Seed group. Identify the values of N, M, n, and k. Use technology to calculate the probability of 4 or fewer yawners in the No Seed group using the hypergeometric distribution. (Include readable output.)</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-6-c-d">
+      <title>Importance of Blinding</title>
+      <statement>
+        <p>In the Yawning study, why was it important that the subjects didn't know what the study was about when they were led into the room?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-6-c-e">
+      <title>Unequal Sample Sizes</title>
+      <statement>
+        <p>In the Yawning study, is it a problem that the sample sizes for the Yawn seed and the No Yawn seed group aren't equal? Explain.</p>
       </statement>
       <response/>
     </exercise>
