@@ -3,7 +3,10 @@
   <title>Investigation 3.3: Handwriting and SAT Scores</title>
 
   <introduction>
-    <p>Until 2021, the SAT exam in the United States included a hand-written essay. An article in the October 11, 2006 issue of the Washington Post found that among students who took the essay portion of the SAT exam in 2005-06, those who wrote in cursive style scored significantly higher on the essay, on average, than students who used printed block letters. Researchers wanted to know whether simply writing in cursive would be a way to increase scores.</p>
+    <sidebyside widths="60% 35%">
+      <p>Until 2021, the SAT exam in the United States included a hand-written essay. An article in the October 11, 2006 issue of the Washington Post found that among students who took the essay portion of the SAT exam in 2005-06, those who wrote in cursive style scored significantly higher on the essay, on average, than students who used printed block letters. Researchers wanted to know whether simply writing in cursive would be a way to increase scores.</p>
+      <image source="images/Inv3.3intro.png"/>
+    </sidebyside>
   </introduction>
 
   <exercise xml:id="inv3-3-a">
@@ -37,6 +40,13 @@
         </statement>
       </choice>
     </choices>
+    <solution>
+      <p>Writing style: categorical and binary</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="inv3-3-a-classify-2">
+    <title>Classify SAT Score Variable</title>
     <statement>
       <p>Classify the SAT score variable.</p>
     </statement>
@@ -53,7 +63,6 @@
       </choice>
     </choices>
     <solution>
-      <p>Writing style: categorical and binary</p>
       <p>SAT score: quantitative</p>
     </solution>
   </exercise>
@@ -87,7 +96,7 @@
   <exercise xml:id="inv3-3-d">
     <title>Cause-and-Effect</title>
     <statement>
-      <p>Would the difference cited in <xref ref="inv3-3-c" text="custom">checkpoint 11.1.3</xref> make it more reasonable to draw a cause-and-effect conclusion between writing style and SAT score with the second study than with the first one? Explain.</p>
+      <p>Would the difference cited in <xref ref="inv3-3-c" text="custom">checkpoint 11.1.4</xref> make it more reasonable to draw a cause-and-effect conclusion between writing style and SAT score with the second study than with the first one? Explain.</p>
     </statement>
     <solution>
       <p>Yes, the writing style should be the only explanation for a difference between the scores.</p>
@@ -97,7 +106,7 @@
 
   <assemblage>
     <title>Definition: Observational Study vs. Experimental Study</title>
-    <p>An <term>observational study</term><idx><h>observational study</h></idx> is one in which the researchers passively observe and record information about the observational units. In an <term>experimental study</term><idx><h>experimental study</h></idx>, the researchers actively impose the explanatory variable (often called <term>treatment</term><idx><h>treatment</h></idx>) on the observational units (can also be called the <term>experimental units</term><idx><h>experimental units</h></idx> in an experiment).</p>
+    <p>An <term>observational study</term><idx><h>observational study</h></idx> is one in which the researchers passively observe and record information about the observational units. In an <term>experimental study</term><idx><h>experimental study</h></idx>, the researchers actively impose the explanatory variable (the categories are often called <term>treatments</term><idx><h>treatment</h></idx>) on the observational units (can also be called the <term>experimental units</term><idx><h>experimental units</h></idx> in an experiment).</p>
   </assemblage>
 
   <paragraphs>
@@ -165,7 +174,7 @@
   </paragraphs>
 
   <exercise xml:id="inv3-3-h">
-    <title>Repeat Randomization</title>
+    <title>Repeat Re-randomization</title>
     <statement>
       <p>Press the Randomize button again. Was the difference in proportions that are right-handed the same this time?</p>
       <p><var width="60" height="2"/></p>
@@ -184,6 +193,7 @@
     </statement>
     <solution>
       <p>The values for the difference in sample proportions center around zero.</p>
+      <image source="images/Inv3.3solsi.png" width="70%"/>
     </solution>
     <response/>
   </exercise>
@@ -235,6 +245,7 @@
     </statement>
     <solution>
       <p>Yes, the center of this distribution is also approximately zero.</p>
+      <image source="images/Inv3.3solsm.png" width="70%"/>
     </solution>
     <response/>
   </exercise>
@@ -247,6 +258,7 @@
     </statement>
     <solution>
       <p>Yes, the center of this distribution is also approximately zero.</p>
+      <image source="images/Inv3.3solsn.png" width="70%"/>
     </solution>
     <response/>
   </exercise>
@@ -259,6 +271,7 @@
     </statement>
     <solution>
       <p>Yes, the center of this distribution is also approximately zero.</p>
+      <image source="images/Inv3.3solso.png" width="70%"/>
     </solution>
     <response/>
   </exercise>
@@ -282,6 +295,8 @@
   <assemblage>
     <title>Study Conclusions</title>
     <p>The second study determined for each grader whether they would grade the exam written in block letters or in cursive letters. Because it was the same exam otherwise, there shouldn't be any other reason for the difference in scores apart from the type of writing. For this reason, because the difference was statistically significant, you will soon see that we will be willing to conclude that the writing style caused the difference in scores. However, this only tells us about that one essay and in the slightly artificial condition of asking all the graders to grade the same essay. We don't know whether the same effect would be found with other essays or conditions. By looking at the 2006 exams, we know that actual student papers were graded by actual graders, a more realistic setting, but also with the potential for confounding variables between the writing style and grade, such as student preparation prior to the exam.</p>
+
+    <p>Keep in mind that cause-and-effect conclusions are a separate consideration from the generalizability of the results to a larger population. From now on we will consider each of these issues in our final conclusion as shown in the table below (adapted from Ramsey and Schafer's <em>The Statistical Sleuth</em>):</p>
 
     <table>
       <title>Study Design and Conclusions</title>
@@ -333,7 +348,6 @@
       <title>Identify Variables</title>
       <statement>
         <p>Identify the explanatory and response variables.</p>
-        <p><var width="60" height="3"/></p>
       </statement>
       <response/>
     </exercise>
@@ -342,7 +356,6 @@
       <title>Study Type</title>
       <statement>
         <p>Is this an observational study or an experiment? Explain how you are deciding.</p>
-        <p><var width="60" height="3"/></p>
       </statement>
       <response/>
     </exercise>
@@ -351,7 +364,6 @@
       <title>Cause-and-Effect</title>
       <statement>
         <p>If these researchers find a statistically significant difference in the response rate between these two groups, would it be reasonable to draw a cause-and-effect conclusion? Explain (including any additional information you would need to know to decide).</p>
-        <p><var width="60" height="4"/></p>
       </statement>
       <response/>
     </exercise>
@@ -360,7 +372,6 @@
       <title>Generalizability</title>
       <statement>
         <p>To what population is it reasonable to generalize these results? Explain (including any additional information you would need to know to decide).</p>
-        <p><var width="60" height="4"/></p>
       </statement>
       <response/>
     </exercise>
