@@ -5,7 +5,7 @@
   <introduction>
     <sidebyside widths="45% 50%" margins="0% 5%">
       <stack>
-        <p>The folks at <em>MythBusters</em>, a popular television program on the Discovery Channel, investigated whether yawning is contagious by recruiting fifty subjects at a local flea market and asking them to sit in one of three small rooms for a short period of time. For some of the subjects, the attendee yawned while leading them to two of the rooms (planting a yawn "seed"), whereas for the other subjects the attendee did not yawn. As time passed, the researchers watched (via a hidden camera) to see which subjects yawned.</p>
+        <p>The folks at <em>MythBusters</em>, a popular television program on the Discovery Channel, investigated whether yawning is contagious by recruiting fifty subjects at a local flea market and asking them to sit in one of three small rooms for a short period of time. For some of the subjects, the attendee yawned while leading them to two of the rooms (planting a yawn "seed"), whereas for the other subjects the attendee did not yawn. As time passed, the researchers watched (via a hidden camera) to see which subjects yawned. <url href="https://www.youtube.com/watch?v=bCCCxV3nNgs">Video snippet</url></p>
       </stack>
       <video youtube="bCCCxV3nNgs" width="100%"/>
     </sidebyside>
@@ -319,39 +319,54 @@
     <response/>
   </exercise>
 
-  <paragraphs>
-    <p>Open the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm">Analyzing Two-way Tables applet</url>.</p>
-    <p><ul>
-      <li>Enter the two-way table</li>
-      <li>Check the box for Show Fisher's Exact Test in the lower left corner</li>
-      <li>A check box will appear for determining the two-sided p-value</li>
-    </ul></p>
+  <p class="horizontal-rule"> </p>
+
+  <paragraphs xml:id="tech-detour-hypergeometric">
+    <title>Technology Detour – Calculating Hypergeometric Probabilities (Fisher's Exact Test)</title>
+
+    <exercise xml:id="tech-detour-hypergeometric-applet" label="Hypergeometric - Applet">
+      <title>Calculating Hypergeometric Probabilities in Analyzing Two-way Tables applet</title>
+      <statement>
+        <p>Open the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm">Analyzing Two-way Tables applet</url>.</p>
+        <p><ul>
+          <li>Enter the two-way table</li>
+          <li>Check the box for Show Fisher's Exact Test in the lower left corner</li>
+          <li>A check box will appear for determining the two-sided p-value</li>
+        </ul></p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="tech-detour-hypergeometric-r" label="Hypergeometric - R">
+      <title>Calculating Hypergeometric Probabilities in R</title>
+      <statement>
+        <p>The iscamhyperprob function takes the following inputs:</p>
+        <p><ul>
+          <li><c>k</c>, the observed value of interest (or the difference in conditional proportions, assumed if value is less than one, including negative)</li>
+          <li><c>total</c>, the total number of observations in the two-way table</li>
+          <li><c>succ</c>, the overall number of successes in the table</li>
+          <li><c>n</c>, the number of observations in "group A"</li>
+          <li><c>lower.tail</c>, a Boolean which is TRUE or FALSE</li>
+        </ul></p>
+        <p>For example: <c>iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)</c></p>
+      </statement>
+    </exercise>
+
+    <exercise xml:id="tech-detour-hypergeometric-jmp" label="Hypergeometric - JMP">
+      <title>Calculating Hypergeometric Probabilities in JMP</title>
+      <statement>
+        <p>Using the Distribution Calculator:</p>
+        <p><ul>
+          <li>Choose Hypergeometric from the Distribution menu</li>
+          <li>Specify the values of Population Size = table total, Number of Items = total number of successes, Sample Size = group 1 total</li>
+          <li>Select Input quantiles and compute probabilities</li>
+          <li>Specify the tail probability and enter Qa = number of successes in "group A"</li>
+        </ul></p>
+        <p>Keep in mind: To find <m>P(X \geq k)</m> use <m>P(X > k-1)</m>.</p>
+      </statement>
+    </exercise>
   </paragraphs>
 
-  <assemblage>
-    <title>Technology Detour: Calculating Hypergeometric Probabilities in R</title>
-    <p>The iscamhyperprob function takes the following inputs:</p>
-    <ul>
-      <li><c>k</c>, the observed value of interest (or the difference in conditional proportions, assumed if value is less than one, including negative)</li>
-      <li><c>total</c>, the total number of observations in the two-way table</li>
-      <li><c>succ</c>, the overall number of successes in the table</li>
-      <li><c>n</c>, the number of observations in "group A"</li>
-      <li><c>lower.tail</c>, a Boolean which is TRUE or FALSE</li>
-    </ul>
-    <p>For example: <c>iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)</c></p>
-  </assemblage>
-
-  <assemblage>
-    <title>Technology Detour: Calculating Hypergeometric Probabilities in JMP</title>
-    <p>Using the Distribution Calculator:</p>
-    <ul>
-      <li>Choose Hypergeometric from the Distribution menu</li>
-      <li>Specify the values of Population Size = table total, Number of Items = total number of successes, Sample Size = group 1 total</li>
-      <li>Select Input quantiles and compute probabilities</li>
-      <li>Specify the tail probability and enter Qa = number of successes in "group A"</li>
-    </ul>
-    <p>Keep in mind: To find <m>P(X \geq k)</m> use <m>P(X > k-1)</m>.</p>
-  </assemblage>
+  <p class="horizontal-rule"> </p>
 
   <exercise xml:id="inv3-6-o">
     <title>Alternative Setup - No Seed Group</title>
@@ -499,8 +514,11 @@
     <exercise xml:id="practice-3-6-b-b">
       <title>Setup for Exact p-value</title>
       <statement>
-        <p>Calculating the exact p-value involves finding p(X __________). [Hint: Fill in the blank with an inequality symbol and a number.]</p>
-        <p>p(X <var width="20"/>)</p>
+        <p>Calculating the exact p-value involves finding <m>P(X</m> __________).</p>
+        <hint>
+          <p>Fill in the blank with an inequality symbol and a number.</p>
+        </hint>
+        <p><m>P(X</m> <var width="20"/>)</p>
       </statement>
       <response/>
     </exercise>
@@ -530,7 +548,7 @@
     <exercise xml:id="practice-3-6-c-a">
       <title>Alternative Setup - Not Yawning</title>
       <statement>
-        <p>Suppose I wanted to treat "not yawning" as a success. Consider Y = number of non-yawners in the yawn seed group. Show how to set up the hypergeometric calculation of p(Y = 24) = C(_, _) × C(_, _) / C(_, _).</p>
+        <p>Suppose I wanted to treat "not yawning" as a success. Consider <m>Y</m> = number of non-yawners in the yawn seed group. Show how to set up the hypergeometric calculation of <m>P(Y = 24) = C(</m>_, _<m>) \times C(</m>_, _<m>) / C(</m>_, _<m>)</m>.</p>
         <p><var width="60" height="2"/></p>
       </statement>
       <response/>
@@ -548,7 +566,7 @@
     <exercise xml:id="practice-3-6-c-c">
       <title>No Seed Group Probability</title>
       <statement>
-        <p>Suppose I want to find the probability of 4 or fewer yawners in the No Seed group. Identify the values of N, M, n, and k. Use technology to calculate the probability of 4 or fewer yawners in the No Seed group using the hypergeometric distribution. (Include readable output.)</p>
+        <p>Suppose I want to find the probability of 4 or fewer yawners in the No Seed group. Identify the values of <m>N</m>, <m>M</m>, <m>n</m>, and <m>k</m>. Use technology to calculate the probability of 4 or fewer yawners in the No Seed group using the hypergeometric distribution. (Include readable output.)</p>
         <p><var width="60" height="4"/></p>
       </statement>
       <response/>
