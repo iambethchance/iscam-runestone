@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="procedure-choice-ch3">
+  <title>Choice of Procedures for Comparing Two Proportions</title>
+
+  <table>
+    <title>Procedure Selection Guide</title>
+    <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+      <row header="yes">
+        <cell>Study design</cell>
+        <cell>Two binary variables, but not case-control study</cell>
+        <cell>Two binary variables, but not case-control study</cell>
+        <cell>Two binary variables</cell>
+      </row>
+      <row>
+        <cell>Parameter</cell>
+        <cell>Difference in population proportions (<m>\pi_1 - \pi_2</m>)</cell>
+        <cell>Relative Risk (<m>\pi_1/\pi_2</m>)</cell>
+        <cell>Odds Ratio (<m>\tau</m>)</cell>
+      </row>
+      <row>
+        <cell>Null Hypothesis</cell>
+        <cell>H<subscript>0</subscript>: <m>\pi_1 - \pi_2 = 0</m></cell>
+        <cell>H<subscript>0</subscript>: <m>\pi_1/\pi_2 = 1</m></cell>
+        <cell>H<subscript>0</subscript>: <m>\tau = 1</m></cell>
+      </row>
+      <row>
+        <cell>Simulation</cell>
+        <cell colspan="3">Independent random sampling from binomial processes; Random assignment with hypergeometric distribution</cell>
+      </row>
+      <row>
+        <cell>Exact p-value</cell>
+        <cell colspan="3">Fisher's Exact Test</cell>
+      </row>
+      <row>
+        <cell>Can use z procedures if</cell>
+        <cell colspan="3">At least 5 successes and 5 failures in each group</cell>
+      </row>
+      <row>
+        <cell>Confidence interval</cell>
+        <cell><m>\hat{p}_1 - \hat{p}_2 \pm z^*\sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m></cell>
+        <cell>exp of [ln(<m>\hat{p}_1/\hat{p}_2</m>) ± <m>z^*\sqrt{\frac{1}{A}-\frac{1}{A+C}+\frac{1}{B}-\frac{1}{B+D}}</m>]</cell>
+        <cell>exp of [ln(<m>AD/BC</m>) ± <m>z^*\sqrt{\frac{1}{A}+\frac{1}{B}+\frac{1}{C}+\frac{1}{D}}</m>]</cell>
+      </row>
+    </tabular>
+  </table>
+
+</section>

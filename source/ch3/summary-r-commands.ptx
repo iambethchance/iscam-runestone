@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="r-commands-ch3">
+  <title>Quick Reference to ISCAM R Workspace Functions and Other R Commands</title>
+
+  <table>
+    <title>R Command Reference</title>
+    <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
+      <row header="yes">
+        <cell>Procedure Desired</cell>
+        <cell>Function Name (Options)</cell>
+      </row>
+      <row>
+        <cell>Set up two-way table</cell>
+        <cell>matrixname = matrix(c(A, C, B, D), nrow = 2, dimnames = list(c("row name", "row name"), c("column name", "column name")))</cell>
+      </row>
+      <row>
+        <cell>Segmented bar graph</cell>
+        <cell>Set up two-way table and then use barplot; barplot(prop.table(matrixname, margin=2), legend = T, ylab = "Proportion")</cell>
+      </row>
+      <row>
+        <cell>Generate data from Binomial</cell>
+        <cell>rbinom(number, sample size, probability)</cell>
+      </row>
+      <row>
+        <cell>Create a column of 3 graphs</cell>
+        <cell>par(mfrow=c(3,1))</cell>
+      </row>
+      <row>
+        <cell>Two proportion z-test/interval</cell>
+        <cell>iscamtwopropztest(x1, n1, x2, n2, hypothesized, alternative, conf.level) *x1 can be count or proportion</cell>
+      </row>
+      <row>
+        <cell>Hypergeometric probability</cell>
+        <cell>iscamhyperprob(k, total, succ, n, lower.tail = FALSE)</cell>
+      </row>
+      <row>
+        <cell>Normal approximation to hypergeometric</cell>
+        <cell>iscamhypernorm(x, N, M, n, TRUE/FALSE)</cell>
+      </row>
+      <row>
+        <cell>Generate data from hypergeometric</cell>
+        <cell>rhyper(number, sample size, probability)</cell>
+      </row>
+      <row>
+        <cell>Create Boolean for values below x</cell>
+        <cell>sum(data &lt;= x)/n</cell>
+      </row>
+      <row>
+        <cell>Fisher's Exact Test, CI for odds ratio</cell>
+        <cell>fisher.test(matrix, alternative)</cell>
+      </row>
+      <row>
+        <cell>Relative risk</cell>
+        <cell>fmsb::riskratio(A, B, A+C, B+D, conf.level, p.calc.by.independence = TRUE)</cell>
+      </row>
+    </tabular>
+  </table>
+
+</section>
