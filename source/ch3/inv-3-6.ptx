@@ -4,7 +4,7 @@
 
   <introduction>
     <video youtube="bCCCxV3nNgs" width="70%"/>
-    <p>The folks at MythBusters, a popular television program on the Discovery Channel, investigated whether yawning is contagious by recruiting fifty subjects at a local flea market and asking them to sit in one of three small rooms for a short period of time. For some of the subjects, the attendee yawned while leading them to two of the rooms (planting a yawn "seed"), whereas for the other subjects the attendee did not yawn. As time passed, the researchers watched (via a hidden camera) to see which subjects yawned.</p>
+    <p>The folks at <em>MythBusters</em>, a popular television program on the Discovery Channel, investigated whether yawning is contagious by recruiting fifty subjects at a local flea market and asking them to sit in one of three small rooms for a short period of time. For some of the subjects, the attendee yawned while leading them to two of the rooms (planting a yawn "seed"), whereas for the other subjects the attendee did not yawn. As time passed, the researchers watched (via a hidden camera) to see which subjects yawned.</p>
   </introduction>
 
   <exercise xml:id="inv3-6-a">
@@ -15,8 +15,8 @@
       <p>RV: <var width="40"/></p>
     </statement>
     <solution>
-      <p>EV: Whether or not the subject was given a yawn seed</p>
-      <p>RV: Whether or not the subject yawned</p>
+      <p>EV: given seed or not</p>
+      <p>RV: whether yawned or not</p>
     </solution>
     <response/>
   </exercise>
@@ -30,9 +30,9 @@
       <p><m>H_a</m>: <var width="50"/></p>
     </statement>
     <solution>
-      <p>Parameter: π<subscript>seed</subscript> - π<subscript>no seed</subscript> = difference in probability of yawning between those given a yawn seed and those not given a yawn seed</p>
-      <p><m>H_0</m>: π<subscript>seed</subscript> - π<subscript>no seed</subscript> = 0</p>
-      <p><m>H_a</m>: π<subscript>seed</subscript> - π<subscript>no seed</subscript> > 0</p>
+      <p>Parameter: π<subscript>s</subscript> - π<subscript>c</subscript> = difference in probability of yawning (seeded - control)</p>
+      <p><m>H_0</m>: π<subscript>s</subscript> - π<subscript>c</subscript> = 0 (no association between seeding/not and yawning/not)</p>
+      <p><m>H_a</m>: π<subscript>s</subscript> - π<subscript>c</subscript> > 0 (the yawn seed leads to a higher probability of yawning)</p>
     </solution>
     <response/>
   </exercise>
@@ -114,7 +114,7 @@
       <p><var width="60" height="5"/></p>
     </statement>
     <solution>
-      <p>Use 50 cards: 14 representing yawners and 36 representing non-yawners. Shuffle and deal 34 to the yawn seed group and 16 to the no yawn seed group. Record the number of yawners in the yawn seed group. Repeat many times and count how often we get 10 or more yawners in the yawn seed group to find the p-value.</p>
+      <p>50 cards: 14 red, 36 blue. Shuffle. Deal out 34 to "group A." Record the number of red cards in Group A. Repeat many times. Calculate the proportion of red-card-counts that are 10 or higher.</p>
     </solution>
     <response/>
   </exercise>
@@ -138,7 +138,9 @@
       <p><var width="60" height="4"/></p>
     </statement>
     <solution>
-      <p>The distribution should be approximately bell-shaped (normal), centered around 9.52 yawners in the yawn seed group, with a standard deviation around 1.5.</p>
+      <p>Symmetric (but with gaps depending on rounding/bins), mean(π̂<subscript>1</subscript> - π̂<subscript>2</subscript>) ≈ 0, sd(π̂<subscript>1</subscript> - π̂<subscript>2</subscript>) ≈ 0.14</p>
+      <p>Example results:</p>
+      <image source="images/Inv3.6solse.png" width="70%"/>
     </solution>
     <response/>
   </exercise>
@@ -150,7 +152,7 @@
       <p><var width="30"/></p>
     </statement>
     <solution>
-      <p>The p-value should be approximately 0.51 or greater.</p>
+      <p>p-value about 0.5</p>
     </solution>
     <response/>
   </exercise>
@@ -169,7 +171,7 @@
       <p><var width="40"/></p>
     </statement>
     <solution>
-      <p>C(50, 34) = 50!/(34! × 16!) = 11,554,258,485</p>
+      <p>C(50, 34) = 50!/(34! × 16!) = 4.92 × 10<m>^{12}</m> possible ways to randomly assign 34 people to group A</p>
     </solution>
     <response/>
   </exercise>
@@ -184,8 +186,8 @@
     </statement>
     <solution>
       <p>Successes: C(14, 10) = 1,001</p>
-      <p>Failures: C(36, 24) = 2,939,325</p>
-      <p>Total: 1,001 × 2,939,325 = 2,942,264,325</p>
+      <p>Failures: C(36, 24) = 125,167,700</p>
+      <p>To find the total number of possibilities, multiply these two values together</p>
     </solution>
     <response/>
   </exercise>
@@ -200,7 +202,8 @@
       <p><var width="30"/></p>
     </statement>
     <solution>
-      <p>P(X = 10) = 2,942,264,325 / 11,554,258,485 = 0.2545</p>
+      <p>X = # successes in group A</p>
+      <p>P(X = 10) = (1,001 × 125,167,700) / 4.92 × 10<m>^{12}</m> = 0.254</p>
     </solution>
     <response/>
   </exercise>
@@ -212,7 +215,7 @@
       <p><var width="60" height="3"/></p>
     </statement>
     <solution>
-      <p>This is only the probability of getting exactly 10 yawners in the yawn seed group. The p-value needs to include all outcomes at least as extreme (10 or more yawners).</p>
+      <p>No, the p-value would be P(X ≥ 10), not P(X = 10)</p>
     </solution>
     <response/>
   </exercise>
@@ -239,8 +242,8 @@
       <p><var width="60" height="2"/></p>
     </statement>
     <solution>
-      <p>P(X = 11) ≈ 0.1697; P(X = 12) ≈ 0.0707; P(X = 13) ≈ 0.0162; P(X = 14) ≈ 0.0014</p>
-      <p>We stop at 14 because there are only 14 total yawners in the study, so it's impossible to have more than 14 in the yawn seed group.</p>
+      <p>P(X = 11) ≈ 0.1708; P(X = 12) ≈ 0.0702; P(X = 13) ≈ 0.0158; P(X = 14) ≈ 0.0015</p>
+      <p>We stop at 14 because this is the total # successes</p>
     </solution>
     <response/>
   </exercise>
@@ -254,9 +257,9 @@
       <p>Interpretation: <var width="60" height="3"/></p>
     </statement>
     <solution>
-      <p>Exact p-value: 0.2545 + 0.1697 + 0.0707 + 0.0162 + 0.0014 = 0.5125</p>
-      <p>This should be very close to the empirical p-value from the simulation.</p>
-      <p>If yawning were not contagious, there is about a 51% chance of randomly assigning 10 or more of the 14 yawners to the yawn seed group.</p>
+      <p>Exact p-value: 0.254 + 0.1708 + 0.0702 + 0.0158 + 0.0015 = 0.5128</p>
+      <p>Comparison: similar to simulation</p>
+      <p>Interpretation: P(X ≥ 10), probability of 10 or more successes by random assignment alone (assuming no effect from the seed). If the yawn seed has no effect, the probability of finding 10 or more of 34 yawners in the seeded group when 50 subjects are randomly assigned to seeded and no-seed groups is 0.5128.</p>
     </solution>
     <response/>
   </exercise>
@@ -273,7 +276,9 @@
       <p><var width="60" height="2"/></p>
     </statement>
     <solution>
-      <p>Results should match the hand calculation of approximately 0.513.</p>
+      <p>P(X ≥ 10) with M = 14, n = 34, N = 50</p>
+      <p>Example R output:</p>
+      <image source="images/Inv3.6solsm.png" width="70%"/>
     </solution>
     <response/>
   </exercise>
@@ -285,7 +290,8 @@
       <p><var width="60" height="4"/></p>
     </statement>
     <solution>
-      <p>Now M = 36 non-yawners, n = 34 in yawn seed group, observed 24 non-yawners. P(Y ≤ 24) where Y = number of non-yawners in yawn seed group. This should give the same p-value.</p>
+      <p>P(X ≤ 24) with M = 36, n = 34, N = 50 = 0.5128</p>
+      <image source="images/Inv3.6solsn.png" width="70%"/>
     </solution>
     <response/>
   </exercise>
@@ -327,7 +333,8 @@
       <p><var width="60" height="4"/></p>
     </statement>
     <solution>
-      <p>Focus on n = 16 in no-yawn-seed group, M = 36 non-yawners, observed 12. P(Z ≥ 12) where Z = number of non-yawners in no seed group. This should also give the same p-value.</p>
+      <p>P(X ≥ 12) with M = 36, n = 16, N = 50 = 0.5128</p>
+      <image source="images/Inv3.6solso.png" width="70%"/>
     </solution>
     <response/>
   </exercise>
@@ -346,7 +353,8 @@
       <p><var width="60" height="3"/></p>
     </statement>
     <solution>
-      <p>The simulation results should be very close to these theoretical values.</p>
+      <p>The simulation results should be very similar, including the mean and standard deviation values when using the count scale.</p>
+      <image source="images/Inv3.6solsp.png" width="70%"/>
     </solution>
     <response/>
   </exercise>
@@ -354,11 +362,11 @@
   <exercise xml:id="inv3-6-q">
     <title>MythBusters Conclusion</title>
     <statement>
-      <p>On the MythBusters program, the hosts concluded that, based on the observed difference in conditional proportions and the large sample size, there is "little doubt, yawning seems to be contagious." Do you agree?</p>
+      <p>On the <em>MythBusters</em> program, the hosts concluded that, based on the observed difference in conditional proportions and the large sample size, there is "little doubt, yawning seems to be contagious." Do you agree?</p>
       <p><var width="60" height="3"/></p>
     </statement>
     <solution>
-      <p>No. With a p-value of 0.513, we do not have strong evidence that yawning is contagious. The observed difference could easily have occurred by chance alone.</p>
+      <p>The p-value is not small so we fail to reject H<subscript>0</subscript>. We do not have convincing evidence of a seeding effect.</p>
     </solution>
     <response/>
   </exercise>
@@ -370,7 +378,7 @@
       <p><var width="60" height="3"/></p>
     </statement>
     <solution>
-      <p>We should be cautious about generalizing beyond volunteers at a local flea market, as this was not a random sample from a broader population.</p>
+      <p>No! We are not able to discount "chance" (random assignment) as the explanation for the observed difference in the sample proportions. We should be cautious about generalizing beyond volunteers at a local flea market, as this was not a random sample from a broader population.</p>
     </solution>
     <response/>
   </exercise>
@@ -386,7 +394,7 @@
     <exercise xml:id="practice-3-6-a-a">
       <title>Evidence Against Contagious Yawning</title>
       <statement>
-        <p>For the MythBusters' study (p-value > 0.5), is it reasonable to conclude from this study that we have strong evidence that yawning is not contagious? Explain.</p>
+        <p>For the <em>MythBusters</em> study (p-value > 0.5), is it reasonable to conclude from this study that we have strong evidence that yawning is not contagious? Explain.</p>
       </statement>
       <response/>
     </exercise>
