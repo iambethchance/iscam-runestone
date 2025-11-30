@@ -44,7 +44,7 @@
     <exercise xml:id="inv3-1-c">
       <title>Two-Way Table</title>
       <statement>
-        <p>When we have two samples for a binary categorical variable, it is often useful to organize the data using a two-way table. Complete the following 2 × 2 table of counts.</p>
+        <p>When we have two samples for a binary categorical variable, it is often useful to organize the data using a two-way table. Complete the following 2 × 2 table <em>of counts</em>.</p>
         <table>
         <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
           <row header="yes">
@@ -116,7 +116,7 @@
 
     <exercise xml:id="inv3-1-e">
       <title>Comparing Proportions</title>
-      <statement><p>Suggest a better way to compare the prevalence of hearing loss between the two studies. Calculate one number as the statistic for this study (what symbols are you using?). Does your statistic seem large enough to convince you that there has been an increase in hearing loss?</p></statement>
+      <statement><p>Suggest a better way to compare the prevalence of hearing loss between the two studies. Calculate <em>one number</em> as the statistic for this study (what symbols are you using?). Does your statistic seem large enough to convince you that there has been an increase in hearing loss?</p></statement>
       <solution><p>88 - 05 = 480/2928 - 333/1771 = -0.024 (judgements of the impressiveness of this number will vary; it seems on the small side but the sample sizes are large)</p></solution>
       <response/>
     </exercise>
@@ -126,7 +126,7 @@
       <p>The simplest statistic for comparing a binary variable between two groups is the difference in the proportion of "successes" for each group. These proportions, calculated separately for each group rather than looking at the overall proportion, are called <term>conditional proportions</term><idx><h>conditional proportions</h></idx>.</p>
     </assemblage>
 
-    <p>In this case, we compute the difference in the proportion of teens with some level of hearing loss between the two years (<m>\hat{p}_{94} - \hat{p}_{06} = 480/2928 - 333/1771</m>).</p>
+    <p>In this case, we compute the difference in the <em>proportion</em> of teens with some level of hearing loss between the two years (<m>\hat{p}_{94} - \hat{p}_{06} = 480/2928 - 333/1771</m>).</p>
 
     <p>The next step is to examine an effective graphical summary for comparing the two groups.</p>
 
@@ -203,7 +203,8 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
   <paragraphs>
     <title>Inferential Statistics</title>
-    <p>As we've said before, it certainly is possible to obtain sample proportions this far apart, just by random chance, even if the population proportions (of teens with some hearing loss) were the same. The question now is how likely such a difference would be if the population proportions were the same. We can answer this question by modeling the sampling variability, arising from taking random samples from these populations, for the difference in two sample proportions. Investigating this sampling variability will help us to assess whether this particular difference in sample proportions is strong evidence that the population proportions actually differ.</p>
+    <p>As we've said before, it certainly is <em>possible</em> to obtain <em>sample</em> 
+    proportions this far apart, just by random chance, even if the <em>population</em> proportions (of teens with some hearing loss) were the same. The question now is <em>how likely</em> such a difference would be if the population proportions were the same. We can answer this question by modeling the sampling variability, arising from taking random samples from these populations, for the difference in two sample proportions. Investigating this sampling variability will help us to assess whether this particular difference in sample proportions is strong evidence that the population proportions actually differ.</p>
 
     <exercise xml:id="inv3-1-h">
       <title>Hypotheses</title>
@@ -255,7 +256,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <exercise xml:id="inv3-1-l">
       <title>One Repetition</title>
       <statement>
-        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url> to randomly sample one "could have been" difference in conditional proportions assuming the null hypothesis is true.</p>
+        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url> to randomly sample one "could have been" difference in conditional proportions <em>assuming the null hypothesis is true</em>.</p>
         <p><ul>
           <li><p>Specify .173 as the process probability for both populations.</p></li>
           <li><p>Specify 2928 and 1771 as the two sample sizes.</p></li>
@@ -388,7 +389,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <p>When taking two independent samples (of sizes <m>n_1</m> and <m>n_2</m>) from large populations, the distribution of the difference in the sample proportions <m>(\hat{p}_1 - \hat{p}_2)</m> is approximately normal with mean equal to <m>\pi_1 - \pi_2</m> and standard deviation equal to <m>SD(\hat{p}_1 - \hat{p}_2) = \sqrt{\frac{\pi_1(1-\pi_1)}{n_1} + \frac{\pi_2(1-\pi_2)}{n_2}}</m>.</p>
       <p>Under the null hypothesis <m>H_0: \pi_1 - \pi_2 = 0</m>, the standard deviation simplifies to <m>\sqrt{\pi(1-\pi)(\frac{1}{n_1} + \frac{1}{n_2})}</m> where <m>\pi</m> is the common population proportion.</p>
       <p><term>Technical Conditions:</term> We will consider the normal model appropriate if the sample sizes are large, namely <m>n_1\pi_1 > 5</m>, <m>n_1(1 - \pi_1) > 5</m>, <m>n_2\pi_2 > 5</m>, <m>n_2(1 - \pi_2) > 5</m>, and the populations are large compared to the sample sizes.</p>
-      <p>Note: The variability in the differences in sample proportions is larger than the variability of individual sample proportions. In fact, the variances (standard deviation squared) add, and then we take the square root of the sum of variances to find the standard deviation.</p>
+      <p>Note: The variability in the differences in sample proportions is larger than the variability of individual sample proportions. In fact, the <em>variances</em> (standard deviation squared) add, and then we take the square root of the sum of variances to find the standard deviation.</p>
     </assemblage>
 
     <p>However, to calculate these values we would need to know <m>\pi_1</m>, <m>\pi_2</m>, or <m>\pi</m>. So again we estimate the standard deviation of our statistic using the sample data.</p>
@@ -400,7 +401,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <p>Then use we use this value to calculate the standard error of <m>\hat{p}_1 - \hat{p}_2</m> to be:</p>
     <p><m>SE(\hat{p}_1 - \hat{p}_2) = \sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1} + \frac{1}{n_2})}</m></p>
 
-<p>Use these theoretical results to suggest the general formula for a standardized statistic and a method for calculating a p-value to test <m>H_0: \pi_1 - \pi_2 = 0</m> (also expressed as <m>H_0: \pi_1 = \pi_2</m>) versus the alternative <m>H_a: \pi_1 - \pi_2 &lt; 0</m> (or <m>H_a: \pi_1 &lt; \pi_2</m>). (This is referred to as the <term>two-sample z-test</term><idx><h>two-sample z-test</h></idx> or <term>two proportion z-test</term><idx><h>two proportion z-test</h></idx>.)</p>
+<p>Use these theoretical results to suggest the general <em>formula</em> for a standardized statistic and a method for calculating a p-value to test <m>H_0: \pi_1 - \pi_2 = 0</m> (also expressed as <m>H_0: \pi_1 = \pi_2</m>) versus the alternative <m>H_a: \pi_1 - \pi_2 &lt; 0</m> (or <m>H_a: \pi_1 &lt; \pi_2</m>). (This is referred to as the <term>two-sample z-test</term><idx><h>two-sample z-test</h></idx> or <term>two proportion z-test</term><idx><h>two proportion z-test</h></idx>.)</p>
 
     <exercise xml:id="inv3-1-u">
       <title>Standardized Statistic Formula</title>
@@ -487,7 +488,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
       <response/>
     </exercise>
 
-    <p>Note: It is technically incorrect to say there has been a 0.15% to 4.67% increase in hearing loss from 1994 to 2006, because "percentage change" implies a multiplication of values, not an addition or subtraction as we are considering here. It would be acceptable to say that the increase is between 0.15 and 4.67 percentage points.</p>
+    <p>Note: It is technically incorrect to say there has been a 0.15% to 4.67% increase in hearing loss from 1994 to 2006, because "percentage change" implies a multiplication of values, not an addition or subtraction as we are considering here. It would be acceptable to say that the increase is between 0.15 and 4.67 <empercentage points</em>.</p>
 
     <assemblage>
       <title>Technical Conditions</title>
@@ -498,7 +499,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
 
     <exercise xml:id="inv3-1-aa">
       <title>Conclusion</title>
-      <statement><p>Summarize your conclusions from this study. Be sure to address statistical significance, statistical confidence, and the populations you are willing to generalize the results to. Also, are you willing to conclude that the change in the prevalence of hearing loss is due to the increased use of ear buds among teenagers between 1994 and 2006? Explain why or why not.</p></statement>
+      <statement><p>Summarize your conclusions from this study. Be sure to address statistical significance, statistical confidence, and the populations you are willing to generalize the results to. Also, are you willing to conclude that the change in the <em>prevalence</em> of hearing loss is due to the increased use of ear buds among teenagers between 1994 and 2006? Explain why or why not.</p></statement>
       <solution>
         <p>The change in the likelihood of some hearing loss in these two samples is statistically significant (p-value = 0.017 from z-test) and we are 95% confident that the population proportion is 0.001 to 0.047 higher "now" than before among all American teenagers (representative samples by NHANES).</p>
         <p>NOTE: The adjective "statistically significant" (didn't happen by chance alone) applies to the sample data, not the population data.</p>
