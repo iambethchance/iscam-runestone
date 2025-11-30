@@ -292,33 +292,6 @@
     <p>Using the hypergeometric probabilities to determine a p-value in this fashion for a two-way table is called <term>Fisher's Exact Test</term><idx><h>Fisher's Exact Test</h></idx>, named after <url href="https://en.wikipedia.org/wiki/Ronald_Fisher">R. A. Fisher</url>.</p>
   </assemblage>
 
-  <exercise xml:id="inv3-6-m">
-    <title>Technology Calculation</title>
-    <statement>
-      <p>Calculate this hypergeometric probability using technology (see Technology Detour).</p>
-      <p><var width="60" height="2"/></p>
-    </statement>
-    <solution>
-      <p>P(X ≥ 10) with M = 14, n = 34, N = 50</p>
-      <p>Example R output:</p>
-      <image source="images/Inv3.6solsR.jpg" width="70%"/>
-    </solution>
-    <response/>
-  </exercise>
-
-  <exercise xml:id="inv3-6-n">
-    <title>Alternative Setup - Not Yawning</title>
-    <statement>
-      <p>Set up and carry out the calculation to determine the exact p-value where you define the success to be "not yawning" and the group of interest to be the yawn seed group.</p>
-      <p><var width="60" height="4"/></p>
-    </statement>
-    <solution>
-      <p>P(X ≤ 24) with M = 36, n = 34, N = 50 = 0.5128</p>
-      <image source="images/Inv3.6solsn.png" width="70%"/>
-    </solution>
-    <response/>
-  </exercise>
-
   <p class="horizontal-rule"> </p>
 
   <paragraphs xml:id="tech-detour-hypergeometric">
@@ -333,7 +306,12 @@
           <li>Check the box for Show Fisher's Exact Test in the lower left corner</li>
           <li>A check box will appear for determining the two-sided p-value</li>
         </ul></p>
+        <p>Report your p-value: <var width="15"/></p>
       </statement>
+      <solution>
+        <p>p-value = 0.5128</p>
+      </solution>
+      <response/>
     </exercise>
 
     <exercise xml:id="tech-detour-hypergeometric-r" label="Hypergeometric - R">
@@ -348,7 +326,14 @@
           <li><c>lower.tail</c>, a Boolean which is TRUE or FALSE</li>
         </ul></p>
         <p>For example: <c>iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)</c></p>
+        <p>Report your p-value: <var width="15"/></p>
       </statement>
+      <solution>
+        <p>Example R output:</p>
+        <image source="images/Inv3.6solsR.jpg" width="70%"/>
+        <p>p-value = 0.5128</p>
+      </solution>
+      <response/>
     </exercise>
 
     <exercise xml:id="tech-detour-hypergeometric-jmp" label="Hypergeometric - JMP">
@@ -362,11 +347,43 @@
           <li>Specify the tail probability and enter Qa = number of successes in "group A"</li>
         </ul></p>
         <p>Keep in mind: To find <m>P(X \geq k)</m> use <m>P(X > k-1)</m>.</p>
+        <p>Report your p-value: <var width="15"/></p>
       </statement>
+      <solution>
+        <p>Example JMP output:</p>
+        <image source="images/Inv3.6solsJMP.png" width="70%"/>
+        <p>p-value = 0.5128</p>
+      </solution>
+      <response/>
     </exercise>
   </paragraphs>
 
   <p class="horizontal-rule"> </p>
+
+  <exercise xml:id="inv3-6-m">
+    <title>Technology Calculation</title>
+    <statement>
+      <p>Calculate this hypergeometric probability using technology (using one of the methods above).</p>
+      <p><var width="60" height="2"/></p>
+    </statement>
+    <solution>
+      <p><m>P(X ≥ 10)</m> with <m>M = 14</m>, <m>n = 34</m>, <m>N = 50</m>; p-value = 0.5128</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-6-n">
+    <title>Alternative Setup - Not Yawning</title>
+    <statement>
+      <p>Set up and carry out the calculation to determine the exact p-value where you define the success to be "not yawning" and the group of interest to be the yawn seed group.</p>
+      <p><var width="60" height="4"/></p>
+    </statement>
+    <solution>
+      <p><m>P(X ≤ 24)</m> with <m>M = 36</m>, <m>n = 34</m>, <m>N = 50</m> = 0.5128</p>
+      <image source="images/Inv3.6solsn.png" width="70%"/>
+    </solution>
+    <response/>
+  </exercise>
 
   <exercise xml:id="inv3-6-o">
     <title>Alternative Setup - No Seed Group</title>
@@ -375,7 +392,7 @@
       <p><var width="60" height="4"/></p>
     </statement>
     <solution>
-      <p>P(X ≥ 12) with M = 36, n = 16, N = 50 = 0.5128</p>
+      <p><m>P(X ≥ 12)</m> with <m>M = 36</m>, <m>n = 16</m>, <m>N = 50</m> = 0.5128</p>
       <image source="images/Inv3.6solso.jpg" width="70%"/>
     </solution>
     <response/>
