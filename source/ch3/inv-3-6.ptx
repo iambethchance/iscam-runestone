@@ -170,7 +170,7 @@
 
   <paragraphs>
     <title>Exact p-value</title>
-    <p>The simulations you have conducted in Investigations 3.5 (Dolphin Therapy) and above approximated the p-value for two-way tables arising from random assignment by assuming the row and column totals are fixed. In this case, the probability of obtaining a specific number of successes in one group can be calculated exactly using the hypergeometric probability distribution. (We used the independent binomial distributions with the teen hearing loss study, where we wanted to sample separately from two populations and the overall number of successes was not fixed in advance.)</p>
+    <p>The simulations you have conducted in Investigations 3.5 (Dolphin Therapy) and above approximated the p-value for two-way tables arising from random assignment by assuming the row and column totals are fixed. In this case, the probability of obtaining a specific number of successes in one group can be calculated exactly using the <em>hypergeometric</em> probability distribution. (We used the independent binomial distributions with the teen hearing loss study, where we wanted to sample separately from two populations and the overall number of successes was not fixed in advance.)</p>
     <p>Keep in mind, that under the null hypothesis, we are assuming the group assignments made no difference and that there would be 14 successes ("yawners") and 36 failures ("non-yawners") between the two groups regardless.</p>
     <p>Because the random assignment makes every configuration of the subjects between the two groups equally likely, we determine the probability of any particular outcome for the number of yawners and non-yawners by first counting the total number of ways to assign 34 of the subjects to the yawn-seed group (and 16 to the no-yawn-seed group) in the denominator. The numerator is then the number of ways to get a particular set of configurations for that group, such as those consisting of 10 yawners and 24 non-yawners.</p>
   </paragraphs>
@@ -215,7 +215,7 @@
   <exercise xml:id="inv3-6-i">
     <title>Calculate Exact Probability</title>
     <statement>
-      <p>To determine the exact probability that random assignment would produce exactly 10 successes and 24 failures into the group of 34 subjects, divide your calculation in <xref ref="inv3-6-h" text="custom">checkpoint 8</xref> by your calculation in <xref ref="inv3-6-g" text="custom">checkpoint 7</xref>.</p>
+      <p>To determine the exact probability that random assignment would produce exactly 10 successes and 24 failures into the group of 34 subjects, divide your calculation in <xref ref="inv3-6-h" text="custom">checkpoint 9</xref> by your calculation in <xref ref="inv3-6-g" text="custom">checkpoint 8</xref>.</p>
       <hint>
         <p>Divide the total number of ways to obtain the observed configuration by the total number of ways to assign subjects.</p>
       </hint>
@@ -231,7 +231,7 @@
   <exercise xml:id="inv3-6-j">
     <title>Is this the p-value?</title>
     <statement>
-      <p>Explain why your answer to (i) is not yet the p-value for this study.</p>
+      <p>Explain why your answer to (i) is <em>not</em> yet the p-value for this study.</p>
       <p><var width="60" height="3"/></p>
     </statement>
     <solution>
@@ -249,7 +249,7 @@
 
   <paragraphs>
     <p>In this study, we had <m>N = 50</m> subjects and we defined yawning to be success so <m>M = 14</m>. We also arbitrarily chose to focus on the yawn-seed group, so <m>n = 34</m>. This calculation works out the same if you had defined "not yawning" to be a success and/or if you had focused on the 16 people in the no-yawn-seed group. You just need to make sure you count consistently.</p>
-    <p>We will continue to define the p-value to be the probability of obtaining results at least as extreme as those observed in the actual study. Because we expected more yawners in the yawn-seed group, the p-value is the probability of randomly assigning at least 10 of the yawners in the yawn-seed group.</p>
+    <p>We will continue to define the p-value to be the probability of obtaining results <em>at least as extreme</em> as those observed in the actual study. Because we expected more yawners in the yawn-seed group, the p-value is the probability of randomly assigning at least 10 of the yawners in the yawn-seed group.</p>
     <p>So far you have found <m>P(X = 10) = C(14, 10) \times C(36, 24) / C(50, 34) = 0.2545</m>.</p>
   </paragraphs>
 
@@ -319,9 +319,17 @@
     <response/>
   </exercise>
 
+  <paragraphs>
+    <p>Open the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm">Analyzing Two-way Tables applet</url>.</p>
+    <p><ul>
+      <li>Enter the two-way table</li>
+      <li>Check the box for Show Fisher's Exact Test in the lower left corner</li>
+      <li>A check box will appear for determining the two-sided p-value</li>
+    </ul></p>
+  </paragraphs>
+
   <assemblage>
-    <title>Technology Detour: Calculating Hypergeometric Probabilities (Fisher's Exact Test)</title>
-    <p><term>In R:</term></p>
+    <title>Technology Detour: Calculating Hypergeometric Probabilities in R</title>
     <p>The iscamhyperprob function takes the following inputs:</p>
     <ul>
       <li><c>k</c>, the observed value of interest (or the difference in conditional proportions, assumed if value is less than one, including negative)</li>
@@ -331,8 +339,10 @@
       <li><c>lower.tail</c>, a Boolean which is TRUE or FALSE</li>
     </ul>
     <p>For example: <c>iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)</c></p>
-    
-    <p><term>In JMP:</term></p>
+  </assemblage>
+
+  <assemblage>
+    <title>Technology Detour: Calculating Hypergeometric Probabilities in JMP</title>
     <p>Using the Distribution Calculator:</p>
     <ul>
       <li>Choose Hypergeometric from the Distribution menu</li>
@@ -341,12 +351,6 @@
       <li>Specify the tail probability and enter Qa = number of successes in "group A"</li>
     </ul>
     <p>Keep in mind: To find <m>P(X \geq k)</m> use <m>P(X > k-1)</m>.</p>
-    
-    <p><term>Analyzing Two-way Tables Applet:</term></p>
-    <ul>
-      <li>Check the box for Show Fisher's Exact Test in the lower left corner</li>
-      <li>A check box will appear for determining the two-sided p-value</li>
-    </ul>
   </assemblage>
 
   <exercise xml:id="inv3-6-o">
@@ -366,6 +370,7 @@
     <title>Discussion</title>
     <p>You should see that there are several equivalent ways to set up the probability calculation. Make sure it is clear how you define success/failure and which group you are considering "group A." This will help you determine the numerical values for <m>N</m>, <m>M</m>, and <m>n</m> in the calculation.</p>
     <p>Below is a graph of the Hypergeometric distribution with <m>N = 50</m>, <m>M = 14</m>, and <m>n = 34</m>.</p>
+    <image source="images/Inv3.6hyper.png" width="70%"/>
     <p>Using probability rules, you can show that the expected value of this distribution is <m>\mu = (14/50) \times 34 = 9.52</m> yawners in yawn seed group and the standard deviation of the probability distribution is the square root of <m>n \times (M/N) \times (N – M)/N \times (N – n)/(N – 1) = 1.496</m> yawners.</p>
   </paragraphs>
 
