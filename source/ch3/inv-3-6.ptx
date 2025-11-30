@@ -150,10 +150,14 @@
   </exercise>
 
   <exercise xml:id="inv3-6-f">
-    <title>Calculate p-value</title>
+    <title>Estimate p-value</title>
     <statement>
-      <p>Specify the observed number of successes in the Count Samples box. Then indicate whether the research conjecture expected a larger or smaller number of successes in the seed treatment by choosing Greater Than or Less Than from the pull-down menu. Then press the Count button. Report your p-value.</p>
-      <p><var width="30"/></p>
+      <p><ul>
+        <li>Specify the observed number of successes in the Count Samples box.</li>
+        <li>Then indicate whether the research conjecture expected a larger or smaller number of successes in the seed treatment by choosing Greater Than or Less Than from the pull-down menu.</li>
+        <li>Then press the Count button.</li>
+      </ul></p>
+      <p>Report your p-value: <var width="30"/></p>
     </statement>
     <solution>
       <p>p-value about 0.5</p>
@@ -171,7 +175,10 @@
   <exercise xml:id="inv3-6-g">
     <title>Total Ways to Assign</title>
     <statement>
-      <p>How many ways altogether are there to randomly assign these 50 subjects into one group of 34 (yawn-seed group) and the remaining group of 16 (no-yawn-seed group)? [Hint: Recall what you saw earlier with the binomial distribution and counting the number of ways to obtain S successes and F failures in n trials. See the Technical Details in Investigation 1.1.]</p>
+      <p>How many ways altogether are there to randomly assign these 50 subjects into one group of 34 (yawn-seed group) and the remaining group of 16 (no-yawn-seed group)?</p>
+      <hint>
+        <p>Recall what you saw earlier with the binomial distribution and counting the number of ways to obtain S successes and F failures in n trials. See the Technical Details in Investigation 1.1.</p>
+      </hint>
       <p><var width="40"/></p>
     </statement>
     <solution>
@@ -183,9 +190,15 @@
   <exercise xml:id="inv3-6-h">
     <title>Ways to Obtain Observed Configuration</title>
     <statement>
-      <p>Now consider the 14 successes and the 36 failures. How many ways are there to randomly select 10 of the successes? How many ways are there to randomly assign 24 of the failures to be in the yawn seed group? How should you combine these two numbers to calculate the total number of ways to obtain 10 successes and 24 failures in the yawn-seed group, the configuration that we observed in the study?</p>
+      <p>Now consider the 14 successes and the 36 failures.</p>
+      <p>How many ways are there to randomly select 10 of the successes?</p>
       <p>Successes: <var width="20"/></p>
+      <p>How many ways are there to randomly assign 24 of the failures to be in the yawn seed group?</p>
       <p>Failures: <var width="20"/></p>
+      <p>How should you combine these two numbers to calculate the total number of ways to obtain 10 successes and 24 failures in the yawn-seed group, the configuration that we observed in the study?</p>
+      <hint>
+        <p>Multiply the number of ways to select successes by the number of ways to select failures.</p>
+      </hint>
       <p>Total: <var width="20"/></p>
     </statement>
     <solution>
@@ -199,7 +212,7 @@
   <exercise xml:id="inv3-6-i">
     <title>Calculate Exact Probability</title>
     <statement>
-      <p>To determine the exact probability that random assignment would produce exactly 10 successes and 24 failures into the group of 34 subjects, divide your calculation in <xref ref="inv3-6-h" text="custom">checkpoint (h)</xref> by your calculation in <xref ref="inv3-6-g" text="custom">checkpoint (g)</xref>.</p>
+      <p>To determine the exact probability that random assignment would produce exactly 10 successes and 24 failures into the group of 34 subjects, divide your calculation in <xref ref="inv3-6-h" text="custom">checkpoint 8</xref> by your calculation in <xref ref="inv3-6-g" text="custom">checkpoint 7</xref>.</p>
       <hint>
         <p>Divide the total number of ways to obtain the observed configuration by the total number of ways to assign subjects.</p>
       </hint>
@@ -229,10 +242,13 @@
     <p>The probability of obtaining <m>k</m> successes in Group A, with <m>n</m> observations, when sampled from a two-way table with <m>N</m> observations, consisting of <m>M</m> successes and <m>N - M</m> failures is:</p>
     <p><me>P(X = k) = \frac{C(M, k) \times C(N - M, n - k)}{C(N, n)}</me></p>
     <p>where <m>C(N, n) = \frac{N!}{n!(N - n)!}</m> is the number of ways to choose <m>n</m> items from a group of <m>N</m> items, and <m>X</m> represents the number of successes randomly selected for group A. <m>X</m> is a hypergeometric random variable. Also note <m>E(X) = n(M/N)</m> and <m>SD(X) = \sqrt{n(M/N)(1 - M/N)(N - n)/(N - 1)}</m>.</p>
+  </assemblage>
+
+  <paragraphs>
     <p>In this study, we had <m>N = 50</m> subjects and we defined yawning to be success so <m>M = 14</m>. We also arbitrarily chose to focus on the yawn-seed group, so <m>n = 34</m>. This calculation works out the same if you had defined "not yawning" to be a success and/or if you had focused on the 16 people in the no-yawn-seed group. You just need to make sure you count consistently.</p>
     <p>We will continue to define the p-value to be the probability of obtaining results at least as extreme as those observed in the actual study. Because we expected more yawners in the yawn-seed group, the p-value is the probability of randomly assigning at least 10 of the yawners in the yawn-seed group.</p>
     <p>So far you have found <m>P(X = 10) = C(14, 10) \times C(36, 24) / C(50, 34) = 0.2545</m>.</p>
-  </assemblage>
+  </paragraphs>
 
   <exercise xml:id="inv3-6-k">
     <title>Calculate Additional Probabilities</title>
@@ -270,7 +286,7 @@
 
   <assemblage>
     <title>Definition: Fisher's Exact Test</title>
-    <p>Using the hypergeometric probabilities to determine a p-value in this fashion for a two-way table is called <term>Fisher's Exact Test</term><idx><h>Fisher's Exact Test</h></idx>, named after R. A. Fisher.</p>
+    <p>Using the hypergeometric probabilities to determine a p-value in this fashion for a two-way table is called <term>Fisher's Exact Test</term><idx><h>Fisher's Exact Test</h></idx>, named after <url href="https://en.wikipedia.org/wiki/Ronald_Fisher">R. A. Fisher</url>.</p>
   </assemblage>
 
   <exercise xml:id="inv3-6-m">
@@ -282,7 +298,7 @@
     <solution>
       <p>P(X ≥ 10) with M = 14, n = 34, N = 50</p>
       <p>Example R output:</p>
-      <image source="images/Inv3.6solsm.png" width="70%"/>
+      <image source="images/Inv3.6solsR.jpg" width="70%"/>
     </solution>
     <response/>
   </exercise>
@@ -300,7 +316,7 @@
     <response/>
   </exercise>
 
-  <aside>
+  <assemblage>
     <title>Technology Detour: Calculating Hypergeometric Probabilities (Fisher's Exact Test)</title>
     <p><term>In R:</term></p>
     <p>The iscamhyperprob function takes the following inputs:</p>
@@ -328,7 +344,7 @@
       <li>Check the box for Show Fisher's Exact Test in the lower left corner</li>
       <li>A check box will appear for determining the two-sided p-value</li>
     </ul>
-  </aside>
+  </assemblage>
 
   <exercise xml:id="inv3-6-o">
     <title>Alternative Setup - No Seed Group</title>
@@ -338,7 +354,7 @@
     </statement>
     <solution>
       <p>P(X ≥ 12) with M = 36, n = 16, N = 50 = 0.5128</p>
-      <image source="images/Inv3.6solso.png" width="70%"/>
+      <image source="images/Inv3.6solso.jpg" width="70%"/>
     </solution>
     <response/>
   </exercise>
@@ -358,7 +374,7 @@
     </statement>
     <solution>
       <p>The simulation results should be very similar, including the mean and standard deviation values when using the count scale.</p>
-      <image source="images/Inv3.6solsp.png" width="70%"/>
+      <image source="images/Inv3.6solsp.jpg" width="70%"/>
     </solution>
     <response/>
   </exercise>
@@ -399,6 +415,7 @@
       <title>Evidence Against Contagious Yawning</title>
       <statement>
         <p>For the <em>MythBusters</em> study (p-value > 0.5), is it reasonable to conclude from this study that we have strong evidence that yawning is not contagious? Explain.</p>
+        <p><var width="60" height="3"/></p>
       </statement>
       <response/>
     </exercise>
@@ -407,6 +424,7 @@
       <title>Sample Size and Power</title>
       <statement>
         <p>Explain, in this context, what is meant in the Study Conclusions box by "the researchers could try the study again with a larger sample size to increase the power of their test" and why that is a reasonable recommendation here.</p>
+        <p><var width="60" height="3"/></p>
       </statement>
       <response/>
     </exercise>
@@ -415,6 +433,7 @@
       <title>Hypergeometric vs Binomial</title>
       <statement>
         <p>To calculate the p-value here, why are we using the hypergeometric distribution instead of the binomial distribution?</p>
+        <p><var width="60" height="3"/></p>
       </statement>
       <response/>
     </exercise>
@@ -462,6 +481,9 @@
       <title>Hypergeometric Parameters</title>
       <statement>
         <p>When the null hypothesis is true, the random variable X has a hypergeometric distribution. Specify the values of N, M, and n.</p>
+        <p>N = <var width="10"/></p>
+        <p>M = <var width="10"/></p>
+        <p>n = <var width="10"/></p>
       </statement>
       <response/>
     </exercise>
@@ -470,6 +492,7 @@
       <title>Setup for Exact p-value</title>
       <statement>
         <p>Calculating the exact p-value involves finding p(X __________). [Hint: Fill in the blank with an inequality symbol and a number.]</p>
+        <p>p(X <var width="20"/>)</p>
       </statement>
       <response/>
     </exercise>
@@ -478,6 +501,7 @@
       <title>Calculate Exact p-value</title>
       <statement>
         <p>Calculate this exact p-value, either by hand or with technology. Comment on whether this p-value is similar to the approximate one from your simulation results. (Be sure it's clear how you calculated this value.)</p>
+        <p><var width="60" height="4"/></p>
       </statement>
       <response/>
     </exercise>
@@ -486,6 +510,7 @@
       <title>Double Sample Size</title>
       <statement>
         <p>Suppose that the dolphin study had involved twice as many subjects, again with half randomly assigned to each group, and with the same proportion of improvers in each group. Determine the exact p-value in this case, and comment on whether/how it changes from the p-value with the real data. Explain why this makes sense.</p>
+        <p><var width="60" height="4"/></p>
       </statement>
       <response/>
     </exercise>
@@ -498,6 +523,7 @@
       <title>Alternative Setup - Not Yawning</title>
       <statement>
         <p>Suppose I wanted to treat "not yawning" as a success. Consider Y = number of non-yawners in the yawn seed group. Show how to set up the hypergeometric calculation of p(Y = 24) = C(_, _) × C(_, _) / C(_, _).</p>
+        <p><var width="60" height="2"/></p>
       </statement>
       <response/>
     </exercise>
@@ -506,6 +532,7 @@
       <title>Technology Calculation - Non-yawners</title>
       <statement>
         <p>Use technology to calculate the probability of 24 or fewer non-yawners in the YawnSeed group using the hypergeometric distribution. (Include output.) How does this compare to the probability of 10 or more yawners in the YawnSeed group?</p>
+        <p><var width="60" height="4"/></p>
       </statement>
       <response/>
     </exercise>
@@ -514,6 +541,7 @@
       <title>No Seed Group Probability</title>
       <statement>
         <p>Suppose I want to find the probability of 4 or fewer yawners in the No Seed group. Identify the values of N, M, n, and k. Use technology to calculate the probability of 4 or fewer yawners in the No Seed group using the hypergeometric distribution. (Include readable output.)</p>
+        <p><var width="60" height="4"/></p>
       </statement>
       <response/>
     </exercise>
@@ -522,6 +550,7 @@
       <title>Importance of Blinding</title>
       <statement>
         <p>In the Yawning study, why was it important that the subjects didn't know what the study was about when they were led into the room?</p>
+        <p><var width="60" height="3"/></p>
       </statement>
       <response/>
     </exercise>
@@ -530,6 +559,7 @@
       <title>Unequal Sample Sizes</title>
       <statement>
         <p>In the Yawning study, is it a problem that the sample sizes for the Yawn seed and the No Yawn seed group aren't equal? Explain.</p>
+        <p><var width="60" height="3"/></p>
       </statement>
       <response/>
     </exercise>
