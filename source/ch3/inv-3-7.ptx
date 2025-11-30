@@ -120,9 +120,9 @@
     <title>Fisher's Exact Test</title>
     <statement>
       <p>Use technology to carry out Fisher's Exact Test (by calculating the corresponding hypergeometric probability) to assess the strength of evidence that the probability of survival is higher with CC alone as compared to standard CPR. Write out how to calculate this probability, report the p-value, and interpret what it is the probability of.</p>
-      <p>Let X represent <var width="40"/></p>
-      <p>p-value = P(X <var width="5"/> <var width="5"/>) = <var width="15"/></p>
-      <p>where X follows a hypergeometric distribution with N = <var width="5"/>, M = <var width="5"/>, and n = <var width="5"/></p>
+      <p>Let <m>X</m> represent <var width="40"/></p>
+      <p>p-value = <m>P(X</m> <var width="5"/> <var width="5"/>) = <var width="15"/></p>
+      <p>where <m>X</m> follows a hypergeometric distribution with <m>N</m> = <var width="5"/>, <m>M</m> = <var width="5"/>, and <m>n</m> = <var width="5"/></p>
       <p>Interpretation: <var width="60" height="3"/></p>
     </statement>
     <solution>
@@ -134,13 +134,13 @@
   </exercise>
 
   <paragraphs>
-    <p>Because the sample sizes are large in this study, you should not be surprised that the probability distribution in (d) is approximately normal. The large sample sizes allow us to approximate the hypergeometric distribution with a normal distribution. Thus, with large samples sizes (e.g., at least 5 successes and at least 5 failures in each group), an alternative to Fisher's Exact Test is the two-sample z-test that you studied in Section 3.1.</p>
+    <p>Because the sample sizes are large in this study, you should not be surprised that the probability distribution in <xref ref="inv3-7-d" text="custom">checkpoint 4</xref> is approximately normal. The large sample sizes allow us to approximate the hypergeometric distribution with a normal distribution. Thus, with large samples sizes (e.g., at least 5 successes and at least 5 failures in each group), an alternative to Fisher's Exact Test is the two-sample <em>z</em>-test that you studied in Section 3.1.</p>
   </paragraphs>
 
   <exercise xml:id="inv3-7-e">
-    <title>Two-Sample Z-test</title>
+    <title>Two-Sample <em>z</em>-test</title>
     <statement>
-      <p>Use technology to obtain the two-sample z-test statistic and p-value for this study. Compare this p-value to the one from Fisher's Exact Test; are they similar?</p>
+      <p>Use technology to obtain the two-sample <em>z</em>-test statistic and p-value for this study. Compare this p-value to the one from Fisher's Exact Test; are they similar?</p>
       <p><var width="60" height="3"/></p>
     </statement>
     <solution>
@@ -189,7 +189,10 @@
   <exercise xml:id="inv3-7-i">
     <title>Confidence Interval</title>
     <statement>
-      <p>An advantage to using the z-procedures is being able to easily produce a confidence interval for the parameter. Use technology to determine a 95% confidence interval for the parameter of interest, and then interpret this interval. [Hint: Think carefully about what the relevant parameter is in this study.]</p>
+      <p>An advantage to using the <em>z</em>-procedures is being able to easily produce a confidence interval for the parameter. Use technology to determine a 95% confidence interval for the parameter of interest, and then interpret this interval.</p>
+      <hint>
+        <p>Think carefully about what the relevant parameter is in this study.</p>
+      </hint>
       <p><var width="60" height="4"/></p>
     </statement>
     <solution>
@@ -256,28 +259,48 @@
     <response/>
   </exercise>
 
-  <subsection xml:id="practice3-7">
-    <title>Practice Problem 3.7</title>
+  <subsection xml:id="practice3-7A">
+    <title>Practice Problem 3.7A</title>
 
-    <exercise xml:id="practice-3-7-a">
-      <title>Other Response Variables</title>
+    <p>Researchers in the CPR study also examined other response variables. For example, the 911 dispatcher's instructions were completely delivered in 62% of episodes assigned to chest compression plus mouth-to-mouth compared to 81% of the episodes assigned to chest compression alone.</p>
+
+    <exercise xml:id="practice-3-7-a-a">
+      <title>Difference in Proportions</title>
       <statement>
-        <p>(a) Researchers in the CPR study also examined other response variables. For example, the 911 dispatcher's instructions were completely delivered in 62% of episodes assigned to chest compression plus mouth-to-mouth compared to 81% of the episodes assigned to chest compression alone.</p>
-        <p>(i) Calculate the difference in conditional proportions and compare it to the original study.</p>
+        <p>Calculate the difference in conditional proportions and compare it to the original study.</p>
         <p><var width="60" height="2"/></p>
-        <p>(ii) Without calculating, do you suspect the p-value for comparing this new response variable between the two groups will be larger or smaller or about the same as the p-value you determined above? Explain your reasoning.</p>
-        <p><var width="60" height="3"/></p>
       </statement>
       <response/>
     </exercise>
 
-    <exercise xml:id="practice-3-7-b">
-      <title>Combined Study</title>
+    <exercise xml:id="practice-3-7-a-b">
+      <title>P-value Comparison</title>
       <statement>
-        <p>(b) The above study was operationally identical to that of another study and the results of the two studies were combined. Of the 399 combined patients randomly assigned to standard CPR, 44 survived to discharge from the hospital. Of the 351 combined patients randomly assigned to chest compression alone, 47 survived to discharge.</p>
-        <p>(i) Calculate the difference in conditional proportions and compare it to the original study.</p>
+        <p>Without calculating, do you suspect the p-value for comparing this new response variable between the two groups will be larger or smaller or about the same as the p-value you determined above? Explain your reasoning.</p>
+        <p><var width="60" height="3"/></p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice3-7B">
+    <title>Practice Problem 3.7B</title>
+
+    <p>The above study was operationally identical to that of another study and the results of the two studies were combined. Of the 399 combined patients randomly assigned to standard CPR, 44 survived to discharge from the hospital. Of the 351 combined patients randomly assigned to chest compression alone, 47 survived to discharge.</p>
+
+    <exercise xml:id="practice-3-7-b-a">
+      <title>Combined Study Difference</title>
+      <statement>
+        <p>Calculate the difference in conditional proportions and compare it to the original study.</p>
         <p><var width="60" height="2"/></p>
-        <p>(ii) Without calculating, do you suspect the p-value for this comparison will be larger, smaller, or the same as the p-value you determined? Explain your reasoning.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-3-7-b-b">
+      <title>Combined Study P-value</title>
+      <statement>
+        <p>Without calculating, do you suspect the p-value for this comparison will be larger, smaller, or the same as the p-value you determined? Explain your reasoning.</p>
         <p><var width="60" height="3"/></p>
       </statement>
       <response/>
