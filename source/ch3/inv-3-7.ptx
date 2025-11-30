@@ -3,7 +3,12 @@
   <title>Investigation 3.7: CPR vs. Chest Compressions</title>
 
   <introduction>
-    <p>For many years, if a person experienced a heart attack and a bystander called 911, the dispatcher instructed the bystander in how to administer chest compression plus mouth-to-mouth ventilation (a combination known as CPR) until the emergency team arrived. Some researchers believe that giving instruction in chest compression alone (CC) would be a more effective approach. In the 1990s, a randomized comparative experiment was conducted in Seattle involving 518 cases (Hallstrom, Cobb, Johnson, &amp; Copass, <em>New England Journal of Medicine</em>, 2000): In 278 cases, the dispatcher gave instructions in standard CPR to the bystander, and in the remaining 240 cases the dispatcher gave instructions in CC alone. A total of 64 patients survived to discharge from the hospital: 29 in the CPR group and 35 in the CC group.</p>
+    <sidebyside widths="55% 40%" margins="0% 5%">
+      <p>For many years, if a person experienced a heart attack and a bystander called 911, the dispatcher instructed the bystander in how to administer chest compression plus mouth-to-mouth ventilation (a combination known as CPR) until the emergency team arrived. Some researchers believe that giving instruction in chest compression alone (CC) would be a more effective approach. In the 1990s, a randomized comparative experiment was conducted in Seattle involving 518 cases (Hallstrom, Cobb, Johnson, &amp; Copass, <url href="https://www.nejm.org/doi/full/10.1056/NEJM200005253422101"><em>New England Journal of Medicine</em>, 2000</url>): In 278 cases, the dispatcher gave instructions in standard CPR to the bystander, and in the remaining 240 cases the dispatcher gave instructions in CC alone. A total of 64 patients survived to discharge from the hospital: 29 in the CPR group and 35 in the CC group.</p>
+      <image source="images/Inv3.7intro.png" width="100%">
+        <description>CPR instruction study illustration</description>
+      </image>
+    </sidebyside>
   </introduction>
 
   <exercise xml:id="inv3-7-a">
@@ -13,13 +18,17 @@
       <p>Observational units: <var width="40"/></p>
       <p>Explanatory: <var width="40"/></p>
       <p>Response: <var width="40"/></p>
-      <p>Type of study: (circle one) Observational    Experimental</p>
+      <p>Type of study:</p>
     </statement>
+    <choices>
+      <choice><statement>Observational</statement></choice>
+      <choice correct="yes"><statement>Experimental</statement></choice>
+    </choices>
     <solution>
-      <p>Observational units: 518 heart attack patients</p>
-      <p>Explanatory: Type of instruction (CPR or CC alone)</p>
-      <p>Response: Whether or not the patient survived to discharge</p>
-      <p>Type of study: Experimental (random assignment of instruction type)</p>
+      <p>Observational units = 518 cases</p>
+      <p>Explanatory variable = whether they were given CPR or CC instructions</p>
+      <p>Response variable = whether the patient survived to discharge from the hospital</p>
+      <p>Type of Study = experimental</p>
     </solution>
     <response/>
   </exercise>
@@ -97,7 +106,8 @@
       <p><var width="60" height="3"/></p>
     </statement>
     <solution>
-      <p>CC: 35/240 = 0.146; CPR: 29/278 = 0.104; Difference: 0.146 - 0.104 = 0.042 or 4.2 percentage points. This may seem small but could be important in a life-or-death situation.</p>
+      <p><m>\hat{p}_{CC} - \hat{p}_{CPR} = 35/240 - 29/278 = 0.0415</m></p>
+      <p>Opinions will vary on whether this difference appears noteworthy.</p>
     </solution>
     <response/>
   </exercise>
@@ -112,10 +122,9 @@
       <p>Interpretation: <var width="60" height="3"/></p>
     </statement>
     <solution>
-      <p>Let X represent the number of survivors in the CC group</p>
-      <p>p-value = P(X ≥ 35) where X ~ Hypergeometric(N = 518, M = 64, n = 240)</p>
-      <p>p-value ≈ 0.062</p>
-      <p>Interpretation: If CC and CPR were equally effective, there is about a 6.2% chance of randomly assigning 35 or more of the 64 survivors to the CC group.</p>
+      <p>Let <m>X</m> represent the number of survivors in the CPR group. Note, we are assessing the strength of evidence that the probability of survival is higher with CC alone.</p>
+      <p>exact p-value = <m>P(X \lt 29)</m> with <m>M = 64</m>, <m>n = 278</m>, <m>N = 518</m>) = 0.0973</p>
+      <p>Interpretation: If the two treatments were equally effective, there would be about a 9.7% chance of getting 29 or fewer survivors in the CPR group of 278 patients when randomly assigning all 518 patients to the two treatment groups.</p>
     </solution>
     <response/>
   </exercise>
@@ -131,7 +140,7 @@
       <p><var width="60" height="3"/></p>
     </statement>
     <solution>
-      <p>The z-test should give a p-value around 0.073, which is similar to (slightly larger than) the Fisher's Exact Test p-value of 0.062.</p>
+      <p>The p-value is a little smaller (0.076) compared to the exact p-value of 0.0973.</p>
     </solution>
     <response/>
   </exercise>
@@ -143,7 +152,7 @@
       <p><var width="60" height="2"/></p>
     </statement>
     <solution>
-      <p>Use a continuity correction by treating 35 successes as 34.5 when calculating the z-statistic.</p>
+      <p>continuity correction</p>
     </solution>
     <response/>
   </exercise>
@@ -155,7 +164,8 @@
       <p><var width="60" height="3"/></p>
     </statement>
     <solution>
-      <p>With continuity correction, the p-value should be very close to the Fisher's Exact Test result.</p>
+      <p>To make sure the probability mass at 29 is included, we could consider finding the probability for something just above 29 (e.g., 29.5 and 34.5) or applying an Adjusted Wald correction (adding one success and one failure to each sample), though that seems to work better for the confidence interval performance than matching the p-value to the exact. In this case, the adjusted Wald moves the statistic further from zero but with a larger se so the p-value doesn't change much.</p>
+      <p>The p-value from the normal distribution is a little low but the continuity correction makes the approximation much more accurate.</p>
     </solution>
     <response/>
   </exercise>
@@ -167,8 +177,7 @@
       <p><var width="60" height="4"/></p>
     </statement>
     <solution>
-      <p>At the 10% level: Yes, since the p-value (≈0.062) is less than 0.10, we have moderate evidence that CC alone is better.</p>
-      <p>At the 5% level: No, since the p-value is greater than 0.05, we do not have strong evidence at this stricter significance level.</p>
+      <p>The exact p-value of 0.09736 is below 0.10, so we would consider this convincing evidence at the 10% level but not at the 5% level of significance.</p>
     </solution>
     <response/>
   </exercise>
@@ -180,8 +189,9 @@
       <p><var width="60" height="4"/></p>
     </statement>
     <solution>
-      <p>95% CI for π<subscript>CC</subscript> - π<subscript>CPR</subscript>: approximately (-0.002, 0.086)</p>
-      <p>We are 95% confident that the difference in survival probabilities (CC - CPR) is between -0.2 percentage points and 8.6 percentage points.</p>
+      <p>Using the two-sample z-interval:</p>
+      <p>95% CI for <m>\pi_{CPR} - \pi_{CC}</m>: (-0.0988, 0.0158)</p>
+      <p>I'm 95% confident that the survival probability is up to 0.0988 higher for the CC group but could be up to 0.0158 higher for the CPR group.</p>
     </solution>
     <response/>
   </exercise>
@@ -197,11 +207,12 @@
       <p>(v) confidence interval? <var width="40"/></p>
     </statement>
     <solution>
-      <p>(i) Changes sign: -0.042</p>
-      <p>(ii) Changes sign</p>
-      <p>(iii) Would be H<subscript>a</subscript>: π<subscript>CPR</subscript> - π<subscript>CC</subscript> &lt; 0</p>
-      <p>(iv) Same p-value</p>
-      <p>(v) Changes signs of endpoints: (-0.086, 0.002)</p>
+      <p>(i) The observed statistic would now be positive 0.042</p>
+      <p>(ii) The standardized statistic would now be positive (but same magnitude)</p>
+      <p>(iii) The alternative hypothesis would now be <m>\pi_{CC} - \pi_{CPR} > 0</m></p>
+      <p>(iv) The p-value, now the probability of a statistic above 0.042, would be the same</p>
+      <p>(v) The endpoints of the confidence interval will reverse sign</p>
+      <p>Note: Even with a 90% confidence level, zero is captured in the interval, even though we rejected the null hypothesis for a 10% level of significance. This can happen when you compare a one-sided p-value to a confidence interval which corresponds to a two-sided p-value. The other issue is even 0.0896 is not all that large of a value, so even if you consider the difference statistically significant, it's not clear whether the CC treatment has a "large" benefit.</p>
     </solution>
     <response/>
   </exercise>
