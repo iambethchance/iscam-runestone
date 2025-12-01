@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-3-8-summary">
+  <title>Summary of Inference for Relative Risk</title>
+
+  <assemblage>
+    <title>Relative Risk Procedures</title>
+
+    <p><term>Statistic:</term> Ratio of conditional proportions (typically set up to be larger than one) = <m>\frac{\hat{p}_1}{\hat{p}_2}</m></p>
+
+    <p><term>Hypotheses:</term> <m>H_0: \frac{\pi_1}{\pi_2} = 1</m>; <m>H_a: \frac{\pi_1}{\pi_2} &lt; 1</m>, <m>\frac{\pi_1}{\pi_2} &gt; 1</m>, or <m>\frac{\pi_1}{\pi_2} \neq 1</m></p>
+
+    <p><term>p-value:</term> Fisher's Exact Test or normal approximation on <m>\ln\left(\frac{\hat{p}_1}{\hat{p}_2}\right)</m></p>
+
+    <p><term>Confidence interval for <m>\frac{\pi_1}{\pi_2}</m>:</term> Exponentiate endpoints of</p>
+    <p><me>\ln\left(\frac{\hat{p}_1}{\hat{p}_2}\right) \pm z^*\sqrt{\frac{1}{A}-\frac{1}{A+C}+\frac{1}{B}-\frac{1}{B+D}}</me></p>
+
+    <p><term>Technology:</term></p>
+    <p><ul>
+      <li>
+        <p><term>In R:</term> You can install the fmsb package and use the riskratio command.</p>
+        <p><c>fmsb::riskratio(A, B, A+C, B+D, conf.level, p.calc.by.independence = TRUE)</c></p>
+      </li>
+      <li><p><term>In JMP:</term> From the Contingency Analysis hot spot, choose Relative Risk</p></li>
+    </ul></p>
+  </assemblage>
+
+  <assemblage>
+    <title>Technology Detour – Simulating Random Assignment (two-way tables)</title>
+
+    <p><ol>
+      <li>Simulate a random sample (number of successes for group 1) using the hypergeometric distribution</li>
+      <li>Calculate the number of successes for group 2 (total successes – number of successes group 1)</li>
+      <li>Convert the counts to proportions</li>
+      <li>Calculate the difference in proportions, relative risk, etc.</li>
+    </ol></p>
+
+    <p>Keep in mind you can use "log" to calculate the natural logs of values. Also recall how you created a Boolean expression in Investigation 3.1 to find the p-value from the simulated results.</p>
+
+    <p><term>In Applet:</term> <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?twobytwo=1">Analyzing Two-way Tables</url></p>
+
+    <p><term>In R:</term> <url href="https://www.rossmanchance.com/iscam3/data/RAHyperR.html">RAHyperR.html</url></p>
+
+    <p><term>In JMP:</term> <url href="https://www.rossmanchance.com/iscam3/data/RAHyperJMP.html">RAHyperJMP.html</url></p>
+  </assemblage>
+
+</section>
