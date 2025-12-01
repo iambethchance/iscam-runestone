@@ -3,13 +3,14 @@
   <title>Investigation 3.9: Smoking and Lung Cancer</title>
 
   <introduction>
-    <image source="images/Inv3.9Intro.png" width="50%"/>
+    <image source="images/Inv3.9Intro.png" width="65%"/>
     
     <p>After World War II, evidence began mounting that there was a link between cigarette smoking and pulmonary carcinoma (lung cancer). In the 1950s, three now classic articles were published on the topic. One of these studies was conducted in the United States by Wynder and Graham ("Tobacco Smoking as a Possible Etiologic Factor in Bronchiogenic Cancer," 1950, Journal of the American Medical Association). They found records from a large number of patients with a specific type of lung cancer in hospitals in California, Colorado, Missouri, New Jersey, New York, Ohio, Pennsylvania, and Utah. Of those in the study, the researchers focused on 605 male patients with this form of lung cancer. Another 780 male hospital patients with similar age and economic distributions without this type of lung cancer were interviewed in St. Louis MO, Boston MA, Cleveland OH, and Hines IL. Subjects (or family members) were interviewed to assess their smoking habits, occupation, education, etc. The table below classifies them as a non-smoker or light smoker or as an at least a moderate smoker.</p>
 
     <table>
       <title>Wynder and Graham Study</title>
       <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <col halign="left"/>
         <row header="yes">
           <cell></cell>
           <cell>None or Light smoker (0-9 cigarettes per day)</cell>
@@ -70,12 +71,15 @@
     <title>Study Classification</title>
     <statement>
       <p>Would you classify the Wynder &amp; Graham study as cross-classified, cohort, or case-control? Explain.</p>
-      <p><var width="60" height="4"/></p>
+      <choices>
+        <choice><p>Cross-classified observational study</p></choice>
+        <choice><p>Cohort (prospective) observational study</p></choice>
+        <choice correct="yes"><p>Case-control (retrospective) observational study</p></choice>
+      </choices>
     </statement>
     <solution>
       <p>This is a case-control study: the researchers found cases of lung cancer and then other similar patients without lung cancer (controls). Having lung cancer or not is the response variable.</p>
     </solution>
-    <response/>
   </exercise>
 
   <exercise xml:id="inv3-9-c">
@@ -94,12 +98,12 @@
   <exercise xml:id="inv3-9-d">
     <title>Original Relative Risk</title>
     <statement>
-      <p>The original thought was to calculate the relative risk of being in the lung cancer group for those who smoked compared to those who didn't smoke. Calculate this value. Is it similar to <xref ref="inv3-9-c" text="custom">(c)</xref>?</p>
+      <p>The original thought was to calculate the relative risk of being in the lung cancer group for those who smoked compared to those who didn't smoke. Calculate this value. Is it similar to <xref ref="inv3-9-c" text="custom">checkpoint 4</xref>?</p>
       <p>Smokers were <var width="10"/> times more likely to have lung cancer than non-smokers.</p>
     </statement>
     <solution>
       <p>Relative risk of being in the lung cancer group = (583/1159)/(22/226) ≈ 5.17</p>
-      <p>The heavy smokers were 5.17 times more likely to have lung cancer compared to the light smokers. This value is not at all similar to the relative risk calculated in (c).</p>
+      <p>The heavy smokers were 5.17 times more likely to have lung cancer compared to the light smokers. This value is not at all similar to the relative risk calculated in checkpoint 4.</p>
     </solution>
     <response/>
   </exercise>
@@ -111,27 +115,27 @@
   <assemblage>
     <title>Definition: Odds of Success</title>
     <p>The <term>odds of success</term><idx><h>odds of success</h></idx> are defined as the ratio of the proportion of "successes" to the proportion of "failures," which simplifies to the ratio of the number of successes to number of failures.</p>
-    <p>Odds = (proportion of successes) / (proportion of failures) = (number of successes) / (number of failures)</p>
+    <p><m>Odds = (proportion of successes) / (proportion of failures) = (number of successes) / (number of failures)</m></p>
     <p>For example, if the odds are 2-to-1 in favor of an outcome, we expect a success twice as often as a failure in the long run, so this corresponds to a probability of 2/3 of the outcome occurring. Similarly, if the probability of success is 1/10, then the odds equals (1/10)/(9/10) = 1/9, and a failure is 9 times more likely than a success. It's important to note how the "outcome" is defined. For example, in horse racing, odds are typically presented in terms of "losing the race," so if a horse is given 2-to-1 odds against winning a race, we expect the horse to lose two-thirds of the races in the long run.</p>
   </assemblage>
 
   <assemblage>
     <title>Definition: Odds Ratio</title>
     <p>The <term>odds ratio</term><idx><h>odds ratio</h></idx> is another way to compare conditional proportions in a 2 × 2 table.</p>
-    <p>Odds ratio = (number of successes in group 1 / number of failures in group 1) / (number of successes in group 2 / number of failures in group 2)</p>
+    <p><m>Odds ratio = (number of successes in group 1 / number of failures in group 1) / (number of successes in group 2 / number of failures in group 2)</m></p>
     <p>Like relative risk, if the odds ratio is 3, this is interpreted as "the odds of success in the 'top' group are 3 times (or 200%) higher than the odds of success in the 'bottom' group." However, the relative risk and the odds ratio are not always similar in value.</p>
   </assemblage>
 
   <exercise xml:id="inv3-9-e">
     <title>Odds Ratio: Heavy Smoker</title>
     <statement>
-      <p>Calculate and interpret the odds ratio comparing the odds of being a heavy smoker (rather than light smoker) for the lung cancer patients to the odds of being a heavy smoker in the control group. Does this match <xref ref="inv3-9-c" text="custom">(c)</xref>?</p>
+      <p>Calculate and interpret the odds ratio comparing the odds of being a heavy smoker (rather than light smoker) for the lung cancer patients to the odds of being a heavy smoker in the control group. Does this match <xref ref="inv3-9-c" text="custom">checkpoint 4</xref>?</p>
       <p>The odds of being a heavy smoker are <var width="10"/> times higher for lung cancer patients than controls.</p>
     </statement>
     <solution>
       <p>Odds ratio of being heavy smoker = (583/22)/(576/204) ≈ 9.39</p>
       <p>The odds of being a heavy smoker were 9.39 times higher for lung cancer patients than for control patients.</p>
-      <p>This does not match (c).</p>
+      <p>This does not match checkpoint 4.</p>
     </solution>
     <response/>
   </exercise>
@@ -139,12 +143,12 @@
   <exercise xml:id="inv3-9-f">
     <title>Odds Ratio: Lung Cancer</title>
     <statement>
-      <p>Calculate and interpret the odds ratio comparing the odds of lung cancer for the smokers to the odds of lung cancer for the nonsmokers. Does this match <xref ref="inv3-9-d" text="custom">(d)</xref> or <xref ref="inv3-9-e" text="custom">(e)</xref>?</p>
+      <p>Calculate and interpret the odds ratio comparing the odds of lung cancer for the smokers to the odds of lung cancer for the nonsmokers. Does this match <xref ref="inv3-9-d" text="custom">checkpoint 4</xref> or <xref ref="inv3-9-e" text="custom">checkpoint 6</xref>?</p>
       <p>The odds of lung cancer are <var width="10"/> times higher for smokers than non-smokers.</p>
     </statement>
     <solution>
       <p>Odds ratio of lung cancer = (583/576)/(22/204) ≈ 9.39</p>
-      <p>The odds of lung cancer are 9.39 times higher for heavy smokers than for light smokers. This does not match (d) but does match (e).</p>
+      <p>The odds of lung cancer are 9.39 times higher for heavy smokers than for light smokers. This does not match checkpoint 4 but does match checkpoint 6.</p>
     </solution>
     <response/>
   </exercise>
@@ -156,7 +160,7 @@
 
   <paragraphs>
     <title>Statistical Inference</title>
-    <p>So we could use either <xref ref="inv3-9-e" text="custom">(e)</xref> or <xref ref="inv3-9-f" text="custom">(f)</xref> as the statistic, we should just be consistent. Also notice that the odds of not having lung cancer are 1/9.39 = 0.106 times smaller for the light smokers than the heavy smokers.</p>
+    <p>So we could use either Odds Ratio as the statistic, we should just be consistent. Also notice that the odds of not having lung cancer are 1/9.39 = 0.106 times smaller for the light smokers than the heavy smokers.</p>
 
     <p>Let <m>\tau</m> ("tau") represent the population odds ratio of being a heavy smoker comparing the population of lung cancer patients to the population of control patients, keeping in mind that this is equivalent to the population odds ratio of interest, but matches the study design, e.g.,</p>
     <p><m>\tau = \frac{\pi_1/(1-\pi_1)}{\pi_2/(1-\pi_2)}</m></p>
@@ -167,11 +171,32 @@
     <title>State Hypotheses</title>
     <statement>
       <p>State the null and alternative hypotheses in terms of this parameter.</p>
-      <p><var width="60" height="3"/></p>
+      <tabular>
+        <row>
+          <cell>Null hypothesis</cell>
+          <cell>In symbols:</cell>
+          <cell><m>\tau = 1</m> or <m>\ln(\tau) = 0</m></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>In words:</cell>
+          <cell><var width="60" height="2"/></cell>
+        </row>
+        <row>
+          <cell>Alternative hypothesis</cell>
+          <cell>In symbols:</cell>
+          <cell><m>\tau > 1</m> or <m>\ln(\tau) > 0</m></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>In words:</cell>
+          <cell><var width="60" height="2"/></cell>
+        </row>
+      </tabular>
     </statement>
     <solution>
-      <p>H<subscript>0</subscript>: <m>\tau = 1</m> (the population odds ratio is one, there is no association between smoking level and lung cancer status)</p>
-      <p>H<subscript>a</subscript>: <m>\tau &gt; 1</m> (the population odds ratio of being a heavy smoker are higher for lung cancer patients; equivalently, the population odds of lung cancer are higher for heavy smokers)</p>
+      <p>H<subscript>0</subscript>: The population odds ratio is one, there is no association between smoking level and lung cancer status (<m>\tau = 1</m> or <m>\ln(\tau) = 0</m>).</p>
+      <p>H<subscript>a</subscript>: The population odds ratio of being a heavy smoker are higher for lung cancer patients; equivalently, the population odds of lung cancer are higher for heavy smokers (<m>\tau > 1</m> or <m>\ln(\tau) > 0</m>).</p>
     </solution>
     <response/>
   </exercise>
@@ -204,9 +229,12 @@
   <exercise xml:id="inv3-9-h">
     <title>Calculate Standard Error and Confidence Interval</title>
     <statement>
-      <p>Calculate this standard error (and compare to the simulation results) and then use it (by hand) to find an approximate 95% confidence interval for the log odds ratio. [Hint: Remember you have two choices for interpreting this parameter.]</p>
+      <p>Calculate this standard error (and compare to the simulation results) and then use it (by hand) to find an approximate 95% confidence interval for the log odds ratio.</p>
       <p><var width="60" height="5"/></p>
     </statement>
+    <hint>
+      <p>Remember you have two choices for interpreting this parameter.</p>
+    </hint>
     <solution>
       <p>SE(ln odds ratio) = <m>\sqrt{1/22 + 1/583 + 1/204 + 1/576}</m> ≈ 0.232</p>
       <p>95% confidence interval for log odds ratio: ln(9.385) ± 1.96(0.232) ≈ (1.784, 2.694)</p>
@@ -217,7 +245,7 @@
   <exercise xml:id="inv3-9-i">
     <title>Back-Transform Interval</title>
     <statement>
-      <p>Back-transform the end-points of the interval in <xref ref="inv3-9-h" text="custom">(h)</xref> and interpret your results.</p>
+      <p>Back-transform the end-points of the interval in <xref ref="inv3-9-h" text="custom">checkpoint 8</xref> and interpret your results.</p>
       <p><var width="60" height="4"/></p>
     </statement>
     <solution>
@@ -230,8 +258,8 @@
   <exercise xml:id="inv3-9-j">
     <title>Interval Contains One</title>
     <statement>
-      <p>Does the interval found in <xref ref="inv3-9-i" text="custom">(i)</xref> contain the value one? Discuss the implications of whether or not the interval contains the value one.</p>
-      <p><var width="60" height="4"/></p>
+      <p>Does the interval found in <xref ref="inv3-9-i" text="custom">checkpoint 9</xref> contain the value one? Discuss the implications of whether or not the interval contains the value one.</p>
+      <p><response/></p>
     </statement>
     <solution>
       <p>This interval does not contain one, matching our small p-value. Both the test and confidence interval say it is not plausible that the odds of lung cancer are the same for both heavy and light smokers.</p>
@@ -243,7 +271,7 @@
     <title>Verify with Technology</title>
     <statement>
       <p>Use technology to verify your calculations.</p>
-      <p><var width="60" height="3"/></p>
+      <p><response/></p>
     </statement>
     <solution>
       <p>Using Fisher's Exact Test or technology for odds ratio confidence intervals should produce similar results to the hand calculations.</p>
@@ -255,7 +283,7 @@
     <title>Study Conclusions</title>
     <statement>
       <p>Summarize (with justification) the conclusions you would draw from this study (using both the p-value and the confidence interval, and addressing both the population to which you are willing to generalize and whether or not you are drawing a cause-and-effect conclusion).</p>
-      <p><var width="60" height="6"/></p>
+      <p><response/></p>
     </statement>
     <solution>
       <p>This study gives us strong evidence that the odds of being a lung cancer patient are quite a bit larger for those who are regular to heavy smokers compared to the lighter or non-smokers. We can't attribute this increase to the smoking habit alone because this was an observational (case-control) study rather than a randomized experiment, though they did match age and economic factors between the two groups. But there could be other differences like in diet and exercise that account for the higher rate of lung cancer among the heavy smokers. We also should be a little cautious in generalizing these results, perhaps only to hospitalized males like those selected by these researchers (age, social-economic status).</p>
@@ -273,7 +301,7 @@
   <subsection xml:id="practice3-9A">
     <title>Practice Problem 3.9A: Abuse and Violence Study</title>
 
-    <p>A researcher searched court records to find 908 individuals who had been victims of abuse as children (11 years or younger). She then found 667 individuals, with similar demographic characteristics, who had not been abused as children. Based on a search through subsequent years of court records, she determined how many in each of these groups became involved in violent crimes (Widom, 1989). The results are shown below:</p>
+    <p>A researcher searched court records to find 908 individuals who had been victims of abuse as children (11 years or younger). She then found 667 individuals, with similar demographic characteristics, who had not been abused as children. Based on a search through subsequent years of court records, she determined how many in each of these groups became involved in violent crimes (Widom, <url href="https://www.ojp.gov/ncjrs/virtual-library/abstracts/does-violence-beget-violence-critical-examination-literature\" visual=\"ojp.gov\">1989</url>). The results are shown below:</p>
 
     <table>
       <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
@@ -296,6 +324,7 @@
     </table>
 
     <exercise xml:id="practice-3-9-a-1">
+      <title>Study Design</title>
       <statement>
         <p>Is this an observational study or an experiment? If observational, which type?</p>
         <p><var width="60" height="2"/></p>
@@ -304,6 +333,7 @@
     </exercise>
 
     <exercise xml:id="practice-3-9-a-2">
+      <title>Calculate Odds Ratio</title>
       <statement>
         <p>Calculate and interpret the odds ratio of being involved in a violent crime between these two groups.</p>
         <p><var width="60" height="3"/></p>
@@ -312,6 +342,7 @@
     </exercise>
 
     <exercise xml:id="practice-3-9-a-3">
+      <title>Sampling Distribution Analysis</title>
       <statement>
         <p>Use the Comparing Two Population Proportions applet to</p>
         <p><ul>
@@ -327,6 +358,7 @@
     </exercise>
 
     <exercise xml:id="practice-3-9-a-4">
+      <title>Randomization Distribution Analysis</title>
       <statement>
         <p>Use the Analyzing Two-way Tables applet to</p>
         <p><ul>
@@ -340,6 +372,7 @@
     </exercise>
 
     <exercise xml:id="practice-3-9-a-5">
+      <title>Fisher's Exact Test</title>
       <statement>
         <p>Report the p-value from Fisher's Exact Test. Which of the previous p-values is this closest to? Why? Do the p-values vary much? Which would you consider the "best"? Why?</p>
         <p><var width="60" height="4"/></p>
@@ -348,6 +381,7 @@
     </exercise>
 
     <exercise xml:id="practice-3-9-a-6">
+      <title>Causation</title>
       <statement>
         <p>Is it reasonable to conclude that being a victim of abuse as a child causes individuals to be more likely to be violent toward others afterwards? Explain.</p>
         <p><var width="60" height="3"/></p>
@@ -356,6 +390,7 @@
     </exercise>
 
     <exercise xml:id="practice-3-9-a-7">
+      <title>Confidence Interval</title>
       <statement>
         <p>Calculate and interpret a 95% confidence interval for the population odds ratio.</p>
         <p><var width="60" height="3"/></p>
@@ -364,6 +399,7 @@
     </exercise>
 
     <exercise xml:id="practice-3-9-a-8">
+      <title>Generalization</title>
       <statement>
         <p>Is it reasonable to generalize these results to all abuse and non-abuse victims? Explain.</p>
         <p><var width="60" height="3"/></p>
@@ -376,6 +412,7 @@
     <title>Practice Problem 3.9B: Comparing Relative Risk and Odds Ratio</title>
 
     <exercise xml:id="practice-3-9-b-1">
+      <title>Relative Risk Calculation</title>
       <statement>
         <p>Suppose that individuals in Group 1 have a 2/3 probability of success, and those in Group 2 have a 1/2 probability of success. Calculate and interpret the relative risk of success, comparing Group 1 to Group 2.</p>
         <p><var width="60" height="3"/></p>
@@ -384,6 +421,7 @@
     </exercise>
 
     <exercise xml:id="practice-3-9-b-2">
+      <title>Odds Calculation</title>
       <statement>
         <p>Calculate and interpret the odds of success for Group 1.</p>
         <p><var width="60" height="2"/></p>
@@ -392,6 +430,7 @@
     </exercise>
 
     <exercise xml:id="practice-3-9-b-3">
+      <title>Odds Ratio Calculation</title>
       <statement>
         <p>Calculate and interpret the odds ratio of success, comparing Group 1 to Group 2.</p>
         <p><var width="60" height="3"/></p>
@@ -400,6 +439,7 @@
     </exercise>
 
     <exercise xml:id="practice-3-9-b-4">
+      <title>Compare Different Probabilities</title>
       <statement>
         <p>Suppose Group 3 has a 0.1 probability of success, and Group 4 has a 0.05 probability of success. Repeat questions in the previous two checkpoints.</p>
         <p><var width="60" height="4"/></p>
@@ -408,6 +448,7 @@
     </exercise>
 
     <exercise xml:id="practice-3-9-b-5">
+      <title>Comparing Relative Risk and Odds Ratio</title>
       <statement>
         <p>In which case (Groups 1 and 2, or Groups 3 and 4) are the relative risk and odds ratio more similar? Why?</p>
         <p><var width="60" height="4"/></p>

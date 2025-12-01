@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-3-9-summary">
+  <title>Summary of Inference for Odds Ratio</title>
+
+  <p>For tables of the form:</p>
+  <table>
+    <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+      <row>
+        <cell><m>A</m></cell>
+        <cell><m>B</m></cell>
+      </row>
+      <row>
+        <cell><m>C</m></cell>
+        <cell><m>D</m></cell>
+      </row>
+      <row bottom="none">
+        <cell><m>A + C</m></cell>
+        <cell><m>B + D</m></cell>
+      </row>
+    </tabular>
+  </table>
+
+  <assemblage>
+    <title>Odds Ratio Procedures</title>
+
+    <p><term>Statistic:</term> Odds ratio (typically set up to be larger than one) = <m>\frac{A \times D}{B \times C}</m> or equivalently <m>\frac{\text{odds}_1}{\text{odds}_2} = \frac{\frac{\hat{p}_1}{1-\hat{p}_1}}{\frac{\hat{p}_2}{1-\hat{p}_2}}</m></p>
+
+    <p><term>Hypotheses:</term> <m>H_0: \tau = 1</m> or <m>\ln(\tau) = 0</m>; <m>H_a: \tau &lt; 1</m>, <m>\tau &gt; 1</m>, or <m>\tau \neq 1</m> (or equivalently using <m>\ln(\tau)</m>)</p>
+
+    <p><term>p-value:</term> Fisher's Exact Test or normal approximation on <m>\ln(\text{odds ratio})</m></p>
+
+    <p><term>Confidence interval for <m>\tau</m>:</term> Exponentiate endpoints of</p>
+    <p><me>\ln\left(\frac{A \times D}{B \times C}\right) \pm z^*\sqrt{\frac{1}{A}+\frac{1}{B}+\frac{1}{C}+\frac{1}{D}}</me></p>
+
+    <p><term>Technology:</term></p>
+    <p><ul>
+      <li>
+        <p><term>In R:</term> You can install the fmsb package and use the oddsratio command.</p>
+        <p><c>fmsb::oddsratio(A, B, C, D, conf.level, p.calc.by.independence = TRUE)</c></p>
+      </li>
+      <li><p><term>In JMP:</term> From the Contingency Analysis hot spot, choose Odds Ratio</p></li>
+    </ul></p>
+  </assemblage>
+
+  <assemblage>
+    <title>Technology Detour – Simulating Random Assignment (two-way tables)</title>
+
+    <p><ol>
+      <li>Simulate a random sample (number of successes for group 1) using the hypergeometric distribution</li>
+      <li>Calculate the number of successes for group 2 (total successes – number of successes group 1)</li>
+      <li>Convert the counts to proportions</li>
+      <li>Calculate the odds for each group and the odds ratio</li>
+      <li>Calculate the log-odds ratio</li>
+    </ol></p>
+
+    <p>Keep in mind you can use "log" to calculate the natural logs of values. Also recall how you created a Boolean expression in Investigation 3.1 to find the p-value from the simulated results.</p>
+
+    <p><term>In Applet:</term> <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?twobytwo=1">Analyzing Two-way Tables</url></p>
+
+    <p><term>In R:</term> <url href="https://www.rossmanchance.com/iscam3/data/RAHyperR.html">RAHyperR.html</url></p>
+
+    <p><term>In JMP:</term> <url href="https://www.rossmanchance.com/iscam3/data/RAHyperJMP.html">RAHyperJMP.html</url></p>
+  </assemblage>
+
+</section>
