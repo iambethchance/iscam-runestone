@@ -102,7 +102,8 @@
   <assemblage>
     <title>Definition: Relative Risk</title>
     <p>The <term>relative risk</term><idx><h>relative risk</h></idx> is the ratio of the conditional proportions, often intentionally set up so that the value is larger than one:</p>
-    <me>\text{Relative risk} = \frac{\text{Proportion of successes in group 1 (the larger proportion)}}{\text{Proportion of successes in group 2 (the smaller proportion)}}</me>
+    <me>\text{Relative risk} = \frac{\hat{p}_1}{\hat{p}_2}</me>
+    <p>where <m>\hat{p}_1</m> is the larger proportion and <m>\hat{p}_2</m> is the smaller proportion.</p>
   </assemblage>
 
   <p>The relative risk tells us how many times higher the "risk" or "likelihood" of "success" is in group 1 compared to group 2.</p>
@@ -168,10 +169,9 @@
     <response/>
   </exercise>
 
-  <remark>
-    <title>Mathematical Model</title>
-    <p>But can we apply a mathematical model to this distribution?</p>
-  </remark>
+<paragraphs>
+    <title>But can we apply a mathematical model to this distribution?</title>
+  </paragraphs>
 
   <exercise xml:id="inv3-8-h">
     <title>Mean Near 1</title>
@@ -249,7 +249,7 @@
   </exercise>
 
   <exercise xml:id="inv3-8-n">
-    <title>p-value Unchanged</title>
+    <title>Change in p-value?</title>
     <statement>
       <p>Has the empirical p-value changed? Explain why this makes sense.</p>
       <hint>
@@ -270,7 +270,7 @@
   <assemblage>
     <title>Theoretical Result</title>
     <p>It can be shown that the standard error of the ln relative risk is approximated by:</p>
-    <me>SE(\ln \text{ rel risk}) = \sqrt{\left(\frac{1}{A} - \frac{1}{A+B}\right) + \left(\frac{1}{C} - \frac{1}{C+D}\right)}</me>
+    <me>SE(\ln(\text{RR})) = \sqrt{\left(\frac{1}{A} - \frac{1}{A+B}\right) + \left(\frac{1}{C} - \frac{1}{C+D}\right)}</me>
     <p>where <m>A</m>, <m>B</m>, <m>C</m>, and <m>D</m> are the observed counts in the 2×2 table of data, with <m>A</m> and <m>C</m> representing the number of "successes" in the two groups. Having this formula allows us to determine the variability from sample to sample without conducting the simulation first.</p>
   </assemblage>
 
