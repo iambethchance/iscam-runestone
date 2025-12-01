@@ -3,6 +3,8 @@
   <title>Investigation 3.9: Smoking and Lung Cancer</title>
 
   <introduction>
+    <image source="images/Inv3.9Intro.png" width="50%"/>
+    
     <p>After World War II, evidence began mounting that there was a link between cigarette smoking and pulmonary carcinoma (lung cancer). In the 1950s, three now classic articles were published on the topic. One of these studies was conducted in the United States by Wynder and Graham ("Tobacco Smoking as a Possible Etiologic Factor in Bronchiogenic Cancer," 1950, Journal of the American Medical Association). They found records from a large number of patients with a specific type of lung cancer in hospitals in California, Colorado, Missouri, New Jersey, New York, Ohio, Pennsylvania, and Utah. Of those in the study, the researchers focused on 605 male patients with this form of lung cancer. Another 780 male hospital patients with similar age and economic distributions without this type of lung cancer were interviewed in St. Louis MO, Boston MA, Cleveland OH, and Hines IL. Subjects (or family members) were interviewed to assess their smoking habits, occupation, education, etc. The table below classifies them as a non-smoker or light smoker or as an at least a moderate smoker.</p>
 
     <table>
@@ -43,7 +45,7 @@
       <p><var width="60" height="4"/></p>
     </statement>
     <solution>
-      <p>From the table, 605/1385 = 0.437 or 43.7% have lung cancer. This is not a reasonable estimate of the baseline rate because the researchers controlled how many lung cancer patients and control patients were in the study. The actual rate of lung cancer in the population is much lower.</p>
+      <p>Baseline risk ≈ 605/1385 = 0.437. It does not seem reasonable to believe that almost half of the population at that time was a lung cancer patient. This large proportion happens because the researchers controlled how many lung cancer and non-lung cancer patients would be in the study (and probably consciously trying to make them similar) rather than randomly selecting patients in general and seeing how many had lung cancer (recording the variable "naturally").</p>
     </solution>
     <response/>
   </exercise>
@@ -71,7 +73,7 @@
       <p><var width="60" height="4"/></p>
     </statement>
     <solution>
-      <p>This is a case-control study. The researchers first identified patients with lung cancer (the cases) and patients without lung cancer (the controls), and then looked back at their smoking history.</p>
+      <p>This is a case-control study: the researchers found cases of lung cancer and then other similar patients without lung cancer (controls). Having lung cancer or not is the response variable.</p>
     </solution>
     <response/>
   </exercise>
@@ -83,7 +85,8 @@
       <p>Lung cancer patients were <var width="10"/> times more likely to be heavy smokers than control patients.</p>
     </statement>
     <solution>
-      <p>Relative risk = (583/605) / (576/780) = 0.964 / 0.738 = 1.31. Lung cancer patients were 1.31 times more likely to be heavy smokers than control patients.</p>
+      <p>Relative risk of being a heavy smoker = (583/605)/(576/780) ≈ 1.30</p>
+      <p>The lung cancer patients were about 1.3 times more likely to be heavy smokers compared to the patients without lung cancer.</p>
     </solution>
     <response/>
   </exercise>
@@ -95,7 +98,8 @@
       <p>Smokers were <var width="10"/> times more likely to have lung cancer than non-smokers.</p>
     </statement>
     <solution>
-      <p>Relative risk = (583/1159) / (22/226) = 0.503 / 0.097 = 5.18. Smokers were 5.18 times more likely to have lung cancer than non-smokers. This is very different from the value in (c).</p>
+      <p>Relative risk of being in the lung cancer group = (583/1159)/(22/226) ≈ 5.17</p>
+      <p>The heavy smokers were 5.17 times more likely to have lung cancer compared to the light smokers. This value is not at all similar to the relative risk calculated in (c).</p>
     </solution>
     <response/>
   </exercise>
@@ -125,7 +129,9 @@
       <p>The odds of being a heavy smoker are <var width="10"/> times higher for lung cancer patients than controls.</p>
     </statement>
     <solution>
-      <p>Odds ratio = (583/22) / (576/204) = 26.5 / 2.82 = 9.39. The odds of being a heavy smoker are 9.39 times higher for lung cancer patients than controls. This does not match (c).</p>
+      <p>Odds ratio of being heavy smoker = (583/22)/(576/204) ≈ 9.39</p>
+      <p>The odds of being a heavy smoker were 9.39 times higher for lung cancer patients than for control patients.</p>
+      <p>This does not match (c).</p>
     </solution>
     <response/>
   </exercise>
@@ -137,7 +143,8 @@
       <p>The odds of lung cancer are <var width="10"/> times higher for smokers than non-smokers.</p>
     </statement>
     <solution>
-      <p>Odds ratio = (583/576) / (22/204) = 1.012 / 0.108 = 9.39. The odds of lung cancer are 9.39 times higher for smokers than non-smokers. This matches (e), not (d).</p>
+      <p>Odds ratio of lung cancer = (583/576)/(22/204) ≈ 9.39</p>
+      <p>The odds of lung cancer are 9.39 times higher for heavy smokers than for light smokers. This does not match (d) but does match (e).</p>
     </solution>
     <response/>
   </exercise>
@@ -163,20 +170,24 @@
       <p><var width="60" height="3"/></p>
     </statement>
     <solution>
-      <p>H<subscript>0</subscript>: <m>\tau</m> = 1 (the odds of being a heavy smoker are the same for lung cancer patients and controls)</p>
-      <p>H<subscript>a</subscript>: <m>\tau</m> ≠ 1 (the odds of being a heavy smoker differ between the two groups)</p>
+      <p>H<subscript>0</subscript>: <m>\tau = 1</m> (the population odds ratio is one, there is no association between smoking level and lung cancer status)</p>
+      <p>H<subscript>a</subscript>: <m>\tau &gt; 1</m> (the population odds ratio of being a heavy smoker are higher for lung cancer patients; equivalently, the population odds of lung cancer are higher for heavy smokers)</p>
     </solution>
     <response/>
   </exercise>
 
   <paragraphs>
-    <p>To simulate outcomes for a case-control study, we can treat the numbers of cases (lung cancer patients) and control patients as fixed, and randomly sample from each population, determining the proportion that are in group B (e.g., heavy smokers). Under the null hypothesis, we could use 1159/1385 ≈ 0.837 as the common probability of success in the Comparing Two Population Proportions applet and generate a sampling distribution of odds ratios.</p>
+    <p>To simulate outcomes for a case-control study, we can treat the numbers of cases (lung cancer patients) and control patients as fixed, and randomly sample from each population, determining the proportion that are in group B (e.g., heavy smokers). Under the null hypothesis, we could use 1159/1385 ≈ 0.837 as the common probability of success in the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1">Comparing Two Population Proportions applet</url> and generate a sampling distribution of odds ratios.</p>
 
     <p>The null distribution of odds ratios has a mean around 1, and set up this way, the observed odds ratio of 9.385 produces a very small p-value. (This p-value is equivalent to the Fisher's Exact Test p-value.)</p>
+    
+    <image source="images/Inv3.9ORsim.png" width="70%"/>
 
     <p>To estimate a confidence interval, we could instead use the sample proportions (583/605 and 576/780) as the process probabilities, rather than assuming they are equal.</p>
 
     <p>The center of this distribution is now around 10, similar to the observed odds ratio, and the standard deviation is around 2.6. We also notice these distributions are slightly skewed to the right. We can again use a log-transformation to see whether that creates a more symmetric distribution as was the case for relative risk.</p>
+    
+    <image source="images/Inv3.9ORdist.png" width="70%"/>
 
     <p>Keep in mind that this distribution does not assume the null hypothesis is true, so we shouldn't use this distribution to find a p-value directly. But we are very interested in the variability of this distribution.</p>
 
@@ -197,10 +208,8 @@
       <p><var width="60" height="5"/></p>
     </statement>
     <solution>
-      <p>SE = <m>\sqrt{1/583 + 1/22 + 1/576 + 1/204}</m> = <m>\sqrt{0.00172 + 0.0455 + 0.00174 + 0.0049}</m> = <m>\sqrt{0.0539}</m> = 0.232</p>
-      <p>This is close to the simulation result of 0.24.</p>
-      <p>ln(9.39) = 2.24</p>
-      <p>95% CI for ln(odds ratio): 2.24 ± 1.96(0.232) = 2.24 ± 0.455 = (1.785, 2.695)</p>
+      <p>SE(ln odds ratio) = <m>\sqrt{1/22 + 1/583 + 1/204 + 1/576}</m> ≈ 0.232</p>
+      <p>95% confidence interval for log odds ratio: ln(9.385) ± 1.96(0.232) ≈ (1.784, 2.694)</p>
     </solution>
     <response/>
   </exercise>
@@ -212,8 +221,8 @@
       <p><var width="60" height="4"/></p>
     </statement>
     <solution>
-      <p>95% CI for odds ratio: (e<superscript>1.785</superscript>, e<superscript>2.695</superscript>) = (5.96, 14.81)</p>
-      <p>We are 95% confident that the odds of being a heavy smoker are 5.96 to 14.81 times higher for lung cancer patients than for controls. Equivalently, we are 95% confident that the odds of lung cancer are 5.96 to 14.81 times higher for heavy smokers than for light smokers.</p>
+      <p>95% confidence interval for odds ratio: (<m>e^{1.784}</m>, <m>e^{2.694}</m>) ≈ (5.96, 14.79)</p>
+      <p>We are 95% confident that the heavy smokers' odds of being a lung cancer patient rather than a control patient are 5.96 to 14.79 times higher than the odds for a light smoker being a lung cancer patient rather than a control patient. (This is the alternative interpretation of the value of tau defined in g.)</p>
     </solution>
     <response/>
   </exercise>
@@ -225,7 +234,7 @@
       <p><var width="60" height="4"/></p>
     </statement>
     <solution>
-      <p>No, the interval does not contain 1. This means that an odds ratio of 1 (indicating no association between smoking and lung cancer) is not a plausible value. This provides statistically significant evidence that the odds of lung cancer are higher for heavy smokers than for light smokers.</p>
+      <p>This interval does not contain one, matching our small p-value. Both the test and confidence interval say it is not plausible that the odds of lung cancer are the same for both heavy and light smokers.</p>
     </solution>
     <response/>
   </exercise>
@@ -249,7 +258,7 @@
       <p><var width="60" height="6"/></p>
     </statement>
     <solution>
-      <p>The p-value from Fisher's Exact Test is very small (p ≪ 0.001), providing very strong evidence that the odds of lung cancer differ between heavy smokers and light smokers. The 95% confidence interval (5.96, 14.81) indicates that the odds of lung cancer are between 6 and 15 times higher for heavy smokers. However, because this was an observational case-control study, we cannot conclude that smoking causes lung cancer—there could be confounding variables. We can only generalize to hospitalized males similar to those in the study. The study does show a strong association between smoking and lung cancer.</p>
+      <p>This study gives us strong evidence that the odds of being a lung cancer patient are quite a bit larger for those who are regular to heavy smokers compared to the lighter or non-smokers. We can't attribute this increase to the smoking habit alone because this was an observational (case-control) study rather than a randomized experiment, though they did match age and economic factors between the two groups. But there could be other differences like in diet and exercise that account for the higher rate of lung cancer among the heavy smokers. We also should be a little cautious in generalizing these results, perhaps only to hospitalized males like those selected by these researchers (age, social-economic status).</p>
     </solution>
     <response/>
   </exercise>
