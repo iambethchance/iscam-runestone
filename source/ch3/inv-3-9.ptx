@@ -3,9 +3,9 @@
   <title>Investigation 3.9: Smoking and Lung Cancer</title>
 
   <introduction>
-    <image source="images/Inv3.9Intro.png" width="65%"/>
+    <image source="images/Inv3.9Intro.png" width="70%"/>
     
-    <p>After World War II, evidence began mounting that there was a link between cigarette smoking and pulmonary carcinoma (lung cancer). In the 1950s, three now classic articles were published on the topic. One of these studies was conducted in the United States by Wynder and Graham ("Tobacco Smoking as a Possible Etiologic Factor in Bronchiogenic Cancer," 1950, Journal of the American Medical Association). They found records from a large number of patients with a specific type of lung cancer in hospitals in California, Colorado, Missouri, New Jersey, New York, Ohio, Pennsylvania, and Utah. Of those in the study, the researchers focused on 605 male patients with this form of lung cancer. Another 780 male hospital patients with similar age and economic distributions without this type of lung cancer were interviewed in St. Louis MO, Boston MA, Cleveland OH, and Hines IL. Subjects (or family members) were interviewed to assess their smoking habits, occupation, education, etc. The table below classifies them as a non-smoker or light smoker or as an at least a moderate smoker.</p>
+    <p>After World War II, evidence began mounting that there was a link between cigarette smoking and pulmonary carcinoma (lung cancer). In the 1950s, three now classic articles were published on the topic. One of these studies was conducted in the United States by Wynder and Graham ("Tobacco Smoking as a Possible Etiologic Factor in Bronchiogenic Cancer," 1950, <em>Journal of the American Medical Association</em>). They found records from a large number of patients with a specific type of lung cancer in hospitals in California, Colorado, Missouri, New Jersey, New York, Ohio, Pennsylvania, and Utah. Of those in the study, the researchers focused on 605 male patients with this form of lung cancer. Another 780 male hospital patients with similar age and economic distributions without this type of lung cancer were interviewed in St. Louis MO, Boston MA, Cleveland OH, and Hines IL. Subjects (or family members) were interviewed to assess their smoking habits, occupation, education, etc. The table below classifies them as a non-smoker or light smoker or as an at least a moderate smoker.</p>
 
     <table>
       <title>Wynder and Graham Study</title>
@@ -18,7 +18,7 @@
           <cell>Total</cell>
         </row>
         <row>
-          <cell>Lung cancer patients</cell>
+          <cell>Lung cancer</cell>
           <cell>22</cell>
           <cell>583</cell>
           <cell>605</cell>
@@ -43,14 +43,15 @@
     <title>Baseline Rate</title>
     <statement>
       <p>What is the estimate of the baseline rate of lung cancer from this table? Does that seem to be a reasonable estimate to you? How is this related to the design of the study?</p>
-      <p><var width="60" height="4"/></p>
+      <p><response/></p>
     </statement>
     <solution>
       <p>Baseline risk ≈ 605/1385 = 0.437. It does not seem reasonable to believe that almost half of the population at that time was a lung cancer patient. This large proportion happens because the researchers controlled how many lung cancer and non-lung cancer patients would be in the study (and probably consciously trying to make them similar) rather than randomly selecting patients in general and seeing how many had lung cancer (recording the variable "naturally").</p>
     </solution>
-    <response/>
   </exercise>
-
+  <paragraphs>
+    <p>In the previous investigation, we found 3.4% of children in the sample had a peanut allergy. This seems like a reasonable estimate for the <em>overall base rate</em> because whether a child developed an allergy was observed "naturally," the frequency of those outcomes was in no way influenced by the researchers. However, in this study, the researchers had some control over the breakdown of lung cancer patients and control patients.</p>
+  </paragraphs>
   <assemblage>
     <title>Definition: Types of Observational Studies</title>
     <p>There are three main types of observational studies:</p>
@@ -60,12 +61,6 @@
       <li><term>Case-control study</term><idx><h>case-control study</h></idx>: The researchers identify observational units in each response variable category (the "cases" and the "controls") and then determine the explanatory variable outcome for each observational unit. How the controls are selected is very important in determining the comparability of the groups. These are often retrospective designs in that the researchers may need to "look back" at historical data on the observational units.</li>
     </ul></p>
   </assemblage>
-
-  <paragraphs>
-    <p>In the previous investigation, we found 3.4% of children in the sample had a peanut allergy. This seems like a reasonable estimate for the overall base rate because whether a child developed an allergy was observed "naturally," the frequency of those outcomes was in no way influenced by the researchers. However, in this study, the researchers had some control over the breakdown of lung cancer patients and control patients.</p>
-
-    <p>An advantage of case-control studies is when you are studying a "rare event," you can ensure a large enough number of "successes" and fairly balanced group sizes. However, a disadvantage is that it does not make sense to calculate "risk" or likelihood of success from a case-control study, because the distribution of the response variable has been manipulated/determined by the researcher.</p>
-  </paragraphs>
 
   <exercise xml:id="inv3-9-b">
     <title>Study Classification</title>
@@ -81,6 +76,10 @@
       <p>This is a case-control study: the researchers found cases of lung cancer and then other similar patients without lung cancer (controls). Having lung cancer or not is the response variable.</p>
     </solution>
   </exercise>
+  <paragraphs>
+    <p>An advantage of case-control studies is when you are studying a "rare event," you can ensure a large enough number of "successes" and fairly balanced group sizes. However, a disadvantage is that it does not make sense to calculate "risk" or likelihood of success from a case-control study, because the distribution of the response variable has been manipulated/determined by the researcher.</p>
+  </paragraphs>
+
 
   <exercise xml:id="inv3-9-c">
     <title>Alternative Relative Risk</title>
@@ -109,20 +108,25 @@
   </exercise>
 
   <paragraphs>
-    <p>Switching the roles of the explanatory and response often gives very different results for relative risk (changing our measure of the strength of the relationship) and often really isn't the comparison of interest stated by the research question. Consequently, conditional proportions of success and relative risk are not appropriate statistics to use with case-control studies. Instead, we will consider another way to compare the uncertainty of an outcome between two groups.</p>
+    <p>Switching the roles of the explanatory and response often gives very different results for relative risk (changing our measure of the strength of the relationship) and often really isn't the comparison of interest stated by the research question. 
+    Consequently, <strong>conditional proportions of success and relative risk are not appropriate statistics to use with case-control studies</strong>. Instead, we will consider another way to compare the uncertainty of an outcome between two groups.</p>
   </paragraphs>
 
   <assemblage>
     <title>Definition: Odds of Success</title>
     <p>The <term>odds of success</term><idx><h>odds of success</h></idx> are defined as the ratio of the proportion of "successes" to the proportion of "failures," which simplifies to the ratio of the number of successes to number of failures.</p>
-    <p><m>Odds = (proportion of successes) / (proportion of failures) = (number of successes) / (number of failures)</m></p>
-    <p>For example, if the odds are 2-to-1 in favor of an outcome, we expect a success twice as often as a failure in the long run, so this corresponds to a probability of 2/3 of the outcome occurring. Similarly, if the probability of success is 1/10, then the odds equals (1/10)/(9/10) = 1/9, and a failure is 9 times more likely than a success. It's important to note how the "outcome" is defined. For example, in horse racing, odds are typically presented in terms of "losing the race," so if a horse is given 2-to-1 odds against winning a race, we expect the horse to lose two-thirds of the races in the long run.</p>
+    <p><m>Odds = (proportion\ of\ successes) / (proportion\ of\ failures) </m>
+    <m>= (number\ of\ successes) / (number\ of\ failures)</m></p>
   </assemblage>
+<paragraphs>
+   <p>For example, if the odds are 2-to-1 in favor of an outcome, we expect a success twice as often as a failure in the long run, so this corresponds to a probability of 2/3 of the outcome occurring. Similarly, if the probability of success is 1/10, then the odds equals (1/10)/(9/10) = 1/9, and a failure is 9 times more likely than a success. It's important to note how the "outcome" is defined. For example, in horse racing, odds are typically presented in terms of "losing the race," so if a horse is given 2-to-1 odds against winning a race, we expect the horse to lose two-thirds of the races in the long run.</p>
+ 
+</paragraphs>
 
   <assemblage>
     <title>Definition: Odds Ratio</title>
     <p>The <term>odds ratio</term><idx><h>odds ratio</h></idx> is another way to compare conditional proportions in a 2 × 2 table.</p>
-    <p><m>Odds ratio = (number of successes in group 1 / number of failures in group 1) / (number of successes in group 2 / number of failures in group 2)</m></p>
+    <p><m>Odds ratio = (number\ of\ successes\ in\ group 1 \over number\ of\ failures\ in\ group 1) / (number\ of\ successes\ in\ group 2 \over number\ of\ failures\ in\ group 2)</m></p>
     <p>Like relative risk, if the odds ratio is 3, this is interpreted as "the odds of success in the 'top' group are 3 times (or 200%) higher than the odds of success in the 'bottom' group." However, the relative risk and the odds ratio are not always similar in value.</p>
   </assemblage>
 
@@ -160,7 +164,7 @@
 
   <paragraphs>
     <title>Statistical Inference</title>
-    <p>So we could use either Odds Ratio as the statistic, we should just be consistent. Also notice that the odds of not having lung cancer are 1/9.39 = 0.106 times smaller for the light smokers than the heavy smokers.</p>
+    <p>So we could use either Odds Ratio as the statistic, we should just be consistent. Also notice that the odds of <em>not</em> having lung cancer are 1/9.39 = 0.106 times smaller for the light smokers than the heavy smokers.</p>
 
     <p>Let <m>\tau</m> ("tau") represent the population odds ratio of being a heavy smoker comparing the population of lung cancer patients to the population of control patients, keeping in mind that this is equivalent to the population odds ratio of interest, but matches the study design, e.g.,</p>
     <p><m>\tau = \frac{\pi_1/(1-\pi_1)}{\pi_2/(1-\pi_2)}</m></p>
@@ -175,7 +179,7 @@
         <row>
           <cell>Null hypothesis</cell>
           <cell>In symbols:</cell>
-          <cell><m>\tau = 1</m> or <m>\ln(\tau) = 0</m></cell>
+          <cell><var width="60" height="2"/></cell>
         </row>
         <row>
           <cell></cell>
@@ -185,7 +189,7 @@
         <row>
           <cell>Alternative hypothesis</cell>
           <cell>In symbols:</cell>
-          <cell><m>\tau > 1</m> or <m>\ln(\tau) > 0</m></cell>
+          <cell><var width="60" height="2"/></cell>
         </row>
         <row>
           <cell></cell>
@@ -195,8 +199,8 @@
       </tabular>
     </statement>
     <solution>
-      <p>H<subscript>0</subscript>: The population odds ratio is one, there is no association between smoking level and lung cancer status (<m>\tau = 1</m> or <m>\ln(\tau) = 0</m>).</p>
-      <p>H<subscript>a</subscript>: The population odds ratio of being a heavy smoker are higher for lung cancer patients; equivalently, the population odds of lung cancer are higher for heavy smokers (<m>\tau > 1</m> or <m>\ln(\tau) > 0</m>).</p>
+      <p>H<subscript>0</subscript>: <m>\tau = 1</m> (the population odds ratio is one, there is no association between smoking level and lung cancer status)</p>
+      <p>H<subscript>a</subscript>: <m>\tau > 1</m> (the population odds ratio of being a heavy smoker are higher for lung cancer patients; aka, the population odds of lung cancer are higher for heavy smokers)</p>
     </solution>
     <response/>
   </exercise>
@@ -204,19 +208,24 @@
   <paragraphs>
     <p>To simulate outcomes for a case-control study, we can treat the numbers of cases (lung cancer patients) and control patients as fixed, and randomly sample from each population, determining the proportion that are in group B (e.g., heavy smokers). Under the null hypothesis, we could use 1159/1385 ≈ 0.837 as the common probability of success in the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1">Comparing Two Population Proportions applet</url> and generate a sampling distribution of odds ratios.</p>
 
-    <p>The null distribution of odds ratios has a mean around 1, and set up this way, the observed odds ratio of 9.385 produces a very small p-value. (This p-value is equivalent to the Fisher's Exact Test p-value.)</p>
-    
     <image source="images/Inv3.9ORsim.png" width="70%"/>
 
+    <p>The null distribution of odds ratios has a mean around 1, and set up this way, the observed odds ratio of 9.385 produces a very small p-value. (This p-value is equivalent to the Fisher's Exact Test p-value.)</p>
+    
     <p>To estimate a confidence interval, we could instead use the sample proportions (583/605 and 576/780) as the process probabilities, rather than assuming they are equal.</p>
 
     <p>The center of this distribution is now around 10, similar to the observed odds ratio, and the standard deviation is around 2.6. We also notice these distributions are slightly skewed to the right. We can again use a log-transformation to see whether that creates a more symmetric distribution as was the case for relative risk.</p>
-    
-    <image source="images/Inv3.9ORdist.png" width="70%"/>
 
-    <p>Keep in mind that this distribution does not assume the null hypothesis is true, so we shouldn't use this distribution to find a p-value directly. But we are very interested in the variability of this distribution.</p>
+    <p>Doing so for the second case yields the following distribution:</p>
+    
+    <stack>
+      <image source="images/Inv3.9ORdist.png" width="70%"/>
+      <p>Keep in mind that this distribution does not assume the null hypothesis is true, so we shouldn't use this distribution to find a p-value directly. But we are very interested in the variability of this distribution.</p>
+    </stack>
 
     <p>The standard deviation of this distribution is now around 0.24. Note that this is not the same as ln(2.6).</p>
+  
+  <p>Statisticians have also derived a theoretical formula to estimate this standard deviation.</p>
   </paragraphs>
 
   <assemblage>
@@ -245,7 +254,7 @@
   <exercise xml:id="inv3-9-i">
     <title>Back-Transform Interval</title>
     <statement>
-      <p>Back-transform the end-points of the interval in <xref ref="inv3-9-h" text="custom">checkpoint 8</xref> and interpret your results.</p>
+      <p>Back-transform the end-points of the interval in <xref ref="inv3-9-h" text="custom">checkpoint 9</xref> and interpret your results.</p>
       <p><var width="60" height="4"/></p>
     </statement>
     <solution>
@@ -256,7 +265,7 @@
   </exercise>
 
   <exercise xml:id="inv3-9-j">
-    <title>Interval Contains One</title>
+    <title>Interval Contains One?</title>
     <statement>
       <p>Does the interval found in <xref ref="inv3-9-i" text="custom">checkpoint 9</xref> contain the value one? Discuss the implications of whether or not the interval contains the value one.</p>
       <p><response/></p>
@@ -344,7 +353,7 @@
     <exercise xml:id="practice-3-9-a-3">
       <title>Sampling Distribution Analysis</title>
       <statement>
-        <p>Use the Comparing Two Population Proportions applet to</p>
+        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1">Comparing Two Population Proportions applet</url> to</p>
         <p><ul>
           <li>Create a sampling distribution for the odds ratio [Hint: Which variable was "controlled" by the researcher? What is your estimated common probability of success?]</li>
           <li>Find the empirical p-value (be sure it's clear how you do so)</li>
@@ -360,7 +369,7 @@
     <exercise xml:id="practice-3-9-a-4">
       <title>Randomization Distribution Analysis</title>
       <statement>
-        <p>Use the Analyzing Two-way Tables applet to</p>
+        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?twobytwo=1">Analyzing Two-way Tables applet</url> to</p>
         <p><ul>
           <li>Create a randomization distribution for the odds ratio and find the empirical p-value.</li>
           <li>Create a randomization distribution for the log-odds ratio and find the empirical p-value.</li>
@@ -441,7 +450,7 @@
     <exercise xml:id="practice-3-9-b-4">
       <title>Compare Different Probabilities</title>
       <statement>
-        <p>Suppose Group 3 has a 0.1 probability of success, and Group 4 has a 0.05 probability of success. Repeat questions in the previous two checkpoints.</p>
+        <p>Suppose Group 3 has a 0.1 probability of success, and Group 4 has a 0.05 probability of success. Repeat the RR and OR calculations.</p>
         <p><var width="60" height="4"/></p>
       </statement>
       <response/>
