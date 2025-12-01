@@ -202,10 +202,11 @@
   <p><term>Note:</term> If the number of successes in either group equals zero, the applet adds 0.5 to each cell of the table before calculating the relative risk in order to avoid dividing by zero.</p>
   </exercise>
 
+<p>In fact, this distribution is usually well modeled by a <em>log normal distribution</em>.</p>
   <exercise xml:id="inv3-8-j">
     <title>Log Transformation</title>
     <statement>
-      <p>In fact, this distribution is usually well modeled by a <em>log normal distribution</em>. To verify this, check the ln relative risk box (in the lower left corner, or choose from pull-down menu) to take the natural log of each relative risk value and display a new histogram of these transformed values. Describe the shape of this distribution. Is the distribution of the <em>lnrelrisk</em> well modeled by a normal distribution?</p>
+      <p> To verify this, check the ln relative risk box (in the lower left corner, or choose from pull-down menu) to take the natural log of each relative risk value and display a new histogram of these transformed values. Describe the shape of this distribution. Is the distribution of the <em>lnrelrisk</em> well modeled by a normal distribution?</p>
       <p><var width="60" height="3"/></p>
     </statement>
     <solution>
@@ -283,14 +284,15 @@
       <p><var width="60" height="3"/></p>
     </statement>
     <solution>
-      <me>SE = \sqrt{\left(\frac{1}{11} - \frac{1}{183}\right) + \left(\frac{1}{2} - \frac{1}{195}\right)} = \sqrt{0.0854 + 0.4949} = \sqrt{0.5803} = 0.762</me>
+      <me>SE = \sqrt{\left(\frac{1}{11} - \frac{1}{183}\right) + \left(\frac{1}{2} - \frac{1}{195}\right)} </me>
+      <me>= \sqrt{0.0854 + 0.4949} = \sqrt{0.5803} = 0.762</me>
       <p>This should be reasonably close to (but somewhat different from) the simulation SD, as we're not assuming the null hypothesis is true.</p>
     </solution>
     <response/>
   </exercise>
 
   <paragraphs>
-    <p>Note: The variability in the statistic under the null hypothesis (as estimated by the simulation) should be in the ballpark but not all that close to the variability in the statistic estimated from the data. If we used a pooled p̂, modelling the null hypothesis to be true, the results are usually a bit more similar: Assuming null hypothesis is true: √(1/6.34 - 1/183 + 1/6.76 - 1/195) ≈ 0.543. In a case like this where we have strong evidence against the null hypothesis, using the observed counts is more appropriate.</p>
+    <p><term>Note:</term> The variability in the statistic under the null hypothesis (as estimated by the simulation) should be in the ballpark but not all that close to the variability in the statistic estimated from the data. If we used a pooled <m>\hat{p}</m>, modelling the null hypothesis to be true, the results are usually a bit more similar: Assuming null hypothesis is true: <m>\sqrt{1/6.34 - 1/183 + 1/6.76 - 1/195} \approx 0.543</m>. In a case like this where we have strong evidence against the null hypothesis, using the observed counts is more appropriate.</p>
   </paragraphs>
 
   <exercise xml:id="inv3-8-p">
@@ -323,7 +325,7 @@
   <exercise xml:id="inv3-8-r">
     <title>Parameter Estimated</title>
     <statement>
-      <p>What parameter does the confidence interval in <xref ref="inv3-8-q" text="custom">checkpoint 16</xref> estimate?</p>
+      <p>What parameter does the confidence interval in <xref ref="inv3-8-q" text="custom">checkpoint 18</xref> estimate?</p>
       <p><var width="40"/></p>
     </statement>
     <solution>
@@ -384,7 +386,7 @@
   <exercise xml:id="inv3-8-w">
     <title>Coverage Probability</title>
     <statement>
-      <p>Suppose you used this method to construct a confidence interval for each of the 1,000 simulated random samples that you generated in <xref ref="inv3-8-f" text="custom">checkpoint 6</xref>. Because our simulation assumes the null hypothesis to be true, do you expect the value 1 to be in these intervals? All of them? Most of them? What percentage of them? Explain.</p>
+      <p>Suppose you used this method to construct a confidence interval for each of the 1,000 simulated random samples that you generated in <xref ref="inv3-8-f" text="custom">checkpoint 7</xref>. Because our simulation assumes the null hypothesis to be true, do you expect the value 1 to be in these intervals? All of them? Most of them? What percentage of them? Explain.</p>
       <p><var width="60" height="3"/></p>
     </statement>
     <solution>
