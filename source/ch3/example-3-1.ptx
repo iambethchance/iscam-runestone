@@ -5,17 +5,20 @@
   <introduction>
     <p><alert>Try these questions yourself before you use the solutions following to check your answers.</alert></p>
 
-    <p>Researchers have conjectured that the use of the words "forbid" and "allow" can affect people's responses to survey questions. Students in an introductory statistics class were randomly assigned to answer one of the following questions:</p>
-    <p><ul>
-      <li>Should your college allow speeches on campus that might incite violence?</li>
-      <li>Should your college forbid speeches on campus that might incite violence?</li>
-    </ul></p>
+    <sidebyside widths="65% 30%">
+      <stack>
+        <p>Researchers have conjectured that the use of the words "forbid" and "allow" can affect people's responses to survey questions. Students in an introductory statistics class were randomly assigned to answer one of the following questions:</p>
+        <p><ul>
+          <li>Should your college allow speeches on campus that might incite violence?</li>
+          <li>Should your college forbid speeches on campus that might incite violence?</li>
+        </ul></p>
+      </stack>
+      <image source="images/example3.1intro.png">
+        <description>Introduction image for Example 3.1</description>
+      </image>
+    </sidebyside>
 
     <p>Of the 11 students who received the first question, 8 responded yes. Of the 14 students who received the second question, 12 said no.</p>
-
-    <image source="images/example3.1intro.png" width="60%">
-      <description>Introduction image for Example 3.1</description>
-    </image>
   </introduction>
 
   <p><ol label="(a)">
@@ -79,9 +82,9 @@
       </image></li>
 
       <li><p>The null hypothesis will be that there is no effect due to wording of the question. So if <m>\pi_{allow}</m> is the probability someone says "yes" to the allow question and if <m>\pi_{forbid}</m> is the probability someone says no to the forbid question:</p>
-      <p>H<subscript>0</subscript>: <m>\pi_{allow}</m> - <m>\pi_{forbid}</m> = 0</p>
+      <p><m>H_0: \pi_{allow}</m> - <m>\pi_{forbid}</m> = 0</p>
       <p>and based on the prior research:</p>
-      <p>H<subscript>a</subscript>: <m>\pi_{allow}</m> - <m>\pi_{forbid}</m> &lt; 0</p>
+      <p><m>H_a: \pi_{allow}</m> - <m>\pi_{forbid}</m> &lt; 0</p>
 
       <p>Fisher's Exact Test indicates how often we expect to see as few as 8 or fewer successes in the allow group (equivalently, at least as many as 12 successes in the forbid group). So if we define X to be the number in the allow group in favor of the speeches, X follows a hypergeometric distribution with N = 25, M = 20, and n = 11. The p-value will be P(X ≤ 8).</p>
 
@@ -110,7 +113,7 @@
       <p><term>JMP Output:</term> <m>\text{ }</m>
         <answer>
           <p>
-            <image source="images/example3.1solsJMP.png" width="70%">
+            <image source="images/example3.1solsJMP.png" width="50%">
               <description>JMP output for Fisher's Exact Test</description>
             </image>
           </p>
