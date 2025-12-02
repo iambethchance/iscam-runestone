@@ -2,26 +2,26 @@
 <section xml:id="inv-3-9-summary">
   <title>Summary of Inference for Odds Ratio</title>
 
+  <p>For tables of the form:</p>
+  <table>
+    <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+      <row>
+        <cell><m>A</m></cell>
+        <cell><m>B</m></cell>
+      </row>
+      <row>
+        <cell><m>C</m></cell>
+        <cell><m>D</m></cell>
+      </row>
+      <row bottom="none">
+        <cell><m>A + C</m></cell>
+        <cell><m>B + D</m></cell>
+      </row>
+    </tabular>
+  </table>
+
   <assemblage>
     <title>Odds Ratio Procedures</title>
-
-    <p>For tables of the form:</p>
-    <table>
-      <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
-        <row>
-          <cell><m>A</m></cell>
-          <cell><m>B</m></cell>
-        </row>
-        <row>
-          <cell><m>C</m></cell>
-          <cell><m>D</m></cell>
-        </row>
-        <row bottom="none">
-          <cell><m>A + C</m></cell>
-          <cell><m>B + D</m></cell>
-        </row>
-      </tabular>
-    </table>
 
     <p><term>Statistic:</term> Odds ratio (typically set up to be larger than one) = <m>\frac{A \times D}{B \times C}</m> or equivalently <m>\frac{\text{odds}_1}{\text{odds}_2} = \frac{\frac{\hat{p}_1}{1-\hat{p}_1}}{\frac{\hat{p}_2}{1-\hat{p}_2}}</m></p>
 
@@ -34,6 +34,7 @@
 
     <p><term>Technology:</term></p>
     <p><ul>
+      <li><p><term>In Two-way Tables applet:</term> Choose Odds Ratio as statistic and check box for 95% CI</p></li>
       <li>
         <p><term>In R:</term> You can install the fmsb package and use the oddsratio command.</p>
         <p><c>fmsb::oddsratio(A, B, C, D, conf.level, p.calc.by.independence = TRUE)</c></p>
@@ -64,7 +65,7 @@
 
   <p>The graphs below show how (a) the probability of success and odds of success are related and (b) how relative risk and odds ratios are similar when the difference in proportions is small. Also note that when the difference in proportions is zero, the relative risk and the odds ratio are both one.</p>
 
-  <sidebyside widths="48% 48%" margins="2%">
+  <sidebyside widths="50% 42%" margins="4%">
     <image source="images/ORvRR1.png"/>
     <image source="images/ORvRR2.png"/>
   </sidebyside>
