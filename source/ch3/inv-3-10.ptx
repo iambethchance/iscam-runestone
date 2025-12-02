@@ -95,7 +95,7 @@
     <title>Calculate Appropriate Statistic</title>
     <statement>
       <p>Which statistic (odds ratio or relative risk) is most appropriate to calculate from this table, considering how the data were collected? Calculate and interpret this statistic. Does the value of this statistic support the researchers' conjecture? Explain.</p>
-      <p><var width="60" height="6"/></p>
+      <p><response/></p>
     </statement>
     <solution>
       <p>Because this is a case-control study, the odds ratio is the most appropriate statistic. The researchers controlled the number of crash and no-crash drivers, so we cannot meaningfully calculate the risk of having a crash.</p>
@@ -113,8 +113,8 @@
   <exercise xml:id="inv3-10-d">
     <title>Simulation Design</title>
     <statement>
-      <p>Outline the steps of a simulation that models the randomness in this study and helps you assess how unusual the statistic is that you calculated in <xref ref="inv3-10-c" text="custom">(c)</xref> when the null hypothesis is true. Include a statement of the null and alternative hypotheses for your choice of parameter.</p>
-      <p><var width="60" height="8"/></p>
+      <p>Outline the steps of a simulation that models the randomness in this study and helps you assess how unusual the statistic is that you calculated in <xref ref="inv3-10-c" text="custom">checkpoint 5</xref> when the null hypothesis is true. Include a statement of the null and alternative hypotheses for your choice of parameter.</p>
+      <p><response/></p>
     </statement>
     <solution>
       <p>We could replicate the sampling design by sampling independently from two binomial processes with the same probability of success (this will model H₀: τ = 1). One process will represent the sampling of the crash victims (n = 535) and the other will represent the sampling of the no-crash population (n = 588).</p>
@@ -134,11 +134,18 @@
     <response/>
   </exercise>
 
+  <aside>
+    <p>You can use the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?twobytwo=1">Analyzing Two-way Tables applet</url> to carry out your simulation.</p>
+  </aside>
+
   <exercise xml:id="inv3-10-e">
     <title>Carry Out Simulation</title>
+    <hint>
+      <p>Be careful of rounding issues in finding your p-value, make sure you are including observations as extreme as the observed in your count.</p>
+    </hint>
     <statement>
-      <p>Use technology to carry out your simulation and draw your conclusions. [Hint: Be careful of rounding issues in finding your p-value, make sure you are including observations as extreme as the observed in your count.]</p>
-      <p><var width="60" height="5"/></p>
+      <p>Use technology to carry out your simulation and draw your conclusions.</p>
+      <p><response/></p>
     </statement>
     <solution>
       <p>The distribution should appear skewed to the right with mean close to 1 and standard deviation around 0.21.</p>
@@ -154,7 +161,7 @@
     <title>Confidence Interval</title>
     <statement>
       <p>Calculate and interpret a 95% confidence interval for your choice of parameter.</p>
-      <p><var width="60" height="5"/></p>
+      <p><response/></p>
     </statement>
     <solution>
       <p>Theoretical standard error for the log odds ratio:</p>
@@ -172,7 +179,7 @@
     <title>Overall Conclusions</title>
     <statement>
       <p>Summarize (with justification) the conclusions you would draw from this study (using both the p-value and a confidence interval, and addressing both the population you are willing to generalize to and whether or not you are drawing a cause-and-effect conclusion).</p>
-      <p><var width="60" height="8"/></p>
+      <p><response/></p>
     </statement>
     <solution>
       <p>We have strong evidence (p-value = 0.0158) that sleep-deprived drivers have higher odds (6% to 139% higher) of being in a car crash, at least for drivers like these New Zealand drivers.</p>
@@ -191,52 +198,66 @@
   <subsection xml:id="practice3-10">
     <title>Practice Problem 3.10</title>
 
-    <exercise xml:id="practice-3-10-a">
+    <p>Another landmark study on smoking began in 1952 (Hammond and Horn, 1958, "Smoking and death rates—Report on forty-four months of follow-up of 187,783 men: II. Death rates by cause," JAMA). They used 22,000 American Cancer Society volunteers as interviewers. Each interviewer was to ask 10 healthy white men between the ages of 50 and 69 to complete a questionnaire on smoking habits. Each year during the 44-month follow-up, the interviewer reported whether or not the man had died, and if so, how. They ended up tracking 187,783 men in nine states (CA, IL, IA, MI, MN, NJ, NY, PA, WI). Almost 188,000 were followed up by the volunteers through October 1955, during which time about 11,870 of the men had died, 488 from lung cancer. The following table classifies the men as having a history of regular cigarette smoking or not and whether or not they died from lung cancer. In this study, nonsmokers are grouped with occasional smokers, including pipe- and cigar-only smokers.</p>
+
+    <table>
       <title>Hammond and Horn Study</title>
+      <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <row header="yes">
+          <cell></cell>
+          <cell>Not regular smoker</cell>
+          <cell>Regular smoker</cell>
+          <cell>Total</cell>
+        </row>
+        <row>
+          <cell>Lung cancer death</cell>
+          <cell>51</cell>
+          <cell>397</cell>
+          <cell>448</cell>
+        </row>
+        <row>
+          <cell>Alive or other cause of death</cell>
+          <cell>108,778</cell>
+          <cell>78,557</cell>
+          <cell>187,335</cell>
+        </row>
+        <row>
+          <cell>Total</cell>
+          <cell>108,829</cell>
+          <cell>78,954</cell>
+          <cell>187,783</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <exercise xml:id="practice-3-10-a">
       <statement>
-        <p>Another landmark study on smoking began in 1952 (Hammond and Horn, 1958, "Smoking and death rates—Report on forty-four months of follow-up of 187,783 men: II. Death rates by cause," JAMA). They used 22,000 American Cancer Society volunteers as interviewers. Each interviewer was to ask 10 healthy white men between the ages of 50 and 69 to complete a questionnaire on smoking habits. Each year during the 44-month follow-up, the interviewer reported whether or not the man had died, and if so, how. They ended up tracking 187,783 men in nine states (CA, IL, IA, MI, MN, NJ, NY, PA, WI). Almost 188,000 were followed up by the volunteers through October 1955, during which time about 11,870 of the men had died, 488 from lung cancer. The following table classifies the men as having a history of regular cigarette smoking or not and whether or not they died from lung cancer. In this study, nonsmokers are grouped with occasional smokers, including pipe- and cigar-only smokers.</p>
+        <p>Is this a case-control, cohort, or cross-classified study?</p>
+        <p><response/></p>
+      </statement>
+      <response/>
+    </exercise>
 
-        <table>
-          <title>Hammond and Horn Study</title>
-          <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
-            <row header="yes">
-              <cell></cell>
-              <cell>Not regular smoker</cell>
-              <cell>Regular smoker</cell>
-              <cell>Total</cell>
-            </row>
-            <row>
-              <cell>Lung cancer death</cell>
-              <cell>51</cell>
-              <cell>397</cell>
-              <cell>448</cell>
-            </row>
-            <row>
-              <cell>Alive or other cause of death</cell>
-              <cell>108,778</cell>
-              <cell>78,557</cell>
-              <cell>187,335</cell>
-            </row>
-            <row>
-              <cell>Total</cell>
-              <cell>108,829</cell>
-              <cell>78,954</cell>
-              <cell>187,783</cell>
-            </row>
-          </tabular>
-        </table>
+    <exercise xml:id="practice-3-10-b">
+      <statement>
+        <p>Calculate and interpret an odds ratio from the two-way table.</p>
+        <p><response/></p>
+      </statement>
+      <response/>
+    </exercise>
 
-        <p>(a) Is this a case-control, cohort, or cross-classified study?</p>
-        <p><var width="60" height="2"/></p>
+    <exercise xml:id="practice-3-10-c">
+      <statement>
+        <p>Produce and interpret a 95% confidence interval for the population odds ratio.</p>
+        <p><response/></p>
+      </statement>
+      <response/>
+    </exercise>
 
-        <p>(b) Calculate and interpret an odds ratio from the two-way table.</p>
-        <p><var width="60" height="3"/></p>
-
-        <p>(c) Produce and interpret a 95% confidence interval for the population odds ratio.</p>
-        <p><var width="60" height="4"/></p>
-
-        <p>(d) Are these results consistent with the Wynder and Graham study? Explain.</p>
-        <p><var width="60" height="4"/></p>
+    <exercise xml:id="practice-3-10-d">
+      <statement>
+        <p>Are these results consistent with the Wynder and Graham study? Explain.</p>
+        <p><response/></p>
       </statement>
       <response/>
     </exercise>
