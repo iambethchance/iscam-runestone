@@ -3,12 +3,13 @@
   <title>Investigation 3.10: Sleepy Drivers</title>
 
   <introduction>
-    <p>Connor et al. (<url href="https://pubmed.ncbi.nlm.nih.gov/12003884/" visual="pubmed.ncbi.nlm.nih.gov">British Medical Journal, May 2002</url>) reported on a study that investigated whether sleeplessness is related to car crashes. The researchers identified all drivers or passengers of eligible light vehicles who were admitted to a hospital or died as a result of a car crash on public roads in the Auckland, New Zealand region between April 1998 and July 1999. Through cluster sampling, they identified a sample of 571 drivers who had been involved in a crash resulting in injury and a sample of 588 drivers who had not been involved in such a crash as representative of people driving on the region's roads during the study period. The researchers asked the individuals (or proxy interviewees) whether they had a full night's sleep (at least seven hours mostly between 11pm and 7am) any night during the previous week. The researchers found that 61 of the 535 crash drivers who responded and 44 of the 588 "no crash" drivers had not gotten at least one full night's sleep in the previous week.</p>
-    <figure>
-      <image source="images/Inv3.10intro.png" width="60%">
+    <sidebyside widths="60% 35%">
+      <p>Connor et al. (<url href="https://pubmed.ncbi.nlm.nih.gov/12003884/" visual="pubmed.ncbi.nlm.nih.gov"><em>British Medical Journal</em>, May 2002</url>) reported on a study that investigated whether sleeplessness is related to car crashes. The researchers identified all drivers or passengers of eligible light vehicles who were admitted to a hospital or died as a result of a car crash on public roads in the Auckland, New Zealand region between April 1998 and July 1999.</p>
+      <image source="images/Inv3.10intro.png">
         <description>Introduction image for Investigation 3.10</description>
       </image>
-    </figure>
+    </sidebyside>
+    <p>Through cluster sampling, they identified a sample of 571 drivers who had been involved in a crash resulting in injury and a sample of 588 drivers who had not been involved in such a crash as representative of people driving on the region's roads during the study period. The researchers asked the individuals (or proxy interviewees) whether they had a full night's sleep (at least seven hours mostly between 11pm and 7am) any night during the previous week. The researchers found that 61 of the 535 crash drivers who responded and 44 of the 588 "no crash" drivers had not gotten at least one full night's sleep in the previous week.</p>
   </introduction>
 
   <exercise xml:id="inv3-10-a">
@@ -118,7 +119,7 @@
   <exercise xml:id="inv3-10-d">
     <title>Simulation Design</title>
     <statement>
-      <p>Outline the steps of a simulation that models the randomness in this study and helps you assess how unusual the statistic is that you calculated in <xref ref="inv3-10-c" text="custom">checkpoint 5</xref> when the null hypothesis is true. Include a statement of the null and alternative hypotheses for your choice of parameter.</p>
+      <p>Outline the steps of a simulation that models the randomness in this study and helps you assess how unusual the statistic is that you calculated in <xref ref="inv3-10-c" text="custom">checkpoint 6</xref> when the null hypothesis is true. Include a statement of the null and alternative hypotheses for your choice of parameter.</p>
       <p><response/></p>
     </statement>
     <solution>
@@ -155,14 +156,13 @@
     <solution>
       <p>The distribution should appear skewed to the right with mean close to 1 and standard deviation around 0.21.</p>
       <p>Example simulation results: mean ≈ 1.108, standard deviation ≈ 0.213</p>
-      <p>The observed ratio of 1.59 is a fair bit out in the tail of the distribution. Counting how many simulated odds ratios are 1.59 or larger, we find approximately 1% to 1.5% of the simulated values are at least this extreme.</p>
-      <p>Using Fisher's Exact Test, the one-sided p-value is 0.0158.</p>
-      <p>This small p-value (approximately 0.016) provides strong evidence against the null hypothesis, suggesting that there is a relationship between sleep deprivation and car crashes in the population.</p>
-      <figure>
         <image source="images/Inv3.10solse.jpg" width="70%">
           <description>Simulation results showing the distribution of odds ratios under the null hypothesis</description>
         </image>
-      </figure>
+       <p>The observed ratio of 1.59 is a fair bit out in the tail of the distribution. Counting how many simulated odds ratios are 1.59 or larger, we find approximately 1% to 1.5% of the simulated values are at least this extreme.</p>
+      <p>Using Fisher's Exact Test, the one-sided p-value is 0.0158.</p>
+      <p>This small p-value (approximately 0.016) provides strong evidence against the null hypothesis, suggesting that there is a relationship between sleep deprivation and car crashes in the population.</p>
+    
     </solution>
     <response/>
   </exercise>
@@ -181,13 +181,17 @@
       <p>Back-transform: exp(0.057, 0.870) ≈ (1.06, 2.39)</p>
       <p>We are 95% confident that the odds of being in a car crash are 1.06 to 2.39 times larger for those without a full night's sleep in the previous week compared to those with at least one full night's sleep.</p>
       <p>This interval does not capture one, so we have statistically significant evidence of an increase in odds for those without a full night's sleep.</p>
-      <p><term>Using R:</term></p>
+    </solution>
+    <solution>
+      <title>Solution using R</title>
       <figure>
         <image source="images/Inv3.10solsfR.png" width="70%">
           <description>R output showing confidence interval calculation for odds ratio</description>
         </image>
       </figure>
-      <p><term>Using JMP:</term></p>
+    </solution>
+    <solution>
+      <title>Solution using JMP</title>
       <figure>
         <image source="images/Inv3.10solsfJMP.png" width="70%">
           <description>JMP output showing confidence interval calculation for odds ratio</description>
@@ -220,11 +224,12 @@
   <subsection xml:id="practice3-10">
     <title>Practice Problem 3.10</title>
 
-    <p>Another landmark study on smoking began in 1952 (Hammond and Horn, 1958, "Smoking and death rates—Report on forty-four months of follow-up of 187,783 men: II. Death rates by cause," JAMA). They used 22,000 American Cancer Society volunteers as interviewers. Each interviewer was to ask 10 healthy white men between the ages of 50 and 69 to complete a questionnaire on smoking habits. Each year during the 44-month follow-up, the interviewer reported whether or not the man had died, and if so, how. They ended up tracking 187,783 men in nine states (CA, IL, IA, MI, MN, NJ, NY, PA, WI). Almost 188,000 were followed up by the volunteers through October 1955, during which time about 11,870 of the men had died, 488 from lung cancer. The following table classifies the men as having a history of regular cigarette smoking or not and whether or not they died from lung cancer. In this study, nonsmokers are grouped with occasional smokers, including pipe- and cigar-only smokers.</p>
+    <p>Another landmark study on smoking began in 1952 (Hammond and Horn, 1958, <url href="https://pubmed.ncbi.nlm.nih.gov/12308037/" visual="pubmed.ncbi.nlm.nih.gov">"Smoking and death rates—Report on forty-four months of follow-up of 187,783 men: II. Death rates by cause," JAMA</url>). They used 22,000 American Cancer Society volunteers as interviewers. Each interviewer was to ask 10 healthy white men between the ages of 50 and 69 to complete a questionnaire on smoking habits. Each year during the 44-month follow-up, the interviewer reported whether or not the man had died, and if so, how. They ended up tracking 187,783 men in nine states (CA, IL, IA, MI, MN, NJ, NY, PA, WI). Almost 188,000 were followed up by the volunteers through October 1955, during which time about 11,870 of the men had died, 488 from lung cancer. The following table classifies the men as having a history of regular cigarette smoking or not and whether or not they died from lung cancer. In this study, nonsmokers are grouped with occasional smokers, including pipe- and cigar-only smokers.</p>
 
     <table>
       <title>Hammond and Horn Study</title>
       <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <col halign="left"/>
         <row header="yes">
           <cell></cell>
           <cell>Not regular smoker</cell>
@@ -255,7 +260,23 @@
     <exercise xml:id="practice-3-10-a">
       <statement>
         <p>Is this a case-control, cohort, or cross-classified study?</p>
-        <p><response/></p>
+        <choices>
+          <choice>
+            <statement>
+              <p>Case-control</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>Cohort</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>Cross-classified</p>
+            </statement>
+          </choice>
+        </choices>
       </statement>
       <response/>
     </exercise>
