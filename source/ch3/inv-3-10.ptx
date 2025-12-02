@@ -3,7 +3,7 @@
   <title>Investigation 3.10: Sleepy Drivers</title>
 
   <introduction>
-    <p>Connor et al. (British Medical Journal, May 2002) reported on a study that investigated whether sleeplessness is related to car crashes. The researchers identified all drivers or passengers of eligible light vehicles who were admitted to a hospital or died as a result of a car crash on public roads in the Auckland, New Zealand region between April 1998 and July 1999. Through cluster sampling, they identified a sample of 571 drivers who had been involved in a crash resulting in injury and a sample of 588 drivers who had not been involved in such a crash as representative of people driving on the region's roads during the study period. The researchers asked the individuals (or proxy interviewees) whether they had a full night's sleep (at least seven hours mostly between 11pm and 7am) any night during the previous week. The researchers found that 61 of the 535 crash drivers who responded and 44 of the 588 "no crash" drivers had not gotten at least one full night's sleep in the previous week.</p>
+    <p>Connor et al. (<url href="https://pubmed.ncbi.nlm.nih.gov/12003884/" visual="pubmed.ncbi.nlm.nih.gov">British Medical Journal, May 2002</url>) reported on a study that investigated whether sleeplessness is related to car crashes. The researchers identified all drivers or passengers of eligible light vehicles who were admitted to a hospital or died as a result of a car crash on public roads in the Auckland, New Zealand region between April 1998 and July 1999. Through cluster sampling, they identified a sample of 571 drivers who had been involved in a crash resulting in injury and a sample of 588 drivers who had not been involved in such a crash as representative of people driving on the region's roads during the study period. The researchers asked the individuals (or proxy interviewees) whether they had a full night's sleep (at least seven hours mostly between 11pm and 7am) any night during the previous week. The researchers found that 61 of the 535 crash drivers who responded and 44 of the 588 "no crash" drivers had not gotten at least one full night's sleep in the previous week.</p>
   </introduction>
 
   <exercise xml:id="inv3-10-a">
@@ -17,9 +17,9 @@
     </statement>
     <solution>
       <p>Observational units: Drivers in Auckland, New Zealand</p>
-      <p>Explanatory variable: Whether had full night's sleep in past week (categorical)</p>
-      <p>Response variable: Whether involved in crash (categorical)</p>
-      <p>Type of study: Observational study, case-control design (researchers selected drivers who had crashes and drivers who had not, then looked at their sleep patterns)</p>
+      <p>Explanatory variable: Whether got a full night's sleep in previous week (categorical: yes/no)</p>
+      <p>Response variable: Whether involved in a car crash (categorical: yes/no)</p>
+      <p>Type of study: This is a case-control observational study. The researchers selected drivers who had crashes (cases) and drivers who had not (controls), then looked back at their sleep patterns.</p>
     </solution>
     <response/>
   </exercise>
@@ -98,10 +98,10 @@
       <p><var width="60" height="6"/></p>
     </statement>
     <solution>
-      <p>Because this is a case-control study, the odds ratio is more appropriate. The researchers controlled the number of crash and no-crash drivers, so we cannot meaningfully calculate the risk of having a crash.</p>
-      <p>Odds ratio = (61/474) / (44/544) = 0.129 / 0.081 = 1.59</p>
-      <p>The odds of being sleep deprived are 1.59 times higher for crash drivers than for no-crash drivers. Equivalently, the odds of having a crash are 1.59 times higher for sleep-deprived drivers than for well-rested drivers.</p>
-      <p>This does support the conjecture that sleeplessness is related to car crashes, as the odds ratio is greater than 1.</p>
+      <p>Because this is a case-control study, the odds ratio is the most appropriate statistic. The researchers controlled the number of crash and no-crash drivers, so we cannot meaningfully calculate the risk of having a crash.</p>
+      <p>Odds ratio = (61/44) / (474/544) = 1.386 / 0.871 = 1.59</p>
+      <p>The odds of being in a crash if didn't get a full night's sleep were 1.59 times higher than the odds of being in a crash if did get at least one full night's sleep. (Note: this is the same as the odds of not getting a full night's sleep for the crash victims vs. the odds of not getting a full night's sleep for the non-crash subjects.)</p>
+      <p>This does support the conjecture that sleeplessness is related to car crashes, as the odds ratio is notably greater than 1.</p>
     </solution>
     <response/>
   </exercise>
@@ -117,16 +117,19 @@
       <p><var width="60" height="8"/></p>
     </statement>
     <solution>
+      <p>We could replicate the sampling design by sampling independently from two binomial processes with the same probability of success (this will model H₀: τ = 1). One process will represent the sampling of the crash victims (n = 535) and the other will represent the sampling of the no-crash population (n = 588).</p>
       <p>Let <m>\tau</m> represent the population odds ratio.</p>
       <p>H<subscript>0</subscript>: <m>\tau</m> = 1 (the odds of being sleep deprived are the same for crash and no-crash drivers)</p>
       <p>H<subscript>a</subscript>: <m>\tau</m> > 1 (the odds of being sleep deprived are higher for crash drivers)</p>
       <p>Simulation steps:</p>
-      <p>1. Assume the null hypothesis is true, so the probability of being sleep deprived is the same for both groups: 105/1123 = 0.0935</p>
-      <p>2. For the crash group, simulate 535 observations with success probability 0.0935</p>
-      <p>3. For the no-crash group, simulate 588 observations with success probability 0.0935</p>
-      <p>4. Calculate the odds ratio for this simulated sample</p>
-      <p>5. Repeat steps 2-4 many times (e.g., 10,000 times)</p>
-      <p>6. Find the proportion of simulated odds ratios that are at least as large as the observed value of 1.59</p>
+      <p><ol>
+        <li>Assume the null hypothesis is true, so use 105/1123 ≈ 0.0935 as the common probability of success (no full night's sleep)</li>
+        <li>For the crash group, simulate 535 binomial observations with success probability 0.0935</li>
+        <li>For the no-crash group, simulate 588 binomial observations with success probability 0.0935</li>
+        <li>Calculate the odds ratio for this simulated sample</li>
+        <li>Repeat steps 2-4 many times (e.g., 10,000 times)</li>
+        <li>Find the proportion of simulated odds ratios that are at least as large as the observed value of 1.59</li>
+      </ol></p>
     </solution>
     <response/>
   </exercise>
@@ -138,9 +141,11 @@
       <p><var width="60" height="5"/></p>
     </statement>
     <solution>
-      <p>Using the Analyzing Two-way Tables applet or the Comparing Two Population Proportions applet with odds ratio as the statistic, the empirical p-value is approximately 0.016 to 0.025, depending on the simulation.</p>
-      <p>Fisher's Exact Test gives a one-sided p-value of 0.016.</p>
-      <p>This small p-value provides evidence against the null hypothesis, suggesting that the odds of having a crash are higher for sleep-deprived drivers than for well-rested drivers.</p>
+      <p>The distribution should appear skewed to the right with mean close to 1 and standard deviation around 0.21.</p>
+      <p>Example simulation results: mean ≈ 1.108, standard deviation ≈ 0.213</p>
+      <p>The observed ratio of 1.59 is a fair bit out in the tail of the distribution. Counting how many simulated odds ratios are 1.59 or larger, we find approximately 1% to 1.5% of the simulated values are at least this extreme.</p>
+      <p>Using Fisher's Exact Test, the one-sided p-value is 0.0158.</p>
+      <p>This small p-value (approximately 0.016) provides strong evidence against the null hypothesis, suggesting that there is a relationship between sleep deprivation and car crashes in the population.</p>
     </solution>
     <response/>
   </exercise>
@@ -152,12 +157,13 @@
       <p><var width="60" height="5"/></p>
     </statement>
     <solution>
-      <p>For the odds ratio:</p>
-      <p>ln(1.59) = 0.464</p>
-      <p>SE(ln odds ratio) = <m>\sqrt{1/61 + 1/474 + 1/44 + 1/544}</m> = <m>\sqrt{0.0164 + 0.0021 + 0.0227 + 0.0018}</m> = <m>\sqrt{0.043}</m> = 0.207</p>
-      <p>95% CI for ln(odds ratio): 0.464 ± 1.96(0.207) = 0.464 ± 0.406 = (0.058, 0.870)</p>
-      <p>95% CI for odds ratio: (e<superscript>0.058</superscript>, e<superscript>0.870</superscript>) = (1.06, 2.39)</p>
-      <p>We are 95% confident that the odds of having a crash are 1.06 to 2.39 times higher for sleep-deprived drivers than for well-rested drivers.</p>
+      <p>Theoretical standard error for the log odds ratio:</p>
+      <p>SE(ln odds ratio) = <m>\sqrt{\frac{1}{61} + \frac{1}{44} + \frac{1}{474} + \frac{1}{544}}</m> ≈ <m>\sqrt{0.0164 + 0.0227 + 0.0021 + 0.0018}</m> ≈ <m>\sqrt{0.043}</m> ≈ 0.2075</p>
+      <p>ln(1.59) ≈ 0.4637</p>
+      <p>95% CI for ln(odds ratio): 0.4637 ± 1.96(0.2075) = 0.4637 ± 0.4067 ≈ (0.057, 0.870)</p>
+      <p>Back-transform: exp(0.057, 0.870) ≈ (1.06, 2.39)</p>
+      <p>We are 95% confident that the odds of being in a car crash are 1.06 to 2.39 times larger for those without a full night's sleep in the previous week compared to those with at least one full night's sleep.</p>
+      <p>This interval does not capture one, so we have statistically significant evidence of an increase in odds for those without a full night's sleep.</p>
     </solution>
     <response/>
   </exercise>
@@ -169,9 +175,10 @@
       <p><var width="60" height="8"/></p>
     </statement>
     <solution>
-      <p>The p-value of approximately 0.016 provides moderately strong evidence that the odds of having a crash are higher for sleep-deprived drivers than for well-rested drivers. The 95% confidence interval (1.06, 2.39) indicates that the odds are about 1 to 2.5 times higher for sleepy drivers.</p>
-      <p>However, because this was an observational case-control study, we cannot conclude that lack of sleep causes crashes. There could be confounding variables (e.g., driving conditions, time of day, driver experience, alcohol use). We can only say there is an association between sleep deprivation and car crashes.</p>
-      <p>We should be cautious about generalizing these results beyond drivers in Auckland, New Zealand during the study period. The sample was designed to be representative of drivers in that region, but may not represent drivers in other countries or time periods.</p>
+      <p>We have strong evidence (p-value = 0.0158) that sleep-deprived drivers have higher odds (6% to 139% higher) of being in a car crash, at least for drivers like these New Zealand drivers.</p>
+      <p>The 95% confidence interval (1.06, 2.39) indicates that the odds are approximately 1 to 2.4 times higher for sleepy drivers. Since this interval does not contain 1, we have statistically significant evidence of an association.</p>
+      <p>However, we cannot draw a cause-and-effect conclusion because this was an observational study. There could be confounding variables (e.g., driver experience, time of day, road conditions, alcohol use).</p>
+      <p>We should apply these results only to drivers in Auckland, New Zealand at that time, as that is the population from which the sample was drawn.</p>
     </solution>
     <response/>
   </exercise>
