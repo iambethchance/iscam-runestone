@@ -199,43 +199,43 @@
           <p>Open the InfantData.txt (raw data) link from the data files page, select all, copy, and then in R use the following command. Keep in mind that R is case sensitive:</p>
           
           <p><em>PC:</em></p>
-          <program language="r" interactive="sage">
+          <sage language="r">
             <input>
 InfantData = read.table("clipboard", header=TRUE)
             </input>
-          </program>
+          </sage>
           
           <p><em>Mac:</em></p>
-          <program language="r" interactive="sage">
+          <sage language="r">
             <input>
 InfantData = read.table(pipe("pbpaste"), header=TRUE)
             </input>
-          </program>
+          </sage>
           
           <p>You can also use a URL (in quotes). The <c>header</c> command indicates the variables have names.</p>
           
           <p><alert>Text Files on Your Computer</alert></p>
-          <program language="r" interactive="sage">
+          <sage language="r">
             <input>
 InfantData = read.table(file.choose(), header=T)
             </input>
-          </program>
+          </sage>
           
           <p>To see the data, type:</p>
-          <program language="r" interactive="sage">
+          <sage language="r">
             <input>
 View(InfantData)
 # or
 head(InfantData)
             </input>
-          </program>
+          </sage>
           
           <p>Next you can <q>attach</q> the file to be able to use variable names directly:</p>
-          <program language="r" interactive="sage">
+          <sage language="r">
             <input>
 attach(InfantData)    # Now R knows what the "choice" variable is
             </input>
-          </program>
+          </sage>
           
           <p>Or you need to clarify to R which datafile you are using (e.g., <c>InfantData$choice</c>).</p>
           
@@ -297,11 +297,11 @@ attach(InfantData)    # Now R knows what the "choice" variable is
         <title>Tallying the Outcomes - R</title>
         <statement>
           <p>To count the number of correct and incorrect responses, type:</p>
-          <program language="r" interactive="sage">
+          <sage language="r">
             <input>
 table(InfantData)
             </input>
-          </program>
+          </sage>
           
           <note>
             <title>R Reminder</title>
@@ -355,11 +355,11 @@ choice
         <title>Bar Graphs - R (raw data)</title>
         <statement>
           <p>You need to pass the tabled data into the barplot function:</p>
-          <program language="r" interactive="sage">
+          <sage language="r">
             <input>
 barplot(table(InfantData), xlab="Choice", ylab="Frequency")
             </input>
-          </program>
+          </sage>
           <p>You may need to toggle to the R Graphics Window to see the graph window. Now you can use R to export the graph to a file or you can Copy and Paste or use a screen capture.</p>
           
           <note>
@@ -381,11 +381,11 @@ barplot(table(InfantData), xlab="Choice", ylab="Frequency")
         <title>Bar Graphs - R (summary data)</title>
         <statement>
           <p>If you already (or only) have the summarized data (the number of successes and failures), you can type:</p>
-          <program language="r" interactive="sage">
+          <sage language="r">
             <input>
 barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
             </input>
-          </program>
+          </sage>
           
           <note>
             <title>R Reminder</title>
