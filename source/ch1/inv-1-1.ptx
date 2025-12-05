@@ -200,41 +200,41 @@
           
           <p><em>PC:</em></p>
           <sage language="r">
-            <input>
+            <code>
 InfantData = read.table("clipboard", header=TRUE)
-            </input>
+            </code>
           </sage>
           
           <p><em>Mac:</em></p>
           <sage language="r">
-            <input>
+            <code>
 InfantData = read.table(pipe("pbpaste"), header=TRUE)
-            </input>
+            </code>
           </sage>
           
           <p>You can also use a URL (in quotes). The <c>header</c> command indicates the variables have names.</p>
           
           <p><alert>Text Files on Your Computer</alert></p>
           <sage language="r">
-            <input>
+            <code>
 InfantData = read.table(file.choose(), header=T)
-            </input>
+            </code>
           </sage>
           
           <p>To see the data, type:</p>
           <sage language="r">
-            <input>
+            <code>
 View(InfantData)
 # or
 head(InfantData)
-            </input>
+            </code>
           </sage>
           
           <p>Next you can <q>attach</q> the file to be able to use variable names directly:</p>
           <sage language="r">
-            <input>
+            <code>
 attach(InfantData)    # Now R knows what the "choice" variable is
-            </input>
+            </code>
           </sage>
           
           <p>Or you need to clarify to R which datafile you are using (e.g., <c>InfantData$choice</c>).</p>
@@ -298,9 +298,9 @@ attach(InfantData)    # Now R knows what the "choice" variable is
         <statement>
           <p>To count the number of correct and incorrect responses, type:</p>
           <sage language="r">
-            <input>
+            <code>
 table(InfantData)
-            </input>
+            </code>
           </sage>
           
           <note>
@@ -356,9 +356,9 @@ choice
         <statement>
           <p>You need to pass the tabled data into the barplot function:</p>
           <sage language="r">
-            <input>
+            <code>
 barplot(table(InfantData), xlab="Choice", ylab="Frequency")
-            </input>
+            </code>
           </sage>
           <p>You may need to toggle to the R Graphics Window to see the graph window. Now you can use R to export the graph to a file or you can Copy and Paste or use a screen capture.</p>
           
@@ -382,9 +382,9 @@ barplot(table(InfantData), xlab="Choice", ylab="Frequency")
         <statement>
           <p>If you already (or only) have the summarized data (the number of successes and failures), you can type:</p>
           <sage language="r">
-            <input>
+            <code>
 barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
-            </input>
+            </code>
           </sage>
           
           <note>
