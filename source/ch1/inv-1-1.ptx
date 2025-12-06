@@ -198,28 +198,29 @@
           <p><alert>Files from the Web</alert></p>
           <p>Open the InfantData.txt (raw data) link from the data files page, select all, copy, and then in R use the following command. Keep in mind that R is case sensitive:</p>
           
-          <p><em>PC:</em></p>
+          <p><alert>Loading from URL (Recommended)</alert></p>
+          <p>The easiest method is to load the data directly from the web using the <c>url()</c> function:</p>
           <sage language="r">
             <code>
-InfantData = read.table("clipboard", header=TRUE)
+InfantData = read.table(url("https://www.rossmanchance.com/iscam3/data/InfantData.txt"), header=TRUE)
             </code>
           </sage>
           
-          <p><em>Mac:</em></p>
+          <p>The <c>header=TRUE</c> argument indicates the first row contains variable names.</p>
+          
+          <p><alert>Loading from Your Computer</alert></p>
+          <p>If you've downloaded the file, use <c>file.choose()</c> to browse for it:</p>
           <sage language="r">
             <code>
-InfantData = read.table(pipe("pbpaste"), header=TRUE)
+InfantData = read.table(file.choose(), header=TRUE)
             </code>
           </sage>
           
-          <p>You can also use a URL (in quotes). The <c>header</c> command indicates the variables have names.</p>
-          
-          <p><alert>Text Files on Your Computer</alert></p>
-          <sage language="r">
-            <code>
-InfantData = read.table(file.choose(), header=T)
-            </code>
-          </sage>
+          <p><alert>Alternative: Direct URL (RStudio)</alert></p>
+          <p>In RStudio (not Sage cells), you can often use the URL directly as a string:</p>
+          <pre>
+InfantData = read.table("https://www.rossmanchance.com/iscam3/data/InfantData.txt", header=TRUE)
+          </pre>
           
           <p>To see the data, type:</p>
           <sage language="r">
