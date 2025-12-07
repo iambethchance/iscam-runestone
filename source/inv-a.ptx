@@ -227,6 +227,21 @@
     
     <p>From the <url href="https://www.rossmanchance.com/iscam3/files.html" target="_blank">ISCAM data files and applets page</url> (Chapter 0), you can view the data in <url href="https://www.rossmanchance.com/iscam4/data/AtlanticStorms.txt" target="_blank">AtlanticStorms.txt</url>. Use your mouse (or ctrl-A) to highlight all four columns and then copy and paste these data to your clipboard. In the Descriptive Statistics applet, clear the existing data (press <em>Clear</em>), click in the Paste data box and paste the data from your clipboard. Press the <em>Use Data</em> button. [Alternatively, this dataset is listed in the Select data pull-down menu as Atlantic Storms.] Use the Quantitative Variable pull-down menu to select the Number of Hurricanes variable (Hurricanes).</p>
     
+    <p><alert>Loading Data in R:</alert> You can also load this data directly in R using the code below:</p>
+    
+    <sage language="r">
+      <input>
+# Load Atlantic Storms data from GitHub
+AtlanticStorms = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/AtlanticStorms.txt", header=TRUE)
+
+# Display first few rows
+head(AtlanticStorms)
+
+# Summary statistics
+summary(AtlanticStorms)
+      </input>
+    </sage>
+    
     <assemblage>
       <title>Shape of Distributions</title>
       <p>The shape of a distribution is often classified as <term>symmetric</term><idx><h>symmetric</h><h>a distribution with a mirror image on each side of the center</h></idx> (mirror image on each side of the center) or <term>skewed</term><idx><h>skewed</h><h>a distribution with a longer tail on one side</h></idx>.</p>
