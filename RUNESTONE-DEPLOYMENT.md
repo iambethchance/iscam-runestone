@@ -76,6 +76,57 @@ pretext deploy
 
 ## Important Configuration Notes
 
+### R Code Execution in Runestone
+**Good news: Runestone DOES support R code through SageMath cells!**
+
+Based on other Runestone textbooks, R execution works via:
+- `<sage language="r">` tags with `<input>` blocks
+- SageCell server integration (configured in publication/runestone.ptx)
+- Each cell runs independently via https://sagecell.sagemath.org
+
+**Syntax:**
+```xml
+<sage language="r">
+  <input>
+# Your R code here
+data &lt;- data.frame(...)
+print(data)
+  </input>
+</sage>
+```
+
+**Note:** Use `&lt;-` (XML-encoded) for R's assignment operator in the source files.
+
+### Sage Cells in Runestone (Independent Sessions)
+**Independence of Sage Cells**: Each Sage cell in the interactive Runestone textbook runs completely independently. Variables created in one cell are NOT available in other cells. This means:
+- Students must re-create or re-load data in each cell where they need it
+- You should include all necessary setup code in each Sage cell
+- Explain this clearly to students to avoid confusion
+
+**Best Practice - Cumulative Code Pattern**:
+Since there is NO persistent R session or workspace students can build upon, use this pattern:
+- **Cell 1**: Create data + show it
+- **Cell 2**: Create data (repeated) + table command
+- **Cell 3**: Create data (repeated) + bar graph command
+- **Cell 4**: Create data (repeated) + new analysis command
+
+This "cumulative code" approach (similar to CourseKata) means:
+- Each cell is self-contained and can run independently
+- Students don't have to scroll back and re-run earlier cells
+- Later cells include all previous setup PLUS the new command
+- Comment the repeated code as "from earlier" so it's clear what's new
+
+**Common Issues**:
+- If students see `<rpy2.rinterface_lib.sexp.NULLType object...>` message, the R code didn't produce output properly
+- Solution: Use explicit `print()` statements for all output (e.g., `print(table(data))` instead of just `table(data)`)
+- Always include verification text after Sage cells so students know what output to expect
+
+**Expand Window Feature**: 
+- Sage cells have an expand icon to open in a larger window
+- Known issue: This sometimes shows a white screen in Runestone
+- Workaround: Students should run code in the inline cell first, then expand if needed
+- The expanded window does NOT maintain state between cells (still independent)
+
 ### In publication/publication.ptx:
 - Update `<book-id>` to match what you set on Runestone Academy
 - This must be unique and lowercase with no spaces

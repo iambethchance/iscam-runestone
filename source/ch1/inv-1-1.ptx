@@ -212,24 +212,34 @@ InfantData = read.table(file.choose(), header=TRUE)
           
           <p><alert>For This Interactive Textbook (Sage Cell)</alert></p>
           <p>Since the Sage cells in this textbook cannot access external URLs, we'll create the data directly. Click <q>Evaluate (R)</q> below to load and view the Infant data:</p>
+          
+          <note>
+            <title>Working with Sage Cells</title>
+            <p><alert>Important:</alert> Each Sage cell runs completely independently in this textbook. Variables created in one cell are <em>not</em> available in other cells. This is why you'll see the data creation code repeated in each cell throughout this investigation - each cell includes all the previous steps plus the new command you're learning.</p>
+            <p><alert>Building Your Analysis:</alert> As you progress through the investigation, each cell will include:
+            <ul>
+              <li><p>All the previous commands (like creating the data)</p></li>
+              <li><p>PLUS the new command for that step</p></li>
+            </ul>
+            This way, you can run any cell at any time without having to go back and re-run earlier cells.</p>
+            <p><alert>How to Use:</alert> Click the <q>Evaluate (R)</q> button below each code cell to run the R code. You should see output appear in a green-bordered box below. You can also click the expand icon (↗) in the upper right to open the cell in a larger editor window.</p>
+          </note>
+          
           <sage language="r">
-            <code>
+            <input>
 # Create the InfantData dataset directly
-InfantData = data.frame(
+InfantData &lt;- data.frame(
   choice = c("Helper", "Helper", "Helper", "Helper", "Helper", "Hinderer",
              "Helper", "Helper", "Helper", "Helper", "Helper", "Helper",
              "Helper", "Hinderer", "Helper", "Helper")
 )
 
-# Display the first few rows
-head(InfantData)
-
-# Or to see all data
+# Display the data to verify it loaded correctly
 print(InfantData)
-            </code>
+            </input>
           </sage>
           
-          <p><alert>Note for Sage Cells:</alert> Each Sage cell runs independently, so you'll need to include the data creation code (or load the data) at the beginning of each cell where you want to use it. For example, when creating tables or graphs in later sections, you'll see the data creation code included again.</p>
+          <p>You should see output showing the data with 16 rows and one column called <c>choice</c>. Verify that you see both "Helper" and "Hinderer" values.</p>
           
           <p>Or you need to clarify to R which datafile you are using (e.g., <c>InfantData$choice</c>).</p>
           
@@ -292,18 +302,20 @@ print(InfantData)
         <statement>
           <p>To count the number of correct and incorrect responses:</p>
           <sage language="r">
-            <code>
+            <input>
 # Create the InfantData dataset
-InfantData = data.frame(
+InfantData &lt;- data.frame(
   choice = c("Helper", "Helper", "Helper", "Helper", "Helper", "Hinderer",
              "Helper", "Helper", "Helper", "Helper", "Helper", "Helper",
              "Helper", "Hinderer", "Helper", "Helper")
 )
 
-# Count frequencies
-table(InfantData)
-            </code>
+# Count frequencies and display
+print(table(InfantData$choice))
+            </input>
           </sage>
+          
+          <p>You should see output showing: Helper 14, Hinderer 2</p>
           
           <note>
             <title>R Reminder</title>
@@ -358,19 +370,19 @@ choice
         <statement>
           <p>You need to pass the tabled data into the barplot function:</p>
           <sage language="r">
-            <code>
+            <input>
 # Create the InfantData dataset
-InfantData = data.frame(
+InfantData &lt;- data.frame(
   choice = c("Helper", "Helper", "Helper", "Helper", "Helper", "Hinderer",
              "Helper", "Helper", "Helper", "Helper", "Helper", "Helper",
              "Helper", "Hinderer", "Helper", "Helper")
 )
 
 # Create bar plot
-barplot(table(InfantData), xlab="Choice", ylab="Frequency")
-            </code>
+barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
+            </input>
           </sage>
-          <p>You may need to toggle to the R Graphics Window to see the graph window. Now you can use R to export the graph to a file or you can Copy and Paste or use a screen capture.</p>
+          <p>The bar graph should appear directly below. You should see two bars - one tall bar for Helper (14) and one short bar for Hinderer (2).</p>
           
           <note>
             <title>R Reminder</title>
@@ -392,10 +404,12 @@ barplot(table(InfantData), xlab="Choice", ylab="Frequency")
         <statement>
           <p>If you already (or only) have the summarized data (the number of successes and failures), you can type:</p>
           <sage language="r">
-            <code>
+            <input>
 barplot(c(14, 2), names.arg=c("Helper", "Hinderer"))
-            </code>
+            </input>
           </sage>
+          
+          <p>The bar graph should appear directly below showing the same pattern as before.</p>
           
           <note>
             <title>R Reminder</title>
