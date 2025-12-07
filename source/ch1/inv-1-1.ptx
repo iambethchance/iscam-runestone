@@ -195,32 +195,33 @@
       <exercise xml:id="tech-detour-r-loading" label="Loading Data - R">
         <title>Loading Data - R</title>
         <statement>
-          <p><alert>Files from the Web</alert></p>
-          <p>Open the InfantData.txt (raw data) link from the data files page, select all, copy, and then in R use the following command. Keep in mind that R is case sensitive:</p>
+          <p><alert>Loading from URL (In RStudio)</alert></p>
+          <p>If you're using RStudio on your computer, you can load the <url href="https://www.rossmanchance.com/iscam3/data/InfantData.txt">InfantData.txt</url> file directly from the web using the <c>url()</c> function:</p>
           
-          <p><alert>Loading from URL (Recommended)</alert></p>
-          <p>The easiest method is to load the data directly from the web using the <c>url()</c> function:</p>
-          <sage language="r">
-            <code>
+          <pre>
 InfantData = read.table(url("https://www.rossmanchance.com/iscam3/data/InfantData.txt"), header=TRUE)
-            </code>
-          </sage>
+          </pre>
           
           <p>The <c>header=TRUE</c> argument indicates the first row contains variable names.</p>
           
           <p><alert>Loading from Your Computer</alert></p>
-          <p>If you've downloaded the file, use <c>file.choose()</c> to browse for it:</p>
+          <p>If you've downloaded the <url href="https://www.rossmanchance.com/iscam3/data/InfantData.txt">InfantData.txt</url> file, use <c>file.choose()</c> to browse for it:</p>
+          <pre>
+InfantData = read.table(file.choose(), header=TRUE)
+          </pre>
+          
+          <p><alert>For This Interactive Textbook (Sage Cell)</alert></p>
+          <p>Since the Sage cells in this textbook cannot access external URLs, we'll create the data directly. Click <q>Evaluate (R)</q> below to load the Infant data:</p>
           <sage language="r">
             <code>
-InfantData = read.table(file.choose(), header=TRUE)
+# Create the InfantData dataset directly
+InfantData = data.frame(
+  choice = c("Helper", "Helper", "Helper", "Helper", "Helper", "Hinderer",
+             "Helper", "Helper", "Helper", "Helper", "Helper", "Helper",
+             "Helper", "Hinderer", "Helper", "Helper")
+)
             </code>
           </sage>
-          
-          <p><alert>Alternative: Direct URL (RStudio)</alert></p>
-          <p>In RStudio (not Sage cells), you can often use the URL directly as a string:</p>
-          <pre>
-InfantData = read.table("https://www.rossmanchance.com/iscam3/data/InfantData.txt", header=TRUE)
-          </pre>
           
           <p>To see the data, type:</p>
           <sage language="r">
