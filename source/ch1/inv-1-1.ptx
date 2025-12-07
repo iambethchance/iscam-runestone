@@ -222,19 +222,19 @@ head(InfantData)
           <p><alert>Option 2: Using This Interactive Textbook (Sage Cell)</alert></p>
           <p>In Sage cells, you have two options for loading data:</p>
           
-          <p><em>Option 2a: Load from URL (works for small to medium datasets)</em></p>
+          <p><em>Option 2a: Load from GitHub (recommended for Sage cells)</em></p>
           <sage language="r">
             <input>
-# Load data directly from URL
-InfantData = read.table(url("https://www.rossmanchance.com/iscam3/data/InfantData.txt"), header=TRUE)
+# Load data directly from GitHub
+InfantData = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/InfantData.txt", header=TRUE)
 
 # Display the data
 InfantData
             </input>
           </sage>
           
-          <p><em>Option 2b: Create data directly (always works)</em></p>
-          <p>If loading from a URL times out or fails, you can create the data directly:</p>
+          <p><em>Option 2b: Create data directly (backup option)</em></p>
+          <p>If loading from GitHub times out or fails, you can create the data directly:</p>
           
           <sage language="r">
             <input>
