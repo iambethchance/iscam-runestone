@@ -97,6 +97,42 @@ print(data)
 
 **Note:** Use `&lt;-` (XML-encoded) for R's assignment operator in the source files.
 
+### Loading External Data in Sage Cells - LIMITATION
+**Important:** Sage cells in Runestone CANNOT directly access external URLs for security reasons. This means:
+
+❌ **Does NOT work in Sage cells:**
+```r
+# This will fail in Sage cells
+data <- read.table(url("https://example.com/data.txt"), header=TRUE)
+```
+
+✅ **Solutions:**
+
+1. **For small datasets**: Create data inline using `data.frame()` (what we're doing now)
+```r
+data <- data.frame(
+  var1 = c(1, 2, 3, ...),
+  var2 = c("A", "B", "C", ...)
+)
+```
+
+2. **For larger datasets**: Direct students to use RStudio instead
+   - RStudio can load from URLs with `read.table(url(...))`
+   - Posit Cloud (free browser-based RStudio)
+   - RStudio Desktop
+
+3. **R packages from GitHub**: Students CAN install packages in Sage cells
+```r
+install.packages("devtools")
+devtools::install_github("username/packagename")
+library(packagename)
+data(datasetname)  # Load data from package
+```
+   - **Caveat**: Installation is slow and may timeout for large packages
+   - Need to repeat installation in each Sage cell (unless cached)
+
+4. **Best practice**: Use Sage cells for small teaching examples, transition to RStudio for real data analysis
+
 ### Sage Cells in Runestone (Independent Sessions)
 **Independence of Sage Cells**: Each Sage cell in the interactive Runestone textbook runs completely independently. Variables created in one cell are NOT available in other cells. This means:
 - Students must re-create or re-load data in each cell where they need it

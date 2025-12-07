@@ -33,5 +33,76 @@
     
     <p>Though you will only scratch the surface of the statistical methods used in practice, you will learn fundamental concepts (such as variability, randomness, confidence, and significance) that are an integral part of many statistical analyses. A distinct emphasis will be the focus on how the data are collected and how this determines the scope of conclusions that you can draw from the data.</p>
   </preface>
+  
+  <preface xml:id="using-technology">
+    <title>Using Technology with This Book</title>
+    
+    <p>This interactive textbook provides multiple ways to work with data and statistical software:</p>
+    
+    <subsection xml:id="interactive-r-cells">
+      <title>Interactive R Cells (Sage)</title>
+      
+      <p>Throughout the book, you'll find interactive R code cells powered by SageMath. These allow you to run R code directly in your browser without installing any software. Each cell is self-contained and runs independently.</p>
+      
+      <p><alert>Important:</alert> Each Sage cell starts fresh - variables from one cell are not available in other cells. This is why you'll see data creation code repeated in cells throughout an investigation.</p>
+      
+      <p><alert>Advantages:</alert></p>
+      <ul>
+        <li><p>No software installation required</p></li>
+        <li><p>Works on any device with a web browser</p></li>
+        <li><p>Great for quick explorations and learning concepts</p></li>
+      </ul>
+      
+      <p><alert>Limitations:</alert></p>
+      <ul>
+        <li><p>Cannot load external data files or URLs directly</p></li>
+        <li><p>Best suited for small to medium datasets (created inline)</p></li>
+        <li><p>Each cell runs independently (no persistent workspace)</p></li>
+      </ul>
+    </subsection>
+    
+    <subsection xml:id="using-rstudio">
+      <title>Using RStudio</title>
+      
+      <p>For more extensive data analysis, especially with larger datasets, we recommend using RStudio:</p>
+      
+      <p><alert>Options:</alert></p>
+      <ul>
+        <li><p><url href="https://posit.cloud">Posit Cloud</url> (formerly RStudio Cloud) - free browser-based RStudio</p></li>
+        <li><p><url href="https://posit.co/download/rstudio-desktop/">RStudio Desktop</url> - install on your computer</p></li>
+      </ul>
+      
+      <p><alert>Advantages:</alert></p>
+      <ul>
+        <li><p>Can load data from files and URLs</p></li>
+        <li><p>Persistent workspace across your session</p></li>
+        <li><p>Full R package ecosystem available</p></li>
+        <li><p>Better for larger datasets and complex analyses</p></li>
+      </ul>
+      
+      <p>Throughout the text, we provide code for both the interactive Sage cells and RStudio, clearly marked so you know which to use.</p>
+    </subsection>
+    
+    <subsection xml:id="data-files">
+      <title>Accessing Data Files</title>
+      
+      <p>Data files for this textbook are available at:</p>
+      <ul>
+        <li><p><url href="https://www.rossmanchance.com/iscam3/data/">ISCAM Data Files</url></p></li>
+      </ul>
+      
+      <p><alert>For Interactive Sage Cells:</alert> Since Sage cells cannot access external URLs, we create small datasets directly in the code using <c>data.frame()</c>. This is ideal for learning concepts with manageable examples.</p>
+      
+      <p><alert>For RStudio:</alert> You can load data files directly from URLs using <c>read.table(url(...))</c> or download files to your computer and use <c>file.choose()</c> to browse for them.</p>
+      
+      <p><alert>For Larger Datasets:</alert> When working with substantial datasets or conducting more complex analyses, we recommend transitioning to RStudio where you have full access to R's capabilities and can manage larger data files effectively.</p>
+    </subsection>
+    
+    <subsection xml:id="jmp-software">
+      <title>Using JMP</title>
+      
+      <p>JMP is statistical software with a graphical interface that some students may prefer. Instructions for JMP are provided alongside R instructions in the Technology Detours. JMP is available through many educational institutions or as a free trial from <url href="https://www.jmp.com">JMP.com</url>.</p>
+    </subsection>
+  </preface>
 
 </frontmatter>
