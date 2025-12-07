@@ -211,7 +211,7 @@ InfantData = read.table(file.choose(), header=TRUE)
           </pre>
           
           <p><alert>For This Interactive Textbook (Sage Cell)</alert></p>
-          <p>Since the Sage cells in this textbook cannot access external URLs, we'll create the data directly. Click <q>Evaluate (R)</q> below to load the Infant data:</p>
+          <p>Since the Sage cells in this textbook cannot access external URLs, we'll create the data directly. Click <q>Evaluate (R)</q> below to load and view the Infant data:</p>
           <sage language="r">
             <code>
 # Create the InfantData dataset directly
@@ -220,24 +220,16 @@ InfantData = data.frame(
              "Helper", "Helper", "Helper", "Helper", "Helper", "Helper",
              "Helper", "Hinderer", "Helper", "Helper")
 )
-            </code>
-          </sage>
-          
-          <p>To see the data, type:</p>
-          <sage language="r">
-            <code>
-View(InfantData)
-# or
+
+# Display the first few rows
 head(InfantData)
+
+# Or to see all data
+print(InfantData)
             </code>
           </sage>
           
-          <p>Next you can <q>attach</q> the file to be able to use variable names directly:</p>
-          <sage language="r">
-            <code>
-attach(InfantData)    # Now R knows what the "choice" variable is
-            </code>
-          </sage>
+          <p><alert>Note for Sage Cells:</alert> Each Sage cell runs independently, so you'll need to include the data creation code (or load the data) at the beginning of each cell where you want to use it. For example, when creating tables or graphs in later sections, you'll see the data creation code included again.</p>
           
           <p>Or you need to clarify to R which datafile you are using (e.g., <c>InfantData$choice</c>).</p>
           
@@ -298,9 +290,17 @@ attach(InfantData)    # Now R knows what the "choice" variable is
       <exercise xml:id="tech-detour-r" label="R">
         <title>Tallying the Outcomes - R</title>
         <statement>
-          <p>To count the number of correct and incorrect responses, type:</p>
+          <p>To count the number of correct and incorrect responses:</p>
           <sage language="r">
             <code>
+# Create the InfantData dataset
+InfantData = data.frame(
+  choice = c("Helper", "Helper", "Helper", "Helper", "Helper", "Hinderer",
+             "Helper", "Helper", "Helper", "Helper", "Helper", "Helper",
+             "Helper", "Hinderer", "Helper", "Helper")
+)
+
+# Count frequencies
 table(InfantData)
             </code>
           </sage>
@@ -359,6 +359,14 @@ choice
           <p>You need to pass the tabled data into the barplot function:</p>
           <sage language="r">
             <code>
+# Create the InfantData dataset
+InfantData = data.frame(
+  choice = c("Helper", "Helper", "Helper", "Helper", "Helper", "Hinderer",
+             "Helper", "Helper", "Helper", "Helper", "Helper", "Helper",
+             "Helper", "Hinderer", "Helper", "Helper")
+)
+
+# Create bar plot
 barplot(table(InfantData), xlab="Choice", ylab="Frequency")
             </code>
           </sage>
