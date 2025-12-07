@@ -220,7 +220,31 @@ head(InfantData)
           </note>
           
           <p><alert>Option 2: Using This Interactive Textbook (Sage Cell)</alert></p>
-          <p>Since the Sage cells in this textbook cannot access external URLs, we'll create the data directly. Click <q>Evaluate (R)</q> below to load and view the Infant data:</p>
+          <p>You can also use the ISCAM package directly in the Sage cells! First, install the package (this may take a minute):</p>
+          
+          <sage language="r">
+            <input>
+# Install the ISCAM package from GitHub
+# This only needs to run once per session, but may take 30-60 seconds
+install.packages("remotes")
+remotes::install_github("ISCAM4/ISCAM")
+            </input>
+          </sage>
+          
+          <p>Once installed, you can load the package and access the data:</p>
+          
+          <sage language="r">
+            <input>
+# Load the ISCAM package and data
+library(ISCAM)
+data(InfantData)
+
+# Display the data
+InfantData
+            </input>
+          </sage>
+          
+          <p><alert>Alternative:</alert> If the package installation is too slow or times out, we can create the data directly instead:</p>
           
           <note>
             <title>Working with Sage Cells</title>
