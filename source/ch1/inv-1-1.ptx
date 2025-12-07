@@ -220,35 +220,11 @@ head(InfantData)
           </note>
           
           <p><alert>Option 2: Using This Interactive Textbook (Sage Cell)</alert></p>
-          <p>You can also use the ISCAM package directly in the Sage cells! First, install the package (this may take a minute):</p>
-          
-          <sage language="r">
-            <input>
-# Install the ISCAM package from GitHub
-# This only needs to run once per session, but may take 30-60 seconds
-install.packages("remotes")
-remotes::install_github("ISCAM4/ISCAM")
-            </input>
-          </sage>
-          
-          <p>Once installed, you can load the package and access the data:</p>
-          
-          <sage language="r">
-            <input>
-# Load the ISCAM package and data
-library(ISCAM)
-data(InfantData)
-
-# Display the data
-InfantData
-            </input>
-          </sage>
-          
-          <p><alert>Alternative:</alert> If the package installation is too slow or times out, we can create the data directly instead:</p>
+          <p>For the interactive Sage cells in this textbook, we'll create the data directly in each code cell. This approach works best because:</p>
           
           <note>
             <title>Working with Sage Cells</title>
-            <p><alert>Important:</alert> Each Sage cell runs completely independently in this textbook. Variables created in one cell are <em>not</em> available in other cells. This is why you'll see the data creation code repeated in each cell throughout this investigation - each cell includes all the previous steps plus the new command you're learning.</p>
+            <p><alert>Important:</alert> Each Sage cell runs completely independently in this textbook. Variables created in one cell are <em>not</em> available in other cells, and you cannot install R packages from CRAN or GitHub in Sage cells. This is why you'll see the data creation code repeated in each cell throughout this investigation - each cell includes all the previous steps plus the new command you're learning.</p>
             <p><alert>Building Your Analysis:</alert> As you progress through the investigation, each cell will include:
             <ul>
               <li><p>All the previous commands (like creating the data)</p></li>
