@@ -220,11 +220,41 @@ head(InfantData)
           </note>
           
           <p><alert>Option 2: Using This Interactive Textbook (Sage Cell)</alert></p>
-          <p>For the interactive Sage cells in this textbook, we'll create the data directly in each code cell. This approach works best because:</p>
+          <p>In Sage cells, you have two options for loading data:</p>
+          
+          <p><em>Option 2a: Load from URL (works for small to medium datasets)</em></p>
+          <sage language="r">
+            <input>
+# Load data directly from URL
+InfantData = read.table(url("https://www.rossmanchance.com/iscam3/data/InfantData.txt"), header=TRUE)
+
+# Display the data
+InfantData
+            </input>
+          </sage>
+          
+          <p><em>Option 2b: Create data directly (always works)</em></p>
+          <p>If loading from a URL times out or fails, you can create the data directly:</p>
+          
+          <sage language="r">
+            <input>
+# Create the InfantData dataset directly
+InfantData &lt;- data.frame(
+  choice = c("Helper", "Helper", "Helper", "Helper", "Helper", "Hinderer",
+             "Helper", "Helper", "Helper", "Helper", "Helper", "Helper",
+             "Helper", "Hinderer", "Helper", "Helper")
+)
+
+# Display the data
+InfantData
+            </input>
+          </sage>
           
           <note>
             <title>Working with Sage Cells</title>
-            <p><alert>Important:</alert> Each Sage cell runs completely independently in this textbook. Variables created in one cell are <em>not</em> available in other cells, and you cannot install R packages from CRAN or GitHub in Sage cells. This is why you'll see the data creation code repeated in each cell throughout this investigation - each cell includes all the previous steps plus the new command you're learning.</p>
+            <p><alert>Important:</alert> Each Sage cell runs completely independently in this textbook. Variables created in one cell are <em>not</em> available in other cells. This is why you'll see the data creation code repeated in each cell throughout this investigation - each cell includes all the previous steps plus the new command you're learning.</p>
+            
+            <p><alert>Limitations:</alert> You cannot install new R packages (like <c>install.packages()</c> or <c>remotes::install_github()</c>) in Sage cells. However, you can use packages that are already installed on the Sage server, and you can load data from URLs using <c>read.table(url(...))</c> for most datasets.</p>
             <p><alert>Building Your Analysis:</alert> As you progress through the investigation, each cell will include:
             <ul>
               <li><p>All the previous commands (like creating the data)</p></li>
