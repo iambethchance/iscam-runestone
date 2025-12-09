@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="investigation4-4">
+  <title>Section 3: Comparing Two Treatment Means</title>
+  
+  <introduction>
+    <p>The previous section focused on quantitative data arising from two independent random samples. This section will focus on quantitative data arising from randomized experiments. We will again consider simulation-based, exact, and theory-based p-values, as well as what assumptions we need to make for confidence intervals.</p>
+  </introduction>
+  
+  <subsection xml:id="inv-4-4-sleep">
+    <title>Investigation 4.4: Lingering Effects of Sleep Deprivation</title>
+  
+    <introduction>
+      <p>Researchers have established that sleep deprivation has a harmful effect on visual learning (the subject does not consolidate information to improve on the task). Stickgold, James, and Hobson (2000) investigated whether subjects could <q>make up</q> for sleep deprivation by getting a full night's sleep in subsequent nights. This study involved randomly assigning 21 subjects (volunteers between the ages of 18 and 25) to one of two groups: one group was deprived of sleep on the night following training with a visual discrimination task, and the other group was permitted unrestricted sleep on that first night. Both groups were allowed unrestricted sleep on the following two nights, and then were re-tested on the third day. Subjects' performance on the test was recorded as the minimum time (in milliseconds) between stimuli appearing on a computer screen for which they could accurately report what they had seen on the screen. Previous studies had shown that subjects deprived of sleep performed significantly worse the following day, but it was not clear how long these negative effects would last. The data presented here are the improvements in reaction times (in milliseconds), so a negative value indicates a decrease in performance.</p>
+      
+      <p>Sleep deprivation group (<m>n = 11</m>): 10.7, 4.5, 2.2, 21.3, 14.7, 10.7, 9.6, 2.4, 21.8, 7.2, 10.0</p>
+      <p>Unrestricted sleep group (<m>n = 10</m>): 25.2, 14.5, 7.0, 12.6, 34.5, 45.6, 11.6, 18.6, 12.1, 30.5</p>
+    </introduction>
+    
+    <subsubsection xml:id="inv-4-4-study-design">
+      <title>Study Design</title>
+      
+      <exercise xml:id="inv4-4-a" label="I4.4.1">
+        <title>Experiment or Observational Study</title>
+        <statement>
+          <p>Is this an experiment or an observational study? Explain.</p>
+        </statement>
+        <solution>
+          <p>This is an experiment because the researchers randomly assigned subjects to the two sleep conditions (sleep deprivation vs. unrestricted sleep).</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-b" label="I4.4.2">
+        <title>Identify Variables</title>
+        <statement>
+          <p>Identify the explanatory (EV) and response (RV) variables. Also classify each as being categorical or quantitative.</p>
+          <p>EV: <var width="40"/> type: <var width="20"/></p>
+          <p>RV: <var width="40"/> type: <var width="20"/></p>
+        </statement>
+        <solution>
+          <p>EV: Sleep condition (sleep deprived or unrestricted sleep) type: categorical</p>
+          <p>RV: Improvement in reaction time (milliseconds) type: quantitative</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-c" label="I4.4.3">
+        <title>State Hypotheses</title>
+        <statement>
+          <p>Write out the null and alternative hypotheses, in words, for this research study.</p>
+        </statement>
+        <solution>
+          <p>Null hypothesis: There is no difference in average improvement scores between the sleep deprived and unrestricted sleep groups. Any observed difference is due to chance variation in the random assignment.</p>
+          <p>Alternative hypothesis: The average improvement score for the sleep deprived group is lower than the average improvement score for the unrestricted sleep group, indicating that the harmful effects of sleep deprivation linger three days later.</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-d" label="I4.4.4">
+        <title>One-sided or Two-sided</title>
+        <statement>
+          <p>Is your alternative hypothesis one-sided or two-sided? What does this imply about the types of response values you would expect to see in each treatment group? [Hint: Positive or negative?]</p>
+        </statement>
+        <solution>
+          <p>The alternative hypothesis is one-sided (we predict sleep deprived group will have lower improvements). This implies we expect to see smaller (possibly even negative) improvement values in the sleep deprived group compared to higher positive improvement values in the unrestricted sleep group.</p>
+        </solution>
+        <response/>
+      </exercise>
+    </subsubsection>
+    
+    <subsubsection xml:id="inv-4-4-descriptive">
+      <title>Descriptive Statistics</title>
+      
+      <p>The following dotplots reveal the distributions of improvements between the two groups:</p>
+      
+      <image source="images/Inv4.4intro.png" width="80%">
+        <description>Dotplots comparing improvement scores between sleep deprived and unrestricted sleep groups</description>
+      </image>
+      
+      <exercise xml:id="inv4-4-e" label="I4.4.5">
+        <title>Preliminary Evidence</title>
+        <statement>
+          <p>Do these data provide preliminary evidence that the harmful effects of sleep deprivation linger three days later? Explain your reasoning. [Hints: Are all the improvement scores in one group higher than all the improvement scores in the other group? Is there a tendency for higher improvement scores in one group three days later?]</p>
+        </statement>
+        <solution>
+          <p>Yes, these data provide preliminary evidence. While not all unrestricted sleep scores are higher than all sleep deprived scores (there is some overlap), there is a clear tendency for the unrestricted sleep group to have higher improvement scores. The center of the unrestricted sleep distribution appears to be higher than the center of the sleep deprived distribution.</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-f" label="I4.4.6">
+        <title>Calculate Observed Difference</title>
+        <statement>
+          <p>There are several ways we could choose to measure the tendency observed in (e). A common choice of statistic is of course the difference in group means. Calculate this statistic by subtracting the <q>deprived</q> group's value from the <q>unrestricted</q> group's value.</p>
+          <p>Observed difference in sample means: <m>\bar{x}_{\text{unrestricted}} - \bar{x}_{\text{deprived}} = </m> <var width="10"/></p>
+        </statement>
+        <solution>
+          <p>Unrestricted sleep group mean: <m>\bar{x}_{\text{unrestricted}} = 21.22</m> milliseconds</p>
+          <p>Sleep deprived group mean: <m>\bar{x}_{\text{deprived}} = 10.46</m> milliseconds</p>
+          <p>Observed difference: <m>21.22 - 10.46 = 10.76</m> milliseconds</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-g" label="I4.4.7">
+        <title>Could It Be Chance</title>
+        <statement>
+          <p>Is it possible that the differences seen here could have occurred just by chance variation, due to the random assignment of subjects to groups, even if there were really no effect of the sleep condition on improvement?</p>
+        </statement>
+        <solution>
+          <p>Yes, it is possible. Even if sleep condition had no real effect, the random assignment process could by chance place subjects with naturally higher improvement scores into one group, creating an observed difference.</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-h" label="I4.4.8">
+        <title>Source of Chance</title>
+        <statement>
+          <p>As usual, we want to know how plausible it is for us to obtain a difference in sample means at least as extreme as the observed value by chance alone. What is the source of <q>chance</q> in this study?</p>
+        </statement>
+        <solution>
+          <p>The source of chance in this study is the random assignment of subjects to the two treatment groups. Even if the treatment had no effect, different random assignments would produce different differences in group means.</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-i" label="I4.4.9">
+        <title>Outline Simulation</title>
+        <statement>
+          <p>Outline the steps of a simulation analysis that would explore the <q>could have been</q> outcomes under the null hypothesis by modelling the randomness described in (h).</p>
+        </statement>
+        <solution>
+          <p>1. Assume the null hypothesis is true (sleep condition has no effect).</p>
+          <p>2. Pool all 21 improvement scores together.</p>
+          <p>3. Randomly reassign the 21 scores to two groups (10 to unrestricted, 11 to deprived).</p>
+          <p>4. Calculate the difference in means for this random assignment.</p>
+          <p>5. Repeat steps 3-4 many times (e.g., 1000 times).</p>
+          <p>6. Compare the observed difference to the distribution of simulated differences to see how unusual it is.</p>
+        </solution>
+        <response/>
+      </exercise>
+    </subsubsection>
+    
+    <subsubsection xml:id="inv-4-4-inference">
+      <title>Statistical Inference</title>
+      
+      <p>As with the <q>dolphin therapy</q> experiment from Chapter 3, we again need to judge the strength of evidence that the experimental data provide in support of the researchers' conjecture that sleep deprivation has a harmful effect on learning. We are now working with a quantitative response variable rather than a categorical one, but we will use the same basic logic of statistical significance: We will ask whether the observed experimental results are very unlikely to have occurred by chance variation if the explanatory variable has no effect, that is, if the values in the two groups are interchangeable. To simulate this randomization test: We will take the observed response variable outcomes, randomly distribute these numerical values between the two groups, compute the statistic of interest (e.g., the difference in group means), repeat this process a large number of times, and see how often the random assignment process alone produces a difference in group means as extreme as in the actual research study. This is similar to what you considered in Investigation 4.1. However, this time it is not really feasible to list out all possible <m>C(21,10) = 352,716</m> random assignments and consider the value of the statistic for each one, so we will simulate a large number of random assignments instead. Note, we need to know the value of <m>(\bar{x}_1 - \bar{x}_2)</m>, not just the <q>number of successes</q> as with the dolphin therapy study.</p>
+      
+      <exercise xml:id="inv4-4-j" label="I4.4.10">
+        <title>Physical Simulation</title>
+        <statement>
+          <p>Take a set of 21 index cards, and write each of the improvement values on a card. Then shuffle the cards and deal out 10 of them to represent the subjects randomly assigned to the <q>unrestricted sleep</q> group and 11 to represent the <q>sleep deprived group.</q> Calculate the mean of the improvements in each group. Then calculate the difference in group means, subtracting in the same order as before.</p>
+          <p>Simulated difference in means (<m>\bar{x}_{\text{unrestricted}} - \bar{x}_{\text{deprived}}</m>): <var width="10"/></p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-k" label="I4.4.11">
+        <title>Compare to Observed</title>
+        <statement>
+          <p>Is your simulated result for the difference in means as extreme as the actual experimental result? Explain. Why is looking at this one simulated difference not enough to assess statistical significance?</p>
+        </statement>
+        <solution>
+          <p>The simulated result will vary, but it is likely not as extreme as the actual result. Looking at just one simulated difference is not enough because we need to understand the entire distribution of what could happen by chance alone. We need many repetitions to determine how often (what proportion of the time) random assignment alone produces results as extreme as what we observed.</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-l" label="I4.4.12">
+        <title>Combine Class Results</title>
+        <statement>
+          <p>Combine your results with your classmates to produce a dotplot of the difference in group means.</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <p>Simulating more repetitions would provide a better understanding of how significant (i.e., unlikely to have happened by random assignment alone) the observed experimental results are. In other words, more repetitions will enable us to approximate the p-value more accurately. We will again turn to technology to perform the simulation more quickly and efficiently.</p>
+      
+      <exercise xml:id="inv4-4-m" label="I4.4.13">
+        <title>Use Applet for Simulation</title>
+        <statement>
+          <p>Open the <url href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm">Comparing Groups (Quantitative) applet</url>. You will see dotplots of the research results. Verify the calculation of the observed difference in group means. (This applet subtracts the top row from the bottom row.)</p>
+          <ul>
+            <li><p>Check the Show Shuffle Options box.</p></li>
+            <li><p>Select the Plot radio button.</p></li>
+            <li><p>Press the Shuffle Responses button.</p></li>
+          </ul>
+          <p>The applet combines all the scores into one pile, reassigns the group labels (red and black coloring) at random, and then redistributes the observations to the two treatment groups, just like you did with the index cards.</p>
+          <p>What did you find for the difference in group means? <var width="10"/></p>
+          <p>Is this more extreme than the observed difference in group means in the research study? <var width="10"/></p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-n" label="I4.4.14">
+        <title>More Repetitions</title>
+        <statement>
+          <p>Press Shuffle Responses four more times. With each new <q>could have been</q> result (each new random assignment), the applet calculates the difference in group means and adds a dot to the dotplot to the right. Identify what each dot represents in the dotplot on the far right.</p>
+        </statement>
+        <solution>
+          <p>Each dot represents the difference in group means (<m>\bar{x}_{\text{unrestricted}} - \bar{x}_{\text{deprived}}</m>) from one random reassignment of the 21 improvement scores to the two groups.</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-o" label="I4.4.15">
+        <title>Expected Mean of Null Distribution</title>
+        <statement>
+          <p>As we conduct more and more repetitions, what do you expect the mean of this null distribution of difference in group means to be close to? Explain.</p>
+        </statement>
+        <solution>
+          <p>The mean should be close to 0. Under the null hypothesis (no effect of sleep condition), the 21 improvement scores are equally likely to be assigned to either group, so on average, the difference in means should be approximately zero.</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-p" label="I4.4.16">
+        <title>Generate Full Distribution</title>
+        <statement>
+          <p>Change the Number of repetitions from 1 to 995 (to produce a total of 1,000 repetitions). Press Shuffle Responses. Describe the shape, mean, and standard deviation of the resulting dotplot. Explain what is represented by this standard deviation.</p>
+          <p>Shape: <var width="30"/></p>
+          <p>Mean: <var width="10"/></p>
+          <p>Standard deviation: <var width="10"/></p>
+          <p>Interpretation: <var width="60"/></p>
+        </statement>
+        <solution>
+          <p>Shape: Approximately symmetric and bell-shaped (normal)</p>
+          <p>Mean: Close to 0 (e.g., between -0.5 and 0.5)</p>
+          <p>Standard deviation: Approximately 5-6 milliseconds</p>
+          <p>Interpretation: The standard deviation measures the typical variability in differences of group means that we would expect to see just from random assignment alone, if the null hypothesis were true.</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-q" label="I4.4.17">
+        <title>Calculate p-value</title>
+        <statement>
+          <p>Now enter the observed difference in group means (question (f)) from the research study into the Count Samples box, use the Greater Than option (to match our alternative hypothesis), and press the Count button. What does the applet report for the empirical p-value?</p>
+        </statement>
+        <solution>
+          <p>The applet should report a p-value of approximately 0.02 to 0.03 (will vary based on simulation).</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-r" label="I4.4.18">
+        <title>Interpret p-value</title>
+        <statement>
+          <p>Provide an interpretation of this p-value in context (make sure you address the statistic, the source of the randomness in the study, and what you mean by <q>more extreme</q>).</p>
+        </statement>
+        <solution>
+          <p>The p-value represents the probability of observing a difference in mean improvement scores of 10.76 milliseconds or larger, by random assignment alone, if sleep condition truly had no effect on improvement. In other words, if we repeatedly randomly assigned these 21 subjects to two groups, only about 2-3% of the time would we see the unrestricted sleep group's average improvement exceed the sleep deprived group's average by 10.76 milliseconds or more.</p>
+        </solution>
+        <response/>
+      </exercise>
+    </subsubsection>
+    
+    <subsubsection xml:id="inv-4-4-conclusions">
+      <title>Conclusions</title>
+      
+      <exercise xml:id="inv4-4-s" label="I4.4.19">
+        <title>Statistical Significance</title>
+        <statement>
+          <p>What conclusion would you draw from this simulation analysis regarding the question of whether the learning improvements in the sleep deprived group are statistically significantly lower (on average) than those in the unrestricted sleep group? Also explain the reasoning process by which your conclusion follows from the simulation results.</p>
+        </statement>
+        <solution>
+          <p>The learning improvements in the sleep deprived group are statistically significantly lower than those in the unrestricted sleep group. The p-value of approximately 0.02-0.03 indicates that if sleep condition had no effect, we would rarely (only 2-3% of the time) see a difference in means as large as we observed, just from random assignment variation. This small p-value provides strong evidence against the null hypothesis and in favor of the alternative hypothesis that sleep deprivation has a lingering negative effect on learning improvement.</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-t" label="I4.4.20">
+        <title>Causation</title>
+        <statement>
+          <p>Does the design of this study allow you to conclude that the reduction in improvement scores is caused by the sleep deprivation? Explain.</p>
+        </statement>
+        <solution>
+          <p>Yes, because this was a randomized experiment (subjects were randomly assigned to sleep conditions), we can conclude that the sleep deprivation caused the reduction in improvement scores. Random assignment helps ensure that the two groups are similar in all respects except for the sleep condition, so any observed difference can be attributed to the treatment rather than to other confounding variables.</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-u" label="I4.4.21">
+        <title>Generalizability</title>
+        <statement>
+          <p>To what <q>population</q> is it reasonable to generalize these results?</p>
+        </statement>
+        <solution>
+          <p>It is reasonable to generalize these results to college-aged volunteers (ages 18-25) who are similar to those in the study. However, we should be cautious about generalizing to much different populations (e.g., children, elderly, people with sleep disorders) since the subjects were volunteers in a specific age range.</p>
+        </solution>
+        <response/>
+      </exercise>
+    </subsubsection>
+    
+    <subsubsection xml:id="inv-4-4-exact">
+      <title>Exact p-value?</title>
+      
+      <p>Although not as convenient as before, we can determine the exact p-value for this randomization test by considering all the different possible random assignments of these 21 subjects into groups of 11 and 10, determining the difference in means (or medians) for each, and then counting how many are at least as extreme as the observed difference.</p>
+      
+      <p>The following histogram (produced using the <c>combn</c> function in R, from the <c>combinat</c> package, assuming <c>imprvs</c> contains the response variable values) shows the distribution of all 352,716 possible differences in group means.</p>
+      
+      <image source="images/Inv4.4e.png" width="60%">
+        <description>Histogram showing exact randomization distribution of all 352,716 possible differences in group means</description>
+      </image>
+      
+      <program language="r">
+        <input>
+indices = 1:21
+allcombs = combn(21, 10)
+
+diffs = 1:ncol(allcombs)
+
+for (i in 1:ncol(allcombs)){
+  group1=imprvs[allcombs[,i]]
+  group2=imprvs[setdiff(indices, allcombs[,i])]
+  diffs[i]=mean(group1)-mean(group2)
+}
+
+hist(diffs)
+abline(v=15.92, col=2)
+
+# approx. run time: 1 min
+        </input>
+      </program>
+      
+      <exercise xml:id="inv4-4-v" label="I4.4.22">
+        <title>Compare Simulation to Exact</title>
+        <statement>
+          <p>Do your simulation results reasonably approximate this null distribution?</p>
+        </statement>
+        <solution>
+          <p>Yes, the simulation results should reasonably approximate this exact distribution. Both should be approximately symmetric and bell-shaped, centered near 0, with similar spread.</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-4-w" label="I4.4.23">
+        <title>Calculate Exact p-value</title>
+        <statement>
+          <p>It turns out that 2533 of the 352,716 different random assignments produce a difference in group means of 15.92 milliseconds or larger. Use this information to determine the exact p-value of this randomization test. Is the approximate p-value from your simulation close?</p>
+        </statement>
+        <solution>
+          <p>Exact p-value = 2533 / 352,716 = 0.00718 or approximately 0.007</p>
+          <p>This is reasonably close to the approximate p-value from the simulation (which was around 0.02-0.03, though exact simulation results will vary). Both p-values are small enough to provide strong evidence against the null hypothesis.</p>
+        </solution>
+        <response/>
+      </exercise>
+      
+      <p><alert>Discussion:</alert> The exact randomization distribution consists of every possible random assignment and calculates the statistic of interest (e.g., difference in means) for each one. Then we simply count how many of the configurations result in a value of the statistic at least as extreme (as defined by the alternative hypothesis) as the actual observed result. As you might expect, it can be extremely tedious, even with computers, to list out all of these possible random assignments. And these group sizes are relatively small! One shortcut is to only count how many assignments give results more extreme than the one observed, but as you will see we can often appeal to a mathematical model as well.</p>
+      
+      <assemblage xml:id="tech-detour-4-4">
+        <title>Technology Detour <mdash/> Simulating a Randomization Test for a Quantitative Response</title>
+        
+        <p><alert>Step 1:</alert> Randomly reorder the group membership labels (keeping the same number in each group)</p>
+        <p><alert>Step 2:</alert> Calculate the new difference in means (or other statistic) using the reordered group labels</p>
+        <p><alert>Step 3:</alert> Repeat Steps 1 and 2 many times.</p>
+        <p>Look at the distribution of the statistic, including the mean and standard deviation, and count how many of the simulated statistics are as or more extreme as the observed.</p>
+        
+        <p><alert>Applet:</alert> <url href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm">Comparing Groups (Quantitative)</url></p>
+        
+        <p><alert>In R:</alert> See RandomizationTestQuant.html (with Sleep Deprivation file loaded and attached)</p>
+        
+        <p><alert>In JMP:</alert> See RandomizationTestQuantJMP.html</p>
+      </assemblage>
+    </subsubsection>
+    
+    <subsubsection xml:id="inv-4-4-study-conclusions">
+      <title>Study Conclusions</title>
+      
+      <p>These data come from a randomized, comparative experiment. The dotplots and descriptive statistics reveal that, even three days later, the sleep-deprived subjects tended (on average) to have lower improvements than those permitted unrestricted sleep. To investigate whether this difference is larger than could be expected from random assignment alone (assuming no real difference between the two treatment conditions, our null hypothesis), you simulated a randomization test by assigning the 21 measurements (improvement scores) to the two groups at random. You should have found that random assignment alone rarely produced differences in group means as extreme as in the actual study (the <q>exact</q> p-value is less than 0.01). Thus, we have fairly strong evidence that the average learning improvement is genuinely lower for the sleep deprived subjects. Moreover, because this was a randomized comparative experiment and not an observational study, we can draw a causal conclusion that the sleep deprivation was the cause of the lower learning improvements. However, the subjects were college-aged volunteers, so we may not want to generalize these results to a much different population.</p>
+    </subsubsection>
+  </subsection>
+  
+  <subsection xml:id="practice-4-4">
+    <title>Practice Problems</title>
+    
+    <subsubsection xml:id="practice-4-4a">
+      <title>Practice Problem 4.4A</title>
+      
+      <exercise xml:id="pp4-4a-1" label="PP4.4A.1">
+        <statement>
+          <p>Consider Figure 1 in the Stickgold et al. study. What information was the graph intending to convey?</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="pp4-4a-2" label="PP4.4A.2">
+        <statement>
+          <p>What important details are not conveyed in Figure 1 that dotplots would have shown better?</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="pp4-4a-3" label="PP4.4A.3">
+        <statement>
+          <p>Explain how the simulation analysis conducted in this investigation differs from Investigation 4.2. (What is the random process being simulated? What assumptions are underlying the simulation?)</p>
+        </statement>
+        <solution>
+          <p>In Investigation 4.2 (comparing elephant walking distances), we simulated the random sampling process from two populations under the assumption that the population means are equal. In Investigation 4.4, we simulated the random assignment process in an experiment under the assumption that the treatment has no effect (so the response values would be the same regardless of which group the subject was assigned to). Investigation 4.2 deals with observational data and random sampling; Investigation 4.4 deals with experimental data and random assignment.</p>
+        </solution>
+        <response/>
+      </exercise>
+    </subsubsection>
+    
+    <subsubsection xml:id="practice-4-4b">
+      <title>Practice Problem 4.4B</title>
+      
+      <exercise xml:id="pp4-4b-1" label="PP4.4B.1">
+        <statement>
+          <p>Produce numerical and graphical summaries for the data in <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/FakeSleepDeprivation.txt">FakeSleepDeprivation.txt</url>, representing a new set of 21 responses for the sleep deprivation study. Comment on how the shapes, centers, and variability for the two distributions compare between these data and the original data.</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="pp4-4b-2" label="PP4.4B.2">
+        <statement>
+          <p>Use technology (see Technology Detour) to carry out a randomization test to compare the improvements for the sleep deprived and unrestricted sleep groups using the hypothetical data. Indicate how you approximated the p-value.</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="pp4-4b-3" label="PP4.4B.3">
+        <statement>
+          <p>How does the p-value for the hypothetical data compare to the p-value for the original data? Explain why this makes sense based on what you learned about how the data sets compared in (a).</p>
+        </statement>
+        <response/>
+      </exercise>
+    </subsubsection>
+  </subsection>
+
+</section>
