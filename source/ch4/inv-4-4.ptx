@@ -25,7 +25,7 @@
           <p>Is this an experiment or an observational study? Explain.</p>
         </statement>
         <solution>
-          <p>This is an experiment because the researchers randomly assigned subjects to the two sleep conditions (sleep deprivation vs. unrestricted sleep).</p>
+          <p>This is an experiment because researchers determined which subjects would be sleep deprived.</p>
         </solution>
         <response/>
       </exercise>
@@ -38,8 +38,8 @@
           <p>RV: <var width="40"/> type: <var width="20"/></p>
         </statement>
         <solution>
-          <p>EV: Sleep condition (sleep deprived or unrestricted sleep) type: categorical</p>
-          <p>RV: Improvement in reaction time (milliseconds) type: quantitative</p>
+          <p>EV: Was the subject sleep deprived? type: Binary categorical</p>
+          <p>RV: What was the subject's improvement score? type: Quantitative</p>
         </solution>
         <response/>
       </exercise>
@@ -50,8 +50,8 @@
           <p>Write out the null and alternative hypotheses, in words, for this research study.</p>
         </statement>
         <solution>
-          <p>Null hypothesis: There is no difference in average improvement scores between the sleep deprived and unrestricted sleep groups. Any observed difference is due to chance variation in the random assignment.</p>
-          <p>Alternative hypothesis: The average improvement score for the sleep deprived group is lower than the average improvement score for the unrestricted sleep group, indicating that the harmful effects of sleep deprivation linger three days later.</p>
+          <p><m>H_0</m>: There is no difference in improvement scores on average between these two treatments (in the long run).</p>
+          <p><m>H_a</m>: On average, improvement scores are higher for unrestricted sleep treatment.</p>
         </solution>
         <response/>
       </exercise>
@@ -62,7 +62,7 @@
           <p>Is your alternative hypothesis one-sided or two-sided? What does this imply about the types of response values you would expect to see in each treatment group? [Hint: Positive or negative?]</p>
         </statement>
         <solution>
-          <p>The alternative hypothesis is one-sided (we predict sleep deprived group will have lower improvements). This implies we expect to see smaller (possibly even negative) improvement values in the sleep deprived group compared to higher positive improvement values in the unrestricted sleep group.</p>
+          <p>The alternative hypothesis is one-sided; we expect to see positive improvement scores in each group, but higher scores in the unrestricted sleep group.</p>
         </solution>
         <response/>
       </exercise>
@@ -83,7 +83,7 @@
           <p>Do these data provide preliminary evidence that the harmful effects of sleep deprivation linger three days later? Explain your reasoning. [Hints: Are all the improvement scores in one group higher than all the improvement scores in the other group? Is there a tendency for higher improvement scores in one group three days later?]</p>
         </statement>
         <solution>
-          <p>Yes, these data provide preliminary evidence. While not all unrestricted sleep scores are higher than all sleep deprived scores (there is some overlap), there is a clear tendency for the unrestricted sleep group to have higher improvement scores. The center of the unrestricted sleep distribution appears to be higher than the center of the sleep deprived distribution.</p>
+          <p>On average, the improvement score was higher for unrestricted group. We see a tendency for higher improvement scores in the unrestricted group (the dotplot is shifted to the right compared to the sleep deprived group dotplot).</p>
         </solution>
         <response/>
       </exercise>
@@ -95,9 +95,9 @@
           <p>Observed difference in sample means: <m>\bar{x}_{\text{unrestricted}} - \bar{x}_{\text{deprived}} = </m> <var width="10"/></p>
         </statement>
         <solution>
-          <p>Unrestricted sleep group mean: <m>\bar{x}_{\text{unrestricted}} = 21.22</m> milliseconds</p>
-          <p>Sleep deprived group mean: <m>\bar{x}_{\text{deprived}} = 10.46</m> milliseconds</p>
-          <p>Observed difference: <m>21.22 - 10.46 = 10.76</m> milliseconds</p>
+          <p><m>\bar{x}_{\text{deprived}} = 10.46</m> ms (note: solution key shows 3.90 ms but this appears to be an error based on the actual data)</p>
+          <p><m>\bar{x}_{\text{unrestricted}} = 21.22</m> ms (note: solution key shows 19.82 ms but this appears to be an error based on the actual data)</p>
+          <p>Difference: <m>21.22 - 10.46 = 10.76</m> ms (note: solution key shows 15.92 ms)</p>
         </solution>
         <response/>
       </exercise>
@@ -108,7 +108,7 @@
           <p>Is it possible that the differences seen here could have occurred just by chance variation, due to the random assignment of subjects to groups, even if there were really no effect of the sleep condition on improvement?</p>
         </statement>
         <solution>
-          <p>Yes, it is possible. Even if sleep condition had no real effect, the random assignment process could by chance place subjects with naturally higher improvement scores into one group, creating an observed difference.</p>
+          <p>It is possible <mdash/> random assignment alone could conceivably lead to a large difference in the group means.</p>
         </solution>
         <response/>
       </exercise>
@@ -119,7 +119,7 @@
           <p>As usual, we want to know how plausible it is for us to obtain a difference in sample means at least as extreme as the observed value by chance alone. What is the source of <q>chance</q> in this study?</p>
         </statement>
         <solution>
-          <p>The source of chance in this study is the random assignment of subjects to the two treatment groups. Even if the treatment had no effect, different random assignments would produce different differences in group means.</p>
+          <p>Random assignment</p>
         </solution>
         <response/>
       </exercise>
@@ -130,12 +130,7 @@
           <p>Outline the steps of a simulation analysis that would explore the <q>could have been</q> outcomes under the null hypothesis by modelling the randomness described in (h).</p>
         </statement>
         <solution>
-          <p>1. Assume the null hypothesis is true (sleep condition has no effect).</p>
-          <p>2. Pool all 21 improvement scores together.</p>
-          <p>3. Randomly reassign the 21 scores to two groups (10 to unrestricted, 11 to deprived).</p>
-          <p>4. Calculate the difference in means for this random assignment.</p>
-          <p>5. Repeat steps 3-4 many times (e.g., 1000 times).</p>
-          <p>6. Compare the observed difference to the distribution of simulated differences to see how unusual it is.</p>
+          <p>We want to simulate the random assignment by assuming everyone would get the same improvement score, regardless of which group they end up in, and randomly assign the subjects into 2 groups of <m>n_1 = 11</m> and <m>n_2 = 10</m>. Then see how frequently you get <m>\bar{x}_1 - \bar{x}_2 > 15.92</m>.</p>
         </solution>
         <response/>
       </exercise>
@@ -161,7 +156,7 @@
           <p>Is your simulated result for the difference in means as extreme as the actual experimental result? Explain. Why is looking at this one simulated difference not enough to assess statistical significance?</p>
         </statement>
         <solution>
-          <p>The simulated result will vary, but it is likely not as extreme as the actual result. Looking at just one simulated difference is not enough because we need to understand the entire distribution of what could happen by chance alone. We need many repetitions to determine how often (what proportion of the time) random assignment alone produces results as extreme as what we observed.</p>
+          <p>Results will vary. Looking at just one simulated difference is not enough because we need to understand the entire distribution of what could happen by chance alone to determine how often (what proportion of the time) random assignment alone produces results as extreme as what we observed.</p>
         </solution>
         <response/>
       </exercise>
@@ -198,7 +193,7 @@
           <p>Press Shuffle Responses four more times. With each new <q>could have been</q> result (each new random assignment), the applet calculates the difference in group means and adds a dot to the dotplot to the right. Identify what each dot represents in the dotplot on the far right.</p>
         </statement>
         <solution>
-          <p>Each dot represents the difference in group means (<m>\bar{x}_{\text{unrestricted}} - \bar{x}_{\text{deprived}}</m>) from one random reassignment of the 21 improvement scores to the two groups.</p>
+          <p>Each dot is the value of <m>\bar{x}_1 - \bar{x}_2</m> after one reshuffling of the data values (What is the difference in sample means with each random assignment?).</p>
         </solution>
         <response/>
       </exercise>
@@ -209,7 +204,7 @@
           <p>As we conduct more and more repetitions, what do you expect the mean of this null distribution of difference in group means to be close to? Explain.</p>
         </statement>
         <solution>
-          <p>The mean should be close to 0. Under the null hypothesis (no effect of sleep condition), the 21 improvement scores are equally likely to be assigned to either group, so on average, the difference in means should be approximately zero.</p>
+          <p>Zero (under null hypothesis)</p>
         </solution>
         <response/>
       </exercise>
@@ -224,10 +219,10 @@
           <p>Interpretation: <var width="60"/></p>
         </statement>
         <solution>
-          <p>Shape: Approximately symmetric and bell-shaped (normal)</p>
-          <p>Mean: Close to 0 (e.g., between -0.5 and 0.5)</p>
-          <p>Standard deviation: Approximately 5-6 milliseconds</p>
-          <p>Interpretation: The standard deviation measures the typical variability in differences of group means that we would expect to see just from random assignment alone, if the null hypothesis were true.</p>
+          <p>Shape: symmetric</p>
+          <p>Mean: <m>\approx 0</m></p>
+          <p>SD: <m>\approx 7</m></p>
+          <p>Interpretation: typical deviation from the mean</p>
         </solution>
         <response/>
       </exercise>
@@ -238,7 +233,7 @@
           <p>Now enter the observed difference in group means (question (f)) from the research study into the Count Samples box, use the Greater Than option (to match our alternative hypothesis), and press the Count button. What does the applet report for the empirical p-value?</p>
         </statement>
         <solution>
-          <p>The applet should report a p-value of approximately 0.02 to 0.03 (will vary based on simulation).</p>
+          <p>Counting <m>> 15.92</m> (this is the direction specified by the alternative hypothesis), the p-value should be about 0.007.</p>
         </solution>
         <response/>
       </exercise>
@@ -249,7 +244,7 @@
           <p>Provide an interpretation of this p-value in context (make sure you address the statistic, the source of the randomness in the study, and what you mean by <q>more extreme</q>).</p>
         </statement>
         <solution>
-          <p>The p-value represents the probability of observing a difference in mean improvement scores of 10.76 milliseconds or larger, by random assignment alone, if sleep condition truly had no effect on improvement. In other words, if we repeatedly randomly assigned these 21 subjects to two groups, only about 2-3% of the time would we see the unrestricted sleep group's average improvement exceed the sleep deprived group's average by 10.76 milliseconds or more.</p>
+          <p>The p-value is the percentage of random assignments, when the null hypothesis is true (<m>H_0: \mu_{\text{unrestricted}} - \mu_{\text{deprived}} = 0</m>, no treatment effect) that will have <m>\bar{x}_{\text{unrestricted}} - \bar{x}_{\text{deprived}} > 15.92</m> by chance (random sampling) alone.</p>
         </solution>
         <response/>
       </exercise>
@@ -264,7 +259,7 @@
           <p>What conclusion would you draw from this simulation analysis regarding the question of whether the learning improvements in the sleep deprived group are statistically significantly lower (on average) than those in the unrestricted sleep group? Also explain the reasoning process by which your conclusion follows from the simulation results.</p>
         </statement>
         <solution>
-          <p>The learning improvements in the sleep deprived group are statistically significantly lower than those in the unrestricted sleep group. The p-value of approximately 0.02-0.03 indicates that if sleep condition had no effect, we would rarely (only 2-3% of the time) see a difference in means as large as we observed, just from random assignment variation. This small p-value provides strong evidence against the null hypothesis and in favor of the alternative hypothesis that sleep deprivation has a lingering negative effect on learning improvement.</p>
+          <p>With a p-value below 0.01, reject <m>H_0</m> because p-value is small, in favor of <m>H_a: \mu_{\text{unrestricted}} - \mu_{\text{deprived}} > 0</m>. We have convincing evidence that the observed difference in means is not just due to random chance but instead that the underlying treatment mean for the unrestricted group is higher than for the sleep deprived treatment.</p>
         </solution>
         <response/>
       </exercise>
@@ -275,7 +270,7 @@
           <p>Does the design of this study allow you to conclude that the reduction in improvement scores is caused by the sleep deprivation? Explain.</p>
         </statement>
         <solution>
-          <p>Yes, because this was a randomized experiment (subjects were randomly assigned to sleep conditions), we can conclude that the sleep deprivation caused the reduction in improvement scores. Random assignment helps ensure that the two groups are similar in all respects except for the sleep condition, so any observed difference can be attributed to the treatment rather than to other confounding variables.</p>
+          <p>Yes, because of the random assignment to treatment groups, and the result was statistically significant.</p>
         </solution>
         <response/>
       </exercise>
@@ -286,7 +281,7 @@
           <p>To what <q>population</q> is it reasonable to generalize these results?</p>
         </statement>
         <solution>
-          <p>It is reasonable to generalize these results to college-aged volunteers (ages 18-25) who are similar to those in the study. However, we should be cautious about generalizing to much different populations (e.g., children, elderly, people with sleep disorders) since the subjects were volunteers in a specific age range.</p>
+          <p>Maybe volunteers between 18-25 years old (but not clear whether this study used any random sampling).</p>
         </solution>
         <response/>
       </exercise>
@@ -329,7 +324,7 @@ abline(v=15.92, col=2)
           <p>Do your simulation results reasonably approximate this null distribution?</p>
         </statement>
         <solution>
-          <p>Yes, the simulation results should reasonably approximate this exact distribution. Both should be approximately symmetric and bell-shaped, centered near 0, with similar spread.</p>
+          <p>The distributions are quite similar.</p>
         </solution>
         <response/>
       </exercise>
@@ -340,8 +335,8 @@ abline(v=15.92, col=2)
           <p>It turns out that 2533 of the 352,716 different random assignments produce a difference in group means of 15.92 milliseconds or larger. Use this information to determine the exact p-value of this randomization test. Is the approximate p-value from your simulation close?</p>
         </statement>
         <solution>
-          <p>Exact p-value = 2533 / 352,716 = 0.00718 or approximately 0.007</p>
-          <p>This is reasonably close to the approximate p-value from the simulation (which was around 0.02-0.03, though exact simulation results will vary). Both p-values are small enough to provide strong evidence against the null hypothesis.</p>
+          <p>2533/352,716 = 0.0072</p>
+          <p>This should be similar to the approximate p-value from 1000 repetitions of the random assignment.</p>
         </solution>
         <response/>
       </exercise>
