@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="investigation4-3">
+  <title>Investigation 4.3: Left-Handedness and Life Expectancy</title>
+  
+  <introduction>
+    <p>Psychologist Stanley Coren has conducted several studies investigating the life expectancy of left-handers compared to right-handers, believing that the stress of being left-handed in a right-handed world leads to earlier deaths among the left-handers. In one study Coren and Halpern (1991) sent surveys to thousands of next-of-kin of recently deceased southern Californians and asked whether the person had been right-handed or left-handed. They were very careful in how they collected their data. First, they consulted a bereavement counselor who suggested that they not contact anyone unless at least 9 months had passed since the death. The counselor also suggested that they make the contact as gentle as possible and not follow up or press people for responses. The researchers also decided that they would not contact next of kin if the death had been a result of murder or suicide or if the deceased was a child age 6 or younger. They received 987 replies and found that the average age of right-handed people at death was 75 years and for left-handed people it was 66 years.</p>
+  </introduction>
+  
+  <exercise xml:id="inv4-3-a" label="I4.3.1">
+    <title>Study Design</title>
+    <statement>
+      <p>Is this an observational study or an experiment?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-3-b" label="I4.3.2">
+    <title>Independence of Samples</title>
+    <statement>
+      <p>Did the researchers take a random sample of left-handers and an independent random sample of right-handers? Is it reasonable to consider these samples independent?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <p>Even though the researchers did not take a random sample of left-handers and a separate random sample of right-handers, we are still willing to consider these samples as independent because the results for one group should have no effect on the results for the other group. In a situation with two independent random samples, we can apply the two-sample <m>t</m>-test to make inferences about the difference in the population means.</p>
+  
+  <exercise xml:id="inv4-3-c" label="I4.3.3">
+    <title>Additional Information Needed</title>
+    <statement>
+      <p>The summary of the study reported the sample means; what additional information do we need to assess the statistical significance of their difference? Why is this information important?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-3-d" label="I4.3.4">
+    <title>Hypotheses</title>
+    <statement>
+      <p>Let <m>\mu_L</m> represent the mean lifetime for the population of left-handers and let <m>\mu_R</m> represent the mean lifetime for the population of right-handers. State the null and alternative hypotheses for Coren and Halpern's study (based on the research conjecture).</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <p>The table below lists some guesses for the sample size breakdown (based on estimates of the proportion of the population that are left-handed) and the sample standard deviations.</p>
+  
+  <table xml:id="table-handedness-scenarios">
+    <title>Scenarios for Left-Handedness Study</title>
+    <tabular halign="center">
+      <row header="yes" bottom="major">
+        <cell>Scenario</cell>
+        <cell>Group</cell>
+        <cell>Sample size</cell>
+        <cell>Sample mean</cell>
+        <cell>Sample SD</cell>
+        <cell><m>t</m>-statistic</cell>
+        <cell>p-value</cell>
+        <cell>Significant at 1% level?</cell>
+      </row>
+      <row>
+        <cell>1</cell>
+        <cell>left</cell>
+        <cell>99 (10% of 987)</cell>
+        <cell>66</cell>
+        <cell>15</cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell>right</cell>
+        <cell>888</cell>
+        <cell>75</cell>
+        <cell>15</cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>2</cell>
+        <cell>left</cell>
+        <cell>50 (5% of 987)</cell>
+        <cell>66</cell>
+        <cell>15</cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell>right</cell>
+        <cell>937</cell>
+        <cell>75</cell>
+        <cell>15</cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>3</cell>
+        <cell>left</cell>
+        <cell>50 (5% of 987)</cell>
+        <cell>66</cell>
+        <cell>25</cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell>right</cell>
+        <cell>937</cell>
+        <cell>75</cell>
+        <cell>25</cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>4</cell>
+        <cell>left</cell>
+        <cell>10 (1% of 987)</cell>
+        <cell>66</cell>
+        <cell>25</cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row bottom="minor">
+        <cell></cell>
+        <cell>right</cell>
+        <cell>977</cell>
+        <cell>75</cell>
+        <cell>25</cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row>
+        <cell>5</cell>
+        <cell>left</cell>
+        <cell>99 (10% of 987)</cell>
+        <cell>66</cell>
+        <cell>50</cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+      <row bottom="major">
+        <cell></cell>
+        <cell>right</cell>
+        <cell>888</cell>
+        <cell>75</cell>
+        <cell>50</cell>
+        <cell></cell>
+        <cell></cell>
+        <cell></cell>
+      </row>
+    </tabular>
+  </table>
+  
+  <exercise xml:id="inv4-3-e" label="I4.3.5">
+    <title>Comparing Scenarios</title>
+    <statement>
+      <p>For the following pairs of scenarios from the table above, which do you believe will result in the lower p-value, that is, stronger evidence against the null hypothesis? Explain briefly.</p>
+      <p><ul>
+        <li><p>Scenario 2 vs. 3</p></li>
+        <li><p>Scenario 3 vs. 4</p></li>
+      </ul></p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-3-f" label="I4.3.6">
+    <title>Hypothesis Tests for Multiple Scenarios</title>
+    <statement>
+      <p>Use technology (see preceding Technology Detour) to carry out the two-sample <m>t</m>-tests for these hypotheses, using the sample sizes, sample means, and sample standard deviations given in the table above. For each of these five scenarios, report the resulting standardized statistic, p-value, and whether or not the difference is statistically significant with a significance level of <m>\alpha = 0.01</m> in the table above.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-3-g" label="I4.3.7">
+    <title>Effects of Sample Size and Standard Deviation</title>
+    <statement>
+      <p>Summarize what your analysis reveals about the effects of the sample size breakdown and the sample standard deviations on the values of the <m>t</m>-statistic and p-value.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-3-h" label="I4.3.8">
+    <title>Most Realistic Scenario</title>
+    <statement>
+      <p>Considering the five scenarios of sample sizes and standard deviations used in the table, which scenario do you think is most realistic for this study of left- and right-handers' lifetimes? Explain, based on the context for these data.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-3-i" label="I4.3.9">
+    <title>Causation vs. Association</title>
+    <statement>
+      <p>Based on your analyses and how these data were collected, are you convinced that being left-handed causes individuals to die sooner on average than being right-handed? How should you phrase your conclusion?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-3-j" label="I4.3.10">
+    <title>Alternative Explanation</title>
+    <statement>
+      <p>Part of the motivation for this research was an earlier study by Porac and Coren (1981) that surveyed 5147 men and women of all ages in North America. They found that 15% of ten-year-olds were left-handed, compared to only 5% of fifty-year-olds and less than 1% of eighty-year-olds. At the age of 85, right-handers outnumbered left-handers by a margin of 200 to 1. Suggest another explanation for these puzzling findings that actually provides a counter-argument to the conclusion from the 1991 Coren and Halpern study that left-handers tend to live shorter lives than right-handers.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <assemblage xml:id="study-conclusions-4-3">
+    <title>Study Conclusions</title>
+    
+    <p>The difference in the sample mean lifetimes does appear to be statistically significant for all reasonable choices of the sample sizes and the sample standard deviations, so we have strong evidence that left-handers do tend to have shorter life spans than right-handers. However, there are numerous cautions to heed when drawing conclusions from such a study. This was a retrospective study with voluntary response, and in fact the researchers reported that they tended to hear from the left-handed relatives more often than right-handers, and they only heard from fewer than half of the families contacted. There is also no information given about the proportion of left-handers in the two southern California counties studied or the average ages of their residents now. In particular, one explanation for the lower percentage of left-handers among the elderly is not that they have died younger but that it used to be quite common practice to strongly encourage left-handed children to switch to being right-handed. Nowadays, that is less common (in fact many athletes love having this advantage!), and so now there is a higher percentage of left-handers among younger age groups. This helps to explain why the left-handers who had died would tend to be younger. In other words, maybe the average age difference between living left-handers and right-handers is also nine years.</p>
+    
+    <p>These studies have actually become hot topics for debate as some other studies have not been able to replicate Coren and Halpren's results. Other prospective longitudinal studies in the United States (Marks and Williams, 1991; Wolf, D'Agostino, and Cobb, 1991) have not found a significant difference in age at death. Still others have found connections between handedness and accident rates, lower birth rates, cancer, alcohol misuse, smoking, and schizophrenia. Alas, we don't see any randomized, comparative experiments being conducted to answer these questions in the near future!</p>
+  </assemblage>
+  
+  <p><alert>Discussion:</alert> You should have found that larger variability in each sample (so a larger SE) produces a larger p-value and therefore less convincing evidence that the population means differ. Or to put this in a more positive light: Reducing variability within groups makes it easier to distinguish between the groups. You should also have found that a bigger discrepancy in sample sizes between the two groups produces a larger p-value and therefore less convincing evidence that the population means differ.</p>
+  
+  <subsection xml:id="practice-problems-4-3">
+    <title>Practice Problems</title>
+    
+    <exercise xml:id="practice-4-3-a" label="PP4.3A">
+      <title>Effects on p-value</title>
+      <statement>
+        <p>(a) If all else stays the same but the difference in the means between the groups is larger, will the p-value be larger or smaller?</p>
+        <p>(b) If all else stays the same but the sample sizes within the groups are larger, will the p-value be larger or smaller?</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-3-b" label="PP4.3B">
+      <title>Children's Television Viewing Habits</title>
+      <statement>
+        <p>Recall the study on children's television viewing habits for two schools in San Jose, CA from Practice Problem 2.6B (Robinson, 1999). The researcher wanted to study whether a new classroom curriculum could reduce children's television viewing habits, which might in turn help to prevent obesity. One of the schools, chosen at random, incorporated an 18-lesson, 6-month classroom curriculum designed to reduce watching television and playing video games, whereas the other school made no changes to its curriculum. Both before the curriculum intervention, all children were asked to report how many hours per week they spent on these activities.</p>
+        
+        <p>The following summary statistics pertain to the reports of television watching, in hours per week, prior to the intervention:</p>
+        
+        <table>
+          <title>Baseline Television Viewing Data</title>
+          <tabular halign="center">
+            <row header="yes" bottom="major">
+              <cell>Baseline</cell>
+              <cell>Sample size</cell>
+              <cell>Sample mean</cell>
+              <cell>Sample SD</cell>
+            </row>
+            <row>
+              <cell>Control group</cell>
+              <cell>103</cell>
+              <cell>15.46</cell>
+              <cell>15.02</cell>
+            </row>
+            <row bottom="major">
+              <cell>Intervention group</cell>
+              <cell>95</cell>
+              <cell>15.35</cell>
+              <cell>13.17</cell>
+            </row>
+          </tabular>
+        </table>
+        
+        <p>Approximate two-sided p-value: 0.956</p>
+        
+        <p>(a) Do you think the researchers are happy or unhappy about the size of this p-value? Explain.</p>
+        
+        <p>Suppose that the summary statistics at baseline had instead been the following:</p>
+        
+        <table>
+          <title>Alternative Baseline Scenario 1</title>
+          <tabular halign="center">
+            <row header="yes" bottom="major">
+              <cell>Baseline</cell>
+              <cell>Sample size</cell>
+              <cell>Sample mean</cell>
+              <cell>Sample SD</cell>
+            </row>
+            <row>
+              <cell>Control group</cell>
+              <cell>103</cell>
+              <cell>14.46</cell>
+              <cell>15.02</cell>
+            </row>
+            <row bottom="major">
+              <cell>Intervention group</cell>
+              <cell>95</cell>
+              <cell>8.80</cell>
+              <cell>13.17</cell>
+            </row>
+          </tabular>
+        </table>
+        
+        <p>(b) Without performing any calculations, how should the p-value for these data compare (larger or smaller) to the p-value from the actual baseline results? Explain.</p>
+        
+        <p>Suppose that the summary statistics at the beginning of the study had instead been the following:</p>
+        
+        <table>
+          <title>Alternative Baseline Scenario 2</title>
+          <tabular halign="center">
+            <row header="yes" bottom="major">
+              <cell>Baseline</cell>
+              <cell>Sample size</cell>
+              <cell>Sample mean</cell>
+              <cell>Sample SD</cell>
+            </row>
+            <row>
+              <cell>Control group</cell>
+              <cell>103</cell>
+              <cell>15.46</cell>
+              <cell>13.82</cell>
+            </row>
+            <row bottom="major">
+              <cell>Intervention group</cell>
+              <cell>95</cell>
+              <cell>15.35</cell>
+              <cell>10.41</cell>
+            </row>
+          </tabular>
+        </table>
+        
+        <p>(c) Without performing any calculations, how should the p-value for these data compare (larger or smaller) to the actual baseline results? Explain.</p>
+        
+        <p>(d) Suppose the researchers decide to look at a subset of children in this study that belong to the same social-economic class (with the expectation that their television watching habits will be more similar to each other). Discuss one advantage and one disadvantage to this approach in terms of detecting a difference between the control group and the intervention group at the conclusion of the study. [Hints: Relate to your answer in (c)?]</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+  
+</section>
