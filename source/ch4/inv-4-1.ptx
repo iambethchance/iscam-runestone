@@ -3,7 +3,7 @@
   <title>Investigation 4.1: Employment Discrimination?</title>
   
   <introduction>
-    <image source="images/Inv4.1intro.png" width="60%">
+    <image source="images/Inv4.1intro.png" width="80%">
       <description>Introduction image for Investigation 4.1</description>
     </image>
     
@@ -73,21 +73,17 @@
       </table>
       
       <p>Do these data seem to support the claim that the laid-off employees tended to be older than those who were not laid off?</p>
+      <p><var width="60"/></p>
     </statement>
-    <response/>
     <hint>
       <p>Compare where the ages fall in the distribution for each group.</p>
     </hint>
     <solution>
-      <p>
-        Retained: 25 | 33 35 38 | 48 | 53<br/>
-        Laid Off: (none) | (none) | (none) | 55 55 56 | 64
-      </p>
       <p>Yes, the stemplot shows that all three laid-off employees (ages 55, 55, and 64) were among the four oldest employees, while the seven retained employees tended to be younger (ages 25, 33, 35, 38, 48, 53, 56). This provides preliminary evidence supporting the claim that older employees were more likely to be laid off.</p>
     </solution>
   </exercise>
   
-  <exercise xml:id="inv4-1-a2" label="I4.1.1b">
+  <exercise xml:id="inv4-1-a2" label="I4.1.2">
     <title>Comment on Preliminary Evidence</title>
     <statement>
       <p>Based on your stemplot, comment on whether these data provide preliminary evidence that the layoff decisions were not made at random. What aspects of the age distributions support or contradict this claim?</p>
@@ -104,76 +100,126 @@
   <paragraphs>
   <p>It's possible that the employers just randomly decided which three employees to layoff. </p>
   </paragraphs>
-  <exercise xml:id="inv4-1-b" label="I4.1.2">
+  <exercise xml:id="inv4-1-b" label="I4.1.3">
     <title>Compare to Random Layoffs</title>
     <statement>
       <p>How would you expect the behavior of these dotplots to compare if the layoff decisions had been made completely at random?</p>
     </statement>
+    <hint>
+      <p>If layoffs were random, what would you expect about the distribution of ages in each group?</p>
+    </hint>
     <response/>
+    <solution>
+      <p>If the layoff decisions were made completely at random, we would expect the ages in the laid-off group and the retained group to look similar - they should overlap considerably and have similar centers and spreads. There shouldn't be a systematic difference where one group is noticeably older or younger than the other.</p>
+    </solution>
   </exercise>
   
-  <exercise xml:id="inv4-1-c" label="I4.1.3">
+  <exercise xml:id="inv4-1-c" label="I4.1.4">
     <title>Generate "could have been" outcome</title>
     <statement>
       <p>Describe how you could generate one <q>could have been</q> observation under this assumption that the lay-off decisions are made completely at random.</p>
     </statement>
+    <hint>
+      <p>Think about using cards, slips of paper, or some other physical method to randomly select 3 people from the 10.</p>
+    </hint>
     <response/>
+    <solution>
+      <p>One way would be to write the 10 ages on slips of paper, mix them thoroughly, and randomly draw 3 slips to represent the laid-off employees. The remaining 7 would be the retained employees. Alternatively, you could number the employees 1-10 and use a random number generator to select 3 numbers. Each random selection would give you one "could have been" outcome showing what the layoffs might have looked like if they were truly random.</p>
+    </solution>
   </exercise>
   
-  <exercise xml:id="inv4-1-d" label="I4.1.4">
+  <exercise xml:id="inv4-1-d" label="I4.1.5">
     <title>Count Possible Outcomes</title>
     <statement>
       <p>How many different ways are there to randomly choose 3 of the 10 people to lay off?</p>
       <p>Number of ways: <var width="5"/></p>
     </statement>
+    <hint>
+      <p>Use the combination formula: <m>\binom{10}{3} = \frac{10!}{3!(10-3)!}</m></p>
+    </hint>
     <answer>120</answer>
+    <solution>
+      <p><m>\binom{10}{3} = \frac{10!}{3!7!} = \frac{10 \times 9 \times 8}{3 \times 2 \times 1} = 120</m></p>
+    </solution>
   </exercise>
   
   <p>To find a p-value, we just need to decide which of these 120 outcomes are as or more <q>extreme</q> than the observed outcome.</p>
   
   <p><alert>Approach 1:</alert> We could simply list out the outcomes that we consider more extreme and count them.</p>
   
-  <exercise xml:id="inv4-1-e" label="I4.1.5">
+  <exercise xml:id="inv4-1-e" label="I4.1.6">
     <title>Identify Extreme Outcomes</title>
     <statement>
       <p>The ages of the laid-off individuals were 55₁, 55₂, and 64. Which other sets of 3 ages from the 10 would you consider as or more extreme? Briefly justify your choices.</p>
     </statement>
+    <hint>
+      <p>Think about which combinations would show even stronger evidence of age discrimination (laying off even older workers).</p>
+    </hint>
     <response/>
+    <solution>
+      <p>The observed outcome had the three oldest workers laid off (two 55-year-olds and the 64-year-old). More extreme outcomes would be: (55₁, 56, 64), (55₂, 56, 64), and (55₁, 55₂, 56). These three combinations all involve laying off 3 of the 4 oldest workers.</p>
+    </solution>
   </exercise>
   
-  <exercise xml:id="inv4-1-f" label="I4.1.6">
+  <exercise xml:id="inv4-1-f" label="I4.1.7">
     <title>Calculate Exact p-value</title>
     <statement>
       <p>Use your answer to (e) to determine an <q>exact</q> p-value. How do you interpret this value and what do you conclude?</p>
     </statement>
+    <hint>
+      <p>The p-value is the number of outcomes as or more extreme as observed, divided by the total number of possible outcomes (120).</p>
+    </hint>
     <response/>
+    <solution>
+      <p>There are 4 outcomes as or more extreme (including the observed): the observed outcome (55₁, 55₂, 64) plus the three from the previous question. So the p-value = 4/120 = 0.0333 or about 3.3%. This means if layoffs were random, there would be only a 3.3% chance of seeing a combination as extreme as what was observed. This provides strong evidence that the layoff decisions were not made at random and may have discriminated based on age.</p>
+    </solution>
   </exercise>
   
   <p><alert>Approach 2:</alert> Approach 1 focuses on who was laid off and who was not, but does not fully consider how old they were. Rather than ignoring this information, we could instead focus on the difference in the ages assigned to the two groups.</p>
   
-  <exercise xml:id="inv4-1-g" label="I4.1.7">
+  <exercise xml:id="inv4-1-g" label="I4.1.8">
     <title>Calculate Difference in Means</title>
     <statement>
       <p>Calculate the difference in the average age of those laid off and those not laid off for the observed data.</p>
       <p>Difference in means: <var width="10"/> years</p>
     </statement>
+    <hint>
+      <p>Calculate the mean age for the laid-off group (55, 55, 64) and the mean age for the retained group (25, 33, 35, 38, 48, 53, 56), then find the difference.</p>
+    </hint>
     <answer>16.86</answer>
+    <solution>
+      <p>Mean age of laid-off: (55 + 55 + 64)/3 = 58 years</p>
+      <p>Mean age of retained: (25 + 33 + 35 + 38 + 48 + 53 + 56)/7 = 41.14 years</p>
+      <p>Difference: 58 - 41.14 = 16.86 years</p>
+    </solution>
   </exercise>
   
-  <exercise xml:id="inv4-1-h" label="I4.1.8">
+  <exercise xml:id="inv4-1-h" label="I4.1.9">
     <title>Compare Approaches</title>
     <statement>
       <p>Identify any outcomes that have a larger difference in the average age between those laid off/not. Are the same outcomes still the most extreme? Does the p-value change?</p>
     </statement>
+    <hint>
+      <p>Look at the combinations involving the oldest workers (53, 55₁, 55₂, 56, 64) and calculate which would give the largest mean differences.</p>
+    </hint>
     <response/>
+    <solution>
+      <p>Only the combinations (55₁, 56, 64) and (55₂, 56, 64) have a larger difference in means (17.33 years each). The combination (55₁, 55₂, 56) has a smaller difference (13.04 years). So when using difference in means as our statistic, we have 3 outcomes as or more extreme (the observed plus the two with difference 17.33), giving p-value = 3/120 = 0.025 or 2.5%, which is slightly stronger evidence than the 3.3% from Approach 1.</p>
+    </solution>
   </exercise>
   
-  <exercise xml:id="inv4-1-i" label="I4.1.9">
+  <exercise xml:id="inv4-1-i" label="I4.1.10">
     <title>Scope of Conclusions</title>
     <statement>
       <p>Remind the lawyers what limitations there are to the conclusions that can be made in this study.</p>
     </statement>
+    <hint>
+      <p>Consider: Is this an experiment or an observational study? Can we establish causation? What population can we generalize to?</p>
+    </hint>
     <response/>
+    <solution>
+      <p>This is an observational study, not a randomized experiment, so we cannot establish a cause-and-effect relationship. While the data provide evidence that the layoffs were not random, we cannot definitively conclude that age was the cause of the layoff decisions - there could be other confounding variables. Additionally, this analysis only applies to these 10 specific workers in Round 2; we cannot necessarily generalize to all employees or all rounds of layoffs without additional data.</p>
+    </solution>
   </exercise>
   
   <p>Below is a graph of all possible differences in means.</p>
@@ -182,12 +228,18 @@
     <description>Dotplot showing distribution of all possible differences in means</description>
   </image>
   
-  <exercise xml:id="inv4-1-j" label="I4.1.10">
+  <exercise xml:id="inv4-1-j" label="I4.1.11">
     <title>Distribution Shape</title>
     <statement>
       <p>What is roughly the average? Is the distribution symmetric?</p>
     </statement>
+    <hint>
+      <p>Look at the center and shape of the dotplot of all possible differences in means.</p>
+    </hint>
     <response/>
+    <solution>
+      <p>The distribution is roughly centered around 0 (since under random assignment, we'd expect no systematic difference between the groups). The distribution is not symmetric because the group sizes are unequal (7 vs. 3) and because the dataset is small, creating granularity in the possible values for the differences.</p>
+    </solution>
   </exercise>
   
   <p>Although we might suspect the distribution to be centered at zero, the graph is not expected to be symmetric because the group sizes are unequal and we subtracted laid-off – retained. Also, the data set is small so there will be <q>granularity</q> between the possible values for the difference. In fact, other possible choices of statistics (e.g., difference in medians) would look even <q>stranger.</q> But those details are less important, we can still use these values to determine a p-value.</p>
@@ -201,10 +253,10 @@
   <p>In the rest of this chapter, you will focus on comparing groups on a quantitative response variable. The reasoning process of statistical significance remains the same – how often would random chance give me a result at least as extreme? Your analysis will still focus on two key ideas: How were the groups formed (e.g., random assignment vs. random sampling), or are we modelling hypothetical randomness? And choice of statistic for comparing the two groups. With large sample sizes we won't be able to list out all the outcomes so we will focus more on simulation and mathematical models. The latter will also again allow us to use a convenient confidence interval formula. Once you have a p-value or confidence interval, you interpret them in the same way as in previous chapters, while also considering the limitations of the study design.</p>
   
   <subsection xml:id="practice-problems-4-1">
-    <title>Practice Problems</title>
+    <title>Practice Problem 4.1A</title>
     
     <exercise xml:id="practice-4-1-a" label="PP4.1A">
-      <title>Practice Problem 4.1A: Younger Employee Bias</title>
+      <title>Younger Employee Bias</title>
       <statement>
         <p>Suppose the following individuals were laid off: 25, 35, 38. What would be the exact p-value if the alternative hypothesis was that there was a bias against the younger employees? Explain.</p>
       </statement>
