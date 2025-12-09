@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="investigation4-2">
-  <title>Investigation 4.2: The Elephants in the Room</title>
+  <title>Section 2: Comparing Two Population Means</title>
   
   <introduction>
-    <sidebyside widths="60% 35%" valign="top">
-      <p>Researchers Holdgate et al. (2016) studied walking behavior of elephants in North American zoos to see whether there is a difference in average distance traveled by African and Asian elephants in captivity. They put GPS loggers on 33 African elephants and 23 Asian elephants, and measured the distance (in kilometers) the elephants walked per day. (See <url href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4944962/">Holdgate et al. 2016 study</url>.)</p>
+    <p>In this section, we want to focus on quantitative data arising from two independent random samples. For example, in the first investigation you will compare the average travel distances of African and Asian elephants. For statistical inference, we need to explore how statistics like the difference in sample means behave under random sampling. We will first explore a hypothetical situation and then we then discuss a theoretical result justifying use of a t-distribution for the reference distribution in finding p-values and confidence intervals.</p>
+  </introduction>
+  
+  <subsection xml:id="inv-4-2-elephants">
+    <title>Investigation 4.2: The Elephants in the Room</title>
+  
+  <introduction>
+    <sidebyside widths="60% 25%" valign="top">
+      <p>Researchers Holdgate et al. (<url href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4944962/">2016</url>) studied walking behavior of elephants in North American zoos to see whether there is a difference in average distance traveled by African and Asian elephants in captivity. They put GPS loggers on 33 African elephants and 23 Asian elephants, and measured the distance (in kilometers) the elephants walked per day.</p>
       
       <image source="images/Inv4.2intro.png" width="100%">
         <description>Introduction image for Investigation 4.2</description>
@@ -22,69 +29,75 @@
     </solution>
     <response/>
   </exercise>
+  
+  <p>Open the <url href="https://www.rossmanchance.com/iscam3/data/elephants.txt">elephants.txt</url> data file. First, look at the data by creating a graph of distances separated by species. When using graphs to compare groups it is especially important that comparative graphs be drawn on the same scale. <alert>Note:</alert> These data are stacked as each column is a different variable (species and distance).</p>
     
-    <exercise xml:id="inv4-2-b" label="I4.2.2">
-      <title>Create Comparative Graphs</title>
-      <statement>
-        <p>Open the <url href="https://www.rossmanchance.com/iscam3/data/elephants.txt">elephants.txt</url> data file. First, look at the data by creating a graph of distances separated by species. When using graphs to compare groups it is especially important that comparative graphs be drawn on the same scale. Note: These data are stacked as each column is a different variable (species and distance).</p>
-      </statement>
-      <hint>
-        <p>Use the technology detours below to help create comparative graphs. Make sure both groups are plotted on the same scale for proper comparison.</p>
-      </hint>
-      <response/>
-    </exercise>
-    
-    <paragraphs xml:id="tech-detour-comparative-graphs">
-      <title>Technology Detour – Comparative Graphs</title>
-      
-      <p><alert>In Descriptive Statistics applet</alert></p>
-      <ul>
+  <exercise xml:id="inv4-2-b" label="I4.2.2">
+    <title>Create Comparative Graphs - Applet</title>
+    <statement>
+      <p>Use the Descriptive Statistics applet to create comparative graphs:</p>
         <li><p>Copy the data to the clipboard. In the applet, check the Stacked box. Press Clear and paste the data into the Sample data window and press Use Data. (Or type elephants.txt in the empty Paste data window.)</p></li>
         <li><p>Use the Separate by pull-down menu to select the Species categorical variable</p></li>
         <li><p>You have radio button options for Histograms and Boxplots.</p></li>
       </ul>
-      
-      <p><alert>In R</alert></p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-2-b2" label="I4.2.2b">
+    <title>Create Comparative Graphs - R</title>
+    <statement>
+      <p>Use R to create comparative graphs:</p>
       <sage language="r">
         <input>
+# Load ISCAM functions from GitHub
+source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")
+
 # Load elephant data from GitHub
 elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
 
 # Create dotplot
-# iscamdotplot(Distance, Species)  # If using ISCAM package in RStudio
-
-# Alternative with base R
-stripchart(Distance ~ Species, data=elephants, method="stack", 
-           pch=19, xlab="Distance (km)", main="Elephant Walking Distances")
+iscamdotplot(elephants$Distance, elephants$Species, xlab="Distance (km)")
 
 # Boxplot
 boxplot(Distance ~ Species, data=elephants, horizontal=TRUE, 
         xlab="Distance (km)", ylab="Species")
         </input>
       </sage>
-      
-      <p><alert>In JMP</alert></p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-2-b3" label="I4.2.2c">
+    <title>Create Comparative Graphs - JMP</title>
+    <statement>
+      <p>Use JMP to create comparative graphs:</p>
       <ul>
         <li><p>Choose Analyze > Distribution and specify both the quantitative variable (Y, Columns) and the categorical variable (By).</p></li>
         <li><p>Press OK.</p></li>
         <li><p>Use the Distributions hot spot to select Stack</p></li>
         <li><p>OR use Graph > Graph Builder. Drag Distance to the X axis and Species to the Y axis. Use the icons across the top to change to boxplots and histograms.</p></li>
       </ul>
-      
-      <note>
-        <p>When comparing groups, some boxplot displays vary the other dimension of the box size by relative sample size.</p>
-      </note>
-    </paragraphs>
+      <p><alert>Note:</alert> When comparing groups, some boxplot displays vary the other dimension of the box size by relative sample size.</p>
+    </statement>
+    <response/>
+  </exercise>
     
-    <exercise xml:id="inv4-2-c" label="I4.2.3">
+    <exercise xml:id="inv4-2-c" label="I4.2.5">
       <title>Identify Outliers</title>
       <statement>
         <p>According to the boxplots, were there any <q>outlier</q> elephants? Explain how you know.</p>
       </statement>
+      <hint>
+        <p>Outliers are typically shown as individual points beyond the whiskers of the boxplot.</p>
+      </hint>
       <response/>
+      <solution>
+        <p>Yes, there appear to be outliers in both groups. The boxplot will show these as individual points beyond the whiskers, indicating elephants that walked unusually long or short distances compared to others in their group.</p>
+      </solution>
     </exercise>
     
-    <exercise xml:id="inv4-2-d" label="I4.2.4">
+    <exercise xml:id="inv4-2-d" label="I4.2.6">
       <title>Limitation of Boxplots</title>
       <statement>
         <p>What is a limitation to using only boxplots to compare these two distributions?</p>
@@ -93,14 +106,23 @@ boxplot(Distance ~ Species, data=elephants, horizontal=TRUE,
         <p>Think about what information boxplots show versus what they hide about the distribution.</p>
       </hint>
       <response/>
+      <solution>
+        <p>Boxplots only show summary statistics (median, quartiles, range) and outliers. They don't show the actual shape of the distribution, the number of observations at different values, or whether there are multiple modes. Dotplots or histograms provide more detailed information about the distribution's shape.</p>
+      </solution>
     </exercise>
     
-    <exercise xml:id="inv4-2-e" label="I4.2.5">
+    <exercise xml:id="inv4-2-e" label="I4.2.7">
       <title>Compare Distributions</title>
       <statement>
         <p>Explore the differences in the walking distances between the African and Asian elephants. Which species tended to walk more? Which species showed greater variability? Which distribution is more symmetric?</p>
       </statement>
+      <hint>
+        <p>Look at the centers, spreads, and shapes of the two distributions.</p>
+      </hint>
       <response/>
+      <solution>
+        <p>African elephants tended to walk more on average (higher center). Asian elephants showed greater variability (wider spread). The Asian elephant distribution appears more symmetric, while the African elephant distribution may be slightly skewed.</p>
+      </solution>
     </exercise>
     
     <p>And we can calculate separate summary statistics for the two species:</p>
@@ -476,5 +498,6 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
         <response/>
       </exercise>
     </subsection>
+  </subsection>
     
   </section>
