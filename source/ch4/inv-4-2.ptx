@@ -35,7 +35,7 @@
   <exercise xml:id="inv4-2-b" label="I4.2.2">
     <title>Create Comparative Graphs - Applet</title>
     <statement>
-      <p>Use the Descriptive Statistics applet to create comparative graphs:</p>
+      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url> to create comparative graphs:</p>
       <ul>
         <li><p>Copy the data to the clipboard. In the applet, check the Stacked box. Press Clear and paste the data into the Sample data window and press Use Data. (Or type elephants.txt in the empty Paste data window.)</p></li>
         <li><p>Use the Separate by pull-down menu to select the Species categorical variable</p></li>
@@ -66,7 +66,6 @@ boxplot(Distance ~ Species, data=elephants, horizontal=TRUE,
         </input>
       </sage>
     </statement>
-    <response/>
   </exercise>
   
   <exercise xml:id="inv4-2-b3" label="I4.2.2c">
@@ -81,10 +80,9 @@ boxplot(Distance ~ Species, data=elephants, horizontal=TRUE,
       </ul>
       <p><alert>Note:</alert> When comparing groups, some boxplot displays vary the other dimension of the box size by relative sample size.</p>
     </statement>
-    <response/>
   </exercise>
     
-    <exercise xml:id="inv4-2-c" label="I4.2.5">
+    <exercise xml:id="inv4-2-c" label="I4.2.7">
       <title>Identify Outliers</title>
       <statement>
         <p>According to the boxplots, were there any <q>outlier</q> elephants? Explain how you know.</p>
@@ -98,7 +96,7 @@ boxplot(Distance ~ Species, data=elephants, horizontal=TRUE,
       </solution>
     </exercise>
     
-    <exercise xml:id="inv4-2-d" label="I4.2.6">
+    <exercise xml:id="inv4-2-d" label="I4.2.8">
       <title>Limitation of Boxplots</title>
       <statement>
         <p>What is a limitation to using only boxplots to compare these two distributions?</p>
@@ -112,7 +110,7 @@ boxplot(Distance ~ Species, data=elephants, horizontal=TRUE,
       </solution>
     </exercise>
     
-    <exercise xml:id="inv4-2-e" label="I4.2.7">
+    <exercise xml:id="inv4-2-e" label="I4.2.9">
       <title>Compare Distributions</title>
       <statement>
         <p>Explore the differences in the walking distances between the African and Asian elephants. Which species tended to walk more? Which species showed greater variability? Which distribution is more symmetric?</p>
@@ -128,29 +126,35 @@ boxplot(Distance ~ Species, data=elephants, horizontal=TRUE,
     
     <p>And we can calculate separate summary statistics for the two species:</p>
     
-    <paragraphs xml:id="tech-detour-numerical-summaries-4-2">
-      <title>Technology Detour – Numerical Summaries</title>
-      
-      <p><alert>In Descriptive Statistics applet</alert></p>
-      <p>Check the Mean: Actual and Std dev: Actual boxes (at least)</p>
-      
-      <p><alert>In R</alert></p>
+  <exercise xml:id="inv4-2-d1" label="I4.2.3">
+    <title>Calculate Numerical Summaries - Applet</title>
+    <statement>
+      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url> to calculate numerical summaries:</p>
+      <ul>
+        <li><p>Check the Mean: Actual and Std dev: Actual boxes (at least)</p></li>
+      </ul>
+    </statement>
+  </exercise>
+  
+  <exercise xml:id="inv4-2-d2" label="I4.2.3b">
+    <title>Calculate Numerical Summaries - R</title>
+    <statement>
+      <p>Use R to calculate numerical summaries:</p>
       <sage language="r">
         <input>
+# Load ISCAM functions from GitHub
+source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")
+
 # Load elephant data from GitHub
 elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
 
 # Summary statistics by species
-# iscamsummary(Distance, Species)  # If using ISCAM package in RStudio
-
-# Alternative with base R
 # For African elephants
 african = subset(elephants, Species == "African")
 cat("African Elephants:\n")
 cat("n =", length(african$Distance), "\n")
 cat("Mean =", mean(african$Distance), "\n")
-cat("SD =", sd(african$Distance), "\n")
-cat("Skewness =", e1071::skewness(african$Distance), "\n\n")
+cat("SD =", sd(african$Distance), "\n\n")
 
 # For Asian elephants
 asian = subset(elephants, Species == "Asian")
@@ -158,15 +162,24 @@ cat("Asian Elephants:\n")
 cat("n =", length(asian$Distance), "\n")
 cat("Mean =", mean(asian$Distance), "\n")
 cat("SD =", sd(asian$Distance), "\n")
-cat("Skewness =", e1071::skewness(asian$Distance), "\n")
         </input>
       </sage>
-      
-      <p><alert>In JMP</alert></p>
-      <p>Choose Analyze > Distribution and specify both the quantitative variable (Y, Columns) and the categorical variable (By). Press OK. Use the Distributions hot spot to select Stack.</p>
-    </paragraphs>
+    </statement>
+  </exercise>
+  
+  <exercise xml:id="inv4-2-d3" label="I4.2.3c">
+    <title>Calculate Numerical Summaries - JMP</title>
+    <statement>
+      <p>Use JMP to calculate numerical summaries:</p>
+      <ul>
+        <li><p>Choose Analyze > Distribution and specify both the quantitative variable (Y, Columns) and the categorical variable (By).</p></li>
+        <li><p>Press OK.</p></li>
+        <li><p>Use the Distributions hot spot to select Stack.</p></li>
+      </ul>
+    </statement>
+  </exercise>
     
-    <exercise xml:id="inv4-2-f" label="I4.2.6">
+    <exercise xml:id="inv4-2-f" label="I4.2.10">
       <title>Record Summary Statistics</title>
       <statement>
         <p>Determine the sample sizes, sample means, and the sample standard deviations for each group and record these below, using appropriate symbols.</p>
@@ -197,7 +210,7 @@ cat("Skewness =", e1071::skewness(asian$Distance), "\n")
       <response/>
     </exercise>
     
-    <exercise xml:id="inv4-2-g" label="I4.2.7">
+    <exercise xml:id="inv4-2-g" label="I4.2.11">
       <title>Predict Statistical Significance</title>
       <statement>
         <p>Do you think the difference in sample means is going to be statistically significant? What does statistical significance mean in this context? (What null and alternative hypotheses can we test?)</p>
@@ -207,7 +220,7 @@ cat("Skewness =", e1071::skewness(asian$Distance), "\n")
     
     <p>Before we can address statistical significance, we need more information as to how much we expect a difference in sample means to vary from sample to sample (e.g., what if we had lots of different zoos, each with random samples of each type of elephant). We will take a detour to explore this in a case where we have the populations to begin with to see some rather familiar results.</p>
     
-    <exercise xml:id="inv4-2-h" label="I4.2.8">
+    <exercise xml:id="inv4-2-h" label="I4.2.12">
       <title>Outline Simulation Steps</title>
       <statement>
         <p>Outline the simulation steps we need to use.</p>
