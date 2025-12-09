@@ -478,6 +478,9 @@ Players without a team affiliation or without a listed salary were not included 
         <statement>
           <p>A third, but perhaps the biggest, issue is that the population standard deviations are unknown. Suggest a formula for estimating the standard deviation of the difference in sample means.</p>
         </statement>
+        <hint>
+          <p>Replace the population standard deviations with sample standard deviations in the formula.</p>
+        </hint>
         <solution>
           <p>We can estimate the standard error using the sample standard deviations: <m>\sqrt{s_1^2/n_1 + s_2^2/n_2}</m>, where <m>s_1</m> and <m>s_2</m> are the sample standard deviations from each group.</p>
         </solution>
@@ -489,11 +492,52 @@ Players without a team affiliation or without a listed salary were not included 
         <statement>
           <p>So then what we really need to know about is the distribution of <m>t = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>. In the applet, use the Statistic pull-down menu to select the <m>t</m>-statistic and then examine the distribution of this statistic. Is it approximately normal? Where is it centered? Use the check box to Overlay <m>t</m> distribution. Is the <m>t</m>-distribution a good model for this sampling distribution?</p>
         </statement>
+        <hint>
+          <p>Select t-statistic from the Statistic menu and overlay the t-distribution to compare.</p>
+        </hint>
         <solution>
           <p>The distribution of the <m>t</m>-statistic is approximately normal and centered at 0. The overlaid <m>t</m>-distribution provides a good model for this sampling distribution, slightly heavier-tailed than the normal distribution to account for the additional variability from estimating the population standard deviations.</p>
         </solution>
         <response/>
       </exercise>
+      
+      <assemblage xml:id="t-distribution-discussion">
+        <title>Discussion: When to Use the <m>t</m>-Distribution</title>
+        
+        <p>The sample sizes of 20 for each group appear to be large enough for a <m>t</m>-distribution (even a normal distribution) to reasonably approximate the distribution of this statistic. If the population distributions had themselves been normally distributed (and large), then a <m>t</m>-distribution will be a good approximation of the statistic for any sample sizes. The more skewed the population shapes, the larger the sample sizes need to be for you to safely use the <m>t</m>-distribution. Notice even with these very skewed populations, because their shapes and sample sizes were similar, we didn't need very large sample sizes at all for the standardized statistic to follow a <m>t</m>-distribution.</p>
+        
+        <p>One remaining question is what to use for the degrees of freedom for the <m>t</m>-distribution. In the one-sample case (Chapter 2) we used <m>n - 1</m>. For two samples, it's actually more complicated. The Welch-Satterthwaite approximation for degrees of freedom involves the sample sizes and the unknown population standard deviations, though it doesn't always result in integer values. We will leave this calculation up to technology. You only need to realize that the degrees of freedom are related to the sample sizes and as the sample sizes become large, the <m>t</m>-distribution loses more and more of the heaviness in the tails and approaches the (standard) normal distribution. If you need to determine a p-value or critical value <q>by hand,</q> we suggest using the following simple approximation for the degrees of freedom: <m>\min(n_1 - 1, n_2 - 1)</m>, the smaller of the two sample sizes minus one.</p>
+        
+        <p>Especially when the population shapes are similar and the sample sizes are similar, the <m>t</m>-distribution provides a pretty good approximation to the sampling distribution of <m>\frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>, even for non-normal populations.</p>
+      </assemblage>
+      
+      <sidebyside widths="60% 35%" valign="top">
+        <p>In this case, we could use 19 as the approximate degrees of freedom. Notice that this sample size is large enough that the <m>t</m>-distribution looks a lot like the normal distribution as well, which should agree with your observation in (m). But we will continue to use the <m>t</m>-distribution rather than the normal distribution to still account for additional variation from our estimates of the population standard deviations.</p>
+        
+        <image source="images/Inv4.2tnorm.png" width="100%">
+          <description>Comparison of <m>t</m>-distribution with 19 df and normal distribution</description>
+        </image>
+      </sidebyside>
+      
+      <assemblage xml:id="two-sample-t-procedures">
+        <title>Summary of Two-Sample <m>t</m> Procedures</title>
+        
+        <p><alert>Parameter:</alert> <m>\mu_1 - \mu_2</m> = the difference in the population means</p>
+        
+        <p><alert>To test <m>H_0: \mu_1 - \mu_2 = 0</m></alert></p>
+        <p>Standardized statistic: <me>t = \frac{(\bar{x}_1 - \bar{x}_2) - 0}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</me></p>
+        
+        <p><alert><m>t</m>-Confidence interval for <m>\mu_1 - \mu_2</m></alert></p>
+        <p><me>(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}</me></p>
+        
+        <p><alert>Approximate degrees of freedom:</alert> Compare this to a <m>t</m>-distribution with degrees of freedom equal to the smaller of the two sample sizes minus one: <m>\min(n_1, n_2) - 1</m>.</p>
+        
+        <p><alert>Technical conditions:</alert> These procedures are considered valid if the sample distributions are reasonably symmetric or the sample sizes are both at least 20.</p>
+      </assemblage>
+      
+      <p>The applet uses the <url href="https://en.wikipedia.org/wiki/Welch%E2%80%93Satterthwaite_equation">Welch-Satterthwaite approximation</url> to calculate the degrees of freedom when the population variances are not assumed equal.</p>
+      
+      <p>For more information on the <url href="https://en.wikipedia.org/wiki/Pooled_variance#Pooled_standard_deviation">pooled <m>t</m>-test</url>, which assumes equal population variances, see the linked resource. In practice, the unpooled (Welch) <m>t</m>-test is generally preferred as it is more robust to violations of the equal variance assumption.</p>
     </subsection>
     
     <subsection xml:id="elephants-continued">
@@ -504,6 +548,12 @@ Players without a team affiliation or without a listed salary were not included 
         <statement>
           <p>Are the technical conditions met for the <m>t</m>-procedures to be valid for these data?</p>
         </statement>
+        <hint>
+          <p>Check if the sample distributions are reasonably symmetric or if the sample sizes are both at least 20.</p>
+        </hint>
+        <solution>
+          <p>Yes, the technical conditions are met. The sample distributions are reasonably symmetric (based on the dotplots and boxplots), and both sample sizes are less than 20 but the distributions don't show strong skewness, so the <m>t</m>-procedures should be valid.</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -513,6 +563,12 @@ Players without a team affiliation or without a listed salary were not included 
           <p>Use technology to decide whether there is a statistically significant difference between the average walking distance of the African and Asian elephant populations. State the hypotheses, define any symbols you use, report the test-statistic and p-value. Include one-sentence interpretations of both the standardized statistic and the p-value in context. What conclusion do you draw?</p>
           <p><var width="80" height="10"/></p>
         </statement>
+        <hint>
+          <p>Use one of the technology tools below to conduct the two-sample <m>t</m>-test.</p>
+        </hint>
+        <solution>
+          <p>Let <m>\mu_A</m> = population mean walking distance for African elephants and <m>\mu_{As}</m> = population mean walking distance for Asian elephants. <m>H_0: \mu_A - \mu_{As} = 0</m> (no difference), <m>H_a: \mu_A - \mu_{As} \neq 0</m> (there is a difference). Test statistic: <m>t = 0.13</m>, p-value = 0.897. The standardized statistic of 0.13 indicates the observed difference is only 0.13 standard errors from 0, which is very small. The p-value of 0.897 means if there were no difference in population mean walking distances, we would observe a difference at least as extreme as ours in about 90% of random samples. We fail to reject the null hypothesis; there is insufficient evidence of a difference in mean walking distances.</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -606,59 +662,27 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
         </statement>
       </exercise>
       
-      <p>The applet uses the <url href="https://en.wikipedia.org/wiki/Welch%E2%80%93Satterthwaite_equation">Welch-Satterthwaite approximation</url> to calculate the degrees of freedom when the population variances are not assumed equal.</p>
-      
-      <sidebyside widths="60% 35%" valign="top">
-        <p>In this case, we could use 19 as the approximate degrees of freedom. Notice that this sample size is large enough that the <m>t</m>-distribution looks a lot like the normal distribution as well, which should agree with your observation in (m). But we will continue to use the <m>t</m>-distribution rather than the normal distribution to still account for additional variation from our estimates of the population standard deviations.</p>
-        
-        <image source="images/Inv4.2tnorm.png" width="100%">
-          <description>Comparison of <m>t</m>-distribution with 19 df and normal distribution</description>
-        </image>
-      </sidebyside>
-      
-      <assemblage xml:id="t-distribution-discussion">
-        <title>Discussion: When to Use the <m>t</m>-Distribution</title>
-        
-        <p>The sample sizes of 20 for each group appear to be large enough for a <m>t</m>-distribution (even a normal distribution) to reasonably approximate the distribution of this statistic. If the population distributions had themselves been normally distributed (and large), then a <m>t</m>-distribution will be a good approximation of the statistic for any sample sizes. The more skewed the population shapes, the larger the sample sizes need to be for you to safely use the <m>t</m>-distribution. Notice even with these very skewed populations, because their shapes and sample sizes were similar, we didn't need very large sample sizes at all for the standardized statistic to follow a <m>t</m>-distribution.</p>
-        
-        <p>One remaining question is what to use for the degrees of freedom for the <m>t</m>-distribution. In the one-sample case (Chapter 2) we used <m>n - 1</m>. For two samples, it's actually more complicated. The Welch-Satterthwaite approximation for degrees of freedom involves the sample sizes and the unknown population standard deviations, though it doesn't always result in integer values. We will leave this calculation up to technology. You only need to realize that the degrees of freedom are related to the sample sizes and as the sample sizes become large, the <m>t</m>-distribution loses more and more of the heaviness in the tails and approaches the (standard) normal distribution. If you need to determine a p-value or critical value <q>by hand,</q> we suggest using the following simple approximation for the degrees of freedom: <m>\min(n_1 - 1, n_2 - 1)</m>, the smaller of the two sample sizes minus one.</p>
-        
-        <p>Especially when the population shapes are similar and the sample sizes are similar, the <m>t</m>-distribution provides a pretty good approximation to the sampling distribution of <m>\frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>, even for non-normal populations.</p>
-      </assemblage>
-      
       <exercise xml:id="inv4-2-k" label="I4.2.19">
         <title>Confidence Interval</title>
         <statement>
           <p>Also approximate a 95% confidence interval and interpret this interval in context. [Hint: When interpreting a confidence interval for the difference, you should always clarify the direction of subtraction and which population parameter is larger.]</p>
         </statement>
+        <hint>
+          <p>Use technology to calculate the confidence interval and remember to interpret in context.</p>
+        </hint>
+        <solution>
+          <p>A 95% confidence interval for <m>\mu_A - \mu_{As}</m> is approximately (-1.45, 1.65) km. We are 95% confident that the true difference in mean walking distances (African minus Asian) is between -1.45 km and 1.65 km. This means African elephants could walk anywhere from 1.45 km less to 1.65 km more than Asian elephants, on average. Since this interval includes 0, it's plausible there is no difference.</p>
+        </solution>
         <response/>
       </exercise>
       
       <assemblage xml:id="study-conclusions-4-2">
         <title>Study Conclusions</title>
         
-        <p>In this study, the mean distance walked is similar for these two species (5.40 vs. 5.30 km) and the sample sizes are not super large (33 and 23), with a fair bit of variation in walking distances within each species (<m>s_{\text{African}} = 1.47</m> vs <m>s_{\text{Asian}} = 3.41</m> km). For these reasons, we do not expect a small p-value. The distributions are fairly symmetric so the unpooled t-test should be valid (the standard deviations are not very similar, so we would not feel comfortable assuming equal population variances). The unpooled t-test statistic of 0.131 is small, yielding a two-sided p-value of 0.897. We fail to reject the null hypothesis that the population mean walking distances are the same. These data do not provide convincing evidence of a difference in walking distances, on average, between Asian and African elephants in American zoos. A 95% confidence interval tells us that its plausible that, in these two populations, African elephants average up to 1.45 km less to 1.65 km more than Asian elephants. It might be interesting to further explore the larger variation in walking distances among the Asian elephants. We should also be aware that we have sampled a large fraction of the populations and should consider some "finite population corrections" which would only further increase the standard deviation.</p>
+        <p>In this study, the mean distance walked is similar for these two species (5.40 vs. 5.30 km) and the sample sizes are not super large (33 and 23), with a fair bit of variation in walking distances within each species (<m>s_{\text{African}} = 1.47</m> vs <m>s_{\text{Asian}} = 3.41</m> km). For these reasons, we do not expect a small p-value. The distributions are fairly symmetric so the unpooled <m>t</m>-test should be valid (the standard deviations are not very similar, so we would not feel comfortable assuming equal population variances). The unpooled <m>t</m>-test statistic of 0.131 is small, yielding a two-sided p-value of 0.897. We fail to reject the null hypothesis that the population mean walking distances are the same. These data do not provide convincing evidence of a difference in walking distances, on average, between Asian and African elephants in American zoos. A 95% confidence interval tells us that its plausible that, in these two populations, African elephants average up to 1.45 km less to 1.65 km more than Asian elephants. It might be interesting to further explore the larger variation in walking distances among the Asian elephants. We should also be aware that we have sampled a large fraction of the populations and should consider some <q>finite population corrections</q> which would only further increase the standard deviation.</p>
       </assemblage>
       
       <p>Keep in mind that the <m>t</m>-tests only tell us about whether the centers of the distributions are significantly different. They don't help us analyze other potentially interesting differences in the two distributions.</p>
-      
-      <p>For more information on the <url href="https://en.wikipedia.org/wiki/Pooled_variance#Pooled_standard_deviation">pooled <m>t</m>-test</url>, which assumes equal population variances, see the linked resource. In practice, the unpooled (Welch) <m>t</m>-test is generally preferred as it is more robust to violations of the equal variance assumption.</p>
-      
-      <assemblage xml:id="two-sample-t-procedures">
-        <title>Summary of Two-Sample <m>t</m> Procedures</title>
-        
-        <p><alert>Parameter:</alert> <m>\mu_1 - \mu_2</m> = the difference in the population means</p>
-        
-        <p><alert>To test <m>H_0: \mu_1 - \mu_2 = 0</m></alert></p>
-        <p>Standardized statistic: <me>t = \frac{(\bar{x}_1 - \bar{x}_2) - 0}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</me></p>
-        
-        <p><alert><m>t</m>-Confidence interval for <m>\mu_1 - \mu_2</m></alert></p>
-        <p><me>(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}</me></p>
-        
-        <p><alert>Approximate degrees of freedom:</alert> Compare this to a <m>t</m>-distribution with degrees of freedom equal to the smaller of the two sample sizes minus one: <m>\min(n_1, n_2) - 1</m>.</p>
-        
-        <p><alert>Technical conditions:</alert> These procedures are considered valid if the sample distributions are reasonably symmetric or the sample sizes are both at least 20.</p>
-      </assemblage>
     </subsection>
     
     <subsection xml:id="practice-problems-4-2">
