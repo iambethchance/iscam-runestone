@@ -72,7 +72,7 @@ hist(elephants$Distance[elephants$Species=="African"],
 hist(elephants$Distance[elephants$Species=="Asian"], 
      main="Asian Elephants", xlab="Distance (km)", 
      xlim=c(0,15), breaks=20, col="lightgreen")
-par(mfrow=c(1,1))
+invisible(par(mfrow=c(1,1)))
         </input>
       </sage>
     </statement>
@@ -259,12 +259,16 @@ iscamsummary(elephants$Distance, elephants$Species)
     <subsection xml:id="prob-detour-two-means">
       <title>Probability Detour: Sampling Distribution of Difference in Two Means</title>
       
-      <p>To understand how differences in sample means behave, let's explore a hypothetical scenario where we know the population distributions. We'll use NBA player salary data to investigate.</p>
-      
+      <p>To understand how <em>differences in sample means</em> behave, let's explore 
+      a hypothetical scenario where we know the population distributions... </p>
+
+<p>The file <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/NBASalaries2025.txt">NBASalaries2025.txt</url> contains season salaries (in millions of dollars) for all NBA basketball players at the start of the 2025-26 season (downloaded from <url href="http://www.espn.com/nba/salaries">ESPN NBA salaries</url> July 2025). 
+Players without a team affiliation or without a listed salary were not included in the data set.    </p>
+
       <exercise xml:id="prob-detour-2means-a" label="PD4.2.1">
         <title>Salary Distribution Shape</title>
         <statement>
-          <p>Why might salaries be skewed to the right?</p>
+          <p>Do you expect salary data to be symmetric or skewed, and if skewed, in which direction? Explain.</p>
         </statement>
         <response/>
       </exercise>
@@ -272,7 +276,7 @@ iscamsummary(elephants$Distance, elephants$Species)
       <exercise xml:id="prob-detour-2means-b" label="PD4.2.2">
         <title>Mean vs Median</title>
         <statement>
-          <p>With a skewed right distribution, would you expect the mean to be larger or smaller than the median?</p>
+          <p>Which do you suspect will be larger, the mean or median salary? Explain.</p>
         </statement>
         <response/>
       </exercise>
@@ -280,7 +284,9 @@ iscamsummary(elephants$Distance, elephants$Species)
       <exercise xml:id="prob-detour-2means-c" label="PD4.2.3">
         <title>Population Parameters</title>
         <statement>
-          <p>Open the <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/NBASalaries2025.txt">NBASalaries2025.txt</url> data file (see also <url href="http://www.espn.com/nba/salaries">ESPN NBA salaries</url>). Record the sample sizes, means, and standard deviations for the Western and Eastern conferences.</p>
+          <p>Open the <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/NBASalaries2025_2.txt">NBASalaries2025_2.txt</url> data file
+           and paste the two columns into the <url href="http://www.rossmanchance.com/applets/2021/twopopmodels/TwoPopSampling.html">Sampling from Two Populations applet</url>. What are the values of the means, standard deviations, and skewness values? What symbols can we use to represent these values? Are the shapes of the distributions as you expected?
+            Record the sample sizes, means, and standard deviations for the Western and Eastern conferences.</p>
         </statement>
         <response/>
       </exercise>
@@ -288,7 +294,13 @@ iscamsummary(elephants$Distance, elephants$Species)
       <exercise xml:id="prob-detour-2means-d" label="PD4.2.4">
         <title>Sample Statistics</title>
         <statement>
-          <p>Take a random sample of size 20 from each conference. Record the sample means and standard deviations. How do they compare to the population values?</p>
+          <p>Select a random sample of 20 players from each league:
+<ul><li>Check the Show Sampling Options box.</li>
+<li>Specify sample sizes of 20 for each sample and press Draw Samples.</li>
+<li>Select the Plot radio button.</li>
+</ul>
+Record the sample means and sample standard deviations for your samples. How do the sample results compare to the population results? What about the shapes of the samples?</p>
+
         </statement>
         <response/>
       </exercise>
@@ -304,7 +316,9 @@ iscamsummary(elephants$Distance, elephants$Species)
       <exercise xml:id="prob-detour-2means-f" label="PD4.2.6">
         <title>Shape of Distribution</title>
         <statement>
-          <p>Describe the shape of the sampling distribution of the difference in sample means. How does it compare to the shape of the salary distributions themselves?</p>
+          <p>Describe the shape of the sampling distribution of the difference in sample means. 
+          How does the distribution of the differences in sample means 
+          compare to the shape of the salary distributions themselves?</p>
         </statement>
         <response/>
       </exercise>
@@ -312,7 +326,7 @@ iscamsummary(elephants$Distance, elephants$Species)
       <exercise xml:id="prob-detour-2means-g" label="PD4.2.7">
         <title>Center of Distribution</title>
         <statement>
-          <p>What is the center of the sampling distribution? What does this represent?</p>
+          <p>What is the approximate center of the sampling distribution? Is this what you expected?</p>
         </statement>
         <response/>
       </exercise>
@@ -320,7 +334,7 @@ iscamsummary(elephants$Distance, elephants$Species)
       <exercise xml:id="prob-detour-2means-h" label="PD4.2.8">
         <title>Variability</title>
         <statement>
-          <p>How does the variability in the sampling distribution of differences in means compare to the variability in individual salaries?</p>
+          <p>) But of course, what you really want to know about is the variability. Is there more or less variability in this distribution compared to the variability in each population? </p>
         </statement>
         <response/>
       </exercise>
@@ -328,7 +342,7 @@ iscamsummary(elephants$Distance, elephants$Species)
       <exercise xml:id="prob-detour-2means-i" label="PD4.2.9">
         <title>Predicted Standard Error</title>
         <statement>
-          <p>From each conference we can predict the standard error to be <m>\sigma/\sqrt{n}</m>. Calculate this for each conference and compare to the standard deviation of the difference in sample means.</p>
+          <p>We know there should be less variability because we are talking about sample means rather than individual observations. But how much variability do we expect to find in the distribution of sample means taken from the Western conference? What about the Eastern conference? Is the variability in the difference in sample means larger or smaller than in the individual distributions?</p>
         </statement>
         <response/>
       </exercise>
