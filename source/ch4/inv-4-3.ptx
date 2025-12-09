@@ -3,7 +3,7 @@
   <title>Investigation 4.3: Left-Handedness and Life Expectancy</title>
   
   <introduction>
-    <p>Psychologist Stanley Coren has conducted several studies investigating the life expectancy of left-handers compared to right-handers, believing that the stress of being left-handed in a right-handed world leads to earlier deaths among the left-handers. In one study Coren and Halpern (1991) sent surveys to thousands of next-of-kin of recently deceased southern Californians and asked whether the person had been right-handed or left-handed. They were very careful in how they collected their data. First, they consulted a bereavement counselor who suggested that they not contact anyone unless at least 9 months had passed since the death. The counselor also suggested that they make the contact as gentle as possible and not follow up or press people for responses. The researchers also decided that they would not contact next of kin if the death had been a result of murder or suicide or if the deceased was a child age 6 or younger. They received 987 replies and found that the average age of right-handed people at death was 75 years and for left-handed people it was 66 years.</p>
+    <p>Psychologist Stanley Coren has conducted several studies investigating the life expectancy of left-handers compared to right-handers, believing that the stress of being left-handed in a right-handed world leads to earlier deaths among the left-handers. In one study Coren and Halpern (<url href="https://pubmed.ncbi.nlm.nih.gov/2006231/">1991</url>) sent surveys to thousands of next-of-kin of recently deceased southern Californians and asked whether the person had been right-handed or left-handed. They were very careful in how they collected their data. First, they consulted a bereavement counselor who suggested that they not contact anyone unless at least 9 months had passed since the death. The counselor also suggested that they make the contact as gentle as possible and not follow up or press people for responses. The researchers also decided that they would not contact next of kin if the death had been a result of murder or suicide or if the deceased was a child age 6 or younger. They received 987 replies and found that the average age of right-handed people at death was 75 years and for left-handed people it was 66 years.</p>
   </introduction>
   
   <exercise xml:id="inv4-3-a" label="I4.3.1">
@@ -11,7 +11,14 @@
     <statement>
       <p>Is this an observational study or an experiment?</p>
     </statement>
-    <response/>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><p>Observational study</p></statement>
+      </choice>
+      <choice>
+        <statement><p>Experiment</p></statement>
+      </choice>
+    </choices>
   </exercise>
   
   <exercise xml:id="inv4-3-b" label="I4.3.2">
@@ -36,7 +43,14 @@
     <title>Hypotheses</title>
     <statement>
       <p>Let <m>\mu_L</m> represent the mean lifetime for the population of left-handers and let <m>\mu_R</m> represent the mean lifetime for the population of right-handers. State the null and alternative hypotheses for Coren and Halpern's study (based on the research conjecture).</p>
+      
+      <p>Null hypothesis: <m>H_0</m>: <var width="5"/> <var width="3"/> <var width="5"/></p>
+      <p>Alternative hypothesis: <m>H_a</m>: <var width="5"/> <var width="3"/> <var width="5"/></p>
     </statement>
+    <solution>
+      <p><m>H_0: \mu_L = \mu_R</m> (left-handers and right-handers have the same mean lifetime)</p>
+      <p><m>H_a: \mu_L &lt; \mu_R</m> (left-handers have a shorter mean lifetime than right-handers)</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -161,19 +175,160 @@
   <exercise xml:id="inv4-3-e" label="I4.3.5">
     <title>Comparing Scenarios</title>
     <statement>
-      <p>For the following pairs of scenarios from the table above, which do you believe will result in the lower p-value, that is, stronger evidence against the null hypothesis? Explain briefly.</p>
-      <p><ul>
-        <li><p>Scenario 2 vs. 3</p></li>
-        <li><p>Scenario 3 vs. 4</p></li>
-      </ul></p>
+      <p>For the following pairs of scenarios from the table above, which do you believe will result in the lower p-value, that is, stronger evidence against the null hypothesis?</p>
     </statement>
-    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-3-e1" label="I4.3.5a">
+    <title>Scenario 2 vs. 3</title>
+    <statement>
+      <p>Which scenario will have the lower p-value (stronger evidence): Scenario 2 vs. 3?</p>
+    </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><p>Scenario 2</p></statement>
+      </choice>
+      <choice>
+        <statement><p>Scenario 3</p></statement>
+      </choice>
+    </choices>
+  </exercise>
+  
+  <exercise xml:id="inv4-3-e2" label="I4.3.5b">
+    <title>Scenario 3 vs. 4</title>
+    <statement>
+      <p>Which scenario will have the lower p-value (stronger evidence): Scenario 3 vs. 4?</p>
+    </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><p>Scenario 3</p></statement>
+      </choice>
+      <choice>
+        <statement><p>Scenario 4</p></statement>
+      </choice>
+    </choices>
   </exercise>
   
   <exercise xml:id="inv4-3-f" label="I4.3.6">
     <title>Hypothesis Tests for Multiple Scenarios</title>
     <statement>
-      <p>Use technology (see preceding Technology Detour) to carry out the two-sample <m>t</m>-tests for these hypotheses, using the sample sizes, sample means, and sample standard deviations given in the table above. For each of these five scenarios, report the resulting standardized statistic, p-value, and whether or not the difference is statistically significant with a significance level of <m>\alpha = 0.01</m> in the table above.</p>
+      <p>Use technology (see preceding Technology Detour) to carry out the two-sample <m>t</m>-tests for these hypotheses, using the sample sizes, sample means, and sample standard deviations given in the table above. For each of these five scenarios, report the resulting standardized statistic, p-value, and whether or not the difference is statistically significant with a significance level of <m>\alpha = 0.01</m> in the table below.</p>
+      
+      <table xml:id="table-handedness-results">
+        <title>Results for Left-Handedness Study Scenarios</title>
+        <tabular halign="center">
+          <row header="yes" bottom="major">
+            <cell>Scenario</cell>
+            <cell>Group</cell>
+            <cell>Sample size</cell>
+            <cell>Sample mean</cell>
+            <cell>Sample SD</cell>
+            <cell><m>t</m>-statistic</cell>
+            <cell>p-value</cell>
+            <cell>Significant at 1% level?</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>left</cell>
+            <cell>99 (10% of 987)</cell>
+            <cell>66</cell>
+            <cell>15</cell>
+            <cell><var width="8"/></cell>
+            <cell><var width="8"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell>right</cell>
+            <cell>888</cell>
+            <cell>75</cell>
+            <cell>15</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>left</cell>
+            <cell>50 (5% of 987)</cell>
+            <cell>66</cell>
+            <cell>15</cell>
+            <cell><var width="8"/></cell>
+            <cell><var width="8"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell>right</cell>
+            <cell>937</cell>
+            <cell>75</cell>
+            <cell>15</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>left</cell>
+            <cell>50 (5% of 987)</cell>
+            <cell>66</cell>
+            <cell>25</cell>
+            <cell><var width="8"/></cell>
+            <cell><var width="8"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell>right</cell>
+            <cell>937</cell>
+            <cell>75</cell>
+            <cell>25</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>left</cell>
+            <cell>10 (1% of 987)</cell>
+            <cell>66</cell>
+            <cell>25</cell>
+            <cell><var width="8"/></cell>
+            <cell><var width="8"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell>right</cell>
+            <cell>977</cell>
+            <cell>75</cell>
+            <cell>25</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>left</cell>
+            <cell>99 (10% of 987)</cell>
+            <cell>66</cell>
+            <cell>50</cell>
+            <cell><var width="8"/></cell>
+            <cell><var width="8"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+          <row bottom="major">
+            <cell></cell>
+            <cell>right</cell>
+            <cell>888</cell>
+            <cell>75</cell>
+            <cell>50</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </table>
     </statement>
     <response/>
   </exercise>
@@ -223,19 +378,26 @@
   <subsection xml:id="practice-problems-4-3">
     <title>Practice Problems</title>
     
-    <exercise xml:id="practice-4-3-a" label="PP4.3A">
-      <title>Effects on p-value</title>
+    <exercise xml:id="practice-4-3a-a" label="PP4.3A.1">
+      <title>Effect of Larger Mean Difference</title>
       <statement>
-        <p>(a) If all else stays the same but the difference in the means between the groups is larger, will the p-value be larger or smaller?</p>
-        <p>(b) If all else stays the same but the sample sizes within the groups are larger, will the p-value be larger or smaller?</p>
+        <p>If all else stays the same but the difference in the means between the groups is larger, will the p-value be larger or smaller?</p>
       </statement>
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-4-3-b" label="PP4.3B">
-      <title>Children's Television Viewing Habits</title>
+    <exercise xml:id="practice-4-3a-b" label="PP4.3A.2">
+      <title>Effect of Larger Sample Sizes</title>
       <statement>
-        <p>Recall the study on children's television viewing habits for two schools in San Jose, CA from Practice Problem 2.6B (Robinson, 1999). The researcher wanted to study whether a new classroom curriculum could reduce children's television viewing habits, which might in turn help to prevent obesity. One of the schools, chosen at random, incorporated an 18-lesson, 6-month classroom curriculum designed to reduce watching television and playing video games, whereas the other school made no changes to its curriculum. Both before the curriculum intervention, all children were asked to report how many hours per week they spent on these activities.</p>
+        <p>If all else stays the same but the sample sizes within the groups are larger, will the p-value be larger or smaller?</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-3b-a" label="PP4.3B.1">
+      <title>Children's Television Viewing Habits - Baseline p-value</title>
+      <statement>
+        <p>Recall the study on children's television viewing habits for two schools in San Jose, CA from Practice Problem 2.6B (<url href="https://pubmed.ncbi.nlm.nih.gov/10608376/">Robinson, 1999</url>). The researcher wanted to study whether a new classroom curriculum could reduce children's television viewing habits, which might in turn help to prevent obesity. One of the schools, chosen at random, incorporated an 18-lesson, 6-month classroom curriculum designed to reduce watching television and playing video games, whereas the other school made no changes to its curriculum. Both before the curriculum intervention, all children were asked to report how many hours per week they spent on these activities.</p>
         
         <p>The following summary statistics pertain to the reports of television watching, in hours per week, prior to the intervention:</p>
         
@@ -265,8 +427,14 @@
         
         <p>Approximate two-sided p-value: 0.956</p>
         
-        <p>(a) Do you think the researchers are happy or unhappy about the size of this p-value? Explain.</p>
-        
+        <p>Do you think the researchers are happy or unhappy about the size of this p-value? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-3b-b" label="PP4.3B.2">
+      <title>Alternative Baseline Scenario 1</title>
+      <statement>
         <p>Suppose that the summary statistics at baseline had instead been the following:</p>
         
         <table>
@@ -293,8 +461,14 @@
           </tabular>
         </table>
         
-        <p>(b) Without performing any calculations, how should the p-value for these data compare (larger or smaller) to the p-value from the actual baseline results? Explain.</p>
-        
+        <p>Without performing any calculations, how should the p-value for these data compare (larger or smaller) to the p-value from the actual baseline results? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-3b-c" label="PP4.3B.3">
+      <title>Alternative Baseline Scenario 2</title>
+      <statement>
         <p>Suppose that the summary statistics at the beginning of the study had instead been the following:</p>
         
         <table>
@@ -321,9 +495,15 @@
           </tabular>
         </table>
         
-        <p>(c) Without performing any calculations, how should the p-value for these data compare (larger or smaller) to the actual baseline results? Explain.</p>
-        
-        <p>(d) Suppose the researchers decide to look at a subset of children in this study that belong to the same social-economic class (with the expectation that their television watching habits will be more similar to each other). Discuss one advantage and one disadvantage to this approach in terms of detecting a difference between the control group and the intervention group at the conclusion of the study. [Hints: Relate to your answer in (c)?]</p>
+        <p>Without performing any calculations, how should the p-value for these data compare (larger or smaller) to the actual baseline results? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-3b-d" label="PP4.3B.4">
+      <title>Subsetting by Socio-Economic Class</title>
+      <statement>
+        <p>Suppose the researchers decide to look at a subset of children in this study that belong to the same social-economic class (with the expectation that their television watching habits will be more similar to each other). Discuss one advantage and one disadvantage to this approach in terms of detecting a difference between the control group and the intervention group at the conclusion of the study. [Hints: Relate to your answer in the previous question?]</p>
       </statement>
       <response/>
     </exercise>
