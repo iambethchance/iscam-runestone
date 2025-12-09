@@ -52,7 +52,7 @@
       <sage language="r">
         <input>
 # Load ISCAM functions from GitHub
-invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R"))
+invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
 # Load elephant data from GitHub
 elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
@@ -118,9 +118,9 @@ par(mfrow=c(1,1))
         </stack>
       </sidebyside>
       
-      <p><alert>Note:</alert> When comparing groups, some boxplot displays vary the other dimension of the box size by relative sample size.</p>
     </statement>
   </exercise>
+      <p><alert>Note:</alert> When comparing groups, some boxplot displays vary the other dimension of the box size by relative sample size.</p>
     
     <exercise xml:id="inv4-2-c" label="I4.2.7">
       <title>Identify Outliers</title>
@@ -183,7 +183,7 @@ par(mfrow=c(1,1))
       <sage language="r">
         <input>
 # Load ISCAM functions from GitHub
-invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R"))
+invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
 # Load elephant data from GitHub
 elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
@@ -216,7 +216,7 @@ iscamsummary(elephants$Distance, elephants$Species)
           <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
             <row header="yes">
               <cell></cell>
-              <cell>n</cell>
+              <cell><me>n</me></cell>
               <cell>Mean</cell>
               <cell>SD</cell>
             </row>
