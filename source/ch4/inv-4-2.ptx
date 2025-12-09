@@ -314,6 +314,9 @@ Players without a team affiliation or without a listed salary were not included 
           <p>Are the shapes of the distributions as you expected?</p>
           <p><var width="50"/></p>
         </statement>
+        <hint>
+          <p>Use the applet to find the population parameters from the data file.</p>
+        </hint>
         <solution>
           <p>The population sizes are approximately 243 Western and 229 Eastern players. The mean salaries are approximately <m>\mu_{\text{West}} = 11.7</m> million and <m>\mu_{\text{East}} = 11.3</m> million. The standard deviations are approximately <m>\sigma_{\text{West}} = 13.8</m> million and <m>\sigma_{\text{East}} = 13.3</m> million. Both distributions are strongly right-skewed as expected for salary data.</p>
         </solution>
@@ -356,6 +359,9 @@ Players without a team affiliation or without a listed salary were not included 
           <p>How do the sample results compare to the population results? What about the shapes of the samples?</p>
           <p><var width="50"/></p>
         </statement>
+        <hint>
+          <p>Compare your sample statistics to the population parameters recorded earlier.</p>
+        </hint>
         <solution>
           <p>Sample results will vary, but the sample means should be reasonably close to the population means, and the sample standard deviations should be reasonably close to the population standard deviations. The sample distributions may appear less skewed than the population distributions due to smaller sample sizes.</p>
         </solution>
@@ -372,6 +378,9 @@ Players without a team affiliation or without a listed salary were not included 
             <li><p>Examine the distribution of differences in sample means.</p></li>
           </ul>
         </statement>
+        <hint>
+          <p>Generate at least 1000 samples to see the shape of the sampling distribution.</p>
+        </hint>
         <solution>
           <p>After generating 1000+ samples, you should see a distribution of differences in sample means that is approximately normal, centered near the difference in population means (about 0.4 million).</p>
         </solution>
@@ -385,6 +394,9 @@ Players without a team affiliation or without a listed salary were not included 
           How does the distribution of the differences in sample means 
           compare to the shape of the salary distributions themselves?</p>
         </statement>
+        <hint>
+          <p>Compare the shape of this distribution to the original population distributions.</p>
+        </hint>
         <solution>
           <p>The sampling distribution of the difference in sample means is approximately normal (symmetric, bell-shaped), even though the individual salary distributions are strongly right-skewed. This illustrates the Central Limit Theorem for differences in means.</p>
         </solution>
@@ -426,12 +438,21 @@ Players without a team affiliation or without a listed salary were not included 
         <response/>
       </exercise>
       
+      <assemblage xml:id="key-result-two-means">
+        <title>Key Result: Sampling Distribution of Difference in Two Means</title>
+        <p>A theorem similar to the Central Limit Theorem indicates that if we have two infinite, normally distributed populations, with means <m>\mu_1</m> and <m>\mu_2</m> and standard deviations <m>\sigma_1</m> and <m>\sigma_2</m>, and we take independent random samples from each population, the sampling distribution of <m>\bar{x}_1 - \bar{x}_2</m> will follow a normal distribution with mean <m>\mu_1 - \mu_2</m> and standard deviation <m>\sqrt{\sigma_1^2/n_1 + \sigma_2^2/n_2}</m>.</p>
+      </assemblage>
+      
+      <p>This is a nice theoretical result, but we seldom meet these conditions exactly.</p>
+      
       <exercise xml:id="prob-detour-2means-j" label="PD4.2.10">
-        <title>Key Result</title>
+        <title>Summary of Results</title>
         <statement>
-          <p><alert>Key Result:</alert> A theorem similar to the Central Limit Theorem indicates that if we have two infinite, normally distributed populations, with means <m>\mu_1</m> and <m>\mu_2</m> and standard deviations <m>\sigma_1</m> and <m>\sigma_2</m>, and we take independent random samples from each population, the sampling distribution of <m>\bar{x}_1 - \bar{x}_2</m> will follow a normal distribution with mean <m>\mu_1 - \mu_2</m> and standard deviation <m>\sqrt{\sigma_1^2/n_1 + \sigma_2^2/n_2}</m>.</p>
-          <p>This is a nice theoretical result, but we seldom meet these conditions exactly. Summarize your findings about the distribution of the difference in sample means (shape, center, spread) and compare to the theoretical predictions.</p>
+          <p>Summarize your findings about the distribution of the difference in sample means (shape, center, spread) and compare to the theoretical predictions.</p>
         </statement>
+        <hint>
+          <p>Compare what you observed in the simulation to the Key Result above.</p>
+        </hint>
         <solution>
           <p>Shape: The sampling distribution is approximately normal, even though the populations are skewed. Center: Approximately <m>\mu_{\text{East}} - \mu_{\text{West}} \approx -0.4</m> million. Spread: Standard deviation approximately 4.3 million, which matches the theoretical prediction <m>\sqrt{13.8^2/20 + 13.3^2/20} \approx 4.28</m> million.</p>
         </solution>
@@ -443,6 +464,9 @@ Players without a team affiliation or without a listed salary were not included 
         <statement>
           <p>Identify two characteristics of our NBA salary populations that do not agree with the Key Result statement above.</p>
         </statement>
+        <hint>
+          <p>Think about the distribution shape and population size.</p>
+        </hint>
         <solution>
           <p>1) The populations are not normally distributed; they are strongly right-skewed. 2) The populations are not infinite; we have finite populations of about 240 players in each conference.</p>
         </solution>
@@ -463,7 +487,7 @@ Players without a team affiliation or without a listed salary were not included 
       <exercise xml:id="prob-detour-2means-m" label="PD4.2.13">
         <title>Standardized Statistics</title>
         <statement>
-          <p>So then what we really need to know about is the distribution of <m>t = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>. In the applet, use the Statistic pull-down menu to select the t-statistic and then examine the distribution of this statistic. Is it approximately normal? Where is it centered? Use the check box to Overlay t distribution. Is the <m>t</m>-distribution a good model for this sampling distribution?</p>
+          <p>So then what we really need to know about is the distribution of <m>t = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>. In the applet, use the Statistic pull-down menu to select the <m>t</m>-statistic and then examine the distribution of this statistic. Is it approximately normal? Where is it centered? Use the check box to Overlay <m>t</m> distribution. Is the <m>t</m>-distribution a good model for this sampling distribution?</p>
         </statement>
         <solution>
           <p>The distribution of the <m>t</m>-statistic is approximately normal and centered at 0. The overlaid <m>t</m>-distribution provides a good model for this sampling distribution, slightly heavier-tailed than the normal distribution to account for the additional variability from estimating the population standard deviations.</p>
@@ -478,7 +502,7 @@ Players without a team affiliation or without a listed salary were not included 
       <exercise xml:id="inv4-2-i" label="I4.2.13">
         <title>Technical Conditions</title>
         <statement>
-          <p>Are the technical conditions met for the t-procedures to be valid for these data?</p>
+          <p>Are the technical conditions met for the <m>t</m>-procedures to be valid for these data?</p>
         </statement>
         <response/>
       </exercise>
@@ -487,6 +511,7 @@ Players without a team affiliation or without a listed salary were not included 
         <title>Hypothesis Test</title>
         <statement>
           <p>Use technology to decide whether there is a statistically significant difference between the average walking distance of the African and Asian elephant populations. State the hypotheses, define any symbols you use, report the test-statistic and p-value. Include one-sentence interpretations of both the standardized statistic and the p-value in context. What conclusion do you draw?</p>
+          <p><var width="80" height="10"/></p>
         </statement>
         <response/>
       </exercise>
@@ -532,19 +557,31 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
       <exercise xml:id="inv4-2-j3" label="I4.2.14c">
         <title>Two-Sample <m>t</m>-Test - JMP</title>
         <statement>
-          <p>Use JMP to conduct a two-sample <m>t</m>-test:</p>
-          
-          <image source="images/Inv4.2JMP3.png" width="80%">
-            <description>JMP output for unpooled two-sample t-test</description>
-          </image>
-          
-          <ul>
-            <li><p>Choose Analyze > Fit Y by X</p></li>
-            <li><p>Put the quantitative variable in Y, Response and the categorical variable in X, Factor</p></li>
-            <li><p>Press OK</p></li>
-            <li><p>Click on the red triangle next to Oneway Analysis and select t Test</p></li>
-            <li><p>JMP provides both pooled and unpooled (Welch) results</p></li>
-          </ul>
+          <sidebyside widths="60% 35%" valign="top">
+            <stack>
+              <p>Use JMP to conduct a two-sample <m>t</m>-test:</p>
+              <ul>
+                <li><p><url href="https://github.com/iambethchance/iscam-runestone/blob/master/assets/tech_images/JMP_Two_Means_HypTest_v1.jsl">ISCAM Journal file</url>: Hypothesis Test for Two Means</p></li>
+                <li><p>Choose the <m>t</m>-test and Unequal Variances</p></li>
+                <li><p>Specify the alternative hypothesis and the sample means and sample standard deviations and press Enter.</p></li>
+                <li><p>There is no simple CI calculator</p></li>
+              </ul>
+              <p>OR</p>
+              <ul>
+                <li><p>Choose Analyze > Fit Y by X</p></li>
+                <li><p>Put the quantitative variable in Y, Response and the categorical variable in X, Factor</p></li>
+                <li><p>Press OK</p></li>
+                <li><p>Click on the red triangle next to Oneway Analysis and select <m>t</m> Test</p></li>
+                <li><p>JMP provides both pooled and unpooled (Welch) results</p></li>
+              </ul>
+            </stack>
+            
+            <stack>
+              <image source="images/Inv4.2JMP3.png" width="100%">
+                <description>JMP output for unpooled two-sample t-test</description>
+              </image>
+            </stack>
+          </sidebyside>
         </statement>
       </exercise>
       
@@ -579,6 +616,16 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
         </image>
       </sidebyside>
       
+      <assemblage xml:id="t-distribution-discussion">
+        <title>Discussion: When to Use the <m>t</m>-Distribution</title>
+        
+        <p>The sample sizes of 20 for each group appear to be large enough for a <m>t</m>-distribution (even a normal distribution) to reasonably approximate the distribution of this statistic. If the population distributions had themselves been normally distributed (and large), then a <m>t</m>-distribution will be a good approximation of the statistic for any sample sizes. The more skewed the population shapes, the larger the sample sizes need to be for you to safely use the <m>t</m>-distribution. Notice even with these very skewed populations, because their shapes and sample sizes were similar, we didn't need very large sample sizes at all for the standardized statistic to follow a <m>t</m>-distribution.</p>
+        
+        <p>One remaining question is what to use for the degrees of freedom for the <m>t</m>-distribution. In the one-sample case (Chapter 2) we used <m>n - 1</m>. For two samples, it's actually more complicated. The Welch-Satterthwaite approximation for degrees of freedom involves the sample sizes and the unknown population standard deviations, though it doesn't always result in integer values. We will leave this calculation up to technology. You only need to realize that the degrees of freedom are related to the sample sizes and as the sample sizes become large, the <m>t</m>-distribution loses more and more of the heaviness in the tails and approaches the (standard) normal distribution. If you need to determine a p-value or critical value <q>by hand,</q> we suggest using the following simple approximation for the degrees of freedom: <m>\min(n_1 - 1, n_2 - 1)</m>, the smaller of the two sample sizes minus one.</p>
+        
+        <p>Especially when the population shapes are similar and the sample sizes are similar, the <m>t</m>-distribution provides a pretty good approximation to the sampling distribution of <m>\frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>, even for non-normal populations.</p>
+      </assemblage>
+      
       <exercise xml:id="inv4-2-k" label="I4.2.19">
         <title>Confidence Interval</title>
         <statement>
@@ -593,9 +640,25 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
         <p>In this study, the mean distance walked is similar for these two species (5.40 vs. 5.30 km) and the sample sizes are not super large (33 and 23), with a fair bit of variation in walking distances within each species (<m>s_{\text{African}} = 1.47</m> vs <m>s_{\text{Asian}} = 3.41</m> km). For these reasons, we do not expect a small p-value. The distributions are fairly symmetric so the unpooled t-test should be valid (the standard deviations are not very similar, so we would not feel comfortable assuming equal population variances). The unpooled t-test statistic of 0.131 is small, yielding a two-sided p-value of 0.897. We fail to reject the null hypothesis that the population mean walking distances are the same. These data do not provide convincing evidence of a difference in walking distances, on average, between Asian and African elephants in American zoos. A 95% confidence interval tells us that its plausible that, in these two populations, African elephants average up to 1.45 km less to 1.65 km more than Asian elephants. It might be interesting to further explore the larger variation in walking distances among the Asian elephants. We should also be aware that we have sampled a large fraction of the populations and should consider some "finite population corrections" which would only further increase the standard deviation.</p>
       </assemblage>
       
-      <p>Keep in mind that the t-tests only tells us about whether the centers of the distributions are significantly different. They don't help us analysis other potentially interesting differences in the two distributions.</p>
+      <p>Keep in mind that the <m>t</m>-tests only tell us about whether the centers of the distributions are significantly different. They don't help us analyze other potentially interesting differences in the two distributions.</p>
       
-      <p>For more information on the <url href="https://en.wikipedia.org/wiki/Pooled_variance#Pooled_standard_deviation">pooled t-test</url>, which assumes equal population variances, see the linked resource. In practice, the unpooled (Welch) t-test is generally preferred as it is more robust to violations of the equal variance assumption.</p>
+      <p>For more information on the <url href="https://en.wikipedia.org/wiki/Pooled_variance#Pooled_standard_deviation">pooled <m>t</m>-test</url>, which assumes equal population variances, see the linked resource. In practice, the unpooled (Welch) <m>t</m>-test is generally preferred as it is more robust to violations of the equal variance assumption.</p>
+      
+      <assemblage xml:id="two-sample-t-procedures">
+        <title>Summary of Two-Sample <m>t</m> Procedures</title>
+        
+        <p><alert>Parameter:</alert> <m>\mu_1 - \mu_2</m> = the difference in the population means</p>
+        
+        <p><alert>To test <m>H_0: \mu_1 - \mu_2 = 0</m></alert></p>
+        <p>Standardized statistic: <me>t = \frac{(\bar{x}_1 - \bar{x}_2) - 0}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</me></p>
+        
+        <p><alert><m>t</m>-Confidence interval for <m>\mu_1 - \mu_2</m></alert></p>
+        <p><me>(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}</me></p>
+        
+        <p><alert>Approximate degrees of freedom:</alert> Compare this to a <m>t</m>-distribution with degrees of freedom equal to the smaller of the two sample sizes minus one: <m>\min(n_1, n_2) - 1</m>.</p>
+        
+        <p><alert>Technical conditions:</alert> These procedures are considered valid if the sample distributions are reasonably symmetric or the sample sizes are both at least 20.</p>
+      </assemblage>
     </subsection>
     
     <subsection xml:id="practice-problems-4-2">
