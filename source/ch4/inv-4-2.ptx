@@ -501,24 +501,21 @@ Players without a team affiliation or without a listed salary were not included 
         <response/>
       </exercise>
       
-      <assemblage xml:id="t-distribution-discussion">
-        <title>Discussion: When to Use the <m>t</m>-Distribution</title>
-        
-        <p>The sample sizes of 20 for each group appear to be large enough for a <m>t</m>-distribution (even a normal distribution) to reasonably approximate the distribution of this statistic. If the population distributions had themselves been normally distributed (and large), then a <m>t</m>-distribution will be a good approximation of the statistic for any sample sizes. The more skewed the population shapes, the larger the sample sizes need to be for you to safely use the <m>t</m>-distribution. Notice even with these very skewed populations, because their shapes and sample sizes were similar, we didn't need very large sample sizes at all for the standardized statistic to follow a <m>t</m>-distribution.</p>
-        
-        <p>One remaining question is what to use for the degrees of freedom for the <m>t</m>-distribution. In the one-sample case (Chapter 2) we used <m>n - 1</m>. For two samples, it's actually more complicated. The Welch-Satterthwaite approximation for degrees of freedom involves the sample sizes and the unknown population standard deviations, though it doesn't always result in integer values. We will leave this calculation up to technology. You only need to realize that the degrees of freedom are related to the sample sizes and as the sample sizes become large, the <m>t</m>-distribution loses more and more of the heaviness in the tails and approaches the (standard) normal distribution. If you need to determine a p-value or critical value <q>by hand,</q> we suggest using the following simple approximation for the degrees of freedom: <m>\min(n_1 - 1, n_2 - 1)</m>, the smaller of the two sample sizes minus one.</p>
-        
-        <p>Especially when the population shapes are similar and the sample sizes are similar, the <m>t</m>-distribution provides a pretty good approximation to the sampling distribution of <m>\frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>, even for non-normal populations.</p>
-      </assemblage>
+      <p><strong>Discussion:</strong> The sample sizes of 20 for each group appear to be large enough for a <m>t</m>-distribution (even a normal distribution) to reasonably approximate the distribution of this statistic. If the population distributions had themselves been normally distributed (and large), then a <m>t</m>-distribution will be a good approximation of the statistic for any sample sizes. The more skewed the population shapes, the larger the sample sizes need to be for you to safely use the <m>t</m>-distribution. Notice even with these very skewed populations, because their shapes and sample sizes were similar, we didn't need very large sample sizes at all for the standardized statistic to follow a <m>t</m>-distribution.</p>
+      
+      <p>One remaining question is what to use for the degrees of freedom for the <m>t</m>-distribution. In the one-sample case (Chapter 2) we used <m>n - 1</m>. For two samples, it's actually more complicated. The <url href="https://www.rossmanchance.com/iscam3/glossary_files/Satterthwaite.htm">Welch-Satterthwaite</url> approximation for degrees of freedom involves the sample sizes and the unknown population standard deviations, though it doesn't always result in integer values. We will leave this calculation up to technology. You only need to realize that the degrees of freedom are related to the sample sizes and as the sample sizes become large, the <m>t</m>-distribution loses more and more of the heaviness in the tails and approaches the (standard) normal distribution. If you need to determine a p-value or critical value <q>by hand,</q> we suggest using the following simple approximation for the degrees of freedom: <m>\min(n_1 - 1, n_2 - 1)</m>, the smaller of the two sample sizes minus one.</p>
+      
       
       <sidebyside widths="60% 35%" valign="top">
-        <p>In this case, we could use 19 as the approximate degrees of freedom. Notice that this sample size is large enough that the <m>t</m>-distribution looks a lot like the normal distribution as well, which should agree with your observation in (m). But we will continue to use the <m>t</m>-distribution rather than the normal distribution to still account for additional variation from our estimates of the population standard deviations.</p>
+        <p>In this case, we could use 19 as the approximate degrees of freedom. Notice that this sample size is large enough that the <m>t</m>-distribution looks a lot like the normal distribution as well, which should agree with your observation in Checkpoint 15.1.29. But we will continue to use the <m>t</m>-distribution rather than the normal distribution to still account for additional variation from our estimates of the population standard deviations.</p>
         
         <image source="images/Inv4.2tnorm.png" width="100%">
           <description>Comparison of <m>t</m>-distribution with 19 df and normal distribution</description>
         </image>
       </sidebyside>
       
+      <p>Especially when the population shapes are similar and the sample sizes are similar, the <m>t</m>-distribution provides a pretty good approximation to the sampling distribution of <m>\frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>, even for non-normal populations.</p>
+    
       <assemblage xml:id="two-sample-t-procedures">
         <title>Summary of Two-Sample <m>t</m> Procedures</title>
         
@@ -535,9 +532,99 @@ Players without a team affiliation or without a listed salary were not included 
         <p><alert>Technical conditions:</alert> These procedures are considered valid if the sample distributions are reasonably symmetric or the sample sizes are both at least 20.</p>
       </assemblage>
       
-      <p>The applet uses the <url href="https://en.wikipedia.org/wiki/Welch%E2%80%93Satterthwaite_equation">Welch-Satterthwaite approximation</url> to calculate the degrees of freedom when the population variances are not assumed equal.</p>
+<p><alert>Using Technology to Carry out the Two-Sample <m>t</m>-Tests</alert>
+In using technology, you need to consider how the data are available: Do you have the “raw data” (meaning all the individual data values) or just the summary statistics (sample sizes, means, SDs)? Most software packages will assume raw data is “stacked” – each column represents a different variable (all response variable values in one column, the explanatory variable in a second column). Also notice that being able to run the <m>t</m>-test 
+with only the summary data is one advantage the <m>t</m>-test has over the simulation. But also keep in mind that the t-output is valid only when the population distributions are normal or the sample sizes are large. When reporting your results, make sure you specify which technology you used, because different software use different degrees of freedom. You will also need to watch for the direction of subtraction that the software packages use automatically (often alphabetical by group name).</p>
+
+<p>There is also a version of the two-sample <m>t</m>-test that makes an additional assumption – the population standard deviations are equal. The standardized statistic has the following form:
+  <me>t = \frac{(\bar{x}_1 - \bar{x}_2) - 0}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}</me>
+  where <m>s_p = \sqrt{\frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}}</m>, a pooled estimate of the common SD.</p>
+<p>This <q>pooled <m>t</m>-test</q> has some advantages (namely higher power), when the population standard deviations are equal. However, this additional condition can be difficult to assess from your sample data. The benefits do not appear to outweigh the risks of applying this assumption when you shouldn't. So in this text we will focus on <q>unpooled <m>t</m>-tests</q> only.</p>
       
-      <p>For more information on the <url href="https://en.wikipedia.org/wiki/Pooled_variance#Pooled_standard_deviation">pooled <m>t</m>-test</url>, which assumes equal population variances, see the linked resource. In practice, the unpooled (Welch) <m>t</m>-test is generally preferred as it is more robust to violations of the equal variance assumption.</p>
+      <p><alert>Technology Detours:</alert> How to conduct two-sample <m>t</m>-tests using different tools.</p>
+      
+      <aside component="knowl">
+        <title>Applet - Theory-Based Inference (Summary Data)</title>
+        <p>Use the Theory-Based Inference applet to conduct a two-sample <m>t</m>-test:</p>
+        
+        <image source="images/Inv4.2TBIA.png" width="80%">
+          <description>Theory-Based Inference applet for unpooled two-sample t-test with summary data</description>
+        </image>
+        
+        <ul>
+          <li><p>Select Two Means from the pull-down menu</p></li>
+          <li><p>Choose Unpooled</p></li>
+          <li><p>Enter the sample sizes, means, and standard deviations for each group</p></li>
+          <li><p>Choose the alternative hypothesis (typically not equal for two-sided)</p></li>
+          <li><p>Press Calculate to get the test statistic, degrees of freedom, and p-value</p></li>
+        </ul>
+      </aside>
+      
+      <aside component="knowl">
+        <title>R - Two-Sample <m>t</m>-Test</title>
+        <p>Use R to conduct a two-sample <m>t</m>-test:</p>
+        <sage language="r">
+          <input>
+# Load elephant data
+elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
+
+# Two-sample t-test (unpooled - Welch's t-test)
+t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
+
+# Note: var.equal=FALSE uses the unpooled (Welch) version
+# This is the default and recommended when variances may differ
+          </input>
+        </sage>
+      </aside>
+      
+      <aside component="knowl">
+        <title>JMP - Two-Sample <m>t</m>-Test</title>
+        <sidebyside widths="60% 35%" valign="top">
+          <stack>
+            <p>Use JMP to conduct a two-sample <m>t</m>-test:</p>
+            <ul>
+              <li><p><url href="https://github.com/iambethchance/iscam-runestone/blob/master/assets/tech_images/JMP_Two_Means_HypTest_v1.jsl">ISCAM Journal file</url>: Hypothesis Test for Two Means</p></li>
+              <li><p>Choose the <m>t</m>-test and Unequal Variances</p></li>
+              <li><p>Specify the alternative hypothesis and the sample means and sample standard deviations and press Enter.</p></li>
+              <li><p>There is no simple CI calculator</p></li>
+            </ul>
+            <p>OR</p>
+            <ul>
+              <li><p>Choose Analyze > Fit Y by X</p></li>
+              <li><p>Put the quantitative variable in Y, Response and the categorical variable in X, Factor</p></li>
+              <li><p>Press OK</p></li>
+              <li><p>Click on the red triangle next to Oneway Analysis and select <m>t</m> Test</p></li>
+              <li><p>JMP provides both pooled and unpooled (Welch) results</p></li>
+            </ul>
+          </stack>
+          
+          <stack>
+            <image source="images/Inv4.2JMP3.png" width="100%">
+              <description>JMP output for unpooled two-sample t-test</description>
+            </image>
+          </stack>
+        </sidebyside>
+      </aside>
+      
+      <aside component="knowl">
+        <title>Applet - Theory-Based Inference (Raw Data)</title>
+        <p>Use the Theory-Based Inference applet with raw data:</p>
+        
+        <image source="images/Inv4.2TBIA2.png" width="80%">
+          <description>Theory-Based Inference applet for unpooled two-sample t-test with raw data</description>
+        </image>
+        
+        <ul>
+          <li><p>Select Two Means from the pull-down menu</p></li>
+          <li><p>Check the Stacked box if your data are in stacked format</p></li>
+          <li><p>Enter elephants.txt in the data window or paste the data</p></li>
+          <li><p>Press Use Data</p></li>
+          <li><p>Select the response variable and grouping variable</p></li>
+          <li><p>Choose Unpooled</p></li>
+          <li><p>Press Calculate</p></li>
+        </ul>
+      </aside>
+
     </subsection>
     
     <subsection xml:id="elephants-continued">
@@ -570,96 +657,6 @@ Players without a team affiliation or without a listed salary were not included 
           <p>Let <m>\mu_A</m> = population mean walking distance for African elephants and <m>\mu_{As}</m> = population mean walking distance for Asian elephants. <m>H_0: \mu_A - \mu_{As} = 0</m> (no difference), <m>H_a: \mu_A - \mu_{As} \neq 0</m> (there is a difference). Test statistic: <m>t = 0.13</m>, p-value = 0.897. The standardized statistic of 0.13 indicates the observed difference is only 0.13 standard errors from 0, which is very small. The p-value of 0.897 means if there were no difference in population mean walking distances, we would observe a difference at least as extreme as ours in about 90% of random samples. We fail to reject the null hypothesis; there is insufficient evidence of a difference in mean walking distances.</p>
         </solution>
         <response/>
-      </exercise>
-      
-      <exercise xml:id="inv4-2-j1" label="I4.2.14a">
-        <title>Two-Sample <m>t</m>-Test - Applet</title>
-        <statement>
-          <p>Use the Theory-Based Inference applet to conduct a two-sample <m>t</m>-test:</p>
-          
-          <image source="images/Inv4.2TBIA.png" width="80%">
-            <description>Theory-Based Inference applet for unpooled two-sample t-test with summary data</description>
-          </image>
-          
-          <ul>
-            <li><p>Select Two Means from the pull-down menu</p></li>
-            <li><p>Choose Unpooled</p></li>
-            <li><p>Enter the sample sizes, means, and standard deviations for each group</p></li>
-            <li><p>Choose the alternative hypothesis (typically not equal for two-sided)</p></li>
-            <li><p>Press Calculate to get the test statistic, degrees of freedom, and p-value</p></li>
-          </ul>
-        </statement>
-      </exercise>
-      
-      <exercise xml:id="inv4-2-j2" label="I4.2.14b">
-        <title>Two-Sample <m>t</m>-Test - R</title>
-        <statement>
-          <p>Use R to conduct a two-sample <m>t</m>-test:</p>
-          <sage language="r">
-            <input>
-# Load elephant data
-elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
-
-# Two-sample t-test (unpooled - Welch's t-test)
-t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
-
-# Note: var.equal=FALSE uses the unpooled (Welch) version
-# This is the default and recommended when variances may differ
-            </input>
-          </sage>
-        </statement>
-      </exercise>
-      
-      <exercise xml:id="inv4-2-j3" label="I4.2.14c">
-        <title>Two-Sample <m>t</m>-Test - JMP</title>
-        <statement>
-          <sidebyside widths="60% 35%" valign="top">
-            <stack>
-              <p>Use JMP to conduct a two-sample <m>t</m>-test:</p>
-              <ul>
-                <li><p><url href="https://github.com/iambethchance/iscam-runestone/blob/master/assets/tech_images/JMP_Two_Means_HypTest_v1.jsl">ISCAM Journal file</url>: Hypothesis Test for Two Means</p></li>
-                <li><p>Choose the <m>t</m>-test and Unequal Variances</p></li>
-                <li><p>Specify the alternative hypothesis and the sample means and sample standard deviations and press Enter.</p></li>
-                <li><p>There is no simple CI calculator</p></li>
-              </ul>
-              <p>OR</p>
-              <ul>
-                <li><p>Choose Analyze > Fit Y by X</p></li>
-                <li><p>Put the quantitative variable in Y, Response and the categorical variable in X, Factor</p></li>
-                <li><p>Press OK</p></li>
-                <li><p>Click on the red triangle next to Oneway Analysis and select <m>t</m> Test</p></li>
-                <li><p>JMP provides both pooled and unpooled (Welch) results</p></li>
-              </ul>
-            </stack>
-            
-            <stack>
-              <image source="images/Inv4.2JMP3.png" width="100%">
-                <description>JMP output for unpooled two-sample t-test</description>
-              </image>
-            </stack>
-          </sidebyside>
-        </statement>
-      </exercise>
-      
-      <exercise xml:id="inv4-2-j4" label="I4.2.14d">
-        <title>Two-Sample <m>t</m>-Test with Raw Data - Applet</title>
-        <statement>
-          <p>Use the Theory-Based Inference applet with raw data:</p>
-          
-          <image source="images/Inv4.2TBIA2.png" width="80%">
-            <description>Theory-Based Inference applet for unpooled two-sample t-test with raw data</description>
-          </image>
-          
-          <ul>
-            <li><p>Select Two Means from the pull-down menu</p></li>
-            <li><p>Check the Stacked box if your data are in stacked format</p></li>
-            <li><p>Enter elephants.txt in the data window or paste the data</p></li>
-            <li><p>Press Use Data</p></li>
-            <li><p>Select the response variable and grouping variable</p></li>
-            <li><p>Choose Unpooled</p></li>
-            <li><p>Press Calculate</p></li>
-          </ul>
-        </statement>
       </exercise>
       
       <exercise xml:id="inv4-2-k" label="I4.2.19">
