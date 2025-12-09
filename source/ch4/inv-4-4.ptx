@@ -38,6 +38,7 @@
         <solution>
           <p>This is an experiment because researchers determined which subjects would be sleep deprived.</p>
         </solution>
+        <response/>
       </exercise>
       
       <exercise xml:id="inv4-4-b" label="I4.4.2">
@@ -76,10 +77,10 @@
         <hint>
           <p>Positive or negative?</p>
         </hint>
+        <response/>
         <solution>
           <p>The alternative hypothesis is one-sided; we expect to see positive improvement scores in each group, but higher scores in the unrestricted sleep group.</p>
         </solution>
-        <response/>
       </exercise>
     </subsection>
     
@@ -88,29 +89,34 @@
       
       <p>The following dotplots reveal the distributions of improvements between the two groups:</p>
       
-      <!-- TODO: Need Inv4.4intro.png image showing dotplots for sleep deprivation data -->
+      <image source="images/Inv4.4e.png" width="80%">
+        <description>Dotplots comparing improvement scores between sleep deprived and unrestricted sleep groups</description>
+      </image>
       
       <exercise xml:id="inv4-4-e" label="I4.4.5">
         <title>Preliminary Evidence</title>
         <statement>
-          <p>Do these data provide preliminary evidence that the harmful effects of sleep deprivation linger three days later? Explain your reasoning. [Hints: Are all the improvement scores in one group higher than all the improvement scores in the other group? Is there a tendency for higher improvement scores in one group three days later?]</p>
+          <p>Do these data provide preliminary evidence that the harmful effects of sleep deprivation linger three days later? Explain your reasoning.</p>
         </statement>
+        <hint>
+          <p>Are all the improvement scores in one group higher than all the improvement scores in the other group? Is there a tendency for higher improvement scores in one group three days later?</p>
+        </hint>
+        <response/>
         <solution>
           <p>On average, the improvement score was higher for unrestricted group. We see a tendency for higher improvement scores in the unrestricted group (the dotplot is shifted to the right compared to the sleep deprived group dotplot).</p>
         </solution>
-        <response/>
       </exercise>
       
       <exercise xml:id="inv4-4-f" label="I4.4.6">
         <title>Calculate Observed Difference</title>
         <statement>
-          <p>There are several ways we could choose to measure the tendency observed in (e). A common choice of statistic is of course the difference in group means. Calculate this statistic by subtracting the <q>deprived</q> group's value from the <q>unrestricted</q> group's value.</p>
+          <p>There are several ways we could choose to measure the tendency observed in <xref ref="inv4-4-e" text="custom">question (e)</xref>. A common choice of statistic is of course the difference in group means. Calculate this statistic by subtracting the <q>deprived</q> group's value from the <q>unrestricted</q> group's value.</p>
           <p>Observed difference in sample means: <m>\bar{x}_{\text{unrestricted}} - \bar{x}_{\text{deprived}} = </m> <var width="10"/></p>
         </statement>
         <solution>
-          <p><m>\bar{x}_{\text{deprived}} = 10.46</m> ms (note: solution key shows 3.90 ms but this appears to be an error based on the actual data)</p>
-          <p><m>\bar{x}_{\text{unrestricted}} = 21.22</m> ms (note: solution key shows 19.82 ms but this appears to be an error based on the actual data)</p>
-          <p>Difference: <m>21.22 - 10.46 = 10.76</m> ms (note: solution key shows 15.92 ms)</p>
+          <p><m>\bar{x}_{\text{deprived}} = 10.46</m> ms</p>
+          <p><m>\bar{x}_{\text{unrestricted}} = 21.22</m> ms</p>
+          <p>Difference: <m>21.22 - 10.46 = 10.76</m> ms</p>
         </solution>
         <response/>
       </exercise>
@@ -140,7 +146,7 @@
       <exercise xml:id="inv4-4-i" label="I4.4.9">
         <title>Outline Simulation</title>
         <statement>
-          <p>Outline the steps of a simulation analysis that would explore the <q>could have been</q> outcomes under the null hypothesis by modelling the randomness described in (h).</p>
+          <p>Outline the steps of a simulation analysis that would explore the <q>could have been</q> outcomes under the null hypothesis by modelling the randomness described in <xref ref="inv4-4-h" text="custom">question (h)</xref>.</p>
         </statement>
         <solution>
           <p>We want to simulate the random assignment by assuming everyone would get the same improvement score, regardless of which group they end up in, and randomly assign the subjects into 2 groups of <m>n_1 = 11</m> and <m>n_2 = 10</m>. Then see how frequently you get <m>\bar{x}_1 - \bar{x}_2 > 15.92</m>.</p>
