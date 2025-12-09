@@ -2,7 +2,15 @@
 <section xml:id="investigation4-2">
   <title>Investigation 4.2: The Elephants in the Room</title>
   
-  <p>Researchers Holdgate et al. (2016) studied walking behavior of elephants in North American zoos to see whether there is a difference in average distance traveled by African and Asian elephants in captivity. They put GPS loggers on 33 African elephants and 23 Asian elephants, and measured the distance (in kilometers) the elephants walked per day.</p>
+  <introduction>
+    <sidebyside widths="60% 35%" valign="top">
+      <p>Researchers Holdgate et al. (2016) studied walking behavior of elephants in North American zoos to see whether there is a difference in average distance traveled by African and Asian elephants in captivity. They put GPS loggers on 33 African elephants and 23 Asian elephants, and measured the distance (in kilometers) the elephants walked per day. (See <url href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4944962/">Holdgate et al. 2016 study</url>.)</p>
+      
+      <image source="Inv4.2intro.png" width="100%">
+        <description>Introduction image for Investigation 4.2</description>
+      </image>
+    </sidebyside>
+  </introduction>
   
   <exercise xml:id="inv4-2-a" label="I4.2.1">
     <title>Identify Study Components</title>
@@ -136,29 +144,29 @@ cat("Skewness =", e1071::skewness(asian$Distance), "\n")
       <title>Record Summary Statistics</title>
       <statement>
         <p>Determine the sample sizes, sample means, and the sample standard deviations for each group and record these below, using appropriate symbols.</p>
-        <tabular>
-          <row header="yes">
-            <cell></cell>
-            <cell>n</cell>
-            <cell>Mean</cell>
-            <cell>SD</cell>
-            <cell>Skew</cell>
-          </row>
-          <row>
-            <cell>African</cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-          </row>
-          <row>
-            <cell>Asian</cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-          </row>
-        </tabular>
+        <table>
+          <title>Summary Statistics for Elephant Walking Distances</title>
+          <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+            <row header="yes">
+              <cell></cell>
+              <cell>n</cell>
+              <cell>Mean</cell>
+              <cell>SD</cell>
+            </row>
+            <row>
+              <cell>African</cell>
+              <cell><var width="5"/></cell>
+              <cell><var width="8"/></cell>
+              <cell><var width="8"/></cell>
+            </row>
+            <row>
+              <cell>Asian</cell>
+              <cell><var width="5"/></cell>
+              <cell><var width="8"/></cell>
+              <cell><var width="8"/></cell>
+            </row>
+          </tabular>
+        </table>
       </statement>
       <response/>
     </exercise>
@@ -171,10 +179,7 @@ cat("Skewness =", e1071::skewness(asian$Distance), "\n")
       <response/>
     </exercise>
     
-    <note>
-      <title>Discussion</title>
-      <p>Before we can address statistical significance, we need more information as to how much we expect a difference in sample means to vary from sample to sample (e.g., what if we had lots of different zoos, each with random samples of each type of elephant). We will take a detour to explore this in a case where we have the populations to begin with to see some rather familiar results.</p>
-    </note>
+    <p>Before we can address statistical significance, we need more information as to how much we expect a difference in sample means to vary from sample to sample (e.g., what if we had lots of different zoos, each with random samples of each type of elephant). We will take a detour to explore this in a case where we have the populations to begin with to see some rather familiar results.</p>
     
     <exercise xml:id="inv4-2-h" label="I4.2.8">
       <title>Outline Simulation Steps</title>
