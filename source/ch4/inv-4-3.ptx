@@ -18,15 +18,55 @@
       <choice>
         <statement><p>Experiment</p></statement>
       </choice>
+      <choice>
+        <statement><p>Both</p></statement>
+      </choice>
+      <choice>
+        <statement><p>Neither</p></statement>
+      </choice>
     </choices>
+    <solution>
+      <p>Observational study because the researchers did not determine which people would be left-handed.</p>
+    </solution>
   </exercise>
   
-  <exercise xml:id="inv4-3-b" label="I4.3.2">
-    <title>Independence of Samples</title>
+  <exercise xml:id="inv4-3-b1" label="I4.3.2a">
+    <title>Random Samples</title>
     <statement>
-      <p>Did the researchers take a random sample of left-handers and an independent random sample of right-handers? Is it reasonable to consider these samples independent?</p>
+      <p>Did the researchers take a random sample of left-handers and an independent random sample of right-handers?</p>
     </statement>
-    <response/>
+    <choices randomize="no">
+      <choice>
+        <statement><p>Yes</p></statement>
+      </choice>
+      <choice>
+        <statement><p>No</p></statement>
+      </choice>
+      <choice correct="yes">
+        <statement><p>Not really but close enough</p></statement>
+      </choice>
+    </choices>
+    <solution>
+      <p>This is really a single random sample (among those willing to participate). Participants were then asked about their handedness (cross-classified) but because there is no connection between the left and right handers in this study, it is reasonable to consider them two independent random samples.</p>
+    </solution>
+  </exercise>
+  
+  <exercise xml:id="inv4-3-b2" label="I4.3.2b">
+    <title>Independence Assumption</title>
+    <statement>
+      <p>Is it reasonable to consider these samples independent?</p>
+    </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><p>Yes</p></statement>
+      </choice>
+      <choice>
+        <statement><p>No</p></statement>
+      </choice>
+    </choices>
+    <solution>
+      <p>This is really a single random sample (among those willing to participate). Participants were then asked about their handedness (cross-classified) but because there is no connection between the left and right handers in this study, it is reasonable to consider them two independent random samples.</p>
+    </solution>
   </exercise>
   
   <p>Even though the researchers did not take a random sample of left-handers and a separate random sample of right-handers, we are still willing to consider these samples as independent because the results for one group should have no effect on the results for the other group. In a situation with two independent random samples, we can apply the two-sample <m>t</m>-test to make inferences about the difference in the population means.</p>
@@ -36,6 +76,9 @@
     <statement>
       <p>The summary of the study reported the sample means; what additional information do we need to assess the statistical significance of their difference? Why is this information important?</p>
     </statement>
+    <solution>
+      <p>Need to know the sample sizes of the two individual groups as well as how much variability there is in the ages at death (sample standard deviations).</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -60,7 +103,7 @@
     <title>Scenarios for Left-Handedness Study</title>
     <tabular halign="center">
       <row header="yes" bottom="major">
-        <cell>Scenario</cell>
+        <cell halign="left">Scenario</cell>
         <cell>Group</cell>
         <cell>Sample size</cell>
         <cell>Sample mean</cell>
@@ -70,7 +113,7 @@
         <cell>Significant at 1% level?</cell>
       </row>
       <row>
-        <cell>1</cell>
+        <cell halign="left">1</cell>
         <cell>left</cell>
         <cell>99 (10% of 987)</cell>
         <cell>66</cell>
@@ -80,7 +123,7 @@
         <cell></cell>
       </row>
       <row bottom="minor">
-        <cell></cell>
+        <cell halign="left"></cell>
         <cell>right</cell>
         <cell>888</cell>
         <cell>75</cell>
@@ -90,7 +133,7 @@
         <cell></cell>
       </row>
       <row>
-        <cell>2</cell>
+        <cell halign="left">2</cell>
         <cell>left</cell>
         <cell>50 (5% of 987)</cell>
         <cell>66</cell>
@@ -100,7 +143,7 @@
         <cell></cell>
       </row>
       <row bottom="minor">
-        <cell></cell>
+        <cell halign="left"></cell>
         <cell>right</cell>
         <cell>937</cell>
         <cell>75</cell>
@@ -110,7 +153,7 @@
         <cell></cell>
       </row>
       <row>
-        <cell>3</cell>
+        <cell halign="left">3</cell>
         <cell>left</cell>
         <cell>50 (5% of 987)</cell>
         <cell>66</cell>
@@ -120,7 +163,7 @@
         <cell></cell>
       </row>
       <row bottom="minor">
-        <cell></cell>
+        <cell halign="left"></cell>
         <cell>right</cell>
         <cell>937</cell>
         <cell>75</cell>
@@ -130,7 +173,7 @@
         <cell></cell>
       </row>
       <row>
-        <cell>4</cell>
+        <cell halign="left">4</cell>
         <cell>left</cell>
         <cell>10 (1% of 987)</cell>
         <cell>66</cell>
@@ -140,7 +183,7 @@
         <cell></cell>
       </row>
       <row bottom="minor">
-        <cell></cell>
+        <cell halign="left"></cell>
         <cell>right</cell>
         <cell>977</cell>
         <cell>75</cell>
@@ -150,7 +193,7 @@
         <cell></cell>
       </row>
       <row>
-        <cell>5</cell>
+        <cell halign="left">5</cell>
         <cell>left</cell>
         <cell>99 (10% of 987)</cell>
         <cell>66</cell>
@@ -160,7 +203,7 @@
         <cell></cell>
       </row>
       <row bottom="major">
-        <cell></cell>
+        <cell halign="left"></cell>
         <cell>right</cell>
         <cell>888</cell>
         <cell>75</cell>
@@ -175,38 +218,16 @@
   <exercise xml:id="inv4-3-e" label="I4.3.5">
     <title>Comparing Scenarios</title>
     <statement>
-      <p>For the following pairs of scenarios from the table above, which do you believe will result in the lower p-value, that is, stronger evidence against the null hypothesis?</p>
+      <p>For the following pairs of scenarios from the table above, which do you believe will result in the lower p-value, that is, stronger evidence against the null hypothesis? Explain briefly.</p>
+      
+      <p>Scenario 2 p-value <var width="15"/> Scenario 3 p-value</p>
+      
+      <p>Scenario 3 p-value <var width="15"/> Scenario 4 p-value</p>
     </statement>
-  </exercise>
-  
-  <exercise xml:id="inv4-3-e1" label="I4.3.5a">
-    <title>Scenario 2 vs. 3</title>
-    <statement>
-      <p>Which scenario will have the lower p-value (stronger evidence): Scenario 2 vs. 3?</p>
-    </statement>
-    <choices randomize="no">
-      <choice correct="yes">
-        <statement><p>Scenario 2</p></statement>
-      </choice>
-      <choice>
-        <statement><p>Scenario 3</p></statement>
-      </choice>
-    </choices>
-  </exercise>
-  
-  <exercise xml:id="inv4-3-e2" label="I4.3.5b">
-    <title>Scenario 3 vs. 4</title>
-    <statement>
-      <p>Which scenario will have the lower p-value (stronger evidence): Scenario 3 vs. 4?</p>
-    </statement>
-    <choices randomize="no">
-      <choice correct="yes">
-        <statement><p>Scenario 3</p></statement>
-      </choice>
-      <choice>
-        <statement><p>Scenario 4</p></statement>
-      </choice>
-    </choices>
+    <solution>
+      <p>Calls for conjecture</p>
+    </solution>
+    <response/>
   </exercise>
   
   <exercise xml:id="inv4-3-f" label="I4.3.6">
@@ -218,7 +239,7 @@
         <title>Results for Left-Handedness Study Scenarios</title>
         <tabular halign="center">
           <row header="yes" bottom="major">
-            <cell>Scenario</cell>
+            <cell halign="left">Scenario</cell>
             <cell>Group</cell>
             <cell>Sample size</cell>
             <cell>Sample mean</cell>
@@ -228,7 +249,7 @@
             <cell>Significant at 1% level?</cell>
           </row>
           <row>
-            <cell>1</cell>
+            <cell halign="left">1</cell>
             <cell>left</cell>
             <cell>99 (10% of 987)</cell>
             <cell>66</cell>
@@ -238,7 +259,7 @@
             <cell><var width="5"/></cell>
           </row>
           <row bottom="minor">
-            <cell></cell>
+            <cell halign="left"></cell>
             <cell>right</cell>
             <cell>888</cell>
             <cell>75</cell>
@@ -248,7 +269,7 @@
             <cell></cell>
           </row>
           <row>
-            <cell>2</cell>
+            <cell halign="left">2</cell>
             <cell>left</cell>
             <cell>50 (5% of 987)</cell>
             <cell>66</cell>
@@ -258,7 +279,7 @@
             <cell><var width="5"/></cell>
           </row>
           <row bottom="minor">
-            <cell></cell>
+            <cell halign="left"></cell>
             <cell>right</cell>
             <cell>937</cell>
             <cell>75</cell>
@@ -268,7 +289,7 @@
             <cell></cell>
           </row>
           <row>
-            <cell>3</cell>
+            <cell halign="left">3</cell>
             <cell>left</cell>
             <cell>50 (5% of 987)</cell>
             <cell>66</cell>
@@ -278,7 +299,7 @@
             <cell><var width="5"/></cell>
           </row>
           <row bottom="minor">
-            <cell></cell>
+            <cell halign="left"></cell>
             <cell>right</cell>
             <cell>937</cell>
             <cell>75</cell>
@@ -288,7 +309,7 @@
             <cell></cell>
           </row>
           <row>
-            <cell>4</cell>
+            <cell halign="left">4</cell>
             <cell>left</cell>
             <cell>10 (1% of 987)</cell>
             <cell>66</cell>
@@ -298,7 +319,7 @@
             <cell><var width="5"/></cell>
           </row>
           <row bottom="minor">
-            <cell></cell>
+            <cell halign="left"></cell>
             <cell>right</cell>
             <cell>977</cell>
             <cell>75</cell>
@@ -308,7 +329,7 @@
             <cell></cell>
           </row>
           <row>
-            <cell>5</cell>
+            <cell halign="left">5</cell>
             <cell>left</cell>
             <cell>99 (10% of 987)</cell>
             <cell>66</cell>
@@ -318,7 +339,7 @@
             <cell><var width="5"/></cell>
           </row>
           <row bottom="major">
-            <cell></cell>
+            <cell halign="left"></cell>
             <cell>right</cell>
             <cell>888</cell>
             <cell>75</cell>
@@ -330,6 +351,123 @@
         </tabular>
       </table>
     </statement>
+    <solution>
+      <table>
+        <title>Completed Results for Left-Handedness Study Scenarios</title>
+        <tabular halign="center">
+          <row header="yes" bottom="major">
+            <cell halign="left">Scenario</cell>
+            <cell>Group</cell>
+            <cell>Sample size</cell>
+            <cell>Sample mean</cell>
+            <cell>Sample SD</cell>
+            <cell><m>t</m>-statistic</cell>
+            <cell>p-value</cell>
+            <cell>Significant at 1% level?</cell>
+          </row>
+          <row>
+            <cell halign="left">1</cell>
+            <cell>left</cell>
+            <cell>99 (10% of 987)</cell>
+            <cell>66</cell>
+            <cell>15</cell>
+            <cell>-5.66</cell>
+            <cell>0.000</cell>
+            <cell>Yes</cell>
+          </row>
+          <row bottom="minor">
+            <cell halign="left"></cell>
+            <cell>right</cell>
+            <cell>888</cell>
+            <cell>75</cell>
+            <cell>15</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell halign="left">2</cell>
+            <cell>left</cell>
+            <cell>50 (5% of 987)</cell>
+            <cell>66</cell>
+            <cell>15</cell>
+            <cell>-4.13</cell>
+            <cell>0.000</cell>
+            <cell>Yes</cell>
+          </row>
+          <row bottom="minor">
+            <cell halign="left"></cell>
+            <cell>right</cell>
+            <cell>937</cell>
+            <cell>75</cell>
+            <cell>15</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell halign="left">3</cell>
+            <cell>left</cell>
+            <cell>50 (5% of 987)</cell>
+            <cell>66</cell>
+            <cell>25</cell>
+            <cell>-2.48</cell>
+            <cell>0.00813</cell>
+            <cell>Yes, barely</cell>
+          </row>
+          <row bottom="minor">
+            <cell halign="left"></cell>
+            <cell>right</cell>
+            <cell>937</cell>
+            <cell>75</cell>
+            <cell>25</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell halign="left">4</cell>
+            <cell>left</cell>
+            <cell>10 (1% of 987)</cell>
+            <cell>66</cell>
+            <cell>25</cell>
+            <cell>-1.13</cell>
+            <cell>0.144</cell>
+            <cell>No</cell>
+          </row>
+          <row bottom="minor">
+            <cell halign="left"></cell>
+            <cell>right</cell>
+            <cell>977</cell>
+            <cell>75</cell>
+            <cell>25</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell halign="left">5</cell>
+            <cell>left</cell>
+            <cell>99 (10% of 987)</cell>
+            <cell>66</cell>
+            <cell>50</cell>
+            <cell>-1.70</cell>
+            <cell>0.0449</cell>
+            <cell>No</cell>
+          </row>
+          <row bottom="major">
+            <cell halign="left"></cell>
+            <cell>right</cell>
+            <cell>888</cell>
+            <cell>75</cell>
+            <cell>50</cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </table>
+    </solution>
     <response/>
   </exercise>
   
@@ -338,6 +476,9 @@
     <statement>
       <p>Summarize what your analysis reveals about the effects of the sample size breakdown and the sample standard deviations on the values of the <m>t</m>-statistic and p-value.</p>
     </statement>
+    <solution>
+      <p>When the sample size for the left handers is larger, we have more evidence against the null hypothesis (larger |t-statistics|, smaller p-values). When the sample standard deviations are larger, we have less evidence against the null hypothesis.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -346,6 +487,9 @@
     <statement>
       <p>Considering the five scenarios of sample sizes and standard deviations used in the table, which scenario do you think is most realistic for this study of left- and right-handers' lifetimes? Explain, based on the context for these data.</p>
     </statement>
+    <solution>
+      <p>Probably scenario 1 or 2 as they have more a more realistic percentage of left-handers and the sample standard deviations (15) are more reasonable (the others are too large if we are expecting about 32% of data values to fall more than one standard deviation above or below the mean. We probably aren't expecting a normal distribution, but these standard deviations still feel too large).</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -354,6 +498,9 @@
     <statement>
       <p>Based on your analyses and how these data were collected, are you convinced that being left-handed causes individuals to die sooner on average than being right-handed? How should you phrase your conclusion?</p>
     </statement>
+    <solution>
+      <p>For even the remotely realistic scenarios, the p-values were quite small indicating statistical significance. However, we can't draw any "cause-and-effect" conclusions as this was an observational study.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -362,6 +509,9 @@
     <statement>
       <p>Part of the motivation for this research was an earlier study by Porac and Coren (1981) that surveyed 5147 men and women of all ages in North America. They found that 15% of ten-year-olds were left-handed, compared to only 5% of fifty-year-olds and less than 1% of eighty-year-olds. At the age of 85, right-handers outnumbered left-handers by a margin of 200 to 1. Suggest another explanation for these puzzling findings that actually provides a counter-argument to the conclusion from the 1991 Coren and Halpern study that left-handers tend to live shorter lives than right-handers.</p>
     </statement>
+    <solution>
+      <p>For those who would be in their eighties in 1981, many of them would have been encouraged to not be left-handed when they were younger. This would explain why there were fewer left-handers in the older age groups.</p>
+    </solution>
     <response/>
   </exercise>
   
@@ -378,23 +528,24 @@
   <subsection xml:id="practice-problems-4-3">
     <title>Practice Problems</title>
     
-    <exercise xml:id="practice-4-3a-a" label="PP4.3A.1">
-      <title>Effect of Larger Mean Difference</title>
+    <exercise xml:id="practice-4-3-a" label="PP4.3A">
+      <title>Practice Problem 4.3A</title>
       <statement>
-        <p>If all else stays the same but the difference in the means between the groups is larger, will the p-value be larger or smaller?</p>
+        <p>(a) If all else stays the same but the difference in the means between the groups is larger, will the p-value be larger or smaller?</p>
+        
+        <p>(b) If all else stays the same but the sample sizes within the groups are larger, will the p-value be larger or smaller?</p>
       </statement>
+      <solution>
+        <p>(a) The greater the difference between the population means, the smaller the p-value.</p>
+        <p>(b) The larger and more similar the sample sizes, the smaller the p-value.</p>
+      </solution>
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-4-3a-b" label="PP4.3A.2">
-      <title>Effect of Larger Sample Sizes</title>
+    <exercise xml:id="practice-4-3-b" label="PP4.3B">
+      <title>Practice Problem 4.3B</title>
       <statement>
-        <p>If all else stays the same but the sample sizes within the groups are larger, will the p-value be larger or smaller?</p>
-      </statement>
-      <response/>
-    </exercise>
-    
-    <exercise xml:id="practice-4-3b-a" label="PP4.3B.1">
+        <p>Recall the study on children's television viewing habits for two schools in San Jose, CA from Practice Problem 2.6B (<url href="https://pubmed.ncbi.nlm.nih.gov/10608376/">Robinson, 1999</url>). The researcher wanted to study whether a new classroom curriculum could reduce children's television viewing habits, which might in turn help to prevent obesity. One of the schools, chosen at random, incorporated an 18-lesson, 6-month classroom curriculum designed to reduce watching television and playing video games, whereas the other school made no changes to its curriculum. Both before the curriculum intervention, all children were asked to report how many hours per week they spent on these activities.</p>
       <title>Children's Television Viewing Habits - Baseline p-value</title>
       <statement>
         <p>Recall the study on children's television viewing habits for two schools in San Jose, CA from Practice Problem 2.6B (<url href="https://pubmed.ncbi.nlm.nih.gov/10608376/">Robinson, 1999</url>). The researcher wanted to study whether a new classroom curriculum could reduce children's television viewing habits, which might in turn help to prevent obesity. One of the schools, chosen at random, incorporated an 18-lesson, 6-month classroom curriculum designed to reduce watching television and playing video games, whereas the other school made no changes to its curriculum. Both before the curriculum intervention, all children were asked to report how many hours per week they spent on these activities.</p>
@@ -405,19 +556,19 @@
           <title>Baseline Television Viewing Data</title>
           <tabular halign="center">
             <row header="yes" bottom="major">
-              <cell>Baseline</cell>
+              <cell halign="left">Baseline</cell>
               <cell>Sample size</cell>
               <cell>Sample mean</cell>
               <cell>Sample SD</cell>
             </row>
             <row>
-              <cell>Control group</cell>
+              <cell halign="left">Control group</cell>
               <cell>103</cell>
               <cell>15.46</cell>
               <cell>15.02</cell>
             </row>
             <row bottom="major">
-              <cell>Intervention group</cell>
+              <cell halign="left">Intervention group</cell>
               <cell>95</cell>
               <cell>15.35</cell>
               <cell>13.17</cell>
@@ -427,33 +578,27 @@
         
         <p>Approximate two-sided p-value: 0.956</p>
         
-        <p>Do you think the researchers are happy or unhappy about the size of this p-value? Explain.</p>
-      </statement>
-      <response/>
-    </exercise>
-    
-    <exercise xml:id="practice-4-3b-b" label="PP4.3B.2">
-      <title>Alternative Baseline Scenario 1</title>
-      <statement>
+        <p>(a) Do you think the researchers are happy or unhappy about the size of this p-value? Explain.</p>
+        
         <p>Suppose that the summary statistics at baseline had instead been the following:</p>
         
         <table>
           <title>Alternative Baseline Scenario 1</title>
           <tabular halign="center">
             <row header="yes" bottom="major">
-              <cell>Baseline</cell>
+              <cell halign="left">Baseline</cell>
               <cell>Sample size</cell>
               <cell>Sample mean</cell>
               <cell>Sample SD</cell>
             </row>
             <row>
-              <cell>Control group</cell>
+              <cell halign="left">Control group</cell>
               <cell>103</cell>
               <cell>14.46</cell>
               <cell>15.02</cell>
             </row>
             <row bottom="major">
-              <cell>Intervention group</cell>
+              <cell halign="left">Intervention group</cell>
               <cell>95</cell>
               <cell>8.80</cell>
               <cell>13.17</cell>
@@ -461,33 +606,27 @@
           </tabular>
         </table>
         
-        <p>Without performing any calculations, how should the p-value for these data compare (larger or smaller) to the p-value from the actual baseline results? Explain.</p>
-      </statement>
-      <response/>
-    </exercise>
-    
-    <exercise xml:id="practice-4-3b-c" label="PP4.3B.3">
-      <title>Alternative Baseline Scenario 2</title>
-      <statement>
+        <p>(b) Without performing any calculations, how should the p-value for these data compare (larger or smaller) to the p-value from the actual baseline results? Explain.</p>
+        
         <p>Suppose that the summary statistics at the beginning of the study had instead been the following:</p>
         
         <table>
           <title>Alternative Baseline Scenario 2</title>
           <tabular halign="center">
             <row header="yes" bottom="major">
-              <cell>Baseline</cell>
+              <cell halign="left">Baseline</cell>
               <cell>Sample size</cell>
               <cell>Sample mean</cell>
               <cell>Sample SD</cell>
             </row>
             <row>
-              <cell>Control group</cell>
+              <cell halign="left">Control group</cell>
               <cell>103</cell>
               <cell>15.46</cell>
               <cell>13.82</cell>
             </row>
             <row bottom="major">
-              <cell>Intervention group</cell>
+              <cell halign="left">Intervention group</cell>
               <cell>95</cell>
               <cell>15.35</cell>
               <cell>10.41</cell>
@@ -495,16 +634,16 @@
           </tabular>
         </table>
         
-        <p>Without performing any calculations, how should the p-value for these data compare (larger or smaller) to the actual baseline results? Explain.</p>
+        <p>(c) Without performing any calculations, how should the p-value for these data compare (larger or smaller) to the actual baseline results? Explain.</p>
+        
+        <p>(d) Suppose the researchers decide to look at a subset of children in this study that belong to the same social-economic class (with the expectation that their television watching habits will be more similar to each other). Discuss one advantage and one disadvantage to this approach in terms of detecting a difference between the control group and the intervention group at the conclusion of the study. [Hints: Relate to your answer in (c)?]</p>
       </statement>
-      <response/>
-    </exercise>
-    
-    <exercise xml:id="practice-4-3b-d" label="PP4.3B.4">
-      <title>Subsetting by Socio-Economic Class</title>
-      <statement>
-        <p>Suppose the researchers decide to look at a subset of children in this study that belong to the same social-economic class (with the expectation that their television watching habits will be more similar to each other). Discuss one advantage and one disadvantage to this approach in terms of detecting a difference between the control group and the intervention group at the conclusion of the study. [Hints: Relate to your answer in the previous question?]</p>
-      </statement>
+      <solution>
+        <p>(a) Do you think the researchers are happy or unhappy about the size of this p-value? The researchers are happy about the large p-value at baseline because it indicates there is no significant difference between the control and intervention groups at the start of the study, which is what they want.</p>
+        <p>(b) Without performing any calculations, how should the p-value for these data compare (larger or smaller) to the p-value from the actual baseline results? The p-value would be smaller because the difference in means is larger (14.46 - 8.80 = 5.66 vs. 15.46 - 15.35 = 0.11).</p>
+        <p>(c) Without performing any calculations, how should the p-value for these data compare (larger or smaller) to the actual baseline results? The p-value would be smaller because the smaller the value of σ (sample standard deviations), the smaller the p-value.</p>
+        <p>(d) Advantage: By reducing the variability within groups (smaller SDs), it would be easier to detect a difference between groups at the conclusion. Disadvantage: By subsetting, the sample sizes would be smaller, making it harder to detect a difference.</p>
+      </solution>
       <response/>
     </exercise>
   </subsection>
