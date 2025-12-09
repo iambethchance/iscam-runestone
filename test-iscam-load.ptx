@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xml:id="test-iscam-load">
+  <title>TEST: Loading ISCAM Functions</title>
+  
+  <p>Testing whether we can load the ISCAM workspace from rossmanchance.com:</p>
+  
+  <sage language="r">
+    <input>
+# Test loading ISCAM.RData workspace
+load(url("http://www.rossmanchance.com/iscam4/ISCAM.RData"))
+
+# Check what was loaded
+print("Objects loaded:")
+print(ls())
+
+# Test if we can see any functions
+print("Functions available:")
+print(ls()[sapply(ls(), function(x) is.function(get(x)))])
+    </input>
+  </sage>
+  
+  <p>If successful, let's try using an ISCAM function with data:</p>
+  
+  <sage language="r">
+    <input>
+# Reload workspace (each cell is independent)
+load(url("http://www.rossmanchance.com/iscam4/ISCAM.RData"))
+
+# Load data from GitHub
+elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
+
+# Try an ISCAM function
+iscamsummary(Distance, Species, data=elephants)
+    </input>
+  </sage>
+  
+</chapter>

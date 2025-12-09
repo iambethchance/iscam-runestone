@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="investigation4-2">
+  <title>Investigation 4.2: The Elephants in the Room</title>
+  
+  <introduction>
+    <p>Researchers Holdgate et al. (2016) studied walking behavior of elephants in North American zoos to see whether there is a difference in average distance traveled by African and Asian elephants in captivity. They put GPS loggers on 33 African elephants and 23 Asian elephants, and measured the distance (in kilometers) the elephants walked per day.</p>
+  </introduction>
+  
+  <subsection xml:id="inv4-2-descriptive">
+    <title>Descriptive Statistics</title>
+    
+    <exercise xml:id="inv4-2-a" label="I4.2.1">
+      <title>Identify Study Components</title>
+      <statement>
+        <p>Identify the observational units and variable of interest. Is the variable quantitative or categorical? Which graphs and numbers might you use to compare these two species?</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="inv4-2-b" label="I4.2.2">
+      <title>Create Comparative Graphs</title>
+      <statement>
+        <p>Open the <url href="https://www.rossmanchance.com/iscam3/data/elephants.txt">elephants.txt</url> data file. First, look at the data by creating a graph of distances separated by species. When using graphs to compare groups it is especially important that comparative graphs be drawn on the same scale. Note: These data are stacked as each column is a different variable (species and distance).</p>
+      </statement>
+      <hint>
+        <p>Use the technology detours below to help create comparative graphs. Make sure both groups are plotted on the same scale for proper comparison.</p>
+      </hint>
+      <response/>
+    </exercise>
+    
+    <paragraphs xml:id="tech-detour-comparative-graphs">
+      <title>Technology Detour – Comparative Graphs</title>
+      
+      <p><alert>In Descriptive Statistics applet</alert></p>
+      <ul>
+        <li><p>Copy the data to the clipboard. In the applet, check the Stacked box. Press Clear and paste the data into the Sample data window and press Use Data. (Or type elephants.txt in the empty Paste data window.)</p></li>
+        <li><p>Use the Separate by pull-down menu to select the Species categorical variable</p></li>
+        <li><p>You have radio button options for Histograms and Boxplots.</p></li>
+      </ul>
+      
+      <p><alert>In R</alert></p>
+      <sage language="r">
+        <input>
+# Load elephant data from GitHub
+elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
+
+# Create dotplot
+# iscamdotplot(Distance, Species)  # If using ISCAM package in RStudio
+
+# Alternative with base R
+stripchart(Distance ~ Species, data=elephants, method="stack", 
+           pch=19, xlab="Distance (km)", main="Elephant Walking Distances")
+
+# Boxplot
+boxplot(Distance ~ Species, data=elephants, horizontal=TRUE, 
+        xlab="Distance (km)", ylab="Species")
+        </input>
+      </sage>
+      
+      <p><alert>In JMP</alert></p>
+      <ul>
+        <li><p>Choose Analyze > Distribution and specify both the quantitative variable (Y, Columns) and the categorical variable (By).</p></li>
+        <li><p>Press OK.</p></li>
+        <li><p>Use the Distributions hot spot to select Stack</p></li>
+        <li><p>OR use Graph > Graph Builder. Drag Distance to the X axis and Species to the Y axis. Use the icons across the top to change to boxplots and histograms.</p></li>
+      </ul>
+      
+      <note>
+        <p>When comparing groups, some boxplot displays vary the other dimension of the box size by relative sample size.</p>
+      </note>
+    </paragraphs>
+    
+    <exercise xml:id="inv4-2-c" label="I4.2.3">
+      <title>Identify Outliers</title>
+      <statement>
+        <p>According to the boxplots, were there any <q>outlier</q> elephants? Explain how you know.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="inv4-2-d" label="I4.2.4">
+      <title>Limitation of Boxplots</title>
+      <statement>
+        <p>What is a limitation to using only boxplots to compare these two distributions?</p>
+      </statement>
+      <hint>
+        <p>Think about what information boxplots show versus what they hide about the distribution.</p>
+      </hint>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="inv4-2-e" label="I4.2.5">
+      <title>Compare Distributions</title>
+      <statement>
+        <p>Explore the differences in the walking distances between the African and Asian elephants. Which species tended to walk more? Which species showed greater variability? Which distribution is more symmetric?</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <p>And we can calculate separate summary statistics for the two species:</p>
+    
+    <paragraphs xml:id="tech-detour-numerical-summaries">
+      <title>Technology Detour – Numerical Summaries</title>
+      
+      <p><alert>In Descriptive Statistics applet</alert></p>
+      <p>Check the Mean: Actual and Std dev: Actual boxes (at least)</p>
+      
+      <p><alert>In R</alert></p>
+      <sage language="r">
+        <input>
+# Load elephant data from GitHub
+elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
+
+# Summary statistics by species
+# iscamsummary(Distance, Species)  # If using ISCAM package in RStudio
+
+# Alternative with base R
+# For African elephants
+african = subset(elephants, Species == "African")
+cat("African Elephants:\n")
+cat("n =", length(african$Distance), "\n")
+cat("Mean =", mean(african$Distance), "\n")
+cat("SD =", sd(african$Distance), "\n")
+cat("Skewness =", e1071::skewness(african$Distance), "\n\n")
+
+# For Asian elephants
+asian = subset(elephants, Species == "Asian")
+cat("Asian Elephants:\n")
+cat("n =", length(asian$Distance), "\n")
+cat("Mean =", mean(asian$Distance), "\n")
+cat("SD =", sd(asian$Distance), "\n")
+cat("Skewness =", e1071::skewness(asian$Distance), "\n")
+        </input>
+      </sage>
+      
+      <p><alert>In JMP</alert></p>
+      <p>Choose Analyze > Distribution and specify both the quantitative variable (Y, Columns) and the categorical variable (By). Press OK. Use the Distributions hot spot to select Stack.</p>
+    </paragraphs>
+    
+    <exercise xml:id="inv4-2-f" label="I4.2.6">
+      <title>Record Summary Statistics</title>
+      <statement>
+        <p>Determine the sample sizes, sample means, and the sample standard deviations for each group and record these below, using appropriate symbols.</p>
+        <tabular>
+          <row header="yes">
+            <cell></cell>
+            <cell>n</cell>
+            <cell>Mean</cell>
+            <cell>SD</cell>
+            <cell>Skew</cell>
+          </row>
+          <row>
+            <cell>African</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+          <row>
+            <cell>Asian</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+        </tabular>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="inv4-2-g" label="I4.2.7">
+      <title>Predict Statistical Significance</title>
+      <statement>
+        <p>Do you think the difference in sample means is going to be statistically significant? What does statistical significance mean in this context? (What null and alternative hypotheses can we test?)</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <note>
+      <title>Discussion</title>
+      <p>Before we can address statistical significance, we need more information as to how much we expect a difference in sample means to vary from sample to sample (e.g., what if we had lots of different zoos, each with random samples of each type of elephant). We will take a detour to explore this in a case where we have the populations to begin with to see some rather familiar results.</p>
+    </note>
+    
+    <exercise xml:id="inv4-2-h" label="I4.2.8">
+      <title>Outline Simulation Steps</title>
+      <statement>
+        <p>Outline the simulation steps we need to use.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+</section>
