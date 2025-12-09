@@ -42,6 +42,7 @@ iscamsummary <- function(variable, by = NULL, data = NULL) {
       cat("\n")
     }
   }
+  invisible(NULL)  # Return NULL invisibly to suppress the message
 }
 
 # Dotplot function
