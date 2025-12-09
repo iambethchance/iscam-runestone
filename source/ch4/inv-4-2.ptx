@@ -52,13 +52,13 @@
       <sage language="r">
         <input>
 # Load ISCAM functions from GitHub
-source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")
+invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R"))
 
 # Load elephant data from GitHub
 elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
 
 # Create dotplot
-iscamdotplot(elephants$Distance, elephants$Species, xlab="Distance (km)")
+invisible(iscamdotplot(elephants$Distance, elephants$Species, xlab="Distance (km)"))
 
 # Boxplot
 boxplot(Distance ~ Species, data=elephants, horizontal=TRUE, 
