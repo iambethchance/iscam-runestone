@@ -2,20 +2,14 @@
 <chapter xml:id="test-iscam-load">
   <title>TEST: Loading ISCAM Functions</title>
   
-  <p>Testing whether we can load the ISCAM workspace from rossmanchance.com:</p>
+  <p>Testing whether we can source ISCAM functions from GitHub (like we did with data files):</p>
   
   <sage language="r">
     <input>
-# Test loading ISCAM.RData workspace
-load(url("http://www.rossmanchance.com/iscam4/ISCAM.RData"))
+# Test sourcing ISCAM functions from GitHub
+source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")
 
-# Check what was loaded
-print("Objects loaded:")
-print(ls())
-
-# Test if we can see any functions
-print("Functions available:")
-print(ls()[sapply(ls(), function(x) is.function(get(x)))])
+# If successful, the message above will print automatically
     </input>
   </sage>
   
@@ -23,13 +17,13 @@ print(ls()[sapply(ls(), function(x) is.function(get(x)))])
   
   <sage language="r">
     <input>
-# Reload workspace (each cell is independent)
-load(url("http://www.rossmanchance.com/iscam4/ISCAM.RData"))
+# Load ISCAM functions (each cell is independent)
+source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")
 
 # Load data from GitHub
 elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
 
-# Try an ISCAM function
+# Try ISCAM summary function
 iscamsummary(Distance, Species, data=elephants)
     </input>
   </sage>
