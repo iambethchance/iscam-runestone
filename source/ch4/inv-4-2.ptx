@@ -30,7 +30,7 @@
     <response/>
   </exercise>
   
-  <p>Open the <url href="https://www.rossmanchance.com/iscam3/data/elephants.txt">elephants.txt</url> data file. First, look at the data by creating a graph of distances separated by species. When using graphs to compare groups it is especially important that comparative graphs be drawn on the same scale. <alert>Note:</alert> These data are stacked as each column is a different variable (species and distance).</p>
+  <p>Open the <url href="https://www.rossmanchance.com/iscam3/data/elephants.txt">elephants.txt</url> data file. First, look at the data by creating a graph of distances separated by species. When using graphs to compare groups it is especially important that <em>comparative graphs</em> be drawn on the same scale. <alert>Note:</alert> These data are <em>stacked</em> as each column is a different variable (species and distance).</p>
     
   <exercise xml:id="inv4-2-b" label="I4.2.2">
     <title>Create Comparative Graphs - Applet</title>
@@ -63,6 +63,16 @@ invisible(iscamdotplot(elephants$Distance, elephants$Species, xlab="Distance (km
 # Boxplot
 boxplot(Distance ~ Species, data=elephants, horizontal=TRUE, 
         xlab="Distance (km)", ylab="Species")
+
+# Stacked histograms using base R
+par(mfrow=c(2,1))
+hist(elephants$Distance[elephants$Species=="African"], 
+     main="African Elephants", xlab="Distance (km)", 
+     xlim=c(0,15), breaks=20, col="lightblue")
+hist(elephants$Distance[elephants$Species=="Asian"], 
+     main="Asian Elephants", xlab="Distance (km)", 
+     xlim=c(0,15), breaks=20, col="lightgreen")
+par(mfrow=c(1,1))
         </input>
       </sage>
     </statement>
