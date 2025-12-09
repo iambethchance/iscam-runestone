@@ -3,7 +3,7 @@
   <title>Section 2: Comparing Two Population Means</title>
   
   <introduction>
-    <p>In this section, we want to focus on quantitative data arising from two independent random samples. For example, in the first investigation you will compare the average travel distances of African and Asian elephants. For statistical inference, we need to explore how statistics like the difference in sample means behave under random sampling. We will first explore a hypothetical situation and then we then discuss a theoretical result justifying use of a t-distribution for the reference distribution in finding p-values and confidence intervals.</p>
+    <p>In this section, we want to focus on quantitative data arising from two independent random samples. For example, in the first investigation you will compare the average travel distances of African and Asian elephants. For statistical inference, we need to explore how statistics like the difference in sample means behave under random sampling. We will first explore a hypothetical situation and then we then discuss a theoretical result justifying use of a <m>t</m>-distribution for the reference distribution in finding p-values and confidence intervals.</p>
   </introduction>
   
   <subsection xml:id="inv-4-2-elephants">
@@ -335,7 +335,7 @@ cat("SD =", sd(asian$Distance), "\n")
       <exercise xml:id="prob-detour-2means-m" label="PD4.2.13">
         <title>Standardized Statistics</title>
         <statement>
-          <p>Create a new distribution by standardizing each difference: <m>t = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>. Describe the shape of this distribution. Does it appear to follow a t-distribution?</p>
+          <p>Create a new distribution by standardizing each difference: <m>t = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>. Describe the shape of this distribution. Does it appear to follow a <m>t</m>-distribution?</p>
         </statement>
         <response/>
       </exercise>
@@ -360,26 +360,31 @@ cat("SD =", sd(asian$Distance), "\n")
         <response/>
       </exercise>
       
-      <paragraphs xml:id="tech-detour-two-sample-t-unpooled-summary">
-        <title>Technology Detour – Two-sample t-procedures (Unpooled, Summary Statistics)</title>
-        
-        <p><alert>In Theory-Based Inference applet</alert></p>
-        
-        <image source="images/Inv4.2TBIA.png" width="80%">
-          <description>Theory-Based Inference applet for unpooled two-sample t-test with summary data</description>
-        </image>
-        
-        <ul>
-          <li><p>Select Two Means from the pull-down menu</p></li>
-          <li><p>Choose Unpooled</p></li>
-          <li><p>Enter the sample sizes, means, and standard deviations for each group</p></li>
-          <li><p>Choose the alternative hypothesis (typically not equal for two-sided)</p></li>
-          <li><p>Press Calculate to get the test statistic, degrees of freedom, and p-value</p></li>
-        </ul>
-        
-        <p><alert>In R</alert></p>
-        <sage language="r">
-          <input>
+      <exercise xml:id="inv4-2-j1" label="I4.2.14a">
+        <title>Two-Sample <m>t</m>-Test - Applet</title>
+        <statement>
+          <p>Use the Theory-Based Inference applet to conduct a two-sample <m>t</m>-test:</p>
+          
+          <image source="images/Inv4.2TBIA.png" width="80%">
+            <description>Theory-Based Inference applet for unpooled two-sample t-test with summary data</description>
+          </image>
+          
+          <ul>
+            <li><p>Select Two Means from the pull-down menu</p></li>
+            <li><p>Choose Unpooled</p></li>
+            <li><p>Enter the sample sizes, means, and standard deviations for each group</p></li>
+            <li><p>Choose the alternative hypothesis (typically not equal for two-sided)</p></li>
+            <li><p>Press Calculate to get the test statistic, degrees of freedom, and p-value</p></li>
+          </ul>
+        </statement>
+      </exercise>
+      
+      <exercise xml:id="inv4-2-j2" label="I4.2.14b">
+        <title>Two-Sample <m>t</m>-Test - R</title>
+        <statement>
+          <p>Use R to conduct a two-sample <m>t</m>-test:</p>
+          <sage language="r">
+            <input>
 # Load elephant data
 elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
 
@@ -388,55 +393,62 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
 
 # Note: var.equal=FALSE uses the unpooled (Welch) version
 # This is the default and recommended when variances may differ
-          </input>
-        </sage>
-        
-        <p><alert>In JMP</alert></p>
-        
-        <image source="images/Inv4.2JMP3.png" width="80%">
-          <description>JMP output for unpooled two-sample t-test</description>
-        </image>
-        
-        <ul>
-          <li><p>Choose Analyze > Fit Y by X</p></li>
-          <li><p>Put the quantitative variable in Y, Response and the categorical variable in X, Factor</p></li>
-          <li><p>Press OK</p></li>
-          <li><p>Click on the red triangle next to Oneway Analysis and select t Test</p></li>
-          <li><p>JMP provides both pooled and unpooled (Welch) results</p></li>
-        </ul>
-      </paragraphs>
+            </input>
+          </sage>
+        </statement>
+      </exercise>
       
-      <paragraphs xml:id="tech-detour-two-sample-t-unpooled-raw">
-        <title>Technology Detour – Two-sample t-procedures (Unpooled, Raw Data)</title>
-        
-        <p><alert>In Theory-Based Inference applet</alert></p>
-        
-        <image source="images/Inv4.2TBIA2.png" width="80%">
-          <description>Theory-Based Inference applet for unpooled two-sample t-test with raw data</description>
-        </image>
-        
-        <ul>
-          <li><p>Select Two Means from the pull-down menu</p></li>
-          <li><p>Check the Stacked box if your data are in stacked format</p></li>
-          <li><p>Enter elephants.txt in the data window or paste the data</p></li>
-          <li><p>Press Use Data</p></li>
-          <li><p>Select the response variable and grouping variable</p></li>
-          <li><p>Choose Unpooled</p></li>
-          <li><p>Press Calculate</p></li>
-        </ul>
-      </paragraphs>
+      <exercise xml:id="inv4-2-j3" label="I4.2.14c">
+        <title>Two-Sample <m>t</m>-Test - JMP</title>
+        <statement>
+          <p>Use JMP to conduct a two-sample <m>t</m>-test:</p>
+          
+          <image source="images/Inv4.2JMP3.png" width="80%">
+            <description>JMP output for unpooled two-sample t-test</description>
+          </image>
+          
+          <ul>
+            <li><p>Choose Analyze > Fit Y by X</p></li>
+            <li><p>Put the quantitative variable in Y, Response and the categorical variable in X, Factor</p></li>
+            <li><p>Press OK</p></li>
+            <li><p>Click on the red triangle next to Oneway Analysis and select t Test</p></li>
+            <li><p>JMP provides both pooled and unpooled (Welch) results</p></li>
+          </ul>
+        </statement>
+      </exercise>
+      
+      <exercise xml:id="inv4-2-j4" label="I4.2.14d">
+        <title>Two-Sample <m>t</m>-Test with Raw Data - Applet</title>
+        <statement>
+          <p>Use the Theory-Based Inference applet with raw data:</p>
+          
+          <image source="images/Inv4.2TBIA2.png" width="80%">
+            <description>Theory-Based Inference applet for unpooled two-sample t-test with raw data</description>
+          </image>
+          
+          <ul>
+            <li><p>Select Two Means from the pull-down menu</p></li>
+            <li><p>Check the Stacked box if your data are in stacked format</p></li>
+            <li><p>Enter elephants.txt in the data window or paste the data</p></li>
+            <li><p>Press Use Data</p></li>
+            <li><p>Select the response variable and grouping variable</p></li>
+            <li><p>Choose Unpooled</p></li>
+            <li><p>Press Calculate</p></li>
+          </ul>
+        </statement>
+      </exercise>
       
       <p>The applet uses the <url href="https://en.wikipedia.org/wiki/Welch%E2%80%93Satterthwaite_equation">Welch-Satterthwaite approximation</url> to calculate the degrees of freedom when the population variances are not assumed equal.</p>
       
       <sidebyside widths="60% 35%" valign="top">
-        <p>In this case, we could use 19 as the approximate degrees of freedom. Notice that this sample size is large enough that the t-distribution looks a lot like the normal distribution as well, which should agree with your observation in (m). But we will continue to use the t-distribution rather than the normal distribution to still account for additional variation from our estimates of the population standard deviations.</p>
+        <p>In this case, we could use 19 as the approximate degrees of freedom. Notice that this sample size is large enough that the <m>t</m>-distribution looks a lot like the normal distribution as well, which should agree with your observation in (m). But we will continue to use the <m>t</m>-distribution rather than the normal distribution to still account for additional variation from our estimates of the population standard deviations.</p>
         
         <image source="images/Inv4.2tnorm.png" width="100%">
-          <description>Comparison of t-distribution with 19 df and normal distribution</description>
+          <description>Comparison of <m>t</m>-distribution with 19 df and normal distribution</description>
         </image>
       </sidebyside>
       
-      <exercise xml:id="inv4-2-k" label="I4.2.15">
+      <exercise xml:id="inv4-2-k" label="I4.2.19">
         <title>Confidence Interval</title>
         <statement>
           <p>Also approximate a 95% confidence interval and interpret this interval in context. [Hint: When interpreting a confidence interval for the difference, you should always clarify the direction of subtraction and which population parameter is larger.]</p>
@@ -459,7 +471,7 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
       <title>Practice Problems</title>
       
       <exercise xml:id="practice-4-2-a" label="PP4.2A">
-        <title>Practice Problem 4.2A: Bootstrap Sampling</title>
+        <title>Bootstrap Sampling</title>
         <statement>
           <p>Open the Sampling from Two Sample Bootstrapping applet.</p>
           <ul>
@@ -483,7 +495,7 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
       </exercise>
       
       <exercise xml:id="practice-4-2-b" label="PP4.2B">
-        <title>Practice Problem 4.2B: Bootstrap for Medians</title>
+        <title>Bootstrap for Medians</title>
         <statement>
           <p>(a) Use the Two sample bootstrapping applet (see also Exploration 2.9) to simulate a null distribution for the difference in medians. Do you think a t-approximation would be valid for this statistic? Why or why not.</p>
           
@@ -495,7 +507,7 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
       </exercise>
       
       <exercise xml:id="practice-4-2-c" label="PP4.2C">
-        <title>Practice Problem 4.2C: Alternative Scenario</title>
+        <title>Alternative Scenario</title>
         <statement>
           <p>Suppose our data had been:</p>
           
