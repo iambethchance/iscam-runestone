@@ -65,7 +65,7 @@ boxplot(Distance ~ Species, data=elephants, horizontal=TRUE,
         xlab="Distance (km)", ylab="Species")
 
 # Stacked histograms using base R
-par(mfrow=c(2,1))
+invisible(par(mfrow=c(2,1)))
 hist(elephants$Distance[elephants$Species=="African"], 
      main="African Elephants", xlab="Distance (km)", 
      xlim=c(0,15), breaks=20, col="lightblue")
@@ -285,23 +285,80 @@ Players without a team affiliation or without a listed salary were not included 
         <title>Population Parameters</title>
         <statement>
           <p>Open the <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/NBASalaries2025_2.txt">NBASalaries2025_2.txt</url> data file
-           and paste the two columns into the <url href="http://www.rossmanchance.com/applets/2021/twopopmodels/TwoPopSampling.html">Sampling from Two Populations applet</url>. What are the values of the means, standard deviations, and skewness values? What symbols can we use to represent these values? Are the shapes of the distributions as you expected?
-            Record the sample sizes, means, and standard deviations for the Western and Eastern conferences.</p>
+           and paste the two columns into the <url href="http://www.rossmanchance.com/applets/2021/twopopmodels/TwoPopSampling.html">Sampling from Two Populations applet</url>. Record the population sizes, means, and standard deviations for the Western and Eastern conferences.</p>
+          <table>
+            <title>Population Parameters for NBA Salaries by Conference</title>
+            <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+              <row header="yes">
+                <cell></cell>
+                <cell><m>n</m></cell>
+                <cell>Mean</cell>
+                <cell>SD</cell>
+              </row>
+              <row>
+                <cell>Western</cell>
+                <cell><var width="5"/></cell>
+                <cell><var width="8"/></cell>
+                <cell><var width="8"/></cell>
+              </row>
+              <row>
+                <cell>Eastern</cell>
+                <cell><var width="5"/></cell>
+                <cell><var width="8"/></cell>
+                <cell><var width="8"/></cell>
+              </row>
+            </tabular>
+          </table>
+          <p>What symbols can we use to represent these values?</p>
+          <p><var width="50"/></p>
+          <p>Are the shapes of the distributions as you expected?</p>
+          <p><var width="50"/></p>
         </statement>
+        <solution>
+          <p>The population sizes are approximately 243 Western and 229 Eastern players. The mean salaries are approximately <m>\mu_{\text{West}} = 11.7</m> million and <m>\mu_{\text{East}} = 11.3</m> million. The standard deviations are approximately <m>\sigma_{\text{West}} = 13.8</m> million and <m>\sigma_{\text{East}} = 13.3</m> million. Both distributions are strongly right-skewed as expected for salary data.</p>
+        </solution>
         <response/>
       </exercise>
       
       <exercise xml:id="prob-detour-2means-d" label="PD4.2.4">
         <title>Sample Statistics</title>
         <statement>
-          <p>Select a random sample of 20 players from each league:
-<ul><li>Check the Show Sampling Options box.</li>
-<li>Specify sample sizes of 20 for each sample and press Draw Samples.</li>
-<li>Select the Plot radio button.</li>
-</ul>
-Record the sample means and sample standard deviations for your samples. How do the sample results compare to the population results? What about the shapes of the samples?</p>
-
+          <p>Select a random sample of 20 players from each conference:</p>
+          <ul>
+            <li><p>Check the Show Sampling Options box.</p></li>
+            <li><p>Specify sample sizes of 20 for each sample and press Draw Samples.</p></li>
+            <li><p>Select the Plot radio button.</p></li>
+          </ul>
+          <p>Record the sample means and sample standard deviations for your samples.</p>
+          <table>
+            <title>Sample Statistics for NBA Salaries by Conference</title>
+            <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+              <row header="yes">
+                <cell></cell>
+                <cell><m>n</m></cell>
+                <cell>Mean</cell>
+                <cell>SD</cell>
+              </row>
+              <row>
+                <cell>Western</cell>
+                <cell><var width="5"/></cell>
+                <cell><var width="8"/></cell>
+                <cell><var width="8"/></cell>
+              </row>
+              <row>
+                <cell>Eastern</cell>
+                <cell><var width="5"/></cell>
+                <cell><var width="8"/></cell>
+                <cell><var width="8"/></cell>
+              </row>
+            </tabular>
+          </table>
+          <p>How do the sample results compare to the population results? What about the shapes of the samples?</p>
+          <p><var width="50"/></p>
         </statement>
+        <solution>
+          <p>Sample results will vary, but the sample means should be reasonably close to the population means, and the sample standard deviations should be reasonably close to the population standard deviations. The sample distributions may appear less skewed than the population distributions due to smaller sample sizes.</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -309,7 +366,15 @@ Record the sample means and sample standard deviations for your samples. How do 
         <title>Generate Sampling Distribution</title>
         <statement>
           <p>Repeat this process many times (at least 1000) to generate a sampling distribution of the difference in sample means (East - West).</p>
+          <ul>
+            <li><p>Enter 1000 (or more) for the number of samples.</p></li>
+            <li><p>Press Sample.</p></li>
+            <li><p>Examine the distribution of differences in sample means.</p></li>
+          </ul>
         </statement>
+        <solution>
+          <p>After generating 1000+ samples, you should see a distribution of differences in sample means that is approximately normal, centered near the difference in population means (about 0.4 million).</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -320,6 +385,9 @@ Record the sample means and sample standard deviations for your samples. How do 
           How does the distribution of the differences in sample means 
           compare to the shape of the salary distributions themselves?</p>
         </statement>
+        <solution>
+          <p>The sampling distribution of the difference in sample means is approximately normal (symmetric, bell-shaped), even though the individual salary distributions are strongly right-skewed. This illustrates the Central Limit Theorem for differences in means.</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -328,14 +396,20 @@ Record the sample means and sample standard deviations for your samples. How do 
         <statement>
           <p>What is the approximate center of the sampling distribution? Is this what you expected?</p>
         </statement>
+        <solution>
+          <p>The center is approximately at the difference in population means (<m>\mu_{\text{East}} - \mu_{\text{West}} \approx -0.4</m> million). This is expected because the difference in sample means is an unbiased estimator of the difference in population means.</p>
+        </solution>
         <response/>
       </exercise>
       
       <exercise xml:id="prob-detour-2means-h" label="PD4.2.8">
         <title>Variability</title>
         <statement>
-          <p>) But of course, what you really want to know about is the variability. Is there more or less variability in this distribution compared to the variability in each population? </p>
+          <p>But of course, what you really want to know about is the variability. Is there more or less variability in this distribution compared to the variability in each population?</p>
         </statement>
+        <solution>
+          <p>There is much less variability in the sampling distribution of the difference in sample means compared to the variability in each population. This is because we are averaging values, which reduces variability.</p>
+        </solution>
         <response/>
       </exercise>
       
@@ -344,41 +418,56 @@ Record the sample means and sample standard deviations for your samples. How do 
         <statement>
           <p>We know there should be less variability because we are talking about sample means rather than individual observations. But how much variability do we expect to find in the distribution of sample means taken from the Western conference? What about the Eastern conference? Is the variability in the difference in sample means larger or smaller than in the individual distributions?</p>
         </statement>
+        <solution>
+          <p>For Western conference: <m>\sigma_{\bar{x}_{\text{West}}} = \sigma_{\text{West}}/\sqrt{n} = 13.8/\sqrt{20} \approx 3.09</m> million.</p>
+          <p>For Eastern conference: <m>\sigma_{\bar{x}_{\text{East}}} = \sigma_{\text{East}}/\sqrt{n} = 13.3/\sqrt{20} \approx 2.97</m> million.</p>
+          <p>The variability in the difference would be approximately <m>\sqrt{3.09^2 + 2.97^2} \approx 4.28</m> million, which is smaller than the individual population standard deviations but larger than either individual standard error.</p>
+        </solution>
         <response/>
       </exercise>
       
       <exercise xml:id="prob-detour-2means-j" label="PD4.2.10">
-        <title>Summary of Results</title>
+        <title>Key Result</title>
         <statement>
-          <p>Summarize your findings about the distribution of the difference in sample means (shape, center, spread).</p>
+          <p><alert>Key Result:</alert> A theorem similar to the Central Limit Theorem indicates that if we have two infinite, normally distributed populations, with means <m>\mu_1</m> and <m>\mu_2</m> and standard deviations <m>\sigma_1</m> and <m>\sigma_2</m>, and we take independent random samples from each population, the sampling distribution of <m>\bar{x}_1 - \bar{x}_2</m> will follow a normal distribution with mean <m>\mu_1 - \mu_2</m> and standard deviation <m>\sqrt{\sigma_1^2/n_1 + \sigma_2^2/n_2}</m>.</p>
+          <p>This is a nice theoretical result, but we seldom meet these conditions exactly. Summarize your findings about the distribution of the difference in sample means (shape, center, spread) and compare to the theoretical predictions.</p>
         </statement>
+        <solution>
+          <p>Shape: The sampling distribution is approximately normal, even though the populations are skewed. Center: Approximately <m>\mu_{\text{East}} - \mu_{\text{West}} \approx -0.4</m> million. Spread: Standard deviation approximately 4.3 million, which matches the theoretical prediction <m>\sqrt{13.8^2/20 + 13.3^2/20} \approx 4.28</m> million.</p>
+        </solution>
         <response/>
       </exercise>
       
       <exercise xml:id="prob-detour-2means-k" label="PD4.2.11">
-        <title>Why Not Perfect Normal?</title>
+        <title>Violations of Assumptions</title>
         <statement>
-          <p>Why might the distribution not follow the theoretical predictions exactly?</p>
+          <p>Identify two characteristics of our NBA salary populations that do not agree with the Key Result statement above.</p>
         </statement>
-        <hint>
-          <p>Consider the nature of the population distributions and sampling.</p>
-        </hint>
+        <solution>
+          <p>1) The populations are not normally distributed; they are strongly right-skewed. 2) The populations are not infinite; we have finite populations of about 240 players in each conference.</p>
+        </solution>
         <response/>
       </exercise>
       
       <exercise xml:id="prob-detour-2means-l" label="PD4.2.12">
         <title>Using Sample Standard Deviations</title>
         <statement>
-          <p>In practice, we don't know the population standard deviations. We estimate the standard error using: <m>\sqrt{s_1^2/n_1 + s_2^2/n_2}</m>. Calculate this predicted standard deviation and compare to your simulation results.</p>
+          <p>A third, but perhaps the biggest, issue is that the population standard deviations are unknown. Suggest a formula for estimating the standard deviation of the difference in sample means.</p>
         </statement>
+        <solution>
+          <p>We can estimate the standard error using the sample standard deviations: <m>\sqrt{s_1^2/n_1 + s_2^2/n_2}</m>, where <m>s_1</m> and <m>s_2</m> are the sample standard deviations from each group.</p>
+        </solution>
         <response/>
       </exercise>
       
       <exercise xml:id="prob-detour-2means-m" label="PD4.2.13">
         <title>Standardized Statistics</title>
         <statement>
-          <p>Create a new distribution by standardizing each difference: <m>t = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>. Describe the shape of this distribution. Does it appear to follow a <m>t</m>-distribution?</p>
+          <p>So then what we really need to know about is the distribution of <m>t = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>. In the applet, use the Statistic pull-down menu to select the t-statistic and then examine the distribution of this statistic. Is it approximately normal? Where is it centered? Use the check box to Overlay t distribution. Is the <m>t</m>-distribution a good model for this sampling distribution?</p>
         </statement>
+        <solution>
+          <p>The distribution of the <m>t</m>-statistic is approximately normal and centered at 0. The overlaid <m>t</m>-distribution provides a good model for this sampling distribution, slightly heavier-tailed than the normal distribution to account for the additional variability from estimating the population standard deviations.</p>
+        </solution>
         <response/>
       </exercise>
     </subsection>
