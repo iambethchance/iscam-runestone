@@ -189,4 +189,289 @@ cat("Skewness =", e1071::skewness(asian$Distance), "\n")
       <response/>
     </exercise>
     
-</section>
+    <subsection xml:id="prob-detour-two-means">
+      <title>Probability Detour: Sampling Distribution of Difference in Two Means</title>
+      
+      <p>To understand how differences in sample means behave, let's explore a hypothetical scenario where we know the population distributions. We'll use NBA player salary data to investigate.</p>
+      
+      <exercise xml:id="prob-detour-2means-a" label="PD4.2.1">
+        <title>Salary Distribution Shape</title>
+        <statement>
+          <p>Why might salaries be skewed to the right?</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="prob-detour-2means-b" label="PD4.2.2">
+        <title>Mean vs Median</title>
+        <statement>
+          <p>With a skewed right distribution, would you expect the mean to be larger or smaller than the median?</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="prob-detour-2means-c" label="PD4.2.3">
+        <title>Population Parameters</title>
+        <statement>
+          <p>Open the <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/NBASalaries2025.txt">NBASalaries2025.txt</url> data file (see also <url href="http://www.espn.com/nba/salaries">ESPN NBA salaries</url>). Record the sample sizes, means, and standard deviations for the Western and Eastern conferences.</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="prob-detour-2means-d" label="PD4.2.4">
+        <title>Sample Statistics</title>
+        <statement>
+          <p>Take a random sample of size 20 from each conference. Record the sample means and standard deviations. How do they compare to the population values?</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="prob-detour-2means-e" label="PD4.2.5">
+        <title>Generate Sampling Distribution</title>
+        <statement>
+          <p>Repeat this process many times (at least 1000) to generate a sampling distribution of the difference in sample means (East - West).</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="prob-detour-2means-f" label="PD4.2.6">
+        <title>Shape of Distribution</title>
+        <statement>
+          <p>Describe the shape of the sampling distribution of the difference in sample means. How does it compare to the shape of the salary distributions themselves?</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="prob-detour-2means-g" label="PD4.2.7">
+        <title>Center of Distribution</title>
+        <statement>
+          <p>What is the center of the sampling distribution? What does this represent?</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="prob-detour-2means-h" label="PD4.2.8">
+        <title>Variability</title>
+        <statement>
+          <p>How does the variability in the sampling distribution of differences in means compare to the variability in individual salaries?</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="prob-detour-2means-i" label="PD4.2.9">
+        <title>Predicted Standard Error</title>
+        <statement>
+          <p>From each conference we can predict the standard error to be <m>\sigma/\sqrt{n}</m>. Calculate this for each conference and compare to the standard deviation of the difference in sample means.</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="prob-detour-2means-j" label="PD4.2.10">
+        <title>Summary of Results</title>
+        <statement>
+          <p>Summarize your findings about the distribution of the difference in sample means (shape, center, spread).</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="prob-detour-2means-k" label="PD4.2.11">
+        <title>Why Not Perfect Normal?</title>
+        <statement>
+          <p>Why might the distribution not follow the theoretical predictions exactly?</p>
+        </statement>
+        <hint>
+          <p>Consider the nature of the population distributions and sampling.</p>
+        </hint>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="prob-detour-2means-l" label="PD4.2.12">
+        <title>Using Sample Standard Deviations</title>
+        <statement>
+          <p>In practice, we don't know the population standard deviations. We estimate the standard error using: <m>\sqrt{s_1^2/n_1 + s_2^2/n_2}</m>. Calculate this predicted standard deviation and compare to your simulation results.</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="prob-detour-2means-m" label="PD4.2.13">
+        <title>Standardized Statistics</title>
+        <statement>
+          <p>Create a new distribution by standardizing each difference: <m>t = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>. Describe the shape of this distribution. Does it appear to follow a t-distribution?</p>
+        </statement>
+        <response/>
+      </exercise>
+    </subsection>
+    
+    <subsection xml:id="elephants-continued">
+      <title>Back to the Elephants</title>
+      
+      <exercise xml:id="inv4-2-i" label="I4.2.9">
+        <title>Technical Conditions</title>
+        <statement>
+          <p>Are the technical conditions met for the t-procedures to be valid for these data?</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="inv4-2-j" label="I4.2.10">
+        <title>Hypothesis Test</title>
+        <statement>
+          <p>Use technology to decide whether there is a statistically significant difference between the average walking distance of the African and Asian elephant populations. State the hypotheses, define any symbols you use, report the test-statistic and p-value. Include one-sentence interpretations of both the standardized statistic and the p-value in context. What conclusion do you draw?</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <paragraphs xml:id="tech-detour-two-sample-t-unpooled-summary">
+        <title>Technology Detour – Two-sample t-procedures (Unpooled, Summary Statistics)</title>
+        
+        <p><alert>In Theory-Based Inference applet</alert></p>
+        
+        <image source="Inv4.2TBIA.png" width="80%">
+          <description>Theory-Based Inference applet for unpooled two-sample t-test with summary data</description>
+        </image>
+        
+        <ul>
+          <li><p>Select Two Means from the pull-down menu</p></li>
+          <li><p>Choose Unpooled</p></li>
+          <li><p>Enter the sample sizes, means, and standard deviations for each group</p></li>
+          <li><p>Choose the alternative hypothesis (typically not equal for two-sided)</p></li>
+          <li><p>Press Calculate to get the test statistic, degrees of freedom, and p-value</p></li>
+        </ul>
+        
+        <p><alert>In R</alert></p>
+        <sage language="r">
+          <input>
+# Load elephant data
+elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
+
+# Two-sample t-test (unpooled - Welch's t-test)
+t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
+
+# Note: var.equal=FALSE uses the unpooled (Welch) version
+# This is the default and recommended when variances may differ
+          </input>
+        </sage>
+        
+        <p><alert>In JMP</alert></p>
+        
+        <image source="Inv4.2JMP3.png" width="80%">
+          <description>JMP output for unpooled two-sample t-test</description>
+        </image>
+        
+        <ul>
+          <li><p>Choose Analyze > Fit Y by X</p></li>
+          <li><p>Put the quantitative variable in Y, Response and the categorical variable in X, Factor</p></li>
+          <li><p>Press OK</p></li>
+          <li><p>Click on the red triangle next to Oneway Analysis and select t Test</p></li>
+          <li><p>JMP provides both pooled and unpooled (Welch) results</p></li>
+        </ul>
+      </paragraphs>
+      
+      <paragraphs xml:id="tech-detour-two-sample-t-unpooled-raw">
+        <title>Technology Detour – Two-sample t-procedures (Unpooled, Raw Data)</title>
+        
+        <p><alert>In Theory-Based Inference applet</alert></p>
+        
+        <image source="Inv4.2TBIA2.png" width="80%">
+          <description>Theory-Based Inference applet for unpooled two-sample t-test with raw data</description>
+        </image>
+        
+        <ul>
+          <li><p>Select Two Means from the pull-down menu</p></li>
+          <li><p>Check the Stacked box if your data are in stacked format</p></li>
+          <li><p>Enter elephants.txt in the data window or paste the data</p></li>
+          <li><p>Press Use Data</p></li>
+          <li><p>Select the response variable and grouping variable</p></li>
+          <li><p>Choose Unpooled</p></li>
+          <li><p>Press Calculate</p></li>
+        </ul>
+      </paragraphs>
+      
+      <p>The applet uses the <url href="https://en.wikipedia.org/wiki/Welch%E2%80%93Satterthwaite_equation">Welch-Satterthwaite approximation</url> to calculate the degrees of freedom when the population variances are not assumed equal.</p>
+      
+      <sidebyside widths="60% 35%" valign="top">
+        <p>In this case, we could use 19 as the approximate degrees of freedom. Notice that this sample size is large enough that the t-distribution looks a lot like the normal distribution as well, which should agree with your observation in (m). But we will continue to use the t-distribution rather than the normal distribution to still account for additional variation from our estimates of the population standard deviations.</p>
+        
+        <image source="Inv4.2tnorm.png" width="100%">
+          <description>Comparison of t-distribution with 19 df and normal distribution</description>
+        </image>
+      </sidebyside>
+      
+      <exercise xml:id="inv4-2-k" label="I4.2.11">
+        <title>Confidence Interval</title>
+        <statement>
+          <p>Also approximate a 95% confidence interval and interpret this interval in context. [Hint: When interpreting a confidence interval for the difference, you should always clarify the direction of subtraction and which population parameter is larger.]</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <assemblage xml:id="study-conclusions-4-2">
+        <title>Study Conclusions</title>
+        
+        <p>In this study, the mean distance walked is similar for these two species (5.40 vs. 5.30 km) and the sample sizes are not super large (33 and 23), with a fair bit of variation in walking distances within each species (<m>s_{\text{African}} = 1.47</m> vs <m>s_{\text{Asian}} = 3.41</m> km). For these reasons, we do not expect a small p-value. The distributions are fairly symmetric so the unpooled t-test should be valid (the standard deviations are not very similar, so we would not feel comfortable assuming equal population variances). The unpooled t-test statistic of 0.131 is small, yielding a two-sided p-value of 0.897. We fail to reject the null hypothesis that the population mean walking distances are the same. These data do not provide convincing evidence of a difference in walking distances, on average, between Asian and African elephants in American zoos. A 95% confidence interval tells us that its plausible that, in these two populations, African elephants average up to 1.45 km less to 1.65 km more than Asian elephants. It might be interesting to further explore the larger variation in walking distances among the Asian elephants. We should also be aware that we have sampled a large fraction of the populations and should consider some "finite population corrections" which would only further increase the standard deviation.</p>
+      </assemblage>
+      
+      <p>Keep in mind that the t-tests only tells us about whether the centers of the distributions are significantly different. They don't help us analysis other potentially interesting differences in the two distributions.</p>
+      
+      <p>For more information on the <url href="https://en.wikipedia.org/wiki/Pooled_variance#Pooled_standard_deviation">pooled t-test</url>, which assumes equal population variances, see the linked resource. In practice, the unpooled (Welch) t-test is generally preferred as it is more robust to violations of the equal variance assumption.</p>
+    </subsection>
+    
+    <subsection xml:id="practice-problems-4-2">
+      <title>Practice Problems</title>
+      
+      <exercise xml:id="practice-4-2-a" label="PP4.2A">
+        <title>Practice Problem 4.2A: Bootstrap Sampling</title>
+        <statement>
+          <p>Open the Sampling from Two Sample Bootstrapping applet.</p>
+          <ul>
+            <li><p>Enter <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt">elephants.txt</url> in the data window and press Use Data (twice).</p></li>
+            <li><p>Check Show Sampling Options</p></li>
+            <li><p>Press Bootstrap Samples</p></li>
+            <li><p>Look at the Plot display.</p></li>
+          </ul>
+          
+          <p>(a) Include a screen capture of your bootstrap sample and verify you have selected 23 Asian elephants and 33 African elephants.</p>
+          
+          <p>(b) Identify any elephants that were selected more than once, and explain how you can tell, AND how you can tell that the two groups were not pooled together before sampling.</p>
+          
+          <p>(c) Now check the Pooled box and press Bootstrap Samples. Include a screen capture of your bootstrap sample.</p>
+          
+          <p>(d) Identify any elephants that were selected more than once, and explain how you can tell, AND how you can tell that the two groups were pooled together before sampling. (Feel free to generate a different sample if another one would make your point better.)</p>
+          
+          <p>(e) Which simulation should we use for a test of significance, and which for a confidence interval? Briefly explain why.</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="practice-4-2-b" label="PP4.2B">
+        <title>Practice Problem 4.2B: Bootstrap for Medians</title>
+        <statement>
+          <p>(a) Use the Two sample bootstrapping applet (see also Exploration 2.9) to simulate a null distribution for the difference in medians. Do you think a t-approximation would be valid for this statistic? Why or why not.</p>
+          
+          <p>(b) Approximate a p-value. Is your conclusion similar as in the analysis with means?</p>
+          
+          <p>(c) Has your analysis proven that there is no difference in the median walking distances between these two species? Explain.</p>
+        </statement>
+        <response/>
+      </exercise>
+      
+      <exercise xml:id="practice-4-2-c" label="PP4.2C">
+        <title>Practice Problem 4.2C: Alternative Scenario</title>
+        <statement>
+          <p>Suppose our data had been:</p>
+          
+          <image source="PP4.2C.png" width="80%">
+            <description>Alternative elephant data scenario for Practice Problem 4.2C</description>
+          </image>
+          
+          <p>(a) Conjecture how this will impact the p-value and confidence interval. Explain your reasoning.</p>
+          
+          <p>(b) Use technology to check your conjecture. Were you correct?</p>
+          
+          <p>(c) Do you consider the t-procedures more valid here than for the actual study? Explain.</p>
+        </statement>
+        <response/>
+      </exercise>
+    </subsection>
+    
+  </section>
