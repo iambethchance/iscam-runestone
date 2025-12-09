@@ -1,5 +1,10 @@
 # ISCAM R Functions for Runestone Sage Cells
-# Simplified versions of key functions from the ISCAM package
+# Essential functions from the ISCAM package for use in browser-based R cells
+# Source: https://github.com/ISCAM4/ISCAM
+
+# ============================================================================
+# SUMMARY STATISTICS
+# ============================================================================
 
 # Summary function for grouped data
 iscamsummary <- function(variable, by = NULL, data = NULL) {
@@ -42,14 +47,147 @@ iscamsummary <- function(variable, by = NULL, data = NULL) {
       cat("\n")
     }
   }
-  invisible(NULL)  # Return NULL invisibly to suppress the message
+  invisible(NULL)
 }
+
+# ============================================================================
+# PLOTTING FUNCTIONS
+# ============================================================================
 
 # Dotplot function
-iscamdotplot <- function(x, ...) {
-  stripchart(x, method = "stack", pch = 19, ...)
+iscamdotplot <- function(x, by = NULL, data = NULL, main = "", xlab = "", ylab = "") {
+  if (!is.null(data)) {
+    x <- data[[deparse(substitute(x))]]
+    if (!is.null(by)) {
+      by <- data[[deparse(substitute(by))]]
+    }
+  }
+  
+  if (is.null(by)) {
+    stripchart(x, method = "stack", pch = 19, main = main, xlab = xlab)
+  } else {
+    stripchart(x ~ by, method = "stack", pch = 19, main = main, xlab = xlab, ylab = ylab)
+  }
+  invisible(NULL)
 }
 
-# Test message
+# Boxplot function
+iscamboxplot <- function(x, by = NULL, data = NULL, main = "", xlab = "", ylab = "") {
+  if (!is.null(data)) {
+    x <- data[[deparse(substitute(x))]]
+    if (!is.null(by)) {
+      by <- data[[deparse(substitute(by))]]
+    }
+  }
+  
+  if (is.null(by)) {
+    boxplot(x, main = main, xlab = xlab, horizontal = TRUE)
+  } else {
+    boxplot(x ~ by, main = main, xlab = xlab, ylab = ylab, horizontal = TRUE)
+  }
+  invisible(NULL)
+}
+
+# ============================================================================
+# BINOMIAL FUNCTIONS
+# ============================================================================
+
+# Binomial probability
+iscambinomprob <- function(k, n, prob, lower.tail = TRUE) {
+  if (lower.tail) {
+    result <- pbinom(k, n, prob)
+  } else {
+    result <- pbinom(k - 1, n, prob, lower.tail = FALSE)
+  }
+  cat(paste0("P = ", round(result, 4), "\n"))
+  invisible(result)
+}
+
+# Binomial test
+iscambinomtest <- function(observed, n, hypothesized = 0.5, alternative = "two.sided", conf.level = 0.95) {
+  result <- binom.test(observed, n, hypothesized, alternative, conf.level)
+  
+  cat("\nOne Sample Binomial Test\n")
+  cat("=========================\n")
+  cat(paste0("Observed: ", observed, " out of ", n, "\n"))
+  cat(paste0("Sample proportion: ", round(observed/n, 4), "\n"))
+  cat(paste0("Hypothesized: ", hypothesized, "\n"))
+  cat(paste0("Alternative: ", alternative, "\n"))
+  cat(paste0("p-value: ", round(result$p.value, 4), "\n"))
+  cat(paste0(conf.level*100, "% Confidence Interval: (", 
+             round(result$conf.int[1], 4), ", ", 
+             round(result$conf.int[2], 4), ")\n"))
+  
+  invisible(result)
+}
+
+# ============================================================================
+# TWO PROPORTION Z-TEST
+# ============================================================================
+
+iscamtwopropztest <- function(x1, n1, x2, n2, hypothesized = 0, 
+                                alternative = "two.sided", conf.level = 0.95) {
+  # Allow proportions or counts
+  if (x1 <= 1) x1 <- round(x1 * n1)
+  if (x2 <= 1) x2 <- round(x2 * n2)
+  
+  p1 <- x1/n1
+  p2 <- x2/n2
+  phat <- (x1 + x2)/(n1 + n2)
+  
+  se <- sqrt(phat * (1 - phat) * (1/n1 + 1/n2))
+  z <- (p1 - p2 - hypothesized) / se
+  
+  if (alternative == "two.sided") {
+    pval <- 2 * pnorm(-abs(z))
+  } else if (alternative == "greater") {
+    pval <- pnorm(z, lower.tail = FALSE)
+  } else {
+    pval <- pnorm(z)
+  }
+  
+  # CI
+  se_ci <- sqrt(p1 * (1 - p1) / n1 + p2 * (1 - p2) / n2)
+  z_crit <- qnorm(1 - (1 - conf.level)/2)
+  ci_lower <- (p1 - p2) - z_crit * se_ci
+  ci_upper <- (p1 - p2) + z_crit * se_ci
+  
+  cat("\nTwo Proportion Z-Test\n")
+  cat("=====================\n")
+  cat(paste0("Group 1: ", x1, " out of ", n1, " (", round(p1, 4), ")\n"))
+  cat(paste0("Group 2: ", x2, " out of ", n2, " (", round(p2, 4), ")\n"))
+  cat(paste0("Difference: ", round(p1 - p2, 4), "\n"))
+  cat(paste0("Z-statistic: ", round(z, 4), "\n"))
+  cat(paste0("p-value: ", round(pval, 4), "\n"))
+  cat(paste0(conf.level*100, "% CI: (", round(ci_lower, 4), ", ", round(ci_upper, 4), ")\n"))
+  
+  invisible(list(z = z, pvalue = pval, ci = c(ci_lower, ci_upper)))
+}
+
+# ============================================================================
+# HYPERGEOMETRIC FUNCTIONS
+# ============================================================================
+
+iscamhyperprob <- function(k, total, succ, n, lower.tail = TRUE) {
+  if (lower.tail) {
+    result <- phyper(k, succ, total - succ, n)
+  } else {
+    result <- phyper(k - 1, succ, total - succ, n, lower.tail = FALSE)
+  }
+  cat(paste0("P = ", round(result, 4), "\n"))
+  invisible(result)
+}
+
+# ============================================================================
+# STARTUP MESSAGE
+# ============================================================================
+
 cat("ISCAM functions loaded successfully from GitHub!\n")
-cat("Available functions: iscamsummary(), iscamdotplot()\n")
+cat("Available functions:\n")
+cat("  - iscamsummary()\n")
+cat("  - iscamdotplot()\n")
+cat("  - iscamboxplot()\n")
+cat("  - iscambinomprob()\n")
+cat("  - iscambinomtest()\n")
+cat("  - iscamtwopropztest()\n")
+cat("  - iscamhyperprob()\n")
