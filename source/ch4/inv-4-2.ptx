@@ -541,30 +541,29 @@ with only the summary data is one advantage the <m>t</m>-test has over the simul
   where <m>s_p = \sqrt{\frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}}</m>, a pooled estimate of the common SD.</p>
 <p>This <q>pooled <m>t</m>-test</q> has some advantages (namely higher power), when the population standard deviations are equal. However, this additional condition can be difficult to assess from your sample data. The benefits do not appear to outweigh the risks of applying this assumption when you shouldn't. So in this text we will focus on <q>unpooled <m>t</m>-tests</q> only.</p>
       
-      <p><alert>Technology Detours:</alert> How to conduct two-sample <m>t</m>-tests using different tools.</p>
-      
-      <aside component="knowl">
-        <title>Applet - Theory-Based Inference (Summary Data)</title>
-        <p>Use the Theory-Based Inference applet to conduct a two-sample <m>t</m>-test:</p>
-        
-        <image source="images/Inv4.2TBIA.png" width="80%">
-          <description>Theory-Based Inference applet for unpooled two-sample t-test with summary data</description>
-        </image>
-        
-        <ul>
-          <li><p>Select Two Means from the pull-down menu</p></li>
-          <li><p>Choose Unpooled</p></li>
-          <li><p>Enter the sample sizes, means, and standard deviations for each group</p></li>
-          <li><p>Choose the alternative hypothesis (typically not equal for two-sided)</p></li>
-          <li><p>Press Calculate to get the test statistic, degrees of freedom, and p-value</p></li>
-        </ul>
-      </aside>
-      
-      <aside component="knowl">
-        <title>R - Two-Sample <m>t</m>-Test</title>
-        <p>Use R to conduct a two-sample <m>t</m>-test:</p>
-        <sage language="r">
-          <input>
+      <exercise xml:id="inv4-2-tech" label="I4.2.TECH">
+        <title>Technology Detours</title>
+        <hint>
+          <title>In Applet - Theory-Based Inference (Summary Data)</title>
+          <p>Use the Theory-Based Inference applet to conduct a two-sample <m>t</m>-test:</p>
+          
+          <image source="images/Inv4.2TBIA.png" width="80%">
+            <description>Theory-Based Inference applet for unpooled two-sample t-test with summary data</description>
+          </image>
+          
+          <ul>
+            <li><p>Select Two Means from the pull-down menu</p></li>
+            <li><p>Choose Unpooled</p></li>
+            <li><p>Enter the sample sizes, means, and standard deviations for each group</p></li>
+            <li><p>Choose the alternative hypothesis (typically not equal for two-sided)</p></li>
+            <li><p>Press Calculate to get the test statistic, degrees of freedom, and p-value</p></li>
+          </ul>
+        </hint>
+        <hint>
+          <title>In R</title>
+          <p>Use R to conduct a two-sample <m>t</m>-test:</p>
+          <sage language="r">
+            <input>
 # Load elephant data
 elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
 
@@ -573,57 +572,59 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
 
 # Note: var.equal=FALSE uses the unpooled (Welch) version
 # This is the default and recommended when variances may differ
-          </input>
-        </sage>
-      </aside>
-      
-      <aside component="knowl">
-        <title>JMP - Two-Sample <m>t</m>-Test</title>
-        <sidebyside widths="60% 35%" valign="top">
-          <stack>
-            <p>Use JMP to conduct a two-sample <m>t</m>-test:</p>
-            <ul>
-              <li><p><url href="https://github.com/iambethchance/iscam-runestone/blob/master/assets/tech_images/JMP_Two_Means_HypTest_v1.jsl">ISCAM Journal file</url>: Hypothesis Test for Two Means</p></li>
-              <li><p>Choose the <m>t</m>-test and Unequal Variances</p></li>
-              <li><p>Specify the alternative hypothesis and the sample means and sample standard deviations and press Enter.</p></li>
-              <li><p>There is no simple CI calculator</p></li>
-            </ul>
-            <p>OR</p>
-            <ul>
-              <li><p>Choose Analyze > Fit Y by X</p></li>
-              <li><p>Put the quantitative variable in Y, Response and the categorical variable in X, Factor</p></li>
-              <li><p>Press OK</p></li>
-              <li><p>Click on the red triangle next to Oneway Analysis and select <m>t</m> Test</p></li>
-              <li><p>JMP provides both pooled and unpooled (Welch) results</p></li>
-            </ul>
-          </stack>
+            </input>
+          </sage>
+        </hint>
+        <hint>
+          <title>In JMP</title>
+          <sidebyside widths="60% 35%" valign="top">
+            <stack>
+              <p>Use JMP to conduct a two-sample <m>t</m>-test:</p>
+              <ul>
+                <li><p><url href="https://github.com/iambethchance/iscam-runestone/blob/master/assets/tech_images/JMP_Two_Means_HypTest_v1.jsl">ISCAM Journal file</url>: Hypothesis Test for Two Means</p></li>
+                <li><p>Choose the <m>t</m>-test and Unequal Variances</p></li>
+                <li><p>Specify the alternative hypothesis and the sample means and sample standard deviations and press Enter.</p></li>
+                <li><p>There is no simple CI calculator</p></li>
+              </ul>
+              <p>OR</p>
+              <ul>
+                <li><p>Choose Analyze > Fit Y by X</p></li>
+                <li><p>Put the quantitative variable in Y, Response and the categorical variable in X, Factor</p></li>
+                <li><p>Press OK</p></li>
+                <li><p>Click on the red triangle next to Oneway Analysis and select <m>t</m> Test</p></li>
+                <li><p>JMP provides both pooled and unpooled (Welch) results</p></li>
+              </ul>
+            </stack>
+            
+            <stack>
+              <image source="images/Inv4.2JMP3.png" width="100%">
+                <description>JMP output for unpooled two-sample t-test</description>
+              </image>
+            </stack>
+          </sidebyside>
+        </hint>
+        <hint>
+          <title>In Applet - Theory-Based Inference (Raw Data)</title>
+          <p>Use the Theory-Based Inference applet with raw data:</p>
           
-          <stack>
-            <image source="images/Inv4.2JMP3.png" width="100%">
-              <description>JMP output for unpooled two-sample t-test</description>
-            </image>
-          </stack>
-        </sidebyside>
-      </aside>
-      
-      <aside component="knowl">
-        <title>Applet - Theory-Based Inference (Raw Data)</title>
-        <p>Use the Theory-Based Inference applet with raw data:</p>
-        
-        <image source="images/Inv4.2TBIA2.png" width="80%">
-          <description>Theory-Based Inference applet for unpooled two-sample t-test with raw data</description>
-        </image>
-        
-        <ul>
-          <li><p>Select Two Means from the pull-down menu</p></li>
-          <li><p>Check the Stacked box if your data are in stacked format</p></li>
-          <li><p>Enter elephants.txt in the data window or paste the data</p></li>
-          <li><p>Press Use Data</p></li>
-          <li><p>Select the response variable and grouping variable</p></li>
-          <li><p>Choose Unpooled</p></li>
-          <li><p>Press Calculate</p></li>
-        </ul>
-      </aside>
+          <image source="images/Inv4.2TBIA2.png" width="80%">
+            <description>Theory-Based Inference applet for unpooled two-sample t-test with raw data</description>
+          </image>
+          
+          <ul>
+            <li><p>Select Two Means from the pull-down menu</p></li>
+            <li><p>Check the Stacked box if your data are in stacked format</p></li>
+            <li><p>Enter elephants.txt in the data window or paste the data</p></li>
+            <li><p>Press Use Data</p></li>
+            <li><p>Select the response variable and grouping variable</p></li>
+            <li><p>Choose Unpooled</p></li>
+            <li><p>Press Calculate</p></li>
+          </ul>
+        </hint>
+        <statement>
+          <p>How to conduct two-sample <m>t</m>-tests using different tools (expand the hints above for instructions).</p>
+        </statement>
+      </exercise>
 
     </subsection>
     
