@@ -3,7 +3,7 @@
   <title>Investigation 4.6: Ice Cream Serving Sizes</title>
   
   <introduction>
-    <p>Researchers conducted a study in which they invited members of the Department of Food Science and Nutritional Science (faculty, graduate students, and staff) at a large midwestern university to an ice cream social (Mindless Eating: Why we eat more than we think, Wansink et al., 2006). The participants were randomly given either a 17- or a 34-ounce bowl. Participants individually helped themselves to the available ice cream in the cafeteria line, unaware that other participants had been given different-sized bowls. The suspicion was that even nutrition experts would tend to take more ice cream when given a larger bowl. Sample results for the actual volumes of ice cream taken (in ounces) are summarized in the following table:</p>
+    <p>Researchers conducted a study in which they invited members of the Department of Food Science and Nutritional Science (faculty, graduate students, and staff) at a large midwestern university to an ice cream social (<url href="http://www.brianwansink.com/uploads/5/5/8/1/55817101/intro.___chapter_1_-_mindless_eating.pdf">Mindless Eating: Why we eat more than we think</url>, Wansink et al., 2006). The participants were randomly given either a 17- or a 34-ounce bowl. Participants individually helped themselves to the available ice cream in the cafeteria line, unaware that other participants had been given different-sized bowls. The suspicion was that even nutrition experts would tend to take more ice cream when given a larger bowl. Sample results for the actual volumes of ice cream taken (in ounces) are summarized in the following table:</p>
     
     <tabular halign="center" top="medium" bottom="medium" left="medium" right="medium">
       <row header="yes" bottom="medium">
@@ -79,12 +79,21 @@
       </statement>
       <solution>
         <p>With a p-value = 0.027 &lt; 0.05, we would conclude that we do have convincing evidence that the larger bowl size causes (this was a randomized experiment) nutrition experts (not a random sample) to take larger servings of ice cream.</p>
+        <image source="images/Inv4.6solsd.png" width="60%">
+          <description>Minitab t-test output for ice cream study</description>
+        </image>
         <p>Using technology with 32 as the degrees of freedom, <m>t^* = 2.037</m> (By hand, with df = 16, <m>t^* = 2.12</m>)</p>
+        <image source="images/Inv4.6solsd2.jpg" width="60%">
+          <description>t-distribution diagram showing critical value</description>
+        </image>
         <p>This is close to <m>z^*</m> but is a little larger, again reflecting the heavier tails/more uncertainty in our estimates from estimating <m>\sigma</m>'s with <m>s</m>'s.</p>
         <p><m>-1.43 + 2.037\sqrt{2.05^2/20 + 2.26^2/17}</m></p>
         <p><m>-1.43 + 1.4555</m></p>
         <p>Margin of error: 1.4555</p>
         <p>Interval: (-2.89, 0.025)</p>
+        <image source="images/Inv4.6solsd3.png" width="60%">
+          <description>Technology output showing confidence interval</description>
+        </image>
         <p>Interpretation: We are 95% confident that on average, the population with the 34 oz bowl will take between 0.025 fewer ounces up to 2.89 more ounces of ice cream than the population given a 17 ounce bowl.</p>
       </solution>
       <response/>
