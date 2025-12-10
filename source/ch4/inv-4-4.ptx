@@ -243,6 +243,10 @@
           <p>Mean: <m>\approx 0</m></p>
           <p>SD: <m>\approx 7</m></p>
           <p>Interpretation: typical deviation from the mean</p>
+          <p>Example results:</p>
+          <image source="images/Inv4.4solsp.png" width="60%">
+            <description>Example randomization distribution showing 1000 simulated differences in means</description>
+          </image>
         </solution>
         <response/>
       </exercise>
@@ -254,6 +258,9 @@
         </statement>
         <solution>
           <p>Counting <m>\geq 15.92</m> (this is the direction specified by the alternative hypothesis), the p-value should be about 0.007.</p>
+          <image source="images/Inv4.4solsq.png" width="60%">
+            <description>Example randomization distribution with p-value calculation</description>
+          </image>
         </solution>
         <response/>
       </exercise>
@@ -264,7 +271,7 @@
           <p>Provide an interpretation of this p-value in context (make sure you address the statistic, the source of the randomness in the study, and what you mean by <q>more extreme</q>).</p>
         </statement>
         <solution>
-          <p>The p-value is the percentage of random assignments, when the null hypothesis is true (<m>H_0: \mu_{\text{unrestricted}} - \mu_{\text{deprived}} = 0</m>, no treatment effect) that will have <m>\bar{x}_{\text{unrestricted}} - \bar{x}_{\text{deprived}} > 15.92</m> by chance (random sampling) alone.</p>
+          <p>The p-value is the percentage of random assignments, when the null hypothesis is true (<m>H_0: \mu_{\text{unrestricted}} - \mu_{\text{deprived}} = 0</m>, no treatment effect) that will have <m>\bar{x}_{\text{unrestricted}} - \bar{x}_{\text{deprived}} \geq 15.92</m> by chance (random sampling) alone.</p>
         </solution>
         <response/>
       </exercise>
@@ -373,16 +380,16 @@ abline(v=15.92, col=2)
         
         <p><alert>Applet:</alert> <url href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm">Comparing Groups (Quantitative)</url></p>
         
-        <p><alert>In R:</alert> See <url href="https://www.rossmanchance.com/iscam3/RandomizationTestQuant.html">RandomizationTestQuant.html</url> (with Sleep Deprivation file loaded and attached)</p>
+        <p><alert>In R:</alert> See <url href="https://www.rossmanchance.com/iscam3/data/RandomizationTestQuantR.html">RandomizationTestQuantR.html</url> (with Sleep Deprivation file loaded and attached)</p>
         
-        <p><alert>In JMP:</alert> See <url href="https://www.rossmanchance.com/iscam3/RandomizationTestQuantJMP.html">RandomizationTestQuantJMP.html</url></p>
+        <p><alert>In JMP:</alert> See <url href="https://www.rossmanchance.com/iscam3/data/RandomizationTestQuantJMP.html">RandomizationTestQuantJMP.html</url></p>
       </assemblage>
     </subsection>
     
     <assemblage xml:id="inv-4-4-study-conclusions">
       <title>Study Conclusions</title>
       
-      <p>These data come from a randomized, comparative experiment. The dotplots and descriptive statistics reveal that, even three days later, the sleep-deprived subjects tended (on average) to have lower improvements than those permitted unrestricted sleep. To investigate whether this difference is larger than could be expected from random assignment alone (assuming no real difference between the two treatment conditions, our null hypothesis), you simulated a randomization test by assigning the 21 measurements (improvement scores) to the two groups at random. You should have found that random assignment alone rarely produced differences in group means as extreme as in the actual study (the <q>exact</q> p-value is less than 0.01). Thus, we have fairly strong evidence that the average learning improvement is genuinely lower for the sleep deprived subjects. Moreover, because this was a randomized comparative experiment and not an observational study, we can draw a causal conclusion that the sleep deprivation was the cause of the lower learning improvements. However, the subjects were college-aged volunteers, so we may not want to generalize these results to a much different population.</p>
+      <p>These data come from a randomized, comparative experiment. The dotplots and descriptive statistics reveal that, even three days later, the sleep-deprived subjects tended (on average) to have lower improvements than those permitted unrestricted sleep. To investigate whether this difference is larger than could be expected from random assignment alone (assuming no real difference between the two treatment conditions, our null hypothesis), you simulated a <strong>randomization test</strong> by assigning the 21 measurements (improvement scores) to the two groups at random. You should have found that random assignment alone rarely produced differences in group means as extreme as in the actual study (the <q>exact</q> p-value is less than 0.01). Thus, we have fairly strong evidence that the average learning improvement is genuinely lower for the sleep deprived subjects. Moreover, because this was a randomized comparative experiment and not an observational study, we can draw a causal conclusion that the sleep deprivation was the cause of the lower learning improvements. However, the subjects were college-aged volunteers, so we may not want to generalize these results to a much different population.</p>
     </assemblage>
   
     <subsection xml:id="practice-4-4">
@@ -435,7 +442,7 @@ abline(v=15.92, col=2)
       
       <exercise xml:id="pp4-4b-3" label="PP4.4B.3">
         <statement>
-          <p>How does the p-value for the hypothetical data compare to the p-value for the original data? Explain why this makes sense based on what you learned about how the data sets compared in (a).</p>
+          <p>How does the p-value for the hypothetical data compare to the p-value for the original data? Explain why this makes sense based on what you learned about how the data sets compared in checkpoint 16.1.27.</p>
         </statement>
         <response/>
       </exercise>
