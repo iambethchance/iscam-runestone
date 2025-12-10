@@ -37,6 +37,10 @@
         <p>Explanatory: <var width="40"/></p>
         <p>Response: <var width="40"/></p>
       </statement>
+      <solution>
+        <p>Explanatory = What was the bowl size? (categorical and binary)</p>
+        <p>Response = How many ounces of ice cream did the subject take? (quantitative)</p>
+      </solution>
       <response/>
     </exercise>
     
@@ -45,6 +49,11 @@
       <statement>
         <p>Specify the null and alternative hypotheses for this research study, in symbols and in words, defining the parameter of interest in context.</p>
       </statement>
+      <solution>
+        <p>Let <m>\mu_{17}</m> represent the underlying treatment mean serving size of ice cream for people (in general) using the 17oz bowl. Let <m>\mu_{34}</m> represent the underlying treatment mean amount of ice cream for people (in general) using the 34oz bowl.</p>
+        <p><m>H_0: \mu_{17} - \mu_{34} = 0</m> (there is no underlying difference in the treatment means)</p>
+        <p><m>H_a: \mu_{17} - \mu_{34} &lt; 0</m> (we expect, on average, larger serving sizes with the larger bowls)</p>
+      </solution>
       <response/>
     </exercise>
     
@@ -53,6 +62,9 @@
       <statement>
         <p>Would it be possible for you to carry out a randomization test using simulation with the information presented here? Explain.</p>
       </statement>
+      <solution>
+        <p>No, need the individual values.</p>
+      </solution>
       <response/>
     </exercise>
   </subsection>
@@ -65,6 +77,16 @@
       <statement>
         <p>Use technology to carry out a two-sample <em>t</em>-test to determine whether individuals given a 34-oz bowl have a tendency to serve themselves more ice cream than individuals given a 17-oz bowl. Be sure to report your standardized statistic and p-value. Also determine a 95% <em>t</em>-confidence interval for the difference in the long-run average serving size. State conclusion that addresses the statistical significance of the data, the magnitude of the difference in the population, whether you are willing to draw a cause-and-effect conclusion, and the population to which you are willing to generalize the results.</p>
       </statement>
+      <solution>
+        <p>With a p-value = 0.027 &lt; 0.05, we would conclude that we do have convincing evidence that the larger bowl size causes (this was a randomized experiment) nutrition experts (not a random sample) to take larger servings of ice cream.</p>
+        <p>Using technology with 32 as the degrees of freedom, <m>t^* = 2.037</m> (By hand, with df = 16, <m>t^* = 2.12</m>)</p>
+        <p>This is close to <m>z^*</m> but is a little larger, again reflecting the heavier tails/more uncertainty in our estimates from estimating <m>\sigma</m>'s with <m>s</m>'s.</p>
+        <p><m>-1.43 + 2.037\sqrt{2.05^2/20 + 2.26^2/17}</m></p>
+        <p><m>-1.43 + 1.4555</m></p>
+        <p>Margin of error: 1.4555</p>
+        <p>Interval: (-2.89, 0.025)</p>
+        <p>Interpretation: We are 95% confident that on average, the population with the 34 oz bowl will take between 0.025 fewer ounces up to 2.89 more ounces of ice cream than the population given a 17 ounce bowl.</p>
+      </solution>
       <response/>
     </exercise>
     
@@ -73,6 +95,9 @@
       <statement>
         <p>Is your confidence interval calculation consistent with the p-value you found with the test of significance? Explain.</p>
       </statement>
+      <solution>
+        <p>This is consistent because the one-sided p-value was below 0.05 but the two-sided p-value was not. With a two-sided p-value above 0.05, we expect zero to be inside the 95% confidence interval.</p>
+      </solution>
       <response/>
     </exercise>
   </subsection>
