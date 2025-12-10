@@ -4,6 +4,9 @@
   
   <introduction>
     <p>Reconsider the exact randomization distribution of the differences in sample means for the Sleep Deprivation study. Previously you determined simulation-based p-values and the exact p-value. Now we will explore modeling the randomization distribution of the difference in sample means with a probability distribution.</p>
+    <image source="images/Inv4.5.png" width="60%">
+      <description>Exact randomization distribution for sleep deprivation study</description>
+    </image>
   </introduction>
   
   <subsection xml:id="inv-4-5-normal-model">
@@ -14,14 +17,20 @@
       <statement>
         <p>Does this distribution appear to be well modeled by a normal distribution?</p>
       </statement>
+      <solution>
+        <p>This appears to very bell-shaped and symmetric.</p>
+      </solution>
       <response/>
     </exercise>
     
     <exercise xml:id="inv4-5-b" label="I4.5.2">
       <title>Information Needed for Normal Model</title>
       <statement>
-        <p>Suppose you want to use the normal model to approximate the p-value for obtaining a difference in means of 15.92 or larger under the null hypothesis or to compute a confidence interval. What other information do you need to know?</p>
+        <p>Suppose you want to use the normal model to approximate the <em>p</em>-value for obtaining a difference in means of 15.92 or larger under the null hypothesis or to compute a confidence interval. What other information do you need to know?</p>
       </statement>
+      <solution>
+        <p>You would need to know about the variability, or the standard deviation in the <m>\bar{x}_1 - \bar{x}_2</m> values.</p>
+      </solution>
       <response/>
     </exercise>
   </subsection>
@@ -41,67 +50,93 @@
         <p>Standard error = <var width="20"/></p>
         <p>Comparison: <var width="60"/></p>
       </statement>
+      <solution>
+        <p>SE = <m>\sqrt{14.73^2/10 + 12.17^2/11} \approx 5.93</m></p>
+        <p>This should be somewhat near the simulated value but does slightly underestimate the variability (SD = 6.74).</p>
+      </solution>
       <response/>
     </exercise>
     
-    <assemblage xml:id="discussion-4-5-independence">
-      <title>Discussion</title>
-      <p>In Investigation 4.2, we stated that <m>SD(\bar{X}_1-\bar{X}_2) = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}</m>, because under the assumption that the two samples are independent, variances add. In a randomization test, however, the two samples are not independent: If one group gets all of the large responses, the other group must have all of the small responses and the difference in group means will be large. Consequently, the standard error formula from Investigation 4.2 will underestimate the shuffle-to-shuffle variation in the statistic. The discrepancy between the standard deviations for the difference in means is largest when the groups are more different: When we shuffle the responses back to the groups, any value can go into either group, but if there is a genuine difference between the treatments, then a score of 40 would be unlikely to come from say the deprived treatment. So how do we estimate the standard deviation of the randomization distribution? Turns out, we are less concerned with that. What we really want to be able to do is predict the behavior of the standardized statistic.</p>
-    </assemblage>
+    <p><alert>Discussion:</alert> In Investigation 4.2, we stated that <m>SD(\bar{X}_1-\bar{X}_2) = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}</m>, because under the assumption that the two samples are independent, variances add. In a randomization test, however, the two samples are not independent: If one group gets all of the large responses, the other group must have all of the small responses and the difference in group means will be large. Consequently, the standard error formula from Investigation 4.2 will underestimate the shuffle-to-shuffle variation in the statistic. The discrepancy between the standard deviations for the difference in means is largest when the groups are more different: When we shuffle the responses back to the groups, any value can go into either group, but if there is a genuine difference between the treatments, then a score of 40 would be unlikely to come from say the deprived treatment. So how do we estimate the standard deviation of the randomization distribution? Turns out, we are less concerned with that. What we really want to be able to do is predict the behavior of the standardized statistic.</p>
   </subsection>
   
   <subsection xml:id="inv-4-5-t-statistic">
-    <title>But what about the t-statistic?</title>
+    <title>But what about the <em>t</em>-statistic?</title>
     
     <exercise xml:id="inv4-5-d" label="I4.5.4">
-      <title>Calculate t-statistic</title>
+      <title>Calculate <em>t</em>-statistic</title>
       <statement>
-        <p>Calculate the two-sample t-statistic from Investigation 4.2 and give a one-sentence interpretation.</p>
+        <p>Calculate the two-sample <em>t</em>-statistic from Investigation 4.2 and give a one-sentence interpretation.</p>
         <p><me>t = \frac{(\bar{x}_{\text{unres}} - \bar{x}_{\text{depr}}) - 0}{\sqrt{\frac{s_{\text{unres}}^2}{n_{\text{unres}}} + \frac{s_{\text{depr}}^2}{n_{\text{depr}}}}}</me></p>
         <p><m>t =</m> <var width="15"/></p>
         <p>Interpretation: <var width="60"/></p>
       </statement>
+      <solution>
+        <p>Standardized statistic <m>t = \frac{15.92 - 0}{5.93} \approx 2.685</m></p>
+        <p>The observed difference in sample means is 2.69 standard errors above the hypothesized difference of zero.</p>
+      </solution>
       <response/>
     </exercise>
     
+    <aside>
+      <title>Applet</title>
+      <p><url href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm">Comparing Groups (Quantitative)</url></p>
+    </aside>
+    
     <exercise xml:id="inv4-5-e" label="I4.5.5">
-      <title>Re-randomization with t-statistic</title>
+      <title>Re-randomization with <em>t</em>-statistic</title>
       <statement>
-        <p>Use the Comparing Groups (Quantitative) applet to create a re-randomization null distribution. Change the Statistic pull-down menu to t-statistic and find the p-value using the value in (d). Is this the same p-value we found when we used the difference in means as the statistic <xref ref="inv4-4-q" text="custom">Investigation 4.4(q)</xref>?</p>
+        <p>Use the Comparing Groups (Quantitative) applet to create a re-randomization null distribution. Change the Statistic pull-down menu to <em>t</em>-statistic and find the <em>p</em>-value using the value in <xref ref="inv4-5-d" text="custom">checkpoint 16.2.4</xref>. Is this the same <em>p</em>-value we found when we used the difference in means as the statistic in <xref ref="inv4-4-q" text="custom">checkpoint 16.1.17</xref>?</p>
       </statement>
+      <solution>
+        <p>Simulation results:</p>
+        <image source="images/Inv4.5solse.png" width="60%">
+          <description>Simulated randomization distribution using t-statistic</description>
+        </image>
+        <p>The <em>p</em>-value (.0079) is similar, but probably not an exact match to Investigation 4.4 (e.g., 0.0090).</p>
+      </solution>
       <response/>
     </exercise>
     
     <exercise xml:id="inv4-5-f" label="I4.5.6">
-      <title>Exact p-value for t-statistic</title>
+      <title>Exact <em>p</em>-value for <em>t</em>-statistic</title>
       <statement>
-        <p>If we use similar code to that in Investigation 4.4 to find the exact distribution of these t-statistics, we can find the exact p-value for the t-statistic is 0.00748. Is this similar to the simulation results?</p>
+        <p>If we use similar code to that in Investigation 4.4 to find the exact distribution of these <em>t</em>-statistics, we can find the exact <em>p</em>-value for the <em>t</em>-statistic is 0.00748. Is this similar to the simulation results?</p>
       </statement>
+      <choices randomize="no">
+        <choice correct="yes">
+          <statement><p>Yes</p></statement>
+        </choice>
+        <choice>
+          <statement><p>No</p></statement>
+        </choice>
+      </choices>
       <response/>
+      <solution>
+        <p>0.0079 from the simulation is very close to the exact <em>p</em>-value of 0.00748.</p>
+      </solution>
     </exercise>
     
     <exercise xml:id="inv4-5-g" label="I4.5.7">
-      <title>Overlay t-distribution</title>
+      <title>Overlay <em>t</em>-distribution</title>
       <statement>
-        <p>Check the box to Overlay the t distribution. Does it appear to be a reasonable model for the simulated null distribution? Does the p-value from the t-distribution appear to reasonably approximate the exact p-value?</p>
+        <p>Check the box to Overlay the <em>t</em> distribution. Does it appear to be a reasonable model for the simulated null distribution? Does the <em>p</em>-value from the <em>t</em>-distribution appear to reasonably approximate the exact <em>p</em>-value?</p>
       </statement>
+      <solution>
+        <p>The <em>t</em> distribution should provide a reasonable model.</p>
+      </solution>
       <response/>
     </exercise>
     
-    <assemblage xml:id="discussion-4-5-t-distribution">
-      <title>Discussion</title>
-      <p>The t-distribution comes to the rescue again, compensating for the underestimation in the variability, and in most situations (moderate and large sample sizes) gives an adequate approximation to the exact randomization distribution. Note the applet reports 17.56 as the degrees of freedom. This comes from the Welch-Satterthwaite approximation because the exact degrees of freedom are unknown in this case.</p>
-      
-      <p>We will consider the t distribution to be a reasonable approximation for the randomization distribution of the t statistic as long as either (similar to what you witnessed in Investigation 4.2):</p>
-      <ul>
-        <li><p>The data in both groups are symmetric and bell-shaped. When this is the case, we have evidence that the <q>treatment populations</q> are normally distributed. When this is true, the randomization distribution of the differences in group means will also follow a normal distribution.</p></li>
-        <li><p>OR The two sample sizes are large. Typically, the sample sizes can be as small as 5, especially if the two groups have similar sample sizes and similar distribution shapes, but conventionally 20 is used as cut-off for how large each sample should be to use this approximation. Examine graphs of your data first. If the sample distributions are not symmetric or have unusual observations, you will want larger sample sizes.</p></li>
-      </ul>
-      
-      <p>In summary, we will often apply the same two-sample t-procedures to both randomized experiments and to independent random samples. The distinction between these two sources of randomness will be most important in drawing your final conclusions (e.g., causation, generalizability). The advantage to the t-procedures over the exact randomization distribution is convenience, especially in calculating a confidence interval.</p>
-      
-      <p>For more information on the Welch-Satterthwaite approach, see <url href="https://www.rossmanchance.com/iscam3/glossary_files/Satterthwaite.htm">Welch-Satterthwaite approximation</url>.</p>
-    </assemblage>
+    <p><alert>Discussion:</alert> The <em>t</em>-distribution comes to the rescue again, compensating for the underestimation in the variability, and in most situations (moderate and large sample sizes) gives an adequate approximation to the exact randomization distribution. Note the applet reports 17.56 as the degrees of freedom. This comes from the <url href="https://www.rossmanchance.com/iscam3/glossary_files/Satterthwaite.htm">Welch-Satterthwaite approximation</url> because the exact degrees of freedom are unknown in this case.</p>
+    
+    <p>We will consider the <em>t</em> distribution to be a reasonable approximation for the randomization distribution of the <em>t</em> statistic as long as either (similar to what you witnessed in Investigation 4.2):</p>
+    <ul>
+      <li><p>The data in both groups are symmetric and bell-shaped. When this is the case, we have evidence that the <q>treatment populations</q> are normally distributed. When this is true, the randomization distribution of the differences in group means will also follow a normal distribution.</p></li>
+      <li><p>OR The two sample sizes are large. Typically, the sample sizes can be as small as 5, especially if the two groups have similar sample sizes and similar distribution shapes, but conventionally 20 is used as cut-off for how large each sample should be to use this approximation. Examine graphs of your data first. If the sample distributions are not symmetric or have unusual observations, you will want larger sample sizes.</p></li>
+    </ul>
+    
+    <p>In summary, we will often apply the same two-sample <em>t</em>-procedures to both randomized experiments and to independent random samples. The distinction between these two sources of randomness will be most important in drawing your final conclusions (e.g., causation, generalizability). The advantage to the <em>t</em>-procedures over the exact randomization distribution is convenience, especially in calculating a confidence interval.</p>
   </subsection>
   
   <subsection xml:id="inv-4-5-confidence-interval">
@@ -110,15 +145,18 @@
     <exercise xml:id="inv4-5-h" label="I4.5.8">
       <title>Interpret Confidence Interval</title>
       <statement>
-        <p>Using the 95% t-confidence interval <m>(\bar{x}_{\text{unres}} - \bar{x}_{\text{depr}}) \pm t^* \sqrt{\frac{s_{\text{unres}}^2}{n_{\text{unres}}} + \frac{s_{\text{depr}}^2}{n_{\text{depr}}}}</m>, we find (3.44, 28.40). Write a one-sentence interpretation of this interval in context, being especially clear how you are defining the parameter for this randomized experiment.</p>
+        <p>Using the 95% <em>t</em>-confidence interval <m>(\bar{x}_{\text{unres}} - \bar{x}_{\text{depr}}) \pm t^* \sqrt{\frac{s_{\text{unres}}^2}{n_{\text{unres}}} + \frac{s_{\text{depr}}^2}{n_{\text{depr}}}}</m>, we find (3.44, 28.40). Write a one-sentence interpretation of this interval in context, being especially clear how you are defining the parameter for this randomized experiment.</p>
       </statement>
+      <solution>
+        <p>We are 95% confident the long-run average improvement scores for those who are not sleep deprived are between 3.44 and 28.40 ms larger than for those who are sleep deprived.</p>
+      </solution>
       <response/>
     </exercise>
   </subsection>
   
   <assemblage xml:id="study-conclusions-4-5">
     <title>Study Conclusions</title>
-    <p>The approximate p-value from the (unpooled, independent samples) two-sample t-test (0.0076, df = 17.56) also provides very strong evidence that the observed difference between the two groups did not arise by chance alone. Therefore, if we were to perform unlimited administrations of the same training and reaction time test under the exact same conditions, we have convincing evidence that the long-run mean of all improvement scores that an individual would have under sleep deprivation is lower, three days later, than the theoretical mean of all improvement scores that an individual would have with unrestricted sleep (i.e., <m>\mu_{\text{sleepdeprived}} &lt; \mu_{\text{unrestricted}}</m>). We are 95% confident that the long-run mean improvement under the <q>no restriction</q> treatment is 3.44 to 28.40 ms faster that the long-run mean improvement under the <q>sleep deprivation</q> treatment. However, we still need to worry about what larger population these individuals represent.</p>
+    <p>The approximate <em>p</em>-value from the (unpooled, independent samples) two-sample <em>t</em>-test (0.0076, df = 17.56) also provides very strong evidence that the observed difference between the two groups did not arise by chance alone. Therefore, if we were to perform unlimited administrations of the same training and reaction time test under the exact same conditions, we have convincing evidence that the long-run mean of all improvement scores that an individual would have under sleep deprivation is lower, three days later, than the theoretical mean of all improvement scores that an individual would have with unrestricted sleep (i.e., <m>\mu_{\text{sleepdeprived}} &lt; \mu_{\text{unrestricted}}</m>). We are 95% confident that the long-run mean improvement under the <q>no restriction</q> treatment is 3.44 to 28.40 ms faster that the long-run mean improvement under the <q>sleep deprivation</q> treatment. However, we still need to worry about what larger population these individuals represent.</p>
   </assemblage>
   
   <subsection xml:id="practice-4-5">
@@ -129,31 +167,42 @@
     <exercise xml:id="PP4-5-a" label="PP4.5.1">
       <title>Improving Randomization</title>
       <statement>
-        <p>Explain how the randomization in this study could be improved (in principle, even if difficult in practice, keeping in mind the goal of random assignment in general).</p>
+        <p>Could the randomization in this study be improved (in principle, even if difficult in practice)?</p>
+      </statement>
+      <choices randomize="no">
+        <choice correct="yes">
+          <statement><p>Yes</p></statement>
+        </choice>
+        <choice>
+          <statement><p>No</p></statement>
+        </choice>
+      </choices>
+      <response/>
+      <statement>
+        <p>Explain: <var width="60"/></p>
       </statement>
       <response/>
     </exercise>
     
     <p>The following summary statistics pertain to the reports of television watching at the conclusion of the study:</p>
     <table>
-      <title>Television Viewing Study Summary Statistics</title>
-      <tabular>
-        <row header="yes">
-          <cell>Follow-up</cell>
-          <cell>Sample size</cell>
-          <cell>Sample mean</cell>
+      <tabular halign="center" top="medium" bottom="medium" left="medium" right="medium">
+        <row header="yes" bottom="medium">
+          <cell right="medium">Follow-up</cell>
+          <cell right="medium">Sample size</cell>
+          <cell right="medium">Sample mean</cell>
           <cell>Sample SD</cell>
         </row>
-        <row>
-          <cell>Control group</cell>
-          <cell><m>n_1 = 103</m></cell>
-          <cell><m>\bar{x}_1 = 14.46</m></cell>
+        <row bottom="medium">
+          <cell right="medium">Control group</cell>
+          <cell right="medium"><m>n_1 = 103</m></cell>
+          <cell right="medium"><m>\bar{x}_1 = 14.46</m></cell>
           <cell><m>s_1 = 13.82</m></cell>
         </row>
         <row>
-          <cell>Intervention group</cell>
-          <cell><m>n_2 = 95</m></cell>
-          <cell><m>\bar{x}_2 = 8.80</m></cell>
+          <cell right="medium">Intervention group</cell>
+          <cell right="medium"><m>n_2 = 95</m></cell>
+          <cell right="medium"><m>\bar{x}_2 = 8.80</m></cell>
           <cell><m>s_2 = 10.41</m></cell>
         </row>
       </tabular>
@@ -168,9 +217,9 @@
     </exercise>
     
     <exercise xml:id="PP4-5-c" label="PP4.5.3">
-      <title>Two-Sample t-Test</title>
+      <title>Two-Sample <em>t</em>-Test</title>
       <statement>
-        <p>Carry out a two-sample t-test. Include your output (indicating how found) and provide a one-sentence interpretation of the p-value in context (make sure you address the statistic, the source of the randomness in the study, and what you mean by <q>more extreme</q>).</p>
+        <p>Carry out a two-sample <em>t</em>-test. Include your output (indicating how found) and provide a one-sentence interpretation of the <em>p</em>-value in context (make sure you address the statistic, the source of the randomness in the study, and what you mean by <q>more extreme</q>).</p>
       </statement>
       <response/>
     </exercise>
@@ -186,7 +235,7 @@
     <exercise xml:id="PP4-5-e" label="PP4.5.5">
       <title>Validity Despite Nonnormality</title>
       <statement>
-        <p>The population distributions are likely skewed (bounded below by zero, SD similar to mean). Explain why the nonnormality of these distributions does not hinder the validity of using this t-test procedure.</p>
+        <p>The population distributions are likely skewed (bounded below by zero, SD similar to mean). Explain why the nonnormality of these distributions does not hinder the validity of using this <em>t</em>-test procedure.</p>
       </statement>
       <response/>
     </exercise>
