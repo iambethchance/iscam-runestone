@@ -7,7 +7,7 @@
       <stack>
         <p>The 2024 movie <em>Twisters</em> mentions how injecting silver iodide into clouds can convert atmospheric moisture into rain. Scientists have long considered this for increasing rainfall in drought regions. In one study, researchers in southern Florida explored whether injecting silver iodide into cumulus clouds would lead to increased rainfall. </p>
       </stack>
-      <image source="images/Inv4.7intro.png">
+      <image source="images/Inv4.7intro.jpg">
         <description>Cloud seeding aircraft</description>
       </image>
     </sidebyside>
@@ -63,14 +63,6 @@
   
   <p>Below are graphical displays and summary statistics for these two distributions:</p>
   
-  <image source="images/Inv4.7fig1.png" width="80%">
-    <description>Histogram and boxplot of rainfall by treatment</description>
-  </image>
-  
-  <image source="images/Inv4.7fig2.png" width="80%">
-    <description>Dotplot of rainfall by treatment</description>
-  </image>
-  
   <tabular halign="center" top="medium" bottom="medium" left="medium" right="medium">
     <row header="yes" bottom="medium">
       <cell right="medium">treatment</cell>
@@ -120,9 +112,7 @@
     </statement>
     <solution>
       <p>There does appear to be a tendency for the seeded clouds to have more rainfall than the unseeded clouds. The dotplot is shifted slightly to the right of the dotplot for the unseeded clouds and all five numbers in the five number summary are larger for the seeded clouds.</p>
-      <image source="images/Inv4.7solc.png" width="80%">
-        <description>Dotplots of rainfall amounts by treatment</description>
-      </image>
+
       <p>Difference in means: <m>442 - 164.6 = 277.4</m> acre-feet</p>
       <p>Difference in medians: <m>222 - 44.2 = 177.8</m> acre-feet</p>
     </solution>
@@ -147,8 +137,11 @@
     </statement>
     <solution>
       <p>Using technology, the two-sample <em>t</em>-test gives a two-sided p-value = 0.054. We have moderate evidence of a difference in the mean rainfall for these two treatments. The one-sided p-value can be found by taking <m>0.054/2 = 0.027</m> because the observed difference is in the conjectured direction. We have strong evidence that, on average, seeded clouds have more rainfall than unseeded clouds.</p>
-      <image source="images/Inv4.7sole.png" width="70%">
-        <description>Two-sample t-test output for original rainfall data</description>
+      <image source="images/Inv4.7solseR.png" width="70%">
+        <description>Two-sample t-test output for original rainfall data (R)</description>
+      </image>
+      <image source="images/Inv4.7solseJMP.png" width="70%">
+        <description>Two-sample t-test output for original rainfall data (JMP)</description>
       </image>
     </solution>
     <response/>
@@ -176,7 +169,7 @@
     </statement>
     <solution>
       <p>The observed difference in medians is <m>-177.4</m> (unseeded minus seeded, or <m>177.4</m> for seeded minus unseeded). Using simulation (e.g., Comparing Groups Quantitative applet), the p-value is approximately 0.009. This provides strong evidence that cloud seeding increases the median rainfall amount.</p>
-      <image source="images/Inv4.7solg.png" width="70%">
+      <image source="images/Inv4.7solsg.jpg" width="70%">
         <description>Randomization distribution for difference in medians</description>
       </image>
     </solution>
@@ -225,8 +218,11 @@
     </statement>
     <solution>
       <p>Yes, both distributions are more symmetric (skewness values much closer to zero) and the variability is more similar between the two distributions (both SDs around 1.6). There is still evidence of a positive shift in rainfall amounts for the seeded clouds.</p>
-      <image source="images/Inv4.7solj.png" width="80%">
-        <description>Dotplots of log-transformed rainfall amounts by treatment</description>
+      <image source="images/Inv4.7solsjR.jpg" width="80%">
+        <description>Dotplots of log-transformed rainfall amounts by treatment (R)</description>
+      </image>
+      <image source="images/Inv4.7solsjJMP.jpg" width="80%">
+        <description>Dotplots of log-transformed rainfall amounts by treatment (JMP)</description>
       </image>
     </solution>
     <response/>
@@ -250,8 +246,11 @@
     </statement>
     <solution>
       <p>Using two-sample <em>t</em>-procedures on the log-transformed data gives a p-value of approximately 0.007 (one-sided) and a 95% confidence interval of approximately (0.24, 2.05) for the difference in mean log rainfall (seeded minus unseeded).</p>
-      <image source="images/Inv4.7soll.png" width="70%">
+      <image source="images/Inv4.7solsl1.jpg" width="70%">
         <description>Two-sample t-test output for log-transformed rainfall data</description>
+      </image>
+      <image source="images/Inv4.7solsl2.jpg" width="70%">
+        <description>Additional output for log-transformed rainfall data</description>
       </image>
     </solution>
     <response/>
