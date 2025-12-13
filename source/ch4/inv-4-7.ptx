@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-4-7-cloud-seeding">
+  <title>Investigation 4.7: Cloud Seeding</title>
+  
+  <introduction>
+    <p>The 2024 movie <em>Twisters</em> mentions how injecting silver iodide into clouds can convert atmospheric moisture into rain. Scientists have long considered this for increasing rainfall in drought regions. In one study, researchers in southern Florida explored whether injecting silver iodide into cumulus clouds would lead to increased rainfall. On each of 52 days that were judged to be suitable for cloud seeding, a target cloud was identified and a plane flew through the target cloud in order to seed it. Randomization was used to determine whether or not to load a seeding mechanism and seed the target cloud with silver iodide on that day. Radar was used to measure the volume of rainfall from the selected cloud during the next 24 hours. The results below and in <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/CloudSeeding.txt">CloudSeeding.txt</url> (from Simpson, Olsen, and Eden, 1975) measure rainfall in volume units of acre-feet, <q>height</q> of rain across one acre.</p>
+    
+    <p><alert>Unseeded:</alert></p>
+    <p>1.0, 4.9, 4.9, 11.5, 17.3, 21.7, 24.4, 26.1, 26.3, 28.6, 29.0, 36.6, 41.1, 47.3, 68.5, 81.2, 87.0, 95.0, 147.8, 163.0, 244.3, 321.2, 345.5, 372.4, 830.1, 1202.6</p>
+    
+    <p><alert>Seeded:</alert></p>
+    <p>4.1, 7.7, 17.5, 31.4, 32.7, 40.6, 92.4, 115.3, 118.3, 119.0, 129.6, 198.6, 200.7, 242.5, 255.0, 274.7, 274.7, 302.8, 334.1, 430.0, 489.1, 703.4, 978.0, 1656.0, 1697.8, 2745.6</p>
+  </introduction>
+  
+  <p><alert>Study Design</alert></p>
+  
+  <exercise xml:id="inv4-7-a" label="I4.7.1">
+    <title>Identify Variables</title>
+    <statement>
+      <p>Identify the observational/experimental units, explanatory variable, and response variable.</p>
+      <p>Observational/experimental units: <var width="50"/></p>
+      <p>Explanatory: <var width="50"/></p>
+      <p>Response: <var width="50"/></p>
+    </statement>
+    <solution>
+      <p>Observational/experimental units: Days (or target clouds on those days)</p>
+      <p>Explanatory: Was the cloud seeded with silver iodide? (categorical, binary)</p>
+      <p>Response: Volume of rainfall in acre-feet (quantitative)</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-7-b" label="I4.7.2">
+    <title>Experiment or Observational Study</title>
+    <statement>
+      <p>Is this an experiment or an observational study? Explain.</p>
+    </statement>
+    <solution>
+      <p>This is an experiment because randomization was used to determine which clouds would be seeded with silver iodide. The researchers imposed the treatment.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <p><alert>Descriptive Statistics</alert></p>
+  
+  <p>Below are graphical displays and summary statistics for these two distributions:</p>
+  
+  <tabular halign="center" top="medium" bottom="medium" left="medium" right="medium">
+    <row header="yes" bottom="medium">
+      <cell right="medium">Variable</cell>
+      <cell right="medium">treatment</cell>
+      <cell right="medium">N</cell>
+      <cell right="medium">Mean</cell>
+      <cell right="medium">SE Mean</cell>
+      <cell right="medium">StDev</cell>
+      <cell right="medium">Minimum</cell>
+      <cell right="medium">Q1</cell>
+      <cell right="medium">Median</cell>
+      <cell right="medium">Q3</cell>
+      <cell right="medium">Maximum</cell>
+      <cell>Skewness</cell>
+    </row>
+    <row bottom="medium">
+      <cell halign="left" right="medium">rainfall</cell>
+      <cell halign="left" right="medium">seeded</cell>
+      <cell right="medium">26</cell>
+      <cell right="medium">442</cell>
+      <cell right="medium">128</cell>
+      <cell right="medium">651</cell>
+      <cell right="medium">4</cell>
+      <cell right="medium">79</cell>
+      <cell right="medium">222</cell>
+      <cell right="medium">445</cell>
+      <cell right="medium">2746</cell>
+      <cell>2.44</cell>
+    </row>
+    <row>
+      <cell halign="left" right="medium">rainfall</cell>
+      <cell halign="left" right="medium">unseeded</cell>
+      <cell right="medium">26</cell>
+      <cell right="medium">164.6</cell>
+      <cell right="medium">54.6</cell>
+      <cell right="medium">278.4</cell>
+      <cell right="medium">1.0</cell>
+      <cell right="medium">23.7</cell>
+      <cell right="medium">44.2</cell>
+      <cell right="medium">183.3</cell>
+      <cell right="medium">1202.6</cell>
+      <cell>2.79</cell>
+    </row>
+  </tabular>
+  
+  <exercise xml:id="inv4-7-c" label="I4.7.3">
+    <title>Preliminary Evidence</title>
+    <statement>
+      <p>Based on the graphs and summary statistics, is there preliminary evidence that cloud seeding is effective? (Include a calculation of the difference in the group means and in the group medians.)</p>
+    </statement>
+    <solution>
+      <p>Yes, there is preliminary evidence. The seeded clouds have higher mean rainfall (442 vs 164.6 acre-feet, difference = 277.4 acre-feet) and higher median rainfall (222 vs 44.2 acre-feet, difference = 177.8 acre-feet). Both distributions are highly right-skewed with large variability, especially in the seeded group.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-7-d" label="I4.7.4">
+    <title>Validity of Two-Sample <em>t</em>-Test</title>
+    <statement>
+      <p>Would it be reasonable to apply a two-sample <em>t</em>-test to assess the statistical significance of the difference in the sample means? Explain.</p>
+    </statement>
+    <solution>
+      <p>It may not be reasonable. Both distributions are highly right-skewed (skewness around 2.4-2.8), have outliers, and the variability is quite different between groups (SD of 651 for seeded vs 278.4 for unseeded). The sample sizes are moderate (<m>n = 26</m> each), but the severe skewness and unequal variances suggest the <em>t</em>-procedures may not be valid.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-7-e" label="I4.7.5">
+    <title>Conduct Two-Sample <em>t</em>-Test</title>
+    <statement>
+      <p>Regardless of your answer to <xref ref="inv4-7-d" text="custom">checkpoint 16.4.4</xref>, carry out a two-sample <em>t</em>-test and a confidence interval to determine the strength of evidence of higher average rainfall with the seeded clouds.</p>
+    </statement>
+    <solution>
+      <p>Using technology, the two-sample <em>t</em>-test gives <m>t \approx 2.06</m> with p-value <m>\approx 0.025</m> (one-sided) or <m>0.05</m> (two-sided). The 95% confidence interval is approximately <m>(-22, 577)</m> acre-feet. This provides evidence of a difference, but given the concerns about validity, we should consider alternative approaches.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-7-f" label="I4.7.6">
+    <title>Alternative Approaches</title>
+    <statement>
+      <p>But if we don't totally trust these results, what other approaches have you learned that could be applied here instead of a two-sample <em>t</em>-test to assess the statistical significance of the difference in group means?</p>
+    </statement>
+    <solution>
+      <p>We could use a randomization test (permutation test) to simulate the distribution of differences in group means under the null hypothesis of no treatment effect. We could also consider analyzing the difference in medians instead of means, or transform the data (e.g., log transformation) to make the distributions more symmetric.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <p><alert>Choice of Statistic</alert></p>
+  
+  <p>One approach to compensate for the skewness and outliers in these rainfall distributions is to analyze the difference in medians instead of the difference in means. Fortunately, an advantage of the randomization test is that it applies just as well, and just as easily, to comparing medians.</p>
+  
+  <exercise xml:id="inv4-7-g" label="I4.7.7">
+    <title>Randomization Test for Medians</title>
+    <statement>
+      <p>Modify the previous code from the Technology Detour in Investigation 4.4 (remember to load/attach the CloudSeeding.txt data, to match the sample sizes in the actual study, and to consider the difference in medians as the statistic), or use the <url href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm">Comparing Groups (Quantitative) applet</url>, to calculate an empirical p-value for the difference in medians for this study. [Hint: What is the observed difference?] Report the p-value and your conclusion about the effect of cloud seeding on median rainfall amounts.</p>
+    </statement>
+    <solution>
+      <p>The observed difference in medians is <m>222 - 44.2 = 177.8</m> acre-feet. Using simulation with 1000+ repetitions, the p-value is approximately 0.005-0.01. This provides strong evidence that cloud seeding increases the median rainfall amount.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-7-h" label="I4.7.8">
+    <title>Normal Model for Median Differences</title>
+    <statement>
+      <p>Would it be reasonable to model the randomization distribution for the difference in medians with a normal or <em>t</em>-distribution? Explain. What about creating a confidence interval using statistic ± 2SD? What would this interval tell you?</p>
+    </statement>
+    <solution>
+      <p>The randomization distribution for the difference in medians is less smooth and more discrete than for means, making a normal approximation less appropriate. A confidence interval using statistic ± 2SD could provide a rough estimate of plausible values for the difference in population medians, but it may not be as reliable as with means.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <p>Although we can certainly use simulation this way to approximate the p-value, it is not feasible to find the <q>exact</q> randomization distribution for a data set of this size. We also notice that the distribution of the difference in medians has less <q>smoothness</q> than the distribution of the differences in means, as certain combinations values are just not possible from a discrete distribution.</p>
+  
+  <p><alert>Data Transformation Approach</alert></p>
+  
+  <p>Another approach you saw earlier is to transform the data first.</p>
+  
+  <exercise xml:id="inv4-7-i" label="I4.7.9">
+    <title>Log Transformation</title>
+    <statement>
+      <p>Determine the (natural) logged rainfall values.</p>
+      <ul>
+        <li><p>In R: <c>lnrainfall = log(rainfall)</c></p></li>
+        <li><p>In JMP: Create a new column with a formula for <c>log(rainfall)</c></p></li>
+      </ul>
+    </statement>
+    <solution>
+      <p>Apply the natural log transformation to all rainfall values in both groups.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-7-j" label="I4.7.10">
+    <title>Examine Transformed Data</title>
+    <statement>
+      <p>Create dotplots and/or histograms of ln rainfall amounts by treatment.</p>
+      <p>Would you consider the shapes of the distributions to be more symmetric than the original data?</p>
+      <p>Would you consider the variability to now be more similar between the two groups?</p>
+      <p>Is there still evidence of a positive shift in (ln) rainfall amounts for the seeded clouds?</p>
+    </statement>
+    <solution>
+      <p>Yes, the log-transformed distributions are much more symmetric (approximately normal) than the original data.</p>
+      <p>Yes, the standard deviations of the log-transformed data are more similar between the two groups.</p>
+      <p>Yes, there is still clear evidence of a positive shift in the seeded group compared to the unseeded group.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-7-k" label="I4.7.11">
+    <title>Validity After Transformation</title>
+    <statement>
+      <p>Would you consider it more reasonable to apply two-sample <em>t</em>-procedures to the transformed rainfall amounts than the original data? Explain.</p>
+    </statement>
+    <solution>
+      <p>Yes, the log transformation addresses both major concerns: the distributions are now more symmetric and the variabilities are more similar. This makes the <em>t</em>-procedures much more valid and reliable.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-7-l" label="I4.7.12">
+    <title>Analysis of Transformed Data</title>
+    <statement>
+      <p>Calculate the one-sided p-value and the (two-sided) 95% confidence interval based on these data. [Hint: Pay attention to the direction of subtraction by the technology.]</p>
+    </statement>
+    <solution>
+      <p>Using two-sample <em>t</em>-procedures on the log-transformed data typically gives a one-sided p-value around 0.003-0.005 and a 95% confidence interval of approximately (0.26, 2.04) for the difference in mean log rainfall (seeded minus unseeded).</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-7-m" label="I4.7.13">
+    <title>Compare Results</title>
+    <statement>
+      <p>How does this p-value compare to what you found from simulating a randomization distribution for the difference in medians? What conclusion would you draw from this p-value?</p>
+    </statement>
+    <solution>
+      <p>The p-values are similar (both around 0.003-0.01), providing consistent strong evidence against the null hypothesis. We have convincing evidence that cloud seeding increases rainfall amounts.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <p><alert>Discussion:</alert> It is fairly straight-forward to <q>back-transform</q> our transformation by exponentiating the endpoints of the interval. But we will again focus on the median rather than the mean as the transformed parameter. Also exponentiating an interval for a difference really gives us a ratio in the original scaling <m>[e^{x_1-x_2} = e^{x_1}/e^{x_2}]</m>. In other words, if group 1 is 2 points higher than group 2 on the log scale <m>(x_1 = x_2 + 2)</m>, then group 1 is <m>e^{x_2+2} = e^{x_2}(e^2)</m> or 7.4 times higher in the original scale (or 100 times larger on the log base 10 scale). Therefore, once we apply the back-transformation, we really have an interval of plausible values for the multiplicative change in the median of the response variable.</p>
+  
+  <exercise xml:id="inv4-7-n" label="I4.7.14">
+    <title>Back-Transformation</title>
+    <statement>
+      <p>Perform the back-transformations and interpret the new confidence interval in terms of a ratio of treatment medians.</p>
+    </statement>
+    <solution>
+      <p>Exponentiating the endpoints of the confidence interval (0.26, 2.04) gives <m>(e^{0.26}, e^{2.04}) \approx (1.3, 7.7)</m>. We are 95% confident that the median volume of rainfall on days when clouds are seeded is 1.3 to 7.7 times larger than when clouds are not seeded.</p>
+    </solution>
+    <response/>
+  </exercise>
+  
+  <assemblage xml:id="study-conclusions-4-7">
+    <title>Study Conclusions</title>
+    <p>The rainfall distributions reveal that the rainfall amounts from the seeded clouds have a larger mean and larger variability than from unseeded clouds, and both groups have very right-skewed distributions of rainfall with several high outliers. As both the centers and spreads change, perhaps the treatment effect is more of a percentage change than a simple shift. A two-sample <em>t</em>-test may not be valid for these data. We could consider a randomization test on the medians, but there is no theory-based confidence interval. This is a situation where a ln-transformation is likely to be helpful in rescaling the data so that the <em>t</em>-procedures are more valid. Examining graphs of the transformed data confirm that the variability is now more similar and both shapes are symmetric. The two-sample <em>t</em>-test applied to the ln-transformed data can thus be used as an approximation to the randomization test. Also, the confidence interval for the difference in the ln rainfall can be back-transformed to provide a statement about the multiplicative treatment effect of cloud seeding: We are 95% confident that the median volume of rainfall on days when clouds are seeded is 1.3 to 7.7 times larger when clouds are seeded as opposed to when they are not seeded. (Increasing from 164.59 to 441.98 acre-feet in the sample.) Because random assignment was used to assign the clouds to the seeding conditions, it is safe to interpret this as evidence that the seeding causes larger rainfall amounts on average.</p>
+    
+    <p>Although the transformation again gives us a comparison of medians, which is often preferable with skewed data and/or outliers, keep in mind, sometimes we really prefer the parameter to be a mean than a median, such as when you want to focus on the <q>total</q> amount (population mean × population size).</p>
+  </assemblage>
+  
+  <subsection xml:id="practice-4-7">
+    <title>Practice Problem 4.7</title>
+    
+    <exercise xml:id="PP4-7-a" label="PP4.7.1">
+      <title>Compare Median Analyses to <em>t</em>-Test</title>
+      <statement>
+        <p>Compare these two analyses using medians to a two-sample <em>t</em>-test and a two-sample <em>t</em>-confidence interval on the original data.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="PP4-7-b" label="PP4.7.2">
+      <title>Randomization Distribution for Means</title>
+      <statement>
+        <p>Examine the randomization distribution for the difference in means (and/or <em>t</em>-statistic). Do the <em>t</em> procedures end up being a reasonable approach for these data?</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+  
+</section>
