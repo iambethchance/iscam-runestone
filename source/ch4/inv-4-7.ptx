@@ -23,9 +23,9 @@
       <p>Response: <var width="50"/></p>
     </statement>
     <solution>
-      <p>Observational/experimental units: Days (or target clouds on those days)</p>
-      <p>Explanatory: Was the cloud seeded with silver iodide? (categorical, binary)</p>
-      <p>Response: Volume of rainfall in acre-feet (quantitative)</p>
+      <p>Observational/experimental units: The 52 clouds (or days)</p>
+      <p>Explanatory: Was the cloud seeded? (binary categorical)</p>
+      <p>Response: How many acre-feet of rain was measured from the cloud? (quantitative)</p>
     </solution>
     <response/>
   </exercise>
@@ -36,7 +36,7 @@
       <p>Is this an experiment or an observational study? Explain.</p>
     </statement>
     <solution>
-      <p>This is an experiment because randomization was used to determine which clouds would be seeded with silver iodide. The researchers imposed the treatment.</p>
+      <p>This is an experiment because the researchers decided which clouds were seeded. This was done with random assignment and presumably the pilots were blind to whether or not they were seeding a cloud and the person evaluating the rainfall was blind to whether or not that cloud had been seeded.</p>
     </solution>
     <response/>
   </exercise>
@@ -96,7 +96,9 @@
       <p>Based on the graphs and summary statistics, is there preliminary evidence that cloud seeding is effective? (Include a calculation of the difference in the group means and in the group medians.)</p>
     </statement>
     <solution>
-      <p>Yes, there is preliminary evidence. The seeded clouds have higher mean rainfall (442 vs 164.6 acre-feet, difference = 277.4 acre-feet) and higher median rainfall (222 vs 44.2 acre-feet, difference = 177.8 acre-feet). Both distributions are highly right-skewed with large variability, especially in the seeded group.</p>
+      <p>There does appear to be a tendency for the seeded clouds to have more rainfall than the unseeded clouds. The dotplot is shifted slightly to the right of the dotplot for the unseeded clouds and all five numbers in the five number summary are larger for the seeded clouds.</p>
+      <p>Difference in means: <m>442 - 164.6 = 277.4</m> acre-feet</p>
+      <p>Difference in medians: <m>222 - 44.2 = 177.8</m> acre-feet</p>
     </solution>
     <response/>
   </exercise>
@@ -107,7 +109,7 @@
       <p>Would it be reasonable to apply a two-sample <em>t</em>-test to assess the statistical significance of the difference in the sample means? Explain.</p>
     </statement>
     <solution>
-      <p>It may not be reasonable. Both distributions are highly right-skewed (skewness around 2.4-2.8), have outliers, and the variability is quite different between groups (SD of 651 for seeded vs 278.4 for unseeded). The sample sizes are moderate (<m>n = 26</m> each), but the severe skewness and unequal variances suggest the <em>t</em>-procedures may not be valid.</p>
+      <p>Both distributions are strongly skewed to the right (skewness values 2.44 and 2.79) and the sample sizes are not huge, so we might be hesitant to apply the two-sample <em>t</em>-test to these data.</p>
     </solution>
     <response/>
   </exercise>
@@ -118,7 +120,7 @@
       <p>Regardless of your answer to <xref ref="inv4-7-d" text="custom">checkpoint 16.4.4</xref>, carry out a two-sample <em>t</em>-test and a confidence interval to determine the strength of evidence of higher average rainfall with the seeded clouds.</p>
     </statement>
     <solution>
-      <p>Using technology, the two-sample <em>t</em>-test gives <m>t \approx 2.06</m> with p-value <m>\approx 0.025</m> (one-sided) or <m>0.05</m> (two-sided). The 95% confidence interval is approximately <m>(-22, 577)</m> acre-feet. This provides evidence of a difference, but given the concerns about validity, we should consider alternative approaches.</p>
+      <p>Using technology, the two-sample <em>t</em>-test gives a two-sided p-value = 0.054. We have moderate evidence of a difference in the mean rainfall for these two treatments. The one-sided p-value can be found by taking <m>0.054/2 = 0.027</m> because the observed difference is in the conjectured direction. We have strong evidence that, on average, seeded clouds have more rainfall than unseeded clouds.</p>
     </solution>
     <response/>
   </exercise>
@@ -129,7 +131,7 @@
       <p>But if we don't totally trust these results, what other approaches have you learned that could be applied here instead of a two-sample <em>t</em>-test to assess the statistical significance of the difference in group means?</p>
     </statement>
     <solution>
-      <p>We could use a randomization test (permutation test) to simulate the distribution of differences in group means under the null hypothesis of no treatment effect. We could also consider analyzing the difference in medians instead of means, or transform the data (e.g., log transformation) to make the distributions more symmetric.</p>
+      <p>Simulation - we can use the random assignment applet to approximate the p-value. We could also consider analyzing the difference in medians instead of means, or transform the data (e.g., log transformation) to make the distributions more symmetric.</p>
     </solution>
     <response/>
   </exercise>
@@ -144,7 +146,7 @@
       <p>Modify the previous code from the Technology Detour in Investigation 4.4 (remember to load/attach the CloudSeeding.txt data, to match the sample sizes in the actual study, and to consider the difference in medians as the statistic), or use the <url href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm">Comparing Groups (Quantitative) applet</url>, to calculate an empirical p-value for the difference in medians for this study. [Hint: What is the observed difference?] Report the p-value and your conclusion about the effect of cloud seeding on median rainfall amounts.</p>
     </statement>
     <solution>
-      <p>The observed difference in medians is <m>222 - 44.2 = 177.8</m> acre-feet. Using simulation with 1000+ repetitions, the p-value is approximately 0.005-0.01. This provides strong evidence that cloud seeding increases the median rainfall amount.</p>
+      <p>The observed difference in medians is <m>-177.4</m> (unseeded minus seeded, or <m>177.4</m> for seeded minus unseeded). Using simulation (e.g., Comparing Groups Quantitative applet), the p-value is approximately 0.009. This provides strong evidence that cloud seeding increases the median rainfall amount.</p>
     </solution>
     <response/>
   </exercise>
@@ -155,7 +157,7 @@
       <p>Would it be reasonable to model the randomization distribution for the difference in medians with a normal or <em>t</em>-distribution? Explain. What about creating a confidence interval using statistic ± 2SD? What would this interval tell you?</p>
     </statement>
     <solution>
-      <p>The randomization distribution for the difference in medians is less smooth and more discrete than for means, making a normal approximation less appropriate. A confidence interval using statistic ± 2SD could provide a rough estimate of plausible values for the difference in population medians, but it may not be as reliable as with means.</p>
+      <p>The distribution looks a little strange, not nearly as nicely bell-shaped and symmetric (and filled in) as the distribution of the differences in sample means. It would probably not be appropriate to model with a normal or <em>t</em>-distribution.</p>
     </solution>
     <response/>
   </exercise>
@@ -190,9 +192,7 @@
       <p>Is there still evidence of a positive shift in (ln) rainfall amounts for the seeded clouds?</p>
     </statement>
     <solution>
-      <p>Yes, the log-transformed distributions are much more symmetric (approximately normal) than the original data.</p>
-      <p>Yes, the standard deviations of the log-transformed data are more similar between the two groups.</p>
-      <p>Yes, there is still clear evidence of a positive shift in the seeded group compared to the unseeded group.</p>
+      <p>Yes, both distributions are more symmetric (skewness values much closer to zero) and the variability is more similar between the two distributions (both SDs around 1.6). There is still evidence of a positive shift in rainfall amounts for the seeded clouds.</p>
     </solution>
     <response/>
   </exercise>
@@ -203,7 +203,7 @@
       <p>Would you consider it more reasonable to apply two-sample <em>t</em>-procedures to the transformed rainfall amounts than the original data? Explain.</p>
     </statement>
     <solution>
-      <p>Yes, the log transformation addresses both major concerns: the distributions are now more symmetric and the variabilities are more similar. This makes the <em>t</em>-procedures much more valid and reliable.</p>
+      <p>Yes, now we have symmetric data without huge outliers. The variability is similar in the two groups and the seeded distribution is shifted a bit to higher values. These sample distributions appear symmetric enough to justify applying the two-sample <em>t</em>-procedures.</p>
     </solution>
     <response/>
   </exercise>
@@ -214,7 +214,7 @@
       <p>Calculate the one-sided p-value and the (two-sided) 95% confidence interval based on these data. [Hint: Pay attention to the direction of subtraction by the technology.]</p>
     </statement>
     <solution>
-      <p>Using two-sample <em>t</em>-procedures on the log-transformed data typically gives a one-sided p-value around 0.003-0.005 and a 95% confidence interval of approximately (0.26, 2.04) for the difference in mean log rainfall (seeded minus unseeded).</p>
+      <p>Using two-sample <em>t</em>-procedures on the log-transformed data gives a p-value of approximately 0.007 (one-sided) and a 95% confidence interval of approximately (0.24, 2.05) for the difference in mean log rainfall (seeded minus unseeded).</p>
     </solution>
     <response/>
   </exercise>
@@ -225,7 +225,7 @@
       <p>How does this p-value compare to what you found from simulating a randomization distribution for the difference in medians? What conclusion would you draw from this p-value?</p>
     </statement>
     <solution>
-      <p>The p-values are similar (both around 0.003-0.01), providing consistent strong evidence against the null hypothesis. We have convincing evidence that cloud seeding increases rainfall amounts.</p>
+      <p>This p-value (0.007) is a little smaller than the empirical p-value (0.009) from the randomization test on medians. We would consider this p-value very strong evidence against the null hypothesis of no treatment effect.</p>
     </solution>
     <response/>
   </exercise>
@@ -238,7 +238,9 @@
       <p>Perform the back-transformations and interpret the new confidence interval in terms of a ratio of treatment medians.</p>
     </statement>
     <solution>
-      <p>Exponentiating the endpoints of the confidence interval (0.26, 2.04) gives <m>(e^{0.26}, e^{2.04}) \approx (1.3, 7.7)</m>. We are 95% confident that the median volume of rainfall on days when clouds are seeded is 1.3 to 7.7 times larger than when clouds are not seeded.</p>
+      <p>The confidence interval (0.2409, 2.0471) is for the difference in the population means of the logged rainfall volumes.</p>
+      <p>Back-transforming: <m>e^{0.24} = 1.27</m>, <m>e^{2.047} = 7.745</m></p>
+      <p>We are 95% confident that the underlying treatment median is 1.27 to 7.745 times greater for seeded clouds compared to unseeded clouds.</p>
     </solution>
     <response/>
   </exercise>
