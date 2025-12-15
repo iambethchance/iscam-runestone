@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-4-11-smoke-alarms">
+  <title>Investigation 4.11: Smoke Alarms</title>
+
+  <introduction>
+    <p>A study published in the journal Pediatrics (Smith et al., 2006) addressed the important issue of how to awaken children during a house fire so they can escape safely. Researchers worked with a volunteer sample of 24 healthy children aged 6-12 by training them to perform a simulated self-rescue escape procedure when they heard an alarm. Researchers then compared the children's reactions to two kinds of alarms: a conventional smoke alarm and a personalized recording of the mother's voice saying the child's name and urging him or her to wake up. All 24 children were exposed to both kinds of alarms, with the order determined randomly.</p>
+    
+    <table>
+      <title>Children's Responses to Alarms</title>
+      <tabular>
+        <row header="yes">
+          <cell>Child #</cell>
+          <cell>Response to mother voice</cell>
+          <cell>Response to conventional</cell>
+          <cell>Child #</cell>
+          <cell>Response to mother voice</cell>
+          <cell>Response to conventional</cell>
+        </row>
+        <row><cell>1</cell><cell>wake</cell><cell>wake</cell><cell>13</cell><cell>wake</cell><cell>wake</cell></row>
+        <row><cell>2</cell><cell>wake</cell><cell>wake</cell><cell>14</cell><cell>wake</cell><cell>wake</cell></row>
+        <row><cell>3</cell><cell>wake</cell><cell>wake</cell><cell>15</cell><cell>wake</cell><cell>not</cell></row>
+        <row><cell>4</cell><cell>wake</cell><cell>wake</cell><cell>16</cell><cell>wake</cell><cell>not</cell></row>
+        <row><cell>5</cell><cell>wake</cell><cell>wake</cell><cell>17</cell><cell>wake</cell><cell>not</cell></row>
+        <row><cell>6</cell><cell>wake</cell><cell>wake</cell><cell>18</cell><cell>wake</cell><cell>not</cell></row>
+        <row><cell>7</cell><cell>wake</cell><cell>wake</cell><cell>19</cell><cell>wake</cell><cell>not</cell></row>
+        <row><cell>8</cell><cell>wake</cell><cell>wake</cell><cell>20</cell><cell>wake</cell><cell>not</cell></row>
+        <row><cell>9</cell><cell>wake</cell><cell>wake</cell><cell>21</cell><cell>wake</cell><cell>not</cell></row>
+        <row><cell>10</cell><cell>wake</cell><cell>wake</cell><cell>22</cell><cell>wake</cell><cell>not</cell></row>
+        <row><cell>11</cell><cell>wake</cell><cell>wake</cell><cell>23</cell><cell>wake</cell><cell>not</cell></row>
+        <row><cell>12</cell><cell>wake</cell><cell>wake</cell><cell>24</cell><cell>not</cell><cell>not</cell></row>
+      </tabular>
+    </table>
+  </introduction>
+  
+  <exercise xml:id="inv4-11-a" label="I4.11.1">
+    <title>Identify Study Components</title>
+    <statement>
+      <p>Identify the observational units, explanatory variable, and response variable. Are the variables quantitative or categorical? Is this an observational study or an experiment? If this is an experiment, how was randomization used/completely randomized or paired?</p>
+      <p>Observational units: <var width="40"/></p>
+      <p>Explanatory variable: <var width="40"/> Type: <var width="20"/></p>
+      <p>Response variable: <var width="40"/> Type: <var width="20"/></p>
+      <p>Type of Study: <var width="40"/></p>
+      <p>Randomness: <var width="60"/></p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-11-b" label="I4.11.2">
+    <title>Initial Analysis</title>
+    <statement>
+      <p>What proportion of children woke up to the conventional alarm and what proportion woke up to the mother's voice? Does this provide preliminary evidence that the mother's voice alarm is more effective? State the hypotheses of interest. Could you make a two-way table for these data? Could we carry out Fisher's Exact Test or a two-sample <em>z</em>-test to assess statistical significance?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <p>The initial analysis reveals the proportion waking to the mother's voice was larger than the proportion that woke to the conventional alarm, but we can't consider these two independent samples – it's the same children! This is again a matched pairs design, but with a categorical response.</p>
+  
+  <exercise xml:id="inv4-11-c" label="I4.11.3">
+    <title>Simulation Consideration</title>
+    <statement>
+      <p>Consider the data table. Suppose we conducted a simulation analysis by shuffling the response variable outcomes back to the explanatory variable outcomes. What's going to happen in many of the cases?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <p>As before, with a matched pairs design we will focus on the differences in responses. First, we need an appropriate way to organize the data. We can do this with a two-way table looking at the two variables measured on each children – whether or not woke up to mom's voice and whether or not woke up to the conventional alarm.</p>
+  
+  <exercise xml:id="inv4-11-d" label="I4.11.4">
+    <title>Create Two-Way Table</title>
+    <statement>
+      <p>Complete the following table. [Hint: what should your table total be?]</p>
+      <table>
+        <tabular>
+          <row header="yes">
+            <cell></cell>
+            <cell>Awakened to conventional alarm</cell>
+            <cell>Did not awaken to conventional alarm</cell>
+            <cell>Row total</cell>
+          </row>
+          <row>
+            <cell>Awakened to mother's voice</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+          <row>
+            <cell>Did not awaken to mother's voice</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+          <row>
+            <cell>Column total</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+        </tabular>
+      </table>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-11-e" label="I4.11.5">
+    <title>Non-Ties</title>
+    <statement>
+      <p>How many children responded differently to the two alarms? (We will treat these "non-ties" as our sample size.)</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-11-f" label="I4.11.6">
+    <title>Mother's Voice Only</title>
+    <statement>
+      <p>Of the children you identified in (e), how many woke to the mom's voice alarm only? What proportion of the children you identified in (e) is this?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-11-g" label="I4.11.7">
+    <title>Expected Success Rate</title>
+    <statement>
+      <p>Suppose there was no difference in the effectiveness of the two alarms in the long-run. If a child does react differently to the two alarms (wakes to one but not the other), how often would you expect the "success alarm" to be the mother's voice in the long run?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-11-h" label="I4.11.8">
+    <title>State Hypotheses</title>
+    <statement>
+      <p>Let <m>\pi</m> represent the probability of waking to the mother's voice alarm when a child wakes to only one of the two alarms. State appropriate null and alternative hypotheses in terms of <m>\pi</m> for deciding whether the mother's voice is the more effective alarm.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-11-i" label="I4.11.9">
+    <title>Statistical Test</title>
+    <statement>
+      <p>Use a method discussed previously in this text to assess whether there is statistically significant evidence that the mother's voice is more effective than the conventional alarm. Be sure it is clear how you are finding the p-value (e.g., simulation, exact, theory-based?)</p>
+      <p>This test, using the binomial distribution to look at the distribution number of successes in the off-diagonal cells, is called <alert>McNemar's Test</alert>.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-11-j" label="I4.11.10">
+    <title>Study Conclusion</title>
+    <statement>
+      <p>Summarize your conclusion for this smoke alarm study, and explain the reasoning process by which it follows.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <assemblage>
+    <title>Study Conclusions</title>
+    <p>In this study, nine children reacted differently to the two alarms. If there were no effect from the type of alarm, we would expect half the children to respond to the mother's voice but not the conventional alarm and the other half of the children to respond to the conventional alarm but not the mother's voice. Instead, all 9 of the one-alarm children responded to the mother's voice but not the conventional alarm. This provides evidence that the mother's voice is more effective than the conventional alarm. To see whether this difference is statistically significant, we can calculate the binomial probability (assuming <m>n = 9</m> and <m>\pi = 0.5</m>) to determine the exact p-value <m>P(X \geq 9) = 0.00195</m>. (Or we could use simulation for one proportion. The sample size <m>n = 9</m> is too small to use a theory-based approach.) This provides strong evidence (p-value <m>&lt; 0.05</m>) that the observed result did not arise from the randomness in the process alone (which alarm was tested first). Because this was a randomized matched-pairs experiment, we will attribute this difference to the type of alarm. Keep in mind that this was a sample of volunteers and may not represent a larger population of children.</p>
+  </assemblage>
+  
+  <subsection xml:id="practice-4-11">
+    <title>Practice Problem 4.11</title>
+    
+    <introduction>
+      <p>Another aspect of this same study considered not just whether the child woke up but whether he/she successfully escaped from the house within 5 minutes of the alarm sounding. The article reports that 20 children escaped when they heard the mother's voice, and only 9 escaped when they heard the conventional tone.</p>
+    </introduction>
+    
+    <exercise xml:id="practice-4-11-1" label="P4.11.1">
+      <title>Additional Information Needed</title>
+      <statement>
+        <p>Describe what additional information you need before you can analyze the data as you did above.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-11-2" label="P4.11.2">
+      <title>Complete the Table</title>
+      <statement>
+        <p>Two children did not escape to either kind of alarm. Use this information to complete the following table:</p>
+        <table>
+          <tabular>
+            <row header="yes">
+              <cell></cell>
+              <cell>Escaped to conventional alarm</cell>
+              <cell>Did not escape to conventional alarm</cell>
+              <cell>Total</cell>
+            </row>
+            <row>
+              <cell>Escaped to mother's voice</cell>
+              <cell><var width="5"/></cell>
+              <cell><var width="5"/></cell>
+              <cell>20</cell>
+            </row>
+            <row>
+              <cell>Did not escape to mother's voice</cell>
+              <cell><var width="5"/></cell>
+              <cell><var width="5"/></cell>
+              <cell><var width="5"/></cell>
+            </row>
+            <row>
+              <cell>Total</cell>
+              <cell>9</cell>
+              <cell><var width="5"/></cell>
+              <cell>24</cell>
+            </row>
+          </tabular>
+        </table>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-11-3" label="P4.11.3">
+      <title>Simulation Analysis</title>
+      <statement>
+        <p>Conduct a simulation analysis (with the One Proportion Inference applet) of these data. Be sure to describe how you use the applet, and report an approximate p-value.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-11-4" label="P4.11.4">
+      <title>Exact P-value</title>
+      <statement>
+        <p>Use the binomial distribution to calculate the exact p-value for this test.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-11-5" label="P4.11.5">
+      <title>Conclusion for Escaping</title>
+      <statement>
+        <p>Summarize your conclusion from this "escaping within 5 minutes" aspect of the study, and explain the reasoning process behind your conclusion.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+  </subsection>
+  
+</section>
