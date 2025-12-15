@@ -5,13 +5,13 @@
   <introduction>
     <sidebyside widths="70% 25%" margins="0% 5%">
       <stack>
-        <p>The 2024 movie <em>Twisters</em> mentions how injecting silver iodide into clouds can convert atmospheric moisture into rain. Scientists have long considered this for increasing rainfall in drought regions. In one study, researchers in southern Florida explored whether injecting silver iodide into cumulus clouds would lead to increased rainfall. </p>
+        <p>The 2024 movie <em>Twisters</em> mentions how injecting silver iodide into clouds can convert atmospheric moisture into rain. Scientists have long considered this for increasing rainfall in drought regions. In one study, researchers in southern Florida explored whether injecting silver iodide into cumulus clouds would lead to increased rainfall. On each of 52 days that were judged to be suitable for cloud seeding, a target cloud was identified and a plane flew through the target cloud in order to seed it. Randomization was used to determine whether or not to load a seeding mechanism and seed the target cloud with silver iodide on that day. </p>
       </stack>
       <image source="images/Inv4.7intro.jpg">
         <description>Cloud seeding aircraft</description>
       </image>
     </sidebyside>
-<p>On each of 52 days that were judged to be suitable for cloud seeding, a target cloud was identified and a plane flew through the target cloud in order to seed it. Randomization was used to determine whether or not to load a seeding mechanism and seed the target cloud with silver iodide on that day. Radar was used to measure the volume of rainfall from the selected cloud during the next 24 hours. The results below and in <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/CloudSeeding.txt">CloudSeeding.txt</url> (from <url href="https://www.jstor.org/stable/1268346">Simpson, Olsen, and Eden, 1975</url>) measure rainfall in volume units of acre-feet, <q>height</q> of rain across one acre.</p>    
+<p>Radar was used to measure the volume of rainfall from the selected cloud during the next 24 hours. The results below and in <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/CloudSeeding.txt">CloudSeeding.txt</url> (from <url href="https://www.jstor.org/stable/1268346">Simpson, Olsen, and Eden, 1975</url>) measure rainfall in volume units of acre-feet, <q>height</q> of rain across one acre.</p>    
     <p><alert>Unseeded:</alert></p>
     <p>1.0, 4.9, 4.9, 11.5, 17.3, 21.7, 24.4, 26.1, 26.3, 28.6, 29.0, 36.6, 41.1, 47.3, 68.5, 81.2, 87.0, 95.0, 147.8, 163.0, 244.3, 321.2, 345.5, 372.4, 830.1, 1202.6</p>
     
@@ -41,16 +41,14 @@
     <title>Experiment or Observational Study</title>
     <statement>
       <p>Is this an experiment or an observational study?</p>
-    </statement>
-    <choices randomize="no">
-      <choice correct="yes">
-        <statement><p>Experiment</p></statement>
-      </choice>
-      <choice>
-        <statement><p>Observational study</p></statement>
-      </choice>
-    </choices>
-    <statement>
+      <choices randomize="no">
+        <choice correct="yes">
+          <statement><p>Experiment</p></statement>
+        </choice>
+        <choice>
+          <statement><p>Observational study</p></statement>
+        </choice>
+      </choices>
       <p>Explain: <var width="60"/></p>
     </statement>
     <solution>
@@ -146,8 +144,10 @@
     <solution>
       <p>Using technology, the two-sample <em>t</em>-test gives a two-sided p-value = 0.054. We have moderate evidence of a difference in the mean rainfall for these two treatments. The one-sided p-value can be found by taking <m>0.054/2 = 0.027</m> because the observed difference is in the conjectured direction. We have strong evidence that, on average, seeded clouds have more rainfall than unseeded clouds.</p>
       <image source="images/Inv4.7solseR.png" width="70%">
+      <em>R output:</em>
         <description>Two-sample t-test output for original rainfall data (R)</description>
       </image>
+      <em>JMP output:</em>
       <image source="images/Inv4.7solseJMP.png" width="70%">
         <description>Two-sample t-test output for original rainfall data (JMP)</description>
       </image>
@@ -155,10 +155,15 @@
     <response/>
   </exercise>
   
+  <aside>
+    <title>Applet</title>
+    <p><url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1">Theory-Based Inference</url></p>
+  </aside>
+  
   <exercise xml:id="inv4-7-f" label="I4.7.6">
     <title>Alternative Approaches</title>
     <statement>
-      <p>But if we don't totally trust these results, what other approaches have you learned that could be applied here instead of a two-sample <em>t</em>-test to assess the statistical significance of the difference in group means?</p>
+      <p>But if we don't totally trust these results, what other approaches have you learned that could be applied here instead of a two-sample <em>t</em>-test to assess the statistical significance of the difference in group means? (See <xref ref="inv-2-8-power-plants">Investigation 2.8</xref> for a similar situation.)</p>
     </statement>
     <solution>
       <p>Simulation - we can use the random assignment applet to approximate the p-value. We could also consider analyzing the difference in medians instead of means, or transform the data (e.g., log transformation) to make the distributions more symmetric.</p>
@@ -173,8 +178,11 @@
   <exercise xml:id="inv4-7-g" label="I4.7.7">
     <title>Randomization Test for Medians</title>
     <statement>
-      <p>Modify the previous code from the Technology Detour in Investigation 4.4 (remember to load/attach the CloudSeeding.txt data, to match the sample sizes in the actual study, and to consider the difference in medians as the statistic), or use the <url href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm">Comparing Groups (Quantitative) applet</url>, to calculate an empirical p-value for the difference in medians for this study. [Hint: What is the observed difference?] Report the p-value and your conclusion about the effect of cloud seeding on median rainfall amounts.</p>
+      <p>Modify the previous code from the Technology Detour in <xref ref="inv-4-4-sleep">Investigation 4.4</xref> (remember to load/attach the CloudSeeding.txt data, to match the sample sizes in the actual study, and to consider the difference in medians as the statistic), or use the <url href="https://www.rossmanchance.com/applets/2021/anovashuffle/AnovaShuffle.htm?hideExtras=2">Comparing Groups (Quantitative) applet</url>, to calculate an empirical p-value for the difference in medians for this study. Report the p-value and your conclusion about the effect of cloud seeding on median rainfall amounts.</p>
     </statement>
+    <hint>
+      <p>What is the observed difference?</p>
+    </hint>
     <solution>
       <p>The observed difference in medians is <m>-177.4</m> (unseeded minus seeded, or <m>177.4</m> for seeded minus unseeded). Using simulation (e.g., Comparing Groups Quantitative applet), the p-value is approximately 0.009. This provides strong evidence that cloud seeding increases the median rainfall amount.</p>
       <image source="images/Inv4.7solsg.jpg" width="70%">
@@ -190,16 +198,16 @@
       <p>Would it be reasonable to model the randomization distribution for the difference in medians with a normal or <em>t</em>-distribution? Explain. What about creating a confidence interval using statistic ± 2SD? What would this interval tell you?</p>
     </statement>
     <solution>
-      <p>The distribution looks a little strange, not nearly as nicely bell-shaped and symmetric (and filled in) as the distribution of the differences in sample means. It would probably not be appropriate to model with a normal or <em>t</em>-distribution.</p>
+      <p>The distribution looks a little strange, not nearly as nicely bell-shaped and symmetric (and filled in) as the distribution of the differences in sample means. It would probably not be appropriate to model with a normal or <em>t</em>-distribution, and therefore a 2SD interval for estimating the difference in population medians, may not be valid either.</p>
     </solution>
     <response/>
   </exercise>
   
   <p>Although we can certainly use simulation this way to approximate the p-value, it is not feasible to find the <q>exact</q> randomization distribution for a data set of this size. We also notice that the distribution of the difference in medians has less <q>smoothness</q> than the distribution of the differences in means, as certain combinations values are just not possible from a discrete distribution.</p>
   
-  <p><alert>Data Transformation Approach</alert></p>
+  <p><alert>Data Transformation</alert></p>
   
-  <p>Another approach you saw earlier is to transform the data first.</p>
+  <p>Another approach you saw earlier (Investigation 2.8) is to transform the data first.</p>
   
   <exercise xml:id="inv4-7-i" label="I4.7.9">
     <title>Log Transformation</title>
@@ -211,7 +219,7 @@
       </ul>
     </statement>
     <solution>
-      <p>Apply the natural log transformation to all rainfall values in both groups.</p>
+      <p>Applying the natural log transformation to all rainfall values in both groups should give 0 and 1.589 for the first two values in the unseeded treatment group.</p>
     </solution>
     <response/>
   </exercise>
@@ -250,14 +258,17 @@
   <exercise xml:id="inv4-7-l" label="I4.7.12">
     <title>Analysis of Transformed Data</title>
     <statement>
-      <p>Calculate the one-sided p-value and the (two-sided) 95% confidence interval based on these data. [Hint: Pay attention to the direction of subtraction by the technology.]</p>
+      <p>Calculate the one-sided p-value and the (two-sided) 95% confidence interval based on these data.</p>
     </statement>
+    <hint>
+      <p>Pay attention to the direction of subtraction by the technology.</p>
+    </hint>
     <solution>
       <p>Using two-sample <em>t</em>-procedures on the log-transformed data gives a p-value of approximately 0.007 (one-sided) and a 95% confidence interval of approximately (0.24, 2.05) for the difference in mean log rainfall (seeded minus unseeded).</p>
       <image source="images/Inv4.7solsl1.jpg" width="70%">
         <description>Two-sample t-test output for log-transformed rainfall data</description>
       </image>
-      <image source="images/Inv4.7solsl2.jpg" width="70%">
+      <image source="images/Inv4.7solsl2.jpg" width="50%">
         <description>Additional output for log-transformed rainfall data</description>
       </image>
     </solution>
