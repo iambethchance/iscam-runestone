@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-4-10-shopping">
+  <title>Investigation 4.10: Comparison Shopping</title>
+
+  <introduction>
+    <p>A student group at Cal Poly carried out a study to compare the prices at two different local grocery stores. The inventory list for Scolari's (a privately-owned local store) was broken into 32 sheets, each with 30 items. A number between 01 and 30 was randomly generated, 17, and the 17th item on each sheet was selected. Each student was then responsible for obtaining the price of that item at both Scolari's and Lucky's (which advertises itself as a discount grocery store). If the exact item was not available at both stores, the item was adjusted slightly (size or brand name) so that the identical item could be priced at both stores. Students gathered two prices for the 29 items that were found at both stores (two were found at Lucky's but not Scolari's). The data are available in shoppingData.txt.</p>
+  </introduction>
+  
+  <exercise xml:id="inv4-10-a" label="I4.10.1">
+    <title>Identify Study Components</title>
+    <statement>
+      <p>Identify the observational units, response variable, population, and sample in this study. Which store do you suspect will have lower prices?</p>
+      <p>Observational units: <var width="40"/></p>
+      <p>Response variable: <var width="40"/></p>
+      <p>Population: <var width="60"/></p>
+      <p>Sample: <var width="60"/></p>
+      <p>Initial conjecture: <var width="60"/></p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-10-b" label="I4.10.2">
+    <title>Study Design and Sampling Method</title>
+    <statement>
+      <p>Was this an experimental study or an observational study? Was this a simple random sample? Was it a probability sample? What is the advantage of this procedure over a simple random sample? Are there any disadvantages in selecting the sample this way?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-10-c" label="I4.10.3">
+    <title>Independent or Paired Design</title>
+    <statement>
+      <p>Did these students use independent samples or a paired design to collect their data?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-10-d" label="I4.10.4">
+    <title>Parameter and Hypotheses</title>
+    <statement>
+      <p>Define the parameter of interest and state the null and alternative hypotheses corresponding to your initial conjecture.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <p>Descriptive statistics for the items' prices (in dollars) at each store, and for the differences in prices, as well as dotplots of the 3 distributions.</p>
+  
+  <p>After further investigation on the outliers among the differences, only the milk was found to be recorded incorrectly, two different sizes, and it was removed from the data set.</p>
+  
+  <exercise xml:id="inv4-10-e" label="I4.10.5">
+    <title>Effectiveness of Pairing</title>
+    <statement>
+      <p>Does the pairing appear to have been useful here? Discuss both why you suspect pairing will be beneficial in this context and any evidence in the above output.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-10-f" label="I4.10.6">
+    <title>Validity of Paired t-test</title>
+    <statement>
+      <p>Would applying a paired <em>t</em>-test appear to be appropriate for these data? Explain.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <p>Below is the output from R of a one-sided paired <em>t</em>-test and a 95% confidence interval (with milk removed):</p>
+  <pre>
+with(shoppingData, t.test(Luckys, Scolaris, paired = TRUE, alternative="less"))
+t = -1.7435, df = 27, p-value = 0.04631
+alternative hypothesis: true difference in means is less than 0 
+sample estimates:
+mean of the differences              -0.1182
+95 percent confidence interval: -0.2573 0.0209
+  </pre>
+  
+  <exercise xml:id="inv4-10-g" label="I4.10.7">
+    <title>Interpret Results</title>
+    <statement>
+      <p>What conclusions can you draw from this output? Be sure to address significance, causation, generalizability, and confidence.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-10-h" label="I4.10.8">
+    <title>Prediction Interval</title>
+    <statement>
+      <p>Calculate (by hand) a 90% prediction interval (<xref ref="inv-2-6">Investigation 2.6</xref>) based on this sample. Include a one-sentence summary of what this interval says.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-10-i" label="I4.10.9">
+    <title>Compare Interval Widths</title>
+    <statement>
+      <p>How does the width of this prediction interval in (h) compare to the width of the confidence interval for the population mean price difference in (g)? Explain why this makes sense. [Hint: Which is harder to predict, the mean or the next observation?]</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-10-j" label="I4.10.10">
+    <title>Comparing Intervals</title>
+    <statement>
+      <p>Which interval, the prediction interval or the confidence interval, do you find more useful here? Explain.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <assemblage>
+    <title>Study Conclusions</title>
+    <p>An important first step in data analysis is always to explore your data! With these data, we found some unusual observations and upon further investigation realized that one data value had been recorded in error (e.g., milk). In this case, we would be justified in removing this observation from the data file (we did not have any justification for removing the other outliers). After cleaning the data, we found that the price differences were slightly skewed to the left with a few outliers (flour, toothpaste, and frozen yogurt). The average price difference (Lucky's <m>-</m> Scolari's) was <m>-\$0.118</m>, with a standard deviation of <m>\$0.359</m>. The median price difference was <m>\$0</m>. So though the sample did not show a strong tendency for one store to have lower prices, the sample mean difference was in the conjectured direction. A one-sided paired <em>t</em>-test found that the mean price difference between these two stores was significantly less than 0 (<em>t</em>-value = <m>-1.74</m>, p-value = 0.046) at the 10% level of significance, and even (barely) at the 5% level. A 95% confidence interval contained zero (as the two-sided p-value would be larger than 0.05). A 90% confidence interval for the mean price difference was (<m>-0.234</m>, <m>-0.003</m>). We can be 90% confident that, on average, items at Scolari's cost between 0.3 cents and 23 cents more than items at Lucky's. This seems like a small savings but could become practically significant for a very large shopping trip. (Note, the average savings is not the same as the savings we would expect on an individual item.) In fact, we are 90% confident that an individual item will be anywhere from 74 cents more expensive at Scolari's to 50 cents more expensive at Lucky's. We feel comfortable generalizing these conclusions to the population of all products common to the two stores because the data were randomly selected using a probability method (systematic random sampling).</p>
+  </assemblage>
+  
+  <subsection xml:id="practice-problems-4-10">
+    <title>Practice Problems</title>
+    
+    <exercise xml:id="practice-4-10a">
+      <title>Practice Problem 4.10A</title>
+      <statement>
+        <p>For the shopping study:</p>
+        <p>(a) Why do the confidence interval and p-value give "conflicting" conclusions for these data?</p>
+        <p>(b) Predict how the analysis will change if we don't remove milk from the data set.</p>
+        <p>(c) Carry out a paired <em>t</em>-test on the 29 observations (with milk). What do you learn?</p>
+        <p>(d) Which analysis (with or without milk) would you present to a customer? Explain.</p>
+      </statement>
+    </exercise>
+    
+    <exercise xml:id="practice-4-10b">
+      <title>Practice Problem 4.10B</title>
+      <statement>
+        <p>If you feel the <em>t</em>-procedures are not likely to be valid, another approach is a sign test (e.g., <xref ref="inv-2-7">Investigation 2.7</xref>, Example 2.2). Remove all products that have zero price difference (the ties) and count how many products are more expensive at Scolari's vs. Lucky's. Is this significantly more than half? You can use a binomial test or one proportion <em>z</em>-test (if valid) to decide and/or a confidence interval to estimate the probability a product is more expensive at Scolari's (for all the products that do have a price difference).</p>
+      </statement>
+    </exercise>
+    
+    <exercise xml:id="practice-4-10c">
+      <title>Practice Problem 4.10C</title>
+      <statement>
+        <p>A more recent data set was collected comparing 36 items at Kroger and Food Lion in Salem, VA over the internet during summer, 2021 (shopping2021.txt). Food Lion advertises that it is less expensive than Kroger in general. Do you agree? Write a paragraph describing your analysis steps and conclusions.</p>
+      </statement>
+    </exercise>
+    
+    <exercise xml:id="practice-4-10d">
+      <title>Practice Problem 4.10D</title>
+      <statement>
+        <p>(a) Reconsider the hippocampus values from Practice Problem 4.9 (hippocampus.txt). Calculate and interpret a 95% prediction interval using these data.</p>
+        <p>(b) Do you believe this is a valid procedure for these data? Explain.</p>
+      </statement>
+    </exercise>
+    
+  </subsection>
+  
+</section>
