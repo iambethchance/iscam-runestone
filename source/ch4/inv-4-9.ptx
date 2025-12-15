@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-4-9-speed-cont">
+  <title>Investigation 4.9: Speed It Up (cont.)</title>
+
+  <introduction>
+    <p>Recall that student researchers wanted to compare the mean typing speed with and without up-tempo music.</p>
+    <p><m>H_0: \mu_{music} - \mu_{nomusic} = 0</m> (no difference in the long run average speed)</p>
+    <p><m>H_a: \mu_{music} - \mu_{nomusic} > 0</m> (on average typing speed is faster with up-tempo music)</p>
+    <p>Below are the results from the students' paired design.</p>
+  </introduction>
+  
+  <exercise xml:id="inv4-9-a" label="I4.9.1">
+    <title>Compare to Previous Results</title>
+    <statement>
+      <p>Compare these results to the results in Investigation 4.8. What has changed? Will these changes impact the p-value? If so, how?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-9-b" label="I4.9.2">
+    <title>Limitations of Previous Tests</title>
+    <statement>
+      <p>Explain why we can't do a randomization test or a two-sample <em>t</em>-test with these data.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <assemblage>
+    <title>Key Idea</title>
+    <p>When the data are paired (e.g., repeat observations on the same observational unit) we should not treat the two samples as independent. This ignores the information that two measurements were taken for each observational unit (we couldn't mix up the values in the second column without altering the information in the data).</p>
+  </assemblage>
+  
+  <p>As suggested in Investigation 4.8(j), we can use the differences as the response variable.</p>
+  
+  <exercise xml:id="inv4-9-c" label="I4.9.3">
+    <title>Distribution of Differences</title>
+    <statement>
+      <p>Summarize what you learn about the distribution of differences.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-9-d" label="I4.9.4">
+    <title>Mean of Differences vs. Difference in Means</title>
+    <statement>
+      <p>How does the mean of the differences (<m>\bar{x}_{diff}</m>) compare to the difference in means (<m>\bar{x}_{music} - \bar{x}_{nomusic}</m>)?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-9-e" label="I4.9.5">
+    <title>Standard Deviation Comparison</title>
+    <statement>
+      <p>How does the standard deviation of the differences compare to the standard deviations of the original typing speeds in the two groups? What does this tell you about the effectiveness of the pairing in this context?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-9-f" label="I4.9.6">
+    <title>Parameter and Hypotheses</title>
+    <statement>
+      <p>Define an appropriate parameter for investigating whether comparing typing speeds with and without music. State a null and an alternative hypothesis about this parameter.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <p>It actually doesn't matter whether we use the "difference in means" or the "mean difference" as our statistic/parameter. What is important is how we estimate the chance variation in that statistic, assuming the null hypothesis is true.</p>
+  
+  <p><alert>Simulation</alert></p>
+  
+  <exercise xml:id="inv4-9-g" label="I4.9.7">
+    <title>Simulation Design</title>
+    <statement>
+      <p>Outline (pseudo-code) how you could use a coin to simulate a randomization test for paired data to compare the two sets of measurements to assess how unusual it is for the average difference in typing speeds to be at least this extreme just by chance. Keep in mind that you want the simulation to mimic the randomization process used in the study design, assuming the presence/absence of music does not affect typing speed.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <p>Copy and paste the original raw data (TypingMusic.txt) into the <url href="https://www.rossmanchance.com/applets/2021/anovashuffle/AnovaShuffle.htm?hideExtras=2">Matched Pairs Randomization applet</url>:</p>
+  
+  <p>View the data window, with one column for the speeds with music and a second column for the speeds without music (each row is one person). You can also include an initial column of identifiers (e.g., student IDs or initials). The dotplots should then show both sets of data, connecting the paired observations, and their differences.</p>
+  
+  <exercise xml:id="inv4-9-h" label="I4.9.8">
+    <title>Examine Outliers</title>
+    <statement>
+      <p>What do you notice about the high outliers (fastest typers) in each condition?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <p>Check the Randomize box and press Randomize. For each pair, the applet will virtually "flip a coin" and if the coin lands heads, the two observations for that person will change positions. The new dotplots and the new set of differences for these rearranged values will be displayed. The mean of these differences will appear in the bottom dotplot.</p>
+  
+  <p>Uncheck Animate. Press Randomize four more times to get a sense of the variability in the mean difference from repetition to repetition. Change the number of repetitions from 1 to 995 (for a total of 1000) and press Randomize.</p>
+  
+  <exercise xml:id="inv4-9-i" label="I4.9.9">
+    <title>Interpret Randomization Distribution</title>
+    <statement>
+      <p>Explain what distribution is being displayed in the bottom (grey) dotplot (what order of subtraction did the applet use?).</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-9-j" label="I4.9.10">
+    <title>Mean of Distribution</title>
+    <statement>
+      <p>Where is the mean of the distribution of the average differences? Why should you expect that?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-9-k" label="I4.9.11">
+    <title>Assess Observed Value</title>
+    <statement>
+      <p>How surprising does our observed value for the mean difference appear to be, under the simulation's assumption that presence/absence of up-tempo music does not affect typing speed?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-9-l" label="I4.9.12">
+    <title>P-value and Conclusion</title>
+    <statement>
+      <p>Use the applet to determine the proportion of simulated Average Differences that are more extreme than what we observed, and report the empirical p-value. [Hint: Be sure to consider the alternative hypothesis when deciding what to consider as "more extreme."] What conclusion will you come to based on this p-value? Can you draw a cause-and-effect conclusion? For what population?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <p><alert>Mathematical Model</alert></p>
+  
+  <exercise xml:id="inv4-9-m" label="I4.9.13">
+    <title>Normal and t-Distribution Models</title>
+    <statement>
+      <p>Does the randomization distribution appear that it would be reasonably well-modeled by a normal distribution? If you change the Statistic from Avg Difference to t-statistic (and check the Overlay t distribution box), do the standardized statistics appear well-modeled by a <em>t</em>-distribution?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <assemblage>
+    <title>Definitions: Paired t-test</title>
+    <p>A paired <em>t</em>-test standardizes the mean of the differences from a matched-pairs design.</p>
+    <p><me>t = \frac{\bar{x}_{diff} - 0}{s_{diff}/\sqrt{n_{diff}}}</me></p>
+    <p>where <m>\bar{x}_{diff}</m> is the sample mean of differences and <m>s_{diff}</m> is the sample standard deviation of the differences. The standardized statistic above assumes the hypothesized difference is zero, but this can be changed.</p>
+    <p><alert>Technical conditions:</alert> When the distribution of differences is normally distributed or the sample size is large (e.g., <m>n > 30</m> pairs of observations), this <em>t</em>-statistic is well modeled by a <em>t</em>-distribution with <m>n - 1</m> degrees of freedom.</p>
+    <p>A paired <em>t</em>-confidence interval for <m>\mu_d</m> has the form <m>\bar{x}_{diff} \pm t_{n-1}^* \times (s_{diff}/\sqrt{n_{diff}})</m></p>
+    <p><alert>Note:</alert> These are a special case of the one-sample <em>t</em>-procedures that can be applied to a single sample of quantitative data (see <xref ref="inv-2-5">Investigation 2.5</xref>). In this case, variable of interest is the difference in the quantitative response for each observational unit pair.</p>
+  </assemblage>
+  
+  <exercise xml:id="inv4-9-n" label="I4.9.14">
+    <title>Calculate and Interpret t-statistic</title>
+    <statement>
+      <p>Use the summary statistics to calculate, by hand, and then interpret the value of this standardized statistic.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-9-o" label="I4.9.15">
+    <title>Compare P-values</title>
+    <statement>
+      <p>Using the Overlay <em>t</em> distribution in the applet, how does the p-value compare to the empirical p-value from the simulated paired-randomization test? Do the <em>t</em>-procedures appear to be valid for these data?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-9-p" label="I4.9.16">
+    <title>Confidence Interval</title>
+    <statement>
+      <p>Use the check box to display the 95% CI for average difference. Report and interpret this interval in context. Is the confidence interval consistent with the p-value? What additional information is provided by the confidence interval?</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <exercise xml:id="inv4-9-q" label="I4.9.17">
+    <title>Verify with Software</title>
+    <statement>
+      <p>Verify your results using software.</p>
+    </statement>
+    <response/>
+  </exercise>
+  
+  <assemblage>
+    <title>Technology Detour – Paired t-tests</title>
+    <p><alert>In R:</alert> you can use the t.test command as before but specify the data are paired, e.g.,</p>
+    <pre>
+> t.test(WithMusic, NoMusic, alternative="greater", conf.level = .95, paired=TRUE)
+    </pre>
+    <p>OR with stacked data</p>
+    <pre>
+> t.test(speed~condition, alt="greater", paired=TRUE)
+    </pre>
+    <p><alert>In JMP</alert></p>
+    <ul>
+      <li><p>Choose Analyze > Specialized Modeling > Matched Pairs</p></li>
+      <li><p>Specify the two columns in the Y, Paired Response box and press OK.</p></li>
+    </ul>
+    <p>The output will include the standardized statistic (t-Ratio), p-values, and confidence interval endpoints.</p>
+  </assemblage>
+  
+  <assemblage>
+    <title>Discussion</title>
+    <p>To compare two groups on a quantitative variable, a more powerful study design than randomly assigning individuals to two groups, if possible, is to pair individuals (or take two measurements on each individual) and measure both responses in each pair (See Example 4.4). This pairing accounts for the variability from individual to individual and allows for a more direct comparison between the two conditions of interest. For example, if two measurements are taken on each individual, there should not be any other systematic differences between the measurements other than the treatment effect. Randomizing will still be important in determining the order of the two treatments, thereby eliminating order as a potential confounding variable. By accounting for the variability in individuals, this should increase the power of the test of significance, making it easier to detect a difference between the two conditions if one really exists. To analyze such data, perform a matched-pairs randomization test or a (one sample) <em>t</em>-test on the differences.</p>
+    <p><alert>Note:</alert> The standard error of the difference in means is equivalent to <m>SE(\bar{X}_1 - \bar{X}_2) = \sqrt{\frac{s_1^2 + s_2^2 - 2rs_1s_2}{n}}</m>, which shows how the positive correlation between the two sets of measurements (<m>r</m>) reduces the estimated standard error of the statistic.</p>
+  </assemblage>
+  
+  <assemblage>
+    <title>Study Conclusions</title>
+    <p>A paired experiment comparing typing speeds with and without up-tempo classical music (Overture to Candide performed by the London Symphony Orchestra) found participants were significantly faster on average with the music. A paired <em>t</em>-test on the mean difference give a one-sided p-value of 0.006, similar to the simulation-based p-value using "random swapping" of the speeds to represent no difference between the two treatment conditions. We are 95% confident that participants like those in this study (e.g., college students, music students or athletes willing to help out a friend) type, on average, 0.63 to 4.61 more words per minute when listening to the up-tempo music. This evidence is much stronger than when we only compared the participants on their first tests, because of both effectively doubling the sample size and also reducing the amount of "unexplained variation" in the response variable. The person-to-person variation in typing speeds was around 15 wpm, compared to the person-to-person variation in difference in typing speeds which was around 5 wpm. A further analysis could compare the average improvement with music between the music students and the athletes.</p>
+  </assemblage>
+  
+  <subsection xml:id="practice-problems-4-9">
+    <title>Practice Problems</title>
+    
+    <exercise xml:id="practice-4-9a">
+      <title>Practice Problem 4.9A</title>
+      <statement>
+        <p>(a) Use statistical software to determine the power of detecting a difference of 5 wpm in a two-sample <em>t</em>-test if the sample standard deviations are 15 wpm. (You can assume a 5% level of significance and a one-sided alternative, as well as a total sample size of 34.)</p>
+        <p>(b) Repeat (a) assuming the sample standard deviations are 5 wpm.</p>
+        <p>(c) Use statistical software to determine the power of detecting a difference of 5 wpm in a one-sample paired <em>t</em>-test assuming the sample standard deviation of the differences is 5 wpm.</p>
+        <p>(d) How does the power of the paired <em>t</em>-test compare to the power of the two-sample <em>t</em>-test? (Cite appropriate evidence.)</p>
+      </statement>
+    </exercise>
+    
+    <exercise xml:id="practice-4-9b">
+      <title>Practice Problem 4.9B</title>
+      <statement>
+        <p>Scientists have long been interested in whether there are physiological indicators of diseases such as schizophrenia. In a 1990 study by Suddath et. al., reported in Ramsey and Schafer (2002), researchers used magnetic resonance imaging to measure the volumes of various regions of the brain for a sample of 15 monozygotic twins, where one twin was affected by schizophrenia and other not ("unaffected"). The twins were found in a search through the United States and Canada, the ages ranged from 25 to 44 years, with 8 male and 7 female pairs. The data (in cubic centimeters) for the left hippocampus region of the brain are in hippocampus.txt. The primary research question is whether the data provide evidence of a difference in hippocampus volumes between those affected by schizophrenia and those unaffected.</p>
+        <p>(a) Calculate the difference in hippocampus volumes for each pair of twins (unaffected <m>-</m> affected).</p>
+        <p>(b) Calculate and interpret a 95% confidence interval for the mean volume difference using the paired <em>t</em>-interval. Also comment on the validity of this procedure.</p>
+        <p>(c) Based on this confidence interval, is there statistically significant evidence that the mean difference in left hippocampus volumes is different from zero? Explain.</p>
+      </statement>
+    </exercise>
+    
+  </subsection>
+  
+</section>
