@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="summary-paired-differences">
+  <title>Summary of Procedures for Paired Differences</title>
+  
+  <assemblage>
+    <title>Test of <m>H_0: \mu_d = 0</m></title>
+    <p><alert>Randomization test</alert> (randomizing the sign of the difference)</p>
+    <p><alert>Paired <em>t</em>-test</alert> (Valid with <m>n > 30</m> or normal population of differences)</p>
+    <p>Standardized (test) statistic: <me>t_0 = \frac{\bar{x}_{diff} - \mu_0}{s_{diff}/\sqrt{n}}</me></p>
+    <p>Degrees of freedom = <m>n - 1</m></p>
+  </assemblage>
+  
+  <assemblage>
+    <title><em>t</em>-Confidence interval for <m>\mu_d</m></title>
+    <p><me>\bar{x}_{diff} \pm t_{n-1}^* \times \frac{s_{diff}}{\sqrt{n}}</me></p>
+    <p>Valid with <m>n > 30</m> or normal population of differences</p>
+  </assemblage>
+  
+  <assemblage>
+    <title>Technology</title>
+    <p><alert>R:</alert> <c>t.test(..., paired=TRUE)</c></p>
+    <p><alert>JMP:</alert> Analyze > Specialized Modeling > Matched Pairs</p>
+  </assemblage>
+  
+  <p>The paired <em>t</em>-test is equivalent to a one-sample <em>t</em>-test on the differences. Also keep in mind that even if the original distributions are skewed, the differences could still be more normally distributed.</p>
+  
+</section>
