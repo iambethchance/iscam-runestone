@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="chapter4-summary">
+  <title>Chapter 4 Summary</title>
+
+  <subsection xml:id="chapter4-summary-narrative">
+    <title>Summary</title>
+
+    <p>In this chapter, you have again focused on comparing the outcomes for different groups, but for quantitative data. The tools for descriptive statistics are the same as in Chapter 2 (e.g., means, medians, standard deviations, interquartile ranges, dotplots, histograms, and boxplots).</p>
+
+    <p>After exploring and comparing the groups descriptively, it may be appropriate to ask whether the differences observed could have arisen "by chance alone." In other words, is the observed difference large enough to convince us that it arose from a genuine difference in the groups instead of from the randomness inherent in designing the experiment or in selecting the samples? Analogous to comparing proportions in Chapter 3, we used simulation to approximate how often we would obtain a difference in means at least as extreme as observed just by chance (random sampling or random assignment). Then we learned of a "large sample" approach we can use in either case to approximate the null distribution of the standardized statistic, yielding the two-sample t-test. Keep in mind that the logic of statistical significance hasn't changed – we assume there is no effect or no population difference and determine how often we would get a sample difference result at least as extreme as what was observed. You saw that this chance is strongly affected by the amount of variability within the groups. It is very important when reporting on your statistical study that you also mention the sample sizes. This helps you evaluate the power and practical significance of the study results. You were also reminded that no matter how small a p-value is, we cannot draw cause-and-effect conclusions unless the data came from a properly designed randomized experiment.</p>
+
+    <p>You will often have the choice between a randomization-based test or the t-procedures. The advantage to the randomization procedures is they allow us to work with many types of statistics (such as median and trimmed mean) where we do not have theoretical results on the large sample behavior of the randomization distribution. The advantage of the t-procedures is the ease in calculating confidence intervals. It is always important to consider the technical conditions of an inference procedure before applying the procedure (e.g., make sure you really have two independent samples). If the conditions are not met, transformations may be one way of rescaling the data to be more appropriate for t procedures. If data are paired, then you should consider one-sample procedures on the differences. Such pairing is often very useful in increasing the efficiency of the study. These t-procedures are quite robust in calculating p-values and confidence intervals.</p>
+
+    <p>Always keep in mind the importance of considering whether there is random sampling and/or random assignment in the study design and how that impacts the scope of conclusions that you can draw from your study.</p>
+  </subsection>
+
+  <subsection xml:id="chapter4-summary-learned">
+    <title>Summary of What You Have Learned in This Chapter</title>
+
+    <p><ul>
+      <li><p>Stating hypotheses in terms of comparing two population or underlying treatment means</p></li>
+      <li><p>The reasoning process behind a randomization test</p></li>
+      <li><p>Calculating and interpreting p-values</p></li>
+      <li><p>Two-sample t-procedures for comparing two groups</p>
+        <ul>
+          <li><p>When appropriate to apply, why helpful</p></li>
+          <li><p>How to interpret results</p></li>
+          <li><p>Alternative approaches if not valid (e.g., data transformations)</p></li>
+          <li><p>Using technology to calculate two-sample t-procedures</p></li>
+        </ul>
+      </li>
+      <li><p>Factors that affect the significance of the comparison (e.g., sample size, size of difference, and within-group variability)</p></li>
+      <li><p>Methods for reducing within-group variability</p></li>
+      <li><p>Matched-pairs designs and analyses</p></li>
+    </ul></p>
+  </subsection>
+
+  <subsection xml:id="chapter4-summary-technology">
+    <title>Technology Summary</title>
+
+    <p><ul>
+      <li><p>Simulating a randomization test for different statistics</p></li>
+      <li><p>Two-sample t-procedures</p></li>
+      <li><p>Paired t-procedures</p></li>
+    </ul></p>
+  </subsection>
+
+  <subsection xml:id="chapter4-summary-r-commands">
+    <title>Quick Reference to ISCAM Workspace Functions and other R Commands</title>
+
+    <table xml:id="table-chapter4-r-commands">
+      <title>R Command Reference</title>
+      <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
+        <col width="40%"/>
+        <col width="60%"/>
+        <row header="yes">
+          <cell>Procedure Desired</cell>
+          <cell>Function Name (options)</cell>
+        </row>
+        <row>
+          <cell>Stacked Dotplots</cell>
+          <cell><c>iscamdotplot(response, explanatory, names)</c></cell>
+        </row>
+        <row>
+          <cell>Stack data</cell>
+          <cell><c>stack(data[, c("var1", "var2")])</c></cell>
+        </row>
+        <row>
+          <cell>Parallel Dotplots (stacked data)</cell>
+          <cell><c>iscamdotplot(response, explanatory)</c></cell>
+        </row>
+        <row>
+          <cell>Parallel Histograms (stacked data)</cell>
+          <cell>Load Lattice package, then <c>histogram(~response | explanatory, layout=c(1,2))</c></cell>
+        </row>
+        <row>
+          <cell>Parallel Boxplots (stacked data)</cell>
+          <cell><c>boxplot(response~explanatory, horizontal=TRUE)</c></cell>
+        </row>
+        <row>
+          <cell>Numerical Summaries</cell>
+          <cell><c>iscamsummary(response, explanatory)</c></cell>
+        </row>
+        <row>
+          <cell>two-sample t-procedures</cell>
+          <cell><c>t.test(response~explanatory, alt, var.equal=FALSE)</c></cell>
+        </row>
+        <row>
+          <cell>two-sample t-procedures (summary data)</cell>
+          <cell><c>iscamtwosamplet(x1, s1, n1, x2, s2, n2, hypothesized, alternative, conf.level)</c></cell>
+        </row>
+        <row>
+          <cell>Paired t-test</cell>
+          <cell><c>t.test(v1, v2, alternative, conf.level, paired=TRUE)</c></cell>
+        </row>
+      </tabular>
+    </table>
+  </subsection>
+
+  <subsection xml:id="chapter4-summary-jmp-commands">
+    <title>Quick Reference to JMP Commands</title>
+
+    <table xml:id="table-chapter4-jmp-commands">
+      <title>JMP Command Reference</title>
+      <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
+        <col width="40%"/>
+        <col width="60%"/>
+        <row header="yes">
+          <cell>Procedure Desired</cell>
+          <cell>Menu; Hot spot</cell>
+        </row>
+        <row>
+          <cell>Stacked histograms (unstacked data)</cell>
+          <cell>Analyze > Distribution</cell>
+        </row>
+        <row>
+          <cell>Stack data</cell>
+          <cell>Tables > Stack</cell>
+        </row>
+        <row>
+          <cell>Parallel Dotplots (stacked data)</cell>
+          <cell>Analyze > Fit Y by X (response, explanatory)</cell>
+        </row>
+        <row>
+          <cell>Parallel Histograms (stacked data)</cell>
+          <cell>Analyze > Fit Y by X; Display Options > Histograms</cell>
+        </row>
+        <row>
+          <cell>Parallel Boxplots (stacked data)</cell>
+          <cell>Analyze > Fit Y by X; Display Options > Boxplots</cell>
+        </row>
+        <row>
+          <cell>Numerical Summaries</cell>
+          <cell>Analyze > Fit Y by X; Means and Std Dev</cell>
+        </row>
+        <row>
+          <cell>two-sample t-procedures</cell>
+          <cell>Analyze > Fit Y by X; t Test</cell>
+        </row>
+        <row>
+          <cell>two-sample t-procedures (summary data)</cell>
+          <cell>Journal file: Hypothesis Test for Two Means; t-test and Unequal Variances</cell>
+        </row>
+        <row>
+          <cell>Paired t-test</cell>
+          <cell>Analyze > Matched Pairs</cell>
+        </row>
+      </tabular>
+    </table>
+  </subsection>
+
+  <subsection xml:id="chapter4-summary-procedures">
+    <title>Choice of Procedures for Comparing Two Means</title>
+
+    <table xml:id="table-chapter4-procedures">
+      <title>Procedure Selection Guide</title>
+      <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
+        <col width="25%"/>
+        <col width="37%"/>
+        <col width="38%"/>
+        <row header="yes">
+          <cell><alert>Study design</alert></cell>
+          <cell>Randomized experiment or independent random samples</cell>
+          <cell>Matched paired design</cell>
+        </row>
+        <row>
+          <cell><alert>Parameter</alert></cell>
+          <cell>Difference in population means or treatment means (<m>\mu_1 - \mu_2</m>)</cell>
+          <cell>Mean difference (<m>\mu_d</m>)</cell>
+        </row>
+        <row>
+          <cell><alert>Null Hypothesis</alert></cell>
+          <cell><m>H_0: \mu_1 - \mu_2 = 0</m></cell>
+          <cell><m>H_0: \mu_{diff} = 0</m></cell>
+        </row>
+        <row>
+          <cell><alert>Simulation</alert></cell>
+          <cell>Randomly reassign response values between groups (see Comparing Groups (Quantitative) applet) or Sampling from Two Populations – Quantitative applet</cell>
+          <cell>Flip a coin to see whether to flip the order of the observations</cell>
+        </row>
+        <row>
+          <cell><alert>Exact p-value</alert></cell>
+          <cell>All possible random assignments</cell>
+          <cell>All possible sign assignments</cell>
+        </row>
+        <row>
+          <cell><alert>Valid to use t-procedures if</alert></cell>
+          <cell>Both sample sizes at least 20 or both population distributions normal</cell>
+          <cell>At least 30 differences or differences are normal</cell>
+        </row>
+        <row>
+          <cell><alert>Standardized (Test) Statistic</alert></cell>
+          <cell><m>t_0 = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}</m></cell>
+          <cell><m>t = \frac{\bar{x}_d - 0}{s_d/\sqrt{n_d}}</m></cell>
+        </row>
+        <row>
+          <cell><alert>Confidence interval</alert></cell>
+          <cell><m>(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}</m></cell>
+          <cell><m>\bar{x}_d \pm t_{n-1}^* \frac{s_d}{\sqrt{n}}</m></cell>
+        </row>
+        <row>
+          <cell><alert>Prediction interval</alert></cell>
+          <cell>N/A</cell>
+          <cell><m>\bar{x}_d \pm t_{n-1}^* s_d \sqrt{1 + \frac{1}{n}}</m></cell>
+        </row>
+        <row>
+          <cell><alert>R Commands</alert></cell>
+          <cell><c>iscamtwosamplet(mean1, stddev1, n1, mean2, stdev2, n2)</c> Optional: hypothesized difference and alternative ("less", "greater", or "two.sided"), conf.level
+          
+          <c>t.test(resp~exp, alt, var.equal=FALSE)</c></cell>
+          <cell><c>t.test(list1, list2, alt, conf.level, paired=TRUE)</c></cell>
+        </row>
+        <row>
+          <cell><alert>JMP</alert></cell>
+          <cell>Analyze > Fit Y by X > t Test</cell>
+          <cell>Analyze > Matched Pairs</cell>
+        </row>
+        <row>
+          <cell><alert>TBI applet</alert></cell>
+          <cell>Two means</cell>
+          <cell>One mean (differences)</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p><alert>Note:</alert> You can also consider transforming the data before applying normal-based methods. There is also a column for comparing medians (H0: population medians equal), but the simulation approach is the primary method (N/A for exact p-value, standardized statistic, and confidence interval).</p>
+  </subsection>
+</section>
