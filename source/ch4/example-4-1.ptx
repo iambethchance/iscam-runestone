@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="example-4-1">
+  <title>Example 4.1: Age Discrimination?</title>
+
+  <introduction>
+    <p><alert>Try these questions yourself before you use the solutions following to check your answers.</alert></p>
+
+    <p>In <xref ref="inv-4-1-age-discrimination"/> you considered the case of Robert Martin and whether the sample of 10 employees in his department provided evidence of age discrimination. Suppose we decide to focus on the long-run difference in mean ages for those laid-off and those retained for the decision making process used by this company.</p>
+  </introduction>
+
+  <exercise xml:id="example4-1-a" label="E4.1a">
+    <title>State Hypotheses</title>
+    <statement>
+      <p>State the null and alternative hypotheses, in symbols, for this study. [Hint: Define your symbols.]</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="example4-1-b" label="E4.1b">
+    <title>Observed Statistic</title>
+    <statement>
+      <p>Recall the observed value of the sample statistic.</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="example4-1-c" label="E4.1c">
+    <title>Randomization Test</title>
+    <statement>
+      <p>Simulate a randomization test for these data and state your conclusion at the 0.01 level of significance.</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="example4-1-d" label="E4.1d">
+    <title>Two-Sample t-Test</title>
+    <statement>
+      <p>Carry out a two-sample t-test for these data and hypotheses, and state your conclusion at the 0.01 level of significance.</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="example4-1-e" label="E4.1e">
+    <title>Compare Analyses</title>
+    <statement>
+      <p>Do these analyses reach the same conclusion? If not, which analysis should be used? Explain.</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <subsection xml:id="example4-1-solutions">
+    <title>Solutions</title>
+
+    <solution>
+      <title>Solution to (a)</title>
+      <p>Let <m>\mu_{fired} - \mu_{not fired}</m> represent the difference in the average age of people that would be laid-off, in the long run (by the overall process), and the average age of the people who would be retained. (Don't worry too much at this point about which stage of the firing process this analysis considers. Just keep in mind that we are trying to say something beyond the observed means. We believe there is some underlying difference in means and these data provide an estimate.)</p>
+
+      <p><md>
+        <mrow>H_0: \mu_{fired} - \mu_{not fired} = 0 \text{ (no overall difference in the average ages of those getting fired and not)}</mrow>
+        <mrow>H_a: \mu_{fired} - \mu_{not fired} > 0 \text{ (those getting fired will tend to have higher ages than those not)}</mrow>
+      </md></p>
+    </solution>
+
+    <solution>
+      <title>Solution to (b)</title>
+      <p><m>\bar{x}_1 - \bar{x}_2 = 58.00 - 41.14 = 16.86</m> years</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (c)</title>
+      <p>Using the Comparing Groups (Quantitative) applet, the empirical p-value (remembering to match the direction of subtraction, which may vary depending on how you pasted the data in), the output below shows an empirical p-value of 0.0225. Because 0.0225 > 0.01, we would not reject the null hypothesis at the 0.01 level and conclude that this firing process was not more likely to fire individuals with larger ages.</p>
+
+      <figure xml:id="fig-example4-1-applet">
+        <caption>Randomization test results</caption>
+        <image source="assets/tech_images/example4-1-applet.png" width="70%">
+          <description>Randomization distribution showing empirical p-value of 0.0225</description>
+        </image>
+      </figure>
+
+      <p><alert>Note:</alert> You could also carry out this simulation using software, e.g., in R:</p>
+      <pre>
+I = 10000; diff = 0			
+for (i in 1:I){						
+  rerandom = sample(age)
+  diff[i] = mean(rerandom[1:3])-mean(rerandom[4:10])
+}
+      </pre>
+    </solution>
+
+    <solution>
+      <title>Solution to (d)</title>
+      <p>A two-sample t-test using software:</p>
+
+      <sidebyside widths="48% 48%">
+        <stack>
+          <p><alert>R</alert></p>
+          <figure xml:id="fig-example4-1-r">
+            <image source="assets/tech_images/example4-1-r.png" width="100%">
+              <description>R output for two-sample t-test</description>
+            </image>
+          </figure>
+        </stack>
+        <stack>
+          <p><alert>JMP</alert></p>
+          <figure xml:id="fig-example4-1-jmp">
+            <image source="assets/tech_images/example4-1-jmp.png" width="100%">
+              <description>JMP output for two-sample t-test</description>
+            </image>
+          </figure>
+        </stack>
+      </sidebyside>
+
+      <p>Now p-value <m>\lt</m> 0.01, and we would reject the null hypothesis at the 0.01 level and conclude that this firing process was more likely to fire individuals with larger ages.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (e)</title>
+      <p>The two-sample t-test yields a much smaller p-value, about 0.006, which implies much stronger evidence of an underlying age difference between the two populations (fired and not fired). However, because of the small sample sizes (especially with the unbalanced groups), we would have major concerns about using the t-procedures for this study. The empirical p-value from the simulated randomization test is more trustworthy. In fact, in this study, it's probably more work than we need to do, because with only 120 possible combinations it is not unreasonable to calculate the exact p-value.</p>
+    </solution>
+  </subsection>
+</section>

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="example-4-3">
+  <title>Example 4.3: Distracted Driving?</title>
+
+  <introduction>
+    <p><alert>Try these questions yourself before you use the solutions following to check your answers.</alert></p>
+
+    <p>Recall the Distracted Driving study from Example 2.2. The reaction times (in milliseconds) for 16 students appear below and in the file <c>driving.txt</c>.</p>
+
+    <table xml:id="table-example4-3-data">
+      <title>Reaction Times (milliseconds)</title>
+      <tabular halign="center">
+        <row header="yes">
+          <cell>Subject</cell>
+          <cell>A</cell>
+          <cell>B</cell>
+          <cell>C</cell>
+          <cell>D</cell>
+          <cell>E</cell>
+          <cell>F</cell>
+          <cell>G</cell>
+          <cell>H</cell>
+          <cell>I</cell>
+          <cell>J</cell>
+          <cell>K</cell>
+          <cell>L</cell>
+          <cell>M</cell>
+          <cell>N</cell>
+          <cell>O</cell>
+          <cell>P</cell>
+        </row>
+        <row>
+          <cell>Cell</cell>
+          <cell>636</cell>
+          <cell>623</cell>
+          <cell>615</cell>
+          <cell>672</cell>
+          <cell>601</cell>
+          <cell>600</cell>
+          <cell>542</cell>
+          <cell>554</cell>
+          <cell>543</cell>
+          <cell>520</cell>
+          <cell>609</cell>
+          <cell>559</cell>
+          <cell>595</cell>
+          <cell>565</cell>
+          <cell>573</cell>
+          <cell>554</cell>
+        </row>
+        <row>
+          <cell>Control</cell>
+          <cell>604</cell>
+          <cell>556</cell>
+          <cell>540</cell>
+          <cell>522</cell>
+          <cell>459</cell>
+          <cell>544</cell>
+          <cell>513</cell>
+          <cell>470</cell>
+          <cell>556</cell>
+          <cell>531</cell>
+          <cell>599</cell>
+          <cell>537</cell>
+          <cell>619</cell>
+          <cell>536</cell>
+          <cell>554</cell>
+          <cell>467</cell>
+        </row>
+      </tabular>
+    </table>
+  </introduction>
+
+  <exercise xml:id="example4-3-a" label="E4.3a">
+    <title>Descriptive Analysis of Differences</title>
+    <statement>
+      <p>Analyze the differences in reaction times (cell phone minus control) for these subjects. Include numerical and graphical summaries of the distribution of differences. Comment on what this descriptive analysis reveals about whether talking on a cell phone tends to produce slower reaction times.</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="example4-3-b" label="E4.3b">
+    <title>State Hypotheses</title>
+    <statement>
+      <p>State the appropriate null and alternative hypotheses to be tested, in order to investigate the research question of whether talking on a cell phone tends to produce slower reaction times.</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="example4-3-c" label="E4.3c">
+    <title>Randomization Test</title>
+    <statement>
+      <p>Conduct a simulation analysis of a randomization test for testing these hypotheses. Report the empirical p-value. Summarize the conclusion that you would draw from this analysis.</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="example4-3-d" label="E4.3d">
+    <title>Technical Conditions for Paired t-Test</title>
+    <statement>
+      <p>Comment on whether the conditions for applying a paired t-test and t-interval are satisfied for these data.</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="example4-3-e" label="E4.3e">
+    <title>Paired t-Test</title>
+    <statement>
+      <p>Conduct a paired t-test of these hypotheses. Report the value of the standardized statistic and the p-value. Indicate your test decision at the 0.05 and 0.01 significance levels, and summarize your conclusion.</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="example4-3-f" label="E4.3f">
+    <title>Confidence and Prediction Intervals</title>
+    <statement>
+      <p>Produce and interpret a 95% t-confidence interval for the population mean difference. Also produce and interpret a 95% prediction interval. Comment on how these two intervals compare.</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="example4-3-g" label="E4.3g">
+    <title>Compare to Sign Test</title>
+    <statement>
+      <p>Compare these analyses to that in Example 2.2. Which analysis would you recommend and why?</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <subsection xml:id="example4-3-solutions">
+    <title>Solutions</title>
+
+    <solution>
+      <title>Solution to (a)</title>
+      <p>Analyzing the differences:</p>
+
+      <figure xml:id="fig-example4-3-dotplot">
+        <caption>Dotplot of differences (Cell - Control)</caption>
+        <image source="assets/tech_images/example4-3-dotplot.png" width="70%">
+          <description>Dotplot of reaction time differences</description>
+        </image>
+      </figure>
+
+      <p>The sample mean difference in reaction times (cell minus control) is <m>\bar{x}_{diff} = 47.125</m> milliseconds, with a standard deviation of <m>s_d = 51.331</m> milliseconds. The dotplot reveals that most of the differences are positive, suggesting that subjects talking on a cell phone tend to take longer to react than subjects listening to a book-on-tape.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (b)</title>
+      <p>The null hypothesis says that the mean reaction time is the same among cell phone users as among book-on-tape listeners (<m>H_0: \mu_{cell} - \mu_{control} = 0</m>). The alternative says that the mean reaction time is larger among cell phone users than among book-on-tape listeners (<m>H_a: \mu_{cell} - \mu_{control} > 0</m>).</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (c)</title>
+      <p>We can carry out the simulation easily with the applet or with R.</p>
+
+      <p>Copying and pasting the data into the Matched Pairs applet with 1,000 repetitions we get the results shown here:</p>
+
+      <figure xml:id="fig-example4-3-applet">
+        <caption>Matched Pairs applet results</caption>
+        <image source="assets/tech_images/example4-3-applet.png" width="70%">
+          <description>Randomization distribution from Matched Pairs applet</description>
+        </image>
+      </figure>
+
+      <p>Using R to carry out the simulation instead:</p>
+      <pre>
+MeanDiffs=0
+for (i in 1:10000){
+  multiplier=sample(c(-1,1), 16, replace=TRUE)
+  RandomizedData=differences*multiplier
+  MeanDiffs[i]=mean(RandomizedData)
+}
+      </pre>
+
+      <p>From R: The empirical p-value is the proportion of these 10,000 repetitions in which the mean difference is 47.125 or more, because 47.125 is the value of the sample mean difference from the actual experimental data. None of the 10,000 repetitions produced such a large mean difference, so the empirical p-value is 0. The simulation therefore shows that we would almost never get a result as extreme as the actual experiment did, if there were really no difference between reactions to cell phone vs. book-on-tape, so we have extremely strong evidence that the cell phone really does increase reaction times.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (d)</title>
+      <p>Because the sample size (16) is fairly small, the t-procedures are valid only if the population of differences follows a normal distribution. The dotplot of differences from these 16 subjects looks roughly symmetric, so the t-procedures are probably valid to apply here.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (e)</title>
+      <p>The standardized statistic is <m>t = \frac{\bar{x}_{diff} - 0}{s_{diff}/\sqrt{n_{diff}}} = \frac{47.125}{51.331/\sqrt{16}} \approx 3.67</m>. The p-value is the probability that a t-distribution with 15 degrees of freedom is 3.67 or larger; R reveals this p-value to be 0.001137. This p-value is very small, so we would reject the null hypothesis at the 0.05 and 0.01 significance levels. The experimental data provide very strong evidence that talking on a cell phone does cause an increase in mean reaction time, as compared to listening to a book-on-tape. The cause/effect conclusion is justified because this is a randomized experiment with a very small p-value.</p>
+
+      <p><alert>Note:</alert> This evidence is stronger than what we saw with the sign test in Example 2.2.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (f)</title>
+      <p>A 95% confidence interval for the population mean difference <m>\mu_d</m> is:</p>
+      <me>\bar{x}_{diff} \pm t_{n-1}^* \times \frac{s_{diff}}{\sqrt{n_{diff}}}</me>
+      <p>which is <m>47.125 \pm 2.131 \times \frac{51.331}{\sqrt{16}}</m>, which is <m>47.125 \pm 27.347</m>, which is <m>(19.778, 74.472)</m>.</p>
+
+      <p>We can be 95% confident that the mean reaction time while talking on a cell phone is between roughly 20 and 75 milliseconds longer than when listening to a book-on-tape.</p>
+
+      <p>A 95% prediction interval for the difference in reaction times for a particular subject is:</p>
+      <me>\bar{x}_{diff} \pm t_{n-1}^* \times s_{diff}\sqrt{1 + \frac{1}{n_{diff}}}</me>
+      <p>which is <m>47.125 \pm 2.131 \times 51.331\sqrt{1 + \frac{1}{16}}</m>, which is <m>47.125 \pm 112.753</m>, which is <m>(-65.628, 159.878)</m>.</p>
+
+      <p>We can be 95% confident that an individual subject will react anywhere from 65 milliseconds more quickly to 160 milliseconds more slowly talking on a cell phone as compared to listening to a book-on-tape.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (g)</title>
+      <p>An advantage of the sign test from Chapter 2 is we don't need to rely on large sample sizes or normality of the differences for the procedure to be valid. However, by ignoring some information in the data, we would expect this procedure to have lower power and we lose information about the size of the difference. The conditions for the t-procedure seem to be satisfactorily met here.</p>
+    </solution>
+  </subsection>
+</section>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="example-4-4">
+  <title>Example 4.4: Comparison Shopping in the Future</title>
+
+  <introduction>
+    <p><alert>Try these questions yourself before you use the solutions following to check your answers.</alert></p>
+
+    <p>Recall <xref ref="inv-4-10-shopping"/> comparing prices for items common to two different grocery stores. For that dataset, the evidence against the null hypothesis was not particularly strong, perhaps due to the small sample size. Suppose you wanted to replicate your own study at two new stores. How would you design the study? In particular, how many items should you select from each store? The answer to the latter question is really a question about power. Suppose you plan to conduct a two-sided test with a 5% level of significance; if there is a $0.20 average price difference, what sample size do you need to have power 0.80 of rejecting the null hypothesis? What assumptions do you need to make to calculate power? How does your answer change depending on a whether you do an independent samples design or a paired design?</p>
+  </introduction>
+
+  <exercise xml:id="example4-4-question" label="E4.4">
+    <title>Study Design and Power Analysis</title>
+    <statement>
+      <p>Address the questions posed in the introduction about designing a comparison shopping study with adequate power.</p>
+    </statement>
+    <response/>
+  </exercise>
+
+  <subsection xml:id="example4-4-solutions">
+    <title>Solution</title>
+
+    <solution>
+      <title>Analysis</title>
+      <p>The original study had access to an inventory list and was able to use a systematic sample to select one item from each of 30 pages. This required the students to find each item in the store, but each student was only given one item to find. If you needed to find all the items yourself, you might consider a multistage sampling plan where you number the aisles, randomly select an aisle, then within the aisle you could randomly select a side, and then randomly select a shelf, and then randomly select a distance down the aisle. This randomly selects and finds the items all in one step! You could then find those same items at the second store (matched pairs) or repeat this process at the second store (independent samples).</p>
+
+      <p>In order to carry out our power calculations, we need to a make a few more assumptions. We were already told that we want to use a two-sided alternative with <m>\alpha = 0.05</m>. If we are doing a two-sample design, the distribution of differences in sample means will be approximately normal if the sample sizes are large enough (especially because we expect these price distributions to be skewed to the right), with standard deviation <m>\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}</m>. So step one is to determine <m>\sigma_1</m> and <m>\sigma_2</m>, but of course we can't know their values exactly, but we really just need ballpark values for now. In the earlier study, we had sample standard deviations of $1.66 and $1.74. We will be a bit conservative and will assume $2.00 for both stores.</p>
+
+      <p>For illustration, let's assume <m>\mu_1 = \mu_2 = \$2.50</m>, with <m>\sigma_1 = \sigma_2 = 2</m>, and <m>n_1 = n_2 = 30</m>, with population distributions that are skewed to the right. The simulation model (below, Two Populations applet) tells us that we would want to see about an $0.79 difference in the sample means to be convinced to reject the null hypothesis. This is our rejection region. And then if the second population mean is <m>\mu_2 = \$2.70</m>, we will find a difference in sample means at least as extreme as $0.80 in about 14% of samples, well below the desired 80%!</p>
+
+      <sidebyside widths="48% 48%">
+        <figure xml:id="fig-example4-4-sim-null">
+          <caption>Assuming null hypothesis (<m>\mu_1 = \mu_2</m>)</caption>
+          <image source="assets/tech_images/example4-4-sim-null.png" width="100%">
+            <description>Simulation assuming null hypothesis true</description>
+          </image>
+        </figure>
+        <figure xml:id="fig-example4-4-sim-alt">
+          <caption>Assuming <m>\mu_2 = \mu_1 + 0.20</m></caption>
+          <image source="assets/tech_images/example4-4-sim-alt.png" width="100%">
+            <description>Simulation assuming alternative with 20 cent difference</description>
+          </image>
+        </figure>
+      </sidebyside>
+
+      <p>One solution is to this embarrassingly lower power is to increase the sample size. Turning to software, JMP and R report a necessary sample size of 1,571 products at each store.</p>
+
+      <sidebyside widths="48% 48%">
+        <stack>
+          <p><alert>R</alert></p>
+          <figure xml:id="fig-example4-4-r-independent">
+            <image source="assets/tech_images/example4-4-r-independent.png" width="100%">
+              <description>R power calculation for independent samples</description>
+            </image>
+          </figure>
+        </stack>
+        <stack>
+          <p><alert>JMP</alert></p>
+          <figure xml:id="fig-example4-4-jmp-independent">
+            <image source="assets/tech_images/example4-4-jmp-independent.png" width="100%">
+              <description>JMP power calculation for independent samples</description>
+            </image>
+          </figure>
+        </stack>
+      </sidebyside>
+
+      <p>Another alternative is a paired design and a one-sample t-test. Suppose we assume <m>\mu_d = 0</m>, <m>\sigma_d = 0.50</m> (note, we are assuming a much smaller standard deviation in the differences than in the product prices, similar to what was observed in Investigation 4.10, the main advantage of the matched pairs design), and want to detect a mean price difference of $0.20 with 80% power. Software tells us, we need just 52 products.</p>
+
+      <sidebyside widths="48% 48%">
+        <stack>
+          <p><alert>R</alert></p>
+          <figure xml:id="fig-example4-4-r-paired">
+            <image source="assets/tech_images/example4-4-r-paired.png" width="100%">
+              <description>R power calculation for paired design</description>
+            </image>
+          </figure>
+        </stack>
+        <stack>
+          <p><alert>JMP</alert></p>
+          <figure xml:id="fig-example4-4-jmp-paired">
+            <image source="assets/tech_images/example4-4-jmp-paired.png" width="100%">
+              <description>JMP power calculation for paired design</description>
+            </image>
+          </figure>
+        </stack>
+      </sidebyside>
+
+      <p>There is a huge improvement with the paired design, though our probability of detecting a difference is still only 80% when the average difference is actually 20 cents. This probability drops to about 53% with 28 items, so it's important to aim for more observations than your power calculation reveals to account for attrition in the sample. But keep in mind that for a very small difference, especially with lots of natural variation in the responses, a very large sample size would be needed and may not be practical. It's important to discuss "what is a meaningful difference to detect" with the subject matter experts.</p>
+    </solution>
+  </subsection>
+</section>
