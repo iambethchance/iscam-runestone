@@ -5,7 +5,7 @@
   <introduction>
     <p>A study published in the journal <em>Pediatrics</em> (<url href="https://pubmed.ncbi.nlm.nih.gov/17015555/">Smith et al., 2006</url>) addressed the important issue of how to awaken children during a house fire so they can escape safely. Researchers worked with a volunteer sample of 24 healthy children aged 6-12 by training them to perform a simulated self-rescue escape procedure when they heard an alarm. Researchers then compared the children's reactions to two kinds of alarms: a conventional smoke alarm and a personalized recording of the mother's voice saying the child's name and urging him or her to wake up. All 24 children were exposed to both kinds of alarms, with the order determined randomly.</p>
     
-    <p><term>Children's Responses to Alarms</term></p>
+    <p><strong>Children's Responses to Alarms</strong></p>
     <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
         <col right="minor"/>
         <col right="minor"/>
@@ -88,34 +88,32 @@
     <title>Create Two-Way Table</title>
     <statement>
       <p>Complete the following table.</p>
-      <table>
-        <tabular>
-          <row header="yes">
-            <cell halign="left"></cell>
-            <cell>Awakened to conventional alarm</cell>
-            <cell>Did not awaken to conventional alarm</cell>
-            <cell>Row total</cell>
-          </row>
-          <row>
-            <cell halign="left"><term>Awakened to mother's voice</term></cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-          </row>
-          <row>
-            <cell halign="left"><term>Did not awaken to mother's voice</term></cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-          </row>
-          <row>
-            <cell halign="left"><term>Column total</term></cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-          </row>
-        </tabular>
-      </table>
+      <tabular>
+        <row header="yes">
+          <cell halign="left"></cell>
+          <cell>Awakened to conventional alarm</cell>
+          <cell>Did not awaken to conventional alarm</cell>
+          <cell>Row total</cell>
+        </row>
+        <row>
+          <cell halign="left"><strong>Awakened to mother's voice</strong></cell>
+          <cell><var width="5"/></cell>
+          <cell><var width="5"/></cell>
+          <cell><var width="5"/></cell>
+        </row>
+        <row>
+          <cell halign="left"><strong>Did not awaken to mother's voice</strong></cell>
+          <cell><var width="5"/></cell>
+          <cell><var width="5"/></cell>
+          <cell><var width="5"/></cell>
+        </row>
+        <row>
+          <cell halign="left"><strong>Column total</strong></cell>
+          <cell><var width="5"/></cell>
+          <cell><var width="5"/></cell>
+          <cell><var width="5"/></cell>
+        </row>
+      </tabular>
     </statement>
     <response/>
     <hint>
@@ -169,7 +167,7 @@
   <exercise xml:id="inv4-11-f" label="I4.11.6">
     <title>Mother's Voice Only</title>
     <statement>
-      <p>Of the children you identified in <xref ref="inv4-11-e">checkpoint 17.5.8</xref>, how many woke to the mom's voice alarm only? What proportion of the children you identified in it is this?</p>
+      <p>Of the children you identified in <xref ref="inv4-11-e">checkpoint 17.5.7</xref>, how many woke to the mom's voice alarm only? What proportion of the children you identified in <xref ref="inv4-11-e">checkpoint 17.5.7</xref> is this?</p>
     </statement>
     <response/>
     <solution>
@@ -208,13 +206,17 @@
     <title>Statistical Test</title>
     <statement>
       <p>Use a method discussed previously in this text to assess whether there is statistically significant evidence that the mother's voice is more effective than the conventional alarm. Be sure it is clear how you are finding the p-value (e.g., simulation, exact, theory-based?)</p>
-      <p>This test, using the binomial distribution to look at the distribution number of successes in the off-diagonal cells, is called <alert>McNemar's Test</alert>.</p>
     </statement>
     <response/>
     <solution>
       <p>With a binomial distribution with <m>\pi = 0.5</m> and <m>n = 9</m>, <m>P(X \geq 9) = 0.00195</m> (exact)</p>
     </solution>
   </exercise>
+  
+  <assemblage>
+    <title>McNemar's Test</title>
+    <p>This test, using the binomial distribution to look at the distribution number of successes in the off-diagonal cells, is called <term>McNemar's Test</term>.</p>
+  </assemblage>
   
   <exercise xml:id="inv4-11-j" label="I4.11.10">
     <title>Study Conclusion</title>
@@ -251,34 +253,32 @@
       <title>Complete the Table</title>
       <statement>
         <p>Two children did not escape to either kind of alarm. Use this information to complete the following table:</p>
-        <table>
-          <tabular>
-            <row header="yes">
-              <cell></cell>
-              <cell>Escaped to conventional alarm</cell>
-              <cell>Did not escape to conventional alarm</cell>
-              <cell>Total</cell>
-            </row>
-            <row>
-              <cell>Escaped to mother's voice</cell>
-              <cell><var width="5"/></cell>
-              <cell><var width="5"/></cell>
-              <cell>20</cell>
-            </row>
-            <row>
-              <cell>Did not escape to mother's voice</cell>
-              <cell><var width="5"/></cell>
-              <cell><var width="5"/></cell>
-              <cell><var width="5"/></cell>
-            </row>
-            <row>
-              <cell>Total</cell>
-              <cell>9</cell>
-              <cell><var width="5"/></cell>
-              <cell>24</cell>
-            </row>
-          </tabular>
-        </table>
+        <tabular>
+          <row header="yes">
+            <cell></cell>
+            <cell>Escaped to conventional alarm</cell>
+            <cell>Did not escape to conventional alarm</cell>
+            <cell>Total</cell>
+          </row>
+          <row>
+            <cell>Escaped to mother's voice</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell>20</cell>
+          </row>
+          <row>
+            <cell>Did not escape to mother's voice</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+          <row>
+            <cell>Total</cell>
+            <cell>9</cell>
+            <cell><var width="5"/></cell>
+            <cell>24</cell>
+          </row>
+        </tabular>
       </statement>
       <response/>
     </exercise>
