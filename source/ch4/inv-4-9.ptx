@@ -167,7 +167,7 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     </statement>
     <response/>
     <solution>
-      <p>The center is 0.</p>
+      <p>The center is 0. This is expected because the groups are equally likely to end up with the higher mean.</p>
     </solution>
   </exercise>
   
@@ -183,10 +183,13 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
   </exercise>
   
   <exercise xml:id="inv4-9-l" label="I4.9.12">
-    <title><em>p</em>-value and Conclusion</title>
+    <title>p-value and Conclusion</title>
     <statement>
-      <p>Use the applet to determine the proportion of simulated Average Differences that are more extreme than what we observed, and report the empirical <em>p</em>-value. [Hint: Be sure to consider the alternative hypothesis when deciding what to consider as "more extreme."] What conclusion will you come to based on this <em>p</em>-value? Can you draw a cause-and-effect conclusion? For what population?</p>
+      <p>Use the applet to determine the proportion of simulated Average Differences that are more extreme than what we observed, and report the empirical <em>p</em>-value. What conclusion will you come to based on this <em>p</em>-value? Can you draw a cause-and-effect conclusion? For what population?</p>
     </statement>
+    <hint>
+      <p>Be sure to consider the alternative hypothesis when deciding what to consider as "more extreme."</p>
+    </hint>
     <response/>
     <solution>
       <p>Example results:</p>
@@ -214,12 +217,12 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
   </exercise>
   
   <assemblage>
-    <title>Definitions: Paired t-test</title>
-    <p>A paired <em>t</em>-test standardizes the mean of the differences from a matched-pairs design.</p>
+    <title>Definitions: Paired <em>t</em>-test</title>
+    <p>A <term>paired <em>t</em>-test</term> standardizes the mean of the differences from a matched-pairs design.</p>
     <p><me>t = \frac{\bar{x}_{diff} - 0}{s_{diff}/\sqrt{n_{diff}}}</me></p>
     <p>where <m>\bar{x}_{diff}</m> is the sample mean of differences and <m>s_{diff}</m> is the sample standard deviation of the differences. The standardized statistic above assumes the hypothesized difference is zero, but this can be changed.</p>
     <p><alert>Technical conditions:</alert> When the distribution of differences is normally distributed or the sample size is large (e.g., <m>n > 30</m> pairs of observations), this <em>t</em>-statistic is well modeled by a <em>t</em>-distribution with <m>n - 1</m> degrees of freedom.</p>
-    <p>A paired <em>t</em>-confidence interval for <m>\mu_d</m> has the form <m>\bar{x}_{diff} \pm t_{n-1}^* \times (s_{diff}/\sqrt{n_{diff}})</m></p>
+    <p>A <term>paired <em>t</em>-confidence interval</term> for <m>\mu_d</m> has the form <me>\bar{x}_{diff} \pm t_{n-1}^* \times (s_{diff}/\sqrt{n_{diff}})</me></p>
     <p><alert>Note:</alert> These are a special case of the one-sample <em>t</em>-procedures that can be applied to a single sample of quantitative data (see <xref ref="investigation2-5">Investigation 2.5</xref>). In this case, variable of interest is the difference in the quantitative response for each observational unit pair.</p>
   </assemblage>
   
@@ -252,13 +255,72 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
   <exercise xml:id="inv4-9-p" label="I4.9.16">
     <title>Confidence Interval</title>
     <statement>
-      <p>Use the check box to display the 95% CI for average difference. Report and interpret this interval in context. Is the confidence interval consistent with the <em>p</em>-value? What additional information is provided by the confidence interval?</p>
+      <p>Use the check box to display the 95% CI for average difference. Report and interpret this interval in context. Is the confidence interval consistent with the p-value? What additional information is provided by the confidence interval?</p>
     </statement>
     <response/>
     <solution>
       <p>95% CI: (0.66, 4.57), The long-run average difference in typing speeds (no music-music) is estimated to fall between 0.66 and 4.57 wpm with 95% confidence. We would have enough evidence to conclude that there is an effect of music, as this interval does not include zero. This is consistent with a <em>p</em>-value of 0.006. The additional information provided by the confidence interval is a plausible range for the mean difference in typing speed.</p>
     </solution>
   </exercise>
+  
+  <assemblage>
+    <title>Technology Detour – Paired t-tests</title>
+    
+    <reading-questions>
+      <exercise>
+        <title>R Instructions</title>
+        <statement>
+          <p>Click to view R instructions</p>
+        </statement>
+        <solution>
+          <p><alert>In R:</alert> you can use the t.test command as before but specify the data are paired, e.g.,</p>
+          <pre>
+> t.test(WithMusic, NoMusic, alternative="greater", conf.level = .95, paired=TRUE)
+          </pre>
+          <p>OR with stacked data</p>
+          <pre>
+> t.test(speed~condition, alt="greater", paired=TRUE)
+          </pre>
+        </solution>
+      </exercise>
+    </reading-questions>
+    
+    <reading-questions>
+      <exercise>
+        <title>Minitab Instructions</title>
+        <statement>
+          <p>Click to view Minitab instructions</p>
+        </statement>
+        <solution>
+          <p><alert>In Minitab:</alert></p>
+          <ul>
+            <li><p>Choose Stat > Basic Statistics > Paired t</p></li>
+            <li><p>Choose "Each sample is in a column" and specify the two columns in Sample 1 and Sample 2</p></li>
+            <li><p>Click Options to specify the confidence level and alternative hypothesis direction</p></li>
+            <li><p>Click OK</p></li>
+          </ul>
+          <p>The output will include the standardized statistic (T-Value), <em>p</em>-value, and confidence interval.</p>
+        </solution>
+      </exercise>
+    </reading-questions>
+    
+    <reading-questions>
+      <exercise>
+        <title>JMP Instructions</title>
+        <statement>
+          <p>Click to view JMP instructions</p>
+        </statement>
+        <solution>
+          <p><alert>In JMP:</alert></p>
+          <ul>
+            <li><p>Choose Analyze > Specialized Modeling > Matched Pairs</p></li>
+            <li><p>Specify the two columns in the Y, Paired Response box and press OK</p></li>
+          </ul>
+          <p>The output will include the standardized statistic (t-Ratio), <em>p</em>-values, and confidence interval endpoints.</p>
+        </solution>
+      </exercise>
+    </reading-questions>
+  </assemblage>
   
   <exercise xml:id="inv4-9-q" label="I4.9.17">
     <title>Verify with Software</title>
@@ -283,29 +345,11 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     </solution>
   </exercise>
   
-  <assemblage>
-    <title>Technology Detour – Paired t-tests</title>
-    <p><alert>In R:</alert> you can use the t.test command as before but specify the data are paired, e.g.,</p>
-    <pre>
-> t.test(WithMusic, NoMusic, alternative="greater", conf.level = .95, paired=TRUE)
-    </pre>
-    <p>OR with stacked data</p>
-    <pre>
-> t.test(speed~condition, alt="greater", paired=TRUE)
-    </pre>
-    <p><alert>In JMP</alert></p>
-    <ul>
-      <li><p>Choose Analyze > Specialized Modeling > Matched Pairs</p></li>
-      <li><p>Specify the two columns in the Y, Paired Response box and press OK.</p></li>
-    </ul>
-    <p>The output will include the standardized statistic (t-Ratio), p-values, and confidence interval endpoints.</p>
-  </assemblage>
+  <p><alert>Discussion</alert></p>
   
-  <assemblage>
-    <title>Discussion</title>
-    <p>To compare two groups on a quantitative variable, a more powerful study design than randomly assigning individuals to two groups, if possible, is to pair individuals (or take two measurements on each individual) and measure both responses in each pair (See Example 4.4). This pairing accounts for the variability from individual to individual and allows for a more direct comparison between the two conditions of interest. For example, if two measurements are taken on each individual, there should not be any other systematic differences between the measurements other than the treatment effect. Randomizing will still be important in determining the order of the two treatments, thereby eliminating order as a potential confounding variable. By accounting for the variability in individuals, this should increase the power of the test of significance, making it easier to detect a difference between the two conditions if one really exists. To analyze such data, perform a matched-pairs randomization test or a (one sample) <em>t</em>-test on the differences.</p>
-    <p><alert>Note:</alert> The standard error of the difference in means is equivalent to <m>SE(\bar{X}_1 - \bar{X}_2) = \sqrt{\frac{s_1^2 + s_2^2 - 2rs_1s_2}{n}}</m>, which shows how the positive correlation between the two sets of measurements (<m>r</m>) reduces the estimated standard error of the statistic.</p>
-  </assemblage>
+  <p>To compare two groups on a quantitative variable, a more powerful study design than randomly assigning individuals to two groups, if possible, is to pair individuals (or take two measurements on each individual) and measure both responses in each pair (See Example 4.4). This pairing accounts for the variability from individual to individual and allows for a more direct comparison between the two conditions of interest. For example, if two measurements are taken on each individual, there should not be any other systematic differences between the measurements other than the treatment effect. Randomizing will still be important in determining the order of the two treatments, thereby eliminating order as a potential confounding variable. By accounting for the variability in individuals, this should increase the power of the test of significance, making it easier to detect a difference between the two conditions if one really exists. To analyze such data, perform a matched-pairs randomization test or a (one sample) <em>t</em>-test on the differences.</p>
+  
+  <p><alert>Note:</alert> The standard error of the difference in means is equivalent to <m>SE(\bar{X}_1 - \bar{X}_2) = \sqrt{\frac{s_1^2 + s_2^2 - 2rs_1s_2}{n}}</m>, which shows how the positive correlation between the two sets of measurements (<m>r</m>) reduces the estimated standard error of the statistic.</p>
   
   <assemblage>
     <title>Study Conclusions</title>
@@ -332,7 +376,7 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     </exercise>
     
     <exercise xml:id="practice-4-9a-3" label="P4.9A.3">
-      <title>Power for Paired t-test</title>
+      <title>Power for Paired <em>t</em>-test</title>
       <statement>
         <p>Use statistical software to determine the power of detecting a difference of 5 wpm in a one-sample paired <em>t</em>-test assuming the sample standard deviation of the differences is 5 wpm.</p>
       </statement>
