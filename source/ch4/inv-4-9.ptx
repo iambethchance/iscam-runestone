@@ -7,16 +7,20 @@
     <p><m>H_0: \mu_{music} - \mu_{nomusic} = 0</m> (no difference in the long run average speed)</p>
     <p><m>H_a: \mu_{music} - \mu_{nomusic} > 0</m> (on average typing speed is faster with up-tempo music)</p>
     <p>Below are the results from the students' paired design.</p>
+    
+    <image source="images/Inv4.9results.png" width="70%">
+      <description>Summary statistics and dotplots for typing speeds with and without music</description>
+    </image>
   </introduction>
   
   <exercise xml:id="inv4-9-a" label="I4.9.1">
     <title>Compare to Previous Results</title>
     <statement>
-      <p>Compare these results to the results in Investigation 4.8. What has changed? Will these changes impact the p-value? If so, how?</p>
+      <p>Compare these results to the results in <xref ref="inv-4-8-speed">Investigation 4.8</xref>. What has changed? Will these changes impact the <em>p</em>-value? If so, how?</p>
     </statement>
     <response/>
     <solution>
-      <p>The sample sizes are larger which would lower the p-value. The standard deviations have changed a bit but in general are similar in magnitude to before. The sample means have changed a bit, but in general are similar in magnitude to before. If anything, the difference in mean typing speed between the two groups is a bit smaller which would raise the p-value.</p>
+      <p>The sample sizes are larger which would lower the <em>p</em>-value. The standard deviations have changed a bit but in general are similar in magnitude to before. The sample means have changed a bit, but in general are similar in magnitude to before. If anything, the difference in mean typing speed between the two groups is a bit smaller which would raise the <em>p</em>-value.</p>
     </solution>
   </exercise>
   
@@ -33,10 +37,14 @@
   
   <assemblage>
     <title>Key Idea</title>
-    <p>When the data are paired (e.g., repeat observations on the same observational unit) we should not treat the two samples as independent. This ignores the information that two measurements were taken for each observational unit (we couldn't mix up the values in the second column without altering the information in the data).</p>
+    <p>When the data are <em>paired</em> (e.g., repeat observations on the same observational unit) we should not treat the two samples as independent. This ignores the information that two measurements were taken for each observational unit (we couldn't mix up the values in the second column without altering the information in the data).</p>
   </assemblage>
   
-  <p>As suggested in Investigation 4.8(j), we can use the differences as the response variable.</p>
+  <p>As suggested in <xref ref="inv4-8-j">Investigation 4.8, Checkpoint 10</xref>, we can use the <em>differences</em> as the response variable.</p>
+  
+  <image source="images/Inv4.9diffs.png" width="70%">
+    <description>Distribution of differences in typing speeds (no music - music)</description>
+  </image>
   
   <exercise xml:id="inv4-9-c" label="I4.9.3">
     <title>Distribution of Differences</title>
@@ -79,9 +87,9 @@
     <response/>
     <solution>
       <p>Let <m>\mu_d</m> = the population mean difference in typing speed, nomusic - music</p>
-      <p><md>
-        <mrow>H_0: \mu_d = 0 \text{ (the typing speeds are the same for both conditions)}</mrow>
-        <mrow>H_a: \mu_d \neq 0 \text{ (The typing speeds are not the same for both conditions.)}</mrow>
+      <p><md alignment="alignat">
+        <mrow>H_0: \mu_d = 0 \amp\text{ (the typing speeds are the same for both conditions)}</mrow>
+        <mrow>H_a: \mu_d \neq 0 \amp\text{ (The typing speeds are not the same for both conditions.)}</mrow>
       </md></p>
     </solution>
   </exercise>
@@ -112,9 +120,16 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     </solution>
   </exercise>
   
-  <p>Copy and paste the original raw data (TypingMusic.txt) into the <url href="https://www.rossmanchance.com/applets/2021/anovashuffle/AnovaShuffle.htm?hideExtras=2">Matched Pairs Randomization applet</url>:</p>
+  <p>Copy and paste the original raw data (<url href="http://www.rossmanchance.com/iscam2/data/TypingMusic.txt" visual="rossmanchance.com/iscam2/data/TypingMusic.txt"><c>TypingMusic.txt</c></url>) into the <url href="https://www.rossmanchance.com/applets/2021/matchedpairs/MatchedPairs.htm">Matched Pairs applet</url>:</p>
   
-  <p>View the data window, with one column for the speeds with music and a second column for the speeds without music (each row is one person). You can also include an initial column of identifiers (e.g., student IDs or initials). The dotplots should then show both sets of data, connecting the paired observations, and their differences.</p>
+  <sidebyside widths="48% 48%">
+    <stack>
+      <p>View the data window, with one column for the speeds with music and a second column for the speeds without music (each row is one person). You can also include an initial column of identifiers (e.g., student IDs or initials). The dotplots should then show both sets of data, connecting the paired observations, and their differences.</p>
+    </stack>
+    <image source="images/Inv4.9applet1.png" width="100%">
+      <description>Matched Pairs applet showing data input</description>
+    </image>
+  </sidebyside>
   
   <exercise xml:id="inv4-9-h" label="I4.9.8">
     <title>Examine Outliers</title>
@@ -123,17 +138,28 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     </statement>
     <response/>
     <solution>
-      <p>Example results:</p>
-      <image source="images/inv4-9-sim.png" width="70%">
-        <description>Distribution of 1000 simulated mean differences from re-randomizations</description>
-      </image>
-      <p>This is the distribution of 1000 simulated <m>\bar{x}_d</m> values from 1000 re-randomizations where <m>\bar{x}_d</m> is calculated by subtracting the with-music speed from the no-music speed.</p>
+      <p>You may notice that for each pair, you always get one result in each condition, but they can flop which condition.</p>
     </solution>
   </exercise>
   
-  <p>Check the Randomize box and press Randomize. For each pair, the applet will virtually "flip a coin" and if the coin lands heads, the two observations for that person will change positions. The new dotplots and the new set of differences for these rearranged values will be displayed. The mean of these differences will appear in the bottom dotplot.</p>
+  <p><ul>
+    <li><p>Check the Randomize box and press Randomize. For each pair, the applet will virtually "flip a coin" and if the coin lands heads, the two observations for that person will change positions. The new dotplots and the new set of differences for these rearranged values will be displayed. The mean of these differences will appear in the bottom dotplot.</p></li>
+    <li><p>Uncheck Animate. Press Randomize four more times to get a sense of the variability in the mean difference from repetition to repetition. Change the number of repetitions from 1 to 995 (for a total of 1000) and press Randomize.</p></li>
+  </ul></p>
   
-  <p>Uncheck Animate. Press Randomize four more times to get a sense of the variability in the mean difference from repetition to repetition. Change the number of repetitions from 1 to 995 (for a total of 1000) and press Randomize.</p>
+  <reading-questions>
+    <exercise>
+      <title>Example Results</title>
+      <statement>
+        <p>Click to see example results from the applet:</p>
+      </statement>
+      <solution>
+        <image source="tech_images/inv4-9-sim.png" width="70%">
+          <description>Distribution of 1000 simulated mean differences from re-randomizations</description>
+        </image>
+      </solution>
+    </exercise>
+  </reading-questions>
   
   <exercise xml:id="inv4-9-i" label="I4.9.9">
     <title>Interpret Randomization Distribution</title>
@@ -142,7 +168,7 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     </statement>
     <response/>
     <solution>
-      <p>The center is 0.</p>
+      <p>This is the distribution of 1000 simulated <m>\bar{x}_d</m> values from 1000 re-randomizations where <m>\bar{x}_d</m> is calculated by subtracting the with-music speed from the no-music speed.</p>
     </solution>
   </exercise>
   
@@ -153,7 +179,7 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     </statement>
     <response/>
     <solution>
-      <p>The average difference observed by the student researchers (2.618) falls in the upper right tail of the distribution. It does appear to be a bit unlikely to happen under the assumption that presence/absence of music does not affect typing speed.</p>
+      <p>The center is 0.</p>
     </solution>
   </exercise>
   
@@ -164,39 +190,38 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     </statement>
     <response/>
     <solution>
-      <p>Example results:</p>
-      <image source="tech_images/inv4-9-applet.png" width="70%">
-        <description>Randomization test results from applet</description>
-      </image>
-      <p>Because the applet used a different direction of subtraction, we want to find the proportion of simulated values that are 2.618 or larger. With an approximate p-value of 0.0053 <m>\lt</m> 0.05, we reject the null hypothesis and find statistically significant evidence in favor of the alternative hypothesis, that long-run average typing speed is larger with the up-tempo music. We can draw a cause-and-effect conclusion with this small p-value, because the student employed random assignment in the ordering of the conditions. We don't have a lot of information about how the sample was selected, but it does not appear to be random sampling and we should be cautious in generalizing these results beyond the musicians and athletes at this university.</p>
+      <p>The average difference observed by the student researchers (2.618) falls in the upper right tail of the distribution. It does appear to be a bit unlikely to happen under the assumption that presence/absence of music does not affect typing speed.</p>
     </solution>
   </exercise>
   
   <exercise xml:id="inv4-9-l" label="I4.9.12">
-    <title>P-value and Conclusion</title>
+    <title><em>p</em>-value and Conclusion</title>
     <statement>
-      <p>Use the applet to determine the proportion of simulated Average Differences that are more extreme than what we observed, and report the empirical p-value. [Hint: Be sure to consider the alternative hypothesis when deciding what to consider as "more extreme."] What conclusion will you come to based on this p-value? Can you draw a cause-and-effect conclusion? For what population?</p>
+      <p>Use the applet to determine the proportion of simulated Average Differences that are more extreme than what we observed, and report the empirical <em>p</em>-value. [Hint: Be sure to consider the alternative hypothesis when deciding what to consider as "more extreme."] What conclusion will you come to based on this <em>p</em>-value? Can you draw a cause-and-effect conclusion? For what population?</p>
     </statement>
     <response/>
     <solution>
-      <p>yes; yes</p>
-      <image source="tech_images/inv4-9-tprob.png" width="60%">
-        <description>t-distribution probability calculation</description>
+      <p>Example results:</p>
+      <image source="tech_images/inv4-9-applet.png" width="70%">
+        <description>Randomization test results from applet</description>
       </image>
+      <p>Because the applet used a different direction of subtraction, we want to find the proportion of simulated values that are 2.618 or larger. With an approximate <em>p</em>-value of 0.0053 <m>\lt</m> 0.05, we reject the null hypothesis and find statistically significant evidence in favor of the alternative hypothesis, that long-run average typing speed is larger with the up-tempo music. We can draw a cause-and-effect conclusion with this small <em>p</em>-value, because the student employed random assignment in the ordering of the conditions. We don't have a lot of information about how the sample was selected, but it does not appear to be random sampling and we should be cautious in generalizing these results beyond the musicians and athletes at this university.</p>
     </solution>
   </exercise>
   
   <p><alert>Mathematical Model</alert></p>
   
   <exercise xml:id="inv4-9-m" label="I4.9.13">
-    <title>Normal and t-Distribution Models</title>
+    <title>Normal and <em>t</em>-Distribution Models</title>
     <statement>
-      <p>Does the randomization distribution appear that it would be reasonably well-modeled by a normal distribution? If you change the Statistic from Avg Difference to t-statistic (and check the Overlay t distribution box), do the standardized statistics appear well-modeled by a <em>t</em>-distribution?</p>
+      <p>Does the randomization distribution appear that it would be reasonably well-modeled by a normal distribution? If you change the Statistic from Avg Difference to <em>t</em>-statistic (and check the Overlay <em>t</em> distribution box), do the standardized statistics appear well-modeled by a <em>t</em>-distribution?</p>
     </statement>
     <response/>
     <solution>
-      <p><m>t = \frac{2.618 - 0}{5.71/\sqrt{34}} \approx 2.67</m></p>
-      <p>Interpretation: Our <m>\bar{x}_d</m> is 2.67 standard errors above the hypothesized <m>\mu_d</m> of 0.</p>
+      <p>yes; yes</p>
+      <image source="tech_images/inv4-9-tprob.png" width="60%">
+        <description><em>t</em>-distribution probability calculation</description>
+      </image>
     </solution>
   </exercise>
   
@@ -211,39 +236,39 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
   </assemblage>
   
   <exercise xml:id="inv4-9-n" label="I4.9.14">
-    <title>Calculate and Interpret t-statistic</title>
+    <title>Calculate and Interpret <em>t</em>-statistic</title>
     <statement>
       <p>Use the summary statistics to calculate, by hand, and then interpret the value of this standardized statistic.</p>
     </statement>
     <response/>
     <solution>
-      <p>The standardized statistic is 2.68 and the p-value is 0.006. This is very similar to the p-value from the randomization test (0.005).</p>
+      <p><m>t = \frac{2.618 - 0}{5.71/\sqrt{34}} \approx 2.67</m></p>
+      <p>Interpretation: Our <m>\bar{x}_d</m> is 2.67 standard errors above the hypothesized <m>\mu_d</m> of 0.</p>
+    </solution>
+  </exercise>
+  
+  <exercise xml:id="inv4-9-o" label="I4.9.15">
+    <title>Compare <em>p</em>-values</title>
+    <statement>
+      <p>Using the Overlay <em>t</em> distribution in the applet, how does the <em>p</em>-value compare to the empirical <em>p</em>-value from the simulated paired-randomization test? Do the <em>t</em>-procedures appear to be valid for these data?</p>
+    </statement>
+    <response/>
+    <solution>
+      <p>The standardized statistic is 2.68 and the <em>p</em>-value is 0.006. This is very similar to the <em>p</em>-value from the randomization test (0.005).</p>
       <image source="tech_images/inv4-9-tbi.png" width="70%">
         <description>Theory-based inference results</description>
       </image>
     </solution>
   </exercise>
   
-  <exercise xml:id="inv4-9-o" label="I4.9.15">
-    <title>Compare P-values</title>
-    <statement>
-      <p>Using the Overlay <em>t</em> distribution in the applet, how does the p-value compare to the empirical p-value from the simulated paired-randomization test? Do the <em>t</em>-procedures appear to be valid for these data?</p>
-    </statement>
-    <response/>
-    <solution>
-      <p>95% CI: (0.66, 4.57), The long-run average difference in typing speeds (no music-music) is estimated to fall between 0.66 and 4.57 wpm with 95% confidence. We would have enough evidence to conclude that there is an effect of music, as this interval does not include zero. This is consistent with a p-value of 0.006. The additional information provided by the confidence interval is a plausible range for the mean difference in typing speed.</p>
-    </solution>
-  </exercise>
-  
   <exercise xml:id="inv4-9-p" label="I4.9.16">
     <title>Confidence Interval</title>
     <statement>
-      <p>Use the check box to display the 95% CI for average difference. Report and interpret this interval in context. Is the confidence interval consistent with the p-value? What additional information is provided by the confidence interval?</p>
+      <p>Use the check box to display the 95% CI for average difference. Report and interpret this interval in context. Is the confidence interval consistent with the <em>p</em>-value? What additional information is provided by the confidence interval?</p>
     </statement>
     <response/>
     <solution>
-      <p>By hand: <m>2.618 \pm 2 \cdot \frac{5.71}{\sqrt{34}} \approx (0.66, 4.58)</m></p>
-      <p>We are 95% confident the mean difference in typing speeds is between 0.66 words per minute and 4.58 words per minute faster when listening to (this) up-tempo music.</p>
+      <p>95% CI: (0.66, 4.57), The long-run average difference in typing speeds (no music-music) is estimated to fall between 0.66 and 4.57 wpm with 95% confidence. We would have enough evidence to conclude that there is an effect of music, as this interval does not include zero. This is consistent with a <em>p</em>-value of 0.006. The additional information provided by the confidence interval is a plausible range for the mean difference in typing speed.</p>
     </solution>
   </exercise>
   
