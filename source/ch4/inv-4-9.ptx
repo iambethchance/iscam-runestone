@@ -62,21 +62,41 @@
     <statement>
       <p>How does the mean of the differences (<m>\bar{x}_{diff}</m>) compare to the difference in means (<m>\bar{x}_{music} - \bar{x}_{nomusic}</m>)?</p>
     </statement>
-    <response/>
-    <solution>
-      <p><m>63.588 - 66.206 = -2.62</m>, the same</p>
-    </solution>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><p>Equal to</p></statement>
+        <feedback><p>Correct! <m>63.588 - 66.206 = -2.62</m>, the same as the mean of differences.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Greater than</p></statement>
+        <feedback><p>Calculate the difference in means and compare.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Less than</p></statement>
+        <feedback><p>Calculate the difference in means and compare.</p></feedback>
+      </choice>
+    </choices>
   </exercise>
   
   <exercise xml:id="inv4-9-e" label="I4.9.5">
     <title>Standard Deviation Comparison</title>
     <statement>
-      <p>How does the standard deviation of the differences compare to the standard deviations of the original typing speeds in the two groups? What does this tell you about the effectiveness of the pairing in this context?</p>
+      <p>How does the standard deviation of the differences compare to the standard deviations of the original typing speeds in the two groups?</p>
     </statement>
-    <response/>
-    <solution>
-      <p>The standard deviation of the differences (5.71) is much smaller than the original SDs of 14.1 and 13.8.</p>
-    </solution>
+    <choices randomize="no">
+      <choice>
+        <statement><p>Greater than</p></statement>
+        <feedback><p>Compare the SD of differences (5.71) to the original SDs (14.1 and 13.8).</p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>Less than</p></statement>
+        <feedback><p>Correct! The standard deviation of the differences (5.71) is much smaller than the original SDs of 14.1 and 13.8, showing the pairing was effective.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Equal to</p></statement>
+        <feedback><p>Compare the SD of differences (5.71) to the original SDs (14.1 and 13.8).</p></feedback>
+      </choice>
+    </choices>
   </exercise>
   
   <exercise xml:id="inv4-9-f" label="I4.9.6">
@@ -203,17 +223,42 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
   <p><alert>Mathematical Model</alert></p>
   
   <exercise xml:id="inv4-9-m" label="I4.9.13">
-    <title>Normal and <em>t</em>-Distribution Models</title>
+    <title>Normal Distribution Model</title>
     <statement>
-      <p>Does the randomization distribution appear that it would be reasonably well-modeled by a normal distribution? If you change the Statistic from Avg Difference to <em>t</em>-statistic (and check the Overlay <em>t</em> distribution box), do the standardized statistics appear well-modeled by a <em>t</em>-distribution?</p>
+      <p>Does the randomization distribution appear that it would be reasonably well-modeled by a normal distribution?</p>
     </statement>
-    <response/>
-    <solution>
-      <p>yes; yes</p>
-      <image source="images/Inv4.9solsl.png" width="70%">
-        <description>Example of t-distribution overlay</description>
-      </image>
-    </solution>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><p>Yes</p></statement>
+        <feedback><p>Correct! The randomization distribution appears reasonably symmetric and bell-shaped.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>No</p></statement>
+        <feedback><p>Look at the shape of the randomization distribution in the applet.</p></feedback>
+      </choice>
+    </choices>
+  </exercise>
+  
+  <exercise xml:id="inv4-9-m2" label="I4.9.13b">
+    <title><em>t</em>-Distribution Model</title>
+    <statement>
+      <p>If you change the Statistic from Avg Difference to <em>t</em>-statistic (and check the Overlay <em>t</em> distribution box), do the standardized statistics appear well-modeled by a <em>t</em>-distribution?</p>
+    </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><p>Yes</p></statement>
+        <feedback>
+          <p>Correct! The <em>t</em>-distribution overlays the randomization distribution well.</p>
+          <image source="images/Inv4.9solsl.png" width="70%">
+            <description>Example of t-distribution overlay</description>
+          </image>
+        </feedback>
+      </choice>
+      <choice>
+        <statement><p>No</p></statement>
+        <feedback><p>Check the overlay of the <em>t</em>-distribution on the randomization distribution in the applet.</p></feedback>
+      </choice>
+    </choices>
   </exercise>
   
   <assemblage>
@@ -267,9 +312,6 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     <title>Verify with Software</title>
     <statement>
       <p>Verify your results using software.</p>
-    </statement>
-    <hint>
-      <title>R</title>
       <p><alert>In R:</alert> you can use the t.test command as before but specify the data are paired, e.g.,</p>
       <pre>
 > t.test(WithMusic, NoMusic, alternative="greater", conf.level = .95, paired=TRUE)
@@ -278,16 +320,13 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
       <pre>
 > t.test(speed~condition, alt="greater", paired=TRUE)
       </pre>
-    </hint>
-    <hint>
-      <title>JMP</title>
       <p><alert>In JMP:</alert></p>
       <ul>
         <li><p>Choose Analyze > Specialized Modeling > Matched Pairs</p></li>
         <li><p>Specify the two columns in the Y, Paired Response box and press OK</p></li>
       </ul>
       <p>The output will include the standardized statistic (t-Ratio), <em>p</em>-values, and confidence interval endpoints.</p>
-    </hint>
+    </statement>
     <response/>
     <solution>
       <p><alert>R output:</alert></p>
