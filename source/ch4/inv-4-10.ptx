@@ -197,5 +197,76 @@ mean of the differences              -0.1182
     </exercise>
     
   </subsection>
+
+  <subsection xml:id="inv4-10-solutions">
+    <title>Solutions</title>
+
+    <solution>
+      <title>Solution to (a)</title>
+      <p><ul>
+        <li><p>Obs units: grocery items</p></li>
+        <li><p>Response variable: What is the item's price or more specifically, what is the difference in the item's price at Lucky's versus Scolari's?</p></li>
+        <li><p>Population: all products common to Scolari's and Lucky's</p></li>
+        <li><p>Sample: 29 items</p></li>
+        <li><p>Initial conjecture: Lucky's will have a lower average price</p></li>
+      </ul></p>
+    </solution>
+
+    <solution>
+      <title>Solution to (b)</title>
+      <p>This was an observational study. This was not a SRS, but was a systematic sample. Advantage - very convenient and uses random selection; disadvantage - still have to find items.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (c)</title>
+      <p>Paired design</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (d)</title>
+      <p>Let <m>\mu_d</m> = average price difference (Lucky's - Scolari's)</p>
+      <p><md>
+        <mrow>H_0: \mu_d = 0 \text{ (no price difference on average for all the products common to both stores)}</mrow>
+        <mrow>H_a: \mu_d > 0 \text{ (Lucky's tends to have lower prices than Scolari's, on average)}</mrow>
+      </md></p>
+    </solution>
+
+    <solution>
+      <title>Solution to (e)</title>
+      <p>Yes, there is much less variability in the differences than in the prices themselves (we are comparing very different types of products with a wide range of prices).</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (f)</title>
+      <p>Yes, the distribution of the differences is not heavily skewed, nor are there huge outliers, and our sample size is close to 30. Note, the distributions of the prices themselves are skewed to the right, but that doesn't concern us here as we focus on the distribution of the differences.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (g)</title>
+      <p>p-value = 0.046, so we have strong evidence (at 5% level) that the average price difference is positive. That is, on average, Scolari's is more expensive per item. I'm 95% confident I will save 0.02 cents to $0.60 per item on average. Can generalize to all items at the two stores because systematic sampling used. But cannot draw a cause-and-effect conclusion as this is an observational study.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (h)</title>
+      <p>Using the <m>n = 28</m> data set (with milk removed):</p>
+      <p><m>\bar{x} = -\$0.1182</m>, <m>s = \$0.3588</m></p>
+      <p><m>t^*</m> with <m>n - 1 = 27</m> degrees of freedom, 90% confidence = 1.703</p>
+      <p><m>-0.1182 + 1.730(0.3588) \cdot \sqrt{1 + \frac{1}{28}} = -0.1182 + 0.622</m></p>
+      <p>90% prediction interval: <m>(-0.74, 0.50)</m></p>
+      <p>I'm 90% confident that an individual item will be anywhere from 74 cents more expensive at Scolari's to 50 cents more expensive at Lucky's. (Meaning, this should work -- successfully predict a price difference -- 90% of the time. So we can say roughly 90% of products have a price difference in this interval, at least with 90% confidence.)</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (i)</title>
+      <p>The prediction interval is much wider than the confidence interval (but has the same midpoint). This reflects that it is harder to predict the outcome of the next observation than the average outcome of all the observations.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (j)</title>
+      <p>It's important to realize that they tell us different things. Do you want to know the price difference averaged across the population (e.g., to help you figure out the total bill between the two stores on all items) or do you want to know how much the price different might be on an individual item?</p>
+
+      <p><alert>Note:</alert> About 6 of the 28 items (21%) are inside the confidence interval. This proportion is not supposed to be close to 0.90 because the confidence interval provides an estimate of the population mean, not individual prices. With the prediction interval 25 of 28 items (89%) are inside the prediction interval.</p>
+    </solution>
+  </subsection>
   
 </section>

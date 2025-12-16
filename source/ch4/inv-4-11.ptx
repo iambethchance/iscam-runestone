@@ -231,5 +231,96 @@
     </exercise>
     
   </subsection>
+
+  <subsection xml:id="inv4-11-solutions">
+    <title>Solutions</title>
+
+    <solution>
+      <title>Solution to (a)</title>
+      <p><ul>
+        <li><p>Obs units: 24 children</p></li>
+        <li><p>Explanatory variable: What type of alarm was used? Type: binary categorical</p></li>
+        <li><p>Response variable: Did the child wake? Type: binary categorical</p></li>
+        <li><p>Type of study: matched pairs</p></li>
+        <li><p>Randomness: which alarm was used first, paired design</p></li>
+      </ul></p>
+    </solution>
+
+    <solution>
+      <title>Solution to (b)</title>
+      <p>The research question is whether a child was more likely to wake up to the mom's voice than to the conventional alarm. If we let <m>\pi_1</m> and <m>\pi_2</m> represent these two probabilities, we can write this as <m>H_0: \pi_1 = \pi_2</m> vs <m>H_a: \pi_1 > \pi_2</m> but we need to keep in mind that these are not independent samples. In the data, <m>23/24 \approx 0.958</m> woke up to the mom's voice; <m>14/24 \approx 0.583</m> woke up to the conventional alarm. This provides strong preliminary evidence that the probability of waking is larger with the mom's voice, but we can't apply Fisher's Exact Test because this was not a randomized experiment with two separate treatments - we do not have two independent random samples.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (c)</title>
+      <p>It's not clear which column (mom's voice or conventional alarm) would be considered the response variable, but if we mix up the entries in one column, most of the rows will not see a change because most of the rows are (awake, awake) anyway.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (d)</title>
+      <table xml:id="table-inv4-11-solution">
+        <title>Two-way table for paired data</title>
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+          <row header="yes">
+            <cell></cell>
+            <cell>Awakened to conventional</cell>
+            <cell>Did not awaken to conventional</cell>
+            <cell>Row total</cell>
+          </row>
+          <row>
+            <cell>Awakened to mother's voice</cell>
+            <cell>14</cell>
+            <cell>9</cell>
+            <cell>23</cell>
+          </row>
+          <row>
+            <cell>Did not awaken to mother's voice</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>Column total</cell>
+            <cell>14</cell>
+            <cell>10</cell>
+            <cell>24</cell>
+          </row>
+        </tabular>
+      </table>
+    </solution>
+
+    <solution>
+      <title>Solution to (e)</title>
+      <p><m>9 + 0</m> children responded differently to the two alarms.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (f)</title>
+      <p>None of the children in (e) awoke to only the conventional alarm. This is a proportion of 0.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (g)</title>
+      <p>Half the time</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (h)</title>
+      <p><md>
+        <mrow>H_0: \pi = 0.50 \text{ (equally likely to wake up to only mom and only conventional alarm)}</mrow>
+        <mrow>H_a: \pi > 0.50 \text{ (more likely to wake up to mom only than to conventional only)}</mrow>
+      </md></p>
+    </solution>
+
+    <solution>
+      <title>Solution to (i)</title>
+      <p>With a binomial distribution with <m>\pi = 0.5</m> and <m>n = 9</m>, <m>P(X \geq 9) = 0.00195</m> (exact)</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (j)</title>
+      <p>We have strong evidence (p-value = 0.00195) to reject <m>H_0: \pi = 0.5</m> (equally likely to wake up to mom/conventional) when only wake up to one of the two alarms. This is convincing evidence that mom's voice increases (causation because this was a randomized matched-pairs experiment) the likelihood of waking up, at least for children like those in this study (healthy children aged 6-12).</p>
+    </solution>
+  </subsection>
   
 </section>

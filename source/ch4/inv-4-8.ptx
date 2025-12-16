@@ -3,7 +3,7 @@
   <title>Investigation 4.8: Speed It Up</title>
 
   <introduction>
-    <p>Student researchers (Coutin <ampersand/> Heffler, 2021) wanted to know whether listening to up-tempo music causes college students to tend to type faster. To collect their data (number of words typed correctly in one minute), the students planned to use the 60-second Easy-Text typing test (TypingTest.com). They recruited 34 college students from groups they were associated with on campus (e.g., athletic teams, musical groups). For the up-tempo music they selected Overture to Candide performed by the London Symphony Orchestra.</p>
+    <p>Student researchers (Coutin <ampersand/> Heffler, 2021) wanted to know whether listening to up-tempo music causes college students to tend to type faster. To collect their data (number of words typed correctly in one minute), the students planned to use the 60-second Easy-Text typing test (<url href="https://www.typingtest.com/">TypingTest.com</url>). They recruited 34 college students from groups they were associated with on campus (e.g., athletic teams, musical groups). For the up-tempo music they selected <em>Overture to Candide</em> performed by the London Symphony Orchestra.</p>
     
     <p>Let <m>\mu_{nomusic}</m> represent the population mean typing speed without the music and <m>\mu_{music}</m> the population mean typing speed with the music.</p>
   </introduction>
@@ -49,7 +49,7 @@
   </exercise>
   
   <exercise xml:id="inv4-8-e" label="I4.8.5">
-    <title>Validity of Two-Sample t-Test</title>
+    <title>Validity of Two-Sample <m>t</m>-Test</title>
     <statement>
       <p>Is a two-sample <em>t</em>-test likely valid for these data? Explain.</p>
     </statement>
@@ -109,7 +109,7 @@
   </assemblage>
   
   <exercise xml:id="inv4-8-k" label="I4.8.11">
-    <title>Identical Typing Tests</title>
+    <title>Identical Typing Tests?</title>
     <statement>
       <p>Should the participants be given an identical typing test both times? Explain.</p>
     </statement>
@@ -196,6 +196,107 @@
       <response/>
     </exercise>
     
+  </subsection>
+
+  <subsection xml:id="inv4-8-solutions">
+    <title>Solutions</title>
+
+    <solution>
+      <title>Solution to (a)</title>
+      <p>The students are interested in testing</p>
+      <p><md>
+        <mrow>H_0: \mu_{nomusic} - \mu_{music} = 0 \text{ (there is no difference in the mean typing speed with and without the music)}</mrow>
+        <mrow>H_a: \mu_{nomusic} - \mu_{music} \lt 0 \text{ (the average typing speed is larger when the up-tempo music is playing)}</mrow>
+      </md></p>
+    </solution>
+
+    <solution>
+      <title>Solution to (b)</title>
+      <p>Completely randomized design</p>
+
+      <figure xml:id="fig-inv4-8-design">
+        <caption>Completely randomized design</caption>
+        <image source="assets/tech_images/inv4-8-design.png" width="70%">
+          <description>Diagram showing completely randomized design for typing study</description>
+        </image>
+      </figure>
+
+      <p>The explanatory variable (whether or not the music is playing) is categorical and the response variable (typing speed measured in words per minute) is quantitative.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (c)</title>
+      <p>You would want to make sure the conditions for each participant are as identical as possible (e.g., no distractions, same level of motivation). You would want to make sure that the timing starts at the same time for everyone, that everyone listens to the same music at the same volume etc.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (d)</title>
+      <p>There is very little difference between the distributions. The means are only about 3.5 words per minute apart and there is substantial variation with standard deviations of 10.8 and 16.1 words per minute. With such much overlap between the two distributions and relatively small sample sizes, it is unlikely that this difference will be considered statistically significant.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (e)</title>
+      <p>The sample sizes are both below 20 and we do have a few outliers. Apart from the outliers, the shapes are somewhat symmetric and similar to each other. This is a pretty borderline case and we may want to explore additional approaches as well.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (f)</title>
+      <p>If everything stays the same but the sample sizes are doubled, then the p-value will be smaller. We could compare the two analyses directly:</p>
+
+      <sidebyside widths="48% 48%">
+        <figure xml:id="fig-inv4-8-n17">
+          <caption>Analysis with <m>n = 17</m></caption>
+          <image source="assets/tech_images/inv4-8-n17.png" width="100%">
+            <description>Results with sample size 17</description>
+          </image>
+        </figure>
+        <figure xml:id="fig-inv4-8-n34">
+          <caption>Analysis with <m>n = 34</m></caption>
+          <image source="assets/tech_images/inv4-8-n34.png" width="100%">
+            <description>Results with sample size 34</description>
+          </image>
+        </figure>
+      </sidebyside>
+
+      <p>In this case, we would still fail to reject the null hypothesis. This is because <m>SD(\bar{x}_1 - \bar{x}_2) = \sqrt{\frac{10.8^2}{17} + \frac{16.1^2}{17}} \approx 4.71</m> is still fairly large, compared to <m>SD(\bar{x}_1 - \bar{x}_2) = \sqrt{\frac{10.8^2}{34} + \frac{16.1^2}{34}} \approx 3.33</m>.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (g)</title>
+      <p>Power represents the probability of rejecting the null hypothesis that the population means are the same when the music population mean is actually 4wpm larger (<m>\mu_{nomusic} - \mu_{music} = -4</m>). Sample sizes around 100 are needed in order for <m>SD(\bar{x}_1 - \bar{x}_2)</m> to be closer to 2 so the t-statistic is above 2 (in absolute value).</p>
+
+      <figure xml:id="fig-inv4-8-power">
+        <caption>Power analysis</caption>
+        <image source="assets/tech_images/inv4-8-power.png" width="70%">
+          <description>Power analysis showing need for larger sample sizes</description>
+        </image>
+      </figure>
+    </solution>
+
+    <solution>
+      <title>Solution to (h)</title>
+      <p>One suggestion is to have each individual do the same typing test twice, once with music and once without.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (i)</title>
+      <p>We could randomize which test condition (with or without music) they use first.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (j)</title>
+      <p>We could measure the difference in words per minute on the two tests, a quantitative variable.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (k)</title>
+      <p>If there is no memory/advantage in taking the test the second time (or what advantage there is will be balanced out by the random assignment suggested in (i)), then they could be identical. Should at least be of the same level of difficulty.</p>
+    </solution>
+
+    <solution>
+      <title>Solution to (l)</title>
+      <p>If we thought music students had similar typing abilities to each other, you could create pairs of music students, given one the typing test with music and one without music. Similarly for the athletes. But is unlikely that the students in a pair will be nearly the same in typing ability as measuring the same participant twice.</p>
+    </solution>
   </subsection>
   
 </section>
