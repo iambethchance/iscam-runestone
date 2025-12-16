@@ -193,7 +193,7 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     <response/>
     <solution>
       <p>Example results:</p>
-      <image source="images/Inv4.9solsl.png" width="70%">
+      <image source="images/Inv4.9solsk.jpg" width="70%">
         <description>Randomization test results from applet</description>
       </image>
       <p>Because the applet used a different direction of subtraction, we want to find the proportion of simulated values that are 2.618 or larger. With an approximate <em>p</em>-value of 0.0053 <m>\lt</m> 0.05, we reject the null hypothesis and find statistically significant evidence in favor of the alternative hypothesis, that long-run average typing speed is larger with the up-tempo music. We can draw a cause-and-effect conclusion with this small <em>p</em>-value, because the student employed random assignment in the ordering of the conditions. We don't have a lot of information about how the sample was selected, but it does not appear to be random sampling and we should be cautious in generalizing these results beyond the musicians and athletes at this university.</p>
@@ -207,16 +207,11 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     <statement>
       <p>Does the randomization distribution appear that it would be reasonably well-modeled by a normal distribution? If you change the Statistic from Avg Difference to <em>t</em>-statistic (and check the Overlay <em>t</em> distribution box), do the standardized statistics appear well-modeled by a <em>t</em>-distribution?</p>
     </statement>
-    <hint>
-      <image source="images/Inv4.9solsk.jpg" width="70%">
-        <description>Example of t-distribution overlay</description>
-      </image>
-    </hint>
     <response/>
     <solution>
       <p>yes; yes</p>
-      <image source="tech_images/inv4-9-tprob.png" width="60%">
-        <description><em>t</em>-distribution probability calculation</description>
+      <image source="images/Inv4.9solsl.png" width="70%">
+        <description>Example of t-distribution overlay</description>
       </image>
     </solution>
   </exercise>
@@ -244,7 +239,7 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
   </exercise>
   
   <exercise xml:id="inv4-9-o" label="I4.9.15">
-    <title>Compare <em>p</em>-values</title>
+    <title>Compare p-values</title>
     <statement>
       <p>Using the Overlay <em>t</em> distribution in the applet, how does the <em>p</em>-value compare to the empirical <em>p</em>-value from the simulated paired-randomization test? Do the <em>t</em>-procedures appear to be valid for these data?</p>
     </statement>
@@ -274,6 +269,7 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
       <p>Verify your results using software.</p>
     </statement>
     <hint>
+      <title>Hint 1: R</title>
       <p><alert>In R:</alert> you can use the t.test command as before but specify the data are paired, e.g.,</p>
       <pre>
 > t.test(WithMusic, NoMusic, alternative="greater", conf.level = .95, paired=TRUE)
@@ -284,16 +280,7 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
       </pre>
     </hint>
     <hint>
-      <p><alert>In Minitab:</alert></p>
-      <ul>
-        <li><p>Choose Stat > Basic Statistics > Paired t</p></li>
-        <li><p>Choose "Each sample is in a column" and specify the two columns in Sample 1 and Sample 2</p></li>
-        <li><p>Click Options to specify the confidence level and alternative hypothesis direction</p></li>
-        <li><p>Click OK</p></li>
-      </ul>
-      <p>The output will include the standardized statistic (T-Value), <em>p</em>-value, and confidence interval.</p>
-    </hint>
-    <hint>
+      <title>Hint 2: JMP</title>
       <p><alert>In JMP:</alert></p>
       <ul>
         <li><p>Choose Analyze > Specialized Modeling > Matched Pairs</p></li>
@@ -314,9 +301,7 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     </solution>
   </exercise>
   
-  <p><alert>Discussion</alert></p>
-  
-  <p>To compare two groups on a quantitative variable, a more powerful study design than randomly assigning individuals to two groups, if possible, is to pair individuals (or take two measurements on each individual) and measure both responses in each pair (See Example 4.4). This pairing accounts for the variability from individual to individual and allows for a more direct comparison between the two conditions of interest. For example, if two measurements are taken on each individual, there should not be any other systematic differences between the measurements other than the treatment effect. Randomizing will still be important in determining the order of the two treatments, thereby eliminating order as a potential confounding variable. By accounting for the variability in individuals, this should increase the power of the test of significance, making it easier to detect a difference between the two conditions if one really exists. To analyze such data, perform a matched-pairs randomization test or a (one sample) <em>t</em>-test on the differences.</p>
+  <p><alert>Discussion</alert>: To compare two groups on a quantitative variable, a more powerful study design than randomly assigning individuals to two groups, if possible, is to pair individuals (or take two measurements on each individual) and measure both responses in each pair (See Example 4.4). This pairing accounts for the variability from individual to individual and allows for a more direct comparison between the two conditions of interest. For example, if two measurements are taken on each individual, there should not be any other systematic differences between the measurements other than the treatment effect. Randomizing will still be important in determining the order of the two treatments, thereby eliminating order as a potential confounding variable. By accounting for the variability in individuals, this should increase the power of the test of significance, making it easier to detect a difference between the two conditions if one really exists. To analyze such data, perform a matched-pairs randomization test or a (one sample) <em>t</em>-test on the differences.</p>
   
   <p><alert>Note:</alert> The standard error of the difference in means is equivalent to <m>SE(\bar{X}_1 - \bar{X}_2) = \sqrt{\frac{s_1^2 + s_2^2 - 2rs_1s_2}{n}}</m>, which shows how the positive correlation between the two sets of measurements (<m>r</m>) reduces the estimated standard error of the statistic.</p>
   
