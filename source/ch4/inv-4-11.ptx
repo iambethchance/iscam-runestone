@@ -3,11 +3,17 @@
   <title>Investigation 4.11: Smoke Alarms</title>
 
   <introduction>
-    <p>A study published in the journal Pediatrics (Smith et al., 2006) addressed the important issue of how to awaken children during a house fire so they can escape safely. Researchers worked with a volunteer sample of 24 healthy children aged 6-12 by training them to perform a simulated self-rescue escape procedure when they heard an alarm. Researchers then compared the children's reactions to two kinds of alarms: a conventional smoke alarm and a personalized recording of the mother's voice saying the child's name and urging him or her to wake up. All 24 children were exposed to both kinds of alarms, with the order determined randomly.</p>
+    <p>A study published in the journal <em>Pediatrics</em> (<url href="https://pubmed.ncbi.nlm.nih.gov/17015555/">Smith et al., 2006</ul>) addressed the important issue of how to awaken children during a house fire so they can escape safely. Researchers worked with a volunteer sample of 24 healthy children aged 6-12 by training them to perform a simulated self-rescue escape procedure when they heard an alarm. Researchers then compared the children's reactions to two kinds of alarms: a conventional smoke alarm and a personalized recording of the mother's voice saying the child's name and urging him or her to wake up. All 24 children were exposed to both kinds of alarms, with the order determined randomly.</p>
     
-    <table>
+    <table xml:id="table-inv4-11-intro">
       <title>Children's Responses to Alarms</title>
-      <tabular>
+      <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <col right="minor"/>
+        <col right="minor"/>
+        <col right="major"/>
+        <col right="minor"/>
+        <col right="minor"/>
+        <col right="minor"/>
         <row header="yes">
           <cell>Child #</cell>
           <cell>Response to mother voice</cell>
@@ -83,7 +89,7 @@
   <exercise xml:id="inv4-11-d" label="I4.11.4">
     <title>Create Two-Way Table</title>
     <statement>
-      <p>Complete the following table. [Hint: what should your table total be?]</p>
+      <p>Complete the following table.</p>
       <table>
         <tabular>
           <row header="yes">
@@ -93,19 +99,19 @@
             <cell>Row total</cell>
           </row>
           <row>
-            <cell>Awakened to mother's voice</cell>
+            <cell><alert>Awakened to mother's voice</alert></cell>
             <cell><var width="5"/></cell>
             <cell><var width="5"/></cell>
             <cell><var width="5"/></cell>
           </row>
           <row>
-            <cell>Did not awaken to mother's voice</cell>
+            <cell><alert>Did not awaken to mother's voice</alert></cell>
             <cell><var width="5"/></cell>
             <cell><var width="5"/></cell>
             <cell><var width="5"/></cell>
           </row>
           <row>
-            <cell>Column total</cell>
+            <cell><alert>Column total</alert></cell>
             <cell><var width="5"/></cell>
             <cell><var width="5"/></cell>
             <cell><var width="5"/></cell>
@@ -114,30 +120,34 @@
       </table>
     </statement>
     <response/>
+    <hint>
+      <title>Hint</title>
+      <p>What should your table total be?</p>
+    </hint>
     <solution>
       <table xml:id="table-inv4-11-solution">
         <title>Two-way table for paired data</title>
         <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
           <row header="yes">
-            <cell></cell>
+            <cell halign="left"></cell>
             <cell>Awakened to conventional</cell>
             <cell>Did not awaken to conventional</cell>
             <cell>Row total</cell>
           </row>
           <row>
-            <cell>Awakened to mother's voice</cell>
+            <cell halign="left"><alert>Awakened to mother's voice</alert></cell>
             <cell>14</cell>
             <cell>9</cell>
             <cell>23</cell>
           </row>
           <row>
-            <cell>Did not awaken to mother's voice</cell>
+            <cell halign="left"><alert>Did not awaken to mother's voice</alert></cell>
             <cell>0</cell>
             <cell>1</cell>
             <cell>1</cell>
           </row>
           <row>
-            <cell>Column total</cell>
+            <cell halign="left"><alert>Column total</alert></cell>
             <cell>14</cell>
             <cell>10</cell>
             <cell>24</cell>
@@ -151,17 +161,18 @@
     <title>Non-Ties</title>
     <statement>
       <p>How many children responded differently to the two alarms? (We will treat these "non-ties" as our sample size.)</p>
+      <p>Number of children: <var form="numeric" width="10"/></p>
     </statement>
     <response/>
     <solution>
-      <p><m>9 + 0</m> children responded differently to the two alarms.</p>
+      <p><m>9 + 0 = 9</m> children responded differently to the two alarms.</p>
     </solution>
   </exercise>
   
   <exercise xml:id="inv4-11-f" label="I4.11.6">
     <title>Mother's Voice Only</title>
     <statement>
-      <p>Of the children you identified in (e), how many woke to the mom's voice alarm only? What proportion of the children you identified in (e) is this?</p>
+      <p>Of the children you identified in <xref ref="inv4-11-e" text="custom">(e)</xref>, how many woke to the mom's voice alarm only? What proportion of the children you identified in <xref ref="inv4-11-e" text="custom">(e)</xref> is this?</p>
     </statement>
     <response/>
     <solution>
@@ -173,6 +184,7 @@
     <title>Expected Success Rate</title>
     <statement>
       <p>Suppose there was no difference in the effectiveness of the two alarms in the long-run. If a child does react differently to the two alarms (wakes to one but not the other), how often would you expect the "success alarm" to be the mother's voice in the long run?</p>
+      <p>Probability: <var width="10"/></p>
     </statement>
     <response/>
     <solution>
@@ -184,13 +196,15 @@
     <title>State Hypotheses</title>
     <statement>
       <p>Let <m>\pi</m> represent the probability of waking to the mother's voice alarm when a child wakes to only one of the two alarms. State appropriate null and alternative hypotheses in terms of <m>\pi</m> for deciding whether the mother's voice is the more effective alarm.</p>
+      <p><m>H_0</m>: <m>\pi</m> <var width="5"/> <var width="10"/></p>
+      <p><m>H_a</m>: <m>\pi</m> <var width="5"/> <var width="10"/></p>
+      <p>Definition of <m>\pi</m>: <var width="60"/></p>
     </statement>
     <response/>
     <solution>
-      <p><md>
-        <mrow>H_0: \pi = 0.50 \text{ (equally likely to wake up to only mom and only conventional alarm)}</mrow>
-        <mrow>H_a: \pi > 0.50 \text{ (more likely to wake up to mom only than to conventional only)}</mrow>
-      </md></p>
+      <p><br/><m>H_0: \pi = 0.50</m></p>
+      <p><m>H_a: \pi > 0.50</m></p>
+      <p>where <m>\pi</m> = probability of waking to the mother's voice alarm when a child wakes to only one of the two alarms (equally likely to wake up to only mom and only conventional alarm under null; more likely to wake up to mom only than to conventional only under alternative)</p>
     </solution>
   </exercise>
   
