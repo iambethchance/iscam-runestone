@@ -167,19 +167,16 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     <li><p>Uncheck Animate. Press Randomize four more times to get a sense of the variability in the mean difference from repetition to repetition. Change the number of repetitions from 1 to 995 (for a total of 1000) and press Randomize.</p></li>
   </ul></p>
   
-  <reading-questions>
-    <exercise>
-      <title>Example results</title>
-      <statement>
-        <p>Click to view example results from the applet</p>
-      </statement>
-      <solution>
-        <image source="tech_images/inv4-9-sim.png" width="70%">
-          <description>Distribution of 1000 simulated mean differences from re-randomizations</description>
-        </image>
-      </solution>
-    </exercise>
-  </reading-questions>
+  <exercise label="inv4-9-example-results">
+    <statement>
+      <p>Example results</p>
+    </statement>
+    <solution>
+      <image source="tech_images/inv4-9-sim.png" width="70%">
+        <description>Distribution of 1000 simulated mean differences from re-randomizations</description>
+      </image>
+    </solution>
+  </exercise>
   
   <exercise xml:id="inv4-9-i" label="I4.9.9">
     <title>Interpret Randomization Distribution</title>
@@ -327,7 +324,7 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     </statement>
     <response/>
     <hint>
-      <title>Hint 1: R</title>
+      <title>R</title>
       <p><alert>In R:</alert> you can use the t.test command as before but specify the data are paired, e.g.,</p>
       <pre>
 > t.test(WithMusic, NoMusic, alternative="greater", conf.level = .95, paired=TRUE)
@@ -338,7 +335,7 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
       </pre>
     </hint>
     <hint>
-      <title>Hint 2: JMP</title>
+      <title>JMP</title>
       <p><alert>In JMP:</alert></p>
       <ul>
         <li><p>Choose Analyze > Specialized Modeling > Matched Pairs</p></li>
