@@ -16,7 +16,7 @@
   <exercise xml:id="inv4-9-a" label="I4.9.1">
     <title>Compare to Previous Results</title>
     <statement>
-      <p>Compare these results to the results in <xref ref="inv-4-8-speed">Investigation 4.8</xref>. What has changed? Will these changes impact the <em>p</em>-value? If so, how?</p>
+      <p>Compare these results to the results in <xref ref="inv-4-8-speed">Investigation 4.8</xref>. What has changed? Will these changes impact the p-value? If so, how?</p>
     </statement>
     <response/>
     <solution>
@@ -25,7 +25,7 @@
   </exercise>
   
   <exercise xml:id="inv4-9-b" label="I4.9.2">
-    <title>Limitations of Previous Tests</title>
+    <title>Can We Use Previous Methods?</title>
     <statement>
       <p>Explain why we can't do a randomization test or a two-sample <em>t</em>-test with these data.</p>
     </statement>
@@ -147,7 +147,7 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     <li><p>Uncheck Animate. Press Randomize four more times to get a sense of the variability in the mean difference from repetition to repetition. Change the number of repetitions from 1 to 995 (for a total of 1000) and press Randomize.</p></li>
   </ul></p>
   
-  <p><url href="tech_images/inv4-9-sim.png">Example results</url></p>
+  <p><url href="tech_images/inv4-9-sim.png">Click for Example results</url></p>
   
   <exercise xml:id="inv4-9-i" label="I4.9.9">
     <title>Interpret Randomization Distribution</title>
@@ -193,7 +193,7 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     <response/>
     <solution>
       <p>Example results:</p>
-      <image source="tech_images/inv4-9-applet.png" width="70%">
+      <image source="images/Inv4.9solsl.png" width="70%">
         <description>Randomization test results from applet</description>
       </image>
       <p>Because the applet used a different direction of subtraction, we want to find the proportion of simulated values that are 2.618 or larger. With an approximate <em>p</em>-value of 0.0053 <m>\lt</m> 0.05, we reject the null hypothesis and find statistically significant evidence in favor of the alternative hypothesis, that long-run average typing speed is larger with the up-tempo music. We can draw a cause-and-effect conclusion with this small <em>p</em>-value, because the student employed random assignment in the ordering of the conditions. We don't have a lot of information about how the sample was selected, but it does not appear to be random sampling and we should be cautious in generalizing these results beyond the musicians and athletes at this university.</p>
@@ -207,6 +207,11 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     <statement>
       <p>Does the randomization distribution appear that it would be reasonably well-modeled by a normal distribution? If you change the Statistic from Avg Difference to <em>t</em>-statistic (and check the Overlay <em>t</em> distribution box), do the standardized statistics appear well-modeled by a <em>t</em>-distribution?</p>
     </statement>
+    <hint>
+      <image source="images/Inv4.9solsk.jpg" width="70%">
+        <description>Example of t-distribution overlay</description>
+      </image>
+    </hint>
     <response/>
     <solution>
       <p>yes; yes</p>
@@ -263,83 +268,47 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     </solution>
   </exercise>
   
-  <assemblage>
-    <title>Technology Detour – Paired t-tests</title>
-    
-    <reading-questions>
-      <exercise>
-        <title>R Instructions</title>
-        <statement>
-          <p>Click to view R instructions</p>
-        </statement>
-        <solution>
-          <p><alert>In R:</alert> you can use the t.test command as before but specify the data are paired, e.g.,</p>
-          <pre>
-> t.test(WithMusic, NoMusic, alternative="greater", conf.level = .95, paired=TRUE)
-          </pre>
-          <p>OR with stacked data</p>
-          <pre>
-> t.test(speed~condition, alt="greater", paired=TRUE)
-          </pre>
-        </solution>
-      </exercise>
-    </reading-questions>
-    
-    <reading-questions>
-      <exercise>
-        <title>Minitab Instructions</title>
-        <statement>
-          <p>Click to view Minitab instructions</p>
-        </statement>
-        <solution>
-          <p><alert>In Minitab:</alert></p>
-          <ul>
-            <li><p>Choose Stat > Basic Statistics > Paired t</p></li>
-            <li><p>Choose "Each sample is in a column" and specify the two columns in Sample 1 and Sample 2</p></li>
-            <li><p>Click Options to specify the confidence level and alternative hypothesis direction</p></li>
-            <li><p>Click OK</p></li>
-          </ul>
-          <p>The output will include the standardized statistic (T-Value), <em>p</em>-value, and confidence interval.</p>
-        </solution>
-      </exercise>
-    </reading-questions>
-    
-    <reading-questions>
-      <exercise>
-        <title>JMP Instructions</title>
-        <statement>
-          <p>Click to view JMP instructions</p>
-        </statement>
-        <solution>
-          <p><alert>In JMP:</alert></p>
-          <ul>
-            <li><p>Choose Analyze > Specialized Modeling > Matched Pairs</p></li>
-            <li><p>Specify the two columns in the Y, Paired Response box and press OK</p></li>
-          </ul>
-          <p>The output will include the standardized statistic (t-Ratio), <em>p</em>-values, and confidence interval endpoints.</p>
-        </solution>
-      </exercise>
-    </reading-questions>
-  </assemblage>
-  
   <exercise xml:id="inv4-9-q" label="I4.9.17">
     <title>Verify with Software</title>
     <statement>
       <p>Verify your results using software.</p>
     </statement>
+    <hint>
+      <p><alert>In R:</alert> you can use the t.test command as before but specify the data are paired, e.g.,</p>
+      <pre>
+> t.test(WithMusic, NoMusic, alternative="greater", conf.level = .95, paired=TRUE)
+      </pre>
+      <p>OR with stacked data</p>
+      <pre>
+> t.test(speed~condition, alt="greater", paired=TRUE)
+      </pre>
+    </hint>
+    <hint>
+      <p><alert>In Minitab:</alert></p>
+      <ul>
+        <li><p>Choose Stat > Basic Statistics > Paired t</p></li>
+        <li><p>Choose "Each sample is in a column" and specify the two columns in Sample 1 and Sample 2</p></li>
+        <li><p>Click Options to specify the confidence level and alternative hypothesis direction</p></li>
+        <li><p>Click OK</p></li>
+      </ul>
+      <p>The output will include the standardized statistic (T-Value), <em>p</em>-value, and confidence interval.</p>
+    </hint>
+    <hint>
+      <p><alert>In JMP:</alert></p>
+      <ul>
+        <li><p>Choose Analyze > Specialized Modeling > Matched Pairs</p></li>
+        <li><p>Specify the two columns in the Y, Paired Response box and press OK</p></li>
+      </ul>
+      <p>The output will include the standardized statistic (t-Ratio), <em>p</em>-values, and confidence interval endpoints.</p>
+    </hint>
     <response/>
     <solution>
-      <p>Output:</p>
       <p><alert>R output:</alert></p>
-      <image source="tech_images/inv4-9-r.png" width="60%">
+      <image source="images/Inv4.9solspR.png" width="60%">
         <description>R output for paired t-test</description>
       </image>
-      <p><alert>Minitab output:</alert></p>
-      <image source="tech_images/inv4-9-minitab.png" width="60%">
-        <description>Minitab output for paired t-test</description>
-      </image>
       <p><alert>JMP output:</alert></p>
-      <image source="tech_images/inv4-9-jmp.png" width="60%">
+      <image source="images/Inv4.9solspJMP.png" width="60%">
         <description>JMP output for paired t-test</description>
       </image>
     </solution>
