@@ -3,16 +3,15 @@
   <title>Investigation 4.8: Speed It Up</title>
 
   <introduction>
-    <p>Student researchers (Coutin <ampersand/> Heffler, 2021) wanted to know whether listening to up-tempo music causes college students to tend to type faster. To collect their data (number of words typed correctly in one minute), the students planned to use the 60-second Easy-Text typing test (<url href="https://www.typingtest.com/">TypingTest.com</url>). They recruited 34 college students from groups they were associated with on campus (e.g., athletic teams, musical groups). For the up-tempo music they selected <em>Overture to Candide</em> performed by the London Symphony Orchestra.</p>
-    
-    <figure xml:id="fig-inv4-8-intro">
-      <caption>Speed It Up study setup</caption>
-      <image source="assets/images/inv4-8-intro.png" width="60%">
+    <sidebyside widths="60% 35%" valign="top">
+      <stack>
+        <p>Student researchers (Coutin <ampersand/> Heffler, 2021) wanted to know whether listening to up-tempo music causes college students to tend to type faster. To collect their data (number of words typed correctly in one minute), the students planned to use the 60-second Easy-Text typing test (<url href="https://www.typingtest.com/">TypingTest.com</url>). They recruited 34 college students from groups they were associated with on campus (e.g., athletic teams, musical groups). For the up-tempo music they selected <em>Overture to Candide</em> performed by the London Symphony Orchestra.</p>
+        <p>Let <m>\mu_{nomusic}</m> represent the population mean typing speed without the music and <m>\mu_{music}</m> the population mean typing speed with the music.</p>
+      </stack>
+      <image source="images/inv4-8-intro.png" width="100%">
         <description>Image showing typing test with music</description>
       </image>
-    </figure>
-    
-    <p>Let <m>\mu_{nomusic}</m> represent the population mean typing speed without the music and <m>\mu_{music}</m> the population mean typing speed with the music.</p>
+    </sidebyside>
   </introduction>
   
   <exercise xml:id="inv4-8-a" label="I4.8.1">
@@ -46,7 +45,7 @@
     <response/>
     <solution>
       <p>Completely randomized design</p>
-      <image source="assets/tech_images/inv4-8-design.png" width="70%">
+      <image source="tech_images/inv4-8-design.png" width="70%">
         <description>Diagram showing completely randomized design for typing study</description>
       </image>
       <p>The explanatory variable (whether or not the music is playing) is categorical and the response variable (typing speed measured in words per minute) is quantitative.</p>
@@ -66,12 +65,9 @@
   
   <p>Consider the following results for the number of words per minute by each participant.</p>
   
-  <figure xml:id="fig-inv4-8-results">
-    <caption>Distribution of typing speeds by condition</caption>
-    <image source="assets/images/inv4-8-results.png" width="70%">
-      <description>Dotplots and summary statistics comparing typing speeds with and without music</description>
-    </image>
-  </figure>
+  <image source="images/inv4-8-results.png" width="70%">
+    <description>Dotplots and summary statistics comparing typing speeds with and without music</description>
+  </image>
   
   <exercise xml:id="inv4-8-d" label="I4.8.4">
     <title>Examine Distributions</title>
@@ -108,13 +104,13 @@
       <sidebyside widths="48% 48%">
         <stack>
           <p><alert>Analysis with <m>n = 17</m></alert></p>
-          <image source="assets/tech_images/inv4-8-n17.png" width="100%">
+          <image source="tech_images/inv4-8-n17.png" width="100%">
             <description>Results with sample size 17</description>
           </image>
         </stack>
         <stack>
           <p><alert>Analysis with <m>n = 34</m></alert></p>
-          <image source="assets/tech_images/inv4-8-n34.png" width="100%">
+          <image source="tech_images/inv4-8-n34.png" width="100%">
             <description>Results with sample size 34</description>
           </image>
         </stack>
@@ -125,7 +121,7 @@
   
   <p>Increasing the sample size helps reduce the "random chance" variation in our statistic, but does not reduce the person-to-person variation in typing speeds. When the person-to-person variation is large, it will still be difficult for us to detect the underlying treatment difference in treatment means even if one truly exists. If the actual difference in typing speeds is 4 words per minute on average, we would need sample sizes on the order of 100 participants, in each group, to have at least 80% power.</p>
   
-  <p><strong>Power Calculation Illustration</strong></p>
+  <p><alert>Power Calculation Illustration</alert></p>
   <p>Let's think about how we would calculate power here.  We would want to consider two distributions</p>
   <ul><li>The null distribution for the difference in sample means</li>
   <li>An alternative distribution for the difference in sample means</li>
@@ -133,7 +129,7 @@
 <p>In this case, we will consider the alternative distribution when the actual difference in average typing speed is 4 wpm.</p>
 
 <p>Power represents the probability of rejecting the null hypothesis that the population means are the same when the music population mean is actually 4wpm larger (<m>\mu_{nomusic} - \mu_{music} = -4</m>). </p>
-  <image source="assets/tech_images/inv4-8-power.png" width="70%">
+  <image source="tech_images/inv4-8-power.png" width="70%">
     <description>Power analysis showing need for larger sample sizes</description>
   </image>
   <p>Increasing the sample sizes will make the curves skinnier so there is less overlap and more of the alternative distribution is in the rejection region. But 
