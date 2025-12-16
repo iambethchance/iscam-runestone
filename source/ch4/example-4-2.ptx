@@ -5,7 +5,7 @@
   <introduction>
     <p><alert>Try these questions yourself before you use the solutions following to check your answers.</alert></p>
 
-    <p>In 1995, the National Highway System Designation Act abolished the federal mandate of 55 miles per hour maximum speed limit and allowed states to establish their own limits. Of the 50 states (plus District of Columbia), 32 increased their speed limits in 1996. The data in <c>TrafficFatalities.txt</c> shows the percentage change in interstate highway traffic fatalities from 1995 to 1996 and whether or not the state increased their speed limit. (Data from the National Highway Traffic Safety Administration as reported in Ramsey and Schafer, 2002.)</p>
+    <p>In 1995, the National Highway System Designation Act abolished the federal mandate of 55 miles per hour maximum speed limit and allowed states to establish their own limits. Of the 50 states (plus District of Columbia), 32 increased their speed limits in 1996. The data in <url href="http://www.rossmanchance.com/iscam2/data/TrafficFatalities.txt" visual="rossmanchance.com/iscam2/data/TrafficFatalities.txt"><c>TrafficFatalities.txt</c></url> shows the percentage change in interstate highway traffic fatalities from 1995 to 1996 and whether or not the state increased their speed limit. (Data from the National Highway Traffic Safety Administration as reported in Ramsey and Schafer, 2002.)</p>
   </introduction>
 
   <exercise xml:id="example4-2-a" label="E4.2a">
@@ -14,6 +14,9 @@
       <p>Identify the observational units and response variable of interest. Is this a randomized experiment or an observational study?</p>
     </statement>
     <response/>
+    <solution>
+      <p>The observational units are the 50 states and the District of Columbia. The response variable of interest is the percentage change in traffic fatalities from 1995 to 1996 (quantitative). This is an observational study because the researchers did not randomly assign which states would increase their speed limits.</p>
+    </solution>
   </exercise>
 
   <exercise xml:id="example4-2-b" label="E4.2b">
@@ -22,42 +25,7 @@
       <p>Produce numerical and graphical summaries of these data and describe how the two groups compare.</p>
     </statement>
     <response/>
-  </exercise>
-
-  <exercise xml:id="example4-2-c" label="E4.2c">
-    <title>Technical Conditions</title>
-    <statement>
-      <p>Are the technical conditions for a two-sample t-test met for this study? Explain.</p>
-    </statement>
-    <response/>
-  </exercise>
-
-  <exercise xml:id="example4-2-d" label="E4.2d">
-    <title>Two-Sample t-Test and Confidence Interval</title>
-    <statement>
-      <p>Carry out a two-sample t-test to determine whether the average percentage change in interstate highway traffic fatalities is significantly higher in states that increased their speed limit. If you find a significant difference, estimate its magnitude with a confidence interval.</p>
-    </statement>
-    <response/>
-  </exercise>
-
-  <exercise xml:id="example4-2-e" label="E4.2e">
-    <title>Interpret p-Value</title>
-    <statement>
-      <p>Discuss what the p-value in (d) measures.</p>
-    </statement>
-    <response/>
-  </exercise>
-
-  <subsection xml:id="example4-2-solutions">
-    <title>Solutions</title>
-
     <solution>
-      <title>Solution to (a)</title>
-      <p>The observational units are the 50 states and the District of Columbia. The response variable of interest is the percentage change in traffic fatalities from 1995 to 1996 (quantitative). This is an observational study because the researchers did not randomly assign which states would increase their speed limits.</p>
-    </solution>
-
-    <solution>
-      <title>Solution to (b)</title>
       <p>The following graphical display is dotplots of the percentage change in traffic fatalities for each state (and D.C.) in the two groups on the same scale:</p>
 
       <figure xml:id="fig-example4-2-dotplots">
@@ -102,14 +70,26 @@
 
       <p>These summaries also reveal that the two sample distributions are reasonably similar in shape and variability.</p>
     </solution>
+  </exercise>
 
+  <exercise xml:id="example4-2-c" label="E4.2c">
+    <title>Technical Conditions</title>
+    <statement>
+      <p>Are the technical conditions for a two-sample <em>t</em>-test met for this study? Explain.</p>
+    </statement>
+    <response/>
     <solution>
-      <title>Solution to (c)</title>
-      <p>In considering the technical conditions, we see that the sample sizes (19 and 32) are reasonably large. Coupled with the normal shaped sample distributions, the normality/large sample size conditions appears to be satisfied for us to use the t-distribution.</p>
+      <p>In considering the technical conditions, we see that the sample sizes (19 and 32) are reasonably large. Coupled with the normal shaped sample distributions, the normality/large sample size conditions appears to be satisfied for us to use the <em>t</em>-distribution.</p>
     </solution>
+  </exercise>
 
+  <exercise xml:id="example4-2-d" label="E4.2d">
+    <title>Two-Sample <em>t</em>-Test and Confidence Interval</title>
+    <statement>
+      <p>Carry out a two-sample <em>t</em>-test to determine whether the average percentage change in interstate highway traffic fatalities is significantly higher in states that increased their speed limit. If you find a significant difference, estimate its magnitude with a confidence interval.</p>
+    </statement>
+    <response/>
     <solution>
-      <title>Solution to (d)</title>
       <p>Let <m>\mu_{no} - \mu_{yes}</m> represent the true "effect" of increasing the speed limit on the traffic fatality rate (states that didn't change speed limit – states that did change speed limit)</p>
 
       <p><md>
@@ -135,7 +115,7 @@
         </figure>
       </sidebyside>
 
-      <p>We can also approximate this randomization distribution with the two-sample t-procedure. In this case, the (unpooled) standardized statistic will be <m>t = \frac{-8.53 - 13.69}{\sqrt{\frac{31^2}{19} + \frac{22^2}{32}}} = -2.74</m></p>
+      <p>We can also approximate this randomization distribution with the two-sample <em>t</em>-procedure. In this case, the (unpooled) standardized statistic will be <m>t = \frac{-8.53 - 13.69}{\sqrt{\frac{31^2}{19} + \frac{22^2}{32}}} = -2.74</m></p>
 
       <p>If we approximate the degrees of freedom by <m>\min(19-1, 32-1) = 18</m>, then we find the one-sided p-value to be:</p>
       <pre>
@@ -213,12 +193,18 @@ There is 0.95 probability between -2.101 and 2.101
 
       <p>As we might have guessed, the mean increase in fatalities for the "No" group has increased so that the difference in the group means is less extreme. This leads to a less extreme standardized statistic and a larger p-value (one-sided p-value = 0.01785/2 = 0.0089) so somewhat weaker evidence against the null hypothesis in favor of the one-sided alternative hypothesis.</p>
     </solution>
+  </exercise>
 
+  <exercise xml:id="example4-2-e" label="E4.2e">
+    <title>Interpret p-value</title>
+    <statement>
+      <p>Discuss what the p-value in <xref ref="example4-2-d">checkpoint 18.2.4</xref> measures.</p>
+    </statement>
+    <response/>
     <solution>
-      <title>Solution to (e)</title>
       <p>The other technical condition is that we have independent random samples or random assignment to groups. We do not have either in this study, because we are examining the population of all states (and D.C.), and the states self-selected whether they changed their speed limit. Thus, any p-value we calculate is in a sense hypothetical because we have all the states here, we might ask the question: would the two groups look this different if whether or not they increased their speed limit had been assigned at random?</p>
 
       <p>So the above p-value measures how often we would see a difference in group means at least this large based on random assignment to the two groups if there were no true treatment effect. Although this p-value is hypothetical, we still have some sense that the difference observed between the groups is larger than we would expect to see "by chance" even in a situation like this where it is not feasible to carry out a true randomized experiment. This gives some information that can be used in policy decisions but we must be careful not to overstate the attribution to the speed limit change.</p>
     </solution>
-  </subsection>
+  </exercise>
 </section>
