@@ -5,13 +5,13 @@
   <introduction>
     <sidebyside widths="70% 25%" margins="0% 5%">
       <stack>
-        <p>Student researchers (Coutin <ampersand/> Heffler, 2021) wanted to know whether listening to up-tempo music causes college students to tend to type faster. To collect their data (number of words typed correctly in one minute), the students planned to use the 60-second Easy-Text typing test (<url href="https://www.typingtest.com/">TypingTest.com</url>). They recruited 34 college students from groups they were associated with on campus (e.g., athletic teams, musical groups). For the up-tempo music they selected <em>Overture to Candide</em> performed by the London Symphony Orchestra.</p>
+        <p>Student researchers (Coutin <ampersand/> Heffler, 2021) wanted to know whether listening to up-tempo music causes college students to tend to type faster. To collect their data (number of words typed correctly in one minute), the students planned to use the 60-second Easy-Text typing test (<url href="https://www.typingtest.com/">TypingTest.com</url>). </p>
       </stack>
       <image source="images/Inv4.8intro.jpg">
         <description>Image showing typing test with music</description>
       </image>
     </sidebyside>
-    <p>Let <m>\mu_{nomusic}</m> represent the population mean typing speed without the music and <m>\mu_{music}</m> the population mean typing speed with the music.</p>
+<p>They recruited 34 college students from groups they were associated with on campus (e.g., athletic teams, musical groups). For the up-tempo music they selected <em>Overture to Candide</em> performed by the London Symphony Orchestra.</p>    <p>Let <m>\mu_{nomusic}</m> represent the population mean typing speed without the music and <m>\mu_{music}</m> the population mean typing speed with the music.</p>
   </introduction>
   
   <exercise xml:id="inv4-8-a" label="I4.8.1">
@@ -119,20 +119,24 @@
     </solution>
   </exercise>
   
-  <p>Increasing the sample size helps reduce the "random chance" variation in our statistic, but does not reduce the person-to-person variation in typing speeds. When the person-to-person variation is large, it will still be difficult for us to detect the underlying treatment difference in treatment means even if one truly exists. If the actual difference in typing speeds is 4 words per minute on average, we would need sample sizes on the order of 100 participants, in each group, to have at least 80% power.</p>
-<p> The image below shows the null distribution for the difference in sample means, 
-and the alternative distribution for the difference in sample means when the actual difference in 
-population means is 4 wpm. We see quite a bit of overlap in the two distributions so the 
-probability of rejecting the null hypothesis is small.</p>
-
- <image source="images/Inv4.8g.png" width="70%">
-    <description>Example Power analysis</description>
-  </image>
-  <p>Increasing the sample sizes will make the curves skinnier so there is less overlap and more of the alternative distribution is in the rejection region. But 
- Sample sizes around 100 are needed in order for <m>SD(\bar{x}_1 - \bar{x}_2)</m> to be closer to 2 so the <em>t</em>-statistic is above 2 (in absolute value).</p> 
- <image source="images/Inv4.8g2.png" width="70%">
-    <description>Power analysis showing need for larger sample sizes</description>
-  </image>
+<p>The images below show the null distribution for the difference in sample means and the alternative distribution for the difference in sample means when the actual difference in population means is 4 wpm.</p>
+  
+  <sidebyside widths="48% 48%">
+    <stack>
+      <p><alert>Sample sizes of <m>n = 17</m></alert></p>
+      <image source="images/Inv4.8g3.jpg" width="100%">
+        <description>Power analysis with sample size 17</description>
+      </image>
+    </stack>
+    <stack>
+      <p><alert>Sample sizes of <m>n = 34</m></alert></p>
+      <image source="images/Inv4.8g4.jpg" width="100%">
+        <description>Power analysis with sample size 34</description>
+      </image>
+    </stack>
+  </sidebyside>
+  
+  <p>We see quite a bit of overlap in the two distributions so the probability of rejecting the null hypothesis is small. Increasing the sample size helps reduce the "random chance" variation in our statistic, but does not reduce the person-to-person variation in typing speeds. When the person-to-person variation is large, it will still be difficult for us to detect the underlying treatment difference in treatment means even if one truly exists. Increasing the sample sizes will make the curves skinnier so there is less overlap and more of the alternative distribution is in the rejection region. However, sample sizes around 100 are needed in order for <m>SD(\bar{x}_1 - \bar{x}_2)</m> to be closer to 2 so the <em>t</em>-statistic is above 2 (in absolute value), giving us at least 80% power.</p>
 
 <alert>Alternative study design</alert>
   <p>But there is another way we can improve the design of this study for detecting differences in typing speeds without using any additional people!</p>
