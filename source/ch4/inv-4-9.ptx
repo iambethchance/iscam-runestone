@@ -324,6 +324,10 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     <title>Verify with Software</title>
     <statement>
       <p>Verify your results using software.</p>
+    </statement>
+    <response/>
+    <hint>
+      <title>Hint 1: R</title>
       <p><alert>In R:</alert> you can use the t.test command as before but specify the data are paired, e.g.,</p>
       <pre>
 > t.test(WithMusic, NoMusic, alternative="greater", conf.level = .95, paired=TRUE)
@@ -332,14 +336,16 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
       <pre>
 > t.test(speed~condition, alt="greater", paired=TRUE)
       </pre>
+    </hint>
+    <hint>
+      <title>Hint 2: JMP</title>
       <p><alert>In JMP:</alert></p>
       <ul>
         <li><p>Choose Analyze > Specialized Modeling > Matched Pairs</p></li>
         <li><p>Specify the two columns in the Y, Paired Response box and press OK</p></li>
       </ul>
       <p>The output will include the standardized statistic (t-Ratio), <em>p</em>-values, and confidence interval endpoints.</p>
-    </statement>
-    <response/>
+    </hint>
     <solution>
       <p><alert>R output:</alert></p>
       <image source="images/Inv4.9solspR.png" width="70%">
