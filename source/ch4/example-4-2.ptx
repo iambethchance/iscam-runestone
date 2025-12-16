@@ -35,43 +35,34 @@
     <solution>
       <p>The following graphical display is dotplots of the percentage change in traffic fatalities for each state (and D.C.) in the two groups on the same scale:</p>
 
-      <figure xml:id="fig-example4-2-dotplots">
-        <caption>Dotplots of percentage change in traffic fatalities</caption>
-        <image source="assets/tech_images/example4-2-dotplots.png" width="70%">
-          <description>Dotplots comparing percentage change for states with and without speed limit increases</description>
-        </image>
-      </figure>
+      <image source="assets/tech_images/example4-2-dotplots.png" width="70%">
+        <description>Dotplots comparing percentage change for states with and without speed limit increases</description>
+      </image>
 
       <p>Because the distributions are reasonably symmetric, it makes sense to report the means and standard deviations as the numerical summaries:</p>
-      <table xml:id="table-example4-2-summary">
-        <title>Summary Statistics</title>
-        <tabular halign="center">
-          <row header="yes">
-            <cell>Group</cell>
-            <cell>Mean</cell>
-            <cell>Standard Deviation</cell>
-          </row>
-          <row>
-            <cell>No increase</cell>
-            <cell><m>\bar{x}_{no} = -8.53\%</m></cell>
-            <cell><m>s_{no} = 31\%</m></cell>
-          </row>
-          <row>
-            <cell>Increase</cell>
-            <cell><m>\bar{x}_{yes} = 13.69\%</m></cell>
-            <cell><m>s_{yes} = 22\%</m></cell>
-          </row>
-        </tabular>
-      </table>
+      <tabular halign="center">
+        <row header="yes">
+          <cell halign="left">Group</cell>
+          <cell>Mean</cell>
+          <cell>Standard Deviation</cell>
+        </row>
+        <row>
+          <cell halign="left">No increase</cell>
+          <cell><m>\bar{x}_{no} = -8.53\%</m></cell>
+          <cell><m>s_{no} = 31\%</m></cell>
+        </row>
+        <row>
+          <cell halign="left">Increase</cell>
+          <cell><m>\bar{x}_{yes} = 13.69\%</m></cell>
+          <cell><m>s_{yes} = 22\%</m></cell>
+        </row>
+      </tabular>
 
       <p>These results indicate that there is a tendency for the percentage change in traffic fatalities to be higher in those states that increase their speed limits. This tendency is also seen in stacked boxplots:</p>
 
-      <figure xml:id="fig-example4-2-boxplots">
-        <caption>Boxplots of percentage change in traffic fatalities</caption>
-        <image source="assets/tech_images/example4-2-boxplots.png" width="60%">
-          <description>Stacked boxplots comparing the two groups</description>
-        </image>
-      </figure>
+      <image source="assets/tech_images/example4-2-boxplots.png" width="60%">
+        <description>Stacked boxplots comparing the two groups</description>
+      </image>
 
       <p>The boxplots also reveal an outlier, the District of Columbia, which did not change its speed limit and had an unusually high decrease in the percentage change of accidents.</p>
 
@@ -100,26 +91,22 @@
       <p>Let <m>\mu_{no} - \mu_{yes}</m> represent the true "effect" of increasing the speed limit on the traffic fatality rate (states that didn't change speed limit – states that did change speed limit)</p>
 
       <p><md>
-        <mrow>H_0: \mu_{no} - \mu_{yes} = 0 \text{ there is no true effect from increasing the speed limit}</mrow>
-        <mrow>H_a: \mu_{no} - \mu_{yes} \lt 0 \text{ increasing the speed limit leads to an increase in traffic fatalities}</mrow>
-        <mrow>\text{(higher average percentage change with increase in speed limit)}</mrow>
+        <mrow>H_0: \mu_{no} - \mu_{yes} = 0</mrow>
+        <mrow>\text{(there is no true effect from increasing the speed limit)}</mrow>
+        <mrow>H_a: \mu_{no} - \mu_{yes} \lt 0</mrow>
+        <mrow>\text{(increasing the speed limit leads to an increase in traffic fatalities,}</mrow>
+        <mrow>\text{higher average percentage change with increase in speed limit)}</mrow>
       </md></p>
 
       <p>We can apply a randomization test that would look at what would happen if these groups were mixed up with no difference between the "no" group and the "yes" group.</p>
 
       <sidebyside widths="48% 48%">
-        <figure xml:id="fig-example4-2-sim-null">
-          <caption>Assuming null hypothesis (<m>\mu_1 = \mu_2</m>)</caption>
-          <image source="assets/tech_images/example4-2-sim-null.png" width="100%">
-            <description>Simulation results assuming null hypothesis</description>
-          </image>
-        </figure>
-        <figure xml:id="fig-example4-2-sim-alt">
-          <caption>Assuming <m>\mu_2 = \mu_1 + 0.20</m></caption>
-          <image source="assets/tech_images/example4-2-sim-alt.png" width="100%">
-            <description>Simulation results assuming alternative</description>
-          </image>
-        </figure>
+        <image source="assets/tech_images/example4-2-sim-null.png" width="100%">
+          <description>Simulation results assuming null hypothesis</description>
+        </image>
+        <image source="assets/tech_images/example4-2-sim-alt.png" width="100%">
+          <description>Simulation results assuming alternative</description>
+        </image>
       </sidebyside>
 
       <p>We can also approximate this randomization distribution with the two-sample <em>t</em>-procedure. In this case, the (unpooled) standardized statistic will be <m>t = \frac{-8.53 - 13.69}{\sqrt{\frac{31^2}{19} + \frac{22^2}{32}}} = -2.74</m></p>
@@ -130,39 +117,30 @@
 probability: 0.006728
       </pre>
 
-      <figure xml:id="fig-example4-2-tprob">
-        <caption>T probability calculator applet</caption>
-        <image source="assets/tech_images/example4-2-tprob.png" width="60%">
-          <description>T distribution showing p-value calculation</description>
-        </image>
-      </figure>
+      <image source="assets/tech_images/example4-2-tprob.png" width="60%">
+        <description>T distribution showing p-value calculation</description>
+      </image>
 
       <p>These calculations are confirmed with technology (with different df approximations):</p>
 
       <sidebyside widths="30% 33% 33%">
         <stack>
           <p><alert>Theory-based inference applet</alert></p>
-          <figure xml:id="fig-example4-2-applet">
-            <image source="assets/tech_images/example4-2-applet.png" width="100%">
-              <description>Theory-based inference applet results</description>
-            </image>
-          </figure>
+          <image source="assets/tech_images/example4-2-applet.png" width="100%">
+            <description>Theory-based inference applet results</description>
+          </image>
         </stack>
         <stack>
           <p><alert>R</alert></p>
-          <figure xml:id="fig-example4-2-r">
-            <image source="assets/tech_images/example4-2-r.png" width="100%">
-              <description>R output for two-sample t-test</description>
-            </image>
-          </figure>
+          <image source="assets/tech_images/example4-2-r.png" width="100%">
+            <description>R output for two-sample t-test</description>
+          </image>
         </stack>
         <stack>
           <p><alert>JMP</alert></p>
-          <figure xml:id="fig-example4-2-jmp">
-            <image source="assets/tech_images/example4-2-jmp.png" width="100%">
-              <description>JMP output for two-sample t-test</description>
-            </image>
-          </figure>
+          <image source="assets/tech_images/example4-2-jmp.png" width="100%">
+            <description>JMP output for two-sample t-test</description>
+          </image>
         </stack>
       </sidebyside>
 
@@ -177,35 +155,37 @@ probability: 0.006728
 There is 0.95 probability between -2.101 and 2.101
       </pre>
 
-      <figure xml:id="fig-example4-2-tinv">
-        <caption>T critical value</caption>
-        <image source="assets/tech_images/example4-2-tinv.png" width="60%">
-          <description>T distribution showing critical values</description>
-        </image>
-      </figure>
+      <image source="assets/tech_images/example4-2-tinv.png" width="60%">
+        <description>T distribution showing critical values</description>
+      </image>
 
       <p>Then the 95% confidence interval can be calculated:</p>
-      <me>(-8.53 - 13.69) \pm 2.101\sqrt{\frac{31^2}{19} + \frac{22^2}{32}} = -22.2 \pm 16.85 \text{ or } (-39.05, -5.35)</me>
+      <md>
+        <mrow>(-8.53 - 13.69) \pm 2.101\sqrt{\frac{31^2}{19} + \frac{22^2}{32}}</mrow>
+        <mrow>= -22.2 \pm 16.85 \text{ or } (-39.05, -5.35)</mrow>
+      </md>
 
       <p>We are 95% confident that the true "treatment effect" is in this interval or that the mean percentage increase in traffic fatality rates is between 5.4 percentage points to 39.1 percentage points higher in states that increase their speed limit compared to states that do not increase their speed limit (continuing to be careful not to state this as a cause and effect relationship).</p>
 
       <p>Before we complete this analysis, it is worthwhile to investigate the amount of influence that the outlier (the District of Columbia) has on the results, especially because D.C. does have different characteristics from the states in general. The updated R output (two-sided p-value) is below:</p>
 
-      <figure xml:id="fig-example4-2-r-no-outlier">
-        <caption>R output without D.C.</caption>
-        <image source="assets/tech_images/example4-2-r-no-outlier.png" width="60%">
-          <description>R output after removing D.C. outlier</description>
-        </image>
-      </figure>
+      <image source="assets/tech_images/example4-2-r-no-outlier.png" width="60%">
+        <description>R output after removing D.C. outlier</description>
+      </image>
 
       <p>As we might have guessed, the mean increase in fatalities for the "No" group has increased so that the difference in the group means is less extreme. This leads to a less extreme standardized statistic and a larger p-value (one-sided p-value = 0.01785/2 = 0.0089) so somewhat weaker evidence against the null hypothesis in favor of the one-sided alternative hypothesis.</p>
     </solution>
   </exercise>
 
+  <aside>
+    <title>Theory-Based Inference Applet</title>
+    <p>Use the <url href="https://www.rossmanchance.com/applets/2021/OneSample/OneSample.htm" visual="rossmanchance.com/applets/2021/OneSample/OneSample.htm">Theory-Based Inference applet</url> for <em>t</em>-test calculations.</p>
+  </aside>
+
   <exercise xml:id="example4-2-e" label="E4.2e">
     <title>Interpret p-value</title>
     <statement>
-      <p>Discuss what the p-value in <xref ref="example4-2-d">checkpoint 18.2.4</xref> measures.</p>
+      <p>Discuss what the p-value in <xref ref="example4-2-d">checkpoint 18.2.15</xref> measures.</p>
     </statement>
     <response/>
     <solution>
