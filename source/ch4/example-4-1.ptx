@@ -5,23 +5,38 @@
   <introduction>
     <p><alert>Try these questions yourself before you use the solutions following to check your answers.</alert></p>
 
-    <p>In <xref ref="investigation4-1"/> you considered the case of Robert Martin and whether the sample of 10 employees in his department provided evidence of age discrimination. Suppose we decide to focus on the long-run difference in mean ages for those laid-off and those retained for the decision making process used by this company.</p>
+    <p>In <xref ref="investigation4-1">Investigation 4.1</xref> you considered the case of Robert Martin and whether the sample of 10 employees in his department provided evidence of age discrimination. Suppose we decide to focus on the long-run difference in mean ages for those laid-off and those retained for the decision making process used by this company.</p>
   </introduction>
 
   <exercise xml:id="example4-1-a" label="E4.1a">
     <title>State Hypotheses</title>
     <statement>
-      <p>State the null and alternative hypotheses, in symbols, for this study. [Hint: Define your symbols.]</p>
+      <p>State the null and alternative hypotheses, in symbols, for this study.</p>
     </statement>
+    <hint>
+      <p>Define your symbols.</p>
+    </hint>
     <response/>
+    <solution>
+      <p>Let <m>\mu_{fired} - \mu_{not fired}</m> represent the difference in the average age of people that would be laid-off, in the long run (by the overall process), and the average age of the people who would be retained. (Don't worry too much at this point about which stage of the firing process this analysis considers. Just keep in mind that we are trying to say something beyond the observed means. We believe there is some underlying difference in means and these data provide an estimate.)</p>
+
+      <p><md>
+        <mrow>H_0: \mu_{fired} - \mu_{not fired} = 0 \text{ (no overall difference in the average ages of those getting fired and not)}</mrow>
+        <mrow>H_a: \mu_{fired} - \mu_{not fired} > 0 \text{ (those getting fired will tend to have higher ages than those not)}</mrow>
+      </md></p>
+    </solution>
   </exercise>
 
   <exercise xml:id="example4-1-b" label="E4.1b">
     <title>Observed Statistic</title>
     <statement>
-      <p>Recall the observed value of the sample statistic.</p>
+      <p>Recall the observed value of the sample statistic (in years).</p>
+      <p><var form="numeric" width="10"/></p>
     </statement>
     <response/>
+    <solution>
+      <p><m>\bar{x}_1 - \bar{x}_2 = 58.00 - 41.14 = 16.86</m> years</p>
+    </solution>
   </exercise>
 
   <exercise xml:id="example4-1-c" label="E4.1c">
@@ -30,44 +45,7 @@
       <p>Simulate a randomization test for these data and state your conclusion at the 0.01 level of significance.</p>
     </statement>
     <response/>
-  </exercise>
-
-  <exercise xml:id="example4-1-d" label="E4.1d">
-    <title>Two-Sample t-Test</title>
-    <statement>
-      <p>Carry out a two-sample t-test for these data and hypotheses, and state your conclusion at the 0.01 level of significance.</p>
-    </statement>
-    <response/>
-  </exercise>
-
-  <exercise xml:id="example4-1-e" label="E4.1e">
-    <title>Compare Analyses</title>
-    <statement>
-      <p>Do these analyses reach the same conclusion? If not, which analysis should be used? Explain.</p>
-    </statement>
-    <response/>
-  </exercise>
-
-  <subsection xml:id="example4-1-solutions">
-    <title>Solutions</title>
-
     <solution>
-      <title>Solution to (a)</title>
-      <p>Let <m>\mu_{fired} - \mu_{not fired}</m> represent the difference in the average age of people that would be laid-off, in the long run (by the overall process), and the average age of the people who would be retained. (Don't worry too much at this point about which stage of the firing process this analysis considers. Just keep in mind that we are trying to say something beyond the observed means. We believe there is some underlying difference in means and these data provide an estimate.)</p>
-
-      <p><md>
-        <mrow>H_0: \mu_{fired} - \mu_{not fired} = 0 \text{ (no overall difference in the average ages of those getting fired and not)}</mrow>
-        <mrow>H_a: \mu_{fired} - \mu_{not fired} > 0 \text{ (those getting fired will tend to have higher ages than those not)}</mrow>
-      </md></p>
-    </solution>
-
-    <solution>
-      <title>Solution to (b)</title>
-      <p><m>\bar{x}_1 - \bar{x}_2 = 58.00 - 41.14 = 16.86</m> years</p>
-    </solution>
-
-    <solution>
-      <title>Solution to (c)</title>
       <p>Using the Comparing Groups (Quantitative) applet, the empirical p-value (remembering to match the direction of subtraction, which may vary depending on how you pasted the data in), the output below shows an empirical p-value of 0.0225. Because 0.0225 > 0.01, we would not reject the null hypothesis at the 0.01 level and conclude that this firing process was not more likely to fire individuals with larger ages.</p>
 
       <figure xml:id="fig-example4-1-applet">
@@ -86,10 +64,21 @@ for (i in 1:I){
 }
       </pre>
     </solution>
+  </exercise>
+  
+  <aside>
+    <title>Comparing Groups Applet</title>
+    <p>Use the <url href="https://www.rossmanchance.com/applets/2021/anovashuffle/AnovaShuffle.htm?hideExtras=2" visual="rossmanchance.com/applets/2021/anovashuffle/AnovaShuffle.htm">Comparing Groups applet</url> to simulate a randomization test.</p>
+  </aside>
 
+  <exercise xml:id="example4-1-d" label="E4.1d">
+    <title>Two-Sample <em>t</em>-Test</title>
+    <statement>
+      <p>Carry out a two-sample <em>t</em>-test for these data and hypotheses, and state your conclusion at the 0.01 level of significance.</p>
+    </statement>
+    <response/>
     <solution>
-      <title>Solution to (d)</title>
-      <p>A two-sample t-test using software:</p>
+      <p>A two-sample <em>t</em>-test using software:</p>
 
       <sidebyside widths="48% 48%">
         <stack>
@@ -112,10 +101,21 @@ for (i in 1:I){
 
       <p>Now p-value <m>\lt</m> 0.01, and we would reject the null hypothesis at the 0.01 level and conclude that this firing process was more likely to fire individuals with larger ages.</p>
     </solution>
+  </exercise>
+  
+  <aside>
+    <title>Theory-Based Inference Applet</title>
+    <p>Use the <url href="https://www.rossmanchance.com/applets/2021/OneSample/OneSample.htm" visual="rossmanchance.com/applets/2021/OneSample/OneSample.htm">Theory-Based Inference applet</url> for <em>t</em>-test calculations.</p>
+  </aside>
 
+  <exercise xml:id="example4-1-e" label="E4.1e">
+    <title>Compare Analyses</title>
+    <statement>
+      <p>Do these analyses reach the same conclusion? If not, which analysis should be used? Explain.</p>
+    </statement>
+    <response/>
     <solution>
-      <title>Solution to (e)</title>
-      <p>The two-sample t-test yields a much smaller p-value, about 0.006, which implies much stronger evidence of an underlying age difference between the two populations (fired and not fired). However, because of the small sample sizes (especially with the unbalanced groups), we would have major concerns about using the t-procedures for this study. The empirical p-value from the simulated randomization test is more trustworthy. In fact, in this study, it's probably more work than we need to do, because with only 120 possible combinations it is not unreasonable to calculate the exact p-value.</p>
+      <p>The two-sample <em>t</em>-test yields a much smaller p-value, about 0.006, which implies much stronger evidence of an underlying age difference between the two populations (fired and not fired). However, because of the small sample sizes (especially with the unbalanced groups), we would have major concerns about using the <em>t</em>-procedures for this study. The empirical p-value from the simulated randomization test is more trustworthy. In fact, in this study, it's probably more work than we need to do, because with only 120 possible combinations it is not unreasonable to calculate the exact p-value.</p>
     </solution>
-  </subsection>
+  </exercise>
 </section>
