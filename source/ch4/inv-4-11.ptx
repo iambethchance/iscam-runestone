@@ -43,6 +43,15 @@
       <p>Randomness: <var width="60"/></p>
     </statement>
     <response/>
+    <solution>
+      <p><ul>
+        <li><p>Obs units: 24 children</p></li>
+        <li><p>Explanatory variable: What type of alarm was used? Type: binary categorical</p></li>
+        <li><p>Response variable: Did the child wake? Type: binary categorical</p></li>
+        <li><p>Type of study: matched pairs</p></li>
+        <li><p>Randomness: which alarm was used first, paired design</p></li>
+      </ul></p>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv4-11-b" label="I4.11.2">
@@ -51,6 +60,9 @@
       <p>What proportion of children woke up to the conventional alarm and what proportion woke up to the mother's voice? Does this provide preliminary evidence that the mother's voice alarm is more effective? State the hypotheses of interest. Could you make a two-way table for these data? Could we carry out Fisher's Exact Test or a two-sample <em>z</em>-test to assess statistical significance?</p>
     </statement>
     <response/>
+    <solution>
+      <p>The research question is whether a child was more likely to wake up to the mom's voice than to the conventional alarm. If we let <m>\pi_1</m> and <m>\pi_2</m> represent these two probabilities, we can write this as <m>H_0: \pi_1 = \pi_2</m> vs <m>H_a: \pi_1 > \pi_2</m> but we need to keep in mind that these are not independent samples. In the data, <m>23/24 \approx 0.958</m> woke up to the mom's voice; <m>14/24 \approx 0.583</m> woke up to the conventional alarm. This provides strong preliminary evidence that the probability of waking is larger with the mom's voice, but we can't apply Fisher's Exact Test because this was not a randomized experiment with two separate treatments - we do not have two independent random samples.</p>
+    </solution>
   </exercise>
   
   <p>The initial analysis reveals the proportion waking to the mother's voice was larger than the proportion that woke to the conventional alarm, but we can't consider these two independent samples – it's the same children! This is again a matched pairs design, but with a categorical response.</p>
@@ -61,6 +73,9 @@
       <p>Consider the data table. Suppose we conducted a simulation analysis by shuffling the response variable outcomes back to the explanatory variable outcomes. What's going to happen in many of the cases?</p>
     </statement>
     <response/>
+    <solution>
+      <p>It's not clear which column (mom's voice or conventional alarm) would be considered the response variable, but if we mix up the entries in one column, most of the rows will not see a change because most of the rows are (awake, awake) anyway.</p>
+    </solution>
   </exercise>
   
   <p>As before, with a matched pairs design we will focus on the differences in responses. First, we need an appropriate way to organize the data. We can do this with a two-way table looking at the two variables measured on each children – whether or not woke up to mom's voice and whether or not woke up to the conventional alarm.</p>
@@ -99,6 +114,37 @@
       </table>
     </statement>
     <response/>
+    <solution>
+      <table xml:id="table-inv4-11-solution">
+        <title>Two-way table for paired data</title>
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+          <row header="yes">
+            <cell></cell>
+            <cell>Awakened to conventional</cell>
+            <cell>Did not awaken to conventional</cell>
+            <cell>Row total</cell>
+          </row>
+          <row>
+            <cell>Awakened to mother's voice</cell>
+            <cell>14</cell>
+            <cell>9</cell>
+            <cell>23</cell>
+          </row>
+          <row>
+            <cell>Did not awaken to mother's voice</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+          </row>
+          <row>
+            <cell>Column total</cell>
+            <cell>14</cell>
+            <cell>10</cell>
+            <cell>24</cell>
+          </row>
+        </tabular>
+      </table>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv4-11-e" label="I4.11.5">
@@ -107,6 +153,9 @@
       <p>How many children responded differently to the two alarms? (We will treat these "non-ties" as our sample size.)</p>
     </statement>
     <response/>
+    <solution>
+      <p><m>9 + 0</m> children responded differently to the two alarms.</p>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv4-11-f" label="I4.11.6">
@@ -115,6 +164,9 @@
       <p>Of the children you identified in (e), how many woke to the mom's voice alarm only? What proportion of the children you identified in (e) is this?</p>
     </statement>
     <response/>
+    <solution>
+      <p>None of the children in (e) awoke to only the conventional alarm. This is a proportion of 0.</p>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv4-11-g" label="I4.11.7">
@@ -123,6 +175,9 @@
       <p>Suppose there was no difference in the effectiveness of the two alarms in the long-run. If a child does react differently to the two alarms (wakes to one but not the other), how often would you expect the "success alarm" to be the mother's voice in the long run?</p>
     </statement>
     <response/>
+    <solution>
+      <p>Half the time</p>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv4-11-h" label="I4.11.8">
@@ -131,6 +186,12 @@
       <p>Let <m>\pi</m> represent the probability of waking to the mother's voice alarm when a child wakes to only one of the two alarms. State appropriate null and alternative hypotheses in terms of <m>\pi</m> for deciding whether the mother's voice is the more effective alarm.</p>
     </statement>
     <response/>
+    <solution>
+      <p><md>
+        <mrow>H_0: \pi = 0.50 \text{ (equally likely to wake up to only mom and only conventional alarm)}</mrow>
+        <mrow>H_a: \pi > 0.50 \text{ (more likely to wake up to mom only than to conventional only)}</mrow>
+      </md></p>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv4-11-i" label="I4.11.9">
@@ -140,6 +201,9 @@
       <p>This test, using the binomial distribution to look at the distribution number of successes in the off-diagonal cells, is called <alert>McNemar's Test</alert>.</p>
     </statement>
     <response/>
+    <solution>
+      <p>With a binomial distribution with <m>\pi = 0.5</m> and <m>n = 9</m>, <m>P(X \geq 9) = 0.00195</m> (exact)</p>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv4-11-j" label="I4.11.10">
@@ -148,6 +212,9 @@
       <p>Summarize your conclusion for this smoke alarm study, and explain the reasoning process by which it follows.</p>
     </statement>
     <response/>
+    <solution>
+      <p>We have strong evidence (p-value = 0.00195) to reject <m>H_0: \pi = 0.5</m> (equally likely to wake up to mom/conventional) when only wake up to one of the two alarms. This is convincing evidence that mom's voice increases (causation because this was a randomized matched-pairs experiment) the likelihood of waking up, at least for children like those in this study (healthy children aged 6-12).</p>
+    </solution>
   </exercise>
   
   <assemblage>
@@ -230,97 +297,6 @@
       <response/>
     </exercise>
     
-  </subsection>
-
-  <subsection xml:id="inv4-11-solutions">
-    <title>Solutions</title>
-
-    <solution>
-      <title>Solution to (a)</title>
-      <p><ul>
-        <li><p>Obs units: 24 children</p></li>
-        <li><p>Explanatory variable: What type of alarm was used? Type: binary categorical</p></li>
-        <li><p>Response variable: Did the child wake? Type: binary categorical</p></li>
-        <li><p>Type of study: matched pairs</p></li>
-        <li><p>Randomness: which alarm was used first, paired design</p></li>
-      </ul></p>
-    </solution>
-
-    <solution>
-      <title>Solution to (b)</title>
-      <p>The research question is whether a child was more likely to wake up to the mom's voice than to the conventional alarm. If we let <m>\pi_1</m> and <m>\pi_2</m> represent these two probabilities, we can write this as <m>H_0: \pi_1 = \pi_2</m> vs <m>H_a: \pi_1 > \pi_2</m> but we need to keep in mind that these are not independent samples. In the data, <m>23/24 \approx 0.958</m> woke up to the mom's voice; <m>14/24 \approx 0.583</m> woke up to the conventional alarm. This provides strong preliminary evidence that the probability of waking is larger with the mom's voice, but we can't apply Fisher's Exact Test because this was not a randomized experiment with two separate treatments - we do not have two independent random samples.</p>
-    </solution>
-
-    <solution>
-      <title>Solution to (c)</title>
-      <p>It's not clear which column (mom's voice or conventional alarm) would be considered the response variable, but if we mix up the entries in one column, most of the rows will not see a change because most of the rows are (awake, awake) anyway.</p>
-    </solution>
-
-    <solution>
-      <title>Solution to (d)</title>
-      <table xml:id="table-inv4-11-solution">
-        <title>Two-way table for paired data</title>
-        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
-          <row header="yes">
-            <cell></cell>
-            <cell>Awakened to conventional</cell>
-            <cell>Did not awaken to conventional</cell>
-            <cell>Row total</cell>
-          </row>
-          <row>
-            <cell>Awakened to mother's voice</cell>
-            <cell>14</cell>
-            <cell>9</cell>
-            <cell>23</cell>
-          </row>
-          <row>
-            <cell>Did not awaken to mother's voice</cell>
-            <cell>0</cell>
-            <cell>1</cell>
-            <cell>1</cell>
-          </row>
-          <row>
-            <cell>Column total</cell>
-            <cell>14</cell>
-            <cell>10</cell>
-            <cell>24</cell>
-          </row>
-        </tabular>
-      </table>
-    </solution>
-
-    <solution>
-      <title>Solution to (e)</title>
-      <p><m>9 + 0</m> children responded differently to the two alarms.</p>
-    </solution>
-
-    <solution>
-      <title>Solution to (f)</title>
-      <p>None of the children in (e) awoke to only the conventional alarm. This is a proportion of 0.</p>
-    </solution>
-
-    <solution>
-      <title>Solution to (g)</title>
-      <p>Half the time</p>
-    </solution>
-
-    <solution>
-      <title>Solution to (h)</title>
-      <p><md>
-        <mrow>H_0: \pi = 0.50 \text{ (equally likely to wake up to only mom and only conventional alarm)}</mrow>
-        <mrow>H_a: \pi > 0.50 \text{ (more likely to wake up to mom only than to conventional only)}</mrow>
-      </md></p>
-    </solution>
-
-    <solution>
-      <title>Solution to (i)</title>
-      <p>With a binomial distribution with <m>\pi = 0.5</m> and <m>n = 9</m>, <m>P(X \geq 9) = 0.00195</m> (exact)</p>
-    </solution>
-
-    <solution>
-      <title>Solution to (j)</title>
-      <p>We have strong evidence (p-value = 0.00195) to reject <m>H_0: \pi = 0.5</m> (equally likely to wake up to mom/conventional) when only wake up to one of the two alarms. This is convincing evidence that mom's voice increases (causation because this was a randomized matched-pairs experiment) the likelihood of waking up, at least for children like those in this study (healthy children aged 6-12).</p>
-    </solution>
   </subsection>
   
 </section>

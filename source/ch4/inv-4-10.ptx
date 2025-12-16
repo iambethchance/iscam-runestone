@@ -17,6 +17,15 @@
       <p>Initial conjecture: <var width="60"/></p>
     </statement>
     <response/>
+    <solution>
+      <p><ul>
+        <li><p>Obs units: grocery items</p></li>
+        <li><p>Response variable: What is the item's price or more specifically, what is the difference in the item's price at Lucky's versus Scolari's?</p></li>
+        <li><p>Population: all products common to Scolari's and Lucky's</p></li>
+        <li><p>Sample: 29 items</p></li>
+        <li><p>Initial conjecture: Lucky's will have a lower average price</p></li>
+      </ul></p>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv4-10-b" label="I4.10.2">
@@ -25,6 +34,9 @@
       <p>Was this an experimental study or an observational study? Was this a simple random sample? Was it a probability sample? What is the advantage of this procedure over a simple random sample? Are there any disadvantages in selecting the sample this way?</p>
     </statement>
     <response/>
+    <solution>
+      <p>This was an observational study. This was not a SRS, but was a systematic sample. Advantage - very convenient and uses random selection; disadvantage - still have to find items.</p>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv4-10-c" label="I4.10.3">
@@ -33,6 +45,9 @@
       <p>Did these students use independent samples or a paired design to collect their data?</p>
     </statement>
     <response/>
+    <solution>
+      <p>Paired design</p>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv4-10-d" label="I4.10.4">
@@ -41,6 +56,13 @@
       <p>Define the parameter of interest and state the null and alternative hypotheses corresponding to your initial conjecture.</p>
     </statement>
     <response/>
+    <solution>
+      <p>Let <m>\mu_d</m> = average price difference (Lucky's - Scolari's)</p>
+      <p><md>
+        <mrow>H_0: \mu_d = 0 \text{ (no price difference on average for all the products common to both stores)}</mrow>
+        <mrow>H_a: \mu_d > 0 \text{ (Lucky's tends to have lower prices than Scolari's, on average)}</mrow>
+      </md></p>
+    </solution>
   </exercise>
   
   <p>Descriptive statistics for the items' prices (in dollars) at each store, and for the differences in prices, as well as dotplots of the 3 distributions.</p>
@@ -53,6 +75,9 @@
       <p>Does the pairing appear to have been useful here? Discuss both why you suspect pairing will be beneficial in this context and any evidence in the above output.</p>
     </statement>
     <response/>
+    <solution>
+      <p>Yes, there is much less variability in the differences than in the prices themselves (we are comparing very different types of products with a wide range of prices).</p>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv4-10-f" label="I4.10.6">
@@ -61,6 +86,9 @@
       <p>Would applying a paired <em>t</em>-test appear to be appropriate for these data? Explain.</p>
     </statement>
     <response/>
+    <solution>
+      <p>Yes, the distribution of the differences is not heavily skewed, nor are there huge outliers, and our sample size is close to 30. Note, the distributions of the prices themselves are skewed to the right, but that doesn't concern us here as we focus on the distribution of the differences.</p>
+    </solution>
   </exercise>
   
   <p>Below is the output from R of a one-sided paired <em>t</em>-test and a 95% confidence interval (with milk removed):</p>
@@ -79,6 +107,9 @@ mean of the differences              -0.1182
       <p>What conclusions can you draw from this output? Be sure to address significance, causation, generalizability, and confidence.</p>
     </statement>
     <response/>
+    <solution>
+      <p>p-value = 0.046, so we have strong evidence (at 5% level) that the average price difference is positive. That is, on average, Scolari's is more expensive per item. I'm 95% confident I will save 0.02 cents to $0.60 per item on average. Can generalize to all items at the two stores because systematic sampling used. But cannot draw a cause-and-effect conclusion as this is an observational study.</p>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv4-10-h" label="I4.10.8">
@@ -87,6 +118,14 @@ mean of the differences              -0.1182
       <p>Calculate (by hand) a 90% prediction interval (<xref ref="inv2-6">Investigation 2.6</xref>) based on this sample. Include a one-sentence summary of what this interval says.</p>
     </statement>
     <response/>
+    <solution>
+      <p>Using the <m>n = 28</m> data set (with milk removed):</p>
+      <p><m>\bar{x} = -\$0.1182</m>, <m>s = \$0.3588</m></p>
+      <p><m>t^*</m> with <m>n - 1 = 27</m> degrees of freedom, 90% confidence = 1.703</p>
+      <p><m>-0.1182 + 1.730(0.3588) \cdot \sqrt{1 + \frac{1}{28}} = -0.1182 + 0.622</m></p>
+      <p>90% prediction interval: <m>(-0.74, 0.50)</m></p>
+      <p>I'm 90% confident that an individual item will be anywhere from 74 cents more expensive at Scolari's to 50 cents more expensive at Lucky's. (Meaning, this should work -- successfully predict a price difference -- 90% of the time. So we can say roughly 90% of products have a price difference in this interval, at least with 90% confidence.)</p>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv4-10-i" label="I4.10.9">
@@ -95,6 +134,9 @@ mean of the differences              -0.1182
       <p>How does the width of this prediction interval in (h) compare to the width of the confidence interval for the population mean price difference in (g)? Explain why this makes sense. [Hint: Which is harder to predict, the mean or the next observation?]</p>
     </statement>
     <response/>
+    <solution>
+      <p>The prediction interval is much wider than the confidence interval (but has the same midpoint). This reflects that it is harder to predict the outcome of the next observation than the average outcome of all the observations.</p>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv4-10-j" label="I4.10.10">
@@ -103,6 +145,10 @@ mean of the differences              -0.1182
       <p>Which interval, the prediction interval or the confidence interval, do you find more useful here? Explain.</p>
     </statement>
     <response/>
+    <solution>
+      <p>It's important to realize that they tell us different things. Do you want to know the price difference averaged across the population (e.g., to help you figure out the total bill between the two stores on all items) or do you want to know how much the price different might be on an individual item?</p>
+      <p><alert>Note:</alert> About 6 of the 28 items (21%) are inside the confidence interval. This proportion is not supposed to be close to 0.90 because the confidence interval provides an estimate of the population mean, not individual prices. With the prediction interval 25 of 28 items (89%) are inside the prediction interval.</p>
+    </solution>
   </exercise>
   
   <assemblage>
@@ -196,77 +242,6 @@ mean of the differences              -0.1182
       <response/>
     </exercise>
     
-  </subsection>
-
-  <subsection xml:id="inv4-10-solutions">
-    <title>Solutions</title>
-
-    <solution>
-      <title>Solution to (a)</title>
-      <p><ul>
-        <li><p>Obs units: grocery items</p></li>
-        <li><p>Response variable: What is the item's price or more specifically, what is the difference in the item's price at Lucky's versus Scolari's?</p></li>
-        <li><p>Population: all products common to Scolari's and Lucky's</p></li>
-        <li><p>Sample: 29 items</p></li>
-        <li><p>Initial conjecture: Lucky's will have a lower average price</p></li>
-      </ul></p>
-    </solution>
-
-    <solution>
-      <title>Solution to (b)</title>
-      <p>This was an observational study. This was not a SRS, but was a systematic sample. Advantage - very convenient and uses random selection; disadvantage - still have to find items.</p>
-    </solution>
-
-    <solution>
-      <title>Solution to (c)</title>
-      <p>Paired design</p>
-    </solution>
-
-    <solution>
-      <title>Solution to (d)</title>
-      <p>Let <m>\mu_d</m> = average price difference (Lucky's - Scolari's)</p>
-      <p><md>
-        <mrow>H_0: \mu_d = 0 \text{ (no price difference on average for all the products common to both stores)}</mrow>
-        <mrow>H_a: \mu_d > 0 \text{ (Lucky's tends to have lower prices than Scolari's, on average)}</mrow>
-      </md></p>
-    </solution>
-
-    <solution>
-      <title>Solution to (e)</title>
-      <p>Yes, there is much less variability in the differences than in the prices themselves (we are comparing very different types of products with a wide range of prices).</p>
-    </solution>
-
-    <solution>
-      <title>Solution to (f)</title>
-      <p>Yes, the distribution of the differences is not heavily skewed, nor are there huge outliers, and our sample size is close to 30. Note, the distributions of the prices themselves are skewed to the right, but that doesn't concern us here as we focus on the distribution of the differences.</p>
-    </solution>
-
-    <solution>
-      <title>Solution to (g)</title>
-      <p>p-value = 0.046, so we have strong evidence (at 5% level) that the average price difference is positive. That is, on average, Scolari's is more expensive per item. I'm 95% confident I will save 0.02 cents to $0.60 per item on average. Can generalize to all items at the two stores because systematic sampling used. But cannot draw a cause-and-effect conclusion as this is an observational study.</p>
-    </solution>
-
-    <solution>
-      <title>Solution to (h)</title>
-      <p>Using the <m>n = 28</m> data set (with milk removed):</p>
-      <p><m>\bar{x} = -\$0.1182</m>, <m>s = \$0.3588</m></p>
-      <p><m>t^*</m> with <m>n - 1 = 27</m> degrees of freedom, 90% confidence = 1.703</p>
-      <p><m>-0.1182 + 1.730(0.3588) \cdot \sqrt{1 + \frac{1}{28}} = -0.1182 + 0.622</m></p>
-      <p>90% prediction interval: <m>(-0.74, 0.50)</m></p>
-      <p>I'm 90% confident that an individual item will be anywhere from 74 cents more expensive at Scolari's to 50 cents more expensive at Lucky's. (Meaning, this should work -- successfully predict a price difference -- 90% of the time. So we can say roughly 90% of products have a price difference in this interval, at least with 90% confidence.)</p>
-    </solution>
-
-    <solution>
-      <title>Solution to (i)</title>
-      <p>The prediction interval is much wider than the confidence interval (but has the same midpoint). This reflects that it is harder to predict the outcome of the next observation than the average outcome of all the observations.</p>
-    </solution>
-
-    <solution>
-      <title>Solution to (j)</title>
-      <p>It's important to realize that they tell us different things. Do you want to know the price difference averaged across the population (e.g., to help you figure out the total bill between the two stores on all items) or do you want to know how much the price different might be on an individual item?</p>
-
-      <p><alert>Note:</alert> About 6 of the 28 items (21%) are inside the confidence interval. This proportion is not supposed to be close to 0.90 because the confidence interval provides an estimate of the population mean, not individual prices. With the prediction interval 25 of 28 items (89%) are inside the prediction interval.</p>
-    </solution>
   </subsection>
   
 </section>
