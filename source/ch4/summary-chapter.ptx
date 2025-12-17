@@ -166,14 +166,14 @@
           <cell>Parameter</cell>
           <cell><line>Difference in population means or 
           treatment means (<m>\mu_1 - \mu_2</m>)</line></cell>
-          <cell>Difference in population medians
-          or treatment medians </cell>
+          <cell><line>Difference in population medians</line>
+          <line>or treatment medians</line> </cell>
           <cell>Mean difference (<m>\mu_d</m>)</cell>
         </row>
         <row>
           <cell>Null Hypothesis</cell>
           <cell><m>H_0: \mu_1 - \mu_2 = 0</m></cell>
-          <cell><m>H_0: \tilde\mu_1 - \tilde\mu_2</m></cell>
+          <cell><m>H_0: \tilde\mu_1 - \tilde\mu_2 = 0</m></cell>
           <cell><m>H_0: \mu_{diff} = 0</m></cell>
         </row>
         <row>
@@ -223,11 +223,11 @@
         </row>
         <row>
           <cell>R Commands</cell>
-          <cell><line><c>iscamtwosamplet(mean1, </c></line>
-          <line><c>stddev1, n1, mean2, stdev2, n2)</c></line>
-          <line>Optional: hypothesized difference and</line>
-          <line>alternative ("less", "greater", or "two.sided"),</line>
-          <line>conf.level</line>
+          <cell><line><c>iscamtwosamplet(xbar1, s1,</c></line>
+          <line><c>n1, xbar2, s2, n2)</c></line>
+          <line><em>Optional</em>: hypothesized difference and
+          alternative ("less", "greater", or "two.sided"),</line>
+          <line><em>Optional</em>: conf.level</line>
           <line/>
           <line><c>t.test(resp~exp, alt,</c></line><line><c>var.equal=FALSE)</c></line></cell>
           <cell>N/A</cell>
