@@ -23,14 +23,11 @@
     <solution>
       <p>We can define <m>\pi</m> to be the probability that these students correctly identify the odd soda. (In other words, if this group of students were to repeat this process under identical conditions indefinitely, <m>\pi</m> represents the long-term fraction that they would identify correctly.) The null hypothesis asserts that the students are just guessing, which means that their success probability is one-third (<m>H_0: \pi = 1/3</m>). The alternative hypothesis is that students do better than guessing, which means that their success probability is greater than one-third (<m>H_a: \pi > 1/3</m>).</p>
           
-          <p>Under the null hypothesis that the students are just guessing among the three cups, <m>X</m> (the number of correct identifications) has a binomial distribution with parameters <m>n = 21</m> and <m>\pi = 1/3</m>. The normal distribution would probably not be valid here as we do not satisfy the conditions: <m>n \times \pi = 21(1/3) = 7 &lt; 10</m>. We could simulate observations from this Binomial process using the One Proportion Inference applet, and see how often we observe 12 or more correct identifications just by chance:</p>
+          <p>Under the null hypothesis that the students are just guessing among the three cups, <m>X</m> (the number of correct identifications) has a binomial distribution with parameters <m>n = 21</m> and <m>\pi = 1/3</m>. The normal distribution would probably not be valid here as we do not satisfy the conditions: <m>n \times \pi = 21(1/3) = 7 &lt; 10</m>. We could simulate observations from this Binomial process using the <url href="file:///C:/Users/bchance/repos/rcapplets/oneprop/OneProp.htm">One Proportion Inference applet</url>, and see how often we observe 12 or more correct identifications just by chance:</p>
           
-          <figure xml:id="fig-ex-1-2-simulation">
-            <caption>Simulation results for cola discrimination</caption>
-            <image source="images/example1.2sols.png" width="70%">
-              <description>Simulation distribution for cola test</description>
-            </image>
-          </figure>
+          <image source="images/example1.2sols.png" width="70%">
+            <description>Simulation distribution for cola test</description>
+          </image>
           
           <aside>
             <title>R Output</title>
@@ -72,12 +69,9 @@ iscambinomnorm(k=12, n=21, prob=.3333, direction="above")
             </input>
           </program>
           
-          <figure xml:id="fig-ex-1-2-contcorr">
-            <caption>Continuity correction comparison</caption>
-            <image source="images/example1.2contcorr.png" width="70%">
-              <description>Comparison of binomial, normal approximation, and continuity correction</description>
-            </image>
-          </figure>
+          <image source="images/example1.2contcorr.png" width="70%">
+            <description>Comparison of binomial, normal approximation, and continuity correction</description>
+          </image>
           
           <p>This p-value reveals that if the students were just guessing, there's only about a 2% probability of "by chance" getting 12 or more correct identifications among 21 trials. In other words, if we repeated this study over and over, <strong>and if</strong> students were just guessing each time, then a result at least this favorable would occur in only about 2% of the studies. Because this probability is quite small, we have fairly strong evidence that these students' process in fact is better than guessing in discriminating among the colas (i.e., that <m>\pi > 1/3</m>). Because the sodas were randomly placed in the cups and (presumably) the teacher kept other variables (e.g., temperature, age) constant, this study attempted to isolate the taste and appearance of the sodas as the sole reasons for their selection.</p>
     </solution>
@@ -115,7 +109,7 @@ iscambinomtest(12, 21, conf.level=95)
   <exercise xml:id="example1-2-d" label="E1.2d">
     <title>Identify Type I and Type II errors</title>
     <statement>
-      <p>Describe what Type I and Type II errors mean in this situation. Which type of error might you have made in (c)?</p>
+      <p>Describe what Type I and Type II errors mean in this situation. Which type of error might you have made in <xref ref="example1-2-c" text="custom">Checkpoint 1.2.3</xref>?</p>
     </statement>
     <response/>
     <solution>
@@ -144,60 +138,45 @@ iscambinomtest(12, 21, conf.level=95)
     <solution>
       <sidebyside widths="65% 30%">
             <stack>
-              <p>If we want to test <m>H_0: \pi = 1/3</m> vs. <m>H_a: \pi > 1/3</m> for a sample size of <m>n = 100</m>, then the rejection region will be the values of <m>\hat{p}</m> so that <m>P(\hat{p} > \text{cut-off}) \leq 0.05</m> when <m>\pi = 1/3</m>. Because we are comfortable using the normal approximation with this sample size, we can use the Theory-Based Inference applet to find this cut-off.</p>
+              <p>If we want to test <m>H_0: \pi = 1/3</m> vs. <m>H_a: \pi > 1/3</m> for a sample size of <m>n = 100</m>, then the rejection region will be the values of <m>\hat{p}</m> so that <m>P(\hat{p} > \text{cut-off}) \leq 0.05</m> when <m>\pi = 1/3</m>. Because we are comfortable using the normal approximation with this sample size, we can use the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url> to find this cut-off.</p>
               
-              <figure xml:id="fig-ex-1-2-cutoff">
-                <caption>Finding rejection region cutoff</caption>
-                <image source="images/ex1-2-cutoff.png" width="100%">
-                  <description>Graph showing cutoff for rejection region</description>
-                </image>
-              </figure>
-            </stack>
-            <figure xml:id="fig-ex-1-2-e-sols">
-<!---              <caption>Solution for part (e)</caption>-->
-              <image source="images/example1.2(e)sols.png" width="100%">
-                <description>Solution summary for part (e)</description>
+              <image source="images/ex1-2-cutoff.png" width="100%">
+                <description>Graph showing cutoff for rejection region</description>
               </image>
-            </figure>
+            </stack>
+            <image source="images/example1.2(e)sols.png" width="100%">
+              <description>Solution summary for part (e)</description>
+            </image>
           </sidebyside>
           
           <p>(Enter the hypothesized value, the direction of the alternative, the sample size, then change the count input until the p-value dips below 0.05). This says a <m>\hat{p}</m> of 0.420 or larger would lead us to reject this null hypothesis that <m>\pi = 0.5</m> at the 5% level of significance.</p>
           
           <sidebyside widths="65% 30%">
             <stack>
-              <p>So now we need to find the probability <m>P(\hat{p} \geq 0.420)</m> when the underlying process probability is actually 0.5. When <m>\pi = 0.5</m>, we have an approximately normal distribution with mean equal to 0.5 and standard deviation equal to <m>\sqrt{.5(.5)/100} = 0.05</m>. Using the TBI applet, we can enter 0.5 as the hypothesized probability and 0.420 as the observed sample proportion with a > alternative. This gives us an appropriate power of 0.9452.</p>
+              <p>So now we need to find the probability <m>P(\hat{p} \geq 0.420)</m> when the underlying process probability is actually 0.5. When <m>\pi = 0.5</m>, we have an approximately normal distribution with mean equal to 0.5 and standard deviation equal to <m>\sqrt{.5(.5)/100} = 0.05</m>. Using the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url>, we can enter 0.5 as the hypothesized probability and 0.420 as the observed sample proportion with a > alternative. This gives us an appropriate power of 0.9452.</p>
               
-              <figure xml:id="fig-ex-1-2-power">
-                <caption>Power calculation visualization</caption>
-                <image source="images/ex1-2-power.png" width="100%">
-                  <description>Graphs showing power calculation with overlapping distributions</description>
-                </image>
-              </figure>
-            </stack>
-            <figure xml:id="fig-ex-1-2-f-sols">
-<!--              <caption>Solution for part (f)</caption> -->
-              <image source="images/example1.2(f)sols.png" width="100%">
-                <description>Complete solution summary for part (f)</description>
+              <image source="images/ex1-2-power.png" width="100%">
+                <description>Graphs showing power calculation with overlapping distributions</description>
               </image>
-            </figure>
+            </stack>
+            <image source="images/example1.2(f)sols.png" width="100%">
+              <description>Complete solution summary for part (f)</description>
+            </image>
           </sidebyside>
           
           <p>Thus, the probability of rejecting <m>H_0: \pi = 1/3</m> when <m>n = 100</m> and <m>\pi</m> is actually 0.5 equals 0.9452. Therefore, in about 95% of samples from a process with <m>\pi = 0.5</m> we will correctly reject that <m>\pi = 1/3</m>.</p>
           
           <p>Showing these curves on the same graph:</p>
-          <figure xml:id="fig-ex-1-2-f-sols2">
-            <caption>Power is the proportion of the green area that lies to the right of the blue line.</caption>
-            <image source="images/example1.2(f)sols2.png" width="70%">
-              <description>Combined power visualization</description>
-            </image>
-          </figure>
+          <image source="images/example1.2(f)sols2.png" width="70%">
+            <description>Combined power visualization</description>
+          </image>
     </solution>
   </exercise>
 
   <exercise xml:id="example1-2-g" label="E1.2g">
     <title>Power with larger probability</title>
     <statement>
-      <p>If the underlying probability of identifying the odd soda equals 2/3, will the power calculated in (f) be larger or smaller in this case? Explain without performing any calculations.</p>
+      <p>If the underlying probability of identifying the odd soda equals 2/3, will the power calculated in <xref ref="example1-2-f" text="custom">Checkpoint 1.2.6</xref> be larger or smaller in this case? Explain without performing any calculations.</p>
     </statement>
     <response/>
     <solution>
@@ -205,19 +184,13 @@ iscambinomtest(12, 21, conf.level=95)
             <stack>
               <p>If the underlying process probability is even larger at <m>\pi = 2/3</m>, this will shift the alternative distribution to the right and even more of the distribution will lie in the rejection region. Our power will increase as it will be even easier for us to obtain a sample that will convince us that the hypothesized value of 1/3 is incorrect.</p>
               
-              <figure xml:id="fig-ex-1-2-power-larger">
-                <caption>Power with larger alternative probability</caption>
-                <image source="images/ex1-2-power-larger.png" width="100%">
-                  <description>Graph showing increased power with larger probability</description>
-                </image>
-              </figure>
+              <image source="images/ex1-2-power-larger.png" width="100%">
+                <description>Graph showing increased power with larger probability</description>
+              </image>
             </stack>
-            <figure xml:id="fig-ex-1-2-g-sols">
-<!--              <caption>Solution for part (g)</caption> -->
-              <image source="images/example1.2(g)sols.png" width="100%">
+            <image source="images/example1.2(g)sols.png" width="100%">
               <description>Complete solution summary for part (g)</description>
             </image>
-          </figure>
           </sidebyside>
     </solution>
   </exercise>
@@ -225,7 +198,7 @@ iscambinomtest(12, 21, conf.level=95)
   <exercise xml:id="example1-2-h" label="E1.2h">
     <title>Power with stricter significance level</title>
     <statement>
-      <p>If the teacher uses a 0.01 significance level (with an alternative probability of 0.50), will the power calculated in (f) be larger or smaller in this case? Explain without performing any calculations.</p>
+      <p>If the teacher uses a 0.01 significance level (with an alternative probability of 0.50), will the power calculated in <xref ref="example1-2-f" text="custom">Checkpoint 1.2.6</xref> be larger or smaller in this case? Explain without performing any calculations.</p>
     </statement>
     <response/>
     <solution>
@@ -233,19 +206,13 @@ iscambinomtest(12, 21, conf.level=95)
             <stack>
               <p>If the level of significance is lowered from 0.05 to 0.01, this will move the red line to the right. We will need a larger sample proportion to convince us and this will slightly reduce our power (less than 0.90).</p>
               
-              <figure xml:id="fig-ex-1-2-power-stricter">
-                <caption>Power with stricter significance level</caption>
-                <image source="images/ex1-2-power-stricter.png" width="100%">
-                  <description>Graph showing reduced power with stricter alpha level</description>
-                </image>
-              </figure>
+              <image source="images/ex1-2-power-stricter.png" width="100%">
+                <description>Graph showing reduced power with stricter alpha level</description>
+              </image>
             </stack>
-            <figure xml:id="fig-ex-1-2-h-sols">
-<!--              <caption>Solution for part (h)</caption> -->
-              <image source="images/example1.2(h)sols.png" width="100%">
+            <image source="images/example1.2(h)sols.png" width="100%">
               <description>Complete solution summary for part (h)</description>
             </image>
-          </figure>
           </sidebyside>
     </solution>
   </exercise>
