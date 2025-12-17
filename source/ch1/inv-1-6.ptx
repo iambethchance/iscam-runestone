@@ -131,11 +131,14 @@
   </exercise>
   
   <p>We could employ a "trial-and-error" type of approach to determine which values of <m>\pi</m> appear plausible based on what we observed in the sample. This involves testing different values of <m>\pi</m> and seeing whether the corresponding two-sided p-value is larger than some pre-specified cut-off, typically 0.05. (This cut-off is often called the level of significance.) That is, we will consider <m>\pi_0</m> a plausible value for <m>\pi</m> if assuming <m>\pi = \pi_0</m> does not make our sample statistic look surprising (yielding a small p-value).</p>
-  
+
+<p>Use the <url href=""https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1">One Proportion Inference applet</url> to test different values of <m>\pi_0</m> (multiples of 0.01).</p> 
+<interactive iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="3:2"/>
+   
   <exercise xml:id="I1-6-6a" label="I1.6.6a">
     <title>Identify Plausible Values on Number Line</title>
     <statement>
-      <p>Use the One Proportion Inference applet to test different values of <m>\pi_0</m> (multiples of 0.01). For each value below, determine if observing 80 of 124 successes yields a two-sided p-value greater than 0.05. Check all plausible values (p-value <m>\geq</m> 0.05):</p>
+      <p>For each value below, determine whether observing 80 of 124 successes yields a two-sided p-value greater than 0.05. Check all plausible values (p-value <m>\geq</m> 0.05):</p>
     </statement>
     <choices randomize="no">
       <choice>
@@ -363,11 +366,11 @@
   <assemblage xml:id="probability-detour-ci-methods">
     <title>Probability Detour – Binomial Confidence Intervals</title>
     
-    <p>Probably the most well-known binomial confidence interval method is the <term>Clopper-Pearson method</term> (Biometrika, 1934). Rather than using two-sided p-values, it will consider a value for <m>\pi</m> plausible as long as the one-sided tail probability is smaller than (1 – confidence level)/2. One advantage of the Clopper-Pearson method is there is a simple computer algorithm for finding it, rather than needing to check all values as you have done here.</p>
+    <p>Probably the most well-known binomial confidence interval method is the <term>Clopper-Pearson method</term> (<em>Biometrika</em>, 1934). Rather than using two-sided p-values, it will consider a value for <m>\pi</m> plausible as long as the one-sided tail probability is smaller than (1 – confidence level)/2. One advantage of the Clopper-Pearson method is there is a simple computer algorithm for finding it, rather than needing to check all values as you have done here.</p>
     
-    <p>The method we first showed you (keeping all values of <m>\pi</m> with a two-sided p-value larger than (1 – confidence level) using the two-sided p-value based on the tail probabilities) is attributed to <term>Blaker</term> (The Canadian Journal of Statistics, 2000). We could refer to this as the "smallest tail probability" method.</p>
+    <p>The method we first showed you (keeping all values of <m>\pi</m> with a two-sided p-value larger than (1 – confidence level) using the two-sided p-value based on the tail probabilities) is attributed to <term>Blaker</term> (<em>The Canadian Journal of Statistics</em>, 2000). We could refer to this as the "smallest tail probability" method.</p>
     
-    <p>Another approach would be to use the "smallest p-value" approach for the two-sided p-value, switching to using P(X = x) to find values of x more extreme than observed in finding the two-sided p-value. This method, attributed to <term>Sterne</term> (Biometrika, 1954), has the disadvantage that the interval produced can have holes! For example, a value like 0.12 may be in the interval of plausible values, the value 0.13 may not, and the value 0.14 may be again.</p>
+    <p>Another approach would be to use the "smallest p-value" approach for the two-sided p-value, switching to using P(X = x) to find values of x more extreme than observed in finding the two-sided p-value. This method, attributed to <term>Sterne</term> (<em>Biometrika</em>, 1954), has the disadvantage that the interval produced can have holes! For example, a value like 0.12 may be in the interval of plausible values, the value 0.13 may not, and the value 0.14 may be again.</p>
     
     <p>Many prefer the Blaker method to the holes of the Sterne method, and Blaker's method is now gaining favor over Clopper-Pearson because the intervals tend to be shorter. We will see some other methods later in this text as well. For now, keep in mind the likely duality between confidence intervals and tests of significance: The confidence interval is the set of values for which we would fail to reject the null hypothesis in favor of the two-sided alternative. So we can interpret the confidence interval as the set of plausible values for the parameter in that they are the values such that our observed sample result would not be surprising. Keep in mind that saying a value is <em>plausible</em> is not the same as saying a value is <em>probable</em>. We won't make probability statements about parameter values in this text.</p>
   </assemblage>
@@ -383,23 +386,6 @@
     </hint>
     <solution>
       <p>The parameter <m>\pi</m> is a fixed value - it either is or isn't in the interval. The 99% refers to the confidence in our <em>method</em>: if we were to repeat this process many times, about 99% of the intervals we construct would contain the true parameter value. We cannot make a probability statement about this specific interval containing the parameter.</p>
-    </solution>
-  </exercise>
-  
-  <exercise xml:id="I1-6-12" label="I1.6.12">
-    <title>Technology Comparison</title>
-    <statement>
-      <p>Use technology (see Technology Detour below) to determine the 95% and 99% Clopper-Pearson confidence intervals for the probability that a kissing couple leans to the right. Comment on how the 99% confidence interval compares to the 95% interval, examining both midpoints and widths. [Hint: Average the endpoints to find the midpoint; subtract the endpoints to find the width.]</p>
-    </statement>
-    <response/>
-    <hint>
-      <p>Use R's iscambinomtest function or JMP with the ISCAM Journal file.</p>
-    </hint>
-    <solution>
-      <p>Using technology (e.g., R with <c>iscambinomtest(80, 124, conf.level=0.95)</c>):</p>
-      <p>95% CI: approximately 0.556 to 0.725</p>
-      <p>99% CI: approximately 0.528 to 0.751</p>
-      <p>The 99% interval is wider (width ≈ 0.223 vs. 0.169 for 95%) but has a similar midpoint (approximately 0.64).</p>
     </solution>
   </exercise>
   
@@ -462,6 +448,24 @@ iscambinomtest(80, 124, conf.level = 0.99)
     </exercise>
   </paragraphs>
   
+    <exercise xml:id="I1-6-12" label="I1.6.12">
+    <title>Technology Comparison</title>
+    <statement>
+      <p>Use technology to determine the 95% and 99% Clopper-Pearson confidence intervals for the probability that a kissing couple leans to the right. Comment on how the 99% confidence interval compares to the 95% interval, examining both midpoints and widths. [Hint: Average the endpoints to find the midpoint; subtract the endpoints to find the width.]</p>
+    </statement>
+    <response/>
+    <hint>
+      <p>Use R's iscambinomtest function or JMP with the ISCAM Journal file.</p>
+    </hint>
+    <solution>
+      <p>Using technology (e.g., R with <c>iscambinomtest(80, 124, conf.level=0.95)</c>):</p>
+      <p>95% CI: approximately 0.556 to 0.725</p>
+      <p>99% CI: approximately 0.528 to 0.751</p>
+      <p>The 99% interval is wider (width ≈ 0.223 vs. 0.169 for 95%) but has a similar midpoint (approximately 0.64).</p>
+    </solution>
+  </exercise>
+  
+
   <exercise xml:id="I1-6-13" label="I1.6.13">
     <title>Optional: Compare Methods</title>
     <statement>
@@ -485,11 +489,9 @@ iscambinomtest(80, 124, conf.level = 0.99)
       <li><p>The middle graph shows how far we can move that distribution to the right (largest plausible value of <m>\pi</m>) before the probability below 80 dips below 0.025.</p></li>
     </ul></p>
     
-    <figure>
       <image source="images/r-binom-output.png" width="75%">
         <description>R output from iscambinomtest showing three graphs - top and middle showing binomial distributions at interval endpoints, bottom showing confidence interval</description>
       </image>
-    </figure>
   </paragraphs>
   
   <subsection xml:id="practice1-6">
