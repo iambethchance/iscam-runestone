@@ -4,7 +4,7 @@
     <title>Investigation 1.11: Ganzfeld Experiments</title>
     
     <p>
-      Statistician Jessica Utts has conducted extensive analysis of studies that have investigated psychic functioning. (Combining results across multiple studies, often to increase power, is called meta-analysis.) <url href="https://www.ics.uci.edu/~jutts/air.pdf" visual="ics.uci.edu/~jutts">Utts (1995)</url> cites research from <url href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=D97D004003D79ED839A32B3CB8DC468B?doi=10.1.1.377.3258&amp;rep=rep1&amp;type=pdf" visual="citeseerx.ist.psu.edu">Bem and Honorton (1994)</url> that analyzed studies that used a technique called ganzfeld.
+      Statistician Jessica Utts has conducted extensive analysis of studies that have investigated psychic functioning. (Combining results across multiple studies, often to increase power, is called meta-analysis.) Utts (<url href="https://www.ics.uci.edu/~jutts/air.pdf" visual="ics.uci.edu/~jutts">1995</url>) cites research from Bem and Honorton (<url href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=D97D004003D79ED839A32B3CB8DC468B?doi=10.1.1.377.3258&amp;rep=rep1&amp;type=pdf" visual="citeseerx.ist.psu.edu">1994</url>) that analyzed studies that used a technique called ganzfeld.
     </p>
     
     <p>
@@ -122,17 +122,14 @@
         The <term>rejection region</term> consists of the values we would need to observe for the statistic in the study in order to be willing to reject the null hypothesis.
       </p>
     </assemblage>
-
-    <exercise xml:id="I1-11-c" label="I1.11c">
-      <title>Find Rejection Region</title>
-      <statement>
-        <p>
+ <p>
           According to the distribution in <xref ref="I1-11-b" text="local">Checkpoint</xref>, what proportion of the 329 sessions would need to be successful ("hits"), in order to reject the null hypothesis in <xref ref="I1-11-a" text="local">Checkpoint</xref> in favor of the alternative hypothesis at the 5% level of significance?
         </p>
         <p>
           In the <url href="https://www.rossmanchance.com/applets/2021/power/Power.html" visual="rossmanchance.com/applets/2021/power/Power.html">Power Simulation applet</url>:
         </p>
-        <p>
+        <interactive iframe="https://www.rossmanchance.com/applets/2021/power/power.html?hideExtras=1" width="160%" aspect="3:2"/>
+  <p>
           <ul>
             <li><p>Specify the Hypothesized probability of success: 0.25</p></li>
             <li><p>Specify the sample size: 329</p></li>
@@ -144,6 +141,10 @@
             <li><p>Check the <c>Normal Approximation</c> and <c>Summary Stats</c> boxes to verify <xref ref="I1-11-b" text="local">Checkpoint</xref></p></li>
           </ul>
         </p>
+       
+    <exercise xml:id="I1-11-c" label="I1.11c">
+      <title>Find Rejection Region</title>
+      <statement>
         <p>
           Report the rejection region found by the applet and include a one-sentence interpretation of this region.
         </p>
@@ -935,8 +936,6 @@
         <p>
           The table below shows the possible states of the world and the possible decisions we can make. Indicate where the types of errors fall in this table and where the test makes the correct decision.
         </p>
-        <table>
-          <title>Test Decisions and Errors</title>
           <tabular>
             <row header="yes">
               <cell></cell>
@@ -949,27 +948,25 @@
             </row>
             <row>
               <cell>Reject <m>H_0</m></cell>
-              <cell><var width="30"/></cell>
-              <cell><var width="30"/></cell>
+              <cell><var width="15"/></cell>
+              <cell><var width="15"/></cell>
             </row>
             <row>
               <cell>Fail to reject <m>H_0</m></cell>
-              <cell><var width="30"/></cell>
-              <cell><var width="30"/></cell>
+              <cell><var width="15"/></cell>
+              <cell><var width="15"/></cell>
             </row>
           </tabular>
-        </table>
       </statement>
       <response/>
       <solution>
-        <table>
           <title>Test Decisions and Errors - Solution</title>
-          <tabular>
-            <row header="yes">
+          <tabular row-headers="yes">
+            <row header="yes" bottom="minor">
               <cell></cell>
               <cell colspan="2" halign="center">State of the world</cell>
             </row>
-            <row header="yes">
+            <row header="yes" bottom="minor">
               <cell>Test decision</cell>
               <cell><m>H_0</m> true</cell>
               <cell><m>H_0</m> false</cell>
@@ -979,13 +976,12 @@
               <cell>Type I error</cell>
               <cell>Correct decision (Power)</cell>
             </row>
-            <row>
+            <row bottom="minor">
               <cell>Fail to reject <m>H_0</m></cell>
               <cell>Correct decision</cell>
               <cell>Type II error</cell>
             </row>
           </tabular>
-        </table>
       </solution>
     </exercise>
   </subsection>
