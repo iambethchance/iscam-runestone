@@ -16,29 +16,36 @@
     <p>In 2011, the survey was conducted for the first time using both telephone interviews with online interviews for those who have no landlines or who mainly use cell phones (cell phone only and cell phone mostly adults). In this "nationwide cross section" of 1,987 adults, interviewed between April 11-18, 2011, 91% of adults claimed to always wear seat belts when they are in the front seat of a car.</p>
   </introduction>
 
-  <p><ol label="(a)">
-    <li><p>Identify the observational units and population of interest.</p></li>
-    
-    <li><p>Define the relevant population parameter in words.</p></li>
-    
-    <li><p>Use this sample data to construct a 95% confidence interval for the population parameter using two different methods. Compare the results of your methods.</p></li>
-    
-    <li><p>Explain what is meant by the phrase "95% confidence" for these procedures.</p></li>
-    
-    <li><p>Suggest a reason we might be skeptical that this confidence interval captures the proportion of adults who use a seat belt while in the front seat of a car.</p></li>
-    
-    <li><p>Suggest some ways to guard against non-sampling errors in this study. That is, how might you collect the data to get a more accurate estimate of the proportion of drivers that actually use a seat belt.</p></li>
-  </ol></p>
+  <exercise xml:id="example1-3-a" label="E1.3a">
+    <title>Identify observational units and population</title>
+    <statement>
+      <p>Identify the observational units and population of interest.</p>
+    </statement>
+    <response/>
+    <solution>
+      <p>The observational units are U.S. adults and the population consists of all U.S. adults (in 2011).</p>
+    </solution>
+  </exercise>
 
-  <conclusion>
-    <p><term>Solutions:</term> <m>\text{ }</m>
-      <answer>
-        <p><ol label="(a)">
-          <li><p>The observational units are U.S. adults and the population consists of all U.S. adults (in 2011).</p></li>
-          
-          <li><p>The parameter of interest is the proportion of all U.S. adults that (claim to) always wear a seat belt when they are in the front seat of a car.</p></li>
-          
-          <li><p>We can use several methods because the population (all adults) is much larger than <m>20 \times 1987 = 39,740</m>. (<m>X = 0.91 \times 1987 \approx 1808</m>)</p>
+  <exercise xml:id="example1-3-b" label="E1.3b">
+    <title>Define population parameter</title>
+    <statement>
+      <p>Define the relevant population parameter in words.</p>
+    </statement>
+    <response/>
+    <solution>
+      <p>The parameter of interest is the proportion of all U.S. adults that (claim to) always wear a seat belt when they are in the front seat of a car.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="example1-3-c" label="E1.3c">
+    <title>Construct confidence intervals</title>
+    <statement>
+      <p>Use this sample data to construct a 95% confidence interval for the population parameter using two different methods. Compare the results of your methods.</p>
+    </statement>
+    <response/>
+    <solution>
+      <p>We can use several methods because the population (all adults) is much larger than <m>20 \times 1987 = 39,740</m>. (<m>X = 0.91 \times 1987 \approx 1808</m>)</p>
           
           <p>For example, the Plus Four Method gives us (0.897, 0.922).</p>
           
@@ -97,19 +104,46 @@ prop.test(1808, 1987, conf.level=.95)
           
           <p>The intervals are very similar to each other as we would expect with the large sample size, though the binomial interval is a bit wider than the others.</p>
           
-          <p>These intervals tell us that we are 95% confident that between 90% and 92% of all U.S. adult drivers (claim to) always wear their seat belt. We are willing to generalize this result to all adult Americans because Harris conducted a nationwide poll, presumably using some random selecting techniques.</p></li>
-          
-          <li><p>If Harris Poll was to repeatedly take random samples of 1,987 adults and calculate a confidence interval for each one, then over thousands and thousands of such samples, we'd expect roughly 95% of the intervals to capture the actual value of the population proportion that (claim to) wear a seat belt.</p></li>
-          
-          <li><p>This is a bit of a loaded question, with a clear expectation for appropriate behavior. People may overestimate their usage, either to not admit to breaking the law or due to faulty memory. We should be somewhat skeptical of such self-reported responses.</p></li>
-          
-          <li><p>The researchers could observe drivers rather than only asking drivers. In fact, a 2001 study of 612 drivers coming to a convenience store in El Paso, Texas found 61.5% of the drivers actually wearing a seat belt. But when asked whether they always wear their seat belt, 75% of these same drivers said yes.</p>
-          
-          <p>Researchers also worry about the tone used in asking questions and making sure every interviewer uses exactly the same language and demeanor when conducting a phone poll. In surveys with many questions, researchers will also rotate the order of questions to different respondents. Respondents can also be asked about related behaviors or past efforts (e.g., "did you vote last year" instead of "do you plan to vote").</p></li>
-        </ol></p>
-      </answer>
-    </p>
-    
+          <p>These intervals tell us that we are 95% confident that between 90% and 92% of all U.S. adult drivers (claim to) always wear their seat belt. We are willing to generalize this result to all adult Americans because Harris conducted a nationwide poll, presumably using some random selecting techniques.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="example1-3-d" label="E1.3d">
+    <title>Explain 95% confidence</title>
+    <statement>
+      <p>Explain what is meant by the phrase "95% confidence" for these procedures.</p>
+    </statement>
+    <response/>
+    <solution>
+      <p>If Harris Poll was to repeatedly take random samples of 1,987 adults and calculate a confidence interval for each one, then over thousands and thousands of such samples, we'd expect roughly 95% of the intervals to capture the actual value of the population proportion that (claim to) wear a seat belt.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="example1-3-e" label="E1.3e">
+    <title>Identify potential bias</title>
+    <statement>
+      <p>Suggest a reason we might be skeptical that this confidence interval captures the proportion of adults who use a seat belt while in the front seat of a car.</p>
+    </statement>
+    <response/>
+    <solution>
+      <p>This is a bit of a loaded question, with a clear expectation for appropriate behavior. People may overestimate their usage, either to not admit to breaking the law or due to faulty memory. We should be somewhat skeptical of such self-reported responses.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="example1-3-f" label="E1.3f">
+    <title>Suggest improvements to data collection</title>
+    <statement>
+      <p>Suggest some ways to guard against non-sampling errors in this study. That is, how might you collect the data to get a more accurate estimate of the proportion of drivers that actually use a seat belt.</p>
+    </statement>
+    <response/>
+    <solution>
+      <p>The researchers could observe drivers rather than only asking drivers. In fact, a 2001 study of 612 drivers coming to a convenience store in El Paso, Texas found 61.5% of the drivers actually wearing a seat belt. But when asked whether they always wear their seat belt, 75% of these same drivers said yes.</p>
+      
+      <p>Researchers also worry about the tone used in asking questions and making sure every interviewer uses exactly the same language and demeanor when conducting a phone poll. In surveys with many questions, researchers will also rotate the order of questions to different respondents. Respondents can also be asked about related behaviors or past efforts (e.g., "did you vote last year" instead of "do you plan to vote").</p>
+    </solution>
+  </exercise>
+
+  <conclusion>
     <p><url href="https://youtu.be/Yp5f1qExi8Q">Watch video walkthrough</url> of this example.</p>
   </conclusion>
 

@@ -17,46 +17,80 @@
     <p> Researchers then predicted the winner to be the candidate whose face was judged to look more competent by most of the participants. For the 32 U.S. Senate races in 2004, this method predicted the winner correctly in 23 of them.</p>
   </introduction>
 
-  <p><ol label="(a)">
-    <li><p>In what proportion of the races did the "competent face" method predict the winner correctly?</p></li>
-    
-    <li><p>Describe (in words) the null hypothesis to be investigated with this study.</p></li>
-    
-    <li><p>Describe how you could (in principle) use a coin to produce a simulation analysis of whether these data provide strong evidence that the "competent face" method would correctly predict the election winner more than half the time. Include enough detail that someone else could implement the full analysis and draw a reasonable conclusion.</p></li>
-    
-    <li><p>Use the One Proportion Inference applet to conduct a simulation (using 10,000 samples) addressing the question of whether the researchers' results provide strong evidence in support of the researchers' conjecture that the "competent face" method would correctly predict the election winner more than half the time. Be sure to report (and indicate on the dotplot), the p-value from the simulation.</p></li>
-    
-    <li><p>Write a paragraph, as if to the researchers, describing what your simulation analysis reveals about whether the data provide strong evidence in support of their conjecture.</p></li>
-    
-    <li><p>These researchers also predicted the outcomes of 279 races for the U.S. House of Representatives in 2004. The "competent face" method correctly predicted the winner in 189 of those races. Do you predict this p-value will be larger or smaller than in (d)? Explain your reasoning.</p></li>
-  </ol></p>
+  <exercise xml:id="example1-1-a" label="E1.1a">
+    <title>Calculate success proportion</title>
+    <statement>
+      <p>In what proportion of the races did the "competent face" method predict the winner correctly?</p>
+    </statement>
+    <response/>
+    <solution>
+      <p>This method predicted the winner correctly in 23/32 ≈ 0.719 of the races.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="example1-1-b" label="E1.1b">
+    <title>State null hypothesis</title>
+    <statement>
+      <p>Describe (in words) the null hypothesis to be investigated with this study.</p>
+    </statement>
+    <response/>
+    <solution>
+      <p>The null hypothesis is that the "competent face" method is no better than flipping a coin to predict the winner, so it would work in only 50% of all races in the long run.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="example1-1-c" label="E1.1c">
+    <title>Describe coin simulation</title>
+    <statement>
+      <p>Describe how you could (in principle) use a coin to produce a simulation analysis of whether these data provide strong evidence that the "competent face" method would correctly predict the election winner more than half the time. Include enough detail that someone else could implement the full analysis and draw a reasonable conclusion.</p>
+    </statement>
+    <response/>
+    <solution>
+      <p>You would flip a fair coin 32 times, once for each of the election races. Keep track of the number of heads, representing races for which the method correctly predicted the winner. Repeat simulating 32 flips a large number of times. Determine the proportion of samples in which 23 or more coin tosses resulted in heads. If this proportion is very small, conclude that the competent face method really does predict the winner correctly more than half the time.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="example1-1-d" label="E1.1d">
+    <title>Conduct simulation test</title>
+    <statement>
+      <p>Use the One Proportion Inference applet to conduct a simulation (using 10,000 samples) addressing the question of whether the researchers' results provide strong evidence in support of the researchers' conjecture that the "competent face" method would correctly predict the election winner more than half the time. Be sure to report (and indicate on the dotplot), the p-value from the simulation.</p>
+    </statement>
+    <response/>
+    <solution>
+      <p>Based on 10,000 samples, the approximate p-value is around 0.0104. (Your approximate p-value will probably be different but close to this. The exact Binomial p-value equals 0.01.)</p>
+      
+      <figure xml:id="fig-ex-1-1-sol-d">
+        <caption>Simulation results for Example 1.1(d)</caption>
+        <image source="images/example1.1sols.png" width="70%">
+          <description>Dotplot showing simulation distribution with p-value</description>
+        </image>
+      </figure>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="example1-1-e" label="E1.1e">
+    <title>Interpret simulation results</title>
+    <statement>
+      <p>Write a paragraph, as if to the researchers, describing what your simulation analysis reveals about whether the data provide strong evidence in support of their conjecture.</p>
+    </statement>
+    <response/>
+    <solution>
+      <p>This analysis reveals that it would be quite surprising to correctly predict 23 or more of 32 election races if the "competent face" method were no better than flipping a coin. More specifically, such an extreme result would only occur about 1% of the time by random chance. So, the data provide fairly strong evidence in support of the researchers' conjecture that the "competent face" method works more than half the time.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="example1-1-f" label="E1.1f">
+    <title>Predict p-value for House races</title>
+    <statement>
+      <p>These researchers also predicted the outcomes of 279 races for the U.S. House of Representatives in 2004. The "competent face" method correctly predicted the winner in 189 of those races. Do you predict this p-value will be larger or smaller than in (d)? Explain your reasoning.</p>
+    </statement>
+    <response/>
+    <solution>
+      <p>The observed proportion of successes is now 189/279 ≈ 0.677. This is not quite as extreme (far from 0.5) as the first study, but the sample size is much larger. For this reason, you probably expect the p-value to be even smaller. (Indeed, the p-value now dips below 0.001.)</p>
+    </solution>
+  </exercise>
 
   <conclusion>
-    <p><term>Solutions:</term> <m>\text{ }</m>
-      <answer>
-        <p><ol label="(a)">
-          <li><p>This method predicted the winner correctly in 23/32 ≈ 0.719 of the races.</p></li>
-          
-          <li><p>The null hypothesis is that the "competent face" method is no better than flipping a coin to predict the winner, so it would work in only 50% of all races in the long run.</p></li>
-          
-          <li><p>You would flip a fair coin 32 times, once for each of the election races. Keep track of the number of heads, representing races for which the method correctly predicted the winner. Repeat simulating 32 flips a large number of times. Determine the proportion of samples in which 23 or more coin tosses resulted in heads. If this proportion is very small, conclude that the competent face method really does predict the winner correctly more than half the time.</p></li>
-          
-          <li><p>Based on 10,000 samples, the approximate p-value is around 0.0104. (Your approximate p-value will probably be different but close to this. The exact Binomial p-value equals 0.01.)</p>
-          
-          <figure xml:id="fig-ex-1-1-sol-d">
-            <caption>Simulation results for Example 1.1(d)</caption>
-            <image source="images/example1.1sols.png" width="70%">
-              <description>Dotplot showing simulation distribution with p-value</description>
-            </image>
-          </figure></li>
-          
-          <li><p>This analysis reveals that it would be quite surprising to correctly predict 23 or more of 32 election races if the "competent face" method were no better than flipping a coin. More specifically, such an extreme result would only occur about 1% of the time by random chance. So, the data provide fairly strong evidence in support of the researchers' conjecture that the "competent face" method works more than half the time.</p></li>
-          
-          <li><p>The observed proportion of successes is now 189/279 ≈ 0.677. This is not quite as extreme (far from 0.5) as the first study, but the sample size is much larger. For this reason, you probably expect the p-value to be even smaller. (Indeed, the p-value now dips below 0.001.)</p></li>
-        </ol></p>
-      </answer>
-    </p>
-    
     <p><url href="https://www.youtube.com/watch?v=gUwY6M5dRUg">Watch video walkthrough</url> of this example.</p>
   </conclusion>
 
