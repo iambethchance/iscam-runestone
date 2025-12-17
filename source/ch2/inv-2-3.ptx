@@ -3,19 +3,19 @@
   <title>Investigation 2.3: Readability of Cancer Pamphlets</title>
   
   <introduction>
-    <figure xml:id="figure-inv2-3-intro">
-      <image source="images/Inv2.3Intro.png" width="60%">
+    <sidebyside widths="70% 25%" margins="0% 5%" valign="top">
+      <stack>
+        <p>Researchers in Philadelphia investigated whether pamphlets containing information for cancer patients are written at a level that the cancer patients can comprehend. They applied tests to measure the reading levels of 63 cancer patients and also the readability levels of 30 cancer pamphlets (based on such factors as sentence length and number of polysyllabic words). These numbers correspond to grade levels, but cancer patient reading levels below grade 3 and above grade 12 were not determined exactly.</p>
+      </stack>
+      <image source="images/Inv2.3Intro.png" width="100%">
         <description>Cancer pamphlets study introduction image</description>
       </image>
-    </figure>
-    
-    <p>Researchers in Philadelphia investigated whether pamphlets containing information for cancer patients are written at a level that the cancer patients can comprehend. They applied tests to measure the reading levels of 63 cancer patients and also the readability levels of 30 cancer pamphlets (based on such factors as sentence length and number of polysyllabic words). These numbers correspond to grade levels, but cancer patient reading levels below grade 3 and above grade 12 were not determined exactly.</p>
+    </sidebyside>
     
     <p>The following tables indicate the number of patients at each reading level and the number of pamphlets at each readability level:</p>
     
-    <table xml:id="table-patients-reading-level">
-      <title>Patient's Reading Level</title>
-      <tabular top="medium" bottom="medium" left="medium" right="medium">
+      <alert>Patient's Reading Level</alert>
+      <tabular top="medium" bottom="medium" left="medium" right="medium" row-headers="yes">
         <row header="yes" bottom="medium">
           <cell right="medium">Patient's reading level</cell>
           <cell right="medium">&lt;<nbsp/>3</cell>
@@ -47,11 +47,10 @@
           <cell>17</cell>
         </row>
       </tabular>
-    </table>
     
-    <table xml:id="table-pamphlets-readability-level">
-      <title>Pamphlet's Readability Level</title>
-      <tabular top="medium" bottom="medium" left="medium" right="medium">
+    
+      <alert>Pamphlet's Readability Level</alert>
+      <tabular top="medium" bottom="medium" left="medium" right="medium" row-headers="yes">
         <row header="yes" bottom="medium">
           <cell right="medium">Pamphlet's readability level</cell>
           <cell right="medium">6</cell>
@@ -88,8 +87,22 @@
     <title>Reading level count</title>
     <statement>
       <p>How many of these patients had a 6th grade reading level?</p>
+      <p><var width="5"/></p>
     </statement>
-    <response/>
+    <setup>
+      <var>
+        <condition number="3">
+          <feedback>
+            <p>Correct! 3 patients had a 6th grade reading level.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. Look at the table for the count at reading level 6.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>3</p>
     </solution>
