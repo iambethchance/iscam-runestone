@@ -22,6 +22,26 @@
     <title>Conduct Physical Simulation</title>
     <statement>
       <p>How many mothers received the correct baby in each trial?</p>
+      <table>
+        <tabular>
+          <row header="yes">
+            <cell>Trials</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            <cell>4</cell>
+            <cell>5</cell>
+          </row>
+          <row>
+            <cell>Number of matches</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+        </tabular>
+      </table>
     </statement>
     <hint>
       <p>Record the number of matches (0, 1, 2, or 4) for each of your 5 trials.</p>
@@ -29,7 +49,6 @@
     <solution>
       <p>Answers will vary, but most trials should result in 0 or 1 match. Zero matches and one match are the most common outcomes.</p>
     </solution>
-    <response/>
   </exercise>
   
   <exercise xml:id="random-babies-ex-c" label="B.3">
@@ -60,33 +79,27 @@
     <response/>
   </exercise>
   
-  <subsection xml:id="simulation-analysis-b">
-    <title>Simulation Analysis</title>
+<paragraphs>    <title>Simulation Analysis</title>
     
-    <p>Now let's use technology to simulate this process many more times. <url href="https://www.rossmanchance.com/applets/2021/randombabies/RandomBabies.html?hideExtras=1" target="_blank">Open the Random Babies applet</url> and follow these steps:</p>
-    
-    <sidebyside widths="60% 35%" margins="0% 5%">
-      <stack>
+    <p>Now let's use technology to simulate this process many more times. Using the <url href="https://www.rossmanchance.com/applets/2021/randombabies/RandomBabies.html?hideExtras=1" target="_blank">Random Babies applet</url> (below or follow the link) and follow these steps:</p>
         <ul>
           <li>Press <alert>Randomize</alert>. Notice that the applet randomly returns babies to mothers and determines how many babies are returned to the correct home (by matching diaper colors). The applet also counts and graphs the resulting number of matches.</li>
           <li>Uncheck the <alert>Animate</alert> box and press <alert>Randomize</alert> a few more times. You should see the results accumulate in the table and the histogram.</li>
           <li>Click on the histogram bar representing the outcome of zero mothers receiving the correct baby. This shows you a "time plot" of the proportion of trials with 0 matches vs. the number of trials.</li>
           <li>Set the <alert>Number of trials</alert> to 100 and press <alert>Randomize</alert> a few times, noticing how the behavior of this graph changes.</li>
         </ul>
-      </stack>
-      
-      <image source="randombabies-screenshot.png" width="100%">
-        <description>Screenshot of Random Babies applet</description>
-      </image>
-    </sidebyside>
+    
+         <interactive iframe="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm?hideExtras=1" width="160%" aspect="3:2"/>
+
     
     <p>Run the applet for at least 1000 trials total.</p>
-  </subsection>
+  </paragraphs>
   
   <exercise xml:id="random-babies-ex-e" label="B.5">
     <title>Run Applet Simulation</title>
     <statement>
       <p>What proportion of your trials resulted in zero mothers receiving the correct baby?</p>
+    <var width="10" /></p>
     </statement>
     <hint>
       <p>Count the number of trials with 0 matches and divide by 1000.</p>
@@ -94,9 +107,6 @@
     <solution>
       <p>The proportion should be around 0.375. The exact theoretical probability is 9/24 = 0.375.</p>
     </solution>
-    <answer>
-      <p>0.375</p>
-    </answer>
   </exercise>
   
   <exercise xml:id="random-babies-ex-f" label="B.6">
@@ -136,15 +146,15 @@
   <exercise xml:id="random-babies-ex-g" label="B.7">
     <title>Compare to Initial Guess</title>
     <statement>
-      <p>How does your empirical estimate from the simulation compare to your initial guess in checkpoint 2.20 (where you predicted whether zero matches or all four matches was more likely)?</p>
+      <p>How does your empirical estimate from the simulation compare to your initial guess in checkpoint 1.2.1 (where you predicted whether zero matches or all four matches was more likely)?</p>
+  <var width="20" height="4"/>
     </statement>
     <hint>
-      <p>In checkpoint 2.20, you predicted whether it was more likely that no mothers get the correct baby or that all four mothers get the correct baby. Compare that prediction to what you observed in the simulation.</p>
+      <p>In checkpoint 1.2.1, you predicted whether it was more likely that no mothers get the correct baby or that all four mothers get the correct baby. Compare that prediction to what you observed in the simulation.</p>
     </hint>
     <solution>
       <p>Most people initially guess that having all four mothers get the correct baby is less likely than zero matches, and the simulation confirms this intuition. Zero matches occurs about 37.5% of the time, while all four matches occurs only about 4.2% of the time.</p>
     </solution>
-    <response/>
   </exercise>
   
   <exercise xml:id="random-babies-ex-h" label="B.8">
@@ -175,7 +185,7 @@
     <response/>
   </exercise>
   
-  <subsection xml:id="exact-analysis-b">
+  <paragraphs>
     <title>Exact Mathematical Analysis</title>
     
     <p>One disadvantage to using simulation to estimate a probability like this is that everyone will potentially obtain a different estimate. Even with a very large number of trials, your result will still only be an estimate of the actual long-run probability. For this particular scenario however, we can determine exact theoretical probabilities.</p>
@@ -190,17 +200,16 @@
   <p>All of the possible outcomes are listed below:</p>
   
   <p><alert>Sample Space:</alert></p>
-  <table xml:id="table-sample-space-babies">
     <tabular>
       <row><cell>1234</cell><cell>1243</cell><cell>1324</cell><cell>1342</cell><cell>1423</cell><cell>1432</cell></row>
       <row><cell>2134</cell><cell>2143</cell><cell>2314</cell><cell>2341</cell><cell>2413</cell><cell>2431</cell></row>
       <row><cell>3124</cell><cell>3142</cell><cell>3214</cell><cell>3241</cell><cell>3412</cell><cell>3421</cell></row>
       <row><cell>4123</cell><cell>4132</cell><cell>4213</cell><cell>4231</cell><cell>4312</cell><cell>4321</cell></row>
     </tabular>
-  </table>
   
   <p>In this case, returning the babies to the mothers completely at random implies that the outcomes in our sample space are equally likely to occur (<em>outcome probability</em> = 1 / <em>number of possible outcomes</em>).</p>
-  
+</paragraphs>
+
   <exercise xml:id="random-babies-ex-j" label="B.10">
     <title>Count Sample Space</title>
     <statement>
@@ -240,6 +249,7 @@
     <title>Identify Possible Values</title>
     <statement>
       <p>Define the random variable <m>X</m> to be the number of mothers who receive the correct baby. What are the possible values of <m>X</m>?</p>
+    <var
     </statement>
     <hint>
       <p>Consider: Can you have 0 matches? 1 match? 2 matches? What about 3 matches - is that possible?</p>
@@ -247,7 +257,6 @@
     <answer>
       <p>The possible values are 0, 1, 2, and 4. (Note: 3 is not possible!)</p>
     </answer>
-    <response/>
   </exercise>
   
   <exercise xml:id="random-babies-ex-l" label="B.12">
@@ -255,21 +264,21 @@
     <statement>
       <p>Go through the sample space and count how many outcomes result in each possible value of <m>X</m> (0, 1, 2, 3, or 4 matches).</p>
       <p>
-        <tabular>
+        <tabular row-headers="yes" top="minor" bottom="minor" left="minor" right="minor">
           <row header="yes">
-            <cell>Number of Matches</cell>
-            <cell>0</cell>
-            <cell>1</cell>
-            <cell>2</cell>
-            <cell>3</cell>
+            <cell right="minor">Number of Matches</cell>
+            <cell right="minor">0</cell>
+            <cell right="minor">1</cell>
+            <cell right="minor">2</cell>
+            <cell right="minor">3</cell>
             <cell>4</cell>
           </row>
           <row>
-            <cell>Count</cell>
-            <cell><var width="3" /></cell>
-            <cell><var width="3" /></cell>
-            <cell><var width="3" /></cell>
-            <cell><var width="3" /></cell>
+            <cell right="minor">Count</cell>
+            <cell right="minor"><var width="3" /></cell>
+            <cell right="minor"><var width="3" /></cell>
+            <cell right="minor"><var width="3" /></cell>
+            <cell right="minor"><var width="3" /></cell>
             <cell><var width="3" /></cell>
           </row>
         </tabular>
@@ -365,11 +374,11 @@
           </row>
           <row>
             <cell><m>P(X)</m></cell>
-            <cell><var width="8" /></cell>
-            <cell><var width="8" /></cell>
-            <cell><var width="8" /></cell>
-            <cell><var width="8" /></cell>
-            <cell><var width="8" /></cell>
+            <cell><var width="5" /></cell>
+            <cell><var width="5" /></cell>
+            <cell><var width="5" /></cell>
+            <cell><var width="5" /></cell>
+            <cell><var width="5" /></cell>
           </row>
         </tabular>
       </p>
@@ -445,6 +454,7 @@
     <title>Compare to Simulation</title>
     <statement>
       <p>How do your exact probabilities compare to the empirical estimates you obtained from the simulation?</p>
+    <var
     </statement>
     <hint>
       <p>Look at the proportions from your 1000 trials - are they close to the theoretical probabilities?</p>
@@ -452,7 +462,6 @@
     <solution>
       <p>The simulation results should be fairly close to the exact probabilities, especially with 1000 or more trials. Small differences are expected due to random variability in the simulation.</p>
     </solution>
-    <response/>
   </exercise>
   
   <exercise xml:id="random-babies-ex-o" label="B.15">
@@ -596,10 +605,8 @@
     </solution>
     <response/>
   </exercise>
-  </subsection>
   
-  <subsection xml:id="discussion-b">
-    <title>Discussion</title>
+  <paragraphs>    <title>Discussion</title>
     
     <p>Notice that we have used two methods to answer questions about this random process:</p>
     <ul>
@@ -608,7 +615,7 @@
     </ul>
     
     <p>This approach of looking at the analysis using both simulation and exact approaches will be a theme in this course. We will also consider some approximate mathematical models as well. You should consider these multiple approaches as a way to assess the appropriateness of each method. You should also be aware of situations where one method may be preferable to another and why.</p>
-  </subsection>
+  </paragraphs>
   
   <subsection xml:id="practiceBA">
     <title>Practice Problem B.A</title>
@@ -733,7 +740,7 @@
     </exercise>
     
     <exercise xml:id="practice-bc-e" label="PPB.C.5">
-      <title>Calculate Expected Values</title>
+      <title>Compare Standard Deviations</title>
       <statement>
         <p>Explain which bet displays a larger standard deviation.</p>
       </statement>
