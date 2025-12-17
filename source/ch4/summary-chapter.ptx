@@ -149,81 +149,101 @@
   <subsection xml:id="chapter4-summary-procedures">
     <title>Choice of Procedures for Comparing Two Means</title>
 
-    <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
-        <col width="20%"/>
-        <col width="27%"/>
-        <col width="27%"/>
+    <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor" row-header="yes">
+        <col width="22%"/>
+        <col width="26%"/>
+        <col width="26%"/>
         <col width="26%"/>
         <row header="yes" bottom="major">
-          <cell><alert>Study design</alert></cell>
-          <cell>Randomized experiment or independent random samples</cell>
-          <cell>Randomized experiment or independent random samples</cell>
+          <cell>Study design</cell>
+          <cell><line>Randomized experiment or</line>
+          <line>independent random samples</line></cell>
+          <cell><line>Randomized experiment or</line>
+          <line>independent random samples</line></cell>
           <cell>Matched paired design</cell>
         </row>
         <row>
-          <cell><alert>Parameter</alert></cell>
-          <cell>Difference in population means or treatment means (<m>\mu_1 - \mu_2</m>)</cell>
-          <cell>Difference in population medians or treatment medians</cell>
+          <cell>Parameter</cell>
+          <cell><line>Difference in population means or</line>
+          <line>treatment means (<m>\mu_1 - \mu_2</m>)</line></cell>
+          <cell><line>Difference in population medians</line>
+          <line>or treatment medians</line></cell>
           <cell>Mean difference (<m>\mu_d</m>)</cell>
         </row>
         <row>
-          <cell><alert>Null Hypothesis</alert></cell>
+          <cell>Null Hypothesis</cell>
           <cell><m>H_0: \mu_1 - \mu_2 = 0</m></cell>
-          <cell><m>H_0</m>: population medians equal</cell>
+          <cell><line><m>H_0</m>: population medians</line>
+          <line>equal</line></cell>
           <cell><m>H_0: \mu_{diff} = 0</m></cell>
         </row>
         <row>
-          <cell><alert>Simulation</alert></cell>
-          <cell>Randomly reassign response values between groups (see Comparing Groups (Quantitative) applet) or Sampling from Two Populations – Quantitative applet</cell>
-          <cell>Randomly reassign response values between groups</cell>
-          <cell>Flip a coin to see whether to flip the order of the observations</cell>
+          <cell>Simulation</cell>
+          <cell><line>Randomly reassign response values</line>
+          <line>between groups (see Comparing Groups</line>
+          <line>(Quantitative) applet) or Sampling from</line>
+          <line>Two Populations – Quantitative applet</line></cell>
+          <cell><line>Randomly reassign response</line>
+          <line>values between groups</line></cell>
+          <cell><line>Flip a coin to see whether to flip</line>
+          <line>the order of the observations</line></cell>
         </row>
         <row>
-          <cell><alert>Exact p-value</alert></cell>
+          <cell>Exact p-value</cell>
           <cell>All possible random assignments</cell>
           <cell>N/A</cell>
           <cell>All possible sign assignments</cell>
         </row>
         <row>
-          <cell><alert>Valid to use <em>t</em>-procedures if</alert></cell>
-          <cell>Both sample sizes at least 20 or both population distributions normal</cell>
+          <cell><line>Valid to use</line>
+          <line><em>t</em>-procedures if</line></cell>
+          <cell><line>Both sample sizes at least 20 or</line>
+          <line>both population distributions normal</line></cell>
           <cell>N/A</cell>
-          <cell>At least 30 differences or differences are normal</cell>
+          <cell><line>At least 30 differences or</line>
+          <line>differences are normal</line></cell>
         </row>
         <row>
-          <cell><alert>Standardized (Test) Statistic</alert></cell>
+          <cell><line>Standardized</line>
+          <line>(Test) Statistic</line></cell>
           <cell><m>t_0 = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}</m></cell>
           <cell>N/A</cell>
           <cell><m>t = \frac{\bar{x}_d - 0}{s_d/\sqrt{n_d}}</m></cell>
         </row>
         <row>
-          <cell><alert>Confidence interval</alert></cell>
+          <cell>Confidence interval</cell>
           <cell><m>(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}</m></cell>
           <cell>N/A</cell>
           <cell><m>\bar{x}_d \pm t_{n-1}^* \frac{s_d}{\sqrt{n}}</m></cell>
         </row>
         <row>
-          <cell><alert>Prediction interval</alert></cell>
+          <cell>Prediction interval</cell>
           <cell>N/A</cell>
           <cell>N/A</cell>
           <cell><m>\bar{x}_d \pm t_{n-1}^* s_d \sqrt{1 + \frac{1}{n}}</m></cell>
         </row>
         <row>
-          <cell><alert>R Commands</alert></cell>
-          <cell><c>iscamtwosamplet(mean1, stddev1, n1, mean2, stdev2, n2)</c> Optional: hypothesized difference and alternative ("less", "greater", or "two.sided"), conf.level
-          
-          <c>t.test(resp~exp, alt, var.equal=FALSE)</c></cell>
+          <cell>R Commands</cell>
+          <cell><line><c>iscamtwosamplet(mean1, stddev1, n1,</c></line>
+          <line><c>mean2, stdev2, n2)</c></line>
+          <line>Optional: hypothesized difference and</line>
+          <line>alternative ("less", "greater", or "two.sided"),</line>
+          <line>conf.level</line>
+          <line/>
+          <line><c>t.test(resp~exp, alt, var.equal=FALSE)</c></line></cell>
           <cell>N/A</cell>
-          <cell><c>t.test(list1, list2, alt, conf.level, paired=TRUE)</c></cell>
+          <cell><line><c>t.test(list1, list2, alt,</c></line>
+          <line><c>conf.level, paired=TRUE)</c></line></cell>
         </row>
         <row>
-          <cell><alert>JMP</alert></cell>
-          <cell>Analyze > Fit Y by X > <em>t</em> Test</cell>
+          <cell>JMP</cell>
+          <cell><line>Analyze > Fit Y by X ></line>
+          <line><em>t</em> Test</line></cell>
           <cell>N/A</cell>
           <cell>Analyze > Matched Pairs</cell>
         </row>
         <row>
-          <cell><alert>TBI applet</alert></cell>
+          <cell>TBI applet</cell>
           <cell>Two means</cell>
           <cell>N/A</cell>
           <cell>One mean (differences)</cell>
