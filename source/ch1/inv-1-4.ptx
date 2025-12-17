@@ -238,10 +238,10 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
         
         <p>should show output in the Console window as well as a graph of the binomial distribution with the p-value shaded in the Graphics window.</p>
         
-        <note>
+        <paragraphs>
           <title>R Reminder</title>
           <p>Make sure to load the ISCAM package first with <c>library(iscam)</c>.</p>
-        </note>
+        </paragraphs>
       </statement>
       <solution>
         <p>The output will show:</p>
@@ -306,7 +306,7 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
   </paragraphs>
   
   <exercise xml:id="I1-4-7" label="I1.4.7">
-    <title>Report the P-value</title>
+    <title>Report the p-value</title>
     <statement>
       <p>Find and report the p-value from your technology (including appropriate notation for the event of interest).</p>
     </statement>
@@ -316,11 +316,9 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
     </hint>
     <solution>
       <p>Example results:</p>
-      <figure>
-        <image source="images/inv14sols1.png" width="60%">
-          <description>Simulation showing probability of 8 or more successes out of 10 trials with pi=0.15</description>
-        </image>
-      </figure>
+      <image source="images/inv14sols1.png" width="60%">
+        <description>Simulation showing probability of 8 or more successes out of 10 trials with pi=0.15</description>
+      </image>
       <p>We see that we never get 8 or more successes so the p-value is approximately zero.</p>
       <p>R tells us the p-value equals <m>8.665 \times 10^{-6}</m></p>
     </solution>
@@ -376,17 +374,15 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
       </hint>
       <solution>
         <p>The null hypothesis would be <m>H_0: \pi = 0.85</m> and the alternative hypothesis would be <m>H_a: \pi &lt; 0.85</m>.</p>
-        <figure>
           <image source="images/inv1.4intro.png" width="60%">
             <description>Binomial distribution showing survival as success with pi=0.85</description>
           </image>
-        </figure>
         <p>This turns out to be an equivalent analysis.</p>
       </solution>
     </exercise>
     
     <exercise xml:id="I1-4-10b" label="I1.4.10b">
-      <title>Compare P-value and Conclusion</title>
+      <title>Compare p-values</title>
       <statement>
         <p>Compared to the analysis with death as success, the p-value has:</p>
       </statement>
@@ -462,7 +458,7 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
     </exercise>
     
     <exercise xml:id="I1-4-11c" label="I1.4.11c">
-      <title>Calculate P-value with Technology</title>
+      <title>Calculate p-value with Technology</title>
       <statement>
         <p>Use technology to determine the binomial probability of finding at least 71 deaths in a sample of 361 if <m>\pi = 0.15</m>.</p>
       </statement>
@@ -471,11 +467,9 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
         <p>Use the One Proportion Inference applet or R with n=361, observed=71, and π=0.15.</p>
       </hint>
       <solution>
-        <figure>
           <image source="images/inv1.4largen.png" width="60%">
             <description>Binomial distribution for n=361 with pi=0.15 showing p-value</description>
           </image>
-        </figure>
         <p>p-value ≈ 0.01</p>
       </solution>
     </exercise>
@@ -525,19 +519,18 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
     </exercise>
   </paragraphs>
   
-  <p>The following graphs display the two theoretical probability distributions (for sample sizes n = 10 and n = 361), both assuming the null hypothesis (<m>\pi = 0.15</m>) is true. These graphs show just how far the observed values (8 and 71) are from the expected value of the number of deaths (0.15 × 10 = 1.5 and 0.15 × 361 = 54.15) in each case. You should also note that the shape, center, and variability of the probability distribution for number of successes are all affected by the sample size n.</p>
+  <p>The following graphs display the two theoretical probability distributions (for sample sizes <m>n = 10</m> and </m>n = 361</m>), both assuming the null hypothesis (<m>\pi = 0.15</m>) is true. These graphs show just how far the observed values (8 and 71) are from the expected value of the number of deaths (0.15 × 10 = 1.5 and 0.15 × 361 = 54.15) in each case. You should also note that the shape, center, and variability of the probability distribution for number of successes are all affected by the sample size <m>n</m>.</p>
   
-  <figure xml:id="fig-heart-transplant-distributions">
-    <caption>Binomial distributions for n=10 and n=361, both with π=0.15</caption>
-    <sidebyside widths="48% 48%" margins="2%">
-      <image source="images/inv1.4smalln.png">
-        <description>Binomial distribution showing n=10, pi=0.15, with observed value of 8 marked</description>
-      </image>
-      <image source="images/inv1.4largen.png">
-        <description>Binomial distribution showing n=361, pi=0.15, with observed value of 71 marked</description>
-      </image>
-    </sidebyside>
-  </figure>
+  <alert>Binomial distributions for n=10 and n=361, both with π=0.15</alert>
+  
+  <sidebyside widths="48% 48%" margins="2%">
+    <image source="images/inv1.4smalln.png">
+      <description>Binomial distribution showing n=10, pi=0.15, with observed value of 8 marked</description>
+    </image>
+    <image source="images/inv1.4largen.png">
+      <description>Binomial distribution showing n=361, pi=0.15, with observed value of 71 marked</description>
+    </image>
+  </sidebyside>
   
   <p>Keep in mind that of interest to us is the observed statistic's relative location in the null distribution. Thus, we are most interested in how variable the possible outcomes are from the "expected" outcome. The center of the distribution isn't all that interesting to us in answering the research question because we determine what the center of the distribution will be by how we specify the null hypothesis. Even the shape isn't all that interesting on its own in answering our research question.</p>
   
@@ -639,7 +632,7 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
     </exercise>
     
     <exercise xml:id="PP1-4A-4" label="PP1.4A.4">
-      <title>Calculate P-value</title>
+      <title>Calculate p-value</title>
       <statement>
         <p>Report the binomial p-value for your hypotheses.</p>
       </statement>
@@ -647,7 +640,7 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
     </exercise>
     
     <exercise xml:id="PP1-4A-5" label="PP1.4A.5">
-      <title>Modified Dataset P-value</title>
+      <title>Modified Dataset p-value</title>
       <statement>
         <p>After dropping two "suspicious" observations, 6 of the 69 remaining observations were above 15 ppb. Report the binomial p-value for your hypotheses. Is the second p-value larger or smaller than the first?</p>
       </statement>
@@ -677,7 +670,7 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
     </exercise>
     
     <exercise xml:id="PP1-4B-3" label="PP1.4B.3">
-      <title>When P-value Exceeds 0.50</title>
+      <title>When p-value Exceeds 0.50</title>
       <statement>
         <p>Under what circumstances will a p-value calculation like these be larger than 0.50?</p>
       </statement>
@@ -688,7 +681,7 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
   <subsection xml:id="practice1-4C">
     <title>Practice Problem 1.4C</title>
     
-    <p>One of the first times the U.S. Supreme Court considered statistical significance in an employment discrimination case was in Hazelwood School District vs. United States (1977). The U.S. government sued the City of Hazelwood, a suburb of St. Louis, MO, on the grounds that it discriminated against African Americans in its hiring of school teachers. The evidence introduced noted that of the 405 teachers hired in 1972 and 1973 (the years following the passage of the Civil Rights Act), only 15 had been African-American. By comparison, according to 1970 census figures, of the almost 20,000 elementary and secondary teachers employed in the St. Louis area, 15.4% were African American. We want to decide whether the data on these 405 teachers is convincing evidence that the Hazelwood hiring process had a probability of a new hire being African American that was less than 0.154.</p>
+    <p>One of the first times the U.S. Supreme Court considered statistical significance in an employment discrimination case was in <em>Hazelwood School District vs. United States (1977)</em>. The U.S. government sued the City of Hazelwood, a suburb of St. Louis, MO, on the grounds that it discriminated against African Americans in its hiring of school teachers. The evidence introduced noted that of the 405 teachers hired in 1972 and 1973 (the years following the passage of the Civil Rights Act), only 15 had been African-American. By comparison, according to 1970 census figures, of the almost 20,000 elementary and secondary teachers employed in the St. Louis area, 15.4% were African American. We want to decide whether the data on these 405 teachers is convincing evidence that the Hazelwood hiring process had a probability of a new hire being African American that was less than 0.154.</p>
     
     <exercise xml:id="PP1-4C-1" label="PP1.4C.1">
       <title>Expected Number of Hires</title>
