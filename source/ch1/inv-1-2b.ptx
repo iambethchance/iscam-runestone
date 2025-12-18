@@ -486,9 +486,8 @@
     </exercise>
   </subsection>
   
-  <subsection xml:id="tech-detour-binomial-1-2b">
-    <title>Technology Detour – Calculating Binomial Probabilities</title>
-    
+      <exercises xml:id="tech-detour-binomial-1-2b" hidden-label="yes"><title>Technology Detour – Calculating Binomial Probabilities</title>
+
     <exercises>
       <exercise xml:id="tech-detour-binomial-calculate-1-2b" label="Calculate Binomial Probabilities">
         <title>Calculate Binomial Probabilities with Technology</title>
@@ -497,31 +496,37 @@
         </statement>
         <hint>
           <title>R Instructions</title>
-          <p>The <c>iscambinomprob</c> function takes the following inputs:</p>
+          <p>In R, we can use the <c>pbinom</c> function to calculate binomial probabilities:</p>
           <p><ul>
-            <li><p><c>k</c> = the observed value you want to calculate the probability about</p></li>
-            <li><p><c>n</c> = the sample size of the binomial distribution</p></li>
-            <li><p><c>prob</c> = the probability of success in the binomial distribution</p></li>
-            <li><p><c>lower.tail</c> = TRUE if you want the probability less than or equal to the observed value, FALSE if want the probability greater than or equal to the observed value</p></li>
+            <li><p><c>q</c> = the observed value</p></li>
+            <li><p><c>size</c> = the sample size (n)</p></li>
+            <li><p><c>prob</c> = the probability of success</p></li>
+            <li><p><c>lower.tail</c> = FALSE to get <m>P(X \geq k)</m>, TRUE to get <m>P(X \leq k)</m></p></li>
           </ul></p>
           
           <p>For the Friend or Foe study, run the following code:</p>
           <sage language="r">
             <input>
-# Load the ISCAM package
-library(iscam)
+# Calculate P(X >= 14) when n=16 and prob=0.5
+# pbinom gives P(X <= q), so we need lower.tail=FALSE for P(X > q)
+# For P(X >= 14), we use pbinom(13, ..., lower.tail=FALSE)
+p_value = pbinom(13, size=16, prob=0.5, lower.tail=FALSE)
+cat("P(X >= 14) =", p_value, "\n")
 
-# Calculate binomial probability
-# k=14 successes, n=16 trials, prob=0.5, lower.tail=FALSE for P(X >= 14)
-iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
+# Visualize the binomial distribution
+x = 0:16
+probs = dbinom(x, size=16, prob=0.5)
+barplot(probs, names.arg=x, xlab="Number of Successes", 
+        ylab="Probability", main="Binomial Distribution (n=16, p=0.5)",
+        col=ifelse(x >= 14, "red", "lightblue"))
             </input>
           </sage>
           
-          <p>You should see both the probability appear and a shaded graph showing the binomial distribution with the tail area highlighted.</p>
+          <p>You should see the p-value and a bar graph showing the binomial distribution with the tail area (14, 15, 16) highlighted in red.</p>
           
           <note>
             <title>R Reminder</title>
-            <p>The <c>iscambinomprob</c> function is part of the ISCAM package. The <c>lower.tail</c> parameter controls the direction: FALSE gives you <m>P(X \geq k)</m>, TRUE gives you <m>P(X \leq k)</m>.</p>
+            <p>The <c>pbinom</c> function calculates cumulative probabilities. With <c>lower.tail=FALSE</c>, it gives <m>P(X > q)</m>, so to get <m>P(X \geq 14)</m>, we use <c>pbinom(13, ..., lower.tail=FALSE)</c>.</p>
           </note>
         </hint>
         <hint>
@@ -530,18 +535,17 @@ iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
           
           <sidebyside widths="55% 40%" valign="top">
             <stack>
-              <p><ol>
+              <p><ul>
                 <li><p>Select Binomial from the Distribution pull down menu.</p></li>
                 <li><p>Specify the values of the probability of success (<m>\pi</m>) and n (the sample size).</p></li>
                 <li><p>Leave the Type of Calculation as is.</p></li>
                 <li><p>Select Probability Option <m>X \geq Q_a</m> but specify <m>Q_a</m> to equal <m>k-1</m> (e.g., 13).</p></li>
                 <li><p>Press Enter.</p></li>
-              </ol></p>
+              </ul></p>
               
-              <note>
-                <title>JMP Reminder</title>
+              <alert>JMP Reminder</alert>
                 <p>In JMP's Distribution Calculator, you need to subtract 1 from your observed value when using the <m>\geq</m> option because JMP calculates <m>P(X > Q_a)</m> as <m>P(X \geq Q_a + 1)</m>. So to get <m>P(X \geq 14)</m>, you enter 13 as <m>Q_a</m>.</p>
-              </note>
+              
             </stack>
             <stack>
               <image source="images/inv1-2-JMPa.png" width="100%">
@@ -558,5 +562,4 @@ iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
         </solution>
       </exercise>
     </exercises>
-  </subsection>
 </section>
