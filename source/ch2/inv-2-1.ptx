@@ -203,10 +203,7 @@ nrow(births2)
       </statement>
       <solution>
         <p>Expected output:</p>
-        <image source="images/Inv2-1h-solsJMP.png" width="60%">
-          <description>JMP output showing selected rows</description>
-        </image>
-        <image source="images/Inv2-1h-solsJMP3.png.jpg" width="60%">
+        <image source="images/Inv2-1h-solsJMP3.png.jpg" width="40%">
           <description>JMP data table with excluded rows</description>
         </image>
       </solution>
@@ -380,6 +377,12 @@ hist(births2$birthweight, xlab="birth weight")
       <title>R Hints</title>
       <p>Edit the previous command, using births2 (two places). Use "==" for an equality comparison (i.e., <c>OEG == 2</c>).</p>
     </hint>
+    <hint>
+      <title>JMP Hints</title>
+        <image source="images/Inv2-1h-solsJMP.png" width="60%">
+          <description>JMP output showing selected rows</description>
+        </image>
+    </hint>
     <solution>
       <p>265,676 observations</p>
       <p>R command: <c>births3=births2[which(births2$OEG == 2 ), ]</c></p>
@@ -436,7 +439,7 @@ iscamsummary(births3$birthweight, digits=2)
       </statement>
       <solution>
         <p>Expected output:</p>
-        <image source="images/Inv2-1j-solsJMP.png" width="60%">
+        <image source="images/Inv2-1j-solsJMP2.png" width="60%">
           <description>JMP numerical summaries for birth weights</description>
         </image>
       </solution>
@@ -606,7 +609,7 @@ table(within2sd)/length(birthweight)
   <paragraphs xml:id="tech-detour-normal-probability-plot">
     <title>Technology Detour – Normal Probability Plots</title>
     
-    <p>Another way to assess the "fit" of a probability model to the data is with a probability plot (aka quantile plot). Probability plots work roughly like this: The computer determines how many observations are in the data set, and then reports the z-scores it would expect for the 1/nth percentiles (also called quantiles) for the probability model. The plot compares these z-scores to the observed data; if the z-scores "line up" with the observed data, then the probability plot supports that the data are behaving like the candidate distribution. The theory is that whether or not the observations follow a line can be easier to judge than whether a histogram follows a curve.</p>
+    <p>Another way to assess the "fit" of a probability model to the data is with a probability plot (aka quantile plot). Probability plots work roughly like this: The computer determines how many observations are in the data set, and then reports the <em>z</em>-scores it would expect for the 1/n<sup>th</sup> percentiles (also called quantiles) for the probability model. The plot compares these <em>z</em>-scores to the observed data; if the <em>z</em>-scores "line up" with the observed data, then the probability plot supports that the data are behaving like the candidate distribution. The theory is that whether or not the observations follow a line can be easier to judge than whether a histogram follows a curve.</p>
     
     <exercise xml:id="tech-detour-r-normal-probability-plot" label="Normal Probability Plot - R">
       <title>Create Normal Probability Plot in R</title>
