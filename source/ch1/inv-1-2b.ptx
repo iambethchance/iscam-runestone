@@ -486,80 +486,77 @@
     </exercise>
   </subsection>
   
-  <paragraphs xml:id="tech-detour-binomial-1-2b">
+  <subsection xml:id="tech-detour-binomial-1-2b">
     <title>Technology Detour – Calculating Binomial Probabilities</title>
     
-    <exercise xml:id="tech-detour-r-binomial-1-2b" label="Binomial Probabilities - R 1-2b">
-      <title>Calculating Binomial Probabilities in R</title>
-      <statement>
-        <p>Make sure you have the ISCAM Workspace loaded.</p>
-        <p>The <c>iscambinomprob</c> function takes the following inputs:</p>
-        <p><ul>
-          <li><p><c>k</c> = the observed value you want to calculate the probability about</p></li>
-          <li><p><c>n</c> = the sample size of the binomial distribution</p></li>
-          <li><p><c>prob</c> = the probability of success in the binomial distribution</p></li>
-          <li><p><c>lower.tail</c> = TRUE if you want the probability less than or equal to the observed value, FALSE if want the probability greater than or equal to the observed value</p></li>
-        </ul></p>
-        
-        <p>For the Friend or Foe study, in the Console at the prompt, type:</p>
-        <program language="r" interactive="sage">
-          <input>
+    <exercises>
+      <exercise xml:id="tech-detour-binomial-calculate-1-2b" label="Calculate Binomial Probabilities">
+        <title>Calculate Binomial Probabilities with Technology</title>
+        <statement>
+          <p>Use technology (R or JMP) to calculate the exact binomial probability for the Friend or Foe study (14 successes in 16 trials with probability 0.5). Choose one set of instructions below by clicking on a hint:</p>
+        </statement>
+        <hint>
+          <title>R Instructions</title>
+          <p>The <c>iscambinomprob</c> function takes the following inputs:</p>
+          <p><ul>
+            <li><p><c>k</c> = the observed value you want to calculate the probability about</p></li>
+            <li><p><c>n</c> = the sample size of the binomial distribution</p></li>
+            <li><p><c>prob</c> = the probability of success in the binomial distribution</p></li>
+            <li><p><c>lower.tail</c> = TRUE if you want the probability less than or equal to the observed value, FALSE if want the probability greater than or equal to the observed value</p></li>
+          </ul></p>
+          
+          <p>For the Friend or Foe study, run the following code:</p>
+          <sage language="r">
+            <input>
+# Load the ISCAM package
+library(iscam)
+
+# Calculate binomial probability
+# k=14 successes, n=16 trials, prob=0.5, lower.tail=FALSE for P(X >= 14)
 iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
-          </input>
-        </program>
-        <p>or</p>
-        <program language="r" interactive="sage">
-          <input>
-iscambinomprob(14, 16, .5, FALSE)
-          </input>
-        </program>
-        <p>(Yes, "false" needs to be capitalized)</p>
-        
-        <p>You should see both the probability appear in the Console window and a shaded graph open in a separate Graphics window. (You may have to toggle windows to see this Graphics window.)</p>
-        
-        <paragraphs>
-          <title>R Reminder</title>
-          <p>The <c>iscambinomprob</c> function is part of the ISCAM package. Make sure to load the package first with <c>library(iscam)</c>. The <c>lower.tail</c> parameter controls the direction: FALSE gives you <m>P(X \geq k)</m>, TRUE gives you <m>P(X \leq k)</m>.</p>
-        </paragraphs>
-      </statement>
-      <solution>
-        <p>For the Friend or Foe study with 14 successes out of 16 trials, the binomial p-value should be very small (approximately 0.0021), indicating strong evidence against the null hypothesis that infants are choosing randomly between the two toys.</p>
-      </solution>
-    </exercise>
-    
-    <exercise xml:id="tech-detour-jmp-binomial-1-2b" label="Binomial Probabilities - JMP 1-2b">
-      <title>Calculating Binomial Probabilities in JMP</title>
-      <statement>
-        <p>Using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url> (Download this file to your computer and then open the .jrn file to launch JMP.)</p>
-        
-        <sidebyside widths="55% 40%" valign="top">
-          <stack>
-            <p><ol>
-              <li><p>Select Binomial from the Distribution pull down menu.</p></li>
-              <li><p>Specify the values of the probability of success (<m>\pi</m>) and n (the sample size).</p></li>
-              <li><p>Leave the Type of Calculation as is.</p></li>
-              <li><p>Select Probability Option <m>X \geq Q_a</m> but specify <m>Q_a</m> to equal <m>k-1</m> (e.g., 13).</p></li>
-              <li><p>Press Enter.</p></li>
-            </ol></p>
-            
-            <note>
-              <title>JMP Reminder</title>
-              <p>In JMP's Distribution Calculator, you need to subtract 1 from your observed value when using the <m>\geq</m> option because JMP calculates <m>P(X > Q_a)</m> as <m>P(X \geq Q_a + 1)</m>. So to get <m>P(X \geq 14)</m>, you enter 13 as <m>Q_a</m>.</p>
-            </note>
-          </stack>
-          <stack>
-            <image source="images/inv1-2-JMPa.png" width="100%">
-              <description>JMP Distribution Calculator input screen for binomial probabilities</description>
-            </image>
-            <image source="images/inv1-2-JMPb.png" width="100%">
-              <description>JMP Distribution Calculator output screen showing binomial distribution</description>
-            </image>
-          </stack>
-        </sidebyside>
-      </statement>
-      <solution>
-        <p>The JMP Distribution Calculator will display both the probability value and a visual representation of the binomial distribution with the tail area shaded. For finding <m>P(X \geq 14)</m> when <m>n=16</m> and <m>\pi=0.5</m>, enter 13 for <m>Q_a</m> to get the correct p-value of approximately 0.0021.</p>
-      </solution>
-    </exercise>
-  </paragraphs>
+            </input>
+          </sage>
+          
+          <p>You should see both the probability appear and a shaded graph showing the binomial distribution with the tail area highlighted.</p>
+          
+          <note>
+            <title>R Reminder</title>
+            <p>The <c>iscambinomprob</c> function is part of the ISCAM package. The <c>lower.tail</c> parameter controls the direction: FALSE gives you <m>P(X \geq k)</m>, TRUE gives you <m>P(X \leq k)</m>.</p>
+          </note>
+        </hint>
+        <hint>
+          <title>JMP Instructions</title>
+          <p>Using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url> (Download this file to your computer and then open the .jrn file to launch JMP.)</p>
+          
+          <sidebyside widths="55% 40%" valign="top">
+            <stack>
+              <p><ol>
+                <li><p>Select Binomial from the Distribution pull down menu.</p></li>
+                <li><p>Specify the values of the probability of success (<m>\pi</m>) and n (the sample size).</p></li>
+                <li><p>Leave the Type of Calculation as is.</p></li>
+                <li><p>Select Probability Option <m>X \geq Q_a</m> but specify <m>Q_a</m> to equal <m>k-1</m> (e.g., 13).</p></li>
+                <li><p>Press Enter.</p></li>
+              </ol></p>
+              
+              <note>
+                <title>JMP Reminder</title>
+                <p>In JMP's Distribution Calculator, you need to subtract 1 from your observed value when using the <m>\geq</m> option because JMP calculates <m>P(X > Q_a)</m> as <m>P(X \geq Q_a + 1)</m>. So to get <m>P(X \geq 14)</m>, you enter 13 as <m>Q_a</m>.</p>
+              </note>
+            </stack>
+            <stack>
+              <image source="images/inv1-2-JMPa.png" width="100%">
+                <description>JMP Distribution Calculator input screen for binomial probabilities</description>
+              </image>
+              <image source="images/inv1-2-JMPb.png" width="100%">
+                <description>JMP Distribution Calculator output screen showing binomial distribution</description>
+              </image>
+            </stack>
+          </sidebyside>
+        </hint>
+        <solution>
+          <p>For the Friend or Foe study with 14 successes out of 16 trials, the binomial p-value should be very small (approximately 0.0021), indicating strong evidence against the null hypothesis that infants are choosing randomly between the two toys.</p>
+        </solution>
+      </exercise>
+    </exercises>
+  </subsection>
 </section>
