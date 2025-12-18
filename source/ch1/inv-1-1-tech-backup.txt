@@ -1,0 +1,402 @@
+BACKUP OF DETAILED TECHNOLOGY INSTRUCTIONS FROM INV-1-1.PTX
+Created: December 18, 2025
+This content was removed to streamline the investigation file.
+
+=============================================================================
+
+<p>
+  For the technology, choose either R or JMP (no need to do both).
+</p>
+
+<reveal xml:id="tech-R" button-text="Show R instructions">
+  <title>R Instructions</title>
+  <p>Use the following R command to make the bar graph:</p>
+  <program language="r">
+barplot(c(14, 2), names.arg = c("Helper", "Hinderer"),
+        xlab = "Choice")
+  </program>
+  <!-- Or your R/Sage interactive cell goes here -->
+</reveal>
+
+<reveal xml:id="tech-JMP" button-text="Show JMP instructions">
+  <title>JMP Instructions</title>
+  <p>Open JMP and follow these steps:</p>
+  <ol>
+    <li>Enter the data in a new data table…</li>
+    <li>Choose <c>Graph &gt; Bar Chart</c>…</li>
+  </ol>
+</reveal>
+
+    <paragraphs>
+
+      <exercise xml:id="tech-detour-r-loading-rstudio" label="Loading Data - RStudio">
+        <title>Loading Data - RStudio</title>
+        <statement>
+          <p>In RStudio, choose <c>Import Dataset > From Text (readr)</c> and enter the URL, then press <c>Import</c>.</p>
+          <ul>
+            <li><p>Example URL: <url href="https://www.rossmanchance.com/iscam3/data/InfantData.txt">https://www.rossmanchance.com/iscam3/data/InfantData.txt</url></p></li>
+            <li><p>Keep <c>First Row as Names</c> checked</p></li>
+            <li><p>For ISCAM files, change the <c>Delimiter</c> to <c>Tab</c></p></li>
+            <li><p>Press <c>Update</c> to preview the data</p></li>
+            <li><p>You can set the dataset name</p></li>
+          </ul>
+          
+          <paragraphs>
+            <title>RStudio Reminder</title>
+            <p>With other data files, you may need to consider how <q>missing values</q> are coded. The Import Dataset dialog gives you a preview so you can check that the data looks correct before importing.</p>
+          </paragraphs>
+        </statement>
+        <solution>
+          <p>After importing, you should see the data appear in your Environment pane (upper right) and a data viewer window will open showing the contents of the file. The data table should show one column named <c>choice</c> with 16 rows containing either "Helper" or "Hinderer".</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="tech-detour-r-loading" label="Loading Data - R">
+        <title>Loading Data in R</title>
+        <statement>
+          <p><alert>Option 1: Using RStudio on Your Computer</alert></p>
+          
+          <p><em>Loading from URL:</em></p>
+          <p>If you're using RStudio on your computer, you can load the <url href="https://www.rossmanchance.com/iscam3/data/InfantData.txt">InfantData.txt</url> file directly from the web using the <c>url()</c> function:</p>
+          
+          <pre>
+InfantData = read.table(url("https://www.rossmanchance.com/iscam3/data/InfantData.txt"), header=TRUE)
+head(InfantData)
+          </pre>
+          
+          <p><em>Loading from Your Computer:</em></p>
+          <p>If you've downloaded the <url href="https://www.rossmanchance.com/iscam3/data/InfantData.txt">InfantData.txt</url> file, use <c>file.choose()</c> to browse for it:</p>
+          <pre>
+InfantData = read.table(file.choose(), header=TRUE)
+head(InfantData)
+          </pre>
+          
+          <p>The <c>header=TRUE</c> argument indicates the first row contains variable names.</p>
+          
+          <paragraphs>
+            <title>RStudio Reminder</title>
+            <p>After loading, you should see the data appear in your Environment pane (upper right). Use <c>View(InfantData)</c> or <c>head(InfantData)</c> to inspect the data. With other data files, you may need to consider how <q>missing values</q> are coded.</p>
+          </paragraphs>
+          
+          <p><alert>Option 2: Using This Interactive Textbook (Sage Cell)</alert></p>
+          <p>In Sage cells, you have two options for loading data:</p>
+          
+          <p><em>Option 2a: Load from GitHub (recommended for Sage cells)</em></p>
+          <sage language="r">
+            <input>
+# Load data directly from GitHub
+InfantData = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/InfantData.txt", header=TRUE)
+
+# Display the data
+InfantData
+            </input>
+          </sage>
+          
+          <p><em>Option 2b: Create data directly (backup option)</em></p>
+          <p>If loading from GitHub times out or fails, you can create the data directly:</p>
+          
+          <sage language="r">
+            <input>
+# Create the InfantData dataset directly
+InfantData &lt;- data.frame(
+  choice = c("Helper", "Helper", "Helper", "Helper", "Helper", "Hinderer",
+             "Helper", "Helper", "Helper", "Helper", "Helper", "Helper",
+             "Helper", "Hinderer", "Helper", "Helper")
+)
+
+# Display the data
+InfantData
+            </input>
+          </sage>
+          
+          <paragraphs>
+            <title>Working with Sage Cells</title>
+            <p><alert>Important:</alert> Each Sage cell runs completely independently in this textbook. Variables created in one cell are <em>not</em> available in other cells. This is why you'll see the data creation code repeated in each cell throughout this investigation - each cell includes all the previous steps plus the new command you're learning.</p>
+            
+            <p><alert>Limitations:</alert> You cannot install new R packages (like <c>install.packages()</c> or <c>remotes::install_github()</c>) in Sage cells. However, you can use packages that are already installed on the Sage server, and you can load data from URLs using <c>read.table(url(...))</c> for most datasets.</p>
+            <p><alert>Building Your Analysis:</alert> As you progress through the investigation, each cell will include:
+            <ul>
+              <li><p>All the previous commands (like creating the data)</p></li>
+              <li><p>PLUS the new command for that step</p></li>
+            </ul>
+            This way, you can run any cell at any time without having to go back and re-run earlier cells.</p>
+            <p><alert>How to Use:</alert> Click the <q>Evaluate (R)</q> button below each code cell to run the R code. You should see output appear below. You can also click the expand icon (↗) in the upper right to open the cell in a larger editor window.</p>
+          </paragraphs>
+          
+          <sage language="r">
+            <input>
+# Create the InfantData dataset directly
+InfantData &lt;- data.frame(
+  choice = c("Helper", "Helper", "Helper", "Helper", "Helper", "Hinderer",
+             "Helper", "Helper", "Helper", "Helper", "Helper", "Helper",
+             "Helper", "Hinderer", "Helper", "Helper")
+)
+
+# Display the data to verify it loaded correctly
+InfantData
+            </input>
+          </sage>
+          
+          <p>You should see output showing the data with 16 rows and one column called <c>choice</c>. Verify that you see both "Helper" and "Hinderer" values.</p>
+          
+          <paragraphs>
+            <title>Additional R Tips</title>
+            <p><alert>For RStudio Users:</alert> R is case sensitive! <c>InfantData</c> and <c>infantdata</c> are different objects. Always check your data after loading with <c>View()</c> or <c>head()</c>.</p>
+            <p><alert>Other Data Formats:</alert> Depending on how your data is formatted, you may need additional arguments:</p>
+            <ul>
+              <li><p><c>sep="\t"</c> for tab-separated values</p></li>
+              <li><p><c>na.strings="*"</c> to specify how missing values are coded</p></li>
+              <li><p><c>strip.white=TRUE</c> to remove extra whitespace</p></li>
+            </ul>
+          </paragraphs>
+        </statement>
+        <solution>
+          <p>After loading the data, you should see a data frame with 16 rows and one column named <c>choice</c> containing "Helper" and "Hinderer" values.</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="tech-detour-jmp-loading" label="Loading Data - JMP">
+        <title>Loading Data - JMP</title>
+        <statement>
+          <p><alert>Method 1: Copy and Paste</alert></p>
+          <p>Choose <c>File > New > Data table</c>. Open the <url href="https://www.rossmanchance.com/iscam2/data/InfantData.txt" target="_blank">InfantData.txt</url> (raw data) link from the <url href="https://www.rossmanchance.com/iscam4/files.html" target="_blank">data files page</url> and select all the observations and the variable name and copy the data into the clipboard. Return to the data table in JMP and select <c>Edit > Paste with Column Names</c>.</p>
+          
+          <p><alert>Method 2: Open File</alert></p>
+          <p>If the .txt file is saved on your computer, you can choose <c>File > Open</c> and use the pull-down menu to change the file type.</p>
+          
+          <paragraphs>
+            <title>JMP Reminder</title>
+            <p>When using <c>Paste with Column Names</c>, make sure you include the header row (variable names) in your selection. JMP will automatically detect the data types for each column. Always check the data table after importing to ensure everything looks correct.</p>
+          </paragraphs>
+        </statement>
+        <solution>
+          <p>After pasting or opening the file, you should see a data table with one column labeled <c>choice</c> containing 16 rows. The column should be recognized as a Character data type. The values should alternate between "Helper" and "Hinderer" entries.</p>
+          <image source="tech_images/JMPdatatable.png" width="70%">
+            <description>JMP data table showing the choice column with 16 rows of Helper and Hinderer values</description>
+          </image>
+        </solution>
+      </exercise>
+    </paragraphs>
+    
+    <paragraphs xml:id="tech-detour-tallying">
+      <title>Technology Detour - Tallying the Outcomes</title>
+      
+      <exercise xml:id="tech-detour-r" label="R">
+        <title>Tallying the Outcomes in R</title>
+        <statement>
+          <p><alert>For RStudio Users:</alert> If you loaded data from a file, run:</p>
+          <pre>
+table(InfantData$choice)
+          </pre>
+          
+          <p><alert>For Interactive Textbook Users:</alert> Use the Sage cell below (it includes the data creation from before):</p>
+          <sage language="r">
+            <input>
+# Create the InfantData dataset
+InfantData &lt;- data.frame(
+  choice = c("Helper", "Helper", "Helper", "Helper", "Helper", "Hinderer",
+             "Helper", "Helper", "Helper", "Helper", "Helper", "Helper",
+             "Helper", "Hinderer", "Helper", "Helper")
+)
+
+# Count frequencies
+table(InfantData$choice)
+            </input>
+          </sage>
+          
+          <p>You should see output showing: Helper 14, Hinderer 2</p>
+          
+          <paragraphs>
+            <title>R Reminder</title>
+            <p>The <c>table()</c> function automatically counts the frequency of each unique value in your data. The result shows category names and their counts.</p>
+          </paragraphs>
+        </statement>
+        <solution>
+          <p>The output should show:</p>
+          <pre>
+choice
+  Helper Hinderer 
+  14        2
+          </pre>
+          <p>This indicates that 14 infants chose the Helper toy and 2 chose the Hinderer toy.</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="tech-detour-jmp" label="JMP">
+        <title>Tallying the Outcomes - JMP</title>
+        <statement>
+          <p>Choose <c>Analyze > Tabulate</c>. In the new window, drag the <c>choice</c> column to either the Drop Zone for columns or for rows. Press <c>Done</c>.</p>
+          
+          <image source="tech_images/JMPtabulate.png" width="70%">
+            <description>JMP Tabulate window showing counts: Helper 14, Hinderer 2</description>
+          </image>
+          
+          <paragraphs>
+            <title>JMP Reminder</title>
+            <p>Look for the red triangle (<q>hot spot</q>) menus in JMP windows - they provide additional options and actions. Dragging variables to different zones (rows vs. columns) changes how your table is organized.</p>
+          </paragraphs>
+        </statement>
+        <solution>
+          <p>The Tabulate output should display a table showing the counts for each category:</p>
+          <ul>
+            <li><p>Helper: 14</p></li>
+            <li><p>Hinderer: 2</p></li>
+            <li><p>Total (N): 16</p></li>
+          </ul>
+          <p>The exact layout depends on whether you placed the variable in rows or columns, but the counts will be the same.</p>
+          <image source="tech_images/JMPtable.png" width="50%">
+            <description>JMP frequency table showing choice categories and their counts</description>
+          </image>
+        </solution>
+      </exercise>
+    </paragraphs>
+    
+    <paragraphs xml:id="tech-detour-bargraphs">
+      <title>Technology Detour - Bar Graphs</title>
+      
+      <exercise xml:id="tech-detour-r-bargraph-raw" label="Bar Graphs - R (raw data)">
+        <title>Bar Graphs in R (from raw data)</title>
+        <statement>
+          <p><alert>For RStudio Users:</alert> If you loaded data from a file, run:</p>
+          <pre>
+barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
+          </pre>
+          
+          <p><alert>For Interactive Textbook Users:</alert> Use the Sage cell below (it includes the data creation):</p>
+          <sage language="r">
+            <input>
+# Create the InfantData dataset
+InfantData &lt;- data.frame(
+  choice = c("Helper", "Helper", "Helper", "Helper", "Helper", "Hinderer",
+             "Helper", "Helper", "Helper", "Helper", "Helper", "Helper",
+             "Helper", "Hinderer", "Helper", "Helper")
+)
+
+# Create bar plot
+barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
+            </input>
+          </sage>
+          
+          <p>The bar graph should appear showing two bars - one tall bar for Helper (14) and one short bar for Hinderer (2).</p>
+          
+          <paragraphs>
+            <title>R Reminder</title>
+            <p>The <c>xlab</c> and <c>ylab</c> arguments add labels to your axes. Always label your graphs to make them interpretable! You can nest the <c>table()</c> function inside <c>barplot()</c> to go directly from raw data to a graph.</p>
+          </paragraphs>
+        </statement>
+        <solution>
+          <p>You should see a bar graph with two bars:</p>
+          <ul>
+            <li><p>A bar for "Helper" with height 14</p></li>
+            <li><p>A bar for "Hinderer" with height 2</p></li>
+          </ul>
+          <p>The x-axis should be labeled "Choice" and the y-axis should be labeled "Frequency". The bars should have gaps between them to indicate these are categorical data.</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="tech-detour-r-bargraph-summary" label="Bar Graphs - R (summary data)">
+        <title>Bar Graphs in R (from summary data)</title>
+        <statement>
+          <p>If you already (or only) have the summarized data (the number of successes and failures), you can create the bar graph directly without needing the raw data:</p>
+          
+          <p><alert>For RStudio or Interactive Textbook:</alert></p>
+          <sage language="r">
+            <input>
+barplot(c(14, 2), names.arg=c("Helper", "Hinderer"), xlab="Choice", ylab="Frequency")
+            </input>
+          </sage>
+          
+          <p>The bar graph should appear showing the same pattern as before.</p>
+          
+          <paragraphs>
+            <title>R Reminder</title>
+            <p>The <c>c()</c> function creates a vector (list) of values. The <c>names.arg</c> parameter assigns category labels to each bar. The order matters - the first count gets the first label!</p>
+          </paragraphs>
+        </statement>
+        <solution>
+          <p>You should see a bar graph identical to the one created from raw data:</p>
+          <ul>
+            <li><p>A bar labeled "Helper" with height 14</p></li>
+            <li><p>A bar labeled "Hinderer" with height 2</p></li>
+          </ul>
+          <p>This method is useful when you only have summary statistics rather than the full dataset.</p>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="tech-detour-jmp-bargraph-summary" label="Bar Graphs - JMP (summary data)">
+        <title>Bar Graphs - JMP (summary data)</title>
+        <statement>
+          <p><alert>Method 1: From Tabulate Window</alert></p>
+          <p>In the Tabulate window (from above), use the red down arrow in the upper left corner (<q>hot spot</q>) and select <c>Show Chart</c>. Best when using the Drop zone for rows.</p>
+          
+          <image source="tech_images/bargraphJMP1.png" width="50%">
+            <description>JMP Tabulate window with Show Chart option</description>
+          </image>
+          
+          <p><alert>Method 2: Graph Builder</alert></p>
+          <p>If you have the categories and counts in a data window, choose <c>Graph > Graph Builder</c>. Drag the variable names to the x-axis and the counts to the y-axis. Press the 7th icon to convert the chart to a bar graph.</p>
+          
+          <image source="tech_images/bargraphJMP2.png" width="50%">
+            <description>JMP Graph Builder interface for creating bar graphs from summary data</description>
+          </image>
+          
+          <paragraphs>
+            <title>JMP Reminder</title>
+            <p>Graph Builder is JMP's most flexible graphing tool. The icons at the top let you switch between different graph types. Drag and drop variables to different zones to change what the graph displays.</p>
+          </paragraphs>
+        </statement>
+        <solution>
+          <p>You should see a bar graph showing two bars with the frequency counts clearly labeled. The Helper bar should be noticeably taller (14) than the Hinderer bar (2). The graph should automatically include axis labels and a legend if needed.</p>
+          <image source="tech_images/JMPbargraph2.png" width="70%">
+            <description>JMP bar graph created from summary data showing Helper and Hinderer counts</description>
+          </image>
+        </solution>
+      </exercise>
+      
+      <exercise xml:id="tech-detour-jmp-bargraph-raw" label="Bar Graphs - JMP (raw data)">
+        <title>Bar Graphs - JMP (raw data)</title>
+        <statement>
+          <p><alert>Method 1: Graph Builder</alert></p>
+          <p>From the Data Table window, select <c>Graph > Graph Builder</c>. Drag the Choice variable to the X-axis. Hover until the X-region shows the group labels and then let go. Press the 7th (<q>Bar</q>) icon to convert the chart to a bar graph.</p>
+          
+          <image source="tech_images/bargraphJMP3.png" width="50%">
+            <description>JMP Graph Builder showing dragging variable to X-axis</description>
+          </image>
+          
+          <image source="tech_images/bargraphJMP4.png" width="50%">
+            <description>JMP Graph Builder with Bar chart icon selected</description>
+          </image>
+          
+          <p><alert>Method 2: Distribution Platform</alert></p>
+          <p>Choose <c>Analyze > Distribution</c>. With the choice column highlighted, press the <c>Y, Columns</c> button (or drag to the white box). Press <c>OK</c>.</p>
+          
+          <image source="tech_images/bargraphJMP6.png" width="50%">
+            <description>JMP Distribution output with frequency chart</description>
+          </image>
+          
+          <p>You have lots of options here (using the hot spots), like turning the graph horizontal, adding an axis (putting it on the left), adding labels, separating bars, etc.</p>
+          
+          <image source="tech_images/bargraphJMP7.png" width="50%">
+            <description>JMP Distribution hot spot menu options</description>
+          </image>
+          
+          <paragraphs>
+            <title>JMP Reminder</title>
+            <p>The Distribution platform is great for exploring categorical data. Use the red triangle hot spots to customize your graph - you can make bars horizontal, add counts/percentages, change colors, and more. Experiment with the options to make your graph publication-ready!</p>
+          </paragraphs>
+        </statement>
+        <solution>
+          <p>Either method should produce a bar graph showing the distribution of choices. You should see:</p>
+          <ul>
+            <li><p>Two distinct bars for Helper and Hinderer</p></li>
+            <li><p>The Helper bar should be approximately 7 times taller than the Hinderer bar (14 vs 2)</p></li>
+            <li><p>Frequency counts labeled on or near the bars</p></li>
+            <li><p>Clear axis labels and category names</p></li>
+          </ul>
+          <p>Using the Distribution platform gives you more statistical output beyond just the graph, including percentages and other summary statistics.</p>
+          <image source="tech_images/JMPbargraph1.png" width="50%">
+            <description>JMP bar graph showing Helper and Hinderer distribution</description>
+          </image>
+        </solution>
+      </exercise>
+    </paragraphs>
