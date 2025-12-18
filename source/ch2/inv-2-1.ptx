@@ -183,9 +183,7 @@ nrow(births2)
       </statement>
       <solution>
         <p>Expected output:</p>
-        <image source="images/Inv2-1h-solsR.jpg" width="60%">
-          <description>R output showing number of rows after subsetting</description>
-        </image>
+        297,558 births
       </solution>
     </exercise>
     
@@ -208,7 +206,7 @@ nrow(births2)
         <image source="images/Inv2-1h-solsJMP.png" width="60%">
           <description>JMP output showing selected rows</description>
         </image>
-        <image source="images/Inv2-1h-solsJMP2.png" width="60%">
+        <image source="images/Inv2-1h-solsJMP3.png" width="60%">
           <description>JMP data table with excluded rows</description>
         </image>
       </solution>
@@ -571,10 +569,10 @@ table(within2sd)/length(birthweight)
       <statement>
         <p>Calculate the percentage of the birthweights that fall within 2 standard deviations of the mean.</p>
         <p><ol>
-          <li><p>Calculate (by hand) the mean + 2SD limits (e.g., 2415 and 4258).</p></li>
+          <li><p>Calculate (by hand) the mean + 2SD limits (e.g., 2415.9 and 4262.3).</p></li>
           <li><p>In the data window, double click on an empty column to activate it and name it "within2sd"</p></li>
           <li><p>Right click on the column name and select Formula</p></li>
-          <li><p>From Functions (grouped) select Conditional. Enter conditions for birth weight &lt; 4258 &amp; birth weight &gt; 2415 to equal 1, 0 otherwise.</p></li>
+          <li><p>From Functions (grouped) select Conditional. Enter conditions for birth weight &lt; 4262.3 &amp; birth weight &gt; 2415.9 to equal 1, 0 otherwise.</p></li>
           <li><p>Then use Analyze &gt; Distribution on this column and report the mean, the proportion of ones.</p></li>
         </ol></p>
       </statement>
@@ -665,7 +663,7 @@ qqline(birthweight, datax=T)
   <exercise xml:id="inv2-1-q" label="I2.1q">
     <title>Calculate low birth weight probability</title>
     <statement>
-      <p>Use technology (e.g., <url href="http://www.rossmanchance.com/applets/2021/normprobcalc/NormProbCalc.html">Normal Probability Calculator applet</url>) to calculate the normal distribution probability that a randomly selected baby will be of low birth weight. Include a well-labeled sketch with the shaded area of interest.</p>
+      <p>Use technology (e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html?hideExtras=1">Normal Probability Calculator applet</url>) to calculate the normal distribution probability that a randomly selected baby will be of low birth weight. Include a well-labeled sketch with the shaded area of interest.</p>
     </statement>
     <hint>
       <p>Expected output:</p>
@@ -674,7 +672,7 @@ qqline(birthweight, datax=T)
       </image>
     </hint>
     <solution>
-      <p>We estimate that in the long run about 3.3% of full term babies will be of low birth weight.</p>
+      <p>We estimate that in the long run about 3.5% of full term babies will be of low birth weight.</p>
     </solution>
     <response/>
   </exercise>
@@ -697,7 +695,12 @@ qqline(birthweight, datax=T)
   </exercise>
   
   <conclusion>
-    <p><alert>Discussion:</alert> We can often use a theoretical model to predict how data will behave. However, it is often unclear whether the model we are using is appropriate. Sometimes we have to consider the context (e.g., biological characteristic) and presume a particular model. We can also use existing data to create a model but we need to consider what population the data are representative of and how stable we think the data generating process is (e.g., not changing over time). In this case, a normal distribution appears to underestimate the likelihood of both smaller and heavier babies (3.2% beyond 2SD rather than 5%), but overall the model is performing well, allowing us to make predictions like we did in (r).</p>
+    <p><alert>Discussion:</alert> We can often use a theoretical model to predict how data will behave. However, it is often unclear whether the model we are using is appropriate. Sometimes we have to consider the context (e.g., biological characteristic) and presume a particular model. We can also use existing data to create a model, 
+    but we need to consider what population the data are representative of and how 
+    stable we think the data generating process is (e.g., not changing over time). 
+    In this case, a normal distribution predicts 3.3% of babies will be of low birth weight (compared to 3.2% in the data file) and that about 5% of birth weights will be beyond two standard deviations from the mean (compared to 4.8% in the dataset). The 
+    model appears to be quite accurate (once we remove the non full term babies and missing values) and useful for other predictions.  
+</p>
   </conclusion>
   
   <subsection xml:id="practice2-1A">
