@@ -95,12 +95,39 @@ iscamboxplot <- function(x, by = NULL, data = NULL, main = "", xlab = "", ylab =
 # Binomial probability
 iscambinomprob <- function(k, n, prob, lower.tail = TRUE) {
   if (lower.tail) {
-    result <- pbinom(k, n, prob)
+    this.prob <- pbinom(k, n, prob)
   } else {
-    result <- pbinom(k - 1, n, prob, lower.tail = FALSE)
+    this.prob <- pbinom(k - 1, n, prob, lower.tail = FALSE)
   }
-  cat(paste0("P = ", round(result, 4), "\n"))
-  invisible(result)
+  
+  # Create barplot of binomial distribution
+  x <- 0:n
+  probs <- dbinom(x, size = n, prob)
+  
+  # Determine which bars to highlight
+  if (lower.tail) {
+    highlight <- x <= k
+  } else {
+    highlight <- x >= k
+  }
+  
+  # Create plot
+  barplot(probs, names.arg = x, 
+          col = ifelse(highlight, "red", "lightblue"),
+          xlab = "Number of Successes", 
+          ylab = "Probability",
+          main = paste0("Binomial Distribution (n=", n, ", p=", prob, ")"))
+  
+  # Add probability text
+  showprob <- format(this.prob, digits = 4)
+  maxx <- max(x[highlight])
+  myy <- max(probs) * 0.9
+  text((maxx + n * prob) * 9 / 16, myy, 
+       paste0("P = ", showprob), cex = 1.2, col = "red")
+  
+  # Print result
+  cat(paste0("P = ", round(this.prob, 4), "\n"))
+  invisible(this.prob)
 }
 
 # Binomial test
