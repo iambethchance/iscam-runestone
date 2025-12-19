@@ -512,7 +512,7 @@ invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance
 
 # Calculate binomial probability
 # k=14 successes, n=16 trials, prob=0.5, lower.tail=FALSE for P(X >= 14)
-iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
+invisible(iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE))
             </input>
           </sage>
           
@@ -537,8 +537,6 @@ iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
                 <li><p>Press Enter.</p></li>
               </ul></p>
               
-              <alert>JMP Reminder</alert>
-                <p>In JMP's Distribution Calculator, you need to subtract 1 from your observed value when using the <m>\geq</m> option because JMP calculates <m>P(X > Q_a)</m> as <m>P(X \geq Q_a + 1)</m>. So to get <m>P(X \geq 14)</m>, you enter 13 as <m>Q_a</m>.</p>
               
             </stack>
             <stack>
@@ -550,7 +548,9 @@ iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
               </image>
             </stack>
           </sidebyside>
-        </hint>
+            <alert>JMP Reminder</alert>
+                <p>In JMP's Distribution Calculator, you need to subtract 1 from your observed value when using the <m>\geq</m> option because JMP calculates <m>P(X > Q_a)</m> as <m>P(X \geq Q_a + 1)</m>. So to get <m>P(X \geq 14)</m>, you enter 13 as <m>Q_a</m>.</p>
+          </hint>
         <solution>
           <p>For the Friend or Foe study with 14 successes out of 16 trials, the binomial p-value should be very small (approximately 0.0021), indicating strong evidence against the null hypothesis that infants are choosing randomly between the two toys.</p>
         </solution>
