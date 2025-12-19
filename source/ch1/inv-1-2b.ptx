@@ -512,7 +512,16 @@ invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance
 
 # Calculate binomial probability
 # k=14 successes, n=16 trials, prob=0.5, lower.tail=FALSE for P(X >= 14)
-invisible(iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE))
+iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
+
+# Create visualization of binomial distribution
+x &lt;- 0:16
+probs &lt;- dbinom(x, 16, 0.5)
+barplot(probs, names.arg=x, xlab="Number of Successes", ylab="Probability",
+        main="Binomial Distribution (n=16, p=0.5)",
+        col=ifelse(x &gt;= 14, "red", "lightblue"))
+legend("topright", legend=c("P(X >= 14)", "Other values"), 
+       fill=c("red", "lightblue"))
             </input>
           </sage>
           
