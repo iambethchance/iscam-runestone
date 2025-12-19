@@ -507,22 +507,26 @@
           <p>For the Friend or Foe study, run the following code:</p>
           <sage language="r">
             <input>
-# Install and load the ISCAM package from GitHub
-if (!require(devtools)) install.packages("devtools", repos="http://cran.r-project.org")
-devtools::install_github("ISCAM-ISU/iscam", quiet=TRUE)
-library(iscam)
+# Calculate P(X >= 14) when n=16 and prob=0.5
+# pbinom gives P(X <= q), so we use lower.tail=FALSE for P(X > q)
+# For P(X >= 14), we calculate P(X > 13) using pbinom(13, ..., lower.tail=FALSE)
+p_value = pbinom(13, size=16, prob=0.5, lower.tail=FALSE)
+cat("P(X >= 14) =", p_value, "\n")
 
-# Calculate binomial probability
-# k=14 successes, n=16 trials, prob=0.5, lower.tail=FALSE for P(X >= 14)
-iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
+# Visualize the binomial distribution
+x = 0:16
+probs = dbinom(x, size=16, prob=0.5)
+barplot(probs, names.arg=x, xlab="Number of Successes", 
+        ylab="Probability", main="Binomial(n=16, p=0.5)",
+        col=ifelse(x >= 14, "red", "lightblue"))
             </input>
           </sage>
           
-          <p>You should see both the probability appear and a shaded graph showing the binomial distribution with the tail area highlighted.</p>
+          <p>You should see the p-value and a bar graph showing the binomial distribution with the tail area (14, 15, 16 successes) highlighted in red.</p>
           
           <note>
             <title>R Reminder</title>
-            <p>The code first installs the ISCAM package from GitHub, then uses the <c>iscambinomprob</c> function. The <c>lower.tail</c> parameter controls the direction: FALSE gives you <m>P(X \geq k)</m>, TRUE gives you <m>P(X \leq k)</m>.</p>
+            <p>The <c>pbinom</c> function calculates cumulative probabilities. With <c>lower.tail=FALSE</c>, <c>pbinom(q, ...)</c> gives <m>P(X > q)</m>, so to get <m>P(X \geq 14)</m> we use <c>pbinom(13, size=16, prob=0.5, lower.tail=FALSE)</c>.</p>
           </note>
         </hint>
         <hint>
