@@ -98,7 +98,7 @@ iscambinomprob <- function(k, n, prob, lower.tail, verbose = TRUE) {
     stop("Error: `prob` (probability) must be a numeric value between 0 and 1.")
   }
   
-  old <- par(mar = c(4, 3, 2, 2))
+  old <- par(mar = c(4, 3, 2, 2), pin = c(5, 3))
   on.exit(par(old), add = TRUE)
   thisx <- 0:n
   minx <- max(0, n * prob - 4 * sqrt(prob * (1 - prob) * n))
