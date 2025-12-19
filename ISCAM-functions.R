@@ -92,42 +92,69 @@ iscamboxplot <- function(x, by = NULL, data = NULL, main = "", xlab = "", ylab =
 # BINOMIAL FUNCTIONS
 # ============================================================================
 
-# Binomial probability
-iscambinomprob <- function(k, n, prob, lower.tail = TRUE) {
+# Binomial probability with graph (from ISCAM4/ISCAM package)
+iscambinomprob <- function(k, n, prob, lower.tail, verbose = TRUE) {
+  if (prob < 0 || prob > 1) {
+    stop("Error: `prob` (probability) must be a numeric value between 0 and 1.")
+  }
+  
+  old <- par(mar = c(4, 3, 2, 2))
+  on.exit(par(old), add = TRUE)
+  thisx <- 0:n
+  minx <- max(0, n * prob - 4 * sqrt(prob * (1 - prob) * n))
+  maxx <- min(n, n * prob + 4 * sqrt(prob * (1 - prob) * n))
+  maxx <- max(k + 1, maxx)
+  myy <- dbinom(floor(n * prob), n, prob)
+  plot(
+    thisx,
+    dbinom(thisx, size = n, prob),
+    xlab = " ",
+    ylab = " ",
+    type = "h",
+    xlim = c(minx, maxx),
+    panel.first = grid(),
+    lwd = 2
+  )
+  abline(h = 0, col = "gray")
+
   if (lower.tail) {
     this.prob <- pbinom(k, n, prob)
+    showprob <- format(this.prob, digits = 4)
+    lines(0:k, dbinom(0:k, size = n, prob), col = "red", type = "h", lwd = 2)
+    text(
+      minx,
+      myy * .8,
+      labels = bquote(atop(P(X <= .(k)), "=" ~ .(showprob))),
+      pos = 4,
+      col = "red"
+    )
+    if (verbose) {
+      cat("Probability", k, "and below =", this.prob, "\n")
+    }
   } else {
-    this.prob <- pbinom(k - 1, n, prob, lower.tail = FALSE)
+    this.prob <- 1 - pbinom(k - 1, n, prob)
+    showprob <- format(this.prob, digits = 4)
+    lines(k:n, dbinom(k:n, size = n, prob), col = "red", type = "h", lwd = 2)
+    text(
+      (maxx + n * prob) * 9 / 16,
+      myy,
+      labels = bquote(atop(P(X >= .(k)), "=" ~ .(showprob))),
+      pos = 1,
+      col = "red"
+    )
+    if (verbose) {
+      cat("Probability", k, "and above =", this.prob, "\n")
+    }
   }
-  
-  # Create barplot of binomial distribution
-  x <- 0:n
-  probs <- dbinom(x, size = n, prob)
-  
-  # Determine which bars to highlight
-  if (lower.tail) {
-    highlight <- x <= k
-  } else {
-    highlight <- x >= k
-  }
-  
-  # Create plot
-  barplot(probs, names.arg = x, 
-          col = ifelse(highlight, "red", "lightblue"),
-          xlab = "Number of Successes", 
-          ylab = "Probability",
-          main = paste0("Binomial Distribution (n=", n, ", p=", prob, ")"))
-  
-  # Add probability text
-  showprob <- format(this.prob, digits = 4)
-  maxx <- max(x[highlight])
-  myy <- max(probs) * 0.9
-  text((maxx + n * prob) * 9 / 16, myy, 
-       paste0("P = ", showprob), cex = 1.2, col = "red")
-  
-  # Print result
-  cat(paste0("P = ", round(this.prob, 4), "\n"))
-  invisible(this.prob)
+  newtitle <- substitute(
+    paste("Binomial (", n == x1, ", ", pi == x2, ")", ),
+    list(x1 = n, x2 = prob)
+  )
+  title(newtitle)
+  mtext(side = 1, line = 2, "Number of Successes")
+  mtext(side = 2, line = 2, "Probability")
+
+  return(this.prob)
 }
 
 # Binomial test
