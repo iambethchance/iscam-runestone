@@ -507,6 +507,11 @@
           <p>For the Friend or Foe study, run the following code:</p>
           <sage language="r">
             <input>
+# Install and load the ISCAM package from GitHub
+if (!require(devtools)) install.packages("devtools", repos="http://cran.r-project.org")
+devtools::install_github("ISCAM-ISU/iscam", quiet=TRUE)
+library(iscam)
+
 # Calculate binomial probability
 # k=14 successes, n=16 trials, prob=0.5, lower.tail=FALSE for P(X >= 14)
 iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
@@ -517,7 +522,7 @@ iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
           
           <note>
             <title>R Reminder</title>
-            <p>The <c>iscambinomprob</c> function is part of the ISCAM package. The <c>lower.tail</c> parameter controls the direction: FALSE gives you <m>P(X \geq k)</m>, TRUE gives you <m>P(X \leq k)</m>.</p>
+            <p>The code first installs the ISCAM package from GitHub, then uses the <c>iscambinomprob</c> function. The <c>lower.tail</c> parameter controls the direction: FALSE gives you <m>P(X \geq k)</m>, TRUE gives you <m>P(X \leq k)</m>.</p>
           </note>
         </hint>
         <hint>
@@ -530,7 +535,7 @@ iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
                 <li><p>Select Binomial from the Distribution pull down menu.</p></li>
                 <li><p>Specify the values of the probability of success (<m>\pi</m>) and n (the sample size).</p></li>
                 <li><p>Leave the Type of Calculation as is.</p></li>
-                <li><p>Select Probability Option <m>X \geq Q_a</m> but specify <m>Q_a</m> to equal <m>k-1</m> (e.g., 13).</p></li>
+                <li>Select Probability Option <m>X \geq Q_a</m> but specify <m>Q_a</m> to equal <m>k-1</m> (e.g., 13).</p></li>
                 <li><p>Press Enter.</p></li>
               </ul></p>
               
