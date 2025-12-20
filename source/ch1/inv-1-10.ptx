@@ -25,12 +25,6 @@
         <p>
           Width: <var width="10"/>
         </p>
-
-        <p>
-        </p>
-        <p>
-          <var width="60"/>
-        </p>
       </statement>
       <response/>
       <hint><title>R</title>
@@ -39,38 +33,7 @@
       <hint><title>JMP</title>
         <p>Use Journal File <ellipsis/> confidence interval (Summary Stats) <ellipsis/> binomial</p>
       </hint>
-      <solution>
-        <paragraphs>
-          <title>R:</title>
-          <image source="images/image086.jpg" width="80%">
-            <description>R output showing exact binomial confidence interval</description>
-          </image>
-        <alert>In JMP:</alert>
-          <image source="images/1.10JMP.PNG" width="80%">
-            <description>JMP output showing exact binomial confidence interval</description>
-          </image>
-        </paragraphs>
-      </solution>
-    </exercise>
-
-    <exercise xml:id="I1-10-a3" label="I1.10a3">
-      <title>Report Exact Binomial Interval</title>
-      <statement>
-        <p>
-          Report the interval, including the midpoint and width.
-        </p>
-        <p>
-          Interval: (<var width="10"/>, <var width="10"/>)
-        </p>
-        <p>
-          Midpoint: <var width="10"/>
-        </p>
-        <p>
-          Width: <var width="10"/>
-        </p>
-      </statement>
-      <response/>
-      <hint>
+      <hint><title>Calculation hints</title>
         <p>
           Midpoint = (upper endpoint + lower endpoint)/2
         </p>
@@ -79,11 +42,23 @@
         </p>
       </hint>
       <solution>
+        <paragraphs>
+          <title>R</title>
+          <image source="images/image086.jpg" width="90%">
+            <description>R output showing exact binomial confidence interval</description>
+          </image>
+        <alert>In JMP:</alert>
+          <image source="images/1.10JMP.PNG" width="60%">
+            <description>JMP output showing exact binomial confidence interval</description>
+          </image>
         <p>
           The midpoint of this interval is (.4439 + .9748)/2 = 0.709 which is lower than <m>\hat{p}</m> = 0.80. This makes sense as if we observed <m>\hat{p}</m> = 0.80, the largest <m>\pi</m> could be is 1.0 (.20 away) but <m>\pi</m> could conceivably be as small as 0.0 (.80 away), so we don't want an interval that is symmetric around 0.80. The width is .9748 - .4439 = 0.531.
         </p>
+
+        </paragraphs>
       </solution>
     </exercise>
+
 
     <exercise xml:id="I1-10-b" label="I1.10b">
       <title>Calculate 95% <em>z</em>-Confidence Interval</title>
