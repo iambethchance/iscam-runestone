@@ -1,5 +1,5 @@
 <section xml:id="investigation-1-10">
-<title>Confidence Intervals</title>
+<title>Alt Confidence Intervals</title>
 
 <exercises xml:id="investigation1-10" hidden-label="yes">
     <title>Investigation 1.10: Heart Transplant Mortality (cont.)</title>
@@ -8,21 +8,25 @@
       Recall <xref ref="investigation-1-4" text="custom">Investigation 1.4</xref>, where you learned that 8 of the 10 most recent heart transplantation operations at St. George's Hospital resulted in a death.
     </p>
 
-    <p>
-      Use technology to find the "exact binomial" (Clopper-Pearson) 95% confidence interval for the probability of death in the heart transplantation process at St. George's Hospital.
-    </p>
-
+      
     <exercise xml:id="I1-10-a" label="I1.10a">
-      <title>Exact Binomial Technology - R</title>
+      <title>Exact Binomial </title>
       <statement>
+      <p>Use technology to find the "exact binomial" (Clopper-Pearson) 95% confidence interval for the probability of death in the heart transplantation process at St. George's Hospital.</p>
+
         <p>
-          In R: use <c>iscambinomtest(...., conf.level = .95)</c>
         </p>
         <p>
           <var width="60"/>
         </p>
       </statement>
       <response/>
+      <hint><title>In R</title>
+      Use <c>iscambinomtest(...., conf.level = .95)
+      </hint>
+      <hint><title>JMP</title>
+        Use Journal File <ellipsis/> confidence interval (Summary Stats) <ellipsis/> binomial
+      </hint>
       <solution>
         <paragraphs>
           <title>R:</title>
@@ -30,23 +34,7 @@
             <description>R output showing exact binomial confidence interval</description>
           </image>
         </paragraphs>
-      </solution>
-    </exercise>
-
-    <exercise xml:id="I1-10-a2" label="I1.10a2">
-      <title>Exact Binomial Technology - JMP</title>
-      <statement>
-        <p>
-          In JMP: use Journal File <ellipsis/> confidence interval (Summary Stats) <ellipsis/> binomial
-        </p>
-        <p>
-          <var width="60"/>
-        </p>
-      </statement>
-      <response/>
-      <solution>
-        <paragraphs>
-          <title>JMP:</title>
+        <alert>In JMP:</alert>
           <image source="images/1.10JMP.PNG" width="80%">
             <description>JMP output showing exact binomial confidence interval</description>
           </image>
