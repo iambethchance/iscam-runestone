@@ -103,7 +103,7 @@
 
 
     <exercise xml:id="I1-10-c" label="I1.10c">
-      <title>Verify <em>z</em>-Interval with Technology - R</title>
+      <title>Verify <em>z</em>-Interval with Technology</title>
       <statement>
         <p>
           Use technology to verify your calculation of the one proportion <m>z</m>-interval (also called the Wald interval)
@@ -114,21 +114,21 @@
       </statement>
       <response/>
       <hint><title>R</title>          
-      Use <c>iscamoneproptest(...., conf.level = .95)</c>
+      <p>Use <c>iscamoneproptest(...., conf.level = .95)</c></p>
       </hint>
       <hint><title>JMP</title>
-      Use Journal File <ellipsis/> confidence interval <ellipsis/>
+      <p>Use Journal File <ellipsis/> confidence interval <ellipsis/></p>
       </hint>
       <solution>
         <paragraphs>
-          <title>R:</title>
-          <image source="images/image088.jpg" width="80%">
+          <title>R</title>
+          <image source="images/image088.jpg" width="90%">
             <description>R output showing <em>z</em>-interval</description>
           </image>
           </paragraphs>
         <paragraphs>
-          <title>JMP:</title>
-          <image source="images/1.10normJMP.PNG" width="80%">
+          <title>JMP</title>
+          <image source="images/1.10normJMP.PNG" width="60%">
             <description>JMP output showing <em>z</em>-interval</description>
           </image>
         </paragraphs>
@@ -167,24 +167,27 @@
       To consider whether the one sample <m>z</m>-interval is valid for this study, we can pretend we know the process probability, generate many random samples from that process, calculate confidence intervals from the simulated samples, and see what percentage of these confidence intervals capture the actual value of the process probability that we specified.
     </p>
 
-    <exercise xml:id="I1-10-e" label="I1.10e">
-      <title>Explore Simulating Confidence Intervals Applet</title>
-      <statement>
+<paragraphs>
         <p>
           Open the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1" visual="rossmanchance.com/applets/2021/confsim/ConfSim.html">Simulating Confidence Intervals applet</url>.
         </p>
+        <interactive ifrmae = "https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1" width="160%" aspect="3:2"/>
         <p>
           Suppose the actual process probability of death is 0.15 and you plan to take a sample of 10 operations and apply the <m>z</m>-interval (aka Wald) method.
         </p>
         <p>
           <ul>
             <li><p>Set the value of <m>\pi</m> to 0.15 and the Sample size (n) to 10.</p></li>
-            <li><p>Press Sample.</p></li>
+            <li><p>Press <alert>Sample</alert>.</p></li>
             <li><p>Click on the interval to see the endpoint(s), midpoint, and width (verify).</p></li>
           </ul>
         </p>
         <p>
-          Did you obtain the same interval as in (c)? Why or why not?
+</paragraphs>
+    <exercise xml:id="I1-10-e" label="I1.10e">
+      <title>Simulating Confidence Intervals</title>
+      <statement>
+          Did you obtain the same interval as in question 3? Why or why not?
         </p>
         <p>
           <var width="60"/>
@@ -207,11 +210,15 @@
       </solution>
     </exercise>
 
+<paragraphs>
+<ul><li>
+Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</alert> until you have at least 1,000 intervals in the Running total. 
+</li></ul>
     <exercise xml:id="I1-10-f" label="I1.10f">
       <title>Evaluate <em>z</em>-Interval Coverage Rate</title>
       <statement>
         <p>
-          Change the Number of intervals to 100 and press Sample until you have at least 1,000 intervals in the Running total. How many of these random intervals succeed in capturing the actual value of the process probability (0.15)? Does this method appear to succeed in capturing the value of the parameter (which we assumed to be equal to 0.15) 95% "of the time"?
+          How many of these random intervals succeed in capturing the actual value of the process probability (0.15)? Does this method appear to succeed in capturing the value of the parameter (which we assumed to be equal to 0.15) 95% "of the time"?
         </p>
         <p>
           <var width="60"/>
@@ -228,13 +235,14 @@
     <p>
       Because the <m>z</m>-interval procedure has the sample size conditions of the Central Limit Theorem, there are scenarios where we should not use this <m>z</m>-procedure to determine the confidence interval. In these cases, one option is to use the Exact Binomial distribution (Clopper-Pearson) method.
     </p>
-
+<paragraphs>
+        <ul>
+          <li>Use the <alert>Method</alert> pull-down menu to select Exact Binomial and continue to press Sample until you generate at least 1,000 confidence intervals from a process with <m>\pi = 0.15</m> and <m>n = 10</m>.</li>
+        </ul>
+</paragraphs>
     <exercise xml:id="I1-10-g" label="I1.10g">
       <title>Evaluate Exact Binomial Coverage Rate</title>
       <statement>
-        <p>
-          Use the Method pull-down menu to select Exact Binomial and continue to press Sample until you generate at least 1,000 confidence intervals from a process with <m>\pi = 0.15</m> and <m>n = 10</m>.
-        </p>
         <p>
           Does this appear to be a 95% confidence interval method?
         </p>
@@ -292,18 +300,20 @@
       </p>
     </assemblage>
 
-    <exercise xml:id="I1-10-i" label="I1.10i">
-      <title>Evaluate Plus Four Coverage Rate</title>
-      <statement>
-        <p>
+<paragraphs>
+       <p>
           Investigate the reliability of the Plus Four procedure using the applet:
         </p>
         <p>
           <ul>
-            <li><p>Use the Method pull-down menu to change from Exact Binomial to Plus Four (95%).</p></li>
+            <li><p>Use the <alert>Method</alert> pull-down menu to change from Exact Binomial to Plus Four (95%).</p></li>
             <li><p>Generate at least 1,000 confidence intervals from a process with <m>\pi = 0.15</m> and <m>n = 10</m>.</p></li>
           </ul>
         </p>
+ </paragraphs>
+    <exercise xml:id="I1-10-i" label="I1.10i">
+      <title>Evaluate Plus Four Coverage Rate</title>
+      <statement>
         <p>
           Is this coverage rate close to 95%? Is this an improvement over the (Wald) <m>z</m>-interval?
         </p>
@@ -370,11 +380,14 @@
       </solution>
     </exercise>
 
+<paragraphs>
+<ul><li>Use the <alert>Method</alert> pull-down menu to toggle between the Wald and Plus Four intervals. [<em>Hint:</em> You can Sort the intervals first.] </li></ul>
+</paragraphs>
     <exercise xml:id="I1-10-k" label="I1.10k">
       <title>Compare Interval Midpoints</title>
       <statement>
         <p>
-          Use the Method pull-down menu to toggle between the Wald and Plus Four intervals. [<em>Hint:</em> You can Sort the intervals first.] What do you notice about how the midpoints of the intervals compare? (Also think how <m>\tilde{p}</m> and <m>\hat{p}</m> differ, these are the values shown in the "Sample statistics (CI Midpoints)" graph.) Why is the change in the midpoints of the intervals useful in this scenario?
+          What do you notice about how the midpoints of the intervals compare? (Also think how <m>\tilde{p}</m> and <m>\hat{p}</m> differ, these are the values shown in the "Sample statistics (CI Midpoints)" graph.) Why is the change in the midpoints of the intervals useful in this scenario?
         </p>
         <p>
           <var width="60"/>
@@ -388,11 +401,17 @@
       </solution>
     </exercise>
 
+<paragraphs>
+<ul><li>  In the applet, change the number of intervals to 100. </li>
+<li> Press <alert>Reset.</li> 
+<li>Use the pull-down menu to select the Blaker method (the Exact Binomial using the tail probabilities), and wait a bit. (If it's just 100 at a time, it's not too bad to hit Sample a few more times.) Report the percentage of intervals that capture the parameter AND the average width of these 100 intervals.</li>
+</ul>
+
     <exercise xml:id="I1-10-l" label="I1.10l">
       <title>Evaluate Blaker Method</title>
       <statement>
         <p>
-          In the applet, change the number of intervals to 100. Press Reset. Use the pull-down menu to select the Blaker method (the Exact Binomial using the tail probabilities), and wait a bit. (If it's just 100 at a time, it's not too bad to hit Sample a few more times.) Report the percentage of intervals that capture the parameter AND the average width of these 100 intervals.
+          Report the percentage of intervals that capture the parameter AND the average width of these 100 intervals.
         </p>
         <p>
           Running Total: <var width="20"/>
