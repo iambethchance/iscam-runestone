@@ -1,7 +1,12 @@
 <section xml:id="investigation-1-4">
+<title>Factors Impacting p-values</title>
+
+<exercises xml:id="investigation1-4" hidden-label="yes">
   <title>Investigation 1.4: Heart Transplant Mortality</title>
   
+  <introduction>
   <p>Poloneicki, Sismanidis, Bland, and Jones (<url href="https://pubmed.ncbi.nlm.nih.gov/14751918/">2004</url>) reported that in September 2000 heart transplantation at St. George's Hospital in London was suspended because of concern that more patients were dying than previously. Newspapers reported that the 80% mortality rate in the last 10 cases was of particular concern because it was over five times the national average. The variable measured was whether or not the patient died within 30 days of the transplant. Although there was not an officially reported national mortality rate (probability of death within 30 days for patients undergoing this procedure), the researchers determined that 15% was a reasonable benchmark for comparison.</p>
+  </introduction>
   
   <exercise xml:id="I1-4-1" label="I1.4.1">
     <title>Define Sample and Variable</title>
@@ -601,7 +606,7 @@ iscambinomtest(observed=14, n=16, hyp=.5, alt="greater")
     <title>Study Conclusions</title>
     <p>A sample mortality rate of 80% is indeed quite surprising, even with a sample size as small as 10, if the actual probability of death were 0.15. The (exact) p-value is 0.0000087, and the observed statistic is 5.76 standard deviations above the expected value, providing extremely strong evidence that the actual probability of death at this hospital is higher than the national benchmark of 0.15 (fewer than 1 in 100,000 sets of 10 operations would "randomly" have 8 or more deaths if <m>\pi = 0.15</m>). However, we must be cautious about doing this type of "data snooping," where we allowed a seemingly unusual observation to motivate our suspicion and then use the same data to support our suspicion. Once the initial suspicion has formed, we should collect new data on which to test the suspicion. The actual investigation examined all previous heart transplantations at this hospital over the previous 14 years. In this broader study, the p-value is 0.0097 and the observed number of successes is 2.48 standard deviations above the expected number, still providing very strong evidence against the null hypothesis. That is, there is strong evidence that this hospital's probability of mortality was higher than the 15% national benchmark. We must, however, be cautious because our study has not identified what factors could be leading to the higher rate. Perhaps this hospital tends to see sicker patients to begin with. The researchers actually performed a more sophisticated analysis that incorporated information about the risk factors of all the operations at this hospital and reached similar conclusions.</p>
   </assemblage>
-  
+  </exercises>
   <subsection xml:id="practice1-4A">
     <title>Practice Problem 1.4A</title>
     
