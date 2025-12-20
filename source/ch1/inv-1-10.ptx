@@ -177,7 +177,7 @@
         </p>
         <p>
           <ul>
-            <li><p>Set the value of <m>\pi</m> to 0.15 and the Sample size (n) to 10.</p></li>
+            <li><p>Set the value of <m>\pi</m> to 0.15 and the Sample size (<em>n</em>) to 10.</p></li>
             <li><p>Press <alert>Sample</alert>.</p></li>
             <li><p>Click on the interval to see the endpoint(s), midpoint, and width (verify).</p></li>
           </ul>
@@ -290,11 +290,11 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
     <assemblage xml:id="plus-four-definition">
       <title>Definition: <term>Plus Four</term> 95% Confidence Interval for <m>\pi</m></title>
       <p>
-        <ol>
+        <ul>
           <li><p>Determine the number of successes (<m>X</m>) and sample size (<m>n</m>) in the study</p></li>
           <li><p>Increase the number of successes by two and the sample size by four, and calculate a new proportion: <m>\tilde{p} = (X + 2)/(n + 4)</m>. Make this value the midpoint of the interval.</p></li>
           <li><p>Use the <m>z</m>-interval procedure as above for the augmented sample size of <m>(n + 4)</m>: <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{n+4}}</m></p></li>
-        </ol>
+        </ul>
       </p>
       <p>
         In short, with 95% confidence, the idea is to pretend you have 2 more successes and 2 more failures than you really did. For confidence levels other than 95%, researchers have recommended using the <em>Adjusted Wald</em> method: <m>\tilde{p} = (X + 0.5(z^*)^2)/(n + (z^*)^2)</m> and <m>\tilde{n} = n + (z^*)^2</m> so the interval becomes <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{\tilde{n}}}</m>.
@@ -516,7 +516,7 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
       <title>Plus Four Interval for St. George's Hospital</title>
       <statement>
         <p>
-          Determine and then interpret a Plus Four confidence interval for the probability of a death during a heart transplant operation at St. George's hospital. [<em>Hints:</em> You can do the calculation either by hand, first finding <m>\tilde{p}</m> and <m>z^*</m>, or with software (e.g., the Theory-Based Inference applet) by telling the technology there were 4 more operations consisting of two more deaths than in the actual sample. Note: You can't use the Simulating Confidence Intervals applet to answer this question.]
+          Determine and then interpret a Plus Four confidence interval for the probability of a death during a heart transplant operation at St. George's hospital.
         </p>
         <p>
           Plus Four interval: (<var width="10"/>, <var width="10"/>)
@@ -526,6 +526,10 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
         </p>
       </statement>
       <response/>
+      <hint>
+        <p>You can do the calculation either by hand, first finding <m>\tilde{p}</m> and <m>z^*</m>, or with software (e.g., the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=2">Theory-Based Inference applet</url>) by telling the technology there were 4 more operations consisting of two more deaths than in the actual sample.</p>
+        <p>Note: You can't use the Simulating Confidence Intervals applet to answer this question.</p>
+      </hint>
       <solution>
         <p>
           10/14 = 0.714; 0.714 ± 1.96 sqrt(0.714(1 - 0.714)/14) = 0.714 ± 0.2367 <m>\Rightarrow</m> (0.477, 0.951)
@@ -540,7 +544,7 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
       <title>Compare Intervals for Larger Study</title>
       <statement>
         <p>
-          (o) Repeat for the larger study at St. George's that revealed 71 deaths out of 361 operations. Round to 3 decimal places.
+          Repeat for the larger study at St. George's that revealed 71 deaths out of 361 operations. Round to 3 decimal places.
         </p>
         <p>
           Wald interval: (<var width="10"/>, <var width="10"/>)
