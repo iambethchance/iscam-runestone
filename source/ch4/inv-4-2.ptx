@@ -645,7 +645,6 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
         <title>Hypothesis Test</title>
         <statement>
           <p>Use technology to decide whether there is a statistically significant difference between the average walking distance of the African and Asian elephant populations. State the hypotheses, define any symbols you use, report the test-statistic and p-value. Include one-sentence interpretations of both the standardized statistic and the p-value in context. What conclusion do you draw?</p>
-          <p><var width="80" height="10"/></p>
         </statement>
         <hint>
           <p>Use one of the technology tools below to conduct the two-sample <m>t</m>-test.</p>
@@ -680,62 +679,119 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
     </subsection>
     
     </exercises>
-    <subsection xml:id="practice-problems-4-2">
-      <title>Practice Problems</title>
-      
-      <exercise xml:id="practice-4-2-a" label="PP4.2A">
-        <title>Bootstrap Sampling</title>
-        <statement>
-          <p>Open the Sampling from Two Sample Bootstrapping applet.</p>
-          <ul>
-            <li><p>Enter <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt">elephants.txt</url> in the data window and press Use Data (twice).</p></li>
-            <li><p>Check Show Sampling Options</p></li>
-            <li><p>Press Bootstrap Samples</p></li>
-            <li><p>Look at the Plot display.</p></li>
-          </ul>
-          
-          <p>(a) Include a screen capture of your bootstrap sample and verify you have selected 23 Asian elephants and 33 African elephants.</p>
-          
-          <p>(b) Identify any elephants that were selected more than once, and explain how you can tell, AND how you can tell that the two groups were not pooled together before sampling.</p>
-          
-          <p>(c) Now check the Pooled box and press Bootstrap Samples. Include a screen capture of your bootstrap sample.</p>
-          
-          <p>(d) Identify any elephants that were selected more than once, and explain how you can tell, AND how you can tell that the two groups were pooled together before sampling. (Feel free to generate a different sample if another one would make your point better.)</p>
-          
-          <p>(e) Which simulation should we use for a test of significance, and which for a confidence interval? Briefly explain why.</p>
-        </statement>
-        <response/>
-      </exercise>
-      
-      <exercise xml:id="practice-4-2-b" label="PP4.2B">
-        <title>Bootstrap for Medians</title>
-        <statement>
-          <p>Use the Two sample bootstrapping applet (see also Exploration 2.9) to simulate a null distribution for the difference in medians. Do you think a t-approximation would be valid for this statistic? Why or why not.</p>
-          
-          <p>Approximate a p-value. Is your conclusion similar as in the analysis with means?</p>
-          
-          <p>Has your analysis proven that there is no difference in the median walking distances between these two species? Explain.</p>
-        </statement>
-        <response/>
-      </exercise>
-      
-      <exercise xml:id="practice-4-2-c" label="PP4.2C">
-        <title>Alternative Scenario</title>
-        <statement>
-          <p>Suppose our data had been:</p>
-          
-          <image source="images/PP4.2C.png" width="80%">
-            <description>Alternative elephant data scenario for Practice Problem 4.2C</description>
-          </image>
-          
-          <p>Conjecture how this will impact the p-value and confidence interval. Explain your reasoning.</p>
-          
-          <p>Use technology to check your conjecture. Were you correct?</p>
-          
-          <p>Do you consider the <em>t</em>-procedures more valid here than for the actual study? Explain.</p>
-        </statement>
-        <response/>
-      </exercise>
-    </subsection>
+    
+  <subsection xml:id="practice-problem-4-2a">
+    <title>Practice Problem 4.2A</title>
+    
+    <p>Open the Sampling from Two Sample Bootstrapping applet.</p>
+    <ul>
+      <li><p>Enter <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt">elephants.txt</url> in the data window and press Use Data (twice).</p></li>
+      <li><p>Check Show Sampling Options</p></li>
+      <li><p>Press Bootstrap Samples</p></li>
+      <li><p>Look at the Plot display.</p></li>
+    </ul>
+    
+    <exercise xml:id="practice-4-2-a-1" label="PP4.2A.1">
+      <title>Verify Bootstrap Sample</title>
+      <statement>
+        <p>Include a screen capture of your bootstrap sample and verify you have selected 23 Asian elephants and 33 African elephants.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-2-a-2" label="PP4.2A.2">
+      <title>Identify Multiple Selections</title>
+      <statement>
+        <p>Identify any elephants that were selected more than once, and explain how you can tell, AND how you can tell that the two groups were not pooled together before sampling.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-2-a-3" label="PP4.2A.3">
+      <title>Generate Pooled Sample</title>
+      <statement>
+        <p>Now check the Pooled box and press Bootstrap Samples. Include a screen capture of your bootstrap sample.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-2-a-4" label="PP4.2A.4">
+      <title>Analyze Pooled Sample</title>
+      <statement>
+        <p>Identify any elephants that were selected more than once, and explain how you can tell, AND how you can tell that the two groups were pooled together before sampling. (Feel free to generate a different sample if another one would make your point better.)</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-2-a-5" label="PP4.2A.5">
+      <title>Compare Simulation Methods</title>
+      <statement>
+        <p>Which simulation should we use for a test of significance, and which for a confidence interval? Briefly explain why.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+  
+  <subsection xml:id="practice-problem-4-2b">
+    <title>Practice Problem 4.2B</title>
+    
+    <exercise xml:id="practice-4-2-b-1" label="PP4.2B.1">
+      <title>Simulate Difference in Medians</title>
+      <statement>
+        <p>Use the Two sample bootstrapping applet (see also Exploration 2.9) to simulate a null distribution for the difference in medians. Do you think a t-approximation would be valid for this statistic? Why or why not.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-2-b-2" label="PP4.2B.2">
+      <title>Compare p-values</title>
+      <statement>
+        <p>Approximate a p-value. Is your conclusion similar as in the analysis with means?</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-2-b-3" label="PP4.2B.3">
+      <title>Interpret Results</title>
+      <statement>
+        <p>Has your analysis proven that there is no difference in the median walking distances between these two species? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+  
+  <subsection xml:id="practice-problem-4-2c">
+    <title>Practice Problem 4.2C</title>
+    
+    <p>Suppose our data had been:</p>
+    
+    <image source="images/PP4.2C.png" width="80%">
+      <description>Alternative elephant data scenario for Practice Problem 4.2C</description>
+    </image>
+    
+    <exercise xml:id="practice-4-2-c-1" label="PP4.2C.1">
+      <title>Conjecture Impact</title>
+      <statement>
+        <p>Conjecture how this will impact the p-value and confidence interval. Explain your reasoning.</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-2-c-2" label="PP4.2C.2">
+      <title>Verify with Technology</title>
+      <statement>
+        <p>Use technology to check your conjecture. Were you correct?</p>
+      </statement>
+      <response/>
+    </exercise>
+    
+    <exercise xml:id="practice-4-2-c-3" label="PP4.2C.3">
+      <title>Evaluate t-procedure Validity</title>
+      <statement>
+        <p>Do you consider the <em>t</em>-procedures more valid here than for the actual study? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
     
 </section>
