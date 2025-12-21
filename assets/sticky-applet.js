@@ -2,14 +2,18 @@
 // Makes interactive applets float/stick as users scroll
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Find all interactive elements that should be sticky
-    const interactives = document.querySelectorAll('.interactive[data-sticky="true"]');
+    // Find all interactive iframe elements (Runestone renders them in figures or divs)
+    const interactives = document.querySelectorAll('.ptx-content iframe[src*="rossmanchance.com/applets"]');
+    
+    console.log('Found ' + interactives.length + ' applet iframes'); // Debug
     
     if (interactives.length === 0) return;
     
-    interactives.forEach(function(interactive) {
-        const container = interactive.closest('figure') || interactive.parentElement;
+    interactives.forEach(function(iframe) {
+        const container = iframe.closest('figure') || iframe.closest('.interactive') || iframe.parentElement;
         container.classList.add('sticky-applet-container');
+        
+        console.log('Setting up sticky applet for:', iframe.src); // Debug
         
         // Create toggle button
         const toggleBtn = document.createElement('button');
@@ -19,33 +23,31 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(toggleBtn);
         
         let isSticky = false;
-        let originalPosition = null;
+        let originalParent = null;
+        let originalNextSibling = null;
         
         // Toggle sticky state
         function toggleSticky() {
             if (!isSticky) {
                 // Save original position
-                originalPosition = {
-                    parent: interactive.parentElement,
-                    nextSibling: interactive.nextElementSibling
-                };
+                originalParent = iframe.parentElement;
+                originalNextSibling = iframe.nextElementSibling;
                 
                 // Make sticky
                 container.classList.add('is-sticky');
                 toggleBtn.textContent = '✕ Hide Applet';
+                toggleBtn.classList.add('active');
                 isSticky = true;
+                
+                console.log('Applet is now sticky'); // Debug
             } else {
                 // Return to original position
                 container.classList.remove('is-sticky');
-                if (originalPosition) {
-                    if (originalPosition.nextSibling) {
-                        originalPosition.parent.insertBefore(interactive, originalPosition.nextSibling);
-                    } else {
-                        originalPosition.parent.appendChild(interactive);
-                    }
-                }
                 toggleBtn.textContent = '📊 Show Applet';
+                toggleBtn.classList.remove('active');
                 isSticky = false;
+                
+                console.log('Applet returned to original position'); // Debug
             }
         }
         
@@ -66,7 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }, {
-            threshold: 0.1
+            threshold: 0.1,
+            rootMargin: '-60px 0px 0px 0px'
         });
         
         observer.observe(container);
