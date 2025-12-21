@@ -48,6 +48,55 @@ figure.figure-like:has(.interactive) {
     max-width: 1400px !important;
     width: 100% !important;
     margin-left: auto !important;
+
+/* Sticky/Floating Applet Styles */
+.sticky-applet-container {
+    position: relative;
+}
+
+.sticky-applet-container.is-sticky .interactive {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 500px;
+    height: 400px;
+    z-index: 1000;
+    background: white;
+    border: 2px solid #4682b4;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.sticky-applet-container.is-sticky .interactive iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.sticky-applet-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: #4682b4;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    display: none;
+}
+
+.sticky-applet-toggle:hover {
+    background: #5a9bd4;
+}
+
+.sticky-applet-toggle.show {
+    display: block;
     margin-right: auto !important;
 }
 
