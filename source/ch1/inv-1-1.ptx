@@ -10,14 +10,6 @@
     
         <p>In one component of the study, sixteen 10-month-old infants were shown a <q>climber</q> character (a piece of wood with <q>googly</q> eyes glued onto it) that could not make it up a hill in two tries.</p>
         
-        <aside>
-          <title>Video Demonstrations</title>
-          <p><url href="https://www.youtube.com/watch?v=WqEV9Otdp58">Video 1: Helper behavior</url></p>
-          <p><url href="https://www.youtube.com/watch?v=YX6PTixcS5I">Video 2: Hinder behavior</url></p>
-          <p><url href="https://www.youtube.com/watch?v=dijiqWrUOx0">Video 3: Infant choice</url></p>
-          <p>More videos: <url href="http://campuspress.yale.edu/infantlab/media/">Yale Infant Lab</url></p>
-        </aside>
-        
         <p>Then the infants were shown two scenarios for the climber's next try, one where the climber was pushed to the top of the hill by another character (the <q>helper</q> toy) and one where the climber was pushed back down the hill by another character (the <q>hinderer</q> toy). The infant was alternately shown these two scenarios several times.</p>
         
    <sidebyside widths="58% 38%" valign="top">
@@ -30,7 +22,15 @@
       </image>
     </sidebyside>
   </introduction>
-  
+          <aside>
+          <title>Video Demonstrations</title>
+          <p><url href="https://www.youtube.com/watch?v=WqEV9Otdp58">Video 1: Helper behavior</url></p>
+          <p><url href="https://www.youtube.com/watch?v=YX6PTixcS5I">Video 2: Hinder behavior</url></p>
+          <p><url href="https://www.youtube.com/watch?v=dijiqWrUOx0">Video 3: Infant choice</url></p>
+          <p>More videos: <url href="http://campuspress.yale.edu/infantlab/media/">Yale Infant Lab</url></p>
+        </aside>
+        
+
   <paragraphs>
     <title>Collecting the Data</title>
     
@@ -105,7 +105,7 @@
       <statement>
         <p>Is this variable quantitative or categorical?</p>
       </statement>
-      <choices randomize="no">
+      <choices randomize="yes" multiple-correct="no">
         <choice correct="yes">
           <statement>
             <p>Categorical</p>
@@ -156,7 +156,7 @@
     <exercise xml:id="inv1-1-f" label="I1.1.6">
       <title>Create Bar Graph</title>
       <statement>
-        <p>The <q>raw data</q> can be found on the course webpage as a txt file (<url href="https://www.rossmanchance.com/iscam3/data/InfantData.txt">InfantData.txt</url>). How many do you see of each possible outcome? Sketch the bar graph. Give your graph an <q>active title,</q> a concise sentence stating the main message/key takeaways from the graph.</p>
+        <p>The <q>raw data</q> can be found on the course webpage as a txt file (<url href="https://www.rossmanchance.com/iscam3/data/InfantData.txt">InfantData.txt</url>). How many do you see of each possible outcome? Sketch the bar graph. Give your graph an <q>active title,</q> a concise sentence stating the main message/key takeaways from the graph. What is your title?</p>
       </statement>
       <hint>
         <p>Count how many infants chose each toy. A bar graph should have bars for each category (Helper and Hinderer) with heights representing the counts.</p>
@@ -240,7 +240,7 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
       <statement>
         <p>What do the researchers think is true about the value of this probability (e.g., do they think it is larger or smaller than 0.50)?</p>
       </statement>
-      <choices randomize="no">
+      <choices randomize="yes" multiple-correct="no">
         <choice correct="yes">
           <statement>
             <p>Larger than 0.50</p>
@@ -276,7 +276,7 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
       <statement>
         <p>Is it possible that in the long run infants just choose equally between the two toys (e.g., the probability an infant will choose the helper toy is 0.5) and we just happened to see more than half choose the helper toy in our sample?</p>
       </statement>
-      <choices randomize="no">
+      <choices randomize="yes" multiple-correct="no">
         <choice correct="yes">
           <statement>
             <p>Yes</p>
@@ -301,7 +301,7 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
       <statement>
         <p>Is it plausible that the observed majority occurred because infants just prefer the color blue?</p>
       </statement>
-      <choices randomize="no">
+      <choices randomize="yes" multiple-correct="no">
         <choice>
           <statement>
             <p>Yes</p>
@@ -325,7 +325,7 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
     </exercise>
     
     <p>So that leaves us with two explanations for the majority we observed:</p>
-    <p><ol>
+    <p><ol label="(1)">
       <li><p>There is something to the theory that infants are genuinely more likely to pick the helper toy (for some reason).</p></li>
       <li><p>Infants choose equally between the two toys in the long run and we happened to get <q>lucky</q> and had an unusual sample where most of the infants in our sample picking the helper toy.</p></li>
     </ol></p>
@@ -489,7 +489,7 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
       <statement>
         <p>Did you get the same number of heads all five times?</p>
       </statement>
-      <choices randomize="no">
+      <choices randomize="yes" multiple-correct="no">
         <choice>
           <statement>
             <p>Yes</p>
@@ -514,7 +514,7 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
     
     <ul><li>Now change the <alert>Number of repetitions</alert> to 1995 and press <alert>Draw Samples</alert>, to produce a total of 2,000 repetitions of this random process of tossing a coin 16 times. </li></ul>
     <exercise xml:id="inv1-1-r" label="I1.1.18">
-      <title>Generate Null Distribution</title>
+      <title>Describe Distribution</title>
       <statement>
         <p>For the dotplot you have created, what does each dot represent (i.e., what would you need to do to add another dot to the graph)?</p>
       </statement>
@@ -532,7 +532,7 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
       <statement>
         <p>Is the graph variable (number of heads) quantitative or categorical?</p>
       </statement>
-      <choices randomize="no">
+      <choices randomize="yes" multiple-correct="no">
         <choice correct="yes">
           <statement>
             <p>Quantitative</p>
@@ -558,7 +558,7 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
     <exercise xml:id="inv1-1-s" label="I1.1.19">
       <title>Draw Conclusion</title>
       <statement>
-        <p>Now that we have a better picture of the long-run behavior of this process, discuss whether you would consider option 2 before (j): <q>Infants choose equally between the two toys in the long run and we happened to get 'lucky' and find most of the infants in our sample picking the helper toy</q> to be a plausible conclusion for this study. Explain your reasoning as if to a skeptic.</p>
+        <p>Now that we have a better picture of the long-run behavior of this process, discuss whether you would consider option 2 before Question 12: <q>Infants choose equally between the two toys in the long run and we happened to get 'lucky' and find most of the infants in our sample picking the helper toy</q> to be a plausible conclusion for this study. Explain your reasoning as if to a skeptic.</p>
       </statement>
       <hint>
         <p>Look at how often 14 or more heads occurred in your 2,000 simulated repetitions. Is this common or rare? What does this tell you about the plausibility of the "no preference" assumption?</p>
@@ -594,7 +594,7 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
       <statement>
         <p>If you were to use a coin to carry out a simulation analysis to evaluate these results: how many times would you flip the coin for one repetition <mdash/> 6, 8, 10, 12, 16, or 1000?</p>
       </statement>
-      <choices randomize="no">
+      <choices randomize="yes" multiple-correct="no">
         <choice>
           <statement>
             <p>6</p>
