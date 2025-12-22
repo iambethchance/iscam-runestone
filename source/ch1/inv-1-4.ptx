@@ -473,6 +473,19 @@ invisible(iscambinomtest(observed=, n=, hypothesized=, alternative=""))
       <hint>
         <p>Use the One Proportion Inference applet or R with n=361, observed=71, and π=0.15.</p>
       </hint>
+            <hint>
+        <title>R option</title>
+        <sage language="r">
+          <input>
+# Load ISCAM functions from GitHub
+invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
+
+# Calculate binomial test
+invisible(iscambinomtest(observed=, n=, hypothesized=, alternative=""))
+          </input>
+        </sage>
+      </hint>
+
       <solution>
           <image source="images/inv1.4largen.png" width="60%">
             <description>Binomial distribution for n=361 with pi=0.15 showing p-value</description>
