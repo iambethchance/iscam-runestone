@@ -197,7 +197,7 @@
     <exercise xml:id="I1-3-10" label="Theoretical mean SD">
       <title>Theoretical Mean and Standard Deviation</title>
       <statement>
-        <p>T What are the theoretical values for the mean and standard deviation of the null distribution?</p>
+        <p>What are the theoretical values for the mean and standard deviation of the null distribution?</p>
         
         <p>Mean = <var width="5" /></p>
         <p>Std Dev = <var width="5" /></p>
@@ -213,7 +213,7 @@
     
     <assemblage xml:id="binomial-formulas">
       <title>Binomial Distribution Formulas</title>
-      <p>It can be shown that when <m>X</m> is Binomial(<m>n</m>, <m>\pi</m>), the expected value is <m>E(X) = n \times \pi</m> and the variance is <m>V(X) = n\pi(1 - \pi)</m>. (See <xref ref="binomial-random-variable-rules" text="title"/> for more discussion of expected value and variance of a random variable.)</p>
+      <p>It can be shown that when <m>X</m> is Binomial(<m>n</m>, <m>\pi</m>), the expected value is <m>E(X) = n \times \pi</m> and the variance is <m>V(X) = n\pi(1 - \pi)</m>. (See <xref ref="random-babies-ex-p"/> Investigation B for more discussion of expected value and variance of a random variable.)</p>
     </assemblage>
     
     <exercise xml:id="I1-3-11" label="Verify calculations">
@@ -221,13 +221,19 @@
       <statement>
         <p>Verify these calculations match the applet output and remember that the standard deviation is the square root of the variance.</p>
       </statement>
-      <response/>
+      <choices randomize="no">
+        <choice correct="yes">
+          <statement><p>Verified</p></statement>
+          <feedback><p>Correct! <m>E(C) = 10(0.2) = 2.00</m> and <m>SD(C) = \sqrt{10 \times 0.2 \times 0.8} = 1.265</m>.</p></feedback>
+        </choice>
+        <choice>
+          <statement><p>Not Verified</p></statement>
+          <feedback><p>Check your calculations again. <m>E(C) = 10(0.2) = 2.00</m> and <m>SD(C) = \sqrt{10 \times 0.2 \times 0.8} = 1.265</m>.</p></feedback>
+        </choice>
+      </choices>
       <hint>
         <p>Use the formulas provided in the previous question with n=10 and pi=0.20.</p>
       </hint>
-      <solution>
-        <p><m>E(C) = 10(0.2) = 2.00</m> and <m>SD(C) = \sqrt{10 \times 0.2 \times 0.8} = 1.265</m>.</p>
-      </solution>
     </exercise>
     
     <exercise xml:id="I1-3-12" label="Result in tail">
@@ -325,7 +331,7 @@
       <exercise xml:id="I1-3-17" label="I1.3.17">
         <title>Approach 1: p-value Threshold</title>
         <statement>
-          <p><alert>Approach 1:</alert> What value for <m>c</m> would give you a probability below 0.05 of obtaining that many or more hits? In other words, what is the smallest value of <m>c</m> so <m>P(C \geq c) &lt; 0.05</m>?</p>
+          <p><alert>What value for <m>c</m> would give you a probability below 0.05 of obtaining that many or more hits? In other words, what is the smallest value of <m>c</m> so <m>P(C \geq c) &lt; 0.05</m>?</p>
         </statement>
         <response/>
         <hint>
@@ -342,7 +348,7 @@
       </exercise>
       
       <exercise xml:id="I1-3-17b" label="I1.3.17b">
-        <title>Approach 2: Standard Deviations</title>
+        <title>Standard Deviations</title>
         <statement>
           <p><alert>Approach 2:</alert> What is the smallest value of <m>c</m> that is at least 2 standard deviations from the expected value?</p>
         </statement>
