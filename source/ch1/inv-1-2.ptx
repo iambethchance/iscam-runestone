@@ -182,118 +182,88 @@
 </paragraphs>
   <interactive iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="3:2"/>
   
-  <p><raw-format><![CDATA[
-    <style>
-    .sticky-applet-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 9999;
-      padding: 12px 20px;
-      background: #4682b4;
-      color: white;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
-      font-size: 16px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      display: none;
-    }
-    .sticky-applet-toggle:hover {
-      background: #5a9bd4;
-    }
-    </style>
-    <script>
-    console.log('=== STICKY APPLET SCRIPT LOADED ===');
-    
-    // Wait for page to fully load
+  <raw-format><![CDATA[
+  <style>
+  .sticky-applet-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    padding: 12px 20px;
+    background: #4682b4;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    display: none;
+  }
+  .sticky-applet-toggle:hover {
+    background: #5a9bd4;
+  }
+  </style>
+  <script type="text/javascript">
+  (function() {
     window.addEventListener('load', function() {
-      console.log('Page loaded, setting up sticky applet...');
+      var iframes = document.querySelectorAll('iframe[src*="rossmanchance.com"]');
+      if (iframes.length === 0) return;
       
-      // Find all Rossman Chance applet iframes
-      const iframes = document.querySelectorAll('iframe[src*="rossmanchance.com"]');
-      console.log('Found ' + iframes.length + ' applet iframes');
-      
-      if (iframes.length === 0) {
-        console.log('No applets found, exiting');
-        return;
-      }
-      
-      const targetIframe = iframes[0];
-      console.log('Target iframe:', targetIframe);
-      
-      // Create toggle button
-      const toggleBtn = document.createElement('button');
+      var targetIframe = iframes[0];
+      var toggleBtn = document.createElement('button');
       toggleBtn.className = 'sticky-applet-toggle';
       toggleBtn.innerHTML = '📊 Show Applet';
       document.body.appendChild(toggleBtn);
-      console.log('Toggle button created and added to body');
       
-      // Create sticky container
-      const stickyContainer = document.createElement('div');
+      var stickyContainer = document.createElement('div');
       stickyContainer.style.cssText = 'position:fixed;top:60px;right:20px;width:600px;height:500px;z-index:9998;background:white;border:3px solid #4682b4;box-shadow:0 4px 12px rgba(0,0,0,0.3);border-radius:8px;overflow:hidden;display:none;';
       
-      let isSticky = false;
+      var isSticky = false;
       
-      // Check if applet is visible
       function checkScroll() {
-        const rect = targetIframe.getBoundingClientRect();
-        const isVisible = rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
-        
-        console.log('Scroll check - Applet visible:', isVisible, 'isSticky:', isSticky);
+        var rect = targetIframe.getBoundingClientRect();
+        var isVisible = rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
         
         if (!isVisible && !isSticky) {
           toggleBtn.style.display = 'block';
-          console.log('Showing toggle button');
         } else if (isVisible && !isSticky) {
           toggleBtn.style.display = 'none';
-          console.log('Hiding toggle button');
         }
       }
       
-      // Toggle button click handler
       toggleBtn.addEventListener('click', function() {
-        console.log('Toggle button clicked!');
         isSticky = true;
         toggleBtn.style.display = 'none';
         
-        // Clone the iframe
-        const clonedIframe = targetIframe.cloneNode(true);
+        var clonedIframe = targetIframe.cloneNode(true);
         clonedIframe.style.width = '100%';
         clonedIframe.style.height = '100%';
         clonedIframe.style.border = 'none';
         
-        // Create close button
-        const closeBtn = document.createElement('button');
+        var closeBtn = document.createElement('button');
         closeBtn.innerHTML = '✕';
         closeBtn.style.cssText = 'position:absolute;top:8px;right:8px;background:#dc3545;color:white;border:none;border-radius:50%;width:35px;height:35px;cursor:pointer;font-size:20px;z-index:9999;line-height:1;';
         
         closeBtn.addEventListener('click', function() {
-          console.log('Close button clicked');
           stickyContainer.style.display = 'none';
           document.body.removeChild(stickyContainer);
           isSticky = false;
           checkScroll();
         });
         
-        // Add to container and show
         stickyContainer.innerHTML = '';
         stickyContainer.appendChild(clonedIframe);
         stickyContainer.appendChild(closeBtn);
         stickyContainer.style.display = 'block';
         document.body.appendChild(stickyContainer);
-        console.log('Sticky container displayed');
       });
       
-      // Listen for scroll events
       window.addEventListener('scroll', checkScroll);
-      
-      // Initial check
       setTimeout(checkScroll, 1000);
-      console.log('=== STICKY APPLET SETUP COMPLETE ===');
     });
-    </script>
-    ]]></raw-format></p>
+  })();
+  </script>
+  ]]></raw-format>
 
   <exercise xml:id="inv1-2b-f" label="I1.2b.6">
     <title>Summarize your results</title>
