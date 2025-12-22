@@ -165,7 +165,7 @@ iscambinomtest <- function(
   alternative,
   conf.level = NULL
 ) {
-  old <- par(mar = c(4, 3, 2, 2), pin = c(4, 2.5))
+  old <- par(mar = c(3, 3, 2, 1), pin = c(4, 2.5))
   on.exit(par(old), add = TRUE)
 
   if (observed < 1) {

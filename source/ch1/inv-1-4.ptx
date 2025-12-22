@@ -228,30 +228,30 @@
     <response/>
     <hint>
       <title>R Instructions</title>
-      <p>The <c>iscambinomprob</c> function takes the following inputs:</p>
+      <p>The <c>iscambinomtest</c> function takes the following inputs:</p>
       <p><ul>
-        <li><p><c>k</c> = the observed value you want to calculate the probability about</p></li>
-        <li><p><c>n</c> = the sample size of the binomial distribution</p></li>
-        <li><p><c>prob</c> = the probability of success in the binomial distribution</p></li>
-        <li><p><c>lower.tail</c> = TRUE if you want the probability less than or equal to the observed value, FALSE if you want the probability greater than or equal to the observed value</p></li>
+        <li><p><c>observed</c> = Observed number of successes or proportion of successes</p></li>
+        <li><p><c>n</c> = Number of trials (sample size)</p></li>
+        <li><p><c>hypothesized</c> = Hypothesized probability</p></li>
+        <li><p><c>alternative</c> = Direction of alternative (e.g., "greater" or "less" or "two.sided")</p></li>
       </ul></p>
       
-      <p>For the Heart Transplant study, run the following code:</p>
+      <p>The following code finds the p-value for the infant study study:</p>
       <sage language="r">
         <input>
 # Load ISCAM functions from GitHub
 invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
-# Calculate binomial probability
-# k=8 deaths, n=10 trials, prob=0.15, lower.tail=FALSE for P(X >= 8)
-iscambinomprob(k=8, n=10, prob=0.15, lower.tail=FALSE)
+# Calculate binomial test for heart transplant study
+# observed=8 deaths, n=10 transplants, hypothesized=0.15, alternative="greater"
+iscambinomtest(observed=8, n=10, hypothesized=0.15, alternative="greater")
         </input>
       </sage>
       
-      <p>You should see the p-value in the output as well as a graph of the binomial distribution with the upper tail shaded. Modify the code for the heart transplant study, in particular, what are you setting the hypothesis value to? </p>
+      <p>You should see the p-value in the output as well as a graph of the binomial distribution with the upper tail shaded.</p>
       
       <p><alert>R Reminder:</alert>
-      The <c>alternative</c> parameter controls the direction: "greater" tests if π > 0.5, "less" tests if π &lt; 0.5.</p>
+      The <c>alternative</c> parameter controls the direction: "greater" tests if π > 0.15, "less" tests if π &lt; 0.15.</p>
     </hint>
     <hint>
       <title>JMP Instructions</title>
@@ -300,7 +300,7 @@ iscambinomprob(k=8, n=10, prob=0.15, lower.tail=FALSE)
   </exercise>
 </subsection>
   
-  <exercise xml:id="I1-4-7" label="I1.4.7">
+<!--  <exercise xml:id="I1-4-7" label="I1.4.7">
     <title>Report the p-value</title>
     <statement>
       <p>Find and report the p-value from your technology (including appropriate notation for the event of interest).</p>
@@ -317,10 +317,10 @@ iscambinomprob(k=8, n=10, prob=0.15, lower.tail=FALSE)
       <p>We see that we never get 8 or more successes so the p-value is approximately zero.</p>
       <p>R tells us the p-value equals <m>8.665 \times 10^{-6}</m></p>
     </solution>
-  </exercise>
-  
+  </exercise>-->
+
   <exercise xml:id="I1-4-8" label="I1.4.8">
-    <title>Interpret the P-value</title>
+    <title>Interpret the p-value</title>
     <statement>
       <p>Provide a detailed interpretation of your p-value:</p>
       <p>The p-value is the probability of obtaining <var width="10" /> or <var width="10" /> successes in <var width="10" /> trials from a random process, assuming <var width="50" />.</p>
@@ -516,7 +516,7 @@ iscambinomprob(k=8, n=10, prob=0.15, lower.tail=FALSE)
   
   <p>The following graphs display the two theoretical probability distributions (for sample sizes <m>n = 10</m> and <m>n = 361</m>), both assuming the null hypothesis (<m>\pi = 0.15</m>) is true. These graphs show just how far the observed values (8 and 71) are from the expected value of the number of deaths (0.15 × 10 = 1.5 and 0.15 × 361 = 54.15) in each case. You should also note that the shape, center, and variability of the probability distribution for number of successes are all affected by the sample size <m>n</m>.</p>
   
-  <alert>Binomial distributions for n=10 and n=361, both with π=0.15</alert>
+  <p><alert>Binomial distributions for n=10 and n=361, both with π=0.15</alert>
   
   <sidebyside widths="48% 48%" margins="2%">
     <image source="images/inv1.4smalln.png">
@@ -526,14 +526,14 @@ iscambinomprob(k=8, n=10, prob=0.15, lower.tail=FALSE)
       <description>Binomial distribution showing n=361, pi=0.15, with observed value of 71 marked</description>
     </image>
   </sidebyside>
-  
+  </p>
   <p>Keep in mind that of interest to us is the observed statistic's relative location in the null distribution. Thus, we are most interested in how variable the possible outcomes are from the "expected" outcome. The center of the distribution isn't all that interesting to us in answering the research question because we determine what the center of the distribution will be by how we specify the null hypothesis. Even the shape isn't all that interesting on its own in answering our research question.</p>
   
   <exercise xml:id="I1-4-15" label="I1.4.15">
     <title>Distribution Feature Differences</title>
     <statement>
       <p>Identify another feature (beside center, shape, and variability) of the above distributions that differs between them.</p>
-    </statement>
+    <var width = "20"/></statement>
     <response/>
     <hint>
       <p>Think about practical aspects like the scale or range of values displayed.</p>
