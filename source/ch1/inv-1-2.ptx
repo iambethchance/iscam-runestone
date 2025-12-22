@@ -183,84 +183,115 @@
   <interactive iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="3:2"/>
   
   <p><raw-format><![CDATA[
-    <div style="background: yellow; padding: 10px; margin: 10px 0;">
-      TEST: If you can see this yellow box, raw HTML is working!
-    </div>
+    <style>
+    .sticky-applet-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      padding: 12px 20px;
+      background: #4682b4;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      display: none;
+    }
+    .sticky-applet-toggle:hover {
+      background: #5a9bd4;
+    }
+    </style>
     <script>
-    // Sticky applet functionality - inline version
-    (function() {
-      if (typeof window.stickyAppletLoaded !== 'undefined') return;
-      window.stickyAppletLoaded = true;
+    console.log('=== STICKY APPLET SCRIPT LOADED ===');
+    
+    // Wait for page to fully load
+    window.addEventListener('load', function() {
+      console.log('Page loaded, setting up sticky applet...');
       
-      function setupStickyApplet() {
-        const iframes = document.querySelectorAll('iframe[src*="rossmanchance.com"]');
-        console.log('Sticky applet: Found ' + iframes.length + ' applet iframes');
+      // Find all Rossman Chance applet iframes
+      const iframes = document.querySelectorAll('iframe[src*="rossmanchance.com"]');
+      console.log('Found ' + iframes.length + ' applet iframes');
+      
+      if (iframes.length === 0) {
+        console.log('No applets found, exiting');
+        return;
+      }
+      
+      const targetIframe = iframes[0];
+      console.log('Target iframe:', targetIframe);
+      
+      // Create toggle button
+      const toggleBtn = document.createElement('button');
+      toggleBtn.className = 'sticky-applet-toggle';
+      toggleBtn.innerHTML = '📊 Show Applet';
+      document.body.appendChild(toggleBtn);
+      console.log('Toggle button created and added to body');
+      
+      // Create sticky container
+      const stickyContainer = document.createElement('div');
+      stickyContainer.style.cssText = 'position:fixed;top:60px;right:20px;width:600px;height:500px;z-index:9998;background:white;border:3px solid #4682b4;box-shadow:0 4px 12px rgba(0,0,0,0.3);border-radius:8px;overflow:hidden;display:none;';
+      
+      let isSticky = false;
+      
+      // Check if applet is visible
+      function checkScroll() {
+        const rect = targetIframe.getBoundingClientRect();
+        const isVisible = rect.top >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight);
         
-        if (iframes.length === 0) return;
+        console.log('Scroll check - Applet visible:', isVisible, 'isSticky:', isSticky);
         
-        const targetIframe = iframes[0];
-        const container = targetIframe.closest('figure') || targetIframe.parentElement;
-        
-        const toggleBtn = document.createElement('button');
-        toggleBtn.className = 'sticky-applet-toggle';
-        toggleBtn.textContent = '📊 Show Applet';
-        toggleBtn.style.cssText = 'position:fixed;bottom:20px;right:20px;z-index:999;padding:12px 20px;background:#4682b4;color:white;border:none;border-radius:25px;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.2);display:none;';
-        document.body.appendChild(toggleBtn);
-        
-        const stickyContainer = document.createElement('div');
-        stickyContainer.style.cssText = 'position:fixed;top:20px;right:20px;width:500px;height:400px;z-index:1000;background:white;border:2px solid #4682b4;box-shadow:0 4px 6px rgba(0,0,0,0.1);border-radius:8px;overflow:hidden;display:none;';
-        
-        let isSticky = false;
-        
-        function checkScroll() {
-          const rect = container.getBoundingClientRect();
-          const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
-          
-          if (!isVisible && !isSticky) {
-            toggleBtn.style.display = 'block';
-          } else if (isVisible && !isSticky) {
-            toggleBtn.style.display = 'none';
-          }
-        }
-        
-        toggleBtn.addEventListener('click', function() {
-          isSticky = true;
+        if (!isVisible && !isSticky) {
+          toggleBtn.style.display = 'block';
+          console.log('Showing toggle button');
+        } else if (isVisible && !isSticky) {
           toggleBtn.style.display = 'none';
-          
-          const clonedIframe = targetIframe.cloneNode(true);
-          clonedIframe.style.width = '100%';
-          clonedIframe.style.height = '100%';
-          clonedIframe.style.border = 'none';
-          
-          const closeBtn = document.createElement('button');
-          closeBtn.textContent = '✕';
-          closeBtn.style.cssText = 'position:absolute;top:5px;right:5px;background:#dc3545;color:white;border:none;border-radius:50%;width:30px;height:30px;cursor:pointer;font-size:16px;z-index:1001;';
-          closeBtn.addEventListener('click', function() {
-            stickyContainer.style.display = 'none';
-            document.body.removeChild(stickyContainer);
-            isSticky = false;
-            checkScroll();
-          });
-          
-          stickyContainer.innerHTML = '';
-          stickyContainer.appendChild(clonedIframe);
-          stickyContainer.appendChild(closeBtn);
-          stickyContainer.style.display = 'block';
-          document.body.appendChild(stickyContainer);
+          console.log('Hiding toggle button');
+        }
+      }
+      
+      // Toggle button click handler
+      toggleBtn.addEventListener('click', function() {
+        console.log('Toggle button clicked!');
+        isSticky = true;
+        toggleBtn.style.display = 'none';
+        
+        // Clone the iframe
+        const clonedIframe = targetIframe.cloneNode(true);
+        clonedIframe.style.width = '100%';
+        clonedIframe.style.height = '100%';
+        clonedIframe.style.border = 'none';
+        
+        // Create close button
+        const closeBtn = document.createElement('button');
+        closeBtn.innerHTML = '✕';
+        closeBtn.style.cssText = 'position:absolute;top:8px;right:8px;background:#dc3545;color:white;border:none;border-radius:50%;width:35px;height:35px;cursor:pointer;font-size:20px;z-index:9999;line-height:1;';
+        
+        closeBtn.addEventListener('click', function() {
+          console.log('Close button clicked');
+          stickyContainer.style.display = 'none';
+          document.body.removeChild(stickyContainer);
+          isSticky = false;
+          checkScroll();
         });
         
-        window.addEventListener('scroll', checkScroll);
-        checkScroll();
-        
-        console.log('Sticky applet: Setup complete');
-      }
+        // Add to container and show
+        stickyContainer.innerHTML = '';
+        stickyContainer.appendChild(clonedIframe);
+        stickyContainer.appendChild(closeBtn);
+        stickyContainer.style.display = 'block';
+        document.body.appendChild(stickyContainer);
+        console.log('Sticky container displayed');
+      });
       
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setupStickyApplet);
-      } else {
-        setupStickyApplet();
-      }
-    })();
+      // Listen for scroll events
+      window.addEventListener('scroll', checkScroll);
+      
+      // Initial check
+      setTimeout(checkScroll, 1000);
+      console.log('=== STICKY APPLET SETUP COMPLETE ===');
+    });
     </script>
     ]]></raw-format></p>
 
