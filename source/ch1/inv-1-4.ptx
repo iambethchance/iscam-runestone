@@ -222,17 +222,18 @@
   <exercise xml:id="tech-detour-binomial-1-4">
     <title>Binomial Test of Significance</title>
     <statement>
-      <p>Use technology (R or JMP) to find and report the p-value for the Heart Transplant study (8 deaths in 10 trials with hypothesized probability 0.15). Choose one set of instructions below by clicking on a hint.</p>
+      <p>Use R or JMP to find and report the p-value for the Heart Transplant study (8 deaths in 10 trials with hypothesized probability 0.15). Choose one set of instructions below by clicking on a hint. Report the p-value you find.</p>
+<var width="5"/>
     </statement>
     <response/>
     <hint>
       <title>R Instructions</title>
-      <p>The <c>iscambinomtest</c> function takes the following inputs:</p>
+      <p>The <c>iscambinomprob</c> function takes the following inputs:</p>
       <p><ul>
-        <li><p><c>observed</c> = Observed number of successes or proportion of successes</p></li>
-        <li><p><c>n</c> = Number of trials (sample size)</p></li>
-        <li><p><c>hypothesized</c> = Hypothesized probability</p></li>
-        <li><p><c>alternative</c> = Direction of alternative (e.g., "greater" or "less" or "two.sided")</p></li>
+        <li><p><c>k</c> = the observed value you want to calculate the probability about</p></li>
+        <li><p><c>n</c> = the sample size of the binomial distribution</p></li>
+        <li><p><c>prob</c> = the probability of success in the binomial distribution</p></li>
+        <li><p><c>lower.tail</c> = TRUE if you want the probability less than or equal to the observed value, FALSE if you want the probability greater than or equal to the observed value</p></li>
       </ul></p>
       
       <p>For the Heart Transplant study, run the following code:</p>
@@ -241,16 +242,16 @@
 # Load ISCAM functions from GitHub
 invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
-# Calculate binomial test
-# observed=8 deaths, n=10 trials, hypothesized=0.15, alternative="greater"
-iscambinomtest(observed=8, n=10, hypothesized=0.15, alternative="greater")
+# Calculate binomial probability
+# k=8 deaths, n=10 trials, prob=0.15, lower.tail=FALSE for P(X >= 8)
+iscambinomprob(k=8, n=10, prob=0.15, lower.tail=FALSE)
         </input>
       </sage>
       
-      <p>You should see the p-value in the output as well as a graph of the binomial distribution with the upper tail shaded.</p>
+      <p>You should see the p-value in the output as well as a graph of the binomial distribution with the upper tail shaded. Modify the code for the heart transplant study, in particular, what are you setting the hypothesis value to? </p>
       
-      <alert>R Reminder</alert>
-      <p>The code loads the ISCAM functions from GitHub, then uses <c>iscambinomtest</c>. The <c>alternative</c> parameter controls the direction: "greater" tests if π > 0.15, "less" tests if π &lt; 0.15.</p>
+      <p><alert>R Reminder:</alert>
+      The <c>alternative</c> parameter controls the direction: "greater" tests if π > 0.5, "less" tests if π &lt; 0.5.</p>
     </hint>
     <hint>
       <title>JMP Instructions</title>
@@ -261,8 +262,8 @@ iscambinomtest(observed=8, n=10, hypothesized=0.15, alternative="greater")
           <p><ul>
             <li><p>Choose <alert>Analyze > Distribution</alert></p>
               <p><ul>
-                <li><p><em>With raw data</em>, drag the variable to the Y, Columns slot. Press OK.</p></li>
-                <li><p><em>With summarized data</em>, move the column with the category names to the Y, columns slot and move the column with the counts to the Freq slot. Press OK.</p></li>
+                <li><p><em>With raw data</em>, drag the variable to the Y, Columns slot. Press <alert>OK</alert>.</p></li>
+                <li><p><em>With summarized data</em>, move the column with the category names to the Y, columns slot and move the column with the counts to the Freq slot. Press <alert>OK</alert>.</p></li>
               </ul></p>
             </li>
           </ul></p>
@@ -278,7 +279,7 @@ iscambinomtest(observed=8, n=10, hypothesized=0.15, alternative="greater")
             <li><p>From the variable's hot spot, select <term>Test Probabilities</term>.</p></li>
             <li><p>Specify the hypothesized probability of success for the category you want to define as success (only).</p></li>
             <li><p>Then pick a one-sided alternative hypothesis (greater than or less than).</p></li>
-            <li><p>Press Done.</p></li>
+            <li><p>Press <alert>Done</alert>.</p></li>
           </ul></p>
         </stack>
         <image source="images/JMPTestp2.png">
@@ -288,8 +289,8 @@ iscambinomtest(observed=8, n=10, hypothesized=0.15, alternative="greater")
       
       <p>JMP assumes "success" to be the first category alphabetically unless you specify otherwise with <term>Cols > Column Info > Column Properties > Value Ordering</term>.</p>
       
-      <alert>JMP Reminder</alert>
-      <p>"Not equal to" alternatives will be discussed in Investigation 1.5.</p>
+      <p><alert>Note:</alert>
+      "Not equal to" alternatives will be discussed in Investigation 1.5.</p>
     </hint>
     <solution>
       <p>For the Heart Transplant study with 8 deaths out of 10 trials and a hypothesized probability of 0.15:</p>
