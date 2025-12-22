@@ -23,26 +23,24 @@
     <title>Conduct Physical Simulation</title>
     <statement>
       <p>How many mothers received the correct baby in each trial?</p>
-      <table>
-        <tabular>
-          <row header="yes">
-            <cell>Trials</cell>
-            <cell>1</cell>
-            <cell>2</cell>
-            <cell>3</cell>
-            <cell>4</cell>
-            <cell>5</cell>
+        <tabular top="medium" bottom="medium" left="medium" right="medium">
+          <row header="yes" bottom="medium">
+            <cell right="medium">Trials</cell>
+            <cell right="medium" halign="center">1</cell>
+            <cell right="medium" halign="center">2</cell>
+            <cell right="medium" halign="center">3</cell>
+            <cell right="medium" halign="center">4</cell>
+            <cell halign="center">5</cell>
           </row>
           <row>
-            <cell>Number of matches</cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
+            <cell right="medium">Number of matches</cell>
+            <cell right="medium"><var width="5"/></cell>
+            <cell right="medium"><var width="5"/></cell>
+            <cell right="medium"><var width="5"/></cell>
+            <cell right="medium"><var width="5"/></cell>
             <cell><var width="5"/></cell>
           </row>
         </tabular>
-      </table>
     </statement>
     <hint>
       <p>Record the number of matches (0, 1, 2, or 4) for each of your 5 trials.</p>
@@ -55,15 +53,17 @@
   <exercise xml:id="random-babies-ex-c" label="B.3">
     <title>Identify Common Outcomes</title>
     <statement>
-      <p>What was the most common outcome across your trials? What was the least common?</p>
+      <p>What was the most common outcome across your trials?</p>
+      <p><var width="20" height="3"/></p>
+      <p>What was the least common outcome across your trials?</p>
+      <p><var width="20" height="3"/></p>
     </statement>
     <hint>
-      <p>Look at your results from the previous question - which number of matches appeared most frequently?</p>
+      <p>Look at your results from the previous question - which number of matches appeared most frequently and least frequently?</p>
     </hint>
     <solution>
       <p>The most common outcomes are typically 0 or 1 match. Having all 4 mothers receive the correct baby (4 matches) is very rare, as is having exactly 2 matches.</p>
     </solution>
-    <response/>
   </exercise>
   
   <exercise xml:id="random-babies-ex-d" label="B.4">
@@ -114,7 +114,7 @@
     <title>Estimate Probability</title>
     <statement>
       <p>Based on your simulation results, estimate the probability that at least one mother receives the correct baby.</p>
-      <p>Probability = <var width="10" /></p>
+      <p>Probability estimate = <var width="10" /></p>
     </statement>
     <setup>
       <var>
@@ -175,7 +175,7 @@
   <exercise xml:id="random-babies-ex-i" label="B.9">
     <title>Analyze Running Proportion</title>
     <statement>
-      <p>Look at the time plot showing the running proportion of trials with 0 matches. What do you notice about the behavior of this proportion as the number of trials increases?</p>
+      <p>Look at the time plot in the applet showing the running proportion of trials with 0 matches. What do you notice about the behavior of this proportion as the number of trials increases?</p>
     </statement>
     <hint>
       <p>Does the proportion stabilize or continue to vary wildly?</p>
@@ -214,29 +214,17 @@
   <exercise xml:id="random-babies-ex-j" label="B.10">
     <title>Count Sample Space</title>
     <statement>
-      <p>How many possible outcomes are there in the sample space? What is the probability of any one specific outcome (e.g., 1234)?</p>
-      <p>Number of outcomes = <var width="5" /></p>
-      <p>Probability = <var width="10" /></p>
+      <p>How many possible outcomes are there in the sample space?</p>
+      <p><var width="10" /></p>
+      <p>What is the probability of any one specific outcome (e.g., 1234)?</p>
+      <p><var width="10" /></p>
     </statement>
-    <setup>
-      <var>
-        <condition number="24">
-          <feedback>
-            <p>There are 24 possible outcomes in the sample space.</p>
-          </feedback>
-        </condition>
-      </var>
-      <var>
-        <condition number="0.0417" tolerance="0.001">
-          <feedback>
-            <p>Each outcome has probability 1/24  0.0417.</p>
-          </feedback>
-        </condition>
-      </var>
-    </setup>
     <hint>
       <p>Count the total number of entries in the sample space table above. If all outcomes are equally likely, divide 1 by the total number of outcomes.</p>
     </hint>
+    <solution>
+      <p>There are 24 possible outcomes in the sample space. Each outcome has probability 1/24 ≈ 0.0417.</p>
+    </solution>
   </exercise>
   
   <p>You could have determined the number of possible outcomes without having to list them first. For the first mother to receive a baby, she could receive any one of the four babies. Then there are three babies to choose from in giving a baby to the second mother. The third mother receives one of the two remaining babies and then the last baby goes to the fourth mother. Because the number of possibilities at one stage of this process does not depend on the outcome (which baby) of earlier stages, the total number of possibilities is the product <m>4 \times 3 \times 2 \times 1 = 24</m>. This is also known as <m>4!</m>, read "4 factorial." Because the above outcomes are equally likely, the probability of any one of the above outcomes occurring is <m>1/24</m>. Although these 24 outcomes are equally likely, we were more interested above in the probability of 0 matches, 1 match, etc.</p>
@@ -255,9 +243,9 @@
     <hint>
       <p>Consider: Can you have 0 matches? 1 match? 2 matches? What about 3 matches - is that possible?</p>
     </hint>
-    <answer>
+    <solution>
       <p>The possible values are 0, 1, 2, and 4. (Note: 3 is not possible!)</p>
-    </answer>
+    </solution>
   </exercise>
   
   <exercise xml:id="random-babies-ex-l" label="B.12">
@@ -265,22 +253,22 @@
     <statement>
       <p>Go through the sample space and count how many outcomes result in each possible value of <m>X</m> (0, 1, 2, 3, or 4 matches).</p>
       <p>
-        <tabular row-headers="yes" top="minor" bottom="minor" left="minor" right="minor">
-          <row header="yes">
-            <cell right="minor">Number of Matches</cell>
-            <cell right="minor">0</cell>
-            <cell right="minor">1</cell>
-            <cell right="minor">2</cell>
-            <cell right="minor">3</cell>
-            <cell>4</cell>
+        <tabular row-headers="yes" top="medium" bottom="medium" left="medium" right="medium">
+          <row header="yes" bottom="medium">
+            <cell right="medium">Number of Matches</cell>
+            <cell right="medium" halign="center">0</cell>
+            <cell right="medium" halign="center">1</cell>
+            <cell right="medium" halign="center">2</cell>
+            <cell right="medium" halign="center">3</cell>
+            <cell halign="center">4</cell>
           </row>
           <row>
-            <cell right="minor">Count</cell>
-            <cell right="minor"><var width="3" /></cell>
-            <cell right="minor"><var width="3" /></cell>
-            <cell right="minor"><var width="3" /></cell>
-            <cell right="minor"><var width="3" /></cell>
-            <cell><var width="3" /></cell>
+            <cell right="medium">Count</cell>
+            <cell right="medium" halign="center"><var width="3" /></cell>
+            <cell right="medium" halign="center"><var width="3" /></cell>
+            <cell right="medium" halign="center"><var width="3" /></cell>
+            <cell right="medium" halign="center"><var width="3" /></cell>
+            <cell halign="center"><var width="3" /></cell>
           </row>
         </tabular>
       </p>
