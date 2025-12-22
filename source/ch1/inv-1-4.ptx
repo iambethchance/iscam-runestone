@@ -242,16 +242,16 @@
 # Load ISCAM functions from GitHub
 invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
-# Calculate binomial test for heart transplant study
-# observed=8 deaths, n=10 transplants, hypothesized=0.15, alternative="greater"
-iscambinomtest(observed=8, n=10, hypothesized=0.15, alternative="greater")
+# Calculate binomial test
+# observe=14 chose toy, n=16 infants, hypothesized=0.5, alternative="greater"
+iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
         </input>
       </sage>
       
-      <p>You should see the p-value in the output as well as a graph of the binomial distribution with the upper tail shaded.</p>
+      <p>You should see the p-value in the output as well as a graph of the binomial distribution with the upper tail shaded. Modify the code for the heart transplant study, in particular, what are you setting the hypothesis value to? </p>
       
       <p><alert>R Reminder:</alert>
-      The <c>alternative</c> parameter controls the direction: "greater" tests if π > 0.15, "less" tests if π &lt; 0.15.</p>
+      The <c>alternative</c> parameter controls the direction: "greater" tests if π > 0.5, "less" tests if π &lt; 0.5.</p>
     </hint>
     <hint>
       <title>JMP Instructions</title>
