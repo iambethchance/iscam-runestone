@@ -167,10 +167,76 @@ iscambinomtest <- function(observed, n, hypothesized = 0.5, alternative = "two.s
   cat(paste0("Sample proportion: ", round(observed/n, 4), "\n"))
   cat(paste0("Hypothesized: ", hypothesized, "\n"))
   cat(paste0("Alternative: ", alternative, "\n"))
-  cat(paste0("p-value: ", round(result$p.value, 4), "\n"))
+  cat(paste0("p-value: ", round(result$p.value, 6), "\n"))
   cat(paste0(conf.level*100, "% Confidence Interval: (", 
              round(result$conf.int[1], 4), ", ", 
              round(result$conf.int[2], 4), ")\n"))
+  
+  # Add visualization
+  old <- par(mar = c(4, 3, 2, 2), pin = c(5, 3))
+  on.exit(par(old), add = TRUE)
+  
+  thisx <- 0:n
+  minx <- max(0, n * hypothesized - 4 * sqrt(hypothesized * (1 - hypothesized) * n))
+  maxx <- min(n, n * hypothesized + 4 * sqrt(hypothesized * (1 - hypothesized) * n))
+  maxx <- max(observed + 1, maxx)
+  myy <- dbinom(floor(n * hypothesized), n, hypothesized)
+  
+  plot(
+    thisx,
+    dbinom(thisx, size = n, hypothesized),
+    xlab = " ",
+    ylab = " ",
+    type = "h",
+    xlim = c(minx, maxx),
+    panel.first = grid(),
+    lwd = 2
+  )
+  abline(h = 0, col = "gray")
+  
+  # Shade based on alternative hypothesis
+  if (alternative == "less") {
+    lines(0:observed, dbinom(0:observed, size = n, hypothesized), col = "red", type = "h", lwd = 2)
+    text(
+      minx,
+      myy * .8,
+      labels = bquote(atop(P(X <= .(observed)), "=" ~ .(format(result$p.value, digits = 4)))),
+      pos = 4,
+      col = "red"
+    )
+  } else if (alternative == "greater") {
+    lines(observed:n, dbinom(observed:n, size = n, hypothesized), col = "red", type = "h", lwd = 2)
+    text(
+      (maxx + n * hypothesized) * 9 / 16,
+      myy,
+      labels = bquote(atop(P(X >= .(observed)), "=" ~ .(format(result$p.value, digits = 4)))),
+      pos = 1,
+      col = "red"
+    )
+  } else {
+    # two-sided: shade both tails
+    expected <- n * hypothesized
+    distance <- abs(observed - expected)
+    lower_tail <- 0:floor(expected - distance)
+    upper_tail <- ceiling(expected + distance):n
+    lines(lower_tail, dbinom(lower_tail, size = n, hypothesized), col = "red", type = "h", lwd = 2)
+    lines(upper_tail, dbinom(upper_tail, size = n, hypothesized), col = "red", type = "h", lwd = 2)
+    text(
+      (maxx + n * hypothesized) / 2,
+      myy * .9,
+      labels = bquote(atop("Two-sided p-value", "=" ~ .(format(result$p.value, digits = 4)))),
+      pos = 3,
+      col = "red"
+    )
+  }
+  
+  newtitle <- substitute(
+    paste("Binomial (", n == x1, ", ", pi == x2, ")", ),
+    list(x1 = n, x2 = hypothesized)
+  )
+  title(newtitle)
+  mtext(side = 1, line = 2, "Number of Successes")
+  mtext(side = 2, line = 2, "Probability")
   
   invisible(result)
 }
