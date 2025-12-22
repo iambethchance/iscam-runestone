@@ -158,87 +158,242 @@ iscambinomprob <- function(k, n, prob, lower.tail, verbose = TRUE) {
 }
 
 # Binomial test
-iscambinomtest <- function(observed, n, hypothesized = 0.5, alternative = "two.sided", conf.level = 0.95) {
-  result <- binom.test(observed, n, hypothesized, alternative, conf.level)
-  
-  cat("\nOne Sample Binomial Test\n")
-  cat("=========================\n")
-  cat(paste0("Observed: ", observed, " out of ", n, "\n"))
-  cat(paste0("Sample proportion: ", round(observed/n, 4), "\n"))
-  cat(paste0("Hypothesized: ", hypothesized, "\n"))
-  cat(paste0("Alternative: ", alternative, "\n"))
-  cat(paste0("p-value: ", round(result$p.value, 6), "\n"))
-  cat(paste0(conf.level*100, "% Confidence Interval: (", 
-             round(result$conf.int[1], 4), ", ", 
-             round(result$conf.int[2], 4), ")\n"))
-  
-  # Add visualization
-  old <- par(mar = c(4, 3, 2, 2), pin = c(5, 3))
-  on.exit(par(old), add = TRUE)
-  
-  thisx <- 0:n
-  minx <- max(0, n * hypothesized - 4 * sqrt(hypothesized * (1 - hypothesized) * n))
-  maxx <- min(n, n * hypothesized + 4 * sqrt(hypothesized * (1 - hypothesized) * n))
-  maxx <- max(observed + 1, maxx)
-  myy <- dbinom(floor(n * hypothesized), n, hypothesized)
-  
-  plot(
-    thisx,
-    dbinom(thisx, size = n, hypothesized),
-    xlab = " ",
-    ylab = " ",
-    type = "h",
-    xlim = c(minx, maxx),
-    panel.first = grid(),
-    lwd = 2
-  )
-  abline(h = 0, col = "gray")
-  
-  # Shade based on alternative hypothesis
-  if (alternative == "less") {
-    lines(0:observed, dbinom(0:observed, size = n, hypothesized), col = "red", type = "h", lwd = 2)
-    text(
-      minx,
-      myy * .8,
-      labels = bquote(atop(P(X <= .(observed)), "=" ~ .(format(result$p.value, digits = 4)))),
-      pos = 4,
-      col = "red"
-    )
-  } else if (alternative == "greater") {
-    lines(observed:n, dbinom(observed:n, size = n, hypothesized), col = "red", type = "h", lwd = 2)
-    text(
-      (maxx + n * hypothesized) * 9 / 16,
-      myy,
-      labels = bquote(atop(P(X >= .(observed)), "=" ~ .(format(result$p.value, digits = 4)))),
-      pos = 1,
-      col = "red"
-    )
-  } else {
-    # two-sided: shade both tails
-    expected <- n * hypothesized
-    distance <- abs(observed - expected)
-    lower_tail <- 0:floor(expected - distance)
-    upper_tail <- ceiling(expected + distance):n
-    lines(lower_tail, dbinom(lower_tail, size = n, hypothesized), col = "red", type = "h", lwd = 2)
-    lines(upper_tail, dbinom(upper_tail, size = n, hypothesized), col = "red", type = "h", lwd = 2)
-    text(
-      (maxx + n * hypothesized) / 2,
-      myy * .9,
-      labels = bquote(atop("Two-sided p-value", "=" ~ .(format(result$p.value, digits = 4)))),
-      pos = 3,
-      col = "red"
-    )
+iscambinomtest <- function(
+  observed,
+  n,
+  hypothesized = NULL,
+  alternative,
+  conf.level = NULL
+) {
+  withr::local_par(mar = c(4, 3, 2, 2))
+
+  if (observed < 1) {
+    observed <- round(n * observed)
   }
-  
-  newtitle <- substitute(
-    paste("Binomial (", n == x1, ", ", pi == x2, ")", ),
-    list(x1 = n, x2 = hypothesized)
-  )
-  title(newtitle)
-  mtext(side = 1, line = 2, "Number of Successes")
-  mtext(side = 2, line = 2, "Probability")
-  
-  invisible(result)
+  pvalue <- NULL
+  if (!is.null(hypothesized)) {
+    minx <- max(
+      0,
+      n * hypothesized - 4 * sqrt(hypothesized * (1 - hypothesized) * n)
+    )
+    maxx <- min(
+      n,
+      n * hypothesized + 4 * sqrt(hypothesized * (1 - hypothesized) * n)
+    )
+    maxx <- max(observed + 1, maxx)
+    myy <- max(dbinom(floor(n * hypothesized), n, hypothesized)) * .9
+    x <- 0:n
+    plot(
+      x,
+      dbinom(x, size = n, prob = hypothesized),
+      xlab = "",
+      ylab = " ",
+      type = "h",
+      xlim = c(minx, maxx),
+      panel.first = grid(),
+      lwd = 2
+    )
+    newtitle <- substitute(
+      paste("Binomial (", n == x1, ", ", pi == x2, ")", ),
+      list(x1 = n, x2 = hypothesized)
+    )
+    title(newtitle)
+    mtext(side = 1, line = 2, "Number of Successes")
+    mtext(side = 2, line = 2, "Probability")
+
+    if (alternative == "less") {
+      pvalue <- pbinom(observed, size = n, prob = hypothesized, TRUE)
+      lines(
+        0:observed,
+        dbinom(0:observed, size = n, prob = hypothesized),
+        col = "red",
+        type = "h",
+        lwd = 2
+      )
+      text(
+        minx,
+        myy,
+        labels = paste("p-value:", signif(pvalue, 4)),
+        pos = 4,
+        col = "red"
+      )
+    } else if (alternative == "greater") {
+      value <- observed - 1
+      pvalue <- pbinom(value, size = n, prob = hypothesized, FALSE)
+      lines(
+        observed:n,
+        dbinom(observed:n, size = n, prob = hypothesized),
+        col = "red",
+        type = "h",
+        lwd = 2
+      )
+      text(
+        maxx,
+        myy,
+        labels = paste("p-value:", signif(pvalue, 4)),
+        pos = 2,
+        col = "red"
+      )
+    } else {
+      pvalue <- 0
+      firstvalue <- dbinom(observed, size = n, prob = hypothesized)
+      for (y in 0:n) {
+        newvalue <- dbinom(y, size = n, prob = hypothesized)
+        if (newvalue <= firstvalue + .00001) {
+          pvalue <- pvalue + newvalue
+          lines(y, newvalue, col = "red", type = "h", lwd = 2)
+        }
+      }
+      text(
+        minx,
+        myy,
+        labels = paste("two-sided p-value:\n", signif(pvalue, 4)),
+        pos = 4,
+        col = "red"
+      )
+    }
+    pvalue <- signif(pvalue, 5)
+    abline(h = 0, col = "gray")
+    abline(v = 0, col = "gray")
+  }
+  cat("\n", "Exact Binomial Test\n", sep = "", "\n")
+  statistic <- signif(observed / n, 4)
+  cat(paste(
+    "Data: observed successes = ",
+    observed,
+    ", sample size = ",
+    n,
+    ", sample proportion = ",
+    statistic,
+    "\n\n",
+    sep = ""
+  ))
+
+  if (!is.null(hypothesized)) {
+    cat(paste("Null hypothesis       : pi =", hypothesized, sep = " "), "\n")
+    altname <- switch(alternative, less = "<", greater = ">", two.sided = "<>")
+    cat(
+      paste("Alternative hypothesis: pi", altname, hypothesized, sep = " "),
+      "\n"
+    )
+    cat(paste("p-value:", pvalue, sep = " "), "\n")
+  }
+  p.L <- function(x, alpha) {
+    if (x == 0) {
+      0
+    } else {
+      qbeta(alpha, x, n - x + 1)
+    }
+  }
+  p.U <- function(x, alpha) {
+    if (x == n) {
+      1
+    } else {
+      qbeta(1 - alpha, x + 1, n - x)
+    }
+  }
+  CINT <- 0
+  multconflevel <- 0
+  lower1 <- NULL
+  upper1 <- NULL
+  if (!is.null(conf.level)) {
+    for (k in 1:length(conf.level)) {
+      if (conf.level[k] > 1) {
+        conf.level[k] <- conf.level[k] / 100
+      }
+      alpha <- (1 - conf.level[k]) / 2
+      CINT <- c(
+        signif(p.L(observed, alpha), 5),
+        ",",
+        signif(p.U(observed, alpha), 5)
+      )
+      multconflevel <- 100 * conf.level[k]
+      cat(multconflevel, "% Confidence interval for pi: (", CINT, ") \n")
+      lower1[k] <- as.numeric(CINT[1])
+      upper1[k] <- as.numeric(CINT[3])
+    }
+  }
+  withr::local_par(mar = c(4, 2, 1.5, .5), mfrow = c(3, 1))
+  if (length(conf.level) > 1) {
+    withr::local_par(mar = c(4, 2, 1.5, .4), mfrow = c(length(conf.level), 1))
+  }
+
+  if (is.null(hypothesized)) {
+    statistic <- observed / n
+    # lower=lower1[1]; upper=upper1[1]
+    SDphat <- sqrt(statistic * (1 - statistic) / n)
+    min <- statistic - 4 * SDphat
+    max <- statistic + 4 * SDphat
+    CIseq <- seq(min, max, .01)
+    minx <- as.integer(max(0, min * n))
+    maxx <- as.integer(min(n, max * n))
+
+    if (length(conf.level) == 1) {
+      myxlab <- substitute(
+        paste("Binomial (", n == x1, ", ", pi == x2, ")", ),
+        list(x1 = n, x2 = signif(lower1[1], 4))
+      )
+      plot(
+        seq(minx, maxx),
+        dbinom(seq(minx, maxx), size = n, prob = lower1[1]),
+        xlab = "  ",
+        ylab = " ",
+        type = "h",
+        xlim = c(minx, maxx)
+      )
+      mtext("Number of successes", side = 1, line = 1.75, adj = .5, cex = .75)
+      title(myxlab)
+      lines(
+        observed:n,
+        dbinom(observed:n, size = n, prob = lower1[1]),
+        col = "red",
+        type = "h"
+      )
+
+      myxlab <- substitute(
+        paste("Binomial (", n == x1, ", ", pi == x2, ")", ),
+        list(x1 = n, x2 = signif(upper1[1], 4))
+      )
+      plot(
+        seq(minx, maxx),
+        dbinom(seq(minx, maxx), size = n, prob = upper1[1]),
+        xlab = " ",
+        ylab = " ",
+        type = "h",
+        xlim = c(minx, maxx)
+      )
+      lines(
+        0:observed,
+        dbinom(0:observed, size = n, prob = upper1[1]),
+        col = "red",
+        type = "h"
+      )
+
+      mtext("Number of successes", side = 1, line = 1.75, adj = .5, cex = .75)
+      title(myxlab)
+    } # end only one interval
+
+    for (k in 1:length(conf.level)) {
+      plot(
+        c(min, statistic, max),
+        c(1, 1, 1),
+        pch = c(".", "^", "."),
+        ylab = " ",
+        xlab = "process probability",
+        ylim = c(1, 1)
+      )
+      abline(v = statistic, col = "gray")
+      text(min, 1, labels = paste(conf.level[k] * 100, "% CI:"))
+      text(statistic, .9, labels = signif(statistic, 4))
+      text(lower1[k], 1, labels = signif(lower1[k], 4), pos = 3)
+      text(upper1[k], 1, labels = signif(upper1[k], 4), pos = 3)
+      points(c(lower1[k], upper1[k]), c(1, 1), pch = c("[", "]"))
+      lines(c(lower1[k], upper1[k]), c(1, 1))
+    } # end intervals loop
+  } # end no hypothesized
+
+  withr::local_par(mfrow = c(1, 1))
+  invisible(list("pvalue" = pvalue, "lower" = lower1, "upper" = upper1))
 }
 
 # ============================================================================
