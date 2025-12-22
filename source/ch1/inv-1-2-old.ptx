@@ -1,9 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="investigation1-2b" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <subtitle>Binomial random variables</subtitle>
-  <p>In this investigation, you will explore using a mathematical model to evaluate the results from a random process.</p>
-  
-  <exercises xml:id="exercises-1-2b" hidden-label="yes"><title>Investigation 1.2b: Can Wolves Understand Human Cues?</title>
+<section xml:id="investigation1-2">
+  <title>Investigation 1.2: Can Wolves Understand Human Cues?</title>
   
   <sidebyside widths="58% 38%">
     <stack>
@@ -14,8 +10,7 @@
   </sidebyside>
       <p><url href="https://www.nature.com/articles/s41598-017-12055-6#MOESM1">Lampe et al. (2017)</url> gave captive wolves, pack dogs living in identical conditions to the wolves, and pet dogs living with families a series of "object-choice tasks." A table was placed outside a fenced compartment, and a container was placed at each end of the table, one containing food and one empty. The experimenter would give the cue as to which container had the food and then the animal would touch one of the two targets next to the containers. A 6-year-old female timber wolf, Yukon, chose the intended container in 6 of the 8 trials with behavioral cues.</p>
   
-
-  <exercise xml:id="inv1-2b-a" label="I1.2b.1">
+  <exercise xml:id="inv1-2-a" label="I1.2.1">
     <title>Identify Sample and Process</title>
     <statement>
       <p>Identify the sample/random process for this study.</p>
@@ -30,7 +25,7 @@
   </exercise>
   
 
-  <exercise xml:id="inv1-2b-b" label="I1.2b.2">
+  <exercise xml:id="inv1-2-b" label="I1.2.2">
     <title>Identify the Variable</title>
     <statement>
       <p>Identify the variable of interest for this process.</p>
@@ -44,7 +39,7 @@
     </solution>
   </exercise>
 
-  <exercise xml:id="inv1-2b-b2" label="I1.2b.2b">
+  <exercise xml:id="inv1-2-b2" label="I1.2.2b">
     <title>Classify Variable Type</title>
     <statement>
       <p>Is this variable quantitative or categorical?</p>
@@ -75,7 +70,7 @@
     </solution>
   </exercise>
   
-  <exercise xml:id="inv1-2b-c" label="I1.2b.3">
+  <exercise xml:id="inv1-2-c" label="I1.2.3">
     <title>Expected Success Rate</title>
     <statement>
       <p>If Yukon was purely guessing, how often would you expect her to identify the correct container?</p>
@@ -122,6 +117,9 @@
         </feedback>
       </choice>
     </choices>
+    <solution>
+      <p>About 50% of the time.</p>
+    </solution>
   </exercise>
   
   <p>We will think of the sample of 8 attempts as identical observations from a random process, and we are choosing between two possibilities:</p>
@@ -130,7 +128,7 @@
     <li><p>Yukon does not consistently understand behavioral cues and is guessing randomly.</p></li>
   </ol></p>
   
-  <assemblage xml:id="def-hypotheses-1-2b">
+  <assemblage xml:id="def-hypotheses">
     <title>Definition: Hypotheses</title>
     <p>In drawing conclusions beyond our sample data to the underlying random process, we will often be choosing between two competing claims about the underlying process:</p>
     <p><ul>
@@ -145,7 +143,7 @@
       <title>How to use matching questions</title>
       <p>Drag the descriptions from the left to match them with the correct answer on the right.</p>
     </aside>
-  <exercise xml:id="inv1-2b-d" label="I1.2b.4">
+  <exercise xml:id="inv1-2-d" label="I1.2.4">
     <title>State Hypotheses</title>
     <statement>
       <p>Identify the above possibilities as the null and alternative hypotheses.</p>
@@ -166,7 +164,7 @@
     </solution>
   </exercise>
   
-  <exercise xml:id="inv1-2b-e" label="I1.2b.5">
+  <exercise xml:id="inv1-2-e" label="I1.2.5">
     <title>Plan the Simulation</title>
     <statement>
       <p>So our simulation model is going to assume the null hypothesis is true and we will see how unusual it is to find 6 successes and 2 failures in 8 attempts. Can we use "coin tossing" again? How many times will we toss the coin?</p>
@@ -178,93 +176,11 @@
   </exercise>
 
 <paragraphs><title>Carry out the simulation</title>
-      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url> to carry out 1,000 repetitions of the simulation. Check the <alert>Summary Statistics</alert> box and report the mean and standard deviation of your simulated distribution of "could have been" outcomes.</p>
+      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url> to carry out 1,000 repetitions of the simulation. Check the Summary Statistics box and report the mean and standard deviation of your simulated distribution of "could have been" outcomes.</p>
 </paragraphs>
   <interactive iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="3:2"/>
-  
-  <p><raw-format><![CDATA[
-    <div style="background: yellow; padding: 10px; margin: 10px 0;">
-      TEST: If you can see this yellow box, raw HTML is working!
-    </div>
-    <script>
-    // Sticky applet functionality - inline version
-    (function() {
-      if (typeof window.stickyAppletLoaded !== 'undefined') return;
-      window.stickyAppletLoaded = true;
-      
-      function setupStickyApplet() {
-        const iframes = document.querySelectorAll('iframe[src*="rossmanchance.com"]');
-        console.log('Sticky applet: Found ' + iframes.length + ' applet iframes');
-        
-        if (iframes.length === 0) return;
-        
-        const targetIframe = iframes[0];
-        const container = targetIframe.closest('figure') || targetIframe.parentElement;
-        
-        const toggleBtn = document.createElement('button');
-        toggleBtn.className = 'sticky-applet-toggle';
-        toggleBtn.textContent = '📊 Show Applet';
-        toggleBtn.style.cssText = 'position:fixed;bottom:20px;right:20px;z-index:999;padding:12px 20px;background:#4682b4;color:white;border:none;border-radius:25px;cursor:pointer;font-size:16px;box-shadow:0 2px 8px rgba(0,0,0,0.2);display:none;';
-        document.body.appendChild(toggleBtn);
-        
-        const stickyContainer = document.createElement('div');
-        stickyContainer.style.cssText = 'position:fixed;top:20px;right:20px;width:500px;height:400px;z-index:1000;background:white;border:2px solid #4682b4;box-shadow:0 4px 6px rgba(0,0,0,0.1);border-radius:8px;overflow:hidden;display:none;';
-        
-        let isSticky = false;
-        
-        function checkScroll() {
-          const rect = container.getBoundingClientRect();
-          const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
-          
-          if (!isVisible && !isSticky) {
-            toggleBtn.style.display = 'block';
-          } else if (isVisible && !isSticky) {
-            toggleBtn.style.display = 'none';
-          }
-        }
-        
-        toggleBtn.addEventListener('click', function() {
-          isSticky = true;
-          toggleBtn.style.display = 'none';
-          
-          const clonedIframe = targetIframe.cloneNode(true);
-          clonedIframe.style.width = '100%';
-          clonedIframe.style.height = '100%';
-          clonedIframe.style.border = 'none';
-          
-          const closeBtn = document.createElement('button');
-          closeBtn.textContent = '✕';
-          closeBtn.style.cssText = 'position:absolute;top:5px;right:5px;background:#dc3545;color:white;border:none;border-radius:50%;width:30px;height:30px;cursor:pointer;font-size:16px;z-index:1001;';
-          closeBtn.addEventListener('click', function() {
-            stickyContainer.style.display = 'none';
-            document.body.removeChild(stickyContainer);
-            isSticky = false;
-            checkScroll();
-          });
-          
-          stickyContainer.innerHTML = '';
-          stickyContainer.appendChild(clonedIframe);
-          stickyContainer.appendChild(closeBtn);
-          stickyContainer.style.display = 'block';
-          document.body.appendChild(stickyContainer);
-        });
-        
-        window.addEventListener('scroll', checkScroll);
-        checkScroll();
-        
-        console.log('Sticky applet: Setup complete');
-      }
-      
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setupStickyApplet);
-      } else {
-        setupStickyApplet();
-      }
-    })();
-    </script>
-    ]]></raw-format></p>
 
-  <exercise xml:id="inv1-2b-f" label="I1.2b.6">
+  <exercise xml:id="inv1-2-f" label="I1.2.6">
     <title>Summarize your results</title>
     <statement>
       <p>Mean: <var width="5"/> <br/>
@@ -273,19 +189,19 @@
     <response/>
     <solution>
       <p>Example results:</p>
-      <image source="images/inv1.2solsf.jpg" width="100%">
-        <description>Possible applet results shows dot plot of Number of heads with mean 3.988 and standard deviation 1.464</description>
-      </image>
+      <ul>
+        <li>Histogram</li>
+        <li>Description automatically generated with low confidence</li>
+      </ul>
       <p>The mean number of heads is about 4 (half of 8) and the standard deviation of the number of heads is about 1.5.</p>
     </solution>
   </exercise>
   
-  <exercise xml:id="inv1-2b-g" label="I1.2b.7">
+  <exercise xml:id="inv1-2-g" label="I1.2.7">
     <title>Evaluate Surprise Level</title>
     <statement>
       <p>Based on your simulation results, which assumes Yukon is guessing, should we be very surprised to see 6 correct guesses? Explain/support your reasoning.</p>
     </statement>
-    <hint><p>Is the observation near the middle/bulk of the distribution or out in the edges/tails of the distribution?</p></hint>
     <response/>
     <solution>
       <p>An outcome of 6 heads does not appear to be in the tail of the distribution.</p>
@@ -297,11 +213,10 @@
     
     <p>In Investigation 1.1, the observed result (14) was pretty far in the tail of the distribution and you probably agreed that we could consider it unusual. This result (6 out of 8) is not as inconsistent with the null hypothesis; so where do we "draw the line"? First, we need agree on a measure of "rareness." We could just calculate the theoretical probability of 6 heads in 8 tosses (0.1094), but keep in mind that if we have a larger sample size (e.g., 100 tosses), then any individual outcome (e.g., 62 heads) will have a small probability. So we want to judge how extreme our observation is relative to the other observations in the simulated distribution. One way to do this is to count how many outcomes are as or even more extreme (even further from the expected value) than the observed outcome. For example, if we tell you that only 1% of rattlesnakes are longer than 2.5 meters, then you know to be very surprised to see a 3-meter rattlesnake and you may even begin to think that what you are looking at is not a rattlesnake at all!</p>
     
-    <p><ul><li>In the applet, enter 6 in the <alert>Count Samples</alert> box and keep the "as extreme as" button to greater than or equal to, <m>\geq</m>. </li></ul></p>
-    <exercise xml:id="inv1-2b-h" label="I1.2b.8">
+    <exercise xml:id="inv1-2-h" label="I1.2.8">
       <title>Calculate p-value</title>
       <statement>
-        <p>Report the proportion of the repetitions with 6 or more heads (correct choices).</p>
+        <p>In the applet, enter 6 in the Count samples box and keep the "as extreme as" button to greater than or equal to, <m>\geq</m>. Report the proportion of the repetitions with 6 or more heads (correct choices).</p>
         <p>In 1,000 repetitions, assuming the probability of choosing correctly is 0.50, we found <var width="5"/> % of repetitions of 8 attempts to result in 6 or more successes.</p>
       </statement>
       <response/>
@@ -310,10 +225,10 @@
       </solution>
     </exercise>
     
-    <p>Notice that we consider the direction of the alternative hypothesis to help us determine which outcomes we consider "more extreme" than our observed outcome. This tail probability you found in Question 9 is referred to as the p-value.</p>
+    <p>Notice that we consider the direction of the alternative hypothesis to help us determine which outcomes we consider "more extreme" than our observed outcome. This tail probability you found in (h) is referred to as the p-value.</p>
     
-    <assemblage xml:id="def-pvalue-null-distribution-1-2b">
-      <title>Definitions: Null Distribution and p-value</title>
+    <assemblage xml:id="def-pvalue-null-distribution">
+      <title>Definition: Null Distribution and p-value</title>
       <p>Because the simulation assumes the null hypothesis to be true, we can refer to the distribution you simulated as the <term>null distribution</term><idx><h>null distribution</h><h>distribution assuming null hypothesis is true</h></idx>. When you determine the proportion of the results in the null distribution that are at least as extreme as the observed result, you are estimating a probability. We will refer to this probability as the <term>p-value</term><idx><h>p-value</h><h>probability of results as extreme as observed, assuming null hypothesis</h></idx>. We use the p-value to evaluate the strength of evidence against the null hypothesis.</p>
       
       <p>The smaller the p-value, the stronger the evidence against the null hypothesis. There are no hard-and-fast cut-off values for gauging the smallness of a p-value, but generally speaking:</p>
@@ -325,7 +240,7 @@
       </ul></p>
     </assemblage>
     
-    <exercise xml:id="inv1-2b-i" label="I1.2b.9">
+    <exercise xml:id="inv1-2-i" label="I1.2.9">
       <title>Compare p-values</title>
       <statement>
         <p>Did everyone in your class obtain the same p-value? <em>(If not, are you surprised?)</em></p>
@@ -357,9 +272,9 @@
   </paragraphs>
   
   <paragraphs>
-<!--    <title>Probability Detour – Binomial Random Variables</title>-->
+    <title>Probability Detour – Binomial Random Variables</title>
     
-    <assemblage xml:id="def-binomial-random-variable-1-2b">
+    <assemblage xml:id="def-binomial-random-variable">
       <title>Definition: Binomial Random Variable</title>
       <p>A <term>Binomial random variable</term><idx><h>binomial random variable</h><h>counts successes in independent trials</h></idx> counts the number of successes in a random process with the following properties:</p>
       <p><ul>
@@ -377,7 +292,7 @@
     <paragraphs>
       <title>Calculating Binomial Probabilities</title>
       
-      <exercise xml:id="inv1-2b-j" label="I1.2b.10">
+      <exercise xml:id="inv1-2-j" label="I1.2.10">
         <title>Calculate Single Outcome Probability</title>
         <statement>
           <p>Let S represent Success and F represent Failure. Consider one particular outcome for the 8 trials with 6 successes: SSFSSSFS. Because we are assuming the trials are independent, we can find the probability of this event by multiplying together the probabilities of the individual outcomes in the event.</p>
@@ -393,7 +308,7 @@
         </solution>
       </exercise>
       
-      <exercise xml:id="inv1-2b-k" label="I1.2b.11">
+      <exercise xml:id="inv1-2-k" label="I1.2.11">
         <title>Count Arrangements</title>
         <statement>
           <p>But there are other possible outcomes that would also result in 6 successes and 2 failures (for example, SFSSSSSF). How many ways are there to arrange the 6 successes among the 8 slots?</p>
@@ -407,7 +322,7 @@
         </solution>
       </exercise>
       
-      <exercise xml:id="inv1-2b-l" label="I1.2b.12">
+      <exercise xml:id="inv1-2-l" label="I1.2.12">
         <title>Calculate Probability for 6 Successes</title>
         <statement>
           <p>Because the 28 outcomes corresponding to 6 successes are mutually exclusive (can't occur simultaneously), we can find the probability of at least one of them happening by adding all of the probabilities together:</p>
@@ -423,10 +338,10 @@
         </solution>
       </exercise>
       
-      <exercise xml:id="inv1-2b-m" label="I1.2b.13">
+      <exercise xml:id="inv1-2-m" label="I1.2.13">
         <title>Calculate Complete p-value</title>
         <statement>
-          <p>Is the number you found in Question 13 our p-value for this study? If not, how would we find the p-value?</p>
+          <p>Is the number you found in (l) our p-value for this study? If not, how would we find the p-value?</p>
         </statement>
         <response/>
         <solution>
@@ -434,11 +349,10 @@
         </solution>
       </exercise>
       
-      <ul><li>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url>, check the <alert>Exact Binomial</alert> box. (Optional: See Technology Detour below for R/JMP instructions.) </li></ul>
-      <exercise xml:id="inv1-2b-n" label="I1.2b.14">
+      <exercise xml:id="inv1-2-n" label="I1.2.14">
       <title>Confirm with technology</title>
         <statement>
-          <p>How does the binomial distribution match up to your earlier simulation results? How does the binomial (or "exact") p-value compare to what you simulated earlier? Did everyone in class obtain the same "exact" p-value?</p>
+          <p>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url>, check the Exact Binomial box. (Optional: See Technology Detour below.) How does the binomial distribution match up to your earlier simulation results? How does the binomial (or "exact") p-value compare to what you simulated earlier? Did everyone in class obtain the same "exact" p-value?</p>
         </statement>
         <response/>
         <solution>
@@ -446,7 +360,7 @@
         </solution>
       </exercise>
       
-      <exercise xml:id="inv1-2b-o" label="I1.2b.15">
+      <exercise xml:id="inv1-2-o" label="I1.2.15">
         <title>Interpret p-value</title>
         <statement>
           <p>Write a one-sentence interpretation of this p-value in this context. Key components to include: what random process is being repeated, what is the null hypothesis that we are assuming to be true, what is the observed result we are considering, which outcomes are we considering to be more extreme?</p>
@@ -460,9 +374,9 @@
   </paragraphs>
   
   <paragraphs>
-<!--    <title>Conclusions</title> -->
+    <title>Conclusions</title>
     
-    <exercise xml:id="inv1-2b-p" label="I1.2b.16">
+    <exercise xml:id="inv1-2-p" label="I1.2.16">
       <title>State Conclusion</title>
       <statement>
         <p>Based on this analysis, do these data provide convincing evidence that wolves can understand behavioral cues?</p>
@@ -474,90 +388,17 @@
     </exercise>
   </paragraphs>
   
-  
-  <assemblage xml:id="study-conclusions-1-2b">
+  <assemblage xml:id="study-conclusions-1-2">
     <title>Study Conclusions</title>
     <p>If we assume Yukon is guessing between the two containers, regardless of the cue, then finding 6 or more successes in 8 trials is actually not very surprising (binomial p-value = 0.1445); about 14% of samples from a 50/50 process would show 6 or more successes in 8 trials. This does not provide convincing evidence that Yukon can perform "above chance," but there is not information about whether other wolves or other cues would show better performance.</p>
   </assemblage>
- 
-<subsection xml:id="tech-detour-1-1">
-<title>Technology Detour – Calculating Binomial Probabilities</title>
-  <exercise xml:id="tech-detour-binomial-1-2b">
-    <title>Calculate Binomial Probabilities with Technology</title>
-    <statement>
-      <p>Use technology (R or JMP) to calculate the exact binomial probability for the Friend or Foe study (14 successes in 16 trials with probability 0.5). Choose one set of instructions below by clicking on a hint. Then adapt the instructions for the Wolf study.</p>
-    </statement>
-    <hint>
-          <title>R Instructions</title>
-          <p>The <c>iscambinomprob</c> function takes the following inputs:</p>
-          <p><ul>
-            <li><p><c>k</c> = the observed value you want to calculate the probability about</p></li>
-            <li><p><c>n</c> = the sample size of the binomial distribution</p></li>
-            <li><p><c>prob</c> = the probability of success in the binomial distribution</p></li>
-            <li><p><c>lower.tail</c> = TRUE if you want the probability less than or equal to the observed value, FALSE if want the probability greater than or equal to the observed value</p></li>
-          </ul></p>
-          
-          <p>For the Friend or Foe study, run the following code:</p>
-          <sage language="r">
-            <input>
-# Load ISCAM functions from GitHub
-invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
-
-# Calculate binomial probability
-# k=14 successes, n=16 trials, prob=0.5, lower.tail=FALSE for P(X >= 14)
-iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
-            </input>
-          </sage>
-          
-          <p>You should see both the probability appear and a shaded graph showing the binomial distribution with the tail area highlighted.</p>
-          
-          <alert>R Reminder</alert>
-            <p>The code loads the ISCAM functions from GitHub, then uses <c>iscambinomprob</c>. The <c>lower.tail</c> parameter controls the direction: FALSE gives you <m>P(X \geq k)</m>, TRUE gives you <m>P(X \leq k)</m>.</p>
-          
-        </hint>
-        <hint>
-          <title>JMP Instructions</title>
-          <p>Using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url> (Download this file to your computer and then open the .jrn file to launch JMP.)</p>
-          
-          <sidebyside widths="55% 40%" valign="top">
-            <stack>
-              <p><ul>
-                <li><p>Select Binomial from the Distribution pull down menu.</p></li>
-                <li><p>Specify the values of the probability of success (<m>\pi</m>) and n (the sample size).</p></li>
-                <li><p>Leave the Type of Calculation as is.</p></li>
-                <li><p>Select Probability Option <m>X \geq Q_a</m> but specify <m>Q_a</m> to equal <m>k-1</m> (e.g., 13).</p></li>
-                <li><p>Press Enter.</p></li>
-              </ul></p>
-              
-              
-            </stack>
-            <stack>
-              <image source="images/inv1-2-JMPa.png" width="100%">
-                <description>JMP Distribution Calculator input screen for binomial probabilities</description>
-              </image>
-              <image source="images/inv1-2-JMPb.png" width="100%">
-                <description>JMP Distribution Calculator output screen showing binomial distribution</description>
-              </image>
-            </stack>
-          </sidebyside>
-            <p><alert>JMP Reminder</alert>
-                In JMP's Distribution Calculator, you need to subtract 1 from your observed value when using the <m>\geq</m> option because JMP calculates <m>P(X > Q_a)</m> as <m>P(X \geq Q_a + 1)</m>. So to get <m>P(X \geq 14)</m>, you enter 13 as <m>Q_a</m>.</p>
-          </hint>
-        <solution>
-          <p>For the Friend or Foe study with 14 successes out of 16 trials, the binomial p-value should be very small (approximately 0.0021), indicating strong evidence against the null hypothesis that infants are choosing randomly between the two toys.</p>
-        </solution>
-  </exercise>
-
-</subsection>
-
-</exercises>
-
-  <subsection xml:id="practice1-2bA">
-    <title>Practice Problem 1.2bA</title>
+  
+  <subsection xml:id="practice1-2A">
+    <title>Practice Problem 1.2A</title>
     
     <p>When Yukon was given "communicative cues" (looking at the container, pointing to the container) instead of behavioral cues, she was correct in 7 out of 8 attempts. Does this outcome provide convincing evidence that wolves understand communicative cues?</p>
     
-    <exercise xml:id="practice-1-2ba-a" label="PP1.2bA.1">
+    <exercise xml:id="practice-1-2a-a" label="PP1.2A.1">
       <title>State Hypotheses</title>
       <statement>
         <p>State the null and alternative hypotheses for this study.</p>
@@ -565,7 +406,7 @@ iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-1-2ba-b" label="PP1.2bA.2">
+    <exercise xml:id="practice-1-2a-b" label="PP1.2A.2">
       <title>Calculate and Interpret p-value</title>
       <statement>
         <p>Report both a simulation-based and the exact p-value. Include a one-sentence interpretation of the p-value in this context.</p>
@@ -576,7 +417,7 @@ iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-1-2ba-c" label="PP1.2bA.3">
+    <exercise xml:id="practice-1-2a-c" label="PP1.2A.3">
       <title>Summarize Analysis and Conclusions</title>
       <statement>
         <p>Summarize your analysis and the conclusions you would draw from this study.</p>
@@ -584,7 +425,7 @@ iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-1-2ba-d" label="PP1.2bA.4">
+    <exercise xml:id="practice-1-2a-d" label="PP1.2A.4">
       <title>Evaluate Pooled Data Analysis</title>
       <statement>
         <p>Across the 12 wolves in the study, in the 64 trials with communicative cues, the wolves understood the cue 41 times. What is the new p-value for these results? Explain why this would not be an appropriate analysis.</p>
@@ -592,13 +433,13 @@ iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
       <response/>
     </exercise>
   </subsection>
- 
-  <subsection xml:id="practice1-2bB">
-    <title>Practice Problem 1.2bB</title>
+  
+  <subsection xml:id="practice1-2B">
+    <title>Practice Problem 1.2B</title>
     
     <p>A study in <em>Psychonomic Bulletin and Review</em> (<url href="https://psycnet.apa.org/record/2007-18366-015" target="_blank">Lea, Thomas, Lamkin, <ampersand/> Bell, 2007</url>) presented evidence that "people use facial prototypes when they encounter different names." Similar to one of the experiments they conducted, you will be asked to match photos of two faces to the names Tim and Bob. The researchers wrote that their participants "overwhelmingly agreed" on which face belonged to Tim. You will conduct a similar study in class to see whether your class also agrees with which face is Tim's more than you would expect from random chance (here "random chance" = there is no facial prototyping and people pick a name for the face on the left at random).</p>
     
-    <exercise xml:id="practice-1-2bb-a" label="PP1.2bB.1">
+    <exercise xml:id="practice-1-2b-a" label="PP1.2B.1">
       <title>Identify Process and Variable</title>
       <statement>
         <p>What is the sample/random process and variable in this study? What assumptions are we making about this process?</p>
@@ -606,7 +447,7 @@ iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-1-2bb-b" label="PP1.2bB.2">
+    <exercise xml:id="practice-1-2b-b" label="PP1.2B.2">
       <title>State Hypotheses</title>
       <statement>
         <p>State the null and alternative hypotheses for this study.</p>
@@ -614,7 +455,7 @@ iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-1-2bb-c" label="PP1.2bB.3">
+    <exercise xml:id="practice-1-2b-c" label="PP1.2B.3">
       <title>Report Class Results</title>
       <statement>
         <p>Report the count, proportion, and percentage "correctly" identifying Tim's face in your class.</p>
@@ -622,7 +463,7 @@ iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-1-2bb-d" label="PP1.2bB.4">
+    <exercise xml:id="practice-1-2b-d" label="PP1.2B.4">
       <title>Calculate p-value and Conclude</title>
       <statement>
         <p>Use the applet or the technology instructions below to obtain a binomial p-value. What do you conclude about the null hypothesis?</p>
@@ -630,7 +471,7 @@ iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-1-2bb-e" label="PP1.2bB.5">
+    <exercise xml:id="practice-1-2b-e" label="PP1.2B.5">
       <title>Verify Binomial Assumptions</title>
       <statement>
         <p>Do you think the properties of the binomial random variable are met here? What assumptions need to be made?</p>
@@ -639,4 +480,80 @@ iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
     </exercise>
   </subsection>
   
+  <paragraphs xml:id="tech-detour-binomial">
+    <title>Technology Detour – Calculating Binomial Probabilities</title>
+    
+    <exercise xml:id="tech-detour-r-binomial" label="Binomial Probabilities - R">
+      <title>Calculating Binomial Probabilities in R</title>
+      <statement>
+        <p>Make sure you have the ISCAM Workspace loaded.</p>
+        <p>The <c>iscambinomprob</c> function takes the following inputs:</p>
+        <p><ul>
+          <li><p><c>k</c> = the observed value you want to calculate the probability about</p></li>
+          <li><p><c>n</c> = the sample size of the binomial distribution</p></li>
+          <li><p><c>prob</c> = the probability of success in the binomial distribution</p></li>
+          <li><p><c>lower.tail</c> = TRUE if you want the probability less than or equal to the observed value, FALSE if want the probability greater than or equal to the observed value</p></li>
+        </ul></p>
+        
+        <p>For the Friend or Foe study, in the Console at the prompt, type:</p>
+        <program language="r" interactive="sage">
+          <input>
+iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
+          </input>
+        </program>
+        <p>or</p>
+        <program language="r" interactive="sage">
+          <input>
+iscambinomprob(14, 16, .5, FALSE)
+          </input>
+        </program>
+        <p>(Yes, "false" needs to be capitalized)</p>
+        
+        <p>You should see both the probability appear in the Console window and a shaded graph open in a separate Graphics window. (You may have to toggle windows to see this Graphics window.)</p>
+        
+        <paragraphs>
+          <title>R Reminder</title>
+          <p>The <c>iscambinomprob</c> function is part of the ISCAM package. Make sure to load the package first with <c>library(iscam)</c>. The <c>lower.tail</c> parameter controls the direction: FALSE gives you <m>P(X \geq k)</m>, TRUE gives you <m>P(X \leq k)</m>.</p>
+        </paragraphs>
+      </statement>
+      <solution>
+        <p>For the Friend or Foe study with 14 successes out of 16 trials, the binomial p-value should be very small (approximately 0.0021), indicating strong evidence against the null hypothesis that infants are choosing randomly between the two toys.</p>
+      </solution>
+    </exercise>
+    
+    <exercise xml:id="tech-detour-jmp-binomial" label="Binomial Probabilities - JMP">
+      <title>Calculating Binomial Probabilities in JMP</title>
+      <statement>
+        <p>Using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url> (Download this file to your computer and then open the .jrn file to launch JMP.)</p>
+        
+        <sidebyside widths="55% 40%" valign="top">
+          <stack>
+            <p><ol>
+              <li><p>Select Binomial from the Distribution pull down menu.</p></li>
+              <li><p>Specify the values of the probability of success (<m>\pi</m>) and n (the sample size).</p></li>
+              <li><p>Leave the Type of Calculation as is.</p></li>
+              <li><p>Select Probability Option <m>X \geq Q_a</m> but specify <m>Q_a</m> to equal <m>k-1</m> (e.g., 13).</p></li>
+              <li><p>Press Enter.</p></li>
+            </ol></p>
+            
+            <note>
+              <title>JMP Reminder</title>
+              <p>In JMP's Distribution Calculator, you need to subtract 1 from your observed value when using the <m>\geq</m> option because JMP calculates <m>P(X > Q_a)</m> as <m>P(X \geq Q_a + 1)</m>. So to get <m>P(X \geq 14)</m>, you enter 13 as <m>Q_a</m>.</p>
+            </note>
+          </stack>
+          <stack>
+            <image source="images/inv1-2-JMPa.png" width="100%">
+              <description>JMP Distribution Calculator input screen for binomial probabilities</description>
+            </image>
+            <image source="images/inv1-2-JMPb.png" width="100%">
+              <description>JMP Distribution Calculator output screen showing binomial distribution</description>
+            </image>
+          </stack>
+        </sidebyside>
+      </statement>
+      <solution>
+        <p>The JMP Distribution Calculator will display both the probability value and a visual representation of the binomial distribution with the tail area shaded. For finding <m>P(X \geq 14)</m> when <m>n=16</m> and <m>\pi=0.5</m>, enter 13 for <m>Q_a</m> to get the correct p-value of approximately 0.0021.</p>
+      </solution>
+    </exercise>
+  </paragraphs>
 </section>
