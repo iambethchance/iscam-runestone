@@ -396,7 +396,7 @@ iscambinomtest <- function(
   } # end no hypothesized
 
   par(mfrow = c(1, 1))
-  return(invisible(list("pvalue" = pvalue, "lower" = lower1, "upper" = upper1)))
+  list("pvalue" = pvalue, "lower" = lower1, "upper" = upper1)
 }
 
 # ============================================================================
