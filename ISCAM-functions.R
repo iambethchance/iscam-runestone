@@ -165,7 +165,8 @@ iscambinomtest <- function(
   alternative,
   conf.level = NULL
 ) {
-  withr::local_par(mar = c(4, 3, 2, 2))
+  old <- par(mar = c(4, 3, 2, 2))
+  on.exit(par(old), add = TRUE)
 
   if (observed < 1) {
     observed <- round(n * observed)
@@ -313,9 +314,11 @@ iscambinomtest <- function(
       upper1[k] <- as.numeric(CINT[3])
     }
   }
-  withr::local_par(mar = c(4, 2, 1.5, .5), mfrow = c(3, 1))
+  old2 <- par(mar = c(4, 2, 1.5, .5), mfrow = c(3, 1))
+  on.exit(par(old2), add = TRUE)
   if (length(conf.level) > 1) {
-    withr::local_par(mar = c(4, 2, 1.5, .4), mfrow = c(length(conf.level), 1))
+    old3 <- par(mar = c(4, 2, 1.5, .4), mfrow = c(length(conf.level), 1))
+    on.exit(par(old3), add = TRUE)
   }
 
   if (is.null(hypothesized)) {
@@ -392,7 +395,7 @@ iscambinomtest <- function(
     } # end intervals loop
   } # end no hypothesized
 
-  withr::local_par(mfrow = c(1, 1))
+  par(mfrow = c(1, 1))
   invisible(list("pvalue" = pvalue, "lower" = lower1, "upper" = upper1))
 }
 
