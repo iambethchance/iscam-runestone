@@ -165,7 +165,7 @@ iscambinomtest <- function(
   alternative,
   conf.level = NULL
 ) {
-  old <- par(mar = c(4, 3, 2, 2))
+  old <- par(mar = c(3.5, 3, 2, 1), pin = c(4.5, 2.5))
   on.exit(par(old), add = TRUE)
 
   if (observed < 1) {
@@ -199,7 +199,7 @@ iscambinomtest <- function(
       list(x1 = n, x2 = hypothesized)
     )
     title(newtitle)
-    mtext(side = 1, line = 2, "Number of Successes")
+    mtext(side = 1, line = 2.2, "Number of Successes")
     mtext(side = 2, line = 2, "Probability")
 
     if (alternative == "less") {
