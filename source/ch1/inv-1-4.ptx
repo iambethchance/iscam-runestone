@@ -367,6 +367,17 @@ invisible(iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="great
       <hint>
         <p>If survival is success, then the benchmark becomes 0.85. How many survived out of 10?</p>
       </hint>
+      <hint><title>R option</title>
+      <sage language="r">
+        <input>
+# Load ISCAM functions from GitHub
+invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
+
+# Calculate binomial test
+invisible(iscambinomtest(observed=, n=, hypothesized=, alternative=""))
+        </input>
+      </sage>
+      <hint>
       <solution>
         <p>The null hypothesis would be <m>H_0: \pi = 0.85</m> and the alternative hypothesis would be <m>H_a: \pi &lt; 0.85</m>.</p>
           <image source="images/inv1.4intro.png" width="60%">
