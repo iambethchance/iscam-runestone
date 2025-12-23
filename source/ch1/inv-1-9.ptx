@@ -497,32 +497,26 @@ iscaminvnorm(prob1 = 0.95, direction = "between")
       <hint>
         <title>R/Sage Instructions</title>
         <p>
-          Use the interactive Sage cell below to calculate the z-confidence interval. Modify the values for different confidence levels or data.
+          Use the <c>iscamonepropztest</c> function to calculate the z-confidence interval. The function takes the following inputs:
         </p>
+        <p>
+          <ul>
+            <li><p><c>observed</c> = number of successes or the sample proportion (<m>\hat{p}</m>)</p></li>
+            <li><p><c>n</c> = sample size</p></li>
+            <li><p><c>hypothesized</c> = hypothesized value (optional, for hypothesis tests)</p></li>
+            <li><p><c>alternative</c> = "greater", "less", or "two.sided" (optional, for hypothesis tests)</p></li>
+            <li><p><c>conf.level</c> = confidence level (as percentage or decimal)</p></li>
+          </ul>
+        </p>
+        <p>If you don't specify a hypothesized value and alternative, be sure to label the confidence level.</p>
         <sage language="r">
           <input>
-# One proportion z-confidence interval
-observed &lt;- 80      # number of successes
-n &lt;- 124            # sample size
-conf_level &lt;- 0.90  # confidence level
+# Load ISCAM functions from GitHub
+invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
-# Calculate sample proportion and standard error
-p_hat &lt;- observed / n
-se &lt;- sqrt(p_hat * (1 - p_hat) / n)
-
-# Find critical value
-z_star &lt;- qnorm((1 + conf_level)/2)
-
-# Calculate confidence interval
-margin_of_error &lt;- z_star * se
-lower &lt;- p_hat - margin_of_error
-upper &lt;- p_hat + margin_of_error
-
-cat("Sample proportion:", p_hat, "\n")
-cat("Standard error:", se, "\n")
-cat("Critical value z* =", z_star, "\n")
-cat(conf_level * 100, "% Confidence Interval: (", 
-    round(lower, 4), ",", round(upper, 4), ")\n", sep="")
+# Calculate 90% z-confidence interval for kissing study
+# 80 successes out of 124 trials
+iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
           </input>
         </sage>
       </hint>
