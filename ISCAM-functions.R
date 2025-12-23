@@ -405,9 +405,6 @@ iscambinomtest <- function(
 
 # Inverse Normal Calculation - finds quantiles from probabilities
 iscaminvnorm <- function(prob1, mean = 0, sd = 1, direction, verbose = TRUE) {
-  old <- par(mar = c(4, 3, 2, 2))
-  on.exit(par(old))
-  
   min_x <- mean - 4 * sd
   max_x <- mean + 4 * sd
   x_seq <- seq(min_x, max_x, length.out = 500)
@@ -463,9 +460,6 @@ iscaminvnorm <- function(prob1, mean = 0, sd = 1, direction, verbose = TRUE) {
 
 # One Proportion Z-Test and Confidence Interval
 iscamonepropztest <- function(observed, n, hypothesized = NULL, alternative = "two.sided", conf.level = NULL, verbose = TRUE) {
-  old <- par(mar = c(4, 4, 2, 1))
-  on.exit(par(old))
-  
   # Convert proportion to count if needed
   if (observed < 1) {
     observed <- round(n * observed)
