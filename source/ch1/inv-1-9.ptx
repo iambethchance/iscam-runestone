@@ -221,7 +221,7 @@
         </p>
         <sage language="r">
           <input>
-invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R')))
+source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R')
 iscaminvnorm(prob1 = 0.95, direction = 'between')
           </input>
         </sage>
@@ -507,7 +507,7 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         <p>If you don't specify a hypothesized value and alternative, be sure to label the confidence level.</p>
         <sage language="r">
           <input>
-invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R')))
+source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R')
 iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
           </input>
         </sage>
@@ -516,9 +516,9 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         <title>JMP Instructions</title>
         <p>
           <ol>
-            <li><p>Open the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal file</url> and select <c>Confidence Interval for One Proportion</c></p></li>
+            <li><p>Open the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal file</url> and select <alert>Confidence Interval for One Proportion</alert></p></li>
             <li><p>Specify Raw Data (column of outcomes) or Summary Stats</p></li>
-            <li><p>With Summary Stats, keep the radio button set to <c>Normal Approximation</c></p></li>
+            <li><p>With Summary Stats, keep the radio button set to <alert>Normal Approximation</alert></p></li>
             <li><p>Enter the number of successes (80) and sample size (124)</p></li>
             <li><p>Set the confidence level to 90%</p></li>
           </ol>
@@ -532,12 +532,12 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         </p>
         <p>
           <ol>
-            <li><p>Keep the pull-down menu set to <c>One proportion</c>.</p></li>
+            <li><p>Keep the pull-down menu set to <alert>One proportion</alert>.</p></li>
             <li><p>Specify the sample size <m>n = 124</m> and either the count (80) or the sample proportion (0.645).</p></li>
-            <li><p>Press <c>Calculate</c>.</p></li>
-            <li><p>Check the box for <c>Confidence interval</c></p></li>
-            <li><p>Change the confidence level to 90%</p></li>
-            <li><p>Press the <c>Calculate CI</c> button</p></li>
+            <li><p>Press <alert>Calculate</alert>.</p></li>
+            <li><p>Check the box for <alert>Confidence interval</alert></p></li>
+            <li><p>Change the <alert>confidence level</alert> to 90%</p></li>
+            <li><p>Press the <alert>Calculate CI</alert> button</p></li>
           </ol>
         </p>
         <p>The applet will display the 90% <m>z</m>-confidence interval.</p>
@@ -561,7 +561,7 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         <p>
           Example output from Theory-Based Inference applet:
         </p>
-        <image source="images/inv1.9ksolApplet.jpg" width="80%">
+        <image source="images/inv1.9ksolApplet.jpg" width="60%">
           <description>Theory-Based Inference applet output showing z-confidence interval for kissing study</description>
         </image>
       </solution>
