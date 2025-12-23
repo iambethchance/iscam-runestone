@@ -396,7 +396,6 @@ iscambinomtest <- function(
   } # end no hypothesized
 
   par(mfrow = c(1, 1))
-  list("pvalue" = pvalue, "lower" = lower1, "upper" = upper1)
 }
 
 # ============================================================================
@@ -454,8 +453,6 @@ iscaminvnorm <- function(prob1, mean = 0, sd = 1, direction, verbose = TRUE) {
     text(answer2, dnorm(answer2, mean, sd) * 0.5, labels = prob1/2, pos = 4, col = "blue")
     if (verbose) cat("There is", prob1, "probability outside", round(answer1, 4), "and", round(answer2, 4), "\n")
   }
-  
-  invisible(NULL)
 }
 
 # One Proportion Z-Test and Confidence Interval
@@ -716,7 +713,6 @@ iscamonepropztest <- function(
     }
   }
   withr::local_par(mfrow = c(1, 1))
-  invisible(NULL)
 }
 
 # ============================================================================
@@ -758,8 +754,6 @@ iscamtwopropztest <- function(x1, n1, x2, n2, hypothesized = 0,
   cat(paste0("Z-statistic: ", round(z, 4), "\n"))
   cat(paste0("p-value: ", round(pval, 4), "\n"))
   cat(paste0(conf.level*100, "% CI: (", round(ci_lower, 4), ", ", round(ci_upper, 4), ")\n"))
-  
-  invisible(list(z = z, pvalue = pval, ci = c(ci_lower, ci_upper)))
 }
 
 # ============================================================================
@@ -773,5 +767,4 @@ iscamhyperprob <- function(k, total, succ, n, lower.tail = TRUE) {
     result <- phyper(k - 1, succ, total - succ, n, lower.tail = FALSE)
   }
   cat(paste0("P = ", round(result, 4), "\n"))
-  invisible(result)
 }
