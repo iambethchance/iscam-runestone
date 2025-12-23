@@ -209,16 +209,24 @@
       <hint>
         <title>R/Sage Instructions</title>
         <p>
-          Use the interactive Sage cell below to find the critical value. The <c>qnorm</c> function returns the quantile (z-value) for a given probability from the normal distribution.
+          Use the interactive Sage cell below to find the critical value. The <c>iscaminvnorm</c> function takes the following inputs:
+        </p>
+        <p>
+          <ul>
+            <li><p><c>prob1</c> = probability of interest</p></li>
+            <li><p><c>mean</c> = the mean of the normal distribution (default = 0)</p></li>
+            <li><p><c>sd</c> = the standard deviation of the normal distribution (default = 1)</p></li>
+            <li><p><c>direction</c> = whether the probability of interest was in the lower tail ("below"), upper tail ("above"), both tails ("outside"), or in the middle of the distribution ("between")</p></li>
+          </ul>
         </p>
         <sage language="r">
           <input>
-# Find the critical value for 95% confidence
-# For 95% in the middle, we need (1-0.95)/2 = 0.025 in each tail
-# So we want the value at 0.975 (or symmetrically at 0.025)
+# Load ISCAM functions from GitHub
+invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
-z_star &lt;- qnorm(0.975, mean=0, sd=1)
-cat("Critical value z* =", z_star, "\n")
+# Find the critical value for 95% confidence
+# We want 95% in the middle (between the critical values)
+iscaminvnorm(prob1 = 0.95, direction = "between")
           </input>
         </sage>
       </hint>
@@ -233,7 +241,7 @@ cat("Critical value z* =", z_star, "\n")
             <li><p>Specify the values for the mean (0) and standard deviation (1)</p></li>
             <li><p>Change the <alert>Type of Calculation</alert> to <c>Input probability and calculate quantiles</c></p></li>
             <li><p>Select <c>Central Probability</c> and specify the confidence level (e.g., 0.95)</p></li>
-            <li><p>Press Enter/Return.</p></li>
+            <li><p>Press <alert>Enter/Return</alert>.</p></li>
           </ol>
         </p>
         <p>The critical value should be approximately 1.96.</p>
