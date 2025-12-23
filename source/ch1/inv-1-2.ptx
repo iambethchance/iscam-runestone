@@ -408,30 +408,31 @@
     </statement>
     <hint>
           <title>R Instructions</title>
-          <p>The <c>iscambinomprob</c> function takes the following inputs:</p>
+          <p>The <c>iscamonepropztest</c> function takes the following inputs:</p>
           <p><ul>
-            <li><p><c>k</c> = the observed value you want to calculate the probability about</p></li>
-            <li><p><c>n</c> = the sample size of the binomial distribution</p></li>
-            <li><p><c>prob</c> = the probability of success in the binomial distribution</p></li>
-            <li><p><c>lower.tail</c> = TRUE if you want the probability less than or equal to the observed value, FALSE if want the probability greater than or equal to the observed value</p></li>
+            <li><p><c>observed</c> = the number of successes (or if less than 1, the sample proportion)</p></li>
+            <li><p><c>n</c> = the sample size</p></li>
+            <li><p><c>hypothesized</c> = the hypothesized probability of success under the null hypothesis</p></li>
+            <li><p><c>alternative</c> = "greater", "less", or "two.sided" for the direction of the alternative hypothesis</p></li>
+            <li><p><c>conf.level</c> = the confidence level (e.g., 0.90 for 90%, 0.95 for 95%)</p></li>
           </ul></p>
           
           <p>For the Friend or Foe study, run the following code:</p>
           <sage language="r">
             <input>
-# Load ISCAM functions from GitHub
-invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
+# Load ISCAM functions from GitHub (includes iscamonepropztest)
+suppressMessages(invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
-# Calculate binomial probability
-# k=14 successes, n=16 trials, prob=0.5, lower.tail=FALSE for P(X >= 14)
-iscambinomprob(k=14, n=16, prob=.5, lower.tail=FALSE)
+# Calculate z-test and confidence interval
+# observed=14 successes, n=16 trials, hypothesized=0.5, alternative="greater", conf.level=0.90
+iscamonepropztest(observed=14, n=16, hypothesized=0.5, alternative="greater", conf.level=0.90)
             </input>
           </sage>
           
-          <p>You should see both the probability appear and a shaded graph showing the binomial distribution with the tail area highlighted.</p>
+          <p>You should see the z-statistic, p-value, a normal distribution graph with shaded tail area, and a 90% confidence interval.</p>
           
           <p><alert>R Reminders: </alert>
-            The code loads the ISCAM functions from GitHub, then uses <c>iscambinomprob</c>. The <c>lower.tail</c> parameter controls the direction: FALSE gives you <m>P(X \geq k)</m>, TRUE gives you <m>P(X \leq k)</m>.</p>
+            The code loads the ISCAM functions from GitHub, then uses <c>iscamonepropztest</c>. The <c>alternative</c> parameter can be "greater", "less", or "two.sided". The <c>conf.level</c> parameter specifies the confidence level (0.90 for 90%, 0.95 for 95%, etc.).</p>
           
         </hint>
         <hint>
