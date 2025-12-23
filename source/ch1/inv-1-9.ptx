@@ -100,7 +100,7 @@
       <title>Definition</title>
       <p>
         The <term>standard error of the sample proportion</term>, <m>SE(\hat{p})</m>, is an estimate for the standard deviation of <m>\hat{p}</m> (i.e., <m>SD(\hat{p})</m>) based on the sample data, found by substituting the sample proportion for <m>\pi</m>: 
-        <me>E(\hat{p}) = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</me>
+        <me>SE(\hat{p}) = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</me>
       </p>
     </assemblage>
 
@@ -186,11 +186,15 @@
       <title>Find the 95% Critical Value</title>
       <statement>
         <p>
-          Use one of the technology options below to find the critical value for 95% confidence.
+          Use technology to find the critical value for 95% confidence. Choose one set of instructions below by clicking on a hint.
         </p>
         <p>
-          <term>Normal Probability Calculator:</term>
+          Critical value for 95% confidence: <m>z^* =</m> <var width="20"/>
         </p>
+      </statement>
+      <response/>
+      <hint>
+        <title>Normal Probability Calculator</title>
         <p>
           In <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="rossmanchance.com/applets/2021/normcalc/NormCalc.html">Normal Probability Calculator</url> applet:
         </p>
@@ -200,9 +204,10 @@
             <li><p>Check the box next to the first <m>&lt;</m> sign and specify the probability value to correspond to the lower tail probability of interest: <m>(1-C)/2</m>. Press Enter/Return and it will display the negative <m>z^*</m>-value.</p></li>
           </ul>
         </p>
-        <p>
-          <term>R/Sage:</term>
-        </p>
+        <p>For 95% confidence, use probability 0.025 in the lower tail (or 0.975 for upper tail).</p>
+      </hint>
+      <hint>
+        <title>R/Sage Instructions</title>
         <p>
           Use the interactive Sage cell below to find the critical value. The <c>qnorm</c> function returns the quantile (z-value) for a given probability from the normal distribution.
         </p>
@@ -216,30 +221,22 @@ z_star &lt;- qnorm(0.975, mean=0, sd=1)
 cat("Critical value z* =", z_star, "\n")
           </input>
         </sage>
-        <p>
-          <term>JMP:</term>
-        </p>
+      </hint>
+      <hint>
+        <title>JMP Instructions</title>
         <p>
           In JMP using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url>:
         </p>
         <p>
           <ol>
-            <li><p>From the Distribution pull-down menu, select Normal (at the top of the list)</p></li>
+            <li><p>From the Distribution pull-down menu, select <alert>Normal</alert> (at the top of the list)</p></li>
             <li><p>Specify the values for the mean (0) and standard deviation (1)</p></li>
-            <li><p>Change the Type of Calculation to <c>Input probability and calculate quantiles</c></p></li>
+            <li><p>Change the <alert>Type of Calculation</alert> to <c>Input probability and calculate quantiles</c></p></li>
             <li><p>Select <c>Central Probability</c> and specify the confidence level (e.g., 0.95)</p></li>
             <li><p>Press Enter/Return.</p></li>
           </ol>
         </p>
-        <p>
-          Critical value for 95% confidence: <m>z^* =</m> <var width="20"/>
-        </p>
-      </statement>
-      <response/>
-      <hint>
-        <p>
-          The critical value should be approximately 1.96.
-        </p>
+        <p>The critical value should be approximately 1.96.</p>
       </hint>
       <solution>
         <p>
@@ -482,11 +479,15 @@ cat("Critical value z* =", z_star, "\n")
       <title>Calculate 90% <m>z</m>-Confidence Interval</title>
       <statement>
         <p>
-          Use one of the technology options below to calculate a 90% <m>z</m>-confidence interval for the kissing study data (80 out of 124 couples leaned right).
+          Use technology to calculate a 90% <m>z</m>-confidence interval for the kissing study data (80 out of 124 couples leaned right). Choose one set of instructions below by clicking on a hint.
         </p>
         <p>
-          <term>R/Sage:</term>
+          90% confidence interval: <var width="40"/>
         </p>
+      </statement>
+      <response/>
+      <hint>
+        <title>R/Sage Instructions</title>
         <p>
           Use the interactive Sage cell below to calculate the z-confidence interval. Modify the values for different confidence levels or data.
         </p>
@@ -516,9 +517,9 @@ cat(conf_level * 100, "% Confidence Interval: (",
     round(lower, 4), ",", round(upper, 4), ")\n", sep="")
           </input>
         </sage>
-        <p>
-          <term>JMP:</term>
-        </p>
+      </hint>
+      <hint>
+        <title>JMP Instructions</title>
         <p>
           <ol>
             <li><p>Open the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal file</url> and select <c>Confidence Interval for One Proportion</c></p></li>
@@ -528,9 +529,10 @@ cat(conf_level * 100, "% Confidence Interval: (",
             <li><p>Set the confidence level to 90%</p></li>
           </ol>
         </p>
-        <p>
-          <term>Theory-Based Inference Applet:</term>
-        </p>
+        <p>The output will show the 90% <m>z</m>-confidence interval.</p>
+      </hint>
+      <hint>
+        <title>Theory-Based Inference Applet Instructions</title>
         <p>
           Using the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url>:
         </p>
@@ -544,15 +546,7 @@ cat(conf_level * 100, "% Confidence Interval: (",
             <li><p>Press the <c>Calculate CI</c> button</p></li>
           </ol>
         </p>
-        <p>
-          90% confidence interval: <var width="40"/>
-        </p>
-      </statement>
-      <response/>
-      <hint>
-        <p>
-          The 90% confidence interval should be approximately (0.574, 0.716).
-        </p>
+        <p>The applet will display the 90% <m>z</m>-confidence interval.</p>
       </hint>
       <solution>
         <p>
