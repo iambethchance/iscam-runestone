@@ -1,6 +1,6 @@
 <section xml:id="investigation-1-7">
 <title>Investigation 1.7: Sampling Distributions</title>
-<p> Historically, when computers were less prevalent, these empirical and binomial probabilities were often cumbersome to determine and statisticians instead applied a far more convenient approximation method to estimate the probabilities of interest. In this section, you will see how the normal probability model can be used as a third method to approximate the p-values, confidence intervals, and error probabilities from the previous section. See the <xref ref="prob-detour-normal-vars">Probability Detour</xref> for more information about the normal distribution.</p>
+<p> Historically, when computers were less prevalent, these empirical and binomial probabilities were often cumbersome to determine and statisticians instead applied a far more convenient approximation method to estimate the probabilities of interest. In this section, you will see how the normal probability model can be used as a third method to approximate the p-values, confidence intervals, and error probabilities from the previous section. See the <xref ref="prob-detour-normal-vars">Probability Detour | </xref> for more information about the normal distribution.</p>
 <exercises xml:id="investigation1-7" hidden-label="yes">
     <title>Reese's Pieces (Optional)</title>
     
@@ -84,9 +84,9 @@
     
     <p>Using the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?candy=1&amp;hideExtras=1" visual="rossmanchance.com/applets/2021/oneprop/OneProp.htm">Reese's Pieces applet</url>.</p>
     <p><ul>
-          <li>Set the applet to assume a 0.333 process probability of a Reese's Pieces candy being orange. The applet is set to take a sample of n = 25 candies.</li>
+          <li>Set the applet to assume a 0.333 process probability of a Reese's Pieces candy being orange. The applet is set to take a sample of <m>n = 25</m> candies.</li>
           <li>Click the <alert>Draw Samples</alert> button.</li>
-          <li>The applet will randomly select a sample of 25 candies, sort them, and remember the sample number of orange candies.</li>
+          <li>The applet will randomly select a sample of 25 candies, sort them by color, and report the sample number of orange candies.</li>
           <li>Click the <alert>Draw Samples</alert> button again.</li>
         </ul></p>
     <interactive iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?candy=1&amp;hideExtras=1" width="160%" aspect="3:2"/>
@@ -276,8 +276,8 @@
         <p><ul>
           <li>Set the <alert>Probability of orange</alert> to 0.333 and the <alert>Number of candies</alert> to 25.</li>
           <li>Generate 2,000 samples.</li>
-          <li>Enter the first value from question 15 the <m>As extreme as</m> box.</li>
-          <li>Check the <m>Two-sided</m> box and then the <m>Between</m> box.</li>
+          <li>Enter the first value from question 15 the <alert>As extreme as</alert> box.</li>
+          <li>Check the <alert>Two-tailed</alert> box and then the <alert>Between</alert> box.</li>
           <li>Enter the second value in the box that appears.</li>
         </ul></p>
 
@@ -319,7 +319,7 @@
     
     <assemblage xml:id="empirical-rule">
       <title>Definition: The Empirical Rule</title>
-      <p>The Empirical Rule or the 68-95-99.7 rule states that for a mound-shaped, symmetric distribution:</p>
+      <p>The <term>Empirical Rule</term> or the <em>68-95-99.7 rule</em> states that for a mound-shaped, symmetric distribution:</p>
       <p><ul>
         <li>the interval (mean – SD, mean + SD) should capture approximately 68% of the distribution.</li>
         <li>the interval (mean – 2 SD, mean + 2 SD) should capture approximately 95% of the distribution.</li>
@@ -333,14 +333,23 @@
       <statement>
         <p>Do your simulation results agree with the empirical rule?</p>
       </statement>
-      <response/>
+      <choices randomize="no">
+        <choice correct="yes">
+          <statement><p>Yes</p></statement>
+          <feedback><p>Correct! The simulation results show that approximately 95% of the sample proportions fall within two standard deviations of the mean (0.333), which is consistent with the empirical rule's prediction for mound-shaped, symmetric distributions.</p></feedback>
+        </choice>
+        <choice>
+          <statement><p>No</p></statement>
+          <feedback><p>Not quite. Look at the percentage of samples falling within two standard deviations - it should be close to 95%, which agrees with the empirical rule.</p></feedback>
+        </choice>
+      </choices>
       <solution>
         <p>Yes, the simulation results agree well with the empirical rule. Approximately 95% of the sample proportions fall within two standard deviations of the mean (0.333), which is consistent with the empirical rule's prediction for mound-shaped, symmetric distributions.</p>
       </solution>
     </exercise>
     
     <exercise xml:id="I1-7-q" label="I1.7q">
-      <title>Complete Statements</title>
+      <title>Applying the Empirical Rule</title>
       <statement>
         <p>Complete the following statements:</p>
         <p>Roughly <var width="5"/>% of sample proportions fall within <var width="10"/> of the value of <m>\pi</m>.</p>
