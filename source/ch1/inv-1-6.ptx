@@ -1,8 +1,8 @@
 <section xml:id="investigation-1-6">
-<title>Investigation 1.6: Kissing the Right Way</title>
+<title>Investigation 1.6: Interval of Plausible Values</title>
 <p>In the previous investigation, you learned how to decide whether a hypothesized value of the parameter is plausible based on a two-sided p-value. The two-sided p-value is used when you do not have a prior suspicion or interest in whether the hypothesized value is too large or too small. In fact, in many studies we may not even really have a hypothesized value, but are more interested in using the sample data to estimate the value of the parameter. What are all the plausible values for the parameter?</p>
 <exercises xml:id="investigation1-6" hidden-label="yes">
-  <title>Introduction</title>
+  <title>Kissing the Right Way</title>
   
   
   <sidebyside widths="58% 38%">
@@ -189,7 +189,7 @@
     </hint>
   </exercise>
   
-  <exercise xml:id="I1-6-6" label="I1.6.6">
+<!--  <exercise xml:id="I1-6-6" label="I1.6.6">
     <title>Find 95% Confidence Interval</title>
     <statement>
       <p>Use the One Proportion Inference applet to determine the values of <m>\pi_0</m> such that observing 80 of 124 successes or a result more extreme occurs in at least 5% of samples. [Hints: Use values of <m>\pi</m> that are multiples of 0.01 until you can find the boundaries where the exact two-sided p-values (using the tails of the binomial distribution) change from below 0.05 to above 0.05. Then feel free to "zoom in" to three decimal places of accuracy if you'd like.] On a number line, indicate which values are rejected (not plausible) and which values are not rejected and therefore considered plausible.</p>
@@ -203,7 +203,7 @@
       <p>Values below 0.557 and above 0.727 would have two-sided p-values less than 0.05 and would be rejected.</p>
       <p>Values between 0.557 and 0.727 would have two-sided p-values greater than 0.05 and are considered plausible.</p>
     </solution>
-  </exercise>
+  </exercise>-->
   
   <assemblage xml:id="def-confidence-interval">
     <title>Definition: Confidence Interval</title>
@@ -349,10 +349,11 @@
   
   <p><alert>Discussion:</alert> In this investigation you have learned a second type of "statistical inference": providing an interval of plausible values for the parameter based on an observed sample statistic. Confidence intervals provide a nice companion to tests of significance and are also very useful by themselves. Whereas a test of significance allows you to test the plausibility of a specific hypothesized value, if you reject the null hypothesis, the test of significance provides no information as to how different the actual parameter is from the hypothesized value. If you fail to reject the null hypothesis, you only know that the tested value is one of many plausible values. A confidence interval provides an estimate (with bounds) of the actual value of the parameter. You will learn some additional methods for finding confidence intervals later in this text, but do be aware that some software packages use different methods for finding the "exact" binomial two-sided p-values.</p>
   
+   <p>Alternatively, another way to define a binomial confidence interval is to find all the values of <m>\pi</m> such that P(X &lt; observed) &lt; (1 – confidence level)/2 and P(X > observed) &lt; (1 – confidence level)/2. Use the applet to find the 95% confidence interval using this approach. [Hints: Remember to use the one-sided p-value and change the direction of the tail probability between &lt; and >, but not =.]</p>
+     
   <exercise xml:id="I1-6-10" label="I1.6.10">
     <title>Alternative CI Method</title>
     <statement>
-      <p>Alternatively, another way to define a binomial confidence interval is to find all the values of <m>\pi</m> such that P(X &lt; observed) &lt; (1 – confidence level)/2 and P(X > observed) &lt; (1 – confidence level)/2. Use the applet to find the 95% confidence interval using this approach. [Hints: Remember to use the one-sided p-value and change the direction of the tail probability between &lt; and >, but not =.]</p>
       <p>How does the resulting 95% confidence interval compare to the previous one? Which interval is "better"? Explain.</p>
     </statement>
     <response/>
@@ -390,67 +391,84 @@
       <p>The parameter <m>\pi</m> is a fixed value - it either is or isn't in the interval. The 99% refers to the confidence in our <em>method</em>: if we were to repeat this process many times, about 99% of the intervals we construct would contain the true parameter value. We cannot make a probability statement about this specific interval containing the parameter.</p>
     </solution>
   </exercise>
+  </exercises>
+
+<subsection xml:id="tech-detour-exact-ci">
+  <title>Technology Detour – Exact Confidence Intervals</title>
   
-  <paragraphs xml:id="tech-detour-exact-ci">
-    <title>Technology Detour – Exact Confidence Intervals</title>
-    
-    <p>Different software packages use different confidence interval methods, but you shouldn't see much distinction when the sample size is large.</p>
-    
-    <exercise xml:id="tech-detour-ci-r" label="CI - R">
-      <title>Confidence Intervals in R</title>
-      <statement>
-        <p><alert>In R: Clopper-Pearson</alert> (tail probability &lt; (1-confidence)/2)</p>
-        <program language="r" interactive="sage">
-          <input>
-iscambinomtest(observed, n, conf.level = )
-          </input>
-        </program>
-        <p>Can enter either sample count or sample proportion for "observed."</p>
-        <p>Be sure to label the confidence level. You can enter the proportion or the percentage value.</p>
-        
-      </statement>
-      <solution>
-        <p>For the kissing couples example with 80 successes out of 124 trials:</p>
-        <program language="r">
-          <input>
-library(iscam)
+  <p>Different software packages use different confidence interval methods, but you shouldn't see much distinction when the sample size is large.</p>
+  
+  <exercise xml:id="tech-detour-ci-tech" label="tech-detour-ci">
+    <title>Calculate Confidence Intervals with Technology</title>
+    <statement>
+      <p>Use technology (R or JMP) to calculate confidence intervals for the kissing couples study (80 successes in 124 trials). Choose one set of instructions below by clicking on a hint.</p>
+    </statement>
+    <hint>
+      <title>R Instructions (Clopper-Pearson)</title>
+      <p>The <c>iscambinomtest</c> function calculates confidence intervals using the Clopper-Pearson method (tail probability &lt; (1-confidence)/2).</p>
+      <p>Can enter either sample count or sample proportion for "observed."</p>
+      <p>Be sure to label the confidence level. You can enter the proportion or the percentage value.</p>
+      <sage language="r">
+        <input>
+# Load ISCAM functions from GitHub
+invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
+
+# Calculate 95% confidence interval
+# observed=80 successes, n=124 trials, conf.level=0.95
 iscambinomtest(80, 124, conf.level = 0.95)
-          </input>
-        </program>
-        <p>This produces a 95% Clopper-Pearson confidence interval of approximately (0.556, 0.725).</p>
-        <p>For a 99% confidence interval:</p>
-        <program language="r">
-          <input>
+        </input>
+      </sage>
+      <p>This produces a 95% Clopper-Pearson confidence interval of approximately (0.556, 0.725).</p>
+      <p>For a 99% confidence interval:</p>
+      <sage language="r">
+        <input>
+# Calculate 99% confidence interval
 iscambinomtest(80, 124, conf.level = 0.99)
-          </input>
-        </program>
-        <p>This produces a 99% confidence interval of approximately (0.528, 0.751).</p>
-      </solution>
-    </exercise>
-    
-    <exercise xml:id="tech-detour-ci-jmp" label="CI - JMP">
-      <title>Confidence Intervals in JMP</title>
-      <statement>
-        <p><alert>In JMP: Clopper-Pearson</alert> (tail probability &lt; (1-confidence)/2)</p>
-        <p>Using the ISCAM Journal file, select <em>Confidence Interval for One Proportion (with Summary Stats)</em>.</p>
-        <p>(The raw data option does not give an exact binomial confidence interval.)</p>
-        <p>With summarized data, specify the count and sample size, and select the Binomial radio button.</p>
-      </statement>
-      <solution>
-        <p>For the kissing couples example:</p>
-        <p><ul>
-          <li><p>Enter Number of successes: 80</p></li>
-          <li><p>Enter Sample size: 124</p></li>
-          <li><p>Select the Binomial radio button</p></li>
-          <li><p>The default confidence level is 95%</p></li>
-        </ul></p>
-        <p>The output will show a 95% Clopper-Pearson confidence interval of approximately (0.556, 0.725).</p>
-        <p>You can change the confidence level to 99% in the dialog box to obtain the 99% confidence interval of approximately (0.528, 0.751).</p>
-      </solution>
-    </exercise>
-  </paragraphs>
-  
-    <exercise xml:id="I1-6-12" label="I1.6.12">
+        </input>
+      </sage>
+      <p>This produces a 99% confidence interval of approximately (0.528, 0.751).</p>
+      <p><alert>R Output Graphs:</alert></p>
+      <p>The <c>iscambinomtest</c> function includes some interesting graphs:</p>
+      <p><ul>
+        <li><p>The bottom graph illustrates the 95% confidence interval. The interval is centered at the observed sample proportion <m>\hat{p}</m> and displays the two endpoints of the interval of plausible values for the process probability.</p></li>
+        <li><p>The top graph shows the distribution assuming the lower value of the confidence interval as the process probability. This is as far left as we can shift that null distribution before the area to the right of the observed number of successes, 80, dips below 0.025.</p></li>
+        <li><p>The middle graph shows how far we can move that distribution to the right (largest plausible value of <m>\pi</m>) before the probability below 80 dips below 0.025.</p></li>
+      </ul></p>
+      <image source="images/r-binom-output.png" width="75%">
+        <description>R output from iscambinomtest showing three graphs - top and middle showing binomial distributions at interval endpoints, bottom showing confidence interval</description>
+      </image>
+    </hint>
+    <hint>
+      <title>JMP Instructions (Clopper-Pearson)</title>
+      <p>JMP uses the Clopper-Pearson method (tail probability &lt; (1-confidence)/2).</p>
+      <p>Using the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal file</url> (Download this file to your computer and then open the .jrn file to launch JMP.):</p>
+      <p><ul>
+        <li><p>Select <em>Confidence Interval for One Proportion (with Summary Stats)</em></p></li>
+        <li><p>(The raw data option does not give an exact binomial confidence interval.)</p></li>
+        <li><p>With summarized data, specify the count and sample size, and select the Binomial radio button</p></li>
+      </ul></p>
+      <p>For the kissing couples example:</p>
+      <p><ul>
+        <li><p>Enter Number of successes: 80</p></li>
+        <li><p>Enter Sample size: 124</p></li>
+        <li><p>Select the Binomial radio button</p></li>
+        <li><p>The default confidence level is 95%</p></li>
+      </ul></p>
+      <p>The output will show a 95% Clopper-Pearson confidence interval of approximately (0.556, 0.725).</p>
+      <p>You can change the confidence level to 99% in the dialog box to obtain the 99% confidence interval of approximately (0.528, 0.751).</p>
+    </hint>
+    <solution>
+      <p>Using technology (e.g., R with <c>iscambinomtest(80, 124, conf.level=0.95)</c>):</p>
+      <p>95% CI: approximately 0.556 to 0.725</p>
+      <p>99% CI: approximately 0.528 to 0.751</p>
+      <p>The 99% interval is wider (width ≈ 0.223 vs. 0.169 for 95%) but has a similar midpoint (approximately 0.64).</p>
+    </solution>
+  </exercise>
+</subsection>
+
+<p class="horizontal-rule"> </p>
+
+  <exercise xml:id="I1-6-12" label="I1.6.12">
     <title>Technology Comparison</title>
     <statement>
       <p>Use technology to determine the 95% and 99% Clopper-Pearson confidence intervals for the probability that a kissing couple leans to the right. Comment on how the 99% confidence interval compares to the 95% interval, examining both midpoints and widths. [Hint: Average the endpoints to find the midpoint; subtract the endpoints to find the width.]</p>
@@ -481,21 +499,6 @@ iscambinomtest(80, 124, conf.level = 0.99)
       <p>The Blaker 99% interval is typically narrower than the Clopper-Pearson 99% interval, which is one reason it's gaining favor in practice.</p>
     </solution>
   </exercise>
-  
-  <paragraphs>
-    <title>Output from R</title>
-    <p>The <c>iscambinomtest</c> function includes some interesting graphs.</p>
-    <p><ul>
-      <li><p>The bottom graph illustrates the 95% confidence interval. The interval is centered at the observed sample proportion <m>\hat{p}</m> and displays the two endpoints of the interval of plausible values for the process probability.</p></li>
-      <li><p>The top graph shows the distribution assuming the lower value of the confidence interval as the process probability. This is as far left as we can shift that null distribution before the area to the right of the observed number of successes, 80, dips below 0.025.</p></li>
-      <li><p>The middle graph shows how far we can move that distribution to the right (largest plausible value of <m>\pi</m>) before the probability below 80 dips below 0.025.</p></li>
-    </ul></p>
-    
-      <image source="images/r-binom-output.png" width="75%">
-        <description>R output from iscambinomtest showing three graphs - top and middle showing binomial distributions at interval endpoints, bottom showing confidence interval</description>
-      </image>
-  </paragraphs>
-  </exercises>
 
   <subsection xml:id="practice1-6">
     <title>Practice Problem 1.6</title>
