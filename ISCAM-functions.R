@@ -395,7 +395,7 @@ iscambinomtest <- function(
     } # end intervals loop
   } # end no hypothesized
 
-  par(mfrow = c(1, 1))
+  invisible(par(mfrow = c(1, 1)))
 }
 
 # ============================================================================
@@ -712,7 +712,7 @@ iscamonepropztest <- function(
       }
     }
   }
-  withr::local_par(mfrow = c(1, 1))
+  invisible(withr::local_par(mfrow = c(1, 1)))
 }
 
 # ============================================================================
