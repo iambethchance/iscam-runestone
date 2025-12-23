@@ -459,80 +459,269 @@ iscaminvnorm <- function(prob1, mean = 0, sd = 1, direction, verbose = TRUE) {
 }
 
 # One Proportion Z-Test and Confidence Interval
-iscamonepropztest <- function(observed, n, hypothesized = NULL, alternative = "two.sided", conf.level = NULL, verbose = TRUE) {
-  # Convert proportion to count if needed
+iscamonepropztest <- function(
+  observed,
+  n,
+  hypothesized = NULL,
+  alternative = "two.sided",
+  conf.level = NULL
+) {
+  withr::local_par(mar = c(5, 3, 1, 1))
+
   if (observed < 1) {
-    observed <- round(n * observed)
+    observed = round(n * observed)
   }
-  
-  phat <- observed / n
-  
-  # Hypothesis test
+  myout = prop.test(observed, n, hypothesized, alternative, correct = FALSE)
+  cat("\n", "One Proportion z test\n", sep = "", "\n")
+  statistic = signif(observed / n, 4)
+  cat(paste(
+    "Data: observed successes = ",
+    observed,
+    ", sample size = ",
+    n,
+    ", sample proportion = ",
+    statistic,
+    "\n\n",
+    sep = ""
+  ))
+  zvalue = NULL
+  pvalue = NULL
   if (!is.null(hypothesized)) {
-    se <- sqrt(hypothesized * (1 - hypothesized) / n)
-    z <- (phat - hypothesized) / se
-    
-    if (alternative == "two.sided") {
-      pval <- 2 * pnorm(-abs(z))
+    cat(paste("Null hypothesis       : pi =", hypothesized, sep = " "), "\n")
+    altname = switch(
+      alternative,
+      less = "<",
+      greater = ">",
+      two.sided = "<>",
+      not.equal = "<>"
+    )
+    cat(
+      paste("Alternative hypothesis: pi", altname, hypothesized, sep = " "),
+      "\n"
+    )
+    zvalue = (statistic - hypothesized) /
+      sqrt(hypothesized * (1 - hypothesized) / n)
+    cat("z-statistic:", signif(zvalue, 4), "\n")
+    pvalue = signif(myout$p.value, 4)
+    cat("p-value:", pvalue, "\n")
+    SD = sqrt(hypothesized * (1 - hypothesized) / n)
+    min = min(hypothesized - 4 * SD, hypothesized - abs(zvalue) * SD - .001)
+    max = max(hypothesized + 4 * SD, hypothesized + abs(zvalue) * SD + .001)
+    x = seq(min, max, .001)
+    plot(
+      x,
+      dnorm(x, hypothesized, SD),
+      xlab = "",
+      ylab = "",
+      type = "l",
+      ylim = c(0, dnorm(hypothesized, hypothesized, SD)),
+      panel.first = grid()
+    )
+
+    zseq = c(
+      hypothesized - 3 * SD,
+      hypothesized - 2 * SD,
+      hypothesized - SD,
+      hypothesized,
+      hypothesized + SD,
+      hypothesized + 2 * SD,
+      hypothesized + 3 * SD
+    )
+    axis(
+      side = 1,
+      at = zseq,
+      labels = c("z=-3", "z=-2", "z=-1", "z=0", "z=1", "z=2", "z=3"),
+      padj = 1.2,
+      tick = FALSE,
+      col.axis = "blue"
+    )
+    abline(h = 0, col = "black")
+    mtext(side = 1, line = 3, "\u2190 Sample Proportions \u2192")
+    mtext(side = 2, line = 2, "Density")
+    if (alternative == "less") {
+      drawseq = seq(min, statistic, .001)
+      polygon(
+        c(drawseq, statistic, min),
+        c(dnorm(drawseq, hypothesized, SD), 0, 0),
+        col = "red"
+      )
+      text(
+        min,
+        max(dnorm(hypothesized, hypothesized, SD)) * .9,
+        labels = paste("z-statistic:", signif(zvalue, 4)),
+        pos = 4,
+        col = "blue"
+      )
+      text(
+        min,
+        max(dnorm(hypothesized, hypothesized, SD)) * .8,
+        labels = paste("p-value:", pvalue),
+        pos = 4,
+        col = "red"
+      )
     } else if (alternative == "greater") {
-      pval <- pnorm(z, lower.tail = FALSE)
-    } else if (alternative == "less") {
-      pval <- pnorm(z)
-    }
-    
-    # Plot the null distribution
-    minx <- max(0, hypothesized - 4 * se)
-    maxx <- min(1, hypothesized + 4 * se)
-    x_seq <- seq(minx, maxx, length.out = 500)
-    
-    plot(x_seq, dnorm(x_seq, hypothesized, se), type = "l",
-         xlab = "Sample Proportion", ylab = "Density",
-         main = paste0("Null: N(", hypothesized, ", ", round(se, 4), ")"),
-         panel.first = grid())
-    abline(v = phat, col = "red", lwd = 2)
-    
-    if (verbose) {
-      cat("\nOne Proportion Z-Test\n")
-      cat("=====================\n")
-      cat(paste0("Sample: ", observed, " successes out of ", n, ", phat = ", round(phat, 4), "\n"))
-      cat(paste0("Null hypothesis: pi = ", hypothesized, "\n"))
-      cat(paste0("Alternative: ", alternative, "\n"))
-      cat(paste0("Z-statistic: ", round(z, 4), "\n"))
-      cat(paste0("p-value: ", round(pval, 4), "\n"))
-    }
-  }
-  
-  # Confidence interval
-  if (!is.null(conf.level)) {
-    se_ci <- sqrt(phat * (1 - phat) / n)
-    z_crit <- qnorm(1 - (1 - conf.level) / 2)
-    ci_lower <- phat - z_crit * se_ci
-    ci_upper <- phat + z_crit * se_ci
-    
-    # Plot the CI
-    if (is.null(hypothesized)) {
-      minx <- max(0, phat - 4 * se_ci)
-      maxx <- min(1, phat + 4 * se_ci)
-      x_seq <- seq(minx, maxx, length.out = 500)
-      
-      plot(x_seq, dnorm(x_seq, phat, se_ci), type = "l",
-           xlab = "Sample Proportion", ylab = "Density",
-           main = paste0(conf.level * 100, "% Confidence Interval"),
-           panel.first = grid())
-      abline(v = c(ci_lower, phat, ci_upper), col = c("red", "blue", "red"), lwd = 2)
-    }
-    
-    if (verbose) {
-      if (is.null(hypothesized)) {
-        cat("\nOne Proportion Z-Confidence Interval\n")
-        cat("====================================\n")
-        cat(paste0("Sample: ", observed, " successes out of ", n, ", phat = ", round(phat, 4), "\n"))
+      drawseq = seq(statistic, max, .001)
+      polygon(
+        c(statistic, drawseq, max),
+        c(0, dnorm(drawseq, hypothesized, SD), 0),
+        col = "red"
+      )
+      text(
+        max,
+        max(dnorm(hypothesized, hypothesized, SD)) * .9,
+        labels = paste("z-statistic:", signif(zvalue, 4)),
+        pos = 2,
+        col = "blue"
+      )
+      text(
+        max,
+        max(dnorm(hypothesized, hypothesized, SD)) * .8,
+        labels = paste("p-value:", pvalue),
+        pos = 2,
+        col = "red"
+      )
+    } else if (alternative == "two.sided" || alternative == "not.equal") {
+      if (statistic < hypothesized) {
+        drawseq1 = seq(min, statistic, .001)
+        drawseq2 = seq(hypothesized + (hypothesized - statistic), max, .001)
+      } else {
+        drawseq1 = seq(min, hypothesized - (statistic - hypothesized), .001)
+        drawseq2 = seq(statistic, max, .001)
       }
-      cat(paste0(conf.level * 100, "% CI: (", round(ci_lower, 4), ", ", round(ci_upper, 4), ")\n"))
+      polygon(
+        c(min, drawseq1, drawseq1[length(drawseq1)]),
+        c(0, dnorm(drawseq1, hypothesized, SD), 0),
+        col = "red"
+      )
+      polygon(
+        c(drawseq2[1], drawseq2, max),
+        c(0, dnorm(drawseq2, hypothesized, SD), 0),
+        col = "red"
+      )
+      text(
+        min,
+        max(dnorm(hypothesized, hypothesized, SD)) * .9,
+        labels = paste("z-statistic:", signif(zvalue, 4)),
+        pos = 4,
+        col = "blue"
+      )
+      text(
+        min,
+        max(dnorm(hypothesized, hypothesized, SD)) * .8,
+        labels = paste("two-sided p-value:", pvalue),
+        pos = 4,
+        col = "red"
+      )
     }
   }
-  
-  invisible(NULL)
+  withr::local_par(mfrow = c(3, 1))
+  if (length(conf.level) > 1) {
+    withr::local_par(mar = c(4, 2, 1.5, 4), mfrow = c(length(conf.level), 1))
+  }
+  lower = 0
+  upper = 0
+  if (!is.null(conf.level)) {
+    for (k in 1:length(conf.level)) {
+      if (conf.level[k] > 1) {
+        conf.level[k] = conf.level[k] / 100
+      }
+      myout = prop.test(
+        observed,
+        n,
+        p = statistic,
+        alternative = "two.sided",
+        conf.level[k],
+        correct = FALSE
+      )
+      criticalvalue = qnorm((1 - conf.level[k]) / 2)
+      lower[k] = statistic +
+        criticalvalue * sqrt(statistic * (1 - statistic) / n)
+      upper[k] = statistic -
+        criticalvalue * sqrt(statistic * (1 - statistic) / n)
+      multconflevel = 100 * conf.level[k]
+      cat(
+        multconflevel,
+        "% Confidence interval for pi: (",
+        lower[k],
+        ", ",
+        upper[k],
+        ") \n"
+      )
+    }
+    if (is.null(hypothesized)) {
+      SDphat = sqrt(statistic * (1 - statistic) / n)
+      min = statistic - 4 * SDphat
+      max = statistic + 4 * SDphat
+      CIseq = seq(min, max, .001)
+
+      if (length(conf.level) == 1) {
+        myxlab = substitute(
+          paste("Normal (", mean == x1, ", ", SD == x2, ")", ),
+          list(x1 = signif(lower[1], 4), x2 = signif(SDphat, 4))
+        )
+        plot(CIseq, dnorm(CIseq, lower[1], SDphat), type = "l", xlab = " ")
+        mtext("sample proportions", side = 1, line = 1.75, adj = .5, cex = .75)
+        topseq = seq(statistic, max, .001)
+        polygon(
+          c(statistic, topseq, max),
+          c(0, dnorm(topseq, lower[1], SDphat), 0),
+          col = "red"
+        )
+        title(myxlab)
+        myxlab = substitute(
+          paste("Normal (", mean == x1, ", ", SD == x2, ")", ),
+          list(x1 = signif(upper[1], 4), x2 = signif(SDphat, 4))
+        )
+        plot(
+          seq(min, max, .001),
+          dnorm(seq(min, max, .001), upper[1], SDphat),
+          type = "l",
+          xlab = " "
+        )
+        mtext("sample proportions", side = 1, line = 1.75, adj = .5, cex = .75)
+        bottomseq = seq(min, statistic, .001)
+        polygon(
+          c(min, bottomseq, statistic, statistic),
+          c(
+            0,
+            dnorm(bottomseq, upper[1], SDphat),
+            dnorm(statistic, upper[1], SDphat),
+            0
+          ),
+          col = "red"
+        )
+        newtitle = substitute(
+          paste("Normal (", mean == x1, ", ", SD == x2, ")", ),
+          list(x1 = signif(upper[1], 4), x2 = signif(SDphat, 4))
+        )
+        title(newtitle)
+      }
+      for (k in 1:length(conf.level)) {
+        plot(
+          c(min, statistic, max),
+          c(1, 1, 1),
+          pch = c(".", "^", "."),
+          ylab = " ",
+          xlab = "process probability",
+          ylim = c(1, 1)
+        )
+        abline(v = statistic, col = "gray")
+        text(min * 1.1, 1, labels = paste(conf.level[k] * 100, "% CI:"))
+        text(statistic, .9, labels = signif(statistic, 4))
+        text(lower[k], 1, labels = signif(lower[k], 4), pos = 3)
+        text(upper[k], 1, labels = signif(upper[k], 4), pos = 3)
+        points(c(lower[k], upper[k]), c(1, 1), pch = c("[", "]"))
+        lines(c(lower[k], upper[k]), c(1, 1))
+      }
+    }
+  }
+  withr::local_par(mfrow = c(1, 1))
+  invisible(list(
+    "zvalue" = zvalue,
+    "pvalue" = pvalue,
+    "lower" = lower,
+    "upper" = upper
+  ))
 }
 
 # ============================================================================
@@ -591,19 +780,3 @@ iscamhyperprob <- function(k, total, succ, n, lower.tail = TRUE) {
   cat(paste0("P = ", round(result, 4), "\n"))
   invisible(result)
 }
-
-# ============================================================================
-# STARTUP MESSAGE
-# ============================================================================
-
-cat("ISCAM functions loaded successfully from GitHub!\n")
-cat("Available functions:\n")
-cat("  - iscamsummary()\n")
-cat("  - iscamdotplot()\n")
-cat("  - iscamboxplot()\n")
-cat("  - iscambinomprob()\n")
-cat("  - iscambinomtest()\n")
-cat("  - iscaminvnorm()\n")
-cat("  - iscamonepropztest()\n")
-cat("  - iscamtwopropztest()\n")
-cat("  - iscamhyperprob()\n")
