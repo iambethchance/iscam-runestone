@@ -404,27 +404,68 @@ iscambinomtest <- function(
 # ============================================================================
 
 # Inverse Normal Calculation - finds quantiles from probabilities
-iscaminvnorm <- function(prob1, mean = 0, sd = 1, direction) {
+iscaminvnorm <- function(prob1, mean = 0, sd = 1, direction, verbose = TRUE) {
+  old <- par(mar = c(4, 3, 2, 2))
+  on.exit(par(old))
+  
+  min_x <- mean - 4 * sd
+  max_x <- mean + 4 * sd
+  x_seq <- seq(min_x, max_x, length.out = 500)
+  y_max <- dnorm(mean, mean, sd)
+  
+  plot(x_seq, dnorm(x_seq, mean, sd), type = "l", 
+       xlab = "", ylab = "", main = paste0("Normal(mean = ", mean, ", SD = ", sd, ")"),
+       panel.first = grid())
+  abline(h = 0, col = "gray")
+  
   if (direction == "below") {
     answer <- qnorm(prob1, mean, sd)
-    cat("The observation with", prob1, "probability below is", round(answer, 4), "\n")
+    prob_seq <- seq(min_x, answer, length.out = 100)
+    polygon(c(min_x, prob_seq, answer), c(0, dnorm(prob_seq, mean, sd), 0), 
+            col = "pink", border = "red")
+    text(min_x, y_max * 0.8, labels = paste0("P(X <= ", round(answer, 4), ") = ", prob1),
+         pos = 4, col = "red")
+    if (verbose) cat("The observation with", prob1, "probability below is", round(answer, 4), "\n")
   } else if (direction == "above") {
     answer <- qnorm(prob1, mean, sd, lower.tail = FALSE)
-    cat("The observation with", prob1, "probability above is", round(answer, 4), "\n")
+    prob_seq <- seq(answer, max_x, length.out = 100)
+    polygon(c(answer, prob_seq, max_x), c(0, dnorm(prob_seq, mean, sd), 0), 
+            col = "pink", border = "red")
+    text(max_x, y_max * 0.8, labels = paste0("P(X >= ", round(answer, 4), ") = ", prob1),
+         pos = 2, col = "red")
+    if (verbose) cat("The observation with", prob1, "probability above is", round(answer, 4), "\n")
   } else if (direction == "between") {
     answer1 <- qnorm((1 - prob1) / 2, mean, sd)
     answer2 <- qnorm(1 - (1 - prob1) / 2, mean, sd)
-    cat("There is", prob1, "probability between", round(answer1, 4), "and", round(answer2, 4), "\n")
+    prob_seq <- seq(answer1, answer2, length.out = 100)
+    polygon(c(answer1, prob_seq, answer2), c(0, dnorm(prob_seq, mean, sd), 0), 
+            col = "pink", border = "red")
+    text(mean, y_max * 0.5, labels = prob1, col = "blue")
+    text(answer1, dnorm(answer1, mean, sd), labels = round(answer1, 4), pos = 3, col = "red")
+    text(answer2, dnorm(answer2, mean, sd), labels = round(answer2, 4), pos = 3, col = "red")
+    if (verbose) cat("There is", prob1, "probability between", round(answer1, 4), "and", round(answer2, 4), "\n")
   } else if (direction == "outside") {
     answer1 <- qnorm(prob1 / 2, mean, sd)
     answer2 <- qnorm(1 - prob1 / 2, mean, sd)
-    cat("There is", prob1, "probability outside", round(answer1, 4), "and", round(answer2, 4), "\n")
+    prob_seq1 <- seq(min_x, answer1, length.out = 100)
+    prob_seq2 <- seq(answer2, max_x, length.out = 100)
+    polygon(c(min_x, prob_seq1, answer1), c(0, dnorm(prob_seq1, mean, sd), 0), 
+            col = "pink", border = "red")
+    polygon(c(answer2, prob_seq2, max_x), c(0, dnorm(prob_seq2, mean, sd), 0), 
+            col = "pink", border = "red")
+    text(answer1, dnorm(answer2, mean, sd) * 0.5, labels = prob1/2, pos = 2, col = "blue")
+    text(answer2, dnorm(answer2, mean, sd) * 0.5, labels = prob1/2, pos = 4, col = "blue")
+    if (verbose) cat("There is", prob1, "probability outside", round(answer1, 4), "and", round(answer2, 4), "\n")
   }
+  
   invisible(NULL)
 }
 
 # One Proportion Z-Test and Confidence Interval
-iscamonepropztest <- function(observed, n, hypothesized = NULL, alternative = "two.sided", conf.level = NULL) {
+iscamonepropztest <- function(observed, n, hypothesized = NULL, alternative = "two.sided", conf.level = NULL, verbose = TRUE) {
+  old <- par(mar = c(4, 4, 2, 1))
+  on.exit(par(old))
+  
   # Convert proportion to count if needed
   if (observed < 1) {
     observed <- round(n * observed)
@@ -445,13 +486,26 @@ iscamonepropztest <- function(observed, n, hypothesized = NULL, alternative = "t
       pval <- pnorm(z)
     }
     
-    cat("\nOne Proportion Z-Test\n")
-    cat("=====================\n")
-    cat(paste0("Sample proportion: ", round(phat, 4), " (", observed, " out of ", n, ")\n"))
-    cat(paste0("Null hypothesis: pi = ", hypothesized, "\n"))
-    cat(paste0("Alternative: ", alternative, "\n"))
-    cat(paste0("Z-statistic: ", round(z, 4), "\n"))
-    cat(paste0("p-value: ", round(pval, 4), "\n"))
+    # Plot the null distribution
+    minx <- max(0, hypothesized - 4 * se)
+    maxx <- min(1, hypothesized + 4 * se)
+    x_seq <- seq(minx, maxx, length.out = 500)
+    
+    plot(x_seq, dnorm(x_seq, hypothesized, se), type = "l",
+         xlab = "Sample Proportion", ylab = "Density",
+         main = paste0("Null: N(", hypothesized, ", ", round(se, 4), ")"),
+         panel.first = grid())
+    abline(v = phat, col = "red", lwd = 2)
+    
+    if (verbose) {
+      cat("\nOne Proportion Z-Test\n")
+      cat("=====================\n")
+      cat(paste0("Sample: ", observed, " successes out of ", n, ", phat = ", round(phat, 4), "\n"))
+      cat(paste0("Null hypothesis: pi = ", hypothesized, "\n"))
+      cat(paste0("Alternative: ", alternative, "\n"))
+      cat(paste0("Z-statistic: ", round(z, 4), "\n"))
+      cat(paste0("p-value: ", round(pval, 4), "\n"))
+    }
   }
   
   # Confidence interval
@@ -461,12 +515,27 @@ iscamonepropztest <- function(observed, n, hypothesized = NULL, alternative = "t
     ci_lower <- phat - z_crit * se_ci
     ci_upper <- phat + z_crit * se_ci
     
+    # Plot the CI
     if (is.null(hypothesized)) {
-      cat("\nOne Proportion Z-Confidence Interval\n")
-      cat("====================================\n")
-      cat(paste0("Sample proportion: ", round(phat, 4), " (", observed, " out of ", n, ")\n"))
+      minx <- max(0, phat - 4 * se_ci)
+      maxx <- min(1, phat + 4 * se_ci)
+      x_seq <- seq(minx, maxx, length.out = 500)
+      
+      plot(x_seq, dnorm(x_seq, phat, se_ci), type = "l",
+           xlab = "Sample Proportion", ylab = "Density",
+           main = paste0(conf.level * 100, "% Confidence Interval"),
+           panel.first = grid())
+      abline(v = c(ci_lower, phat, ci_upper), col = c("red", "blue", "red"), lwd = 2)
     }
-    cat(paste0(conf.level * 100, "% Confidence Interval: (", round(ci_lower, 4), ", ", round(ci_upper, 4), ")\n"))
+    
+    if (verbose) {
+      if (is.null(hypothesized)) {
+        cat("\nOne Proportion Z-Confidence Interval\n")
+        cat("====================================\n")
+        cat(paste0("Sample: ", observed, " successes out of ", n, ", phat = ", round(phat, 4), "\n"))
+      }
+      cat(paste0(conf.level * 100, "% CI: (", round(ci_lower, 4), ", ", round(ci_upper, 4), ")\n"))
+    }
   }
   
   invisible(NULL)
