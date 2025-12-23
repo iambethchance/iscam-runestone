@@ -2,7 +2,7 @@
 <title>Investigation 1.9: Kissing the Right Way (cont.)</title>
 <p><em>The normal approximation can also be used to approximate confidence intervals</em></p>
 <exercises xml:id="investigation1-9" hidden-label="yes">
-    <title>Estimating the probabiity</title>
+    <title>Interval of plausible values based on Central Limit Theorem</title>
     
     <p>
       Recall the study published in <em>Nature</em> that found 64.5% of 124 kissing couples leaned right to kiss (<xref ref="investigation-1-6" text="custom">Investigation 1.6</xref>). We previously used simulation and the binomial distribution to determine which values were plausible for the underlying probability that a kissing couple leans right (<m>\pi</m>). In particular, we found 0.5 and 0.74 were not plausible values for <m>\pi</m> but 0.6667 was. The 95% Clopper-Pearson Binomial confidence interval was (0.554, 0.729). Now you will consider applying the normal model as another method for producing confidence intervals for this parameter.
@@ -99,8 +99,8 @@
     <assemblage xml:id="standard-error-definition">
       <title>Definition</title>
       <p>
-        The <term>standard error of the sample proportion</term>, <m>\text{SE}(\hat{p})</m>, is an estimate for the standard deviation of <m>\hat{p}</m> (i.e., <m>\text{SD}(\hat{p})</m>) based on the sample data, found by substituting the sample proportion for <m>\pi</m>: 
-        <me>\text{SE}(\hat{p}) = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</me>
+        The <term>standard error of the sample proportion</term>, <m>SE(\hat{p})</m>, is an estimate for the standard deviation of <m>\hat{p}</m> (i.e., <m>SD(\hat{p})</m>) based on the sample data, found by substituting the sample proportion for <m>\pi</m>: 
+        <me>E(\hat{p}) = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</me>
       </p>
     </assemblage>
 
@@ -175,8 +175,6 @@
       </p>
     </assemblage>
 
-  </exercises>
-
   <subsection xml:id="tech-detour-critical-values">
     <title>Technology Detour <mdash/> Finding Percentiles from the Standard Normal Distribution</title>
 
@@ -184,9 +182,15 @@
       Use technology to more precisely determine the number of standard deviations that capture the middle 95% of the normal distribution with mean = 0 and standard deviation = 1. [<em>Hint:</em> In other words, how many standard deviations do you need to go on each side of zero to capture the middle 95% of the standard normal distribution?] Keep in mind that the <m>z</m>-value corresponding to probability <m>C</m> in the middle of the distribution, also corresponds to having probability <m>(1-C)/2</m> in each tail.
     </p>
 
-    <exercise xml:id="tech-detour-norm-calc-critical" label="Critical Values - Normal Calc">
-      <title>Finding Critical Values with Normal Probability Calculator</title>
+    <exercise xml:id="tech-detour-critical-values-ex" label="Critical Values Tech Detour">
+      <title>Find the 95% Critical Value</title>
       <statement>
+        <p>
+          Use one of the technology options below to find the critical value for 95% confidence.
+        </p>
+        <p>
+          <term>Normal Probability Calculator:</term>
+        </p>
         <p>
           In <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="rossmanchance.com/applets/2021/normcalc/NormCalc.html">Normal Probability Calculator</url> applet:
         </p>
@@ -196,49 +200,54 @@
             <li><p>Check the box next to the first <m>&lt;</m> sign and specify the probability value to correspond to the lower tail probability of interest: <m>(1-C)/2</m>. Press Enter/Return and it will display the negative <m>z^*</m>-value.</p></li>
           </ul>
         </p>
-      </statement>
-    </exercise>
+        <p>
+          <term>R/Sage:</term>
+        </p>
+        <p>
+          Use the interactive Sage cell below to find the critical value. The <c>qnorm</c> function returns the quantile (z-value) for a given probability from the normal distribution.
+        </p>
+        <sage language="r">
+          <input>
+# Find the critical value for 95% confidence
+# For 95% in the middle, we need (1-0.95)/2 = 0.025 in each tail
+# So we want the value at 0.975 (or symmetrically at 0.025)
 
-    <exercise xml:id="tech-detour-r-critical" label="Critical Values - R">
-      <title>Finding Critical Values in R</title>
-      <statement>
+z_star &lt;- qnorm(0.975, mean=0, sd=1)
+cat("Critical value z* =", z_star, "\n")
+          </input>
+        </sage>
         <p>
-          In R: The <c>iscaminvnorm</c> function takes the following inputs:
+          <term>JMP:</term>
         </p>
         <p>
-          <ul>
-            <li><p>Probability of interest (prob1)</p></li>
-            <li><p>mean = the mean of the normal distribution (default = 0)</p></li>
-            <li><p>sd = the standard deviation of the normal distribution (default = 1)</p></li>
-            <li><p>direction = whether the probability of interest was in the lower tail ("below") or the upper tail ("above"), in both tails ("outside"), or in the middle of the distribution ("between")</p></li>
-          </ul>
+          In JMP using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url>:
         </p>
         <p>
-          For example: <c>iscaminvnorm(prob1 = 0.95, direction = "between")</c>
+          <ol>
+            <li><p>From the Distribution pull-down menu, select Normal (at the top of the list)</p></li>
+            <li><p>Specify the values for the mean (0) and standard deviation (1)</p></li>
+            <li><p>Change the Type of Calculation to <c>Input probability and calculate quantiles</c></p></li>
+            <li><p>Select <c>Central Probability</c> and specify the confidence level (e.g., 0.95)</p></li>
+            <li><p>Press Enter/Return.</p></li>
+          </ol>
+        </p>
+        <p>
+          Critical value for 95% confidence: <m>z^* =</m> <var width="20"/>
         </p>
       </statement>
+      <response/>
+      <hint>
+        <p>
+          The critical value should be approximately 1.96.
+        </p>
+      </hint>
+      <solution>
+        <p>
+          <m>z^* = 1.96</m> (more precisely, 1.9599639845...)
+        </p>
+      </solution>
     </exercise>
-
-      <exercise xml:id="tech-detour-jmp-critical" label="Critical Values - JMP">
-        <title>Finding Critical Values in JMP</title>
-        <statement>
-          <p>
-            In JMP using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url>:
-          </p>
-          <p>
-            <ol>
-              <li><p>From the Distribution pull-down menu, select Normal (at the top of the list)</p></li>
-              <li><p>Specify the values for the mean (0) and standard deviation (1)</p></li>
-              <li><p>Change the Type of Calculation to <c>Input probability and calculate quantiles</c></p></li>
-              <li><p>Select <c>Central Probability</c> and specify the confidence level (e.g., 0.95)</p></li>
-              <li><p>Press Enter/Return.</p></li>
-            </ol>
-          </p>
-        </statement>
-      </exercise>
   </subsection>
-
-  <exercises xml:id="investigation1-9-continued" hidden-label="yes">
 
     <exercise xml:id="I1-9-h" label="I1.9h">
       <title>Compare 90% Critical Value</title>
@@ -466,87 +475,103 @@
       </solution>
     </exercise>
 
-  </exercises>
-
   <subsection xml:id="tech-detour-z-intervals">
     <title>Technology Detour <mdash/> One Proportion <m>z</m>-Confidence Intervals</title>
 
-    <exercise xml:id="tech-detour-r-zint" label="z-interval - R">
-      <title><m>z</m>-interval with R</title>
+    <exercise xml:id="tech-detour-z-intervals-ex" label="z-interval Tech Detour">
+      <title>Calculate 90% <m>z</m>-Confidence Interval</title>
       <statement>
         <p>
-          Use <c>iscamonepropztest(observed, n, hypothesized, alternative="greater", "less," or "two.sided", conf.level)</c>
+          Use one of the technology options below to calculate a 90% <m>z</m>-confidence interval for the kissing study data (80 out of 124 couples leaned right).
         </p>
         <p>
-          You can enter either the number of successes or the proportion of successes (<m>\hat{p}</m>) for the "observed" value. If you don't specify a hypothesized value and alternative, be sure to label the confidence level.
+          <term>R/Sage:</term>
         </p>
         <p>
-          For example: <c>iscamonepropztest(observed=80, n=124, conf.level=0.95)</c>
+          Use the interactive Sage cell below to calculate the z-confidence interval. Modify the values for different confidence levels or data.
         </p>
-      </statement>
-      <solution>
-        <p>
-          Running the command in R will produce output including the 95% confidence interval:
-        </p>
-        <image source="images/inv1.9ksolR.png" width="80%">
-          <description>R output showing 95% z-confidence interval for kissing study</description>
-        </image>
-      </solution>
-    </exercise>
+        <sage language="r">
+          <input>
+# One proportion z-confidence interval
+observed &lt;- 80      # number of successes
+n &lt;- 124            # sample size
+conf_level &lt;- 0.90  # confidence level
 
-    <exercise xml:id="tech-detour-jmp-zint" label="z-interval - JMP">
-      <title><m>z</m>-interval with JMP</title>
-      <statement>
+# Calculate sample proportion and standard error
+p_hat &lt;- observed / n
+se &lt;- sqrt(p_hat * (1 - p_hat) / n)
+
+# Find critical value
+z_star &lt;- qnorm((1 + conf_level)/2)
+
+# Calculate confidence interval
+margin_of_error &lt;- z_star * se
+lower &lt;- p_hat - margin_of_error
+upper &lt;- p_hat + margin_of_error
+
+cat("Sample proportion:", p_hat, "\n")
+cat("Standard error:", se, "\n")
+cat("Critical value z* =", z_star, "\n")
+cat(conf_level * 100, "% Confidence Interval: (", 
+    round(lower, 4), ",", round(upper, 4), ")\n", sep="")
+          </input>
+        </sage>
+        <p>
+          <term>JMP:</term>
+        </p>
         <p>
           <ol>
             <li><p>Open the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal file</url> and select <c>Confidence Interval for One Proportion</c></p></li>
             <li><p>Specify Raw Data (column of outcomes) or Summary Stats</p></li>
             <li><p>With Summary Stats, keep the radio button set to <c>Normal Approximation</c></p></li>
+            <li><p>Enter the number of successes (80) and sample size (124)</p></li>
+            <li><p>Set the confidence level to 90%</p></li>
           </ol>
         </p>
+        <p>
+          <term>Theory-Based Inference Applet:</term>
+        </p>
+        <p>
+          Using the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url>:
+        </p>
+        <p>
+          <ol>
+            <li><p>Keep the pull-down menu set to <c>One proportion</c>.</p></li>
+            <li><p>Specify the sample size <m>n = 124</m> and either the count (80) or the sample proportion (0.645).</p></li>
+            <li><p>Press <c>Calculate</c>.</p></li>
+            <li><p>Check the box for <c>Confidence interval</c></p></li>
+            <li><p>Change the confidence level to 90%</p></li>
+            <li><p>Press the <c>Calculate CI</c> button</p></li>
+          </ol>
+        </p>
+        <p>
+          90% confidence interval: <var width="40"/>
+        </p>
       </statement>
+      <response/>
+      <hint>
+        <p>
+          The 90% confidence interval should be approximately (0.574, 0.716).
+        </p>
+      </hint>
       <solution>
         <p>
-          JMP will display output including the 95% confidence interval:
+          90% <m>z</m>-confidence interval: (0.574, 0.716)
+        </p>
+        <p>
+          Example output from R:
+        </p>
+        <image source="images/inv1.9ksolR.png" width="80%">
+          <description>R output showing z-confidence interval for kissing study</description>
+        </image>
+        <p>
+          Example output from JMP:
         </p>
         <image source="images/inv1.9kJMP.jpg" width="80%">
-          <description>JMP output showing 95% z-confidence interval for kissing study</description>
+          <description>JMP output showing z-confidence interval for kissing study</description>
         </image>
-      </solution>
-    </exercise>
-
-    <exercise xml:id="tech-detour-tbia-zint" label="z-interval - TBIA">
-      <title><m>z</m>-interval with Theory-Based Inference applet</title>
-      <statement>
-        <sidebyside widths="55% 40%">
-          <stack>
-            <p>
-              Using the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url>:
-            </p>
-            <p>
-              <ol>
-                <li><p>Keep the pull-down menu set to <c>One proportion</c>.</p></li>
-                <li><p>Specify the sample size <m>n</m> and either the count or the sample proportion. Or check the <c>Paste Data</c> box and paste in the individual outcomes (check the <c>Includes header</c> box if you are also copying over the variable name).</p></li>
-                <li><p>Press <c>Calculate</c>.</p></li>
-                <li><p>Check the box for <c>Confidence interval</c></p></li>
-                <li><p>Change the confidence level from 95 to 90%</p></li>
-                <li><p>Press the <c>Calculate CI</c> button</p></li>
-              </ol>
-            </p>
-          </stack>
-          <stack>
-            <image source="images/Inv1.9TBI1.png" width="100%">
-              <description>Theory-Based Inference applet interface showing input fields</description>
-            </image>
-            <image source="images/Inv1.9TBI2.png" width="100%">
-              <description>Theory-Based Inference applet showing confidence interval options</description>
-            </image>
-          </stack>
-        </sidebyside>
-      </statement>
-      <solution>
         <p>
-          The applet will display output including the confidence interval:
+          Example output from Theory-Based Inference applet:
         </p>
         <image source="images/inv1.9ksolApplet.jpg" width="80%">
           <description>Theory-Based Inference applet output showing z-confidence interval for kissing study</description>
@@ -554,8 +579,6 @@
       </solution>
     </exercise>
   </subsection>
-
-  <exercises xml:id="investigation1-9-final" hidden-label="yes">
 
     <exercise xml:id="I1-9-m" label="I1.9m">
       <title>Compare to Exact Binomial Intervals</title>
@@ -920,5 +943,7 @@
       </choices>
     </exercise>
   </subsection>
+
+  </exercises>
 
 </section>
