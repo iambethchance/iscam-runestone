@@ -186,11 +186,11 @@
       <title>Find the 95% Critical Value</title>
       <statement>
         <p>
-          ind the critical value for 95% confidence. Choose one set of instructions below by clicking on a hint.
+          Find the critical value for 95% confidence. Choose one set of instructions below by clicking on a hint.
         </p>
         <p>
           Critical value for 95% confidence: <m>z^* =</m> <var width="20"/>
-        </p>F
+        </p>
       </statement>
       <response/>
       <hint>
@@ -221,11 +221,7 @@
         </p>
         <sage language="r">
           <input>
-# Load ISCAM functions from GitHub
 invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R')))
-
-# Find the critical value for 95% confidence
-# We want 95% in the middle (between the critical values)
 iscaminvnorm(prob1 = 0.95, direction = 'between')
           </input>
         </sage>
@@ -511,11 +507,7 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         <p>If you don't specify a hypothesized value and alternative, be sure to label the confidence level.</p>
         <sage language="r">
           <input>
-# Load ISCAM functions from GitHub
 invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R')))
-
-# Calculate 90% z-confidence interval for kissing study
-# 80 successes out of 124 trials
 iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
           </input>
         </sage>
