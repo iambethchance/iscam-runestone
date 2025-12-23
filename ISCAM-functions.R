@@ -716,12 +716,7 @@ iscamonepropztest <- function(
     }
   }
   withr::local_par(mfrow = c(1, 1))
-  invisible(list(
-    "zvalue" = zvalue,
-    "pvalue" = pvalue,
-    "lower" = lower,
-    "upper" = upper
-  ))
+  invisible(NULL)
 }
 
 # ============================================================================
