@@ -1,8 +1,8 @@
 <section xml:id="investigation-1-5">
-<title>Investigation 1.5: Buttered Toast</title>
+<title>Investigation 1.5: Two-sided p-values</title>
 
 <exercises xml:id="investigation1-5" hidden-label="yes">
-  <title>Introduction</title>
+  <title>Buttered Side Down Again?</title>
   
   <sidebyside widths="58% 38%">
     <stack>
@@ -44,6 +44,7 @@
     <title>Define Parameter</title>
     <statement>
       <p>Identify the parameter of interest in this study (in words).</p>
+      <var width="50"/>
     </statement>
     <response/>
     <hint>
@@ -116,7 +117,7 @@
     </solution>
   </exercise>
   
-  <p>You have now stated a two-sided alternative hypothesis (rather than a "one-sided" alternative of strictly less than or strictly greater than). So now we need to decide which values we will consider "or more extreme" in calculating the p-value.</p>
+  <p>You have now stated a <term>two-sided</term> alternative hypothesis (rather than a "one-sided" alternative of strictly less than or strictly greater than). So now we need to decide which values we will consider "or more extreme" in calculating the p-value.</p>
   <p>In this pilot study, the toast landed top-down 3 times and top-up 7 times. Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" target="_blank">One Proportion Inference applet</url> to calculate the binomial probability of 3 or fewer successes in 10 attempts, assuming the null hypothesis is true (i.e., P(X ≤ 3) where X is the number landing top-down).</p>
   <interactive iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="3:2"/>
  
@@ -124,6 +125,7 @@
     <title>Calculate One-Sided Probability</title>
     <statement>
       <p> Report the one-sided p-value</p>
+      <var width="10"/>
     </statement>
     <response/>
     <hint>
@@ -174,14 +176,18 @@
     <exercise xml:id="I1-5-8" label="I1.5.8">
       <title>Alternative Null Hypothesis</title>
       <statement>
-        <p>Restate the alternative hypothesis in words. How will the null distribution change?</p>
+        <p>Restate the alternative hypothesis in words.</p>
+        <p><var width="50" /></p>
+        <p>How will the null distribution change?</p>
+        <p><var width="50" /></p>
       </statement>
       <response/>
       <hint>
         <p>How does changing π from 0.5 to 0.55 affect the center of the distribution?</p>
       </hint>
       <solution>
-        <p>Now we think the long-run proportion of toast drops landing top side down is not 0.55. This will shift the null distribution to center at 5.5 rather than at 5 successes.</p>
+        <p>Alternative hypothesis in words: Now we think the long-run proportion of toast drops landing top side down is not 0.55.</p>
+        <p>How the null distribution changes: This will shift the null distribution to center at 5.5 rather than at 5 successes.</p>
       </solution>
     </exercise>
     
@@ -189,7 +195,7 @@
       <title>Left Tail Probability</title>
       <statement>
         <p>Make this change in the applet and find the binomial probability of 3 or fewer successes.</p>
-      </statement>
+      <var width="10"/></statement>
       <response/>
       <hint>
         <p>Use n=10, π=0.55, and find P(X ≤ 3).</p>
@@ -219,7 +225,8 @@
   <exercise xml:id="I1-5-11" label="I1.5.11">
     <title>Find More Extreme Value</title>
     <statement>
-      <p>Find P(X ≥ 8). Is x = 8 considered more extreme than x = 3?</p>
+      <p>Find P(X ≥ 8). <var width="10"/></p>
+      <p>Is x = 8 considered more extreme than x = 3? <var width="10"/></p>
     </statement>
     <response/>
     <hint>
@@ -249,12 +256,20 @@
     <statement>
       <p>Verify your result in the applet: Start with 3 and use the "Tails" option, then check the <strong>Two-sided</strong> box.</p>
     </statement>
-    <response/>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><p>Verified</p></statement>
+        <feedback><p>Correct! Results match if you start with P(X ≤ 3) and use the pull-down menu to select "Tails" for the two-sided p-value.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Not Verified</p></statement>
+        <feedback><p>Check again. Results should match if you start with P(X ≤ 3) and use the pull-down menu to select "Tails" for the two-sided p-value.</p></feedback>
+      </choice>
+    </choices>
     <hint>
       <p>Use the "Tails" option in the pull-down menu.</p>
     </hint>
     <solution>
-      <p>Results match if you start with P(X ≤ 3) and use the pull-down menu to select "Tails" for the two-sided p-value.</p>
       <figure>
         <image source="images/inv1.5pilot2.png" width="60%">
           <description>Two-sided binomial test for n=10, pi=0.55 showing two-sided p-value</description>
@@ -299,6 +314,9 @@
     <title>Buttered Toast Two-Sided Test</title>
     <statement>
       <p>Use the applet to find the two-sided p-value for testing <m>H_0: \pi = 0.5</m> vs. <m>H_a: \pi \neq 0.50</m>. Do you have strong enough evidence to reject the null hypothesis and conclude π differs from 0.5? Why are you making this decision?</p>
+      <aside>
+        <p><url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" target="_blank">One Proportion Inference applet</url></p>
+      </aside>
     </statement>
     <response/>
     <hint>
@@ -322,63 +340,67 @@
   <p><alert>Discussion:</alert> Recall that the process we are using to testing our hypotheses is to first assume the null hypothesis is true. For this reason, we can never use this process as evidence <em>for</em> the null hypothesis, only lack of evidence <em>against</em> it. Keep in mind the saying "Absence of evidence is not evidence of absence." Also, note that our evidence depends on the form of the alternative hypothesis. A more complete statement is that we do not have evidence in favor of the alternative that we specified, and that our strength of evidence could differ if we started with a different alternative hypothesis.</p>
   
   <p class="horizontal-rule"> </p>
+
+</exercises>
+
+<subsection xml:id="tech-detour-two-sided">
+  <title>Technology Detour – Two-sided p-values</title>
   
-  <paragraphs xml:id="tech-detour-two-sided">
-    <title>Technology Detour – Two-sided p-values</title>
-    
-    <exercise xml:id="tech-detour-two-sided-applet" label="Two-sided - Applet">
-      <title>Two-sided p-values in One Proportion Inference applet</title>
-      <statement>
-        <p><ul>
-          <li><p>Check the two-sided box</p></li>
-          <li><p>For the "smallest tail probability" approach, set the pull-down menu to "Tails" (finds tail value on other side that is first below the one-sided p-value)</p></li>
-          <li><p>For the "smallest p-value" approach, set the pull-down menu to "Individual" (sums all probabilities smaller than the observed)</p></li>
-          <li><p>(These will match when the distribution is symmetric.)</p></li>
-        </ul></p>
-      </statement>
-    </exercise>
-    
-    <exercise xml:id="tech-detour-two-sided-r" label="Two-sided - R">
-      <title>Two-sided p-values in R</title>
-      <statement>
-        <p>Using the <c>iscambinomtest</c> function, specify <c>alternative = "two.sided"</c></p>
-        <p>(Smallest p-value method)</p>
-        <program language="r" interactive="sage">
-          <input>
+  <exercise xml:id="tech-detour-two-sided-tech" label="tech-detour-two-sided">
+    <title>Calculate Two-Sided p-values with Technology</title>
+    <statement>
+      <p>Use technology (R or JMP) to calculate the two-sided p-value for the buttered toast study (19 successes in 48 trials with probability 0.5). Choose one set of instructions below by clicking on a hint.</p>
+      <p>Two-sided p-value = <var width="10" /></p>
+    </statement>
+    <hint>
+      <title>Applet Instructions</title>
+      <p>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" target="_blank">One Proportion Inference applet</url>:</p>
+      <p><ul>
+        <li><p>Check the two-sided box</p></li>
+        <li><p>For the "smallest tail probability" approach, set the pull-down menu to "Tails" (finds tail value on other side that is first below the one-sided p-value)</p></li>
+        <li><p>For the "smallest p-value" approach, set the pull-down menu to "Individual" (sums all probabilities smaller than the observed)</p></li>
+        <li><p>(These will match when the distribution is symmetric.)</p></li>
+      </ul></p>
+    </hint>
+    <hint>
+      <title>R Instructions</title>
+      <p>Using the <c>iscambinomtest</c> function, specify <c>alternative = "two.sided"</c></p>
+      <p>(Smallest p-value method)</p>
+      <sage language="r">
+        <input>
+# Load ISCAM functions from GitHub
+invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
+
+# Calculate two-sided binomial test
+# observed=19 successes, n=48 trials, hyp=0.5, alt="two.sided"
 iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
-          </input>
-        </program>
-      </statement>
-      <solution>
-        <p>The output will show:</p>
-        <ul>
-          <li><p>The observed number of successes (19) and sample size (48)</p></li>
-          <li><p>The hypothesized probability (0.5)</p></li>
-          <li><p>The two-sided p-value: 0.1934</p></li>
-          <li><p>A graph showing the binomial distribution with both tails shaded</p></li>
-        </ul>
-      </solution>
-    </exercise>
-    
-    <exercise xml:id="tech-detour-two-sided-jmp" label="Two-sided - JMP">
-      <title>Two-sided p-values in JMP</title>
-      <statement>
-        <p><alert>Note:</alert> The default two-sided test under Analyze > Distribution is not an "exact" binomial test.</p>
-        
-        <figure>
-          <image source="images/JMPtwosided.png" width="60%">
-            <description>JMP two-sided binomial test output</description>
-          </image>
-        </figure>
-      </statement>
-      <solution>
-        <p>The output table will show the two-sided p-value for the exact binomial test. For the buttered toast example with 19 successes out of 48 trials and hypothesized probability of 0.5, the two-sided p-value should be approximately 0.1934.</p>
-      </solution>
-    </exercise>
-  </paragraphs>
-  
-  <p class="horizontal-rule"> </p>
-  </exercises>
+        </input>
+      </sage>
+      <p>The output will show:</p>
+      <ul>
+        <li><p>The observed number of successes (19) and sample size (48)</p></li>
+        <li><p>The hypothesized probability (0.5)</p></li>
+        <li><p>The two-sided p-value: 0.1934</p></li>
+        <li><p>A graph showing the binomial distribution with both tails shaded</p></li>
+      </ul>
+    </hint>
+    <hint>
+      <title>JMP Instructions</title>
+      <p><alert>Note:</alert> The default two-sided test under Analyze > Distribution is not an "exact" binomial test.</p>
+      <figure>
+        <image source="images/JMPtwosided.png" width="60%">
+          <description>JMP two-sided binomial test output</description>
+        </image>
+      </figure>
+    </hint>
+    <solution>
+      <p>The two-sided p-value is 0.1934. The output table will show the two-sided p-value for the exact binomial test. For the buttered toast example with 19 successes out of 48 trials and hypothesized probability of 0.5, the two-sided p-value should be approximately 0.1934.</p>
+    </solution>
+  </exercise>
+</subsection>
+
+<p class="horizontal-rule"> </p>
+
   <subsection xml:id="practice1-5">
     <title>Practice Problem 1.5</title>
     
