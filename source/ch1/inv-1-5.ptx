@@ -1,5 +1,7 @@
 <section xml:id="investigation-1-5">
 <title>Investigation 1.5: Two-sided p-values</title>
+<p>So far, we have looked for evidence in favor lf a "greater than" or "less than" alternative hypothesis.  But what if our research question is interested in either type of outcome?
+</p>
 
 <exercises xml:id="investigation1-5" hidden-label="yes">
   <title>Buttered Side Down Again?</title>
@@ -144,7 +146,7 @@
   <exercise xml:id="I1-5-6" label="I1.5.6">
     <title>Identify More Extreme Outcomes</title>
     <statement>
-      <p>Conjecture: What other outcomes would you consider "as or more surprising" as 3 or fewer successes?</p>
+      <p><em>Conjecture</em>: What other outcomes would you consider "as or more surprising" as 3 or fewer successes?</p>
     </statement>
     <response/>
     <hint>
@@ -320,7 +322,7 @@
     </statement>
     <response/>
     <hint>
-      <p>Use n=48, observed=19, π=0.5, and check the two-sided box.</p>
+      <p>Use n=48, observed=19, π=0.5, and check the <term index="no">two-sided box</term>.</p>
     </hint>
     <solution>
       <figure>
@@ -341,7 +343,6 @@
   
   <p class="horizontal-rule"> </p>
 
-</exercises>
 
 <subsection xml:id="tech-detour-two-sided">
   <title>Technology Detour – Two-sided p-values</title>
@@ -356,7 +357,7 @@
       <title>Applet Instructions</title>
       <p>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" target="_blank">One Proportion Inference applet</url>:</p>
       <p><ul>
-        <li><p>Check the two-sided box</p></li>
+        <li><p>Check the <alert>two-sided</alert> box</p></li>
         <li><p>For the "smallest tail probability" approach, set the pull-down menu to "Tails" (finds tail value on other side that is first below the one-sided p-value)</p></li>
         <li><p>For the "smallest p-value" approach, set the pull-down menu to "Individual" (sums all probabilities smaller than the observed)</p></li>
         <li><p>(These will match when the distribution is symmetric.)</p></li>
@@ -387,17 +388,16 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
     <hint>
       <title>JMP Instructions</title>
       <p><alert>Note:</alert> The default two-sided test under Analyze > Distribution is not an "exact" binomial test.</p>
-      <figure>
         <image source="images/JMPtwosided.png" width="60%">
-          <description>JMP two-sided binomial test output</description>
+          <description>Use radio button to create JMP two-sided binomial test output</description>
         </image>
-      </figure>
     </hint>
     <solution>
       <p>The two-sided p-value is 0.1934. The output table will show the two-sided p-value for the exact binomial test. For the buttered toast example with 19 successes out of 48 trials and hypothesized probability of 0.5, the two-sided p-value should be approximately 0.1934.</p>
     </solution>
   </exercise>
 </subsection>
+</exercises>
 
 <p class="horizontal-rule"> </p>
 
