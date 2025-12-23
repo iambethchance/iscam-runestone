@@ -1,8 +1,10 @@
 <section xml:id="investigation-1-10">
-<title>Alt Confidence Intervals</title>
+<title>Investigation 1.10: Heart Transplant Mortality (cont.)</title>
+<p><em>The Exact Binomial and Normal approximation (em>z</em>) confidence intervals have advantages 
+and disadvantages, so let's explore some other options.</em></p>
 
 <exercises xml:id="investigation1-10" hidden-label="yes">
-    <title>Investigation 1.10: Heart Transplant Mortality (cont.)</title>
+    <title>More Confidence Intervals</title>
     
     <p>
       Recall <xref ref="investigation-1-4" text="custom">Investigation 1.4</xref>, where you learned that 8 of the 10 most recent heart transplantation operations at St. George's Hospital resulted in a death.
@@ -28,7 +30,21 @@
       </statement>
       <response/>
       <hint><title>R</title>
-        <p>Use <c>iscambinomtest(...., conf.level = .95)</c></p>
+        <p>Use the <c>iscambinomtest()</c> function with the following parameters:</p>
+        <p>
+          <ul>
+            <li><p><c>observed</c> = number of successes (8)</p></li>
+            <li><p><c>n</c> = sample size (10)</p></li>
+            <li><p><c>alternative</c> = "two.sided" (for confidence intervals)</p></li>
+            <li><p><c>conf.level</c> = confidence level (0.95 or 95)</p></li>
+          </ul>
+        </p>
+        <sage language="r">
+          <input>
+source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R');
+iscambinomtest(observed = 8, n = 10, alternative = "two.sided", conf.level = 0.95)
+          </input>
+        </sage>
       </hint>
       <hint><title>JMP</title>
         <p>Use Journal File <ellipsis/> confidence interval (Summary Stats) <ellipsis/> binomial</p>
@@ -113,8 +129,21 @@
         </p>
       </statement>
       <response/>
-      <hint><title>R</title>          
-      <p>Use <c>iscamoneproptest(...., conf.level = .95)</c></p>
+      <hint><title>R</title>
+        <p>Use the <c>iscamonepropztest()</c> function with the following parameters:</p>
+        <p>
+          <ul>
+            <li><p><c>observed</c> = number of successes (8)</p></li>
+            <li><p><c>n</c> = sample size (10)</p></li>
+            <li><p><c>conf.level</c> = confidence level (0.95 or 95)</p></li>
+          </ul>
+        </p>
+        <sage language="r">
+          <input>
+source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R');
+iscamonepropztest(observed = 8, n = 10, conf.level = 0.95)
+          </input>
+        </sage>
       </hint>
       <hint><title>JMP</title>
       <p>Use Journal File <ellipsis/> confidence interval <ellipsis/></p>
@@ -171,10 +200,10 @@
         <p>
           Open the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1" visual="rossmanchance.com/applets/2021/confsim/ConfSim.html">Simulating Confidence Intervals applet</url>.
         </p>
-        <interactive iframe = "https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1" width="160%" aspect="3:2"/>
         <p>
           Suppose the actual process probability of death is 0.15 and you plan to take a sample of 10 operations and apply the <m>z</m>-interval (aka Wald) method.
         </p>
+        <interactive iframe = "https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1" width="160%" aspect="3:2"/>
         <p>
           <ul>
             <li><p>Set the value of <m>\pi</m> to 0.15 and the Sample size (<em>n</em>) to 10.</p></li>
