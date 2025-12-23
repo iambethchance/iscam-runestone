@@ -400,6 +400,79 @@ iscambinomtest <- function(
 }
 
 # ============================================================================
+# NORMAL DISTRIBUTION FUNCTIONS
+# ============================================================================
+
+# Inverse Normal Calculation - finds quantiles from probabilities
+iscaminvnorm <- function(prob1, mean = 0, sd = 1, direction) {
+  if (direction == "below") {
+    answer <- qnorm(prob1, mean, sd)
+    cat("The observation with", prob1, "probability below is", round(answer, 4), "\n")
+  } else if (direction == "above") {
+    answer <- qnorm(prob1, mean, sd, lower.tail = FALSE)
+    cat("The observation with", prob1, "probability above is", round(answer, 4), "\n")
+  } else if (direction == "between") {
+    answer1 <- qnorm((1 - prob1) / 2, mean, sd)
+    answer2 <- qnorm(1 - (1 - prob1) / 2, mean, sd)
+    cat("There is", prob1, "probability between", round(answer1, 4), "and", round(answer2, 4), "\n")
+  } else if (direction == "outside") {
+    answer1 <- qnorm(prob1 / 2, mean, sd)
+    answer2 <- qnorm(1 - prob1 / 2, mean, sd)
+    cat("There is", prob1, "probability outside", round(answer1, 4), "and", round(answer2, 4), "\n")
+  }
+  invisible(NULL)
+}
+
+# One Proportion Z-Test and Confidence Interval
+iscamonepropztest <- function(observed, n, hypothesized = NULL, alternative = "two.sided", conf.level = NULL) {
+  # Convert proportion to count if needed
+  if (observed < 1) {
+    observed <- round(n * observed)
+  }
+  
+  phat <- observed / n
+  
+  # Hypothesis test
+  if (!is.null(hypothesized)) {
+    se <- sqrt(hypothesized * (1 - hypothesized) / n)
+    z <- (phat - hypothesized) / se
+    
+    if (alternative == "two.sided") {
+      pval <- 2 * pnorm(-abs(z))
+    } else if (alternative == "greater") {
+      pval <- pnorm(z, lower.tail = FALSE)
+    } else if (alternative == "less") {
+      pval <- pnorm(z)
+    }
+    
+    cat("\nOne Proportion Z-Test\n")
+    cat("=====================\n")
+    cat(paste0("Sample proportion: ", round(phat, 4), " (", observed, " out of ", n, ")\n"))
+    cat(paste0("Null hypothesis: pi = ", hypothesized, "\n"))
+    cat(paste0("Alternative: ", alternative, "\n"))
+    cat(paste0("Z-statistic: ", round(z, 4), "\n"))
+    cat(paste0("p-value: ", round(pval, 4), "\n"))
+  }
+  
+  # Confidence interval
+  if (!is.null(conf.level)) {
+    se_ci <- sqrt(phat * (1 - phat) / n)
+    z_crit <- qnorm(1 - (1 - conf.level) / 2)
+    ci_lower <- phat - z_crit * se_ci
+    ci_upper <- phat + z_crit * se_ci
+    
+    if (is.null(hypothesized)) {
+      cat("\nOne Proportion Z-Confidence Interval\n")
+      cat("====================================\n")
+      cat(paste0("Sample proportion: ", round(phat, 4), " (", observed, " out of ", n, ")\n"))
+    }
+    cat(paste0(conf.level * 100, "% Confidence Interval: (", round(ci_lower, 4), ", ", round(ci_upper, 4), ")\n"))
+  }
+  
+  invisible(NULL)
+}
+
+# ============================================================================
 # TWO PROPORTION Z-TEST
 # ============================================================================
 
@@ -467,5 +540,7 @@ cat("  - iscamdotplot()\n")
 cat("  - iscamboxplot()\n")
 cat("  - iscambinomprob()\n")
 cat("  - iscambinomtest()\n")
+cat("  - iscaminvnorm()\n")
+cat("  - iscamonepropztest()\n")
 cat("  - iscamtwopropztest()\n")
 cat("  - iscamhyperprob()\n")
