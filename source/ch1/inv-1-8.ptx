@@ -374,7 +374,7 @@
 
     <p>
       The normal approximation is typically applied to the null distribution of sample proportions rather than sample counts.
-    <ul><li>Use the radio button to toggle the <term index="no">Choice of Statistic</term> to Proportion of heads. </li></ul></p>
+    <ul><li>In the applet, use the radio button to toggle the <term index="no">Choice of Statistic</term> to Proportion of heads. </li></ul></p>
 
     <exercise xml:id="I1-8-i" label="I1.8i">
       <title>Switch to Proportions</title>
@@ -467,7 +467,7 @@
         <p>
           What does the "zero" subscript tell you?
         </p>
-        <var width = "30"/>
+        <var width = "50"/>
       </statement>
       <response/>
       <hint>
@@ -553,7 +553,7 @@
       <title>Conduct One Proportion z-test with Technology</title>
       <statement>
         <p>
-          Use technology (Applet, R, or JMP) to conduct a one proportion <em>z</em>-test for the Halloween study (n = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
+          Use technology (Applet, R, or JMP) to conduct a one proportion <em>z</em>-test for the Halloween study (<em>n</em> = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
         </p>
         <p>Enter the p-value you find: <var width="10"/></p>
       </statement>
@@ -567,7 +567,7 @@
         </var>
       </setup>
       <hint>
-        <title>Theory-Based Inference Applet</title>
+        <title><url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url></title>
         <sidebyside widths="55% 40%" valign="top">
           <stack>
             <p>
@@ -787,13 +787,15 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
 
     <p>
       To make the normal probability (which is finding <m>P(X &lt; 135)</m>) closer to the binomial probability, which finds <m>P(X \leq 135) = P(X &lt; 135) + P(X = 135)</m>, we want to include more of the area under the normal curve above 135 in our calculation. A continuity correction does this by using the normal distribution to find <m>P(X &lt; 135.5)</m> instead. This does not change the binomial probability but should enlarge the normal probability.
-    </p>
-
+    <ul><li>
+     In the One Proportion Inference applet, specify 135.5 in the <alert>As Extreme As</alert> box (if using number of successes as the statistic, otherwise use <m>135.5/284 \approx 0.477</m> instead) and press <alert>Count</alert>. 
+     </li></ul>
+     </p>
     <exercise xml:id="I1-8-r" label="I1.8r">
       <title>Apply Continuity Correction</title>
       <statement>
         <p>
-          In the One Proportion Inference applet, specify 135.5 in the As Extreme As box (if using number of successes as the statistic, otherwise use <m>135.5/284 \approx 0.477</m> instead) and press <strong>Count</strong>. What does the applet use for the right-side cut-off? Why? How does the p-value change? Is it now more similar to the binomial p-value?
+         What does the applet use for the right-side cut-off? Why? How does the p-value change? Is it now more similar to the binomial p-value?
         </p>
       </statement>
       <response/>
@@ -813,19 +815,16 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
     </exercise>
 
     <p>
-      Many software programs allow you to apply this continuity correction for a one-sample <em>z</em>-test (e.g., using <m>\hat{p} = (X \pm 0.5)/n</m> as the input) or may do so by default. However, when n is large, you may not see much difference in the values.
+      Many software programs allow you to apply this continuity correction for a one-sample <em>z</em>-test (e.g., using <m>\hat{p} = (X \pm 0.5)/n</m> as the input) or may do so by default. However, when <em>n</em> is large, you may not see much difference in the values.
     </p>
-
-  </exercises>
   
   <subsection xml:id="tech-detour-continuity-correction">
     <title>Technology Detour - Continuity Correction</title>
-    <exercises>
     <exercise xml:id="tech-detour-continuity-correction-combined" label="Tech1.8.CC.combined">
       <title>Apply Continuity Correction with Technology</title>
       <statement>
         <p>
-          Use technology (Applet or R) to apply a continuity correction to the Halloween study data (n = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
+          Use technology (Applet or R) to apply a continuity correction to the Halloween study data (<em>n</em> = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
         </p>
         <p>Enter the corrected p-value you find: <var width="10"/></p>
       </statement>
@@ -878,10 +877,7 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
         <sage language="r">
           <input>
 <![CDATA[
-# Load ISCAM functions from GitHub
-source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20231223');
-
-# Visualize continuity correction
+invisible(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20231223'));
 iscambinomnorm(135, 284, 0.5, "two.sided")
 ]]>
           </input>
@@ -917,10 +913,8 @@ iscambinomnorm(135, 284, 0.5, "two.sided")
         </image>
       </solution>
     </exercise>
-    </exercises>
   </subsection>
   
-  <exercises xml:id="investigation1-8-conclusions" hidden-label="yes">
 
     <assemblage xml:id="study-conclusions-1-8">
       <title>Study Conclusions</title>
