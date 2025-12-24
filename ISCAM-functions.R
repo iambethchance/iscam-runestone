@@ -157,6 +157,197 @@ iscambinomprob <- function(k, n, prob, lower.tail, verbose = TRUE) {
   return(this.prob)
 }
 
+# Binomial with normal approximation and continuity correction visualization
+iscambinomnorm <- function(k, n, prob, direction) {
+  withr::local_par(mar = c(5, 3, 1, 1))
+
+  thisx <- 0:n
+  phat <- thisx / n
+  minx <- max(0, n * prob - 4 * sqrt(prob * (1 - prob) * n))
+  maxx <- max(k + 1, min(n, n * prob + 4 * sqrt(prob * (1 - prob) * n)))
+  myy <- max(dbinom(floor(n * prob), n, prob))
+  plot(
+    thisx,
+    dbinom(thisx, size = n, prob),
+    xlab = "",
+    ylab = " ",
+    type = "h",
+    xlim = c(minx, maxx),
+    panel.first = grid(),
+    lwd = 2
+  )
+  abline(h = 0, col = "gray")
+  mtext(side = 1, line = 3, "Number of Successes (Proportion)")
+  mtext(side = 2, line = 2, "Probability (Density)")
+
+  axis(
+    side = 1,
+    at = thisx,
+    labels = signif(phat, 2),
+    padj = 1.2,
+    tick = FALSE,
+    col.axis = "blue"
+  )
+  normmean <- n * prob
+  normsd <- sqrt(n * prob * (1 - prob))
+  normseq <- seq(0, n, .001)
+  lines(normseq, dnorm(normseq, normmean, normsd), col = "grey")
+  if (direction == "below") {
+    probseq <- seq(0, k, .001)
+    phatseq <- probseq / n
+    withcorrect <- seq(0, k + .5, .001)
+    this.prob <- pbinom(k, n, prob)
+    normprob <- pnorm(k, normmean, normsd)
+    normprob2 <- pnorm(k + .5, normmean, normsd)
+    showprob <- format(this.prob, digits = 4)
+    showprob2 <- format(normprob, digits = 4)
+    showprob3 <- format(normprob2, digits = 4)
+    polygon(
+      c(withcorrect, k + .5, 0),
+      c(dnorm(withcorrect, normmean, normsd), 0, 0),
+      col = 6,
+      border = 6
+    )
+    polygon(
+      c(probseq, k, 0),
+      c(dnorm(probseq, normmean, normsd), 0, 0),
+      col = "light blue",
+      border = "blue"
+    )
+    lines(0:k, dbinom(0:k, size = n, prob), col = "red", type = "h", lwd = 2)
+    text(
+      minx,
+      myy * .9,
+      labels = paste("P(X \u2264", k, ") \n =", showprob),
+      col = "red",
+      pos = 4
+    )
+  } else if (direction == "above") {
+    this.prob <- 1 - pbinom(k - 1, n, prob)
+    probseq <- seq(k, n, .001)
+    withcorrect <- seq(k - .5, n, .001)
+    normprob <- pnorm(k, normmean, normsd, lower.tail = FALSE)
+    normprob2 <- pnorm(k - .5, normmean, normsd, lower.tail = FALSE)
+    showprob <- format(this.prob, digits = 4)
+    showprob2 <- format(normprob, digits = 4)
+    showprob3 <- format(normprob2, digits = 4)
+    polygon(
+      c(k - .5, withcorrect, n),
+      c(0, dnorm(withcorrect, normmean, normsd), 0),
+      col = 6,
+      border = 6
+    )
+    polygon(
+      c(k, probseq, n),
+      c(0, dnorm(probseq, normmean, normsd), 0),
+      col = "light blue",
+      border = "blue"
+    )
+    lines(k:n, dbinom(k:n, size = n, prob), col = "red", type = "h", lwd = 2)
+    text(
+      maxx,
+      myy * .9,
+      labels = paste0("P(X \u2265 ", k, ")\n = ", showprob),
+      col = "red",
+      pos = 2
+    )
+  } else if (direction == "two.sided") {
+    if (k < normmean) {
+      k1 <- k
+      k2 <- floor(min(normmean - k + normmean, n))
+      newvalue <- dbinom(k2, size = n, prob)
+      if (newvalue <= dbinom(k1, size = n, prob) + .00001) {
+        k2 <- k2
+      } else {
+        k2 <- k2 + 1
+      }
+    } else {
+      k1 <- floor(min(normmean - (k - normmean), n))
+      k2 <- k
+      newvalue <- dbinom(k1, size = n, prob)
+      if (newvalue <= dbinom(k, size = n, prob) + .00001) {
+        k1 <- k1
+      } else {
+        k1 <- k1 - 1
+      }
+    }
+    this.prob <- pbinom(k1, n, prob) +
+      pbinom(k2 - 1, n, prob, lower.tail = FALSE)
+    normprob <- pnorm(k1, normmean, normsd) +
+      pnorm(k2, normmean, normsd, lower.tail = FALSE)
+    normprob2 <- pnorm(k1 + .5, normmean, normsd) +
+      pnorm(k2 - .5, normmean, normsd, lower.tail = FALSE)
+    showprob <- format(this.prob, digits = 4)
+    showprob2 <- format(normprob, digits = 4)
+    showprob3 <- format(normprob2, digits = 4)
+    probseq1 <- seq(0, k1, .001)
+    probseq2 <- seq(k2, n, .001)
+    withcorrect <- seq(0, k1 + .5, .001)
+    withcorrect2 <- seq(k2 - .5, n, .001)
+    polygon(
+      c(withcorrect, k1 + .5, 0),
+      c(dnorm(withcorrect, normmean, normsd), 0, 0),
+      col = 6,
+      border = 6
+    )
+    polygon(
+      c(probseq1, k1, 0),
+      c(dnorm(probseq1, normmean, normsd), 0, 0),
+      col = "light blue",
+      border = "blue"
+    )
+    polygon(
+      c(k2 - .5, withcorrect2, n),
+      c(0, dnorm(withcorrect2, normmean, normsd), 0),
+      col = 6,
+      border = 6
+    )
+    polygon(
+      c(k2, probseq2, n),
+      c(0, dnorm(probseq2, normmean, normsd), 0),
+      col = "light blue",
+      border = "blue"
+    )
+    lines(0:k1, dbinom(0:k1, size = n, prob), col = "red", type = "h")
+    lines(k2:n, dbinom(k2:n, size = n, prob), col = "red", type = "h")
+    text(
+      minx,
+      myy * .85,
+      labels = paste(
+        "P(X \u2264",
+        k1,
+        ") + P(X \u2265",
+        k2,
+        ") \n =",
+        showprob
+      ),
+      col = "red",
+      pos = 4
+    )
+  }
+  newtitle <- substitute(
+    paste(
+      "Binomial (",
+      n == x1,
+      ", ",
+      pi == x2,
+      "), Normal(",
+      mean == x3,
+      ",  ",
+      SD == x4,
+      ")"
+    ),
+    list(x1 = n, x2 = prob, x3 = prob, x4 = signif(normsd / n, 4))
+  )
+  title(newtitle)
+  full <- c(
+    c(" binomial:", showprob),
+    c("\n normal approx:", showprob2),
+    c("\n normal approx with continuity:", showprob3)
+  )
+  cat(full, "\n")
+}
+
 # Binomial test
 iscambinomtest <- function(
   observed,
