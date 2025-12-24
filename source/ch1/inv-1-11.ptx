@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="investigation-1-11">
 <title>Investigation 1.11: Ganzfeld Experiments</title>
-<p><em>An important first step if designing a study is determining whether you have enough observations to be able to detect the effect of interest.</em></p>
+<p><em>An important first step of designing a study is determining whether you have enough observations to be able to detect the effect of interest.</em></p>
 <exercises xml:id="investigation1-11" hidden-label="yes">
     <title>The Study</title>
     
@@ -128,7 +128,7 @@
           According to the distribution in <xref ref="I1-11-b" text="custom">question 2</xref>, what proportion of the 329 sessions would need to be successful ("hits"), in order to reject the null hypothesis in <xref ref="I1-11-a" text="custom">question 1</xref> in favor of the alternative hypothesis at the 5% level of significance?
         </p>
         <p>
-          In the <url href="https://www.rossmanchance.com/applets/2021/power/Power.html" visual="rossmanchance.com/applets/2021/power/Power.html">Power Simulation applet</url>:
+          In the <url href="https://www.rossmanchance.com/applets/2021/power/power.html?hideExtras=1" visual="rossmanchance.com/applets/2021/power/power.html">Power Simulation applet</url>:
         </p>
   <p>
           <ul>
@@ -446,7 +446,7 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
             </ul>
           </p>
           <p>
-            For example: <alert>iscamnormpower(LOS=.05, n=20, prob1=.25, alternative="greater", prob2=0.333)</alert>
+            For example: <c>iscamnormpower(LOS=.05, n=20, prob1=.25, alternative="greater", prob2=0.333)</c>
           </p>
           <p>
             should reveal both distributions and report the rejection region to achieve the level of significance, the observed level of significance, and the power.
@@ -510,7 +510,7 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
       <title>Sample Size for 80% Power at π = 0.35</title>
       <statement>
         <p>
-          How will your answer to (k) change if the actual probability of success is <m>\pi = 0.35</m>? Determine the number of sessions needed in this case.
+          How will your answer to the previous question change if the actual probability of success is <m>\pi = 0.35</m>? Determine the number of sessions needed in this case.
         </p>
         <p>
           Sample size needed: <var width="20"/>
@@ -553,10 +553,12 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
         If the researchers believe there is a genuine but small effect (say 5 percentage points) of ESP, then with a sample size of 329, there is about a 65% chance that, when the probability of a correct identification equals 0.30, they will obtain a sample result that convinces them to reject the null hypothesis that <m>\pi = 0.250</m>. With a sample size of around 500, there is over 80% chance that the researchers will find evidence of ESP when <m>\pi = 0.30</m>. Keep in mind that with a large sample size, we can often find a statistically significant result that we may not consider practically significant.
       </p>
 
-      <p>
-        <em>Discussion:</em> When the sample size is small, the binomial distribution can be used for power calculations, but notice that the discreteness of the binomial probability distribution can complicate matters. This is another example where the normal distribution is simpler, but do keep in mind use of the normal approximation is not always valid.
-      </p>
     </assemblage>
+
+      <p>
+        <title>Discussion:</title> When the sample size is small, the binomial distribution can be used for power calculations, but notice that the discreteness of the binomial probability distribution can complicate matters. This is another example where the normal distribution is simpler, but do keep in mind use of the normal approximation is not always valid.
+      </p>
+
 </exercises>
 
   <subsection xml:id="practice1-11A">
