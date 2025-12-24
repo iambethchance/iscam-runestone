@@ -22,10 +22,18 @@
     </solution>
   </exercise>
 
+  <exercise xml:id="I1-13-interactive-applet">
+    <title>Using the Sampling Words Applet</title>
+    <statement>
+      <p>Use the applet below to generate a distribution of 10,000 random samples of size <m>n = 10</m>, calculating the sample proportion of words that are short each time.</p>
+      <interactive iframe="https://www.rossmanchance.com/applets/OneSample.html?population=gettysburg" width="100%" aspect="4:3"/>
+    </statement>
+  </exercise>
+
   <exercise xml:id="I1-13-b">
     <title>Simulated standard deviation for <m>n</m> = 10</title>
     <statement>
-      <p>Using the <url href="https://www.rossmanchance.com/applets/OneSample.html?population=gettysburg">Sampling Words applet</url>, generate a distribution of 10,000 random samples of size <m>n = 10</m>, calculating the sample proportion of words that are short each time. What does the applet report for the standard deviation of the sample proportions? Is it close to the theoretical value you calculated in <xref ref="I1-13-a"/>?</p>
+      <p>What does the applet report for the standard deviation of the sample proportions? Is it close to the theoretical value you calculated in <xref ref="I1-13-a"/>?</p>
 
       <p>Applet standard deviation: <var width="15"/></p>
       <p>Comparison: <var width="60"/></p>
@@ -62,7 +70,8 @@
     </solution>
   </exercise>
 
-  <p><title>Discussion:</title> The theoretical formula we've been using for the standard deviation of sample proportions assumes that the probability of success is constant and the trials are independent (properties of a binomial random variable). Now that we are sampling without replacement from a finite population, the population characteristics do change slightly as we remove observations. The probability the first word is short will be <m>110/268 \approx 0.410</m>, but if that word is short, the probability the next one will also be short is now <m>109/267 \approx 0.408</m>. And if the first word is not short, the probability the second one will be is <m>110/267 \approx 0.412</m>. In other words, the probability of success (short word) for the 2nd trial depends on what we obtained in the first trial.</p>
+  <paragraphs><title>Discussion:</title> The theoretical formula we've been using for the standard deviation of sample proportions assumes that the probability of success is constant and the trials are independent (properties of a binomial random variable). Now that we are sampling without replacement from a finite population, the population characteristics do change slightly as we remove observations. The probability the first word is short will be <m>110/268 \approx 0.410</m>, but if that word is short, the probability the next one will also be short is now <m>109/267 \approx 0.408</m>. And if the first word is not short, the probability the second one will be is <m>110/267 \approx 0.412</m>. In other words, the probability of success (short word) for the 2nd trial depends on what we obtained in the first trial.</p>
+  </paragraphs>
 
   <assemblage>
     <title>Key Result: Sampling Without Replacement</title>
@@ -100,14 +109,17 @@
     </solution>
   </exercise>
 
-  <p><title>Discussion:</title> The finite population correction factor should decrease the predicted value of the standard deviation (always multiplying by a value less than one) and give a value that is closer to the simulation results.</p>
+  <paragraphs><title>Discussion:</title><p> The finite population correction factor should decrease the predicted value of the standard deviation (always multiplying by a value less than one) and give a value that is closer to the simulation results.</p></paragraphs>
 
-  <p>Suppose we have a very large population, how does this impact our calculation of the standard deviation of the sample proportions?</p>
+  <p>Suppose we have a very large population, how does this impact our calculation of the standard deviation of the sample proportions?
+  <ul>
+  <li>In the applet, change the population size by selecting the <alert>x100</alert> button.</li>
+  </ul></p>
 
   <exercise xml:id="I1-13-e">
     <title>Population proportion with larger population</title>
     <statement>
-      <p>In the applet, change the population size by selecting the <c>x100</c> button. What is the population proportion of words that are short?</p>
+      <p> What is the population proportion of words that are short?</p>
 
       <p>Population proportion: <var width="15"/></p>
     </statement>
@@ -142,8 +154,8 @@
 
   <p>If the population size is not large, we use the "finite population correction factor." Probability sampling methods other than simple random sampling would also require calculating a different standard deviation. You can learn more appropriate techniques in a course on sampling design and methods.</p>
 
-  <p><title>Discussion:</title> Once again you see the fundamental principle of sampling variability. Fortunately, this variability follows a predictable pattern in the long run. With random sampling, we expect the sample proportion to be "representative" of the population proportion. The second key advantage of random sampling is we now know how to estimate the size of the sample-to-sample variation. Sample proportions that are based on larger samples will tend to fall even closer to the population proportion as there is less variability among the sample proportions. So first, select randomly to avoid bias, and then if we can increase the sample size, this will improve the precision of the sample results. Once we know the precision of the sample results in repeated samples, then we can decide whether any one particular sample result can be considered statistically significant or unlikely to happen by chance – by the random sampling process – alone. A small p-value does not guarantee that the sample result did not happen just by chance, but it does allow you to measure how unlikely such a result is.</p>
-
+  <paragraphs><title>Discussion:</title><p>Once again you see the fundamental principle of sampling variability. Fortunately, this variability follows a predictable pattern in the long run. With random sampling, we expect the sample proportion to be "representative" of the population proportion. The second key advantage of random sampling is we now know how to estimate the size of the sample-to-sample variation. Sample proportions that are based on larger samples will tend to fall even closer to the population proportion as there is less variability among the sample proportions. So first, select randomly to avoid bias, and then if we can increase the sample size, this will improve the precision of the sample results. Once we know the precision of the sample results in repeated samples, then we can decide whether any one particular sample result can be considered statistically significant or unlikely to happen by chance – by the random sampling process – alone. A small p-value does not guarantee that the sample result did not happen just by chance, but it does allow you to measure how unlikely such a result is.</p>
+</paragraphs>
   <p>In <xref ref="inv-1-15" text="custom">Investigation 1.15</xref>, you will consider a method for computing an "exact" p-value, taking the population size into account. However, in many situations we don't know the size of the population, just that it is large, and instead we will proceed directly to the binomial or normal-based method, as long as the technical conditions are met.</p>
 
 </exercises>
