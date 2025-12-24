@@ -362,7 +362,7 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
       <response/>
       <hint>
         <p>If survival is success, then the benchmark becomes 0.85. How many survived out of 10?</p>
-      </hint>
+      </hint>      
       <hint>
         <title>R option</title>
         <sage language="r">
@@ -371,7 +371,25 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
 source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20231223');
 
 # Calculate binomial test
-iscambinomtest(observed=, n=, hypothesized=, alternative="")
+# Replace the blanks with your values:
+tryCatch({
+  iscambinomtest(observed=, n=, hypothesized=, alternative="")
+}, error = function(e) {
+  cat("Please fill in all parameter values:\n")
+  cat("  observed = number of successes\n")
+  cat("  n = sample size\n")
+  cat("  hypothesized = hypothesized probability (e.g., 0.5)\n")
+  cat("  alternative = \"greater\", \"less\", or \"two.sided\"\n")
+})
+          </input>
+        </sage>t(observed=, n=, hypothesized=, alternative="")
+}, error = function(e) {
+  cat("Please fill in all parameter values:\n")
+  cat("  observed = number of successes\n")
+  cat("  n = sample size\n")
+  cat("  hypothesized = hypothesized probability (e.g., 0.5)\n")
+  cat("  alternative = \"greater\", \"less\", or \"two.sided\"\n")
+})
           </input>
         </sage>
       </hint>
