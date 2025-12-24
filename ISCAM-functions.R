@@ -165,6 +165,16 @@ iscambinomtest <- function(
   alternative,
   conf.level = NULL
 ) {
+  # Check for missing parameters
+  if (missing(observed) || missing(n) || missing(hypothesized) || missing(alternative)) {
+    cat("Please fill in all required parameters:\n")
+    cat("  observed = number of successes\n")
+    cat("  n = sample size\n")
+    cat("  hypothesized = hypothesized probability (e.g., 0.5)\n")
+    cat("  alternative = \"greater\", \"less\", or \"two.sided\"\n")
+    return(invisible(NULL))
+  }
+  
   old <- par(mar = c(3.5, 3, 2, 1), pin = c(4.5, 2.5))
   on.exit(par(old), add = TRUE)
 
