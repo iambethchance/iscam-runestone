@@ -267,15 +267,18 @@
       <title>Verify with Applet</title>
       <statement>
         <p>
-          Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" visual="rossmanchance.com/applets/2021/oneprop/OneProp.htm">One Proportion Inference applet</url> to verify your answers to <xref ref="I1-8-d"/>. Check the <strong>Normal Approximation</strong> box to verify your answer to <xref ref="I1-8-f"/>.
+          Use the One Proportion Inference applet below to verify your answers to <xref ref="I1-8-d"/>. Check the <strong>Normal Approximation</strong> box to verify your answer to <xref ref="I1-8-f"/>.
         </p>
+        <interactive xml:id="oneprop-applet-1-8-g" iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="4:5"/>
       </statement>
-      <response/>
+      <hint>
+        <p>Enter n=284 and observed=135. Check the Normal Approximation box to see the normal curve overlay.</p>
+      </hint>
       <solution>
         <p>
           The mean is at 142 and the standard deviation is at 8.43. The normal distribution overlay matches up pretty well with the binomial distribution though we do see some spaces between the bars.
         </p>
-        <image source="images/Inv1.8g.png" width="80%">
+        <image source="images/inv1.8g.png" width="80%">
           <description>One Proportion Inference applet showing binomial distribution with normal approximation overlay</description>
         </image>
       </solution>
@@ -376,7 +379,7 @@
       <title>Switch to Proportions</title>
       <statement>
         <p>
-          Use the radio button to toggle the <strong>Choice of Statistic</strong> to Proportion of heads. What changes about the null distribution? What is the observed value of the statistic?
+          Use the radio button to toggle the <term index="no">Choice of Statistic</term> to Proportion of heads. What changes about the null distribution? What is the observed value of the statistic?
         </p>
       </statement>
       <response/>
@@ -542,9 +545,11 @@
       </solution>
     </exercise>
 
-    <paragraphs xml:id="tech-detour-one-prop-z">
-      <title>Technology Detour - One Proportion z-test</title>
-
+  </exercises>
+  
+  <subsection xml:id="tech-detour-one-prop-z">
+    <title>Technology Detour - One Proportion z-test</title>
+    <exercises>
     <exercise xml:id="tech-detour-one-prop-z-applet" label="Tech1.8.applet">
       <title>Technology Detour (Theory-Based Inference Applet)</title>
       <statement>
@@ -705,8 +710,10 @@ iscamonepropztest(135, 284, 0.5, "two.sided")
         </image>
       </solution>
     </exercise>
-
-    </paragraphs>
+    </exercises>
+  </subsection>
+  
+  <exercises xml:id="investigation1-8-continued" hidden-label="yes">
 
     <exercise xml:id="I1-8-n" label="I1.8n">
       <title>Interpret p-value</title>
@@ -832,9 +839,11 @@ iscamonepropztest(135, 284, 0.5, "two.sided")
       Many software programs allow you to apply this continuity correction for a one-sample <em>z</em>-test (e.g., using <m>\hat{p} = (X \pm 0.5)/n</m> as the input) or may do so by default. However, when n is large, you may not see much difference in the values.
     </p>
 
-    <paragraphs xml:id="tech-detour-continuity-correction">
-      <title>Technology Detour - Continuity Correction</title>
-
+  </exercises>
+  
+  <subsection xml:id="tech-detour-continuity-correction">
+    <title>Technology Detour - Continuity Correction</title>
+    <exercises>
     <exercise xml:id="tech-detour-continuity-correction-applet" label="Tech1.8.CC.applet">
       <title>Technology Detour (Theory-Based Inference Applet)</title>
       <statement>
@@ -929,8 +938,10 @@ iscambinomnorm(135, 284, 0.5, "two.sided")
     <image source="images/contcorrR.png" width="80%">
       <description>R visualization showing continuity correction comparison</description>
     </image>
-
-    </paragraphs>
+    </exercises>
+  </subsection>
+  
+  <exercises xml:id="investigation1-8-conclusions" hidden-label="yes">
 
     <assemblage xml:id="study-conclusions-1-8">
       <title>Study Conclusions</title>
