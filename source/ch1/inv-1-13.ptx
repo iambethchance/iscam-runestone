@@ -26,14 +26,14 @@
     <title>Using the Sampling Words Applet</title>
     <statement>
       <p>Use the applet below to generate a distribution of 10,000 random samples of size <m>n = 10</m>, calculating the sample proportion of words that are short each time.</p>
-      <interactive iframe="https://www.rossmanchance.com/applets/OneSample.html?population=gettysburg" width="100%" aspect="4:3"/>
+      <interactive iframe="https://www.rossmanchance.com/applets/OneSample.html?population=gettysburg&hideExtras=1" width="160%" aspect="3:2"/>
     </statement>
   </exercise>
 
   <exercise xml:id="I1-13-b">
     <title>Simulated standard deviation for <m>n</m> = 10</title>
     <statement>
-      <p>What does the applet report for the standard deviation of the sample proportions? Is it close to the theoretical value you calculated in <xref ref="I1-13-a"/>?</p>
+      <p>What does the applet report for the standard deviation of the sample proportions? Is it close to the theoretical value you calculated in <xref ref="I1-13-a" text="custom">question 2</xref>?</p>
 
       <p>Applet standard deviation: <var width="15"/></p>
       <p>Comparison: <var width="60"/></p>
@@ -52,7 +52,7 @@
   <exercise xml:id="I1-13-c">
     <title>Comparing formula and simulation for <m>n</m> = 100</title>
     <statement>
-      <p>Repeat <xref ref="I1-13-a"/> and <xref ref="I1-13-b"/> using <m>n = 100</m> as the sample size. Are the theoretical and simulation-based standard deviations still similar?</p>
+      <p>Repeat <xref ref="I1-13-a" text="custom">question 2</xref> and <xref ref="I1-13-b" text="custom">question 3</xref> using <m>n = 100</m> as the sample size. Are the theoretical and simulation-based standard deviations still similar?</p>
 
       <p>Formula prediction: <var width="15"/></p>
       <p>Applet simulation: <var width="15"/></p>
@@ -70,7 +70,7 @@
     </solution>
   </exercise>
 
-  <paragraphs><title>Discussion:</title> <p>The theoretical formula we've been using for the standard deviation of sample proportions assumes that the probability of success is constant and the trials are independent (properties of a binomial random variable). Now that we are sampling without replacement from a finite population, the population characteristics do change slightly as we remove observations. The probability the first word is short will be <m>110/268 \approx 0.410</m>, but if that word is short, the probability the next one will also be short is now <m>109/267 \approx 0.408</m>. And if the first word is not short, the probability the second one will be is <m>110/267 \approx 0.412</m>. In other words, the probability of success (short word) for the 2nd trial depends on what we obtained in the first trial.</p>
+  <paragraphs><title>Discussion</title> <p>The theoretical formula we've been using for the standard deviation of sample proportions assumes that the probability of success is constant and the trials are independent (properties of a binomial random variable). Now that we are sampling without replacement from a finite population, the population characteristics do change slightly as we remove observations. The probability the first word is short will be <m>110/268 \approx 0.410</m>, but if that word is short, the probability the next one will also be short is now <m>109/267 \approx 0.408</m>. And if the first word is not short, the probability the second one will be is <m>110/267 \approx 0.412</m>. In other words, the probability of success (short word) for the 2nd trial depends on what we obtained in the first trial.</p>
   </paragraphs>
 
   <assemblage>
@@ -109,7 +109,7 @@
     </solution>
   </exercise>
 
-  <paragraphs><title>Discussion:</title><p> The finite population correction factor should decrease the predicted value of the standard deviation (always multiplying by a value less than one) and give a value that is closer to the simulation results.</p></paragraphs>
+  <paragraphs><title>Discussion</title><p> The finite population correction factor should decrease the predicted value of the standard deviation (always multiplying by a value less than one) and give a value that is closer to the simulation results.</p></paragraphs>
 
   <p>Suppose we have a very large population, how does this impact our calculation of the standard deviation of the sample proportions?
   <ul>
