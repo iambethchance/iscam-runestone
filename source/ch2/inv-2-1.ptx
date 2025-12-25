@@ -75,21 +75,66 @@
   </paragraphs>
   
   <paragraphs xml:id="tech-detour-access-quantitative">
-    <title>Technology Detour - Accessing Quantitative Data</title>
+    <title>Technology Detour <mdash/> Loading in a Data File</title>
     
-    <p>You may be able to copy and paste the data from the webpage, or download the file to your computer and open it as tab delimited. Remember to search the help menus for more information if you have more complicated data files in the future.</p>
+    <p>Access the <url href="http://www.rossmanchance.com/iscam4/data/USbirthsJan2024.txt">USbirthsJan2024.txt</url> data file and check that you have 297,798 rows of data.</p>
     
-    <aside>
-      <title>R Notes</title>
-      <p>In the instructions below, recall that the + sign comes up in R after you hit Enter when R is expecting the next line to be a continuation of the previous line. You can alternatively continue the command on the same line. In the instructions below, some steps are optional.</p>
-    </aside>
+    <p><alert>R Instructions</alert></p>
+    <p><ul>
+      <li><p><alert>In RStudio:</alert> Choose Import Dataset &gt; From Text (readr) and enter the URL, then press Import.</p>
+        <p><ul>
+          <li><p>e.g., <url href="http://www.rossmanchance.com/iscam4/data/USbirthsJan2024.txt">http://www.rossmanchance.com/iscam4/data/USbirthsJan2024.txt</url></p></li>
+          <li><p>Keep First Row as Names checked</p></li>
+          <li><p>For ISCAM files, change the Delimiter to Tab.</p></li>
+          <li><p>Press Update to preview the data.</p></li>
+          <li><p>You can set the dataset name (e.g., <c>births</c>).</p></li>
+          <li><p>Note: With other data files, you may need to consider how "missing values" are coded.</p></li>
+        </ul></p>
+      </li>
+      <li><p><alert>In R using copy and paste:</alert> Open the data file link from the data files page, select all, copy, and then in R use the following command (Keep in mind that R is case sensitive):</p>
+        <program language="r">
+          <input>
+# PC:
+births = read.table("clipboard", header=TRUE)
+
+# MAC:
+births = read.table(pipe("pbpaste"), header=TRUE)
+          </input>
+        </program>
+        <p>You can also use a URL (in quotes). The <c>header</c> command indicates the variables have names.</p>
+      </li>
+      <li><p><alert>Txt files on your computer:</alert></p>
+        <program language="r">
+          <input>
+births = read.table(file.choose(), header=TRUE)
+          </input>
+        </program>
+      </li>
+      <li><p>To see the data, type <c>View(births)</c> or <c>head(births)</c></p></li>
+      <li><p>Next you can "attach" the file to be able to use variable names directly:</p>
+        <program language="r">
+          <input>
+attach(births)    # Now R knows what the "birthweight" variable is
+          </input>
+        </program>
+        <p>or you need to clarify to R which datafile you are using (e.g., <c>births$birthweight</c>).</p>
+      </li>
+      <li><p>Other input options, depending on how the data you are pasting is formatted, include:</p>
+        <p><ul>
+          <li><p><c>sep="\t"</c> separated by tabs</p></li>
+          <li><p><c>na.strings="*"</c> how to code missing values</p></li>
+          <li><p><c>strip.white=TRUE</c> strip extra white space</p></li>
+        </ul></p>
+      </li>
+    </ul></p>
     
-    <aside>
-      <title>JMP Notes</title>
-      <p>Remember to paste in the column names (e.g., hold down the shift key) when using ctrl-V. Also make sure you don't end up with an extra row. For this data set, we recommend you save the file and use File &gt; Open and use the pull-down menu to specify the .txt format.</p>
-    </aside>
+    <p><alert>JMP Instructions</alert></p>
+    <p><ul>
+      <li><p>Choose File &gt; New &gt; Data table. Open the USbirthsJan2024.txt (raw data) link from the data files page and select all the observations and the variable names and copy the data into the clipboard. Return to the data table in JMP and select Edit &gt; Paste with Column Names.</p></li>
+      <li><p>Or if the .txt file is saved on your computer, you can choose File &gt; Open and use the pull-down menu to change the file type.</p></li>
+    </ul></p>
     
-    <p>Access the data file and check that you have 297,798 rows of data. Now use technology to create a dotplot of the birth weights.</p>
+    <p>Now use technology to create a dotplot of the birth weights.</p>
   </paragraphs>
   
   <exercise xml:id="tech-detour-dotplots">
@@ -648,7 +693,7 @@ qqline(birthweight, datax=TRUE)
   <exercise xml:id="inv2-1-r" label="I2.1r">
     <title>Compare to actual data</title>
     <statement>
-      <p>Now examine the births3 data: What percentage of the birth weights in this data set were at most 2500 grams? [Hint: Create a Boolean variable?] How does this compare to <xref ref="inv2-1-q" text="custom">the prediction in the previous checkpoint</xref>? Does this surprise you? Explain.</p>
+      <p>Now examine the births3 data: What percentage of the birth weights in this data set were at most 2500 grams? [Hint: Create a Boolean variable?] How does this compare to <xref ref="inv2-1-q" text="custom">the prediction in the previous question</xref>? Does this surprise you? Explain.</p>
     </statement>
     <hint>
       <p>Expected output:</p>
