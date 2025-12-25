@@ -120,8 +120,8 @@
     <title>Assess representativeness</title>
     <statement>
       <p>Do you think it is reasonable to consider this sample as representative of all varsity team football and soccer players at this school? Explain why or why not.</p>
+</statement>
       <response/>
-    </statement>
     <solution>
       <p>It is unlikely to be representative of all football and soccer players at this university. The responses were voluntary and therefore this was not a random sample, and the response rate was low (0.3).</p>
     </solution>
@@ -216,7 +216,10 @@
       <p>For example:</p>
       <sage language="r">
         <input>
-invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20231223')));
+# Load ISCAM functions from GitHub
+invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20231223')))
+
+# Calculate hypergeometric probability
 iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)
         </input>
       </sage>
@@ -294,8 +297,8 @@ iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)
     <title>Generalization to larger population</title>
     <statement>
       <p>What does the p-value in <xref ref="I1-15-g" text="custom">question 12</xref> tell you about the proportion of all U.S. collegiate football and soccer players with a concussion?</p>
-      <p><var width="60"/></p>
     </statement>
+    <response/>
     <solution><xref ref="I1-15-g" text="custom">question 12</xref>
       <p>This sample was not randomly selected from the population of all U.S. collegiate football and soccer players, so this sample really tells us nothing about the likelihood of a concussion among the larger population.</p>
     </solution>
