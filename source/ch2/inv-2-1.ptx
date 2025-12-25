@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="investigation2-1">
-  <title>Investigation 2.1: Birth Weights</title>
-  
+  <title>Investigation 2.1: Birth Weights</title>\
+  <p><em> In this investigation you will review traditional methods for describing the distribution 
+  of a quantitative variable, including dotplots and histograms. 
+  You will also learn how to use technology to create these displays.
+  You will also consider how to compare the observed distribution of 
+  data to a mathematical model.</em></p>
+<exercises xml:id="investigation1-3" hidden-label="yes">
+  <title>The Data</title>
   <introduction>
     <sidebyside widths="60% 35%" valign="top">
       <stack>
@@ -10,7 +16,6 @@
         <p><ul>
           <li><p>Open this website and follow the Downloadable Data Files link for Birth. How large is the zip file for the U.S. data in 2024?</p></li>
           <li><p>Open the <url href="https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2023.pdf">User's Guide for 2024</url>. How many births were recorded for the U.S. in 2024?</p></li>
-          <li><p>According to this documentation file, how many total "positions" are there in the data file? What information is in the first 8 positions? What information is in the next 4 positions? How would you determine the birth month?</p></li>
         </ul></p>
         
         </stack>
@@ -19,9 +24,11 @@
       </image>
     </sidebyside>
   
+  <p>According to this documentation file, how many total "positions" are there in the data file? What information is in the first 8 positions? What information is in the next 4 positions? How would you determine the birth month?</p>
+  
         <p>The file <url href="http://www.rossmanchance.com/iscam4/data/USbirthsJan2024.txt">USbirthsJan2024.txt</url> contains information on the 297,798 births in January 2024, including birth weight (in grams), whether the baby was full term (gestation over 36 weeks), the 5 minute <url href="http://en.wikipedia.org/wiki/Apgar_score">apgar score</url> (an immediate measure of the infant's health), and the amount of weight gained by the mother during pregnancy (in lbs). The goal of this investigation is to build a model of how birth weights can be expected to behave in the future. In particular, we will ask questions such as: Can we use that model to make predictions about certain kinds of birth weights? How reliable will our estimates be?</p>
       
-    <p><alert>Discussion:</alert> If you were to download this file, it could take a minute. You would then need to unzip the file, which is then 5GB. This can be problematic to work with, especially if you were most interested in just a few of the variables. It can also be cumbersome to deal with all of the rows, especially if you just want to see general patterns. Most packages can now work with datafiles this large, but we are still pushing the limit a bit. JMP and R take a couple minutes to read in the data, and each row is still a single string (not separated into columns or tabs). One approach is to preprocess the data a bit before loading into the software package. Using a program like "awk" you can read in the data from specific positions (e.g., just the birth weights) or in R use read.fwf. Then a comma or tab delimited file would be much easier for the software to handle. <url href="https://www.rossmanchance.com/iscam4/in/CDCBirths.html">Guide for recreating the 2023 datafile</url>.</p>
+    <paragraphs><title>Discussion:</title> If you were to download this file, it could take a minute. You would then need to unzip the file, which is then 5GB. This can be problematic to work with, especially if you were most interested in just a few of the variables. It can also be cumbersome to deal with all of the rows, especially if you just want to see general patterns. Most packages can now work with datafiles this large, but we are still pushing the limit a bit. JMP and R take a couple minutes to read in the data, and each row is still a single string (not separated into columns or tabs). One approach is to preprocess the data a bit before loading into the software package. Using a program like "awk" you can read in the data from specific positions (e.g., just the birth weights) or in R use read.fwf. Then a comma or tab delimited file would be much easier for the software to handle. <url href="https://www.rossmanchance.com/iscam4/in/CDCBirths.html">Guide for recreating the 2023 datafile</url>.</paragraphs>
     
   </introduction>
 
@@ -83,55 +90,64 @@
     <p>Access the data file and check that you have 297,798 rows of data. Now use technology to create a dotplot of the birth weights.</p>
   </paragraphs>
   
-  <paragraphs xml:id="tech-detour-dotplots">
-    <title>Technology Detour – Dotplots</title>
-    
-    <exercise xml:id="tech-detour-r-dotplot" label="Dotplot - R">
-      <title>Creating Dotplots in R</title>
-      <statement>
-        <p>Assuming you imported the data into "births"</p>
-        <program language="r" interactive="sage">
-          <input>
+  <exercise xml:id="tech-detour-dotplots">
+    <title>Technology Detour <mdash/> Creating Dotplots</title>
+    <statement>
+      <p>Use technology to create a dotplot of the birth weights. Assuming you imported the data into "births".</p>
+    </statement>
+    <hint>
+      <title>R Instructions</title>
+      <p>Use the <c>iscamdotplot</c> function to create a dotplot:</p>
+      <program language="r">
+        <input>
 nrow(births)           # Counts the number of observations
 names(births)          # Shows the variable names for your data
 iscamdotplot(births$birthweight,     # Use file name $ variable name
   xlab="birth weight (g)",           # Can add nicer horizontal axis label
   main="graph of birthwt")           # Can add title
-          </input>
-        </program>
-      </statement>
-      <solution>
-        <p>Expected output:</p>
-        <image source="images/firstRdotplot.jpg" width="60%">
-          <description>R dotplot of birth weights showing distribution</description>
-        </image>
-      </solution>
-    </exercise>
-    
-    <exercise xml:id="tech-detour-jmp-dotplot" label="Dotplot - JMP">
-      <title>Creating Dotplots in JMP</title>
-      <statement>
-        <p><ol>
-          <li><p>Select Graph &gt; Graph Builder</p></li>
-          <li><p>Drag the birthweight variable from the list on the left to the X label.</p></li>
-          <li><p>Select the far left graph type that is only dots.</p></li>
-          <li><p>Use the pull-down menu to change the Jitter style to Positive Grid.</p></li>
-        </ol></p>
-        
-        <image source="images/JMPdotplot.png" width="40%">
-          <description>JMP Graph Builder interface for creating dotplots</description>
-        </image>
-      </statement>
-      <solution>
-        <p>Expected output:</p>
-        <image source="images/firstJMPdotplot.jpg" width="60%">
-          <description>JMP dotplot of birth weights showing distribution</description>
-        </image>
-      </solution>
-    </exercise>
-    
-    <p>A dotplot shows each numerical value individually (and is best with smaller datasets), some packages may actually "bin" the values if the data set is large. If the dataset includes many distinct (non-repeated) values, this can make it more difficult to see the "clumping" in the data.</p>
-  </paragraphs>
+        </input>
+      </program>
+      <p>Expected output:</p>
+      <image source="images/firstRdotplot.jpg" width="60%">
+        <description>R dotplot of birth weights showing distribution</description>
+      </image>
+      <p>Try it yourself:</p>
+      <sage language="r">
+        <input>
+# Load ISCAM functions from GitHub
+invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')))
+
+# Create sample data (first 100 rows for demonstration)
+# In practice, you would load your full dataset
+birthweight = c(3629, 3062, 3345, 2977, 3175, 3458, 3714, 2835, 3289, 3402)
+
+# Create dotplot
+iscamdotplot(birthweight,
+  xlab="birth weight (g)",
+  main="Birth Weights Dotplot")
+        </input>
+      </sage>
+    </hint>
+    <hint>
+      <title>JMP Instructions</title>
+      <p><ol>
+        <li><p>Select Graph &gt; Graph Builder</p></li>
+        <li><p>Drag the birthweight variable from the list on the left to the X label.</p></li>
+        <li><p>Select the far left graph type that is only dots.</p></li>
+        <li><p>Use the pull-down menu to change the Jitter style to Positive Grid.</p></li>
+      </ol></p>
+      <image source="images/JMPdotplot.png" width="40%">
+        <description>JMP Graph Builder interface for creating dotplots</description>
+      </image>
+      <p>Expected output:</p>
+      <image source="images/firstJMPdotplot.jpg" width="60%">
+        <description>JMP dotplot of birth weights showing distribution</description>
+      </image>
+    </hint>
+    <solution>
+      <p>A dotplot shows each numerical value individually (and is best with smaller datasets). Some packages may actually "bin" the values if the data set is large. If the dataset includes many distinct (non-repeated) values, this can make it more difficult to see the "clumping" in the data.</p>
+    </solution>
+  </exercise>
   
   <exercise xml:id="inv2-1-c" label="I2.1c">
     <title>Describe dotplot</title>
@@ -147,7 +163,7 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
   <paragraphs>
     <title>Discussion: Handling Missing Data</title>
     
-    <p><alert>Discussion:</alert> The observations at 9999 don't seem to belong. The User Guide or "codebook" for these data states that the largest birth weight is 8165 grams and for other variables it lists 99, 999, or 9999 as values for "not stated" or unknown.</p>
+    <p>The observations at 9999 don't seem to belong. The User Guide or "codebook" for these data states that the largest birth weight is 8165 grams and for other variables it lists 99, 999, or 9999 as values for "not stated" or unknown.</p>
 
     <image source="images/codebooksnippet.png" width="100%">
       <description>Snippet from CDC codebook showing data positions</description>
@@ -166,49 +182,65 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
     </aside>
   </paragraphs>
   
-  <paragraphs xml:id="tech-detour-subsetting">
-    <title>Technology Detour – Subsetting the Data</title>
-    
-    <exercise xml:id="tech-detour-r-subset" label="Subsetting - R">
-      <title>Subsetting Data in R</title>
-      <statement>
-        <program language="r" interactive="sage">
-          <input>
+  <exercise xml:id="tech-detour-subsetting">
+    <title>Technology Detour <mdash/> Subsetting the Data</title>
+    <statement>
+      <p>Remove the observations with birthweight = 9999 (missing values) from the dataset.</p>
+    </statement>
+    <hint>
+      <title>R Instructions</title>
+      <p>Use logical subsetting to create a new dataset without the missing values:</p>
+      <program language="r">
+        <input>
 births2 = births[which(births$birthweight &lt; 9999), ]  # selects rows that satisfy condition
                                                          # notice the comma!
 nrow(births2)
 # Refer to the new data using births2$birthweight
-          </input>
-        </program>
-      </statement>
-      <solution>
-        <p>Expected output:
-        297,558 births</p>
-      </solution>
-    </exercise>
-    
-    <exercise xml:id="tech-detour-jmp-subset" label="Subsetting - JMP">
-      <title>Subsetting Data in JMP</title>
-      <statement>
-        <p><ol>
-          <li><p>Use the Rows menu to select Row Selection &gt; Select Where</p></li>
-          <li><p>Specify you want to select the rows where birth weight is equals 9999</p></li>
-          <li><p>Press OK.</p></li>
-          <li><p>Then select Rows &gt; Hide and Exclude</p></li>
-        </ol></p>
-        
-        <image source="images/JMProwselection.png" width="60%">
-          <description>JMP Row Selection dialog for subsetting data</description>
-        </image>
-      </statement>
-      <solution>
-        <p>Expected output:</p>
-        <image source="images/Inv2-1h-solsJMP3.png.jpg" width="40%">
-          <description>JMP data table with excluded rows</description>
-        </image>
-      </solution>
-    </exercise>
-  </paragraphs>
+        </input>
+      </program>
+      <p>Expected output: 297,558 births</p>
+      <p>Try it yourself:</p>
+      <sage language="r">
+        <input>
+# Load ISCAM functions from GitHub
+invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')))
+
+# Create sample data with some 9999 values
+birthweight_raw = c(3629, 3062, 9999, 2977, 3175, 3458, 9999, 2835, 3289, 3402, 3156, 3741, 2998)
+
+# Show original data
+cat("Original data:", birthweight_raw, "\n")
+cat("Number of observations:", length(birthweight_raw), "\n\n")
+
+# Subset the data
+birthweight_clean = birthweight_raw[which(birthweight_raw &lt; 9999)]
+
+# Show cleaned data
+cat("Cleaned data:", birthweight_clean, "\n")
+cat("Number of observations:", length(birthweight_clean), "\n")
+        </input>
+      </sage>
+    </hint>
+    <hint>
+      <title>JMP Instructions</title>
+      <p><ol>
+        <li><p>Use the Rows menu to select Row Selection &gt; Select Where</p></li>
+        <li><p>Specify you want to select the rows where birth weight is equals 9999</p></li>
+        <li><p>Press OK.</p></li>
+        <li><p>Then select Rows &gt; Hide and Exclude</p></li>
+      </ol></p>
+      <image source="images/JMProwselection.png" width="60%">
+        <description>JMP Row Selection dialog for subsetting data</description>
+      </image>
+      <p>Expected output:</p>
+      <image source="images/Inv2-1h-solsJMP3.png.jpg" width="40%">
+        <description>JMP data table with excluded rows</description>
+      </image>
+    </hint>
+    <solution>
+      <p>After subsetting, you should have 297,558 observations (240 rows with birthweight = 9999 were removed from the original 297,798 observations).</p>
+    </solution>
+  </exercise>
   
   <exercise xml:id="inv2-1-d" label="I2.1d">
     <title>Recreate dotplot with subsetted data</title>
@@ -239,51 +271,71 @@ nrow(births2)
     <p>It may still be difficult to see much in the dotplot with such a large data set, especially if there are many distinct (non-repeated) values. One solution is to "bin" the observations. Some software packages (e.g., Minitab) will do that automatically even with a dotplot. Another approach is to use a different type of graph, a histogram, that groups the data into intervals of equal width (e.g., 1000-2000, 2000-3000, …) and then construct a bar for each interval with the height of the bar representing the number or proportion of observations in that interval. Notice these bars will be touching, unlike in a bar graph, to represent the continuous rather than categorical nature of the data.</p>
   </paragraphs>
   
-  <paragraphs xml:id="tech-detour-histograms">
-    <title>Technology Detour – Histograms</title>
-    
-    <exercise xml:id="tech-detour-r-histogram" label="Histogram - R">
-      <title>Creating Histograms in R</title>
-      <statement>
-        <program language="r" interactive="sage">
-          <input>
+  <exercise xml:id="tech-detour-histograms">
+    <title>Technology Detour <mdash/> Creating Histograms</title>
+    <statement>
+      <p>Create a histogram for the subsetted birth weight data (births2).</p>
+    </statement>
+    <hint>
+      <title>R Instructions</title>
+      <p>Use the <c>hist</c> function to create a histogram:</p>
+      <program language="r">
+        <input>
 hist(births2$birthweight, xlab="birth weight")
 # Note you can also use breaks=x to change the number of intervals to x.
-          </input>
-        </program>
-      </statement>
-      <solution>
-        <p>Expected output:</p>
-        <image source="images/histogramR.jpg" width="60%">
-          <description>R histogram of birth weights showing distribution</description>
-        </image>
-      </solution>
-    </exercise>
-    
-    <exercise xml:id="tech-detour-jmp-histogram" label="Histogram - JMP">
-      <title>Creating Histograms in JMP</title>
-      <statement>
-        <p><ol>
-          <li><p>Choose Analyze &gt; Distribution</p></li>
-          <li><p>Drag birth weight to the Y, Columns box (or click on it and press the button)</p></li>
-          <li><p>Click OK.</p></li>
-          <li><p>Use the hot spot and choose Histogram Options &gt; Vertical (to unselect).</p></li>
-          <li><p>Right click on one of the values and select Add Axis Label and enter the variable description.</p></li>
-          <li><p>See File &gt; Preferences to change some of the default settings</p></li>
-        </ol></p>
-        
-        <image source="images/JMPAnalyzeDistribution.png" width="60%">
-          <description>JMP Analyze Distribution dialog for creating histograms</description>
-        </image>
-      </statement>
-      <solution>
-        <p>Expected output:</p>
-        <image source="images/histogramJMP.png" width="60%">
-          <description>JMP histogram of birth weights showing distribution</description>
-        </image>
-      </solution>
-    </exercise>
-  </paragraphs>
+        </input>
+      </program>
+      <p>Expected output:</p>
+      <image source="images/histogramR.jpg" width="60%">
+        <description>R histogram of birth weights showing distribution</description>
+      </image>
+      <p>Try it yourself:</p>
+      <sage language="r">
+        <input>
+# Load ISCAM functions from GitHub
+invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')))
+
+# Create sample data (larger sample for histogram)
+set.seed(123)
+birthweight_raw = rnorm(1000, mean=3300, sd=450)
+# Add some 9999 values
+birthweight_raw[sample(1:1000, 10)] = 9999
+
+# Subset the data to remove missing values
+birthweight = birthweight_raw[which(birthweight_raw &lt; 9999)]
+
+cat("Creating histogram of", length(birthweight), "birth weights\n")
+
+# Create histogram
+hist(birthweight, 
+     xlab="Birth Weight (grams)",
+     main="Distribution of Birth Weights",
+     col="lightblue")
+        </input>
+      </sage>
+    </hint>
+    <hint>
+      <title>JMP Instructions</title>
+      <p><ol>
+        <li><p>Choose Analyze &gt; Distribution</p></li>
+        <li><p>Drag birth weight to the Y, Columns box (or click on it and press the button)</p></li>
+        <li><p>Click OK.</p></li>
+        <li><p>Use the hot spot and choose Histogram Options &gt; Vertical (to unselect).</p></li>
+        <li><p>Right click on one of the values and select Add Axis Label and enter the variable description.</p></li>
+        <li><p>See File &gt; Preferences to change some of the default settings</p></li>
+      </ol></p>
+      <image source="images/JMPAnalyzeDistribution.png" width="60%">
+        <description>JMP Analyze Distribution dialog for creating histograms</description>
+      </image>
+      <p>Expected output:</p>
+      <image source="images/histogramJMP.png" width="60%">
+        <description>JMP histogram of birth weights showing distribution</description>
+      </image>
+    </hint>
+    <solution>
+      <p>A histogram groups data into intervals of equal width and displays bars with heights representing the frequency or proportion of observations in each interval. The bars touch each other to represent the continuous nature of quantitative data.</p>
+    </solution>
+  </exercise>
   
   <exercise xml:id="inv2-1-e" label="I2.1e">
     <title>Compare dotplot and histogram</title>
@@ -408,43 +460,64 @@ hist(births2$birthweight, xlab="birth weight")
     <p>Let's use this as our final dataset and use technology to calculate some helpful numerical summaries of the distribution, namely ones that describe the center (e.g., mean, median), variability (e.g., standard deviation), and skewness. The <term>skewness statistic</term> involves <m>\Sigma((y_i-\bar{y})/s)^3</m>, so positive values indicate a distribution that is skewed right, negative values indicate a distribution that is skewed left, and values near zero indicate a symmetric distribution.</p>
   </paragraphs>
   
-  <paragraphs xml:id="tech-detour-numerical-summaries">
-    <title>Technology Detour – Numerical Summaries</title>
-    
-    <exercise xml:id="tech-detour-r-summaries" label="Numerical Summaries - R">
-      <title>Numerical Summaries in R</title>
-      <statement>
-        <p><alert>R note:</alert> This is our final dataset, so we can "attach" the datafile and then not need to use "births3$" for R to know which dataset we are using.</p>
-        <program language="r" interactive="sage">
-          <input>
+  <exercise xml:id="tech-detour-numerical-summaries">
+    <title>Technology Detour <mdash/> Numerical Summaries</title>
+    <statement>
+      <p>Calculate numerical summaries (mean, median, standard deviation, skewness) for the subsetted birth weight data (births3).</p>
+    </statement>
+    <hint>
+      <title>R Instructions</title>
+      <p>Use the <c>iscamsummary</c> function to get numerical summaries:</p>
+      <program language="r">
+        <input>
 attach(births3)    # Optional step if this is final data to work with
 iscamsummary(births3$birthweight, digits=2)
 # Entering "digits = " specifies the number of digits you want displayed 
 # after the decimal. Default is 3.
-          </input>
-        </program>
-      </statement>
-      <solution>
-        <p>Expected output:</p>
-        <image source="images/Inv2-1j-solsR.jpg" width="60%">
-          <description>R numerical summaries for birth weights</description>
-        </image>
-      </solution>
-    </exercise>
-    
-    <exercise xml:id="tech-detour-jmp-summaries" label="Numerical Summaries - JMP">
-      <title>Numerical Summaries in JMP</title>
-      <statement>
-        <p>See the Analyze &gt; Distribution output from creating the histogram and/or Analyze &gt; Tabulate.</p>
-      </statement>
-      <solution>
-        <p>Expected output:</p>
-        <image source="images/Inv2-1j-solsJMP2.png" width="40%">
-          <description>JMP numerical summaries for birth weights</description>
-        </image>
-      </solution>
-    </exercise>
-  </paragraphs>
+        </input>
+      </program>
+      <p>Expected output:</p>
+      <image source="images/Inv2-1j-solsR.jpg" width="60%">
+        <description>R numerical summaries for birth weights</description>
+      </image>
+      <p>Try it yourself:</p>
+      <sage language="r">
+        <input>
+# Load ISCAM functions from GitHub
+invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')))
+
+# Create sample data and subset (simulating the full term births)
+set.seed(456)
+birthweight_raw = rnorm(1000, mean=3300, sd=450)
+birthweight_raw[sample(1:1000, 10)] = 9999  # Add missing values
+
+# Subset to remove missing values
+birthweight_subset = birthweight_raw[which(birthweight_raw &lt; 9999)]
+
+# Further subset for "full term" (simulating OEG == 2)
+# Keep about 90% of remaining observations
+full_term_indices = sample(1:length(birthweight_subset), size=round(0.9*length(birthweight_subset)))
+birthweight = birthweight_subset[full_term_indices]
+
+cat("Final sample size:", length(birthweight), "observations\n\n")
+
+# Calculate numerical summaries
+iscamsummary(birthweight, digits=2)
+        </input>
+      </sage>
+    </hint>
+    <hint>
+      <title>JMP Instructions</title>
+      <p>See the Analyze &gt; Distribution output from creating the histogram and/or use Analyze &gt; Tabulate for custom summaries.</p>
+      <p>Expected output:</p>
+      <image source="images/Inv2-1j-solsJMP2.png" width="40%">
+        <description>JMP numerical summaries for birth weights</description>
+      </image>
+    </hint>
+    <solution>
+      <p>The numerical summaries provide measures of center (mean, median), spread (standard deviation, IQR), and shape (skewness). These complement the visual displays and allow for more precise descriptions of the distribution.</p>
+    </solution>
+  </exercise>
   
   <exercise xml:id="inv2-1-j" label="I2.1j">
     <title>Report numerical summaries</title>
@@ -498,43 +571,64 @@ iscamsummary(births3$birthweight, digits=2)
     <response/>
   </exercise>
   
-  <paragraphs xml:id="tech-detour-normal-overlay">
-    <title>Technology Detour – Normal Distribution Overlay</title>
-    
-    <p>Many software programs will allow you to overlay a theoretical normal distribution to see how well it matches your data, using the mean and standard deviation from the observed data.</p>
-    
-    <exercise xml:id="tech-detour-r-normal-overlay" label="Normal Overlay - R">
-      <title>Add Normal Overlay in R</title>
-      <statement>
-        <p>Add an overlay of a normal model on the distribution of birthweight data. (First create the histogram as above.)</p>
-        <program language="r" interactive="sage">
-          <input>
-iscamaddnorm(births3$birthweight, main, xlab, bins)
-          </input>
-        </program>
-      </statement>
-      <solution>
-        <p>Expected output:</p>
-        <image source="images/Inv2-1m-solsR.jpg" width="60%">
-          <description>R histogram with normal overlay for birth weights</description>
-        </image>
-      </solution>
-    </exercise>
-    
-    <exercise xml:id="tech-detour-jmp-normal-overlay" label="Normal Overlay - JMP">
-      <title>Add Normal Overlay in JMP</title>
-      <statement>
-        <p>Add an overlay of a normal model on the distribution of birthweight data.</p>
-        <p>Use the hot spot and select Continuous Fit &gt; Normal.</p>
-      </statement>
-      <solution>
-        <p>Expected output:</p>
-        <image source="images/Inv2-1m-solsJMP.png" width="60%">
-          <description>JMP histogram with normal overlay for birth weights</description>
-        </image>
-      </solution>
-    </exercise>
-  </paragraphs>
+  <exercise xml:id="tech-detour-normal-overlay">
+    <title>Technology Detour <mdash/> Normal Distribution Overlay</title>
+    <statement>
+      <p>Add an overlay of a theoretical normal distribution to see how well it matches the birth weight data, using the mean and standard deviation from the observed data.</p>
+    </statement>
+    <hint>
+      <title>R Instructions</title>
+      <p>First create a histogram, then use <c>iscamaddnorm</c> to add the normal curve overlay:</p>
+      <program language="r">
+        <input>
+hist(births3$birthweight, xlab="birth weight (g)", main="Birth Weights with Normal Overlay")
+iscamaddnorm(births3$birthweight)
+        </input>
+      </program>
+      <p>Expected output:</p>
+      <image source="images/Inv2-1m-solsR.jpg" width="60%">
+        <description>R histogram with normal overlay for birth weights</description>
+      </image>
+      <p>Try it yourself:</p>
+      <sage language="r">
+        <input>
+# Load ISCAM functions from GitHub
+invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')))
+
+# Create sample data and subset (simulating the full term births)
+set.seed(789)
+birthweight_raw = rnorm(1000, mean=3300, sd=450)
+birthweight_raw[sample(1:1000, 10)] = 9999  # Add missing values
+
+# Subset to remove missing values
+birthweight_subset = birthweight_raw[which(birthweight_raw &lt; 9999)]
+
+# Further subset for "full term"
+full_term_indices = sample(1:length(birthweight_subset), size=round(0.9*length(birthweight_subset)))
+birthweight = birthweight_subset[full_term_indices]
+
+cat("Creating histogram with normal overlay for", length(birthweight), "observations\n")
+
+# Create histogram
+hist(birthweight, xlab="Birth Weight (grams)", main="Birth Weights with Normal Overlay", col="lightblue")
+
+# Add normal curve overlay
+iscamaddnorm(birthweight)
+        </input>
+      </sage>
+    </hint>
+    <hint>
+      <title>JMP Instructions</title>
+      <p>In the Distribution output, use the red triangle (hot spot) next to the variable name and select Continuous Fit &gt; Normal.</p>
+      <p>Expected output:</p>
+      <image source="images/Inv2-1m-solsJMP.png" width="60%">
+        <description>JMP histogram with normal overlay for birth weights</description>
+      </image>
+    </hint>
+    <solution>
+      <p>The normal curve overlay allows you to visually assess how well a normal distribution with the same mean and standard deviation fits your data. Look for areas where the bars deviate substantially from the curve.</p>
+    </solution>
+  </exercise>
   
   <exercise xml:id="inv2-1-m" label="I2.1m">
     <title>Assess normal overlay fit</title>
@@ -606,44 +700,62 @@ table(within2sd)/length(birthweight)
     <response/>
   </exercise>
   
-  <paragraphs xml:id="tech-detour-normal-probability-plot">
-    <title>Technology Detour – Normal Probability Plots</title>
-    
-    <p>Another way to assess the "fit" of a probability model to the data is with a probability plot (aka quantile plot). Probability plots work roughly like this: The computer determines how many observations are in the data set, and then reports the <em>z</em>-scores it would expect for the 1/n<sup>th</sup> percentiles (also called quantiles) for the probability model. The plot compares these <em>z</em>-scores to the observed data; if the <em>z</em>-scores "line up" with the observed data, then the probability plot supports that the data are behaving like the candidate distribution. The theory is that whether or not the observations follow a line can be easier to judge than whether a histogram follows a curve.</p>
-    
-    <exercise xml:id="tech-detour-r-normal-probability-plot" label="Normal Probability Plot - R">
-      <title>Create Normal Probability Plot in R</title>
-      <statement>
-        <p>Use technology to create a normal probability plot for the subsetted birth weight data.</p>
-        <program language="r" interactive="sage">
-          <input>
-qqnorm(birthweight, datax=TRUE)    # "datax=T" puts observed values on x-axis
-qqline(birthweight, datax=T)
-          </input>
-        </program>
-      </statement>
-      <solution>
-        <p>Expected output:</p>
-        <image source="images/Inv2-1p-solsR.jpg" width="60%">
-          <description>R normal probability plot for birth weights</description>
-        </image>
-      </solution>
-    </exercise>
-    
-    <exercise xml:id="tech-detour-jmp-normal-probability-plot" label="Normal Probability Plot - JMP">
-      <title>Create Normal Probability Plot in JMP</title>
-      <statement>
-        <p>Use technology to create a normal probability plot for the subsetted birth weight data.</p>
-        <p>In the Distributions window, Use the hot spot to select Normal Quantile Plot.</p>
-      </statement>
-      <solution>
-        <p>Expected output:</p>
-        <image source="images/Inv2-1p-solsJMP.png" width="60%">
-          <description>JMP normal probability plot for birth weights</description>
-        </image>
-      </solution>
-    </exercise>
-  </paragraphs>
+  <exercise xml:id="tech-detour-normal-probability-plot">
+    <title>Technology Detour <mdash/> Normal Probability Plots</title>
+    <statement>
+      <p>Create a normal probability plot (also called a quantile plot) for the subsetted birth weight data. Probability plots work by comparing the observed data to the <em>z</em>-scores expected for a normal distribution; if the points "line up" along a straight line, this supports that the data are behaving like a normal distribution.</p>
+    </statement>
+    <hint>
+      <title>R Instructions</title>
+      <p>Use the <c>qqnorm</c> and <c>qqline</c> functions to create a normal probability plot:</p>
+      <program language="r">
+        <input>
+qqnorm(birthweight, datax=TRUE)    # "datax=TRUE" puts observed values on x-axis
+qqline(birthweight, datax=TRUE)
+        </input>
+      </program>
+      <p>Expected output:</p>
+      <image source="images/Inv2-1p-solsR.jpg" width="60%">
+        <description>R normal probability plot for birth weights</description>
+      </image>
+      <p>Try it yourself:</p>
+      <sage language="r">
+        <input>
+# Load ISCAM functions from GitHub
+invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')))
+
+# Create sample data and subset (simulating the full term births)
+set.seed(101)
+birthweight_raw = rnorm(1000, mean=3300, sd=450)
+birthweight_raw[sample(1:1000, 10)] = 9999  # Add missing values
+
+# Subset to remove missing values
+birthweight_subset = birthweight_raw[which(birthweight_raw &lt; 9999)]
+
+# Further subset for "full term"
+full_term_indices = sample(1:length(birthweight_subset), size=round(0.9*length(birthweight_subset)))
+birthweight = birthweight_subset[full_term_indices]
+
+cat("Creating normal probability plot for", length(birthweight), "observations\n")
+
+# Create normal probability plot
+qqnorm(birthweight, datax=TRUE, main="Normal Probability Plot")
+qqline(birthweight, datax=TRUE, col="red", lwd=2)
+        </input>
+      </sage>
+    </hint>
+    <hint>
+      <title>JMP Instructions</title>
+      <p>In the Distribution window, use the red triangle (hot spot) next to the variable name and select Normal Quantile Plot.</p>
+      <p>Expected output:</p>
+      <image source="images/Inv2-1p-solsJMP.png" width="60%">
+        <description>JMP normal probability plot for birth weights</description>
+      </image>
+    </hint>
+    <solution>
+      <p>A normal probability plot is often easier to interpret than comparing a histogram to a curve. If the points follow a straight line, the data are consistent with a normal distribution. Deviations from the line, especially in the tails, indicate departures from normality.</p>
+    </solution>
+  </exercise>
   
   <exercise xml:id="inv2-1-p" label="I2.1p">
     <title>Assess normal probability plot</title>
@@ -702,12 +814,14 @@ qqline(birthweight, datax=T)
   </exercise>
   
   <conclusion>
-    <p><alert>Discussion:</alert> We can often use a theoretical model to predict how data will behave. However, it is often unclear whether the model we are using is appropriate. Sometimes we have to consider the context (e.g., biological characteristic) and presume a particular model. We can also use existing data to create a model, 
+    <paragraphs>
+      <title>Discussion</title>
+      <p>We can often use a theoretical model to predict how data will behave. However, it is often unclear whether the model we are using is appropriate. Sometimes we have to consider the context (e.g., biological characteristic) and presume a particular model. We can also use existing data to create a model, 
     but we need to consider what population the data are representative of and how 
     stable we think the data generating process is (e.g., not changing over time). 
     In this case, a normal distribution predicts 3.5% of babies will be of low birth weight (compared to 3.2% in the data file) and that about 5% of birth weights will be beyond two standard deviations from the mean (compared to 4.8% in the dataset). The 
-    model appears to be quite accurate (once we remove the non full term babies and missing values) and useful for other predictions.  
-</p>
+    model appears to be quite accurate (once we remove the non full term babies and missing values) and useful for other predictions.</p>
+    </paragraphs>
   </conclusion>
   
   <subsection xml:id="practice2-1A">
