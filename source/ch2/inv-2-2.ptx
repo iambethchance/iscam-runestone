@@ -339,30 +339,32 @@ lnresponsetime = log(responsetime)
     <p>Another approach is to fit a different mathematical model to the original data:</p>
   </paragraphs>
   
-  <ul><li>Use technology to overlay an exponential probability model (often used to model wait times) to these data and/or create a probability plot using the exponential distribution as the reference distribution.</li></ul>
+  <paragraphs xml:id="tech-detour-exponential-distribution">
+    <title>Technology Detour <mdash/> Exponential Distribution</title>
+    
+    <p>Use technology to overlay an exponential probability model (often used to model wait times) to these data and/or create a probability plot using the exponential distribution as the reference distribution.</p>
+    
+    <p><alert>R Instructions</alert></p>
+    <p>For the qqplot we have to first get the quantiles:</p>
+    <program language="r">
+      <input>
+theoquant = qexp(ppoints(12))      # Generates 1/n quantiles for 12 observations
+                                    # from exponential distribution
+hist(theoquant)                     
+qqplot(responsetime, theoquant)    # Your data vs. quantiles. Look for a line.
+iscamaddexp(responsetime)          # overlay exponential model
+      </input>
+    </program>
+    
+    <p><alert>JMP Instructions</alert></p>
+    <p>In the Distribution window, use the hot spot to select Continuous Fit &gt; Exponential.</p>
+  </paragraphs>
 
   <exercise xml:id="inv2-2-j" label="I6.2.10">
     <title>Exponential probability model</title>
     <statement>
       <p>Describe the behavior of the exponential distribution. Does it appear to be a reasonable fit for these data? Describe any deviations.</p>
     </statement>
-    <hint>
-      <title>In R</title>
-      <p>For the qqplot we have to first get the quantiles:</p>
-      <program language="r" interactive="sage">
-        <input>
-theoquant = qexp(ppoints(12))      # Generates 1/n quantiles for 12 observations
-                                    # from exponential distribution
-hist(theoquant)                     
-qqplot(responsetime, theoquant)    # Your data vs. quantiles. Look for a line.
-iscamaddexp(responsetime)          # overlay exponential model
-        </input>
-      </program>
-    </hint>
-    <hint>
-      <title>In JMP</title>
-      <p>In the Distribution window, use the hot spot to select Continuous Fit > Exponential.</p>
-    </hint>
     <solution>
       <p>The exponential is skewed to the right with its peak at zero. This does not appear to be as good of a fit. We have more observations around 4-5 seconds than the exponential distribution would predict and fewer observations less than 1 second (we don't have any, the times could be rounded in the dataset?).</p>
       <image source="images/Inv2-2j-sols1.jpg" width="60%">
@@ -379,7 +381,7 @@ iscamaddexp(responsetime)          # overlay exponential model
     <title>Calculate probability using exponential distribution</title>
     <statement>
       <p>Use technology to calculate the probability of a wait time under 2 seconds using the exponential distribution with mean 4.25 sec</p>
-      <p>How does it compare to your estimate in <xref ref="inv2-2-h"/> and the result in <xref ref="inv2-2-i"/>?</p>
+      <p>How does it compare to your estimate in <xref ref="inv2-2-h" text="custom?"> and the result in <xref ref="inv2-2-i"/>?</p>
     </statement>
     <hint>
       <title>In R</title>
