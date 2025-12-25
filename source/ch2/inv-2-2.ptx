@@ -260,6 +260,8 @@ iscamboxplot(responsetime, xlab="Time until reaction (seconds)")
     <p>A <term>data transformation</term> applies a mathematical function to each value to re-express the data on an alternative scale. Data transformations can also make the data more closely modeled with a normal distribution, which could then satisfy the conditions the Central Limit Theorem.</p>
   </assemblage>
   
+  <p>Create a new variable which is log(responsetime). (You can use either natural log or log base 10, but so we all do the same thing, let's use natural log here, which is the default in most software when you say "log.")</p>
+  
   <exercise xml:id="tech-detour-log-transformation">
     <title>Technology Detour <mdash/> Log Transformation</title>
     <statement>
@@ -280,19 +282,10 @@ lnresponsetime = log(responsetime)
   </exercise>
   
   <exercise xml:id="inv2-2-g" label="I6.2.7">
-    <title>Log transformation</title>
+    <title>Log transformation analysis</title>
     <statement>
-      <p>Create a new variable which is log(responsetime). (You can use either natural log or log base 10, but so we all do the same thing, let's use natural log here, which is the default in most software when you say "log.")</p>
       <p>Create a histogram of these data and a normal probability plot. Does log(responsetime) approximately follow a normal distribution? What are the mean and standard deviation of this distribution?</p>
     </statement>
-    <hint>
-      <title>In R</title>
-      <p><c>lnresponsetime = log(responsetime)</c></p>
-    </hint>
-    <hint>
-      <title>In JMP</title>
-      <p>Create a new column and edit the formula. Type or use your mouse to select Transcendental > Log to create Log(responsetime). Press OK.</p>
-    </hint>
     <solution>
       <p>This histogram of the ln response times is more symmetric and the normal probability plot is more linear. This is definitely more normal looking than before (but we might be able to do better). The mean is 1.292 and the SD = 0.5285. The skewness statistic is closer to zero (0.676).</p>
       <image source="images/Inv2-2g-sols1.jpg" width="60%">
@@ -341,29 +334,32 @@ lnresponsetime = log(responsetime)
   <paragraphs>
     <title>Alternative Probability Models</title>
     
-    <p>Another approach is to fit a different mathematical model to the original data:</p>
+    <p>Another approach is to fit a different mathematical model to the original data. Use technology to overlay an exponential probability model (often used to model wait times) to these data and/or create a probability plot using the exponential distribution as the reference distribution.</p>
   </paragraphs>
   
-  <paragraphs xml:id="tech-detour-exponential-distribution">
+  <exercise xml:id="tech-detour-exponential-distribution">
     <title>Technology Detour <mdash/> Exponential Distribution</title>
-    
-    <p>Use technology to overlay an exponential probability model (often used to model wait times) to these data and/or create a probability plot using the exponential distribution as the reference distribution.</p>
-    
-    <p><alert>R Instructions</alert></p>
-    <p>For the qqplot we have to first get the quantiles:</p>
-    <program language="r">
-      <input>
+    <statement>
+      <p>Overlay an exponential probability model to the honking response time data.</p>
+    </statement>
+    <hint>
+      <title>R Instructions</title>
+      <p>For the qqplot we have to first get the quantiles:</p>
+      <program language="r">
+        <input>
 theoquant = qexp(ppoints(12))      # Generates 1/n quantiles for 12 observations
                                     # from exponential distribution
 hist(theoquant)                     
 qqplot(responsetime, theoquant)    # Your data vs. quantiles. Look for a line.
 iscamaddexp(responsetime)          # overlay exponential model
-      </input>
-    </program>
-    
-    <p><alert>JMP Instructions</alert></p>
-    <p>In the Distribution window, use the hot spot to select Continuous Fit &gt; Exponential.</p>
-  </paragraphs>
+        </input>
+      </program>
+    </hint>
+    <hint>
+      <title>JMP Instructions</title>
+      <p>In the Distribution window, use the hot spot to select Continuous Fit &gt; Exponential.</p>
+    </hint>
+  </exercise>
 
   <exercise xml:id="inv2-2-j" label="I6.2.10">
     <title>Exponential probability model</title>
@@ -382,11 +378,12 @@ iscamaddexp(responsetime)          # overlay exponential model
     <response/>
   </exercise>
   
+  <p>Use technology to calculate the probability of a wait time under 2 seconds using the exponential distribution with mean 4.25 sec</p>
   <exercise xml:id="inv2-2-k" label="I6.2.11">
     <title>Calculate probability using exponential distribution</title>
     <statement>
-      <p>Use technology to calculate the probability of a wait time under 2 seconds using the exponential distribution with mean 4.25 sec</p>
-      <p>How does it compare to your estimate in <xref ref="inv2-2-h" text="custom?">question 10</xref> and the result in <xref ref="inv2-2-i" text="custom">question 11</xref>?</p>
+      
+      <p>How does it compare to your estimate in <xref ref="inv2-2-h" text="custom">question 10</xref> and the result in <xref ref="inv2-2-i" text="custom">question 11</xref>?</p>
     </statement>
     <hint>
       <title>In R</title>
@@ -408,7 +405,7 @@ iscamaddexp(responsetime)          # overlay exponential model
   <exercise xml:id="inv2-2-l" label="I6.2.12">
     <title>Lognormal distribution</title>
     <statement>
-      <p>Repeat <xref ref="inv2-2-j" text="custom">questions 12 and 13</xref> and <xref ref="inv2-2-k" text="custom">question 13</xref> with a "lognormal" distribution.</p>
+      <p>Repeat <xref ref="inv2-2-j" text="custom">question 12</xref> and <xref ref="inv2-2-k" text="custom">question 13</xref> with a "lognormal" distribution.</p>
       <p><em>Note:</em> This is equivalent to fitting the normal distribution on the log-transformed data!</p>
     </statement>
     <hint>
