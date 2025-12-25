@@ -113,31 +113,15 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
       <image source="images/firstRdotplot.jpg" width="60%">
         <description>R dotplot of birth weights showing distribution</description>
       </image>
-      <p>Try it yourself:</p>
-      <sage language="r">
-        <input>
-# Load ISCAM functions from GitHub
-invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')))
-
-# Create sample data (first 100 rows for demonstration)
-# In practice, you would load your full dataset
-birthweight = c(3629, 3062, 3345, 2977, 3175, 3458, 3714, 2835, 3289, 3402)
-
-# Create dotplot
-iscamdotplot(birthweight,
-  xlab="birth weight (g)",
-  main="Birth Weights Dotplot")
-        </input>
-      </sage>
     </hint>
     <hint>
       <title>JMP Instructions</title>
-      <p><ol>
-        <li><p>Select Graph &gt; Graph Builder</p></li>
-        <li><p>Drag the birthweight variable from the list on the left to the X label.</p></li>
+      <p><ul>
+        <li><p>Select <alert>Graph &gt; Graph Builder</alert></p></li>
+        <li><p>Drag the birthweight variable from the list on the left to the X axis.</p></li>
         <li><p>Select the far left graph type that is only dots.</p></li>
-        <li><p>Use the pull-down menu to change the Jitter style to Positive Grid.</p></li>
-      </ol></p>
+        <li><p>Use the pull-down menu to change the Jitter style to <alert>Positive Grid</alert>.</p></li>
+      </ul></p>
       <image source="images/JMPdotplot.png" width="40%">
         <description>JMP Graph Builder interface for creating dotplots</description>
       </image>
@@ -201,27 +185,6 @@ nrow(births2)
         </input>
       </program>
       <p>Expected output: 297,558 births</p>
-      <p>Try it yourself:</p>
-      <sage language="r">
-        <input>
-# Load ISCAM functions from GitHub
-invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')))
-
-# Create sample data with some 9999 values
-birthweight_raw = c(3629, 3062, 9999, 2977, 3175, 3458, 9999, 2835, 3289, 3402, 3156, 3741, 2998)
-
-# Show original data
-cat("Original data:", birthweight_raw, "\n")
-cat("Number of observations:", length(birthweight_raw), "\n\n")
-
-# Subset the data
-birthweight_clean = birthweight_raw[which(birthweight_raw &lt; 9999)]
-
-# Show cleaned data
-cat("Cleaned data:", birthweight_clean, "\n")
-cat("Number of observations:", length(birthweight_clean), "\n")
-        </input>
-      </sage>
     </hint>
     <hint>
       <title>JMP Instructions</title>
@@ -291,30 +254,6 @@ hist(births2$birthweight, xlab="birth weight")
       <image source="images/histogramR.jpg" width="60%">
         <description>R histogram of birth weights showing distribution</description>
       </image>
-      <p>Try it yourself:</p>
-      <sage language="r">
-        <input>
-# Load ISCAM functions from GitHub
-invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')))
-
-# Create sample data (larger sample for histogram)
-set.seed(123)
-birthweight_raw = rnorm(1000, mean=3300, sd=450)
-# Add some 9999 values
-birthweight_raw[sample(1:1000, 10)] = 9999
-
-# Subset the data to remove missing values
-birthweight = birthweight_raw[which(birthweight_raw &lt; 9999)]
-
-cat("Creating histogram of", length(birthweight), "birth weights\n")
-
-# Create histogram
-hist(birthweight, 
-     xlab="Birth Weight (grams)",
-     main="Distribution of Birth Weights",
-     col="lightblue")
-        </input>
-      </sage>
     </hint>
     <hint>
       <title>JMP Instructions</title>
@@ -482,31 +421,6 @@ iscamsummary(births3$birthweight, digits=2)
       <image source="images/Inv2-1j-solsR.jpg" width="60%">
         <description>R numerical summaries for birth weights</description>
       </image>
-      <p>Try it yourself:</p>
-      <sage language="r">
-        <input>
-# Load ISCAM functions from GitHub
-invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')))
-
-# Create sample data and subset (simulating the full term births)
-set.seed(456)
-birthweight_raw = rnorm(1000, mean=3300, sd=450)
-birthweight_raw[sample(1:1000, 10)] = 9999  # Add missing values
-
-# Subset to remove missing values
-birthweight_subset = birthweight_raw[which(birthweight_raw &lt; 9999)]
-
-# Further subset for "full term" (simulating OEG == 2)
-# Keep about 90% of remaining observations
-full_term_indices = sample(1:length(birthweight_subset), size=round(0.9*length(birthweight_subset)))
-birthweight = birthweight_subset[full_term_indices]
-
-cat("Final sample size:", length(birthweight), "observations\n\n")
-
-# Calculate numerical summaries
-iscamsummary(birthweight, digits=2)
-        </input>
-      </sage>
     </hint>
     <hint>
       <title>JMP Instructions</title>
@@ -591,33 +505,6 @@ iscamaddnorm(births3$birthweight)
       <image source="images/Inv2-1m-solsR.jpg" width="60%">
         <description>R histogram with normal overlay for birth weights</description>
       </image>
-      <p>Try it yourself:</p>
-      <sage language="r">
-        <input>
-# Load ISCAM functions from GitHub
-invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')))
-
-# Create sample data and subset (simulating the full term births)
-set.seed(789)
-birthweight_raw = rnorm(1000, mean=3300, sd=450)
-birthweight_raw[sample(1:1000, 10)] = 9999  # Add missing values
-
-# Subset to remove missing values
-birthweight_subset = birthweight_raw[which(birthweight_raw &lt; 9999)]
-
-# Further subset for "full term"
-full_term_indices = sample(1:length(birthweight_subset), size=round(0.9*length(birthweight_subset)))
-birthweight = birthweight_subset[full_term_indices]
-
-cat("Creating histogram with normal overlay for", length(birthweight), "observations\n")
-
-# Create histogram
-hist(birthweight, xlab="Birth Weight (grams)", main="Birth Weights with Normal Overlay", col="lightblue")
-
-# Add normal curve overlay
-iscamaddnorm(birthweight)
-        </input>
-      </sage>
     </hint>
     <hint>
       <title>JMP Instructions</title>
@@ -643,40 +530,38 @@ iscamaddnorm(birthweight)
     <response/>
   </exercise>
   
-  <paragraphs xml:id="tech-detour-within-2sd">
-    <title>Technology Detour – Checking Normal Distribution Properties</title>
-    
-    <p>Another method for comparing your data to a theoretical normal distribution is to see whether certain properties of a normal distribution hold true. In Chapter 1, you learned that 95% of observations in a normal distribution should fall within two standard deviations of the mean.</p>
-    
-    <exercise xml:id="tech-detour-r-within-2sd" label="Within 2 SD - R">
-      <title>Calculate Percentage Within 2 SD in R</title>
-      <statement>
-        <p>Calculate the percentage of the birthweights that fall within 2 standard deviations of the mean by creating a Boolean (true/false) variable.</p>
-        <program language="r" interactive="sage">
-          <input>
-within2sd = (birthweight &gt; mean(birthweight) - 2*sd(birthweight)) &amp; 
-            (birthweight &lt; mean(birthweight) + 2*sd(birthweight))
-# Note: Make sure you copy this code with no line breaks (and assumes data is attached)
-table(within2sd)/length(birthweight)
-          </input>
-        </program>
-      </statement>
-    </exercise>
-    
-    <exercise xml:id="tech-detour-jmp-within-2sd" label="Within 2 SD - JMP">
-      <title>Calculate Percentage Within 2 SD in JMP</title>
-      <statement>
-        <p>Calculate the percentage of the birthweights that fall within 2 standard deviations of the mean.</p>
-        <p><ol>
-          <li><p>Calculate (by hand) the mean + 2SD limits (e.g., 2415.9 and 4262.3).</p></li>
-          <li><p>In the data window, double click on an empty column to activate it and name it "within2sd"</p></li>
-          <li><p>Right click on the column name and select Formula</p></li>
-          <li><p>From Functions (grouped) select Conditional. Enter conditions for birth weight &lt; 4262.3 &amp; birth weight &gt; 2415.9 to equal 1, 0 otherwise.</p></li>
-          <li><p>Then use Analyze &gt; Distribution on this column and report the mean, the proportion of ones.</p></li>
-        </ol></p>
-      </statement>
-    </exercise>
-  </paragraphs>
+  <exercise xml:id="tech-detour-within-2sd">
+    <title>Technology Detour <mdash/> Checking Normal Distribution Properties</title>
+    <statement>
+      <p>Another method for comparing your data to a theoretical normal distribution is to see whether certain properties of a normal distribution hold true. In Chapter 1, you learned that 95% of observations in a normal distribution should fall within two standard deviations of the mean.</p>
+      <p>Calculate the percentage of the birthweights (in births3) that fall within 2 standard deviations of the mean.</p>
+    </statement>
+    <hint>
+      <title>R Instructions</title>
+      <p>Create a Boolean (true/false) variable to identify observations within 2 SD:</p>
+      <program language="r">
+        <input>
+within2sd = (births3$birthweight &gt; mean(births3$birthweight) - 2*sd(births3$birthweight)) &amp; 
+            (births3$birthweight &lt; mean(births3$birthweight) + 2*sd(births3$birthweight))
+# Note: Make sure you copy this code with no line breaks
+table(within2sd)/length(births3$birthweight)
+        </input>
+      </program>
+    </hint>
+    <hint>
+      <title>JMP Instructions</title>
+      <p><ol>
+        <li><p>Calculate (by hand) the mean ± 2SD limits using your numerical summaries.</p></li>
+        <li><p>In the data window, double click on an empty column to activate it and name it "within2sd"</p></li>
+        <li><p>Right click on the column name and select Formula</p></li>
+        <li><p>From Functions (grouped) select Conditional. Enter conditions for birth weight to be between the two limits to equal 1, 0 otherwise.</p></li>
+        <li><p>Then use Analyze &gt; Distribution on this column and report the mean (the proportion of ones).</p></li>
+      </ol></p>
+    </hint>
+    <solution>
+      <p>About 95% of these birthweights fall within two standard deviations of the mean birthweight, just as we would predict for a normal distribution.</p>
+    </solution>
+  </exercise>
   
   <exercise xml:id="inv2-1-n" label="I2.1n">
     <title>Percentage within 2 SD</title>
@@ -685,8 +570,7 @@ table(within2sd)/length(birthweight)
       <p>Percentage: <var width="10"/>%</p>
     </statement>
     <solution>
-      <p>Using the mean of 3339.1 and the standard deviation of 461.6, our 2SD limits would be 2415.9 and 4262.3. So then our ratio is 252915/265676 ≈ 0.95</p>
-      <p>So about 95% of these birthweights fall within two standard deviations of the mean birthweight, just as we would predict for a normal distribution.</p>
+      <p>About 95% of these birthweights fall within two standard deviations of the mean birthweight, just as we would predict for a normal distribution.</p>
     </solution>
     <response/>
   </exercise>
@@ -720,31 +604,6 @@ qqline(birthweight, datax=TRUE)
       <image source="images/Inv2-1p-solsR.jpg" width="60%">
         <description>R normal probability plot for birth weights</description>
       </image>
-      <p>Try it yourself:</p>
-      <sage language="r">
-        <input>
-# Load ISCAM functions from GitHub
-invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')))
-
-# Create sample data and subset (simulating the full term births)
-set.seed(101)
-birthweight_raw = rnorm(1000, mean=3300, sd=450)
-birthweight_raw[sample(1:1000, 10)] = 9999  # Add missing values
-
-# Subset to remove missing values
-birthweight_subset = birthweight_raw[which(birthweight_raw &lt; 9999)]
-
-# Further subset for "full term"
-full_term_indices = sample(1:length(birthweight_subset), size=round(0.9*length(birthweight_subset)))
-birthweight = birthweight_subset[full_term_indices]
-
-cat("Creating normal probability plot for", length(birthweight), "observations\n")
-
-# Create normal probability plot
-qqnorm(birthweight, datax=TRUE, main="Normal Probability Plot")
-qqline(birthweight, datax=TRUE, col="red", lwd=2)
-        </input>
-      </sage>
     </hint>
     <hint>
       <title>JMP Instructions</title>
