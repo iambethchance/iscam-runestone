@@ -952,15 +952,65 @@ iscamtwopropztest <- function(x1, n1, x2, n2, hypothesized = 0,
   cat(paste0(conf.level*100, "% CI: (", round(ci_lower, 4), ", ", round(ci_upper, 4), ")\n"))
 }
 
-# ============================================================================
+# ==============================================================================
 # HYPERGEOMETRIC FUNCTIONS
-# ============================================================================
+# ==============================================================================
 
 iscamhyperprob <- function(k, total, succ, n, lower.tail = TRUE) {
-  if (lower.tail) {
-    result <- phyper(k, succ, total - succ, n)
-  } else {
-    result <- phyper(k - 1, succ, total - succ, n, lower.tail = FALSE)
+  withr::local_par(mar = c(4, 4, 2, 1))
+
+  if (k < 1 & k > 0) {
+    k <- round((k * (total - n) * n + succ * n) / total)
   }
-  cat(paste0("P = ", round(result, 4), "\n"))
+
+  fail <- total - succ
+  thisx <- max(0, n - fail):min(n, succ)
+  plot(
+    thisx,
+    dhyper(thisx, succ, fail, n),
+    xlab = " ",
+    ylab = " ",
+    type = "h",
+    panel.first = grid(),
+    lwd = 2
+  )
+  abline(h = 0, col = "gray")
+  mtext(side = 1, line = 2, "Number of Successes")
+  mtext(side = 2, line = 2, "Probability")
+
+  if (lower.tail) {
+    this.prob <- phyper(k, succ, fail, n)
+    showprob <- format(this.prob, digits = 4)
+    lines(0:k, dhyper(0:k, succ, fail, n), col = "red", type = "h", lwd = 2)
+    xtext <- max(2, k - .5)
+    text(
+      xtext,
+      dhyper(k, succ, fail, n),
+      labels = paste("P(X \u2264 ", k, ")\n = ", showprob),
+      pos = 3,
+      col = "red"
+    )
+    cat("Probability", k, "and below =", this.prob, "\n")
+  }
+  if (!lower.tail) {
+    this.prob <- 1 - phyper(k - 1, succ, fail, n)
+    showprob <- format(this.prob, digits = 4)
+    lines(k:n, dhyper(k:n, succ, fail, n), col = "red", type = "h", lwd = 2)
+    # text(k, dhyper(k, succ, fail, n), labels=showprob, pos=4, col="red")
+    xtext <- min(k + .5, succ - 2)
+    text(
+      xtext,
+      dhyper(k, succ, fail, n),
+      labels = paste("P(X \u2265 ", k, ")\n = ", showprob),
+      pos = 3,
+      col = "red"
+    )
+    cat("Probability", k, "and above =", this.prob, "\n")
+  }
+  newtitle <- substitute(
+    paste("Hypergeometric (", N == x1, ", ", M == x2, ",", n == x3, ")"),
+    list(x1 = total, x2 = succ, x3 = n)
+  )
+  title(newtitle)
+  return(this.prob)
 }
