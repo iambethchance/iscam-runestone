@@ -260,19 +260,24 @@ iscamboxplot(responsetime, xlab="Time until reaction (seconds)")
     <p>A <term>data transformation</term> applies a mathematical function to each value to re-express the data on an alternative scale. Data transformations can also make the data more closely modeled with a normal distribution, which could then satisfy the conditions the Central Limit Theorem.</p>
   </assemblage>
   
-  <paragraphs xml:id="tech-detour-log-transformation">
+  <exercise xml:id="tech-detour-log-transformation">
     <title>Technology Detour <mdash/> Log Transformation</title>
-    
-    <p><alert>R Instructions</alert></p>
-    <program language="r">
-      <input>
+    <statement>
+      <p>Create a log transformation of the response time data.</p>
+    </statement>
+    <hint>
+      <title>R Instructions</title>
+      <program language="r">
+        <input>
 lnresponsetime = log(responsetime)
-      </input>
-    </program>
-    
-    <p><alert>JMP Instructions</alert></p>
-    <p>Create a new column and edit the formula. Type or use your mouse to select Transcendental &gt; Log to create Log(responsetime). Press OK.</p>
-  </paragraphs>
+        </input>
+      </program>
+    </hint>
+    <hint>
+      <title>JMP Instructions</title>
+      <p>Create a new column and edit the formula. Type or use your mouse to select Transcendental &gt; Log to create Log(responsetime). Press OK.</p>
+    </hint>
+  </exercise>
   
   <exercise xml:id="inv2-2-g" label="I6.2.7">
     <title>Log transformation</title>
