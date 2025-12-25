@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="inv-1-15" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Investigation 1.15: Counting Concussions</title>
-
+<p><em>In this investigation, you will learn about another probability distribution that allows you to calculate exact p-values when sampling from a population (rather than from a random process).</em></p>
 <exercises xml:id="investigation1-15" hidden-label="yes">
     <title>The Study</title>
 
@@ -81,6 +81,7 @@
     <statement>
       <p>Identify some precautions taken by these students to avoid nonsampling errors.</p>
     </statement>
+    <response/>
     <solution>
       <p>The surveys asked about various injuries, not just concussions, and the responses were anonymous.</p>
     </solution>
@@ -119,8 +120,7 @@
     <title>Assess representativeness</title>
     <statement>
       <p>Do you think it is reasonable to consider this sample as representative of all varsity team football and soccer players at this school? Explain why or why not.</p>
-      
-    </statement>
+      <response/>
     <solution>
       <p>It is unlikely to be representative of all football and soccer players at this university. The responses were voluntary and therefore this was not a random sample, and the response rate was low (0.3).</p>
     </solution>
@@ -188,11 +188,11 @@
     <p>The main distinction between a hypergeometric random variable and a binomial random variable is the trials are no longer independent. The probability of drawing a success for the first object is <m>M/N</m>. But if we do draw a success, then the probability of success for the second object is <m>(M - 1)/(N - 1)</m>. If we replaced the item, then we would be back to a binomial process.</p>
     
     <p>In general, the probability of obtaining <m>k</m> successes from a population with <m>M</m> successes and <m>N - M</m> failures is</p>
-    <me>P(X = k) = \frac{\binom{M}{k} \times \binom{N-M}{n-k}}{\binom{N}{n}}</me>
+    <p><me>P(X = k) = \frac{\binom{M}{k} \times \binom{N-M}{n-k}}{\binom{N}{n}}</me></p>
     <p>where <m>\binom{a}{b} = \frac{a!}{b!(a-b)!}</m></p>
     
     <p>The expected value of the hypergeometric random variable is <m>E(X) = (M/N) \times n</m> and the standard deviation is</p>
-    <me>SD(X) = \sqrt{n \times (M/N) \times ((N-M)/N) \times ((N-n)/(N-1))}</me>
+    <p><me>SD(X) = \sqrt{n \times (M/N) \times ((N-M)/N) \times ((N-n)/(N-1))}</me></p>
     <p>(Compare these to a binomial with <m>\pi = M/N</m>.)</p>
   </assemblage>
 
@@ -215,6 +215,7 @@
       <p>For example:</p>
       <sage language="r">
         <input>
+invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20231223')));
 iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)
         </input>
       </sage>
