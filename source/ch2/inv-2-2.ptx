@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="investigation2-2">
+<section xml:id="inv-2-2">
   <title>Investigation 2.2: Honking Reaction Times</title>
-  
+
+<exercises xml:id="investigation2-2" hidden-label="yes">
+  <title>The Study</title>
+
   <introduction>
     <sidebyside widths="60% 35%" valign="top">
       <p>Diekmann, Krassnig, and Lorenz (<url href="https://pubmed.ncbi.nlm.nih.gov/9043205/">1996</url>) conducted a field study to explore whether driver characteristics are related to an aggressive response (Thanks to Jeff Sklar for pointing us to this article).</p>
@@ -173,62 +176,66 @@
     <p>A <term>modified boxplot</term> will display such outliers separately and then extend the whiskers to the most extreme non-outlier observation.</p>
   </assemblage>
   
-  <paragraphs xml:id="tech-detour-modified-boxplots">
-    <title>Technology Detour – Modified Boxplots</title>
-    
-    <p>Use the following Technology Detour to create a "modified" boxplot for these data.</p>
-    
-    <exercise xml:id="tech-detour-applet-boxplot" label="Modified Boxplot - Applet">
-      <title>Modified Boxplot in Descriptive Statistics Applet</title>
-      <statement>
-        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm" visual="rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url>.</p>
-        <p><ol>
-          <li><p>Paste in data.</p></li>
-          <li><p>Check the Add Boxplot box.</p></li>
-          <li><p>Check the Show outliers box.</p></li>
-        </ol></p>
-      </statement>
-      <solution>
-        <p>Example output:</p>
-        <image source="images/Inv2-2f-Applet.jpg" width="60%">
-          <description>Applet modified boxplot showing outliers</description>
-        </image>
-      </solution>
-    </exercise>
-    
-    <exercise xml:id="tech-detour-r-boxplot" label="Modified Boxplot - R">
-      <title>Modified Boxplot in R</title>
-      <statement>
-        <program language="r" interactive="sage">
-          <input>
+  <exercise xml:id="tech-detour-modified-boxplots">
+    <title>Technology Detour <mdash/> Modified Boxplots</title>
+    <statement>
+      <p>Create a "modified" boxplot for the honking response time data.</p>
+    </statement>
+    <hint>
+      <title>Applet Instructions</title>
+      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url>:</p>
+      <p><ol>
+        <li><p>Paste in the data.</p></li>
+        <li><p>Check the Add Boxplot box.</p></li>
+        <li><p>Check the Show outliers box.</p></li>
+      </ol></p>
+      <p>Expected output:</p>
+      <image source="images/Inv2-2f-Applet.jpg" width="60%">
+        <description>Applet modified boxplot showing outliers</description>
+      </image>
+    </hint>
+    <hint>
+      <title>R Instructions</title>
+      <p>Use the <c>boxplot</c> or <c>iscamboxplot</c> function:</p>
+      <program language="r">
+        <input>
 boxplot(responsetime, ylab="time until reaction",    # Adds labels
         horizontal=TRUE)                              # Makes horizontal
 # OR
 iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
-          </input>
-        </program>
-      </statement>
-      <solution>
-        <p>R output:</p>
-        <image source="images/Inv2-2f-R.jpg" width="60%">
-          <description>R modified boxplot showing outliers</description>
-        </image>
-      </solution>
-    </exercise>
-    
-    <exercise xml:id="tech-detour-jmp-boxplot" label="Modified Boxplot - JMP">
-      <title>Modified Boxplot in JMP</title>
-      <statement>
-        <p>In the Distributions window, use the hot spot to select Outlier Boxplot.</p>
-      </statement>
-      <solution>
-        <p>JMP output:</p>
-        <image source="images/Inv2-2f-JMP.jpg" width="60%">
-          <description>JMP modified boxplot showing outliers</description>
-        </image>
-      </solution>
-    </exercise>
-  </paragraphs>
+        </input>
+      </program>
+      <p>Expected output:</p>
+      <image source="images/Inv2-2f-R.jpg" width="60%">
+        <description>R modified boxplot showing outliers</description>
+      </image>
+      <p>Try it yourself:</p>
+      <sage language="r">
+        <input>
+# Load ISCAM functions from GitHub
+invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')))
+
+# Load honking data from GitHub
+honking = read.table("https://www.rossmanchance.com/iscam2/data/honking.txt", header=TRUE)
+responsetime = honking$responsetime
+
+# Create modified boxplot
+iscamboxplot(responsetime, xlab="Time until reaction (seconds)")
+        </input>
+      </sage>
+    </hint>
+    <hint>
+      <title>JMP Instructions</title>
+      <p>In the Distributions window, use the red triangle (hot spot) next to the variable name and select Outlier Boxplot.</p>
+      <p>Expected output:</p>
+      <image source="images/Inv2-2f-JMP.jpg" width="60%">
+        <description>JMP modified boxplot showing outliers</description>
+      </image>
+    </hint>
+    <solution>
+      <p>A modified boxplot displays the five-number summary with whiskers extending to the most extreme non-outlier observations. Points beyond 1.5 × IQR from the quartiles are marked as outliers.</p>
+    </solution>
+  </exercise>
   
   <exercise xml:id="inv2-2-f" label="I6.2.6">
     <title>Counting outliers</title>
@@ -438,6 +445,7 @@ plnorm(2, meanlog = 1.292, sdlog = 0.5238)
     <p>In this study, we found that the amount of time a blocked driver waits before responding follows a skewed right distribution with a mean of 4.25 seconds and a median of 3.24 seconds, with a few drivers waiting more than 10 seconds. Although the dataset is small, we might consider using these data to build a mathematical model for these skewed data, either using a transformation or a probability model other than the normal distribution, to help predict future results (e.g., a wait time of less than 2 seconds). These researchers were actually interested in whether the "social status" of the blocked car was related to how long it took before people honked. They found that "the mean and median response times decreased monotonically with the status of car, except when the blocked car was very small." Similar results had been found in an earlier study by Doob and Gross in the United States (1968) which varied the status of the blocking car. However, neither study was replicated by a Swiss study (Jann, Suhner, <ampersand/> Marioni, 1995), perhaps due to cultural differences.</p>
   </assemblage>
   
+  </exercises>
   <subsection xml:id="practice2-2A">
     <title>Practice Problem 2.2A</title>
     
