@@ -215,13 +215,9 @@ iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
 # Load ISCAM functions from GitHub
 invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')))
 
-# Honking response time data (in seconds)
-responsetime = c(1.86, 2.24, 2.28, 2.39, 2.50, 2.59, 2.67, 2.79, 2.81, 2.88, 
-                 2.92, 3.06, 3.24, 3.30, 3.38, 3.43, 3.54, 3.56, 3.64, 3.76, 
-                 3.79, 3.81, 3.82, 3.86, 3.94, 4.07, 4.12, 4.18, 4.20, 4.32, 
-                 4.36, 4.44, 4.49, 4.55, 4.63, 4.64, 4.72, 4.81, 4.84, 4.90, 
-                 4.91, 4.92, 5.03, 5.15, 5.34, 5.37, 5.61, 5.62, 5.64, 5.81, 
-                 6.03, 6.20, 6.57, 6.67, 6.79, 9.78, 17.15)
+# Load honking data from GitHub
+honking = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/honking.txt", header=TRUE)
+responsetime = honking$responsetime
 
 # Create modified boxplot
 iscamboxplot(responsetime, xlab="Time until reaction (seconds)")
