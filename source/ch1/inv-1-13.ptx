@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="inv-1-13" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Investigation 1.13: Sampling Words (cont.)</title>
-  <p><em>In the previous investigation, we saw that if we take random samples from a finite population, the mean of the sampling distribution of sample proportions should equal the population proportion, i.e., <m>E(\hat{p}) = \pi</m>. But what about the standard deviation of the distribution of sample proportions?</em></p>
+<p><em>In Section 3, we have transitioned from sampling from an infinite process to sampling from a finite population. We discussed randomly selecting the sample from a list of the entire population as a way to convince critics that the sample is likely to be representative of the larger population and therefore, we are willing to <em>generalize</em> results from a randomly selected sample to the larger population. 
+</p><p>
+So now the “random chance” we are modelling is not in an individual outcome (like in a coin flip) but in which individuals we obtain in our sample. As suggested in Investigation 1.12, sample statistics from random samples will again follow a predictable pattern, allowing us to measure the strength of evidence against claims about the population parameter and to estimate the margin-of-error in our estimates of the parameter. We will again consider simulation-based p-values, exact p-values, and a mathematical model for estimating the p-value and confidence interval.
+</em></p>
+
 
 <exercises xml:id="investigation1-13" hidden-label="yes">
 <title>Estimating the Standard Deviation of Sample Proportions</title>
+  <p>In the previous investigation, we saw that if we take random samples from a finite population, the mean of the sampling distribution of sample proportions should equal the population proportion, i.e., <m>E(\hat{p}) = \pi</m>. But what about the standard deviation of the distribution of sample proportions?</p>
   <p>One option is the same formula we used before: <m>SD(\hat{p}) = \sqrt{\frac{\pi(1-\pi)}{n}}</m>.</p>
 
   <exercise xml:id="I1-13-a">
@@ -154,7 +159,7 @@
 
   <p>If the population size is not large, we use the "finite population correction factor." Probability sampling methods other than simple random sampling would also require calculating a different standard deviation. You can learn more appropriate techniques in a course on sampling design and methods.</p>
 
-  <paragraphs><title>Discussion:</title><p>Once again you see the fundamental principle of sampling variability. Fortunately, this variability follows a predictable pattern in the long run. With random sampling, we expect the sample proportion to be "representative" of the population proportion. The second key advantage of random sampling is we now know how to estimate the size of the sample-to-sample variation. Sample proportions that are based on larger samples will tend to fall even closer to the population proportion as there is less variability among the sample proportions. So first, select randomly to avoid bias, and then if we can increase the sample size, this will improve the precision of the sample results. Once we know the precision of the sample results in repeated samples, then we can decide whether any one particular sample result can be considered statistically significant or unlikely to happen by chance – by the random sampling process – alone. A small p-value does not guarantee that the sample result did not happen just by chance, but it does allow you to measure how unlikely such a result is.</p>
+  <paragraphs><title>Discussion</title><p>Once again you see the fundamental principle of sampling variability. Fortunately, this variability follows a predictable pattern in the long run. With random sampling, we expect the sample proportion to be "representative" of the population proportion. The second key advantage of random sampling is we now know how to estimate the size of the sample-to-sample variation. Sample proportions that are based on larger samples will tend to fall even closer to the population proportion as there is less variability among the sample proportions. So first, select randomly to avoid bias, and then if we can increase the sample size, this will improve the precision of the sample results. Once we know the precision of the sample results in repeated samples, then we can decide whether any one particular sample result can be considered statistically significant or unlikely to happen by chance – by the random sampling process – alone. A small p-value does not guarantee that the sample result did not happen just by chance, but it does allow you to measure how unlikely such a result is.</p>
 </paragraphs>
   <p>In <xref ref="inv-1-15" text="custom">Investigation 1.15</xref>, you will consider a method for computing an "exact" p-value, taking the population size into account. However, in many situations we don't know the size of the population, just that it is large, and instead we will proceed directly to the binomial or normal-based method, as long as the technical conditions are met.</p>
 
