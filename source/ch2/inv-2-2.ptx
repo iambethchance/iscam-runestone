@@ -260,6 +260,20 @@ iscamboxplot(responsetime, xlab="Time until reaction (seconds)")
     <p>A <term>data transformation</term> applies a mathematical function to each value to re-express the data on an alternative scale. Data transformations can also make the data more closely modeled with a normal distribution, which could then satisfy the conditions the Central Limit Theorem.</p>
   </assemblage>
   
+  <paragraphs xml:id="tech-detour-log-transformation">
+    <title>Technology Detour <mdash/> Log Transformation</title>
+    
+    <p><alert>R Instructions</alert></p>
+    <program language="r">
+      <input>
+lnresponsetime = log(responsetime)
+      </input>
+    </program>
+    
+    <p><alert>JMP Instructions</alert></p>
+    <p>Create a new column and edit the formula. Type or use your mouse to select Transcendental &gt; Log to create Log(responsetime). Press OK.</p>
+  </paragraphs>
+  
   <exercise xml:id="inv2-2-g" label="I6.2.7">
     <title>Log transformation</title>
     <statement>
@@ -306,7 +320,7 @@ iscamboxplot(responsetime, xlab="Time until reaction (seconds)")
   <exercise xml:id="inv2-2-i" label="I6.2.9">
     <title>Compare prediction to observed data</title>
     <statement>
-      <p>How does this prediction in <xref ref="inv2-2-h"/> compare to the observed percentage honking within the first 2 seconds in the data set?</p>
+      <p>How does this prediction in <xref ref="inv2-2-h" text="custom">question 10</xref> compare to the observed percentage honking within the first 2 seconds in the data set?</p>
     </statement>
     <solution>
       <p>In the original distribution, 6 of the 57 observations are below 2 (10.5%).</p>
