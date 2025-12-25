@@ -80,7 +80,6 @@
     <title>Identify precautions</title>
     <statement>
       <p>Identify some precautions taken by these students to avoid nonsampling errors.</p>
-      <p><var width="60"/></p>
     </statement>
     <solution>
       <p>The surveys asked about various injuries, not just concussions, and the responses were anonymous.</p>
@@ -120,7 +119,7 @@
     <title>Assess representativeness</title>
     <statement>
       <p>Do you think it is reasonable to consider this sample as representative of all varsity team football and soccer players at this school? Explain why or why not.</p>
-      <p><var width="60"/></p>
+      
     </statement>
     <solution>
       <p>It is unlikely to be representative of all football and soccer players at this university. The responses were voluntary and therefore this was not a random sample, and the response rate was low (0.3).</p>
@@ -159,7 +158,7 @@
     </solution>
   </exercise>
 
-  <p>You should find your answers in <xref ref="I1-15-f"/> are not quite the same. This illustrates a violation of the independence assumption of our binomial model. However, if the population is large compared to the size of the sample, then the conditional probabilities are almost equal, and we can approximate with a binomial distribution. But when the population is not large, we need to take that lack of independence into account.</p>
+  <p>You should find your answers in <xref ref="I1-15-f" text="custom">question 9</> are not quite the same. This illustrates a violation of the independence assumption of our binomial model. However, if the population is large compared to the size of the sample, then the conditional probabilities are almost equal, and we can approximate with a binomial distribution. But when the population is not large, we need to take that lack of independence into account.</p>
 
   <assemblage>
     <title>Key Result: Sampling Without Replacement</title>
@@ -198,56 +197,57 @@
   </assemblage>
 
   
-  <paragraphs xml:id="tech-detour-hypergeometric">
+  <exercise xml:id="tech-detour-hypergeometric">
     <title>Technology Detour <mdash/> Calculating Hypergeometric Probabilities</title>
-<p>Continuing to suppose 17 of the 110 athletes had a concussion, use technology to find the probability that a random sample of 33 would have 12 or more successes.</p>
-
-    <exercise xml:id="tech-detour-r-hyper" label="Hypergeometric - R">
-      <title>Calculating Hypergeometric Probabilities in R</title>
-      <statement>
-        <p>In R: The <c>iscamhyperprob</c> function takes the following inputs:</p>
-        <p><ul>
-          <li><p><c>k</c>, the observed value of interest (or the difference in conditional proportions, assumed if value is less than one, including negative)</p></li>
-          <li><p><c>total</c>, the total number of observations in the population</p></li>
-          <li><p><c>succ</c>, the overall number of successes in the population</p></li>
-          <li><p><c>n</c>, the sample size</p></li>
-          <li><p><c>lower.tail</c>, a Boolean which is TRUE or FALSE</p></li>
-        </ul></p>
-        <p>For example: <c>iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)</c></p>
-      </statement>
-      <solution>
-        <image source="images/Inv1.15Rsols.jpg" width="80%">
-          <description>R output showing hypergeometric probability calculation result of 0.0002</description>
+    <statement>
+      <p>Continuing to suppose 17 of the 110 athletes had a concussion, use technology to find the probability that a random sample of 33 would have 12 or more successes.</p>
+    </statement>
+    <hint>
+      <title>R Instructions</title>
+      <p>The <c>iscamhyperprob</c> function takes the following inputs:</p>
+      <p><ul>
+        <li><p><c>k</c>, the observed value of interest (or the difference in conditional proportions, assumed if value is less than one, including negative)</p></li>
+        <li><p><c>total</c>, the total number of observations in the population</p></li>
+        <li><p><c>succ</c>, the overall number of successes in the population</p></li>
+        <li><p><c>n</c>, the sample size</p></li>
+        <li><p><c>lower.tail</c>, a Boolean which is TRUE or FALSE</p></li>
+      </ul></p>
+      <p>For example:</p>
+      <sage language="r">
+        <input>
+iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)
+        </input>
+      </sage>
+    </hint>
+    <hint>
+      <title>JMP Instructions</title>
+      <p>Using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam3/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url>:</p>
+      <p><ol>
+        <li><p>Select Hypergeometric from the Distribution menu.</p></li>
+        <li><p>Specify the Population Size, the number of successes in the population (Number of items) and the sample size.</p></li>
+        <li><p>Choose the tail probability and specify the number of interest (e.g., 12)</p></li>
+      </ol></p>
+      <p>Note: To find <m>P(X \geq 12)</m>, we use <m>P(X > 11)</m>.</p>
+      <sidebyside widths="45% 45%">
+        <image source="images/Inv1.15JMP1.png">
+          <description>JMP Distribution Calculator setup for hypergeometric distribution</description>
         </image>
-      </solution>
-    </exercise>
-
-    <exercise xml:id="tech-detour-jmp-hyper" label="Hypergeometric - JMP">
-      <title>Calculating Hypergeometric Probabilities in JMP</title>
-      <statement>
-        <p>In JMP using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam3/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url>:</p>
-        <p><ol>
-          <li><p>Select Hypergeometric from the Distribution menu.</p></li>
-          <li><p>Specify the Population Size, the number of successes in the population (Number of items) and the sample size.</p></li>
-          <li><p>Choose the tail probability and specify the number of interest (e.g., 12)</p></li>
-        </ol></p>
-        <p>Note: To find <m>P(X \geq 12)</m>, we use <m>P(X > 11)</m>.</p>
-        <sidebyside widths="45% 45%">
-          <image source="images/Inv1.15JMP1.png">
-            <description>JMP Distribution Calculator setup for hypergeometric distribution</description>
-          </image>
-          <image source="images/Inv1.15JMP2.png">
-            <description>JMP Distribution Calculator output for hypergeometric probability</description>
-          </image>
-        </sidebyside>
-      </statement>
-      <solution>
-        <image source="images/Inv1.15JMPsols.png" width="80%">
-          <description>JMP output showing hypergeometric probability calculation result of 0.0002</description>
+        <image source="images/Inv1.15JMP2.png">
+          <description>JMP Distribution Calculator output for hypergeometric probability</description>
         </image>
-      </solution>
-    </exercise>
-  </paragraphs>
+      </sidebyside>
+    </hint>
+    <solution>
+      <p>R output:</p>
+      <image source="images/Inv1.15Rsols.jpg" width="80%">
+        <description>R output showing hypergeometric probability calculation result of 0.0002</description>
+      </image>
+      <p>JMP output:</p>
+      <image source="images/Inv1.15JMPsols.png" width="80%">
+        <description>JMP output showing hypergeometric probability calculation result of 0.0002</description>
+      </image>
+    </solution>
+  </exercise>
 
   <exercise xml:id="I1-15-g">
     <title>Report p-value</title>
@@ -291,10 +291,10 @@
   <exercise xml:id="I1-15-i">
     <title>Generalization to larger population</title>
     <statement>
-      <p>What does the p-value in <xref ref="I1-15-g"/> tell you about the proportion of all U.S. collegiate football and soccer players with a concussion?</p>
+      <p>What does the p-value in <xref ref="I1-15-g" text="custom">question 12</xref> tell you about the proportion of all U.S. collegiate football and soccer players with a concussion?</p>
       <p><var width="60"/></p>
     </statement>
-    <solution>
+    <solution>" text="custom">question 12</xref>
       <p>This sample was not randomly selected from the population of all U.S. collegiate football and soccer players, so this sample really tells us nothing about the likelihood of a concussion among the larger population.</p>
     </solution>
   </exercise>
@@ -326,8 +326,9 @@
   </assemblage>
 
 </exercises>
-  <subsection xml:id="practice1-15">
-    <title>Practice Problems 1.15</title>
+
+  <subsection xml:id="practice1-15A">
+    <title>Practice Problem 1.15A</title>
 
     <exercise xml:id="practice-1-15-a" label="PP1.15A">
       <title>First-year student voting preferences</title>
@@ -336,6 +337,10 @@
       </statement>
       <response/>
     </exercise>
+  </subsection>
+
+  <subsection xml:id="practice1-15B">
+    <title>Practice Problem 1.15B</title>
 
     <exercise xml:id="practice-1-15-b" label="PP1.15B">
       <title>GSS non-sampling errors</title>
