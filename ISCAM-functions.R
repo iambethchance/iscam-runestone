@@ -656,27 +656,141 @@ iscaminvnorm <- function(prob1, mean = 0, sd = 1, direction, verbose = TRUE) {
 # T-DISTRIBUTION FUNCTIONS
 # ============================================================================
 
-# Find t* critical value (inverse t)
-iscaminvt <- function(confidence, df, tail = "between") {
-  if (tail == "between") {
-    # Two-tailed (confidence interval)
-    alpha <- (1 - confidence) / 2
-    t_star <- qt(1 - alpha, df)
-    cat(paste0("For ", confidence * 100, "% confidence with df = ", df, ":\n"))
-    cat(paste0("t* = ", round(t_star, 4), "\n"))
-    return(t_star)
-  } else if (tail == "above") {
-    # Upper tail
-    t_star <- qt(confidence, df)
-    cat(paste0("t* (upper ", confidence * 100, "% with df = ", df, "): ", round(t_star, 4), "\n"))
-    return(t_star)
-  } else if (tail == "below") {
-    # Lower tail
-    t_star <- qt(1 - confidence, df)
-    cat(paste0("t* (lower ", confidence * 100, "% with df = ", df, "): ", round(t_star, 4), "\n"))
-    return(t_star)
-  } else {
-    stop("tail must be 'between', 'above', or 'below'")
+# Find t* critical value (inverse t) - simplified version for Sage cells
+iscaminvt <- function(prob, df, direction) {
+  old_par <- par(mar = c(4, 3, 2, 2))
+  on.exit(par(old_par))
+  
+  min_val <- -4
+  max_val <- 4
+  ymax <- dt(0, df)
+  thisx <- seq(min_val, max_val, .001)
+  
+  plot(
+    thisx,
+    dt(thisx, df),
+    xlab = "",
+    ylab = "density",
+    type = "l",
+    panel.first = grid()
+  )
+  title(paste("t (df =", df, ")"))
+  mtext(side = 1, line = 2, "t-values")
+  mtext(side = 2, line = 2, "density")
+  
+  abline(h = 0, col = "black")
+  
+  if (direction == "below") {
+    answer <- signif(qt(prob, df, lower.tail = TRUE), 4)
+    thisrange <- seq(min_val, answer, .001)
+    polygon(c(thisrange, answer, 0), c(dt(thisrange, df), 0, 0), col = "pink")
+    text(
+      (min_val + answer) / 2,
+      dt(answer, df) / 2,
+      labels = prob,
+      pos = 2,
+      col = "blue"
+    )
+    text(
+      answer,
+      min(dt(answer, df), ymax * .85),
+      labels = paste("T <=", answer),
+      col = "red",
+      pos = 3
+    )
+    cat("The observation with", prob, "probability below is", answer, "\n")
+    invisible(list("answer" = answer))
+  } else if (direction == "above") {
+    answer <- signif(qt(prob, df, lower.tail = FALSE), 4)
+    thisrange <- seq(answer, max_val, .001)
+    polygon(c(answer, thisrange, max_val), c(0, dt(thisrange, df), 0), col = "pink")
+    text(
+      (answer + max_val) / 2,
+      (dt(answer, df) / 2),
+      labels = prob,
+      pos = 4,
+      col = "blue"
+    )
+    text(
+      answer,
+      min(dt(answer, df), ymax * .85),
+      labels = paste("T >=", answer),
+      col = "red",
+      pos = 3
+    )
+    cat("The observation with", prob, "probability above is", answer, "\n")
+    invisible(list("answer" = answer))
+  } else if (direction == "between") {
+    answer1 <- signif(qt((1 - prob) / 2, df, lower.tail = TRUE), 4)
+    answer2 <- 0 + (0 - answer1)
+    thisrange <- seq(answer1, answer2, .001)
+    polygon(
+      c(answer1, thisrange, answer2),
+      c(0, dt(thisrange, df), 0),
+      col = "pink"
+    )
+    text(0, (dt(.5, df) / 2), labels = prob, col = "blue")
+    text(
+      answer1,
+      min(dt(answer1, df), ymax * .85),
+      labels = paste("T =", answer1),
+      col = "red",
+      pos = 3
+    )
+    text(
+      answer2,
+      min(dt(answer2, df), ymax * .85),
+      labels = paste("T =", answer2),
+      col = "red",
+      pos = 3
+    )
+    cat("There is", prob, "probability between", answer1, "and", answer2, "\n")
+    invisible(list("answer1" = answer1, "answer2" = answer2))
+  } else if (direction == "outside") {
+    answer1 <- signif(qt(prob / 2, df, lower.tail = TRUE), 4)
+    answer2 <- 0 + (0 - answer1)
+    thisrange1 <- seq(min_val, answer1, .001)
+    thisrange2 <- seq(answer2, max_val, .001)
+    polygon(
+      c(min_val, thisrange1, answer1),
+      c(0, dt(thisrange1, df), 0),
+      col = "pink"
+    )
+    polygon(
+      c(answer2, thisrange2, max_val),
+      c(0, dt(thisrange2, df), 0),
+      col = "pink"
+    )
+    text(
+      answer1,
+      dt(answer1, df) / 2,
+      labels = prob / 2,
+      col = "blue",
+      pos = 2
+    )
+    text(
+      answer2,
+      dt(answer2, df) / 2,
+      labels = prob / 2,
+      col = "blue",
+      pos = 4
+    )
+    text(
+      answer1,
+      min(dt(answer1, df), ymax * .85),
+      labels = paste("T =", answer1),
+      col = "red",
+      pos = 3
+    )
+    text(
+      answer2,
+      min(dt(answer2, df), ymax * .85),
+      labels = paste("T =", answer2),
+      col = "red",
+      pos = 3
+    )
+    cat("There is", prob, "probability outside", answer1, "and", answer2, "\n")
+    invisible(list("answer1" = answer1, "answer2" = answer2))
   }
 }
 

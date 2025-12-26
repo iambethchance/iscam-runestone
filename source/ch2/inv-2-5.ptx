@@ -468,9 +468,9 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
         <title>R/Sage Instructions</title>
         <p>Use R to find <m>t^*</m> with the <c>iscaminvt</c> function:</p>
         <p><ul>
-          <li><p><c>confidence</c> = the confidence level (e.g., 0.95 for 95%)</p></li>
+          <li><p><c>prob</c> = the probability (e.g., 0.95 for 95%)</p></li>
           <li><p><c>df</c> = degrees of freedom (n - 1)</p></li>
-          <li><p><c>tail</c> = "between" for confidence intervals, "above" or "below" for one-sided tests</p></li>
+          <li><p><c>direction</c> = "between" for confidence intervals, "above" or "below" for one-sided tests</p></li>
         </ul></p>
         <p>For 95% confidence with df = 4:</p>
         <sage language="r">
@@ -479,11 +479,11 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
 # Load ISCAM functions from GitHub
 source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R");
 
-iscaminvt(.95, 4, "between")
+iscaminvt(0.95, 4, "between")
 ]]>
           </input>
         </sage>
-        <p>This should return <m>t^* = 2.776</m>.</p>
+        <p>This should return <m>t^* = 2.776</m> and show a graph of the t-distribution.</p>
       </hint>
       <hint>
         <title>JMP Instructions</title>
