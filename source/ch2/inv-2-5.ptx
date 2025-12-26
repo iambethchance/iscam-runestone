@@ -483,7 +483,7 @@ iscaminvt(0.95, 4, "between")
 ]]>
           </input>
         </sage>
-        <p>This should return <m>t^* = 2.776</m> and show a graph of the t-distribution.</p>
+        <p>This should return <m>t^* = 2.776</m> </p>
       </hint>
       <hint>
         <title>JMP Instructions</title>
@@ -633,6 +633,19 @@ iscamonesamplet(xbar=98.249, sd=.733, n=130, hypothesized=98.6,
           </input>
         </sage>
         <p>where <c>xbar</c> = sample mean, <c>sd</c> = sample standard deviation, <c>n</c> = sample size, <c>hypothesized</c> = hypothesized mean value, <c>alternative</c> = "two.sided", "greater", or "less", and <c>conf.level</c> = confidence level (e.g., 0.95 for 95%).</p>
+        <p><em>OR</em> use base R's <c>t.test</c> with a vector of raw data:</p>
+        <sage language="r">
+          <input>
+<![CDATA[
+# Example with raw data (replace with your actual data)
+# body_temps <- c(98.4, 98.6, 98.8, ...) 
+
+# For this example, we'll use the summary statistics
+# t.test requires data, but we can demonstrate the structure:
+# t.test(body_temps, mu=98.6, alternative="two.sided", conf.level=0.95)
+]]>
+          </input>
+        </sage>
         <p>The function will display:</p>
         <p><ul>
           <li><p><m>t</m>-statistic: -5.46</p></li>

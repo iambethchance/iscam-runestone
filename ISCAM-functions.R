@@ -1007,12 +1007,7 @@ iscamonesamplet <- function(
     cat("p-value:", pvalue, "\n")
   }
   
-  invisible(list(
-    "tvalue" = tvalue,
-    "pvalue" = pvalue,
-    "lower" = lower,
-    "upper" = upper
-  ))
+  invisible()
 }
 
 # One Proportion Z-Test and Confidence Interval
