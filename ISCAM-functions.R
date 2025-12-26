@@ -689,6 +689,11 @@ iscamonesamplet <- function(
   alternative = "two.sided",
   conf.level = 0.95
 ) {
+  # Handle conf.level as percentage (95) or proportion (0.95)
+  if (conf.level > 1) {
+    conf.level <- conf.level / 100
+  }
+  
   # Calculate t-statistic
   se <- sd / sqrt(n)
   t_stat <- (xbar - hypothesized) / se

@@ -483,7 +483,7 @@ iscaminvt(.95, 4, "between")
 ]]>
           </input>
         </sage>
-        <p>This will return <m>t^* = 2.776</m>.</p>
+        <p>This should return <m>t^* = 2.776</m>.</p>
       </hint>
       <hint>
         <title>JMP Instructions</title>
@@ -603,23 +603,20 @@ iscaminvt(.95, 4, "between")
       </hint>
       <hint>
         <title>R/Sage Instructions</title>
-        <p>Use R to conduct a one sample <m>t</m>-test. You can use the <c>t.test</c> command with raw data or <c>iscamonesamplet</c> with summary data:</p>
+        <p>Use R to conduct a one sample <m>t</m>-test. You can use the <c>t.test</c> command with raw data (if you have a vector <c>x</c>) or <c>iscamonesamplet</c> with summary statistics:</p>
         <sage language="r">
           <input>
 <![CDATA[
 # Load ISCAM functions from GitHub
 source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R");
 
-# With raw data
-t.test(x, mu = hypothesized_value, alternative="two.sided", conf.level = .95)
-
-# OR with summary statistics
+# Use iscamonesamplet with summary statistics for the body temperature study
 iscamonesamplet(xbar=98.249, sd=.733, n=130, hypothesized=98.6, 
-                alternative="two.sided", conf.level=95)
+                alternative="two.sided", conf.level=0.95)
 ]]>
           </input>
         </sage>
-        <p>where <c>sd</c> = sample standard deviation, <m>s</m>.</p>
+        <p>where <c>xbar</c> = sample mean, <c>sd</c> = sample standard deviation, <c>n</c> = sample size, <c>hypothesized</c> = hypothesized mean value, <c>alternative</c> = "two.sided", "greater", or "less", and <c>conf.level</c> = confidence level (e.g., 0.95 for 95%).</p>
         <p>The function will display:</p>
         <p><ul>
           <li><p><m>t</m>-statistic: -5.46</p></li>
