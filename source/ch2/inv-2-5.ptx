@@ -619,7 +619,7 @@ iscaminvt(0.95, 4, "between")
       </hint>
       <hint>
         <title>R/Sage Instructions</title>
-        <p>Use R to conduct a one sample <m>t</m>-test. You can use the <c>t.test</c> command with raw data (if you have a vector <c>x</c>) or <c>iscamonesamplet</c> with summary statistics:</p>
+        <p>Use R to conduct a one sample <m>t</m>-test. You can use the <c>iscamonesamplet</c> function with summary statistics:</p>
         <sage language="r">
           <input>
 <![CDATA[
@@ -632,7 +632,15 @@ iscamonesamplet(xbar=98.249, sd=.733, n=130, hypothesized=98.6,
 ]]>
           </input>
         </sage>
-        <p>where <c>xbar</c> = sample mean, <c>sd</c> = sample standard deviation, <c>n</c> = sample size, <c>hypothesized</c> = hypothesized mean value, <c>alternative</c> = "two.sided", "greater", or "less", and <c>conf.level</c> = confidence level (e.g., 0.95 for 95%).</p>
+        <p>where:</p>
+        <p><ul>
+          <li><p><c>xbar</c> = sample mean</p></li>
+          <li><p><c>sd</c> = sample standard deviation</p></li>
+          <li><p><c>n</c> = sample size</p></li>
+          <li><p><c>hypothesized</c> = hypothesized mean value</p></li>
+          <li><p><c>alternative</c> = "two.sided", "greater", or "less"</p></li>
+          <li><p><c>conf.level</c> = confidence level (e.g., 0.95 for 95%)</p></li>
+        </ul></p>
         <p><em>OR</em> use base R's <c>t.test</c> with a vector of raw data:</p>
         <sage language="r">
           <input>
