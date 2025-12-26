@@ -241,7 +241,7 @@
   <exercise xml:id="inv2-4-p" label="I6.4.16">
     <title>Sample from skewed population</title>
     <statement>
-      <p>How does this distribution compare to the distribution in checkpoint 12?</p>
+      <p>How does this distribution compare to the distribution in question 12?</p>
       
 <!--      <p>Sketch: <var width="30"/></p>-->
       <p>Mean: <var width="10"/></p>
@@ -268,7 +268,7 @@
     <title>Compare three populations</title>
     <statement>
       
-      <paragraphs>  <title>Distribution of sample means comparison</title></paragraphs>
+      <paragraphs>  <alert>Distribution of sample means comparison</alert></paragraphs>
         <tabular>
           <row header="yes">
             <cell>Distribution of sample means</cell>
@@ -304,20 +304,22 @@
   
   <paragraphs>
     <title>Changing the Sample Size</title>
+  <p>Now consider changing the sample size from 47 to 188 (four times larger). </p>
   </paragraphs>
   
   <exercise xml:id="inv2-4-s" label="I6.4.19">
     <title>Predict effect of larger sample size</title>
     <statement>
-      <p><em>Prediction</em>: Now consider changing the sample size from 47 to 188 (four times larger). Make a prediction for how the shape, mean, and SD of the distribution of sample means would change (if at all).</p>
+      <p><em>Predict</em> how the shape, mean, and SD of the distribution of sample means would change (if at all).</p>
     </statement>
     <response/>
   </exercise>
-  
+  <ul>
+  <li>In the applet, make this change of sample size from 47 to 188, and generate 1000 random samples (from the uniformly distributed population, pop3). </li></ul>
   <exercise xml:id="inv2-4-t" label="I6.4.20">
     <title>Test prediction with larger sample</title>
     <statement>
-      <p>Make this change of sample size from 47 to 188, and generate 1000 random samples (from the uniformly distributed population, pop3). Did the shape of the sample means change very much? What about the mean of the sample means? What about the SD of the sample means? How were your predictions in checkpoint 19?</p>
+      <p>Did the shape of the sample means change very much? What about the mean of the sample means? What about the SD of the sample means? How were your predictions in question 18?</p>
     </statement>
     <response/>
   </exercise>
@@ -348,7 +350,26 @@
     </ul></p>
     
     <p>The convention is to consider the sample size large enough if <m>n &gt; 30</m>. However, this rule really depends on the shape of the population. The more non-symmetric the population distribution, the larger the sample size necessary before the distribution of sample means is reasonably modeled by a normal distribution.</p>
-    
+    <tabular halign="center">
+      <row header="yes">
+        <cell>Sample skewness</cell>
+        <cell>0.25</cell>
+        <cell>0.5</cell>
+        <cell>0.75</cell>
+        <cell>1.0</cell>
+        <cell>1.5</cell>
+        <cell>2.0</cell>
+      </row>
+      <row>
+        <cell>Minimum sample size</cell>
+        <cell>10</cell>
+        <cell>20</cell>
+        <cell>35</cell>
+        <cell>50</cell>
+        <cell>100</cell>
+        <cell>165</cell>
+      </row>
+    </tabular>
     <p>The population is considered large if it is more than 20 times the size of the sample.</p>
   </assemblage>
   
@@ -373,7 +394,7 @@
   <exercise xml:id="inv2-4-w" label="I6.4.23">
     <title>Apply Central Limit Theorem</title>
     <statement>
-      <p>Use the result from the Central Limit Theorem and technology (e.g., the Normal Probability Calculator applet) to estimate the probability of a sample mean weight exceeding 159.57 lbs for a random sample of 47 passengers from a population with mean <m>\mu = 167</m> lbs and standard deviation <m>\sigma = 35</m> lbs. [Hint: Shade the area of interest in your sketch in (v).] How does this estimated probability compare to what you found with repeated sampling from the hypothetical populations?</p>
+      <p>Use the result from the Central Limit Theorem and technology (e.g., the Normal Probability Calculator applet) to estimate the probability of a sample mean weight exceeding 159.57 lbs for a random sample of 47 passengers from a population with mean <m>\mu = 167</m> lbs and standard deviation <m>\sigma = 35</m> lbs. [Hint: Shade the area of interest in your sketch for question 21.] How does this estimated probability compare to what you found with repeated sampling from the hypothetical populations?</p>
     </statement>
     <response/>
   </exercise>
@@ -381,10 +402,13 @@
   <exercise xml:id="inv2-4-x" label="I6.4.24">
     <title>Identify concerns</title>
     <statement>
-      <p>Identify one concern you might have with this analysis. [Hint: What other assumption, apart from the shape of the population, was made in these simulations that may not be true in this study? Do you think this is a reasonable assumption for this study?]</p>
+      <p>Identify one concern you might have with this analysis. </p>
     </statement>
     <response/>
+    <hint>What other assumption, apart from the shape of the population, was made in these simulations that may not be true in this study? Do you think this is a reasonable assumption for this study?</hint>
+  <solution>We assumed the mean and std dev reported by the CDC in 2005 are accurate reflections of the weights of the passengers. This may or may not be the case.</solution>
   </exercise>
+
   
   <assemblage xml:id="study-conclusions-2-4">
     <title>Study Conclusions</title>
