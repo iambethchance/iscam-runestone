@@ -619,7 +619,15 @@ iscaminvt(0.95, 4, "between")
       </hint>
       <hint>
         <title>R/Sage Instructions</title>
-        <p>Use R to conduct a one sample <m>t</m>-test. You can use the <c>iscamonesamplet</c> function with summary statistics:</p>
+        <p>Use R to conduct a one sample <m>t</m>-test. You can use the <c>iscamonesamplet</c> function with summary statistics where:</p>
+        <p><ul>
+          <li><p><c>xbar</c> = sample mean</p></li>
+          <li><p><c>sd</c> = sample standard deviation</p></li>
+          <li><p><c>n</c> = sample size</p></li>
+          <li><p><c>hypothesized</c> = hypothesized mean value</p></li>
+          <li><p><c>alternative</c> = "two.sided", "greater", or "less"</p></li>
+          <li><p><c>conf.level</c> = confidence level (e.g., 0.95 for 95%)</p></li>
+        </ul></p>
         <sage language="r">
           <input>
 <![CDATA[
@@ -632,28 +640,14 @@ iscamonesamplet(xbar=98.249, sd=.733, n=130, hypothesized=98.6,
 ]]>
           </input>
         </sage>
-        <p>where:</p>
-        <p><ul>
-          <li><p><c>xbar</c> = sample mean</p></li>
-          <li><p><c>sd</c> = sample standard deviation</p></li>
-          <li><p><c>n</c> = sample size</p></li>
-          <li><p><c>hypothesized</c> = hypothesized mean value</p></li>
-          <li><p><c>alternative</c> = "two.sided", "greater", or "less"</p></li>
-          <li><p><c>conf.level</c> = confidence level (e.g., 0.95 for 95%)</p></li>
-        </ul></p>
         <p><em>OR</em> use base R's <c>t.test</c> with a vector of raw data:</p>
-        <sage language="r">
+        <program language="r">
           <input>
-<![CDATA[
 # Example with raw data (replace with your actual data)
-# body_temps <- c(98.4, 98.6, 98.8, ...) 
-
-# For this example, we'll use the summary statistics
-# t.test requires data, but we can demonstrate the structure:
-# t.test(body_temps, mu=98.6, alternative="two.sided", conf.level=0.95)
-]]>
+body_temps &lt;- c(98.4, 98.6, 98.8, ...) 
+t.test(body_temps, mu=98.6, alternative="two.sided", conf.level=0.95)
           </input>
-        </sage>
+        </program>
         <p>The function will display:</p>
         <p><ul>
           <li><p><m>t</m>-statistic: -5.46</p></li>
@@ -767,7 +761,7 @@ iscamonesamplet(xbar=98.249, sd=.733, n=130, hypothesized=98.6,
     <exercise xml:id="practice-2-5b-d" label="PP2.5B.4">
       <title>Justify <m>t</m>-distribution</title>
       <statement>
-        <p>Give two reasons why a <m>t</m> [Hint: Click on the slider handle and use the arrow keys on your keyboard.] -distribution is likely to be an appropriate model for these data.</p>
+        <p>Give two reasons why a <m>t</m>-distribution is likely to be an appropriate model for these data.</p>
       </statement>
       <response/>
     </exercise>
@@ -803,7 +797,7 @@ iscamonesamplet(xbar=98.249, sd=.733, n=130, hypothesized=98.6,
     <exercise xml:id="practice-2-5c-a" label="PP2.5C.1">
       <title>Evaluate observed mean</title>
       <statement>
-        <p>As in <xref ref="inv2-5-i" text="custom">Checkpoint 7.2.9</xref>, use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample.html?">Sampling from Finite Population</url> applet to select 10,000 samples of 13 adults from the hypothetical population of 10,000 body temperatures. Based on the generated distribution of sample means, is the observed mean of 98.249 (or more extreme in either direction) a surprising outcome for this population?</p>
+        <p>As in <xref ref="inv2-5-i" text="custom">question 9</xref>, use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample.html?">Sampling from Finite Population</url> applet to select 10,000 samples of 13 adults from the hypothetical population of 10,000 body temperatures. Based on the generated distribution of sample means, is the observed mean of 98.249 (or more extreme in either direction) a surprising outcome for this population?</p>
       </statement>
       <response/>
     </exercise>
