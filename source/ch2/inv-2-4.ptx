@@ -7,7 +7,7 @@
 
   <introduction>
     <sidebyside widths="65% 30%" valign="top">
-      <p>On October 2, 2005, the tour boat <em>Ethan Allen</em> capsized on Lake George in upstate New York. All 47 passengers on board were thrown into the lake, and 20 of them drowned. Although there were some claims that a large wave had hit the boat, an investigation by New York State Police (2006) concluded that the boat had been overloaded with heavy passengers. In fact, the average weight of the 47 passengers was found to be 174 pounds; whereas the boat was designed with the assumption that passengers would average 140 pounds.</p>
+      <p>On October 2, 2005, the tour boat <em>Ethan Allen</em> capsized on Lake George in upstate New York. All 47 passengers on board were thrown into the lake, and 20 of them drowned. Although there were some claims that a large wave had hit the boat, an investigation by New York State Police (2006) concluded that the boat had been overloaded with heavy passengers. </p>
       
       <stack>
         <image source="images/Inv2.4intro.jpg" width="100%">
@@ -16,7 +16,7 @@
         <p><em>Ethan Allen tour boat on Lake George</em></p>
       </stack>
     </sidebyside>
- </introduction>
+<p>In fact, the average weight of the 47 passengers was found to be 174 pounds; whereas the boat was designed with the assumption that passengers would average 140 pounds.</p> </introduction>
   
   <exercise xml:id="inv2-4-a" label="I6.4.1">
     <title>Conjecture about weight distribution</title>
@@ -169,11 +169,14 @@
     </statement>
     <response/>
   </exercise>
-  
+  <ul>
+  <li>Now set the <term index="no">Number of Samples</term> to 990 (for 1,000 total) and press <term index="no">Draw Samples</term>.
+  </li>
+  </ul>
   <exercise xml:id="inv2-4-l" label="I6.4.12">
     <title>Generate 1000 samples</title>
     <statement>
-      <p>Now set the <alert>Number of Samples</alert> to 990 (for 1,000 total) and press <alert>Draw Samples</alert>. 
+      <p> 
       Describe the shape, center, and variability of the distribution of the sample means (lower right). How do these features compare to the population distribution? Which one of these features has changed the most vs. the population, and how has it changed?</p>
       
       <p><strong>Distribution of sample means (aka "sampling distribution"):</strong></p>
@@ -203,7 +206,7 @@
   <exercise xml:id="inv2-4-n" label="I6.4.14">
     <title>Count samples exceeding limit</title>
     <statement>
-      <p>To investigate the question posed in <xref ref="inv2-4-m"/>, what conclusions can you draw from the count displayed by the applet?</p>
+      <p>To investigate the question posed in <xref ref="inv2-4-m" custom="text">question 12</xref>, what conclusions can you draw from the count displayed by the applet?</p>
     </statement>
     <response/>
   </exercise>
@@ -214,10 +217,14 @@
     <p>To carry out the preceding simulation analysis, we assumed that the population distribution had a normal shape. But what if the population of adult weights has a different, non-normal distribution? Will that change our findings?</p>
   </paragraphs>
   
+  <ul><li>
+  Now choose the data from the second column (pop2) with the Choose variable pull-down menu on the left side. 
+  </li></ul>
+
   <exercise xml:id="inv2-4-o" label="I6.4.15">
     <title>Analyze skewed population</title>
     <statement>
-      <p>Now choose the data from the second column (pop2) with the Choose variable pull-down menu on the left side. Describe the shape of this population and what it means for the variable to have this shape in this context. How do the values of <m>\mu</m> and <m>\sigma</m> compare to the pop1 (rounding a bit)?</p>
+      <p>Describe the shape of this population and what it means for the variable to have this shape in this context. How do the values of <m>\mu</m> and <m>\sigma</m> compare to the pop1 (rounding a bit)?</p>
       
       <p>Shape: <var width="20"/></p>
       <p>Mean: <var width="10"/></p>
@@ -227,12 +234,16 @@
     <response/>
   </exercise>
   
+  <ul>
+  <li>Generate 1,000 random samples of 47 individuals from this population. </li>
+  <li>Sketch the distribution of sample means and note the values for the mean and standard deviation of the sampling distribution. 
+  </li></ul>
   <exercise xml:id="inv2-4-p" label="I6.4.16">
     <title>Sample from skewed population</title>
     <statement>
-      <p>Generate 1,000 random samples of 47 individuals from this population. Produce a well-labeled sketch of the distribution of sample means below and note the values for the mean and standard deviation of the sampling distribution. How does this distribution compare to the distribution in checkpoint 12?</p>
+      <p>How does this distribution compare to the distribution in checkpoint 12?</p>
       
-      <p>Sketch: <var width="30"/></p>
+<!--      <p>Sketch: <var width="30"/></p>-->
       <p>Mean: <var width="10"/></p>
       <p>SD: <var width="10"/></p>
       <p>Comparison: <var width="40"/></p>
@@ -240,19 +251,22 @@
     <response/>
   </exercise>
   
+  <ul><li>Use the applet to approximate the probability of obtaining a sample mean weight of at least 159.574 lbs for a random sample of 47 passengers from population 2. </li></ul>
   <exercise xml:id="inv2-4-q" label="I6.4.17">
     <title>Probability for skewed population</title>
     <statement>
-      <p>Use the applet to approximate the probability of obtaining a sample mean weight of at least 159.574 lbs for a random sample of 47 passengers from population 2. Has this probability changed considerably with the change in the shape of the distribution of the population of weights?</p>
+      <p>Has this probability changed considerably with the change in the shape of the distribution of the population of weights?</p>
     </statement>
     <response/>
   </exercise>
-  
+  <ul><li>
+  Repeat this analysis using the other population distribution (pop3) 
+      in the data file and summarize your observations for the three populations in the table below.
+      </li>
+      </ul>
   <exercise xml:id="inv2-4-r" label="I6.4.18">
     <title>Compare three populations</title>
     <statement>
-      <p>Repeat this analysis using the other population distribution (pop3) 
-      in the data file and summarize your observations for the three populations in the table below.</p>
       
       <paragraphs>  <title>Distribution of sample means comparison</title></paragraphs>
         <tabular>
@@ -283,6 +297,9 @@
         </tabular>
       
     </statement>
+    <solution>
+      <p>The distribution of sample means has not changed much with any of the changes in population shape.</p>
+    </solution>
   </exercise>
   
   <paragraphs>
@@ -292,7 +309,7 @@
   <exercise xml:id="inv2-4-s" label="I6.4.19">
     <title>Predict effect of larger sample size</title>
     <statement>
-      <p>Prediction: Now consider changing the sample size from 47 to 188 (four times larger). Make a prediction for how the shape, mean, and SD of the distribution of sample means would change (if at all).</p>
+      <p><em>Prediction</em>: Now consider changing the sample size from 47 to 188 (four times larger). Make a prediction for how the shape, mean, and SD of the distribution of sample means would change (if at all).</p>
     </statement>
     <response/>
   </exercise>
