@@ -432,7 +432,7 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
     <p>Keep in mind that the critical value <m>t^*</m> tells us how many standard errors we need to extend from the sample mean (in each direction) based on how confident we want to be. Our goal is to develop a <m>100 \times C\%</m> confidence interval method that will capture the population parameter <m>(100 \times C)\%</m> of the time in the long run.</p>
   </assemblage>
   
-  <subsection xml:id="tech-detour-finding-t-star">
+  <paragraphs>
     <title>Technology Detour - Finding <m>t^*</m></title>
     <exercise xml:id="inv2-5-t-tech-combined" label="I7.2.20tech.combined">
       <title>Find Critical <m>t^*</m> Value with Technology</title>
@@ -466,21 +466,21 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
       </hint>
       <hint>
         <title>R/Sage Instructions</title>
-        <p>Use R to find critical <m>t^*</m> values. The <c>iscaminvt(confidence, df, tail)</c> function takes the following inputs:</p>
+        <p>Use R to find <m>t^*</m> with the <c>iscaminvt</c> function:</p>
         <p><ul>
           <li><p>confidence = the confidence level (e.g., 0.95 for 95%)</p></li>
           <li><p>df = degrees of freedom (n - 1)</p></li>
           <li><p>tail = "between" for confidence intervals, "above" or "below" for one-sided tests</p></li>
         </ul></p>
         <p>For 95% confidence with df = 4:</p>
-        <program language="r">
+        <sage>
           <input>iscaminvt(.95, 4, "between")</input>
-        </program>
+        </sage>
         <p>This will return <m>t^* = 2.776</m>.</p>
       </hint>
       <hint>
         <title>JMP Instructions</title>
-        <p>Use the Distribution Calculator in JMP:</p>
+        <p>Use the <url href="https://www.jmp.com/en_us/learning-library/videos/distribution-calculator.html" visual="jmp.com/learning-library/videos/distribution-calculator.html">Distribution Calculator</url> in JMP:</p>
         <p><ul>
           <li><p>Use the Distribution menu to select <m>t</m></p></li>
           <li><p>Specify the degrees of freedom (n - 1)</p></li>
@@ -496,12 +496,12 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
         </image>
       </solution>
     </exercise>
-  </subsection>
+  </paragraphs>
   
   <exercise xml:id="inv2-5-t" label="I7.2.20">
-    <title>Find <m>t^*</m> for <m>n\ =\ 5</m></title>
+    <title>Find <m>t_4^*</m> for <m>n\ =\ 5</m></title>
     <statement>
-      <p>Using the technology detour above, find the <m>t^*</m> value corresponding to a 95% confidence level and a sample size of <m>n = 5</m>.</p>
+      <p>Using the technology detour above, find the <m>t_4^*</m> value corresponding to a 95% confidence level and a sample size of <m>n = 5</m>. How does this <m>t^*</m> critical value compare to the corresponding <m>z^*</m> value of 1.96 for 95% confidence?</p>
       
       <p><m>t_4^*</m> = <var width="10"/></p>
     </statement>
@@ -512,24 +512,6 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
       </image>
     </solution>
     <response/>
-  </exercise>
-  
-  <exercise xml:id="inv2-5-u" label="I7.2.21">
-    <title>Compare <m>t^*</m> to <m>z^*</m></title>
-    <statement>
-      <p>How does the <m>t^*</m> critical value of 2.776 compare to the corresponding <m>z^*</m> value of 1.96 for 95% confidence?</p>
-    </statement>
-    <choices randomize="no">
-      <choice>
-        <statement><p>Smaller</p></statement>
-      </choice>
-      <choice>
-        <statement><p>No change</p></statement>
-      </choice>
-      <choice correct="yes">
-        <statement><p>Larger</p></statement>
-      </choice>
-    </choices>
   </exercise>
   
   <exercise xml:id="inv2-5-v" label="I7.2.22">
@@ -571,7 +553,7 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
   <exercise xml:id="inv2-5-x" label="I7.2.24">
     <title>Calculate confidence interval</title>
     <statement>
-      <p>Use the critical value from the previous question to calculate a 95% confidence interval for the mean body temperature of a healthy adult based on our sample <m>(\bar{x} = 98.249</m>, <m>s = 0.733</m>, <m>n = 130)</m>. Is this interval consistent with your conclusion about the null hypothesis in <xref ref="inv2-5-n" text="custom">Checkpoint 7.2.14</xref>? Explain.</p>
+      <p>Use the critical value from the previous question to calculate a 95% confidence interval for the mean body temperature of a healthy adult based on our sample <m>(\bar{x} = 98.249</m>, <m>s = 0.733</m>, <m>n = 130)</m>. Is this interval consistent with your conclusion about the null hypothesis in <xref ref="inv2-5-n" text="custom">question 14</xref>? xplain.</p>
     </statement>
     <solution>
       <p>95% confidence interval = <m>98.249 \pm 1.979 \times \frac{0.733}{\sqrt{130}} = 98.249 \pm 0.127 = (98.122, 98.376)</m>. This interval does not contain 98.6, which is consistent with our rejection of 98.6 as a plausible value for the population mean.</p>
@@ -630,14 +612,14 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
       <hint>
         <title>R/Sage Instructions</title>
         <p>Use R to conduct a one sample <m>t</m>-test. You can use the <c>t.test</c> command with raw data ("x") or <c>iscamonesamplet</c> with summary data:</p>
-        <program language="r">
+        <sage>
           <input>t.test(x, mu = hypothesized_value, alternative="two.sided", conf.level = .95)</input>
-        </program>
+        </sage>
         <p>OR</p>
-        <program language="r">
+        <sage>
           <input>iscamonesamplet(xbar=98.249, sd=.733, n=130, hypothesized=98.6, 
                 alternative="two.sided", conf.level=95)</input>
-        </program>
+        </sage>
         <p>where sd = sample standard deviation, <m>s</m>.</p>
         <p>The function will display:</p>
         <p><ul>
@@ -650,18 +632,19 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
         <title>JMP Instructions</title>
         <p>You can use raw data or summary data (see second option):</p>
         <p><ul>
-          <li><p>In the Data window, choose Analyze > Distribution</p></li>
-          <li><p>Specify the variable in the Y, Columns box</p></li>
-          <li><p>The 95% confidence interval will be shown in the Summary Statistics box. If you want to change the confidence level, use the variable hot spot and select Confidence interval.</p></li>
-          <li><p>To perform the test of significance, use the variable hot spot, select Test Mean. Then enter the hypothesized value of <m>\mu</m> and press OK.</p></li>
+          <li><p>In the Data window, choose <term text="custom">Analyze > Distribution</term></p></li>
+          <li><p>Specify the variable in the <term text="custom">Y, Columns</term> box</p></li>
+          <li><p>The 95% confidence interval will be shown in the Summary Statistics box. If you want to change the confidence level, use the variable hot spot and select <term text="custom">Confidence interval</term>.</p></li>
+          <li><p>To perform the test of significance, use the variable hot spot, select <term text="custom">Test Mean</term>. Then enter the hypothesized value of <m>\mu</m> and press <term text="custom">OK</term>.</p></li>
         </ul></p>
         <p>OR</p>
         <p><ul>
-          <li><p>Open the ISCAM Journal file > Hypothesis Test for One Mean</p></li>
+          <li><p>Open the ISCAM Journal file > <term text="custom">Hypothesis Test</term> for One Mean</p></li>
           <li><p>Choose Raw Data (and pick the column) or Summary Statistics (and then specify the sample size, sample mean, and sample standard deviation)</p></li>
           <li><p>Be sure to choose the <m>t</m>-test Test Type and specify the alternative hypothesis</p></li>
-          <li><p>In the ISCAM Journal file > Confidence Interval for One Mean</p></li>
+          <li><p>In the ISCAM Journal file > <term text="custom">Confidence Interval for One Mean</term></p></li>
           <li><p>Choose the <m>t</m> interval type and specify confidence level</p></li>
+          <li><p>You can also use the <url href="https://www.jmp.com/en_us/learning-library/videos/distribution-calculator.html" visual="jmp.com/learning-library/videos/distribution-calculator.html">Distribution Calculator</url> to find critical values</p></li>
         </ul></p>
       </hint>
       <solution>
