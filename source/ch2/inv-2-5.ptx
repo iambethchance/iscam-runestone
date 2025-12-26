@@ -468,13 +468,20 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
         <title>R/Sage Instructions</title>
         <p>Use R to find <m>t^*</m> with the <c>iscaminvt</c> function:</p>
         <p><ul>
-          <li><p>confidence = the confidence level (e.g., 0.95 for 95%)</p></li>
-          <li><p>df = degrees of freedom (n - 1)</p></li>
-          <li><p>tail = "between" for confidence intervals, "above" or "below" for one-sided tests</p></li>
+          <li><p><c>confidence</c> = the confidence level (e.g., 0.95 for 95%)</p></li>
+          <li><p><c>df</c> = degrees of freedom (n - 1)</p></li>
+          <li><p><c>tail</c> = "between" for confidence intervals, "above" or "below" for one-sided tests</p></li>
         </ul></p>
         <p>For 95% confidence with df = 4:</p>
-        <sage>
-          <input>iscaminvt(.95, 4, "between")</input>
+        <sage language="r">
+          <input>
+<![CDATA[
+# Load ISCAM functions from GitHub
+source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R");
+
+iscaminvt(.95, 4, "between")
+]]>
+          </input>
         </sage>
         <p>This will return <m>t^* = 2.776</m>.</p>
       </hint>
@@ -498,21 +505,6 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
     </exercise>
   </paragraphs>
   
-  <exercise xml:id="inv2-5-t" label="I7.2.20">
-    <title>Find <m>t_4^*</m> for <m>n\ =\ 5</m></title>
-    <statement>
-      <p>Using the technology detour above, find the <m>t_4^*</m> value corresponding to a 95% confidence level and a sample size of <m>n = 5</m>. How does this <m>t^*</m> critical value compare to the corresponding <m>z^*</m> value of 1.96 for 95% confidence?</p>
-      
-      <p><m>t_4^*</m> = <var width="10"/></p>
-    </statement>
-    <solution>
-      <p><m>t_4^* = 2.776</m></p>
-      <image source="images/Inv2.5tsols.png" width="60%">
-        <description>t probability calculator showing t* value for df=4</description>
-      </image>
-    </solution>
-    <response/>
-  </exercise>
   
   <exercise xml:id="inv2-5-v" label="I7.2.22">
     <title>Find <m>t^*</m> for <m>n = 13</m></title>
@@ -520,7 +512,7 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
       <p>Find the <m>t^*</m> value for the sample size of <m>n = 13</m>. How do the <m>t</m>-critical values compare for these different sample sizes? Is this what you expected? Explain.</p>
     </statement>
     <solution>
-      <p>The t critical value of 2.179 is much closer to the z critical value of 1.96 with a larger sample size. Compared to the <m>t</m> critical value from <xref ref="inv2-5-t" text="custom">Checkpoint 7.2.20</xref>, the current critical value has decreased suggesting that the t critical value will approach the <m>z</m> critical value as the sample size increases. (By <m>n = 130</m>, <m>t^* = 1.98</m>.)</p>
+      <p>The <em>t</em> critical value of 2.179 is much closer to the <em>z</em> critical value of 1.96 with a larger sample size. Compared to the <m>t</m> critical value from <xref ref="inv2-5-t" text="custom">question 20</xref>, the current critical value has decreased suggesting that the <em>t</em> critical value will approach the <m>z</m> critical value as the sample size increases. </p>
       <image source="images/Inv2.5vsols.png" width="60%">
         <description>t probability calculator showing t* value for df=12</description>
       </image>
@@ -561,7 +553,7 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
     <response/>
   </exercise>
   
-  <subsection xml:id="tech-detour-one-sample-t">
+  <paragraphs>
     <title>Technology Detour - One Sample <m>t</m>-procedures</title>
     <exercise xml:id="inv2-5-y-tech-combined" label="I7.2.25tech.combined">
       <title>Conduct One Sample <m>t</m>-test with Technology</title>
@@ -589,12 +581,11 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
           <stack>
             <p>Use the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url> to conduct a one sample <m>t</m>-test:</p>
             <p><ul>
-              <li><p>Select One mean from the Scenario pull-down menu</p></li>
-              <li><p>You can check Paste data to copy and paste in the raw data, or type in the sample size, mean, and standard deviation. Press Calculate.</p></li>
-              <li><p>Check the box for Test of significance and enter the hypothesized value of <m>\mu</m> and set the direction of the alternative. Press Calculate.</p></li>
-              <li><p>Check the box for Confidence interval, enter the confidence level and press Calculate CI.</p></li>
+              <li><p>Select <term index="no">One mean</term> from the Scenario pull-down menu</p></li>
+              <li><p>You can check Paste data to copy and paste in the raw data, or type in the sample size, mean, and standard deviation. Press <term index="no">Calculate</term>.</p></li>
+              <li><p>Check the box for Test of significance and enter the hypothesized value of <m>\mu</m> and set the direction of the alternative. Press <term index="no">Calculate</term></p></li>
+              <li><p>Check the box for Confidence interval, enter the confidence level and press <term index ="no">Calculate CI</term>.</p></li>
             </ul></p>
-            <p>For the body temperature study, enter n = 130, mean = 98.249, SD = 0.733. Set the hypothesized value to 98.6 and select a two-sided alternative.</p>
           </stack>
           <stack>
             <image source="images/Inv2.5TBIA1.png">
@@ -608,19 +599,27 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
             </image>
           </stack>
         </sidebyside>
+            <p>For the body temperature study, enter n = 130, mean = 98.249, SD = 0.733. Set the hypothesized value to 98.6 and select a two-sided alternative.</p>
       </hint>
       <hint>
         <title>R/Sage Instructions</title>
-        <p>Use R to conduct a one sample <m>t</m>-test. You can use the <c>t.test</c> command with raw data ("x") or <c>iscamonesamplet</c> with summary data:</p>
-        <sage>
-          <input>t.test(x, mu = hypothesized_value, alternative="two.sided", conf.level = .95)</input>
+        <p>Use R to conduct a one sample <m>t</m>-test. You can use the <c>t.test</c> command with raw data or <c>iscamonesamplet</c> with summary data:</p>
+        <sage language="r">
+          <input>
+<![CDATA[
+# Load ISCAM functions from GitHub
+source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R");
+
+# With raw data
+t.test(x, mu = hypothesized_value, alternative="two.sided", conf.level = .95)
+
+# OR with summary statistics
+iscamonesamplet(xbar=98.249, sd=.733, n=130, hypothesized=98.6, 
+                alternative="two.sided", conf.level=95)
+]]>
+          </input>
         </sage>
-        <p>OR</p>
-        <sage>
-          <input>iscamonesamplet(xbar=98.249, sd=.733, n=130, hypothesized=98.6, 
-                alternative="two.sided", conf.level=95)</input>
-        </sage>
-        <p>where sd = sample standard deviation, <m>s</m>.</p>
+        <p>where <c>sd</c> = sample standard deviation, <m>s</m>.</p>
         <p>The function will display:</p>
         <p><ul>
           <li><p><m>t</m>-statistic: -5.46</p></li>
@@ -659,7 +658,7 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
         </image>
       </solution>
     </exercise>
-  </subsection>
+  </paragraphs>
   
   <exercise xml:id="inv2-5-y" label="I7.2.25">
     <title>Use technology to verify calculations</title>
