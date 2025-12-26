@@ -652,6 +652,87 @@ iscaminvnorm <- function(prob1, mean = 0, sd = 1, direction, verbose = TRUE) {
   }
 }
 
+# ============================================================================
+# T-DISTRIBUTION FUNCTIONS
+# ============================================================================
+
+# Find t* critical value (inverse t)
+iscaminvt <- function(confidence, df, tail = "between") {
+  if (tail == "between") {
+    # Two-tailed (confidence interval)
+    alpha <- (1 - confidence) / 2
+    t_star <- qt(1 - alpha, df)
+    cat(paste0("For ", confidence * 100, "% confidence with df = ", df, ":\n"))
+    cat(paste0("t* = ", round(t_star, 4), "\n"))
+    return(t_star)
+  } else if (tail == "above") {
+    # Upper tail
+    t_star <- qt(confidence, df)
+    cat(paste0("t* (upper ", confidence * 100, "% with df = ", df, "): ", round(t_star, 4), "\n"))
+    return(t_star)
+  } else if (tail == "below") {
+    # Lower tail
+    t_star <- qt(1 - confidence, df)
+    cat(paste0("t* (lower ", confidence * 100, "% with df = ", df, "): ", round(t_star, 4), "\n"))
+    return(t_star)
+  } else {
+    stop("tail must be 'between', 'above', or 'below'")
+  }
+}
+
+# One Sample t-Test and Confidence Interval
+iscamonesamplet <- function(
+  xbar,
+  sd,
+  n,
+  hypothesized = 0,
+  alternative = "two.sided",
+  conf.level = 0.95
+) {
+  # Calculate t-statistic
+  se <- sd / sqrt(n)
+  t_stat <- (xbar - hypothesized) / se
+  df <- n - 1
+  
+  # Calculate p-value
+  if (alternative == "two.sided") {
+    p_value <- 2 * pt(-abs(t_stat), df)
+  } else if (alternative == "greater") {
+    p_value <- pt(t_stat, df, lower.tail = FALSE)
+  } else if (alternative == "less") {
+    p_value <- pt(t_stat, df)
+  } else {
+    stop("alternative must be 'two.sided', 'greater', or 'less'")
+  }
+  
+  # Calculate confidence interval
+  t_crit <- qt(1 - (1 - conf.level) / 2, df)
+  ci_lower <- xbar - t_crit * se
+  ci_upper <- xbar + t_crit * se
+  
+  # Print results
+  cat("\nOne Sample t-Test\n")
+  cat("=================\n")
+  cat(paste0("Sample mean: ", round(xbar, 4), "\n"))
+  cat(paste0("Sample SD: ", round(sd, 4), "\n"))
+  cat(paste0("Sample size: ", n, "\n"))
+  cat(paste0("Hypothesized mean: ", hypothesized, "\n"))
+  cat(paste0("\nt-statistic: ", round(t_stat, 4), "\n"))
+  cat(paste0("df: ", df, "\n"))
+  cat(paste0("p-value: ", ifelse(p_value < 0.0001, "< 0.0001", round(p_value, 4)), "\n"))
+  cat(paste0("\n", conf.level * 100, "% Confidence Interval:\n"))
+  cat(paste0("(", round(ci_lower, 4), ", ", round(ci_upper, 4), ")\n"))
+  
+  # Return invisible list
+  invisible(list(
+    t_statistic = t_stat,
+    df = df,
+    p_value = p_value,
+    conf_int = c(ci_lower, ci_upper),
+    conf_level = conf.level
+  ))
+}
+
 # One Proportion Z-Test and Confidence Interval
 iscamonepropztest <- function(
   observed,
