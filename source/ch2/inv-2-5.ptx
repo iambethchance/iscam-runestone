@@ -4,7 +4,7 @@
     <p><em>In the previous investigation, we assumed random sampling from a finite population to predict the distribution of sample means and help us evaluate whether a particular value is an unlikely value for the sample mean by chance alone. However, this method is not realistic in practice as we had to make up a population to sample from and we had to make some assumptions about that population (e.g., shape). Luckily, the Central Limit Theorem also predicts how that distribution would behave for most population shapes. But the CLT does require us to know certain characteristics about the population.</em>  </p>
 
   <exercises xml:id="investigation2-5" hidden-label="yes">
-  <title>The Data</title>
+  <title>The Claim</title>
 
   <introduction>
     <sidebyside widths="65% 30%" valign="top">
@@ -190,11 +190,13 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
   </exercise>
   
   <p>But what about the statistic suggested in <xref ref="inv2-5-f" text="custom">Checkpoint 7.2.6</xref>; does this standardized statistic behave nicely and is this distribution again well modeled by a normal distribution?</p>
-  
+  <ul><li>
+  In the applet, change the <term text="custom">Statistic</term> option (above the graph) to <m>t</m>-statistic, the name for the standardized sample mean using the standard error of the sample mean. 
+  </li></ul>
   <exercise xml:id="inv2-5-j" label="I7.2.10">
     <title>Examine <m>t</m>-statistic distribution</title>
     <statement>
-      <p>In the applet, change the Statistic option (above the graph) to <m>t</m>-statistic, the name for the standardized sample mean using the standard error of the sample mean. Describe the shape of the distribution of these <m>t</m>-statistics from your 10,000 random samples.</p>
+      <p>Describe the shape of the distribution of these <m>t</m>-statistics from your 10,000 random samples.</p>
     </statement>
     <solution>
       <p>The shape is symmetric and bell-shaped, with mean roughly zero and standard deviation a little larger than 1.</p>
@@ -205,13 +207,19 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
     <response/>
   </exercise>
   
+  <ul><li>
+  Check the box to Overlay Normal Distribution; 
+  </li></ul>
   <exercise xml:id="inv2-5-k" label="I7.2.11">
     <title>Compare to normal distribution</title>
     <statement>
-      <p>Check the box to Overlay Normal Distribution; does this appear to be a reasonable fit? What p-value does this normal approximation produce?</p>
+      <p>Coes this appear to be a reasonable fit? </p>
+    <var width="5"/>
+    <p>What p-value does this normal approximation produce?</p>
+    <var width = "5"/>
     </statement>
     <hint>
-      <p>Enter your answer to <xref ref="inv2-5-f" text="custom">Checkpoint 7.2.6</xref> as the observed result for the <m>t</m>-statistic and count beyond.</p>
+      <p>Enter your answer to <xref ref="inv2-5-f" text="custom">question 6</xref> as the observed result for the <m>t</m>-statistic and count beyond.</p>
     </hint>
     <solution>
       <p>The fit seems good, but not perfect. The normal distribution is perhaps a bit too "skinny" in the middle and doesn't go out far enough in the ends.</p>
@@ -251,11 +259,10 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
     
     <p>To model the sampling distribution of the standardized statistic <m>\frac{\bar{x} - \mu}{s/\sqrt{n}}</m>, we need a density curve with <em>heavier tails</em> than the standard normal distribution. William S. Gosset, a chemist turned statistician, showed in 1908, while working for the Guinness Breweries in Dublin, that a "t probability curve" provides a better model for the sampling distribution of this standardized statistic when the population of observations follows a normal distribution.</p>
   </paragraphs>
-  
+  <ul><li><p>Check the Overlay <m>t</m>-distribution box. </p></li></ul>
   <exercise xml:id="inv2-5-m" label="I7.2.13">
     <title>Compare <m>t</m>-distribution to normal</title>
-    <statement>
-      <p>Check the Overlay <m>t</m>-distribution box. 
+    <statement>      
       What is the main visual difference in the  <m>t</m>-distribution model compared to the normal distribution model? Does this  <m>t</m>-distribution appear to be a better model for the simulated sampling distribution? Is the theory-based p-value using the <m>t</m>-distribution closer to the empirical p-value than the theory-based p-value using the normal distribution?</p>
     </statement>
     <solution>
@@ -263,11 +270,15 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
     </solution>
     <response/>
   </exercise>
-  
+  <p>The actual body temperature study involved a sample of <m>n = 130</m> adults. </p>
+  <ul><li>
+  Use the applet to generate a sampling distribution of <m>t</m>-statistics for this sample size. </li>
+  <li>Toggle between the normal and <m>t</m> probability distributions. 
+  </li></ul>
   <exercise xml:id="inv2-5-n" label="I7.2.14">
     <title>Analyze with larger sample size</title>
     <statement>
-      <p>The actual body temperature study involved a sample of <m>n = 130</m> adults. Use the applet to generate a sampling distribution of <m>t</m>-statistics for this sample size. Toggle between the normal and <m>t</m> probability distributions. Do you see much difference between them? What is the actual value of the observed <m>t</m>-statistic with this sample size? Where does it fall in this distribution? What do you conclude about the null hypothesis?</p>
+      <p>Do you see much difference between them? What is the actual value of the observed <m>t</m>-statistic with this sample size? Where does it fall in this distribution? What do you conclude about the null hypothesis?</p>
     </statement>
     <solution>
       <p>With a sample size of 130, we don't see as much distinction between the normal and <m>t</m> distributions. With <m>n = 130</m>, <m>SE = 0.733/\sqrt{130} \approx 0.0643</m> and <m>t = (98.249 - 98.6)/0.0643 \approx -5.459</m>. The sample mean of 98.249 is 5.459 standard errors below the population mean of 98.6, which implies 98.249 would be very surprising to observe for the sample mean if the population mean were really 98.6. This is far out in the tail of the simulated sampling distribution and gives strong evidence against the null hypothesis that the population mean is equal to 98.6. (We would reject the null hypothesis.)</p>
@@ -328,16 +339,15 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
       <ul>
         <li><p>Change the <alert>Statistic</alert> to Means, but keep the <alert>Distribution</alert> set to Normal and the <alert>Method</alert> as <m>z</m> with sigma.</p></li>
         <li><p>Set the population mean to 98.6, the population standard deviation to 0.733, and the sample size to 13.</p></li>
-      </ul>
+  <li>Generate 1000 random samples from this population and examine the running total for the percentage of 95% confidence intervals <m>(\bar{x} \pm 1.96\sigma/\sqrt{n})</m> that successfully capture the actual value of the population mean <m>\mu</m>.</li>
+          </ul>
     <interactive iframe="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1" width="160%" aspect="3:2"/>
   <exercise xml:id="inv2-5-o" label="I7.2.15">
     <title>Examine <m>z</m> with sigma intervals</title>
     <statement>
-      <p>Generate 1000 random samples from this population and examine the running total for the percentage of 95% confidence intervals <m>(\bar{x} \pm 1.96\sigma/\sqrt{n})</m> that successfully capture the actual value of the population mean <m>\mu</m>.</p>
-      <p><ol>
-        <li><p>Is this 95% confident "<m>z</m> with sigma" procedure behaving as it should? How are you deciding?</p></li>
-        <li><p>Press Sort. In what situations can an interval fail to capture <m>\mu</m>?</p></li>
-      </ol></p>
+      <p>Is this 95% confident "<m>z</m> with sigma" procedure behaving as it should? How are you deciding?
+        [Press Sort. In what situations can an interval fail to capture <m>\mu</m>?]</p>
+    
     </statement>
     <solution>
       <p>Results will vary, but should be close to 95%, indicating that the method does achieve the claimed confidence level. After sorting, we can see that intervals fail to capture <m>\mu</m> when the sample mean is unusually far from the population mean.</p>
@@ -361,11 +371,11 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
     </solution>
     <response/>
   </exercise>
-  
+  <ul><li>Change the <alert>Method</alert> now to <m>z</m> with <m>s</m>. </li></ul>
   <exercise xml:id="inv2-5-q" label="I7.2.17">
     <title>Test <m>z</m> with <m>s</m> method</title>
     <statement>
-      <p>Change the Method now to <m>z</m> with <m>s</m>. What percentage of these 1000 confidence intervals succeed in capturing the population mean of 98.6? Is this close to 95%? If not, is it larger or smaller?</p>
+      <p>What percentage of these 1000 confidence intervals succeed in capturing the population mean of 98.6? Is this close to 95%? If not, is it larger or smaller?</p>
     </statement>
     <solution>
       <p>Percentage drops to 91 or 92%.</p>
@@ -399,7 +409,7 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
   <exercise xml:id="inv2-5-s" label="I7.2.19">
     <title>Test <m>t</m>-interval method</title>
     <statement>
-      <p>Change the Method to t. How do the intervals visibly change? Is the coverage rate indeed closer to 95%?</p>
+      <p>Change the <term text="custom">Method</term to t. How do the intervals visibly change? Is the coverage rate indeed closer to 95%?</p>
     </statement>
     <solution>
       <p>The intervals become longer and now the overall percentage is closer to 95%.</p>
@@ -424,20 +434,27 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
   
   <paragraphs xml:id="tech-detour-finding-t-star">
     <title>Technology Detour <mdash/> Finding <m>t^*</m></title>
+    
+    <p><em>Using Technology to Find Critical <m>t^*</m> Values</em></p>
+    <p><ul>
+      <li><p><url href="inv2-5-t-tech-applet" visual="">Applet</url></p></li>
+      <li><p><url href="inv2-5-t-tech-r" visual="">R</url></p></li>
+      <li><p><url href="inv2-5-t-tech-jmp" visual="">JMP</url></p></li>
+    </ul></p>
 
-    <exercise xml:id="inv2-5-t-tech-applet" label="I7.2.20tech.applet">
-      <title><m>t</m> Probability Calculator applet</title>
+    <exercise xml:id="inv2-5-t-tech-applet" label="I7.2.20tech.applet" hidden-label="yes">
+      <title>Finding <m>t^*</m> with Applet</title>
       <statement>
         <p>Using the <m>t</m> Probability Calculator applet below:</p>
-        <p><ol>
+        <p><ul>
           <li><p>Specify the degrees of freedom</p></li>
           <li><p>Check the box next to the less than symbol and then enter <m>(1-C)/2</m> (e.g., 0.025 for 95% confidence) in the probability box and press Return. The <m>t</m>-value box should fill in.</p></li>
-        </ol></p>
+        </ul></p>
         <interactive iframe="https://www.rossmanchance.com/applets/2021/tcalc/tCalc.htm?hideExtras=1" width="100%" aspect="5:3"/>
       </statement>
     </exercise>
 
-    <exercise xml:id="inv2-5-t-tech-r" label="I7.2.20tech.R">
+    <exercise xml:id="inv2-5-t-tech-r" label="I7.2.20tech.R" hidden-label="yes">
       <title>Finding <m>t^*</m> with R</title>
       <statement>
         <p>Assuming 95% confidence with df = 4:</p>
@@ -445,16 +462,16 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
       </statement>
     </exercise>
 
-    <exercise xml:id="inv2-5-t-tech-jmp" label="I7.2.20tech.JMP">
+    <exercise xml:id="inv2-5-t-tech-jmp" label="I7.2.20tech.JMP" hidden-label="yes">
       <title>Finding <m>t^*</m> with JMP</title>
       <statement>
         <p>Using the Distribution Calculator:</p>
-        <p><ol>
+        <p><ul>
           <li><p>Use the Distribution menu to select <m>t</m></p></li>
           <li><p>Specify the degrees of freedom</p></li>
           <li><p>Choose Input probability and calculate quantiles</p></li>
           <li><p>Specify Central Probability and enter the confidence level (e.g., .95).</p></li>
-        </ol></p>
+        </ul></p>
       </statement>
     </exercise>
   </paragraphs>
@@ -542,17 +559,24 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
   
   <paragraphs xml:id="tech-detour-one-sample-t">
     <title>Technology Detour <mdash/> One Sample <m>t</m>-procedures</title>
+    
+    <p><em>Using Technology to Perform One-Sample <m>t</m>-Test and Confidence Interval</em></p>
+    <p><ul>
+      <li><p><url href="inv2-5-y-tech-applet" visual="">Applet</url></p></li>
+      <li><p><url href="inv2-5-y-tech-r" visual="">R</url></p></li>
+      <li><p><url href="inv2-5-y-tech-jmp" visual="">JMP</url></p></li>
+    </ul></p>
 
-    <exercise xml:id="inv2-5-y-tech-applet" label="I7.2.25tech.applet">
+    <exercise xml:id="inv2-5-y-tech-applet" label="I7.2.25tech.applet" hidden-label="yes">
       <title>One Sample <m>t</m> with Theory-Based Inference applet</title>
       <statement>
         <p>Using the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url>:</p>
-        <p><ol>
+        <p><ul>
           <li><p>Select One mean from the Scenario pull-down menu</p></li>
           <li><p>You can check Paste data to copy and paste in the raw data, or type in the sample size, mean, and standard deviation. Press Calculate.</p></li>
           <li><p>Check the box for Test of significance and enter the hypothesized value of <m>\mu</m> and set the direction of the alternative. Press Calculate.</p></li>
           <li><p>Check the box for Confidence interval, enter the confidence level and press Calculate CI.</p></li>
-        </ol></p>
+        </ul></p>
       </statement>
       <solution>
         <p>Here are the steps illustrated:</p>
@@ -573,7 +597,7 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
       </solution>
     </exercise>
 
-    <exercise xml:id="inv2-5-y-tech-r" label="I7.2.25tech.R">
+    <exercise xml:id="inv2-5-y-tech-r" label="I7.2.25tech.R" hidden-label="yes">
       <title>One Sample <m>t</m> with R</title>
       <statement>
         <p>You can use the <c>t.test</c> command with raw data ("x") or <c>iscamonesamplet</c> with summary data:</p>
@@ -590,24 +614,24 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
       </solution>
     </exercise>
 
-    <exercise xml:id="inv2-5-y-tech-jmp" label="I7.2.25tech.JMP">
+    <exercise xml:id="inv2-5-y-tech-jmp" label="I7.2.25tech.JMP" hidden-label="yes">
       <title>One Sample <m>t</m> with JMP</title>
       <statement>
         <p>You can use raw data or summary data (see second option):</p>
-        <p><ol>
+        <p><ul>
           <li><p>In the Data window, choose Analyze > Distribution</p></li>
           <li><p>Specify the variable in the Y, Columns box</p></li>
           <li><p>The 95% confidence interval will be shown in the Summary Statistics box. If you want to change the confidence level, use the variable hot spot and select Confidence interval.</p></li>
           <li><p>To perform the test of significance, use the variable hot spot, select Test Mean. Then enter the hypothesized value of <m>\mu</m> and press OK.</p></li>
-        </ol></p>
+        </ul></p>
         <p>OR</p>
-        <p><ol>
+        <p><ul>
           <li><p>Open the ISCAM Journal file > Hypothesis Test for One Mean</p></li>
           <li><p>Choose Raw Data (and pick the column) or Summary Statistics (and then specify the sample size, sample mean, and sample standard deviation)</p></li>
           <li><p>Be sure to choose the <m>t</m>-test Test Type and specify the alternative hypothesis</p></li>
           <li><p>In the ISCAM Journal file > Confidence Interval for One Mean</p></li>
           <li><p>Choose the <m>t</m> interval type and specify confidence level</p></li>
-        </ol></p>
+        </ul></p>
       </statement>
       <solution>
         <image source="images/Inv2.5ysolsJMP.jpg" width="60%">

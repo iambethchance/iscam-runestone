@@ -44,8 +44,8 @@
     <title>Identify observational units and variable for this research question</title>
     <statement>
       <p>The observational units are: <var width="30"/></p>
-      <p>The variable is: </p>
-      <p>This variable is <var form="buttons" width="15"/>.</p>
+      <p>The variable is <var form="buttons" width="15"/>, </p>
+      <p>This variable is </p>
     </statement>
     <choices randomize="no">
       <choice><statement><p>quantitative</p></statement></choice>
@@ -56,13 +56,13 @@
     </hint>
     <response/>
   </exercise>
-  
+  <p>Instead of focusing on the total weight of the 47 passengers, we can instead work with the average weight of the 47 passengers. </p>
   <exercise xml:id="inv2-4-d" label="I6.4.4">
     <title>Convert total weight to average weight</title>
     <statement>
-      <p>Instead of focusing on the total weight of the 47 passengers, we can instead work with the average weight of the 47 passengers. Complete the following to indicate how these are equivalent:</p>
+      <p>Complete the following to indicate how these are equivalent:</p>
       
-      <p>Total weight of passengers <m>&gt; 7500</m> lbs when average weight of 47 passengers <m>&gt;</m> <var width="10"/>.</p>
+      <p>Total weight of passengers is larger than 7500 lbs when average weight of 47 passengers is larger than: <var width="10"/> lbs.</p>
     </statement>
     <solution>
       <p>7500/47 = 159.574 pounds</p>
@@ -126,7 +126,7 @@
   <exercise xml:id="inv2-4-h" label="I6.4.8">
     <title>Describe population distribution</title>
     <statement>
-      <p>Describe the shape, mean (<m>\mu</m>) and standard deviation (<m>\sigma</m>) of pop1 (shown in the histogram under Population Data). You can also check the Show skewness box.</p>
+      <p>Describe the shape, mean (<m>\mu</m>), and standard deviation (<m>\sigma</m>) of pop1 (shown in the histogram under Population Data). You can also check the Show skewness box.</p>
     </statement>
     <response/>
   </exercise>
@@ -271,7 +271,7 @@
       <paragraphs>  <alert>Distribution of sample means comparison</alert></paragraphs>
         <tabular>
           <row header="yes">
-            <cell>Distribution of sample means</cell>
+            <cell>Population</cell>
             <cell>Shape (Skew)</cell>
             <cell>Mean</cell>
             <cell>Standard deviation</cell>
@@ -349,8 +349,15 @@
       <li><p><term>Central Limit Theorem:</term> The shape will be normal if the population distribution is normal, or approximately normal if the sample size is large regardless of the shape of the population distribution.</p></li>
     </ul></p>
     
-    <p>The convention is to consider the sample size large enough if <m>n &gt; 30</m>. However, this rule really depends on the shape of the population. The more non-symmetric the population distribution, the larger the sample size necessary before the distribution of sample means is reasonably modeled by a normal distribution.</p>
-    <tabular halign="center">
+    <p>The convention is to consider the sample size large enough if <m>n &gt; 30</m>. However, this rule really depends on the shape of the population. The more non-symmetric the population distribution, the larger the sample size necessary before the distribution of sample means is reasonably modeled by a normal distribution. You can use this table to change the sample size cut-off based on the value of the sample skewness.</p>
+    <tabular halign="center" row-headers="yes" col-headers="yes" left="minor" right="minor" top="minor" bottom="minor">
+      <col halign="left"/>
+      <col/>
+      <col/>
+      <col/>
+      <col/>
+      <col/>
+      <col/>
       <row header="yes">
         <cell>Sample skewness</cell>
         <cell>0.25</cell>
