@@ -794,61 +794,224 @@ iscaminvt <- function(prob, df, direction) {
   }
 }
 
-# One Sample t-Test and Confidence Interval
+# One Sample t-Test and Confidence Interval - with graphics
 iscamonesamplet <- function(
   xbar,
   sd,
   n,
   hypothesized = 0,
-  alternative = "two.sided",
-  conf.level = 0.95
+  alternative = NULL,
+  conf.level = NULL,
+  verbose = TRUE
 ) {
   # Handle conf.level as percentage (95) or proportion (0.95)
-  if (conf.level > 1) {
+  if (!is.null(conf.level) && any(conf.level > 1)) {
     conf.level <- conf.level / 100
   }
   
-  # Calculate t-statistic
-  se <- sd / sqrt(n)
-  t_stat <- (xbar - hypothesized) / se
+  if (verbose) {
+    cat("\nOne Sample t test\n\n", sep = "")
+  }
+  statistic <- xbar
   df <- n - 1
+  se <- sd / sqrt(n)
+  tvalue <- NULL
+  pvalue <- NULL
   
-  # Calculate p-value
-  if (alternative == "two.sided") {
-    p_value <- 2 * pt(-abs(t_stat), df)
-  } else if (alternative == "greater") {
-    p_value <- pt(t_stat, df, lower.tail = FALSE)
-  } else if (alternative == "less") {
-    p_value <- pt(t_stat, df)
-  } else {
-    stop("alternative must be 'two.sided', 'greater', or 'less'")
+  if (verbose) {
+    cat(paste(
+      "mean = ",
+      xbar,
+      ", sd = ",
+      sd,
+      ",  sample size = ",
+      n,
+      "\n",
+      sep = ""
+    ))
   }
   
-  # Calculate confidence interval
-  t_crit <- qt(1 - (1 - conf.level) / 2, df)
-  ci_lower <- xbar - t_crit * se
-  ci_upper <- xbar + t_crit * se
+  if (!is.null(alternative)) {
+    if (verbose) {
+      cat(paste("Null hypothesis       : mu =", hypothesized, sep = " "), "\n")
+      altname <- switch(
+        alternative,
+        less = "<",
+        greater = ">",
+        two.sided = "<>",
+        not.equal = "<>"
+      )
+      cat(
+        paste("Alternative hypothesis: mu", altname, hypothesized, sep = " "),
+        "\n"
+      )
+    }
+
+    tvalue <- (statistic - hypothesized) / se
+    if (verbose) {
+      cat("t-statistic:", signif(tvalue, 4), "\n")
+    }
+    
+    min_t <- min(-4, tvalue - .001)
+    diffmin <- min(
+      hypothesized - 4 * se,
+      hypothesized - abs(hypothesized - statistic) - .01
+    )
+    max_t <- max(4, tvalue + .001)
+    diffmax <- max(
+      hypothesized + 4 * se,
+      hypothesized + abs(hypothesized - statistic) + .01
+    )
+    x <- seq(min_t, max_t, .001)
+    diffx <- x * se + hypothesized
+    
+    old_par <- par(mar = c(4, 3, 2, 2))
+    on.exit(par(old_par), add = TRUE)
+    
+    plot(
+      diffx,
+      dt(x, df),
+      xlab = "Sample Means",
+      ylab = " ",
+      type = "l",
+      ylim = c(0, dt(0, df)),
+      panel.first = grid()
+    )
+    tseq <- c(
+      hypothesized - 3 * se,
+      hypothesized - 2 * se,
+      hypothesized - se,
+      hypothesized,
+      hypothesized + se,
+      hypothesized + 2 * se,
+      hypothesized + 3 * se
+    )
+    mtext(side = 2, line = 2, "density")
+
+    axis(
+      side = 1,
+      at = tseq,
+      labels = c("t=-3", "t=-2", "t=-1", "t=0", "t=1", "t=2", "t=3"),
+      padj = 1.2,
+      tick = FALSE,
+      col.axis = "blue"
+    )
+    abline(h = 0, col = "black")
+    title(paste("t (df=", df, ")"))
+    
+    if (alternative == "less") {
+      pvalue <- pt(tvalue, df)
+      drawseq <- seq(diffmin, statistic, .001)
+      polygon(
+        c(drawseq, statistic, diffmin),
+        c(dt((drawseq - hypothesized) / se, df), 0, 0),
+        col = "red"
+      )
+      text(
+        diffmin,
+        dt(0, df) * .9,
+        labels = paste("t-statistic:", signif(tvalue, 3)),
+        pos = 4,
+        col = "blue"
+      )
+      text(
+        diffmin,
+        dt(0, df) * .8,
+        labels = paste("p-value:", signif(pvalue, 4)),
+        pos = 4,
+        col = "red"
+      )
+    } else if (alternative == "greater") {
+      pvalue <- 1 - pt(tvalue, df)
+      drawseq <- seq(statistic, diffmax, .001)
+      polygon(
+        c(statistic, drawseq, diffmax),
+        c(0, dt((drawseq - hypothesized) / se, df), 0),
+        col = "red"
+      )
+      text(
+        diffmax,
+        dt(0, df) * .9,
+        labels = paste("t-statistic:", signif(tvalue, 3)),
+        pos = 2,
+        col = "blue"
+      )
+      text(
+        diffmax,
+        dt(0, df) * .8,
+        labels = paste("p-value:", signif(pvalue, 4)),
+        pos = 2,
+        col = "red"
+      )
+    } else if (alternative == "two.sided" || alternative == "not.equal") {
+      pvalue <- 2 * pt(-1 * abs(tvalue), df)
+      drawseq1 <- seq(
+        diffmin,
+        hypothesized - abs(hypothesized - statistic),
+        .001
+      )
+      drawseq2 <- seq(
+        hypothesized + abs(hypothesized - statistic),
+        diffmax,
+        .001
+      )
+      polygon(
+        c(diffmin, drawseq1, drawseq1[length(drawseq1)]),
+        c(0, dt((drawseq1 - hypothesized) / se, df), 0),
+        col = "red"
+      )
+      polygon(
+        c(drawseq2[1], drawseq2, diffmax),
+        c(0, dt((drawseq2 - hypothesized) / se, df), 0),
+        col = "red"
+      )
+      text(
+        diffmin,
+        dt(0, df) * .9,
+        labels = paste("t-statistic:", signif(tvalue, 4)),
+        pos = 4,
+        col = "blue"
+      )
+      text(
+        diffmin,
+        dt(0, df) * .8,
+        labels = paste("two-sided p-value:", signif(pvalue, 4)),
+        pos = 4,
+        col = "red"
+      )
+    }
+  } # end test
+
+  lower <- NULL
+  upper <- NULL
+  if (!is.null(conf.level)) {
+    for (k in 1:length(conf.level)) {
+      criticalvalue <- qt((1 - conf.level[k]) / 2, df)
+      lower[k] <- statistic + criticalvalue * se
+      upper[k] <- statistic - criticalvalue * se
+      multconflevel <- 100 * conf.level[k]
+      if (verbose) {
+        cat(
+          multconflevel,
+          "% Confidence interval for mu: (",
+          signif(lower[k], 4),
+          ", ",
+          signif(upper[k], 4),
+          ") \n"
+        )
+      }
+    }
+  }
   
-  # Print results
-  cat("\nOne Sample t-Test\n")
-  cat("=================\n")
-  cat(paste0("Sample mean: ", round(xbar, 4), "\n"))
-  cat(paste0("Sample SD: ", round(sd, 4), "\n"))
-  cat(paste0("Sample size: ", n, "\n"))
-  cat(paste0("Hypothesized mean: ", hypothesized, "\n"))
-  cat(paste0("\nt-statistic: ", round(t_stat, 4), "\n"))
-  cat(paste0("df: ", df, "\n"))
-  cat(paste0("p-value: ", ifelse(p_value < 0.0001, "< 0.0001", round(p_value, 4)), "\n"))
-  cat(paste0("\n", conf.level * 100, "% Confidence Interval:\n"))
-  cat(paste0("(", round(ci_lower, 4), ", ", round(ci_upper, 4), ")\n"))
+  if (!is.null(alternative) && verbose) {
+    cat("p-value:", pvalue, "\n")
+  }
   
-  # Return invisible list
   invisible(list(
-    t_statistic = t_stat,
-    df = df,
-    p_value = p_value,
-    conf_int = c(ci_lower, ci_upper),
-    conf_level = conf.level
+    "tvalue" = tvalue,
+    "pvalue" = pvalue,
+    "lower" = lower,
+    "upper" = upper
   ))
 }
 
