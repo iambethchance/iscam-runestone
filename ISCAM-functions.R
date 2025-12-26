@@ -699,7 +699,7 @@ iscaminvt <- function(prob, df, direction) {
       pos = 3
     )
     cat("The observation with", prob, "probability below is", answer, "\n")
-    invisible(list("answer" = answer))
+    invisible()
   } else if (direction == "above") {
     answer <- signif(qt(prob, df, lower.tail = FALSE), 4)
     thisrange <- seq(answer, max_val, .001)
@@ -719,7 +719,7 @@ iscaminvt <- function(prob, df, direction) {
       pos = 3
     )
     cat("The observation with", prob, "probability above is", answer, "\n")
-    invisible(list("answer" = answer))
+    invisible()
   } else if (direction == "between") {
     answer1 <- signif(qt((1 - prob) / 2, df, lower.tail = TRUE), 4)
     answer2 <- 0 + (0 - answer1)
@@ -745,7 +745,7 @@ iscaminvt <- function(prob, df, direction) {
       pos = 3
     )
     cat("There is", prob, "probability between", answer1, "and", answer2, "\n")
-    invisible(list("answer1" = answer1, "answer2" = answer2))
+    invisible()
   } else if (direction == "outside") {
     answer1 <- signif(qt(prob / 2, df, lower.tail = TRUE), 4)
     answer2 <- 0 + (0 - answer1)
@@ -790,7 +790,7 @@ iscaminvt <- function(prob, df, direction) {
       pos = 3
     )
     cat("There is", prob, "probability outside", answer1, "and", answer2, "\n")
-    invisible(list("answer1" = answer1, "answer2" = answer2))
+    invisible()
   }
 }
 
