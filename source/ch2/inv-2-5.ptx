@@ -208,7 +208,7 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
   </exercise>
   
   <ul><li>
-  Check the box to Overlay Normal Distribution; 
+  Check the box to <alert>Overlay Normal Distribution</alert>; 
   </li></ul>
   <exercise xml:id="inv2-5-k" label="I7.2.11">
     <title>Compare to normal distribution</title>
@@ -259,7 +259,7 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
     
     <p>To model the sampling distribution of the standardized statistic <m>\frac{\bar{x} - \mu}{s/\sqrt{n}}</m>, we need a density curve with <em>heavier tails</em> than the standard normal distribution. William S. Gosset, a chemist turned statistician, showed in 1908, while working for the Guinness Breweries in Dublin, that a "t probability curve" provides a better model for the sampling distribution of this standardized statistic when the population of observations follows a normal distribution.</p>
   </paragraphs>
-  <ul><li><p>Check the Overlay <m>t</m>-distribution box. </p></li></ul>
+  <ul><li><p>Check the <alert>Overlay <m>t</m> Distribution</alert> box. </p></li></ul>
   <exercise xml:id="inv2-5-m" label="I7.2.13">
     <title>Compare <m>t</m>-distribution to normal</title>
     <statement>      
@@ -361,7 +361,7 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
   <exercise xml:id="inv2-5-p" label="I7.2.16">
     <title>Predict effect of using <m>s</m></title>
     <statement>
-      <p>But more realistically, we don't know <m>\sigma</m> and will use <m>s</m> in calculating our confidence interval (<m>\bar{x} \pm 1.96s/\sqrt{n}</m>). Predict what will change about the resulting confidence intervals from different random samples if we use each sample standard deviation in place of <m>\sigma</m>.</p>
+      <p>But more realistically, we don't know <m>\sigma</m> and will use <m>s</m> in calculating our confidence interval (e.g., <m>\bar{x} \pm 1.96s/\sqrt{n}</m>). Predict what will change about the resulting confidence intervals from different random samples if we use each sample standard deviation in place of <m>\sigma</m>.</p>
     </statement>
     <hint>
       <p>Think of two main properties of confidence intervals.</p>
@@ -432,54 +432,76 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
     <p>Keep in mind that the critical value <m>t^*</m> tells us how many standard errors we need to extend from the sample mean (in each direction) based on how confident we want to be. Our goal is to develop a <m>100 \times C\%</m> confidence interval method that will capture the population parameter <m>(100 \times C)\%</m> of the time in the long run.</p>
   </assemblage>
   
-  <paragraphs xml:id="tech-detour-finding-t-star">
-    <title>Technology Detour <mdash/> Finding <m>t^*</m></title>
-    
-    <p><em>Using Technology to Find Critical <m>t^*</m> Values</em></p>
-    <p><ul>
-      <li><p><url href="inv2-5-t-tech-applet" visual="">Applet</url></p></li>
-      <li><p><url href="inv2-5-t-tech-r" visual="">R</url></p></li>
-      <li><p><url href="inv2-5-t-tech-jmp" visual="">JMP</url></p></li>
-    </ul></p>
-
-    <exercise xml:id="inv2-5-t-tech-applet" label="I7.2.20tech.applet" hidden-label="yes">
-      <title>Finding <m>t^*</m> with Applet</title>
+  <subsection xml:id="tech-detour-finding-t-star">
+    <title>Technology Detour - Finding <m>t^*</m></title>
+    <exercise xml:id="inv2-5-t-tech-combined" label="I7.2.20tech.combined">
+      <title>Find Critical <m>t^*</m> Value with Technology</title>
       <statement>
-        <p>Using the <m>t</m> Probability Calculator applet below:</p>
+        <p>Use technology (Applet, R, or JMP) to find the <m>t^*</m> value corresponding to a 95% confidence level and a sample size of <m>n = 5</m>. Choose one set of instructions below by clicking on a hint.</p>
+        <p>Enter the <m>t^*</m> value you find: <var width="10"/></p>
+      </statement>
+      <setup>
+        <var>
+          <condition number="2.776" tolerance="0.001">
+            <feedback>
+              <p>Correct! For 95% confidence with df = 4, <m>t^* = 2.776</m>.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Remember to use df = n - 1 = 4 for a sample size of 5.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
+      <hint>
+        <title><url href="https://www.rossmanchance.com/applets/2021/tcalc/tCalc.htm?hideExtras=1" visual="rossmanchance.com/applets/2021/tcalc/tCalc.htm">t Probability Calculator applet</url></title>
+        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/tcalc/tCalc.htm?hideExtras=1" visual="rossmanchance.com/applets/2021/tcalc/tCalc.htm">t Probability Calculator applet</url> to find critical <m>t^*</m> values:</p>
         <p><ul>
-          <li><p>Specify the degrees of freedom</p></li>
+          <li><p>Specify the degrees of freedom (df = n - 1)</p></li>
           <li><p>Check the box next to the less than symbol and then enter <m>(1-C)/2</m> (e.g., 0.025 for 95% confidence) in the probability box and press Return. The <m>t</m>-value box should fill in.</p></li>
         </ul></p>
+        <p>For this problem, use df = 4 and probability = 0.025.</p>
         <interactive iframe="https://www.rossmanchance.com/applets/2021/tcalc/tCalc.htm?hideExtras=1" width="100%" aspect="5:3"/>
-      </statement>
-    </exercise>
-
-    <exercise xml:id="inv2-5-t-tech-r" label="I7.2.20tech.R" hidden-label="yes">
-      <title>Finding <m>t^*</m> with R</title>
-      <statement>
-        <p>Assuming 95% confidence with df = 4:</p>
-        <pre>iscaminvt(.95, 4, "between")</pre>
-      </statement>
-    </exercise>
-
-    <exercise xml:id="inv2-5-t-tech-jmp" label="I7.2.20tech.JMP" hidden-label="yes">
-      <title>Finding <m>t^*</m> with JMP</title>
-      <statement>
-        <p>Using the Distribution Calculator:</p>
+      </hint>
+      <hint>
+        <title>R/Sage Instructions</title>
+        <p>Use R to find critical <m>t^*</m> values. The <c>iscaminvt(confidence, df, tail)</c> function takes the following inputs:</p>
+        <p><ul>
+          <li><p>confidence = the confidence level (e.g., 0.95 for 95%)</p></li>
+          <li><p>df = degrees of freedom (n - 1)</p></li>
+          <li><p>tail = "between" for confidence intervals, "above" or "below" for one-sided tests</p></li>
+        </ul></p>
+        <p>For 95% confidence with df = 4:</p>
+        <program language="r">
+          <input>iscaminvt(.95, 4, "between")</input>
+        </program>
+        <p>This will return <m>t^* = 2.776</m>.</p>
+      </hint>
+      <hint>
+        <title>JMP Instructions</title>
+        <p>Use the Distribution Calculator in JMP:</p>
         <p><ul>
           <li><p>Use the Distribution menu to select <m>t</m></p></li>
-          <li><p>Specify the degrees of freedom</p></li>
+          <li><p>Specify the degrees of freedom (n - 1)</p></li>
           <li><p>Choose Input probability and calculate quantiles</p></li>
-          <li><p>Specify Central Probability and enter the confidence level (e.g., .95).</p></li>
+          <li><p>Specify Central Probability and enter the confidence level (e.g., .95)</p></li>
         </ul></p>
-      </statement>
+        <p>For this problem, use df = 4 and confidence level = 0.95.</p>
+      </hint>
+      <solution>
+        <p><m>t_4^* = 2.776</m></p>
+        <image source="images/Inv2.5tsols.png" width="60%">
+          <description>t probability calculator showing t* value for df=4</description>
+        </image>
+      </solution>
     </exercise>
-  </paragraphs>
+  </subsection>
   
   <exercise xml:id="inv2-5-t" label="I7.2.20">
     <title>Find <m>t^*</m> for <m>n\ =\ 5</m></title>
     <statement>
-      <p>Using one of the above technology detours, find the <m>t^*</m> value corresponding to a 95% confidence level and a sample size of <m>n = 5</m>.</p>
+      <p>Using the technology detour above, find the <m>t^*</m> value corresponding to a 95% confidence level and a sample size of <m>n = 5</m>.</p>
       
       <p><m>t_4^*</m> = <var width="10"/></p>
     </statement>
@@ -557,66 +579,75 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
     <response/>
   </exercise>
   
-  <paragraphs xml:id="tech-detour-one-sample-t">
-    <title>Technology Detour <mdash/> One Sample <m>t</m>-procedures</title>
-    
-    <p><em>Using Technology to Perform One-Sample <m>t</m>-Test and Confidence Interval</em></p>
-    <p><ul>
-      <li><p><url href="inv2-5-y-tech-applet" visual="">Applet</url></p></li>
-      <li><p><url href="inv2-5-y-tech-r" visual="">R</url></p></li>
-      <li><p><url href="inv2-5-y-tech-jmp" visual="">JMP</url></p></li>
-    </ul></p>
-
-    <exercise xml:id="inv2-5-y-tech-applet" label="I7.2.25tech.applet" hidden-label="yes">
-      <title>One Sample <m>t</m> with Theory-Based Inference applet</title>
+  <subsection xml:id="tech-detour-one-sample-t">
+    <title>Technology Detour - One Sample <m>t</m>-procedures</title>
+    <exercise xml:id="inv2-5-y-tech-combined" label="I7.2.25tech.combined">
+      <title>Conduct One Sample <m>t</m>-test with Technology</title>
       <statement>
-        <p>Using the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url>:</p>
-        <p><ul>
-          <li><p>Select One mean from the Scenario pull-down menu</p></li>
-          <li><p>You can check Paste data to copy and paste in the raw data, or type in the sample size, mean, and standard deviation. Press Calculate.</p></li>
-          <li><p>Check the box for Test of significance and enter the hypothesized value of <m>\mu</m> and set the direction of the alternative. Press Calculate.</p></li>
-          <li><p>Check the box for Confidence interval, enter the confidence level and press Calculate CI.</p></li>
-        </ul></p>
+        <p>Use technology (Applet, R, or JMP) to verify your by-hand calculations for the body temperature study (<m>\bar{x} = 98.249</m>, <m>s = 0.733</m>, <m>n = 130</m>, hypothesized <m>\mu = 98.6</m>, two-sided test, 95% confidence). Choose one set of instructions below by clicking on a hint.</p>
+        <p>Enter the p-value you find: <var width="10"/></p>
       </statement>
-      <solution>
-        <p>Here are the steps illustrated:</p>
-        <sidebyside widths="30% 30% 30%">
-          <image source="images/Inv2.5TBIA1.png">
-            <description>Step 1: Entering data in Theory-Based Inference applet</description>
-          </image>
-          <image source="images/Inv2.5TBIA2.png">
-            <description>Step 2: Setting up hypothesis test</description>
-          </image>
-          <image source="images/Inv2.5TBIA3.png">
-            <description>Step 3: Calculating confidence interval</description>
-          </image>
+      <setup>
+        <var>
+          <condition number="0.0001" tolerance="0.0002">
+            <feedback>
+              <p>Correct! For <m>t = -5.46</m> with df = 129, the two-sided p-value is less than 0.001.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Check your calculation. The <m>t</m>-statistic should be approximately -5.46.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
+      <hint>
+        <title><url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url></title>
+        <sidebyside widths="55% 40%" valign="top">
+          <stack>
+            <p>Use the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url> to conduct a one sample <m>t</m>-test:</p>
+            <p><ul>
+              <li><p>Select One mean from the Scenario pull-down menu</p></li>
+              <li><p>You can check Paste data to copy and paste in the raw data, or type in the sample size, mean, and standard deviation. Press Calculate.</p></li>
+              <li><p>Check the box for Test of significance and enter the hypothesized value of <m>\mu</m> and set the direction of the alternative. Press Calculate.</p></li>
+              <li><p>Check the box for Confidence interval, enter the confidence level and press Calculate CI.</p></li>
+            </ul></p>
+            <p>For the body temperature study, enter n = 130, mean = 98.249, SD = 0.733. Set the hypothesized value to 98.6 and select a two-sided alternative.</p>
+          </stack>
+          <stack>
+            <image source="images/Inv2.5TBIA1.png">
+              <description>Step 1: Entering data in Theory-Based Inference applet</description>
+            </image>
+            <image source="images/Inv2.5TBIA2.png">
+              <description>Step 2: Setting up hypothesis test</description>
+            </image>
+            <image source="images/Inv2.5TBIA3.png">
+              <description>Step 3: Calculating confidence interval</description>
+            </image>
+          </stack>
         </sidebyside>
-        <image source="images/Inv2.5ysolsApplet.png" width="60%">
-          <description>Theory-Based Inference applet output for one sample <m>t</m>-test and confidence interval</description>
-        </image>
-      </solution>
-    </exercise>
-
-    <exercise xml:id="inv2-5-y-tech-r" label="I7.2.25tech.R" hidden-label="yes">
-      <title>One Sample <m>t</m> with R</title>
-      <statement>
-        <p>You can use the <c>t.test</c> command with raw data ("x") or <c>iscamonesamplet</c> with summary data:</p>
-        <pre>t.test(x, mu = hypothesized_value, alternative="two.sided", conf.level = .95)</pre>
+      </hint>
+      <hint>
+        <title>R/Sage Instructions</title>
+        <p>Use R to conduct a one sample <m>t</m>-test. You can use the <c>t.test</c> command with raw data ("x") or <c>iscamonesamplet</c> with summary data:</p>
+        <program language="r">
+          <input>t.test(x, mu = hypothesized_value, alternative="two.sided", conf.level = .95)</input>
+        </program>
         <p>OR</p>
-        <pre>iscamonesamplet(xbar=98.249, sd=.733, n=130, hypothesized=98.6, 
-                alternative="two.sided", conf.level=95)</pre>
+        <program language="r">
+          <input>iscamonesamplet(xbar=98.249, sd=.733, n=130, hypothesized=98.6, 
+                alternative="two.sided", conf.level=95)</input>
+        </program>
         <p>where sd = sample standard deviation, <m>s</m>.</p>
-      </statement>
-      <solution>
-        <image source="images/Inv2.5ysolsR.jpg" width="80%">
-          <description>R output for one sample t-test and confidence interval</description>
-        </image>
-      </solution>
-    </exercise>
-
-    <exercise xml:id="inv2-5-y-tech-jmp" label="I7.2.25tech.JMP" hidden-label="yes">
-      <title>One Sample <m>t</m> with JMP</title>
-      <statement>
+        <p>The function will display:</p>
+        <p><ul>
+          <li><p><m>t</m>-statistic: -5.46</p></li>
+          <li><p>Two-sided p-value: &lt; 0.001</p></li>
+          <li><p>95% confidence interval: (98.122, 98.376)</p></li>
+        </ul></p>
+      </hint>
+      <hint>
+        <title>JMP Instructions</title>
         <p>You can use raw data or summary data (see second option):</p>
         <p><ul>
           <li><p>In the Data window, choose Analyze > Distribution</p></li>
@@ -632,19 +663,25 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
           <li><p>In the ISCAM Journal file > Confidence Interval for One Mean</p></li>
           <li><p>Choose the <m>t</m> interval type and specify confidence level</p></li>
         </ul></p>
-      </statement>
+      </hint>
       <solution>
-        <image source="images/Inv2.5ysolsJMP.jpg" width="60%">
-          <description>JMP output for one sample t-test and confidence interval</description>
+        <p>Using technology:</p>
+        <p><ul>
+          <li><p><m>t</m>-statistic = -5.46</p></li>
+          <li><p>Two-sided p-value &lt; 0.001</p></li>
+          <li><p>95% confidence interval: (98.122, 98.376)</p></li>
+        </ul></p>
+        <image source="images/Inv2.5ysolsApplet.png" width="60%">
+          <description>Theory-Based Inference applet output for one sample <m>t</m>-test and confidence interval</description>
         </image>
       </solution>
     </exercise>
-  </paragraphs>
+  </subsection>
   
   <exercise xml:id="inv2-5-y" label="I7.2.25">
     <title>Use technology to verify calculations</title>
     <statement>
-      <p>Use technology to verify your by-hand calculations and summarize the conclusions you would draw from this study (both from the p-value and the confidence interval, including the population you are willing to generalize to). Also include interpretations, in context, of your p-value and your confidence level.</p>
+      <p>Use the technology detour above to verify your by-hand calculations and summarize the conclusions you would draw from this study (both from the p-value and the confidence interval, including the population you are willing to generalize to). Also include interpretations, in context, of your p-value and your confidence level.</p>
     </statement>
     <response/>
   </exercise>
