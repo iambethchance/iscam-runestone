@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="inv-3-1">
   <title>Investigation 3.1: Teen Hearing Loss (cont.)</title>
-<exercises>
+<exercises><title>The Study</title>
   <introduction>
     <p>The Shargorodsky, Curhan, Curhan, and Eavey (<url href="https://jamanetwork.com/journals/jama/fullarticle/186427">2010</url>) study from <xref ref="inv-1-14" text="custom">Investigation 1.14</xref> actually focused on comparing the current hearing loss rate among teens (12-19 years) to previous years to see whether teen hearing loss is increasing, possibly due to heavier use of ear buds. In addition to the 1771 participants in the NHANES 2005-6 study (333 with some level of hearing loss), they also had hearing loss data on 2928 teens from NHANES III (1988-1994), with 480 showing some level of hearing loss. Our goal is to assess whether the difference between these two groups can be considered statistically significant.</p>
     
@@ -104,7 +104,7 @@
     </exercise>
 
     <exercise xml:id="inv3-1-d">
-      <title>Comparing Counts vs Proportions</title>
+      <title>Comparing Counts</title>
       <statement><p>Explain why it does not make sense to conclude that hearing loss was more prevalent in 1988-1994 than in 2005-2006 based only on the comparison that 480 > 333.</p></statement>
       <solution><p>Because the sample sizes for the two surveys are not the same</p></solution>
       <response/>
@@ -144,7 +144,6 @@ hearing
 ]]>
           </input>
         </sage>
-        
         <p>Convert to a matrix of conditional proportions (margin = 2 for column proportions):</p>
         <sage language="r">
           <input>
@@ -155,7 +154,6 @@ hearingprop
 ]]>
           </input>
         </sage>
-        
         <p>Create a segmented bar graph:</p>
         <sage language="r">
           <input>
@@ -598,18 +596,20 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     <paragraphs>
       <title>Technology Detour – Two-sample z-procedures</title>
       
-      <p>In Theory-Based Inference applet</p>
-      <p><ul>
-        <li><p>Select Two proportions</p></li>
-        <li><p>Check the box to paste in 2 columns of data (stacked or unstacked) and press Use data or specify the sample sizes and either the sample counts or the sample proportions and press Calculate.</p></li>
-        <li><p>For the test, check the box for Test of Significance Keep the hypothesized difference at zero and set the direction of the alternative, press Calculate.</p></li>
-        <li><p>For the confidence interval, check the box, specify the confidence level and press Calculate CI</p></li>
-      </ul></p>
-      <sidebyside widths="45% 45%">
-        <image source="images/Inv3.1TBI1.png"/>
-        <image source="images/Inv3.1TBI2.png"/>
-      </sidebyside>
-
+      <hint>
+        <title>Theory-Based Inference applet</title>
+        <p>In Theory-Based Inference applet</p>
+        <p><ul>
+          <li><p>Select Two proportions</p></li>
+          <li><p>Check the box to paste in 2 columns of data (stacked or unstacked) and press Use data or specify the sample sizes and either the sample counts or the sample proportions and press Calculate.</p></li>
+          <li><p>For the test, check the box for Test of Significance Keep the hypothesized difference at zero and set the direction of the alternative, press Calculate.</p></li>
+          <li><p>For the confidence interval, check the box, specify the confidence level and press Calculate CI</p></li>
+        </ul></p>
+        <sidebyside widths="45% 45%">
+          <image source="images/Inv3.1TBI1.png"/>
+          <image source="images/Inv3.1TBI2.png"/>
+        </sidebyside>
+      </hint>
       <hint>
         <title>R Instructions</title>
         <p>The <c>iscamtwopropztest</c> function takes the following inputs:</p>
@@ -637,10 +637,8 @@ iscamtwopropztest(x1=480, n1=2928, x2=333, n2=1771,
 ]]>
           </input>
         </sage>
-        
         <p>This finds the p-value for a one-sided alternative as well as a 95% confidence interval for <m>\pi_1-\pi_2</m>.</p>
       </hint>
-
       <hint>
         <title>JMP Instructions</title>
         <sidebyside widths="50% 45%" valign="top">
@@ -685,14 +683,62 @@ iscamtwopropztest(x1=480, n1=2928, x2=333, n2=1771,
         <li><p>Calculate the difference in the sample proportions</p></li>
         <li><p>Repeat steps 1-4 a large number of times.</p></li>
       </ol></p>
-      
       <p>You should explore the individual <m>\hat{p}</m> distributions but most focus on the distribution of <m>\hat{p}_1 - \hat{p}_2</m>, including the mean, standard deviation, and whether the distribution behaves like a normal distribution.</p>
-
       <hint>
         <title>R Instructions</title>
-        <p>See <url href="https://www.rossmanchance.com/iscam3/data/IndependentBinomialsR.html">IndependentBinomialsR.html</url> for R code to simulate independent binomial samples.</p>
+        <p>Generate a random sample for 1994:</p>
+        <sage language="r">
+          <input>
+<![CDATA[
+count1994 = rbinom(1, size = 2928, prob = .173)
+count1994  # Displays the results
+]]>
+          </input>
+        </sage>
+        <p>Generate 1000 random samples from each year, calculate the proportions, find the differences:</p>
+        <sage language="r">
+          <input>
+<![CDATA[
+# Divides number of successes by n to get sample proportions (X/n)
+phat94 = rbinom(1000, 2928, .173)/2928
+phat06 = rbinom(1000, 1771, .173)/1771
+phatdiffs = phat94 - phat06  # You now have 1000 differences
+]]>
+          </input>
+        </sage>
+        <p>Display the generated distributions:</p>
+        <sage language="r">
+          <input>
+<![CDATA[
+par(mfrow=c(3,1))  # Creates 3 rows in graph window
+hist(phat94); hist(phat06)  # Use a semicolon to separate commands
+hist(phatdiffs, labels=T)  # In RStudio, can zoom the graph window
+]]>
+          </input>
+        </sage>
+        <sage language="r">
+          <input>
+<![CDATA[
+mean(phat94); mean(phat06)
+mean(phatdiffs)
+sd(phat94); sd(phat06)
+sd(phatdiffs)
+]]>
+          </input>
+        </sage>
+        <p>Compare to a normal distribution:</p>
+        <sage language="r">
+          <input>
+<![CDATA[
+# Load ISCAM functions from GitHub
+source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R");
+
+iscamaddnorm(phatdiffs)
+qqnorm(phatdiffs, datax=T)
+]]>
+          </input>
+        </sage>
       </hint>
-      
       <hint>
         <title>JMP Instructions</title>
         <p>See <url href="https://www.rossmanchance.com/iscam3/data/IndependentBinomialsJMP.html">IndependentBinomialsJMP.html</url> for JMP instructions to simulate independent binomial samples.</p>
