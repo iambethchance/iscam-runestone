@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="inv-3-1">
   <title>Investigation 3.1: Teen Hearing Loss (cont.)</title>
-
+<exercises>
   <introduction>
     <p>The <url href="https://jamanetwork.com/journals/jama/fullarticle/186427">Shargorodsky, Curhan, Curhan, and Eavey (2010) study</url> from Investigation 1.14 actually focused on comparing the current hearing loss rate among teens (12-19 years) to previous years to see whether teen hearing loss is increasing, possibly due to heavier use of ear buds. In addition to the 1771 participants in the NHANES 2005-6 study (333 with some level of hearing loss), they also had hearing loss data on 2928 teens from NHANES III (1988-1994), with 480 showing some level of hearing loss. Our goal is to assess whether the difference between these two groups can be considered statistically significant.</p>
     
@@ -45,7 +45,6 @@
       <title>Two-Way Table</title>
       <statement>
         <p>When we have two samples for a binary categorical variable, it is often useful to organize the data using a two-way table. Complete the following 2 × 2 table <em>of counts</em>.</p>
-        <table>
         <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
           <row header="yes">
             <cell></cell>
@@ -72,10 +71,8 @@
             <cell></cell>
           </row>
         </tabular>
-      </table>
       </statement>
       <solution>
-        <table>
         <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
           <row header="yes">
             <cell></cell>
@@ -102,7 +99,6 @@
             <cell>4699</cell>
           </row>
         </tabular>
-      </table>
       </solution>
       <response/>
     </exercise>
@@ -133,52 +129,57 @@
     <paragraphs>
       <title>Technology Detour – Segmented Bar Graphs</title>
       
-      <exercise xml:id="tech-detour-r-segmented">
-        <title>Segmented Bar Graphs - R</title>
-        <statement>
-          <p>Create (and view) a matrix in R to store the counts from the two-way table</p>
-          <program language="r">
-            <input>
+      <p>Use technology to create numerical and graphical summaries for these summarized data.</p>
+      
+      <hint>
+        <title>R Instructions</title>
+        <p>Create (and view) a matrix in R to store the counts from the two-way table:</p>
+        <sage language="r">
+          <input>
+<![CDATA[
+# Create matrix with counts from two-way table
 hearing = matrix(c(480, 2448, 333, 1438), nrow=2,
-dimnames = list(c("some loss", "no loss"), c("94", "06")))
+                 dimnames = list(c("some loss", "no loss"), c("94", "06")))
 hearing
-            </input>
-          </program>
-          <p>Convert to a matrix of conditional proportions (margin =1 for row proportions, margin = 2 for column proportions)</p>
-          <program language="r">
-            <input>
+]]>
+          </input>
+        </sage>
+        
+        <p>Convert to a matrix of conditional proportions (margin = 2 for column proportions):</p>
+        <sage language="r">
+          <input>
+<![CDATA[
+# Convert to proportions
 hearingprop = prop.table(hearing, margin=2)
 hearingprop
-            </input>
-          </program>
-          <p>Create a segmented bar graph</p>
-          <program language="r">
-            <input>
-barplot(hearingprop, legend=T, ylab="proportion")
-            </input>
-          </program>
-        </statement>
-      </exercise>
+]]>
+          </input>
+        </sage>
+        
+        <p>Create a segmented bar graph:</p>
+        <sage language="r">
+          <input>
+<![CDATA[
+# Create segmented bar graph
+barplot(hearingprop, legend=TRUE, ylab="proportion")
+]]>
+          </input>
+        </sage>
+      </hint>
 
-      <exercise xml:id="tech-detour-jmp-segmented">
-        <title>Segmented Bar Graphs - JMP</title>
-        <statement>
-          <p>You can specify the counts from the two-way table, but you have to do so in "column format" (each row is a combination of the two variables and the counts are all in one column)</p>
-          <p><ul>
-            <li><p>Select Analyze > Fit Y by X.</p></li>
-            <li><p>Click Hearing Loss then click the Y, Response button (or drag).</p></li>
-            <li><p>Click Year then click the X, Factor button (or drag). (With raw data, you would be done here.)</p></li>
-            <li><p>Finally click Count then the Freq button. Click OK.</p></li>
-            <li><p>Right-click on one of the bars and select Cell Labelling > Show Percents.</p></li>
-          </ul></p>
-        </statement>
-        <solution>
-          <p>JMP creates a "Mosaic Plot" (the column widths also reflect the relative sample sizes). An extended two-way table is shown below the Mosaic Plot although the rows and columns are reversed. Click the red Contingency Table arrow and uncheck Col% and Total% to see a less cluttered table.</p>
-        </solution>
-      </exercise>
+      <hint>
+        <title>JMP Instructions</title>
+        <p>You can specify the counts from the two-way table, but you have to do so in "column format" (each row is a combination of the two variables and the counts are all in one column)</p>
+        <p><ul>
+          <li><p>Select Analyze > Fit Y by X.</p></li>
+          <li><p>Click Hearing Loss then click the Y, Response button (or drag).</p></li>
+          <li><p>Click Year then click the X, Factor button (or drag). (With raw data, you would be done here.)</p></li>
+          <li><p>Finally click Count then the Freq button. Click OK.</p></li>
+          <li><p>Right-click on one of the bars and select Cell Labelling > Show Percents.</p></li>
+        </ul></p>
+        <p>JMP creates a "Mosaic Plot" (the column widths also reflect the relative sample sizes). An extended two-way table is shown below the Mosaic Plot although the rows and columns are reversed. Click the red Contingency Table arrow and uncheck Col% and Total% to see a less cluttered table.</p>
+      </hint>
     </paragraphs>
-
-    <p>Use technology to create numerical and graphical summaries for these summarized data.</p>
 
     <exercise xml:id="inv3-1-f">
       <title>Descriptive Statistics</title>
@@ -528,7 +529,7 @@ barplot(hearingprop, legend=T, ylab="proportion")
   <subsection xml:id="practice3-1A">
     <title>Practice Problem 3.1A</title>
 
-    <p>In a follow-up study, <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1">Su &amp; Chan (2017)</url> examined hearing loss data for 1165 participants from the 2009-2010 National Health and Nutrition Examination Survey to see whether this trend has continued. They estimate the prevalence (after adjusting for a non-simple random sample and weighting the data to be representative of the population) of some hearing loss to be 0.152. If we treat this as a sample proportion, is this significantly different from the 2005-6 data?</p>
+    <p>In a follow-up study, <url href="https://jamanetwork.com/journals/jamapediatrics/fullarticle/2606596">Su &amp; Chan (2017)</url> examined hearing loss data for 1165 participants from the 2009-2010 National Health and Nutrition Examination Survey to see whether this trend has continued. They estimate the prevalence (after adjusting for a non-simple random sample and weighting the data to be representative of the population) of some hearing loss to be 0.152. If we treat this as a sample proportion, is this significantly different from the 2005-6 data?</p>
 
     <exercise xml:id="practice-3-1-a">
       <statement>
@@ -589,96 +590,112 @@ barplot(hearingprop, legend=T, ylab="proportion")
     <paragraphs>
       <title>Technology Detour – Two-sample z-procedures</title>
       
-      <exercise xml:id="tech-detour-applet-z">
-        <title>Theory-Based Inference Applet</title>
-        <statement>
-          <p>In <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1">Theory-Based Inference applet</url></p>
-          <p><ul>
-            <li><p>Select Two proportions</p></li>
-            <li><p>Check the box to paste in 2 columns of data (stacked or unstacked) and press Use data or specify the sample sizes and either the sample counts or the sample proportions and press Calculate.</p></li>
-            <li><p>For the test, check the box for Test of Significance Keep the hypothesized difference at zero and set the direction of the alternative, press Calculate.</p></li>
-            <li><p>For the confidence interval, check the box, specify the confidence level and press Calculate CI</p></li>
-          </ul></p>
-          <sidebyside widths="45% 45%">
-            <image source="images/Inv3.1TBI1.png"/>
-            <image source="images/Inv3.1TBI2.png"/>
-          </sidebyside>
-        </statement>
-      </exercise>
+      <aside>
+        <title>Theory-Based Inference applet</title>
+        <p><url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1" visual="rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url></p>
+        <p><ul>
+          <li><p>Select Two proportions</p></li>
+          <li><p>Check the box to paste in 2 columns of data (stacked or unstacked) and press Use data or specify the sample sizes and either the sample counts or the sample proportions and press Calculate.</p></li>
+          <li><p>For the test, check the box for Test of Significance Keep the hypothesized difference at zero and set the direction of the alternative, press Calculate.</p></li>
+          <li><p>For the confidence interval, check the box, specify the confidence level and press Calculate CI</p></li>
+        </ul></p>
+        <sidebyside widths="45% 45%">
+          <image source="images/Inv3.1TBI1.png"/>
+          <image source="images/Inv3.1TBI2.png"/>
+        </sidebyside>
+      </aside>
 
-      <exercise xml:id="tech-detour-r-z">
-        <title>R</title>
-        <statement>
-          <p>Use <c>iscamtwopropztest</c> which takes the following inputs:</p>
-          <p><ul>
-            <li><p>observed1 (either the number of successes or sample proportion for first group), n1 (sample size for first group, observed2 (count or proportion), and n2</p></li>
-            <li><p>Optional: hypothesized difference and alternative ("less", "greater", or "two.sided")</p></li>
-            <li><p>Optional: conf.level</p></li>
-          </ul></p>
-          <p>For example:</p>
-          <program language="r">
-            <input>
-iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)
-            </input>
-          </program>
-        </statement>
-        <solution>
-          <p>finds the p-value for a one-sided alternative as well as a 95% confidence interval for <m>\pi_1-\pi_2</m>.</p>
-        </solution>
-      </exercise>
+      <hint>
+        <title>R Instructions</title>
+        <p>The <c>iscamtwopropztest</c> function takes the following inputs:</p>
+        <p><ul>
+          <li><p><c>observed1</c> = either the number of successes or sample proportion for first group</p></li>
+          <li><p><c>n1</c> = sample size for first group</p></li>
+          <li><p><c>observed2</c> = count or proportion for second group</p></li>
+          <li><p><c>n2</c> = sample size for second group</p></li>
+          <li><p><c>hypothesized</c> = hypothesized difference (default is 0)</p></li>
+          <li><p><c>alternative</c> = "less", "greater", or "two.sided" for the direction of the alternative hypothesis</p></li>
+          <li><p><c>conf.level</c> = the confidence level (e.g., 0.95 for 95%)</p></li>
+        </ul></p>
+        
+        <p>For the hearing loss study:</p>
+        <sage language="r">
+          <input>
+<![CDATA[
+# Load ISCAM functions from GitHub
+source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R");
 
-      <exercise xml:id="tech-detour-jmp-z">
-        <title>JMP</title>
-        <statement>
-          <sidebyside widths="50% 45%" valign="top">
-            <stack>
-              <p><ul>
-                <li><p><em>With raw data or after specifying the two-way table in column format</em>, select Analyze > Fit Y by X and specify the categorical response variable (Y, Response) and the categorical explanatory variable (X, Factor)</p></li>
-                <li><p><ul><li>Specify the counts if using a two-way table (and "year" is seen as a categorical variable)</li></ul></p></li>
-                <li><p>Press OK.</p></li>
-              </ul></p>
-            </stack>
-            <image source="images/Inv3.1JMP1.png"/>
-          </sidebyside>
-          
-          <p><ul>
-            <li>The p-value in the Pearson row matches a two-sided z-test.</li>
-            <li>For a confidence interval, use the hot spot to select Two Sample Test for Proportions</li>
-          </ul></p>
-          <p><em>Note:</em> Here you can change which outcome is considered success. This also reports an "adjusted Wald" p-value</p>
-          
-          <sidebyside widths="50% 45%" valign="top">
-            <stack>
-              <p><ul>
-                <li><p><em>With summary data</em> use the <url href="http://www.rossmanchance.com/iscam3/data/ISCAM_Journal.jrn">ISCAM Journal file</url>: Hypothesis Test for Two Proportions</p></li>
-                <li><p>Specify the form of the alternative hypothesis</p></li>
-                <li><p>Enter the number of successes and the sample sizes</p></li>
-              </ul></p>
-              <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use "pooled estimate of variance." This reports the <em>z</em>-score as well.)</p>
-            </stack>
-            <image source="images/Inv3.1JMP2.png"/>
-          </sidebyside>
-        </statement>
-      </exercise>
+# Two-sample z-test: 480 successes out of 2928 in 1994, 333 out of 1771 in 2006
+# Testing if proportion in 1994 is less than proportion in 2006
+iscamtwopropztest(observed1=480, n1=2928, observed2=333, n2=1771, 
+                  hypothesized=0, alternative="less", conf.level=0.95)
+]]>
+          </input>
+        </sage>
+        
+        <p>This finds the p-value for a one-sided alternative as well as a 95% confidence interval for <m>\pi_1-\pi_2</m>.</p>
+      </hint>
+
+      <hint>
+        <title>JMP Instructions</title>
+        <sidebyside widths="50% 45%" valign="top">
+          <stack>
+            <p><ul>
+              <li><p><em>With raw data or after specifying the two-way table in column format</em>, select Analyze > Fit Y by X and specify the categorical response variable (Y, Response) and the categorical explanatory variable (X, Factor)</p></li>
+              <li><p><ul><li>Specify the counts if using a two-way table (and "year" is seen as a categorical variable)</li></ul></p></li>
+              <li><p>Press OK.</p></li>
+            </ul></p>
+          </stack>
+          <image source="images/Inv3.1JMP1.png"/>
+        </sidebyside>
+        
+        <p><ul>
+          <li>The p-value in the Pearson row matches a two-sided z-test.</li>
+          <li>For a confidence interval, use the hot spot to select Two Sample Test for Proportions</li>
+        </ul></p>
+        <p><em>Note:</em> Here you can change which outcome is considered success. This also reports an "adjusted Wald" p-value</p>
+        
+        <sidebyside widths="50% 45%" valign="top">
+          <stack>
+            <p><ul>
+              <li><p><em>With summary data</em> use the <url href="http://www.rossmanchance.com/iscam3/data/ISCAM_Journal.jrn">ISCAM Journal file</url>: Hypothesis Test for Two Proportions</p></li>
+              <li><p>Specify the form of the alternative hypothesis</p></li>
+              <li><p>Enter the number of successes and the sample sizes</p></li>
+            </ul></p>
+            <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use "pooled estimate of variance." This reports the <em>z</em>-score as well.)</p>
+          </stack>
+          <image source="images/Inv3.1JMP2.png"/>
+        </sidebyside>
+      </hint>
     </paragraphs>
 
     <paragraphs>
       <title>Technology Detour – Simulating Proportions from Independent Random Samples</title>
       
-      <exercise xml:id="tech-detour-sim-steps">
-        <title>Simulation Steps</title>
-        <statement>
-          <p>Step 1: Generate a random sample of 2928 observations from a binomial process with <m>\pi = .173</m></p>
-          <p>Step 2: Generate a random sample of 1771 observations from a binomial process with <m>\pi = .173</m></p>
-          <p>Step 3: Convert the sample counts into sample proportions</p>
-          <p>Step 4: Calculate the difference in the sample proportions</p>
-          <p>Step 5: Repeat steps 1-4 a large number of times.</p>
-          <p>You should explore the individual <m>\hat{p}</m> distributions but most focus on the distribution of <m>\hat{p}_1 - \hat{p}_2</m>, including the mean, standard deviation, and whether the distribution behaves like a normal distribution.</p>
+      <p>Simulation Steps:</p>
+      <p><ol>
+        <li><p>Generate a random sample of 2928 observations from a binomial process with <m>\pi = .173</m></p></li>
+        <li><p>Generate a random sample of 1771 observations from a binomial process with <m>\pi = .173</m></p></li>
+        <li><p>Convert the sample counts into sample proportions</p></li>
+        <li><p>Calculate the difference in the sample proportions</p></li>
+        <li><p>Repeat steps 1-4 a large number of times.</p></li>
+      </ol></p>
+      
+      <p>You should explore the individual <m>\hat{p}</m> distributions but most focus on the distribution of <m>\hat{p}_1 - \hat{p}_2</m>, including the mean, standard deviation, and whether the distribution behaves like a normal distribution.</p>
 
-          <p>In Applet: <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1">Comparing Two Population Proportions</url></p>
-          <p>In R: <url href="https://www.rossmanchance.com/iscam3/data/IndependentBinomialsR.html">IndependentBinomialsR.html</url></p>
-          <p>In JMP: <url href="https://www.rossmanchance.com/iscam3/data/IndependentBinomialsJMP.html">IndependentBinomialsJMP.html</url></p>
-        </statement>
-      </exercise>
+      <aside>
+        <title>Comparing Two Population Proportions applet</title>
+        <p><url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1" visual="rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url></p>
+      </aside>
+      
+      <hint>
+        <title>R Instructions</title>
+        <p>See <url href="https://www.rossmanchance.com/iscam3/data/IndependentBinomialsR.html">IndependentBinomialsR.html</url> for R code to simulate independent binomial samples.</p>
+      </hint>
+      
+      <hint>
+        <title>JMP Instructions</title>
+        <p>See <url href="https://www.rossmanchance.com/iscam3/data/IndependentBinomialsJMP.html">IndependentBinomialsJMP.html</url> for JMP instructions to simulate independent binomial samples.</p>
+      </hint>
     </paragraphs>
 </section>
