@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="inv-3-2">
   <title>Investigation 3.2: Nightlights and Near-sightedness</title>
-
+<exercises xml:id="investigation3-2" hidden-label="yes">
+    <title>The Study</title>
   <introduction>
     <sidebyside widths="75% 20%" valign="top">
-      <p>Myopia, or near-sightedness, typically develops during the childhood years. Several studies have explored whether there is an association between development of myopia and the use of night-lights with infants. <url href="https://www.researchgate.net/publication/12962583_Myopia_and_ambient_lighting_at_night">Quinn, Shin, Maguire, and Stone (1999)</url> examined the type of light children aged 2-16 were exposed to. The following two-way table classifies the children's eye condition and whether or not they slept with some kind of light (e.g., a night light or full room light) or in darkness.</p>
+      <p>Myopia, or near-sightedness, typically develops during the childhood years. 
+      Several studies have explored whether there is an association between development of 
+      myopia and the use of night-lights with infants. Quinn, Shin, Maguire, and Stone (<url href="https://www.researchgate.net/publication/12962583_Myopia_and_ambient_lighting_at_night">1999</url>) examined the type of light children aged 2-16 were exposed to. The following two-way table classifies the children's eye condition and whether or not they slept with some kind of light (e.g., a night light or full room light) or in darkness.</p>
       <image source="images/Inv3.2Intro.png"/>
     </sidebyside>
 
     <p>Between January and June 1998, the parents of 479 children who were seen as outpatients in a university pediatric ophthalmology clinic completed a questionnaire (children who had already developed serious eye conditions were excluded). One of the questions asked was "Under which lighting condition did/does your child sleep at night?" before the age of 2 years.</p>
 
-    <table>
       <title>Lighting Condition and Eye Condition</title>
-      <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+      <tabular top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
+        <col halign="left"/>
+        <col halign="center"/>
+        <col halign="center"/>
+        <col halign="center"/>
         <row header="yes">
-          <cell></cell>
+          <cell>Eye condition</cell>
           <cell>Some light</cell>
           <cell>Darkness</cell>
           <cell>Total</cell>
@@ -68,11 +74,11 @@
       <p>Explanatory variable: Lighting condition; Response variable: Eye condition. The lighting condition came first in time (before age 2) and we are interested in whether it affects later eye condition.</p>
     </solution>
   </exercise>
-
+<p>Calculate conditional proportions to measure the difference in the rate of near sightedness between the children with and without lighted rooms in this sample. (Use appropriate symbols.) Also produce a segmented bar graph to compare the eye condition of the two lighting groups. </p>
   <exercise xml:id="inv3-2-b">
     <title>Conditional Proportions and Graph</title>
     <statement>
-      <p>Calculate conditional proportions to measure the difference in the rate of near sightedness between the children with and without lighted rooms in this sample. (Use appropriate symbols.) Also produce a segmented bar graph to compare the eye condition of the two lighting groups. Comment on what this graph reveals about differences in eye condition between these lighting groups. Do you think this difference will be statistically significant? Explain.</p>
+      <p>Comment on what this graph reveals about differences in eye condition between these lighting groups. Do you think this difference will be statistically significant? Explain.</p>
     </statement>
     <solution>
       <p><m>\hat{p}_{light} = 188/307 = 0.612</m>; <m>\hat{p}_{dark} = 18/172 = 0.105</m></p>
@@ -84,7 +90,7 @@
 
   <paragraphs>
     <title>Discussion</title>
-    <p>In the previous investigation, the researchers literally took two different random samples from two different groups of teens. In this study, the data arose from one sample and each child in the sample was classified according to two variables: <em>lighting condition</em> and <em>eye condition</em>. A natural research question here might be "Does use of nightlights and room lights increase the rate of near-sightedness in children?" In such a situation, we can instead phrase our hypotheses in terms of the <em>association</em> between the two variables:</p>
+    <p>In the previous investigation, the researchers literally took two distinct random samples from two different groups of teens. In this study, the data arose from one sample and each child in the sample was classified according to two variables: <em>lighting condition</em> and <em>eye condition</em>. A natural research question here might be "Does use of nightlights and room lights increase the rate of near-sightedness in children?" In such a situation, we can instead phrase our hypotheses in terms of the <em>association</em> between the two variables:</p>
     <p><ul>
       <li><p><m>H_0</m>: There is no association between <em>lighting condition</em> and <em>eye condition</em> in the population</p></li>
       <li><p><m>H_a</m>: There is an association between <em>lighting condition</em> and <em>eye condition</em> in the population</p></li>
@@ -152,7 +158,7 @@
       <p>In some studies, we may consider one variable the explanatory variable that we suspect has an effect on the response variable. However, in some studies often there may be other <term>confounding variables</term><idx><h>confounding variable</h></idx> that also differ between the <em>explanatory variable</em> groups <em>and</em> have a potential effect on the <em>response</em> variable.</p>
     </assemblage>
 
-    <p>Your alternative explanation in <xref ref="inv3-2-e" text="custom">checkpoint 10.3.6</xref> probably identified a potential confounding variable. For example, <em>eye condition of the parents</em> may be related to the explanatory variable (parents with poorer sight are more likely to use room lighting) and to the response variable (children of near-sighted parents are more likely to be near-sighted themselves). Because this confounding variable changes with the explanatory variable, we have no way of separating out the effects of this variable and those of the explanatory variable. This prevents us from drawing a cause-and-effect conclusion between <em>lighting condition</em> and <em>eye condition</em>.</p>
+    <p>Your alternative explanation in <xref ref="inv3-2-e" text="custom">question 6</xref> probably identified a potential confounding variable. For example, <em>eye condition of the parents</em> may be related to the explanatory variable (parents with poorer sight are more likely to use room lighting) and to the response variable (children of near-sighted parents are more likely to be near-sighted themselves). Because this confounding variable changes with the explanatory variable, we have no way of separating out the effects of this variable and those of the explanatory variable. This prevents us from drawing a cause-and-effect conclusion between <em>lighting condition</em> and <em>eye condition</em>.</p>
 
     <p>One way to visualize confounding is to examine a diagram of the study design. For the night-light and eye condition study we considered lighting the explanatory variable and eye condition the response.</p>
 
@@ -200,7 +206,10 @@
   <subsection xml:id="practice3-2A">
     <title>Practice Problem 3.2A</title>
     
-    <p>For each of the following statements, (i) identify which is being considered the explanatory variable and which the response variable, (ii) then suggest a potential confounding variable that explains the observed association between the explanatory and response variables, (iii) finally explain how the suggested variable is related both to the response and to differences between the explanatory variable groups.</p>
+    <p>For each of the following statements, </p><p>
+    (i) identify which is being considered the explanatory variable and which the response variable,</p><p> 
+    (ii) then suggest a potential confounding variable that explains the observed association between the explanatory and response variables, </p><p>
+    (iii) finally explain how the suggested variable is related both to the response and to differences between the explanatory variable groups.</p>
 
     <exercise xml:id="practice-3-2-a-a">
       <title>Children's Feet and Reading Scores</title>
