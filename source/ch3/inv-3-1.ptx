@@ -533,6 +533,84 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     
     </exercises>
 
+ <paragraphs>
+      <title>Technology Detour – Two-sample <em>z</em>-procedures</title>
+      
+      <hint>
+        <title>Theory-Based Inference applet</title>
+        <p>In <url href="https://www.rossmanchance.com/applets/2021/tbimodeling/tbimodeling.html">Theory-Based Inference applet</url></p>
+        <p><ul>
+          <li><p>Select <term index="no">Two proportions</term></p></li>
+          <li><p>Check the box to paste in 2 columns of data (stacked or unstacked) and press <term index="no">Use Data</term> or specify the sample sizes and either the sample counts or the sample proportions and press <term index="no">Calculate</term>.</p></li>
+          <li><p>For the test, check the box for <term index="no">Test of Significance</term>. Keep the hypothesized difference at zero and set the direction of the alternative, press <alert>Calculate</alert>.</p></li>
+          <li><p>For the confidence interval, check the <term index="no">Confidence Interval</term>box, specify the confidence level and press <term index="no">Calculate CI</term></p></li>
+        </ul></p>
+        <sidebyside widths="45% 45%">
+          <image source="images/Inv3.1TBI1.png"/>
+          <image source="images/Inv3.1TBI2.png"/>
+        </sidebyside>
+      </hint>
+      <hint>
+        <title>R Instructions</title>
+        <p>The <c>iscamtwopropztest</c> function takes the following inputs:</p>
+        <p><ul>
+          <li><p><c>observed1</c> = either the number of successes or sample proportion for first group</p></li>
+          <li><p><c>n1</c> = sample size for first group</p></li>
+          <li><p><c>observed2</c> = count or proportion for second group</p></li>
+          <li><p><c>n2</c> = sample size for second group</p></li>
+          <li><p><c>hypothesized</c> = hypothesized difference (default is 0)</p></li>
+          <li><p><c>alternative</c> = "less", "greater", or "two.sided" for the direction of the alternative hypothesis</p></li>
+          <li><p><c>conf.level</c> = the confidence level (e.g., 0.95 for 95%)</p></li>
+        </ul></p>
+        
+        <p>For the hearing loss study:</p>
+        <sage language="r">
+          <input>
+<![CDATA[
+# Load ISCAM functions from GitHub
+source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R");
+
+# Two-sample z-test: 480 successes out of 2928 in 1994, 333 out of 1771 in 2006
+# Testing if proportion in 1994 is less than proportion in 2006
+iscamtwopropztest(observed1=480, n1=2928, observed2=333, n2=1771, 
+                  hypothesized=0, alternative="less", conf.level=0.95)
+]]>
+          </input>
+        </sage>
+        <p>This finds the p-value for a one-sided alternative as well as a 95% confidence interval for <m>\pi_1-\pi_2</m>.</p>
+      </hint>
+      <hint>
+        <title>JMP Instructions</title>
+        <sidebyside widths="50% 45%" valign="top">
+          <stack>
+            <p><ul>
+              <li><p><em>With raw data or after specifying the two-way table in column format</em>, select <term index="no">Analyze > Fit Y by X</term> and specify the categorical response variable (<term index="no">Y, Response</term>) and the categorical explanatory variable (<term index="no">X, Factor</term>)</p></li>
+              <ul><li>Specify the counts if using a two-way table (and "year" is seen as a categorical variable)</li></ul>
+              <li><p>Press <term index="no">OK</term>.</p></li>
+            </ul>
+          </stack>
+          <image source="images/Inv3.1JMP1.png"/>
+        </sidebyside>
+        <ul>
+          <li>The p-value in the Pearson row matches a two-sided <em>z</em>-test.</li>
+          <li>For a confidence interval, use the hot spot to select <term index="no">Two Sample Test for Proportions</term></li>
+        </ul></p>
+        <p><em>Note:</em> Here you can change which outcome is considered success. This also reports an "adjusted Wald" p-value</p>
+        
+        <sidebyside widths="50% 45%" valign="top">
+          <stack>
+            <p><ul>
+              <li><p><em>With summary data</em> use the <url href="http://www.rossmanchance.com/iscam3/data/ISCAM_Journal.jrn">ISCAM Journal file</url>: Hypothesis Test for Two Proportions</p></li>
+              <li><p>Specify the form of the alternative hypothesis</p></li>
+              <li><p>Enter the number of successes and the sample sizes</p></li>
+            </ul></p>
+          </stack>
+          <image source="images/Inv3.1JMP2.png"/>
+        </sidebyside>
+        <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use "pooled estimate of variance." This reports the <em>z</em>-score as well.)</p>
+      </hint>
+    </paragraphs>
+
   <subsection xml:id="practice3-1A">
     <title>Practice Problem 3.1A</title>
 
@@ -594,85 +672,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     <p>Note: Data are "stacked" if each column represents a different variable (e.g., year surveyed and hearing condition) and they are "unstacked" if each column represents a different group (e.g., 1998 and 2002).</p>
   </subsection>
 
-    <paragraphs>
-      <title>Technology Detour – Two-sample z-procedures</title>
-      
-      <hint>
-        <title>Theory-Based Inference applet</title>
-        <p>In Theory-Based Inference applet</p>
-        <p><ul>
-          <li><p>Select Two proportions</p></li>
-          <li><p>Check the box to paste in 2 columns of data (stacked or unstacked) and press Use data or specify the sample sizes and either the sample counts or the sample proportions and press Calculate.</p></li>
-          <li><p>For the test, check the box for Test of Significance Keep the hypothesized difference at zero and set the direction of the alternative, press Calculate.</p></li>
-          <li><p>For the confidence interval, check the box, specify the confidence level and press Calculate CI</p></li>
-        </ul></p>
-        <sidebyside widths="45% 45%">
-          <image source="images/Inv3.1TBI1.png"/>
-          <image source="images/Inv3.1TBI2.png"/>
-        </sidebyside>
-      </hint>
-      <hint>
-        <title>R Instructions</title>
-        <p>The <c>iscamtwopropztest</c> function takes the following inputs:</p>
-        <p><ul>
-          <li><p><c>x1</c> = either the number of successes or sample proportion for first group</p></li>
-          <li><p><c>n1</c> = sample size for first group</p></li>
-          <li><p><c>x2</c> = count or proportion for second group</p></li>
-          <li><p><c>n2</c> = sample size for second group</p></li>
-          <li><p><c>hypothesized</c> = hypothesized difference (default is 0)</p></li>
-          <li><p><c>alternative</c> = "less", "greater", or "two.sided" for the direction of the alternative hypothesis</p></li>
-          <li><p><c>conf.level</c> = the confidence level (e.g., 0.95 for 95%)</p></li>
-        </ul></p>
-        
-        <p>For the hearing loss study:</p>
-        <sage language="r">
-          <input>
-<![CDATA[
-# Load ISCAM functions from GitHub
-source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R");
-
-# Two-sample z-test: 480 successes out of 2928 in 1994, 333 out of 1771 in 2006
-# Testing if proportion in 1994 is less than proportion in 2006
-iscamtwopropztest(x1=480, n1=2928, x2=333, n2=1771, 
-                  hypothesized=0, alternative="less", conf.level=0.95)
-]]>
-          </input>
-        </sage>
-        <p>This finds the p-value for a one-sided alternative as well as a 95% confidence interval for <m>\pi_1-\pi_2</m>.</p>
-      </hint>
-      <hint>
-        <title>JMP Instructions</title>
-        <sidebyside widths="50% 45%" valign="top">
-          <stack>
-            <p><ul>
-              <li><p><em>With raw data or after specifying the two-way table in column format</em>, select <term index="no">Analyze > Fit Y by X</term> and specify the categorical response variable (Y, Response) and the categorical explanatory variable (X, Factor)</p></li>
-              <li><p><ul><li>Specify the counts if using a two-way table (and "year" is seen as a categorical variable)</li></ul></p></li>
-              <li><p>Press OK.</p></li>
-            </ul></p>
-          </stack>
-          <image source="images/Inv3.1JMP1.png"/>
-        </sidebyside>
-        
-        <p><ul>
-          <li>The p-value in the Pearson row matches a two-sided z-test.</li>
-          <li>For a confidence interval, use the hot spot to select Two Sample Test for Proportions</li>
-        </ul></p>
-        <p><em>Note:</em> Here you can change which outcome is considered success. This also reports an "adjusted Wald" p-value</p>
-        
-        <sidebyside widths="50% 45%" valign="top">
-          <stack>
-            <p><ul>
-              <li><p><em>With summary data</em> use the <url href="http://www.rossmanchance.com/iscam3/data/ISCAM_Journal.jrn">ISCAM Journal file</url>: Hypothesis Test for Two Proportions</p></li>
-              <li><p>Specify the form of the alternative hypothesis</p></li>
-              <li><p>Enter the number of successes and the sample sizes</p></li>
-            </ul></p>
-            <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use "pooled estimate of variance." This reports the <em>z</em>-score as well.)</p>
-          </stack>
-          <image source="images/Inv3.1JMP2.png"/>
-        </sidebyside>
-      </hint>
-    </paragraphs>
-
+   
     <paragraphs xml:id="tech-detour-simulation-proportions">
       <title>Technology Detour – Simulating Proportions from Independent Random Samples</title>
       
@@ -741,6 +741,7 @@ source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/I
 
 # Histogram with normal curve overlay
 iscamaddnorm(phatdiffs, main="Distribution of Differences", xlab="phat1 - phat2")
+invisible()  # Suppress any remaining output
 ]]>
           </input>
         </sage>
