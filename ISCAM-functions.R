@@ -1273,41 +1273,321 @@ iscamonepropztest <- function(
 # TWO PROPORTION Z-TEST
 # ============================================================================
 
-iscamtwopropztest <- function(x1, n1, x2, n2, hypothesized = 0, 
-                                alternative = "two.sided", conf.level = 0.95) {
-  # Allow proportions or counts
-  if (x1 <= 1) x1 <- round(x1 * n1)
-  if (x2 <= 1) x2 <- round(x2 * n2)
-  
-  p1 <- x1/n1
-  p2 <- x2/n2
-  phat <- (x1 + x2)/(n1 + n2)
-  
-  se <- sqrt(phat * (1 - phat) * (1/n1 + 1/n2))
-  z <- (p1 - p2 - hypothesized) / se
-  
-  if (alternative == "two.sided") {
-    pval <- 2 * pnorm(-abs(z))
-  } else if (alternative == "greater") {
-    pval <- pnorm(z, lower.tail = FALSE)
-  } else {
-    pval <- pnorm(z)
+iscamtwopropztest <- function(
+  observed1,
+  n1,
+  observed2,
+  n2,
+  hypothesized = 0,
+  alternative = NULL,
+  conf.level = NULL,
+  datatable = NULL
+) {
+  oldpar <- par(no.readonly = TRUE)
+  on.exit(par(oldpar))
+  par(mar = c(5, 3, 1, 1))
+
+  if (!is.null(datatable)) {
+    observed1 = datatable[1]
+    n1 = datatable[1] + datatable[2]
+    observed2 = datatable[3]
+    n2 = datatable[3] + datatable[4]
   }
-  
-  # CI
-  se_ci <- sqrt(p1 * (1 - p1) / n1 + p2 * (1 - p2) / n2)
-  z_crit <- qnorm(1 - (1 - conf.level)/2)
-  ci_lower <- (p1 - p2) - z_crit * se_ci
-  ci_upper <- (p1 - p2) + z_crit * se_ci
-  
-  cat("\nTwo Proportion Z-Test\n")
-  cat("=====================\n")
-  cat(paste0("Group 1: ", x1, " out of ", n1, " (", round(p1, 4), ")\n"))
-  cat(paste0("Group 2: ", x2, " out of ", n2, " (", round(p2, 4), ")\n"))
-  cat(paste0("Difference: ", round(p1 - p2, 4), "\n"))
-  cat(paste0("Z-statistic: ", round(z, 4), "\n"))
-  cat(paste0("p-value: ", round(pval, 4), "\n"))
-  cat(paste0(conf.level*100, "% CI: (", round(ci_lower, 4), ", ", round(ci_upper, 4), ")\n"))
+
+  pvalue = NULL
+  zvalue = NULL
+  if (observed1 < 1) {
+    observed1 = round(n1 * observed1)
+  }
+  if (observed2 < 1) {
+    observed2 = round(n2 * observed2)
+  }
+  cat("\n", "Two Proportion z test\n", sep = "", "\n")
+  statistic1 = observed1 / n1
+  statistic2 = observed2 / n2
+  statistic = statistic1 - statistic2
+  cat(paste(
+    "Group1: observed successes = ",
+    observed1,
+    ", sample size = ",
+    n1,
+    ", sample proportion = ",
+    signif(statistic1, 4),
+    "\n\n",
+    sep = ""
+  ))
+  cat(paste(
+    "Group2: observed successes = ",
+    observed2,
+    ", sample size = ",
+    n2,
+    ", sample proportion = ",
+    signif(statistic2, 4),
+    "\n\n",
+    sep = ""
+  ))
+  if (!is.null(alternative)) {
+    cat(
+      paste("Null hypothesis       : pi1-pi2 =", hypothesized, sep = " "),
+      "\n"
+    )
+    altname = switch(
+      alternative,
+      less = "<",
+      greater = ">",
+      two.sided = "<>",
+      not.equal = "<>"
+    )
+    cat(
+      paste(
+        "Alternative hypothesis: pi1-pi2",
+        altname,
+        hypothesized,
+        sep = " "
+      ),
+      "\n"
+    )
+    pooledphat = (observed1 + observed2) / (n1 + n2)
+    zvalue = (statistic1 - statistic2 - hypothesized) /
+      sqrt(pooledphat * (1 - pooledphat) * (1 / n1 + 1 / n2))
+    cat("z-statistic:", signif(zvalue, 4), "\n")
+    pvalue = 2
+    SD = sqrt(pooledphat * (1 - pooledphat) * (1 / n1 + 1 / n2))
+    min = min(hypothesized - 4 * SD, hypothesized - abs(zvalue) * SD - .001)
+    max = max(hypothesized + 4 * SD, hypothesized + abs(zvalue) * SD + .001)
+    x = seq(min, max, .001)
+    plot(
+      x,
+      dnorm(x, hypothesized, SD),
+      xlab = "\u2190 Difference in Sample Proportions \u2192",
+      type = "l",
+      ylim = c(0, dnorm(hypothesized, hypothesized, SD)),
+      panel.first = grid()
+    )
+    zseq = c(
+      hypothesized - 3 * SD,
+      hypothesized - 2 * SD,
+      hypothesized - SD,
+      hypothesized,
+      hypothesized + SD,
+      hypothesized + 2 * SD,
+      hypothesized + 3 * SD
+    )
+    axis(
+      side = 1,
+      at = zseq,
+      labels = c("z=-3", "z=-2", "z=-1", "z=0", "z=1", "z=2", "z=3"),
+      padj = 1.2,
+      tick = FALSE,
+      col.axis = "blue"
+    )
+    abline(h = 0, col = "black")
+    newtitle = paste(
+      "Normal (mean=",
+      hypothesized,
+      ", SD=",
+      format(SD, digits = 2),
+      ")"
+    )
+    title(newtitle)
+    mtext(side = 2, line = 2, "density")
+
+    if (alternative == "less") {
+      pvalue = signif(pnorm(zvalue), 4)
+      drawseq = seq(min, statistic, .001)
+      polygon(
+        c(drawseq, statistic, min),
+        c(dnorm(drawseq, hypothesized, SD), 0, 0),
+        col = "red"
+      )
+      text(
+        min,
+        max(dnorm(hypothesized, hypothesized, SD)) * .9,
+        labels = paste("z-statistic:", signif(zvalue, 4)),
+        pos = 4,
+        col = "blue"
+      )
+      text(
+        min,
+        max(dnorm(hypothesized, hypothesized, SD)) * .8,
+        labels = paste("p-value:", pvalue),
+        pos = 4,
+        col = "red"
+      )
+    } else if (alternative == "greater") {
+      pvalue = signif(1 - pnorm(zvalue), 4)
+      drawseq = seq(statistic, max, .001)
+      polygon(
+        c(statistic, drawseq, max),
+        c(0, dnorm(drawseq, hypothesized, SD), 0),
+        col = "red"
+      )
+      text(
+        max,
+        max(dnorm(hypothesized, hypothesized, SD)) * .9,
+        labels = paste("z-statistic:", signif(zvalue, 4)),
+        pos = 2,
+        col = "blue"
+      )
+      text(
+        max,
+        max(dnorm(hypothesized, hypothesized, SD)) * .8,
+        labels = paste("p-value:", pvalue),
+        pos = 2,
+        col = "red"
+      )
+    } else if (alternative == "two.sided" || alternative == "not.equal") {
+      pvalue = signif(2 * pnorm(-1 * abs(zvalue)), 4)
+      if (statistic < hypothesized) {
+        drawseq1 = seq(min, statistic, .001)
+        drawseq2 = seq(hypothesized + (hypothesized - statistic), max, .001)
+      } else {
+        drawseq1 = seq(min, hypothesized - (statistic - hypothesized), .001)
+        drawseq2 = seq(statistic, max, .001)
+      }
+      polygon(
+        c(min, drawseq1, drawseq1[length(drawseq1)]),
+        c(0, dnorm(drawseq1, hypothesized, SD), 0),
+        col = "red"
+      )
+      polygon(
+        c(drawseq2[1], drawseq2, max),
+        c(0, dnorm(drawseq2, hypothesized, SD), 0),
+        col = "red"
+      )
+      text(
+        min,
+        max(dnorm(hypothesized, hypothesized, SD)) * .9,
+        labels = paste("z-statistic:", signif(zvalue, 4)),
+        pos = 4,
+        col = "blue"
+      )
+      text(
+        min,
+        max(dnorm(hypothesized, hypothesized, SD)) * .8,
+        labels = paste("two-sided p-value:", pvalue),
+        pos = 4,
+        col = "red"
+      )
+    }
+  } #end have alternative
+  lower = NULL
+  upper = NULL
+  if (!is.null(conf.level)) {
+    if (length(conf.level) > 1) {
+      par(mar = c(4, 2, 1.5, 4), mfrow = c(length(conf.level), 1))
+    }
+    for (k in 1:length(conf.level)) {
+      if (conf.level[k] > 1) {
+        conf.level[k] = conf.level[k] / 100
+      }
+      criticalvalue = qnorm((1 - conf.level[k]) / 2)
+      sephat = sqrt(
+        statistic1 *
+          (1 - statistic1) /
+          n1 +
+          statistic2 * (1 - statistic2) / n2
+      )
+      lower[k] = statistic + criticalvalue * sephat
+      upper[k] = statistic - criticalvalue * sephat
+      multconflevel = 100 * conf.level[k]
+      cat(
+        multconflevel,
+        "% Confidence interval for pi1-pi2: (",
+        lower[k],
+        ", ",
+        upper[k],
+        ") \n"
+      )
+    }
+    if (is.null(alternative)) {
+      min = statistic - 4 * sephat
+      max = statistic + 4 * sephat
+      CIseq = seq(min, max, .001)
+      if (length(conf.level) == 1) {
+        par(mar = c(4, .5, 1.5, .5), mfrow = c(3, 1))
+        myxlab = substitute(
+          paste("Normal (", mean == x1, ", ", SD == x2, ")", ),
+          list(x1 = signif(lower[1], 4), x2 = signif(sephat, 4))
+        )
+        plot(CIseq, dnorm(CIseq, lower[1], sephat), type = "l", xlab = " ")
+        mtext(
+          "difference in sample proportions",
+          side = 1,
+          line = 1.75,
+          adj = .5,
+          cex = .75
+        )
+        topseq = seq(statistic, max, .001)
+        polygon(
+          c(statistic, topseq, max),
+          c(0, dnorm(topseq, lower[1], sephat), 0),
+          col = "red"
+        )
+        title(myxlab)
+        myxlab = substitute(
+          paste("Normal (", mean == x1, ", ", SD == x2, ")", ),
+          list(x1 = signif(upper[1], 4), x2 = signif(sephat, 4))
+        )
+        plot(
+          seq(min, max, .001),
+          dnorm(seq(min, max, .001), upper[1], sephat),
+          type = "l",
+          xlab = " "
+        )
+        mtext(
+          "difference in sample proportions",
+          side = 1,
+          line = 1.75,
+          adj = .5,
+          cex = .75
+        )
+        bottomseq = seq(min, statistic, .001)
+        polygon(
+          c(min, bottomseq, statistic, statistic),
+          c(
+            0,
+            dnorm(bottomseq, upper[1], sephat),
+            dnorm(statistic, upper[1], sephat),
+            0
+          ),
+          col = "red"
+        )
+        newtitle = substitute(
+          paste("Normal (", mean == x1, ", ", SD == x2, ")", ),
+          list(x1 = signif(upper, 4), x2 = signif(sephat, 4))
+        )
+        title(newtitle)
+      } # end one interval
+      for (k in 1:length(conf.level)) {
+        plot(
+          c(min, statistic, max),
+          c(1, 1, 1),
+          pch = c(".", "^", "."),
+          ylab = " ",
+          xlab = "difference in process probabilities",
+          ylim = c(1, 1)
+        )
+        abline(v = statistic, col = "gray")
+        text(min * 1.01, 1, labels = paste(100 * conf.level[k], "% CI:"))
+        text(statistic, .9, labels = signif(statistic, 4))
+        text(lower[k], 1, labels = signif(lower[k], 4), pos = 3)
+        text(upper[k], 1, labels = signif(upper[k], 4), pos = 3)
+        points(c(lower[k], upper[k]), c(1, 1), pch = c("[", "]"))
+        lines(c(lower[k], upper[k]), c(1, 1))
+      }
+    } # end have alternative
+  } # end have confidence level
+  if (!is.null(alternative)) {
+    cat("p-value:", pvalue, "\n")
+  }
+  par(mfrow = c(1, 1))
+  invisible(list(
+    "zvalue" = zvalue,
+    "pvalue" = pvalue,
+    "lower" = lower,
+    "upper" = upper
+  ))
 }
 
 # ==============================================================================

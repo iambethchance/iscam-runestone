@@ -567,13 +567,13 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
         <sage language="r">
           <input>
 <![CDATA[
-# Load ISCAM functions from GitHub
-source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R");
+# Load ISCAM functions from GitHub (cache-busting parameter forces reload)
+source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20241227")
 
 # Two-sample z-test: 480 successes out of 2928 in 1994, 333 out of 1771 in 2006
 # Testing if proportion in 1994 is less than proportion in 2006
-iscamtwopropztest(observed1=480, n1=2928, observed2=333, n2=1771, 
-                  hypothesized=0, alternative="less", conf.level=0.95)
+result = iscamtwopropztest(observed1=480, n1=2928, observed2=333, n2=1771, 
+                           hypothesized=0, alternative="less", conf.level=0.95)
 ]]>
           </input>
         </sage>
@@ -677,13 +677,13 @@ iscamtwopropztest(observed1=480, n1=2928, observed2=333, n2=1771,
       <title>Technology Detour – Simulating Proportions from Independent Random Samples</title>
       
       <p>Simulation Steps:</p>
-      <p><ol>
+      <ol>
         <li><p>Generate a random sample of 2928 observations from a binomial process with <m>\pi = .173</m></p></li>
         <li><p>Generate a random sample of 1771 observations from a binomial process with <m>\pi = .173</m></p></li>
         <li><p>Convert the sample counts into sample proportions</p></li>
         <li><p>Calculate the difference in the sample proportions</p></li>
         <li><p>Repeat steps 1-4 a large number of times.</p></li>
-      </ol></p>
+      </ol>
       <p>You should explore the individual <m>\hat{p}</m> distributions but most focus on the distribution of <m>\hat{p}_1 - \hat{p}_2</m>, including the mean, standard deviation, and whether the distribution behaves like a normal distribution.</p>
       <hint>
         <title>R Instructions</title>
