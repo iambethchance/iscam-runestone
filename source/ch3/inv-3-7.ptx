@@ -38,13 +38,12 @@
     <title>Construct Two-Way Table</title>
     <statement>
       <p>Construct a two-way table to summarize the results of this study. Remember to put the explanatory variable in the columns.</p>
-      <table unnumbered="yes">
-        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
           <row header="yes">
-            <cell></cell>
-            <cell>CPR</cell>
-            <cell>CC alone</cell>
-            <cell>Total</cell>
+            <cell halign="left">Method</cell>
+            <cell halign="left">CPR</cell>
+            <cell halign="left">CC alone</cell>
+            <cell halign="left">Total</cell>
           </row>
           <row>
             <cell>Survived</cell>
@@ -65,10 +64,8 @@
             <cell><var width="5"/></cell>
           </row>
         </tabular>
-      </table>
     </statement>
     <solution>
-      <table unnumbered="yes">
         <tabular top="minor" bottom="minor" left="minor" right="minor">
           <col halign="left"/>
           <col halign="center" width="18%"/>
@@ -99,7 +96,6 @@
             <cell>518</cell>
           </row>
         </tabular>
-      </table>
     </solution>
     <response/>
   </exercise>
@@ -155,7 +151,7 @@
     <response/>
   </exercise>
 
-    <p>Because the sample sizes are large in this study, you should not be surprised that the probability distribution in <xref ref="inv3-7-d" text="custom">checkpoint 6</xref> is approximately normal. The large sample sizes allow us to approximate the hypergeometric distribution with a normal distribution. Thus, with large samples sizes (e.g., at least 5 successes and at least 5 failures in each group), an alternative to Fisher's Exact Test is the two-sample <em>z</em>-test that you studied in Section 3.1.</p>
+    <p>Because the sample sizes are large in this study, you should not be surprised that the probability distribution in <xref ref="inv3-7-d" text="custom">question 4</xref> is approximately normal. The large sample sizes allow us to approximate the hypergeometric distribution with a normal distribution. Thus, with large samples sizes (e.g., at least 5 successes and at least 5 failures in each group), an alternative to Fisher's Exact Test is the two-sample <em>z</em>-test that you studied in Section 3.1.</p>
 
   <aside>
     <title>Theory-Based Inference Applet</title>
@@ -251,11 +247,11 @@
     <title>Theory-Based Inference Applet</title>
     <p>You can use the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?hideExtras=1">Theory-Based Inference applet</url> to calculate the confidence interval.</p>
   </aside>
-
+<p>An advantage to using the <em>z</em>-procedures is being able to easily produce a confidence interval for the parameter. </p>
 <exercise xml:id="inv3-7-i">
     <title>Confidence Interval</title>
     <statement>
-      <p>An advantage to using the <em>z</em>-procedures is being able to easily produce a confidence interval for the parameter. Use technology to determine a 95% confidence interval for the parameter of interest, and then interpret this interval.</p>
+      <p>Use technology to determine a 95% confidence interval for the parameter of interest, and then interpret this interval.</p>
       <hint>
         <p>Think carefully about what the relevant parameter is in this study.</p>
       </hint>
