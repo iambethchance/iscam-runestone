@@ -7,7 +7,7 @@
     <p><alert>Try these questions yourself before you use the solutions following to check your answers.</alert></p>
 
     <sidebyside widths="65% 30%" valign="top">
-      <p>Strayer and Johnston (2001) asked student volunteers to use a machine that simulated driving situations. At irregular intervals, a target would flash red or green. Participants were instructed to press a "brake button" as soon as possible when they detected a red light. The machine would calculate the reaction time to the red flashing targets for each student in milliseconds.</p>
+      <p>Strayer and Johnston (<url href="https://www.researchgate.net/publication/11597928_Driven_to_Distraction_Dual-Task_Studies_of_Simulated_Driving_and_Conversing_on_a_Cellular_Telephone">2001</url>) asked student volunteers to use a machine that simulated driving situations. At irregular intervals, a target would flash red or green. Participants were instructed to press a "brake button" as soon as possible when they detected a red light. The machine would calculate the reaction time to the red flashing targets for each student in milliseconds.</p>
       <image source="images/example2.2intro.png" xml:id="ex2-2-intro-img">
         <description>Introduction image for Example 2.2</description>
       </image>
@@ -15,7 +15,6 @@
 
     <p>The students were given a warm-up period to familiarize themselves with the driving simulator. Then the researchers had each student use the driving simulation machine while talking on a cell phone about politics to someone in another room and then again with music or a book-on-tape playing in the background (control). The students were randomly assigned as to use the cell phone or the control setting for the first trial. The reaction times (in milliseconds) for 16 students appear below and in the file <c>driving.txt</c>.</p>
 
-    <table>
       <title>Reaction Times (ms)</title>
       <tabular halign="center">
         <row bottom="minor">
@@ -76,48 +75,65 @@
           <cell>467</cell>
         </row>
       </tabular>
-    </table>
-  </introduction>
+    </introduction>
 
-  <p><ol label="(a)">
-    <li><p>Suppose we let <m>X</m> represent the number of subjects whose cell phone reaction time was longer. What probability distribution can we use to model <m>X</m>? What assumptions are behind this probability model?</p></li>
+  <exercise xml:id="ex2-2-a">
+    <title>Identify probability distribution and assumptions</title>
+    <statement>
+      <p>Suppose we let <m>X</m> represent the number of subjects whose cell phone reaction time was longer. What probability distribution can we use to model <m>X</m>? What assumptions are behind this probability model?</p>
+    </statement>
+    <solution>
+      <p>We can use the binomial distribution to model <m>X</m>, where <m>n = 16</m> (the number of drivers in the study) and <m>\pi</m> represents the probability that the cell phone reaction time is longer. This is a valid model as long as the reaction times between subjects are independent and the probability of the cell phone reaction time being longer is the same across the subjects.</p>
+    </solution>
+    <response/>
+  </exercise>
 
-    <li><p>How could you characterize the null and alternative hypotheses in this case (in symbols and in words)?</p></li>
+  <exercise xml:id="ex2-2-b">
+    <title>State hypotheses</title>
+    <statement>
+      <p>How could you characterize the null and alternative hypotheses in this case (in symbols and in words)?</p>
+    </statement>
+    <solution>
+      <p><m>H_0: \pi = 0.5</m> (equally likely for either reaction time to be longer)</p>
+      <p><m>H_a: \pi > 0.5</m> (more likely for a subject to take longer to react when talking on the cell phone).</p>
+    </solution>
+    <response/>
+  </exercise>
 
-    <li><p>What is the observed value of <m>X</m> in this study? How would you determine whether this statistic provides convincing evidence against the null hypothesis?</p></li>
+  <exercise xml:id="ex2-2-c">
+    <title>Calculate observed value and describe evidence assessment</title>
+    <statement>
+      <p>What is the observed value of <m>X</m> in this study? How would you determine whether this statistic provides convincing evidence against the null hypothesis?</p>
+    </statement>
+    <solution>
+      <p>The observed value of <m>X</m> is 13 in this study. So we need to assess how unusual it is for 13 or more drivers out of 16 to have a longer cell phone reaction time under the null hypothesis that there is no long-run tendency for either reaction time to be longer.</p>
+    </solution>
+    <response/>
+  </exercise>
 
-    <li><p>Use the binomial distribution to determine a p-value for a sign test applied to this study. Interpret this p-value in the context of this study and state the conclusions you would draw from this p-value.</p></li>
-  </ol></p>
+  <exercise xml:id="ex2-2-d">
+    <title>Determine p-value and interpret results</title>
+    <statement>
+      <p>Use the binomial distribution to determine a p-value for a sign test applied to this study. Interpret this p-value in the context of this study and state the conclusions you would draw from this p-value.</p>
+    </statement>
+    <solution>
+      <p>Determining <m>P(X \ge 13)</m> where <m>X</m> is Binomial (<m>n = 16, \pi = 0.5</m>),</p>
+      
+      <sidebyside widths="45% 45%">
+        <image source="images/example2-2sol1.png">
+          <description>Binomial distribution calculation part 1</description>
+        </image>
+        <image source="images/example2-2sol2.png">
+          <description>Binomial distribution calculation part 2</description>
+        </image>
+      </sidebyside>
+
+      <p>With an exact Binomial p-value of 0.0106, we would reject the null hypothesis at the 5% level of significance. Only 1.1% of random assignments (of which reaction time goes to which condition for each person) would have at least 13 of the differences being positive if the null hypothesis were true. We have strong evidence that such a majority did not happen by chance alone, but reflects a genuine tendency for cell phone reaction times to be longer.</p>
+    </solution>
+    <response/>
+  </exercise>
 
   <conclusion>
-    <title>Analysis</title>
-
-    <p><term>Solutions:</term> <m>\text{ }</m>
-      <answer>
-        <p><ol label="(a)">
-          <li><p>We can use the binomial distribution to model <m>X</m>, where <m>n = 16</m> (the number of drivers in the study) and <m>\pi</m> represents the probability that the cell phone reaction time is longer. This is a valid model as long as the reaction times between subjects are independent and the probability of the cell phone reaction time being longer is the same across the subjects.</p></li>
-
-          <li><p><m>H_0: \pi = 0.5</m> (equally likely for either reaction time to be longer)</p>
-          <p><m>H_a: \pi > 0.5</m> (more likely for a subject to take longer to react when talking on the cell phone).</p></li>
-
-          <li><p>The observed value of <m>X</m> is 13 in this study. So we need to assess how unusual it is for 13 or more drivers out of 16 to have a longer cell phone reaction time under the null hypothesis that there is no long-run tendency for either reaction time to be longer.</p></li>
-
-          <li><p>Determining <m>P(X \ge 13)</m> where <m>X</m> is Binomial (<m>n = 16, \pi = 0.5</m>),</p>
-          
-          <sidebyside widths="45% 45%">
-            <image source="images/example2-2sol1.png">
-              <description>Binomial distribution calculation part 1</description>
-            </image>
-            <image source="images/example2-2sol2.png">
-              <description>Binomial distribution calculation part 2</description>
-            </image>
-          </sidebyside>
-
-          <p>With an exact Binomial p-value of 0.0106, we would reject the null hypothesis at the 5% level of significance. Only 1.1% of random assignments (of which reaction time goes to which condition for each person) would have at least 13 of the differences being positive if the null hypothesis were true. We have strong evidence that such a majority did not happen by chance alone, but reflects a genuine tendency for cell phone reaction times to be longer.</p></li>
-        </ol></p>
-      </answer>
-    </p>
-
     <p>
       <url href="https://youtu.be/fRwv99TX2h8">Watch video walkthrough</url> of this example.
     </p>
