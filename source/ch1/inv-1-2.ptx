@@ -19,11 +19,11 @@
     <title>Identify Sample and Process</title>
     <statement>
       <p>Identify the sample/random process for this study.</p>
+      <hint>
+        <p>What is the sample size?</p>
+      </hint>
     </statement>
     <response/>
-    <hint>
-      <p>What is the sample size?</p>
-    </hint>
     <solution>
       <p>The random process is the repeated trials given to Yukon (<m>n = 8</m>).</p>
     </solution>
@@ -34,11 +34,11 @@
     <title>Identify the Variable</title>
     <statement>
       <p>Identify the variable of interest for this process.</p>
+      <hint>
+        <p>The variable is the measurements recorded for each observation.</p>
+      </hint>
     </statement>
     <response/>
-    <hint>
-      <p>The variable is the measurements recorded for each observation.</p>
-    </hint>
     <solution>
       <p>The variable is whether or not Yukon picks the cued container.</p>
     </solution>
@@ -48,6 +48,9 @@
     <title>Classify Variable Type</title>
     <statement>
       <p>Is this variable quantitative or categorical?</p>
+      <hint>
+        <p>Think about whether the data is a number or a category.</p>
+      </hint>
     </statement>
     <choices randomize="no">
       <choice correct="yes">
@@ -67,9 +70,6 @@
         </feedback>
       </choice>
     </choices>
-    <hint>
-      <p>Think about whether the data is a number or a category.</p>
-    </hint>
     <solution>
       <p>The variable is categorical.</p>
     </solution>
@@ -202,8 +202,8 @@
     <title>Evaluate Surprise Level</title>
     <statement>
       <p>Based on your simulation results, which assumes Yukon is guessing, should we be very surprised to see 6 correct guesses? Explain/support your reasoning.</p>
+      <hint><p>Is the observation near the middle/bulk of the distribution or out in the edges/tails of the distribution?</p></hint>
     </statement>
-    <hint><p>Is the observation near the middle/bulk of the distribution or out in the edges/tails of the distribution?</p></hint>
     <response/>
     <solution>
       <p>An outcome of 6 heads does not appear to be in the tail of the distribution.</p>
@@ -405,8 +405,7 @@
     <statement>
       <p>Use technology (R or JMP) to calculate the exact binomial probability for the Friend or Foe study (14 successes in 16 trials with probability 0.5). Choose one set of instructions below by clicking on a hint. Then adapt the instructions for the Wolf study.</p>
 <p>Enter the probability you find. <var width ="5"/></p>
-    </statement>
-    <hint>
+      <hint>
           <title>R Instructions</title>
           <p>The <c>iscamonepropztest</c> function takes the following inputs:</p>
           <p><ul>
@@ -465,7 +464,8 @@ iscamonepropztest(observed=14, n=16, hypothesized=0.5, alternative="greater", co
             <p><alert>JMP Reminder</alert>
                 In JMP's Distribution Calculator, you need to subtract 1 from your observed value when using the <m>\geq</m> option because JMP calculates <m>P(X > Q_a)</m> as <m>P(X \geq Q_a + 1)</m>. So to get <m>P(X \geq 14)</m>, you enter 13 as <m>Q_a</m>.</p>
           </hint>
-        <solution>
+    </statement>
+    <solution>
           <p>For the wolf study with 6 successes out of 8 trials, the binomial p-value should be 0.1445 as found in the applet.</p>
         </solution>
   </exercise>

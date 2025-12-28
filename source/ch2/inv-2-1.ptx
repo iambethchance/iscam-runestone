@@ -79,7 +79,6 @@
     <statement>
       <p>Access the <url href="http://www.rossmanchance.com/iscam4/data/USbirthsJan2024.txt">USbirthsJan2024.txt</url> data file and check that you have 297,798 rows of data.</p>
       <p>Number of observations: <var width="10"/></p>
-    </statement>
     <hint>
       <title>R Instructions</title>
       <p><alert>Method 1: In RStudio using Import Dataset</alert></p>
@@ -148,6 +147,7 @@ attach(births)    # Now R knows what the "birthweight" variable is
         <li><p>Or if the .txt file is saved on your computer, you can choose File &gt; Open and use the pull-down menu to change the file type.</p></li>
       </ul></p>
     </hint>
+    </statement>
     <solution>
       <p>297,798 observations</p>
     </solution>
@@ -160,7 +160,6 @@ attach(births)    # Now R knows what the "birthweight" variable is
     <title>Technology Detour <mdash/> Creating Dotplots</title>
     <statement>
       <p>Use technology to create a dotplot of the birth weights. Assuming you imported the data into "births".</p>
-    </statement>
     <hint>
       <title>R Instructions</title>
       <p>Use the <c>iscamdotplot</c> function to create a dotplot:</p>
@@ -194,6 +193,7 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
         <description>JMP dotplot of birth weights showing distribution</description>
       </image>
     </hint>
+    </statement>
     <solution>
       <p>A dotplot shows each numerical value individually (and is best with smaller datasets). Some packages may actually "bin" the values if the data set is large. If the dataset includes many distinct (non-repeated) values, this can make it more difficult to see the "clumping" in the data.</p>
     </solution>
@@ -236,7 +236,6 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
     <title>Technology Detour <mdash/> Subsetting the Data</title>
     <statement>
       <p>Remove the observations with birthweight = 9999 (missing values) from the dataset.</p>
-    </statement>
     <hint>
       <title>R Instructions</title>
       <p>Use logical subsetting to create a new dataset without the missing values:</p>
@@ -266,6 +265,7 @@ nrow(births2)
         <description>JMP data table with excluded rows</description>
       </image>
     </hint>
+    </statement>
     <solution>
       <p>After subsetting, you should have 297,558 observations (240 rows with birthweight = 9999 were removed from the original 297,798 observations).</p>
     </solution>
@@ -275,7 +275,6 @@ nrow(births2)
     <title>Recreate dotplot with subsetted data</title>
     <statement>
       <p>Recreate the dotplot with the subsetted data and describe what you see.</p>
-    </statement>
     <hint>
       <title>R Output</title>
       <image source="images/secondRdotplot.jpg" width="60%">
@@ -288,6 +287,7 @@ nrow(births2)
         <description>JMP dotplot of subsetted birth weights</description>
       </image>
     </hint>
+    </statement>
     <solution>
       <p>We now have 297,558 observations. The stack is gone and we see a distribution with a center around 3000 grams and most of the observations between 1800 and 4500 grams.</p>
     </solution>
@@ -304,7 +304,6 @@ nrow(births2)
     <title>Technology Detour <mdash/> Creating Histograms</title>
     <statement>
       <p>Create a histogram for the subsetted birth weight data (births2).</p>
-    </statement>
     <hint>
       <title>R Instructions</title>
       <p>Use the <c>hist</c> function to create a histogram:</p>
@@ -337,6 +336,7 @@ hist(births2$birthweight, xlab="birth weight")
         <description>JMP histogram of birth weights showing distribution</description>
       </image>
     </hint>
+    </statement>
     <solution>
       <p>A histogram groups data into intervals of equal width and displays bars with heights representing the frequency or proportion of observations in each interval. The bars touch each other to represent the continuous nature of quantitative data.</p>
     </solution>
@@ -417,7 +417,6 @@ hist(births2$birthweight, xlab="birth weight")
     <title>Subset by gestation period</title>
     <statement>
       <p>Now, further subset the births2 data based on whether or not the pregnancy lasted at least 37 weeks. How many observations do you end up with?</p>
-    </statement>
     <hint>
       <title>R Hints</title>
       <p>Edit the previous command, using births2 (two places). Use "==" for an equality comparison (i.e., <c>OEG == 2</c>).</p>
@@ -428,6 +427,7 @@ hist(births2$birthweight, xlab="birth weight")
           <description>JMP output showing selected rows</description>
         </image>
     </hint>
+    </statement>
     <solution>
       <p>265,676 observations</p>
       <p>R command: <c>births3=births2[which(births2$OEG == 2 ), ]</c></p>
@@ -457,7 +457,6 @@ hist(births2$birthweight, xlab="birth weight")
     <title>Technology Detour <mdash/> Numerical Summaries</title>
     <statement>
       <p>Calculate numerical summaries (mean, median, standard deviation, skewness) for the subsetted birth weight data (births3).</p>
-    </statement>
     <hint>
       <title>R Instructions</title>
       <p>Use the <c>iscamsummary</c> function to get numerical summaries:</p>
@@ -482,6 +481,7 @@ iscamsummary(births3$birthweight, digits=2)
         <description>JMP numerical summaries for birth weights</description>
       </image>
     </hint>
+    </statement>
     <solution>
       <p>The numerical summaries provide measures of center (mean, median), spread (standard deviation, IQR), and shape (skewness). These complement the visual displays and allow for more precise descriptions of the distribution.</p>
     </solution>
@@ -543,7 +543,6 @@ iscamsummary(births3$birthweight, digits=2)
     <title>Technology Detour <mdash/> Normal Distribution Overlay</title>
     <statement>
       <p>Add an overlay of a theoretical normal distribution to see how well it matches the birth weight data, using the mean and standard deviation from the observed data.</p>
-    </statement>
     <hint>
       <title>R Instructions</title>
       <p>First create a histogram, then use <c>iscamaddnorm</c> to add the normal curve overlay:</p>
@@ -566,6 +565,7 @@ iscamaddnorm(births3$birthweight)
         <description>JMP histogram with normal overlay for birth weights</description>
       </image>
     </hint>
+    </statement>
     <solution>
       <p>The normal curve overlay allows you to visually assess how well a normal distribution with the same mean and standard deviation fits your data. Look for areas where the bars deviate substantially from the curve.</p>
     </solution>
@@ -587,7 +587,6 @@ iscamaddnorm(births3$birthweight)
     <statement>
       <p>Another method for comparing your data to a theoretical normal distribution is to see whether certain properties of a normal distribution hold true. In Chapter 1, you learned that 95% of observations in a normal distribution should fall within two standard deviations of the mean.</p>
       <p>Calculate the percentage of the birthweights (in births3) that fall within 2 standard deviations of the mean.</p>
-    </statement>
     <hint>
       <title>R Instructions</title>
       <p>Create a Boolean (true/false) variable to identify observations within 2 SD:</p>
@@ -610,6 +609,7 @@ table(within2sd)/length(births3$birthweight)
         <li><p>Then use Analyze &gt; Distribution on this column and report the mean (the proportion of ones).</p></li>
       </ol></p>
     </hint>
+    </statement>
     <solution>
       <p>About 95% of these birthweights fall within two standard deviations of the mean birthweight, just as we would predict for a normal distribution.</p>
     </solution>
@@ -642,7 +642,6 @@ table(within2sd)/length(births3$birthweight)
     <title>Technology Detour <mdash/> Normal Probability Plots</title>
     <statement>
       <p>Create a normal probability plot (also called a quantile plot) for the subsetted birth weight data. Probability plots work by comparing the observed data to the <em>z</em>-scores expected for a normal distribution; if the points "line up" along a straight line, this supports that the data are behaving like a normal distribution.</p>
-    </statement>
     <hint>
       <title>R Instructions</title>
       <p>Use the <c>qqnorm</c> and <c>qqline</c> functions to create a normal probability plot:</p>
@@ -665,6 +664,7 @@ qqline(birthweight, datax=TRUE)
         <description>JMP normal probability plot for birth weights</description>
       </image>
     </hint>
+    </statement>
     <solution>
       <p>A normal probability plot is often easier to interpret than comparing a histogram to a curve. If the points follow a straight line, the data are consistent with a normal distribution. Deviations from the line, especially in the tails, indicate departures from normality.</p>
     </solution>
@@ -674,10 +674,10 @@ qqline(birthweight, datax=TRUE)
     <title>Assess normal probability plot</title>
     <statement>
       <p>Do the observations deviate much from a line? If so how?</p>
-    </statement>
     <hint>
       <p>What does this suggest about how the birth weight data values differ from what we would predict for a normal distribution (e.g., smallest values are smaller than expected or larger than expected)? Is this consistent with what you saw in the histogram?</p>
     </hint>
+    </statement>
     <solution>
       <p>The graph is fairly linear except for the ends. The lowest values seem smaller than they should be and the largest values seem larger than they should be. You may or may not have seen these "heavier tails" as easily in the histogram.</p>
     </solution>
@@ -696,13 +696,13 @@ qqline(birthweight, datax=TRUE)
     <title>Calculate low birth weight probability</title>
     <statement>
       <p>Use technology (e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html?hideExtras=1">Normal Probability Calculator applet</url>) to calculate the normal distribution probability that a randomly selected baby will be of low birth weight. Include a well-labeled sketch with the shaded area of interest.</p>
-    </statement>
     <hint>
       <p>Expected output:</p>
       <image source="images/Inv2-1q-sols.jpg" width="60%">
         <description>Normal probability calculation for low birth weight</description>
       </image>
     </hint>
+    </statement>
     <solution>
       <p>We estimate that in the long run about 3.5% of full term babies will be of low birth weight.</p>
     </solution>
@@ -713,13 +713,13 @@ qqline(birthweight, datax=TRUE)
     <title>Compare to actual data</title>
     <statement>
       <p>Now examine the births3 data: What percentage of the birth weights in this data set were at most 2500 grams? [Hint: Create a Boolean variable?] How does this compare to <xref ref="inv2-1-q" text="custom">the prediction in the previous question</xref>? Does this surprise you? Explain.</p>
-    </statement>
     <hint>
       <p>Expected output:</p>
       <image source="images/Inv2-1r-sols.png" width="60%">
         <description>Calculation showing percentage of low birth weights in data</description>
       </image>
     </hint>
+    </statement>
     <solution>
       <p>In this sample, 3.2% of the full term babies were of low birth weight. Using the normal distribution very slightly overpredicted how often this would happen. We might have expected the normal distribution to underpredict based on the heavier tails in the sample we saw earlier, though it is less about the percentage "out there" and more about how far out there based on 95% of the distribution falling within 2SD but still seeing the heavier tails in the normal probability plot.</p>
     </solution>
@@ -781,10 +781,10 @@ qqline(birthweight, datax=TRUE)
       <title>Identify unusual cap price</title>
       <statement>
         <p>Examine and include a stemplot of the cap prices. We see one team with an unusual value. Identify this team by name and suggest an explanation for its unusual cap price.</p>
-      </statement>
       <hint>
         <p>We are not talking about the largest or smallest value this time!</p>
       </hint>
+      </statement>
       <response/>
     </exercise>
   </subsection>
@@ -842,7 +842,6 @@ qqline(birthweight, datax=TRUE)
       <title>Generate random normal data and create probability plot</title>
       <statement>
         <p>Use statistical software to generate a random sample of 100 observations from a normal distribution with mean 2 and standard deviation 5. Create a normal probability plot of the generated data. Do the data follow a straight line?</p>
-      </statement>
       <hint>
         <title>In R</title>
         <p><c>mydata = rnorm(100, 2, 5)</c></p>
@@ -851,6 +850,7 @@ qqline(birthweight, datax=TRUE)
         <title>In JMP</title>
         <p>In new worksheet, choose Columns &gt; New Column. Under Initialize Data set the Number of rows to 100. Under Column Properties, select Formula. Then select Random &gt; Random Normal and specify (2,5).</p>
       </hint>
+      </statement>
       <response/>
     </exercise>
     
@@ -858,7 +858,6 @@ qqline(birthweight, datax=TRUE)
       <title>Generate skewed data and compare probability plot</title>
       <statement>
         <p>Repeat the previous question for data that are skewed to the right. How does the behavior of the probability plot change? How would you interpret this plot without looking at the histogram?</p>
-      </statement>
       <hint>
         <title>In R</title>
         <p><c>mydata = rchisq(100, 2)</c></p>
@@ -867,6 +866,7 @@ qqline(birthweight, datax=TRUE)
         <title>In JMP</title>
         <p>Select Random &gt; Random ChiSquare and enter 2 as the "df"</p>
       </hint>
+      </statement>
       <response/>
     </exercise>
   </subsection>

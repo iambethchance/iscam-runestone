@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="inv-3-6">
   <title>Investigation 3.6: Is Yawning Contagious?</title>
-
+<exercises xml:id="investigation3-6" hidden-label="yes">
+<title>The Study</title>  
   <introduction>
     <sidebyside widths="55% 40%" margins="0% 5%">
       <p>The folks at <em>MythBusters</em>, a popular television program on the Discovery Channel, investigated whether yawning is contagious by recruiting fifty subjects at a local flea market and asking them to sit in one of three small rooms for a short period of time.  <url href="https://www.youtube.com/watch?v=bCCCxV3nNgs">Video snippet</url></p>
@@ -128,17 +129,16 @@
   </exercise>
 
   <paragraphs>
-    <p>Open the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm">Analyzing Two-way Tables applet</url>.</p>
+    <p>Open the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?twobytwo=1">Analyzing Two-way Tables applet</url>.</p>
     <p><ul>
-      <li>Paste in the raw data and press Use Data or enter the titles and counts of a two-way table and press Use Table. (Or check the 2×2 box and enter the cell values and headers)</li>
-      <li>Select GroupA Successes as the statistic.</li>
-      <li>(Scroll right) Generate a randomization distribution for this statistic.</li>
-      <li>Check the Show Shuffle Options box.</li>
-      <li>Set Number of Shuffles to 1000.</li>
-      <li>Press Shuffle.</li>
+      <li>Paste in the raw data and press Use Data or enter the titles and counts of a two-way table and press Use Table. (Or check the 2×2 box and enter the cell values and headers). Or use the version below.</li>
+      <li>Select GroupA Successes as the <alert>Statistic</alert>.</li>
+      <li>Check the <alert>Show Shuffle Options</alert> box.</li>
+      <li>Set <alert>Number of Shuffles</alert> to 1000.</li>
+      <li>Press <alert>Shuffle</alert>.</li>
     </ul></p>
   </paragraphs>
-
+<interactive iframe="https:://www.rossmanchance.com/applets/2021/test/ChiSqShuffle.htm?yawning=2" width="100%" height="600px"/>
   <exercise xml:id="inv3-6-e">
     <title>Describe Randomization Distribution</title>
     <statement>
@@ -301,10 +301,10 @@
     <exercise xml:id="tech-detour-hypergeometric-applet-inv3-6" label="Hypergeometric - Applet - Inv 3.6">
       <title>Calculating Hypergeometric Probabilities in Analyzing Two-way Tables applet</title>
       <statement>
-        <p>Open the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?hideExtras=1">Analyzing Two-way Tables applet</url>.</p>
+        <p>In the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?hideExtras=1">Analyzing Two-way Tables applet</url>.</p>
         <p><ul>
           <li>Enter the two-way table</li>
-          <li>Check the box for Show Fisher's Exact Test in the lower left corner</li>
+          <li>Check the box for <alert>Show Fisher's Exact Test</alert> in the lower left corner</li>
           <li>A check box will appear for determining the two-sided p-value</li>
         </ul></p>
       </statement>
@@ -480,8 +480,7 @@
     <title>Practice Problem 3.6B</title>
 
     <p>Reconsider the Dolphin Therapy study (Investigation 3.5).</p>
-    <table>
-      <tabular top="minor" bottom="minor" left="minor" right="minor">
+  <tabular top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
         <col halign="left"/>
         <col halign="center"/>
         <col halign="center"/>
@@ -511,8 +510,7 @@
           <cell>30</cell>
         </row>
       </tabular>
-    </table>
-    <p>Continue to focus on the number of improvers randomly assigned to the dolphin group, and represent this value by X.</p>
+    <p>Continue to focus on the number of improvers randomly assigned to the dolphin group, and represent this value by <m>X</m>.</p>
 
     <exercise xml:id="practice-3-6-b-a">
       <title>Hypergeometric Parameters</title>

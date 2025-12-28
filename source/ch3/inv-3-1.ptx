@@ -247,10 +247,10 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     <exercise xml:id="inv3-1-j">
       <title>Pooled Estimate</title>
       <statement><p>So under the null hypothesis we really only have one value of <m>\pi</m> to estimate – the common population proportion with hearing loss for these two years. What is your best estimate for <m>\pi</m> from the sample data?</p>
-    <var width = "10"/></statement>
-      <hint>
+    <var width = "10"/>      <hint>
         <p>Think about combining the two years together.</p>
       </hint>
+</statement>
       <solution><p>= 813/4699 = 0.173</p></solution>
       <response/>
     </exercise>
@@ -279,10 +279,10 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <statement>
         <p>Report the values you found for <m>\hat{p}_1</m>, <m>\hat{p}_2</m>, and <m>\hat{p}_1 - \hat{p}_2</m>.</p>
       <p><m>\hat{p}_1 = </m><var width="10"/> <m>\hat{p}_2 = </m><var width="10"/> <m>\hat{p}_1 - \hat{p}_2 = </m><var width="10"/></p>
-      </statement>
       <hint>
         <p>See <xref ref="tech-detour-simulation-proportions" text="custom">Technology Detour</xref> below for carrying out these simulations in other software packages.</p>
       </hint>
+      </statement>
       <solution>
         <p>Example results, =0.185 and  = 0.157 for a difference of 0.028.</p>
         <image source="images/Inv3.1solsl.jpg" width="60%"/>
@@ -572,8 +572,9 @@ source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/I
 
 # Two-sample z-test: 480 successes out of 2928 in 1994, 333 out of 1771 in 2006
 # Testing if proportion in 1994 is less than proportion in 2006
-result = iscamtwopropztest(observed1=480, n1=2928, observed2=333, n2=1771, 
+iscamtwopropztest(observed1=480, n1=2928, observed2=333, n2=1771, 
                            hypothesized=0, alternative="less", conf.level=0.95)
+invisible()
 ]]>
           </input>
         </sage>

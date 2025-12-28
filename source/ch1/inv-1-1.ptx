@@ -45,10 +45,10 @@
       <statement>
         <p>Identify the sample in this study.</p>
         <p><var width="60"/></p>
-      </statement>
       <hint>
         <p>The sample consists of the observational units from which data were collected.</p>
       </hint>
+      </statement>
       <solution>
         <p>The sample is the observations from the 16 infants.</p>
       </solution>
@@ -58,10 +58,10 @@
       <title>Assess Independence Assumption</title>
       <statement>
         <p>Do you think it is reasonable to model these observations as independent realizations of the random process under <q>identical conditions</q>? Explain.</p>
-      </statement>
       <hint>
         <p>Consider whether the infants can be viewed as interchangeable and whether each infant's choice was measured separately.</p>
       </hint>
+      </statement>
       <solution>
         <p>Opinions will vary, but if we consider the infants as interchangeable (no differences between them) and the infants' choices were all measured separately, than this modeling assumption seems appropriate. In particular, we need to be willing to model each infant as having the same probability of picking the helper toy.</p>
       </solution>
@@ -72,10 +72,10 @@
       <title>Explain Experimental Controls</title>
       <statement>
         <p>Why is it important that the researchers varied the colors and shapes of the wooden characters and even on which side the toys were presented to the infants?</p>
-      </statement>
       <hint>
         <p>Think about other factors besides the helping/hindering behavior that might influence an infant's choice.</p>
       </hint>
+      </statement>
       <solution>
         <p>This is to control for (or at least balance out) any other factors that could be influencing the infants' choices.</p>
       </solution>
@@ -91,10 +91,10 @@
       <title>Identify the Variable</title>
       <statement>
         <p>What is the variable we are measuring about each observation?</p>
-      </statement>
       <hint>
         <p>Think about what information is recorded for each infant.</p>
       </hint>
+      </statement>
       <solution>
         <p>Variable = which toy does the infant choose to play with.</p>
       </solution>
@@ -138,10 +138,10 @@
       <title>State Research Question</title>
       <statement>
         <p>What research question is of interest here?</p>
-      </statement>
       <hint>
         <p>What question are the researchers trying to answer about infant behavior?</p>
       </hint>
+      </statement>
       <solution>
         <p>The research question is whether infants in general (assuming identical infants from a random process) are more likely to pick the helper toy than the hinderer toy in the long run.</p>
       </solution>
@@ -158,10 +158,10 @@
       <title>Create Bar Graph</title>
       <statement>
         <p>The <q>raw data</q> can be found on the course webpage as a txt file (<url href="https://www.rossmanchance.com/iscam3/data/InfantData.txt">InfantData.txt</url>). How many do you see of each possible outcome? Sketch the bar graph. Give your graph an <q>active title,</q> a concise sentence stating the main message/key takeaways from the graph. What is your title?</p>
-      </statement>
       <hint>
         <p>Count how many infants chose each toy. A bar graph should have bars for each category (Helper and Hinderer) with heights representing the counts.</p>
       </hint>
+      </statement>
       <solution>
         <p>14/16 = 0.875</p>
         <alert>Active title: A majority of infants preferred the helper toy.</alert>
@@ -176,7 +176,6 @@
       <title>Create Bar Graph with Technology</title>
       <statement>
         <p>Use technology (R or JMP) to create a bar graph of these data. Choose one set of instructions below by clicking on a hint:</p>
-      </statement>
       <hint>
         <title>R Instructions</title>
         <p><alert>Load data from GitHub and create bar graph </alert></p>
@@ -219,6 +218,7 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
           </stack>
         </sidebyside>
       </hint>
+      </statement>
       <solution>
         <p>JMP "thumbnail" graph:</p>
         <image source="images/inv1.1JMPbargraph.png" width="50%">
@@ -334,10 +334,10 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
       <title>Choose Between Explanations</title>
       <statement>
         <p>So for the two possibilities we are still considering, how might you choose between them? In particular, how might you convince someone whether or not option (2) is plausible based on this study?</p>
-      </statement>
       <hint>
         <p>Think about what makes an outcome unusual or typical when choices are made randomly.</p>
       </hint>
+      </statement>
       <solution>
         <p>We would need to convince someone that if these results were just happening "randomly," it would be unusual to get 14 infants picking the helper toy.</p>
       </solution>
@@ -350,10 +350,10 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
       <title>Design a Simulation</title>
       <statement>
         <p>Suggest a method for carrying out a simulation of 16 infants picking equally between the two toys.</p>
-      </statement>
       <hint>
         <p>Think about a simple physical randomization device that gives two equally likely outcomes.</p>
       </hint>
+      </statement>
       <solution>
         <p>We could toss a coin for each infant, letting heads represent choosing the helper toy and tails represent choosing the hinderer toy. This makes the two choices equally likely on each toss. Then use 16 coins or toss one coin 16 times to represent the 16 infants. (We are assuming these are equivalent, that the observational units are identical.) These results will help us assess the variability in the outcomes of 16 infants "just by chance." This will help us decide whether 14 is a typical outcome or an unusual outcome when we know for a fact that the "infants" choose equally (in the long run) between the two toys.</p>
       </solution>
@@ -405,20 +405,20 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
         <p>Heads (helper toy): <var width="5"/></p>
         <p>Tails (hinderer toy): <var width="5"/></p>
         <p>Total number of heads in 16 tosses: <var width="5"/></p>
-      </statement>
       <hint>
         <p>Make sure you numbers of heads and tails sum  to 16.</p>
       </hint>
+      </statement>
     </exercise>
     
     <exercise xml:id="inv1-1-m" label="I1.1.13">
       <title>Combine Class Results</title>
       <statement>
         <p>Combine your simulation results for each repetition with your classmates' on the scale below. Create a dotplot by placing a dot above the numerical result found by each person's set of 16 tosses.</p>
-      </statement>
       <hint>
         <p>Each person in class should contribute one dot to the class dotplot, placed above their number of heads out of 16.</p>
       </hint>
+      </statement>
       <solution>
         <p>Results will vary by class. Below is one possible set of results:</p>
         <image source="tech_images/ch1solsdotplot.jpg" width="70%">
@@ -431,10 +431,10 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
       <title>Describe Simulation Variability</title>
       <statement>
         <p>Did everyone get the same number of heads every time? What is an average or typical number of heads in a set of 16 tosses? Is this what you expected? Explain.</p>
-      </statement>
       <hint>
         <p>Look at the center of the dotplot. What value appears most frequently or is in the middle of the distribution?</p>
       </hint>
+      </statement>
       <solution>
         <p>No, there will be variability across the sets of 16 tosses, but 8 heads is an average or typical number of heads.</p>
       </solution>
@@ -445,10 +445,10 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
       <title>Assess Unusualness</title>
       <statement>
         <p>Does 14 heads appear to be an unusual outcome for 16 observations from a process where heads should appear 50% of the time in the long run?</p>
-      </statement>
       <hint>
         <p>Look at your class dotplot. How often did values as extreme as 14 (or more) occur? Is 14 in the "tail" or center of the distribution?</p>
       </hint>
+      </statement>
       <solution>
         <p>Answers will vary, but 14 does appear to be somewhat unusual, not occurring very often, in the "tail" of the distribution.</p>
       </solution>
@@ -472,10 +472,10 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
       <statement>
         <p>Report the number of heads (i.e., the number of infants who choose the helper toy) for this <q>could have been</q> (under the assumption of no preference) outcome.</p>
         <p>Number of heads: <var width="5"/></p>
-      </statement>
       <hint>
         <p>The applet will simulate flipping 16 coins and count the number of heads for you automatically.</p>
       </hint>
+      </statement>
     </exercise>
     
 <ul><li>In the applet, uncheck the <alert>Show animation</alert> box and press <alert>Draw Samples</alert> four more times, each time recording the number of the 16 infants who choose the helper toy. </li></ul>
@@ -512,10 +512,10 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
       <title>Describe Distribution</title>
       <statement>
         <p>For the dotplot you have created, what does each dot represent (i.e., what would you need to do to add another dot to the graph)?</p>
-      </statement>
       <hint>
         <p>Think about what you did to create one dot in the physical coin-flipping activity.</p>
       </hint>
+      </statement>
       <solution>
         <p>Each dot in the dotplot represents the number of heads in 16 coin tosses (representing the choices of a set of 16 infants).</p>
       </solution>
@@ -554,10 +554,10 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
       <title>Draw Conclusion</title>
       <statement>
         <p>Now that we have a better picture of the long-run behavior of this process, discuss whether you would consider option 2 before Question 12: <q>Infants choose equally between the two toys in the long run and we happened to get 'lucky' and find most of the infants in our sample picking the helper toy</q> to be a plausible conclusion for this study. Explain your reasoning as if to a skeptic.</p>
-      </statement>
       <hint>
         <p>Look at how often 14 or more heads occurred in your 2,000 simulated repetitions. Is this common or rare? What does this tell you about the plausibility of the "no preference" assumption?</p>
       </hint>
+      </statement>
       <solution>
         <p>Because it is very unlikely for us to have seen results at least as extreme as what we observed (14 successes) under the assumption of 50-50 chance, we have evidence against this claim and instead in favor of the claim that there is something other than random chance at play in this sample.</p>
       </solution>

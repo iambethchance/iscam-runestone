@@ -38,10 +38,10 @@
         <li><p>Then overlay a normal probability model. Do these data behave like a normal distribution? If not, how do they deviate from normality? Does the shape make sense in this context?</p></li>
         <li><p>Also examine a normal probability plot and discuss how deviations from the line correspond to the nonnormal shape you are observing.</p></li>
       </ul></p>
+      <hint>
+        <p>Were the observed response times/quantiles placed on the vertical or the horizontal axis?</p>
+      </hint>
     </statement>
-    <hint>
-      <p>Were the observed response times/quantiles placed on the vertical or the horizontal axis?</p>
-    </hint>
     <solution>
       <p>The distribution of response times are skewed to the right. Most people waited less than 5 seconds, but a couple waited more than 15 seconds. There is one outlier 17.15 seconds.</p>
       <p>Example output:</p>
@@ -66,22 +66,11 @@
       <p>Mean: <var width="10"/> seconds</p>
       <p>Median: <var width="10"/> seconds</p>
       <p>Which is larger?</p>
+      <hint>
+        <p>Recall that the mean is the numerical average and the median has 50% of the observations on each side.</p>
+      </hint>
     </statement>
     <choices randomize="no">
-      <choice>
-        <statement>
-          <p>Mean</p>
-        </statement>
-      </choice>
-      <choice>
-        <statement>
-          <p>Median</p>
-        </statement>
-      </choice>
-    </choices>
-    <hint>
-      <p>Recall that the mean is the numerical average and the median has 50% of the observations on each side.</p>
-    </hint>
     <solution>
       <p>The mean (4.249 s) is larger than the median (3.24 s) as it is pulled towards the larger values. Also note that the skewness statistic equals 2.52.</p>
     </solution>
@@ -110,10 +99,10 @@
     <statement>
       <p>Use technology to compute the interquartile range.</p>
       <p>IQR: <var width="10"/> seconds</p>
+      <hint>
+        <p>Run the descriptive statistics command and report the lower and upper quartiles and then subtract.</p>
+      </hint>
     </statement>
-    <hint>
-      <p>Run the descriptive statistics command and report the lower and upper quartiles and then subtract.</p>
-    </hint>
     <solution>
       <p>The interquartile range is 4.835 - 2.590 (Applet) gives 2.245 seconds. The width of the middle 50% of wait times is 2.245 seconds.</p>
     </solution>
@@ -184,7 +173,6 @@
     <title>Technology Detour <mdash/> Modified Boxplots</title>
     <statement>
       <p>Create a "modified" boxplot for the honking response time data.</p>
-    </statement>
     <hint>
       <title>Applet Instructions</title>
       <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url>:</p>
@@ -236,6 +224,7 @@ iscamboxplot(responsetime, xlab="Time until reaction (seconds)")
         <description>JMP modified boxplot showing outliers</description>
       </image>
     </hint>
+    </statement>
     <solution>
       <p>A modified boxplot displays the five-number summary with whiskers extending to the most extreme non-outlier observations. Points beyond 1.5 × IQR from the quartiles are marked as outliers.</p>
     </solution>
@@ -265,7 +254,6 @@ iscamboxplot(responsetime, xlab="Time until reaction (seconds)")
     <title>Technology Detour <mdash/> Log Transformation</title>
     <statement>
       <p>Create a log transformation of the response time data.</p>
-    </statement>
     <hint>
       <title>R Instructions</title>
       <program language="r">
@@ -278,6 +266,7 @@ lnresponsetime = log(responsetime)
       <title>JMP Instructions</title>
       <p>Create a new column and edit the formula. Type or use your mouse to select Transcendental &gt; Log to create Log(responsetime). Press OK.</p>
     </hint>
+    </statement>
   </exercise>
   
   <exercise xml:id="inv2-2-g" label="I6.2.7">
@@ -305,10 +294,10 @@ lnresponsetime = log(responsetime)
         <p><url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html">Normal Probability Calculator applet</url></p>
       </aside>
       <p>Use a normal distribution with mean 1.29 ln-sec and standard deviation 0.53 ln-seconds for the logged response times and predict how often someone will honk within the first 2 seconds.</p>
-    </statement>
     <hint>
       <p>What are you going to use for the observation of interest?</p>
     </hint>
+    </statement>
     <solution>
       <p>Using ln(2) ≈ 0.693 as the observed result, we find about 13% of the model distribution falls below.</p>
       <image source="images/Inv2-2h-sols.jpg" width="60%">
@@ -339,7 +328,6 @@ lnresponsetime = log(responsetime)
     <title>Technology Detour <mdash/> Exponential Distribution</title>
     <statement>
       <p>Overlay an exponential probability model to the honking response time data.</p>
-    </statement>
     <hint>
       <title>R Instructions</title>
       <p>For the qqplot we have to first get the quantiles:</p>
@@ -357,6 +345,7 @@ iscamaddexp(responsetime)          # overlay exponential model
       <title>JMP Instructions</title>
       <p>In the Distribution window, use the hot spot to select Continuous Fit &gt; Exponential.</p>
     </hint>
+    </statement>
   </exercise>
 
   <exercise xml:id="inv2-2-j" label="I6.2.10">
@@ -380,7 +369,6 @@ iscamaddexp(responsetime)          # overlay exponential model
     <title>Technology Detour <mdash/> Exponential Probability Calculation</title>
     <statement>
       <p>Use technology to calculate the probability of a wait time under 2 seconds using the exponential distribution with mean 4.25 sec</p>
-    </statement>
     <hint>
       <title>R Instructions</title>
       <p><c>pexp(2, rate = 1/4.25)</c> calculates P(X &lt; 2) when X ~ Exp(mean = 4.25)</p>
@@ -389,6 +377,7 @@ iscamaddexp(responsetime)          # overlay exponential model
       <title>JMP Instructions</title>
       <p>Using the Distribution Calculator and select the Exponential distribution. Specify a scale parameter of 1/4.25. Choose X &lt;= Qa and enter 2 for Qa (we don't need to worry about strict vs. non-strict inequalities here)</p>
     </hint>
+    </statement>
   </exercise>
   
   <exercise xml:id="inv2-2-k" label="I6.2.11">
@@ -410,7 +399,6 @@ iscamaddexp(responsetime)          # overlay exponential model
     <statement>
       <p>Repeat <xref ref="inv2-2-j" text="custom">question 15</xref> and <xref ref="inv2-2-k" text="custom">question 16</xref> with a "lognormal" distribution.</p>
       <p><em>Note:</em> This is equivalent to fitting the normal distribution on the log-transformed data!</p>
-    </statement>
     <hint>
       <title>In R</title>
       <program language="r" interactive="sage">
@@ -425,6 +413,7 @@ plnorm(2, meanlog = 1.292, sdlog = 0.5238)
       <title>In JMP</title>
       <p>Scroll down the Distribution list and choose the Lognormal distribution with location = 1.292 and scale = 0.5238.</p>
     </hint>
+    </statement>
     <solution>
       <p>The log normal has the skewed right behavior but not as severely as the exponential and provides a better fit to our data. Now the prediction is 0.1326.</p>
       <image source="images/Inv2-2l-sols1.jpg" width="60%">
@@ -450,10 +439,10 @@ plnorm(2, meanlog = 1.292, sdlog = 0.5238)
     <title>Generalization of results</title>
     <statement>
       <p>To what population are you willing to generalize these results? Explain.</p>
-    </statement>
     <hint>
       <p>Think about how the data were collected and what you learned about sampling methods in Chapter 1.</p>
     </hint>
+    </statement>
     <solution>
       <p>We don't have a lot of information about how these participants were selected other than two afternoons in West Germany, so we should be cautious in generalizing these results too far beyond that time period and country. "Waiting time" can be very distinct across cultures.</p>
     </solution>
