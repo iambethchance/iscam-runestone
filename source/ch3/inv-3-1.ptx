@@ -703,6 +703,7 @@ count1994  # Displays the results
 phat94 = rbinom(1000, 2928, .173)/2928
 phat06 = rbinom(1000, 1771, .173)/1771
 phatdiffs = phat94 - phat06  # You now have 1000 differences
+head(phatdiffs)  # Show first few differences
 ]]>
           </input>
         </sage>
@@ -711,18 +712,21 @@ phatdiffs = phat94 - phat06  # You now have 1000 differences
           <input>
 <![CDATA[
 par(mfrow=c(3,1))  # Creates 3 rows in graph window
-hist(phat94); hist(phat06)  # Use a semicolon to separate commands
-hist(phatdiffs, labels=T)  # In RStudio, can zoom the graph window
+invisible(hist(phat94))  # Suppress text output
+invisible(hist(phat06))
+invisible(hist(phatdiffs, labels=T))  # In RStudio, can zoom the graph window
 ]]>
           </input>
         </sage>
         <sage language="r">
           <input>
 <![CDATA[
-mean(phat94); mean(phat06)
-mean(phatdiffs)
-sd(phat94); sd(phat06)
-sd(phatdiffs)
+cat("Mean phat94:", mean(phat94), "\n")
+cat("Mean phat06:", mean(phat06), "\n")
+cat("Mean phatdiffs:", mean(phatdiffs), "\n")
+cat("SD phat94:", sd(phat94), "\n")
+cat("SD phat06:", sd(phat06), "\n")
+cat("SD phatdiffs:", sd(phatdiffs), "\n")
 ]]>
           </input>
         </sage>
@@ -730,18 +734,37 @@ sd(phatdiffs)
         <sage language="r">
           <input>
 <![CDATA[
-# Load ISCAM functions from GitHub
-source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R");
+# Histogram with normal curve overlay
+hist(phatdiffs, freq=FALSE, main="Distribution of Differences", xlab="phat1 - phat2")
+curve(dnorm(x, mean=mean(phatdiffs), sd=sd(phatdiffs)), add=TRUE, col="blue", lwd=2)
 
-iscamaddnorm(phatdiffs)
-qqnorm(phatdiffs, datax=T)
+# Normal quantile plot
+qqnorm(phatdiffs, datax=TRUE, main="Normal Q-Q Plot")
+qqline(phatdiffs, datax=TRUE, col="red")
 ]]>
           </input>
         </sage>
       </hint>
       <hint>
         <title>JMP Instructions</title>
-        <p>See <url href="https://www.rossmanchance.com/iscam3/data/IndependentBinomialsJMP.html">IndependentBinomialsJMP.html</url> for JMP instructions to simulate independent binomial samples.</p>
+        <p>Generate a random sample for 1994:</p>
+        <p><ul>
+          <li><p>In an empty Data window, select Cols > New Column. Name the column count1994, and specify 1 row. Create a formula and select Random > Random Binomial. Specify n = 2928 and p = .173. Press OK</p></li>
+        </ul></p>
+        <p>Generate 1000 random samples from each year, calculate the proportions, find the differences:</p>
+        <p><ul>
+          <li><p>Create a new column but specify 1000 as the number of rows and repeat the above commands. (After creating the first column, you can double click on a second column to activate it, and then right click to open the formula editor.)</p></li>
+          <li><p>Then create a new column/formula where you compute the difference in the proportions: count1994/2928 – count2006/1771. Call this column diff.</p></li>
+        </ul></p>
+        <p>Display the generated distributions:</p>
+        <p><ul>
+          <li><p>Choose Analyze > Distribution and specify the differences column.</p></li>
+          <li><p>Create a new column with a "conditional if" formula for diff <m>\leq</m> -.024 ("true" or "false"). Then use Analyze > Distribution to tally this column.</p></li>
+        </ul></p>
+        <p>Compare to a normal distribution:</p>
+        <p><ul>
+          <li><p>Use the diff hot spot to select Continuous Distribution > Normal and to select Normal Quantile Plot.</p></li>
+        </ul></p>
       </hint>
     </paragraphs>
 </section>
