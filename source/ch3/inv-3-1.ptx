@@ -262,7 +262,8 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <response/>
     </exercise>
 
-    <p>We will begin our simulation analysis by assuming the population proportion is actually this value (<m>\pi = (480 + 333)/(2928 + 1771) = 0.173</m>). We simulate the drawing of two different random samples from this population, one to represent the 1994 study and the other for the 2006 study. Then we examine the distribution of the difference in the conditional proportions with some hearing loss between these two years. Finally, we repeat this random sampling process for many trials. [Note: We can assume <m>\pi = 0.173</m> without loss of generality, but you might want to verify this with other values for <m>\pi</m> as well.]</p>
+    <p>We will begin our simulation analysis by assuming the population proportion is actually 
+    this value (<m>\pi = (480 + 333)/(2928 + 1771) = 0.173</m>). We simulate the drawing of two different random samples from this population, one to represent the 1994 study and the other for the 2006 study. Then we examine the distribution of the difference in the conditional proportions with some hearing loss between these two years. Finally, we repeat this random sampling process for many trials. [Note: We can assume <m>\pi = 0.173</m> without loss of generality, but you might want to verify this with other values for <m>\pi</m> as well.]</p>
      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url> to randomly sample one "could have been" difference in conditional proportions <em>assuming the null hypothesis is true</em>.</p>
         <p><ul>
           <li><p>Specify .173 as the process probability for both populations.</p></li>
@@ -712,9 +713,10 @@ head(phatdiffs)  # Show first few differences
           <input>
 <![CDATA[
 par(mfrow=c(3,1))  # Creates 3 rows in graph window
-invisible(hist(phat94))  # Suppress text output
-invisible(hist(phat06))
-invisible(hist(phatdiffs, labels=T))  # In RStudio, can zoom the graph window
+hist(phat94, main="Distribution of phat94", xlab="phat94")
+hist(phat06, main="Distribution of phat06", xlab="phat06")
+hist(phatdiffs, labels=T, main="Distribution of Differences", xlab="phat94 - phat06")
+invisible()  # Suppress any remaining output
 ]]>
           </input>
         </sage>
@@ -734,13 +736,11 @@ cat("SD phatdiffs:", sd(phatdiffs), "\n")
         <sage language="r">
           <input>
 <![CDATA[
-# Histogram with normal curve overlay
-hist(phatdiffs, freq=FALSE, main="Distribution of Differences", xlab="phat1 - phat2")
-curve(dnorm(x, mean=mean(phatdiffs), sd=sd(phatdiffs)), add=TRUE, col="blue", lwd=2)
+# Load ISCAM functions from GitHub
+source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R");
 
-# Normal quantile plot
-qqnorm(phatdiffs, datax=TRUE, main="Normal Q-Q Plot")
-qqline(phatdiffs, datax=TRUE, col="red")
+# Histogram with normal curve overlay
+iscamaddnorm(phatdiffs, main="Distribution of Differences", xlab="phat1 - phat2")
 ]]>
           </input>
         </sage>
@@ -749,7 +749,8 @@ qqline(phatdiffs, datax=TRUE, col="red")
         <title>JMP Instructions</title>
         <p>Generate a random sample for 1994:</p>
         <p><ul>
-          <li><p>In an empty Data window, select Cols > New Column. Name the column count1994, and specify 1 row. Create a formula and select Random > Random Binomial. Specify n = 2928 and p = .173. Press OK</p></li>
+          <li><p>In an empty Data window, select <term index="no">Cols > New Column<term>. 
+          Name the column count1994, and specify 1 row. Create a formula and select <term index="no">Random > Random Binomial</term>. Specify <em>n</em> = 2928 and <em>p</em> = 0.173. Press <term index="no">OK</term></p></li>
         </ul></p>
         <p>Generate 1000 random samples from each year, calculate the proportions, find the differences:</p>
         <p><ul>
@@ -758,12 +759,12 @@ qqline(phatdiffs, datax=TRUE, col="red")
         </ul></p>
         <p>Display the generated distributions:</p>
         <p><ul>
-          <li><p>Choose Analyze > Distribution and specify the differences column.</p></li>
-          <li><p>Create a new column with a "conditional if" formula for diff <m>\leq</m> -.024 ("true" or "false"). Then use Analyze > Distribution to tally this column.</p></li>
+          <li><p>Choose <term index="no">Analyze > Distribution</term> and specify the differences column.</p></li>
+          <li><p>Create a new column with a "conditional if" formula for diff <m>\leq</m> -0.024 ("true" or "false"). Then use <term index="no">Analyze > Distribution</term> to tally this column.</p></li>
         </ul></p>
         <p>Compare to a normal distribution:</p>
         <p><ul>
-          <li><p>Use the diff hot spot to select Continuous Distribution > Normal and to select Normal Quantile Plot.</p></li>
+          <li><p>Use the diff hot spot to select <term index="no">Continuous Distribution > Normal</term> and to select <term index="no">Normal Quantile Plot</term>.</p></li>
         </ul></p>
       </hint>
     </paragraphs>

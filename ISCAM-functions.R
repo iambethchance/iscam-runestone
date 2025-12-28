@@ -1372,3 +1372,39 @@ iscamhyperprob <- function(k, total, succ, n, lower.tail = TRUE) {
   title(newtitle)
   return(this.prob)
 }
+
+# ==============================================================================
+# ISCAMADDNORM - Add normal curve to histogram
+# ==============================================================================
+
+.internal_add_density <- function(x, fun1, label1, min_val, max_val, bins = NULL, 
+                                   xlab = "x", main = "Histogram with curve") {
+  if (is.null(bins)) {
+    bins <- "Sturges"
+  }
+  
+  hist(x, freq = FALSE, main = main, xlab = xlab, breaks = bins)
+  curve(fun1(x), from = min_val, to = max_val, add = TRUE, col = "blue", lwd = 2)
+  legend("topright", legend = label1, col = "blue", lwd = 2)
+}
+
+iscamaddnorm <- function(
+  x,
+  main = "Histogram with normal curve",
+  xlab = deparse(substitute(x)),
+  bins = NULL
+) {
+  mu <- mean(x, na.rm = TRUE)
+  sdx <- sd(x, na.rm = TRUE)
+
+  .internal_add_density(
+    x,
+    fun1 = function(z) dnorm(z, mu, sdx),
+    label1 = "normal",
+    min_val = mu - 3 * sdx,
+    max_val = mu + 3 * sdx,
+    bins = bins,
+    xlab = xlab,
+    main = main
+  )
+}
