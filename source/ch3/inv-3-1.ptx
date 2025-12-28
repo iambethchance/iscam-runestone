@@ -171,11 +171,11 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
         <title>JMP Instructions</title>
         <p>You can specify the counts from the two-way table, but you have to do so in "column format" (each row is a combination of the two variables and the counts are all in one column)</p>
         <p><ul>
-          <li><p>Select Analyze > Fit Y by X.</p></li>
-          <li><p>Click Hearing Loss then click the Y, Response button (or drag).</p></li>
-          <li><p>Click Year then click the X, Factor button (or drag). (With raw data, you would be done here.)</p></li>
-          <li><p>Finally click Count then the Freq button. Click OK.</p></li>
-          <li><p>Right-click on one of the bars and select Cell Labelling > Show Percents.</p></li>
+          <li><p>Select <term index="no">Analyze > Fit Y by X</term> .</p></li>
+          <li><p>Click Hearing Loss then click the <term index="no">Y, Response</term> button (or drag).</p></li>
+          <li><p>Click Year then click the <term index="no">X, Factor</term> button (or drag). (With raw data, you would be done here.)</p></li>
+          <li><p>Finally click <term index="no">Count</term> then the <term index="no">Freq</term> button. Click <term index="no">OK</term>.</p></li>
+          <li><p>Right-click on one of the bars and select <term index="no">Cell Labelling > Show Percents</term>.</p></li>
         </ul></p>
         <p>JMP creates a "Mosaic Plot" (the column widths also reflect the relative sample sizes). An extended two-way table is shown below the Mosaic Plot although the rows and columns are reversed. Click the red Contingency Table arrow and uncheck Col% and Total% to see a less cluttered table.</p>
       </hint>
@@ -248,7 +248,8 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
 
     <exercise xml:id="inv3-1-j">
       <title>Pooled Estimate</title>
-      <statement><p>So under the null hypothesis we really only have one value of <m>\pi</m> to estimate – the common population proportion with hearing loss for these two years. What is your best estimate for <m>\pi</m> from the sample data?</p></statement>
+      <statement><p>So under the null hypothesis we really only have one value of <m>\pi</m> to estimate – the common population proportion with hearing loss for these two years. What is your best estimate for <m>\pi</m> from the sample data?</p>
+    <var width = "10"/></statement>
       <hint>
         <p>Think about combining the two years together.</p>
       </hint>
@@ -405,7 +406,8 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     </assemblage>
 
     <p>However, to calculate these values we would need to know <m>\pi_1</m>, <m>\pi_2</m>, or <m>\pi</m>. So again we estimate the standard deviation of our statistic using the sample data.</p>
-
+</paragraphs>
+<pargraphs>
    <title>Case 1</title> 
     <p>When testing whether the null hypothesis is true, we are assuming the samples come from the same population, so we "pool" the two samples together to estimate the common population proportion of successes. That is, we estimate <m>\pi</m> by looking at the ratio of the total number of successes to the total sample size:</p>
     <p><m>\hat{p} = \frac{X_1+X_2}{n_1+n_2} = \frac{n_1\hat{p}_1+n_2\hat{p}_2}{n_1+n_2} = \frac{\text{total number of successes}}{\text{total sample size}}</m></p>
@@ -643,7 +645,7 @@ iscamtwopropztest(observed1=480, n1=2928, observed2=333, n2=1771,
         <sidebyside widths="50% 45%" valign="top">
           <stack>
             <p><ul>
-              <li><p><em>With raw data or after specifying the two-way table in column format</em>, select Analyze > Fit Y by X and specify the categorical response variable (Y, Response) and the categorical explanatory variable (X, Factor)</p></li>
+              <li><p><em>With raw data or after specifying the two-way table in column format</em>, select <term index="no">Analyze > Fit Y by X</term> and specify the categorical response variable (Y, Response) and the categorical explanatory variable (X, Factor)</p></li>
               <li><p><ul><li>Specify the counts if using a two-way table (and "year" is seen as a categorical variable)</li></ul></p></li>
               <li><p>Press OK.</p></li>
             </ul></p>
@@ -689,6 +691,8 @@ iscamtwopropztest(observed1=480, n1=2928, observed2=333, n2=1771,
         <title>Comparing Two Population Proportions applet</title>
         <p><url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1" visual="rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url></p>
       </aside>
+
+      <interactive iframe="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1" width="160%" aspect="3:2"/>
       
       <hint>
         <title>R Instructions</title>
