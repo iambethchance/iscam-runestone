@@ -92,6 +92,9 @@
     <statement>
       <p>What proportion of students in the sample reported a concussion (rounded to 3 decimal places)? <var width="15"/></p>
       <p>Is this sample proportion larger than 0.15? <var width="30"/></p>
+    <hint>
+      <p>Divide the number who reported a concussion by the total number of respondents. Then compare to 0.15.</p>
+    </hint>
     </statement>
     <setup>
       <var>
@@ -107,9 +110,6 @@
         </condition>
       </var>
     </setup>
-    <hint>
-      <p>Divide the number who reported a concussion by the total number of respondents. Then compare to 0.15.</p>
-    </hint>
     <solution>
       <p><m>12/33 \approx 0.364</m></p>
       <p>Yes, 0.364 is clearly larger than 0.15.</p>
@@ -133,10 +133,10 @@
     <title>Calculate probability for one athlete</title>
     <statement>
       <p>Suppose 15.5% of all 110 male football/soccer players at this school suffered a concussion. If we randomly select one athlete, what is the probability he had a concussion?</p>
-      <p><var width="30"/></p>
     <hint>
       <p>How many athletes out of 110 would have had a concussion?</p>
     </hint>
+      <p><var width="30"/></p>
     </statement>
     <solution>
       <p>Probability he had a concussion <m>\approx 17/110 = 0.155</m></p>
@@ -258,6 +258,9 @@ iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)
     <title>Report p-value</title>
     <statement>
       <p>Report the p-value (4 decimal places).</p>
+    <hint>
+      <p>Use the hypergeometric distribution with <m>N = 110</m>, <m>M = 17</m>, <m>n = 33</m>. Find <m>P(X \geq 12)</m>.</p>
+    </hint>
       <p><var width="15"/></p>
     </statement>
     <setup>
@@ -274,9 +277,6 @@ iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)
         </condition>
       </var>
     </setup>
-    <hint>
-      <p>Use the hypergeometric distribution with <m>N = 110</m>, <m>M = 17</m>, <m>n = 33</m>. Find <m>P(X \geq 12)</m>.</p>
-    </hint>
     <solution>
       <p>For <m>X</m> hypergeometric with <m>N = 110</m>, <m>M = 17</m>, <m>n = 33</m>, <m>P(X \geq 12) = 0.0002</m></p>
     </solution>
