@@ -24,34 +24,65 @@
     <p><url href="https://www.iscambook.info" visual="iscambook.info">ISCAM Data Files and Applets</url></p>
   </aside>
 
-  <ol label="(a)">
-    <li><p>Carry out a test of significance to determine whether the difference in these sample proportions is convincing evidence of a difference in the population proportions. What conclusion does the test allow you to draw about the population proportions who are unbanked?</p></li>
+  <exercise xml:id="example-3-2-a">
+    <title>Test of Significance</title>
+    <statement>
+      <p>Carry out a test of significance to determine whether the difference in these sample proportions is convincing evidence of a difference in the population proportions. What conclusion does the test allow you to draw about the population proportions who are unbanked?</p>
+    </statement>
+    <solution>
+      <p>The response variable, whether a household is considered unbanked, is categorical and binary. Suppose we define "success" as "unbanked." Then we can let <m>\pi_{white}</m> - <m>\pi_{Black}</m> represent the difference in the population proportions that would be classified as unbanked.</p>
 
-    <li><p>Similarly, we can compare the Hispanic households (the householder identifies as Hispanic or Latino, regardless of race) to the Black households in 2021.</p>
+      <p><m>H_0: \pi_{white}</m> - <m>\pi_{Black} = 0</m> (there is no difference in the population proportions)</p>
+      <p><m> H_a: \pi_{white}</m> - <m>\pi_{Black} \neq 0</m> (there is a difference)</p>
 
-    <table>
-      <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
-        <col halign="left"/>
-        <row header="yes">
-          <cell></cell>
-          <cell><m>n</m></cell>
-          <cell>proportion unbanked</cell>
-        </row>
-        <row>
-          <cell>Black</cell>
-          <cell>4,758</cell>
-          <cell>0.072</cell>
-        </row>
-        <row>
-          <cell>Hispanic</cell>
-          <cell>4,953</cell>
-          <cell>0.060</cell>
-        </row>
-      </tabular>
-    </table>
+      <p>Note: The research question was phrased in terms of "whether there is a difference" so we will use a two-sided test.</p>
 
-    <p>How do you think the p-value for comparing these two proportions will compare to what you found in (a)? Justify your reasoning.</p></li>
-  </ol>
+      <p>The FDIC, like other government surveys, aims to gather a representative sample. Strategies such as weighting and combining results across surveys can also be utilized. In this case, we will treat the White and Black households as independent samples from their respective populations.</p>
+
+      <p>The sample sizes are large, so the normal distribution would be a reasonable model for the sampling distribution of the difference in sample proportions. Using this normal distribution model and assuming the null hypothesis is true, we would expect the distribution of the difference in sample proportions to be centered at zero, and our estimate of the standard deviation of this distribution is</p>
+
+      <p><m>\sqrt{0.0217(1-0.0217)(1/31653+1/4758)} \approx 0.0023</m></p>
+
+      <p>where 0.0217 = (447+342)/(31653 + 4758), the pooled estimate of the proportion of successes.</p>
+
+      <p>With this standard error, the observed difference in the sample proportions (0.0141 - 0.0719 = -0.058) is more than 25 standard errors from the hypothesized difference of zero. The probability of observing a standardized statistic at least this extreme (in either direction) by independent random sampling alone is essentially zero.</p>
+
+      <p>With such a small p-value (e.g., less than 0.01), we reject the null hypothesis. If the population proportions had been equal, this tells us that there is a very small probability of random sampling alone leading to sample proportions at least as far apart as those found in the FDIC survey. Therefore, we have strong evidence that the population proportion who are unbanked is not the same among Black and White households. A 95% confidence interval for the difference in the population proportions is (-0.0652, -0.0503). So we are 95% confident that percentage of White households is about 5 to 6.5 percentage points lower than the percent of Black households in the U.S. This is not a large difference in a practical sense, but we don't believe a difference in sample proportions this large could have arisen by random sampling alone (in particular due to the large sample sizes). Note that the imbalance in the two sample sizes really does not negatively impact our comparison of the two proportions.</p>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="example-3-2-b">
+    <title>Compare Black and Hispanic Households</title>
+    <statement>
+      <p>Similarly, we can compare the Hispanic households (the householder identifies as Hispanic or Latino, regardless of race) to the Black households in 2021.</p>
+
+      <table>
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+          <col halign="left"/>
+          <row header="yes">
+            <cell></cell>
+            <cell><m>n</m></cell>
+            <cell>proportion unbanked</cell>
+          </row>
+          <row>
+            <cell>Black</cell>
+            <cell>4,758</cell>
+            <cell>0.072</cell>
+          </row>
+          <row>
+            <cell>Hispanic</cell>
+            <cell>4,953</cell>
+            <cell>0.060</cell>
+          </row>
+        </tabular>
+      </table>
+
+      <p>How do you think the p-value for comparing these two proportions will compare to what you found in <xref ref="example-3-2-a" text="custom">question (a)</xref>? Justify your reasoning.</p>
+    </statement>
+    <solution>
+      <p>Because the combined sample size is much smaller between these two groups and the two sample proportions are much closer together, both of these factors would indicate a larger p-value. The p-value for the two-sample <em>z</em>-test does increase to 0.0161, but is still statistically significant even though the difference is now only about 1 percentage point.</p>
+    </solution>
+  </exercise>
 
   <p>But these differences could change depending on the income level of the households. Below are the same race/ethnicity groups among those households in the "less than $15,000" income level.</p>
 
@@ -82,94 +113,107 @@
       </tabular>
     </table>
 
-  <ol label="a" start="3">
-    <li><p>Interpret the 0.159 value in context.</p></li>
+  <exercise xml:id="example-3-2-c">
+    <title>Interpret Value</title>
+    <statement>
+      <p>Interpret the 0.159 value in context.</p>
+    </statement>
+    <solution>
+      <p>For households that have a household income below $15,000 and a Black householder, about 15.9% of such households in this sample were unbanked. This is a much higher rate than we saw overall.</p>
+    </solution>
+  </exercise>
 
-    <li><p>How do you think the p-value for comparing these White and Black households will compare to what you found in (a)? What about comparing the Black and Hispanic households? Justify your reasoning.</p>
+  <exercise xml:id="example-3-2-d">
+    <title>Compare Low Income Groups</title>
+    <statement>
+      <p>How do you think the p-value for comparing these White and Black households will compare to what you found in <xref ref="example-3-2-a" text="custom">question (a)</xref>? What about comparing the Black and Hispanic households? Justify your reasoning.</p>
 
-    <p>What about a higher income level?</p>
+      <p>What about a higher income level?</p>
 
-    <table>
-      <title>$50,000-$75,000 Income Level</title>
-      <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
-        <col halign="left"/>
-      <row header="yes">
-        <cell></cell>
-        <cell><m>n</m></cell>
-        <cell>proportion unbanked</cell>
-      </row>
-      <row>
-        <cell>White</cell>
-        <cell>5,920</cell>
-        <cell>0.0060</cell>
-      </row>
-      <row>
-        <cell>Black</cell>
-        <cell>819</cell>
-        <cell>0.0195</cell>
-      </row>
-      <row>
-        <cell>Hispanic</cell>
-        <cell>909</cell>
-        <cell>0.0319</cell>
-      </row>
-    </tabular>
-  </table></li>
+      <table>
+        <title>$50,000-$75,000 Income Level</title>
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+          <col halign="left"/>
+        <row header="yes">
+          <cell></cell>
+          <cell><m>n</m></cell>
+          <cell>proportion unbanked</cell>
+        </row>
+        <row>
+          <cell>White</cell>
+          <cell>5,920</cell>
+          <cell>0.0060</cell>
+        </row>
+        <row>
+          <cell>Black</cell>
+          <cell>819</cell>
+          <cell>0.0195</cell>
+        </row>
+        <row>
+          <cell>Hispanic</cell>
+          <cell>909</cell>
+          <cell>0.0319</cell>
+        </row>
+      </tabular>
+    </table>
+    </statement>
+    <solution>
+      <p>The difference between these two sample proportions is a bit larger (about 11 percentage points), but the sample sizes are also much smaller. The smaller sample sizes will increase the p-value. The <em>z</em>-value is indeed lower (<m>z</m> = 8.90), but still highly significant.</p>
+    </solution>
+  </exercise>
 
-    <li><p>How did the overall proportion that are unbanked change with the higher income level for the household? Is this what you expected? How will this impact the p-value?</p></li>
+  <exercise xml:id="example-3-2-e">
+    <title>Impact of Higher Income</title>
+    <statement>
+      <p>How did the overall proportion that are unbanked change with the higher income level for the household? Is this what you expected? How will this impact the p-value?</p>
+    </statement>
+    <solution>
+      <p>In the higher income range, the proportion unbanked is much smaller. If most of the respondents are in this higher range, this pulls down the overall percentage. The p-value is not necessarily impacted much by the lower proportions, the key is the difference in proportions. Even though this is likely smaller when comparing smaller numbers, the standard error will also decrease as the overall proportion is closer to 0 than 0.50.</p>
+    </solution>
+  </exercise>
 
-    <li><p>Among White, Hispanic, and Black households, does the difference in the proportion that are unbanked persist across income levels?</p></li>
+  <exercise xml:id="example-3-2-f">
+    <title>Differences Across Income Levels</title>
+    <statement>
+      <p>Among White, Hispanic, and Black households, does the difference in the proportion that are unbanked persist across income levels?</p>
+    </statement>
+    <solution>
+      <p>In the two income groups we examined, we do see a consistently higher rate of unbanked households among Black and Hispanic households compared to White households. We also notice that the unbanked rate is similar (and even changes direction) between the Black and Hispanic households between income categories.</p>
+    </solution>
+  </exercise>
 
-    <li><p>The difference between the Black and Hispanic households in the $50,000-$75,000 group is less than 2 percentage points, which seems rather small. Suggest another way to compare these two values.</p></li>
+  <exercise xml:id="example-3-2-g">
+    <title>Alternative Comparison</title>
+    <statement>
+      <p>The difference between the Black and Hispanic households in the $50,000-$75,000 group is less than 2 percentage points, which seems rather small. Suggest another way to compare these two values.</p>
+    </statement>
+    <solution>
+      <p>This is where a relative risk calculation might be more meaningful as the Hispanic proportion is 1.6 times larger than the Black proportion.</p>
+    </solution>
+  </exercise>
 
-    <li><p>One issue that arises with questions about income is that many households don't want to disclose this information on a survey. In particular, 33,912 of the respondents in this survey did not provide this information. How does this impact our comparisons in (d) and (e)? How does this impact the generalizability of the results of this study? Explain your reasoning.</p></li>
+  <exercise xml:id="example-3-2-h">
+    <title>Impact of Missing Data</title>
+    <statement>
+      <p>One issue that arises with questions about income is that many households don't want to disclose this information on a survey. In particular, 33,912 of the respondents in this survey did not provide this information. How does this impact our comparisons in <xref ref="example-3-2-d" text="custom">question (d)</xref> and <xref ref="example-3-2-e" text="custom">question (e)</xref>? How does this impact the generalizability of the results of this study? Explain your reasoning.</p>
+    </statement>
+    <solution>
+      <p>The missing values do decrease the sample sizes quite a bit, which we have seen directly impacts the size of the p-value. But perhaps even more problematic, we don't know whether those who don't answer the income question are systematically different on any of the variables, like financial transactions, than those who do answer the question. This can cause the sample proportions to not accurately reflect the population proportions.</p>
+    </solution>
+  </exercise>
 
-    <li><p>One method to deal with missing observations is to assume they are "missing at random" and to use "data imputation" to fill in the missing values. For example, a value can be inferred using other information provided on the survey (e.g., education, job status) or using information from similar households in the dataset (see <url href="https://www.fdic.gov/analysis/household-survey/2021technotes.pdf" visual="fdic.gov">CPS Technical Paper 77</url>). Provide one reason for <em>and</em> one reason against data imputation in this context.</p></li>
-  </ol>
+  <exercise xml:id="example-3-2-i">
+    <title>Data Imputation</title>
+    <statement>
+      <p>One method to deal with missing observations is to assume they are "missing at random" and to use "data imputation" to fill in the missing values. For example, a value can be inferred using other information provided on the survey (e.g., education, job status) or using information from similar households in the dataset (see <url href="https://www.fdic.gov/analysis/household-survey/2021technotes.pdf" visual="fdic.gov">CPS Technical Paper 77</url>). Provide one reason for <em>and</em> one reason against data imputation in this context.</p>
+    </statement>
+    <solution>
+      <p>A key advantage of imputation is you do not have to lose a large proportion of your sample. However, it is difficult to check the assumptions behind imputation and whether you are mimicking data you have already collected and falsely making the sample appear more homogenous and less variable.</p>
+    </solution>
+  </exercise>
 
   <conclusion>
-    <answer>
-      <title>Solutions:</title>
-
-      <ol label="(a)">
-        <li><p>The response variable, whether a household is considered unbanked, is categorical and binary. Suppose we define "success" as "unbanked." Then we can let <m>\pi_{white}</m> - <m>\pi_{Black}</m> represent the difference in the population proportions that would be classified as unbanked.</p>
-
-        <p><m>H_0: \pi_{white}</m> - <m>\pi_{Black} = 0</m> (there is no difference in the population proportions)</p>
-        <p><m> H_a: \pi_{white}</m> - <m>\pi_{Black} \neq 0</m> (there is a difference)</p>
-
-        <p>Note: The research question was phrased in terms of "whether there is a difference" so we will use a two-sided test.</p>
-
-        <p>The FDIC, like other government surveys, aims to gather a representative sample. Strategies such as weighting and combining results across surveys can also be utilized. In this case, we will treat the White and Black households as independent samples from their respective populations.</p>
-
-        <p>The sample sizes are large, so the normal distribution would be a reasonable model for the sampling distribution of the difference in sample proportions. Using this normal distribution model and assuming the null hypothesis is true, we would expect the distribution of the difference in sample proportions to be centered at zero, and our estimate of the standard deviation of this distribution is</p>
-
-        <p><m>\sqrt{0.0217(1-0.0217)(1/31653+1/4758)} \approx 0.0023</m></p>
-
-        <p>where 0.0217 = (447+342)/(31653 + 4758), the pooled estimate of the proportion of successes.</p>
-
-        <p>With this standard error, the observed difference in the sample proportions (0.0141 - 0.0719 = -0.058) is more than 25 standard errors from the hypothesized difference of zero. The probability of observing a standardized statistic at least this extreme (in either direction) by independent random sampling alone is essentially zero.</p>
-
-        <p>With such a small p-value (e.g., less than 0.01), we reject the null hypothesis. If the population proportions had been equal, this tells us that there is a very small probability of random sampling alone leading to sample proportions at least as far apart as those found in the FDIC survey. Therefore, we have strong evidence that the population proportion who are unbanked is not the same among Black and White households. A 95% confidence interval for the difference in the population proportions is (-0.0652, -0.0503). So we are 95% confident that percentage of White households is about 5 to 6.5 percentage points lower than the percent of Black households in the U.S. This is not a large difference in a practical sense, but we don't believe a difference in sample proportions this large could have arisen by random sampling alone (in particular due to the large sample sizes). Note that the imbalance in the two sample sizes really does not negatively impact our comparison of the two proportions.</p></li>
-
-        <li><p>Because the combined sample size is much smaller between these two groups and the two sample proportions are much closer together, both of these factors would indicate a larger p-value. The p-value for the two-sample <em>z</em>-test does increase to 0.0161, but is still statistically significant even though the difference is now only about 1 percentage point.</p></li>
-
-        <li><p>For households that have a household income below $15,000 and a Black householder, about 15.9% of such households in this sample were unbanked. This is a much higher rate than we saw overall.</p></li>
-
-        <li><p>The difference between these two sample proportions is a bit larger (about 11 percentage points), but the sample sizes are also much smaller. The smaller sample sizes will increase the p-value. The <em>z</em>-value is indeed lower (<m>z</m> = 8.90), but still highly significant.</p></li>
-
-        <li><p>In the higher income range, the proportion unbanked is much smaller. If most of the respondents are in this higher range, this pulls down the overall percentage. The p-value is not necessarily impacted much by the lower proportions, the key is the difference in proportions. Even though this is likely smaller when comparing smaller numbers, the standard error will also decrease as the overall proportion is closer to 0 than 0.50.</p></li>
-
-        <li><p>In the two income groups we examined, we do see a consistently higher rate of unbanked households among Black and Hispanic households compared to White households. We also notice that the unbanked rate is similar (and even changes direction) between the Black and Hispanic households between income categories.</p></li>
-
-        <li><p>This is where a relative risk calculation might be more meaningful as the Hispanic proportion is 1.6 times larger than the Black proportion.</p></li>
-
-        <li><p>The missing values do decrease the sample sizes quite a bit, which we have seen directly impacts the size of the p-value. But perhaps even more problematic, we don't know whether those who don't answer the income question are systematically different on any of the variables, like financial transactions, than those who do answer the question. This can cause the sample proportions to not accurately reflect the population proportions.</p></li>
-
-        <li><p>A key advantage of imputation is you do not have to lose a large proportion of your sample. However, it is difficult to check the assumptions behind imputation and whether you are mimicking data you have already collected and falsely making the sample appear more homogenous and less variable.</p></li>
-      </ol>
-    </answer>
+    <p><url href="https://www.youtube.com/watch?v=xBCRT42dlqI&amp;list=PLUeLcsk2Yi6w_jb72OuHSVxqtRGygj8Lq&amp;index=1" visual="youtube.com">Video walkthrough</url></p>
   </conclusion>
-
-  <p><url href="https://www.youtube.com/watch?v=xBCRT42dlqI&amp;list=PLUeLcsk2Yi6w_jb72OuHSVxqtRGygj8Lq&amp;index=1" visual="youtube.com">Video walkthrough</url></p>
 
 </section>
