@@ -17,13 +17,13 @@
         <p>
           <var width="60"/>
         </p>
+        <hint>
+          <p>
+            Check whether you have at least 10 successes and at least 10 failures in your sample.
+          </p>
+        </hint>
       </statement>
       <response/>
-      <hint>
-        <p>
-          Check whether you have at least 10 successes and at least 10 failures in your sample.
-        </p>
-      </hint>
       <solution>
         <p>
           <m>n\pi \geq 10</m> and <m>n(1-\pi) \geq 10</m>. Since we don't have an estimate for <m>\pi</m>, use <m>\hat{p}</m>:
@@ -53,13 +53,13 @@
         <p>
           <var width="60"/>
         </p>
+        <hint>
+          <p>
+            According to the CLT, what are the mean and standard deviation of the distribution of sample proportions?
+          </p>
+        </hint>
       </statement>
       <response/>
-      <hint>
-        <p>
-          According to the CLT, what are the mean and standard deviation of the distribution of sample proportions?
-        </p>
-      </hint>
       <solution>
         <p>
           No, you do not have enough information to sketch the distribution predicted by the CLT. We need <m>\text{SD}(\hat{p}) = \sqrt{\pi(1-\pi)/n}</m>, but we don't know <m>\pi</m>.
@@ -79,13 +79,13 @@
         <p>Calculate this estimate.
           Estimate: <var width="20"/>
         </p>
+        <hint>
+          <p>
+            What value could you substitute for <m>\pi</m> in the formula <m>\sqrt{\pi(1-\pi)/n}</m>?
+          </p>
+        </hint>
       </statement>
       <response/>
-      <hint>
-        <p>
-          What value could you substitute for <m>\pi</m> in the formula <m>\sqrt{\pi(1-\pi)/n}</m>?
-        </p>
-      </hint>
       <solution>
         <p>
           Method: Use <m>\text{SE}(\hat{p}) = \sqrt{\hat{p}(1-\hat{p})/n}</m>
@@ -113,13 +113,13 @@
         <p>
           Largest plausible distance = <var width="20"/>
         </p>
+        <hint>
+          <p>
+            For a normal distribution, approximately 95% of observations fall within how many standard deviations of the mean?
+          </p>
+        </hint>
       </statement>
       <response/>
-      <hint>
-        <p>
-          For a normal distribution, approximately 95% of observations fall within how many standard deviations of the mean?
-        </p>
-      </hint>
       <solution>
         <p>
           Max plausible distance = <m>2 \times 0.043 = 0.086</m> (95% of the time)
@@ -136,13 +136,13 @@
         <p>
           Interval: <var width="40"/>
         </p>
+        <hint>
+          <p>
+            Add and subtract the distance from part (d) to the sample proportion.
+          </p>
+        </hint>
       </statement>
       <response/>
-      <hint>
-        <p>
-          Add and subtract the distance from part (d) to the sample proportion.
-        </p>
-      </hint>
       <solution>
         <p>
           <m>\pi</m> should fall within 2 standard deviations of the observed sample proportion. So <m>\pi</m> is at least <m>0.645 - 2(0.043) = 0.559</m> and at most <m>0.645 + 2(0.043) = 0.731</m>
@@ -256,6 +256,11 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         <p>
           Find the critical value for a 90% confidence interval. Is it larger or smaller than with 95% confidence? Why does this make sense?
         </p>
+      <hint>
+        <p>
+          Use technology to find the critical value for 90% confidence. Think about what happens to the interval width when you require less confidence.
+        </p>
+      </hint>
       </statement>
       <response/>
       <choices randomize="no">
@@ -276,11 +281,6 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         </choice>
       </choices>
       <response/>
-      <hint>
-        <p>
-          Use technology to find the critical value for 90% confidence. Think about what happens to the interval width when you require less confidence.
-        </p>
-      </hint>
       <solution>
         <p>
           <m>z^*(90) = 1.645 &lt; 1.96</m>
@@ -306,13 +306,13 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         <p>
           Based on this formula, what (expression) is midpoint of the confidence interval? What (expression) is the width of the interval?
         </p>
+        <hint>
+          <p>
+            The interval is <m>\hat{p} \pm z^* \sqrt{\hat{p}(1-\hat{p})/n}</m>. What's the center? What's the distance from the lower bound to the upper bound?
+          </p>
+        </hint>
       </statement>
       <response/>
-      <hint>
-        <p>
-          The interval is <m>\hat{p} \pm z^* \sqrt{\hat{p}(1-\hat{p})/n}</m>. What's the center? What's the distance from the lower bound to the upper bound?
-        </p>
-      </hint>
       <solution>
         <p>
           Midpoint: <m>\hat{p}</m>
@@ -329,6 +329,11 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         <p>
           How does increasing the confidence level affect the width of the interval?
         </p>
+        <hint>
+          <p>
+            What happens to <m>z^*</m> when the confidence level increases?
+          </p>
+        </hint>
       </statement>
       <choices randomize="no">
         <choice>
@@ -348,11 +353,6 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         </choice>
       </choices>
       <response/>
-      <hint>
-        <p>
-          What happens to <m>z^*</m> when the confidence level increases?
-        </p>
-      </hint>
       <solution>
         <p>
           Increasing the Confidence Level <m>\Rightarrow</m> increase <m>z^*</m> <m>\Rightarrow</m> wider interval
@@ -366,6 +366,11 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         <p>
           How does increasing the sample size affect the width of the interval?
         </p>
+        <hint>
+          <p>
+            Look at the formula for the margin of error. What happens to <m>\sqrt{\hat{p}(1-\hat{p})/n}</m> as <m>n</m> increases?
+          </p>
+        </hint>
       </statement>
       <choices randomize="no">
         <choice>
@@ -385,11 +390,6 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         </choice>
       </choices>
       <response/>
-      <hint>
-        <p>
-          Look at the formula for the margin of error. What happens to <m>\sqrt{\hat{p}(1-\hat{p})/n}</m> as <m>n</m> increases?
-        </p>
-      </hint>
       <solution>
         <p>
           Increasing <m>n</m> <m>\Rightarrow</m> smaller width (<m>n</m> is in the denominator)
@@ -441,13 +441,13 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         <p>
           Comparison: <var width="60"/>
         </p>
+        <hint>
+          <p>
+            Use the critical value from the table (1.645) or technology to find the 90% interval.
+          </p>
+        </hint>
       </statement>
       <response/>
-      <hint>
-        <p>
-          Use the critical value from the table (1.645) or technology to find the 90% interval.
-        </p>
-      </hint>
       <solution>
         <p>
           If the confidence level is 90%, then use <m>z^* = 1.645</m>
@@ -615,13 +615,13 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
           <p>
             <m>n =</m> <var width="20"/>
           </p>
+          <hint>
+            <p>
+              Set the margin of error equal to 0.03 and solve for <m>n</m>: <m>z^* \sqrt{\pi(1-\pi)/n} = 0.03</m>
+            </p>
+          </hint>
         </statement>
         <response/>
-        <hint>
-          <p>
-            Set the margin of error equal to 0.03 and solve for <m>n</m>: <m>z^* \sqrt{\pi(1-\pi)/n} = 0.03</m>
-          </p>
-        </hint>
         <solution>
           <p>
             <m>z^* \sqrt{\hat{p}(1-\hat{p})/n} = 0.03</m>
@@ -644,13 +644,13 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
           <p>
             <m>n =</m> <var width="20"/>
           </p>
+          <hint>
+            <p>
+              Set the margin of error equal to 0.03 and solve for <m>n</m> using <m>\pi = 0.5</m>: <m>z^* \sqrt{0.5(0.5)/n} = 0.03</m>
+            </p>
+          </hint>
         </statement>
         <response/>
-        <hint>
-          <p>
-            Set the margin of error equal to 0.03 and solve for <m>n</m> using <m>\pi = 0.5</m>: <m>z^* \sqrt{0.5(0.5)/n} = 0.03</m>
-          </p>
-        </hint>
         <solution>
           <p>
             <m>z^* \sqrt{\hat{p}(1-\hat{p})/n} = 0.03</m>
@@ -673,13 +673,13 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
           <p>
             <var width="60"/>
           </p>
+          <hint>
+            <p>
+              Compare the sample sizes from the two approaches. When is <m>\pi(1-\pi)</m> largest?
+            </p>
+          </hint>
         </statement>
         <response/>
-        <hint>
-          <p>
-            Compare the sample sizes from the two approaches. When is <m>\pi(1-\pi)</m> largest?
-          </p>
-        </hint>
         <solution>
           <p>
             The value of <m>n</m> increases for probabilities closer to 0.50. If the process probability is not 0.50, the recommended <m>n</m> value will result in a smaller margin of error than requested.

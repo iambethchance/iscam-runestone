@@ -28,13 +28,13 @@
         <p>
           Success: <var width="40"/>
         </p>
-      </statement>
-      <response/>
       <hint>
         <p>
           Think about what is being randomly determined in this study - the choice each child makes when presented with toys and candy.
         </p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>
           Sample/random process: The 284 children who were trick-or-treating and presented with a choice between toys and candy.
@@ -54,15 +54,15 @@
         <p>
           Define (in words) the parameter of interest in this study.
         </p>
-        <var width = "40"/>
-      </statement>
-      <response>
-      </response>
       <hint>
         <p>
           What long-run proportion are we interested in learning about?
         </p>
       </hint>
+        <var width = "40"/>
+      </statement>
+      <response>
+      </response>
       <solution>
         <p>
           The parameter of interest is the probability (or long-run proportion) that a child, when presented with a choice between toys and candy while trick-or-treating, will choose the toy.
@@ -82,6 +82,11 @@
         <p>
           <m>H_a: </m> <var width="5"/> <var width="5"/> <var width="5"/>
         </p>
+      <hint>
+        <p>
+          If there is no preference, what would you expect the probability to be? What would indicate a preference?
+        </p>
+      </hint>
       </statement>
       <setup>
         <var>
@@ -157,11 +162,6 @@
           </condition>
         </var>
       </setup>
-      <hint>
-        <p>
-          If there is no preference, what would you expect the probability to be? What would indicate a preference?
-        </p>
-      </hint>
       <solution>
         <p>
           <m>H_0: \pi = 0.5</m>. The probability that a child chooses a toy is 0.5 (no preference).
@@ -178,13 +178,13 @@
         <p>
           What does "theory" predict for the mean and standard deviation of the distribution of "number of successes" under the null hypothesis if we model this experiment as a binomial process? Do you expect this distribution to be symmetric and "filled in" or skewed and "gappy"?
         </p>
-      </statement>
-      <response/>
       <hint>
         <p>
           For a binomial distribution, the mean is <m>n\pi</m> and the standard deviation is <m>\sqrt{n\pi(1-\pi)}</m>.
         </p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>
           Under the null hypothesis with <m>n = 284</m> and <m>\pi = 0.5</m>:
@@ -221,13 +221,13 @@
         <p>
           Why does the value of the process probability (<m>\pi</m>) matter when we check this condition?
         </p>
-      </statement>
-      <response/>
       <hint>
         <p>
           Think about what happens when <m>\pi</m> is very close to 0 or 1.
         </p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>
           When <m>\pi</m> is close to 0 or 1, the binomial distribution becomes more skewed. We need both <m>n\pi</m> and <m>n(1-\pi)</m> to be large enough to ensure the distribution is symmetric enough to be well-approximated by a normal distribution. If <m>\pi</m> is very small, even with a large <m>n</m>, we might not have enough expected successes for the normal approximation to work well.
@@ -241,13 +241,13 @@
         <p>
           Does the Central Limit Theorem appear applicable for the Halloween study?
         </p>
-      </statement>
-      <response/>
       <hint>
         <p>
           Check both conditions: <m>n\pi \geq 10</m> and <m>n(1-\pi) \geq 10</m>.
         </p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>
           Yes, the Central Limit Theorem is applicable.
@@ -308,6 +308,11 @@
         <p>
           Normal approximation: <var width="10"/>
         </p>
+      <hint>
+        <p>
+          Use the One Proportion Inference applet with <m>n = 284</m> and <m>\pi = 0.5</m>.
+        </p>
+      </hint>
       </statement>
       <setup>
         <var>
@@ -348,11 +353,6 @@
         </var>
       </setup>
       <response/>
-      <hint>
-        <p>
-          Use the One Proportion Inference applet with <m>n = 284</m> and <m>\pi = 0.5</m>.
-        </p>
-      </hint>
       <solution>
         <p>
           With 135 children choosing the toy (fewer than expected under <m>H_0</m>):
@@ -382,13 +382,13 @@
         <p>
           What changes about the null distribution? What is the observed value of the statistic?
         </p>
-      </statement>
-      <response/>
       <hint>
         <p>
           Convert the count to a proportion: <m>135/284</m>.
         </p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>
           When switching to proportions, the null distribution is centered at <m>\pi = 0.5</m> instead of 142, and the standard deviation becomes <m>\sqrt{\pi(1-\pi)/n} = \sqrt{0.5(0.5)/284} \approx 0.0297</m> instead of 8.43.
@@ -422,6 +422,11 @@
         <p>
           Interpretation: <var width="50"/>
         </p>
+      <hint>
+        <p>
+          Use the formula: <m>z = \frac{\hat{p} - \pi_0}{\sqrt{\pi_0(1-\pi_0)/n}}</m>
+        </p>
+      </hint>
       </statement>
       <setup>
         <var>
@@ -435,11 +440,6 @@
         </var>
       </setup>
       <response/>
-      <hint>
-        <p>
-          Use the formula: <m>z = \frac{\hat{p} - \pi_0}{\sqrt{\pi_0(1-\pi_0)/n}}</m>
-        </p>
-      </hint>
       <solution>
         <p>
           <m>z = \frac{0.475 - 0.5}{\sqrt{0.5(0.5)/284}} = \frac{-0.025}{0.0297} \approx -0.84</m>
@@ -468,13 +468,13 @@
           What does the "zero" subscript tell you?
         </p>
         <var width = "50"/>
-      </statement>
-      <response/>
       <hint>
         <p>
           The subscript indicates this value is calculated under a specific assumption.
         </p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>
           The "zero" subscript indicates that this is the value calculated under the null hypothesis (using <m>\pi_0</m>, the hypothesized value of the parameter).
@@ -500,13 +500,13 @@
         <p>
           What do you conclude about the plausibility of the null hypothesis based on this standardized statistic?
         </p>
-      </statement>
-      <response/>
       <hint>
         <p>
           Is <m>|z| > 2</m>?
         </p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>
           Since <m>|z| = 0.84 &lt; 2</m>, the observed result is within 2 standard deviations of the expected value under the null hypothesis. This suggests the null hypothesis is plausible - we do not have strong evidence against it. The p-value should be greater than 0.05.
@@ -523,6 +523,11 @@
         <p>
           p-value = <var width="10"/>
         </p>
+      <hint>
+        <p>
+          For a two-sided test, find <m>2P(Z &lt; -0.84)</m> or <m>2P(Z > 0.84)</m>.
+        </p>
+      </hint>
       </statement>
       <setup>
         <var>
@@ -535,11 +540,6 @@
           </condition>
         </var>
       </setup>
-      <hint>
-        <p>
-          For a two-sided test, find <m>2P(Z &lt; -0.84)</m> or <m>2P(Z > 0.84)</m>.
-        </p>
-      </hint>
       <solution>
         <p>
           Using technology (Normal Probability Calculator or <em>z</em>-test function), the p-value is approximately 0.40 (or 0.401). This confirms our conclusion that the result is not statistically significant.
@@ -695,13 +695,13 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
         <p>
           Provide a one sentence interpretation of this p-value in context.
         </p>
-      </statement>
-      <response/>
       <hint>
         <p>
           What does the p-value tell you about how unusual the observed result would be if the null hypothesis were true?
         </p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>
           If children were equally likely to choose toys or candy, we would observe a result as extreme as or more extreme than 135 out of 284 children choosing toys in about 40% of samples.
@@ -715,13 +715,13 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
         <p>
           Do you think the researchers are pleased by the lack of significance in this test? Explain, in the context of the study, why such a result might be good news for them.
         </p>
-      </statement>
-      <response/>
       <hint>
         <p>
           Consider what the researchers were hoping to demonstrate about offering toys as an alternative to candy.
         </p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>
           Yes, the researchers should be pleased! The lack of significance means there's no strong evidence that children prefer candy over toys. This is good news because it suggests that offering toys as an alternative to candy is viable - children are willing to accept toys instead of candy. If there had been strong evidence of a preference for candy, it would suggest that offering toys wouldn't be an effective strategy to reduce candy consumption.
@@ -742,13 +742,13 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
         <p>
           Which p-value from the earlier comparison (exact binomial or normal approximation) is closer to your simulated p-value? Is this expected?
         </p>
-      </statement>
-      <response/>
       <hint>
         <p>
           The exact binomial should match the simulation closely.
         </p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>
           The exact binomial p-value should be closer to the simulated p-value. This is expected because the simulation approximates the true binomial distribution, while the normal approximation is just that - an approximation to the binomial.
@@ -762,13 +762,13 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
         <p>
           In the binomial distribution <m>P(X = 135) = 0.220</m>. What is <m>P(X = 135)</m> with the normal distribution? How do <m>P(X &lt; 135)</m> and <m>P(X \leq 135)</m> compare in each distribution?
         </p>
-      </statement>
-      <response/>
       <hint>
         <p>
           For a continuous distribution, the probability of any exact value is 0.
         </p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>
           With the normal distribution (continuous), <m>P(X = 135) = 0</m> because the probability of any exact value is 0 for a continuous distribution.
@@ -794,13 +794,13 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
         <p>
          What does the applet use for the right-side cut-off? Why? How does the p-value change? Is it now more similar to the binomial p-value?
         </p>
-      </statement>
-      <response/>
       <hint>
         <p>
           By symmetry, what value on the right side corresponds to 135.5 on the left side?
         </p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>
           The applet uses 148.5 for the right-side cut-off. This is because 135.5 is 6.5 below the mean of 142, so by symmetry, we need 6.5 above the mean: <m>142 + 6.5 = 148.5</m>.
