@@ -14,15 +14,15 @@
         <p>
           With a sample size of 124 kissing couples, does the Central Limit Theorem predict the normal probability distribution will be a reasonable model for the distribution of the sample proportion?
         </p>
-        <p>
-          <var width="60"/>
-        </p>
         <hint>
           <p>
             Check whether you have at least 10 successes and at least 10 failures in your sample.
           </p>
         </hint>
-      </statement>
+       <p>
+          <var width="60"/>
+        </p>
+       </statement>
       <response/>
       <solution>
         <p>
@@ -133,14 +133,14 @@
         <p>
           Use the distance from the previous question and the observed sample proportion of <m>\hat{p} = 0.645</m> to determine an interval of plausible values for <m>\pi</m>, the probability that a kissing couple leans to the right.
         </p>
+        <hint>
+          <p>
+            Add and subtract the distance from question 4 to the sample proportion.
+          </p>
+        </hint>
         <p>
           Interval: <var width="40"/>
         </p>
-        <hint>
-          <p>
-            Add and subtract the distance from part (d) to the sample proportion.
-          </p>
-        </hint>
       </statement>
       <response/>
       <solution>
@@ -435,17 +435,17 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         <p>
           Use technology (see Technology Detour below) to find and report the 90% <m>z</m>-confidence interval for the probability that a kissing couple leans to the right. How do the midpoint and width of the 90% confidence interval compare to those of the 95% confidence interval?
         </p>
+        <hint>
+          <p>
+            Use the critical value from the table (1.645) or technology to find the 90% interval.
+          </p>
+        </hint>
         <p>
           90% interval: <var width="40"/>
         </p>
         <p>
           Comparison: <var width="60"/>
         </p>
-        <hint>
-          <p>
-            Use the critical value from the table (1.645) or technology to find the 90% interval.
-          </p>
-        </hint>
       </statement>
       <response/>
       <solution>
@@ -485,11 +485,10 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         <p>
           Calculate the 90% <m>z</m>-confidence interval for the kissing study data (80 out of 124 couples leaned right). Choose one set of instructions below by clicking on a hint.
         </p>
-        <p>
+<!--        <p>
           90% confidence interval: <var width="40"/>
-        </p>
-      </statement>
-      <response/>
+        </p>-->
+<!--      <response/>-->
       <hint>
         <title>R/Sage Instructions</title>
         <p>
@@ -542,6 +541,7 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         </p>
         <p>The applet will display the 90% <m>z</m>-confidence interval.</p>
       </hint>
+      </statement>
       <solution>
         <p>
           90% <m>z</m>-confidence interval: (0.574, 0.716)
@@ -670,14 +670,14 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
           <p>
             How does the sample size required differ based on how you estimate <m>\pi</m> in the calculation? Why is Approach 2 considered a "conservative" approach?
           </p>
-          <p>
-            <var width="60"/>
-          </p>
           <hint>
             <p>
               Compare the sample sizes from the two approaches. When is <m>\pi(1-\pi)</m> largest?
             </p>
           </hint>
+          <p>
+            <var width="60"/>
+          </p>
         </statement>
         <response/>
         <solution>
