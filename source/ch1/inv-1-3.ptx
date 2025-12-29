@@ -27,11 +27,11 @@
     <title>Identify Sample and Variable</title>
     <statement>
       <p>Identify the sample and variable for this random process.</p>
-    </statement>
-    <response/>
     <hint>
       <p>What is the sample size? What was measured about each observation?</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>The random process is the repeated attempts to identify the symbol correctly. The sample size is the 10 trials. Variable = correct/incorrect identification (categorical). The sample size is 10.</p>
     </solution>
@@ -41,11 +41,11 @@
     <title>Binomial Random Process</title>
     <statement>
       <p>Do you consider it reasonable to model your observations as coming from a binomial random process? Explain your reasoning.</p>
-    </statement>
-    <response/>
     <hint>
       <p>Consider the four conditions for a binomial process: two outcomes, independence, fixed number of trials, and constant probability.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>If the target symbols are randomly selected (equally likely), the student uses the same method each time, and the student is not more likely to correctly identify some symbols more than others (e.g., guessing each time) then a binomial process does seem reasonable.</p>
     </solution>
@@ -63,11 +63,11 @@
     <title>Identify the Parameter</title>
     <statement>
       <p>Identify (in words) the parameter of interest for this study.</p>
-    </statement>
-    <response/>
     <hint>
       <p>A parameter describes a long-run probability or proportion for the entire process, not just your sample result.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>The parameter is your probability of correct identification (the long-run probability of correctly identifying the symbol).</p>
     </solution>
@@ -109,11 +109,11 @@
     <statement>
       <p>The null hypothesis is that you aren't clairvoyant and are guessing every time. State this as a null hypothesis using symbols and words.</p>
       <p><em>Tip: Type "pi" for the Greek letter. Format as: H_0: pi = value</em></p>
-    </statement>
-    <response/>
     <hint>
       <p>If guessing randomly among 5 symbols, what is the probability of guessing correctly?</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p><m>H_0: \pi = 0.20</m> (you have a 1 in 5 chance of guessing correctly)</p>
     </solution>
@@ -127,11 +127,11 @@
       <aside>
         <p>Notice that the hypothesized values for <m>\pi</m> in the null and alternative can't <q>overlap;</q> they are competing statements about <m>\pi</m>.</p>
       </aside>
-    </statement>
-    <response/>
     <hint>
       <p>If you are clairvoyant, would your probability of correct identification be higher or lower than random guessing?</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p><m>H_a: \pi > 0.20</m> (you have a higher probability of predicting correctly)</p>
     </solution>
@@ -141,11 +141,11 @@
       <title>Simulation Method</title>
       <statement>
         <p>Assume the null hypothesis is true and let the random variable <m>C</m> denote the number of correct identifications (hits) in 10 attempts. If we were to simulate this random process, could we toss coins? If not, suggest another way we could generate simulated results assuming the null hypothesis to be true. (e.g., what would you want an applet to do?)</p>
-      </statement>
-      <response/>
       <hint>
         <p>Coin tosses give 50/50 probability. Does your null hypothesis assume 50% chance of success?</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>We can model <m>C</m> with the binomial distribution:</p>
         <p><ul>
@@ -162,11 +162,11 @@
       <title>Null Distribution Predictions</title>
       <statement>
         <p>Where do you think your null distribution will be centered? What are the largest and smallest possible values for the number of correct identifications in 10 attempts? What are the largest and smallest values you think you will see in the simulation?</p>
-      </statement>
-      <response/>
       <hint>
         <p>Use the probability from the null hypothesis times the number of attempts to find the expected value.</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>On average, if someone is guessing, we would <q>expect</q> to see <m>\frac{1}{5}(10) = 2</m> correct answers (in the long run). <m>E(C) = 10(0.20) = 2</m> if assuming 5 cards.</p>
       </solution>
@@ -180,11 +180,11 @@
       <title>Describe the Simulation</title>
       <statement>
         <p>Explain the simulation process in your own words.</p>
-      </statement>
-      <response/>
       <hint>
         <p>Set pi to your null hypothesis value and n to the number of attempts you made.</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>Results will vary. The applet should generate 10 spinners (each a 0.20 probability of success = landing in the blue region) and then record the number of successes in those 10 spins.</p>
       </solution>
@@ -201,11 +201,11 @@
         
         <p>Mean = <var width="5" /></p>
         <p>Std Dev = <var width="5" /></p>
-      </statement>
-      <response/>
       <hint>
         <p>Look for the values displayed in the Summary Statistics section of the applet after pressing Reset.</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>After pressing Reset to remove the one simulated trial, you should find Mean = 2.000, SD = 1.265.</p>
       </solution>
@@ -220,6 +220,9 @@
       <title>Verify the Calculations</title>
       <statement>
         <p>Verify these calculations match the applet output and remember that the standard deviation is the square root of the variance.</p>
+      <hint>
+        <p>Use the formulas provided in the previous question with n=10 and pi=0.20.</p>
+      </hint>
       </statement>
       <choices randomize="no">
         <choice correct="yes">
@@ -231,20 +234,17 @@
           <feedback><p>Check your calculations again. <m>E(C) = 10(0.2) = 2.00</m> and <m>SD(C) = \sqrt{10 \times 0.2 \times 0.8} = 1.265</m>.</p></feedback>
         </choice>
       </choices>
-      <hint>
-        <p>Use the formulas provided in the previous question with n=10 and pi=0.20.</p>
-      </hint>
     </exercise>
     
     <exercise xml:id="I1-3-12" label="Result in tail">
       <title>Result in the Tail?</title>
       <statement>
         <p>Was your statistic from <xref ref="I1-3-7" text="custom">question 7</xref> (your number of hits) in the direction specified by the alternative hypothesis? If it was, is it in one of the tails (outer edges) of the null distribution from <xref ref="I1-3-10" text="custom">question 10</xref>?</p>
-      </statement>
-      <response/>
       <hint>
         <p>Compare your number of hits to the mean of the distribution. Is it larger (right tail) or smaller (left tail)?</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>Results will vary, but quite possible your results were below the expected value.</p>
       </solution>
@@ -256,11 +256,11 @@
     <title>Explore p-value Threshold</title>
     <statement>
       <p>Return to the applet and explore how many hits a subject would need in 10 attempts for the p-value to be below 0.05.</p>
-    </statement>
-    <response/>
     <hint>
       <p>Use your mouse to drag the red line.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>A subject would need at least 5 hits in 10 attempts for the p-value to be below 0.05 (specifically, P(X ≥ 5) = 0.0328).</p>
     </solution>
@@ -282,11 +282,11 @@
       <title>Standardize Your Result</title>
       <statement>
         <p>How many standard deviations was your observed result from the expected value for the binomial distribution?</p>
-      </statement>
-      <response/>
       <hint>
         <p>Use the formula: (observed - expected) / standard deviation. Substitute your number of hits for observed, and use the mean and SD from <xref ref="I1-3-10" text="custom">question 10</xref>.</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>The standardized statistic expresses the distance in <q>standard deviations away</q> from the hypothesized value of <m>\pi</m>. A negative value means the distance is below the mean; a positive value means the distance is above the mean.</p>
       </solution>
@@ -301,11 +301,11 @@
         <title>Standardizing 5 Hits</title>
         <statement>
           <p>How many standard deviations from the mean (expected value) would 5 hits be?</p>
-        </statement>
-        <response/>
         <hint>
           <p>Use the same formula as the previous question: (5 - 2) / 1.265. What does this value tell you?</p>
         </hint>
+        </statement>
+        <response/>
         <solution>
           <p>A standardized statistic of 1 means that the sample result is one standard deviation above the mean of 2. Because the SD is 1.265, 1 SD above the mean is at <m>2 + 1.265 = 3.265</m>. Rounding to the nearest whole number, that would correspond to 3 correct identifications. (Or you could solve: <m>(x - 2)/1.265 = 1</m> to find <m>x = 3.265</m>.)</p>
         </solution>
@@ -315,11 +315,11 @@
         <title>Distribution for 25 Attempts</title>
         <statement>
           <p>Suppose you don't know whether or not someone is clairvoyant and you plan to give the person 25 attempts. What are the theoretical expected number and standard deviation for the random variable <m>C</m>, the number of hits when <m>n = 25</m> assuming they are just guessing each time? How do they compare to the values you reported in <xref ref="I1-3-11" text="custom">Question 11</xref>?</p>
-        </statement>
-        <response/>
         <hint>
           <p>Use the binomial formulas with n = 25 and pi = 0.20. Expected value = n × pi, and SD = square root of n × pi × (1 - pi).</p>
         </hint>
+        </statement>
+        <response/>
         <solution>
           <p>Expected value = <m>5</m>, SD = <m>2</m></p>
           <p>Note: You can check these in the applet. Because the value of <m>n</m> has changed, both have increased. The larger the sample size, the more variability in the distribution.</p>
@@ -332,11 +332,11 @@
         <title>Approach 1: p-value Threshold</title>
         <statement>
           <p>What value for <m>c</m> would give you a probability below 0.05 of obtaining that many or more hits? In other words, what is the smallest value of <m>c</m> so <m>P(C \geq c) &lt; 0.05</m>?</p>
-        </statement>
-        <response/>
         <hint>
           <p>Use the applet to find probabilities for different values of c.</p>
         </hint>
+        </statement>
+        <response/>
         <solution>
           <p>We need to find <m>c</m> such that <m>P(C \geq c) &lt; 0.05</m>. Using the applet:
             <ul>
@@ -351,11 +351,11 @@
         <title>Approach 2: Standard Deviations</title>
         <statement>
           <p>What is the smallest value of <m>c</m> that is at least 2 standard deviations from the expected value?</p>
-        </statement>
-        <response/>
         <hint>
           <p>Use the expected value and standard deviation from <xref ref="I1-3-16" text="custom">question 16</xref>.</p>
         </hint>
+        </statement>
+        <response/>
         <solution>
           <p>The observed value would need to be more than <m>5 + 2(2) = 9</m>.</p>
         </solution>
@@ -365,11 +365,11 @@
         <title>Compare the Two Approaches</title>
         <statement>
           <p>How do your answers for these two approaches compare?</p>
-        </statement>
-        <response/>
         <hint>
           <p>Look at the values of c you found in both approaches. Are they the same or very close? What does this suggest about the relationship between p-values and standard deviations?</p>
         </hint>
+        </statement>
+        <response/>
         <solution>
           <p>It is not a coincidence that the value of 9 appears in both and is close to the expected value + 2 SD. It turns out that with a <q>large enough</q> sample size, if a standardized statistic is about 2 SD from the mean, the p-value will be close to 0.05. We will develop this idea much more carefully when we turn to the normal approximation to the binomial.</p>
         </solution>
@@ -379,11 +379,11 @@
         <title>Test with Four Symbols</title>
         <statement>
           <p>Suppose you changed the test to use only 4 symbols. Does this change the expected number or standard deviation for the number of hits when a subject is guessing? How many would someone need to identify correctly to convince you they could perform better than guessing in the long-run?</p>
-        </statement>
-        <response/>
         <hint>
           <p>With 4 symbols, the probability of guessing correctly changes to 1/4 = 0.25. Recalculate the expected value and SD using this new probability, then find how many hits would be 2 SD above the mean.</p>
         </hint>
+        </statement>
+        <response/>
         <solution>
           <p>This would increase the probability of a correct guess to 0.25, and so the probability model would need to change as well. If there are only 4 cards, the probability of a correct guess increases to 0.25. So, with 25 attempts, the expected value would be <m>25(0.25) = 6.25</m> with an SD of <m>\sqrt{25(0.25)(0.75)} = 2.17</m>. So <m>6.25 + 2(2.17) = 10.59 \approx 11</m>. Notice that this <q>cutoff</q> value went up (10 or 11 vs. 9). This is because guessing is more likely to do well so we need more evidence that someone is not guessing. Also, using the applet, <m>P(C \geq 10) = 0.097</m> and <m>P(C \geq 11) = 0.044</m>.</p>
         </solution>
