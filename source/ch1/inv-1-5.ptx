@@ -25,15 +25,15 @@
     <title>Define Process and Variable</title>
     <statement>
       <p>Identify the sample/random process and variable of interest in this study. Which outcome will you consider "success"? Do we have a binomial process?</p>
+   <hint>
+      <p>Consider what is being repeated and what outcome is measured each time.</p>
+    </hint>
       <p>Random process: <var width="50" /></p>
       <p>Variable: <var width="50" /></p>
       <p>Success: <var width="30" /></p>
       <p>Binomial process? <var width="20" /></p>
-    </statement>
+     </statement>
     <response/>
-    <hint>
-      <p>Consider what is being repeated and what outcome is measured each time.</p>
-    </hint>
     <solution>
       <p>Random process: Repeated dropping pieces of toast, assuming identical conditions.</p>
       <p>Variable: Whether the piece of toast lands top side down or top side up</p>
@@ -46,12 +46,12 @@
     <title>Define Parameter</title>
     <statement>
       <p>Identify the parameter of interest in this study (in words).</p>
-      <var width="50"/>
-    </statement>
-    <response/>
     <hint>
       <p>What long-run proportion are we interested in?</p>
     </hint>
+      <var width="50"/>
+    </statement>
+    <response/>
     <solution>
       <p>The probability of a piece of toast landing top side down.</p>
     </solution>
@@ -93,11 +93,11 @@
     <statement>
       <p>State the null hypothesis using symbols and words.</p>
       <p><m>H_0</m>: <var width="50" /></p>
-    </statement>
-    <response/>
     <hint>
       <p>If there's no bias, what should the probability be?</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p><m>H_0: \pi = 0.5</m> (equally likely to land top down or top up)</p>
     </solution>
@@ -108,11 +108,11 @@
     <statement>
       <p>With 10 pieces of toast, what outcomes for the number of successes would convince you that there was a problem with the rig? Suggest a way of stating the alternative hypothesis that reflects this interest/prior suspicion.</p>
       <p><m>H_a</m>: <var width="50" /></p>
-    </statement>
-    <response/>
     <hint>
       <p>Would you be concerned if the result was extreme in either direction (too many or too few successes)?</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p><m>H_a: \pi \neq 0.50</m> (one side is more likely)</p>
       <p>This is a two-sided alternative hypothesis.</p>
@@ -128,11 +128,11 @@
     <statement>
       <p> Report the one-sided p-value</p>
       <var width="10"/>
-    </statement>
-    <response/>
     <hint>
       <p>Use technology with n=10, π=0.5, and find P(X ≤ 3).</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>P(X ≤ 3) = 0.1719</p>
       <figure>
@@ -147,11 +147,11 @@
     <title>Identify More Extreme Outcomes</title>
     <statement>
       <p><em>Conjecture</em>: What other outcomes would you consider "as or more surprising" as 3 or fewer successes?</p>
-    </statement>
-    <response/>
     <hint>
       <p>Think about the symmetry of the distribution when π = 0.5.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>Reasonable conjectures include X ≥ 7</p>
     </solution>
@@ -161,11 +161,11 @@
     <title>Calculate Two-Sided p-value</title>
     <statement>
       <p>If we calculate the two-sided p-value as P(X ≤ 3) + P(X ≥ 7), what would you report for the p-value? Would you find this p-value to be convincing evidence in favor of the two-sided alternative hypothesis?</p>
-    </statement>
-    <response/>
     <hint>
       <p>When the distribution is symmetric, P(X ≥ 7) = P(X ≤ 3).</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>The applet tells us P(X ≥ 7) also equals 0.1719, so the two-sided p-value = 2(0.1719) = 0.3438</p>
       <p>This p-value is quite large, so we would not have convincing evidence against the null hypothesis.</p>
@@ -182,11 +182,11 @@
         <p><var width="50" /></p>
         <p>How will the null distribution change?</p>
         <p><var width="50" /></p>
-      </statement>
-      <response/>
       <hint>
         <p>How does changing π from 0.5 to 0.55 affect the center of the distribution?</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>Alternative hypothesis in words: Now we think the long-run proportion of toast drops landing top side down is not 0.55.</p>
         <p>How the null distribution changes: This will shift the null distribution to center at 5.5 rather than at 5 successes.</p>
@@ -197,11 +197,11 @@
       <title>Left Tail Probability</title>
       <statement>
         <p>Make this change in the applet and find the binomial probability of 3 or fewer successes.</p>
-      <var width="10"/></statement>
-      <response/>
       <hint>
         <p>Use n=10, π=0.55, and find P(X ≤ 3).</p>
       </hint>
+      <var width="10"/></statement>
+      <response/>
       <solution>
         <p>P(X ≤ 3 when π = 0.55) = 0.1020</p>
       </solution>
@@ -211,11 +211,11 @@
       <title>Right Tail Comparison</title>
       <statement>
         <p>Now find P(X ≥ 7) when π = 0.55. How does it compare to P(X ≤ 3)? Why does this make sense?</p>
-      </statement>
-      <response/>
       <hint>
         <p>Is 7 further from the expected value than 3 is?</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>P(X ≥ 7) increases to 0.2660 because now an outcome of 7 is closer to the expected value of the null distribution.</p>
       </solution>
@@ -229,11 +229,11 @@
     <statement>
       <p>Find P(X ≥ 8). <var width="10"/></p>
       <p>Is x = 8 considered more extreme than x = 3? <var width="10"/></p>
-    </statement>
-    <response/>
     <hint>
       <p>Compare P(X ≥ 8) to P(X ≤ 3) = 0.1020.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>P(X ≥ 8) = 0.0996 which is now smaller than P(X ≤ 3) so we could consider x = 8 a more extreme observation compared to x = 3.</p>
     </solution>
@@ -243,11 +243,11 @@
     <title>Two-Sided p-value for π = 0.55</title>
     <statement>
       <p>Calculate the two-sided p-value as P(X ≤ 3) + P(X ≥ 8)</p>
-    </statement>
-    <response/>
     <hint>
       <p>Add the two tail probabilities you found.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>0.1020 + 0.0996 = 0.2016</p>
     </solution>
@@ -257,6 +257,9 @@
     <title>Verify with Applet</title>
     <statement>
       <p>Verify your result in the applet: Start with 3 and use the "Tails" option, then check the <strong>Two-sided</strong> box.</p>
+    <hint>
+      <p>Use the "Tails" option in the pull-down menu.</p>
+    </hint>
     </statement>
     <choices randomize="no">
       <choice correct="yes">
@@ -268,9 +271,7 @@
         <feedback><p>Check again. Results should match if you start with P(X ≤ 3) and use the pull-down menu to select "Tails" for the two-sided p-value.</p></feedback>
       </choice>
     </choices>
-    <hint>
-      <p>Use the "Tails" option in the pull-down menu.</p>
-    </hint>
+    </statement>
     <solution>
       <figure>
         <image source="images/inv1.5pilot2.png" width="60%">
@@ -291,11 +292,11 @@
     <title>Evaluate Pilot Study Conclusion</title>
     <statement>
       <p>The MythBusters decided a 3/7 split was "way outside a random sample" and so they needed to build a different toast-dropping rig. Do you agree with their conclusion from the pilot study? Write a short paragraph to the MythBusters justifying your answer. Include appropriate numerical evidence to support your argument.</p>
-    </statement>
-    <response/>
     <hint>
       <p>Consider both p-values you calculated (for π=0.50 and π=0.55).</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>Based on the two-sided p-values, both 0.50 and 0.55 are plausible values for the probability of a piece of toast landing top side down. Because 0.50 is plausible (p-value = 0.3438), these data do not provide convincing evidence that there is a built-in bias with the mechanism and they could have continued to use it.</p>
     </solution>
@@ -319,11 +320,11 @@
       <aside>
         <p><url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" target="_blank">One Proportion Inference applet</url></p>
       </aside>
-    </statement>
-    <response/>
     <hint>
       <p>Use n=48, observed=19, π=0.5, and check the <term index="no">two-sided box</term>.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <figure>
         <image source="images/inv1.5buttered.png" width="60%">
