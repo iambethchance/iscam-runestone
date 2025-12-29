@@ -14,11 +14,11 @@
       <title>Initial Prediction</title>
       <statement>
         <p><em>Prediction</em>: A friend finds 10 orange candies in her bag. Does this convince you that the three colors are not equally likely? What other information would you want to know? What if she tells you these orange pieces were 50% of the candies in her bag?</p>
-      </statement>
-      <response/>
       <hint>
         <p>Consider: Knowing the total number of candies in the bag is crucial. What's the difference between 10 out of 20 versus 10 out of 100?</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>Conjectures will vary. Knowing the total number of candies (sample size) is crucial. 10 out of 20 (50%) is much different from 10 out of 100 (10%). With 50% orange, this provides some evidence against equal proportions, but we would want more information about sampling variability.</p>
       </solution>
@@ -42,11 +42,11 @@
         <p>Sample/Random process: <var width="40"/></p>
         <p>Variable: <var width="40"/></p>
         <p>Type: <var width="20"/></p>
-      </statement>
-      <response/>
       <hint>
         <p>The random process is selecting candies. The variable is the color of each candy. Is this categorical or quantitative?</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>Sample/Random process: The random process is selecting Reese's Pieces candies.</p>
         <p>Variable: The color of each candy</p>
@@ -58,11 +58,11 @@
       <title>Assess Binomial Process</title>
       <statement>
         <p>Define "success" to be an orange candy and "failure" to be a non-orange candy. Is it reasonable to treat these data as observations from a binomial process? Explain.</p>
-      </statement>
-      <response/>
       <hint>
         <p>Consider: Are there two possible outcomes? Fixed number of trials? Independent trials? Constant probability of success?</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>Yes, this is reasonably a binomial process: There are two possible outcomes (orange/not orange), a fixed number of trials (<m>n = 25</m>), the trials are independent (assuming sampling with replacement or from a very large population), and the probability of success (getting an orange candy) is constant for each trial. The main assumption to consider is whether the candies are well-mixed and randomly selected.</p>
       </solution>
@@ -126,11 +126,11 @@
       <statement>
           What does each dot in this dotplot represent?
           <var width= "40"/>
-      </statement>
-      <response/>
       <hint>
         <p>Each dot represents the sample proportion of orange candies in one sample of 25 candies.</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>Each dot represents the sample proportion of orange candies in one sample of 25 candies. The entire dotplot shows the distribution of sample proportions across many samples when the true probability is 0.333, illustrating the sampling distribution of the sample proportion.</p>
         <image source="images/inv1.7-dotplot-n25.png" width="80%">
@@ -152,11 +152,11 @@
       <title>Derive Formulas</title>
       <statement>
         <p>Use the above information, and the fact that <m>\hat{p} = X/n</m>, to derive formulas for <m>E(\hat{p})</m> and <m>SD(\hat{p})</m>.</p>
-      </statement>
-      <response/>
       <hint>
         <p>Start with <m>E(\hat{p}) = E(X/n) = E((1/n) \times X)</m> and apply the rule for constants.</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p><m>E(\hat{p}) = E(X/n) = (1/n) \times E(X) = (1/n) \times n\pi = \pi</m></p>
         <p><m>SD(\hat{p}) = SD(X/n) = (1/n) \times SD(X) = (1/n) \times \sqrt{n\pi(1-\pi)} = \sqrt{\frac{\pi(1-\pi)}{n}}</m></p>
@@ -170,11 +170,11 @@
       <title>Verify Formulas</title>
       <statement>
         <p>Using <m>\pi = 0.333</m> and <m>n = 25</m>, verify that your formulas match the results from checking the <term index="no">Summary Statistics</term> box in the applet.</p>
-      </statement>
-      <response/>
       <hint>
         <p>Calculate <m>E(\hat{p}) = 0.333</m> and <m>SD(\hat{p}) = \sqrt{\frac{0.333(0.667)}{25}}</m></p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p><m>E(\hat{p}) = \pi = 0.333</m></p>
         <p><m>SD(\hat{p}) = \sqrt{\frac{\pi(1-\pi)}{n}} = \sqrt{\frac{0.333(0.667)}{25}} = \sqrt{\frac{0.222}{25}} = \sqrt{0.00888} \approx 0.094</m></p>
@@ -189,11 +189,11 @@
       <title>Predict Larger Sample</title>
       <statement>
         <p><em>Prediction</em>: If we had instead taken 2,000 samples of size <m>n = 100</m> candies, how do you think the distribution of the sample proportions would compare to the distribution where <m>n = 25</m>? Explain.</p>
-      </statement>
-      <response/>
       <hint>
         <p>Think about how sample size affects variability in sample proportions.</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>With <m>n = 100</m>, we would expect less variability in the sample proportions compared to <m>n = 25</m>. The distribution should still be centered at 0.333 and roughly symmetric, but with much less spread. Larger sample sizes lead to more precise estimates of the population parameter.</p>
       </solution>
@@ -210,11 +210,11 @@
       <title>Compare Distributions</title>
       <statement>
         <p>Describe the behavior (shape, center, variability) of this (new) distribution and how it has changed from the previous. Focus on the most substantial change in the distribution. Is this what you expected?</p>
-      </statement>
-      <response/>
       <hint>
         <p>Pay special attention to the spread of the distribution - how has it changed?</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>The center remains at approximately 0.333. The shape remains roughly symmetric and mound-shaped. The most substantial change is in variability: the distribution with <m>n = 100</m> 
         has much less spread than the distribution with <m>n = 25</m>. This makes sense because larger 
@@ -229,11 +229,11 @@
       <title>Smaller Sample Size</title>
       <statement>
         <p>Repeat the previous questions (using the formulas, checking against the applet) for a sample size of <m>n = 5</m> candies.</p>
-      </statement>
-      <response/>
       <hint>
         <p>Calculate the expected value and standard deviation for <em>n</em> = 5, then compare the distribution to <m>n = 25</m>.</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>For <m>n = 5</m>:</p>
         <p><m>E(\hat{p}) = \pi = 0.333</m></p>
@@ -284,11 +284,11 @@
       <title>Percentage Within Two Standard Deviations</title>
       <statement>
         <p>Write a sentence reporting the percentage of samples with a proportion of orange candies between these two values.</p>
-      </statement>
-      <response/>
       <hint>
         <p>The percentage should be close to 95%.</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>Approximately 95-96% of the samples have a sample proportion between 0.145 and 0.521 (within two standard deviations of 0.333). This percentage may vary slightly in different simulations due to random chance, but should consistently be close to 95%.</p>
         <image source="images/inv1.7solsn.png" width="80%">
@@ -301,11 +301,11 @@
       <title>Compare for <em>n</em> = 100</title>
       <statement>
         <p>How does the percentage of samples within two standard deviations of 0.333 compare?</p>
-      </statement>
-      <response/>
       <hint>
         <p>The percentage should still be close to 95%, regardless of sample size.</p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <p>For <m>n = 100</m>: <m>SD(\hat{p}) = \sqrt{\frac{0.333(0.667)}{100}} \approx 0.047</m></p>
         <p>Cut-offs: <m>0.333 \pm 2(0.047)</m> gives (0.239, 0.427)</p>

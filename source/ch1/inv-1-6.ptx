@@ -21,11 +21,11 @@
       <p>Sample: <var width="50" /></p>
       <p>Variable: <var width="50" /></p>
       <p>Parameter: <var width="50" /></p>
-    </statement>
-    <response/>
     <hint>
       <p>What group was observed, what was measured, and what long-run proportion are we interested in?</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>Sample: 124 observed kissing couples in public places</p>
       <p>Variable: Whether the couple leaned right or left</p>
@@ -37,6 +37,9 @@
     <title>One-Sided or Two-Sided?</title>
     <statement>
       <p>If Dr. Güntürkün wants to investigate whether a majority of kissing couples lean right in the long run, is this a one-sided or a two-sided test?</p>
+    <hint>
+      <p>Does "majority" suggest a specific direction?</p>
+    </hint>
     </statement>
     <choices randomize="no">
       <choice correct="yes">
@@ -48,9 +51,6 @@
         <feedback><p>Not quite. A "majority" suggests a specific direction (greater than 0.5), so this is one-sided.</p></feedback>
       </choice>
     </choices>
-    <hint>
-      <p>Does "majority" suggest a specific direction?</p>
-    </hint>
   </exercise>
   
   <exercise xml:id="I1-6-3" label="I1.6.3">
@@ -66,6 +66,9 @@
           </image>
         </figure>
       </sidebyside>
+    <hint>
+      <p>For each conjecture, we're testing whether the data support the specific claimed value using two-sided tests.</p>
+    </hint>
     </statement>
     <matches>
       <match order="1">
@@ -85,9 +88,6 @@
         <response><m>\pi = 0.74</m></response>
       </match>
     </matches>
-    <hint>
-      <p>For each conjecture, we're testing whether the data support the specific claimed value using two-sided tests.</p>
-    </hint>
   </exercise>
   
   <exercise xml:id="I1-6-4" label="I1.6.4">
@@ -95,6 +95,9 @@
     <statement>
       <p>Dr. Güntürkün found 80 out of 124 couples leaned right. Calculate the observed sample proportion <m>\hat{p}</m>. Round to three decimal places.</p>
       <p><m>\hat{p}</m> = <var name="$phat" width="10" /></p>
+    <hint>
+      <p>Sample proportion = (number of successes)/(sample size)</p>
+    </hint>
     </statement>
     <setup>
       <var>
@@ -110,20 +113,17 @@
         </condition>
       </var>
     </setup>
-    <hint>
-      <p>Sample proportion = (number of successes)/(sample size)</p>
-    </hint>
   </exercise>
   
   <exercise xml:id="I1-6-5" label="I1.6.5">
     <title>Predict Plausible Values</title>
     <statement>
       <p>Based on Dr. Güntürkün's result, what is your best guess for <m>\pi</m>, the long-run probability a kissing couple leans right? Do you think 0.50 will be a plausible value for <m>\pi</m>? 2/3? 0.74? Explain your reasoning.</p>
-    </statement>
-    <response/>
     <hint>
       <p>The sample proportion provides a point estimate. Consider how far each hypothesized value is from the observed proportion.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>Best guess: <m>\pi \approx 0.645</m> (the sample proportion)</p>
       <p>0.50 seems too low - likely not plausible</p>
@@ -141,6 +141,9 @@
     <title>Identify Plausible Values on Number Line</title>
     <statement>
       <p>For each value below, determine whether observing 80 of 124 successes yields a two-sided p-value greater than 0.05. Check all plausible values (p-value <m>\geq</m> 0.05):</p>
+    <hint>
+      <p>Use the applet to find the two-sided p-value for each hypothesized value. Plausible values have p-values <m>\geq</m> 0.05.</p>
+    </hint>
     </statement>
     <choices randomize="no">
       <choice>
@@ -184,9 +187,6 @@
         <feedback><p>The p-value is less than 0.05, so this is not plausible.</p></feedback>
       </choice>
     </choices>
-    <hint>
-      <p>Use the applet to find the two-sided p-value for each hypothesized value. Plausible values have p-values <m>\geq</m> 0.05.</p>
-    </hint>
   </exercise>
   
 <!--  <exercise xml:id="I1-6-6" label="I1.6.6">
@@ -216,11 +216,11 @@
     <title>Interpret 95% CI</title>
     <statement>
       <p>Interpret the confidence interval from the previous exercise. What are you 95% confident of?</p>
-    </statement>
-    <response/>
     <hint>
       <p>A confidence interval gives a range of plausible values for the parameter.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>We are 95% confident that the true probability that a kissing couple leans right is between 0.557 and 0.727 (or approximately 56% to 73%).</p>
     </solution>
@@ -231,6 +231,9 @@
     <statement>
       <p>Use the One Proportion Inference applet to determine the 99% confidence interval by using 0.01 rather than 0.05 as the criterion for rejection/plausibility (level of significance). [Hints: You can check the Show sliders box in the applet and use the slider or edit the orange number to change the value of <m>\pi_0</m>. Keep in mind that you are changing the conjectured value of <m>\pi</m>, not the observed number of successes, which should stay at 80.]</p>
       <p>Using 0.01 as the significance level, test different values of <m>\pi_0</m> to determine which yield a two-sided p-value greater than 0.01. Check all plausible values (p-value <m>\geq</m> 0.01):</p>
+    <hint>
+      <p>Use the applet to find the two-sided p-value for each hypothesized value. Plausible values have p-values <m>\geq</m> 0.01.</p>
+    </hint>
     </statement>
     <choices randomize="no">
       <choice>
@@ -298,20 +301,17 @@
         <feedback><p>The p-value is less than 0.01, so this is not plausible.</p></feedback>
       </choice>
     </choices>
-    <hint>
-      <p>Use the applet to find the two-sided p-value for each hypothesized value. Plausible values have p-values <m>\geq</m> 0.01.</p>
-    </hint>
   </exercise>
   
   <exercise xml:id="I1-6-8b" label="I1.6.8b">
     <title>Compare 95% and 99% Confidence Intervals</title>
     <statement>
       <p>Does this "99% confidence interval" include more or fewer values than the 95% confidence interval? Explain why this makes intuitive sense.</p>
-    </statement>
-    <response/>
     <hint>
       <p>A higher confidence level means we want to be more certain, so we need a wider interval.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>The 99% confidence interval is approximately <m>0.529</m> to <m>0.749</m>.</p>
       <p>This interval includes <em>more</em> values than the 95% confidence interval (it's wider).</p>
@@ -323,11 +323,11 @@
     <title>Compare Intervals</title>
     <statement>
       <p>Identify a value that is captured in the 99% confidence interval but not the 95% confidence interval. Interpret the meaning of this observation. Explain what your analysis reveals about this value as a plausible value of <m>\pi</m>.</p>
-    </statement>
-    <response/>
     <hint>
       <p>Look at values near the endpoints of the 95% interval.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>For example, <m>\pi = 0.54</m> is in the 99% CI (0.529 to 0.749) but not in the 95% CI (0.557 to 0.727).</p>
       <p>This means that if we tested <m>H_0: \pi = 0.54</m> vs. <m>H_a: \pi \neq 0.54</m>:</p>
@@ -359,11 +359,11 @@
     <title>Alternative CI Method</title>
     <statement>
       <p>How does the resulting 95% confidence interval compare to the previous one? Which interval is "better"? Explain.</p>
-    </statement>
-    <response/>
     <hint>
       <p>This is the Clopper-Pearson method. For 95% confidence, use 0.025 as the cutoff for each tail.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>The Clopper-Pearson 95% confidence interval will be slightly different (typically slightly wider) than the Blaker interval.</p>
       <p>Neither is definitively "better" - they use different definitions of "more extreme." The Blaker method tends to produce slightly shorter intervals and is increasingly preferred.</p>
@@ -386,11 +386,11 @@
     <title>Misinterpreting Confidence</title>
     <statement>
       <p>Explain why it is not appropriate to say "There is a 99% probability that between 52.6% and 75.2% of kissing couples lean right when they kiss."</p>
-    </statement>
-    <response/>
     <hint>
       <p>The parameter is fixed (not random), but the interval is random.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>The parameter <m>\pi</m> is a fixed value - it either is or isn't in the interval. The 99% refers to the confidence in our <em>method</em>: if we were to repeat this process many times, about 99% of the intervals we construct would contain the true parameter value. We cannot make a probability statement about this specific interval containing the parameter.</p>
     </solution>
@@ -465,11 +465,11 @@ iscambinomtest(80, 124, conf.level = 0.99)
     <title>Technology Comparison</title>
     <statement>
       <p>Use technology to determine the 95% and 99% Clopper-Pearson confidence intervals for the probability that a kissing couple leans to the right. Comment on how the 99% confidence interval compares to the 95% interval, examining both midpoints and widths. [Hint: Average the endpoints to find the midpoint; subtract the endpoints to find the width.]</p>
-    </statement>
-    <response/>
     <hint>
       <p>Use R's iscambinomtest function or JMP with the ISCAM Journal file.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>Using technology (e.g., R with <c>iscambinomtest(80, 124, conf.level=0.95)</c>):</p>
       <p>95% CI: approximately 0.556 to 0.725</p>
@@ -483,11 +483,11 @@ iscambinomtest(80, 124, conf.level = 0.99)
     <title>Optional: Compare Methods</title>
     <statement>
       <p>Optional: Compare the Clopper-Pearson 99% interval to the Blaker 99% interval. Which is narrower?</p>
-    </statement>
-    <response/>
     <hint>
       <p>The Blaker method typically produces shorter intervals.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>The Blaker 99% interval is typically narrower than the Clopper-Pearson 99% interval, which is one reason it's gaining favor in practice.</p>
     </solution>
