@@ -16,10 +16,10 @@
     <title>Define population</title>
     <statement>
       <p>Define the population of interest in this study in words.</p>
-      <p><var width="60"/></p>
     <hint>
       <p>The population is the group we want to generalize to.</p>
     </hint>
+      <p><var width="60"/></p>
     </statement>
     <solution>
       <p>All U.S. teens aged 12-19 years (or 15-19 per Census data)</p>
@@ -74,6 +74,9 @@
     <title>State hypotheses</title>
     <statement>
       <p>State the null and alternative hypotheses for deciding whether these data provide convincing evidence against the headline "1 in 5 U.S. teens has hearing loss."</p>
+    <hint>
+      <p>The headline claims "1 in 5" which is 0.20 or 20%. We're testing whether the data provide evidence against this claim.</p>
+    </hint>
       <p><m>H_0: </m> <var width="5"/> <var width="5"/> <var width="5"/> <var width="50"/></p>
       <p><m>H_a: </m> <var width="5"/> <var width="5"/> <var width="5"/> <var width="50"/></p>
     </statement>
@@ -165,9 +168,6 @@
         </condition>
       </var>
     </setup>
-    <hint>
-      <p>The headline claims "1 in 5" which is 0.20 or 20%. We're testing whether the data provide evidence against this claim.</p>
-    </hint>
     <solution>
       <p><m>H_0: \pi = 0.20</m> - The proportion of all U.S. teens with hearing loss is 0.20 (1 in 5).</p>
       <p><m>H_a: \pi \neq 0.20</m> - The proportion of all U.S. teens with hearing loss is different from 0.20.</p>
@@ -187,13 +187,13 @@
     <title>Check technical conditions</title>
     <statement>
       <p>Assuming the null hypothesis is true, is the normal model appropriate for the distribution of sample proportions based on this sample size and on this population size? Justify your answers numerically.</p>
+    <hint>
+      <p>Check whether <m>n \pi > 10</m>, <m>n(1-\pi) > 10</m>, and <m>N > 20n</m>.</p>
+    </hint>
 
       <p>Sample size condition: <var width="60"/></p>
       <p>Population size condition: <var width="60"/></p>
       <p>Conclusion: <var width="60"/></p>
-    <hint>
-      <p>Check whether <m>n \pi > 10</m>, <m>n(1-\pi) > 10</m>, and <m>N > 20n</m>.</p>
-    </hint>
     </statement>
     <solution>
       <p>Sample size: <m>1771 \times 0.20 = 354.2 > 10</m> and <m>1771 \times 0.80 = 1416.8 > 10</m> ✓</p>
@@ -206,6 +206,9 @@
     <title>Carry out <m>z</m>-test</title>
     <statement>
       <p>Use technology (see <xref ref="summary-z-procedures"/>) to carry out a <m>z</m>-test of the hypotheses you specified in checkpoint <xref ref="I1-14-b"/>. Report the standardized statistic and p-value, and confirm how you would calculate the standardized statistic by hand.</p>
+    <hint>
+      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=2">Theory-Based Inference applet</url> or calculate <m>z = \frac{\hat{p} - \pi_0}{\sqrt{\frac{\pi_0(1-\pi_0)}{n}}}</m></p>
+    </hint>
 
       <p>Sample proportion: <var width="15"/></p>
       <p>Standardized statistic (<m>z</m>): <var width="15"/></p>
@@ -247,9 +250,6 @@
         </condition>
       </var>
     </setup>
-    <hint>
-      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=2">Theory-Based Inference applet</url> or calculate <m>z = \frac{\hat{p} - \pi_0}{\sqrt{\frac{\pi_0(1-\pi_0)}{n}}}</m></p>
-    </hint>
     <solution>
       <p><m>\hat{p} = \frac{333}{1771} = 0.188</m></p>
       <p><m>z = \frac{0.188 - 0.20}{\sqrt{\frac{0.20(0.80)}{1771}}} = \frac{-0.012}{\sqrt{0.0000903}} = \frac{-0.012}{0.0095} \approx -1.26</m></p>
@@ -261,11 +261,11 @@
     <title>Evaluate test results</title>
     <statement>
       <p>Does this p-value provide convincing evidence (level of significance <m>\alpha = 0.05</m>) against the headline? Justify your answer (in context) and explain the reasoning behind your evidence or lack thereof.</p>
-
-      <p><var width="60"/></p>
-    <hint>
+   <hint>
       <p>Compare the p-value to 0.05. What does the p-value tell you about observing a sample proportion as extreme as 0.188?</p>
     </hint>
+ 
+      <p><var width="60"/></p>
     </statement>
     <solution>
       <p>No, this p-value (0.2068) is not small and does not provide convincing evidence against the claim that <m>\pi = 0.20</m>. We would get sample proportions as or more extreme as 0.188 (meaning at least as far from 0.20) in about 21% of random samples from a population where 20% of teens have some hearing loss. Therefore, the headline seems appropriate.</p>
@@ -276,13 +276,13 @@
     <title>Calculate confidence interval</title>
     <statement>
       <p>Calculate and interpret a 95% confidence interval for the parameter (see <xref ref="summary-z-procedures"/>). Is this interval consistent with your test decision? Explain.</p>
-
+  <hint>
+      <p>Use the formula <m>\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</m> where <m>z^* = 1.96</m> for 95% confidence.</p>
+    </hint>
+  
       <p>95% Confidence interval: <var width="30"/></p>
       <p>Interpretation: <var width="60"/></p>
       <p>Consistency with test: <var width="60"/></p>
-    <hint>
-      <p>Use the formula <m>\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</m> where <m>z^* = 1.96</m> for 95% confidence.</p>
-    </hint>
     </statement>
     <solution>
       <p>95% CI: (0.170, 0.206) or 17.0% to 20.6%</p>
@@ -295,11 +295,11 @@
     <title>Evaluate generalizability</title>
     <statement>
       <p>Do you feel comfortable with generalizing the findings from your test and confidence interval to the population of all American teens in 2005-06? Explain.</p>
-
-      <p><var width="60"/></p>
-    <hint>
+ <hint>
       <p>Consider whether the sample was representative</p>
     </hint>
+   
+      <p><var width="60"/></p>
     </statement>
     <solution>
       <p>Yes, we should feel comfortable generalizing because the 
