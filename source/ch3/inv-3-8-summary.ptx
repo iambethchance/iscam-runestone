@@ -55,9 +55,33 @@
 
     <p><term>In Applet:</term> <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?twobytwo=1">Analyzing Two-way Tables</url></p>
 
-    <p><term>In R:</term> <url href="https://www.rossmanchance.com/iscam3/data/RAHyperR.html">RAHyperR.html</url></p>
+    <paragraphs>
+      <title>In R:</title>
+      <p>Use the <c>rhyper</c> function to simulate random assignment:</p>
+      <program language="r">
+        <input>
+VacInfCount = rhyper(10000, 210, 4985, 2584)
+# 210 is the number of successes (M)
+# 4985 is the number of failures (N - M)
+# 2584 is the sample size (n)
 
-    <p><term>In JMP:</term> <url href="https://www.rossmanchance.com/iscam3/data/RAHyperJMP.html">RAHyperJMP.html</url></p>
+UnvacInfCount = 210 - VacInfCount
+Unvacphat = UnvacInfCount/2584
+        </input>
+      </program>
+    </paragraphs>
+
+    <paragraphs>
+      <title>In JMP:</title>
+      <p>For Investigation 3.8:</p>
+      <p><ul>
+        <li><p>Open the CPRvCC.jmp file. The first column is the response variable (survived to discharge from hospital or not) and the second column is the explanatory variable.</p></li>
+        <li><p>You will notice an element called Randomization Test in the top left corner. Click on the pull-down menu and select Run Script.</p></li>
+        <li><p>Close the new windows (don't save changes). Now use the pull down menu on the script item and select Edit. The lines preceded by "//" are comments. Uncomment the resultCloseWindow command, change the "wait" from one to zero, and the number of trials from 1 to 100. Press Run.</p></li>
+        <li><p>If you comment out the "wait" line you can run many more trials.</p></li>
+      </ul></p>
+      <p>At the end you will have the results for 100 hypothetical studies where the rows and columns are fixed and we store how many survivors end up in the CPR group. You can calculate the number of successes in the CC group using 64 – count.</p>
+    </paragraphs>
   </assemblage>
 
 </section>
