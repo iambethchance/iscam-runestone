@@ -26,8 +26,6 @@
         <p>
           Width: <var width="10"/>
         </p>
-      </statement>
-      <response/>
       <hint><title>R</title>
         <p>Use the <c>iscambinomtest()</c> function with the following parameters:</p>
         <p>
@@ -56,6 +54,8 @@ iscambinomtest(observed = 8, n = 10, alternative = "two.sided", conf.level = 0.9
           Width = (upper endpoint - lower endpoint)
         </p>
       </hint>
+   </statement>
+      <response/>
       <solution>
         <paragraphs>
           <title>R</title>
@@ -69,7 +69,7 @@ iscambinomtest(observed = 8, n = 10, alternative = "two.sided", conf.level = 0.9
         <p>
           The midpoint of this interval is (.4439 + .9748)/2 = 0.709 which is lower than <m>\hat{p}</m> = 0.80. This makes sense as if we observed <m>\hat{p}</m> = 0.80, the largest <m>\pi</m> could be is 1.0 (.20 away) but <m>\pi</m> could conceivably be as small as 0.0 (.80 away), so we don't want an interval that is symmetric around 0.80. The width is .9748 - .4439 = 0.531.
         </p>
-
+   
         </paragraphs>
       </solution>
     </exercise>
@@ -81,17 +81,6 @@ iscambinomtest(observed = 8, n = 10, alternative = "two.sided", conf.level = 0.9
         <p>
           Use your calculator to calculate the 95% one proportion <m>z</m> confidence interval <m>\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</m>. Also report the midpoint and width.
         </p>
-        <p>
-          Interval: (<var width="10"/>, <var width="10"/>)
-        </p>
-        <p>
-          Midpoint: <var width="10"/>
-        </p>
-        <p>
-          Width: <var width="10"/>
-        </p>
-      </statement>
-      <response/>
       <hint>
         <p>
           First calculate SE(<m>\hat{p}</m>) = <m>\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</m>, then use <m>z^* = 1.96</m> for 95% confidence.
@@ -103,6 +92,17 @@ iscambinomtest(observed = 8, n = 10, alternative = "two.sided", conf.level = 0.9
           Width = (upper endpoint - lower endpoint)
         </p>
       </hint>
+        <p>
+          Interval: (<var width="10"/>, <var width="10"/>)
+        </p>
+        <p>
+          Midpoint: <var width="10"/>
+        </p>
+        <p>
+          Width: <var width="10"/>
+        </p>
+      </statement>
+      <response/>
       <solution>
         <p>
           SE(<m>\hat{p}</m>) = sqrt(.8(.2)/10)) = 0.1265
@@ -126,8 +126,6 @@ iscambinomtest(observed = 8, n = 10, alternative = "two.sided", conf.level = 0.9
         <p>Report your results:
           <var width="60"/>
         </p>
-      </statement>
-      <response/>
       <hint><title>R</title>
         <p>Use the <c>iscamonepropztest()</c> function with the following parameters:</p>
         <p>
@@ -147,6 +145,8 @@ iscamonepropztest(observed = 8, n = 10, conf.level = 0.95)
       <hint><title>JMP</title>
       <p>Use Journal File <ellipsis/> confidence interval <ellipsis/></p>
       </hint>
+      </statement>
+      <response/>
       <solution>
         <paragraphs>
           <title>R</title>
@@ -552,12 +552,12 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
         <p>
           Interpretation: <var width="60"/>
         </p>
+        <hint>
+          <p>You can do the calculation either by hand, first finding <m>\tilde{p}</m> and <m>z^*</m>, or with software (e.g., the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=2">Theory-Based Inference applet</url>) by telling the technology there were 4 more operations consisting of two more deaths than in the actual sample.</p>
+          <p>Note: You can't use the Simulating Confidence Intervals applet to answer this question.</p>
+        </hint>
       </statement>
       <response/>
-      <hint>
-        <p>You can do the calculation either by hand, first finding <m>\tilde{p}</m> and <m>z^*</m>, or with software (e.g., the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=2">Theory-Based Inference applet</url>) by telling the technology there were 4 more operations consisting of two more deaths than in the actual sample.</p>
-        <p>Note: You can't use the Simulating Confidence Intervals applet to answer this question.</p>
-      </hint>
       <solution>
         <p>
           10/14 = 0.714; 0.714 ± 1.96 sqrt(0.714(1 - 0.714)/14) = 0.714 ± 0.2367 <m>\Rightarrow</m> (0.477, 0.951)

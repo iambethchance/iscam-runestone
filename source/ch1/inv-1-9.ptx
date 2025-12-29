@@ -430,65 +430,16 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
       </tabular>
     </paragraphs>
     <exercise xml:id="I1-9-l" label="I1.9l">
-      <title>Calculate and Compare 90% Interval</title>
+      <title>Calculate 90% Confidence Interval</title>
       <statement>
         <p>
-          Use technology (see Technology Detour below) to find and report the 90% <m>z</m>-confidence interval for the probability that a kissing couple leans to the right. How do the midpoint and width of the 90% confidence interval compare to those of the 95% confidence interval?
+          Use technology to find and report the 90% <m>z</m>-confidence interval for the probability that a kissing couple leans to the right. 
         </p>
         <hint>
           <p>
             Use the critical value from the table (1.645) or technology to find the 90% interval.
           </p>
         </hint>
-        <p>
-          90% interval: <var width="40"/>
-        </p>
-        <p>
-          Comparison: <var width="60"/>
-        </p>
-      </statement>
-      <response/>
-      <solution>
-        <p>
-          If the confidence level is 90%, then use <m>z^* = 1.645</m>
-        </p>
-        <p>
-          <m>0.645 - 1.645 \times 0.043 = 0.5743</m>
-        </p>
-        <p>
-          <m>0.645 + 1.645 \times 0.043 = 0.7157</m>
-        </p>
-        <p>
-          I am 90% confident that between 57.43% and 71.57% of kissing couples turn to the right.
-        </p>
-        <p>
-          Midpoint = <m>(0.5743 + 0.7157)/2 = 0.645</m> (same as with the 95% confidence interval)
-        </p>
-        <p>
-          Width = <m>0.7157 - 0.5743 = 0.142</m> (smaller than for the 95% confidence interval)
-        </p>
-        <p>
-          <m>2(1.645)(0.043) = 0.142</m>
-        </p>
-        <image source="images/Inv1.9soll.png" width="80%">
-          <description>Comparison of 90% and 95% confidence intervals showing different widths with same midpoint</description>
-        </image>
-      </solution>
-    </exercise>
-
-  <paragraphs xml:id="tech-detour-z-intervals">
-    <title>Technology Detour <mdash/> One Proportion <m>z</m>-Confidence Intervals</title>
-
-    <exercise xml:id="tech-detour-z-intervals-ex" label="z-interval Tech Detour">
-      <title>Calculate 90% <m>z</m>-Confidence Interval</title>
-      <statement>
-        <p>
-          Calculate the 90% <m>z</m>-confidence interval for the kissing study data (80 out of 124 couples leaned right). Choose one set of instructions below by clicking on a hint.
-        </p>
-<!--        <p>
-          90% confidence interval: <var width="40"/>
-        </p>-->
-<!--      <response/>-->
       <hint>
         <title>R/Sage Instructions</title>
         <p>
@@ -541,10 +492,23 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         </p>
         <p>The applet will display the 90% <m>z</m>-confidence interval.</p>
       </hint>
+        <p>
+          90% interval: <var width="40"/>
+        </p>
       </statement>
+      <response/>
       <solution>
         <p>
-          90% <m>z</m>-confidence interval: (0.574, 0.716)
+          If the confidence level is 90%, then use <m>z^* = 1.645</m>
+        </p>
+        <p>
+          <m>0.645 - 1.645 \times 0.043 = 0.5743</m>
+        </p>
+        <p>
+          <m>0.645 + 1.645 \times 0.043 = 0.7157</m>
+        </p>
+        <p>
+          I am 90% confident that between 57.43% and 71.57% of kissing couples turn to the right.
         </p>
         <p>
           Example output from R:
@@ -566,7 +530,32 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         </image>
       </solution>
     </exercise>
-  </paragraphs>
+
+    <exercise xml:id="tech-detour-z-intervals-ex" label="z-interval Tech Detour">
+      <title>Compare Intervals</title>
+      <statement>
+        <p>
+          How do the midpoint and width of the 90% confidence interval compare to those of the 95% confidence interval?
+        </p>
+      </statement>
+      <response/>
+      <solution>
+        <paragraphs>
+        <p>
+          Midpoint = <m>(0.5743 + 0.7157)/2 = 0.645</m> (same as with the 95% confidence interval)
+        </p>
+        <p>
+          Width = <m>0.7157 - 0.5743 = 0.142</m> (smaller than for the 95% confidence interval)
+        </p>
+        <p>
+          <m>2(1.645)(0.043) = 0.142</m>
+        </p>
+        <image source="images/Inv1.9soll.png" width="80%">
+          <description>Comparison of 90% and 95% confidence intervals showing different widths with same midpoint</description>
+        </image>
+      </paragraphs>
+      </solution>
+    </exercise>
 
     <exercise xml:id="I1-9-m" label="I1.9m">
       <title>Compare to Exact Binomial Intervals</title>
