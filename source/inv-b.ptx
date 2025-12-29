@@ -23,6 +23,9 @@
     <title>Conduct Physical Simulation</title>
     <statement>
       <p>How many mothers received the correct baby in each trial?</p>
+    <hint>
+      <p>Record the number of matches (0, 1, 2, or 4) for each of your 5 trials.</p>
+    </hint>
         <tabular row-headers="yes" top="minor" bottom="minor" left="minor" right="minor">
           <row header="yes" bottom="minor">
             <cell right="minor">Trials</cell>
@@ -41,9 +44,6 @@
             <cell><var width="5"/></cell>
           </row>
         </tabular>
-    <hint>
-      <p>Record the number of matches (0, 1, 2, or 4) for each of your 5 trials.</p>
-    </hint>
     </statement>
     <solution>
       <p>Answers will vary, but most trials should result in 0 or 1 match. Zero matches and one match are the most common outcomes.</p>
@@ -102,10 +102,10 @@
     <title>Run Applet Simulation</title>
     <statement>
       <p>What proportion of your trials resulted in zero mothers receiving the correct baby?</p>
-    <var width="10" />
     <hint>
       <p>Count the number of trials with 0 matches and divide by the number of repetiations (e.g., 1000).</p>
     </hint>
+    <var width="10" />
     </statement>
     <solution>
       <p>The proportion should be around 0.375. The exact theoretical probability is 9/24 = 0.375.</p>
@@ -117,6 +117,9 @@
     <statement>
       <p>Based on your simulation results, estimate the probability that at least one mother receives the correct baby.</p>
       <p>Probability estimate = <var width="10" /></p>
+    <hint>
+      <p>Think about the complement: if at least one mother gets the correct baby, that's the opposite of zero mothers getting the correct baby.</p>
+    </hint>
     </statement>
     <setup>
       <var>
@@ -132,9 +135,6 @@
         </condition>
       </var>
     </setup>
-    <hint>
-      <p>Think about the complement: if at least one mother gets the correct baby, that's the opposite of zero mothers getting the correct baby.</p>
-    </hint>
   </exercise>
   
   <assemblage xml:id="def-random-process">
@@ -150,10 +150,10 @@
     <title>Compare to Initial Guess</title>
     <statement>
       <p>How does your empirical estimate from the simulation compare to your initial guess in <xref ref="random-babies-ex-a" text="custom">question 1</xref> (where you predicted whether zero matches or all four matches was more likely)?</p>
-  <var width="20" height="4"/>
     <hint>
       <p>In <xref ref="random-babies-ex-a" text="custom">question 1</xref>, you predicted whether it was more likely that no mothers get the correct baby or that all four mothers get the correct baby. Compare that prediction to what you observed in the simulation.</p>
     </hint>
+  <var width="20" height="4"/>
     </statement>
     <solution>
       <p>Most people initially guess that having all four mothers get the correct baby is less likely than zero matches, and the simulation confirms this intuition. Zero matches occurs about 37.5% of the time, while all four matches occurs only about 4.2% of the time.</p>
@@ -239,10 +239,10 @@
     <title>Identify Possible Values</title>
     <statement>
       <p>Define the random variable <m>X</m> to be the number of mothers who receive the correct baby. What are the possible values of <m>X</m>?</p>
-      <p><var width="30" height="4"/></p>
     <hint>
       <p>Consider: Can you have 0 matches? 1 match? 2 matches? What about 3 matches - is that possible?</p>
     </hint>
+      <p><var width="30" height="4"/></p>
     </statement>
     <solution>
       <p>The possible values are 0, 1, 2, and 4. (Note: 3 is not possible!)</p>
@@ -253,6 +253,9 @@
     <title>Count Outcomes for Each Value</title>
     <statement>
       <p>Go through the sample space and count how many outcomes result in each possible value of <m>X</m> (0, 1, 2, 3, or 4 matches).</p>
+    <hint>
+      <p>For each outcome like 1234 or 2143, count how many positions match (first baby to first mother, second to second, etc.)</p>
+    </hint>
       <p>
         <tabular row-headers="yes" top="minor" bottom="minor" left="minor" right="minor">
           <row header="yes" bottom="minor">
@@ -336,9 +339,6 @@
         </condition>
       </var>
     </setup>
-    <hint>
-      <p>For each outcome like 1234 or 2143, count how many positions match (first baby to first mother, second to second, etc.)</p>
-    </hint>
   </exercise>
   
   <assemblage xml:id="probability-rule-equally-likely">
@@ -352,6 +352,9 @@
     <title>Create Probability Distribution</title>
     <statement>
       <p>Display the probability distribution table showing <m>P(X = 0)</m>, <m>P(X = 1)</m>, <m>P(X = 2)</m>, <m>P(X = 3)</m>, and <m>P(X = 4)</m>.</p>
+    <hint>
+      <p>Divide the count for each value by 24 (the total number of outcomes).</p>
+    </hint>
       <p>
         <tabular top="minor" bottom="minor" left="minor" right="minor" row-headers= "yes">
           <row header="yes" bottom="minor">
@@ -435,19 +438,16 @@
         </condition>
       </var>
     </setup>
-    <hint>
-      <p>Divide the count for each value by 24 (the total number of outcomes).</p>
-    </hint>
   </exercise>
   
   <exercise xml:id="random-babies-ex-n" label="B.14">
     <title>Compare to Simulation</title>
     <statement>
       <p>How do your exact probabilities compare to the empirical estimates you obtained from the simulation?</p>
-    <var  width="30" height="4"/>
     <hint>
       <p>Look at the proportions from your 1000 trials - are they close to the theoretical probabilities?</p>
     </hint>
+    <var  width="30" height="4"/>
     </statement>
     <solution>
       <p>The simulation results should be fairly close to the exact probabilities, especially with 1000 or more trials. Small differences are expected due to random variability in the simulation.</p>
@@ -458,6 +458,9 @@
     <title>Calculate Exact Probability</title>
     <statement>
       <p>Calculate the exact probability that at least one mother receives the correct baby.</p>
+    <hint>
+      <p>Use the complement rule: <m>P(\text{at least one match}) = 1 - P(\text{zero matches})</m></p>
+    </hint>
       <p>Probability = <var width="10" /></p>
     </statement>
     <setup>
@@ -474,9 +477,6 @@
         </condition>
       </var>
     </setup>
-    <hint>
-      <p>Use the complement rule: <m>P(\text{at least one match}) = 1 - P(\text{zero matches})</m></p>
-    </hint>
   </exercise>
   
   <assemblage xml:id="probability-rules">
@@ -496,6 +496,9 @@
     <title>Calculate Expected Value</title>
     <statement>
       <p>Calculate the expected value of the number of mothers who receive the correct baby.</p>
+    <hint>
+      <p>Use the formula: <m>E(X) = </m><m>0 \times P(X=0) + 1 \times P(X=1) + 2 \times P(X=2) + 4 \times P(X=4)</m></p>
+    </hint>
       <p><m>E(X)</m> = <var width="10" /></p>
     </statement>
     <setup>
@@ -512,9 +515,6 @@
         </condition>
       </var>
     </setup>
-    <hint>
-      <p>Use the formula: <m>E(X) = </m><m>0 \times P(X=0) + 1 \times P(X=1) + 2 \times P(X=2) + 4 \times P(X=4)</m></p>
-    </hint>
   </exercise>
   
   <exercise xml:id="random-babies-ex-q" label="B.17">
@@ -545,13 +545,16 @@
     <title>Calculate Variance</title>
     <statement>
       <p>Calculate the variance of <m>X</m>.</p>
-      <p><m>\text{Var}(X)</m> = <var width="10" /></p>
+    <hint>
+      <p>Use the formula: <m>Var(X) =</m><m> (0-1)^2(9/24) + (1-1)^2(8/24) + (2-1)^2(6/24) + (4-1)^2(1/24)</m></p>
+    </hint>
+      <p><m>Var(X)</m> = <var width="10" /></p>
     </statement>
     <setup>
       <var>
         <condition number="1" tolerance="0.01">
           <feedback>
-            <p>Correct! <m>\text{Var}(X) = (0-1)^2(9/24) + (1-1)^2(8/24) + (2-1)^2(6/24) + (4-1)^2(1/24) = 1(9/24) + 0(8/24) + 1(6/24) + 9(1/24) = 9/24 + 6/24 + 9/24 = 24/24 = 1</m></p>
+            <p>Correct! <m>Var(X) = (0-1)^2(9/24) + (1-1)^2(8/24) + (2-1)^2(6/24) + (4-1)^2(1/24) = 1(9/24) + 0(8/24) + 1(6/24) + 9(1/24) = 9/24 + 6/24 + 9/24 = 24/24 = 1</m></p>
           </feedback>
         </condition>
         <condition string=".*">
@@ -561,9 +564,6 @@
         </condition>
       </var>
     </setup>
-    <hint>
-      <p>Use the formula: <m>Var(X) =</m><m> (0-1)^2(9/24) + (1-1)^2(8/24) + (2-1)^2(6/24) + (4-1)^2(1/24)</m></p>
-    </hint>
   </exercise>
   
   <exercise xml:id="random-babies-ex-s" label="B.19">
@@ -571,7 +571,7 @@
     <statement>
       <p>Calculate the standard deviation of <m>X</m> (the square root of the variance). Interpret this value in context.</p>
     <hint>
-      <p>The standard deviation is <m>\sqrt{\text{Var}(X)}</m></p>
+      <p>The standard deviation is <m>\sqrt{Var(X)}</m></p>
     </hint>
     </statement>
     <solution>
