@@ -3,6 +3,7 @@
   <title>Investigation 3.9: Smoking and Lung Cancer</title>
 <exercises xml:id="inv3-9-exercises" hidden-label="yes">
 <title>The (First!) Study</title>
+
   <introduction>
     <image source="images/Inv3.9Intro.png" width="70%"/>
     
@@ -42,8 +43,8 @@
     <title>Baseline Rate</title>
     <statement>
       <p>What is the estimate of the baseline rate of lung cancer from this table? Does that seem to be a reasonable estimate to you? How is this related to the design of the study?</p>
-      <p><response/></p>
     </statement>
+      <p><response/></p>    
     <solution>
       <p>Baseline risk ≈ 605/1385 = 0.437. It does not seem reasonable to believe that almost half of the population at that time was a lung cancer patient. This large proportion happens because the researchers controlled how many lung cancer and non-lung cancer patients would be in the study (and probably consciously trying to make them similar) rather than randomly selecting patients in general and seeing how many had lung cancer (recording the variable "naturally").</p>
     </solution>
@@ -92,11 +93,11 @@
       <p>This is a case-control study: the researchers found cases of lung cancer and then other similar patients without lung cancer (controls). Having lung cancer or not is the response variable.</p>
     </solution>
   </exercise>
-
+<p>One alternative would be to calculate the relative risk of being in the heavy smoker group (which was observed naturally), comparing those with lung cancer to those without lung cancer (control).</p>
   <exercise xml:id="inv3-9-c">
     <title>Alternative Relative Risk</title>
     <statement>
-      <p>One alternative would be to calculate the relative risk of being in the heavy smoker group (which was observed naturally), comparing those with lung cancer to those without lung cancer (control). Calculate this value.</p>
+      <p> Calculate this value.</p>
       <p>Lung cancer patients were <var width="10"/> times more likely to be heavy smokers than control patients.</p>
     </statement>
     <solution>
@@ -106,15 +107,16 @@
     <response/>
   </exercise>
 
+<p>The original thought was to calculate the relative risk of being in the lung cancer group for those who smoked compared to those who didn't smoke.</p>
   <exercise xml:id="inv3-9-d">
     <title>Original Relative Risk</title>
     <statement>
-      <p>The original thought was to calculate the relative risk of being in the lung cancer group for those who smoked compared to those who didn't smoke. Calculate this value. Is it similar to <xref ref="inv3-9-c" text="custom">checkpoint 4</xref>?</p>
+      <p> Calculate this value. Is it similar to <xref ref="inv3-9-c" text="custom">question 4</xref>?</p>
       <p>Smokers were <var width="10"/> times more likely to have lung cancer than non-smokers.</p>
     </statement>
     <solution>
       <p>Relative risk of being in the lung cancer group = (583/1159)/(22/226) ≈ 5.17</p>
-      <p>The heavy smokers were 5.17 times more likely to have lung cancer compared to the light smokers. This value is not at all similar to the relative risk calculated in checkpoint 4.</p>
+      <p>The heavy smokers were 5.17 times more likely to have lung cancer compared to the light smokers. This value is not at all similar to the relative risk calculated in question 4.</p>
     </solution>
     <response/>
   </exercise>
@@ -145,13 +147,13 @@
   <exercise xml:id="inv3-9-e">
     <title>Odds Ratio: Heavy Smoker</title>
     <statement>
-      <p>Calculate and interpret the odds ratio comparing the odds of being a heavy smoker (rather than light smoker) for the lung cancer patients to the odds of being a heavy smoker in the control group. Does this match <xref ref="inv3-9-c" text="custom">checkpoint 4</xref>?</p>
+      <p>Calculate and interpret the odds ratio comparing the odds of being a heavy smoker (rather than light smoker) for the lung cancer patients to the odds of being a heavy smoker in the control group. Does this match <xref ref="inv3-9-c" text="custom">question 4</xref>?</p>
       <p>The odds of being a heavy smoker are <var width="10"/> times higher for lung cancer patients than controls.</p>
     </statement>
     <solution>
       <p>Odds ratio of being heavy smoker = (583/22)/(576/204) ≈ 9.39</p>
       <p>The odds of being a heavy smoker were 9.39 times higher for lung cancer patients than for control patients.</p>
-      <p>This does not match checkpoint 4.</p>
+      <p>This does not match question 4.</p>
     </solution>
     <response/>
   </exercise>
@@ -159,12 +161,12 @@
   <exercise xml:id="inv3-9-f">
     <title>Odds Ratio: Lung Cancer</title>
     <statement>
-      <p>Calculate and interpret the odds ratio comparing the odds of lung cancer for the smokers to the odds of lung cancer for the nonsmokers. Does this match <xref ref="inv3-9-d" text="custom">checkpoint 4</xref> or <xref ref="inv3-9-e" text="custom">checkpoint 6</xref>?</p>
+      <p>Calculate and interpret the odds ratio comparing the odds of lung cancer for the smokers to the odds of lung cancer for the nonsmokers. Does this match <xref ref="inv3-9-d" text="custom">question 4</xref> or <xref ref="inv3-9-e" text="custom">question 6</xref>?</p>
       <p>The odds of lung cancer are <var width="10"/> times higher for smokers than non-smokers.</p>
     </statement>
     <solution>
       <p>Odds ratio of lung cancer = (583/576)/(22/204) ≈ 9.39</p>
-      <p>The odds of lung cancer are 9.39 times higher for heavy smokers than for light smokers. This does not match checkpoint 4 but does match checkpoint 6.</p>
+      <p>The odds of lung cancer are 9.39 times higher for heavy smokers than for light smokers. This does not match question 4 but does match question 6.</p>
     </solution>
     <response/>
   </exercise>
@@ -225,7 +227,7 @@
   <assemblage>
     <title>Theoretical Result</title>
     <p>The sampling distribution of the sample odds ratio also follows a log-normal distribution like the relative risk. Thus, we can construct a confidence interval for the population log-odds ratio using the normal distribution. The standard error of the sample log-odds ratio (using the natural log) is given by the expression:</p>
-    <p>SE(ln odds ratio) = <m>\sqrt{\frac{1}{A} + \frac{1}{B} + \frac{1}{C} + \frac{1}{D}}</m></p>
+    <p><m>SE(ln odds ratio) = \sqrt{\frac{1}{A} + \frac{1}{B} + \frac{1}{C} + \frac{1}{D}}</m></p>
     <p>where A, B, C, and D are the four table counts.</p>
   </assemblage>
 
@@ -248,7 +250,7 @@
   <exercise xml:id="inv3-9-i">
     <title>Back-Transform Interval</title>
     <statement>
-      <p>Back-transform the end-points of the interval in <xref ref="inv3-9-h" text="custom">checkpoint 9</xref> and interpret your results.</p>
+      <p>Back-transform the end-points of the interval in <xref ref="inv3-9-h" text="custom">question 9</xref> and interpret your results.</p>
       <p><var width="60" height="4"/></p>
     </statement>
     <solution>
@@ -261,7 +263,7 @@
   <exercise xml:id="inv3-9-j">
     <title>Interval Contains One?</title>
     <statement>
-      <p>Does the interval found in <xref ref="inv3-9-i" text="custom">checkpoint 9</xref> contain the value one? Discuss the implications of whether or not the interval contains the value one.</p>
+      <p>Does the interval found in <xref ref="inv3-9-i" text="custom">question 9</xref> contain the value one? Discuss the implications of whether or not the interval contains the value one.</p>
       <p><response/></p>
     </statement>
     <solution>
@@ -289,19 +291,15 @@
     </statement>
     <solution>
       <title>Solution using R</title>
-      <figure>
         <image source="images/Inv3.9solskR.jpg" width="80%">
           <description>R output showing Fisher's exact test results for the odds ratio calculation</description>
         </image>
-      </figure>
     </solution>
     <solution>
       <title>Solution using JMP</title>
-      <figure>
-        <image source="images/Inv3.9solskJMP.jpg" width="80%">
+        <image source="images/Inv3.9solskJMP.jpg" width="60%">
           <description>JMP output showing odds ratio calculation and confidence interval</description>
         </image>
-      </figure>
     </solution>
   </exercise>
 
@@ -321,13 +319,13 @@
     <title>Study Conclusions</title>
     <p>Because the baseline incidence of lung cancer in the population is so small, the researchers conducted a case-control study to ensure they would have both patients with and without lung cancer in their study (matched by age and economic status). In a case-control study, the odds ratio is a more meaningful statistic to compare the incidence of lung cancer between the two groups. We find that the sample odds of lung cancer are almost ten times larger for the regular smokers compared to the non-regulars in this study. By the invariance of the odds ratio, this also tells us that the odds of being a regular smoker (rather than not) are almost 10 times higher for those with lung cancer. We are 95% confident that in the larger populations represented by these samples, the odds of lung cancer are 5.92 to 15.52 times larger for the regular smokers (Fisher's Exact Test p-value ≪ 0.001). If both success proportions had been small, we could say this is approximately equal to the relative risk and use the words "10 times higher" or "10 times more likely." The full data set (which broke down the second category further) also shows that the odds of having lung cancer increase with the amount of smoking (light smokers have 2 times the odds, heavy smokers have 11 times the odds, and chain smokers have 29 times the odds!)—this is called a "dose-response." We see a strong relationship between the size of the "dose" of smoking and occurrence of lung cancer for these patients.</p>
 
-    <p>However, this study was criticized for "retrospective bias" in asking subjects to accurately remember, and be willing to tell, details of their lifestyles. This can also be complicated by asking these questions of patients who know they have been diagnosed with lung cancer, as their recall may be affected by this knowledge. We also have to worry whether hospitalized males are representative of the general male population. Other studies around the same time (e.g., Hammond and Horn – see Practice Problem 3.10, Wynder and Cornfield) found similar increases in "risk" with smoking. However, these were all observational studies so critics reasonably argued that other variables such as lifestyle, diet, exercise, and genetics could be responsible for both the smoking habits and the development of lung cancer. Although there was still much (on-going) research to be done, and these studies did not claim to prove that cigarette smoking causes lung cancer, these landmark studies set the stage. They also led to many efforts in improving study design and in developing statistical tools (such as relative risk and odds ratios) to analyze the results.</p>
+    <p>However, this study was criticized for "retrospective bias" in asking subjects to accurately remember, and be willing to tell, details of their lifestyles. This can also be complicated by asking these questions of patients who know they have been diagnosed with lung cancer, as their recall may be affected by this knowledge. We also have to worry whether hospitalized males are representative of the general male population. Other studies around the same time (e.g., Hammond and Horn – see <xref ref="inv-3-10" text="custom">Practice Problem 3.10</xref>, Wynder and Cornfield) found similar increases in "risk" with smoking. However, these were all observational studies so critics reasonably argued that other variables such as lifestyle, diet, exercise, and genetics could be responsible for both the smoking habits and the development of lung cancer. Although there was still much (on-going) research to be done, and these studies did not claim to prove that cigarette smoking causes lung cancer, these landmark studies set the stage. They also led to many efforts in improving study design and in developing statistical tools (such as relative risk and odds ratios) to analyze the results.</p>
   </assemblage>
 </exercises>
   <subsection xml:id="practice3-9A">
     <title>Practice Problem 3.9A: Abuse and Violence Study</title>
 
-    <p>A researcher searched court records to find 908 individuals who had been victims of abuse as children (11 years or younger). She then found 667 individuals, with similar demographic characteristics, who had not been abused as children. Based on a search through subsequent years of court records, she determined how many in each of these groups became involved in violent crimes (Widom, <url href="https://www.ojp.gov/ncjrs/virtual-library/abstracts/does-violence-beget-violence-critical-examination-literature" visual="ojp.gov">1989</url>). The results are shown below:</p>
+    <p>A researcher searched court records to find 908 individuals who had been victims of abuse as children (11 years or younger). She then found 667 individuals, with similar demographic characteristics, who had not been abused as children. Based on a search through subsequent years of court records, she determined how many in each of these groups became involved in violent crimes (<url href="https://www.ojp.gov/ncjrs/virtual-library/abstracts/does-violence-beget-violence-critical-examination-literature" visual="ojp.gov">Widom, 1989</url>). The results are shown below:</p>
 
       <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
         <col halign="left"/>
