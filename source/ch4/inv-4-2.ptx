@@ -29,24 +29,25 @@
   <p>Open the <url href="https://www.rossmanchance.com/iscam3/data/elephants.txt">elephants.txt</url> data file. First, look at the data by creating a graph of distances separated by species. When using graphs to compare groups it is especially important that <em>comparative graphs</em> be drawn on the same scale. <alert>Note:</alert> These data are <em>stacked</em> as each column is a different variable (species and distance).</p>
     
   <exercise xml:id="inv4-2-b" label="I4.2.2">
-    <title>Create Comparative Graphs - Applet</title>
+    <title>Create Comparative Graphs</title>
     <statement>
-      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url> to create comparative graphs:</p>
-      <ul>
-        <li><p>Copy the data to the clipboard. In the applet, check the Stacked box. Press Clear and paste the data into the Sample data window and press Use Data. (Or type elephants.txt in the empty Paste data window.)</p></li>
-        <li><p>Use the Separate by pull-down menu to select the Species categorical variable</p></li>
-        <li><p>You have radio button options for Histograms and Boxplots.</p></li>
-      </ul>
-    </statement>
-    <response/>
-  </exercise>
-  
-  <exercise xml:id="inv4-2-b2" label="I4.2.2b">
-    <title>Create Comparative Graphs - R</title>
-    <statement>
-      <p>Use R to create comparative graphs:</p>
-      <sage language="r">
-        <input>
+      <p>Use technology (Applet, R, or JMP) to create comparative graphs of walking distances by species. Choose one set of instructions below by clicking on a hint.</p>
+      
+      <hint>
+        <title><url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm" visual="rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url></title>
+        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url> to create comparative graphs:</p>
+        <ul>
+          <li><p>Copy the data to the clipboard. In the applet, check the Stacked box. Press Clear and paste the data into the Sample data window and press Use Data. (Or type elephants.txt in the empty Paste data window.)</p></li>
+          <li><p>Use the Separate by pull-down menu to select the Species categorical variable</p></li>
+          <li><p>You have radio button options for Histograms and Boxplots.</p></li>
+        </ul>
+      </hint>
+      
+      <hint>
+        <title>R/Sage Instructions</title>
+        <p>Use R to create comparative graphs:</p>
+        <sage language="r">
+          <input>
 # Load ISCAM functions from GitHub
 invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
@@ -69,54 +70,54 @@ hist(elephants$Distance[elephants$Species=="Asian"],
      main="Asian Elephants", xlab="Distance (km)", 
      xlim=c(0,15), breaks=20, col="lightgreen")
 invisible(par(mfrow=c(1,1)))
-        </input>
-      </sage>
+          </input>
+        </sage>
+      </hint>
+      
+      <hint>
+        <title>JMP Instructions</title>
+        <sidebyside widths="60% 35%" valign="top">
+          <stack>
+            <p>Use JMP to create comparative graphs:</p>
+            <ul>
+              <li><p>Choose Analyze > Distribution and specify both the quantitative variable (Y, Columns) and the categorical variable (By).</p></li>
+              <li><p>Press OK.</p></li>
+              <li><p>Use the Distributions hot spot to select Stack</p></li>
+              <li><p>(See also File > Preferences)</p></li>
+            </ul>
+          </stack>
+          
+          <stack>
+            <image source="images/Inv4.2JMP1.png" width="100%">
+              <description>JMP dialog for casting columns into roles</description>
+            </image>
+          </stack>
+        </sidebyside>
+        
+        <sidebyside widths="60% 35%" valign="top">
+          <stack>
+            <p>OR</p>
+            <ul>
+              <li><p>Select Graph > Graph Builder.</p></li>
+              <li><p>Drag Distance to the X axis and Species to the Y axis</p></li>
+              <li><p>Use the icons across the top to change to boxplots and histograms.</p></li>
+              <li><p>Press Done to complete the graph.</p></li>
+              <li><p>See also Analyze > Tabulate.</p></li>
+            </ul>
+          </stack>
+          
+          <stack>
+            <image source="images/Inv4.2JMP2.png" width="100%">
+              <description>JMP Graph Builder icons for boxplots and histograms</description>
+            </image>
+          </stack>
+        </sidebyside>
+      </hint>
     </statement>
+    <response/>
   </exercise>
   
-  <exercise xml:id="inv4-2-b3" label="I4.2.2c">
-    <title>Create Comparative Graphs - JMP</title>
-    <statement>
-      <sidebyside widths="60% 35%" valign="top">
-        <stack>
-          <p>Use JMP to create comparative graphs:</p>
-          <ul>
-            <li><p>Choose Analyze > Distribution and specify both the quantitative variable (Y, Columns) and the categorical variable (By).</p></li>
-            <li><p>Press OK.</p></li>
-            <li><p>Use the Distributions hot spot to select Stack</p></li>
-            <li><p>(See also File > Preferences)</p></li>
-          </ul>
-        </stack>
-        
-        <stack>
-          <image source="images/Inv4.2JMP1.png" width="100%">
-            <description>JMP dialog for casting columns into roles</description>
-          </image>
-        </stack>
-      </sidebyside>
-      
-      <sidebyside widths="60% 35%" valign="top">
-        <stack>
-          <p>OR</p>
-          <ul>
-            <li><p>Select Graph > Graph Builder.</p></li>
-            <li><p>Drag Distance to the X axis and Species to the Y axis</p></li>
-            <li><p>Use the icons across the top to change to boxplots and histograms.</p></li>
-            <li><p>Press Done to complete the graph.</p></li>
-            <li><p>See also Analyze > Tabulate.</p></li>
-          </ul>
-        </stack>
-        
-        <stack>
-          <image source="images/Inv4.2JMP2.png" width="100%">
-            <description>JMP Graph Builder icons for boxplots and histograms</description>
-          </image>
-        </stack>
-      </sidebyside>
-      
-    </statement>
-  </exercise>
-      <p><alert>Note:</alert> When comparing groups, some boxplot displays vary the other dimension of the box size by relative sample size.</p>
+  <p><alert>Note:</alert> When comparing groups, some boxplot displays vary the other dimension of the box size by relative sample size.</p>
     
     <exercise xml:id="inv4-2-c" label="I4.2.7">
       <title>Identify Outliers</title>
@@ -163,21 +164,23 @@ invisible(par(mfrow=c(1,1)))
     <p>And we can calculate separate summary statistics for the two species:</p>
     
   <exercise xml:id="inv4-2-d1" label="I4.2.3">
-    <title>Calculate Numerical Summaries - Applet</title>
+    <title>Calculate Numerical Summaries</title>
     <statement>
-      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url> to calculate numerical summaries:</p>
-      <ul>
-        <li><p>Check the Mean: Actual and Std dev: Actual boxes (at least)</p></li>
-      </ul>
-    </statement>
-  </exercise>
-  
-  <exercise xml:id="inv4-2-d2" label="I4.2.3b">
-    <title>Calculate Numerical Summaries - R</title>
-    <statement>
-      <p>Use R to calculate numerical summaries:</p>
-      <sage language="r">
-        <input>
+      <p>Use technology (Applet, R, or JMP) to calculate numerical summaries for each species. Choose one set of instructions below by clicking on a hint.</p>
+      
+      <hint>
+        <title><url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm" visual="rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url></title>
+        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url> to calculate numerical summaries:</p>
+        <ul>
+          <li><p>Check the Mean: Actual and Std dev: Actual boxes (at least)</p></li>
+        </ul>
+      </hint>
+      
+      <hint>
+        <title>R/Sage Instructions</title>
+        <p>Use R to calculate numerical summaries:</p>
+        <sage language="r">
+          <input>
 # Load ISCAM functions from GitHub
 invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
@@ -186,21 +189,21 @@ elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-ru
 
 # Summary statistics by species using ISCAM function
 iscamsummary(elephants$Distance, elephants$Species)
-        </input>
-      </sage>
+          </input>
+        </sage>
+      </hint>
+      
+      <hint>
+        <title>JMP Instructions</title>
+        <p>Use JMP to calculate numerical summaries:</p>
+        <ul>
+          <li><p>Choose Analyze > Distribution and specify both the quantitative variable (Y, Columns) and the categorical variable (By).</p></li>
+          <li><p>Press OK.</p></li>
+          <li><p>Use the Distributions hot spot to select Stack.</p></li>
+        </ul>
+      </hint>
     </statement>
-  </exercise>
-  
-  <exercise xml:id="inv4-2-d3" label="I4.2.3c">
-    <title>Calculate Numerical Summaries - JMP</title>
-    <statement>
-      <p>Use JMP to calculate numerical summaries:</p>
-      <ul>
-        <li><p>Choose Analyze > Distribution and specify both the quantitative variable (Y, Columns) and the categorical variable (By).</p></li>
-        <li><p>Press OK.</p></li>
-        <li><p>Use the Distributions hot spot to select Stack.</p></li>
-      </ul>
-    </statement>
+    <response/>
   </exercise>
     
     <exercise xml:id="inv4-2-f" label="I4.2.10">
