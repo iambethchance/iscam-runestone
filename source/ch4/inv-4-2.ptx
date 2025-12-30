@@ -555,28 +555,39 @@ with only the summary data is one advantage the <m>t</m>-test has over the simul
 
         <hint>
           <title>In Applet - Theory-Based Inference (Summary Data)</title>
-          <p>Use the Theory-Based Inference applet to conduct a two-sample <m>t</m>-test:</p>
-          <image source="images/Inv4.2TBIA.png" width="80%">
+          <p>Using the <url href="https://www.rossmanchance.com/applets/2021/rbia/TBIA.html">Theory-Based Inference applet</url> to conduct a two-sample <m>t</m>-test</p>
+          <p>For example:</p>
+          <image source="images/Inv4.2TBIA.png" width="60%">
             <description>Theory-Based Inference applet for unpooled two-sample t-test with summary data</description>
           </image>
           
           <ul>
-            <li><p>Select <term index="no">Two Means</term> from the pull-down menu</p></li>
-            <li><p>Choose Unpooled</p></li>
-            <li><p>Enter the sample sizes, means, and standard deviations for each group</p></li>
-            <li><p>Choose the alternative hypothesis (typically not equal for two-sided)</p></li>
-            <li><p>Press Calculate to get the test statistic, degrees of freedom, and p-value</p></li>
+            <li><p>Select "Two Means" from the <term index="no">Scenario</term> pull-down menu</p></li>
+            <li><p>Enter the sample sizes, means, and standard deviations for each group. Press <term index="no">Calculate</term> to see a visual representation of the means and standard deviations.</p></li>
+            <li><p>Check the <term index="no">Test of Significance</term> box</p></li>
+            <li><p>Choose the alternative hypothesis</p></li>
+            <li><p>Press <term index="no">Calculate</term> to get the test statistic, degrees of freedom, and p-value</p></li>
           </ul>
         </hint>
         <hint>
   <title>In R (summary data)</title>
+          <p>The <c>iscamtwosamplet</c> function takes the following inputs:</p>
+          <ul>
+            <li><p>Group 1 mean, standard deviation, sample size (in that order)</p></li>
+            <li><p>Group 2 mean, standard deviation, sample size (in that order)</p></li>
+            <li><p>Optional: hypothesized difference (default is zero)</p></li>
+            <li><p>Optional: alternative ("less", "greater", or "two.sided")</p></li>
+            <li><p>Optional: conf.level</p></li>
+          </ul>
           <sage language="r">
             <input>
 # Load ISCAM functions from GitHub
 invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
-# Two-sample t-test (unpooled - Welch's t-test)
-invisible(iscamtwosamplet(x1=75, sd1=15, n1=888, x2=66, sd2=15, n2=99, alt="greater"))
+# Two-sample t-test (unpooled - Welch's t-test) with summary data
+# Example: Group 1 (mean=5.4, sd=1.47, n=33) vs Group 2 (mean=5.3, sd=3.41, n=23)
+invisible(iscamtwosamplet(x1=5.4, sd1=1.47, n1=33, x2=5.3, sd2=3.41, n2=23, 
+                          alternative="two.sided", conf.level=0.95))
             </input>
           </sage>
         </hint>
@@ -606,18 +617,19 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
           <title>In JMP (raw data)</title>
           <sidebyside widths="60% 35%" valign="top">
             <stack>
-              <p>Use JMP to conduct a two-sample <m>t</m>-test with raw data:</p>
+              <p>Use JMP to conduct a two-sample <m>t</m>-test with stacked data:</p>
               <ul>
                 <li><p>Choose <term index="no">Analyze > Fit Y by X</term></p></li>
                 <li><p>Put the quantitative variable in <term index="no">Y, Response</term> and the categorical variable in <term index="no">X, Factor</term></p></li>
                 <li><p>Press <term index="no">OK</term></p></li>
-                <li><p>Click on the red triangle next to <term index="no">Oneway Analysis</term> and select <term index="no"><m>t</m> Test</term></p></li>
-                <li><p>JMP provides both pooled and unpooled (Welch) results</p></li>
+                <li><p>Click on the red triangle next to <term index="no">Oneway Analysis</term> 
+                and select <term index="no"><m>t</m> Test</term>. The output will include the 95% confidence interval, the t standardized statistic (and df), and 3 p-values. Pick the p-value that matches your alternative hypothesis.</p>
+                <ul><li><p>To change the confidence level, use the hot spot to select <term index="no">Set <m>\alpha</m> level</term> to <m>1-C</m>.</p></li></ul></li>
               </ul>
             </stack>
             
             <stack>
-              <image source="images/Inv4.2JMP3.png" width="100%">
+              <image source="images/Inv4.2JMP3.png" width="60%">
                 <description>JMP output for unpooled two-sample t-test</description>
               </image>
             </stack>
@@ -631,12 +643,13 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
             <description>Theory-Based Inference applet for unpooled two-sample t-test with raw data</description>
           </image>
           <ul>
-            <li><p>Select Two Means from the pull-down menu</p></li>
-            <li><p>Check the <term index="no">Stacked</term> box if your data are in stacked format</p></li>
-            <li><p>Enter elephants.txt in the data window or paste the data</p></li>
-            <li><p>Press <term index="no">Use Data</term></p></li>
-            <li><p>Select the response variable and grouping variable</p></li>
-            <li><p>Choose <term index="no">Unpooled</term></p></li>
+            <li><p>Select "Two Means" from the <term index="no">Scenario</term> pull-down menu</p></li>
+            <li><p>Copy the data to the clipboard, check the <term index="no">Paste data</term>
+             box, select the <term index="no">Stacked</term> box if that’s the data format 
+             (explanatory variable in first column), press <term index="no">Clear</term>, 
+             click in the data window and paste the data. Press <term index="no">Use Data</term>.</p></li>
+            <li><p>Check the <term index="no">Test of Significance</term> box.</p></li>
+            <li><p>Specify the hypothesized difference and direction of the alternative.</p></li>
             <li><p>Press <term index="no">Calculate</term></p></li>
           </ul>
         </hint>
