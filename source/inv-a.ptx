@@ -196,9 +196,34 @@
     <hint>
       <p>Calculate: <m>\frac{14 - 7.2}{3.3}</m></p>
     </hint>
-    <var width="60" height="4"/>
+      <p><var width="10" /> standard deviations (indicate above or below): <var width="10" /></p>
     </statement>
-    <response/>
+    <setup>
+      <var>
+        <condition number="2.06" tolerance="0.05">
+          <feedback>
+            <p>Correct! <m>\frac{14 - 7.2}{3.3} = 2.06</m></p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. Use the formula: <m>\frac{\text{value} - \text{mean}}{\text{SD}}</m></p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="above">
+          <feedback>
+            <p>Correct! 14 is above the mean of 7.2.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. Is 14 greater than or less than 7.2?</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m>\frac{14 - 7.2}{3.3} = 2.06</m> standard deviations above the mean</p>
     </solution>

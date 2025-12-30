@@ -3,7 +3,8 @@
   <title>Randomness and Probability</title>
 <introduction>
   <p><em>In the previous investigation, you looked at historical data for the number of hurricanes that had occurred per year.  As long as the “data generating process” doesn’t change, these data can give insight as to what will happen in the future. In this investigation, the goal is to explore a random process. We apologize in advance for the absurd but memorable process below. </em></p>
-</introduction>  <subsection>  <exercises xml:id="exercises-0-b" hidden-label="yes"><title>Investigation B: Random Babies</title>
+</introduction>  
+<exercises xml:id="exercises-0-b" hidden-label="yes"><title>Investigation B: Random Babies</title>
     
   <p>Suppose that on one night at a certain hospital, four mothers give birth to four babies. As a very sick joke, the hospital staff decides to return babies to their mothers completely at random. Our goal is to look for the pattern of outcomes from this process, with regard to the issue of how many mothers get the correct baby. This enables us to investigate the underlying properties of this child-returning process, such as the probability that at least one mother receives her own baby.</p>
   
@@ -107,6 +108,7 @@
     </hint>
     <var width="10" />
     </statement>
+    <response/>
     <solution>
       <p>The proportion should be around 0.375. The exact theoretical probability is 9/24 = 0.375.</p>
     </solution>
@@ -569,15 +571,29 @@
   <exercise xml:id="random-babies-ex-s" label="B.19">
     <title>Calculate Standard Deviation</title>
     <statement>
-      <p>Calculate the standard deviation of <m>X</m> (the square root of the variance). Interpret this value in context.</p>
+      <p>Calculate the standard deviation of <m>X</m> (the square root of the variance).</p>
     <hint>
       <p>The standard deviation is <m>\sqrt{Var(X)}</m></p>
     </hint>
+      <p><m>SD(X)</m> = <var width="10" /></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="1" tolerance="0.01">
+          <feedback>
+            <p>Correct! <m>SD(X) = \sqrt{1} = 1</m></p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. Take the square root of the variance you calculated in the previous question.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m>SD(X) = \sqrt{1} = 1</m>. The standard deviation of 1 means that the number of matches typically varies by about 1 from the expected value of 1 match.</p>
     </solution>
-    <response/>
   </exercise>
   
   <p>We will interpret this standard deviation similarly to how we did in <xref ref="invA" text="custom">Investigation A</xref>: how far the outcomes tend to be from the expected value. Here we are talking in terms of the probability model; in <xref ref="invA" text="custom">Investigation A</xref> we were talking in terms of the historical data.</p>
@@ -607,7 +623,6 @@
     <p>This approach of looking at the analysis using both simulation and exact approaches will be a theme in this course. We will also consider some approximate mathematical models as well. You should consider these multiple approaches as a way to assess the appropriateness of each method. You should also be aware of situations where one method may be preferable to another and why.</p>
   </paragraphs>
   </exercises>
-  </subsection>
   <subsection xml:id="practiceBA">
     <title>Practice Problem B.A</title>
     
@@ -625,16 +640,44 @@
       <title>Exact Probability of Match</title>
       <statement>
         <p>Carry out the exact analysis to determine the probability of at least one executive receiving his or her own phone.</p>
+        <p>Probability = <var width="10" /></p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="0.667" tolerance="0.01">
+            <feedback>
+              <p>Correct! For 3 executives, <m>P(\text{at least one match}) = 1 - P(\text{zero matches}) = 1 - 2/6 = 4/6 \approx 0.667</m></p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Find the probability of zero matches first, then use the complement rule.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
     </exercise>
     
     <exercise xml:id="practice-ba-c" label="PPB.A.3">
       <title>Expected Number of Matches</title>
       <statement>
-        <p>Calculate the expected number of matches for 3 executives. How does this compare to the case with 4 mothers?</p>
+        <p>Calculate the expected number of matches for 3 executives.</p>
+        <p><m>E(X)</m> = <var width="10" /></p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="1" tolerance="0.01">
+            <feedback>
+              <p>Correct! The expected value is 1, same as with 4 mothers.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Use the formula <m>E(X) = \sum x \cdot P(X=x)</m> for all possible values.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
     </exercise>
     
     <exercise xml:id="practice-ba-d" label="PPB.A.4">
@@ -655,8 +698,22 @@
       <title>Probability All Correct</title>
       <statement>
         <p>Calculate the (exact) probability that all 8 mothers receive the correct baby. [<em>Hint</em>: First determine how many possible outcomes there are for returning 8 babies to their mothers.]</p>
+        <p>Probability = <var width="10" /></p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="0.0000248" tolerance="0.000001">
+            <feedback>
+              <p>Correct! <m>P(\text{all correct}) = 1/8! = 1/40320 \approx 0.0000248</m></p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. There are 8! = 40,320 possible arrangements, and only 1 is correct. So <m>P = 1/40320</m>.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
     </exercise>
     
     <exercise xml:id="practice-bb-b" label="PPB.B.2">
@@ -666,8 +723,22 @@
       <hint>
         <p>Think carefully: is it possible for exactly 7 mothers to get the correct baby?</p>
       </hint>
+        <p>Probability = <var width="10" /></p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="0">
+            <feedback>
+              <p>Correct! It's impossible to have exactly 7 matches. If 7 are correct, the 8th must also be correct!</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Think about what happens if 7 mothers have the correct baby - where does the 8th baby go?</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
     </exercise>
     
     <exercise xml:id="practice-bb-c" label="PPB.B.3">
@@ -696,8 +767,22 @@
       <title>Probability of Winning Color Bet</title>
       <statement>
         <p>A common bet is color. If someone bets $1 on red, and the ball lands in any of the 18 red slots, the player wins $2 (a net profit of $1). What is the probability they will win their bet on red?</p>
+        <p>Probability = <var width="10" /></p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="0.474" tolerance="0.01">
+            <feedback>
+              <p>Correct! <m>P(\text{red}) = 18/38 \approx 0.474</m></p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. There are 18 red slots out of 38 total slots (18 red + 18 black + 2 green).</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
     </exercise>
     
     <exercise xml:id="practice-bc-b" label="PPB.C.2">
@@ -712,8 +797,22 @@
       <title>Probability of Winning Number Bet</title>
       <statement>
         <p>Another common bet is a number. If the ball lands on the chosen number, the player makes a profit of $35. What is the probability someone wins if they bet on a number?</p>
+        <p>Probability = <var width="10" /></p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="0.0263" tolerance="0.001">
+            <feedback>
+              <p>Correct! <m>P(\text{specific number}) = 1/38 \approx 0.0263</m></p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. There is 1 winning number out of 38 total slots.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
     </exercise>
     
     <exercise xml:id="practice-bc-d" label="PPB.C.4">
