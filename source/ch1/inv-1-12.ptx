@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="inv-1-12" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Investigation 1.12: Sampling Words</title>
-
   <introduction>
     <p><em>Note: Before beginning this investigation, 
     you should have completed the data collection activity 
     on the previous page.</em></p>
-
     <p>The authorship of literary works is often a topic for debate. Were some of the works attributed to Shakespeare actually written by Bacon or Marlowe? Which of the anonymously published Federalist Papers were written by Hamilton, which by Madison, which by Jay? Who were the authors of the writings contained in the Bible? The fields of "literary computing" and "forensic stylometry" examine ways of numerically analyzing authors' works, looking at variables such as sentence length and rates of occurrence of specific words.</p>
-
     <sidebyside widths="60% 35%" valign="top">
       <p>The passage you selected words from is Abraham Lincoln's Gettysburg Address, given November 19, 1863 on the battlefield near Gettysburg, PA. In characterizing this passage, we would ideally examine every word. However, often it is much more convenient and even more efficient to only examine a subset of words.</p>
       <image source="images/address.jpg">
         <description>Image of the Gettysburg Address</description>
       </image>
     </sidebyside>
-
+</introduction>
+<subsection xml:id="inv-1-12-1">
+<exercises>
     <assemblage>
       <title>Definitions: Population, Sample, and Sample Size</title>
       <p>The <term>population</term> is the entire collection of observational units that we are interested in. A <term>sample</term> is the subset of the population for which we collect data. A study's <term>sample size</term> is the number of observational units in the study.</p>
@@ -28,9 +27,6 @@
     <p>Up until now, we have generally been assuming we have a representative sample from an infinite on-going process (e.g., toast drops, hospital transplant operations, candy manufacturing). We made some assumptions, like the process is not changing over time and that there is no tendency to select some types of outcomes more than others (e.g., getting the first 5 candies from the manufacturing process rather than throughout the day). In fact, a binomial process assumes you have repeat observations from the exact same process but with randomness in the actual outcome that occurs (sometimes an infant chooses the helper toy, sometimes not; the randomness is in the choice).</p>
 
     <p>In this investigation, instead of sampling from an on-going process we are sampling from a finite population (the 268 words). In fact, we actually have access to the entire population. But what if we didn't? We still need some way of convincing people that our sample is likely to be representative of the population. Let's use this population to explore how samples behave when the "random chance" arises from which observational units are selected to be in the sample, rather than from "random choices" made by the observational units.</p>
-  </introduction>
-<subsection>
-<exercises>
   <exercise xml:id="I1-12-a">
     <title>Your sample of words</title>
     <statement>
@@ -277,7 +273,7 @@
     </statement>
     <solution>
       <p>Example results. Each dot in the graph represents the proportion of short words in a random sample of 10 words.</p>
-      <image source="images/Inv1.12-hsols.jpg" width="80%">
+      <image source="images/Inv1.12(h)sols.jpg" width="80%">
         <description>Solution graph for checkpoint h showing sampling distribution - Mean = 0.2019, SD = 0.1704, median = 0.20, <m>n</m> = 53</description>
       </image>
       <p>Mean = 0.2019, SD = 0.1704, median = 0.20, <m>n</m> = 53.</p>
@@ -490,7 +486,7 @@ sample(ids, 5)
     </statement>
     <solution>
       <p>Example results:</p>
-      <image source="images/Inv1.12-osols.jpg" width="80%">
+      <image source="images/Inv1.12(o)sols.jpg" width="80%">
         <description>Solution graph for checkpoint o comparing distributions</description>
       </image>
       <p>Mean = 0.494, SD = 0.53294, median = 0.40, <m>n</m> = 53. This graph is centered much closer to 0.41, with a standard deviation that is about half as large.</p>
@@ -576,7 +572,7 @@ sample(ids, 5)
     </statement>
     <solution>
       <p>Example results:</p>
-      <image source="images/Inv1.12-usols.jpg" width="50%">
+      <image source="images/Inv1.12(u)sols.jpg" width="50%">
         <description>Solution graph for checkpoint u showing effect of larger sample size</description>
       </image>
       <p>The center has not changed (0.40), nor has the symmetric shape. But the standard deviation has decreased to 0.154.</p>
