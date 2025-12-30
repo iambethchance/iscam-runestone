@@ -59,18 +59,18 @@ elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-ru
 invisible(iscamdotplot(elephants$Distance, elephants$Species, xlab="Distance (km)"))
 
 # Boxplot
-boxplot(Distance ~ Species, data=elephants, horizontal=TRUE, 
-        xlab="Distance (km)", ylab="Species")
+invisible(boxplot(Distance ~ Species, data=elephants, horizontal=TRUE, 
+        xlab="Distance (km)", ylab="Species"))
 
 # Stacked histograms using base R
-invisible(par(mfrow=c(2,1)))
-hist(elephants$Distance[elephants$Species=="African"], 
+par(mfrow=c(2,1))
+invisible(hist(elephants$Distance[elephants$Species=="African"], 
      main="African Elephants", xlab="Distance (km)", 
-     xlim=c(0,15), breaks=20, col="lightblue")
-hist(elephants$Distance[elephants$Species=="Asian"], 
+     xlim=c(0,15), breaks=20, col="lightblue"))
+invisible(hist(elephants$Distance[elephants$Species=="Asian"], 
      main="Asian Elephants", xlab="Distance (km)", 
-     xlim=c(0,15), breaks=20, col="lightgreen")
-invisible(par(mfrow=c(1,1)))
+     xlim=c(0,15), breaks=20, col="lightgreen"))
+par(mfrow=c(1,1))
           </input>
         </sage>
       </hint>
@@ -189,7 +189,7 @@ invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance
 elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
 
 # Summary statistics by species using ISCAM function
-iscamsummary(elephants$Distance, elephants$Species)
+invisible(iscamsummary(elephants$Distance, elephants$Species))
           </input>
         </sage>
       </hint>
@@ -491,7 +491,7 @@ Players without a team affiliation or without a listed salary were not included 
       
       So then what we really need to know about is the distribution of <m>t = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>. 
       In the applet, 
-      <ul><li>use the <alert>Statistic</alert> pull-down menu to select the <m>t</m>-statistic and then examine the distribution of this statistic. 
+      <ul><li>Use the <alert>Statistic</alert> pull-down menu to select the <m>t</m>-statistic and then examine the distribution of this statistic. 
       </li></ul>
       <exercise xml:id="prob-detour-2means-m" label="PD4.2.13">
         <title>Standardized Statistics</title>
@@ -561,7 +561,7 @@ with only the summary data is one advantage the <m>t</m>-test has over the simul
           </image>
           
           <ul>
-            <li><p>Select <alert>Two Means</alert> from the pull-down menu</p></li>
+            <li><p>Select <term index="no">Two Means</term> from the pull-down menu</p></li>
             <li><p>Choose Unpooled</p></li>
             <li><p>Enter the sample sizes, means, and standard deviations for each group</p></li>
             <li><p>Choose the alternative hypothesis (typically not equal for two-sided)</p></li>
@@ -569,38 +569,49 @@ with only the summary data is one advantage the <m>t</m>-test has over the simul
           </ul>
         </hint>
         <hint>
-          <title>In R</title>
-          <p>Use R to conduct a two-sample <m>t</m>-test:</p>
+  <title>In R (summary data)</title>
           <sage language="r">
             <input>
-# Load elephant data
-elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
+# Load ISCAM functions from GitHub
+invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
 # Two-sample t-test (unpooled - Welch's t-test)
-t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
+invisible(iscamtwosamplet(x1=75, sd1=15, n1=888, x2=66, sd2=15, n2=99, alt="greater"))
+            </input>
+          </sage>
+        </hint>
+<hint>          <title>In R (raw data) </title>
+          <p>Use R to conduct a two-sample <m>t</m>-test:</p>
+          <program language="r">
+            <input>
+# For example, with NBA data, you would use something like 
+t.test(salary~conference, alt="two.sided", var.equal=FALSE)
 
 # Note: var.equal=FALSE uses the unpooled (Welch) version
 # This is the default and recommended when variances may differ
             </input>
-          </sage>
+          </program>
         </hint>
         <hint>
-          <title>In JMP</title>
+          <title>In JMP (summary data)</title>
+          <p>Use JMP to conduct a two-sample <m>t</m>-test with summary statistics:</p>
+          <ul>
+            <li><p><url href="https://github.com/iambethchance/iscam-runestone/blob/master/assets/tech_images/JMP_Two_Means_HypTest_v1.jsl">ISCAM Journal file</url>: Hypothesis Test for Two Means</p></li>
+            <li><p>Choose the <m>t</m>-test and Unequal Variances</p></li>
+            <li><p>Specify the alternative hypothesis and the sample means and sample standard deviations and press Enter.</p></li>
+            <li><p>There is no simple CI calculator</p></li>
+          </ul>
+        </hint>
+        <hint>
+          <title>In JMP (raw data)</title>
           <sidebyside widths="60% 35%" valign="top">
             <stack>
-              <p>Use JMP to conduct a two-sample <m>t</m>-test:</p>
+              <p>Use JMP to conduct a two-sample <m>t</m>-test with raw data:</p>
               <ul>
-                <li><p><url href="https://github.com/iambethchance/iscam-runestone/blob/master/assets/tech_images/JMP_Two_Means_HypTest_v1.jsl">ISCAM Journal file</url>: Hypothesis Test for Two Means</p></li>
-                <li><p>Choose the <m>t</m>-test and Unequal Variances</p></li>
-                <li><p>Specify the alternative hypothesis and the sample means and sample standard deviations and press Enter.</p></li>
-                <li><p>There is no simple CI calculator</p></li>
-              </ul>
-              <p>OR</p>
-              <ul>
-                <li><p>Choose Analyze > Fit Y by X</p></li>
-                <li><p>Put the quantitative variable in Y, Response and the categorical variable in X, Factor</p></li>
-                <li><p>Press OK</p></li>
-                <li><p>Click on the red triangle next to Oneway Analysis and select <m>t</m> Test</p></li>
+                <li><p>Choose <term index="no">Analyze > Fit Y by X</term></p></li>
+                <li><p>Put the quantitative variable in <term index="no">Y, Response</term> and the categorical variable in <term index="no">X, Factor</term></p></li>
+                <li><p>Press <term index="no">OK</term></p></li>
+                <li><p>Click on the red triangle next to <term index="no">Oneway Analysis</term> and select <term index="no"><m>t</m> Test</term></p></li>
                 <li><p>JMP provides both pooled and unpooled (Welch) results</p></li>
               </ul>
             </stack>
