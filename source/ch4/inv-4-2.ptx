@@ -37,9 +37,10 @@
         <title><url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm" visual="rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url></title>
         <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url> to create comparative graphs:</p>
         <ul>
-          <li><p>Copy the data to the clipboard. In the applet, check the Stacked box. Press Clear and paste the data into the Sample data window and press Use Data. (Or type elephants.txt in the empty Paste data window.)</p></li>
-          <li><p>Use the Separate by pull-down menu to select the Species categorical variable</p></li>
-          <li><p>You have radio button options for Histograms and Boxplots.</p></li>
+          <li><p>Copy the data to the clipboard. In the applet, check the <term index="no">Stacked</term> box. Press <term index="no">Clear</term> 
+          and paste the data into the Sample data window and press <term index="no">Use Data</term>. (Or type elephants.txt in the empty Paste data window.)</p></li>
+          <li><p>Use the <term index="no">Separate by</term> pull-down menu to select the Species categorical variable</p></li>
+          <li><p>You have radio button options for <term index="no">Histograms</term> and <term index="no">Boxplots</term> .</p></li>
         </ul>
       </hint>
       
@@ -80,9 +81,9 @@ invisible(par(mfrow=c(1,1)))
           <stack>
             <p>Use JMP to create comparative graphs:</p>
             <ul>
-              <li><p>Choose Analyze > Distribution and specify both the quantitative variable (Y, Columns) and the categorical variable (By).</p></li>
-              <li><p>Press OK.</p></li>
-              <li><p>Use the Distributions hot spot to select Stack</p></li>
+              <li><p>Choose <term index="no">Analyze > Distribution</term> and specify both the quantitative variable (<term index="no">Y, Columns</term>) and the categorical variable (<term index="no">By</term>).</p></li>
+              <li><p>Press <term index="no">OK</term>.</p></li>
+              <li><p>Use the Distributions hot spot to select <term index="no">Stack</term>.</p></li>
               <li><p>(See also File > Preferences)</p></li>
             </ul>
           </stack>
@@ -98,11 +99,11 @@ invisible(par(mfrow=c(1,1)))
           <stack>
             <p>OR</p>
             <ul>
-              <li><p>Select Graph > Graph Builder.</p></li>
-              <li><p>Drag Distance to the X axis and Species to the Y axis</p></li>
+              <li><p>Select <term index="no">Graph > Graph Builder</term>.</p></li>
+              <li><p>Drag <em>Distance</em> to the <term index="no">X axis</term> and <em>Species</em> to the <term index="no">Y axis</term>.</p></li>
               <li><p>Use the icons across the top to change to boxplots and histograms.</p></li>
-              <li><p>Press Done to complete the graph.</p></li>
-              <li><p>See also Analyze > Tabulate.</p></li>
+              <li><p>Press <term index="no">Done</term> to complete the graph.</p></li>
+              <li><p>See also <term index="no">Analyze > Tabulate</term>.</p></li>
             </ul>
           </stack>
           
@@ -114,7 +115,7 @@ invisible(par(mfrow=c(1,1)))
         </sidebyside>
       </hint>
     </statement>
-    <response/>
+<!--    <response/> -->
   </exercise>
   
   <p><alert>Note:</alert> When comparing groups, some boxplot displays vary the other dimension of the box size by relative sample size.</p>
@@ -197,25 +198,24 @@ iscamsummary(elephants$Distance, elephants$Species)
         <title>JMP Instructions</title>
         <p>Use JMP to calculate numerical summaries:</p>
         <ul>
-          <li><p>Choose Analyze > Distribution and specify both the quantitative variable (Y, Columns) and the categorical variable (By).</p></li>
-          <li><p>Press OK.</p></li>
-          <li><p>Use the Distributions hot spot to select Stack.</p></li>
+          <li><p>Choose <term index="no">Analyze > Distribution</term> and specify both the quantitative variable (<term index="no">Y, Columns</term>) and the categorical variable (<term index="no">By</term>).</p></li>
+          <li><p>Press <term index="no">OK</term>.</p></li>
+          <li><p>Use the Distributions hot spot to select <term index="no">Stack</term>.</p></li>
         </ul>
       </hint>
     </statement>
-    <response/>
+<!--    <response/>-->
   </exercise>
     
     <exercise xml:id="inv4-2-f" label="I4.2.10">
       <title>Record Summary Statistics</title>
       <statement>
         <p>Determine the sample sizes, sample means, and the sample standard deviations for each group and record these below, using appropriate symbols.</p>
-        <table>
-          <title>Summary Statistics for Elephant Walking Distances</title>
-          <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+          <alert>Summary Statistics for Elephant Walking Distances</alert>
+          <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
             <row header="yes">
-              <cell></cell>
-              <cell><me>n</me></cell>
+              <cell>Species</cell>
+              <cell><em>n</em></cell>
               <cell>Mean</cell>
               <cell>SD</cell>
             </row>
@@ -232,7 +232,6 @@ iscamsummary(elephants$Distance, elephants$Species)
               <cell><var width="8"/></cell>
             </row>
           </tabular>
-        </table>
       </statement>
       <response/>
     </exercise>
@@ -255,7 +254,7 @@ iscamsummary(elephants$Distance, elephants$Species)
       <response/>
     </exercise>
     
-    <subsection xml:id="prob-detour-two-means">
+    <section xml:id="prob-detour-two-means">
       <title>Probability Detour: Sampling Distribution of Difference in Two Means</title>
       
       <p>To understand how <em>differences in sample means</em> behave, let's explore 
@@ -287,10 +286,10 @@ Players without a team affiliation or without a listed salary were not included 
            and paste the two columns into the <url href="http://www.rossmanchance.com/applets/2021/twopopmodels/TwoPopSampling.html">Sampling from Two Populations applet</url>. Record the population sizes, means, and standard deviations for the Western and Eastern conferences.</p>
           <table>
             <title>Population Parameters for NBA Salaries by Conference</title>
-            <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+            <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
               <row header="yes">
-                <cell></cell>
-                <cell><m>n</m></cell>
+                <cell>League</cell>
+                <cell><em>n</em></cell>
                 <cell>Mean</cell>
                 <cell>SD</cell>
               </row>
@@ -327,17 +326,17 @@ Players without a team affiliation or without a listed salary were not included 
         <statement>
           <p>Select a random sample of 20 players from each conference:</p>
           <ul>
-            <li><p>Check the Show Sampling Options box.</p></li>
-            <li><p>Specify sample sizes of 20 for each sample and press Draw Samples.</p></li>
-            <li><p>Select the Plot radio button.</p></li>
+            <li><p>Check the <term index="no">Show Sampling Options</term> box.</p></li>
+            <li><p>Specify sample sizes of 20 for each sample and press <term index="no">Draw Samples</term>.</p></li>
+            <li><p>Select the <term index="no">Plot</term> radio button.</p></li>
           </ul>
           <p>Record the sample means and sample standard deviations for your samples.</p>
-          <table>
-            <title>Sample Statistics for NBA Salaries by Conference</title>
-            <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+          
+            <alert>Sample Statistics for NBA Salaries by Conference</alert>
+            <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
               <row header="yes">
-                <cell></cell>
-                <cell><m>n</m></cell>
+                <cell>League</cell>
+                <cell><em>n</em></cell>
                 <cell>Mean</cell>
                 <cell>SD</cell>
               </row>
@@ -354,12 +353,11 @@ Players without a team affiliation or without a listed salary were not included 
                 <cell><var width="8"/></cell>
               </row>
             </tabular>
-          </table>
           <p>How do the sample results compare to the population results? What about the shapes of the samples?</p>
-          <p><var width="50"/></p>
         <hint>
           <p>Compare your sample statistics to the population parameters recorded earlier.</p>
         </hint>
+          <p><var width="50"/></p>
         </statement>
         <solution>
           <p>Sample results will vary, but the sample means should be reasonably close to the population means, and the sample standard deviations should be reasonably close to the population standard deviations. The sample distributions may appear less skewed than the population distributions due to smaller sample sizes.</p>
@@ -545,7 +543,6 @@ with only the summary data is one advantage the <m>t</m>-test has over the simul
         <hint>
           <title>In Applet - Theory-Based Inference (Summary Data)</title>
           <p>Use the Theory-Based Inference applet to conduct a two-sample <m>t</m>-test:</p>
-         Enter your p-value: <var width = "10"/>
           <image source="images/Inv4.2TBIA.png" width="80%">
             <description>Theory-Based Inference applet for unpooled two-sample t-test with summary data</description>
           </image>
@@ -611,12 +608,12 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
           </image>
           <ul>
             <li><p>Select Two Means from the pull-down menu</p></li>
-            <li><p>Check the Stacked box if your data are in stacked format</p></li>
+            <li><p>Check the <term index="no">Stacked</term> box if your data are in stacked format</p></li>
             <li><p>Enter elephants.txt in the data window or paste the data</p></li>
-            <li><p>Press Use Data</p></li>
+            <li><p>Press <term index="no">Use Data</term></p></li>
             <li><p>Select the response variable and grouping variable</p></li>
-            <li><p>Choose Unpooled</p></li>
-            <li><p>Press Calculate</p></li>
+            <li><p>Choose <term index="no">Unpooled</term></p></li>
+            <li><p>Press <term index="no">Calculate</term></p></li>
           </ul>
         </hint>
         <statement>
@@ -627,9 +624,9 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
         <response/>
       </exercise>
 
-    </subsection>
+    </section>
     
-    <subsection xml:id="elephants-continued">
+    <section xml:id="elephants-continued">
       <title>Back to the Elephants</title>
       
       <exercise xml:id="inv4-2-i" label="I4.2.13">
