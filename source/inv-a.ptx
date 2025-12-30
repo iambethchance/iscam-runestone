@@ -31,15 +31,28 @@
     </image>
   
   <exercise xml:id="hurricane-ex-a" label="A.1">
-    <title>Calculate Percentage Change 4</title>
+    <title>Calculate Percentage Change</title>
     <statement>
       <p>Calculate the percentage change in the number of tropical hurricanes between these two years.</p>
     <hint>
       <p>The formula for percentage change is: <m>\frac{\text{new value} - \text{old value}}{\text{old value}} \times 100\%</m></p>
     </hint>
-      <p><var width="10"/></p>-
+      <p>Percentage change: <var width="10" />%</p>
     </statement>
-    <response/>
+    <setup>
+      <var>
+        <condition number="133.3" tolerance="1">
+          <feedback>
+            <p>Correct! <m>\frac{14-6}{6} \times 100\% = 133.3\%</m> increase</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. Use the formula: <m>\frac{\text{new value} - \text{old value}}{\text{old value}} \times 100</m></p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m>\frac{14-6}{6} \times 100\% = 133.3\%</m> increase</p>
     </solution>
