@@ -213,6 +213,7 @@ iscamsummary(elephants$Distance, elephants$Species)
         <p>Determine the sample sizes, sample means, and the sample standard deviations for each group and record these below, using appropriate symbols.</p>
           <alert>Summary Statistics for Elephant Walking Distances</alert>
           <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
+            <col width="20%"/>
             <row header="yes">
               <cell>Species</cell>
               <cell><em>n</em></cell>
@@ -279,11 +280,16 @@ Players without a team affiliation or without a listed salary were not included 
         <response/>
       </exercise>
       
+      We will use the <url href="https://www.rossmanchance.com/applets/2021/twopopmodels/TwoPopSampling.html">Sampling from Two Populations applet</url> to explore sampling distributions of the difference in means.
+      <interactive iframe="https://www.rossmanchance.com/applets/2021/twopopmodels/TwoPopSampling.html?hideExtras=1" width="160%" height="600px">
+      <ul><li>Use the <alert>Select data</alert> pull-down menu to choose <em>NBA Salaries (2025)</em></li>
+      <li>Press <alert>Use Data</alert> to load the Salary and Conference population data into the applet.</li>
+      </ul>
+
       <exercise xml:id="prob-detour-2means-c" label="PD4.2.3">
         <title>Population Parameters</title>
         <statement>
-          <p>Open the <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/NBASalaries2025_2.txt">NBASalaries2025_2.txt</url> data file
-           and paste the two columns into the <url href="http://www.rossmanchance.com/applets/2021/twopopmodels/TwoPopSampling.html">Sampling from Two Populations applet</url>. Record the population sizes, means, and standard deviations for the Western and Eastern conferences.</p>
+      Record the population sizes, means, and standard deviations for the Western and Eastern conferences.</p>
           <table>
             <title>Population Parameters for NBA Salaries by Conference</title>
             <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
@@ -320,20 +326,21 @@ Players without a team affiliation or without a listed salary were not included 
         </solution>
         <response/>
       </exercise>
-      
-      <exercise xml:id="prob-detour-2means-d" label="PD4.2.4">
-        <title>Sample Statistics</title>
-        <statement>
+
           <p>Select a random sample of 20 players from each conference:</p>
           <ul>
             <li><p>Check the <term index="no">Show Sampling Options</term> box.</p></li>
             <li><p>Specify sample sizes of 20 for each sample and press <term index="no">Draw Samples</term>.</p></li>
             <li><p>Select the <term index="no">Plot</term> radio button.</p></li>
           </ul>
+
+      <exercise xml:id="prob-detour-2means-d" label="PD4.2.4">
+        <title>Sample Statistics</title>
+        <statement>
           <p>Record the sample means and sample standard deviations for your samples.</p>
           
             <alert>Sample Statistics for NBA Salaries by Conference</alert>
-            <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
+<p>            <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
               <row header="yes">
                 <cell>League</cell>
                 <cell><em>n</em></cell>
@@ -352,7 +359,7 @@ Players without a team affiliation or without a listed salary were not included 
                 <cell><var width="8"/></cell>
                 <cell><var width="8"/></cell>
               </row>
-            </tabular>
+            </tabular></p>
           <p>How do the sample results compare to the population results? What about the shapes of the samples?</p>
         <hint>
           <p>Compare your sample statistics to the population parameters recorded earlier.</p>
@@ -364,16 +371,17 @@ Players without a team affiliation or without a listed salary were not included 
         </solution>
         <response/>
       </exercise>
-      
-      <exercise xml:id="prob-detour-2means-e" label="PD4.2.5">
-        <title>Generate Sampling Distribution</title>
-        <statement>
+
           <p>Repeat this process many times (at least 1000) to generate a sampling distribution of the difference in sample means (East - West).</p>
           <ul>
-            <li><p>Enter 1000 (or more) for the number of samples.</p></li>
-            <li><p>Press Sample.</p></li>
-            <li><p>Examine the distribution of differences in sample means.</p></li>
+            <li><p>Enter 1000 (or more) for the <alert>Number of samples</alert>.</p></li>
+            <li><p>Press <alert>Sample</alert>.</p></li>
+            
           </ul>
+
+      <exercise xml:id="prob-detour-2means-e" label="PD4.2.5">
+        <title>Generate Sampling Distribution</title>
+        <statement><p>Examine the distribution of differences in sample means.</p>
         <hint>
           <p>Generate at least 1000 samples to see the shape of the sampling distribution.</p>
         </hint>
@@ -381,7 +389,7 @@ Players without a team affiliation or without a listed salary were not included 
         <solution>
           <p>After generating 1000+ samples, you should see a distribution of differences in sample means that is approximately normal, centered near the difference in population means (about 0.4 million).</p>
         </solution>
-        <response/>
+<!--       <response/> -->
       </exercise>
       
       <exercise xml:id="prob-detour-2means-f" label="PD4.2.6">
@@ -484,12 +492,17 @@ Players without a team affiliation or without a listed salary were not included 
         <response/>
       </exercise>
       
+      So then what we really need to know about is the distribution of <m>t = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>. 
+      In the applet, 
+      <ul><li>use the <alert>Statistic</alert> pull-down menu to select the <m>t</m>-statistic and then examine the distribution of this statistic. 
+      </li></ul>
       <exercise xml:id="prob-detour-2means-m" label="PD4.2.13">
         <title>Standardized Statistics</title>
         <statement>
-          <p>So then what we really need to know about is the distribution of <m>t = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>. In the applet, use the Statistic pull-down menu to select the <m>t</m>-statistic and then examine the distribution of this statistic. Is it approximately normal? Where is it centered? Use the check box to Overlay <m>t</m> distribution. Is the <m>t</m>-distribution a good model for this sampling distribution?</p>
+          <p>Is the distribution approximately normal? Where is it centered? Use the check box to <term index="no">Overlay <m>t</m> distribution</term>. 
+          Is the <m>t</m>-distribution a good model for this sampling distribution?</p>
         <hint>
-          <p>Select t-statistic from the Statistic menu and overlay the t-distribution to compare.</p>
+          <p>Select <em>t</em>-statistic from the Statistic menu and overlay the <em>t</em>-distribution to compare.</p>
         </hint>
         </statement>
         <solution>
@@ -498,10 +511,10 @@ Players without a team affiliation or without a listed salary were not included 
         <response/>
       </exercise>
       
-      <p><strong>Discussion:</strong> The sample sizes of 20 for each group appear to be large enough for a <m>t</m>-distribution (even a normal distribution) to reasonably approximate the distribution of this statistic. If the population distributions had themselves been normally distributed (and large), then a <m>t</m>-distribution will be a good approximation of the statistic for any sample sizes. The more skewed the population shapes, the larger the sample sizes need to be for you to safely use the <m>t</m>-distribution. Notice even with these very skewed populations, because their shapes and sample sizes were similar, we didn't need very large sample sizes at all for the standardized statistic to follow a <m>t</m>-distribution.</p>
+      <paragraphs><p><title>Discussion:</title> The sample sizes of 20 for each group appear to be large enough for a <m>t</m>-distribution (even a normal distribution) to reasonably approximate the distribution of this statistic. If the population distributions had themselves been normally distributed (and large), then a <m>t</m>-distribution will be a good approximation of the statistic for any sample sizes. The more skewed the population shapes, the larger the sample sizes need to be for you to safely use the <m>t</m>-distribution. Notice even with these very skewed populations, because their shapes and sample sizes were similar, we didn't need very large sample sizes at all for the standardized statistic to follow a <m>t</m>-distribution.</p>
       
       <p>One remaining question is what to use for the degrees of freedom for the <m>t</m>-distribution. In the one-sample case (Chapter 2) we used <m>n - 1</m>. For two samples, it's actually more complicated. The <url href="https://www.rossmanchance.com/iscam3/glossary_files/Satterthwaite.htm">Welch-Satterthwaite</url> approximation for degrees of freedom involves the sample sizes and the unknown population standard deviations, though it doesn't always result in integer values. We will leave this calculation up to technology. You only need to realize that the degrees of freedom are related to the sample sizes and as the sample sizes become large, the <m>t</m>-distribution loses more and more of the heaviness in the tails and approaches the (standard) normal distribution. If you need to determine a p-value or critical value <q>by hand,</q> we suggest using the following simple approximation for the degrees of freedom: <m>\min(n_1 - 1, n_2 - 1)</m>, the smaller of the two sample sizes minus one.</p>
-      
+      </paragraphs>
       
       <sidebyside widths="60% 35%" valign="top">
         <p>In this case, we could use 19 as the approximate degrees of freedom. Notice that this sample size is large enough that the <m>t</m>-distribution looks a lot like the normal distribution as well, which should agree with your observation in Checkpoint 15.1.29. But we will continue to use the <m>t</m>-distribution rather than the normal distribution to still account for additional variation from our estimates of the population standard deviations.</p>
@@ -540,6 +553,9 @@ with only the summary data is one advantage the <m>t</m>-test has over the simul
       
       <exercise xml:id="inv4-2-tech" label="I4.2.TECH">
         <title>Technology Detours</title>
+        <statement>
+          <p>Use technology to conduct a two-sample <m>t</m>-test using different tools (expand the hints below for instructions).</p>
+
         <hint>
           <title>In Applet - Theory-Based Inference (Summary Data)</title>
           <p>Use the Theory-Based Inference applet to conduct a two-sample <m>t</m>-test:</p>
@@ -616,10 +632,7 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
             <li><p>Press <term index="no">Calculate</term></p></li>
           </ul>
         </hint>
-        <statement>
-          <p>Use technology to conduct a two-sample <m>t</m>-test using different tools (expand the hints below for instructions).</p>
-          <p>Record your p-value here</p>
-          <var width="10"/>
+          <p>Record your p-value here:           <var width="10"/></p>
         </statement>
         <response/>
       </exercise>
@@ -687,9 +700,9 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
     
     <p>Open the <url href="https://www.rossmanchance.com/applets/2021/twoboot/TwoBoot.html?hideExtras=1">Sampling from Two Sample Bootstrapping applet</url>.</p>
     <ul>
-      <li><p>Enter <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt">elephants.txt</url> in the data window and press Use Data (twice).</p></li>
-      <li><p>Check Show Sampling Options</p></li>
-      <li><p>Press Bootstrap Samples</p></li>
+      <li><p>Enter <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt">elephants.txt</url> in the data window and press <alert>Use Data</alert> (twice).</p></li>
+      <li><p>Check <alert>Show Sampling Options</alert></p></li>
+      <li><p>Press <alert>Bootstrap Samples</alert></p></li>
       <li><p>Look at the Plot display.</p></li>
     </ul>
     
@@ -767,7 +780,7 @@ t.test(Distance ~ Species, data=elephants, var.equal=FALSE)
     
     <p>Suppose our data had been:</p>
     
-    <image source="images/PP4.2C.png" width="80%">
+    <image source="images/PP4.2C.png" width="70%">
       <description>Alternative elephant data scenario for Practice Problem 4.2C</description>
     </image>
     
