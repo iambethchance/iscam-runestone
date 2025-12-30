@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="investigation4-1">
   <title>Investigation 4.1: Employment Discrimination?</title>
-  <p>In this chapter, we will focus on comparing two groups on a quantitative response variable. Again, the reasoning is still the same as in Ch. 1 – 3, but we will see some small changes in the details. We start with a small investigation to review key ideas and then we parallel Chapter 3 in first considering random sampling and then random assignment, both for scope of conclusions but also for how we will design our simulation. </p>
+  <p><em>In this chapter, we will focus on comparing two groups on a quantitative response variable. Again, the reasoning is still the same as in Ch. 1 – 3, but we will see some small changes in the details. We start with a small investigation to review key ideas and then we parallel Chapter 3 in first considering random sampling and then random assignment, both for scope of conclusions but also for how we will design our simulation. </em></p>
   
   <exercises xml:id="exercises4-1" hidden-label="yes">
+  <title>The Court Case</title>
 <!---  <title>Investigation 4.1: Employment Discrimination?</title> -->
   
   <introduction>
@@ -20,8 +21,10 @@
     <title>Create Side-by-Side Stemplot</title>
     <statement>
       <p>Create a side-by-side stemplot of the ages of the employees who were retained and laid off. Use the table below where the middle column shows the stem (tens digit) and you fill in the leaves (ones digits) on either side.</p>
+    <hint>
+      <p>Put the "ones digits" for each age in the appropriate row. Optional: sort them within each row (stem).</p>
+    </hint>
       
-      <table xml:id="table-stemplot-4-1-1">
         <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
           <row header="yes">
             <cell>Retained</cell>
@@ -74,11 +77,7 @@
             <cell><var width="10"/></cell>
           </row>
         </tabular>
-      </table>
       
-    <hint>
-      <p>Put the "ones digits" for each age in the appropriate row. Optional: sort them within each row (stem).</p>
-    </hint>
     </statement>
     <solution>
       <p>Side-by-side stemplot:</p>
@@ -97,11 +96,11 @@ Retained  |  Stem  |  Laid Off
     <title>Comment on Preliminary Evidence</title>
     <statement>
       <p>Based on your stemplot, comment on whether these data provide preliminary evidence that the layoff decisions were not made at random. What aspects of the age distributions support or contradict this claim?</p>
-    </statement>
-    <response/>
     <hint>
       <p>Consider: If the layoffs were completely random, would you expect all three laid-off employees to be among the four oldest? How likely does this seem?</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>The data provide preliminary evidence that the layoffs may not have been random. If the three employees were chosen completely at random from the ten, we would expect a mix of ages. However, all three laid-off employees (55, 55, 64) were among the four oldest workers, with an average age of about 58 years compared to about 41 years for the retained employees. This clustering of older ages in the laid-off group seems unlikely to occur by chance alone, suggesting possible age discrimination. However, we need to conduct a formal statistical analysis to determine whether this pattern is statistically significant or could reasonably occur by random chance.</p>
     </solution>
@@ -172,7 +171,7 @@ Retained  |  Stem  |  Laid Off
   <exercise xml:id="inv4-1-f" label="I4.1.7">
     <title>Calculate Exact p-value</title>
     <statement>
-      <p>Use your answer to (e) to determine an <q>exact</q> p-value. How do you interpret this value and what do you conclude?</p>
+      <p>Use your answer to the previous question to determine an <q>exact</q> p-value. How do you interpret this value and what do you conclude?</p>
     <hint>
       <p>The p-value is the number of outcomes as or more extreme as observed, divided by the total number of possible outcomes (120).</p>
     </hint>
