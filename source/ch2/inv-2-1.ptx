@@ -469,6 +469,7 @@ hist(births2$birthweight, xlab="birth weight")
   <exercise xml:id="inv2-1-i" label="I2.1i">
     <title>Assess symmetry after subsetting</title>
     <statement>
+      <p>After this step do we have a more symmetric distribution? <var width="30"/></p>
       <setup>
         <var>
           <condition string="(?i)^(yes|y)$">
@@ -488,7 +489,6 @@ hist(births2$birthweight, xlab="birth weight")
           </condition>
         </var>
       </setup>
-      <p>After this step do we have a more symmetric distribution? <var width="30"/></p>
       <p>What is a downside to subsetting the dataset in this way?</p>
     </statement>
     <solution>
@@ -541,6 +541,9 @@ iscamsummary(births3$birthweight, digits=2)
     <title>Report numerical summaries</title>
     <statement>
       <p>Determine the mean, standard deviation, and skewness of these data.</p>
+      <p>Mean: <var width="10"/></p>
+      <p>Standard deviation: <var width="10"/></p>
+      <p>Skewness: <var width="10"/></p>
       <setup>
         <var>
           <condition number="3337" tolerance="5">
@@ -594,9 +597,6 @@ iscamsummary(births3$birthweight, digits=2)
           </condition>
         </var>
       </setup>
-      <p>Mean: <var width="10"/></p>
-      <p>Standard deviation: <var width="10"/></p>
-      <p>Skewness: <var width="10"/></p>
     </statement>
     <response/>
   </exercise>
@@ -746,7 +746,6 @@ table(within2sd)/length(births3$birthweight)
           </condition>
         </var>
       </setup>
-      <p>Percentage: <var width="10"/>%</p>
     </statement>
     <solution>
       <p>Using the mean of 3339.1 and the standard deviation of 461.6, our 2SD limits would be 2415.9 and 4262.3. So then our ratio is 252915/265676 ≈ 0.95</p>
