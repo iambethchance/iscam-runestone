@@ -165,7 +165,9 @@
       <title>Calculate Confidence Interval</title>
       <statement>
         <p>
-          Use the distance from the previous question and the observed sample proportion of <m>\hat{p} = 0.645</m> to determine an interval of plausible values for <m>\pi</m>, the probability that a kissing couple leans to the right.
+          Use the distance from the previous question and the observed sample proportion of
+           <m>\hat{p} = 0.645</m> to determine an interval of plausible values for <m>\pi</m>,
+            the probability that a kissing couple leans to the right.
         </p>
         <hint>
           <p>
@@ -173,10 +175,8 @@
           </p>
         </hint>
         <p>
-          Lower bound: <var width="10"/>
-        </p>
-        <p>
-          Upper bound: <var width="10"/>
+         (Lower bound: <var width="10"/>, 
+          Upper bound: <var width="10"/>)
         </p>
       </statement>
       <setup>
@@ -300,10 +300,23 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
  <!--       <p>The critical value should be approximately 1.96.</p>-->
       </hint>
         <p>
-          Critical value for 95% confidence: <m>z^* =</m> <var form="float" width="10"><condition number="1.96" tolerance="0.01"/></var>
+          Critical value for 95% confidence: <m>z^* =</m> <var width="10"/>
         </p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="1.96" tolerance="0.01">
+            <feedback>
+              <p>Correct! The critical value for 95% confidence is 1.96.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. Use technology to find the z-value that captures the middle 95% of the standard normal distribution.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>
           <m>z^* = 1.96</m> 
@@ -503,13 +516,35 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
           </p>
         </hint>
         <p>
-          Lower bound: <var form="float" width="10"><condition number="0.574" tolerance="0.003"/></var>
-        </p>
-        <p>
-          Upper bound: <var form="float" width="10"><condition number="0.716" tolerance="0.003"/></var>
+          (Lower bound: <var width="10"/>, Upper bound: <var width="10"/>)
         </p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="0.574" tolerance="0.003">
+            <feedback>
+              <p>Correct! The lower bound is <m>0.645 - 1.645(0.043) = 0.574</m>.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. Calculate <m>0.645 - 1.645(0.043)</m> for the lower bound.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.716" tolerance="0.003">
+            <feedback>
+              <p>Correct! The upper bound is <m>0.645 + 1.645(0.043) = 0.716</m>.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. Calculate <m>0.645 + 1.645(0.043)</m> for the upper bound.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>
           If the confidence level is 90%, then use <m>z^* = 1.645</m>
@@ -535,46 +570,44 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         <p>
           The midpoint is:
         </p>
-      </statement>
-      <choices randomize="yes">
-        <choice>
-          <statement>
-            <p>Larger</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>Smaller</p>
-          </statement>
-        </choice>
-        <choice correct="yes">
-          <statement>
-            <p>Equal</p>
-          </statement>
-        </choice>
-      </choices>
-      <statement>
+        <choices randomize="yes">
+          <choice>
+            <statement>
+              <p>Larger</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>Smaller</p>
+            </statement>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>Equal</p>
+            </statement>
+          </choice>
+        </choices>
         <p>
           The width is:
         </p>
+        <choices randomize="yes">
+          <choice>
+            <statement>
+              <p>Larger</p>
+            </statement>
+          </choice>
+          <choice correct="yes">
+            <statement>
+              <p>Smaller</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>Equal</p>
+            </statement>
+          </choice>
+        </choices>
       </statement>
-      <choices randomize="yes">
-        <choice>
-          <statement>
-            <p>Larger</p>
-          </statement>
-        </choice>
-        <choice correct="yes">
-          <statement>
-            <p>Smaller</p>
-          </statement>
-        </choice>
-        <choice>
-          <statement>
-            <p>Equal</p>
-          </statement>
-        </choice>
-      </choices>
       <solution>
         <paragraphs>
         <p>
@@ -594,7 +627,7 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
     </exercise>
 
   <paragraphs xml:id="tech-detour-z-intervals">
-    <title>Technology Detour <mdash/> One Proportion <m>z</m>-Confidence Intervals</title>
+    <title>Technology Detour <mdash/> One Proportion <em>z</em>-Confidence Intervals</title>
 
     <exercise xml:id="tech-detour-z-intervals-ex" label="z-interval Tech Detour">
       <title>One Proportion z-interval with Technology</title>
@@ -603,10 +636,7 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
           Use technology (Applet, R, or JMP) to confirm your calculation of the one proportion <em>z</em>-test for the Halloween study (<em>n</em> = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
         </p>
         <p>
-          Lower bound: <var form="float" width="10"><condition number="0.574" tolerance="0.003"/></var>
-        </p>
-        <p>
-          Upper bound: <var form="float" width="10"><condition number="0.716" tolerance="0.003"/></var>
+          (Lower bound: <var width="10"/>, Upper bound: <var width="10"/>)
         </p>
       <hint>
         <title>R/Sage Instructions</title>
@@ -661,6 +691,32 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         <p>The applet will display the 90% <m>z</m>-confidence interval.</p>
       </hint>
       </statement>
+      <setup>
+        <var>
+          <condition number="0.574" tolerance="0.003">
+            <feedback>
+              <p>Correct! The lower bound is 0.574.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. Use technology to calculate the 90% confidence interval.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.716" tolerance="0.003">
+            <feedback>
+              <p>Correct! The upper bound is 0.716.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. Use technology to calculate the 90% confidence interval.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>
           Example output from R:
@@ -734,9 +790,23 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
             </p>
           </hint>
           <p>
-            <m>n =</m> <var form="float" width="10"><condition number="978" tolerance="1"/></var>
+            <m>n =</m> <var width="10"/>
           </p>
         </statement>
+        <setup>
+          <var>
+            <condition number="978" tolerance="1">
+              <feedback>
+                <p>Correct! Using <m>\hat{p} = 0.645</m>, you need a sample size of 978.</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Not quite. Use <m>n = \frac{z^{*2} \hat{p}(1-\hat{p})}{(0.03)^2}</m> with <m>z^* = 1.96</m> and <m>\hat{p} = 0.645</m>.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p>
             <m>z^* \sqrt{\hat{p}(1-\hat{p})/n} = 0.03</m>
@@ -762,9 +832,23 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
             </p>
           </hint>
           <p>
-            <m>n =</m> <var form="float" width="10"><condition number="1068" tolerance="1"/></var>
+            <m>n =</m> <var width="10"/>
           </p>
         </statement>
+        <setup>
+          <var>
+            <condition number="1068" tolerance="1">
+              <feedback>
+                <p>Correct! Using the conservative estimate <m>\hat{p} = 0.5</m>, you need a sample size of 1068.</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Not quite. Use <m>n = \frac{z^{*2} (0.5)(0.5)}{(0.03)^2}</m> with <m>z^* = 1.96</m>.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p>
             <m>z^* \sqrt{\hat{p}(1-\hat{p})/n} = 0.03</m>
