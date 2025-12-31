@@ -73,7 +73,6 @@
           </var>
         </p>
       </statement>
-      <response/>
       <solution>
         <p>
           <m>H_0: \pi = 0.25</m> (The receivers are just guessing randomly among the four targets)
@@ -96,16 +95,35 @@
         </p>
       </hint>
         <p>
-          Large enough for CLT? <var width="60"/>
+          Large enough for CLT? 
+          <var form="buttons" width="10">
+            <li correct="yes">Yes</li>
+            <li>No</li>
+          </var>
+        </p>
+        <setup>
+          <var name="mean">
+            <condition number="0.25">
+              <feedback>
+                <p>Correct! The mean of the null distribution is <m>\pi = 0.25</m>.</p>
+              </feedback>
+            </condition>
+          </var>
+          <var name="sd">
+            <condition number="0.02387" tolerance="0.0001">
+              <feedback>
+                <p>Correct! The standard deviation is <m>\sqrt{\frac{0.25(0.75)}{329}} \approx 0.02387</m>.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
+        <p>
+          Mean: <var name="mean" width="10"/>
         </p>
         <p>
-          Mean: <var width="20"/>
-        </p>
-        <p>
-          Standard deviation: <var width="20"/>
+          Standard deviation: <var name="sd" width="10"/>
         </p>
        </statement>
-      <response/>
       <solution>
         <p>
           The sample size is large enough because <m>n\pi = 329(0.25) = 82.25 > 10</m> and <m>n(1-\pi) = 329(0.75) = 246.75 > 10</m>.
@@ -152,8 +170,25 @@
         <p>
           Report the rejection region found by the applet and include a one-sentence interpretation of this region.
         </p>
+        <setup>
+          <var name="value">
+            <condition number="0.289" tolerance="0.001">
+              <feedback>
+                <p>Correct! The rejection region is <m>\hat{p} \geq 0.289</m>.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <p>
-          Rejection region: <var width="20"/>
+          Rejection region: <m>\hat{p}</m> 
+          <var form="buttons" width="5">
+            <li correct="yes"><m>\geq</m></li>
+            <li><m>\leq</m></li>
+            <li><m>&lt;</m></li>
+            <li><m>></m></li>
+            <li>=</li>
+          </var>
+          <var name="value" width="10"/>
         </p>
         <p>
           Interpretation: <var width="60"/>
@@ -191,9 +226,6 @@
           What is the relationship between the Type I error probability and the significance level?
         </p>
       </hint>
-        <p>
-          <var width="60"/>
-        </p>
       </statement>
       <response/>
       <solution>
@@ -231,9 +263,6 @@
           What will the mean and standard deviation be when <m>\pi = 0.30</m>?
         </p>
       </hint>
-        <p>
-          <var width="60"/>
-        </p>
       </statement>
       <response/>
       <solution>
@@ -256,7 +285,7 @@
         </p>
 
     <exercise xml:id="I1-11-f" label="I1.11f">
-      <title>Calculate Power for π = 0.30</title>
+      <title>Interpret Power Value for π = 0.30</title>
       <statement>
         <p>
           Review the applet output and provide a one-sentence interpretation of the normal approximation value, 0.6645.
@@ -264,20 +293,11 @@
         <p>
           Interpretation: <var width="60"/>
         </p>
-        <p>
-          Is this value the probability of a Type II error or the power of the test?
-        </p>
-        <p>
-          <var width="60"/>
-        </p>
       </statement>
       <response/>
       <solution>
         <p>
           If we test <m>\pi = 0.25</m> but in reality <m>\pi = 0.30</m>, we will correctly reject the null hypothesis in favor of the one-sided alternative in about 66% of random samples of size n = 329. So the power of this test is approximately 0.66.
-        </p>
-        <p>
-          This value is the power of the test.
         </p>
         <image source="images/Inv1.11-fsol1.png" width="80%">
           <description>Power applet showing null and alternative distributions with power calculation for π = 0.30</description>
@@ -288,14 +308,48 @@
       </solution>
     </exercise>
 
+    <exercise xml:id="I1-11-f2" label="I1.11f2">
+      <title>Identify Type of Probability</title>
+      <statement>
+        <p>
+          Is the value 0.6645 the probability of a Type II error or the power of the test?
+        </p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement><p>Probability of Type II error</p></statement>
+        </choice>
+        <choice correct="yes">
+          <statement><p>Power of the test</p></statement>
+        </choice>
+        <choice>
+          <statement><p>Neither</p></statement>
+        </choice>
+      </choices>
+      <solution>
+        <p>
+          This value is the power of the test. Power = 1 - P(Type II error), so if power is 0.6645, then P(Type II error) = 1 - 0.6645 = 0.3355.
+        </p>
+      </solution>
+    </exercise>
+
     <exercise xml:id="I1-11-g" label="I1.11g">
       <title>Calculate Power for π = 0.35</title>
       <statement>
         <p>
           Now use the applet to find the probability of rejecting the null hypothesis that <m>\pi = 0.25</m> when in reality <m>\pi = 0.35</m>? Explain your steps. How has the probability changed and why?
         </p>
+        <setup>
+          <var name="power">
+            <condition number="0.99" tolerance="0.01">
+              <feedback>
+                <p>Correct! The power is approximately 0.99 when <m>\pi = 0.35</m>.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <p>
-          Power: <var width="20"/>
+          Power: <var name="power" width="10"/>
         </p>
         <p>
           Explanation: <var width="60"/>
@@ -314,24 +368,12 @@
         </image>
       </solution>
     </exercise>
-
+<ul><li>Change the level of significance from 0.05 to 0.01 and press <alert>Count</alert>. </li></ul>
     <exercise xml:id="I1-11-h" label="I1.11h">
       <title>Effect of Changing Significance Level</title>
       <statement>
         <p>
-          Change the level of significance from 0.05 to 0.01 and press Count. How does lowering the level of significance influence the:
-        </p>
-        <p>
-          Rejection region: <var width="60"/>
-        </p>
-        <p>
-          Probability of Type I Error: <var width="60"/>
-        </p>
-        <p>
-          Probability of Type II Error: <var width="60"/>
-        </p>
-        <p>
-          Power (assuming <m>\pi_a = 0.35</m>): <var width="60"/>
+          How does lowering the level of significance influence the (i) rejeciton region, (ii) Probability of Type I Error, (iii) Probability of Type II Error, (iv) Power (assuming <m>\pi_a = 0.35</m>)
         </p>
       </statement>
       <response/>
@@ -365,16 +407,7 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
       <title>Small Sample Size with Exact Binomial</title>
       <statement>
         <p>
-          Report the following:
-        </p>
-        <p>
-          Rejection region: <var width="60"/>
-        </p>
-        <p>
-          Probability of Type I Error: <var width="20"/>
-        </p>
-        <p>
-          Power (assuming <m>\pi_a = 0.35</m>): <var width="20"/>
+          Report the following (i) Rejection region, (ii) Probability of Type I Error, (iii)  Power (assuming <m>\pi_a = 0.35</m>)
         </p>
       </statement>
       <response/>
@@ -487,11 +520,19 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
         <p>
           If your technology allows (or use trial and error), see how many sessions would be needed in the ganzfeld study to have at least an 80% chance of rejecting the null hypothesis if the actual probability of success is <m>\pi = 0.30</m>.
         </p>
+        <setup>
+          <var name="samplesize">
+            <condition number="490" tolerance="10">
+              <feedback>
+                <p>Correct! Approximately 490 sessions are needed to achieve 80% power when <m>\pi = 0.30</m>.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <p>
-          Sample size needed: <var width="20"/>
+          Sample size needed: <var name="samplesize" width="10"/>
         </p>
       </statement>
-      <response/>
       <solution>
         <p>
           We would need a sample size close to 500 (approximately 490) to achieve 80% power when <m>\pi = 0.30</m>.
@@ -514,8 +555,17 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
         <p>
           How will your answer to the previous question change if the actual probability of success is <m>\pi = 0.35</m>? Determine the number of sessions needed in this case.
         </p>
+        <setup>
+          <var name="samplesize2">
+            <condition number="175" tolerance="10">
+              <feedback>
+                <p>Correct! Approximately 170-180 sessions are needed to achieve 80% power when <m>\pi = 0.35</m>.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <p>
-          Sample size needed: <var width="20"/>
+          Sample size needed: <var name="samplesize2" width="10"/>
         </p>
         <p>
           Explanation: <var width="60"/>
