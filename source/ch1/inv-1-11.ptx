@@ -198,21 +198,21 @@
       </p>
     </assemblage>
  <p>
-          According to the distribution in <xref ref="I1-11-b" text="custom">question 2</xref>, what proportion of the 329 sessions would need to be successful ("hits"), in order to reject the null hypothesis in <xref ref="I1-11-a" text="custom">question 1</xref> in favor of the alternative hypothesis at the 5% level of significance?
+          According to the distribution in <xref ref="I1-11-b" text="custom">Question 2</xref>, what proportion of the 329 sessions would need to be successful ("hits"), in order to reject the null hypothesis in <xref ref="I1-11-a" text="custom">Question 1</xref> in favor of the alternative hypothesis at the 5% level of significance?
         </p>
         <p>
           In the <url href="https://www.rossmanchance.com/applets/2021/power/power.html?hideExtras=1" visual="rossmanchance.com/applets/2021/power/power.html">Power Simulation applet</url>:
         </p>
   <p>
           <ul>
-            <li><p>Specify the Hypothesized probability of success: 0.25</p></li>
-            <li><p>Specify the sample size: 329</p></li>
-            <li><p>Specify the Number of samples: 1000</p></li>
+            <li><p>Specify the <alert>Hypothesized probability of success</alert>: 0.25</p></li>
+            <li><p>Specify the <alert>Sample size</alert>: 329</p></li>
+            <li><p>Specify the <alert>Number of repetitions</alert>: 1000</p></li>
             <li><p>Press <alert>Draw Samples</alert></p></li>
             <li><p>Choose <alert>Proportion of successes</alert> as the statistic</p></li>
-            <li><p>Use the pull-down menu to set the Level of Significance to 0.05</p></li>
+            <li><p>Use the pull-down menu to set the <alert>Level of Significance</alert> to 0.05</p></li>
             <li><p>Press <alert>Count</alert></p></li>
-            <li><p>Check the <alert>Normal Approximation</alert> and <alert>Summary Stats</alert> boxes to verify <xref ref="I1-11-b" text="custom">question 2</xref></p></li>
+            <li><p>Check the <alert>Normal Approximation</alert> and <alert>Summary Stats</alert> boxes to verify <xref ref="I1-11-b" text="custom">Question 2</xref></p></li>
           </ul>
         </p>
         <interactive iframe="https://www.rossmanchance.com/applets/2021/power/power.html?hideExtras=1" width="160%" aspect="3:2"/>
@@ -307,7 +307,7 @@
       <title>Describe Alternative Distribution</title>
       <statement>
         <p>
-          Suppose the probability of identifying the correct symbol is actually 0.30. Describe how the distribution of sample proportions will differ from <xref ref="I1-11-b" text="custom">question 2</xref>.
+          Suppose the probability of identifying the correct symbol is actually 0.30. Describe how the distribution of sample proportions will differ from <xref ref="I1-11-b" text="custom">Question 2</xref>.
         </p>
       <hint>
         <p>
@@ -328,7 +328,7 @@
         </p>
         <p>
           <ul>
-            <li><p>Change the Alternative probability of success value to 0.30</p></li>
+            <li><p>Change the <alert>Alternative probability of success</alert> value to 0.30</p></li>
             <li><p>Check the <alert>Show alternative</alert> box</p></li>
             <li><p>Press <alert>Draw Samples</alert></p></li>
             <li><p>Press <alert>Count</alert></p></li>
@@ -430,13 +430,72 @@
       <title>Effect of Changing Significance Level</title>
       <statement>
         <p>
-          How does lowering the level of significance influence the (i) rejeciton region, (ii) Probability of Type I Error, (iii) Probability of Type II Error, (iv) Power (assuming <m>\pi_a = 0.35</m>)
+          How does lowering the level of significance from 0.05 to 0.01 influence each of the following? (Enter: increases, decreases, or no change)
         </p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition string="^\s*[Ii]ncreases?\s*$">
+            <feedback><p>Correct! The rejection region becomes more extreme (larger cutoff value).</p></feedback>
+          </condition>
+          <condition string="^\s*[Dd]ecreases?\s*$">
+            <feedback><p>Think about it: with a lower significance level, we need more extreme values to reject. Does the cutoff move toward or away from the null value?</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Enter: increases, decreases, or no change</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string="^\s*[Dd]ecreases?\s*$">
+            <feedback><p>Correct! Type I error probability equals the significance level, so it decreases to 0.01.</p></feedback>
+          </condition>
+          <condition string="^\s*[Ii]ncreases?\s*$">
+            <feedback><p>Remember: P(Type I error) = significance level.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Enter: increases, decreases, or no change</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string="^\s*[Ii]ncreases?\s*$">
+            <feedback><p>Correct! With a stricter rejection criterion, we're less likely to reject H₀, even when it's false.</p></feedback>
+          </condition>
+          <condition string="^\s*[Dd]ecreases?\s*$">
+            <feedback><p>Think about it: if we make it harder to reject H₀, what happens to our chance of failing to reject when H₀ is false?</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Enter: increases, decreases, or no change</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string="^\s*[Dd]ecreases?\s*$">
+            <feedback><p>Correct! Power = 1 - P(Type II error), so power decreases when P(Type II error) increases.</p></feedback>
+          </condition>
+          <condition string="^\s*[Ii]ncreases?\s*$">
+            <feedback><p>Remember: Power = 1 - P(Type II error). What happened to P(Type II error)?</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Enter: increases, decreases, or no change</p></feedback>
+          </condition>
+        </var>
+      </setup>
+      <statement>
+        <p>
+          Rejection region: <var width="7"/>
+        </p>
+        <p>
+          Probability of Type I Error: <var width="7"/>
+        </p>
+        <p>
+          Probability of Type II Error: <var width="7"/>
+        </p>
+        <p>
+          Power (assuming <m>\pi_a = 0.35</m>): <var width="7"/>
+        </p>
+      </statement>
       <solution>
         <p>
-          Rejection region: becomes more extreme (larger); approximately <m>\hat{p} \geq 0.3055</m>
+          Rejection region: increases (becomes more extreme/larger); approximately <m>\hat{p} \geq 0.3055</m>
         </p>
         <p>
           Probability of Type I Error: decreases to match 0.01
@@ -455,7 +514,7 @@
 Suppose the study had only involved 35 sessions. Because the sample size is small, use of the Central Limit Theorem is questionable. 
 </p>
 <p>
-<ul><li>Uncheck the Normal Approximation box and check the <alert>Exact Binomial</alert> box.</li>
+<ul><li>Uncheck the <alert>Normal Approximation</alert> box and check the <alert>Exact Binomial</alert> box.</li>
 <li> Specify a hypothesized probability of 0.25, an alternative probability of 0.35, and a level of significance of 0.05. </li>
 </ul>
 </p>
@@ -467,7 +526,52 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
           Report the following (i) Rejection region, (ii) Probability of Type I Error, (iii)  Power (assuming <m>\pi_a = 0.35</m>)
         </p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition string="^\s*(p\s*hat|p-hat|phat|\\hat\{p\}|\\hat\{?p\}?|p\^)\s*(>|&gt;)\s*0\.4(0)?\s*$">
+            <feedback><p>Correct! The rejection region is <m>\hat{p} > 0.40</m>.</p></feedback>
+          </condition>
+          <condition string=".*(0\.4|40%|14|15).*">
+            <feedback><p>You're on the right track. Express as <m>\hat{p} > 0.40</m> or report the number of successes (15 or more).</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Check the applet output for the rejection region when n=35.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.036" tolerance="0.002">
+            <feedback><p>Correct! The Type I error probability is approximately 0.036.</p></feedback>
+          </condition>
+          <condition number="0.036" tolerance="0.005">
+            <feedback><p>Close! A more precise value is 0.036.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Check the applet output for the exact probability of Type I error.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.32" tolerance="0.02">
+            <feedback><p>Correct! The power is approximately 0.32 when <m>\pi_a = 0.35</m>.</p></feedback>
+          </condition>
+          <condition number="0.32" tolerance="0.05">
+            <feedback><p>Close! The power is approximately 0.32.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Check the applet output for the power with alternative <m>\pi = 0.35</m>.</p></feedback>
+          </condition>
+        </var>
+      </setup>
+      <statement>
+        <p>
+          Rejection region: <var width="7"/>
+        </p>
+        <p>
+          Probability of Type I Error: <var width="7"/>
+        </p>
+        <p>
+          Power: <var width="7"/>
+        </p>
+      </statement>
       <solution>
         <p>
           Rejection region: <m>\hat{p} > 0.40</m> (or 15 or more successes out of 35)
@@ -491,7 +595,7 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
       <title>Compare Power for Different Sample Sizes</title>
       <statement>
         <p>
-          How does the power in <xref ref="I1-11-i" text="custom">question 9</xref> compare to what you found for power earlier? [<em>Hint:</em> see <xref ref="I1-11-g" text="custom">question 7</xref>] Explain why this relationship makes intuitive sense.
+          How does the power in <xref ref="I1-11-i" text="custom">Question 9</xref> compare to what you found for power earlier? [<em>Hint:</em> see <xref ref="I1-11-g" text="custom">Question 7</xref>] Explain why this relationship makes intuitive sense.
         </p>
         <p>
           <var width="60"/>
