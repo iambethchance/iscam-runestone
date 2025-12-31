@@ -41,9 +41,9 @@
       <title>Identify Sample and Variable</title>
       <statement>
         <p>Identify the sample/random process and variable for your sample.</p>
-        <p>Sample/Random process: <var width="40"/></p>
+        <!-- <p>Sample/Random process: <var width="40"/></p>
         <p>Variable: <var width="40"/></p>
-        <p>Type: <var width="20"/></p>
+        <p>Type: <var width="20"/></p>-->
       <hint>
         <p>The random process is selecting candies. The variable is the color of each candy. Is this categorical or quantitative?</p>
       </hint>
@@ -126,13 +126,21 @@
     <exercise xml:id="I1-7-g" label="I1.7g">
       <title>Interpret Dotplot</title>
       <statement>
-          What does each dot in this dotplot represent?
+          <p>What does each dot in this dotplot represent? <var width="40"/></p>
       <hint>
         <p>Each dot represents the sample proportion of orange candies in one sample of 25 candies.</p>
       </hint>
-          <var width= "40"/>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition string=".*\b(sample|set\s+of\s+25\s+candies)\b.*">
+            <feedback><p>Correct! Each dot represents one sample (or one set of 25 candies).</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Not quite. Think about what each dot in the dotplot represents - consider using the word "sample" or "set of 25 candies" in your answer.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>Each dot represents the sample proportion of orange candies in one sample of 25 candies. The entire dotplot shows the distribution of sample proportions across many samples when the true probability is 0.333, illustrating the sampling distribution of the sample proportion.</p>
         <image source="images/inv1.7-dotplot-n25.png" width="80%">
@@ -177,7 +185,16 @@
         <p>Calculate <m>E(\hat{p}) = 0.333</m> and <m>SD(\hat{p}) = \sqrt{\frac{0.333(0.667)}{25}}</m></p>
       </hint>
       </statement>
-      <response/>
+      <choices randomize="no">
+        <choice correct="yes">
+          <statement><p>Verified</p></statement>
+          <feedback><p>Good. The formulas give <m>E(\hat{p}) = 0.333</m> and <m>SD(\hat{p}) \approx 0.094</m>, which match the applet's summary statistics.</p></feedback>
+        </choice>
+        <choice>
+          <statement><p>Not Verified</p></statement>
+          <feedback><p>Calculate <m>E(\hat{p}) = \pi = 0.333</m> and <m>SD(\hat{p}) = \sqrt{\frac{0.333(0.667)}{25}} \approx 0.094</m>. These should match the applet.</p></feedback>
+        </choice>
+      </choices>
       <solution>
         <p><m>E(\hat{p}) = \pi = 0.333</m></p>
         <p><m>SD(\hat{p}) = \sqrt{\frac{\pi(1-\pi)}{n}} = \sqrt{\frac{0.333(0.667)}{25}} = \sqrt{\frac{0.222}{25}} = \sqrt{0.00888} \approx 0.094</m></p>
@@ -366,6 +383,40 @@
         <p>Think about the empirical rule and standard deviations.</p>
       </hint>
       </statement>
+      <setup>
+        <var>
+          <condition number="95" tolerance="0.5">
+            <feedback><p>Correct! About 95% of sample proportions fall within 2 standard deviations.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Not quite. Recall the empirical rule: what percentage falls within 2 standard deviations?</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string="^\s*2\s*(SD|sd|standard deviations?|std\.?\s*dev\.?s?)\s*$">
+            <feedback><p>Correct! 95% of sample proportions fall within 2 standard deviations of π.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Not quite. How many standard deviations does the 95% interval cover?</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="95" tolerance="0.5">
+            <feedback><p>Correct! For about 95% of samples, π falls within 2 standard deviations.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Not quite. This should match the first percentage.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string="^\s*2\s*(SD|sd|standard deviations?|std\.?\s*dev\.?s?)\s*$">
+            <feedback><p>Correct! For 95% of samples, π falls within 2 standard deviations of the sample proportion.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Not quite. This should match the distance from the previous statement.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>Roughly 95% of sample proportions fall within 2 SD of the value of <m>\pi</m>.</p>
         <p>For roughly 95% of samples, <m>\pi</m> falls within 2 SD of any sample proportion.</p>
