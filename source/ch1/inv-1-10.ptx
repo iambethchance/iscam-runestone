@@ -1,7 +1,7 @@
 <section xml:id="investigation-1-10">
 <title>Investigation 1.10: Heart Transplant Mortality (cont.)</title>
 <introduction>
-<p><em>The Exact Binomial and Normal approximation (<em>z</em>) confidence intervals have advantages and disadvantages, so let's explore some other options.</em></p>
+<p><em>The Exact Binomial and Normal approximation (z) confidence intervals have advantages and disadvantages, so let's explore some other options.</em></p>
 </introduction>
 <exercises xml:id="investigation1-10" hidden-label="yes">
     <title>More Confidence Intervals</title>
@@ -268,9 +268,6 @@ iscamonepropztest(observed = 8, n = 10, conf.level = 0.95)
         <p>
           Do you consider the one proportion <m>z</m>-interval valid for these data? Explain how you are deciding.
         </p>
-        <p>
-          <var width="60"/>
-        </p>
       </statement>
       <response/>
       <solution>
@@ -314,22 +311,62 @@ iscamonepropztest(observed = 8, n = 10, conf.level = 0.95)
       <title>Simulating Confidence Intervals</title>
       <statement>
       <p>
-          Did you obtain the same interval as in <xref ref="I1-10-c" text="custom">question 3</xref>? Why or why not?
-        </p>
-        <p>
-          <var width="60"/>
-        </p>
-        <p>
-          Did the interval succeed in capturing the value of <m>\pi</m>, which we set to be 0.15? How can you tell?
-        </p>
-        <p>
-          <var width="60"/>
+          Did you obtain the same interval as in <xref ref="I1-10-c" text="custom">question 3</xref>?
         </p>
       </statement>
-      <response/>
+      <choices randomize="no">
+        <choice correct="yes">
+          <statement>
+            <p>Yes</p>
+          </statement>
+          <feedback>
+            <p>That's possible, but unlikely since this is a simulation with random sampling.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>No</p>
+          </statement>
+          <feedback>
+            <p>Correct! Each simulation generates a different random sample, so intervals will vary.</p>
+          </feedback>
+        </choice>
+      </choices>
       <solution>
         <p>
-          Results will vary
+          Most likely no - each simulation uses a different random sample from the process with <m>\pi = 0.15</m>, so you'll get different intervals. Question 3 used the actual data with 8 out of 10 deaths.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-10-e2" label="I1.10e2">
+      <title>Did Interval Capture π?</title>
+      <statement>
+        <p>
+          Did your interval succeed in capturing the value of <m>\pi = 0.15</m>? (Check if 0.15 falls between your interval endpoints, or if the interval is colored green in the applet.)
+        </p>
+      </statement>
+      <choices randomize="no">
+        <choice correct="yes">
+          <statement>
+            <p>Yes</p>
+          </statement>
+          <feedback>
+            <p>Good! Your interval captured the true parameter. Most intervals should succeed.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>No</p>
+          </statement>
+          <feedback>
+            <p>That happens sometimes - about 5% of 95% confidence intervals fail to capture the parameter.</p>
+          </feedback>
+        </choice>
+      </choices>
+      <solution>
+        <p>
+          Results will vary. Green intervals capture <m>\pi = 0.15</m>, red intervals do not. Most intervals should be green.
         </p>
         <image source="images/Inv1.10applet1.png" width="80%">
           <description>Simulating Confidence Intervals applet showing single interval for pi=0.15, n=10</description>
