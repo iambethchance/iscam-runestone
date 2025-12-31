@@ -27,6 +27,57 @@
         <p>
           Width: <var width="10"/>
         </p>
+      </statement>
+      <setup>
+        <var>
+          <condition number="0.4439" tolerance="0.003">
+            <feedback>
+              <p>Correct lower bound!</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. The lower bound from the exact binomial method is 0.4439.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.9748" tolerance="0.003">
+            <feedback>
+              <p>Correct upper bound!</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. The upper bound from the exact binomial method is 0.9748.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.709" tolerance="0.003">
+            <feedback>
+              <p>Correct midpoint!</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Calculate (0.4439 + 0.9748)/2.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.531" tolerance="0.003">
+            <feedback>
+              <p>Correct width!</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Calculate 0.9748 - 0.4439.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <hint><title>R</title>
         <p>Use the <c>iscambinomtest()</c> function with the following parameters:</p>
         <p>
@@ -55,8 +106,6 @@ iscambinomtest(observed = 8, n = 10, alternative = "two.sided", conf.level = 0.9
           Width = (upper endpoint - lower endpoint)
         </p>
       </hint>
-   </statement>
-      <response/>
       <solution>
         <paragraphs>
           <title>R</title>
@@ -103,10 +152,59 @@ iscambinomtest(observed = 8, n = 10, alternative = "two.sided", conf.level = 0.9
           Width: <var width="10"/>
         </p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="0.552" tolerance="0.003">
+            <feedback>
+              <p>Correct lower bound!</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Use the formula 0.8 - 1.96 × sqrt(0.8 × 0.2 / 10).</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="1.05" tolerance="0.01">
+            <feedback>
+              <p>Correct upper bound!</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Use the formula 0.8 + 1.96 × sqrt(0.8 × 0.2 / 10).</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.80" tolerance="0.01">
+            <feedback>
+              <p>Correct midpoint!</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. The midpoint is the sample proportion p-hat = 0.80.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.498" tolerance="0.003">
+            <feedback>
+              <p>Correct width!</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Calculate upper bound - lower bound.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>
-          SE(<m>\hat{p}</m>) = sqrt(.8(.2)/10)) = 0.1265
+          SE(<m>\hat{p}</m>) = sqrt(.8(.2)/10) = 0.1265
         </p>
         <p>
           0.8 ± 1.96 sqrt(0.8(0.2)/10) <m>\Rightarrow</m> (0.552, 1.05)
@@ -304,7 +402,20 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
           Average width: <var width="10"/>
         </p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="0.46" tolerance="0.02">
+            <feedback>
+              <p>Correct! The average width is about 0.46.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Look at the Mean of the "(CI Widths)" graph in the applet.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>
           The average width should be about 0.46.
@@ -375,7 +486,20 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
           <var width="10"/>
         </p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="0.44" tolerance="0.02">
+            <feedback>
+              <p>Correct! The average width is about 0.44.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Look at the Mean of the "(CI Widths)" graph in the applet.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>
           The average width is about 0.44.
@@ -450,7 +574,32 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
           Average width: <var width="20"/>
         </p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="95" tolerance="3">
+            <feedback>
+              <p>Correct! The running total should be very close to 95%.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Look at the running total percentage in the applet.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.45" tolerance="0.02">
+            <feedback>
+              <p>Correct! The average width is close to 0.45.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Look at the Mean of the "(CI Widths)" graph in the applet.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>
           The running total should be very close to 95% and the average width close to 0.45.
@@ -558,7 +707,32 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
           Interpretation: <var width="60"/>
         </p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="0.477" tolerance="0.003">
+            <feedback>
+              <p>Correct lower bound!</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Calculate 10/14 ± 1.96 × sqrt((10/14)(4/14)/14).</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.951" tolerance="0.003">
+            <feedback>
+              <p>Correct upper bound!</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Calculate 10/14 + 1.96 × sqrt((10/14)(4/14)/14).</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>
           10/14 = 0.714; 0.714 ± 1.96 sqrt(0.714(1 - 0.714)/14) = 0.714 ± 0.2367 <m>\Rightarrow</m> (0.477, 0.951)
@@ -585,7 +759,56 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
           Compare: <var width="60"/>
         </p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="0.156" tolerance="0.003">
+            <feedback>
+              <p>Correct Wald lower bound!</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Calculate 71/361 - 1.96 × sqrt((71/361)(290/361)/361).</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.238" tolerance="0.003">
+            <feedback>
+              <p>Correct Wald upper bound!</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Calculate 71/361 + 1.96 × sqrt((71/361)(290/361)/361).</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.160" tolerance="0.003">
+            <feedback>
+              <p>Correct Plus Four lower bound!</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Calculate 73/365 - 1.96 × sqrt((73/365)(292/365)/365).</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.241" tolerance="0.003">
+            <feedback>
+              <p>Correct Plus Four upper bound!</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Calculate 73/365 + 1.96 × sqrt((73/365)(292/365)/365).</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>
           With the larger sample size, the intervals are more similar.
@@ -706,7 +929,20 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
             Probability: <var width="10"/>
           </p>
         </statement>
-        <response/>
+        <setup>
+          <var>
+            <condition number="0.95" tolerance="0.01">
+              <feedback>
+                <p>Correct! The probability is approximately 0.95 or 95%.</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Since these are 95% confidence intervals, about 95% will capture π.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p>
             The probability is approximately 0.95 (or 95%). Since these are 95% confidence intervals, in the long run about 95% of the intervals will capture the true parameter value <m>\pi</m>. Therefore, randomly selecting one interval gives you about a 95% chance of selecting one that captures <m>\pi</m>.
@@ -724,7 +960,25 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
             Probability: <var width="10"/>
           </p>
         </statement>
-        <response/>
+        <setup>
+          <var>
+            <condition number="0" tolerance="0.01">
+              <feedback>
+                <p>That's one possibility - either 0 or 1. Once constructed, the parameter either is or isn't in the interval.</p>
+              </feedback>
+            </condition>
+            <condition number="1" tolerance="0.01">
+              <feedback>
+                <p>That's one possibility - either 0 or 1. Once constructed, the parameter either is or isn't in the interval.</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>The probability is either 0 or 1 - the parameter either is or isn't in this specific interval.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p>
             The probability is either 0 or 1 - we just don't know which! Once a specific interval is constructed, the parameter <m>\pi</m> either is or isn't in that interval. The "95% confidence" refers to the method, not to any particular interval. If we were to use this method repeatedly, about 95% of the intervals constructed would contain <m>\pi</m>.
