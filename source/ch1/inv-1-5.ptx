@@ -155,7 +155,7 @@
     <solution>
       <p>P(X ≤ 3) = 0.1719</p>
       <figure>
-        <image source="images/inv1.5After.png" width="60%">
+        <image source="images/inv1.5solse.png" width="60%">
           <description>Binomial distribution for n=10, pi=0.5 showing P(X less than or equal to 3)</description>
         </image>
       </figure>
@@ -324,12 +324,35 @@
   <exercise xml:id="I1-5-12" label="I1.5.12">
     <title>Two-Sided p-value for π = 0.55</title>
     <statement>
-      <p>Calculate the two-sided p-value as P(X ≤ 3) + P(X ≥ 8)</p>
+      <p>Calculate the two-sided p-value as P(X ≤ 3) + P(X ≥ 8): <var width="10"/></p>
     <hint>
       <p>Add the two tail probabilities you found.</p>
     </hint>
     </statement>
-    <response/>
+    <setup>
+      <var>
+        <condition number="0.2016" tolerance="0.001">
+          <feedback>
+            <p>Correct! The two-sided p-value is P(X ≤ 3) + P(X ≥ 8) = 0.1020 + 0.0996 = 0.2016.</p>
+          </feedback>
+        </condition>
+        <condition number="0.202" tolerance="0.002">
+          <feedback>
+            <p>Correct! The two-sided p-value is approximately 0.202.</p>
+          </feedback>
+        </condition>
+        <condition number="0.20" tolerance="0.01">
+          <feedback>
+            <p>Close! You've rounded the p-value. The more precise value is 0.2016.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Not quite. Add the two tail probabilities: P(X ≤ 3) = 0.1020 and P(X ≥ 8) = 0.0996. The p-value should be around 0.20.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>0.1020 + 0.0996 = 0.2016</p>
     </solution>
@@ -354,11 +377,9 @@
       </choice>
     </choices>
     <solution>
-      <figure>
         <image source="images/inv1.5pilot2.png" width="60%">
           <description>Two-sided binomial test for n=10, pi=0.55 showing two-sided p-value</description>
         </image>
-      </figure>
     </solution>
   </exercise>
   
@@ -407,11 +428,9 @@
     </statement>
     <response/>
     <solution>
-      <figure>
         <image source="images/inv1.5buttered.png" width="60%">
           <description>Two-sided binomial test for n=48, pi=0.5, observed=19</description>
         </image>
-      </figure>
       <p>The p-value is not small (p-value = 0.1934, which is larger than 0.05), so we fail to reject the null hypothesis that π = 0.50. We conclude it is plausible that buttered toast is equally likely to land up or down when dropped from the top of a building.</p>
     </solution>
   </exercise>
@@ -424,7 +443,7 @@
   <paragraphs>
     <title>Discussion</title>
     
-    <p>Recall that the process we are using to testing our hypotheses is to first assume the null hypothesis is true. For this reason, we can never use this process as evidence <em>for</em> the null hypothesis, only lack of evidence <em>against</em> it. Keep in mind the saying "Absence of evidence is not evidence of absence." Also, note that our evidence depends on the form of the alternative hypothesis. A more complete statement is that we do not have evidence in favor of the alternative that we specified, and that our strength of evidence could differ if we started with a different alternative hypothesis.</p>
+    <p>Recall that the process we are using to test our hypotheses is to first assume the null hypothesis is true. For this reason, we can never use this process as evidence <em>for</em> the null hypothesis, only lack of evidence <em>against</em> it. Keep in mind the saying "Absence of evidence is not evidence of absence." Also, note that our evidence depends on the form of the alternative hypothesis. A more complete statement is that we do not have evidence in favor of the alternative that we specified, and that our strength of evidence could differ if we started with a different alternative hypothesis.</p>
   </paragraphs>
   
   <p class="horizontal-rule"> </p>
@@ -442,7 +461,7 @@
       <title>Applet Instructions</title>
       <p>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" target="_blank">One Proportion Inference applet</url>:</p>
       <p><ul>
-        <li><p>Check the <alert>two-sided</alert> box</p></li>
+        <li><p>Check the <term index="no">two-sided</term> box</p></li>
         <li><p>For the "smallest tail probability" approach, set the pull-down menu to "Tails" (finds tail value on other side that is first below the one-sided p-value)</p></li>
         <li><p>For the "smallest p-value" approach, set the pull-down menu to "Individual" (sums all probabilities smaller than the observed)</p></li>
         <li><p>(These will match when the distribution is symmetric.)</p></li>
@@ -472,7 +491,7 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
     </hint>
     <hint>
       <title>JMP Instructions</title>
-      <p><alert>Note:</alert> The default two-sided test under Analyze > Distribution is not an "exact" binomial test.</p>
+      <p><term index="no">Note:</alert> The default two-sided test under Analyze > Distribution is not an "exact" binomial test.</p>
         <image source="images/JMPtwosided.png" width="80%">
           <description>Use radio button to create JMP two-sided binomial test output</description>
         </image>
@@ -532,7 +551,7 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
     <exercise xml:id="PP1-5-3" label="PP1.5.3">
       <title>Strange Behavior with Extreme Observations</title>
       <statement>
-        <p>Suppose n = 20 and you observed 0 successes. Find the two-sided p-values using the approach suggested in (b) for π = 0.13, π = 0.145, and π = 0.15. According to the two-sided p-values, which of these values are plausible for π at the 10% level of significance? What strange behavior do you observe?</p>
+        <p>Suppose n = 20 and you observed 0 successes. Find the two-sided p-values using the approach suggested in  the previous question for π = 0.13, π = 0.145, and π = 0.15. According to the two-sided p-values, which of these values are plausible for π at the 10% level of significance? What strange behavior do you observe?</p>
       </statement>
       <response/>
     </exercise>
