@@ -1,39 +1,52 @@
 // Sticky Applet JavaScript
 // Makes interactive applets float/stick as users scroll
 
-// Movable Applet System - preserves iframe state when moving
-(function () {
-  function moveAppletTo(targetId) {
-    const wrap = document.getElementById("applet-wrap");
-    const target = document.getElementById(targetId);
-    if (wrap && target) {
-      target.appendChild(wrap); // moving preserves state
-      console.log('Applet moved to:', targetId);
-      // Scroll to the new location smoothly
-      target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+document.addEventListener('DOMContentLoaded', function() {
+    // Movable Applet System - preserves iframe state when moving
+    console.log('Setting up movable applet system...');
+    
+    function moveAppletTo(targetId) {
+        const wrap = document.getElementById("applet-wrap");
+        const target = document.getElementById(targetId);
+        console.log('Attempting to move applet to:', targetId, 'wrap:', wrap, 'target:', target);
+        
+        if (wrap && target) {
+            target.appendChild(wrap); // moving preserves state
+            console.log('Applet moved to:', targetId);
+            // Scroll to the new location smoothly
+            target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+            console.error('Could not move applet - missing elements');
+        }
     }
-  }
 
-  document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".dock-applet");
-    if (btn) {
-      e.preventDefault();
-      moveAppletTo(btn.dataset.target);
-    }
+    // Set up click handlers for dock buttons
+    document.addEventListener("click", function(e) {
+        console.log('Click detected on:', e.target);
+        
+        const btn = e.target.closest(".dock-applet");
+        if (btn) {
+            console.log('Dock button clicked:', btn);
+            e.preventDefault();
+            moveAppletTo(btn.dataset.target);
+            return;
+        }
 
-    if (e.target && e.target.id === "send-home") {
-      e.preventDefault();
-      const home = document.getElementById("applet-home");
-      const wrap = document.getElementById("applet-wrap");
-      if (home && wrap) {
-        home.appendChild(wrap);
-        console.log('Applet returned home');
-        // Scroll to home location
-        home.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-  });
-})();
+        if (e.target && e.target.id === "send-home") {
+            console.log('Send home button clicked');
+            e.preventDefault();
+            const home = document.getElementById("applet-home");
+            const wrap = document.getElementById("applet-wrap");
+            if (home && wrap) {
+                home.appendChild(wrap);
+                console.log('Applet returned home');
+                // Scroll to home location
+                home.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    });
+    
+    console.log('Movable applet system initialized');
 
 document.addEventListener('DOMContentLoaded', function() {
     // Find all interactive iframe elements (Runestone renders them in figures or divs)
