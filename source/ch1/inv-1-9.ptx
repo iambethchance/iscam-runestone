@@ -96,9 +96,23 @@
           Calculate this estimate.
         </p>
         <p>
-          Estimate: <var form="float" width="10"><condition number="0.043" tolerance="0.001"/></var>
+          Estimate: <var width="10"/>
         </p>
       </statement>
+      <setup>
+        <var>
+          <condition number="0.043" tolerance="0.001">
+            <feedback>
+              <p>Correct! The standard error is 0.043.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. Calculate <m>\sqrt{0.645(0.355)/124}</m> to find the standard error.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>
           Estimate: <m>\text{SE}(\hat{p}) = \sqrt{0.645(0.355)/124} = \sqrt{0.001846} = 0.043</m>
@@ -121,7 +135,7 @@
           Now consider calculating a 95% confidence interval for the process probability <m>\pi</m> based on the observed sample proportion <m>\hat{p}</m>. What's the largest distance you expect to see a sample proportion <m>\hat{p}</m> fall away from the underlying process probability <m>\pi</m>? [<em>Hint:</em> Assuming a normal distribution <ellipsis/> 95% <ellipsis/>]
         </p>
         <p>
-          Largest plausible distance = <var form="float" width="10"><condition number="0.086" tolerance="0.002"/></var>
+          Largest plausible distance = <var width="10"/>
         </p>
         <hint>
           <p>
@@ -129,6 +143,20 @@
           </p>
         </hint>
       </statement>
+      <setup>
+        <var>
+          <condition number="0.086" tolerance="0.002">
+            <feedback>
+              <p>Correct! The largest plausible distance is <m>2 \times 0.043 = 0.086</m>.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. For 95%, use approximately 2 standard deviations: <m>2 \times 0.043</m>.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>
           Max plausible distance = <m>2 \times 0.043 = 0.086</m> (95% of the time)
@@ -148,12 +176,38 @@
           </p>
         </hint>
         <p>
-          Lower bound: <var form="float" width="10"><condition number="0.559" tolerance="0.003"/></var>
+          Lower bound: <var width="10"/>
         </p>
         <p>
-          Upper bound: <var form="float" width="10"><condition number="0.731" tolerance="0.003"/></var>
+          Upper bound: <var width="10"/>
         </p>
       </statement>
+      <setup>
+        <var>
+          <condition number="0.559" tolerance="0.003">
+            <feedback>
+              <p>Correct! The lower bound is <m>0.645 - 0.086 = 0.559</m>.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. Subtract the distance from the sample proportion: <m>0.645 - 0.086</m>.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.731" tolerance="0.003">
+            <feedback>
+              <p>Correct! The upper bound is <m>0.645 + 0.086 = 0.731</m>.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. Add the distance to the sample proportion: <m>0.645 + 0.086</m>.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>
           <m>\pi</m> should fall within 2 standard deviations of the observed sample proportion. So <m>\pi</m> is at least <m>0.645 - 2(0.043) = 0.559</m> and at most <m>0.645 + 2(0.043) = 0.731</m>
