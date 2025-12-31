@@ -61,6 +61,7 @@
       <p>Applet standard deviation: <var width="15"/></p>
       <p>Comparison: <var width="60"/></p> -->
     </statement>
+    </response>
     <solution>Example results:
       <image source="images/Inv1.13-bsols.png" width="80%">
         <description>Screenshot showing the applet results with standard deviation close to 0.153</description>
@@ -194,8 +195,27 @@
     <title>Effect of larger population size</title>
     <statement>
       <p>Generate 10,000 samples of size <m>n = 100</m> from this population. Report the mean and standard deviation from your simulation 
-      and comment on how they compare to <xref ref="I1-13-c" text="custom">Question 4</xref>?</p>
-
+      and comment on how they compare to <xref ref="I1-13-c" text="custom">Question 4</xref>.</p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="0.41" tolerance="0.02">
+          <feedback><p>Correct! The mean remains close to 0.41.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The mean of the sampling distribution should be close to the population proportion of 0.41.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.049" tolerance="0.005">
+          <feedback><p>Correct! The standard deviation is approximately 0.049.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>With a much larger population, the standard deviation should match the original formula: <m>\sqrt{\frac{0.41(0.59)}{100}} \approx 0.049</m>.</p></feedback>
+        </condition>
+      </var>
+    </setup>
+    <statement>
       <p>Mean: <var width="15"/></p>
       <p>Standard deviation: <var width="15"/></p>
       <p>Comparison: <var width="60"/></p>
