@@ -10,7 +10,7 @@
   <introduction>
     <p>A standard test for extra-sensory perception (ESP) asks subjects to identify which of five symbols (e.g., circle, plus, square, diamond, waves) is on the front of a card, viewed by the experimenter but not the subject. The experimenter concentrates on the symbol and a <q>hit</q> is when the subject correctly identifies the symbol being viewed by the experimenter. The subject is given several trials, with the viewed symbol randomly determined for each of the trials, with no discernible pattern.</p>
     
-    <paragraphs><title>ESP Test Symbols:</title></paragraphs>
+    <paragraphs><title>ESP Test Symbols</title></paragraphs>
     <image source="esp.png" width="60%">
       <description>Five ESP test symbols: circle, plus sign, square, diamond, and wavy lines</description>
     </image>
@@ -207,7 +207,32 @@
         <p>Look for the values displayed in the Summary Statistics section of the applet after pressing Reset.</p>
       </hint>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="2" tolerance="0.01">
+            <feedback>
+              <p>Correct! The expected value is <m>E(C) = n \times \pi = 10 \times 0.2 = 2.00</m>.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Calculate <m>E(C) = n \times \pi = 10 \times 0.2</m>.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="1.265" tolerance="0.01">
+            <feedback>
+              <p>Correct! The standard deviation is <m>SD(C) = \sqrt{n \times \pi \times (1-\pi)} = \sqrt{10 \times 0.2 \times 0.8} \approx 1.265</m>.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Calculate <m>SD(C) = \sqrt{n \times \pi \times (1-\pi)} = \sqrt{10 \times 0.2 \times 0.8}</m>.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>After pressing Reset to remove the one simulated trial, you should find Mean = 2.000, SD = 1.265.</p>
       </solution>
@@ -303,13 +328,27 @@
         <title>Standardizing 5 Hits</title>
         <statement>
           <p>How many standard deviations from the mean (expected value) would 5 hits be?</p>
+          <p><var width="5"/> standard deviations</p>
         <hint>
           <p>Use the same formula as the previous question: (5 - 2) / 1.265. What does this value tell you?</p>
         </hint>
         </statement>
-        <response/>
+        <setup>
+          <var>
+            <condition number="2.37" tolerance="0.05">
+              <feedback>
+                <p>Correct! <m>\frac{5 - 2}{1.265} \approx 2.37</m> standard deviations above the mean.</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Use the formula: <m>\frac{\text{observed} - \text{mean}}{\text{SD}} = \frac{5 - 2}{1.265}</m>.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
-          <p>A standardized statistic of 1 means that the sample result is one standard deviation above the mean of 2. Because the SD is 1.265, 1 SD above the mean is at <m>2 + 1.265 = 3.265</m>. Rounding to the nearest whole number, that would correspond to 3 correct identifications. (Or you could solve: <m>(x - 2)/1.265 = 1</m> to find <m>x = 3.265</m>.)</p>
+          <p><m>\frac{5 - 2}{1.265} \approx 2.37</m> standard deviations above the mean.</p>
         </solution>
       </exercise>
       
@@ -317,11 +356,38 @@
         <title>Distribution for 25 Attempts</title>
         <statement>
           <p>Suppose you don't know whether or not someone is clairvoyant and you plan to give the person 25 attempts. What are the theoretical expected number and standard deviation for the random variable <m>C</m>, the number of hits when <m>n = 25</m> assuming they are just guessing each time? How do they compare to the values you reported in <xref ref="I1-3-11" text="custom">Question 11</xref>?</p>
+          <p>Expected value = <var width="5"/></p>
+          <p>Standard deviation = <var width="5"/></p>
         <hint>
           <p>Use the binomial formulas with n = 25 and pi = 0.20. Expected value = n × pi, and SD = square root of n × pi × (1 - pi).</p>
         </hint>
         </statement>
-        <response/>
+        <setup>
+          <var>
+            <condition number="5" tolerance="0.01">
+              <feedback>
+                <p>Correct! <m>E(C) = n \times \pi = 25 \times 0.2 = 5</m>.</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Calculate <m>E(C) = n \times \pi = 25 \times 0.2</m>.</p>
+              </feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="2" tolerance="0.01">
+              <feedback>
+                <p>Correct! <m>SD(C) = \sqrt{n \times \pi \times (1-\pi)} = \sqrt{25 \times 0.2 \times 0.8} = 2</m>.</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Calculate <m>SD(C) = \sqrt{n \times \pi \times (1-\pi)} = \sqrt{25 \times 0.2 \times 0.8}</m>.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p>Expected value = <m>5</m>, SD = <m>2</m></p>
           <p>Note: You can check these in the applet. Because the value of <m>n</m> has changed, both have increased. The larger the sample size, the more variability in the distribution.</p>
@@ -334,11 +400,25 @@
         <title>Approach 1: p-value Threshold</title>
         <statement>
           <p>What value for <m>c</m> would give you a probability below 0.05 of obtaining that many or more hits? In other words, what is the smallest value of <m>c</m> so <m>P(C \geq c) &lt; 0.05</m>?</p>
+          <p><m>c =</m> <var width="5"/> hits</p>
         <hint>
           <p>Use the applet to find probabilities for different values of c.</p>
         </hint>
         </statement>
-        <response/>
+        <setup>
+          <var>
+            <condition number="9">
+              <feedback>
+                <p>Correct! <m>P(C \geq 9) = 0.048 &lt; 0.05</m>, while <m>P(C \geq 8) = 0.109 > 0.05</m>. So 9 is the smallest value that gives a p-value below 0.05.</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Use the applet to check: <m>P(C \geq 8) = 0.109</m> (too large) and <m>P(C \geq 9) = 0.048</m> (below 0.05).</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p>We need to find <m>c</m> such that <m>P(C \geq c) &lt; 0.05</m>. Using the applet:
             <ul>
@@ -353,11 +433,25 @@
         <title>Approach 2: Standard Deviations</title>
         <statement>
           <p>What is the smallest value of <m>c</m> that is at least 2 standard deviations from the expected value?</p>
+          <p><m>c =</m> <var width="5"/> hits</p>
         <hint>
           <p>Use the expected value and standard deviation from <xref ref="I1-3-16" text="custom">question 16</xref>.</p>
         </hint>
         </statement>
-        <response/>
+        <setup>
+          <var>
+            <condition number="9">
+              <feedback>
+                <p>Correct! The expected value is 5 and the SD is 2, so 2 standard deviations above the mean is <m>5 + 2(2) = 9</m>.</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Calculate: expected value + 2 × SD = <m>5 + 2(2)</m>.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p>The observed value would need to be more than <m>5 + 2(2) = 9</m>.</p>
         </solution>

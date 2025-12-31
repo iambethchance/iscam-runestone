@@ -228,7 +228,7 @@
       <var>
         <condition number="15" tolerance="2">
           <feedback>
-            <p>Correct! Results will vary but should be around 13-17% (or 0.13-0.17).</p>
+            <p>Correct! Results will vary but should be around 14-15%.</p>
           </feedback>
         </condition>
         <condition string=".*">
@@ -315,9 +315,22 @@
           </md></p>
           <p>What is the calculated product? <var width="5"/></p>
         </statement>
-        <response/>
+        <setup>
+          <var>
+            <condition number="0.00390625" tolerance="0.0001">
+              <feedback>
+                <p>Correct! <m>P(\text{SSFSSSFS}) = (0.5)^8 = 0.00390625</m></p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Multiply the probability of each outcome: <m>0.5 \times 0.5 \times 0.5 \times 0.5 \times 0.5 \times 0.5 \times 0.5 \times 0.5 = (0.5)^8</m></p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
-          <p>0.58</p>
+          <p><m>(0.5)^8 = 0.00390625</m></p>
         </solution>
       </exercise>
       
