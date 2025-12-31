@@ -7,7 +7,6 @@
     You will also learn how to use technology to create these displays and consider how to compare the observed distribution of 
     data to a mathematical model.</em></p>
   </introduction>
-<subsection>
 <exercises xml:id="investigation2-1" hidden-label="yes">
   <title>The Data</title>
   <introduction>
@@ -52,7 +51,7 @@
   </exercise>    <exercise xml:id="inv2-1-b" label="I2.1b">
       <title>Variable type</title>
       <statement>
-        <p>Is the variable birthweight quantitative or categorical?</p>
+        <p>Is the variable <em>birthweight</em> quantitative or categorical?</p>
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
@@ -81,6 +80,22 @@
     <title>Technology Detour <mdash/> Loading in a Data File</title>
     <statement>
       <p>Access the <url href="http://www.rossmanchance.com/iscam4/data/USbirthsJan2024.txt">USbirthsJan2024.txt</url> data file and check that you have 297,798 rows of data.</p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="297798" tolerance="0">
+          <feedback>
+            <p>Correct! The dataset contains 297,798 observations.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Check that you loaded the data correctly. Use nrow() in R or check the data table size in JMP.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <statement>
       <p>Number of observations: <var width="10"/></p>
     <hint>
       <title>R Instructions</title>
@@ -154,7 +169,6 @@ attach(births)    # Now R knows what the "birthweight" variable is
     <solution>
       <p>297,798 observations</p>
     </solution>
-    <response/>
   </exercise>
   
   <p>Now use technology to create a dotplot of the birth weights.</p>
@@ -306,7 +320,7 @@ nrow(births2)
   <exercise xml:id="tech-detour-histograms">
     <title>Technology Detour <mdash/> Creating Histograms</title>
     <statement>
-      <p>Create a histogram for the subsetted birth weight data (births2).</p>
+      <p>Create a histogram for the subsetted birth weight data (<c>births2</c>).</p>
     <hint>
       <title>R Instructions</title>
       <p>Use the <c>hist</c> function to create a histogram:</p>
@@ -348,7 +362,7 @@ hist(births2$birthweight, xlab="birth weight")
   <exercise xml:id="inv2-1-e" label="I2.1e">
     <title>Compare dotplot and histogram</title>
     <statement>
-      <p>Create a histogram for the subsetted data (births2) and compare the information revealed by the dotplots and the histograms. Do you feel one display is more effective at displaying information about birth weights than the other? Explain.</p>
+      <p>Create a histogram for the subsetted data (<c>births2</c>) and compare the information revealed by the dotplots and the histograms. Do you feel one display is more effective at displaying information about birth weights than the other? Explain.</p>
     </statement>
     <solution>
       <p>The histogram is more effective; the dataset is too large to show individual dots.</p>
@@ -419,7 +433,7 @@ hist(births2$birthweight, xlab="birth weight")
   <exercise xml:id="inv2-1-h" label="I2.1h">
     <title>Subset by gestation period</title>
     <statement>
-      <p>Now, further subset the births2 data based on whether or not the pregnancy lasted at least 37 weeks. How many observations do you end up with?</p>
+      <p>Now, further subset the <c>births2</c> data based on whether or not the pregnancy lasted at least 37 weeks. How many observations do you end up with?</p>
     <hint>
       <title>R Hints</title>
       <p>Edit the previous command, using births2 (two places). Use "==" for an equality comparison (i.e., <c>OEG == 2</c>).</p>
@@ -430,6 +444,21 @@ hist(births2$birthweight, xlab="birth weight")
           <description>JMP output showing selected rows</description>
         </image>
     </hint>
+    <setup>
+      <var>
+        <condition number="265676" tolerance="0">
+          <feedback>
+            <p>Correct! After subsetting to full-term births (at least 37 weeks gestation), you have 265,676 observations.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Check your subsetting command. Make sure you're selecting observations where OEG == 2 (full-term births) from the births2 dataset.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <var width="5"/>
     </statement>
     <solution>
       <p>265,676 observations</p>
@@ -441,6 +470,25 @@ hist(births2$birthweight, xlab="birth weight")
   <exercise xml:id="inv2-1-i" label="I2.1i">
     <title>Assess symmetry after subsetting</title>
     <statement>
+      <setup>
+        <var>
+          <condition string="(?i)^(yes|y)$">
+            <feedback>
+              <p>Correct! The distribution does appear more symmetric after removing premature births.</p>
+            </feedback>
+          </condition>
+          <condition string="(?i).*(more|symmetric).*">
+            <feedback>
+              <p>You're on the right track. A simple "yes" answer is sufficient here.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>After removing premature births, does the distribution look more symmetric? Consider the shape of the histogram.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <p>After this step do we have a more symmetric distribution? <var width="30"/></p>
       <p>What is a downside to subsetting the dataset in this way? <var width="50"/></p>
     </statement>
@@ -493,6 +541,59 @@ iscamsummary(births3$birthweight, digits=2)
   <exercise xml:id="inv2-1-j" label="I2.1j">
     <title>Report numerical summaries</title>
     <statement>
+      <setup>
+        <var>
+          <condition number="3337" tolerance="5">
+            <feedback>
+              <p>Correct! The mean birth weight is approximately 3337 grams.</p>
+            </feedback>
+          </condition>
+          <condition number="3337" tolerance="50">
+            <feedback>
+              <p>Close, but check your calculation. The mean should be around 3337 grams.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Use the iscamsummary() function in R or Analyze &gt; Distribution in JMP to calculate the mean.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="461" tolerance="3">
+            <feedback>
+              <p>Correct! The standard deviation is approximately 461 grams.</p>
+            </feedback>
+          </condition>
+          <condition number="461" tolerance="30">
+            <feedback>
+              <p>Close, but check your calculation. The standard deviation should be around 461 grams.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Use the iscamsummary() function in R or Analyze &gt; Distribution in JMP to calculate the standard deviation.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.2" tolerance="0.15">
+            <feedback>
+              <p>Correct! The skewness is slightly positive, indicating a slight right skew.</p>
+            </feedback>
+          </condition>
+          <condition number="0" tolerance="1">
+            <feedback>
+              <p>Check your calculation. The skewness should be a small positive value close to 0.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Use the iscamsummary() function in R to calculate the skewness statistic.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <p>Determine the mean, standard deviation, and skewness of these data.</p>
       <p>Mean: <var width="10"/></p>
       <p>Standard deviation: <var width="10"/></p>
@@ -621,6 +722,30 @@ table(within2sd)/length(births3$birthweight)
   <exercise xml:id="inv2-1-n" label="I2.1n">
     <title>Percentage within 2 SD</title>
     <statement>
+      <setup>
+        <var>
+          <condition number="95" tolerance="1">
+            <feedback>
+              <p>Correct! Approximately 95% of the birthweights fall within 2 standard deviations of the mean, which matches the normal distribution prediction.</p>
+            </feedback>
+          </condition>
+          <condition number="0.95" tolerance="0.01">
+            <feedback>
+              <p>Correct! Approximately 0.95 (or 95%) of the birthweights fall within 2 standard deviations of the mean.</p>
+            </feedback>
+          </condition>
+          <condition number="95" tolerance="3">
+            <feedback>
+              <p>Close! Check your calculation. About 95% of the values should fall within 2 SD for a normal distribution.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Calculate the proportion of observations where the birth weight falls between (mean - 2×SD) and (mean + 2×SD). Express as a percentage.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <p>Report the percentage of the birthweights that fall within 2 standard deviations of the mean.</p>
       <p>Percentage: <var width="10"/>%</p>
     </statement>
@@ -698,13 +823,38 @@ qqline(birthweight, datax=TRUE)
   <exercise xml:id="inv2-1-q" label="I2.1q">
     <title>Calculate low birth weight probability</title>
     <statement>
-      <p>Use technology (e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html?hideExtras=1">Normal Probability Calculator applet</url>) to calculate the normal distribution probability that a randomly selected baby will be of low birth weight. Include a well-labeled sketch with the shaded area of interest.</p>
+      <setup>
+        <var>
+          <condition number="0.035" tolerance="0.005">
+            <feedback>
+              <p>Correct! The probability is approximately 0.035 (or 3.5%).</p>
+            </feedback>
+          </condition>
+          <condition number="3.5" tolerance="0.5">
+            <feedback>
+              <p>Correct! The probability is approximately 3.5% (or 0.035).</p>
+            </feedback>
+          </condition>
+          <condition number="0.035" tolerance="0.015">
+            <feedback>
+              <p>Close! Check your calculation using the normal distribution with mean 3339 and SD 462.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Use the Normal Probability Calculator with mean=3339, SD=462, and find P(X ≤ 2500). Express as a proportion or percentage.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
+      <p>Use technology (e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html?hideExtras=1">Normal Probability Calculator applet</url>) to calculate the normal distribution probability that a randomly selected baby will be of low birth weight. (Be sure to make sure your answer is consistent with a well-labeled sketch with the shaded area of interest!)</p>
     <hint>
       <p>Expected output:</p>
       <image source="images/Inv2-1q-sols.jpg" width="60%">
         <description>Normal probability calculation for low birth weight</description>
       </image>
     </hint>
+    <p>probability: <var width="10"/></p>
     </statement>
     <solution>
       <p>We estimate that in the long run about 3.5% of full term babies will be of low birth weight.</p>
@@ -715,7 +865,7 @@ qqline(birthweight, datax=TRUE)
   <exercise xml:id="inv2-1-r" label="I2.1r">
     <title>Compare to actual data</title>
     <statement>
-      <p>Now examine the births3 data: What percentage of the birth weights in this data set were at most 2500 grams? [Hint: Create a Boolean variable?] How does this compare to <xref ref="inv2-1-q" text="custom">the prediction in the previous question</xref>? Does this surprise you? Explain.</p>
+      <p>Now examine the <c>births3</c> data: What percentage of the birth weights in this data set were at most 2500 grams? [Hint: Create a Boolean variable?] How does this compare to <xref ref="inv2-1-q" text="custom">the prediction in the previous question</xref>? Does this surprise you? Explain.</p>
     <hint>
       <p>Expected output:</p>
       <image source="images/Inv2-1r-sols.png" width="60%">
@@ -741,7 +891,6 @@ qqline(birthweight, datax=TRUE)
   </conclusion>
   
   </exercises>
-  </subsection>
   <subsection xml:id="practice2-1A">
     <title>Practice Problem 2.1A</title>
     
@@ -796,7 +945,8 @@ qqline(birthweight, datax=TRUE)
   <subsection xml:id="practice2-1B">
     <title>Practice Problem 2.1B</title>
     
-    <p>The <url href="https://www.rossmanchance.com/iscam4/data/AnthemTimes2025.txt" visual="rossmanchance.com/iscam4/data/AnthemTimes2025.txt">AnthemTimes2025.txt</url> file has data on the length of the performance of the national anthem preceding the National Football League's Super Bowl for games from 1980 (Super Bowl 14) to 2025 (Super Bowl 58). Note: There are two columns for times (the first is from a colleague of mine watching and timing each one, the second one is from <url href="https://www.sportsbettingdime.com/guides/resources/super-bowl-national-anthem-lengths-over-under-betting-results/" visual="sportsbettingdime.com">sportsbettingdime</url>). Using sbdTime:</p>
+    <p>The <url href="https://www.rossmanchance.com/iscam4/data/AnthemTimes2025.txt" visual="rossmanchance.com/iscam4/data/AnthemTimes2025.txt">AnthemTimes2025.txt</url> file has data on the length of the performance of the national anthem preceding the National Football League's Super Bowl for games from 1980 (Super Bowl 14) to 2025 (Super Bowl 58). Note: There are two columns for times (the first is from a colleague of mine watching and timing each one, the second one is from <url href="https://www.sportsbettingdime.com/guides/resources/super-bowl-national-anthem-lengths-over-under-betting-results/" visual="sportsbettingdime.com">sportsbettingdime</url>). </p>
+    <alert>Using sbdTime:</alert></p>
     
     <exercise xml:id="practice-2-1b-a" label="PP2.1B.1">
       <title>Create dotplot with active title</title>
