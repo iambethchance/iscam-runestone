@@ -23,7 +23,7 @@
       <title>State Hypotheses for ESP Study</title>
       <statement>
         <p>
-          Suppose you want to test whether the subjects in these studies have ESP, with <m>\pi</m> equal to the actual probability that receivers identify the correct image among the four possible targets. State appropriate null and alternative hypotheses by specifying correct symbols and values.
+          Suppose you want to test whether the subjects in these studies have ESP, with <m>\pi</m> equal to the actual probability that receivers identify the correct image among the four possible targets. State appropriate null and alternative hypotheses.
         </p>
       <hint>
         <p>
@@ -31,48 +31,13 @@
         </p>
       </hint>
         <p>
-          <m>H_0</m>: <var form="buttons" width="5">
-            <li correct="yes">π</li>
-            <li>p</li>
-            <li>μ</li>
-            <li data-feedback="Use equals for null hypothesis"><m>\hat{p}</m></li>
-          </var>
-          <var form="buttons" width="5">
-            <li correct="yes">=</li>
-            <li><m>\leq</m></li>
-            <li><m>\geq</m></li>
-            <li><m>&lt;</m></li>
-            <li><m>></m></li>
-            <li><m>\neq</m></li>
-          </var>
-          <var form="buttons" width="5">
-            <li correct="yes">0.25</li>
-            <li>0.50</li>
-            <li>0.75</li>
-          </var>
+          <m>H_0</m>: <var width="50"/>
         </p>
         <p>
-          <m>H_a</m>: <var form="buttons" width="5">
-            <li correct="yes">π</li>
-            <li>p</li>
-            <li>μ</li>
-            <li data-feedback="Use the parameter not the statistic"><m>\hat{p}</m></li>
-          </var>
-          <var form="buttons" width="5">
-            <li>=</li>
-            <li><m>\leq</m></li>
-            <li><m>\geq</m></li>
-            <li><m>&lt;</m></li>
-            <li correct="yes"><m>></m></li>
-            <li><m>\neq</m></li>
-          </var>
-          <var form="buttons" width="5">
-            <li correct="yes">0.25</li>
-            <li>0.50</li>
-            <li>0.75</li>
-          </var>
+          <m>H_a</m>: <var width="50"/>
         </p>
       </statement>
+      <response/>
       <solution>
         <p>
           <m>H_0: \pi = 0.25</m> (The receivers are just guessing randomly among the four targets)
@@ -94,34 +59,45 @@
           Check whether <m>n\pi \geq 10</m> and <m>n(1-\pi) \geq 10</m>.
         </p>
       </hint>
+      </statement>
+      <setup>
+        <var>
+          <condition string="^\s*[Yy]es\s*$">
+            <feedback><p>Correct! The sample size is large enough for the CLT.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Check whether both <m>n\pi \geq 10</m> and <m>n(1-\pi) \geq 10</m>.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.25">
+            <feedback><p>Correct! The mean of the null distribution is <m>\pi = 0.25</m>.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The mean equals the hypothesized value of <m>\pi</m>.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.02387" tolerance="0.0001">
+            <feedback><p>Correct! The standard deviation is <m>\sqrt{\frac{0.25(0.75)}{329}} \approx 0.02387</m>.</p></feedback>
+          </condition>
+          <condition number="0.0239" tolerance="0.0002">
+            <feedback><p>Close! A more precise value is 0.02387.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use the formula <m>\sqrt{\frac{\pi(1-\pi)}{n}}</m>.</p></feedback>
+          </condition>
+        </var>
+      </setup>
+      <statement>
         <p>
-          Large enough for CLT? 
-          <var form="buttons" width="10">
-            <li correct="yes">Yes</li>
-            <li>No</li>
-          </var>
+          Large enough for CLT? <var width="10"/>
         </p>
-        <setup>
-          <var name="mean">
-            <condition number="0.25">
-              <feedback>
-                <p>Correct! The mean of the null distribution is <m>\pi = 0.25</m>.</p>
-              </feedback>
-            </condition>
-          </var>
-          <var name="sd">
-            <condition number="0.02387" tolerance="0.0001">
-              <feedback>
-                <p>Correct! The standard deviation is <m>\sqrt{\frac{0.25(0.75)}{329}} \approx 0.02387</m>.</p>
-              </feedback>
-            </condition>
-          </var>
-        </setup>
         <p>
-          Mean: <var name="mean" width="10"/>
+          Mean: <var width="10"/>
         </p>
         <p>
-          Standard deviation: <var name="sd" width="10"/>
+          Standard deviation: <var width="10"/>
         </p>
        </statement>
       <solution>
@@ -170,25 +146,23 @@
         <p>
           Report the rejection region found by the applet and include a one-sentence interpretation of this region.
         </p>
-        <setup>
-          <var name="value">
-            <condition number="0.289" tolerance="0.001">
-              <feedback>
-                <p>Correct! The rejection region is <m>\hat{p} \geq 0.289</m>.</p>
-              </feedback>
-            </condition>
-          </var>
-        </setup>
+      </statement>
+      <setup>
+        <var>
+          <condition string="^\s*(p\s*hat|p-hat|phat|\\hat\{p\}|\\hat\{?p\}?|p\^)\s*(>=|≥|&gt;=)\s*0\.289\s*$">
+            <feedback><p>Correct! The rejection region is <m>\hat{p} \geq 0.289</m>.</p></feedback>
+          </condition>
+          <condition string=".*(0\.289|289|29%).*">
+            <feedback><p>You have the right value. Make sure to include the inequality symbol and <m>\hat{p}</m>.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Report the rejection region in the form <m>\hat{p} \geq</m> [value].</p></feedback>
+          </condition>
+        </var>
+      </setup>
+      <statement>
         <p>
-          Rejection region: <m>\hat{p}</m> 
-          <var form="buttons" width="5">
-            <li correct="yes"><m>\geq</m></li>
-            <li><m>\leq</m></li>
-            <li><m>&lt;</m></li>
-            <li><m>></m></li>
-            <li>=</li>
-          </var>
-          <var name="value" width="10"/>
+          Rejection region: <var width="50"/>
         </p>
         <p>
           Interpretation: <var width="60"/>
@@ -339,17 +313,23 @@
         <p>
           Now use the applet to find the probability of rejecting the null hypothesis that <m>\pi = 0.25</m> when in reality <m>\pi = 0.35</m>? Explain your steps. How has the probability changed and why?
         </p>
-        <setup>
-          <var name="power">
-            <condition number="0.99" tolerance="0.01">
-              <feedback>
-                <p>Correct! The power is approximately 0.99 when <m>\pi = 0.35</m>.</p>
-              </feedback>
-            </condition>
-          </var>
-        </setup>
+      </statement>
+      <setup>
+        <var>
+          <condition number="0.99" tolerance="0.01">
+            <feedback><p>Correct! The power is approximately 0.99 when <m>\pi = 0.35</m>.</p></feedback>
+          </condition>
+          <condition number="0.99" tolerance="0.02">
+            <feedback><p>Close! The power is approximately 0.99.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use the applet with alternative probability 0.35 and check the power value.</p></feedback>
+          </condition>
+        </var>
+      </setup>
+      <statement>
         <p>
-          Power: <var name="power" width="10"/>
+          Power: <var width="10"/>
         </p>
         <p>
           Explanation: <var width="60"/>
@@ -520,17 +500,23 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
         <p>
           If your technology allows (or use trial and error), see how many sessions would be needed in the ganzfeld study to have at least an 80% chance of rejecting the null hypothesis if the actual probability of success is <m>\pi = 0.30</m>.
         </p>
-        <setup>
-          <var name="samplesize">
-            <condition number="490" tolerance="10">
-              <feedback>
-                <p>Correct! Approximately 490 sessions are needed to achieve 80% power when <m>\pi = 0.30</m>.</p>
-              </feedback>
-            </condition>
-          </var>
-        </setup>
+      </statement>
+      <setup>
+        <var>
+          <condition number="490" tolerance="10">
+            <feedback><p>Correct! Approximately 490 sessions are needed to achieve 80% power when <m>\pi = 0.30</m>.</p></feedback>
+          </condition>
+          <condition number="490" tolerance="25">
+            <feedback><p>Close! The more precise answer is around 490.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use technology or the applet to find the sample size that achieves 80% power.</p></feedback>
+          </condition>
+        </var>
+      </setup>
+      <statement>
         <p>
-          Sample size needed: <var name="samplesize" width="10"/>
+          Sample size needed: <var width="10"/>
         </p>
       </statement>
       <solution>
@@ -555,17 +541,23 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
         <p>
           How will your answer to the previous question change if the actual probability of success is <m>\pi = 0.35</m>? Determine the number of sessions needed in this case.
         </p>
-        <setup>
-          <var name="samplesize2">
-            <condition number="175" tolerance="10">
-              <feedback>
-                <p>Correct! Approximately 170-180 sessions are needed to achieve 80% power when <m>\pi = 0.35</m>.</p>
-              </feedback>
-            </condition>
-          </var>
-        </setup>
+      </statement>
+      <setup>
+        <var>
+          <condition number="175" tolerance="10">
+            <feedback><p>Correct! Approximately 170-180 sessions are needed to achieve 80% power when <m>\pi = 0.35</m>.</p></feedback>
+          </condition>
+          <condition number="175" tolerance="20">
+            <feedback><p>Close! The more precise answer is around 175.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use technology or the applet to find the sample size that achieves 80% power with <m>\pi = 0.35</m>.</p></feedback>
+          </condition>
+        </var>
+      </setup>
+      <statement>
         <p>
-          Sample size needed: <var name="samplesize2" width="10"/>
+          Sample size needed: <var width="10"/>
         </p>
         <p>
           Explanation: <var width="60"/>
