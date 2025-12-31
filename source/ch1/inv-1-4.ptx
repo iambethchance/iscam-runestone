@@ -13,45 +13,53 @@
 
   <exercise xml:id="I1-4-1" label="I1.4.1">
     <title>Define Sample and Variable</title>
-    
-      <statement>
-        <p>Define the sample or random process for this study.</p>
-      </statement>
-      <response/>
-      <hint>
-        <p>Think about what is being observed repeatedly.</p>
-      </hint>
-      <solution>
-        <p>The 10 most recent heart transplantation surgeries at St. George's Hospital (or more generally, heart transplantation surgeries at this hospital, across all the patients)</p>
-      </solution>
-      <statement>
-        <p>Define the variable for this study.</p>
-      </statement>
-      <response/>
-      <hint>
-        <p>What outcome is being measured for each observation?</p>
-      </hint>
-      <solution>
-        <p>Whether or not the patient died within 30 days of the transplant</p>
-        <p>Note: We define "success" as death within 30 days (could be either death or survival, but this matches the 15% parameter), and "failure" as survival.</p>
-      </solution>
-    
-      <statement>
-        <p>Is this variable quantitative or categorical?</p>
-      </statement>
-      <choices randomize="yes">
-        <choice>
-          <statement><p>Quantitative</p></statement>
-          <feedback><p>Not quite. This variable has categories (death or survival), not numerical measurements.</p></feedback>
-        </choice>
-        <choice correct="yes">
-          <statement><p>Categorical</p></statement>
-          <feedback><p>Correct! This is a categorical variable with two categories (binary): death within 30 days or survival.</p></feedback>
-        </choice>
-      </choices>
-      <solution>
-        <p>Categorical (binary)</p>
-      </solution>
+    <statement>
+      <p>Define the sample or random process for this study.</p>
+      <p>Sample/Random process:</p>
+    </statement>
+    <response/>
+    <hint>
+      <p>Think about what is being observed repeatedly.</p>
+    </hint>
+    <solution>
+      <p>The 10 most recent heart transplantation surgeries at St. George's Hospital (or more generally, heart transplantation surgeries at this hospital, across all the patients)</p>
+    </solution>
+  </exercise>
+  
+  <exercise xml:id="I1-4-1b" label="I1.4.1b">
+    <title>Define the Variable</title>
+    <statement>
+      <p>Define the variable for this study.</p>
+      <p>Variable:</p>
+    </statement>
+    <response/>
+    <hint>
+      <p>What outcome is being measured for each observation?</p>
+    </hint>
+    <solution>
+      <p>Whether or not the patient died within 30 days of the transplant</p>
+      <p>Note: We define "success" as death within 30 days (could be either death or survival, but this matches the 15% parameter), and "failure" as survival.</p>
+    </solution>
+  </exercise>
+  
+  <exercise xml:id="I1-4-1c" label="I1.4.1c">
+    <title>Variable Type</title>
+    <statement>
+      <p>Is this variable quantitative or categorical?</p>
+    </statement>
+    <choices randomize="yes">
+      <choice>
+        <statement><p>Quantitative</p></statement>
+        <feedback><p>Not quite. This variable has categories (death or survival), not numerical measurements.</p></feedback>
+      </choice>
+      <choice correct="yes">
+        <statement><p>Categorical</p></statement>
+        <feedback><p>Correct! This is a categorical variable with two categories (binary): death within 30 days or survival.</p></feedback>
+      </choice>
+    </choices>
+    <solution>
+      <p>Categorical (binary)</p>
+    </solution>
   </exercise>
   
   <p>We need to consider which outcome we will consider "success" and which we will consider "failure." The choice is often arbitrary, though sometimes we may want to focus on the more unusual outcome as success. In fact, in many epidemiology studies, "death" is typically the outcome of interest or "success."</p>
@@ -452,14 +460,15 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
     <exercise xml:id="I1-4-10" label="I1.4.10">
       <title>Alternative Success Definition</title>
       <statement>
-        <p>Suppose that we had focused on survival for 30 days rather than death within 30 days as a "success" in this study. Describe how the hypotheses would change and how the calculation of the binomial p-value would change. Then go ahead and calculate and interpret the exact binomial p-value with this set-up. How does its value compare to your answer in the previous question? How (if at all) does your conclusion change?</p>
-        
+        <p>Suppose that we had focused on <em>survival</em> for 30 days rather than death within 30 days as a "success" in this study. Describe how the hypotheses would change and how the calculation of the binomial p-value would change. Then go ahead and calculate and interpret the exact binomial p-value with this set-up. How does its value compare to your answer in the previous question? How (if at all) does your conclusion change?</p>
+<!--        
         <p><m>\pi</m> represents: <var width="50" /></p>
         <p>H₀: <var width="20" /></p>
         <p>Hₐ: <var width="20" /></p>
         <p>p-value = P(X <var width="20" />)</p>
         
-        <p>Interpretation: The p-value is the probability of obtaining <var width="10" /> or <var width="10" /> successes in <var width="10" /> observations from a random process, assuming <var width="50" />.</p>
+        <p>Interpretation: The p-value is the probability of obtaining <var width="10" /> or <var width="10" /> successes in <var width="10" /> observations from a random process, assuming <var width="50" />.</p>-->
+<response/>
       <hint>
         <p>If survival is success, then the benchmark becomes 0.85. How many survived out of 10?</p>
       </hint>      
@@ -756,15 +765,15 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
       <p>SD when <m>n = 361</m> and <m>\pi = 0.15</m>: <var width="10" /></p>
       <p>Number of standard deviations 71 is above the expected value: <var width="10" /></p>
     <hint>
-      <p>Use <m>E(X) = n × π</m> and <m>SD(X) = \sqrt(n × π × (1-π))</m>. Then calculate <m>(71 - E(X))/SD(X)</m>.</p>
+      <p>Use <m>E(X) = n × π</m> and <m>SD(X) = \sqrt{n × π × (1-π)}</m>. Then calculate <m>(71 - E(X))/SD(X)</m>.</p>
     </hint>
     </statement>
     <response/>
     <solution>
-      <p><m>SD(X) = \sqrt(361 × 0.15 × 0.85) = 6.78</m></p>
+      <p><m>SD(X) = \sqrt{361 × 0.15 × 0.85} = 6.78</m></p>
       <p>Observed 71</p>
       <p><m>(71 - 54.15)/6.78 ≈ 2.49</m>. This is larger than 2.</p>
-      <p>For first data set: <m>(8 - 1.5)/\sqrt(10 × 0.15 × 0.85) = 6.5/1.13 = 5.75</m> (this shows us that the evidence is a fair bit stronger with the first data set)</p>
+      <p>For first data set: <m>(8 - 1.5)/\sqrt{10 × 0.15 × 0.85} = 6.5/1.13 = 5.75</m> (this shows us that the evidence is a fair bit stronger with the first data set)</p>
     </solution>
   </exercise>
   
