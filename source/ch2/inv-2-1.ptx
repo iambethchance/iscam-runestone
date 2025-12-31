@@ -458,7 +458,6 @@ hist(births2$birthweight, xlab="birth weight")
         </condition>
       </var>
     </setup>
-    <var width="5"/>
     </statement>
     <solution>
       <p>265,676 observations</p>
@@ -490,7 +489,7 @@ hist(births2$birthweight, xlab="birth weight")
         </var>
       </setup>
       <p>After this step do we have a more symmetric distribution? <var width="30"/></p>
-      <p>What is a downside to subsetting the dataset in this way? <var width="50"/></p>
+      <p>What is a downside to subsetting the dataset in this way?</p>
     </statement>
     <solution>
       <p>The distribution does look more symmetric, however we can no longer generalize any of our conclusions to premature babies.</p>
@@ -541,6 +540,7 @@ iscamsummary(births3$birthweight, digits=2)
   <exercise xml:id="inv2-1-j" label="I2.1j">
     <title>Report numerical summaries</title>
     <statement>
+      <p>Determine the mean, standard deviation, and skewness of these data.</p>
       <setup>
         <var>
           <condition number="3337" tolerance="5">
@@ -594,7 +594,6 @@ iscamsummary(births3$birthweight, digits=2)
           </condition>
         </var>
       </setup>
-      <p>Determine the mean, standard deviation, and skewness of these data.</p>
       <p>Mean: <var width="10"/></p>
       <p>Standard deviation: <var width="10"/></p>
       <p>Skewness: <var width="10"/></p>
@@ -722,6 +721,7 @@ table(within2sd)/length(births3$birthweight)
   <exercise xml:id="inv2-1-n" label="I2.1n">
     <title>Percentage within 2 SD</title>
     <statement>
+      <p>Report the percentage of the birthweights that fall within 2 standard deviations of the mean.</p>
       <setup>
         <var>
           <condition number="95" tolerance="1">
@@ -746,7 +746,6 @@ table(within2sd)/length(births3$birthweight)
           </condition>
         </var>
       </setup>
-      <p>Report the percentage of the birthweights that fall within 2 standard deviations of the mean.</p>
       <p>Percentage: <var width="10"/>%</p>
     </statement>
     <solution>
@@ -823,6 +822,7 @@ qqline(birthweight, datax=TRUE)
   <exercise xml:id="inv2-1-q" label="I2.1q">
     <title>Calculate low birth weight probability</title>
     <statement>
+      <p>Use technology (e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html?hideExtras=1">Normal Probability Calculator applet</url>) to calculate the normal distribution probability that a randomly selected baby will be of low birth weight. (Be sure to make sure your answer is consistent with a well-labeled sketch with the shaded area of interest!)</p>
       <setup>
         <var>
           <condition number="0.035" tolerance="0.005">
@@ -847,7 +847,6 @@ qqline(birthweight, datax=TRUE)
           </condition>
         </var>
       </setup>
-      <p>Use technology (e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html?hideExtras=1">Normal Probability Calculator applet</url>) to calculate the normal distribution probability that a randomly selected baby will be of low birth weight. (Be sure to make sure your answer is consistent with a well-labeled sketch with the shaded area of interest!)</p>
     <hint>
       <p>Expected output:</p>
       <image source="images/Inv2-1q-sols.jpg" width="60%">
