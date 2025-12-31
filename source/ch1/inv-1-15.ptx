@@ -20,6 +20,22 @@
     <title>Identify observational units</title>
     <statement>
       <p>Identify the observational units in this study.</p>
+    </statement>
+    <setup>
+      <var>
+        <condition string=".*([Aa]thletes?|[Pp]layers?|[Rr]espondents?|[Pp]eople|[Ss]tudents?).*">
+          <feedback>
+            <p>Correct! The observational units are the individuals (athletes/players/respondents) who were surveyed.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>The observational units are the individuals we collected data from. Who were the 33 respondents?</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <statement>
       <p><var width="60"/></p>
     </statement>
     <solution>
@@ -31,7 +47,7 @@
     <title>Identify response variable</title>
     <statement>
       <p>Identify the response variable in this study. How are you defining a "success"?</p>
-      <p><var width="60"/></p>
+      
     </statement>
     <solution>
       <p>The response variable is Did the player have at least one concussion in the past 2 years? A "success" is having a concussion (or not having one - either is fine as long as you are consistent throughout the Investigation).</p>
@@ -60,9 +76,9 @@
     <title>Identify sample and population</title>
     <statement>
       <p>Identify the sample, the population, and the sampling frame used in this study.</p>
-      <p>Sample: <var width="60"/></p>
+      <!--<p>Sample: <var width="60"/></p>
       <p>Population: <var width="60"/></p>
-      <p>Sampling frame: <var width="60"/></p>
+      <p>Sampling frame: <var width="60"/></p>-->
     </statement>
     <solution>
       <p>Sample: the 33 respondents</p>
@@ -138,6 +154,27 @@
     <hint>
       <p>How many athletes out of 110 would have had a concussion?</p>
     </hint>
+    </statement>
+    <setup>
+      <var>
+        <condition number="0.155" tolerance="0.002">
+          <feedback>
+            <p>Correct! The probability is 17/110 ≈ 0.155.</p>
+          </feedback>
+        </condition>
+        <condition string=".*17.*110.*">
+          <feedback>
+            <p>Correct! You can also express this as a decimal: 17/110 ≈ 0.155.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>If 15.5% of 110 players had a concussion, how many is that? What's the probability of selecting one of them?</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <statement>
       <p><var width="30"/></p>
     </statement>
     <solution>
@@ -149,11 +186,49 @@
     <title>Calculate conditional probabilities</title>
     <statement>
       <p>Now consider randomly selecting a second athlete from this population:</p>
-      <p>If the first athlete had a concussion, what is the probability the second athlete did as well? <var width="30"/></p>
-      <p>If the first athlete did not have a concussion, what is the probability the second athlete did? <var width="30"/></p>
     <hint>
       <p>If the first athlete had a concussion, how many athletes with concussions remain? How many total athletes remain?</p>
     </hint>
+    </statement>
+    <setup>
+      <var>
+        <condition number="0.147" tolerance="0.002">
+          <feedback>
+            <p>Correct! P(2nd has concussion | 1st has concussion) = 16/109 ≈ 0.147.</p>
+          </feedback>
+        </condition>
+        <condition string=".*16.*109.*">
+          <feedback>
+            <p>Correct! You can also express this as a decimal: 16/109 ≈ 0.147.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>If the first athlete had a concussion, 16 athletes with concussions remain out of 109 total. What's the probability?</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.156" tolerance="0.002">
+          <feedback>
+            <p>Correct! P(2nd has concussion | 1st did not have concussion) = 17/109 ≈ 0.156.</p>
+          </feedback>
+        </condition>
+        <condition string=".*17.*109.*">
+          <feedback>
+            <p>Correct! You can also express this as a decimal: 17/109 ≈ 0.156.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>If the first athlete did not have a concussion, 17 athletes with concussions remain out of 109 total. What's the probability?</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <statement>
+      <p>If the first athlete had a concussion, what is the probability the second athlete did as well? <var width="30"/></p>
+      <p>If the first athlete did not have a concussion, what is the probability the second athlete did? <var width="30"/></p>
     </statement>
     <solution>
       <p>P(2nd has concussion | 1st has concussion) = <m>16/109 \approx 0.147</m></p>
@@ -161,7 +236,7 @@
     </solution>
   </exercise>
 
-  <p>You should find your answers in <xref ref="I1-15-f" text="custom">question 9</xref> are not quite the same. This illustrates a violation of the independence assumption of our binomial model. However, if the population is large compared to the size of the sample, then the conditional probabilities are almost equal, and we can approximate with a binomial distribution. But when the population is not large, we need to take that lack of independence into account.</p>
+  <p>You should find your answers in <xref ref="I1-15-f" text="custom">Question 9</xref> are not quite the same. This illustrates a violation of the independence assumption of our binomial model. However, if the population is large compared to the size of the sample, then the conditional probabilities are almost equal, and we can approximate with a binomial distribution. But when the population is not large, we need to take that lack of independence into account.</p>
 
   <assemblage>
     <title>Key Result: Sampling Without Replacement</title>
@@ -288,8 +363,8 @@ iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)
     <title>Interpret the probability</title>
     <statement>
       <p>Write a one-sentence interpretation of the probability you calculated.</p>
-      <p><var width="60"/></p>
     </statement>
+    <response/>
     <solution>
       <p>If 15.5% of all football and soccer players at this university have had a concussion during the past two years, the chance we would find at least 12 of a random sample of 33 of these athletes reporting a concussion is 0.0002.</p>
     </solution>
@@ -298,10 +373,10 @@ iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)
   <exercise xml:id="I1-15-i">
     <title>Generalization to larger population</title>
     <statement>
-      <p>What does the p-value in <xref ref="I1-15-g" text="custom">question 12</xref> tell you about the proportion of all U.S. collegiate football and soccer players with a concussion?</p>
+      <p>What does the p-value in <xref ref="I1-15-g" text="custom">Question 12</xref> tell you about the proportion of all U.S. collegiate football and soccer players with a concussion?</p>
     </statement>
     <response/>
-    <solution><xref ref="I1-15-g" text="custom">question 11</xref>
+    <solution><xref ref="I1-15-g" text="custom">Question 12</xref>
       <p>This sample was not randomly selected from the population of all U.S. collegiate football and soccer players, so this sample really tells us nothing about the likelihood of a concussion among the larger population.</p>
     </solution>
   </exercise>
@@ -352,7 +427,7 @@ iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)
     <exercise xml:id="practice-1-15-b" label="PP1.15B">
       <title>GSS non-sampling errors</title>
       <statement>
-        <p>Recall the GSS survey in <xref ref="practice-1-14-a"/>. Identify potential non-sampling errors in such a study. What are some steps the GSS has taken/could take to avoid non-sampling errors?</p>
+        <p>Recall the GSS survey in <xref ref="practice1-14" text="custom">Practice Problem 1.14</xref>. Identify potential non-sampling errors in such a study. What are some steps the GSS has taken/could take to avoid non-sampling errors?</p>
       </statement>
       <response/>
     </exercise>
