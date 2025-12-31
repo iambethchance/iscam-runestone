@@ -1,33 +1,66 @@
 <section xml:id="investigation-1-4">
 <title>Investigation 1.4: Heart Transplant Mortality</title>
 <introduction>
-<p><em>In this investigation, you will explore what factors of a study impact the magnitude of the p-value</em></p>
+<p><em>In this investigation, you will explore what factors of a study impact the magnitude of the p-value.</em></p>
 </introduction>
 <exercises xml:id="investigation1-4" hidden-label="yes">
 <title>The Study</title>
   
   <introduction>
   <p>Poloneicki, Sismanidis, Bland, and Jones (<url href="https://pubmed.ncbi.nlm.nih.gov/14751918/">2004</url>) reported that in September 2000 heart transplantation at St. George's Hospital in London was suspended because of concern that more patients were dying than previously. Newspapers reported that the 80% mortality rate in the last 10 cases was of particular concern because it was over five times the national average. The variable measured was whether or not the patient died within 30 days of the transplant. Although there was not an officially reported national mortality rate (probability of death within 30 days for patients undergoing this procedure), the researchers determined that 15% was a reasonable benchmark for comparison.</p>
+  <image src="images/inv1.4intro.png" width = "80%">
   </introduction>
 
   <exercise xml:id="I1-4-1" label="I1.4.1">
     <title>Define Sample and Variable</title>
-    <statement>
-      <p>Define the sample random process and variable for this study. Is the variable quantitative or categorical?</p>
-      <p>Sample/Random process: <var width="50" /></p>
-      <p>Variable: <var width="50" /></p>
-      <p>Type: <var width="20" /></p>
-    <hint>
-      <p>Think about what is being observed repeatedly and what outcome is being measured for each observation.</p>
-    </hint>
-    </statement>
-    <response/>
-    <solution>
-      <p>Sample/Random process: The 10 most recent heart transplantation surgeries at St. George's Hospital (or more generally, heart transplantation surgeries at this hospital, across all the patients)</p>
-      <p>Variable: Whether or not the patient died within 30 days of the transplant</p>
-      <p>Type: Categorical (binary)</p>
-      <p>Note: We define "success" as death within 30 days (could be either death or survival, but this matches the 15% parameter), and "failure" as survival.</p>
-    </solution>
+    
+    <task xml:id="I1-4-1a" label="I1.4.1a">
+      <statement>
+        <p>Define the sample or random process for this study.</p>
+        <p>Sample/Random process:</p>
+      </statement>
+      <response/>
+      <hint>
+        <p>Think about what is being observed repeatedly.</p>
+      </hint>
+      <solution>
+        <p>The 10 most recent heart transplantation surgeries at St. George's Hospital (or more generally, heart transplantation surgeries at this hospital, across all the patients)</p>
+      </solution>
+    </task>
+    
+    <task xml:id="I1-4-1b" label="I1.4.1b">
+      <statement>
+        <p>Define the variable for this study.</p>
+        <p>Variable:</p>
+      </statement>
+      <response/>
+      <hint>
+        <p>What outcome is being measured for each observation?</p>
+      </hint>
+      <solution>
+        <p>Whether or not the patient died within 30 days of the transplant</p>
+        <p>Note: We define "success" as death within 30 days (could be either death or survival, but this matches the 15% parameter), and "failure" as survival.</p>
+      </solution>
+    </task>
+    
+    <task xml:id="I1-4-1c" label="I1.4.1c">
+      <statement>
+        <p>Is this variable quantitative or categorical?</p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement><p>Quantitative</p></statement>
+          <feedback><p>Not quite. This variable has categories (death or survival), not numerical measurements.</p></feedback>
+        </choice>
+        <choice correct="yes">
+          <statement><p>Categorical</p></statement>
+          <feedback><p>Correct! This is a categorical variable with two categories (binary): death within 30 days or survival.</p></feedback>
+        </choice>
+      </choices>
+      <solution>
+        <p>Categorical (binary)</p>
+      </solution>
+    </task>
   </exercise>
   
   <p>We need to consider which outcome we will consider "success" and which we will consider "failure." The choice is often arbitrary, though sometimes we may want to focus on the more unusual outcome as success. In fact, in many epidemiology studies, "death" is typically the outcome of interest or "success."</p>
@@ -36,7 +69,6 @@
     <title>Define Parameter</title>
     <statement>
       <p>Considering death within 30 days as a success, define the parameter of interest in this study (in words).</p>
-      <p>Parameter: <var width="50" /></p>
     <hint>
       <p>What long-run proportion or probability are we interested in?</p>
     </hint>
@@ -79,7 +111,7 @@
   </exercise>
   
   <exercise xml:id="I1-4-2c" label="I1.4.2c">
-    <title>Check Binomial Process</title>
+    <title>Is this a Binomial Process?</title>
     <statement>
       <p>Is it reasonable to model this heart transplantation process as a binomial process?</p>
     <hint>
@@ -93,7 +125,7 @@
   </exercise>
   
   <exercise xml:id="I1-4-3" label="I1.4.3">
-    <title>Nothing Unusual Implication</title>
+    <title>Nothing Unusual Hypothesis</title>
     <statement>
       <p>If there is nothing unusual about the mortality rate for heart transplantations at this hospital (compared to other U.K. hospitals), what does this imply about the value of the probability of "success"?</p>
       <p><m>\pi</m> <var width="5" /> <var width="10" /></p>
@@ -138,7 +170,7 @@
   </exercise>
   
   <exercise xml:id="I1-4-4" label="I1.4.4">
-    <title>Higher Rate Implication</title>
+    <title>Higher Rate Hypothesis</title>
     <statement>
       <p>If the patients at this hospital are indeed dying at a higher rate than the benchmark rate, what does this imply about the value of the probability of "success"?</p>
     <hint>
@@ -225,7 +257,7 @@
     <title>Binomial Test of Significance</title>
     <statement>
       <p>Use R or JMP to find and report the p-value for the Heart Transplant study (8 deaths in 10 trials with hypothesized probability 0.15). Choose one set of instructions below by clicking on a hint. Report the p-value you find.</p>
-<var width="5"/>
+      <p>p-value: <var width="15"/></p>
     <hint>
       <title>R Instructions</title>
       <p>The <c>iscambinomtest</c> function takes the following inputs:</p>
@@ -246,7 +278,7 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
       
       <p>You should see the p-value in the output as well as a graph of the binomial distribution with the upper tail shaded. Modify the code for the heart transplant study, in particular, what are you setting the hypothesis value to? </p>
       
-      <p><alert>R Reminder:</alert>
+      <p><term index="no">R Reminder:</term>
       The <c>alternative</c> parameter controls the direction: "greater" tests if π > 0.5, "less" tests if π &lt; 0.5.</p>
     </hint>
     <hint>
@@ -256,10 +288,10 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
       <sidebyside widths="48% 48%" margins="2%">
         <stack>
           <p><ul>
-            <li><p>Choose <alert>Analyze > Distribution</alert></p>
+            <li><p>Choose <term index="no">Analyze > Distribution</term></p>
               <p><ul>
-                <li><p><em>With raw data</em>, drag the variable to the Y, Columns slot. Press <alert>OK</alert>.</p></li>
-                <li><p><em>With summarized data</em>, move the column with the category names to the Y, columns slot and move the column with the counts to the Freq slot. Press <alert>OK</alert>.</p></li>
+                <li><p><em>With raw data</em>, drag the variable to the <term index="no">Y, Columns</term> slot. Press <term index="no">OK</term>.</p></li>
+                <li><p><em>With summarized data</em>, move the column with the category names to the Y, columns slot and move the column with the counts to the Freq slot. Press <term index="no">OK</term>.</p></li>
               </ul></p>
             </li>
           </ul></p>
@@ -275,7 +307,7 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
             <li><p>From the variable's hot spot, select <term>Test Probabilities</term>.</p></li>
             <li><p>Specify the hypothesized probability of success for the category you want to define as success (only).</p></li>
             <li><p>Then pick a one-sided alternative hypothesis (greater than or less than).</p></li>
-            <li><p>Press <alert>Done</alert>.</p></li>
+            <li><p>Press <term index="no">Done</term>.</p></li>
           </ul></p>
         </stack>
         <image source="images/JMPTestp2.png">
@@ -285,11 +317,34 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
       
       <p>JMP assumes "success" to be the first category alphabetically unless you specify otherwise with <term>Cols > Column Info > Column Properties > Value Ordering</term>.</p>
       
-      <p><alert>Note:</alert>
+      <p><term index="no">Note:</term>
       "Not equal to" alternatives will be discussed in Investigation 1.5.</p>
     </hint>
     </statement>
-    <response/>
+    <setup>
+      <var>
+        <condition number="0.00000866" tolerance="0.000001">
+          <feedback>
+            <p>Correct! The p-value is 0.00000866 (or 8.665 × 10<m>^{-6}</m>). This extremely small p-value provides very strong evidence that the death rate at this hospital exceeds the national benchmark of 0.15.</p>
+          </feedback>
+        </condition>
+        <condition number="0.0000087" tolerance="0.0000001">
+          <feedback>
+            <p>Correct! The p-value is approximately 0.0000087 (or 8.7 × 10<m>^{-6}</m>). This extremely small p-value provides very strong evidence that the death rate at this hospital exceeds the national benchmark of 0.15.</p>
+          </feedback>
+        </condition>
+        <condition number="0.000009" tolerance="0.000001">
+          <feedback>
+            <p>Close! You've rounded the p-value. The more precise value is 0.00000866, but your answer correctly shows this is an extremely small p-value providing very strong evidence against the null hypothesis.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Not quite. Make sure you're finding P(X ≥ 8) when X ~ Binomial(10, 0.15) with a "greater than" alternative. The p-value should be very small (less than 0.00001).</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>For the Heart Transplant study with 8 deaths out of 10 trials and a hypothesized probability of 0.15:</p>
       <p>p-value = P(X ≥ 8) = 0.00000866 (or 8.665 × 10<m>^{-6}</m>)</p>
@@ -326,7 +381,61 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
       <p>Fill in the blanks with the specific numbers and assumption from this context.</p>
     </hint>
     </statement>
-    <response/>
+    <setup>
+      <var>
+        <condition number="8">
+          <feedback>
+            <p>Correct! We observed 8 deaths.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>What was the observed number of deaths in the sample?</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="^\s*(more|greater)\s*$">
+          <feedback>
+            <p>Correct! We're looking at the upper tail (8 or more).</p>
+          </feedback>
+        </condition>
+        <condition string="^\s*(or\s+more|or\s+greater)\s*$">
+          <feedback>
+            <p>Good! Just "more" or "greater" works since the "or" is already in the sentence.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Are we looking at "more" or "less" than the observed value? Remember, this is an upper-tail test.</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="10">
+          <feedback>
+            <p>Correct! There were 10 transplant surgeries.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>How many transplant surgeries were in the sample?</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="^\s*(the\s+)?(null\s+hypothesis\s+is\s+true|π\s*=\s*0\.15|pi\s*=\s*0\.15|probability\s+(of\s+)?(success\s+)?(equals|is|=)\s*0\.15|the\s+probability\s+of\s+death\s+(equals|is|=)\s*0\.15)\s*$">
+          <feedback>
+            <p>Correct! The assumption is that the probability of death equals 0.15 (the null hypothesis).</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>What probability value are we assuming under the null hypothesis?</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>This is the probability of getting 8 or more "successes" out of 10 observations from a random process where the long-run probability of success equals 0.15.</p>
     </solution>
@@ -384,7 +493,7 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
       
       <solution>
         <p>The null hypothesis would be <m>H_0: \pi = 0.85</m> and the alternative hypothesis would be <m>H_a: \pi &lt; 0.85</m>.</p>
-          <image source="images/inv1.4intro.png" width="60%">
+          <image source="images/inv1.4sols2.png" width="60%">
             <description>Binomial distribution showing survival as success with pi=0.85</description>
           </image>
         <p>This turns out to be an equivalent analysis.</p>
@@ -447,7 +556,25 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
         <p>Sample proportion = 71/361.</p>
       </hint>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="0.19668" tolerance="0.002">
+            <feedback>
+              <p>Correct! <m>\hat{p} = 71/361 \approx 0.197</m></p>
+            </feedback>
+          </condition>
+          <condition number="0.20" tolerance="0.01">
+            <feedback>
+              <p>Close! You've rounded to 0.20. The more precise value is 71/361 ≈ 0.197.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. Divide 71 by 361 to get the sample proportion.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p><m>\hat{p} = 71/361 = 0.197</m></p>
       </solution>
@@ -467,10 +594,10 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
       </solution>
     </exercise>
     
-    <aside>
+<!--    <aside>
       <title>One Proportion Inference applet</title>
       <p><url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm">Launch applet</url></p>
-    </aside> 
+    </aside> -->
   
     <exercise xml:id="I1-4-11c" label="I1.4.11c">
       <title>Calculate p-value with Technology</title>
@@ -497,6 +624,25 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
         <interactive xml:id="oneprop-applet-1-4-11e" iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="4:5"/>
       </hint>
 </statement>
+      <setup>
+        <var>
+          <condition number="0.0097" tolerance="0.0005">
+            <feedback>
+              <p>Correct! The p-value is approximately 0.0097 (or about 0.01). This provides strong evidence that the death rate exceeds 0.15.</p>
+            </feedback>
+          </condition>
+          <condition number="0.01" tolerance="0.002">
+            <feedback>
+              <p>Correct! The p-value is approximately 0.01. This provides strong evidence that the death rate exceeds 0.15.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. Use technology to find P(X ≥ 71) when X ~ Binomial(361, 0.15). The p-value should be around 0.01.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
           <image source="images/inv1.4largen.png" width="60%">
             <description>Binomial distribution for n=361 with pi=0.15 showing p-value</description>
@@ -544,9 +690,39 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
         <p>Use the formula <m>E(X) = n \times\pi</m> where <m>\pi = 0.15</m>.</p>
       </hint>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition number="1.5" tolerance="0.01">
+            <feedback>
+              <p>Correct! E(X) = 10 × 0.15 = 1.5</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. Use E(X) = n × π = 10 × 0.15.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="54.15" tolerance="0.5">
+            <feedback>
+              <p>Correct! E(X) = 361 × 0.15 = 54.15</p>
+            </feedback>
+          </condition>
+          <condition number="54" tolerance="1">
+            <feedback>
+              <p>Close! The more precise value is 361 × 0.15 = 54.15.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. Use E(X) = n × π = 361 × 0.15.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
-        <p><m>E(X) = 10(0.15)</m> = 1.5 or 361(0.15) = 54.15</p>
+        <p><m>E(X)</m> = 10(0.15) = 1.5 or 361(0.15) = 54.15</p>
       </solution>
     </exercise>
   </paragraphs>
@@ -573,7 +749,6 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
     <hint>
       <p>Think about practical aspects like the scale or range of values displayed.</p>
     </hint>
-    <var width = "40"/>
     </statement>
     <response/>
     <solution>
@@ -590,15 +765,15 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
       <p>SD when <m>n = 361</m> and <m>\pi = 0.15</m>: <var width="10" /></p>
       <p>Number of standard deviations 71 is above the expected value: <var width="10" /></p>
     <hint>
-      <p>Use E(X) = n × π and SD(X) = √(n × π × (1-π)). Then calculate (71 - E(X))/SD(X).</p>
+      <p>Use <m>E(X) = n × π</m> and <m>SD(X) = \sqrt(n × π × (1-π))</m>. Then calculate <m>(71 - E(X))/SD(X)</m>.</p>
     </hint>
     </statement>
     <response/>
     <solution>
-      <p>SD(X) = sqrt(361 × 0.15 × 0.85) = 6.78</p>
+      <p><m>SD(X) = \sqrt(361 × 0.15 × 0.85) = 6.78</m></p>
       <p>Observed 71</p>
-      <p>(71 - 54.15)/6.78 ≈ 2.49. This is larger than 2.</p>
-      <p>For first data set: (8 - 1.5)/sqrt(10 × 0.15 × 0.85) = 6.5/1.13 = 5.75 (this shows us that the evidence is a fair bit stronger with the first data set)</p>
+      <p><m>(71 - 54.15)/6.78 ≈ 2.49</m>. This is larger than 2.</p>
+      <p>For first data set: <m>(8 - 1.5)/\sqrt(10 × 0.15 × 0.85) = 6.5/1.13 = 5.75</m> (this shows us that the evidence is a fair bit stronger with the first data set)</p>
     </solution>
   </exercise>
   
@@ -727,15 +902,46 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
     <exercise xml:id="PP1-4C-2" label="PP1.4C.2">
       <title>Standardize and Conclude</title>
       <statement>
-        <p>Using the binomial distribution, how many standard deviations is 15 from the expected number of new hires that are African American when the null hypothesis is true? What conclusion would you draw?</p>
+        <p>Using the binomial distribution, how many standard deviations is 15 from the expected number of new hires that are African American when the null hypothesis is true?</p>
+        <p>Number of standard deviations: <var width="10" /></p>
+        <p>What conclusion would you draw?</p>
       </statement>
+      <setup>
+        <var>
+          <condition number="-6.51" tolerance="0.1">
+            <feedback>
+              <p>Correct! The standardized score is approximately -6.51. The observed value is 6.51 standard deviations below the expected value, providing extremely strong evidence that the probability of hiring African-American teachers is less than 0.154.</p>
+            </feedback>
+          </condition>
+          <condition number="6.51" tolerance="0.1">
+            <feedback>
+              <p>Correct! The observed value is approximately 6.51 standard deviations below the expected value. (Note: Typically we report this as -6.51 to indicate it's below the mean.) This provides extremely strong evidence that the probability of hiring African-American teachers is less than 0.154.</p>
+            </feedback>
+          </condition>
+          <condition number="-6.5" tolerance="0.2">
+            <feedback>
+              <p>Correct! The observed value is approximately 6.5 standard deviations below the expected value, providing extremely strong evidence that the probability of hiring African-American teachers is less than 0.154.</p>
+            </feedback>
+          </condition>
+          <condition number="6.5" tolerance="0.2">
+            <feedback>
+              <p>Correct! The observed value is approximately 6.5 standard deviations below the expected value. (Note: Typically we report this as -6.5 to indicate it's below the mean.) This provides extremely strong evidence that the probability of hiring African-American teachers is less than 0.154.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. Use the formula: (observed - expected) / SD, where expected = 405 × 0.154 = 62.37 and SD = √(405 × 0.154 × 0.846) ≈ 7.27. Calculate (15 - 62.37) / 7.27.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
     
     <exercise xml:id="PP1-4C-3" label="PP1.4C.3">
       <title>Excluding St. Louis City</title>
       <statement>
-        <p>The St. Louis City School District had recently followed a policy attempting to maintain a 50% African-American teaching staff. If you exclude the St. Louis City School District, then proportion of eligible teachers in the St. Louis area that were African-American was 0.057. What is the new expected number of hires? What conclusions would you draw?</p>
+        <p>The St. Louis City School District had recently followed a policy attempting to maintain a 50% African-American teaching staff. If you exclude the St. Louis City School District, then tje proportion of eligible teachers in the St. Louis area that were African-American was 0.057. What is the new expected number of hires? What conclusions would you draw?</p>
       </statement>
       <response/>
     </exercise>
