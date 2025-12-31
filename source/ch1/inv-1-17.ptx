@@ -17,10 +17,42 @@
     <title>Identify observational units and variable</title>
     <statement>
       <p>Identify the observational units and variable of interest.</p>
+    </statement>
+    <setup>
+      <var>
+        <condition string="(?=.*[Hh]ousehold)">
+          <feedback>
+            <p>Correct! The observational units are American households.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>What entities are being studied in this survey?</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="(?=.*([Cc]at|[Pp]et))(?=.*([Oo]wn|[Hh]ave|[Hh]ousehold))">
+          <feedback>
+            <p>Correct! The variable is whether or not there is a cat in the household.</p>
+          </feedback>
+        </condition>
+        <condition string=".*([Cc]at|[Pp]et).*">
+          <feedback>
+            <p>Good! Also clarify that it's about whether or not they own/have a cat.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>What characteristic is being measured for each household?</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <statement>
       <p>Observational units: <var width="40"/></p>
       <p>Variable: <var width="40"/></p>
     </statement>
-    <response/>
     <solution>
       <p>Observational units: American households</p>
       <p>Variable: Whether or not there is a cat in the household</p>
@@ -121,7 +153,6 @@
     <title>Explain small p-value</title>
     <statement>
       <p>Explain why the p-value turns out to be so small, when the sample proportion of households with a cat seems to be quite close to one-third.</p>
-      <p><var width="60"/></p>
     </statement>
     <response/>
     <solution>
@@ -132,10 +163,44 @@
   <exercise xml:id="I1-17-e">
     <title>Calculate confidence interval</title>
     <statement>
-      <p>Produce a 95% confidence interval (CI) for the population proportion who own a pet cat. Interpret this interval.</p>
+      <p>Produce a 95% confidence interval (CI) for the population proportion who own a pet cat. </p>
+    </statement>
+    <setup>
+      <var>
+        <condition string="^\s*\(\s*0?\.31[0-1][0-9]?\s*,\s*0?\.33[0-2][0-9]?\s*\)\s*$">
+          <feedback>
+            <p>Correct! The 95% confidence interval is approximately (0.3105, 0.3315).</p>
+          </feedback>
+        </condition>
+        <condition string=".*\(.*0?\.3[0-1].*0?\.3[2-4].*\).*">
+          <feedback>
+            <p>Close! Check your calculations. Use the formula: p̂ ± 1.96 × SE.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Calculate the 95% CI using p̂ ± 1.96 × SE. Use (lower, upper) format.</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="(?=.*(95|ninety.five))(?=.*([Cc]onfident))">
+          <feedback>
+            <p>Good interpretation! You've explained the confidence level correctly.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Interpret the interval in context: What does this tell us about the population proportion?</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <statement>
+      <p><var width="30"/></p>
+      <p>Interpret this interval.</p>
       <p><var width="60"/></p>
     </statement>
-    <response/>
     <solution>
       <p>Using <m>\hat{p} = 0.321</m> and <m>n = 7539</m>:</p>
       <p><m>SE(\hat{p}) = \sqrt{\frac{0.321(0.679)}{7539}} \approx 0.00538</m></p>
@@ -154,9 +219,34 @@
     <title>Compare CI to test decision</title>
     <statement>
       <p>Is the confidence interval consistent with the test decision about 1/3? Explain.</p>
+    </statement>
+    <setup>
+      <var>
+        <condition string="(?=.*([Yy]es|[Cc]onsistent))(?=.*(not.*include|doesn't.*include|does.*not.*include|exclude))">
+          <feedback>
+            <p>Correct! The CI is consistent because it does not include 1/3 (0.3333).</p>
+          </feedback>
+        </condition>
+        <condition string=".*([Yy]es|[Cc]onsistent).*">
+          <feedback>
+            <p>Good! Also explain why - does the confidence interval include 1/3?</p>
+          </feedback>
+        </condition>
+        <condition string=".*(not.*include|doesn't.*include|does.*not.*include|exclude).*">
+          <feedback>
+            <p>Good explanation! Also state whether they are consistent.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Does the confidence interval include 1/3? How does this relate to the hypothesis test result?</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <statement>
       <p><var width="60"/></p>
     </statement>
-    <response/>
     <solution>
       <p>This is consistent because the confidence interval does not include 0.3333.</p>
     </solution>
@@ -166,7 +256,7 @@
     <title>Strong evidence not one-third?</title>
     <statement>
       <p>Do the sample data provide very strong evidence that the population proportion who own a pet cat is not one-third? Explain whether the p-value or the CI helps you to decide.</p>
-      <p><var width="60"/></p>
+      
     </statement>
     <response/>
     <solution>
