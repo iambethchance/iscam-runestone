@@ -561,61 +561,91 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
       </solution>
     </exercise>
 
-    <exercise xml:id="I1-9-l2-v3" label="I1.9l2v3">
-      <title>Compare Intervals</title>
+    <exercise xml:id="I1-9-l2a" label="I1.9l2a">
+      <title>Compare Interval Midpoints</title>
       <statement>
         <p>
-          How do the midpoint and width of the 90% confidence interval compare to those of the 95% confidence interval?
+          How does the midpoint of the 90% confidence interval compare to the midpoint of the 95% confidence interval?
         </p>
         <p>
-          The midpoint is:
+          The 90% interval midpoint is:
         </p>
-        <choices randomize="yes">
-          <choice>
-            <statement>
-              <p>Larger</p>
-            </statement>
-          </choice>
-          <choice>
-            <statement>
-              <p>Smaller</p>
-            </statement>
-          </choice>
-          <choice correct="yes">
-            <statement>
-              <p>Equal</p>
-            </statement>
-          </choice>
-        </choices>
-        <p>
-          The width is:
-        </p>
-        <choices randomize="yes">
-          <choice>
-            <statement>
-              <p>Larger</p>
-            </statement>
-          </choice>
-          <choice correct="yes">
-            <statement>
-              <p>Smaller</p>
-            </statement>
-          </choice>
-          <choice>
-            <statement>
-              <p>Equal</p>
-            </statement>
-          </choice>
-        </choices>
       </statement>
-      <response/>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>Larger</p>
+          </statement>
+          <feedback>
+            <p>Not quite. Both intervals are centered at the same sample proportion.</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>Smaller</p>
+          </statement>
+          <feedback>
+            <p>Not quite. Both intervals are centered at the same sample proportion.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>Equal</p>
+          </statement>
+          <feedback>
+            <p>Correct! Both intervals have the same midpoint (the sample proportion).</p>
+          </feedback>
+        </choice>
+      </choices>
       <solution>
-        <paragraphs>
         <p>
           Midpoint = <m>(0.5743 + 0.7157)/2 = 0.645</m> (same as with the 95% confidence interval)
         </p>
         <p>
-          Width = <m>0.7157 - 0.5743 = 0.142</m> (smaller than for the 95% confidence interval)
+          Both intervals are centered at the sample proportion <m>\hat{p}</m>.
+        </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="I1-9-l2b" label="I1.9l2b">
+      <title>Compare Interval Widths</title>
+      <statement>
+        <p>
+          How does the width of the 90% confidence interval compare to the width of the 95% confidence interval?
+        </p>
+        <p>
+          The 90% interval width is:
+        </p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>Larger</p>
+          </statement>
+          <feedback>
+            <p>Not quite. Lower confidence level means narrower interval.</p>
+          </feedback>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>Smaller</p>
+          </statement>
+          <feedback>
+            <p>Correct! The 90% interval is narrower because we use a smaller critical value (1.645 vs 1.96).</p>
+          </feedback>
+        </choice>
+        <choice>
+          <statement>
+            <p>Equal</p>
+          </statement>
+          <feedback>
+            <p>Not quite. Different confidence levels produce different widths.</p>
+          </feedback>
+        </choice>
+      </choices>
+      <solution>
+        <p>
+          Width = <m>0.7157 - 0.5743 = 0.142</m> (smaller than the 0.169 width for the 95% confidence interval)
         </p>
         <p>
           <m>2(1.645)(0.043) = 0.142</m>
@@ -623,7 +653,6 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         <image source="images/Inv1.9soll.png" width="80%">
           <description>Comparison of 90% and 95% confidence intervals showing different widths with same midpoint</description>
         </image>
-      </paragraphs>
       </solution>
     </exercise>
 
