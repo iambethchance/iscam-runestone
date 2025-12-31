@@ -23,21 +23,98 @@
       <title>State Hypotheses for ESP Study</title>
       <statement>
         <p>
-          Suppose you want to test whether the subjects in these studies have ESP, with <m>\pi</m> equal to the actual probability that receivers identify the correct image among the four possible targets. State appropriate null and alternative hypotheses.
+          Suppose you want to test whether the subjects in these studies have ESP, with <m>\pi</m> equal to the actual probability that receivers identify the correct image among the four possible targets. State appropriate null and alternative hypotheses by specifying correct symbols and values.
         </p>
       <hint>
         <p>
           If there is no ESP, what would be the probability of correctly identifying the image by chance alone among four choices?
         </p>
       </hint>
+      </statement>
+      <setup>
+        <!-- H0: Blank 1 - parameter symbol -->
+        <var>
+          <condition string="^\s*(\\pi|π|pi)\s*$">
+            <feedback><p>Correct! Use <m>\pi</m> for the parameter.</p></feedback>
+          </condition>
+          <condition string="^\s*p\s*$">
+            <feedback><p>Use the parameter <m>\pi</m>, not the statistic <m>p</m>.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use <m>\pi</m> for the parameter.</p></feedback>
+          </condition>
+        </var>
+        
+        <!-- H0: Blank 2 - equals sign -->
+        <var>
+          <condition string="^\s*=\s*$">
+            <feedback><p>Correct! The null hypothesis uses equality.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The null hypothesis uses the equals sign (=).</p></feedback>
+          </condition>
+        </var>
+        
+        <!-- H0: Blank 3 - value -->
+        <var>
+          <condition string="^\s*0\.25\s*$">
+            <feedback><p>Correct! If guessing randomly among 4 choices, the probability is 0.25.</p></feedback>
+          </condition>
+          <condition string="^\s*(1/4|\.25|25%)\s*$">
+            <feedback><p>Correct idea! Express as a decimal: 0.25</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>What's the probability of guessing correctly among 4 choices?</p></feedback>
+          </condition>
+        </var>
+        
+        <!-- Ha: Blank 4 - parameter symbol -->
+        <var>
+          <condition string="^\s*(\\pi|π|pi)\s*$">
+            <feedback><p>Correct! Use <m>\pi</m> for the parameter.</p></feedback>
+          </condition>
+          <condition string="^\s*p\s*$">
+            <feedback><p>Use the parameter <m>\pi</m>, not the statistic <m>p</m>.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use <m>\pi</m> for the parameter.</p></feedback>
+          </condition>
+        </var>
+        
+        <!-- Ha: Blank 5 - greater than sign -->
+        <var>
+          <condition string="^\s*(>|&gt;)\s*$">
+            <feedback><p>Correct! We're testing if ESP makes the probability greater than chance.</p></feedback>
+          </condition>
+          <condition string="^\s*=\s*$">
+            <feedback><p>Are we testing for ESP (better than chance) or just random guessing?</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>We're testing if the probability is greater than (>) the chance value.</p></feedback>
+          </condition>
+        </var>
+        
+        <!-- Ha: Blank 6 - value -->
+        <var>
+          <condition string="^\s*0\.25\s*$">
+            <feedback><p>Correct! We're testing against the same value as the null hypothesis.</p></feedback>
+          </condition>
+          <condition string="^\s*(1/4|\.25|25%)\s*$">
+            <feedback><p>Correct idea! Express as a decimal: 0.25</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use the same probability value as in the null hypothesis.</p></feedback>
+          </condition>
+        </var>
+      </setup>
+      <statement>
         <p>
-          <m>H_0</m>: <var width="50"/>
+          <m>H_0</m>: <var width="5"/> <var width="5"/> <var width="10"/>
         </p>
         <p>
-          <m>H_a</m>: <var width="50"/>
+          <m>H_a</m>: <var width="5"/> <var width="5"/> <var width="10"/>
         </p>
       </statement>
-      <response/>
       <solution>
         <p>
           <m>H_0: \pi = 0.25</m> (The receivers are just guessing randomly among the four targets)
