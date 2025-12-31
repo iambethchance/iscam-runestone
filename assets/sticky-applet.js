@@ -1,6 +1,40 @@
 // Sticky Applet JavaScript
 // Makes interactive applets float/stick as users scroll
 
+// Movable Applet System - preserves iframe state when moving
+(function () {
+  function moveAppletTo(targetId) {
+    const wrap = document.getElementById("applet-wrap");
+    const target = document.getElementById(targetId);
+    if (wrap && target) {
+      target.appendChild(wrap); // moving preserves state
+      console.log('Applet moved to:', targetId);
+      // Scroll to the new location smoothly
+      target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".dock-applet");
+    if (btn) {
+      e.preventDefault();
+      moveAppletTo(btn.dataset.target);
+    }
+
+    if (e.target && e.target.id === "send-home") {
+      e.preventDefault();
+      const home = document.getElementById("applet-home");
+      const wrap = document.getElementById("applet-wrap");
+      if (home && wrap) {
+        home.appendChild(wrap);
+        console.log('Applet returned home');
+        // Scroll to home location
+        home.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  });
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
     // Find all interactive iframe elements (Runestone renders them in figures or divs)
     const interactives = document.querySelectorAll('.ptx-content iframe[src*="rossmanchance.com/applets"]');

@@ -273,7 +273,13 @@
         <p>
           Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm">One Proportion Inference applet</url> below to verify your answers to <xref ref="I1-8-d" text="custom">question 4</xref>. Check the <strong>Normal Approximation</strong> box to verify your answer to <xref ref="I1-8-f" text="custom">question 6</xref>.
         </p>
-        <interactive xml:id="oneprop-applet-1-8-g" iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="3:2"/>
+        <p><em>Note: You can move this applet to different locations on the page using the "Bring applet here" buttons below. Click "Return applet to top" to bring it back.</em></p>
+        
+        <div id="applet-home" xmlns="http://www.w3.org/1999/xhtml">
+          <div id="applet-wrap">
+            <interactive xml:id="oneprop-applet-1-8-g" iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="3:2"/>
+          </div>
+        </div>
       <hint>
         <p>Enter n=284 and observed=135. Check the Normal Approximation box to see the normal curve overlay.</p>
       </hint>
@@ -299,6 +305,10 @@
     <exercise xml:id="I1-8-h" label="I1.8h">
       <title>Find p-values</title>
       <statement>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <button class="dock-applet" data-target="dock-q8h" style="margin: 10px 0; padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">📊 Bring applet here</button>
+          <div id="dock-q8h" class="applet-dock" style="min-height: 20px; margin: 10px 0;"></div>
+        </div>
         <p>
           In the sample, 135 children chose the toy and 149 chose the candy. Use the applet to find the following two-sided p-values, and explain briefly how each is found:
         </p>
@@ -521,6 +531,10 @@
     <exercise xml:id="I1-8-m" label="I1.8m">
       <title>Calculate p-value from <em>z</em>-statistic</title>
       <statement>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <button class="dock-applet" data-target="dock-q8m" style="margin: 10px 0; padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">📊 Bring applet here</button>
+          <div id="dock-q8m" class="applet-dock" style="min-height: 20px; margin: 10px 0;"></div>
+        </div>
         <p>
           Use technology to find the corresponding p-value. [Hints: You can calculate the probability from the z-value using standard normal distribution (mean 0, SD 1), e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="rossmanchance.com/applets/2021/normcalc/NormCalc.html">Normal Probability Calculator</url> applet; or use the Technology Detour below to carry out a one-sample <em>z</em>-test.]
         </p>
@@ -795,6 +809,10 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
     <exercise xml:id="I1-8-r" label="I1.8r">
       <title>Apply Continuity Correction</title>
       <statement>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <button class="dock-applet" data-target="dock-q8r" style="margin: 10px 0; padding: 8px 16px; background-color: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer;">📊 Bring applet here</button>
+          <div id="dock-q8r" class="applet-dock" style="min-height: 20px; margin: 10px 0;"></div>
+        </div>
         <p>
          What does the applet use for the right-side cut-off? Why? How does the p-value change? Is it now more similar to the binomial p-value?
         </p>
@@ -814,6 +832,10 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
         </p>
       </solution>
     </exercise>
+
+    <div xmlns="http://www.w3.org/1999/xhtml" style="text-align: center; margin: 20px 0;">
+      <button id="send-home" style="padding: 10px 20px; background-color: #2196F3; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">↑ Return applet to top</button>
+    </div>
 
     <p>
       Many software programs allow you to apply this continuity correction for a one-sample <em>z</em>-test (e.g., using <m>\hat{p} = (X \pm 0.5)/n</m> as the input) or may do so by default. However, when <em>n</em> is large, you may not see much difference in the values.
