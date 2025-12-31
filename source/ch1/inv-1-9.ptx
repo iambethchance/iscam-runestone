@@ -22,7 +22,7 @@
           </p>
         </hint>
        <p>
-          <var width="60"/>
+<!--          <var width="60"/>-->
         </p>
        </statement>
       <response/>
@@ -58,7 +58,7 @@
           </p>
         </hint>
         <p>
-          <var width="60"/>
+<!--          <var width="60"/>-->
         </p>
       </statement>
       <response/>
@@ -79,7 +79,7 @@
           Method: <var width="60"/>
         </p>
         <p>Calculate this estimate.
-          Estimate: <var width="20"/>
+          Estimate: <var form="float" width="10"><condition number="0.043" tolerance="0.001"/></var>
         </p>
         <hint>
           <p>
@@ -87,7 +87,6 @@
           </p>
         </hint>
       </statement>
-      <response/>
       <solution>
         <p>
           Method: Use <m>\text{SE}(\hat{p}) = \sqrt{\hat{p}(1-\hat{p})/n}</m>
@@ -113,15 +112,14 @@
           Now consider calculating a 95% confidence interval for the process probability <m>\pi</m> based on the observed sample proportion <m>\hat{p}</m>. What's the largest distance you expect to see a sample proportion <m>\hat{p}</m> fall away from the underlying process probability <m>\pi</m>? [<em>Hint:</em> Assuming a normal distribution <ellipsis/> 95% <ellipsis/>]
         </p>
         <p>
-          Largest plausible distance = <var width="20"/>
+          Largest plausible distance = <var form="float" width="10"><condition number="0.086" tolerance="0.002"/></var>
         </p>
         <hint>
           <p>
-            For a normal distribution, approximately 95% of observations fall within how many standard deviations of the mean?
+            For a normal distribution, approximately 95% of observations fall within how many standard deviations of the mean? Compute a numerical value for the distance.
           </p>
         </hint>
       </statement>
-      <response/>
       <solution>
         <p>
           Max plausible distance = <m>2 \times 0.043 = 0.086</m> (95% of the time)
@@ -141,10 +139,12 @@
           </p>
         </hint>
         <p>
-          Interval: <var width="40"/>
+          Lower bound: <var form="float" width="10"><condition number="0.559" tolerance="0.003"/></var>
+        </p>
+        <p>
+          Upper bound: <var form="float" width="10"><condition number="0.731" tolerance="0.003"/></var>
         </p>
       </statement>
-      <response/>
       <solution>
         <p>
           <m>\pi</m> should fall within 2 standard deviations of the observed sample proportion. So <m>\pi</m> is at least <m>0.645 - 2(0.043) = 0.559</m> and at most <m>0.645 + 2(0.043) = 0.731</m>
@@ -240,7 +240,7 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
  <!--       <p>The critical value should be approximately 1.96.</p>-->
       </hint>
         <p>
-          Critical value for 95% confidence: <m>z^* =</m> <var width="20"/>
+          Critical value for 95% confidence: <m>z^* =</m> <var form="float" width="10"><condition number="1.96" tolerance="0.01"/></var>
         </p>
       </statement>
       <response/>
@@ -443,7 +443,10 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
           </p>
         </hint>
         <p>
-          90% interval: <var width="40"/>
+          Lower bound: <var form="float" width="10"><condition number="0.574" tolerance="0.003"/></var>
+        </p>
+        <p>
+          Upper bound: <var form="float" width="10"><condition number="0.716" tolerance="0.003"/></var>
         </p>
       </statement>
       <response/>
@@ -469,8 +472,49 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         <p>
           How do the midpoint and width of the 90% confidence interval compare to those of the 95% confidence interval?
         </p>
+        <p>
+          The midpoint is:
+        </p>
       </statement>
-      <response/>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>Larger</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>Smaller</p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>Equal</p>
+          </statement>
+        </choice>
+      </choices>
+      <statement>
+        <p>
+          The width is:
+        </p>
+      </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement>
+            <p>Larger</p>
+          </statement>
+        </choice>
+        <choice correct="yes">
+          <statement>
+            <p>Smaller</p>
+          </statement>
+        </choice>
+        <choice>
+          <statement>
+            <p>Equal</p>
+          </statement>
+        </choice>
+      </choices>
       <solution>
         <paragraphs>
         <p>
@@ -497,7 +541,12 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
       <statement>
         <p>
           Use technology (Applet, R, or JMP) to confirm your calculation of the one proportion <em>z</em>-test for the Halloween study (<em>n</em> = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
-        Report the interval you find <var width="20"/>   
+        </p>
+        <p>
+          Lower bound: <var form="float" width="10"><condition number="0.574" tolerance="0.003"/></var>
+        </p>
+        <p>
+          Upper bound: <var form="float" width="10"><condition number="0.716" tolerance="0.003"/></var>
         </p>
       <hint>
         <title>R/Sage Instructions</title>
@@ -593,7 +642,7 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         </p>
       </hint>
         <p>
-          <var width="60"/>
+<!--          <var width="60"/> -->
         </p>
       </statement>
       <response/>
@@ -625,10 +674,9 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
             </p>
           </hint>
           <p>
-            <m>n =</m> <var width="20"/>
+            <m>n =</m> <var form="float" width="10"><condition number="978" tolerance="1"/></var>
           </p>
         </statement>
-        <response/>
         <solution>
           <p>
             <m>z^* \sqrt{\hat{p}(1-\hat{p})/n} = 0.03</m>
@@ -654,10 +702,9 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
             </p>
           </hint>
           <p>
-            <m>n =</m> <var width="20"/>
+            <m>n =</m> <var form="float" width="10"><condition number="1068" tolerance="1"/></var>
           </p>
         </statement>
-        <response/>
         <solution>
           <p>
             <m>z^* \sqrt{\hat{p}(1-\hat{p})/n} = 0.03</m>
@@ -683,7 +730,7 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
             </p>
           </hint>
           <p>
-            <var width="60"/>
+<!--            <var width="60"/> -->
           </p>
         </statement>
         <response/>
@@ -820,7 +867,7 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
     </exercise>
 
     <p>
-      Reconsider Muffin from <xref ref="practice1-8B"/> and suppose our confidence interval is (0.2689, 0.4811). For each statement below, determine whether it is a valid or invalid interpretation of this confidence interval.
+      Reconsider Muffin from <xref ref="practice1-8B" text="Practice Problem 1.8B"/> and suppose our confidence interval is (0.2689, 0.4811). For each statement below, determine whether it is a valid or invalid interpretation of this confidence interval.
     </p>
 
     <exercise xml:id="practice-1-9b-c-1" label="PP1.9B.3.1">
