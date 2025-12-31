@@ -20,9 +20,9 @@
     <title>Identify Sample, Variable, and Parameter</title>
     <statement>
       <p>Identify the sample and variable in this study, as well as the parameter of interest.</p>
-      <p>Sample: <var width="50" /></p>
+  <!--    <p>Sample: <var width="50" /></p>
       <p>Variable: <var width="50" /></p>
-      <p>Parameter: <var width="50" /></p>
+      <p>Parameter: <var width="50" /></p> -->
     <hint>
       <p>What group was observed, what was measured, and what long-run proportion are we interested in?</p>
     </hint>
@@ -425,7 +425,7 @@ iscambinomtest(80, 124, conf.level = 0.95)
       <sage language="r">
         <input>
 # Calculate 99% confidence interval
-iscambinomtest(80, 124, conf.level = 0.99)
+iscambinomtest(observed = 80, n = 124, conf.level = 0.99)
         </input>
       </sage>
       <p>This produces a 99% confidence interval of approximately (0.528, 0.751).</p>
@@ -464,9 +464,12 @@ iscambinomtest(80, 124, conf.level = 0.99)
   <exercise xml:id="I1-6-12" label="I1.6.12">
     <title>Technology Comparison</title>
     <statement>
-      <p>Use technology to determine the 95% and 99% Clopper-Pearson confidence intervals for the probability that a kissing couple leans to the right. Comment on how the 99% confidence interval compares to the 95% interval, examining both midpoints and widths. [Hint: Average the endpoints to find the midpoint; subtract the endpoints to find the width.]</p>
-    <hint>
+      <p>Use technology to determine the 95% and 99% Clopper-Pearson confidence intervals for the probability that a kissing couple leans to the right. Comment on how the 99% confidence interval compares to the 95% interval, examining both midpoints and widths. </p>
+    <hint><title>Tech instructions</title>
       <p>Use R's iscambinomtest function or JMP with the ISCAM Journal file.</p>
+    </hint>
+    <hint><title>Calculation</title>
+    <p>Average the endpoints to find the midpoint; subtract the endpoints to find the width.</p>
     </hint>
     </statement>
     <response/>
@@ -509,11 +512,11 @@ iscambinomtest(80, 124, conf.level = 0.99)
 
   <subsection xml:id="practice1-6">
     <title>Practice Problem 1.6</title>
-    
+    <p>Recall the 8 out of 10 statistic for St. George's Hospital (<xref ref="investigation-1-4" text="custom">Investigation 1.4</xref>). </p>
     <exercise xml:id="PP1-6-1" label="PP1.6.1">
       <title>St. George's Hospital CI</title>
       <statement>
-        <p>Recall the 8 out of 10 statistic for St. George's Hospital (Investigation 1.4). Based on this result, what is an interval of plausible values for the underlying mortality rate at St. George's? [Hint: You can use a 95% confidence level if none is stated.] Describe how you found the interval and name the method used. Report the midpoint and width of this interval.</p>
+        <p>Based on this result, what is an interval of plausible values for the underlying mortality rate at St. George's? [Hint: You can use a 95% confidence level if none is stated.] Describe how you found the interval and name the method used. Report the midpoint and width of this interval.</p>
       </statement>
       <response/>
     </exercise>
@@ -529,7 +532,7 @@ iscambinomtest(80, 124, conf.level = 0.99)
     <exercise xml:id="PP1-6-3" label="PP1.6.3">
       <title>CI and Hypothesis Test Duality</title>
       <statement>
-        <p>Based on the interval in (b), if you were to test <m>H_0: \pi = 0.20</m> vs. <m>H_a: \pi \neq 0.20</m>, would you reject or fail to reject the null hypothesis? Explain how you know the conclusion based on the confidence interval without actually conducting the test.</p>
+        <p>Based on the interval in the previous question, if you were to test <m>H_0: \pi = 0.20</m> vs. <m>H_a: \pi \neq 0.20</m>, would you reject or fail to reject the null hypothesis? Explain how you know the conclusion based on the confidence interval without actually conducting the test.</p>
       </statement>
       <response/>
     </exercise>
