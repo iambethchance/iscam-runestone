@@ -18,7 +18,6 @@
     <hint>
       <p>The population is the group we want to generalize to.</p>
     </hint>
-      <p><var width="60"/></p>
     </statement>
     <solution>
       <p>All U.S. teens aged 12-19 years (or 15-19 per Census data)</p>
@@ -29,7 +28,6 @@
     <title>Define parameter</title>
     <statement>
       <p>Define the parameter of interest in this study in words.</p>
-      <p><var width="60"/></p>
     </statement>
     <solution>
       <p>The proportion of all U.S. teens who have at least some level of hearing loss</p>
@@ -190,9 +188,9 @@
       <p>Check whether <m>n \pi > 10</m>, <m>n(1-\pi) > 10</m>, and <m>N > 20n</m>.</p>
     </hint>
 
-      <p>Sample size condition: <var width="60"/></p>
+<!--      <p>Sample size condition: <var width="60"/></p>
       <p>Population size condition: <var width="60"/></p>
-      <p>Conclusion: <var width="60"/></p>
+      <p>Conclusion: <var width="60"/></p>-->
     </statement>
     <solution>
       <p>Sample size: <m>1771 \times 0.20 = 354.2 > 10</m> and <m>1771 \times 0.80 = 1416.8 > 10</m> ✓</p>
@@ -204,7 +202,8 @@
   <exercise xml:id="I1-14-d">
     <title>Carry out <m>z</m>-test</title>
     <statement>
-      <p>Use technology (see <xref ref="summary-z-procedures"/>) to carry out a <m>z</m>-test of the hypotheses you specified in checkpoint <xref ref="I1-14-b"/>. Report the standardized statistic and p-value, and confirm how you would calculate the standardized statistic by hand.</p>
+      <p>Use technology (see <xref ref="summary-z-procedures"/>) to carry out a <m>z</m>-test 
+      of the hypotheses you specified in checkpoint <xref ref="I1-14-b" text="custom">Question 4</xref>. Report the standardized statistic and p-value, and confirm how you would calculate the standardized statistic by hand.</p>
     <hint>
       <p>Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=2">Theory-Based Inference applet</url> or calculate <m>z = \frac{\hat{p} - \pi_0}{\sqrt{\frac{\pi_0(1-\pi_0)}{n}}}</m></p>
     </hint>
@@ -263,8 +262,6 @@
    <hint>
       <p>Compare the p-value to 0.05. What does the p-value tell you about observing a sample proportion as extreme as 0.188?</p>
     </hint>
- 
-      <p><var width="60"/></p>
     </statement>
     <solution>
       <p>No, this p-value (0.2068) is not small and does not provide convincing evidence against the claim that <m>\pi = 0.20</m>. We would get sample proportions as or more extreme as 0.188 (meaning at least as far from 0.20) in about 21% of random samples from a population where 20% of teens have some hearing loss. Therefore, the headline seems appropriate.</p>
@@ -278,7 +275,27 @@
   <hint>
       <p>Use the formula <m>\hat{p} \pm z^* \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</m> where <m>z^* = 1.96</m> for 95% confidence.</p>
     </hint>
-  
+    </statement>
+    <setup>
+      <var>
+        <condition string="^\s*\(\s*0?\.17[0-9]?\s*,\s*0?\.20[0-9]?\s*\)\s*$">
+          <feedback>
+            <p>Correct! The 95% confidence interval is approximately (0.170, 0.206).</p>
+          </feedback>
+        </condition>
+        <condition string=".*\(.*0?\.1[6-8].*0?\.2[0-1].*\).*">
+          <feedback>
+            <p>Close! Check your calculation. The interval should be approximately (0.170, 0.206).</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Use the formula <m>\hat{p} \pm 1.96 \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</m> with <m>\hat{p} = 0.188</m> and <m>n = 1771</m>. Express your answer in the format (lower, upper).</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <statement>
       <p>95% Confidence interval: <var width="30"/></p>
       <p>Interpretation: <var width="60"/></p>
       <p>Consistency with test: <var width="60"/></p>
@@ -297,8 +314,6 @@
  <hint>
       <p>Consider whether the sample was representative</p>
     </hint>
-   
-      <p><var width="60"/></p>
     </statement>
     <solution>
       <p>Yes, we should feel comfortable generalizing because the 
