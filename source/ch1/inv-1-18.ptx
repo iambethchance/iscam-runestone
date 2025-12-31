@@ -24,9 +24,34 @@
     <title>Calculate confidence interval</title>
     <statement>
       <p>Use this sample information to form a 95% confidence interval for the actual proportion of all humans who are female.</p>
+    </statement>
+    <setup>
+      <var>
+        <condition string="^\s*\(\s*0?\.17[0-9]?\s*,\s*0?\.34[0-9]?\s*\)\s*$">
+          <feedback>
+            <p>Correct! The 95% confidence interval is approximately (0.174, 0.346).</p>
+          </feedback>
+        </condition>
+        <condition string=".*\(\s*17[.\s]?[0-9]?%?\s*,\s*34[.\s]?[0-9]?%?\s*\).*">
+          <feedback>
+            <p>Correct! The 95% confidence interval is approximately (17.4%, 34.6%).</p>
+          </feedback>
+        </condition>
+        <condition string=".*\(.*0?\.1[5-9].*0?\.3[3-6].*\).*">
+          <feedback>
+            <p>Close! Check your calculations. Use p̂ = 26/100 = 0.26 and the formula: p̂ ± 1.96 × SE.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Calculate the 95% CI using p̂ ± 1.96 × SE. Remember p̂ = 26/100. Use (lower, upper) format.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <statement>
       <p><var width="60"/></p>
     </statement>
-    <response/>
     <solution>
       <p>Sample: <m>n = 100</m>, <m>\hat{p} = 26/100 = 0.26</m></p>
       <p><m>SE(\hat{p}) = \sqrt{\frac{0.26(0.74)}{100}} = \sqrt{0.001924} \approx 0.0439</m></p>
@@ -39,9 +64,19 @@
     <title>Evaluate reasonableness</title>
     <statement>
       <p>Is this confidence interval a reasonable estimate of the actual proportion of all humans who are female?</p>
-      <p><var width="60"/></p>
     </statement>
-    <response/>
+    <choices randomize="yes">
+      <choice>
+        <statement>
+          <p>Yes</p>
+        </statement>
+      </choice>
+      <choice correct="yes">
+        <statement>
+          <p>No</p>
+        </statement>
+      </choice>
+    </choices>
     <solution>
       <p>No, this confidence interval is not a reasonable estimate. We know that approximately 50% of humans are female, which is well outside this interval.</p>
     </solution>
