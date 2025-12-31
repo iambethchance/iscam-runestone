@@ -224,13 +224,20 @@
         <p>Report the proportion of the repetitions with 6 or more heads (correct choices).</p>
         <p>In 1,000 repetitions, assuming the probability of choosing correctly is 0.50, we found <var width="5"/> % of repetitions of 8 attempts to result in 6 or more successes.</p>
       </statement>
-      <response/>
-      <solution>
-        <p>Results will vary but should be around 0.15, or 15% of repetitions resulting in 6 or more heads.</p>
-      </solution>
-    </exercise>
-    
-    <p>Notice that we consider the direction of the alternative hypothesis to help us determine which outcomes we consider "more extreme" than our observed outcome. This tail probability you found in Question 9 is referred to as the p-value.</p>
+    <setup>
+      <var>
+        <condition number="15" tolerance="2">
+          <feedback>
+            <p>Correct! Results will vary but should be around 13-17% (or 0.13-0.17).</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. Check your simulation results in the applet for the proportion with 6 or more successes.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     
     <assemblage xml:id="def-pvalue-null-distribution-1-2b">
       <title>Definitions: Null Distribution and p-value</title>
@@ -321,7 +328,20 @@
           <p><me>C(8, 6) = \frac{8!}{6!2!}</me></p>
           <p>What is the calculated result? <var width="5"/></p>
         </statement>
-        <response/>
+        <setup>
+          <var>
+            <condition number="28">
+              <feedback>
+                <p>Correct! <m>C(8,6) = \frac{8!}{6!2!} = \frac{40320}{720 \times 2} = 28</m></p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Calculate <m>\frac{8!}{6!2!}</m> or use the formula for combinations.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p>28</p>
         </solution>
@@ -337,7 +357,20 @@
           <p><me>P(X = k) = \binom{n}{k} \pi^k (1-\pi)^{n-k}</me></p>
           <p>where <m>\binom{n}{k} = \frac{n!}{k!(n-k)!}</m></p>
         </statement>
-        <response/>
+        <setup>
+          <var>
+            <condition number="0.1094" tolerance="0.001">
+              <feedback>
+                <p>Correct! <m>28 \times (0.5^8) = 28 \times 0.00390625 \approx 0.1094</m></p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Calculate <m>28 \times (0.5^8)</m>.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p>0.1094</p>
         </solution>
@@ -354,13 +387,27 @@
         </solution>
       </exercise>
       
-      <ul><li>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url>, check the <alert>Exact Binomial</alert> box. (Optional: See Technology Detour below for R/JMP instructions.) </li></ul>
+      <ul><li>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url>, check the <alert>Exact Binomial</alert> box. (Optional: See <xref ref="tech-detour-1-1" text="custom">Technology Detour</xref> below for R/JMP instructions.) </li></ul>
       <exercise xml:id="inv1-2b-n" label="I1.2b.14">
       <title>Confirm with technology</title>
         <statement>
-          <p>How does the binomial distribution match up to your earlier simulation results? How does the binomial (or "exact") p-value compare to what you simulated earlier? Did everyone in class obtain the same "exact" p-value?</p>
+          <p>Report the binomial (or "exact") p-value from the applet.</p>
+          <p>Exact p-value = <var width="5"/></p>
         </statement>
-        <response/>
+        <setup>
+          <var>
+            <condition number="0.1445" tolerance="0.005">
+              <feedback>
+                <p>Correct! The exact binomial p-value is 0.1445. This should be similar to the simulation results and everyone obtains the same calculated value.</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Check the Exact Binomial box in the applet and report the p-value shown.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p>0.1445. This should be similar to the simulation results and everyone would obtain the same calculated value.</p>
         </solution>
@@ -400,7 +447,7 @@
     <p>If we assume Yukon is guessing between the two containers, regardless of the cue, then finding 6 or more successes in 8 trials is actually not very surprising (binomial p-value = 0.1445); about 14% of samples from a 50/50 process would show 6 or more successes in 8 trials. This does not provide convincing evidence that Yukon can perform "above chance," but there is not information about whether other wolves or other cues would show better performance.</p>
   </assemblage>
  
-<subsection xml:id="tech-detour-1-1">
+<paragraphs xml:id="tech-detour-1-1">
 <title>Technology Detour – Calculating Binomial Probabilities</title>
   <exercise xml:id="tech-detour-binomial-1-2b">
     <title>Calculate Binomial Probabilities with Technology</title>
@@ -472,7 +519,7 @@ iscamonepropztest(observed=14, n=16, hypothesized=0.5, alternative="greater", co
         </solution>
   </exercise>
 
-</subsection>
+</paragraphs>
 
 </exercises>
 

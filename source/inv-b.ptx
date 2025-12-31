@@ -227,6 +227,32 @@
       <p>You could have determined the number of possible outcomes without having to list them first. For the first mother to receive a baby, she could receive any one of the four babies. Then there are three babies to choose from in giving a baby to the second mother. The third mother receives one of the two remaining babies and then the last baby goes to the fourth mother. Because the number of possibilities at one stage of this process does not depend on the outcome (which baby) of earlier stages, the total number of possibilities is the product <m>4 \times 3 \times 2 \times 1 = 24</m>. This is also known as <m>4!</m>, read "4 factorial." Because the above outcomes are equally likely, the probability of any one of the above outcomes occurring is <m>1/24</m>. Although these 24 outcomes are equally likely, we were more interested above in the probability of 0 matches, 1 match, etc.</p>
     </hint>
     </statement>
+    <setup>
+      <var>
+        <condition number="24">
+          <feedback>
+            <p>Correct! There are 24 possible outcomes (<m>4! = 4 \times 3 \times 2 \times 1 = 24</m>).</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. Count the entries in the sample space table, or calculate <m>4!</m></p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.0417" tolerance="0.001">
+          <feedback>
+            <p>Correct! <m>P(\text{specific outcome}) = 1/24 \approx 0.0417</m></p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. If all 24 outcomes are equally likely, what is 1/24?</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>There are 24 possible outcomes in the sample space. Each outcome has probability 1/24 ≈ 0.0417.</p>
     </solution>
@@ -244,8 +270,27 @@
     <hint>
       <p>Consider: Can you have 0 matches? 1 match? 2 matches? What about 3 matches - is that possible?</p>
     </hint>
-      <p><var width="30" height="4"/></p>
+      <p><var width="30" /></p>
     </statement>
+    <setup>
+      <var>
+        <condition string="^\s*0\s*,?\s*1\s*,?\s*2\s*,?\s*4\s*$">
+          <feedback>
+            <p>Correct! The possible values are 0, 1, 2, and 4. (Note: 3 is not possible!)</p>
+          </feedback>
+        </condition>
+        <condition string="^\s*0\s*,?\s*1\s*,?\s*2\s*,?\s*3\s*,?\s*4\s*$">
+          <feedback>
+            <p>Almost! You included 3, but that's actually impossible. If 3 mothers get the correct baby, the 4th must also get the correct baby. Try again.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. Think about which numbers of matches are possible. Is 3 matches possible?</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>The possible values are 0, 1, 2, and 4. (Note: 3 is not possible!)</p>
     </solution>
@@ -507,7 +552,10 @@
       <var>
         <condition number="1" tolerance="0.01">
           <feedback>
-            <p>Correct! <m>E(X) = 0(9/24) + 1(8/24) + 2(6/24) + 4(1/24) = 0 + 8/24 + 12/24 + 4/24 = 24/24 = 1</m>. The expected number of matches is 1.</p>
+            <p>Correct!</p>
+            <p><m>E(X) = 0(9/24) + 1(8/24) + 2(6/24) + 4(1/24)</m></p>
+            <p><m>= 0 + 8/24 + 12/24 + 4/24 = 24/24 = 1</m></p>
+            <p>The expected number of matches is 1.</p>
           </feedback>
         </condition>
         <condition string=".*">
