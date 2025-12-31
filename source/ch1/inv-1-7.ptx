@@ -3,7 +3,6 @@
 <introduction>
 <p><em>So far you have focused on the distribution of the "number of successes" in repeated sampling from a random process.  We will extend that exploration to the distribution of sample proportions, which is a traditional time to talk about the normal approximation for this distribution</em>.</p>
 </introduction>
-<subsection>
 <exercises xml:id="investigation1-7" hidden-label="yes">
     <title>Sampling Distributions</title>
     <sidebyside widths="58% 38%">
@@ -14,9 +13,9 @@
     </sidebyside>
     
     <exercise xml:id="I1-7-a" label="I1.7a">
-      <title>Initial Prediction</title>
+      <title>Initial Conjecture</title>
       <statement>
-        <p><em>Prediction</em>: A friend finds 10 orange candies in her bag. Does this convince you that the three colors are not equally likely? What other information would you want to know? What if she tells you these orange pieces were 50% of the candies in her bag?</p>
+        <p><em>Conjecture</em>: A friend finds 10 orange candies in her bag. Does this convince you that the three colors are not equally likely? What other information would you want to know? What if she tells you these orange pieces were 50% of the candies in her bag?</p>
       <hint>
         <p>Consider: Knowing the total number of candies in the bag is crucial. What's the difference between 10 out of 20 versus 10 out of 100?</p>
       </hint>
@@ -162,7 +161,7 @@
       <response/>
       <solution>
         <p><m>E(\hat{p}) = E(X/n) = (1/n) \times E(X) = (1/n) \times n\pi = \pi</m></p>
-        <p><m>SD(\hat{p}) = SD(X/n) = (1/n) \times SD(X) = (1/n) \times \sqrt{n\pi(1-\pi)} = \sqrt{\frac{\pi(1-\pi)}{n}}</m></p>
+        <p><m>SD(\hat{p}) = SD(X/n) = (1/n) \times SD(X) = (1/n) \times \sqrt{n\pi(1-\pi)} </m><m>= \sqrt{\frac{\pi(1-\pi)}{n}}</m></p>
         <!-- TODO: Missing image file: inv1.7-formulas.png -->
         <!-- <image source="images/inv1.7-formulas.png" width="60%">
           <description>Mathematical formulas for expected value and standard deviation of sample proportion</description>
@@ -234,7 +233,7 @@
       <statement>
         <p>Repeat the previous questions (using the formulas, checking against the applet) for a sample size of <m>n = 5</m> candies.</p>
       <hint>
-        <p>Calculate the expected value and standard deviation for <em>n</em> = 5, then compare the distribution to <m>n = 25</m>.</p>
+        <p>Calculate the expected value and standard deviation for <m>n = 5</m>, then compare the distribution to <m>n = 25</m>.</p>
       </hint>
       </statement>
       <response/>
@@ -261,10 +260,16 @@
           <condition number="0.145" tolerance="0.005">
             <feedback><p>Correct! <m>0.333 - 2(0.094) = 0.145</m></p></feedback>
           </condition>
+          <condition string=".*">
+            <feedback><p>Not quite. Calculate <m>\pi - 2 \times SD(\hat{p}) = 0.333 - 2(0.094)</m></p></feedback>
+          </condition>
         </var>
         <var>
           <condition number="0.521" tolerance="0.005">
             <feedback><p>Correct! <m>0.333 + 2(0.094) = 0.521</m></p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Not quite. Calculate <m>\pi + 2 \times SD(\hat{p}) = 0.333 + 2(0.094)</m></p></feedback>
           </condition>
         </var>
       </setup>
@@ -369,10 +374,9 @@
     
     <paragraphs xml:id="discussion-1-7">
       <title>Discussion</title>
-      <p>Notice that if we know the value of <m>\pi</m> and we know the sample size <em>n</em>, we can predict the value of the sample proportion fairly precisely. This will be very helpful to us in deciding whether an observed sample proportion is "far away" from a hypothesized value for <m>\pi</m>.</p>
+      <p>Notice that if we know the value of <m>\pi</m> and we know the sample size <m>n</m>, we can predict the value of the sample proportion fairly precisely. This will be very helpful to us in deciding whether an observed sample proportion is "far away" from a hypothesized value for <m>\pi</m>.</p>
     </paragraphs>
   </exercises>
-  </subsection>
   <subsection xml:id="practice1-7A">
     <title>Practice Problem 1.7A</title>
     
