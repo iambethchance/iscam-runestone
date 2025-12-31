@@ -226,10 +226,10 @@
       </statement>
       <setup>
         <var>
-          <condition string="^\s*(p\s*hat|p-hat|phat|\\hat\{p\}|\\hat\{?p\}?|p\^)\s*(>=|≥|&gt;=)\s*0\.289\s*$">
+          <condition string="^\s*(p\s*hat|p-hat|phat|\\hat\{p\}|\\hat\{?p\}?|p\^)\s*(>=|≥|&gt;=)\s*0?\.289\s*$">
             <feedback><p>Correct! The rejection region is <m>\hat{p} \geq 0.289</m>.</p></feedback>
           </condition>
-          <condition string=".*(0\.289|289|29%).*">
+          <condition string=".*(0?\.289|289|29%).*">
             <feedback><p>You have the right value. Make sure to include the inequality symbol and <m>\hat{p}</m>.</p></feedback>
           </condition>
           <condition string=".*">
@@ -430,7 +430,7 @@
       <title>Effect of Changing Significance Level</title>
       <statement>
         <p>
-          How does lowering the level of significance from 0.05 to 0.01 influence each of the following? (Enter: increases, decreases, or no change)
+          How does lowering the level of significance from 0.05 to 0.01 influence each of the following? 
         </p>
       </statement>
       <setup>
@@ -481,16 +481,16 @@
       </setup>
       <statement>
         <p>
-          Rejection region: <var width="7"/>
+          Rejection region: <var width="7"/> (The cutoff value of the statistic becomes: larger, smaller, no change)
         </p>
         <p>
-          Probability of Type I Error: <var width="7"/>
+          Probability of Type I Error: <var width="7"/> (increases, decreases, no change)
         </p>
         <p>
-          Probability of Type II Error: <var width="7"/>
+          Probability of Type II Error: <var width="7"/> (increases, decreases, no change)
         </p>
         <p>
-          Power (assuming <m>\pi_a = 0.35</m>): <var width="7"/>
+          Power (assuming <m>\pi_a = 0.35</m>): <var width="7"/> (increases, decreases, no change)
         </p>
       </statement>
       <solution>
@@ -521,11 +521,6 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
 </paragraphs>
     <exercise xml:id="I1-11-i" label="I1.11i">
       <title>Small Sample Size with Exact Binomial</title>
-      <statement>
-        <p>
-          Report the following (i) Rejection region, (ii) Probability of Type I Error, (iii)  Power (assuming <m>\pi_a = 0.35</m>)
-        </p>
-      </statement>
       <setup>
         <var>
           <condition string="^\s*(p\s*hat|p-hat|phat|\\hat\{p\}|\\hat\{?p\}?|p\^)\s*(>|&gt;)\s*0\.4(0)?\s*$">
@@ -569,7 +564,7 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
           Probability of Type I Error: <var width="7"/>
         </p>
         <p>
-          Power: <var width="7"/>
+          Power (assuming <m>\pi_a = 0.35</m>): <var width="7"/>
         </p>
       </statement>
       <solution>
