@@ -29,6 +29,104 @@
     <title>Identify study components</title>
     <statement>
       <p>Identify the variable and population of interest, the sample, and the sampling frame in this study. Also define the parameter and statistic, in words and symbols, and indicate any values that you know.</p>
+    </statement>
+    <setup>
+      <var>
+        <condition string="(?=.*([Pp]residential|[Vv]ote|[Pp]reference))">
+          <feedback>
+            <p>Correct! The variable is presidential vote preference.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>What characteristic was measured for each person in the survey?</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="(?=.*[Cc]ategorical)">
+          <feedback>
+            <p>Correct! This is a categorical (binary) variable.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Is this variable categorical or quantitative?</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="(?=.*([Vv]oters?|[Pp]eople))(?=.*1936)">
+          <feedback>
+            <p>Correct! The population is all U.S. voters in 1936.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Who were they trying to learn about? What year?</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="(?=.*2\.[34])(?=.*([Mm]illion|[Rr]espondents))">
+          <feedback>
+            <p>Correct! The sample was the 2.4 million respondents.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>How many people responded to the survey?</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="(?=.*([Tt]elephone|[Pp]hone))(?=.*([Vv]ehicle|[Rr]egistration|[Cc]ar))">
+          <feedback>
+            <p>Correct! The sampling frame was telephone books and vehicle registration lists.</p>
+          </feedback>
+        </condition>
+        <condition string=".*([Tt]elephone|[Pp]hone).*">
+          <feedback>
+            <p>Good! Also mention vehicle registration lists.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Where did they get the names and addresses?</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="(?=.*[πpi])(?=.*([Pp]roportion))(?=.*([Ll]andon|[Vv]oted))">
+          <feedback>
+            <p>Correct! The parameter is π = proportion of all U.S. voters who voted for Landon.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Define the population proportion using symbol π. What proportion were they trying to estimate?</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="(?=.*[p̂p])(?=.*0\.57)">
+          <feedback>
+            <p>Correct! The statistic is p̂ = 0.57, the sample proportion for Landon.</p>
+          </feedback>
+        </condition>
+        <condition string="(?=.*0\.57)">
+          <feedback>
+            <p>Good! Also include the symbol p̂ for the sample proportion.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>What was the sample proportion? Use symbol p̂ and calculate from the data.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <statement>
       <p>Variable: <var width="40"/> </p>
       <p>Type: <var width="20"/></p>
       <p>Population of interest: <var width="40"/> Sample: <var width="40"/></p>
@@ -36,8 +134,6 @@
       <p>Parameter: <var width="60"/></p>
       <p>Statistic: <var width="60" height="3"/></p>
     </statement>
-    <response>
-    </response>
     <solution>
       <p>Variable: Presidential vote preference; Type: Categorical (binary)</p>
       <p>Population of interest: All U.S. voters in 1936</p>
@@ -52,7 +148,7 @@
     <title>Calculate sample statistic</title>
     <statement>
       <p>Why is <m>1293669/(1293669 + 972897) = 0.57</m> not equal to 0.54?</p>
-      <p><var width="60"/></p>
+      <!-- <p><var width="60"/></p>-->
     </statement>
     <response/>
     <solution>
@@ -102,10 +198,36 @@
     <hint>
       <p>Use columns D-G, L-O, and T-W.</p>
     </hint>
+    </statement>
+    <setup>
+      <var>
+        <condition string=".*">
+          <feedback>
+            <p>Sum recorded. Make sure you summed all voters from the three categories (Republican, Democrat, Socialist/Other) in 1932.</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.507" tolerance="0.005">
+          <feedback>
+            <p>Correct! About 50.7% of respondents said they voted Republican in 1932.</p>
+          </feedback>
+        </condition>
+        <condition number="0.507" tolerance="0.02">
+          <feedback>
+            <p>Close! Check your calculation. Divide Republican voters by total of all three categories.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>What proportion voted Republican? Divide Republican voters by the total sum.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <statement>
       <p>Sum: <var width="20"/> Proportion: <var width="20"/></p>
     </statement>
-    <response>
-    </response>
     <solution>
       <p>Formula: (c52 + l52 + t52)/(sum(c52:g52)+sum(l52:o52)+sum(t52:w52))</p>
       <p>Proportion: 0.507 (approximately 50.7% voted Republican in 1932)</p>
@@ -164,10 +286,29 @@
     <hint>
       <p>Set up a formula using these weights and the breakdown of the planned Landon voters by the 1932 vote, columns D-I, to find a new count. Using 0.871 for non-voters and missing.</p>
     </hint>
+    </statement>
+    <setup>
+      <var>
+        <condition number="1133323" tolerance="100">
+          <feedback>
+            <p>Correct! The adjusted Landon vote count is approximately 1,133,323.</p>
+          </feedback>
+        </condition>
+        <condition number="1133323" tolerance="1000">
+          <feedback>
+            <p>Close! Check that you applied the correct ratios: 0.782 for Republican, 1.197 for Democrat, 2.228 for Socialist/Other, and 0.871 for non-voters and missing.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Apply the weighting ratios to each category of Landon voters based on their 1932 vote, then sum the results.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <statement>
       <p><var width="30"/></p>
     </statement>
-    <response>
-    </response>
     <solution>
       <p>Using 0.78 as the first multiplier (so watch for rounding discrepancies):</p>
       <p>717775.5 + 299320.623 + 12541.412 + 1838.1 + 53412.333 + 48434.568 = 1,133,322.536</p>
@@ -181,10 +322,29 @@
     <hint>
       <p>Use columns L-Q, with 1.1275 for non-voters and missing.</p>
     </hint>
+    </statement>
+    <setup>
+      <var>
+        <condition number="1117971" tolerance="100">
+          <feedback>
+            <p>Correct! The adjusted Roosevelt vote count is approximately 1,117,971.</p>
+          </feedback>
+        </condition>
+        <condition number="1117971" tolerance="1000">
+          <feedback>
+            <p>Close! Check that you applied the correct ratios: 0.782 for Republican, 1.197 for Democrat, 2.228 for Socialist/Other, and 1.1275 for non-voters and missing.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Apply the weighting ratios to each category of Roosevelt voters based on their 1932 vote, then sum the results.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <statement>
       <p><var width="30"/></p>
     </statement>
-    <response>
-    </response>
     <solution>
       <p>111494.76 + 854890.218 + 41039.76 + 1608.616 + 64617.025 + 44320.8975 = 1,117,971.277</p>
     </solution>
@@ -194,9 +354,34 @@
     <title>Calculate adjusted percentage</title>
     <statement>
       <p>Between these two candidates, what is the adjusted percentage voting for Roosevelt? Is this larger or smaller than the original <em>Literary Digest</em> prediction?</p>
+    </statement>
+    <setup>
+      <var>
+        <condition string="(?=.*(0\.49[0-9]?|49[.\s]?[0-9]?%?))(?=.*([Ll]arger|[Ii]ncreas|[Hh]igher|[Mm]ore))">
+          <feedback>
+            <p>Correct! The adjusted proportion is about 0.497 (49.7%), which is larger than the original prediction.</p>
+          </feedback>
+        </condition>
+        <condition string=".*(0\.49[0-9]?|49[.\s]?[0-9]?%?).*">
+          <feedback>
+            <p>Good! You have the proportion. Also indicate whether this is larger or smaller than the original Literary Digest prediction.</p>
+          </feedback>
+        </condition>
+        <condition string=".*([Ll]arger|[Ii]ncreas|[Hh]igher|[Mm]ore).*">
+          <feedback>
+            <p>Good! Also calculate the adjusted proportion: Roosevelt votes / (Roosevelt + Landon votes).</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Calculate the adjusted proportion for Roosevelt and compare it to the original Literary Digest prediction.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
+    <statement>
       <p><var width="60"/></p>
     </statement>
-    <response/>
     <solution>
       <p>Proportion (for these two) voting Roosevelt is now about 0.497 (49.7%), up from 0.429 for the 2 candidates (though still below half).</p>
       <p>This is larger than the original <em>Literary Digest</em> prediction.</p>
@@ -236,7 +421,6 @@
     <hint>
       <p>Look at which method's distribution is most centered around the actual country proportion.</p>
     </hint>
-      <p><var width="60" height="5"/></p>
     </statement>
     <response>
     </response>
