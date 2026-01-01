@@ -722,6 +722,7 @@ table(within2sd)/length(births3$birthweight)
     <title>Percentage within 2 SD</title>
     <statement>
       <p>Report the percentage of the birthweights that fall within 2 standard deviations of the mean.</p>
+      <p>Percentage: <var width="10"/>%</p>
       <setup>
         <var>
           <condition number="95" tolerance="1">
@@ -822,6 +823,13 @@ qqline(birthweight, datax=TRUE)
     <title>Calculate low birth weight probability</title>
     <statement>
       <p>Use technology (e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html?hideExtras=1">Normal Probability Calculator applet</url>) to calculate the normal distribution probability that a randomly selected baby will be of low birth weight. (Be sure to make sure your answer is consistent with a well-labeled sketch with the shaded area of interest!)</p>
+    <hint>
+      <p>Expected output:</p>
+      <image source="images/Inv2-1q-sols.jpg" width="60%">
+        <description>Normal probability calculation for low birth weight</description>
+      </image>
+    </hint>
+    <p>probability: <var width="10"/></p>
       <setup>
         <var>
           <condition number="0.035" tolerance="0.005">
@@ -846,13 +854,6 @@ qqline(birthweight, datax=TRUE)
           </condition>
         </var>
       </setup>
-    <hint>
-      <p>Expected output:</p>
-      <image source="images/Inv2-1q-sols.jpg" width="60%">
-        <description>Normal probability calculation for low birth weight</description>
-      </image>
-    </hint>
-    <p>probability: <var width="10"/></p>
     </statement>
     <solution>
       <p>We estimate that in the long run about 3.5% of full term babies will be of low birth weight.</p>
