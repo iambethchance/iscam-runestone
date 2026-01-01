@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Generate Dotplot URL</title>
+</head>
+<body style="font-family: Helvetica,Arial,sans-serif;">
+<h3>Enter your class section identifier</h3>
+
+<input type="text" id="classid" required="" style="font-size: 14px; padding: 5px;">
+<button onclick="generateURL()" style="font-size: 14px; padding: 5px 15px;">Generate URL</button>
+
+<br><br>
+<div id="result" style="display: none;">
+<p>Click the link below to view your class's dotplot:</p>
+<p id="url" style="font-size: 14px;"></p>
+<br>
+<p style="font-size: 13px; color: #666;">Once you reach the applet:</p>
+<ul style="font-size: 13px; color: #666;">
+<li>Press the <strong>Use Data</strong> button</li>
+<li>Use the <strong>Quantitative variable</strong> pull-down menu to select <strong>Proportion</strong></li>
+</ul>
+</div>
+
+<script>
+function generateURL(){
+	var classid = encodeURIComponent(document.getElementById("classid").value);
+	if (classid) {
+		var url = "https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm?data=https://www.rossmanchance.com/words/getdataG2.php?teacher=" + classid;
+		var resultDiv = document.getElementById("result");
+		var urlPara = document.getElementById("url");
+		
+		resultDiv.style.display = "block";
+		urlPara.innerHTML = "<a href='" + url + "' target='_blank'>" + url + "</a>";
+	}
+}
+</script>
+</body>
+</html>
