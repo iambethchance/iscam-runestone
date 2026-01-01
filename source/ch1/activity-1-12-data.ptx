@@ -11,38 +11,12 @@
     <statement>
       <p>Enter your class ID (provided by your instructor) and click Go to access the data collection tool:</p>
       
-      <interactive xml:id="class-id-input" platform="html">
-        <slate xml:id="class-id-slate" surface="html">
-          <![CDATA[
-          <div style="padding: 20px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 5px;">
-            <label for="classIdInput" style="font-weight: bold; margin-right: 10px;">Class ID:</label>
-            <input type="text" id="classIdInput" placeholder="e.g., chancesec1" 
-                   style="padding: 8px; width: 250px; font-size: 14px; border: 1px solid #ccc; border-radius: 3px;"/>
-            <button onclick="navigateToDataCollection()" 
-                    style="padding: 8px 20px; margin-left: 10px; font-size: 14px; background-color: #4CAF50; color: white; border: none; border-radius: 3px; cursor: pointer;">
-              Go
-            </button>
-          </div>
-          <script>
-            function navigateToDataCollection() {
-              var classid = document.getElementById('classIdInput').value;
-              if (classid && classid.trim() !== '') {
-                var url = 'https://www.rossmanchance.com/gettysburgDataCollection.html?instructor=' + encodeURIComponent(classid.trim());
-                window.open(url, '_blank');
-              } else {
-                alert('Please enter a class ID');
-              }
-            }
-            // Allow Enter key to submit
-            document.getElementById('classIdInput').addEventListener('keypress', function(event) {
-              if (event.key === 'Enter') {
-                navigateToDataCollection();
-              }
-            });
-          </script>
-          ]]>
-        </slate>
-      </interactive>
+      <p>
+        <line><c>Class ID:</c> <fillin characters="20" name="classid"/> <c>[Go Button]</c></line>
+      </p>
+      
+      <p>After entering your class ID above, use this link to access the data collection tool (replace YOUR_CLASS_ID with your actual class ID):</p>
+      <p><url href="https://www.rossmanchance.com/gettysburgDataCollection.html?instructor=YOUR_CLASS_ID">https://www.rossmanchance.com/gettysburgDataCollection.html?instructor=YOUR_CLASS_ID</url></p>
       
       <p><alert>Important:</alert> After the data collection tool opens, select 10 representative words from the Gettysburg Address passage and submit them. Then copy your list of words - you will need to paste them in Investigation 1.12 on the next page.</p>
     </statement>
