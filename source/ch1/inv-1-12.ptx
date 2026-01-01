@@ -466,7 +466,6 @@
     <hint>
       <p>What sampling method would give every word an equal chance of being selected?</p>
     </hint>
-      <p><var width="60"/></p>
     </statement>
     <solution>
       <p>Randomly! Use a random selection method such as assigning each word a number and using a random number generator to select which words to include in the sample. This gives every word an equal chance of being selected, regardless of its length or position.</p>
@@ -501,21 +500,23 @@
     <exercise xml:id="tech-detour-srs-r" label="Tech1.12.R">
       <title>Technology Detour (R)</title>
       <statement>
-        <p>Create a vector of integers from 1 to 268 in the Console window:</p>
-        <program language="r">
-          <code>
+        <p>Use R to select a simple random sample of 5 ID numbers from 1 to 268.</p>
+        <hint>
+          <title>R Instructions</title>
+          <p>Create a vector of integers from 1 to 268 in the Console window:</p>
+          <program language="r">
+            <code>
 ids = 1:268
-          </code>
-        </program>
-        <p>Take a simple random sample of 5 ID numbers:</p>
-        <program language="r">
-          <code>
+            </code>
+          </program>
+          <p>Take a simple random sample of 5 ID numbers:</p>
+          <program language="r">
+            <code>
 sample(ids, 5)
-          </code>
-        </program>
-      <hint>
-        <p>Use the up arrow to repeat this command if you are sharing computers. If you are using the ISCAM workspace, you should also reset the random number seed: <c>rm(.Random.seed)</c></p>
-      </hint>
+            </code>
+          </program>
+          <p><alert>Tip:</alert> Use the up arrow to repeat this command if you are sharing computers. If you are using the ISCAM workspace, you should also reset the random number seed: <c>rm(.Random.seed)</c></p>
+        </hint>
       </statement>
       <solution>
         <p>Each time you run <c>sample(ids, 5)</c>, you will get 5 different random numbers between 1 and 268. Example output: 45, 162, 3, 210, 97</p>
@@ -525,17 +526,19 @@ sample(ids, 5)
     <exercise xml:id="tech-detour-srs-jmp" label="Tech1.12.JMP">
       <title>Technology Detour (JMP)</title>
       <statement>
-        <p>To select a simple random sample in JMP:</p>
-      <hint>
-        <p>The Random Integer function will generate random integers within the specified range for each row in your data table.</p>
-      </hint>
-        <ol>
-          <li><p>Choose <c>File > New > Data Table</c>.</p></li>
-          <li><p>From the <c>Rows</c> menu, select <c>Add Rows</c>. Add 5 rows to the table. Press <c>OK</c>.</p></li>
-          <li><p>Right click the column heading. Select <c>Formula</c>.</p></li>
-          <li><p>Under <c>Random</c> select <c>Random Integer</c>.</p></li>
-          <li><p>Enter 1 and 268 as the bounds. Click <c>OK</c>.</p></li>
-        </ol>
+        <p>Use JMP to select a simple random sample of 5 ID numbers from 1 to 268.</p>
+        <hint>
+          <title>JMP Instructions</title>
+          <p>To select a simple random sample in JMP:</p>
+          <ol>
+            <li><p>Choose <c>File > New > Data Table</c>.</p></li>
+            <li><p>From the <c>Rows</c> menu, select <c>Add Rows</c>. Add 5 rows to the table. Press <c>OK</c>.</p></li>
+            <li><p>Right click the column heading. Select <c>Formula</c>.</p></li>
+            <li><p>Under <c>Random</c> select <c>Random Integer</c>.</p></li>
+            <li><p>Enter 1 and 268 as the bounds. Click <c>OK</c>.</p></li>
+          </ol>
+          <p><alert>Note:</alert> The Random Integer function will generate random integers within the specified range for each row in your data table.</p>
+        </hint>
       </statement>
     </exercise>
   </paragraphs>
