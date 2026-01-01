@@ -519,9 +519,9 @@
     </exercise>
 
     <exercise xml:id="tech-detour-srs-r" label="Tech1.12.R">
-      <title>Technology Detour (R)</title>
+      <title>Other options</title>
       <statement>
-        <p>Use R to select a simple random sample of 5 ID numbers from 1 to 268. Click on the hint below for instructions.</p>
+        <p>Or use R or JMP to select a simple random sample of 5 ID numbers from 1 to 268. Click on the hint below for instructions.</p>
       <hint>
         <title>R Instructions</title>
         <p>Create a vector of integers from 1 to 268 in the Console window:</p>
@@ -538,30 +538,24 @@ sample(ids, 5)
         </program>
         <p><alert>Tip:</alert> Use the up arrow to repeat this command if you are sharing computers. If you are using the ISCAM workspace, you should also reset the random number seed: <c>rm(.Random.seed)</c></p>
       </hint>
+      <hint>
+        <title>JMP Instructions</title>
+        <p>To select a simple random sample in JMP:</p>
+        <ul>
+          <li><p>Choose <alert>File > New > Data Table</alert>.</p></li>
+          <li><p>From the <alert>Rows</alert> menu, select <alert>Add Rows</alert>. Add 5 rows to the table. Press <alert>OK</alert>.</p></li>
+          <li><p>Right click the column heading. Select <alert>Formula</alert>.</p></li>
+          <li><p>Under <alert>Random</alert> select <alert>Random Integer</alert>.</p></li>
+          <li><p>Enter 1 and 268 as the bounds. Click <alert>OK</alert>.</p></li>
+        </ul>
+        <p><alert>Note:</alert> The Random Integer function will generate random integers within the specified range for each row in your data table.</p>
+      </hint>
       </statement>
       <solution>
         <p>Each time you run <c>sample(ids, 5)</c>, you will get 5 different random numbers between 1 and 268. Example output: 45, 162, 3, 210, 97</p>
       </solution>
     </exercise>
 
-    <exercise xml:id="tech-detour-srs-jmp" label="Tech1.12.JMP">
-      <title>Technology Detour (JMP)</title>
-      <statement>
-        <p>Use JMP to select a simple random sample of 5 ID numbers from 1 to 268. Click on the hint below for instructions.</p>
-      <hint>
-        <title>JMP Instructions</title>
-        <p>To select a simple random sample in JMP:</p>
-        <ol>
-          <li><p>Choose <c>File > New > Data Table</c>.</p></li>
-          <li><p>From the <c>Rows</c> menu, select <c>Add Rows</c>. Add 5 rows to the table. Press <c>OK</c>.</p></li>
-          <li><p>Right click the column heading. Select <c>Formula</c>.</p></li>
-          <li><p>Under <c>Random</c> select <c>Random Integer</c>.</p></li>
-          <li><p>Enter 1 and 268 as the bounds. Click <c>OK</c>.</p></li>
-        </ol>
-        <p><alert>Note:</alert> The Random Integer function will generate random integers within the specified range for each row in your data table.</p>
-      </hint>
-      </statement>
-    </exercise>
   </paragraphs>
 
   <p>Instead, we will use the <url href="https://www.rossmanchance.com/applets/OneSample.html?population=gettysburg">Sampling Words applet</url>.</p>
