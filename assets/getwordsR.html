@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://www.rossmanchance.com/applets/getWordsURL.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title> Generate Class-specific URL </title>
+</head>
+<body style="font-family: Helvetica,Arial,sans-serif;">
+<h2>Specify your class id here</h2>
+
+<input type="text" id="name" required="">
+<button onclick="generateURL()">Generate URL</button>
+
+<br><br>
+<div id="result" style="display: none;">
+Now use this url:
+<p id="url"></p>
+
+<script>
+function generateURL(){
+	var name=encodeURIComponent(document.getElementById("name").value);
+	var url = "https://www.rossmanchance.com/gettysburgDataCollection.html?instructor=" + name;
+	var resultDiv = document.getElementById("result");
+	var urlPara = document.getElementById("url");
+	
+	resultDiv.style.display = "block";
+	urlPara.innerHTML = "<a href='" + url + "' target='_blank'>" + url + "</a>";
+	}
+	</script>
+	</div></body></html>
