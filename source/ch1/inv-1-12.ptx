@@ -545,16 +545,35 @@ sample(ids, 5)
 
   <p>Instead, we will use the <url href="https://www.rossmanchance.com/applets/OneSample.html?population=gettysburg">Sampling Words applet</url>.</p>
   <ul>
-    <li><p>Several variables on the words in the Gettysburg Address have already been preloaded. Use the <c>Choose variable</c> pull-down menu to change the variable to <c>Short</c>. Verify our claim about the value of the population proportion.</p></li>
-    <li><p>Check the <c>Show Sampling Options</c> box. Specify 5 as the Sample size. Press <c>Draw Samples</c>.</p></li>
+    <li><p>Several variables on the words in the Gettysburg Address have already been preloaded. Use the <alert>Choose variable</alert> pull-down menu to change the variable to <c>Short</c>. Verify our claim about the value of the population proportion.</p></li>
+    <li><p>Check the <alert>Show Sampling Options</alert> box. Specify 5 as the <alert>Sample size</alert>. Press <alert>Draw Samples</alert>.</p></li>
   </ul>
-
+<interactive iframe="https://www.rossmanchance.com/applets/OneSample.html?population=gettysburg?hideExtras=1" width="160%" aspect="2:2"/>  
   <exercise xml:id="I1-12-m">
     <title>Sample proportion from random sample</title>
     <statement>
       <p>How many of the words selected by the computer were short?  Confirm the computer's calculation of the sample proportion and report below.</p>
       <p>Sample proportion: <var width="10"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string="^(0(\.0+)?|0\.2|0\.4|0\.6|0\.8|1(\.0+)?)$">
+          <feedback>
+            <p>Good! You've entered a valid proportion.</p>
+          </feedback>
+        </condition>
+        <condition string="^(0(\.\d+)?|1(\.0+)?|0?\.\d+)$">
+          <feedback>
+            <p>Your proportion should be a multiple of 0.20 (0, 0.2, 0.4, 0.6, 0.8, or 1.0) for a sample of 5 words.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Please enter a proportion between 0 and 1.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
   </exercise>
 
   <exercise xml:id="I1-12-n">
