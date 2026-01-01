@@ -3,17 +3,36 @@
   <title>Activity: Collecting Data</title>
 
   <introduction>
-    <p>Before beginning Investigation 1.12, you will collect a sample. Make sure you have the classID from your instructor.</p>
+    <p>Before beginning Investigation 1.12, you will collect a sample. Enter the class ID provided by your instructor below to access the data collection tool.</p>
   </introduction>
 
   <exercise xml:id="data-collection-1-12">
-    <title>Collect Your Sample of Words</title>
+    <title>Enter Your Class ID</title>
     <statement>
-      <p>Use the data collection tool below to select 10 representative words from the following passage. </p>
+      <p>Enter your class ID (provided by your instructor) and click Go to access the data collection tool:</p>
       
-      <interactive iframe="https://www.rossmanchance.com/applets/getWordsURL.html" width="100%" aspect="3:2"/>
+      <p>
+        <m>\text{Class ID: }</m>
+        <input>
+          <label>Class ID</label>
+          <var name="classid" width="20"/>
+        </input>
+        <button onclick="navigateToDataCollection()">Go</button>
+      </p>
       
-      <p><alert>Important:</alert> After submitting your words in the tool above, copy your list of words. You will need to paste them in Investigation 1.12 on the next page.</p>
+      <script>
+        function navigateToDataCollection() {
+          var classid = document.querySelector('input[name="classid"]').value;
+          if (classid &amp;&amp; classid.trim() !== '') {
+            var url = 'https://www.rossmanchance.com/gettysburgDataCollection.html?instructor=' + encodeURIComponent(classid.trim());
+            window.open(url, '_blank');
+          } else {
+            alert('Please enter a class ID');
+          }
+        }
+      </script>
+      
+      <p><alert>Important:</alert> After the data collection tool opens, select 10 representative words from the Gettysburg Address passage and submit them. Then copy your list of words - you will need to paste them in Investigation 1.12 on the next page.</p>
     </statement>
   </exercise>
 
