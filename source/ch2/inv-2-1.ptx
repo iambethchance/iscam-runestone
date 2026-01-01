@@ -81,21 +81,7 @@
     <statement>
       <p>Access the <url href="http://www.rossmanchance.com/iscam4/data/USbirthsJan2024.txt">USbirthsJan2024.txt</url> data file and check that you have 297,798 rows of data.</p>
       <p>Number of observations: <var width="10"/></p>
-      <setup>
-        <var>
-          <condition number="297798" tolerance="0">
-            <feedback>
-              <p>Correct! The dataset contains 297,798 observations.</p>
-            </feedback>
-          </condition>
-          <condition string=".*">
-            <feedback>
-              <p>Check that you loaded the data correctly. Use nrow() in R or check the data table size in JMP.</p>
-            </feedback>
-          </condition>
-        </var>
-      </setup>
-    <hint>
+          <hint>
       <title>R Instructions</title>
       <p><alert>Method 1: In RStudio using Import Dataset</alert></p>
       <p><ul>
@@ -164,6 +150,20 @@ attach(births)    # Now R knows what the "birthweight" variable is
       </ul></p>
     </hint>
     </statement>
+<setup>
+        <var>
+          <condition number="297798" tolerance="0">
+            <feedback>
+              <p>Correct! The dataset contains 297,798 observations.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Check that you loaded the data correctly. Use nrow() in R or check the data table size in JMP.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
     <solution>
       <p>297,798 observations</p>
     </solution>
