@@ -355,8 +355,9 @@
     </solution>
   </exercise>
 
-<paag
-  <p><term>Discussion:</term> You have again witnessed the fundamental principle of <term>sampling variability</term>: Values of sample statistics vary when one takes different samples from the same population. The distribution of statistics from a repeated sampling is often called a <term>sampling distribution</term>. In this case, we are treating each sample as an observational unit and the sample statistics as the variable of interest (so the graph label should be something like "sample proportion short"). Although we clearly expect there to be sample-to-sample variation in the statistic, there is a problem if there is a tendency to over or underestimate the parameter of interest.</p>
+<paagraphs><title>Discussion</title>
+  <p>You have again witnessed the fundamental principle of <term>sampling variability</term>: Values of sample statistics vary when one takes different samples from the same population. The distribution of statistics from a repeated sampling is often called a <term>sampling distribution</term>. In this case, we are treating each sample as an observational unit and the sample statistics as the variable of interest (so the graph label should be something like "sample proportion short"). Although we clearly expect there to be sample-to-sample variation in the statistic, there is a problem if there is a tendency to over or underestimate the parameter of interest.</p>
+</paragraphs>
 
   <assemblage>
     <title>Definition: Bias and Unbiased Sampling</title>
@@ -396,6 +397,10 @@
     <statement>
       <p>Could you have predicted that in advance? Explain.</p>
     </statement>
+    <response/>
+    <solution>
+      <p>Yes. When people are asked to select representative words, they tend to overlook short words like "a", "the" and "of", and instead select longer, more interesting words. Therefore, this sampling method tends to under-estimate the proportion of short words in the Gettysburg Address.</p>
+    </solution>
   </exercise>
 
   <exercise xml:id="I1-12-j">
@@ -481,6 +486,7 @@
       <p>What sampling method would give every word an equal chance of being selected?</p>
     </hint>
     </statement>
+    <response/>
     <solution>
       <p>Randomly! Use a random selection method such as assigning each word a number and using a random number generator to select which words to include in the sample. This gives every word an equal chance of being selected, regardless of its length or position.</p>
     </solution>
@@ -514,23 +520,23 @@
     <exercise xml:id="tech-detour-srs-r" label="Tech1.12.R">
       <title>Technology Detour (R)</title>
       <statement>
-        <p>Use R to select a simple random sample of 5 ID numbers from 1 to 268.</p>
-        <hint>
-          <title>R Instructions</title>
-          <p>Create a vector of integers from 1 to 268 in the Console window:</p>
-          <program language="r">
-            <code>
+        <p>Use R to select a simple random sample of 5 ID numbers from 1 to 268. Click on the hint below for instructions.</p>
+      <hint>
+        <title>R Instructions</title>
+        <p>Create a vector of integers from 1 to 268 in the Console window:</p>
+        <program language="r">
+          <code>
 ids = 1:268
-            </code>
-          </program>
-          <p>Take a simple random sample of 5 ID numbers:</p>
-          <program language="r">
-            <code>
+          </code>
+        </program>
+        <p>Take a simple random sample of 5 ID numbers:</p>
+        <program language="r">
+          <code>
 sample(ids, 5)
-            </code>
-          </program>
-          <p><alert>Tip:</alert> Use the up arrow to repeat this command if you are sharing computers. If you are using the ISCAM workspace, you should also reset the random number seed: <c>rm(.Random.seed)</c></p>
-        </hint>
+          </code>
+        </program>
+        <p><alert>Tip:</alert> Use the up arrow to repeat this command if you are sharing computers. If you are using the ISCAM workspace, you should also reset the random number seed: <c>rm(.Random.seed)</c></p>
+      </hint>
       </statement>
       <solution>
         <p>Each time you run <c>sample(ids, 5)</c>, you will get 5 different random numbers between 1 and 268. Example output: 45, 162, 3, 210, 97</p>
@@ -540,19 +546,19 @@ sample(ids, 5)
     <exercise xml:id="tech-detour-srs-jmp" label="Tech1.12.JMP">
       <title>Technology Detour (JMP)</title>
       <statement>
-        <p>Use JMP to select a simple random sample of 5 ID numbers from 1 to 268.</p>
-        <hint>
-          <title>JMP Instructions</title>
-          <p>To select a simple random sample in JMP:</p>
-          <ol>
-            <li><p>Choose <c>File > New > Data Table</c>.</p></li>
-            <li><p>From the <c>Rows</c> menu, select <c>Add Rows</c>. Add 5 rows to the table. Press <c>OK</c>.</p></li>
-            <li><p>Right click the column heading. Select <c>Formula</c>.</p></li>
-            <li><p>Under <c>Random</c> select <c>Random Integer</c>.</p></li>
-            <li><p>Enter 1 and 268 as the bounds. Click <c>OK</c>.</p></li>
-          </ol>
-          <p><alert>Note:</alert> The Random Integer function will generate random integers within the specified range for each row in your data table.</p>
-        </hint>
+        <p>Use JMP to select a simple random sample of 5 ID numbers from 1 to 268. Click on the hint below for instructions.</p>
+      <hint>
+        <title>JMP Instructions</title>
+        <p>To select a simple random sample in JMP:</p>
+        <ol>
+          <li><p>Choose <c>File > New > Data Table</c>.</p></li>
+          <li><p>From the <c>Rows</c> menu, select <c>Add Rows</c>. Add 5 rows to the table. Press <c>OK</c>.</p></li>
+          <li><p>Right click the column heading. Select <c>Formula</c>.</p></li>
+          <li><p>Under <c>Random</c> select <c>Random Integer</c>.</p></li>
+          <li><p>Enter 1 and 268 as the bounds. Click <c>OK</c>.</p></li>
+        </ol>
+        <p><alert>Note:</alert> The Random Integer function will generate random integers within the specified range for each row in your data table.</p>
+      </hint>
       </statement>
     </exercise>
   </paragraphs>
@@ -562,7 +568,7 @@ sample(ids, 5)
     <li><p>Several variables on the words in the Gettysburg Address have already been preloaded. Use the <alert>Choose variable</alert> pull-down menu to change the variable to <c>Short</c>. Verify our claim about the value of the population proportion.</p></li>
     <li><p>Check the <alert>Show Sampling Options</alert> box. Specify 5 as the <alert>Sample size</alert>. Press <alert>Draw Samples</alert>.</p></li>
   </ul>
-<interactive iframe="https://www.rossmanchance.com/applets/OneSample.html?population=gettysburg?hideExtras=1" width="160%" aspect="2:2"/>  
+<interactive iframe="https://www.rossmanchance.com/applets/OneSample.html?population=gettysburghideExtras=1" width="160%" aspect="2:2"/>  
   <exercise xml:id="I1-12-m">
     <title>Sample proportion from random sample</title>
     <statement>
