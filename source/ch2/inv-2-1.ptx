@@ -472,12 +472,12 @@ hist(births2$birthweight, xlab="birth weight")
     </statement>
       <setup>
         <var>
-          <condition string="(?i)^(yes|y)$">
+          <condition string="^(yes|y|Yes|Y|YES)$">
             <feedback>
               <p>Correct! The distribution does appear more symmetric after removing premature births.</p>
             </feedback>
           </condition>
-          <condition string="(?i).*(more|symmetric).*">
+          <condition string=".*(more|symmetric|More|Symmetric).*">
             <feedback>
               <p>You're on the right track. A simple "yes" answer is sufficient here.</p>
             </feedback>
