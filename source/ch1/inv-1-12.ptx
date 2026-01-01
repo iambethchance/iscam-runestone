@@ -313,11 +313,25 @@
       <interactive iframe="https://www.rossmanchance.com/applets/getDotplotURL.html" width="100%" aspect="4:1"/>
 
       <p>What does each dot in this dotplot represent?</p>
-      <p><var width="60"/></p>
-    </statement>
     <hint>
       <p>What would have to be done to add another dot to the graph?</p>
     </hint>
+      <p><var width="60"/></p>
+    </statement>
+    <setup>
+      <var>
+        <condition string="(?i).*\bsample\b.*\b(10|ten)\b.*\bwords?\b.*">
+          <feedback>
+            <p>Correct! Each dot represents a sample of 10 words.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Think about what each student contributed to the graph. What did each student select?</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Each dot in the dotplot represents the sample proportion of short words from one student's sample of 10 words. Since each student selected a different sample of 10 words, each calculated a different sample proportion, which appears as a separate dot in the distribution.</p>
     </solution>
@@ -326,12 +340,11 @@
   <exercise xml:id="I1-12-h">
     <title>Interpreting the sampling distribution</title>
     <statement>
-      <p>What does the graph in <xref ref="I1-12-g" text="local">Question 10</xref> tell you about whether this sampling method tends to produce representative samples?</p>
+      <p>What does the graph in <xref ref="I1-12-g" text="local">Question </xref> tell you about whether this sampling method tends to produce representative samples?</p>
 
     <hint>
       <p>Look at where the center of the distribution is. Is it close to the population proportion of 0.41?</p>
     </hint>
-      <p><var width="60"/></p>
     </statement>
     <solution>
       <p>Example results. Each dot in the graph represents the proportion of short words in a random sample of 10 words.</p>
@@ -342,6 +355,7 @@
     </solution>
   </exercise>
 
+<paag
   <p><term>Discussion:</term> You have again witnessed the fundamental principle of <term>sampling variability</term>: Values of sample statistics vary when one takes different samples from the same population. The distribution of statistics from a repeated sampling is often called a <term>sampling distribution</term>. In this case, we are treating each sample as an observational unit and the sample statistics as the variable of interest (so the graph label should be something like "sample proportion short"). Although we clearly expect there to be sample-to-sample variation in the statistic, there is a problem if there is a tendency to over or underestimate the parameter of interest.</p>
 
   <assemblage>
