@@ -442,6 +442,7 @@ hist(births2$birthweight, xlab="birth weight")
           <description>JMP output showing selected rows</description>
         </image>
     </hint>
+    </statement>
     <setup>
       <var>
         <condition number="265676" tolerance="0">
@@ -456,7 +457,6 @@ hist(births2$birthweight, xlab="birth weight")
         </condition>
       </var>
     </setup>
-    </statement>
     <solution>
       <p>265,676 observations</p>
       <p>R command: <c>births3=births2[which(births2$OEG == 2 ), ]</c></p>
@@ -468,6 +468,8 @@ hist(births2$birthweight, xlab="birth weight")
     <title>Assess symmetry after subsetting</title>
     <statement>
       <p>After this step do we have a more symmetric distribution? <var width="30"/></p>
+      <p>What is a downside to subsetting the dataset in this way?</p>
+    </statement>
       <setup>
         <var>
           <condition string="(?i)^(yes|y)$">
@@ -487,8 +489,6 @@ hist(births2$birthweight, xlab="birth weight")
           </condition>
         </var>
       </setup>
-      <p>What is a downside to subsetting the dataset in this way?</p>
-    </statement>
     <solution>
       <p>The distribution does look more symmetric, however we can no longer generalize any of our conclusions to premature babies.</p>
     </solution>
@@ -542,6 +542,7 @@ iscamsummary(births3$birthweight, digits=2)
       <p>Mean: <var width="10"/></p>
       <p>Standard deviation: <var width="10"/></p>
       <p>Skewness: <var width="10"/></p>
+      </statement>
       <setup>
         <var>
           <condition number="3337" tolerance="5">
@@ -595,8 +596,7 @@ iscamsummary(births3$birthweight, digits=2)
           </condition>
         </var>
       </setup>
-    </statement>
-    <response/>
+<!--    <response/> -->
   </exercise>
   
   <exercise xml:id="inv2-1-j2" label="I2.1j2">
@@ -721,6 +721,7 @@ table(within2sd)/length(births3$birthweight)
     <statement>
       <p>Report the percentage of the birthweights that fall within 2 standard deviations of the mean.</p>
       <p>Percentage: <var width="10"/>%</p>
+  </statement>
       <setup>
         <var>
           <condition number="95" tolerance="1">
@@ -745,7 +746,6 @@ table(within2sd)/length(births3$birthweight)
           </condition>
         </var>
       </setup>
-    </statement>
     <solution>
       <p>Using the mean of 3339.1 and the standard deviation of 461.6, our 2SD limits would be 2415.9 and 4262.3. So then our ratio is 252915/265676 ≈ 0.95</p>
     </solution>
@@ -821,7 +821,14 @@ qqline(birthweight, datax=TRUE)
     <title>Calculate low birth weight probability</title>
     <statement>
       <p>Use technology (e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html?hideExtras=1">Normal Probability Calculator applet</url>) to calculate the normal distribution probability that a randomly selected baby will be of low birth weight. (Be sure to make sure your answer is consistent with a well-labeled sketch with the shaded area of interest!)</p>
+    <hint>
+      <p>Expected output:</p>
+      <image source="images/Inv2-1q-sols.jpg" width="60%">
+        <description>Normal probability calculation for low birth weight</description>
+      </image>
+    </hint>
       <p>probability: <var width="10"/></p>
+      </statement>
       <setup>
         <var>
           <condition number="0.035" tolerance="0.005">
@@ -846,13 +853,6 @@ qqline(birthweight, datax=TRUE)
           </condition>
         </var>
       </setup>
-    </statement>
-    <hint>
-      <p>Expected output:</p>
-      <image source="images/Inv2-1q-sols.jpg" width="60%">
-        <description>Normal probability calculation for low birth weight</description>
-      </image>
-    </hint>
     <solution>
       <p>We estimate that in the long run about 3.5% of full term babies will be of low birth weight.</p>
     </solution>
