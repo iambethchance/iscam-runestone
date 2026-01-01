@@ -63,6 +63,32 @@
       <p>Number of short words: <var width="5"/></p>
       <p>Sample proportion of short words (divide by 10): <var width="10"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string="^(0|1|2|3|4|5|6|7|8|9|10)$">
+          <feedback>
+            <p>Good! You've entered a valid count.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Please enter a whole number between 0 and 10.</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="^(0(\.\d+)?|1(\.0+)?|0?\.\d+)$">
+          <feedback>
+            <p>Good! You've entered a valid proportion.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Please enter a proportion (decimal between 0 and 1). Remember to divide your count by 10.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
   </exercise>
 
   <exercise xml:id="I1-12-c">
