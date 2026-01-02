@@ -441,6 +441,18 @@
               </p>
             </feedback>
           </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Use the formula <m>z = \frac{\hat{p} - \pi_0}{\sqrt{\pi_0(1-\pi_0)/n}} = \frac{0.475 - 0.5}{\sqrt{0.5(0.5)/284}}</m></p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string=".*">
+            <feedback>
+              <p>Your interpretation is recorded.</p>
+            </feedback>
+          </condition>
         </var>
       </setup>
       <response/>
@@ -542,6 +554,11 @@
               </p>
             </feedback>
           </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. For a two-sided test, find <m>2P(Z &lt; -0.84)</m> or <m>2P(Z > 0.84)</m> using the standard normal distribution.</p>
+            </feedback>
+          </condition>
         </var>
       </setup>
       <solution>
@@ -552,9 +569,9 @@
     </exercise>
 
   <paragraphs xml:id="tech-detour-one-prop-z">
-    <title>Technology Detour - One Proportion z-test</title>
+    <title>Technology Detour - One Proportion <em>z</em>-test</title>
     <exercise xml:id="tech-detour-one-prop-z-combined" label="Tech1.8.combined">
-      <title>Conduct One Proportion z-test with Technology</title>
+      <title>Conduct One Proportion <em>z</em>-test with Technology</title>
       <statement>
         <p>
           Use technology (Applet, R, or JMP) to conduct a one proportion <em>z</em>-test for the Halloween study (<m>n</m> = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
@@ -619,7 +636,7 @@
         <sage language="r">
           <input>
 <![CDATA[
-source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251223');
+invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251223')));
 iscamonepropztest(135, 284, 0.5, "two.sided")
 ]]>
           </input>
@@ -878,7 +895,7 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
         <sage language="r">
           <input>
 <![CDATA[
-source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251223');
+invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251223')));
 iscambinomnorm(135, 284, 0.5, "two.sided")
 ]]>
           </input>
