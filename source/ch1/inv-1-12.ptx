@@ -38,12 +38,12 @@
     </statement>
     <setup>
       <var>
-        <condition string="^\s*\w+(\s*,?\s*\w+){9}\s*$">
+        <condition string="^\s*\w+(\s*,?\s*\w+){9}\s*$" correct="yes">
           <feedback>
             <p>Great! You've entered 10 words.</p>
           </feedback>
         </condition>
-        <condition string=".*">
+        <condition string=".*" correct="no">
           <feedback>
             <p>Please enter exactly 10 words from your sample, separated by spaces or commas.</p>
           </feedback>
@@ -65,24 +65,24 @@
     </statement>
     <setup>
       <var>
-        <condition string="^(0|1|2|3|4|5|6|7|8|9|10)$">
+        <condition string="^(0|1|2|3|4|5|6|7|8|9|10)$" correct="yes">
           <feedback>
             <p>Good! You've entered a valid count.</p>
           </feedback>
         </condition>
-        <condition string=".*">
+        <condition string=".*" correct="no">
           <feedback>
             <p>Please enter a whole number between 0 and 10.</p>
           </feedback>
         </condition>
       </var>
       <var>
-        <condition string="^(0(\.\d+)?|1(\.0+)?|0?\.\d+)$">
+        <condition string="^(0(\.\d+)?|1(\.0+)?|0?\.\d+)$" correct="yes">
           <feedback>
             <p>Good! You've entered a valid proportion.</p>
           </feedback>
         </condition>
-        <condition string=".*">
+        <condition string=".*" correct="no">
           <feedback>
             <p>Please enter a proportion (decimal between 0 and 1). Remember to divide your count by 10.</p>
           </feedback>
@@ -105,29 +105,29 @@
     </statement>
     <setup>
       <var>
-        <condition string="(?i)^.*\bwords?\b.*$">
+        <condition string="(?i)^.*\bwords?\b.*$" correct="yes">
           <feedback>
             <p>Correct! The observational units are words.</p>
           </feedback>
         </condition>
-        <condition string=".*">
+        <condition string=".*" correct="no">
           <feedback>
             <p>Think about what individual items you are examining in your sample.</p>
           </feedback>
         </condition>
       </var>
       <var>
-        <condition string="(?i)^((?!.*\blength\b).)*\b(short|whether|if|is)\b.*$">
+        <condition string="(?i)^((?!.*\blength\b).)*\b(short|whether|if|is)\b.*$" correct="yes">
           <feedback>
             <p>Correct! The variable describes whether each word is short or not.</p>
           </feedback>
         </condition>
-        <condition string="(?i).*\blength\b.*">
+        <condition string="(?i).*\blength\b.*" correct="no">
           <feedback>
             <p>Not quite. The variable is categorical (short or not short), not the numeric length.</p>
           </feedback>
         </condition>
-        <condition string=".*">
+        <condition string=".*" correct="no">
           <feedback>
             <p>Think about what characteristic you are recording about each word - specifically related to whether it's short.</p>
           </feedback>
@@ -303,6 +303,7 @@
       <p>Describe a way for deciding whether this sampling method tends to produce samples that are representative of the larger population for this parameter.</p>
       
     </statement>
+    <response/>
   </exercise>
 
   <exercise xml:id="I1-12-g">
@@ -320,12 +321,12 @@
     </statement>
     <setup>
       <var>
-        <condition string="(?i).*\bsample\b.*\b(10|ten)\b.*\bwords?\b.*">
+        <condition string="(?i).*\bsample\b.*\b(10|ten)\b.*\bwords?\b.*" correct="yes">
           <feedback>
             <p>Correct! Each dot represents a sample of 10 words.</p>
           </feedback>
         </condition>
-        <condition string=".*">
+        <condition string=".*" correct="no">
           <feedback>
             <p>Think about what each student contributed to the graph. What did each student select?</p>
           </feedback>
@@ -350,14 +351,14 @@
     <solution>
       <p>Example results. Each dot in the graph represents the proportion of short words in a random sample of 10 words.</p>
       <image source="images/Inv1.12(h)sols.jpg" width="80%">
-        <description>Solution graph for checkpoint h showing sampling distribution - Mean = 0.2019, SD = 0.1704, median = 0.20, <m>n</m> = 53</description>
+        <description>Solution graph showing sampling distribution - Mean = 0.2019, SD = 0.1704, median = 0.20, <m>n</m> = 53</description>
       </image>
       <p>Mean = 0.2019, SD = 0.1704, median = 0.20, <m>n</m> = 53.</p>
     </solution>
   </exercise>
 
 <paragraphs><title>Discussion</title>
-  <p>You have again witnessed the fundamental principle of <term>sampling variability</term>: Values of sample statistics vary when one takes different samples from the same population. The distribution of statistics from a repeated sampling is often called a <term>sampling distribution</term>. In this case, we are treating each sample as an observational unit and the sample statistics as the variable of interest (so the graph label should be something like "sample proportion short"). Although we clearly expect there to be sample-to-sample variation in the statistic, there is a problem if there is a tendency to over or underestimate the parameter of interest.</p>
+  <p>You have again witnessed the fundamental principle of <term>sampling variability</term>: Values of sample statistics vary when one takes different samples from the same population. The distribution of statistics from a repeated sampling is often called a <term>sampling distribution</term>. In this case, we are treating each sample as an observational unit and the sample statistics as the variable of interest (so the graph label should be something like "sample proportion short"). Although we clearly expect there to be sample-to-sample variation in the statistic, there is a problem if there is a tendency to over- or under-estimate the parameter of interest.</p>
 </paragraphs>
 
   <assemblage>
@@ -523,20 +524,14 @@
       <statement>
         <p>Or use R or JMP to select a simple random sample of 5 ID numbers from 1 to 268. Click on the hint below for instructions.</p>
       <hint>
-        <title>R Instructions</title>
-        <p>Create a vector of integers from 1 to 268 in the Console window:</p>
-        <program language="r">
+        <title>Sage Instructions</title>
+        <p>Create a list of integers from 1 to 268 and take a simple random sample of 5 ID numbers. Click "Run" to generate your sample. You can click "Run" multiple times to get different samples.</p>
+        <program language="sage" interactive="sage">
           <code>
-ids = 1:268
-          </code>
-        </program>
-        <p>Take a simple random sample of 5 ID numbers:</p>
-        <program language="r">
-          <code>
+ids = [1..268]
 sample(ids, 5)
           </code>
         </program>
-        <p><alert>Tip:</alert> Use the up arrow to repeat this command if you are sharing computers. If you are using the ISCAM workspace, you should also reset the random number seed: <c>rm(.Random.seed)</c></p>
       </hint>
       <hint>
         <title>JMP Instructions</title>
@@ -572,17 +567,17 @@ sample(ids, 5)
     </statement>
     <setup>
       <var>
-        <condition string="^(0(\.0+)?|0\.2|0\.4|0\.6|0\.8|1(\.0+)?)$">
+        <condition string="^(0(\.0+)?|0\.2|0\.4|0\.6|0\.8|1(\.0+)?)$" correct="yes">
           <feedback>
             <p>Good! You've entered a valid proportion.</p>
           </feedback>
         </condition>
-        <condition string="^(0(\.\d+)?|1(\.0+)?|0?\.\d+)$">
+        <condition string="^(0(\.\d+)?|1(\.0+)?|0?\.\d+)$" correct="no">
           <feedback>
             <p>Your proportion should be a multiple of 0.20 (0, 0.2, 0.4, 0.6, 0.8, or 1.0) for a sample of 5 words.</p>
           </feedback>
         </condition>
-        <condition string=".*">
+        <condition string=".*" correct="no">
           <feedback>
             <p>Please enter a proportion between 0 and 1.</p>
           </feedback>
@@ -614,7 +609,7 @@ sample(ids, 5)
     </statement>
     <response/>
     <solution>
-      <p>No one obtained a sample proportion equal to the population proportion (it is impossible to obtain a sample proportion of 0.41 when <m>n</m> = 5), but there was definitely sample to sample variation. Everyone did not get the same sample proportion of short words.</p>
+      <p>No one obtained a sample proportion equal to the population proportion (it is impossible to obtain a sample proportion of 0.41 when <m>n</m> = 5), but there was definitely sample to sample variation. Not everyone got the same sample proportion of short words.</p>
     </solution>
   </exercise>
 
@@ -629,7 +624,7 @@ sample(ids, 5)
     </solution>
   </exercise>
 
-  <p>Of course, to really see the long-term pattern to the sampling distribution of the statistic, we would like to take many more random samples from this population.</p>
+  <p>Of course, to really see the long-term pattern of the sampling distribution of the statistic, we would like to take many more random samples from this population.</p>
   
   <p>In the Sampling Words applet,</p>
   <ul>
@@ -705,7 +700,7 @@ sample(ids, 5)
     </solution>
   </exercise>
 
-  <p><term>Discussion:</term> Even with randomly drawn samples, sampling variability still exists (random sampling errors). Although not every random sample produces the same characteristics as the population, random sampling has the property that the sample statistics do not consistently overestimate the value of the parameter or consistently underestimate the value of the parameter (which is not changing). The means of the above distributions of sample proportions (the statistics) are both very close to 0.41, the population proportion (the parameter). Because the distributions of the sample statistic (as a random variable) are centered at the value of the population parameter, both graphs are considered to demonstrate an unbiased sampling method. With random samples, <m>E(\hat{p}) = \pi</m>, even when sampling from a finite population.</p>
+  <paragraphs><title>Discussion:</title> Even with randomly drawn samples, sampling variability still exists (random sampling errors). Although not every random sample produces the same characteristics as the population, random sampling has the property that the sample statistics do not consistently overestimate the value of the parameter or consistently underestimate the value of the parameter (which is not changing). The means of the above distributions of sample proportions (the statistics) are both very close to 0.41, the population proportion (the parameter). Because the distributions of the sample statistic (as a random variable) are centered at the value of the population parameter, both graphs are considered to demonstrate an unbiased sampling method. With random samples, <m>E(\hat{p}) = \pi</m>, even when sampling from a finite population.</paragraphs>
 
   <p>Notice that in judging bias we are concerned only with the mean of the distribution, not the shape or variability. However, if we do take larger samples (<m>n</m> = 10 rather than <m>n</m> = 5), we improve the precision of our statistics as they will tend to cluster even more tightly around the population proportion. In designing a study, it is critical to first make sure there is no sampling bias (use random sampling), then the sample size (not the number of samples) will determine how close the statistic can be expected to be to the parameter.</p>
 
@@ -720,7 +715,7 @@ sample(ids, 5)
   </assemblage>
 
   <paragraphs>
-    <p>Simple random samples are not as simple as they sound. They require a complete sampling frame and 100% response rate. This can be quite a challenge, especially if you are interested in individuals throughout the country for example. There are other probability sampling methods that are typically unbiased. See this discussion for a brief introduction to cluster sampling, multistage sampling, stratified sampling, and systematic sample. These techniques will come up later in the text and can be much more practical to carry out.</p>
+    <p>Simple random samples are not as simple as they sound. They require a complete sampling frame and 100% response rate. This can be quite a challenge, especially if you are interested in individuals throughout the country for example. There are other probability sampling methods that are typically unbiased. See this <url href="https://www.rossmanchance.com/stat301F20/lectures/sampling.html">discussion</url> for a brief introduction to cluster sampling, multistage sampling, stratified sampling, and systematic sample. These techniques will come up later in the text and can be much more practical to carry out.</p>
   </paragraphs>
 
 </exercises>
