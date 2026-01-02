@@ -38,7 +38,7 @@
     </statement>
     <setup>
       <var>
-        <condition string="^\s*\w+(\s*,?\s*\w+){9}\s*$" correct="yes">
+        <condition string="^\s*\w+([\s,]+\w+){9}\s*$" correct="yes">
           <feedback>
             <p>Great! You've entered 10 words.</p>
           </feedback>
@@ -524,14 +524,19 @@
       <statement>
         <p>Or use R or JMP to select a simple random sample of 5 ID numbers from 1 to 268. Click on the hint below for instructions.</p>
       <hint>
-        <title>Sage Instructions</title>
-        <p>Create a list of integers from 1 to 268 and take a simple random sample of 5 ID numbers. Click "Run" to generate your sample. You can click "Run" multiple times to get different samples.</p>
-        <program language="sage" interactive="sage">
-          <code>
-ids = [1..268]
+        <title>R/Sage Instructions</title>
+        <p>Create a list of integers from 1 to 268 and take a simple random sample of 5 ID numbers. Click "Evaluate (R)" to generate your sample. You can click "Evaluate" multiple times to get different samples.</p>
+        <sage language="r">
+          <input>
+<![CDATA[
+# Create a vector of IDs from 1 to 268
+ids <- 1:268
+
+# Take a simple random sample of 5 IDs
 sample(ids, 5)
-          </code>
-        </program>
+]]>
+          </input>
+        </sage>
       </hint>
       <hint>
         <title>JMP Instructions</title>
