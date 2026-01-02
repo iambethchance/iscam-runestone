@@ -328,12 +328,12 @@
     </statement>
     <setup>
       <var>
-        <condition string="(?i).*\bsample\b.*\b(10|ten)\b.*\bwords?\b.*" correct="yes">
+        <condition string="^.*[Ss]ample.*\b(10|ten)\b.*[Ww]ords?.*$">
           <feedback>
             <p>Correct! Each dot represents a sample of 10 words.</p>
           </feedback>
         </condition>
-        <condition string=".*" correct="no">
+        <condition string=".*">
           <feedback>
             <p>Think about what each student contributed to the graph. What did each student select?</p>
           </feedback>
