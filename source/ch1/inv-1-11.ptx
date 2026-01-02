@@ -226,7 +226,7 @@
       </statement>
       <setup>
         <var>
-          <condition string="^\s*(p\s*hat|p-hat|phat|\\hat\{p\}|\\hat\{?p\}?|p\^)\s*(>=|≥|&gt;=)\s*0?\.289\s*$">
+          <condition string="^\s*(p\s*hat|p-hat|phat|\\hat\{p\}|\\hat\{?p\}?|p\^)\s*(>|>=|≥|&gt;=)\s*0?\.289\s*$">
             <feedback><p>Correct! The rejection region is <m>\hat{p} \geq 0.289</m>.</p></feedback>
           </condition>
           <condition string=".*(0?\.289|289|29%).*">
@@ -237,11 +237,11 @@
           </condition>
         </var>
         <var>
-          <condition string="^\s*$">
-            <feedback><p>Please enter your interpretation.</p></feedback>
-          </condition>
-          <condition string=".+">
+          <condition string="^.+$" correct="yes">
             <feedback><p>Your answer has been saved.</p></feedback>
+          </condition>
+          <condition string="^\s*$" correct="no">
+            <feedback><p>Please enter your interpretation.</p></feedback>
           </condition>
         </var>
       </setup>
