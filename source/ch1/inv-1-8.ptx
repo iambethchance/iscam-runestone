@@ -448,7 +448,7 @@
           </condition>
         </var>
         <var>
-          <condition string=".*">
+          <condition string=".*" correct="yes">
             <feedback>
               <p>Your interpretation is recorded.</p>
             </feedback>
@@ -473,7 +473,7 @@
     <assemblage xml:id="one-proportion-z-test-definition">
       <title>Definition</title>
       <p>
-        The <term>One Proportion <em>z</em>-test</term><idx><h>One Proportion <em>z</em>-test</h><h>calculates standardized statistic using standard normal distribution</h></idx> calculates the standardized statistic as <m>z_0 = \frac{\hat{p} - \pi_0}{\sqrt{\pi_0(1-\pi_0)/n}}</m> and uses the standard normal distribution (mean 0, std dev 1) to find the p-value.
+        The <term>One Proportion <em>z</em>-test</term><idx><h>One Proportion <em>z</em>-test</h><h>calculates standardized statistic using standard normal distribution</h></idx> calculates the standardized statistic as <me>z_0 = \frac{\hat{p} - \pi_0}{\sqrt{\pi_0(1-\pi_0)/n}}</me> and uses the standard normal distribution (mean 0, std dev 1) to find the p-value.
       </p>
     </assemblage>
 
@@ -534,7 +534,7 @@
       <title>Calculate p-value from <em>z</em>-statistic</title>
       <statement>
         <p>
-          Use technology to find the corresponding p-value. [Hints: You can calculate the probability from the z-value using standard normal distribution (mean 0, SD 1), e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="rossmanchance.com/applets/2021/normcalc/NormCalc.html">Normal Probability Calculator</url> applet; or use the Technology Detour below to carry out a one-sample <em>z</em>-test.]
+          Use technology to find the corresponding p-value. [<em>Hints</em>: You can calculate the probability from the z-value using standard normal distribution (mean 0, SD 1), e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="rossmanchance.com/applets/2021/normcalc/NormCalc.html">Normal Probability Calculator</url> applet; or use the Technology Detour below to carry out a one-sample <em>z</em>-test.]
         </p>
         <p>
           p-value = <var width="10"/>
@@ -547,14 +547,14 @@
       </statement>
       <setup>
         <var>
-          <condition number="0.40" tolerance="0.02">
+          <condition number="0.40" tolerance="0.02" correct="yes">
             <feedback>
               <p>
                 Correct! For a two-sided test with <m>z = -0.84</m>, the p-value is approximately 0.40.
               </p>
             </feedback>
           </condition>
-          <condition string=".*">
+          <condition string=".*" correct="no">
             <feedback>
               <p>Incorrect. For a two-sided test, find <m>2P(Z &lt; -0.84)</m> or <m>2P(Z > 0.84)</m> using the standard normal distribution.</p>
             </feedback>
@@ -624,7 +624,7 @@
         </p>
         <p>
           <ul>
-            <li>observed = the observation of interest (count or proportion)</li>
+            <li><c>observed</c> = the observation of interest (count or proportion)</li>
             <li><m>n</m> = the sample size</li>
             <li>hypothesized = the hypothesized process probability (<m>\pi</m>)</li>
             <li>alternative = "less", "greater", or "two.sided"</li>
