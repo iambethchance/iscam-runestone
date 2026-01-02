@@ -447,10 +447,15 @@
             </feedback>
           </condition>
         </var>
-        <var correct="yes">
-          <condition string=".*">
+        <var width="50">
+          <condition string="^.+$" correct="yes">
             <feedback>
               <p>Your interpretation is recorded.</p>
+            </feedback>
+          </condition>
+          <condition string="^\s*$" correct="no">
+            <feedback>
+              <p>Please enter an interpretation.</p>
             </feedback>
           </condition>
         </var>
