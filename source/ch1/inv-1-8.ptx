@@ -580,9 +580,14 @@
       </statement>
       <setup>
         <var>
-          <condition number="0.40" tolerance="0.02">
+          <condition number="0.40" tolerance="0.02" correct="yes">
             <feedback>
               <p>Correct! For a two-sided test with <m>z = -0.84</m>, the p-value is approximately 0.40.</p>
+            </feedback>
+          </condition>
+          <condition string=".*" correct="no">
+            <feedback>
+              <p>Incorrect. For a two-sided test with <m>z = -0.84</m>, the p-value should be approximately 0.40.</p>
             </feedback>
           </condition>
         </var>
