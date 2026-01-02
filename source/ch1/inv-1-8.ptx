@@ -6,14 +6,14 @@
 <exercises xml:id="investigation1-8" hidden-label="yes">
     <title>The Study</title>
     
-    <sidebyside widths="75% 20%" valign="top">
+    <sidebyside widths="75% 20%" valign="top" margins = "0% 0%">
       <p>
         Obesity has become a widespread health concern, especially in children. Researchers believe that giving children easy access to food increases their likelihood of consuming extra calories.</p>
       <image source="images/inv1-8intro.jpeg" width="100%">
         <description>Halloween treats and toys</description>
       </image>
     </sidebyside>
-<p><url href="https://pubmed.ncbi.nlm.nih.gov/12859885/" visual="pubmed.ncbi.nlm.nih.gov/12859885">Schwartz, Chen, and Brownell (2003)</url> examined whether children would be willing to take a small toy instead of candy at when trick-or-treating on Halloween. They had seven homes in 5 different towns in Connecticut present children with a plate of 4 toys (stretch pumpkin men, large glow-in-the-dark insects, Halloween theme stickers, and Halloween theme pencils) and a plate of 4 different name brand candies (lollipops, fruit-flavored chewy candies, fruit-flavored crunchy wafers, and "sweet and tart" hard candies) to see whether children were more likely to choose the candy or the toy. The houses alternated whether the toys were on the left or on the right. Data were recorded for 284 children between the ages of 3 and 14 (who did not ask for both types of treats).
+<p>Schwartz, Chen, and Brownell (<url href="https://pubmed.ncbi.nlm.nih.gov/12859885/" visual="pubmed.ncbi.nlm.nih.gov/12859885">2003</url>) examined whether children would be willing to take a small toy instead of candy at when trick-or-treating on Halloween. They had seven homes in 5 different towns in Connecticut present children with a plate of 4 toys (stretch pumpkin men, large glow-in-the-dark insects, Halloween theme stickers, and Halloween theme pencils) and a plate of 4 different name brand candies (lollipops, fruit-flavored chewy candies, fruit-flavored crunchy wafers, and "sweet and tart" hard candies) to see whether children were more likely to choose the candy or the toy. The houses alternated whether the toys were on the left or on the right. Data were recorded for 284 children between the ages of 3 and 14 (who did not ask for both types of treats).
       </p>
     <exercise xml:id="I1-8-a" label="I1.8a">
       <title>Identify Sample and Variable</title>
@@ -140,7 +140,7 @@
           </condition>
         </var>
         <var>
-          <condition string="^\s*(!=|≠|&lt;&gt;|not equal|not equals)\s*$">
+          <condition string="^\s*(!=|≠|&lt;&gt;|/=|not equal|not equals)\s*$">
             <feedback>
               <p>Correct! The alternative hypothesis uses not equals.</p>
             </feedback>
@@ -275,7 +275,7 @@
         </p>
         <interactive xml:id="oneprop-applet-1-8-g" iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="3:2"/>
       <hint>
-        <p>Enter n=284 and observed=135. Check the Normal Approximation box to see the normal curve overlay.</p>
+        <p>Recall <m>n</m> = 284 and observed = 135. Check the Normal Approximation box to see the normal curve overlay.</p>
       </hint>
       </statement>
       <solution>
@@ -557,7 +557,7 @@
       <title>Conduct One Proportion z-test with Technology</title>
       <statement>
         <p>
-          Use technology (Applet, R, or JMP) to conduct a one proportion <em>z</em>-test for the Halloween study (<em>n</em> = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
+          Use technology (Applet, R, or JMP) to conduct a one proportion <em>z</em>-test for the Halloween study (<m>n</m> = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
         </p>
         <p>Enter the p-value you find: <var width="10"/></p>
       </statement>
@@ -571,23 +571,23 @@
         </var>
       </setup>
       <hint>
-        <title><url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url></title>
+        <title><url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference Applet</url></title>
         <sidebyside widths="55% 40%" valign="top">
           <stack>
             <p>
-              Use the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url> to conduct a one proportion <em>z</em>-test:
+              Use the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference Applet</url> to conduct a one proportion <em>z</em>-test:
             </p>
             <p>
               <ul>
-                <li>Enter the sample size and either the count or the proportion of successes, press <c>Calculate</c> to display sample data.</li>
-                <li>Check the box for <c>Test of significance</c></li>
+                <li>Enter the sample size and either the count or the proportion of successes, press <term index="no">Calculate</term> to display sample data.</li>
+                <li>Check the box for <term index="no">Test of significance</term></li>
                 <li>Specify the hypothesized value</li>
                 <li>Use the button to specify the direction of the alternative.</li>
-                <li>Press the <c>Calculate</c> button.</li>
+                <li>Press the <term index="no">Calculate</term> button.</li>
               </ul>
             </p>
             <p>
-              For the Halloween study, enter n = 284 and either 135 successes or 0.475 as the proportion. Set the hypothesized value to 0.5 and select a two-sided alternative.
+              For the Halloween study, enter <m>n</m> = 284 and either 135 successes or 0.475 as the proportion. Set the hypothesized value to 0.5 and select a two-sided alternative.
             </p>
           </stack>
           <stack>
@@ -608,7 +608,7 @@
         <p>
           <ul>
             <li>observed = the observation of interest (count or proportion)</li>
-            <li>n = the sample size</li>
+            <li><m>n</m> = the sample size</li>
             <li>hypothesized = the hypothesized process probability (<m>\pi</m>)</li>
             <li>alternative = "less", "greater", or "two.sided"</li>
           </ul>
@@ -660,7 +660,7 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
         <p>
           <ul>
             <li>Select Summary Stats</li>
-            <li>Enter n = 284, number of successes = 135</li>
+            <li>Enter <m>n</m> = 284, number of successes = 135</li>
             <li>Hypothesized proportion = 0.5</li>
             <li>Select "not equal" for two-sided test</li>
             <li>Significance level = 0.05</li>
@@ -787,7 +787,7 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
     </exercise>
 
     <p>
-      To make the normal probability (which is finding <m>P(X &lt; 135)</m>) closer to the binomial probability, which finds <m>P(X \leq 135) = P(X &lt; 135) + P(X = 135)</m>, we want to include more of the area under the normal curve above 135 in our calculation. A continuity correction does this by using the normal distribution to find <m>P(X &lt; 135.5)</m> instead. This does not change the binomial probability but should enlarge the normal probability.
+      To make the normal probability (which is finding <m>P(X &lt; 135)</m> closer to the binomial probability, which finds <m>P(X \leq 135) = P(X &lt; 135) + P(X = 135)</m>, we want to include more of the area under the normal curve above 135 in our calculation. A continuity correction does this by using the normal distribution to find <m>P(X &lt; 135.5)</m> instead. This does not change the binomial probability but should enlarge the normal probability.
     <ul><li>
      In the One Proportion Inference applet, specify 135.5 in the <alert>As Extreme As</alert> box (if using number of successes as the statistic, otherwise use <m>135.5/284 \approx 0.477</m> instead) and press <alert>Count</alert>. 
      </li></ul>
@@ -825,7 +825,7 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
       <title>Apply Continuity Correction with Technology</title>
       <statement>
         <p>
-          Use technology (Applet or R) to apply a continuity correction to the Halloween study data (<em>n</em> = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
+          Use technology (Applet or R) to apply a continuity correction to the Halloween study data (<m>n</m> = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
         </p>
         <p>Enter the corrected p-value you find: <var width="10"/></p>
       </statement>
@@ -847,11 +847,11 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
             </p>
             <p>
               <ul>
-                <li>Check the <strong>continuity correction</strong> box to apply the continuity correction to the standardized statistic and p-value.</li>
+                <li>Check the <term index="no">continuity correction</term> box to apply the continuity correction to the standardized statistic and p-value.</li>
               </ul>
             </p>
             <p>
-              For the Halloween study, after entering the data (n = 284, 135 successes), check the continuity correction box and observe how the p-value changes.
+              For the Halloween study, after entering the data (<m>n</m> = 284, 135 successes), check the <term index="no">continuity correction</term> box and observe how the p-value changes.
             </p>
           </stack>
           <image source="images/contcorr.png">
@@ -866,8 +866,8 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
         </p>
         <p>
           <ul>
-            <li>k = the observation of interest</li>
-            <li>n = the sample size</li>
+            <li><m>k</m> = the observation of interest</li>
+            <li><m>n</m> = the sample size</li>
             <li>prob = the process probability (<m>\pi</m>)</li>
             <li>direction = "less", "greater", or "two.sided"</li>
           </ul>
@@ -930,12 +930,12 @@ iscambinomnorm(135, 284, 0.5, "two.sided")
   <subsection xml:id="practice1-8A">
     <title>Practice Problem 1.8A</title>
     
-    <p>In <xref ref="investigation-1-6" text="custom">Investigation 1-6</xref>, Dr. Güntürkün conjectured that 2/3 of kissing couples lean right.</p>
+    <p>In <xref ref="investigation-1-6" text="custom">Investigation 1.6</xref>, Dr. Güntürkün conjectured that 2/3 of kissing couples lean right.</p>
     
     <exercise xml:id="PP1-8A-1" label="PP1.8A.1">
       <title>Normal Approximation Validity</title>
       <statement>
-        <p>Would the normal approximation (Central Limit Theorem) be valid for the kissing study in <xref ref="investigation-1-6"/>? Justify your answer.</p>
+        <p>Would the normal approximation (Central Limit Theorem) be valid for the kissing study in <xref ref="investigation-1-6" text="custom">Investigation 1.6</xref>? Justify your answer.</p>
       </statement>
       <response/>
     </exercise>

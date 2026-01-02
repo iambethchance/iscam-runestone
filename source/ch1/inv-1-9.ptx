@@ -1,7 +1,7 @@
 <section xml:id="investigation-1-9">
 <title>Investigation 1.9: Kissing the Right Way (cont.)</title>
 <introduction>
-<p><em>The normal approximation can also be used to approximate confidence intervals</em></p>
+<p><em>The normal approximation can also be used to approximate confidence intervals.</em></p>
 </introduction>
 <exercises xml:id="investigation1-9" hidden-label="yes">
     <title>Interval of plausible values based on Central Limit Theorem</title>
@@ -171,7 +171,7 @@
         </p>
         <hint>
           <p>
-            Add and subtract the distance from question 4 to the sample proportion.
+            Add and subtract the distance from Question 5 to the sample proportion.
           </p>
         </hint>
         <p>
@@ -257,7 +257,7 @@
         </p>
         <p>
           <ul>
-            <li><p>You can leave the mean set to zero and the standard deviation to 1 and the variable is "z-scores."</p></li>
+            <li><p>You can leave the mean set to zero and the standard deviation to 1 and the variable is "<em>z</em>-scores."</p></li>
             <li><p>Check the box next to the first <m>&lt;</m> sign and specify the probability value to correspond to the lower tail probability of interest: <m>(1-C)/2</m>. Press Enter/Return and it will display the negative <m>z^*</m>-value.</p></li>
           </ul>
         </p>
@@ -266,7 +266,7 @@
       <hint>
         <title>R/Sage Instructions</title>
         <p>
-          Use the interactive Sage cell below to find the critical value. The <c>iscaminvnorm</c> function takes the following inputs:
+          The <c>iscaminvnorm</c> function takes the following inputs:
         </p>
         <p>
           <ul>
@@ -279,7 +279,7 @@
         <sage language="r">
           <input>
 source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20231223');
-iscaminvnorm(prob1 = 0.95, direction = 'between')
+invisible(iscaminvnorm(prob1 = 0.95, direction = 'between')) 
           </input>
         </sage>
       </hint>
@@ -290,11 +290,11 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         </p>
         <p>
           <ol>
-            <li><p>From the Distribution pull-down menu, select <alert>Normal</alert> (at the top of the list)</p></li>
+            <li><p>From the Distribution pull-down menu, select <term index="no">Normal</term> (at the top of the list)</p></li>
             <li><p>Specify the values for the mean (0) and standard deviation (1)</p></li>
-            <li><p>Change the <alert>Type of Calculation</alert> to <c>Input probability and calculate quantiles</c></p></li>
-            <li><p>Select <c>Central Probability</c> and specify the confidence level (e.g., 0.95)</p></li>
-            <li><p>Press <alert>Enter/Return</alert>.</p></li>
+            <li><p>Change the <term index="no">Type of Calculation</term> to <em>Input probability and calculate quantiles</em></p></li>
+            <li><p>Select <term index="no">Central Probability</term> and specify the confidence level (e.g., 0.95)</p></li>
+            <li><p>Press <term index="no">Enter/Return</term>.</p></li>
           </ol>
         </p>
  <!--       <p>The critical value should be approximately 1.96.</p>-->
@@ -650,7 +650,7 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         <p>
           <m>2(1.645)(0.043) = 0.142</m>
         </p>
-        <image source="images/Inv1.9soll.png" width="80%">
+        <image source="images/Inv1.9soll.png" width="60%">
           <description>Comparison of 90% and 95% confidence intervals showing different widths with same midpoint</description>
         </image>
       </solution>
@@ -663,7 +663,7 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
       <title>One Proportion <em>z</em>-interval with Technology</title>
       <statement>
         <p>
-          Use technology (Applet, R, or JMP) to confirm your calculation of the one proportion <em>z</em>-test for the Halloween study (<em>n</em> = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
+          Use technology (Applet, R, or JMP) to confirm your calculation of the one proportion <em>z</em>-test for the Halloween study (<m>n</m> = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
         </p>
         <p>
           (Lower bound: <var width="10"/>, Upper bound: <var width="10"/>)
@@ -693,13 +693,13 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
       <hint>
         <title>JMP Instructions</title>
         <p>
-          <ol>
-            <li><p>Open the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal file</url> and select <alert>Confidence Interval for One Proportion</alert></p></li>
+          <ul>
+            <li><p>Open the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal file</url> and select <term index="no">Confidence Interval for One Proportion</term></p></li>
             <li><p>Specify Raw Data (column of outcomes) or Summary Stats</p></li>
-            <li><p>With Summary Stats, keep the radio button set to <alert>Normal Approximation</alert></p></li>
+            <li><p>With Summary Stats, keep the radio button set to <term index="no">Normal Approximation</term></p></li>
             <li><p>Enter the number of successes (80) and sample size (124)</p></li>
             <li><p>Set the confidence level to 90%</p></li>
-          </ol>
+          </ul>
         </p>
         <p>The output will show the 90% <m>z</m>-confidence interval.</p>
       </hint>
@@ -710,12 +710,12 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         </p>
         <p>
           <ol>
-            <li><p>Keep the pull-down menu set to <alert>One proportion</alert>.</p></li>
-            <li><p>Specify the sample size <m>n = 124</m> and either the count (80) or the sample proportion (0.645).</p></li>
-            <li><p>Press <alert>Calculate</alert>.</p></li>
-            <li><p>Check the box for <alert>Confidence interval</alert></p></li>
-            <li><p>Change the <alert>confidence level</alert> to 90%</p></li>
-            <li><p>Press the <alert>Calculate CI</alert> button</p></li>
+            <li><p>Keep the pull-down menu set to <term index="no">One proportion</term>.</p></li>
+            <li><p>Specify the sample size <m>n</m> = 124 and either the count (80) or the sample proportion (0.645).</p></li>
+            <li><p>Press <term index="no">Calculate</term>.</p></li>
+            <li><p>Check the box for <term index="no">Confidence interval</term></p></li>
+            <li><p>Change the <term index="no">confidence level</term> to 90%</p></li>
+            <li><p>Press the <term index="no">Calculate CI</term> button</p></li>
           </ol>
         </p>
         <p>The applet will display the 90% <m>z</m>-confidence interval.</p>
@@ -845,7 +845,7 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
             Use the previous <m>\hat{p} = 0.645</m>.
           </p>
           <p>
-            Solving for <m>n</m>, we would get <m>(1.96^2)(0.645)(0.355)/(0.03^2) = 977.4</m> or 978
+            Solving for <m>n</m>, we would get <m>(1.96^2)(0.645)(0.355)/(0.03^2) = 977.4</m> or <m>978</m>
           </p>
         </solution>
       </exercise>
@@ -887,7 +887,7 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
             Using 0.50 as the estimate:
           </p>
           <p>
-            Solving for <m>n</m>, we would get <m>(1.96^2)(0.5)(0.5)/(0.03^2) = 1067.1</m> or 1068.
+            Solving for <m>n</m>, we would get <m>(1.96^2)(0.5)(0.5)/(0.03^2) = 1067.1</m> or <m>1068</m>.
           </p>
         </solution>
       </exercise>
@@ -936,11 +936,11 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         </p>
       </statement>
       <response/>
-      <solution>
+<!--      <solution>
         <p>
           Yes, <m>z</m>-procedures are valid. We have 52 successes and 44 failures, both at least 10, so the validity condition is satisfied.
         </p>
-      </solution>
+      </solution> -->
     </exercise>
 
     <exercise xml:id="practice-1-9a-b" label="PP1.9A.2" number="2">
@@ -951,7 +951,7 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         </p>
       </statement>
       <response/>
-      <solution>
+<!--      <solution>
         <p>
           <m>\hat{p} = 52/96 = 0.542</m>, <m>\text{SE}(\hat{p}) = \sqrt{0.542(0.458)/96} = 0.051</m>
         </p>
@@ -961,7 +961,7 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         <p>
           We are 95% confident that the probability Muffin chases the blue ball is between 0.442 and 0.642.
         </p>
-      </solution>
+      </solution> -->
     </exercise>
 
     <exercise xml:id="practice-1-9a-c" label="PP1.9A.3" number="3">
@@ -972,7 +972,7 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         </p>
       </statement>
       <response/>
-      <solution>
+<!--      <solution>
         <p>
           Margin of error for 95%: 0.100
         </p>
@@ -982,7 +982,7 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         <p>
           The margin of error increases when we require more confidence (99% vs 95%).
         </p>
-      </solution>
+      </solution> -->
     </exercise>
 
     <exercise xml:id="practice-1-9a-d" label="PP1.9A.4">
@@ -993,7 +993,7 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         </p>
       </statement>
       <response/>
-      <solution>
+<!--      <solution>
         <p>
           Using <m>\pi = 0.542</m>:
         </p>
@@ -1003,7 +1003,7 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         <p>
           We would need approximately 9,552 trials to achieve a margin of error of 0.01 (1 percentage point) with 95% confidence.
         </p>
-      </solution>
+      </solution> -->
     </exercise>
   </subsection>
 
@@ -1018,11 +1018,11 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         </p>
       </statement>
       <response/>
-      <solution>
+<!--      <solution>
         <p>
           In an actual study, you never know for certain whether your specific interval contains the unknown parameter. The parameter is a fixed value, and your interval either contains it or doesn't. The confidence level refers to the long-run proportion of intervals that would contain the parameter if we repeated the study many times.
         </p>
-      </solution>
+      </solution> -->
     </exercise>
 
     <exercise xml:id="practice-1-9b-b" label="PP1.9B.2">
@@ -1033,11 +1033,11 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         </p>
       </statement>
       <response/>
-      <solution>
+<!--      <solution>
         <p>
           Standard deviation refers to the actual variability in the distribution (e.g., <m>\text{SD}(\hat{p}) = \sqrt{\pi(1-\pi)/n}</m>), which depends on the unknown parameter <m>\pi</m>. Standard error is an estimate of the standard deviation calculated from the sample data (e.g., <m>\text{SE}(\hat{p}) = \sqrt{\hat{p}(1-\hat{p})/n}</m>), where we substitute the sample proportion for the unknown parameter.
         </p>
-      </solution>
+      </solution> -->
     </exercise>
 
     <p>
