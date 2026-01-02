@@ -103,29 +103,29 @@
     </statement>
     <setup>
       <var>
-        <condition string="(?i)^.*\bwords?\b.*$" correct="yes">
+        <condition string="^.*[Ww]ords?.*$">
           <feedback>
             <p>Correct! The observational units are words.</p>
           </feedback>
         </condition>
-        <condition string=".*" correct="no">
+        <condition string=".*">
           <feedback>
             <p>Think about what individual items you are examining in your sample.</p>
           </feedback>
         </condition>
       </var>
       <var>
-        <condition string="(?i)^((?!.*\blength\b).)*\b(short|whether|if|is)\b.*$" correct="yes">
+        <condition string="^.*([Ss]hort|[Ww]hether|[Ii]f|[Ii]s).*$">
           <feedback>
             <p>Correct! The variable describes whether each word is short or not.</p>
           </feedback>
         </condition>
-        <condition string="(?i).*\blength\b.*" correct="no">
+        <condition string="^.*[Ll]ength.*$">
           <feedback>
             <p>Not quite. The variable is categorical (short or not short), not the numeric length.</p>
           </feedback>
         </condition>
-        <condition string=".*" correct="no">
+        <condition string=".*">
           <feedback>
             <p>Think about what characteristic you are recording about each word - specifically related to whether it's short.</p>
           </feedback>
