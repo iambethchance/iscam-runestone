@@ -90,8 +90,10 @@
         </p>
         <sage language="r">
           <input>
-invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20231223')));
+<![CDATA[
+invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20260101')))
 iscambinomtest(observed = 8, n = 10, alternative = "two.sided", conf.level = 0.95)
+]]>
           </input>
         </sage>
       </hint>
@@ -235,8 +237,10 @@ iscambinomtest(observed = 8, n = 10, alternative = "two.sided", conf.level = 0.9
         </p>
         <sage language="r">
           <input>
-invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20231223')));
+<![CDATA[
+invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20260101')))
 iscamonepropztest(observed = 8, n = 10, conf.level = 0.95)
+]]>
           </input>
         </sage>
       </hint>
@@ -382,9 +386,16 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
       Because the <m>z</m>-interval procedure has the sample size conditions of the Central Limit Theorem, there are scenarios where we should not use this <m>z</m>-procedure to determine the confidence interval. In these cases, one option is to use the Exact Binomial distribution (Clopper-Pearson) method.
     </p>
 <paragraphs>
-        <ul>
-          <li>Use the <alert>Method</alert> pull-down menu to select Exact Binomial and continue to press Sample until you generate at least 1,000 confidence intervals from a process with <m>\pi = 0.15</m> and <m>n = 10</m>.</li>
-        </ul>
+        <sidebyside widths="55% 40%">
+          <p>
+            <ul>
+              <li>Use the <alert>Method</alert> pull-down menu to select <alert>Exact Binomial</alert> and continue to press <alert>Sample</alert> until you generate at least 1,000 confidence intervals from a process with <m>\pi = 0.15</m> and <m>n = 10</m>.</li>
+            </ul>
+          </p>
+          <image source="images/inv1.10applet3.png" width="100%">
+            <description>Simulating Confidence Intervals applet showing Exact Binomial method</description>
+          </image>
+        </sidebyside>
 </paragraphs>
     <exercise xml:id="I1-10-g" label="I1.10g">
       <title>Evaluate Exact Binomial Coverage Rate</title>
@@ -485,12 +496,17 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
        <p>
           Investigate the reliability of the Plus Four procedure using the applet:
         </p>
-        <p>
-          <ul>
-            <li><p>Use the <alert>Method</alert> pull-down menu to change from Exact Binomial to Plus Four (95%).</p></li>
-            <li><p>Generate at least 1,000 confidence intervals from a process with <m>\pi = 0.15</m> and <m>n = 10</m>.</p></li>
-          </ul>
-        </p>
+        <sidebyside widths="55% 40%">
+          <p>
+            <ul>
+              <li><p>Use the <alert>Method</alert> pull-down menu to change from Exact Binomial to Plus Four (95%).</p></li>
+              <li><p>Generate at least 1,000 confidence intervals from a process with <m>\pi = 0.15</m> and <m>n = 10</m>.</p></li>
+            </ul>
+          </p>
+          <image source="images/inv1.10applet5.png" width="100%">
+            <description>Simulating Confidence Intervals applet showing Plus Four method</description>
+          </image>
+        </sidebyside>
  </paragraphs>
     <exercise xml:id="I1-10-i" label="I1.10i">
       <title>Evaluate Plus Four Coverage Rate</title>
@@ -498,21 +514,12 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
         <p>
           Is this coverage rate close to 95%? Is this an improvement over the (Wald) <m>z</m>-interval?
         </p>
-        <p>
-          <var width="60"/>
-        </p>
       </statement>
       <response/>
       <solution>
         <p>
           The coverage rate is again close to 95%, much better than the Wald procedure.
         </p>
-        <image source="images/inv1.10applet4.png" width="20%">
-          <description>Simulating Confidence Intervals applet showing Plus Four method results</description>
-        </image>
-        <image source="images/inv1.10applet5.png" width="20%">
-          <description>Simulating Confidence Intervals applet showing Plus Four coverage rate</description>
-        </image>
       </solution>
     </exercise>
 
