@@ -56,13 +56,13 @@
     <title>Calculating sample proportion of short words</title>
     <statement>
       <p>Looking at your 10 words, define "short" to be 3 or fewer letters. Determine how many of your 10 words are short and calculate the proportion of short words in your sample.</p>
-    <hint>
-      <p>Count the number of words with 3 or fewer letters, then divide by 10.</p>
-    </hint>
 
       <p>Number of short words: <var width="5"/></p>
       <p>Sample proportion of short words (divide by 10): <var width="10"/></p>
     </statement>
+    <hint>
+      <p>Count the number of words with 3 or fewer letters, then divide by 10.</p>
+    </hint>
     <setup>
       <var>
         <condition string="^(0|1|2|3|4|5|6|7|8|9|10)$" correct="yes">
@@ -95,14 +95,14 @@
     <title>Identifying observational units and variables</title>
     <statement>
       <p>Identify the observational units (objects being studied) and variable for this sample.</p>
-   <hint>
-      <p>What are the individual entities being measured? What characteristic are we recording about each one?</p>
-    </hint>
  
       <p>Observational units: <var width="40"/></p>
       <p>Variable: <var width="40"/></p>
       <p>Type:</p>
     </statement>
+    <hint>
+      <p>What are the individual entities being measured? What characteristic are we recording about each one?</p>
+    </hint>
     <setup>
       <var>
         <condition string="(?i)^.*\bwords?\b.*$" correct="yes">
@@ -567,7 +567,7 @@ sample(ids, 5)
     </statement>
     <setup>
       <var>
-        <condition string="^(0(\.0+)?|0\.2|0\.4|0\.6|0\.8|1(\.0+)?)$" correct="yes">
+        <condition string="^(0(\.0+)?|0?\.2|0?\.4|0?\.6|0?\.8|1(\.0+)?)$" correct="yes">
           <feedback>
             <p>Good! You've entered a valid proportion.</p>
           </feedback>
