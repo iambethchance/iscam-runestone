@@ -237,7 +237,10 @@
           </condition>
         </var>
         <var>
-          <condition string=".*">
+          <condition string="^\s*$">
+            <feedback><p>Please enter your interpretation.</p></feedback>
+          </condition>
+          <condition string=".+">
             <feedback><p>Your answer has been saved.</p></feedback>
           </condition>
         </var>
@@ -340,13 +343,10 @@
         </p>
 
     <exercise xml:id="I1-11-f" label="I1.11f">
-      <title>Interpret Power Value for π = 0.30</title>
+      <title>Interpret Output </title>
       <statement>
         <p>
           Review the applet output and provide a one-sentence interpretation of the normal approximation value, 0.6645.
-        </p>
-        <p>
-          Interpretation: <var width="60"/>
         </p>
       </statement>
       <response/>
@@ -527,7 +527,7 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
       <title>Small Sample Size with Exact Binomial</title>
       <setup>
         <var>
-          <condition string="^\s*(p\s*hat|p-hat|phat|\\hat\{p\}|\\hat\{?p\}?|p\^)\s*(>|&gt;)\s*0\.4(0)?\s*$">
+          <condition string="^\s*(p\s*hat|p-hat|phat|\\hat\{p\}|\\hat\{?p\}?|p\^)\s*(>|&gt;|>=|&gt;=)\s*0\.4(0)?\s*$">
             <feedback><p>Correct! The rejection region is <m>\hat{p} > 0.40</m>.</p></feedback>
           </condition>
           <condition string=".*(0\.4|40%|14|15).*">
@@ -573,7 +573,7 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
       </statement>
       <solution>
         <p>
-          Rejection region: <m>\hat{p} > 0.40</m> (or 15 or more successes out of 35)
+          Rejection region: <m>\hat{p} &gt; 0.40</m> (or 15 or more successes out of 35)
         </p>
         <p>
           Probability of Type I Error: approximately 0.036
