@@ -8,7 +8,7 @@
     <title>The Study</title>
     
     <p>
-      Statistician Jessica Utts has conducted extensive analysis of studies that have investigated psychic functioning. (Combining results across multiple studies, often to increase power, is called meta-analysis.) Utts (<url href="https://www.ics.uci.edu/~jutts/air.pdf" visual="ics.uci.edu/~jutts">1995</url>) cites research from Bem and Honorton (<url href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=D97D004003D79ED839A32B3CB8DC468B?doi=10.1.1.377.3258&amp;rep=rep1&amp;type=pdf" visual="citeseerx.ist.psu.edu">1994</url>) that analyzed studies that used a technique called ganzfeld.
+      Statistician Jessica Utts has conducted extensive analysis of studies that have investigated psychic functioning. (Combining results across multiple studies, often to increase power, is called meta-analysis.) Utts (<url href="https://www.ics.uci.edu/~jutts/air.pdf" visual="ics.uci.edu/~jutts">1995</url>) cites research from Bem and Honorton (<url href="https://koestlerunit.wordpress.com/wp-content/uploads/2015/06/bem-honorton-1994.pdf">1994</url>) that analyzed studies that used a technique called ganzfeld.
     </p>
     
     <p>
@@ -236,6 +236,11 @@
             <feedback><p>Report the rejection region in the form <m>\hat{p} \geq</m> [value].</p></feedback>
           </condition>
         </var>
+        <var>
+          <condition string=".*">
+            <feedback><p>Your answer has been saved.</p></feedback>
+          </condition>
+        </var>
       </setup>
       <statement>
         <p>
@@ -245,7 +250,6 @@
           Interpretation: <var width="60"/>
         </p>
       </statement>
-      <response/>
       <solution>
         <p>
           Rejection region: <m>\hat{p} \geq 0.289</m>
@@ -530,7 +534,7 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
             <feedback><p>You're on the right track. Express as <m>\hat{p} > 0.40</m> or report the number of successes (15 or more).</p></feedback>
           </condition>
           <condition string=".*">
-            <feedback><p>Check the applet output for the rejection region when n=35.</p></feedback>
+            <feedback><p>Check the applet output for the rejection region when <m>n</m> = 35.</p></feedback>
           </condition>
         </var>
         <var>
@@ -558,7 +562,7 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
       </setup>
       <statement>
         <p>
-          Rejection region: <var width="7"/>
+          Rejection region: <var width="30"/>
         </p>
         <p>
           Probability of Type I Error: <var width="7"/>
@@ -590,10 +594,7 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
       <title>Compare Power for Different Sample Sizes</title>
       <statement>
         <p>
-          How does the power in <xref ref="I1-11-i" text="custom">Question 9</xref> compare to what you found for power earlier? [<em>Hint:</em> see <xref ref="I1-11-g" text="custom">Question 7</xref>] Explain why this relationship makes intuitive sense.
-        </p>
-        <p>
-          <var width="60"/>
+          How does the power in <xref ref="I1-11-i" text="custom">Question 10</xref> compare to what you found for power earlier? [<em>Hint:</em> see <xref ref="I1-11-f" text="custom">Question 7</xref>] Explain why this relationship makes intuitive sense.
         </p>
       </statement>
       <response/>
@@ -624,12 +625,12 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
         <hint>
           <title>R Instructions</title>
           <p>
-            The <alert>iscambinompower</alert> and <alert>iscamnormpower</alert> functions use the following inputs:
+            The <c>iscambinompower</c> and <c>iscamnormpower</c> functions use the following inputs:
           </p>
           <p>
             <ul>
               <li><p>LOS = the desired level of significance (<m>\alpha</m>)</p></li>
-              <li><p>n = the sample size (number of trials)</p></li>
+              <li><p><m>n</m> = the sample size (number of trials)</p></li>
               <li><p>prob1 = the process probability (<m>\pi</m>) under the null hypothesis</p></li>
               <li><p>alternative = "less", "greater", or "two.sided"</p></li>
               <li><p>prob2 = the alternative probability of success</p></li>
@@ -653,7 +654,7 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
           <p>
             <ul>
               <li><p>Choose <alert>DOE > Sample Size Explorers > Power > Power for One Sample Proportion</alert></p></li>
-              <li><p>Specify the form of the alternative, the level of significance (Alpha), an alternative probability of success, and set the Test Method to Normal Approximation.</p></li>
+              <li><p>Specify the form of the alternative, the level of significance (<m>\alpha</m>), an alternative probability of success, and set the Test Method to Normal Approximation.</p></li>
               <li><p>Specify the Sample Size, the null probability of success (Assumed Proportion), and alternative probability of success (Alternative Proportion).</p></li>
               <li><p>Press <alert>Enter</alert>.</p></li>
             </ul>
@@ -1007,9 +1008,6 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
           What is the null hypothesis?
         </p>
       </hint>
-        <p>
-          Power: <var width="10"/>
-        </p>
       </statement>
       <response/>
       <solution>
@@ -1165,7 +1163,7 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
         <p>
           The table below shows the possible states of the world and the possible decisions we can make. Indicate where the types of errors fall in this table and where the test makes the correct decision.
         </p>
-          <tabular>
+          <tabular row-headers="yes">
             <row header="yes">
               <cell></cell>
               <cell colspan="2" halign="center">State of the world</cell>
