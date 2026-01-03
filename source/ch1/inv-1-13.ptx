@@ -11,7 +11,7 @@
 
 <exercises xml:id="investigation1-13" hidden-label="yes">
 <title>Estimating the Standard Deviation of Sample Proportions</title>
-  <p>In the previous investigation, we saw that if we take random samples from a finite population, the mean of the sampling distribution of sample proportions should equal the population proportion, i.e., <m>E(\hat{p}) = \pi</m>. But what about the standard deviation of the distribution of sample proportions?</p>
+  <p>In the previous investigation, we saw that if we take random samples from a finite population, the mean of the sampling distribution of sample proportions should equal the population proportion (i.e., <m>E(\hat{p}) = \pi</m>). But what about the standard deviation of the distribution of sample proportions?</p>
   <p>One option is the same formula we used before: <m>SD(\hat{p}) = \sqrt{\frac{\pi(1-\pi)}{n}}</m>.</p>
 
   <exercise xml:id="I1-13-a">
@@ -45,7 +45,13 @@
   <exercise xml:id="I1-13-interactive-applet">
     <title>Using the Sampling Words Applet</title>
     <statement>
-      <p>Use the applet below to generate a distribution of 10,000 random samples of size <m>n = 10</m>, calculating the sample proportion of words that are short each time.</p>
+      <p>Use the applet below or in a <url href="https://www.rossmanchance.com/applets/OneSample.html?population=gettysburg" newtab="true">new tab</url> to generate a distribution of 10,000 random samples of size <m>n = 10</m>, calculating the sample proportion of words that are short each time.</p>
+      <ul>
+      <li> Check the <alert>Show Sampling Options</alert> box.</li>
+      <li> Set the <alert>Number of Samples</alert> to 10000</li>
+      <li> Set the <alert>Sample size</alert> to 10 <li>
+      <li>Press <alert>Draw Samples</alert>.</p></li>
+  </ul>
       <interactive iframe="https://www.rossmanchance.com/applets/OneSample.html?population=gettysburg&amp;hideExtras=1" width="160%" aspect="3:2"/>
     </statement>
   </exercise>
@@ -53,14 +59,34 @@
   <exercise xml:id="I1-13-b">
     <title>Simulated standard deviation for <m>n</m> = 10</title>
     <statement>
-      <p>What does the applet report for the standard deviation of the sample proportions? Is it close to the theoretical value you calculated in <xref ref="I1-13-a" text="custom">Question 2</xref>?</p>
-  <hint>
-      <p>Set the sample size to 10, change Number of Samples to 9999 (for 10,000 total), and press Draw Samples.</p>
-    </hint>
-<!--  
+      <p>What does the applet report for the standard deviation of the sample proportions? Is it close to the theoretical value you calculated in <xref ref="I1-13-a" text="custom">Question 1</xref>?</p>
       <p>Applet standard deviation: <var width="15"/></p>
-      <p>Comparison: <var width="60"/></p> -->
+      <p>Comparison: <var width="60"/></p>
+    <hint>
+      <p>The theoretical value is approximately 0.156. The simulation result should be close but will vary slightly.</p>
+    </hint>
     </statement>
+    <setup>
+      <var>
+        <condition number="0.156" tolerance="0.02">
+          <feedback><p>Correct! Your simulated standard deviation is close to the theoretical value.</p></feedback>
+        </condition>
+        <condition number="0.156" tolerance="0.05">
+          <feedback><p>Your value is in a reasonable range, though simulation results can vary. Try running more samples if the value seems far off.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter the standard deviation value reported by the applet (a decimal number around 0.15).</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="^.*([Yy]es|[Cc]lose|[Ss]imilar|[Mm]atch).*$">
+          <feedback><p>Correct! The simulated and theoretical values should be close.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Consider whether the simulated value is close to the theoretical prediction of 0.156.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>Example results:
       <image source="images/Inv1.13-bsols.png" width="80%">
         <description>Screenshot showing the applet results with standard deviation close to 0.153</description>
@@ -68,11 +94,12 @@
       <p>Yes, the standard deviation in the simulation (here, 0.153) is close to the theoretical prediction (0.1555).</p>
     </solution>
   </exercise>
+<ul><li>Repeat <xref ref="I1-13-a" text="custom">Question 1</xref> and <xref ref="I1-13-b" text="custom">Question 2</xref> using <m>n = 100</m> as the sample size. </li></ul>
 
   <exercise xml:id="I1-13-c">
     <title>Comparing formula and simulation for <m>n</m> = 100</title>
     <statement>
-      <p>Repeat <xref ref="I1-13-a" text="custom">Question 2</xref> and <xref ref="I1-13-b" text="custom">Question 3</xref> using <m>n = 100</m> as the sample size. Are the theoretical and simulation-based standard deviations still similar?</p>
+      <p>Are the theoretical and simulation-based standard deviations still similar?</p>
     <hint>
       <p>Use the same formula with <m>n = 100</m>, then simulate in the applet.</p>
     </hint>
@@ -104,7 +131,7 @@
     </solution>
   </exercise>
 
-  <paragraphs><title>Discussion</title> <p>The theoretical formula we've been using for the standard deviation of sample proportions assumes that the probability of success is constant and the trials are independent (properties of a binomial random variable). Now that we are sampling without replacement from a finite population, the population characteristics do change slightly as we remove observations. The probability the first word is short will be <m>110/268 \approx 0.410</m>, but if that word is short, the probability the next one will also be short is now <m>109/267 \approx 0.408</m>. And if the first word is not short, the probability the second one will be is <m>110/267 \approx 0.412</m>. In other words, the probability of success (short word) for the 2nd trial depends on what we obtained in the first trial.</p>
+  <paragraphs><title>Discussion</title> <p>The theoretical formula we've been using for the standard deviation of sample proportions assumes that the probability of success is constant and the trials are independent (properties of a binomial random variable). Now that we are sampling without replacement from a finite population, the population characteristics do change slightly as we remove observations. The probability the first word is short will be <m>110/268 \approx 0.410</m>, but if that word is short, the probability the next one will also be short is now <m>109/267 \approx 0.408</m>. And if the first word is not short, the probability the second one will be is <m>110/267 \approx 0.412</m>. In other words, the probability of success (short word) for the second trial depends on what we obtained in the first trial.</p>
   </paragraphs>
 
   <assemblage>
