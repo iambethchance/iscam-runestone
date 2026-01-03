@@ -250,7 +250,6 @@
     </solution>
   </exercise>
 
-<paragraphs>
 <exercise xml:id="tech-detour-binomial-1-4b">
     <title>Binomial Test of Significance</title>
     <statement>
@@ -284,13 +283,13 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
       </hint>
       </statement>
     </exercise>
-  </paragraphs>
 
 <paragraphs xml:id="tech-detour-1-4">
 <title>Technology Detour – Calculating Binomial Probabilities</title>
 <p>You could use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm">One Proportion Inference applet</url> to use simulation or the binomial distribution to find the p-value. Many statistical software packages will carry out a "Binomial test" directly.</p>
 </paragraphs>
-  <exercise xml:id="tech-detour-binomial-1-4">
+
+<exercise xml:id="tech-detour-binomial-1-4">
     <title>Binomial Test of Significance</title>
     <statement>
       <p>Use R or JMP to find and report the p-value for the Heart Transplant study (8 deaths in 10 trials with hypothesized probability 0.15). Choose one set of instructions below by clicking on a hint. Report the p-value you find.</p>
@@ -393,7 +392,6 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
       <p>This extremely small p-value provides very strong evidence that the death rate at this hospital exceeds the national benchmark of 0.15.</p>
     </solution>
   </exercise>
-</paragraphs>
 
 
 <!--  <exercise xml:id="I1-4-7" label="I1.4.7">
@@ -415,7 +413,6 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
     </solution>
   </exercise>-->
 
-<paragraphs>
 <exercise xml:id="I1-4-8" label="I1.4.8">
     <title>Interpret the p-value</title>
     <statement>
@@ -484,7 +481,6 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
       <p>This is the probability of getting 8 or more "successes" out of 10 observations from a random process where the long-run probability of success equals 0.15.</p>
     </solution>
 </exercise>
-</paragraphs>
 
   <exercise xml:id="I1-4-9" label="I1.4.9">
     <title>Draw Conclusions</title>
@@ -502,7 +498,8 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
   
   <paragraphs>
     <title>Does it matter which outcome I choose to be success?</title>
-    
+</paragraphs>
+
     <exercise xml:id="I1-4-10" label="I1.4.10">
       <title>Alternative Success Definition</title>
       <statement>
@@ -588,13 +585,13 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
         </choice>
       </choices>
     </exercise>
-  </paragraphs>
   
   <paragraphs>
     <title>Does the sample size matter?</title>
     
     <p>Following up on the suspicion that the sample of size 10 aroused, these researchers proceeded to gather data on the previous 361 patients who received a heart transplant at this hospital dating back to 1986. They found 71 deaths within 30 days among heart transplantations.</p>
-    
+  </paragraphs>
+
     <exercise xml:id="I1-4-11" label="I1.4.11">
       <title>Calculate Sample Proportion</title>
       <statement>
@@ -774,8 +771,7 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
         <p><m>E(X)</m> = 10(0.15) = 1.5 or 361(0.15) = 54.15</p>
       </solution>
     </exercise>
-  </paragraphs>
-  
+ <pargraphs> 
   <p>The following graphs display the two theoretical probability distributions (for sample sizes <m>n = 10</m> and <m>n = 361</m>), both assuming the null hypothesis (<m>\pi = 0.15</m>) is true. These graphs show just how far the observed values (8 and 71) are from the expected value of the number of deaths (0.15 × 10 = 1.5 and 0.15 × 361 = 54.15) in each case. You should also note that the shape, center, and variability of the probability distribution for number of successes are all affected by the sample size <m>n</m>.</p>
   
   <p><alert>Binomial distributions for <em>n</em> = 10 and <em>n</em> = 361, both with π = 0.15</alert></p>
@@ -790,7 +786,8 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
   </sidebyside>
   
   <p>Keep in mind that of interest to us is the observed statistic's relative location in the null distribution. Thus, we are most interested in how variable the possible outcomes are from the "expected" outcome. The center of the distribution isn't all that interesting to us in answering the research question because we determine what the center of the distribution will be by how we specify the null hypothesis. Even the shape isn't all that interesting on its own in answering our research question.</p>
-  
+  </pargraphs>
+
   <exercise xml:id="I1-4-15" label="I1.4.15">
     <title>Distribution Feature Differences</title>
     <statement>
@@ -858,7 +855,9 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
     <title>Study Conclusions</title>
     <p>A sample mortality rate of 80% is indeed quite surprising, even with a sample size as small as 10, if the actual probability of death were 0.15. The (exact) p-value is 0.0000087, and the observed statistic is 5.76 standard deviations above the expected value, providing extremely strong evidence that the actual probability of death at this hospital is higher than the national benchmark of 0.15 (fewer than 1 in 100,000 sets of 10 operations would "randomly" have 8 or more deaths if <m>\pi = 0.15</m>). However, we must be cautious about doing this type of "data snooping," where we allowed a seemingly unusual observation to motivate our suspicion and then use the same data to support our suspicion. Once the initial suspicion has formed, we should collect new data on which to test the suspicion. The actual investigation examined all previous heart transplantations at this hospital over the previous 14 years. In this broader study, the p-value is 0.0097 and the observed number of successes is 2.48 standard deviations above the expected number, still providing very strong evidence against the null hypothesis. That is, there is strong evidence that this hospital's probability of mortality was higher than the 15% national benchmark. We must, however, be cautious because our study has not identified what factors could be leading to the higher rate. Perhaps this hospital tends to see sicker patients to begin with. The researchers actually performed a more sophisticated analysis that incorporated information about the risk factors of all the operations at this hospital and reached similar conclusions.</p>
   </assemblage>
+  
   </exercises>
+
   <subsection xml:id="practice1-4A">
     <title>Practice Problem 1.4A</title>
     
