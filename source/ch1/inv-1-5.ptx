@@ -455,47 +455,6 @@
     <statement>
       <p>Use technology (R or JMP) to calculate the two-sided p-value for the buttered toast study (19 successes in 48 trials with probability 0.5). Choose one set of instructions below by clicking on a hint.</p>
       <p>Two-sided p-value = <var width="10" /></p>
-    <hint>
-      <title>Applet Instructions</title>
-      <p>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" target="_blank">One Proportion Inference applet</url>:</p>
-      <p><ul>
-        <li><p>Check the <term index="no">two-sided</term> box</p></li>
-        <li><p>For the "smallest tail probability" approach, set the pull-down menu to "Tails" (finds tail value on other side that is first below the one-sided p-value)</p></li>
-        <li><p>For the "smallest p-value" approach, set the pull-down menu to "Individual" (sums all probabilities smaller than the observed)</p></li>
-        <li><p>(These will match when the distribution is symmetric.)</p></li>
-      </ul></p>
-    </hint>
-    <hint>
-      <title>R Instructions</title>
-      <p>Using the <c>iscambinomtest</c> function, specify <c>alternative = "two.sided"</c></p>
-      <p>(Smallest p-value method)</p>
-      <sage language="r">
-        <input>
-<![CDATA[
-# Load ISCAM functions from GitHub
-invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
-
-# Calculate two-sided binomial test
-# observed=19 successes, n=48 trials, hyp=0.5, alt="two.sided"
-iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
-]]>
-        </input>
-      </sage>
-      <p>The output will show:</p>
-      <ul>
-        <li><p>The observed number of successes (19) and sample size (48)</p></li>
-        <li><p>The hypothesized probability (0.5)</p></li>
-        <li><p>The two-sided p-value: 0.1934</p></li>
-        <li><p>A graph showing the binomial distribution with both tails shaded</p></li>
-      </ul>
-    </hint>
-    <hint>
-      <title>JMP Instructions</title>
-      <p><term index="no">Note:</term> The default two-sided test under Analyze > Distribution is not an "exact" binomial test.</p>
-        <image source="images/JMPtwosided.png" width="80%">
-          <description>Use radio button to create JMP two-sided binomial test output</description>
-        </image>
-    </hint>
     </statement>
     <setup>
       <var>
@@ -521,6 +480,46 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
         </condition>
       </var>
     </setup>
+    <hint>
+      <title>Applet Instructions</title>
+      <p>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" target="_blank">One Proportion Inference applet</url>:</p>
+      <p><ul>
+        <li><p>Check the <term index="no">two-sided</term> box</p></li>
+        <li><p>For the "smallest tail probability" approach, set the pull-down menu to "Tails" (finds tail value on other side that is first below the one-sided p-value)</p></li>
+        <li><p>For the "smallest p-value" approach, set the pull-down menu to "Individual" (sums all probabilities smaller than the observed)</p></li>
+        <li><p>(These will match when the distribution is symmetric.)</p></li>
+      </ul></p>
+    </hint>
+    <hint>
+      <title>R Instructions</title>
+      <p>Using the <c>iscambinomtest</c> function, specify <c>alternative = "two.sided"</c></p>
+      <p>(Smallest p-value method)</p>
+      <sage language="r">
+        <input>
+<![CDATA[
+# Load ISCAM functions from GitHub
+invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
+
+# Calculate two-sided binomial test
+# observed=19 successes, n=48 trials, hyp=0.5, alt="two.sided"
+iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
+]]> </input>
+      </sage>
+      <p>The output will show:</p>
+      <ul>
+        <li><p>The observed number of successes (19) and sample size (48)</p></li>
+        <li><p>The hypothesized probability (0.5)</p></li>
+        <li><p>The two-sided p-value: 0.1934</p></li>
+        <li><p>A graph showing the binomial distribution with both tails shaded</p></li>
+      </ul>
+    </hint>
+    <hint>
+      <title>JMP Instructions</title>
+      <p><term index="no">Note:</term> The default two-sided test under Analyze > Distribution is not an "exact" binomial test.</p>
+        <image source="images/JMPtwosided.png" width="80%">
+          <description>Use radio button to create JMP two-sided binomial test output</description>
+        </image>
+    </hint>
     <solution>
       <p>The two-sided p-value is 0.1934. The output table will show the two-sided p-value for the exact binomial test. For the buttered toast example with 19 successes out of 48 trials and hypothesized probability of 0.5, the two-sided p-value should be approximately 0.1934.</p>
     </solution>
