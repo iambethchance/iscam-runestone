@@ -268,7 +268,11 @@
       <p>The following code finds the p-value for the infant study study:</p>
       <sage language="r">
         <input>
-<![CDATA[invisible(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20231223'))
+<![CDATA[
+# Load ISCAM functions from GitHub
+invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R"))
+
+# Calculate p-value for heart transplant study
 iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
 ]]>
         </input>
