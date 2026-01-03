@@ -469,34 +469,36 @@
       <p>Use technology (R or JMP) to calculate the exact binomial probability for the Friend or Foe study (14 successes in 16 trials with probability 0.5). Choose one set of instructions below by clicking on a hint. Then adapt the instructions for the Wolf study.</p>
 <p>Enter the probability you find. <var width ="5"/></p>
       <hint>
-          <title>R Instructions</title>
-          <p>The <c>iscamonepropztest</c> function takes the following inputs:</p>
+          <title>Calculating Binomial Probabilities in R</title>
+          <p>Make sure you have the ISCAM Workspace loaded.</p>
+          
+          <p>The <c>iscambinomprob</c> function takes the following inputs:</p>
           <p><ul>
-            <li><p><c>observed</c> = the number of successes (or if less than 1, the sample proportion)</p></li>
-            <li><p><c>n</c> = the sample size</p></li>
-            <li><p><c>hypothesized</c> = the hypothesized probability of success under the null hypothesis</p></li>
-            <li><p><c>alternative</c> = "greater", "less", or "two.sided" for the direction of the alternative hypothesis</p></li>
-            <li><p><c>conf.level</c> = the confidence level (e.g., 0.90 for 90%, 0.95 for 95%)</p></li>
+            <li><p><c>k</c> = the observed value you want to calculate the probability about</p></li>
+            <li><p><c>n</c> = the sample size of the binomial distribution</p></li>
+            <li><p><c>prob</c> = the probability of success in the binomial distribution</p></li>
+            <li><p><c>lower.tail</c> = TRUE if you want the probability less than or equal to the observed value, FALSE if you want the probability greater than or equal to the observed value</p></li>
           </ul></p>
           
           <p>For the Friend or Foe study, run the following code:</p>
           <sage language="r">
             <input>
 <![CDATA[
-# Load ISCAM functions from GitHub (includes iscamonepropztest)
-source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R");
+# Load ISCAM functions from GitHub
+source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")
 
-# Calculate z-test and confidence interval
-# observed=14 successes, n=16 trials, hypothesized=0.5, alternative="greater", conf.level=0.90
-iscamonepropztest(observed=14, n=16, hypothesized=0.5, alternative="greater", conf.level=0.90)
+# Calculate binomial probability for 14 or more successes in 16 trials
+iscambinomprob(k=14, n=16, prob=0.5, lower.tail=FALSE)
+
+# Or without parameter names:
+# iscambinomprob(14, 16, 0.5, FALSE)
 ]]>
             </input>
           </sage>
           
-          <p>You should see the z-statistic, p-value, a normal distribution graph with shaded tail area, and a 90% confidence interval.</p>
+          <p>You should see both the probability appear in the output and a shaded binomial distribution graph.</p>
           
-          <p><alert>R Reminders: </alert>
-            The code loads the ISCAM functions from GitHub, then uses <c>iscamonepropztest</c>. The <c>alternative</c> parameter can be "greater", "less", or "two.sided". The <c>conf.level</c> parameter specifies the confidence level (0.90 for 90%, 0.95 for 95%, etc.).</p>
+          <p><alert>R Reminder:</alert> Yes, "FALSE" needs to be capitalized. The <c>lower.tail=FALSE</c> parameter gives you <m>P(X \geq k)</m>, while <c>lower.tail=TRUE</c> gives you <m>P(X \leq k)</m>.</p>
           
         </hint>
         <hint>
