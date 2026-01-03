@@ -293,7 +293,6 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
     <title>Binomial Test of Significance</title>
     <statement>
       <p>Use R or JMP to find and report the p-value for the Heart Transplant study (8 deaths in 10 trials with hypothesized probability 0.15). Choose one set of instructions below by clicking on a hint. Report the p-value you find.</p>
-      <p>p-value: <var width="15"/></p>
       <hint>
         <title>R Instructions</title>
         <p>The <c>iscambinomtest</c> function takes the following inputs:</p>
@@ -360,6 +359,31 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
         "Not equal to" alternatives will be discussed in Investigation 1.5.</p>
       </hint>
     </statement>
+      <p>p-value: <var width="15"/></p>
+    <setup>
+      <var>
+        <condition number="0.00000866" tolerance="0.000001">
+          <feedback>
+            <p>Correct! The p-value is 0.00000866 (or 8.665 × 10<m>^{-6}</m>). This extremely small p-value provides very strong evidence that the death rate at this hospital exceeds the national benchmark of 0.15.</p>
+          </feedback>
+        </condition>
+        <condition number="0.0000087" tolerance="0.0000001">
+          <feedback>
+            <p>Correct! The p-value is approximately 0.0000087 (or 8.7 × 10<m>^{-6}</m>). This extremely small p-value provides very strong evidence that the death rate at this hospital exceeds the national benchmark of 0.15.</p>
+          </feedback>
+        </condition>
+        <condition number="0.000009" tolerance="0.000001">
+          <feedback>
+            <p>Close! You've rounded the p-value. The more precise value is 0.00000866, but your answer correctly shows this is an extremely small p-value providing very strong evidence against the null hypothesis.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Not quite. Make sure you're finding P(X ≥ 8) when X ~ Binomial(10, 0.15) with a "greater than" alternative. The p-value should be very small (less than 0.00001).</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>For the Heart Transplant study with 8 deaths out of 10 trials and a hypothesized probability of 0.15:</p>
       <p>p-value = P(X ≥ 8) = 0.00000866 (or 8.665 × 10<m>^{-6}</m>)</p>
