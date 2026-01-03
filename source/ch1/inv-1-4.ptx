@@ -121,42 +121,7 @@
     </solution>
   </exercise>
 
-<exercise xml:id="tech-detour-binomial-1-4b">
-    <title>Binomial Test of Significance</title>
-    <statement>
-      <p>Use R or JMP to find and report the p-value for the Heart Transplant study (8 deaths in 10 trials with hypothesized probability 0.15). Choose one set of instructions below by clicking on a hint. Report the p-value you find.</p>
-      <p>p-value: <var width="15"/></p>
-      <hint>
-        <title>R Instructions</title>
-        <p>The <c>iscambinomtest</c> function takes the following inputs:</p>
-        <p><ul>
-          <li><p><c>observed</c> = Observed number of successes or proportion of successes</p></li>
-          <li><p><c>n</c> = Number of trials (sample size)</p></li>
-          <li><p><c>hypothesized</c> = Hypothesized probability</p></li>
-          <li><p><c>alternative</c> = Direction of alternative (e.g., "greater" or "less" or "two.sided")</p></li>
-        </ul></p>
-        
-        <p>The following code finds the p-value for the infant study study:</p>
-        <sage xml:id="sage-inv-1-4-1b" language="r">
-          <input>
-<![CDATA[
-# Load ISCAM functions from GitHub
-invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R"))
-
-# Calculate p-value for heart transplant study
-iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
-]]>
-          </input>
-        </sage>
-        
-        <p>You should see the p-value in the output as well as a graph of the binomial distribution with the upper tail shaded. Modify the code for the heart transplant study, in particular, what are you setting the hypothesis value to? </p>
-        
-        <p><term index="no">R Reminder:</term>
-        The <c>alternative</c> parameter controls the direction: "greater" tests if π > 0.5, "less" tests if π &lt; 0.5.</p>
-      </hint>
-      </statement>
-  </exercise>
-
+  
   <exercise xml:id="I1-4-3" label="I1.4.3">
     <title>Nothing Unusual Hypothesis</title>
     <statement>
@@ -201,7 +166,8 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
       <p><m>\pi = 0.15</m></p>
     </solution>
   </exercise>
-  
+
+
   <exercise xml:id="I1-4-4" label="I1.4.4">
     <title>Higher Rate Hypothesis</title>
     <statement>
@@ -246,7 +212,43 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
       <p><m>\pi > 0.15</m></p>
     </solution>
   </exercise>
-  
+
+<exercise xml:id="tech-detour-binomial-1-4b">
+    <title>Binomial Test of Significance</title>
+    <statement>
+      <p>Use R or JMP to find and report the p-value for the Heart Transplant study (8 deaths in 10 trials with hypothesized probability 0.15). Choose one set of instructions below by clicking on a hint. Report the p-value you find.</p>
+      <p>p-value: <var width="15"/></p>
+      <hint>
+        <title>R Instructions</title>
+        <p>The <c>iscambinomtest</c> function takes the following inputs:</p>
+        <p><ul>
+          <li><p><c>observed</c> = Observed number of successes or proportion of successes</p></li>
+          <li><p><c>n</c> = Number of trials (sample size)</p></li>
+          <li><p><c>hypothesized</c> = Hypothesized probability</p></li>
+          <li><p><c>alternative</c> = Direction of alternative (e.g., "greater" or "less" or "two.sided")</p></li>
+        </ul></p>
+        
+        <p>The following code finds the p-value for the infant study study:</p>
+        <sage xml:id="sage-inv-1-4-1b" language="r">
+          <input>
+<![CDATA[
+# Load ISCAM functions from GitHub
+invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R"))
+
+# Calculate p-value for heart transplant study
+iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
+]]>
+          </input>
+        </sage>
+        
+        <p>You should see the p-value in the output as well as a graph of the binomial distribution with the upper tail shaded. Modify the code for the heart transplant study, in particular, what are you setting the hypothesis value to? </p>
+        
+        <p><term index="no">R Reminder:</term>
+        The <c>alternative</c> parameter controls the direction: "greater" tests if π > 0.5, "less" tests if π &lt; 0.5.</p>
+      </hint>
+      </statement>
+  </exercise>
+
   <exercise xml:id="I1-4-5" label="I1.4.5">
     <title>State Hypotheses</title>
     <statement>
