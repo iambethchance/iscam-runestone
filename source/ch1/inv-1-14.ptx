@@ -265,9 +265,24 @@
         </condition>
       </var>
       <var>
-        <condition string=".*">
+        <condition string="^\s*\(?0?\.188\s*-\s*0?\.20?\s*\)\s*\/\s*0?\.009[0-9]?\s*$">
           <feedback>
-            <p>Show your calculation of the <em>z</em>-statistic.</p>
+            <p>Correct! You've shown the formula with the simplified denominator.</p>
+          </feedback>
+        </condition>
+        <condition string="^\s*\(?0?\.188\s*-\s*0?\.20?\s*\)\s*\/\s*sqrt.*0?\.20?\s*\*\s*0?\.80?\s*\/\s*1771.*">
+          <feedback>
+            <p>Correct! You've shown the complete formula.</p>
+          </feedback>
+        </condition>
+        <condition string=".*0?\.188.*0?\.20.*0?\.009[0-9].*">
+          <feedback>
+            <p>Good! Your formula includes the key values (.188, .20, and .0095).</p>
+          </feedback>
+        </condition>
+        <condition string=".+">
+          <feedback>
+            <p>Your response is recorded. The formula should show: (0.188 - 0.20) / 0.0095 or (0.188 - 0.20) / sqrt(0.20*0.80/1771)</p>
           </feedback>
         </condition>
       </var>
