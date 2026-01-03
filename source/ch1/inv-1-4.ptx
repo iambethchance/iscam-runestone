@@ -1,4 +1,4 @@
-<section xml:id="investigation-1-4">
+<section xml:id="inv-1-4">
 <title>Investigation 1.4: Heart Transplant Mortality</title>
 <introduction>
 <p><em>In this investigation, you will explore what factors of a study impact the magnitude of the p-value.</em></p>
@@ -255,19 +255,19 @@
     <statement>
       <p>Use R or JMP to find and report the p-value for the Heart Transplant study (8 deaths in 10 trials with hypothesized probability 0.15). Choose one set of instructions below by clicking on a hint. Report the p-value you find.</p>
       <p>p-value: <var width="15"/></p>
-    <hint>
-      <title>R Instructions</title>
-      <p>The <c>iscambinomtest</c> function takes the following inputs:</p>
-      <p><ul>
-        <li><p><c>observed</c> = Observed number of successes or proportion of successes</p></li>
-        <li><p><c>n</c> = Number of trials (sample size)</p></li>
-        <li><p><c>hypothesized</c> = Hypothesized probability</p></li>
-        <li><p><c>alternative</c> = Direction of alternative (e.g., "greater" or "less" or "two.sided")</p></li>
-      </ul></p>
-      
-      <p>The following code finds the p-value for the infant study study:</p>
-      <sage xml:id="sage-inv-1-4-1" language="r">
-        <input>
+      <hint>
+        <title>R Instructions</title>
+        <p>The <c>iscambinomtest</c> function takes the following inputs:</p>
+        <p><ul>
+          <li><p><c>observed</c> = Observed number of successes or proportion of successes</p></li>
+          <li><p><c>n</c> = Number of trials (sample size)</p></li>
+          <li><p><c>hypothesized</c> = Hypothesized probability</p></li>
+          <li><p><c>alternative</c> = Direction of alternative (e.g., "greater" or "less" or "two.sided")</p></li>
+        </ul></p>
+        
+        <p>The following code finds the p-value for the infant study study:</p>
+        <sage xml:id="sage-inv-1-4-1" language="r">
+          <input>
 <![CDATA[
 # Load ISCAM functions from GitHub
 invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R"))
@@ -275,36 +275,36 @@ invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runeston
 # Calculate p-value for heart transplant study
 iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
 ]]>
-        </input>
-      </sage>
-      
-      <p>You should see the p-value in the output as well as a graph of the binomial distribution with the upper tail shaded. Modify the code for the heart transplant study, in particular, what are you setting the hypothesis value to? </p>
-      
-      <p><term index="no">R Reminder:</term>
-      The <c>alternative</c> parameter controls the direction: "greater" tests if π > 0.5, "less" tests if π &lt; 0.5.</p>
-    </hint>
-    <hint>
-      <title>JMP Instructions</title>
-      <p>Using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url> (Download this file to your computer and then open the .jrn file to launch JMP.)</p>
-      
-      <sidebyside widths="48% 48%" margins="2%">
-        <stack>
-          <p><ul>
-            <li><p>Choose <term index="no">Analyze > Distribution</term></p>
-              <p><ul>
-                <li><p><em>With raw data</em>, drag the variable to the <term index="no">Y, Columns</term> slot. Press <term index="no">OK</term>.</p></li>
-                <li><p><em>With summarized data</em>, move the column with the category names to the Y, columns slot and move the column with the counts to the Freq slot. Press <term index="no">OK</term>.</p></li>
-              </ul></p>
-            </li>
-          </ul></p>
-        </stack>
-        <image source="images/JMPTestp.png">
-          <description>JMP Test Probabilities dialog showing setup for binomial test</description>
-        </image>
-      </sidebyside>
-      
-      <sidebyside widths="48% 48%" margins="2%">
-        <stack>
+          </input>
+        </sage>
+        
+        <p>You should see the p-value in the output as well as a graph of the binomial distribution with the upper tail shaded. Modify the code for the heart transplant study, in particular, what are you setting the hypothesis value to? </p>
+        
+        <p><term index="no">R Reminder:</term>
+        The <c>alternative</c> parameter controls the direction: "greater" tests if π > 0.5, "less" tests if π &lt; 0.5.</p>
+      </hint>
+      <hint>
+        <title>JMP Instructions</title>
+        <p>Using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url> (Download this file to your computer and then open the .jrn file to launch JMP.)</p>
+        
+        <sidebyside widths="48% 48%" margins="2%">
+          <stack>
+            <p><ul>
+              <li><p>Choose <term index="no">Analyze > Distribution</term></p>
+                <p><ul>
+                  <li><p><em>With raw data</em>, drag the variable to the <term index="no">Y, Columns</term> slot. Press <term index="no">OK</term>.</p></li>
+                  <li><p><em>With summarized data</em>, move the column with the category names to the Y, columns slot and move the column with the counts to the Freq slot. Press <term index="no">OK</term>.</p></li>
+                </ul></p>
+              </li>
+            </ul></p>
+          </stack>
+          <image source="images/JMPTestp.png">
+            <description>JMP Test Probabilities dialog showing setup for binomial test</description>
+          </image>
+        </sidebyside>
+        
+        <sidebyside widths="48% 48%" margins="2%">
+          <stack>
           <p><ul>
             <li><p>From the variable's hot spot, select <term>Test Probabilities</term>.</p></li>
             <li><p>Specify the hypothesized probability of success for the category you want to define as success (only).</p></li>
@@ -316,12 +316,12 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
           <description>JMP output showing binomial test results with p-value</description>
         </image>
       </sidebyside>
-      
-      <p>JMP assumes "success" to be the first category alphabetically unless you specify otherwise with <term>Cols > Column Info > Column Properties > Value Ordering</term>.</p>
-      
-      <p><term index="no">Note:</term>
-      "Not equal to" alternatives will be discussed in Investigation 1.5.</p>
-    </hint>
+        
+        <p>JMP assumes "success" to be the first category alphabetically unless you specify otherwise with <term>Cols > Column Info > Column Properties > Value Ordering</term>.</p>
+        
+        <p><term index="no">Note:</term>
+        "Not equal to" alternatives will be discussed in Investigation 1.5.</p>
+      </hint>
     </statement>
     <setup>
       <var>
@@ -477,7 +477,7 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
       </hint>      
       <hint>
         <title>R option</title>
-        <sage xml:id="sage-inv-1-4-2" language="r">
+        <sage language="r">
           <input>
 <![CDATA[
 # Load ISCAM functions from GitHub
