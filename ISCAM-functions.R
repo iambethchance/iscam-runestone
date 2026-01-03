@@ -159,7 +159,8 @@ iscambinomprob <- function(k, n, prob, lower.tail, verbose = TRUE) {
 
 # Binomial with normal approximation and continuity correction visualization
 iscambinomnorm <- function(k, n, prob, direction) {
-  withr::local_par(mar = c(5, 3, 1, 1))
+  old_par <- par(mar = c(5, 3, 1, 1))
+  on.exit(par(old_par), add = TRUE)
 
   thisx <- 0:n
   phat <- thisx / n
@@ -1018,7 +1019,8 @@ iscamonepropztest <- function(
   alternative = "two.sided",
   conf.level = NULL
 ) {
-  withr::local_par(mar = c(5, 3, 1, 1))
+  old_par <- par(mar = c(5, 3, 1, 1))
+  on.exit(par(old_par), add = TRUE)
 
   if (observed < 1) {
     observed = round(n * observed)
@@ -1166,9 +1168,11 @@ iscamonepropztest <- function(
       )
     }
   }
-  withr::local_par(mfrow = c(3, 1))
+  old_par <- par(mfrow = c(3, 1))
+  on.exit(par(old_par), add = TRUE)
   if (length(conf.level) > 1) {
-    withr::local_par(mar = c(4, 2, 1.5, 4), mfrow = c(length(conf.level), 1))
+    old_par <- par(mar = c(4, 2, 1.5, 4), mfrow = c(length(conf.level), 1))
+    on.exit(par(old_par), add = TRUE)
   }
   lower = 0
   upper = 0
@@ -1595,7 +1599,8 @@ iscamtwopropztest <- function(
 # ==============================================================================
 
 iscamhyperprob <- function(k, total, succ, n, lower.tail = TRUE) {
-  withr::local_par(mar = c(4, 4, 2, 1))
+  old_par <- par(mar = c(4, 4, 2, 1))
+  on.exit(par(old_par), add = TRUE)
 
   if (k < 1 & k > 0) {
     k <- round((k * (total - n) * n + succ * n) / total)
