@@ -306,15 +306,13 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
         
         <p>The following code finds the p-value for the infant study study:</p>
         <sage xml:id="sage-inv-1-4-1" language="r">
-          <input>
-<![CDATA[
+          <input><![CDATA[
 # Load ISCAM functions from GitHub
 invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R"))
 
 # Calculate p-value for heart transplant study
 iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
-]]>
-          </input>
+]]></input>
         </sage>
         
         <p>You should see the p-value in the output as well as a graph of the binomial distribution with the upper tail shaded. Modify the code for the heart transplant study, in particular, what are you setting the hypothesis value to? </p>
@@ -391,7 +389,7 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
       <p>p-value = P(X ≥ 8) = 0.00000866 (or 8.665 × 10<m>^{-6}</m>)</p>
       <p>This extremely small p-value provides very strong evidence that the death rate at this hospital exceeds the national benchmark of 0.15.</p>
     </solution>
-  </exercise>
+</exercise>
 
 
 <!--  <exercise xml:id="I1-4-7" label="I1.4.7">
@@ -771,7 +769,8 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
         <p><m>E(X)</m> = 10(0.15) = 1.5 or 361(0.15) = 54.15</p>
       </solution>
     </exercise>
- <pargraphs> 
+ 
+ <paragraphs> 
   <p>The following graphs display the two theoretical probability distributions (for sample sizes <m>n = 10</m> and <m>n = 361</m>), both assuming the null hypothesis (<m>\pi = 0.15</m>) is true. These graphs show just how far the observed values (8 and 71) are from the expected value of the number of deaths (0.15 × 10 = 1.5 and 0.15 × 361 = 54.15) in each case. You should also note that the shape, center, and variability of the probability distribution for number of successes are all affected by the sample size <m>n</m>.</p>
   
   <p><alert>Binomial distributions for <em>n</em> = 10 and <em>n</em> = 361, both with π = 0.15</alert></p>
@@ -786,7 +785,7 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
   </sidebyside>
   
   <p>Keep in mind that of interest to us is the observed statistic's relative location in the null distribution. Thus, we are most interested in how variable the possible outcomes are from the "expected" outcome. The center of the distribution isn't all that interesting to us in answering the research question because we determine what the center of the distribution will be by how we specify the null hypothesis. Even the shape isn't all that interesting on its own in answering our research question.</p>
-  </pargraphs>
+  </paragraphs>
 
   <exercise xml:id="I1-4-15" label="I1.4.15">
     <title>Distribution Feature Differences</title>
