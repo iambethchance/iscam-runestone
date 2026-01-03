@@ -635,9 +635,9 @@
         <p>
           <ul>
             <li><c>observed</c> = the observation of interest (count or proportion)</li>
-            <li><m>n</m> = the sample size</li>
-            <li>hypothesized = the hypothesized process probability (<m>\pi</m>)</li>
-            <li>alternative = "less", "greater", or "two.sided"</li>
+            <li><c>n</c> = the sample size</li>
+            <li><c>hypothesized</c> = the hypothesized process probability (<m>\pi</m>)</li>
+            <li><c>alternative</c> = "less", "greater", or "two.sided"</li>
           </ul>
         </p>
         <p>
@@ -646,7 +646,7 @@
         <sage language="r">
           <input>
 <![CDATA[
-suppressMessages(suppressWarnings(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251223')))
+invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251223')));
 iscamonepropztest(135, 284, 0.5, "two.sided")
 ]]>
           </input>
@@ -905,7 +905,7 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
         <sage language="r">
           <input>
 <![CDATA[
-suppressMessages(suppressWarnings(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251223')))
+invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251223')));
 iscambinomnorm(135, 284, 0.5, "two.sided")
 ]]>
           </input>
