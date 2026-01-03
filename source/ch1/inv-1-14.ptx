@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="inv-1-14" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Investigation 1.14: Teen Hearing Loss</title>
+<introduction><em>Most surveys are taken on a sample selected from a very larger population ...</em></introduction>
 
 <exercises xml:id="investigation1-14" hidden-label="yes">
     <title>The Study</title>
   <sidebyside widths="65% 30%" margins="0% 0%" valign="top">
-    <p><url href="https://jamanetwork.com/journals/jama/fullarticle/186427">Shargorodsky, Curhan, Curhan, and Eavey (2010)</url> examined hearing loss data for 1771 participants from the National Health and Nutrition Examination Survey (NHANES, 2005-6), aged 12<ndash/>19 years. ("NHANES provides nationally representative cross-sectional data on the health status of the civilian, non-institutionalized U.S. population.") A standardized health exam was given along with the survey and through audiometric measurements, 333 teens were found to have at least some level of hearing loss (average hearing threshold level at least 15 dB in either ear). </p>
+    <p>Shargorodsky, Curhan, Curhan, and Eavey (<url href="https://jamanetwork.com/journals/jama/fullarticle/186427">2010</url>) examined hearing loss data for 1771 participants from the National Health and Nutrition Examination Survey (NHANES, 2005-6), aged 12<ndash/>19 years. ("NHANES provides nationally representative cross-sectional data on the health status of the civilian, non-institutionalized U.S. population.") A standardized health exam was given along with the survey and through audiometric measurements, 333 teens were found to have at least some level of hearing loss (average hearing threshold level at least 15 dB in either ear). </p>
     <image source="images/Inv1.14intro.png">
       <description>Image related to teen hearing loss study</description>
     </image>
@@ -136,7 +137,7 @@
         </condition>
       </var>
       <var>
-        <condition string="^\s*(!=|≠|&lt;&gt;|not equal|not equals)\s*$">
+        <condition string="^\s*(!=|≠|&lt;&gt;|\=|not equal|not equals)\s*$">
           <feedback>
             <p>Correct! The alternative hypothesis uses not equals for a two-sided test.</p>
           </feedback>
@@ -230,23 +231,43 @@
         </condition>
       </var>
       <var>
+        <condition number="-1.26" tolerance="0.02">
+          <feedback>
+            <p>Correct! The z-statistic is approximately -1.26.</p>
+          </feedback>
+        </condition>
+        <condition number="-1.26" tolerance="0.10">
+          <feedback>
+            <p>Close! Check your calculation. The z-statistic should be approximately -1.26.</p>
+          </feedback>
+        </condition>
         <condition string=".*">
           <feedback>
-            <p>Enter the z-statistic from your technology or calculation.</p>
+            <p>Not quite. Use <m>z = \frac{\hat{p} - \pi_0}{\sqrt{\frac{\pi_0(1-\pi_0)}{n}}} = \frac{0.188 - 0.20}{\sqrt{\frac{0.20(0.80)}{1771}}}</m></p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.207" tolerance="0.005">
+          <feedback>
+            <p>Correct! The two-sided p-value is approximately 0.207.</p>
+          </feedback>
+        </condition>
+        <condition number="0.207" tolerance="0.02">
+          <feedback>
+            <p>Close! The two-sided p-value should be approximately 0.207.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Enter the two-sided p-value from your technology (should be around 0.21).</p>
           </feedback>
         </condition>
       </var>
       <var>
         <condition string=".*">
           <feedback>
-            <p>Enter the p-value from your technology.</p>
-          </feedback>
-        </condition>
-      </var>
-      <var>
-        <condition string=".*">
-          <feedback>
-            <p>Show your calculation of the z-statistic.</p>
+            <p>Show your calculation of the <em>z</em>-statistic.</p>
           </feedback>
         </condition>
       </var>
