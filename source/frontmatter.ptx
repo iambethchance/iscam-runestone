@@ -42,6 +42,12 @@
     
     <p>This interactive textbook provides multiple ways to work with data and statistical software:</p>
     
+    <paragraphs xml:id="applets">
+      <title>Interactive Applets</title>
+      <p>Many investigations in this book include interactive applets created with JavaScript. These applets allow you to explore statistical concepts dynamically within the context of the investigation. These applets are designed to help you visualize data, understand distributions, and see the effects of changing parameters in statistical models.</p>
+      
+      <p>We have embedded most of the applets directly on the Runestone pages and they should run across all platforms and browsers. In many cases, you may want to open the applet in a separate tab or window so you can toggle between the instructions and the applet and so you can see the full width of the applet all at once. </p>
+</paragraphs>
     <paragraphs xml:id="interactive-r-cells">
       <title>Interactive R Cells (Sage)</title>
       
@@ -52,53 +58,36 @@
       <p><alert>Advantages:</alert></p>
       <ul>
         <li><p>No software installation required</p></li>
-        <li><p>Works on any device with a web browser</p></li>
+        <li><p>Works on any device with a web browser, however Mac users may have additional error messages pop up. Closing those messages (perhaps pressing <c>Evaluate (R)</c> again)and even supressing them (e.g., Chrome) should allow the R code to render.  You will probably also often see a message in the output starting with <c><rpy2></c> which can be safely ignored.</p></li>
         <li><p>Great for quick explorations and learning concepts</p></li>
       </ul>
       
       <p><alert>Limitations:</alert></p>
       <ul>
-        <li><p>Cannot load external data files or URLs directly</p></li>
-        <li><p>Best suited for small to medium datasets (created inline)</p></li>
+        <li><p>Additional wrapper functions are used to load the ISCAM data files and applets.  These are not required for using R with say RStudio. So if your goal is to become more proficient in R, you may want to copy and paste (and adjust) the commands into an R script. </p></li>
         <li><p>Each cell runs independently (no persistent workspace)</p></li>
       </ul>
     </paragraphs>
     
-    <paragraphs xml:id="using-rstudio">
-      <title>Using RStudio</title>
-      
-      <p>For more extensive data analysis, especially with larger datasets, we recommend using RStudio:</p>
-      
+    <paragraphs xml:id="rstudio">
+      <title>Using RStudio</title>      
       <p><alert>Options:</alert></p>
       <ul>
         <li><p><url href="https://posit.cloud">Posit Cloud</url> (formerly RStudio Cloud) - free browser-based RStudio</p></li>
         <li><p><url href="https://posit.co/download/rstudio-desktop/">RStudio Desktop</url> - install on your computer</p></li>
       </ul>
-      
-      <p><alert>Advantages:</alert></p>
-      <ul>
-        <li><p>Can load data from files and URLs</p></li>
-        <li><p>Persistent workspace across your session</p></li>
-        <li><p>Full R package ecosystem available</p></li>
-        <li><p>Better for larger datasets and complex analyses</p></li>
-      </ul>
-      
-      <p>Throughout the text, we provide code for both the interactive Sage cells and RStudio, clearly marked so you know which to use.</p>
     </paragraphs>
     
     <paragraphs xml:id="data-files">
       <title>Accessing Data Files</title>
       
-      <p>Data files for this textbook are available at:</p>
+      <p>Data files for this textbook are available at <url href="https://www.rossmanchance.com/iscam4/data/">ISCAM Data Files</url>.</p>
+      
+      <p>You can access the ISCAM workspace functions used in this text by either:</p>
       <ul>
-        <li><p><url href="https://www.rossmanchance.com/iscam3/data/">ISCAM Data Files</url></p></li>
+        <li><p>Using <c>load(url("http://www.rossmanchance.com/iscam4/ISCAMData.RData"))</c> in RStudio</p></li>
+        <li><p>Installing the package: <c>install.packages("remotes"); remotes::install_github("ISCAM4/ISCAM")</c> and then use <c>library(ISCAM)</c></p></li>
       </ul>
-      
-      <p><alert>For Interactive Sage Cells:</alert> Since Sage cells cannot access external URLs, we create small datasets directly in the code using <c>data.frame()</c>. This is ideal for learning concepts with manageable examples.</p>
-      
-      <p><alert>For RStudio:</alert> You can load data files directly from URLs using <c>read.table(url(...))</c> or download files to your computer and use <c>file.choose()</c> to browse for them.</p>
-      
-      <p><alert>For Larger Datasets:</alert> When working with substantial datasets or conducting more complex analyses, we recommend transitioning to RStudio where you have full access to R's capabilities and can manage larger data files effectively.</p>
     </paragraphs>
     
     <paragraphs xml:id="jmp-software">
