@@ -250,40 +250,6 @@
     </solution>
   </exercise>
 
-<exercise xml:id="tech-detour-binomial-1-4b">
-    <title>Binomial Test of Significance</title>
-    <statement>
-      <p>Use R or JMP to find and report the p-value for the Heart Transplant study (8 deaths in 10 trials with hypothesized probability 0.15). Choose one set of instructions below by clicking on a hint. Report the p-value you find.</p>
-      <p>p-value: <var width="15"/></p>
-      <hint>
-        <title>R Instructions</title>
-        <p>The <c>iscambinomtest</c> function takes the following inputs:</p>
-        <ul>
-          <li><p><c>observed</c> = Observed number of successes or proportion of successes</p></li>
-          <li><p><c>n</c> = Number of trials (sample size)</p></li>
-          <li><p><c>hypothesized</c> = Hypothesized probability</p></li>
-          <li><p><c>alternative</c> = Direction of alternative (e.g., "greater" or "less" or "two.sided")</p></li>
-        </ul>
-        
-        <p>The following code finds the p-value for the infant study study:</p>
-        <sage xml:id="sage-inv-1-4-1b" language="r">
-          <input><![CDATA[
-# Load ISCAM functions from GitHub
-invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R"))
-
-# Calculate p-value for heart transplant study
-iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
-]]></input>
-        </sage>
-        
-        <p>You should see the p-value in the output as well as a graph of the binomial distribution with the upper tail shaded. Modify the code for the heart transplant study, in particular, what are you setting the hypothesis value to? </p>
-        
-        <p><term index="no">R Reminder:</term>
-        The <c>alternative</c> parameter controls the direction: "greater" tests if π &gt; 0.5, "less" tests if π &lt; 0.5.</p>
-      </hint>
-      </statement>
-    </exercise>
-
 <paragraphs xml:id="tech-detour-1-4">
 <title>Technology Detour – Calculating Binomial Probabilities</title>
 <p>You could use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm">One Proportion Inference applet</url> to use simulation or the binomial distribution to find the p-value. Many statistical software packages will carry out a "Binomial test" directly.</p>
@@ -496,29 +462,31 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
   
   <paragraphs>
     <title>Does it matter which outcome I choose to be success?</title>
+    <p>Suppose that we had focused on <em>survival</em> for 30 days rather than death within 30 days as a "success" in this study. </p>
 </paragraphs>
 
     <exercise xml:id="I1-4-10" label="I1.4.10">
       <title>Alternative Success Definition</title>
       <statement>
-        <p>Suppose that we had focused on <em>survival</em> for 30 days rather than death within 30 days as a "success" in this study. Describe how the hypotheses would change and how the calculation of the binomial p-value would change. Then go ahead and calculate and interpret the exact binomial p-value with this set-up. How does its value compare to your answer in the previous question? How (if at all) does your conclusion change?</p>
+        <p>Describe how the hypotheses would change and how the calculation of the binomial p-value would change. Then go ahead and calculate and interpret the exact binomial p-value with this set-up. How does its value compare to your answer in the previous question? How (if at all) does your conclusion change?</p>
 <!--        
         <p><m>\pi</m> represents: <var width="50" /></p>
         <p>H₀: <var width="20" /></p>
         <p>Hₐ: <var width="20" /></p>
-        <p>p-value = P(X <var width="20" />)</p>
-        
+        <p>p-value = P(X <var width="20" />)</p>        
         <p>Interpretation: The p-value is the probability of obtaining <var width="10" /> or <var width="10" /> successes in <var width="10" /> observations from a random process, assuming <var width="50" />.</p>-->
       <hint>
         <p>If survival is success, then the benchmark becomes 0.85. How many survived out of 10?</p>
       </hint>      
+</statement>
+      <response/>      
       <hint>
         <title>R option</title>
         <sage language="r">
           <input>
 <![CDATA[
 # Load ISCAM functions from GitHub
-invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R"))
+source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")
 
 # Calculate binomial test FILL IN THE MISSING VALUES
 iscambinomtest(observed=, n=, hypothesized=, alternative="")
@@ -530,9 +498,6 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
         <title>One Proportion Inference applet</title>
         <interactive xml:id="oneprop-applet-1-4-11d" iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="4:5"/>
       </hint>
-</statement>
-      <response/>
-      
       <solution>
         <p>The null hypothesis would be <m>H_0: \pi = 0.85</m> and the alternative hypothesis would be <m>H_a: \pi &lt; 0.85</m>.</p>
           <image source="images/inv1.4sols2.jpg" width="60%">
@@ -652,18 +617,16 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
             <hint>
         <title>R option</title>
         <sage xml:id="sage-inv-1-4-3" language="r">
-          <input>
-<![CDATA[
+          <input><![CDATA[
 # Load ISCAM functions from GitHub
-invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R"))
+source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")
 
 # Calculate binomial test
 iscambinomtest(observed=, n=, hypothesized=, alternative="")
-]]>
-          </input>
-        </sage>
-      </hint>
-      <hint>
+]]></input>
+      </sage>
+    </hint>
+    <hint>
         <title>One Proportion Inference applet</title>
         <interactive xml:id="oneprop-applet-1-4-11e" iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="4:5"/>
       </hint>
