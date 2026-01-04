@@ -29,6 +29,13 @@
     <title>Identify study components</title>
     <statement>
       <p>Identify the variable and population of interest, the sample, and the sampling frame in this study. Also define the parameter and statistic, in words and symbols, and indicate any values that you know.</p>
+      <p>Variable: <var width="40"/> </p>
+      <p>Type: <var width="20"/></p>
+      <p>Population of interest: <var width="40"/></p>
+      <p>Sample: <var width="40"/></p>
+      <p>Sampling frame: <var width="60"/></p>
+      <p>Parameter: <var width="60"/></p>
+      <p>Statistic: <var width="60" height="3"/></p>
     </statement>
     <setup>
       <var>
@@ -126,14 +133,6 @@
         </condition>
       </var>
     </setup>
-    <statement>
-      <p>Variable: <var width="40"/> </p>
-      <p>Type: <var width="20"/></p>
-      <p>Population of interest: <var width="40"/> Sample: <var width="40"/></p>
-      <p>Sampling frame: <var width="60"/></p>
-      <p>Parameter: <var width="60"/></p>
-      <p>Statistic: <var width="60" height="3"/></p>
-    </statement>
     <solution>
       <p>Variable: Presidential vote preference; Type: Categorical (binary)</p>
       <p>Population of interest: All U.S. voters in 1936</p>
@@ -145,7 +144,7 @@
   </exercise>
 
   <exercise xml:id="I1-16-b">
-    <title>Calculate sample statistic</title>
+    <title>Consider sample statistic</title>
     <statement>
       <p>Why is <m>1293669/(1293669 + 972897) = 0.57</m> not equal to 0.54?</p>
       <!-- <p><var width="60"/></p>-->
@@ -171,23 +170,35 @@
     </solution>
   </exercise>
 
-  <p>Still, a 24% response rate is much higher than current polls and this was the Digest's largest poll yet, shouldn't this improve their prediction? How are current polls with smaller response rates and smaller sample sizes able to be more accurate? One reason suggested for the error in 1936 was that the Digest had consistently been having more Republican voters responding to their straw vote. Does the data support this argument?</p>
+  <p>Still, a 24% response rate is much higher than current polls and this was the <em>Digest</em>'s largest poll yet, shouldn't this improve their prediction? How are current polls with smaller response rates and smaller sample sizes able to be more accurate? One reason suggested for the error in 1936 was that the Digest had consistently been having more Republican voters responding to their straw vote. Does the data support this argument?</p>
 
   <p>Open the <url href="https://www.rossmanchance.com/iscam3/data/LitDigest1936.xlsx">LitDigest1936.xlsx</url> file in Excel or Google Sheets. This contains the raw counts for the three main candidates (including William Lemke, Union Party), as well as an overall total number of straw votes cast in each state.</p>
 
   <exercise xml:id="I1-16-d">
-    <title>Calculate 1936 poll proportion</title>
+    <title>Calculate 1936 poll percentage</title>
     <statement>
       <p>For these 3 candidates, what percentage of the poll respondents said they would vote for Republican Landon in the 1936 election?</p>
     <hint>
-      <p>Set up a column formula in row 52, using columns C and AA.</p>
+      <p>Set up a column formula (e.g., " =C52/AA52") in row 52, using columns C and AA.</p>
     </hint>
-      <p><var form="integer" width="5"/></p>
+      <p><var  width="5"/></p>
     </statement>
-    <response>
-    </response>
+    <setup>
+      <var>
+        <condition number="54.4" tolerance=".5">
+          <feedback>
+            <p>Correct! Approximately 54% of respondents said they would vote for Landon.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Calculate C52/AA52 and convert to a percentage. Round to the nearest whole number.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
-      <p>C52/AA52 = 0.544 (approximately 54.4%)</p>
+      <p>= C52/AA52 = 0.544 (approximately 54.4%)</p>
     </solution>
   </exercise>
 
@@ -229,7 +240,7 @@
       <p>Sum: <var width="20"/> Proportion: <var width="20"/></p>
     </statement>
     <solution>
-      <p>Formula: (c52 + l52 + t52)/(sum(c52:g52)+sum(l52:o52)+sum(t52:w52))</p>
+      <p>Formula: =(c52 + l52 + t52)/(sum(c52:g52)+sum(l52:o52)+sum(t52:w52))</p>
       <p>Proportion: 0.507 (approximately 50.7% voted Republican in 1932)</p>
     </solution>
   </exercise>
@@ -237,7 +248,7 @@
   <exercise xml:id="I1-16-f">
     <title>Compare to actual 1932 results</title>
     <statement>
-      <p>Now find the <url href="https://en.wikipedia.org/wiki/1932_United_States_presidential_election">actual 1932 election results</url>, what proportion of voters voted for the Republican (Hoover) candidate (among the three major candidates)? Did the Literary Digest poll have too many or too few Republican voters? How could we account for this in our estimates of vote count?</p>
+      <p>Now find the <url href="https://en.wikipedia.org/wiki/1932_United_States_presidential_election">actual 1932 election results</url>, what proportion of voters voted for the Republican (Hoover) candidate (among the three major candidates)? Did the <em>Literary Digest</em> poll have too many or too few Republican voters? How could we account for this in our estimates of vote count?</p>
     </statement>
     <response>
     </response>
@@ -249,7 +260,7 @@
 
   <assemblage>
     <title>Post Stratification</title>
-    <p>In the 1936 poll, about 51% of respondents said they voted Republican in 1932, but only about 40% of the actual voters in 1932 voted Republican, a ratio of 0.78. So the <em>Digest</em>'s sample appear to overrepresent the Republican voters. Similarly, persons who said they voted Democrat or Other in the 1932 election were unrepresented in the 1936 poll (ratios: 1.197, 2.23 respectively). (Lohr and Brick, 2017, also estimated the ratio for the non-voters and missing to be 1.1275 for Democrats and 0.871 for Republicans.)</p>
+    <p>In the 1936 poll, about 51% of respondents said they voted Republican in 1932, but only about 40% of the actual voters in 1932 voted Republican, a ratio of 0.78. So the <em>Digest</em>'s sample appears to overrepresent the Republican voters. Similarly, persons who said they voted Democrat or Other in the 1932 election were unrepresented in the 1936 poll (ratios: 1.197, 2.23 respectively). (Lohr and Brick, 2017, also estimated the ratio for the non-voters and missing to be 1.1275 for Democrats and 0.871 for Republicans.)</p>
     
     <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
       <col width="20%"/>
@@ -388,7 +399,7 @@
     </solution>
   </exercise>
 
-  <p>Although this is still much lower than the actual vote share for Roosevelt between these two candidates (62%), you can see how this process tries to account for the sampling bias in the original poll. There are still a lot of assumptions, e.g., respondents accurately reported their 1932 vote, and non-respondents to the LD survey had the same relationship between the 1932 and 1936 votes as the respondents. But if you apply this technique to the individual states, 10 states change from Landon to Roosevelt, including California and New York, and Roosevelt is predicted to win 26 states (276 electoral votes), rather than 16 states (161 electoral votes).</p>
+  <p>Although this is still much lower than the actual vote share for Roosevelt between these two candidates (62%), you can see how this process tries to account for the sampling bias in the original poll. There are still a lot of assumptions (e.g., respondents accurately reported their 1932 vote), and non-respondents to the LD survey had the same relationship between the 1932 and 1936 votes as the respondents. But if you apply this technique to the individual states, 10 states change from Landon to Roosevelt, including California and New York, and Roosevelt is predicted to win 26 states (276 electoral votes), rather than 16 states (161 electoral votes).</p>
 
     <caption>Comparison of correction methods</caption>
     <image source="images/Inv1.16compare.png" width="70%">
@@ -458,7 +469,10 @@
         <choice>
           <statement><p>Those who said they gave more emotional support</p></statement>
         </choice>
-        <choice correct="yes">
+        <choice correct = "yes">
+          <statement><p>Other</p></statement>
+        </choice>
+        <choice correct="no">
           <statement><p>All American women</p></statement>
         </choice>
         <choice>
@@ -479,7 +493,7 @@
       <title>Compare representativeness</title>
       <statement>
         <p>Which poll's results do you think are more representative of the population of all American women? Explain.</p>
-        <p><var width="60" height="4"/></p>
+        
       </statement>
       <response>
       </response>
@@ -495,7 +509,7 @@
       <title>Identify units and variable</title>
       <statement>
         <p>Identify the observational units and variable in this study. Also classify the variable as categorical (also binary?) or quantitative.</p>
-        <p><var width="60"/></p>
+        
       </statement>
       <response>
       </response>
@@ -505,7 +519,7 @@
       <title>Identify parameter and statistic</title>
       <statement>
         <p>Identify the parameter and statistic. Also indicate appropriate symbols.</p>
-        <p><var width="60"/></p>
+        
       </statement>
       <response>
       </response>
@@ -515,7 +529,7 @@
       <title>Evaluate representativeness</title>
       <statement>
         <p>Do you think it likely that this sample is representative of the population of all college students in the world? What about all college students in the U.S.? Explain.</p>
-        <p><var width="60"/></p>
+        
       </statement>
       <response>
       </response>
@@ -525,7 +539,7 @@
       <title>Generalize results</title>
       <statement>
         <p>Describe a population to which you might be willing to generalize the results.</p>
-        <p><var width="60"/></p>
+        
       </statement>
       <response>
       </response>
@@ -557,7 +571,7 @@
       <hint>
         <p>Do any numerical values look suspicious to you? Do any states behave unusually?</p>
       </hint>
-        <p><var width="60"/></p>
+        
       </statement>
       <response>
       </response>
@@ -567,7 +581,7 @@
       <title>Analyze unknown state data</title>
       <statement>
         <p>Notice the State Unknown row. If we don't know the state, how do we know the electoral count for those states… Based on the values given in that row, what do you think the counts for Landon and Roosevelt for individuals with unknown states actually were?</p>
-        <p><var width="60"/></p>
+        
       </statement>
       <response>
       </response>
@@ -581,7 +595,7 @@
       <title>Evaluate class as random sample</title>
       <statement>
         <p>Does your class constitute a random sample of students from your school? Explain why or why not.</p>
-        <p><var width="60"/></p>
+        
       </statement>
       <response>
       </response>
@@ -591,7 +605,7 @@
       <title>Non-representative variable</title>
       <statement>
         <p>Suggest a variable for which your class should not be considered a representative sample of all students at your school. Explain why not.</p>
-        <p><var width="60"/></p>
+        
       </statement>
       <response>
       </response>
@@ -601,7 +615,7 @@
       <title>Representative variable</title>
       <statement>
         <p>Suggest a variable for which it might be reasonable to consider your class to be representative of all students at your school. Justify your choice.</p>
-        <p><var width="60"/></p>
+        
       </statement>
       <response>
       </response>
