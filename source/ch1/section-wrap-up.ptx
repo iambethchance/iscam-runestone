@@ -66,14 +66,14 @@
 
     <p>You used applets to explore sampling distributions:</p>
     <p><ul>
-      <li><p>The <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" visual="rossmanchance.com/applets/2021/oneprop/OneProp.htm">"One Proportion Inference" applet</url> allowed you to explore properties of the binomial distribution. This applet provides both empirical and exact binomial probability calculations. This is similar to what you can do with the <url href="https://www.rossmanchance.com/applets/2021/reeses/ReesesPieces.html" visual="rossmanchance.com/applets/2021/reeses/ReesesPieces.html">"Reese's Pieces" applet</url>.</p></li>
+      <li><p>The <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" visual="rossmanchance.com/applets/2021/oneprop/OneProp.htm">"One Proportion Inference" applet</url> allowed you to explore properties of the binomial distribution. This applet provides both empirical and exact binomial probability calculations. This is similar to what you can do with the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?candy=1" visual="rossmanchance.com/applets/2021/reeses/ReesesPieces.html">"Reese's Pieces" applet</url>.</p></li>
       <li><p>The <url href="https://www.rossmanchance.com/applets/2021/power/power.html" visual="rossmanchance.com/applets/2021/power/power.html">"Simulating Power" applet</url> allowed you to compare the distribution under the null hypothesis to the distribution under an alternative hypothesis and consider the probabilities of Type I and Type II errors and how they are controlled.</p></li>
-      <li><p>The <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html" visual="rossmanchance.com/applets/2021/confsim/ConfSim.html">"Simulating Confidence Intervals" applet</url> allowed you to compare the coverage rates of the Wald, Plus Four/Adjusted Wald, Blaker, and Score intervals</p></li>
+      <li><p>The <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html" visual="rossmanchance.com/applets/2021/confsim/ConfSim.html">"Simulating Confidence Intervals" applet</url> allowed you to compare the coverage rates of the Wald, Plus Four/Adjusted Wald, Blaker, and Score intervals.</p></li>
     </ul></p>
 
     <p>You used applets to perform normal probability calculations:</p>
     <p><ul>
-      <li><p>The <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="rossmanchance.com/applets/2021/normcalc/NormCalc.html">"Normal Probability Calculator" applet</url> allowed you to sketch, label, and find areas under a normal curve</p></li>
+      <li><p>The <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="rossmanchance.com/applets/2021/normcalc/NormCalc.html">"Normal Probability Calculator" applet</url> allowed you to sketch, label, and find areas under a normal curve.</p></li>
       <li><p>The <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">"Theory-Based Inference" applet</url> allowed you to carry out a test of significance for a process probability and to find a two-sided confidence interval using the normal approximation to the binomial.</p></li>
     </ul></p>
   </subsection>
@@ -128,6 +128,8 @@
   <subsection xml:id="jmp-quick-reference">
     <title>Quick Reference to JMP Commands</title>
 
+<p>Download the <url href="https://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrm"> ISCAM journal file</url></p>
+<p>
     <table>
       <title>JMP Commands for One Proportion Analysis</title>
       <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
@@ -165,6 +167,7 @@
         </row>
       </tabular>
     </table>
+    </p>
   </subsection>
 
   <subsection xml:id="procedure-choice">
@@ -203,9 +206,9 @@
           <line><m>SD(\hat{p}) = \sqrt{\pi(1-\pi)/n}\times</m><m>\sqrt{(N-n)/(N-1)}</m></line></cell>
         </row>
         <row>
-          <cell>Valid when (for z procedures)</cell>
+          <cell>Valid when (for <em>z</em> procedures)</cell>
           <cell>At least 10 successes and 10 failures</cell>
-          <cell>Population size > 20n; At least 10 successes and 10 failures</cell>
+          <cell>Population size > 20<m>n</m>; At least 10 successes and 10 failures</cell>
         </row>
         <row>
           <cell>Standardized statistic</cell>
@@ -219,13 +222,13 @@
         </row>
         <row>
           <cell>R Commands</cell>
-          <cell><line>iscamonepropztest</line>
+          <cell><line><c>iscamonepropztest</c></line>
           <line>• Observed (either the number of successes or sample proportion)</line>
           <line>• n (sample size)</line>
           <line>• hypothesized probability (<m>\pi_0</m>)</line>
           <line>• alternative ("less", "greater", or "two.sided")</line>
           <line>• Optional: conf.level(s)</line></cell>
-          <cell><line>iscamhyperprob</line>
+          <cell><line><c>iscamhyperprob</c></line>
           <line>• k (observed number of successes)</line>
           <line>• total (population size)</line>
           <line>• succ (hypothesized number of successes in population)</line>
@@ -248,13 +251,13 @@
   <subsection xml:id="appendix-stratified">
     <title>Chapter 1 Appendix: Stratified Random Sampling</title>
 
-    <p>Another way to reduce variability without taking larger samples is to take even more care in our sampling. For example, a stratified sampling method splits the population into homogenous groups first, and then samples a preset proportion from each subgroup. In the Gettysburg Address example, if we suspect nouns tend to be longer than non-nouns but worry that with only 16% nouns in the population we could easily end up with a sample without nouns, we can force the sample to contain 3 nouns and 17 non-nouns. This method will again be unbiased and if we stratify on a useful variable, we should find even less random sampling variability. Below we see in this case that in stratified random samples of size 20, there is a little bit less variability in the distribution of sample means (though not much here).</p>
+    <p>Another way to reduce variability without taking larger samples is to take even more care in our sampling. For example, a stratified sampling method splits the population into homogenous groups first, and then samples a preset proportion from each subgroup. In the <xref ref="inv-1-12" text="custom">Gettysburg Address example</xref>, if we suspect nouns tend to be longer than non-nouns but worry that with only 16% nouns in the population we could easily end up with a sample without nouns, we can force the sample to contain 3 nouns and 17 non-nouns. This method will again be unbiased and if we stratify on a useful variable, we should find even less random sampling variability. Below we see in this case that in stratified random samples of size 20, there is a little bit less variability in the distribution of sample means (though not much here).</p>
 
     <figure xml:id="fig-stratified-comparison">
       <caption>Comparison of Simple Random Samples vs. Stratified Samples</caption>
       <sidebyside widths="45% 45%">
         <figure>
-          <caption>Simple random samples (n = 20)</caption>
+          <caption>Simple random samples (<m>n</m> = 20)</caption>
           <image source="images/ch1append1.png">
             <description>Distribution of sample means from simple random sampling</description>
           </image>
