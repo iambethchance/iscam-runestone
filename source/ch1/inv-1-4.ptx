@@ -611,25 +611,7 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
       <statement>
         <p>Use technology to determine the binomial probability of finding at least 71 deaths in a sample of 361 if <m>\pi = 0.15</m>.</p>
         <p>p-value: <var width="10"/></p>
-      <hint>
-        <p>Use the One Proportion Inference applet or R or JMP with n=361, observed=71, and π=0.15, with "greater than"</p>
-      </hint>
-            <hint>
-        <title>R option</title>
-        <sage xml:id="sage-inv-1-4-3" language="r">
-          <input><![CDATA[
-# Load ISCAM functions from GitHub
-source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")
-
-# Calculate binomial test
-iscambinomtest(observed=, n=, hypothesized=, alternative="")
-]]></input>
-      </sage>
-    </hint>
-    <hint>
-        <title>One Proportion Inference applet</title>
-        <interactive xml:id="oneprop-applet-1-4-11e" iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="4:5"/>
-      </hint>
+      
 </statement>
       <setup>
         <var>
@@ -650,6 +632,25 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
           </condition>
         </var>
       </setup>
+      <hint>
+        <p>Use the One Proportion Inference applet or R or JMP with n=361, observed=71, and π=0.15, with "greater than"</p>
+      </hint>
+            <hint>
+        <title>R option</title>
+        <sage xml:id="sage-inv-1-4-3" language="r">
+          <input><![CDATA[
+# Load ISCAM functions from GitHub
+source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")
+
+# Calculate binomial test
+iscambinomtest(observed=, n=, hypothesized=, alternative="")
+]]></input>
+      </sage>
+    </hint>
+    <hint>
+        <title>One Proportion Inference applet</title>
+        <interactive xml:id="oneprop-applet-1-4-11e" iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="4:5"/>
+      </hint>
       <solution>
           <image source="images/inv1.4sols3.jpg" width="60%">
             <description>Binomial distribution for n=361 with pi=0.15 showing p-value</description>
