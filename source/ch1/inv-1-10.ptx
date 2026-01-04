@@ -226,7 +226,7 @@ iscambinomtest(observed = 8, n = 10, alternative = "two.sided", conf.level = 0.9
         <p>
           Use technology to verify your calculation of the one proportion <m>z</m>-interval (also called the Wald interval). Does the technology output match your calculation from the previous question?
         </p>
-      <hint><title>R</title>
+      <hint><title>R/Sage instructions</title>
         <p>Use the <c>iscamonepropztest()</c> function with the following parameters:</p>
         <p>
           <ul>
@@ -238,13 +238,13 @@ iscambinomtest(observed = 8, n = 10, alternative = "two.sided", conf.level = 0.9
         <sage language="r">
           <input>
 <![CDATA[
-invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20260101')))
+source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20260101')
 iscamonepropztest(observed = 8, n = 10, conf.level = 0.95)
 ]]>
           </input>
         </sage>
       </hint>
-      <hint><title>JMP</title>
+      <hint><title>JMP instructions</title>
       <p>Use Journal File <ellipsis/> confidence interval <ellipsis/></p>
       </hint>
       </statement>
@@ -262,13 +262,13 @@ iscamonepropztest(observed = 8, n = 10, conf.level = 0.95)
             <p>Not Verified</p>
           </statement>
           <feedback>
-            <p>Check your calculation again. The technology should produce the same interval: (0.552, 1.05).</p>
+            <p>Check your calculation again. The technology should produce the same interval: (0.552, 1.05), though some software pages may round the upper limit to 1.</p>
           </feedback>
         </choice>
       </choices>
       <solution>
         <paragraphs>
-          <title>R</title>
+          <title>R instructions</title>
           <image source="images/image088.jpg" width="90%">
             <description>R output showing <em>z</em>-interval</description>
           </image>
@@ -280,7 +280,7 @@ iscamonepropztest(observed = 8, n = 10, conf.level = 0.95)
           </image>
         </paragraphs>
         <p>
-          The technology output matches the hand calculation: (0.552, 1.05).
+          The technology output matches the hand calculation: (0.552, 1.05), but may report (0.552, 1), recognizing that values above 1 are not legitimate.
         </p>
       </solution>
     </exercise>
