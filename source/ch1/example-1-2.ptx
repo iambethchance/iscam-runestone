@@ -25,13 +25,13 @@
     <solution>
       <p>We can define <m>\pi</m> to be the probability that these students correctly identify the odd soda. (In other words, if this group of students were to repeat this process under identical conditions indefinitely, <m>\pi</m> represents the long-term fraction that they would identify correctly.) The null hypothesis asserts that the students are just guessing, which means that their success probability is one-third (<m>H_0: \pi = 1/3</m>). The alternative hypothesis is that students do better than guessing, which means that their success probability is greater than one-third (<m>H_a: \pi > 1/3</m>).</p>
           
-          <p>Under the null hypothesis that the students are just guessing among the three cups, <m>X</m> (the number of correct identifications) has a binomial distribution with parameters <m>n = 21</m> and <m>\pi = 1/3</m>. The normal distribution would probably not be valid here as we do not satisfy the conditions: <m>n \times \pi = 21(1/3) = 7 &lt; 10</m>. We could simulate observations from this Binomial process using the <url href="file:///C:/Users/bchance/repos/rcapplets/oneprop/OneProp.htm">One Proportion Inference applet</url>, and see how often we observe 12 or more correct identifications just by chance:</p>
+          <p>Under the null hypothesis that the students are just guessing among the three cups, <m>X</m> (the number of correct identifications) has a binomial distribution with parameters <m>n = 21</m> and <m>\pi = 1/3</m>. The normal distribution would probably not be valid here as we do not satisfy the conditions: <m>n \times \pi = 21(1/3) = 7 &lt; 10</m>. We could simulate observations from this Binomial process using the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm">One Proportion Inference applet</url>, and see how often we observe 12 or more correct identifications just by chance:</p>
           
           <image source="images/example1.2sols.png" width="70%">
             <description>Simulation distribution for cola test</description>
           </image>
           
-          <aside>
+          <paragraphs>
             <title>R Output</title>
             <p>Or we could calculate the exact Binomial probability using R:</p>
             <program language="r">
@@ -43,15 +43,15 @@ iscambinomtest(observed=12, n=21, hyp=.3333, alternative="greater")
 # p-value: 0.021177
               </input>
             </program>
-          </aside>
+          </paragraphs>
           
-          <aside>
+          <paragraphs>
             <title>JMP Output</title>
             <p>Or we could calculate the exact Binomial probability using JMP:</p>
             <image source="images/example1.2-aJMP.png" width="90%">
               <description>JMP output for cola discrimination test</description>
             </image>
-          </aside>
+          </paragraphs>
           
           <p>Notice the normal approximation (using R) does not provide a great estimate of this p-value:</p>
           <program language="r">
@@ -134,7 +134,7 @@ iscambinomtest(12, 21, conf.level=95)
     <title>Calculate power of test</title>
     <statement>
       <p>Using the 0.05 significance level and a sample size of 100 students, calculate the power of the test when the underlying probability equals 0.5, and interpret your result.</p>
-      <p>[Hint: Remember our two-step process: 1) Find the rejection region under the null hypothesis, now using the normal distribution; 2) Determine the probability of being in the rejection region under an alternative value of the parameter.]</p>
+      <p>[<em>Hint</em>: Remember our two-step process: 1) Find the rejection region under the null hypothesis, now using the normal distribution; 2) Determine the probability of being in the rejection region under an alternative value of the parameter.]</p>
     </statement>
     <response/>
     <solution>
