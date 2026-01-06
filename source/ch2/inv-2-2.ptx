@@ -66,54 +66,63 @@
       <hint>
         <p>Recall that the mean is the numerical average and the median has 50% of the observations on each side.</p>
       </hint>
-      <p>Mean: <var width="10"/> seconds</p>
-      <p>Median: <var width="10"/> seconds</p>
-      <p>Which is larger?</p>
     </statement>
-    <setup>
-      <var>
-        <condition number="4.249" tolerance="0.01">
-          <feedback>
-            <p>Correct! The mean is 4.249 seconds.</p>
-          </feedback>
-        </condition>
-        <condition string=".*">
-          <feedback>
-            <p>Incorrect. Calculate the sum of all response times divided by the number of observations.</p>
-          </feedback>
-        </condition>
-      </var>
-      <var>
-        <condition number="3.24" tolerance="0.01">
-          <feedback>
-            <p>Correct! The median is 3.24 seconds.</p>
-          </feedback>
-        </condition>
-        <condition string=".*">
-          <feedback>
-            <p>Incorrect. Find the middle value when the data are sorted.</p>
-          </feedback>
-        </condition>
-      </var>
-    </setup>
-    <choices randomize="yes">
-      <choice correct="yes">
-        <statement>
-          <p>Mean is larger</p>
-        </statement>
-      </choice>
-      <choice>
-        <statement>
-          <p>Median is larger</p>
-        </statement>
-      </choice>
-      <choice>
-        <statement>
-          <p>They are equal</p>
-        </statement>
-      </choice>
-    </choices>
-    <response/>
+    <blocks>
+      <block>
+        <p>Mean: <var form="buttons" width="10"/> seconds</p>
+        <setup>
+          <var>
+            <condition number="4.249" tolerance="0.01">
+              <feedback>
+                <p>Correct! The mean is 4.249 seconds.</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Calculate the sum of all response times divided by the number of observations.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
+      </block>
+      <block>
+        <p>Median: <var form="buttons" width="10"/> seconds</p>
+        <setup>
+          <var>
+            <condition number="3.24" tolerance="0.01">
+              <feedback>
+                <p>Correct! The median is 3.24 seconds.</p>
+              </feedback>
+            </condition>
+            <condition string=".*">
+              <feedback>
+                <p>Incorrect. Find the middle value when the data are sorted.</p>
+              </feedback>
+            </condition>
+          </var>
+        </setup>
+      </block>
+      <block>
+        <p>Which is larger?</p>
+        <choices randomize="yes">
+          <choice correct="yes">
+            <statement>
+              <p>Mean is larger</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>Median is larger</p>
+            </statement>
+          </choice>
+          <choice>
+            <statement>
+              <p>They are equal</p>
+            </statement>
+          </choice>
+        </choices>
+      </block>
+    </blocks>
     <solution>
       <p>The mean (4.249 s) is larger than the median (3.24 s) as it is pulled towards the larger values. Also note that the skewness statistic equals 2.52.</p>
     </solution>
