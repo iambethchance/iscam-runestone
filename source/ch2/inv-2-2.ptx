@@ -70,6 +70,32 @@
       <p>Median: <var width="10"/> seconds</p>
       <p>Which is larger?</p>
     </statement>
+    <setup>
+      <var>
+        <condition number="4.249" tolerance="0.01">
+          <feedback>
+            <p>Correct! The mean is 4.249 seconds.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. Calculate the sum of all response times divided by the number of observations.</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="3.24" tolerance="0.01">
+          <feedback>
+            <p>Correct! The median is 3.24 seconds.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. Find the middle value when the data are sorted.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <choices randomize="yes">
       <choice correct="yes">
         <statement>
@@ -117,6 +143,20 @@
       </hint>
       <p>IQR: <var width="10"/> seconds</p>
     </statement>
+    <setup>
+      <var>
+        <condition number="2.245" tolerance="0.01">
+          <feedback>
+            <p>Correct! IQR = 4.835 - 2.590 = 2.245 seconds.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Incorrect. Calculate upper quartile - lower quartile.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>The interquartile range is 4.835 - 2.590 (Applet) gives 2.245 seconds. The width of the middle 50% of wait times is 2.245 seconds.</p>
     </solution>
@@ -219,14 +259,13 @@ iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
       <sage language="r">
         <input>
 # Load ISCAM functions from GitHub
-invisible(capture.output(source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')))
+source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20251224')
 
 # Load honking data from GitHub
 honking = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/honking.txt", header=TRUE)
-responsetime = honking$responsetime
 
 # Create modified boxplot
-iscamboxplot(responsetime, xlab="Time until reaction (seconds)")
+iscamboxplot(honking$responsetime, xlab="Time until reaction (seconds)")
         </input>
       </sage>
     </hint>
@@ -386,6 +425,16 @@ iscamaddexp(responsetime)          # overlay exponential model
     <hint>
       <title>R Instructions</title>
       <p><c>pexp(2, rate = 1/4.25)</c> calculates P(X &lt; 2) when X ~ Exp(mean = 4.25)</p>
+      <p>Try it yourself:</p>
+      <sage language="r">
+        <input>
+# Calculate probability of wait time under 2 seconds
+# using exponential distribution with mean 4.25 sec
+
+# P(X &lt; 2) when X ~ Exp(mean = 4.25)
+pexp(2, rate = 1/4.25)
+        </input>
+      </sage>
     </hint>
     <hint>
       <title>JMP Instructions</title>
