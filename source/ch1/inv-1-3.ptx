@@ -319,39 +319,9 @@
       </statement>
       <setup>
         <var>
-          <condition string="^\s*-?\s*1\.5[0-9]\s*$" correct="yes">
+          <condition string="^\s*(-?\s*1\.5[0-9]|-?\s*0?\.7[0-9]|-?\s*0+(\.0*)?\s*|\+?\s*0?\.7[0-9]|\+?\s*1\.5[0-9]|\+?\s*2\.3[0-9]|\+?\s*3\.1[0-9])\s*$" correct="yes">
             <feedback>
-              <p>Correct! If you had 0 hits, the calculation is <m>\frac{0 - 2}{1.265} \approx -1.58</m> standard deviations below the mean.</p>
-            </feedback>
-          </condition>
-          <condition string="^\s*-?\s*0?\.7[0-9]\s*$" correct="yes">
-            <feedback>
-              <p>Correct! If you had 1 hit, the calculation is <m>\frac{1 - 2}{1.265} \approx -0.79</m> standard deviations below the mean.</p>
-            </feedback>
-          </condition>
-          <condition string="^\s*-?\s*0+(\.0*)?\s*$" correct="yes">
-            <feedback>
-              <p>Correct! If you had 2 hits, the calculation is <m>\frac{2 - 2}{1.265} = 0</m> standard deviations from the mean (exactly at the expected value).</p>
-            </feedback>
-          </condition>
-          <condition string="^\s*\+?\s*0?\.7[0-9]\s*$" correct="yes">
-            <feedback>
-              <p>Correct! If you had 3 hits, the calculation is <m>\frac{3 - 2}{1.265} \approx 0.79</m> standard deviations above the mean.</p>
-            </feedback>
-          </condition>
-          <condition string="^\s*\+?\s*1\.5[0-9]\s*$" correct="yes">
-            <feedback>
-              <p>Correct! If you had 4 hits, the calculation is <m>\frac{4 - 2}{1.265} \approx 1.58</m> standard deviations above the mean.</p>
-            </feedback>
-          </condition>
-          <condition string="^\s*\+?\s*2\.3[0-9]\s*$" correct="yes">
-            <feedback>
-              <p>Correct! If you had 5 hits, the calculation is <m>\frac{5 - 2}{1.265} \approx 2.37</m> standard deviations above the mean.</p>
-            </feedback>
-          </condition>
-          <condition string="^\s*\+?\s*3\.1[0-9]\s*$" correct="yes">
-            <feedback>
-              <p>Correct! If you had 6 hits, the calculation is <m>\frac{6 - 2}{1.265} \approx 3.16</m> standard deviations above the mean.</p>
+              <p>Correct! You've calculated the standardized statistic for your number of hits.</p>
             </feedback>
           </condition>
           <condition string=".*">
