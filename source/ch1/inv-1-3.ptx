@@ -312,11 +312,55 @@
       <title>Standardize Your Result</title>
       <statement>
         <p>How many standard deviations was your observed result from the expected value (mean) for the binomial distribution?</p>
+        <p><var width="10" /></p>
       <hint>
         <p>Use the formula: (observed - expected) / standard deviation. Substitute your number of hits for observed, and use the mean and SD from <xref ref="I1-3-10" text="custom">Question 10</xref>.</p>
       </hint>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition string="^\s*-?\s*1\.5[0-9]\s*$">
+            <feedback>
+              <p>Correct! If you had 0 hits, the calculation is <m>\frac{0 - 2}{1.265} \approx -1.58</m> standard deviations below the mean.</p>
+            </feedback>
+          </condition>
+          <condition string="^\s*-?\s*0?\.7[0-9]\s*$">
+            <feedback>
+              <p>Correct! If you had 1 hit, the calculation is <m>\frac{1 - 2}{1.265} \approx -0.79</m> standard deviations below the mean.</p>
+            </feedback>
+          </condition>
+          <condition string="^\s*-?\s*0+(\.0*)?\s*$">
+            <feedback>
+              <p>Correct! If you had 2 hits, the calculation is <m>\frac{2 - 2}{1.265} = 0</m> standard deviations from the mean (exactly at the expected value).</p>
+            </feedback>
+          </condition>
+          <condition string="^\s*\+?\s*0?\.7[0-9]\s*$">
+            <feedback>
+              <p>Correct! If you had 3 hits, the calculation is <m>\frac{3 - 2}{1.265} \approx 0.79</m> standard deviations above the mean.</p>
+            </feedback>
+          </condition>
+          <condition string="^\s*\+?\s*1\.5[0-9]\s*$">
+            <feedback>
+              <p>Correct! If you had 4 hits, the calculation is <m>\frac{4 - 2}{1.265} \approx 1.58</m> standard deviations above the mean.</p>
+            </feedback>
+          </condition>
+          <condition string="^\s*\+?\s*2\.3[0-9]\s*$">
+            <feedback>
+              <p>Correct! If you had 5 hits, the calculation is <m>\frac{5 - 2}{1.265} \approx 2.37</m> standard deviations above the mean.</p>
+            </feedback>
+          </condition>
+          <condition string="^\s*\+?\s*3\.1[0-9]\s*$">
+            <feedback>
+              <p>Correct! If you had 6 hits, the calculation is <m>\frac{6 - 2}{1.265} \approx 3.16</m> standard deviations above the mean.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Incorrect. Use the formula <m>\frac{\text{your hits} - 2}{1.265}</m> where 2 is the expected value and 1.265 is the standard deviation from <xref ref="I1-3-10" text="custom">Question 10</xref>.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>The standardized statistic expresses the distance in <q>standard deviations away</q> from the hypothesized value of <m>\pi</m>. Use the formula: <m>\frac{\text{observed} - \text{mean}}{\text{SD}} = \frac{\text{your hits} - 2}{1.265}</m>. A negative value means the distance is below the mean; a positive value means the distance is above the mean.</p>
         <p>Depending on your number of hits:</p>
