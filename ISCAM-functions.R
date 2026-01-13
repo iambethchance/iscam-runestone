@@ -594,6 +594,7 @@ iscambinomtest <- function(
       lines(c(lower1[k], upper1[k]), c(1, 1))
     } # end intervals loop
   } # end no hypothesized
+  return(invisible(NULL))
 }
 
 # ============================================================================
