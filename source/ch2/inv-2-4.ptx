@@ -418,11 +418,11 @@ Example results:</p>
     </statement>
     <response/>
     <solution>
-   <m>\sigma \ over \sqrt{n}</m> incorporates information from both 
+      <p><m>\frac{\sigma}{\sqrt{n}}</m> incorporates information from both 
    the variability in the population itself and the sample size. 
    If we have a variable with more person to person variability, we will 
    also expect more sample to sample variability. If we have a larger 
-   sample size, we expect less sample to sample variability (the sample means will cluster more tightly around <m>\mu</m>)
+   sample size, we expect less sample to sample variability (the sample means will cluster more tightly around <m>\mu</m>).</p>
   </solution>
   </exercise>
   
@@ -481,17 +481,31 @@ Example results:</p>
   <exercise xml:id="inv2-4-v" label="I6.4.22">
     <title>Standardize the value</title>
     <statement>
-      <p>Use the theoretical results for the mean and standard deviation of a sample mean to standardize the value of 159.57 lbs. [Hint: Start with a well-labeled sketch.] How might you interpret this value?</p>
+      <p>Use the theoretical results for the mean and standard deviation 
+      of a sample mean to standardize the value of 159.57 lbs. 
+      [<em>Hint</em>: Start with a well-labeled sketch.] How might you 
+      interpret this value?</p>
     </statement>
     <response/>
+    <solution>
+    See graph below. <m>\sigma / \sqrt{n} = 35/\sqrt{47} \approx 5.105</m>
+<m>\frac{159.574 \pm 167}{5.105} = -1.45</m>
+The sample mean weight of 159.574 is about 1.5 standard deviations below the population mean weight of 167 lbs.
   </exercise>
   
   <exercise xml:id="inv2-4-w" label="I6.4.23">
     <title>Apply Central Limit Theorem</title>
     <statement>
-      <p>Use the result from the Central Limit Theorem and technology (e.g., the Normal Probability Calculator applet) to estimate the probability of a sample mean weight exceeding 159.57 lbs for a random sample of 47 passengers from a population with mean <m>\mu = 167</m> lbs and standard deviation <m>\sigma = 35</m> lbs. [Hint: Shade the area of interest in your sketch for Question 21.] How does this estimated probability compare to what you found with repeated sampling from the hypothetical populations?</p>
+      <p>Use the result from the Central Limit Theorem and technology (e.g., the Normal Probability Calculator applet) to estimate the probability of a sample mean weight exceeding 159.57 lbs for a random sample of 47 passengers from a population with mean <m>\mu = 167</m> lbs and standard deviation <m>\sigma = 35</m> lbs. [<em>Hint</em>: Shade the area of interest in your sketch for Question 21.] How does this estimated probability compare to what you found with repeated sampling from the hypothetical populations?</p>
     </statement>
     <response/>
+    <solution>  
+      <p>Using technology, we find <m>P(\bar{x} &gt; 159.57) = 0.9271</m>, 
+      which is very close to what we found with the simulations (about 93%).</p>
+      <image source="images/Inv2.4solsw.jpg" width="50%">
+        <description>Normal distribution with shaded area</description>
+      </image>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv2-4-x" label="I6.4.24">
