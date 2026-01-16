@@ -184,25 +184,73 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
   <exercise xml:id="inv2-5-h" label="I7.2.8">
     <title>Examine population distribution</title>
     <statement>
-      <p>Does this appear to be a normally distributed population? What are the values of the population mean and the population standard deviation?</p>
+      <p>Does this appear to be a normally distributed population? <var width="5"/></p>
+      
+      <p>What is the population mean? <var name="$mean" width="8"/></p>
+      
+      <p>What is the population standard deviation? <var name="$sd" width="8"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string="^\s*yes\s*$">
+          <feedback>
+            <p>Correct! The population distribution appears normally distributed.</p>
+          </feedback>
+        </condition>
+        <condition string="^\s*no\s*$">
+          <feedback>
+            <p>Look at the shape more carefully. Does it appear symmetric and bell-shaped?</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Please enter yes or no</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="98.6" tolerance="0.01">
+          <feedback>
+            <p>Correct! The population mean is 98.6°F.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Check the population statistics displayed in the applet.</p>
+          </feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.733" tolerance="0.001">
+          <feedback>
+            <p>Correct! The population standard deviation is 0.733°F.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Check the population statistics displayed in the applet.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Yes, the population distribution of body temperatures appears normally distributed with mean about 98.6 degrees and standard deviation 0.733 degrees.</p>
     </solution>
     <response/>
   </exercise>
   
+  <ul><li>Use the applet to select 10,000 samples of 13 adults from this hypothetical population. </li></ul>
   <exercise xml:id="inv2-5-i" label="I7.2.9">
     <title>Verify Central Limit Theorem</title>
     <statement>
+      <p>Does the behavior of the distribution of sample means agree with the Central Limit Theorem?</p>
     <hint>
       <p>Discuss shape, center, and variability; compare the CLT predictions to the simulation results.</p>
     </hint>
-      <p>Use the applet to select 10,000 samples of 13 adults from this hypothetical population. Does the behavior of the distribution of sample means confirm the Central Limit Theorem?</p>
     </statement>
     <choices randomize="no">
-      <choice correct="yes"><statement><p>Confirmed</p></statement></choice>
-      <choice><statement><p>Not confirmed</p></statement></choice>
+      <choice correct="yes"><statement><p>Yes</p></statement></choice>
+      <choice><statement><p>No</p></statement></choice>
     </choices>
     <solution>
       <p>This is consistent with the central limit theorem as the shape is approximately normal, the mean is the same as the population mean, and the standard deviation is predicted by <m>0.733/\sqrt{13} = 0.203</m>.</p>
@@ -237,13 +285,8 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
   <exercise xml:id="inv2-5-k" label="I7.2.11">
     <title>Compare to normal distribution</title>
     <statement>
-      <p>Does this appear to be a reasonable fit? </p>
-    </statement>
-    <choices randomize="no">
-      <choice correct="yes"><statement><p>Yes</p></statement></choice>
-      <choice><statement><p>No</p></statement></choice>
-    </choices>
-    <statement>
+      <p>Does this appear to be a reasonable fit? <var width="5"/></p>
+      
       <p>What p-value does this normal approximation produce?</p>
       <hint>
         <p>Enter your answer to <xref ref="inv2-5-f" text="custom">Question 6</xref> as the observed result for the <m>t</m>-statistic and count beyond.</p>
@@ -251,6 +294,23 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
       <p>p-value = <var name="$pval" width="8"/></p>
     </statement>
     <setup>
+      <var>
+        <condition string="^\s*yes\s*$">
+          <feedback>
+            <p>Correct! The fit appears reasonable, though not perfect.</p>
+          </feedback>
+        </condition>
+        <condition string="^\s*no\s*$">
+          <feedback>
+            <p>Look more carefully. While not perfect, the normal distribution does provide a reasonable approximation.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Please enter yes or no</p>
+          </feedback>
+        </condition>
+      </var>
       <var>
         <condition number="0.084" tolerance="0.002">
           <feedback>
@@ -511,12 +571,10 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
         </ul></p>
         <p>For 95% confidence with df = 4:</p>
         <sage language="r">
-          <input>
-# Load ISCAM functions from GitHub
+          <input># Load ISCAM functions from GitHub
 source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")
 
-iscaminvt(0.95, 4, "between")
-          </input>
+iscaminvt(0.95, 4, "between")</input>
         </sage>
         <p>This should return <m>t^* = 2.776</m> </p>
       </hint>
@@ -578,12 +636,12 @@ iscaminvt(0.95, 4, "between")
     <statement>
       <p>Find the <m>t^*</m> value for the sample size of <m>n = 13</m>. How do the <m>t</m>-critical values compare for these different sample sizes?</p>
       
-      <p>Compared to the <m>t^*</m> value from <xref ref="inv2-5-t" text="custom">Question 20</xref> (for <m>n = 5</m>), the <m>t^*</m> value for <m>n = 13</m> is: <var width="15"/></p>
+      <p>Compared to the <m>t^*</m> value from <xref ref="inv2-5-t" text="custom">Question 20</xref> (for <m>n = 5</m>), the <m>t^*</m> value for <m>n = 13</m> is: <var width="15"/> (larger, smaller, essentially the same)</p>
       
-      <p>Compared to the <m>z^*</m> value of 1.96, the <m>t^*</m> value for <m>n = 13</m> is: <var width="15"/></p>
+      <p>Compared to the <m>z^*</m> value of 1.96, the <m>t^*</m> value for <m>n = 13</m> is: <var width="15"/>(larger, smaller, essentially the same)</p>
       
       <p>Is this what you expected? Explain.</p>
-      <p><var form="essay"/></p>
+      <p><var form="essay" width = "100%"/></p>
     </statement>
     <setup>
       <var>
@@ -645,14 +703,80 @@ iscaminvt(0.95, 4, "between")
     <statement>
       <p>Find <m>t^*</m> for the sample size of <m>n = 130</m>.</p>
       
-      <p><m>t_{129}^*</m> = <var width="10"/></p>
+      <p><m>t_{129}^*</m> = <var name="$tstar" width="10"/></p>
       
-      <p>How does this value compare to the earlier <m>t^*</m> values?</p>
-      <p><var form="essay"/></p>
+      <p>Compared to the earlier <m>t^*</m> values (for <m>n = 5</m> and <m>n = 13</m>), the <m>t^*</m> value for <m>n = 130</m> is: <var width="20"/></p>
       
-      <p>How does this value compare to the <m>z^*</m> value?</p>
-      <p><var form="essay"/></p>
+      <p>Compared to the <m>z^*</m> value of 1.96, the <m>t^*</m> value for <m>n = 130</m> is: <var width="20"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="1.979" tolerance="0.002">
+          <feedback>
+            <p>Correct! For <m>n = 130</m> (df = 129), the 95% critical value <m>t^* = 1.979</m>.</p>
+          </feedback>
+        </condition>
+        <condition number="1.96" tolerance="0.01">
+          <feedback>
+            <p>That's the <m>z^*</m> value. You need to find the <m>t^*</m> value with df = 129, which will be slightly larger.</p>
+          </feedback>
+        </condition>
+        <condition number="2.179" tolerance="0.01">
+          <feedback>
+            <p>That's the <m>t^*</m> value for df = 12 (n = 13). You need df = 129 for n = 130.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Use technology to find the <m>t^*</m> critical value for 95% confidence with df = n - 1 = 129.</p>
+          </feedback>
+        </condition>
+      </var>
+      <var case="insensitive">
+        <condition string="^\s*smaller\s*$">
+          <feedback>
+            <p>Correct! As sample size increases, the <m>t^*</m> value decreases (gets smaller) and approaches the <m>z^*</m> value.</p>
+          </feedback>
+        </condition>
+        <condition string="^\s*larger\s*$">
+          <feedback>
+            <p>Incorrect. Compare the values: 2.776 (n=5), 2.179 (n=13), and 1.979 (n=130). As sample size increases, what happens to <m>t^*</m>?</p>
+          </feedback>
+        </condition>
+        <condition string="^\s*(essentially\s+the\s+same|about\s+the\s+same|the\s+same)\s*$">
+          <feedback>
+            <p>There is a noticeable difference. Compare 2.776 and 2.179 to 1.979.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Please enter one of: larger, smaller, or about the same</p>
+          </feedback>
+        </condition>
+      </var>
+      <var case="insensitive">
+        <condition string="^\s*larger\s*$">
+          <feedback>
+            <p>Correct! The <m>t^*</m> value of 1.979 is still slightly larger than the <m>z^*</m> value of 1.96, though they are getting closer with this large sample size.</p>
+          </feedback>
+        </condition>
+        <condition string="^\s*(essentially\s+the\s+same|about\s+the\s+same|the\s+same)\s*$">
+          <feedback>
+            <p>This is also reasonable! They are very close (1.979 vs 1.96), though <m>t^*</m> is still slightly larger.</p>
+          </feedback>
+        </condition>
+        <condition string="^\s*smaller\s*$">
+          <feedback>
+            <p>Incorrect. The <m>t^*</m> value should be larger than the <m>z^*</m> value. Compare 1.979 to 1.96.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Please enter one of: larger, smaller, or about the same</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>For <m>n = 130</m> (df = 129), <m>t^* = 1.979</m>, getting pretty close to 1.96. As the sample size increases, the <m>t^*</m> value decreases and approaches the <m>z^*</m> value.</p>
       <image source="images/Inv2.5wsols.png" width="60%">
@@ -665,7 +789,7 @@ iscaminvt(0.95, 4, "between")
   <exercise xml:id="inv2-5-x" label="I7.2.24">
     <title>Calculate confidence interval</title>
     <statement>
-      <p>Use the critical value from the previous question to calculate a 95% confidence interval for the mean body temperature of a healthy adult based on our sample <m>(\bar{x} = 98.249</m>, <m>s = 0.733</m>, <m>n = 130)</m>. Is this interval consistent with your conclusion about the null hypothesis in <xref ref="inv2-5-n" text="custom">Question 14</xref>? xplain.</p>
+      <p>Use the critical value from the previous question to calculate a 95% confidence interval for the mean body temperature of a healthy adult based on our sample <m>(\bar{x} = 98.249</m>, <m>s = 0.733</m>, <m>n = 130)</m>. Is this interval consistent with your conclusion about the null hypothesis in <xref ref="inv2-5-n" text="custom">Question 14</xref>? Explain.</p>
     </statement>
     <solution>
       <p>95% confidence interval = <m>98.249 \pm 1.979 \times \frac{0.733}{\sqrt{130}} = 98.249 \pm 0.127 = (98.122, 98.376)</m>. This interval does not contain 98.6, which is consistent with our rejection of 98.6 as a plausible value for the population mean.</p>
@@ -718,14 +842,12 @@ iscaminvt(0.95, 4, "between")
           <li><p><c>conf.level</c> = confidence level (e.g., 0.95 for 95%)</p></li>
         </ul></p>
         <sage language="r">
-          <input>
-# Load ISCAM functions from GitHub
+          <input># Load ISCAM functions from GitHub
 source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")
 
 # Use iscamonesamplet with summary statistics for the body temperature study
 iscamonesamplet(xbar=98.249, sd=.733, n=130, hypothesized=98.6, 
-                alternative="two.sided", conf.level=0.95)
-          </input>
+                alternative="two.sided", conf.level=0.95)</input>
         </sage>
         <p><em>OR</em> use base R's <c>t.test</c> with a vector of raw data:</p>
         <program language="r">
