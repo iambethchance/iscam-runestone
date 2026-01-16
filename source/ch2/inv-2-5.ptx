@@ -619,7 +619,7 @@ iscaminvt(0.95, 4, "between")</input>
       <p>Using the technology detour above, find the <m>t_4^*</m> value corresponding to a 95% confidence level and a sample size of <m>n = 5</m>. How does this <m>t^*</m> critical value compare to the corresponding <m>z^*</m> value of 1.96 for 95% confidence?</p>
       
       <p><m>t_4^*</m> = <var name="$tstar" width="10"/></p>
-      <p>Compared to <m>z^* = 1.96</m>, the <m>t_4^*</m> value is: <var width="20"/></p>
+      <p>Compared to <m>z^* = 1.96</m>, the <m>t_4^*</m> value is: <var width="20"/> (larger, smaller, essentially the same)</p>
     </statement>
     <setup>
       <var>
@@ -642,7 +642,7 @@ iscaminvt(0.95, 4, "between")</input>
       <var case="insensitive">
         <condition string="^\s*larger\s*$">
           <feedback>
-            <p>Correct! The <m>t^*</m> value of 2.776 is larger than the <m>z^*</m> value of 1.96 because the t-distribution has heavier tails.</p>
+            <p>Correct! The <m>t^*</m> value of 2.776 is larger than the <m>z^*</m> value of 1.96 because the <em>t</em>-distribution has heavier tails.</p>
           </feedback>
         </condition>
         <condition string="^\s*smaller\s*$">
@@ -675,7 +675,11 @@ iscaminvt(0.95, 4, "between")</input>
   <exercise xml:id="inv2-5-v" label="I7.2.22">
     <title>Find <m>t^*</m> for <m>n = 13</m></title>
     <statement>
-      <p>Find the <m>t^*</m> value for the sample size of <m>n = 13</m>. How do the <m>t</m>-critical values compare for these different sample sizes?</p>
+      <p>Find the <m>t^*</m> value for the sample size of <m>n = 13</m>.</p>
+      
+      <p><m>t_{12}^*</m> = <var name="$tstar" width="10"/></p>
+      
+      <p>How do the <m>t</m>-critical values compare for these different sample sizes?</p>
       
       <p>Compared to the <m>t^*</m> value from <xref ref="inv2-5-t" text="custom">Question 20</xref> (for <m>n = 5</m>), the <m>t^*</m> value for <m>n = 13</m> is: <var width="15"/> (larger, smaller, essentially the same)</p>
       
@@ -685,6 +689,28 @@ iscaminvt(0.95, 4, "between")</input>
       <p><var form="essay" width = "60%"/></p>
     </statement>
     <setup>
+      <var>
+        <condition number="2.179" tolerance="0.002">
+          <feedback>
+            <p>Correct! For <m>n = 13</m> (df = 12), the 95% critical value <m>t^* = 2.179</m>.</p>
+          </feedback>
+        </condition>
+        <condition number="2.776" tolerance="0.01">
+          <feedback>
+            <p>That's the <m>t^*</m> value for df = 4 (n = 5). You need df = 12 for n = 13.</p>
+          </feedback>
+        </condition>
+        <condition number="1.96" tolerance="0.01">
+          <feedback>
+            <p>That's the <m>z^*</m> value. You need to find the <m>t^*</m> value with df = 12.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Use technology to find the <m>t^*</m> critical value for 95% confidence with df = n - 1 = 12.</p>
+          </feedback>
+        </condition>
+      </var>
       <var>
         <condition string="^\s*smaller\s*$">
           <feedback>
