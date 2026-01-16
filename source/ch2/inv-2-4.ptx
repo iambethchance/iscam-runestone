@@ -47,14 +47,28 @@
       <p>Notice that the probability of interest does not pertain to individual passengers.</p>
     </hint>
       <p>The observational units are: <var width="30"/></p>
-      <p>The variable is <var form="buttons" width="15"/>, </p>
+      <p>The variable is <var width="15"/>, </p>
       <p>This variable is </p>
     </statement>
+    <setup>
+      <var case="insensitive">
+        <condition string="boats|boat trips|trips|samples|sample|tour boats">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+      </var>
+      <var case="insensitive">
+        <condition string="average weight|mean weight|average weight of passengers|mean weight of passengers|average weight of 47 passengers">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <choices randomize="yes">
-      <choice><statement><p>quantitative</p></statement></choice>
+      <choice correct="yes"><statement><p>quantitative</p></statement></choice>
       <choice><statement><p>categorical</p></statement></choice>
     </choices>
     <response/>
+<solution>The observational units are the different boats (or boat trips) 
+with 47 passengers each. The variable is the average weight of the 47 passengers on each boat. This variable is quantitative because it is measured on a numerical scale.</solution>
   </exercise>
   <p>Instead of focusing on the total weight of the 47 passengers, we can instead work with the average weight of the 47 passengers. </p>
   <exercise xml:id="inv2-4-d" label="I6.4.4">
@@ -64,6 +78,19 @@
       
       <p>Total weight of passengers is larger than 7500 lbs when average weight of 47 passengers is larger than: <var width="10"/> lbs.</p>
     </statement>
+    <setup>
+      <var>
+        <condition number="159.574" tolerance="0.01">
+          <feedback><p>Correct! 7500/47 ≈ 159.574 pounds</p></feedback>
+        </condition>
+        <condition number="159.57" tolerance="0.01">
+          <feedback><p>Correct! 7500/47 ≈ 159.57 pounds</p></feedback>
+        </condition>
+        <condition number="159.6" tolerance="0.1">
+          <feedback><p>Close enough! 7500/47 ≈ 159.6 pounds</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>7500/47 = 159.574 pounds</p>
     </solution>
@@ -119,7 +146,7 @@
     <p><ul>
     <li>Press the <alert>Clear</alert> button.</li>
       <li><p>Click inside the <alert>Paste population data</alert> box and type <c>WeightPopulations.txt</c> and press <alert>Use Data</alert>.</p></li>
-      <li><p>Press <alert>Use Data</alert> (again).</p></li>
+      <li><p>Once you see the data has loaded into the window, press <alert>Use Data</alert> (again).</p></li>
     </ul></p>
   </paragraphs>
   <interactive iframe="https://www.rossmanchance.com/applets/2021/sampling/OneSample.html?hideExtras=1" width="165%" aspect="3:2"/>
@@ -129,6 +156,7 @@
       <p>Describe the shape, mean (<m>\mu</m>), and standard deviation (<m>\sigma</m>) of pop1 (shown in the histogram under Population Data). You can also check the Show skewness box.</p>
     </statement>
     <response/>
+    <solution>The population is mound-shaped and symmetric (skewness statistic approx zero) with a mean (<m>\mu</m>) of 167 lbs and a standard deviation (<m>\sigma</m>) of 35 lbs.</solution>
   </exercise>  
   <ul>
     <li><p>Check the <alert>Show Sampling Options</alert> box. Keep the <alert>Number of Samples</alert> at 1 
@@ -141,7 +169,7 @@
     <statement>
       <p>Describe the shape, center, and variability of this distribution. How does this sample distribution compare to the population distribution?</p>
       
-      <p>Most Recent Sample distribution:</p>
+      <p><strong>Most Recent Sample distribution:</strong></p>
       <p>Shape: <var width="20"/></p>
       <p>Mean: <var width="10"/></p>
       <p>Standard deviation: <var width="10"/></p>
@@ -150,15 +178,19 @@
       <p>Notice that the mean of this sample (an <m>\bar{x}</m>) has also been added to the graph in the lower right Sampled Statistics graph.</p>
     </statement>
     <response/>
+    <solution>Results will vary but here is one example:
+<img source="images/Inv2.4solsi.jpg" width="50%">
+    This simulated sample distribution is likely symmetric and bell-shaped with a mean similar to <m>\mu</m> and a standard deviation similar to <m>\sigma</m>.</solution>
   </exercise>
   
-  <ul><li>Press <alert>Draw Samples</alert> again. [Option: Check the "Vertical layout" box in the applet.] </li></ul>
+  <ul><li>Press <alert>Draw Samples</alert> again. [Option: Scroll to the far right and check the "Vertical layout" box in the applet.] </li></ul>
   <exercise xml:id="inv2-4-j" label="I6.4.10">
     <title>Generate second sample</title>
     <statement>
       <p>Did you obtain the same sample of 47 weights? Did you obtain the same sample mean? Do either of the two sample means generated thus far equal the population mean?</p>
     </statement>
     <response/>
+    <solution>Probably obtained a different sample mean in the second sample.</solutions>
   </exercise>
   <ul><li>Continue to press <alert>Draw Samples</alert> 8 more times (for 10 samples total), and notice the variability in the resulting sample means from sample to sample. </li></ul>
   <exercise xml:id="inv2-4-k" label="I6.4.11">
@@ -167,6 +199,8 @@
       <p>Is a pattern beginning to emerge in the Sampled Statistics distribution graph?</p>
     </statement>
     <response/>
+    <solution>The values appear to be clustering around 167 but with less spread. Here is one example:
+    <img source="images/Inv2.4solsk.jpg" width="50%"></solution>
   </exercise>
   <ul>
   <li>Now set the <term index="no">Number of Samples</term> to 990 (for 1,000 total) and press <term index="no">Draw Samples</term>.
@@ -176,7 +210,7 @@
     <title>Generate 1000 samples</title>
     <statement>
       <p> 
-      Describe the shape, center, and variability of the distribution of the sample means (lower right). How do these features compare to the population distribution? Which one of these features has changed the most vs. the population, and how has it changed?</p>
+      Describe the shape, center, and variability of the distribution of the sample means (lower right graph). How do these features compare to the population distribution? Which one of these features has changed the most vs. the population, and how has it changed?</p>
     <hint>
       <p>Note the change in scaling. You can check the Population scale box to rescale back to the original population scaling and add the location of the population mean.</p>
     </hint>
@@ -187,6 +221,9 @@
       <p>Standard deviation: <var width="10"/></p>
       <p>Comparison (sample means vs. population): <var width="40"/></p>
     </statement>
+    <solution>Here is one example:
+    <img source="images/Inv2.4solsl.png" width="50%">
+    The shape should be approximately normal, similar to the population. The mean is 166.8, similar to <m>\mu</m> (167). The standard deviation is 5.16, much smaller than the value of <m>\sigma</m> for the population (35).
     <response/>
   </exercise>
   
@@ -196,6 +233,7 @@
       <p>How can we use your simulated distribution of sample means to decide whether it is surprising that a boat with 47 passengers would exceed the (average) weight limit by chance (random sampling error) alone?</p>
     </statement>
     <response/>
+    <solution>We can count how many sample means are greater than the weight limit 159.57 lbs.</solution>
   </exercise>
   
   <ul>
@@ -205,9 +243,15 @@
   <exercise xml:id="inv2-4-n" label="I6.4.14">
     <title>Count samples exceeding limit</title>
     <statement>
-      <p>To investigate the question posed in <xref ref="inv2-4-m" text="custom">question 12</xref>, what conclusions can you draw from the count displayed by the applet?</p>
+      <p>To investigate the question posed in <xref ref="inv2-4-m" text="custom">Question 12</xref>, what conclusions can you draw from the count displayed by the applet?</p>
     </statement>
     <response/>
+    <solution>
+    We want to see how often we get a sample mean this larger or even larger, <m>P(\bar{x} > 159.57)</m>.
+Example results:
+<img source="images/Inv2.4solsn.png" width="50%">
+This indicates that over 92% of the time do we get an average weight above 159.57 (so above the weight limit for the boat) for a sample of 47 passengers.
+</solution>
   </exercise>
   
   <paragraphs>
@@ -217,7 +261,7 @@
   </paragraphs>
   
   <ul><li>
-  Now choose the data from the second column (pop2) with the Choose variable pull-down menu on the left side. 
+  Now choose the data from the second column (<c>pop2</c>) with the <term index="no">Choose variable</term> pull-down menu on the left side. 
   </li></ul>
 
   <exercise xml:id="inv2-4-o" label="I6.4.15">
@@ -231,6 +275,7 @@
       <p>Comparison to previous population: <var width="40"/></p>
     </statement>
     <response/>
+    <solution>he shape is skewed to the right (skew = 1.56). This would indicate most of the weights were on the lower end (120-200 lbs) but there can also be some much heavier adults in the population. The mean and standard deviation are the same as with population one (essentially).</solution>
   </exercise>
   
   <ul>
@@ -240,7 +285,7 @@
   <exercise xml:id="inv2-4-p" label="I6.4.16">
     <title>Sample from skewed population</title>
     <statement>
-      <p>How does this distribution compare to the distribution in question 12?</p>
+      <p>How does this distribution compare to the distribution in Question 12?</p>
       
 <!--      <p>Sketch: <var width="30"/></p>-->
       <p>Mean: <var width="10"/></p>
@@ -248,6 +293,9 @@
       <p>Comparison: <var width="40"/></p>
     </statement>
     <response/>
+    <solution>Example results:
+    <img source="images/Inv2.4solsp.jpg" width="50%">
+    You should find that the shape is still approximately normal. The mean is still right around <m>\mu</m> (167) and the standard deviation is still right around 5.2.
   </exercise>
   
   <ul><li>Use the applet to approximate the probability of obtaining a sample mean weight of at least 159.574 lbs for a random sample of 47 passengers from population 2. </li></ul>
@@ -257,6 +305,7 @@
       <p>Has this probability changed considerably with the change in the shape of the distribution of the population of weights?</p>
     </statement>
     <response/>
+    <solution>We still find about 92% of the sample means above 159.57. Changing the population shape has not really changed our estimate of the probability.</solution>
   </exercise>
   <ul><li>
   Repeat this analysis using the other population distribution (pop3) 
@@ -318,7 +367,7 @@
   <exercise xml:id="inv2-4-t" label="I6.4.20">
     <title>Test prediction with larger sample</title>
     <statement>
-      <p>Did the shape of the sample means change very much? What about the mean of the sample means? What about the SD of the sample means? How were your predictions in question 18?</p>
+      <p>Did the shape of the sample means change very much? What about the mean of the sample means? What about the SD of the sample means? How were your predictions in Question 18?</p>
     </statement>
     <response/>
   </exercise>
@@ -400,7 +449,7 @@
   <exercise xml:id="inv2-4-w" label="I6.4.23">
     <title>Apply Central Limit Theorem</title>
     <statement>
-      <p>Use the result from the Central Limit Theorem and technology (e.g., the Normal Probability Calculator applet) to estimate the probability of a sample mean weight exceeding 159.57 lbs for a random sample of 47 passengers from a population with mean <m>\mu = 167</m> lbs and standard deviation <m>\sigma = 35</m> lbs. [Hint: Shade the area of interest in your sketch for question 21.] How does this estimated probability compare to what you found with repeated sampling from the hypothetical populations?</p>
+      <p>Use the result from the Central Limit Theorem and technology (e.g., the Normal Probability Calculator applet) to estimate the probability of a sample mean weight exceeding 159.57 lbs for a random sample of 47 passengers from a population with mean <m>\mu = 167</m> lbs and standard deviation <m>\sigma = 35</m> lbs. [Hint: Shade the area of interest in your sketch for Question 21.] How does this estimated probability compare to what you found with repeated sampling from the hypothetical populations?</p>
     </statement>
     <response/>
   </exercise>
