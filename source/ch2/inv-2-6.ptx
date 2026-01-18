@@ -19,6 +19,16 @@
       <p>So if you recorded a body temperature of 98.6°F would you be convinced you were sick? What temperature values would you be concerned about?</p>
       <p><var form="essay"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please provide an answer.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <response/>
   </exercise>
   
@@ -28,23 +38,45 @@
       <p>According to the Empirical Rule, if <m>\mu = 98.6</m>°F and <m>\sigma = 0.733</m>°F, between what two values should approximately 95% of healthy temperatures fall?</p>
       <p><var width="10"/> and <var width="10"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="96.783" tolerance="0.01">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="96.783" tolerance="0.05">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. Use the Empirical Rule: mean ± 2 standard deviations.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="99.715" tolerance="0.01">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="99.715" tolerance="0.05">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. Use the Empirical Rule: mean ± 2 standard deviations.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m>98.249 \pm 2(0.733) = (96.783, 99.715)</m>. We would expect approximately 95% of healthy human temperatures to fall in this interval.</p>
       <image source="images/Inv2.6bsols.jpg" width="60%">
         <description>Empirical Rule calculation showing 95% interval</description>
       </image>
     </solution>
-    <response/>
   </exercise>
   
   <exercise xml:id="inv2-6-c" label="I7.3.3">
     <title>Compare to confidence interval</title>
     <statement>
-      <p>Is your answer to <xref ref="inv2-6-b" text="custom">question 2</xref> similar to the confidence interval from <xref ref="inv2-5-x" text="custom">question 24 in Investigation 2.5</xref>? Explain the difference in how the endpoints of the confidence interval are constructed and how we interpret the confidence interval.</p>
-      <p><var form="essay"/></p>
+      <p>Is your answer to <xref ref="inv2-6-b" text="custom">Question 2</xref> similar to the confidence interval from <xref ref="inv2-5-x" text="custom">Question 24 in Investigation 2.5</xref>? Explain the difference in how the endpoints of the confidence interval are constructed and how we interpret the confidence interval.</p>
     </statement>
     <solution>
-      <p>The interval in <xref ref="inv2-6-b" text="custom">question 2</xref> is much wider than a 95% confidence interval. A 95% confidence interval would be <m>98.249 \pm 1.96 (0.733/\sqrt{130}) = (98.12, 98.38)</m>. This interval uses the sample size, and estimates the average human body temperature, not an individual body temperature. We are 95% confident the average human body temperature is between 98.12 and 98.38°F.</p>
+      <p>The interval in <xref ref="inv2-6-b" text="custom">Question 2</xref> is much wider than a 95% confidence interval. A 95% confidence interval would be <m>98.249 \pm 1.96 (0.733/\sqrt{130}) = (98.12, 98.38)</m>. This interval uses the sample size, and estimates the average human body temperature, not an individual body temperature. We are 95% confident the average human body temperature is between 98.12 and 98.38°F.</p>
     </solution>
     <response/>
   </exercise>
@@ -58,12 +90,46 @@
   <exercise xml:id="inv2-6-d" label="I7.3.4">
     <title>Predict individual temperature</title>
     <statement>
-      <p>Still using our same sample results, what one number would you use to predict a healthy body temperature? If you then considered the uncertainty (margin-of-error) in this estimate for predicting one person's body temperature, would you expect this margin-of-error to be larger or smaller when predicting one person's temperature than for predicting the population mean body temperature? Explain.</p>
-      
+      <p>Still using our same sample results, 
+      what one number would you use to predict a healthy body temperature? 
+      </p>
       <p>Estimate: <var width="10"/></p>
-      
-      <p>Margin-of-error comparison: <var form="essay"/></p>
+      <p>If you then considered the uncertainty (margin-of-error) in this estimate for predicting one person's body temperature, would you expect this margin-of-error to be larger or smaller when predicting one person's temperature than for predicting the population mean body temperature?      
+      <p>Margin-of-error comparison: <var width="10"/></p>
+<p> Explain. <var width = "30"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="98.249" tolerance="0.01">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="98.249" tolerance="0.05">
+          <feedback><p>Close! Check the sample mean from the introduction.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. Use the sample mean as your best estimate.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="^\s*larger\s*$">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string="larger">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. Consider whether there's more variability in individual values or in sample means.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please provide an answer.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>We could still use the sample mean as the best one number prediction of a person's healthy body temperature. But we would expect more uncertainty in this estimate of an individual person as there is a lot of person to person variation in body temperatures.</p>
     </solution>
@@ -108,10 +174,22 @@
       <p>Calculate <m>s\sqrt{1+\frac{1}{n}}</m> for the body temperature data.</p>
       <p><var width="10"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="0.735" tolerance="0.002">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="0.735" tolerance="0.01">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. Use the formula with s = 0.733 and n = 130.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m>0.733\sqrt{1+\frac{1}{130}} \approx 0.735</m></p>
     </solution>
-    <response/>
   </exercise>
   
   <p>If we are willing to assume that the population follows a normal distribution (note this is more restrictive than what we need to apply the Central Limit Theorem for a sample mean), then we can construct a 95% prediction interval for an individual outcome using the <m>t</m>-distribution.</p>
@@ -135,21 +213,55 @@
   <exercise xml:id="inv2-6-g" label="I7.3.7">
     <title>Find <m>t^*</m> critical value</title>
     <statement>
-      <p>Notice the critical value will be the same as in <xref ref="inv2-5-w" text="custom">question 23 in Investigation 2.5</xref>. Recall or use technology to determine the critical value with <m>n = 130</m> and 95% confidence.</p>
+      <p>Notice the critical value will be the same as in <xref ref="inv2-5-w" text="custom">Question 23 in Investigation 2.5</xref>. Recall or use technology to determine the critical value with <m>n = 130</m> and 95% confidence.</p>
       <p><m>t_{129}^*</m> = <var width="10"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="1.979" tolerance="0.002">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="1.979" tolerance="0.01">
+          <feedback><p>Close! Check your critical value calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. Use a t-table or calculator with df = 129 and 95% confidence.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m>t_{129}^* = 1.979</m></p>
     </solution>
-    <response/>
   </exercise>
   
   <exercise xml:id="inv2-6-h" label="I7.3.8">
     <title>Calculate prediction interval</title>
     <statement>
-      <p>Using your answer to <xref ref="inv2-6-g" text="custom">question 7</xref>, calculate a 95% prediction interval for an individual healthy adult body temperature.</p>
+      <p>Using your answer to <xref ref="inv2-6-g" text="custom">Question 7</xref>, calculate a 95% prediction interval for an individual healthy adult body temperature.</p>
       <p><var form="essay"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string="\(\s*96\.79\s*,\s*99\.70?\s*\)">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string="\(\s*96\.8\s*,\s*99\.7\s*\)">
+          <feedback><p>Correct! (Rounded values accepted)</p></feedback>
+        </condition>
+        <condition string="96\.79.*99\.70?">
+          <feedback><p>Close! Make sure to include proper interval notation with parentheses: (lower, upper)</p></feedback>
+        </condition>
+        <condition string="96\.8.*99\.7">
+          <feedback><p>Close! Make sure to include proper interval notation with parentheses: (lower, upper)</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Not quite. Calculate: 98.249 ± 1.979(0.735) and express as an interval (lower, upper).</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please provide an answer.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>95% prediction interval = <m>98.249 \pm 1.979(0.735) = 98.249 \pm 1.455 = (96.79, 99.70)</m></p>
       <image source="images/Inv2.6hsolsJMP.png" width="60%">
@@ -162,8 +274,7 @@
   <exercise xml:id="inv2-6-i" label="I7.3.9">
     <title>Interpret prediction interval</title>
     <statement>
-      <p>Provide a one-sentence interpretation of the interval calculated in <xref ref="inv2-6-h" text="custom">question 8</xref>.</p>
-      <p><var form="essay"/></p>
+      <p>Provide a one-sentence interpretation of the interval calculated in <xref ref="inv2-6-h" text="custom">Question 8</xref>.</p>
     </statement>
     <solution>
       <p>We are 95% confident that an individual randomly selected healthy adult will have a body temperature that is between 96.79°F to 99.71°F.</p>
@@ -174,23 +285,75 @@
   <exercise xml:id="inv2-6-j" label="I7.3.10">
     <title>Compare intervals</title>
     <statement>
-      <p>How do the center and width of this prediction interval compare to the 95% confidence interval for the population mean body temperature found in <xref ref="inv2-5-x" text="custom">question 24 in Investigation 2.5</xref>?</p>
-    <p>center: <var form="10"/></p>
-    <p>width: <var form="10"/></p>
+      <p>How do the center and width of this prediction interval compare to the 95% confidence interval for the population mean body temperature found in <xref ref="inv2-5-x" text="custom">Question 24 in Investigation 2.5</xref>?</p>
       <hint>
         <p>The prediction interval accounts for both sampling variability and individual variability.</p>
       </hint>
+    <p>center: <var form="10"/></p>
+    <p>width: <var form="10"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string="^\s*the\s+same\s*$">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string="the\s+same">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string="same">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Not quite. Both intervals are centered at the sample mean.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please provide an answer.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="^\s*wider\s*$">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string="^\s*longer\s*$">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string="wider">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string="longer">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Not quite. Consider the additional variability included in a prediction interval.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please provide an answer.</p></feedback>
+        </condition>
+      </var>
+    </setup>
   </exercise>
   
   <exercise xml:id="inv2-6-k" label="I7.3.11">
     <title>Compare to Empirical Rule interval</title>
     <statement>
-      <p>How does this prediction interval compare to the interval from <xref ref="inv2-6-b" text="custom">question 2</xref>?</p>
-      <p><var form="essay"/></p>
+      <p>How does this prediction interval compare to the interval from <xref ref="inv2-6-b" text="custom">Question 2</xref>?</p>
+      <p><var width="20"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string="similar">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Not quite. Consider how close the prediction interval is to the Empirical Rule interval.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please provide an answer.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
-      <p>The prediction interval is more similar to the answer from <xref ref="inv2-6-b" text="custom">question 2</xref>.</p>
+      <p>The prediction interval is more similar to the answer from <xref ref="inv2-6-b" text="custom">Question 2</xref>.</p>
     </solution>
     <response/>
   </exercise>
