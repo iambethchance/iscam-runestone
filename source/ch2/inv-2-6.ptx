@@ -84,18 +84,7 @@
       </p>
       <p>Estimate: <var width="10"/></p>
       <p>If you then considered the uncertainty (margin-of-error) in this estimate for predicting one person's body temperature, would you expect this margin-of-error to be larger or smaller when predicting one person's temperature than for predicting the population mean body temperature?</p>
-      <p>Margin-of-error comparison:</p>
-      <choices randomize="yes">
-        <choice>
-          <statement><p>Smaller</p></statement>
-        </choice>
-        <choice correct="yes">
-          <statement><p>Larger</p></statement>
-        </choice>
-        <choice>
-          <statement><p>The same</p></statement>
-        </choice>
-      </choices>
+      <p>Margin-of-error comparison: <var form="buttons"/></p>
       <p>Explanation: <var width="30"/></p>
     </statement>
     <setup>
@@ -105,6 +94,17 @@
         </condition>
         <condition number="98.249" tolerance="0.05">
           <feedback><p>Close! Check the sample mean from the introduction.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="Smaller">
+          <feedback><p>Not quite. Consider whether there's more variability in individual values or in sample means.</p></feedback>
+        </condition>
+        <condition string="Larger">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string="The same">
+          <feedback><p>Not quite. Consider whether there's more variability in individual values or in sample means.</p></feedback>
         </condition>
       </var>
       <var>
