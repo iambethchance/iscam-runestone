@@ -85,7 +85,7 @@
       <p>Estimate: <var width="10"/></p>
       <p>If you then considered the uncertainty (margin-of-error) in this estimate for predicting one person's body temperature, would you expect this margin-of-error to be larger or smaller when predicting one person's temperature than for predicting the population mean body temperature?</p>      
       <p>Margin-of-error comparison: <var width="10"/></p>
-      <p>Explanation: <var form="essay"/></p>
+      <p>Explanation: <var width="30"/></p>
     </statement>
     <setup>
       <var>
@@ -292,11 +292,11 @@
         <condition string="same">
           <feedback><p>Correct!</p></feedback>
         </condition>
-        <condition string=".+">
-          <feedback><p>Not quite. Both intervals are centered at the sample mean.</p></feedback>
+        <condition string="equal">
+          <feedback><p>Correct!</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>Please provide an answer.</p></feedback>
+          <feedback><p>Not quite. Both intervals are centered at the sample mean.</p></feedback>
         </condition>
       </var>
       <var>
@@ -312,11 +312,8 @@
         <condition string="longer">
           <feedback><p>Correct!</p></feedback>
         </condition>
-        <condition string=".+">
-          <feedback><p>Not quite. Consider the additional variability included in a prediction interval.</p></feedback>
-        </condition>
         <condition string=".*">
-          <feedback><p>Please provide an answer.</p></feedback>
+          <feedback><p>Not quite. Consider the additional variability included in a prediction interval.</p></feedback>
         </condition>
       </var>
     </setup>
