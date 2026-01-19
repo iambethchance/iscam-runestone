@@ -169,10 +169,10 @@
           <feedback><p>Close! Check your calculation.</p></feedback>
         </condition>
         <condition number="0.5882" tolerance="0.01">
-          <feedback><p>Close! Did you include the observation equal to 5.0? Typically we count values strictly below the threshold.</p></feedback>
+          <feedback><p>Did you include the observation equal to 5.0?</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>Not quite. Count how many observations are below 5.0 mg/l and divide by the total number of observations.</p></feedback>
+          <feedback><p>Count how many observations are (strictly?) below 5.0 mg/l and divide by the total number of observations.</p></feedback>
         </condition>
       </var>
     </setup>
@@ -206,16 +206,28 @@
       <p>If you decide that more than half of the time the river is non-compliant (that is, more than 50% of measurements are below 5.0 mg/l), what does that imply about the long-run median dissolved oxygen level? Explain.</p>
       <p><var width="60" height="5"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string="(less\s+than|below|smaller\s+than|under|lower\s+than).*(5\.0|5)">
+          <feedback><p>Correct! The median must be less than 5.0 mg/l.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please provide an answer.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>If more than half of the observations are less than 5.0, this implies that the median is less than 5.0.</p>
     </solution>
-    <response/>
   </exercise>
 
   <exercise xml:id="inv2-7-i">
     <title>Compare to <em>t</em>-test</title>
     <statement>
-      <p>Identify one advantage to this analysis over the one-sample <em>t</em>-test. Identify one disadvantage of this analysis over the one-sample <em>t</em>-test.</p>
+      <p>Identify one advantage to this analysis over the one-sample <em>t</em>-test.</p><p> Identify one disadvantage of this analysis over the one-sample <em>t</em>-test.</p>
     </statement>
     <solution>
       <p>We do not have to worry about the shape of the sample distribution or the sample size to use the binomial test. However, we only get to talk about whether or not they are non-compliant, not how small the actual observed oxygen levels are.</p>
@@ -226,7 +238,7 @@
   <exercise xml:id="inv2-7-j">
     <title>Alternative criterion</title>
     <statement>
-      <p>The researchers actually wanted to decide whether the river was non-compliant more than 10% of the time. How would that change your analysis in <xref ref="inv2-7-g" text="custom">question 7</xref> and would the p-value be larger or smaller?</p>
+      <p>The researchers actually wanted to decide whether the river was non-compliant more than 10% of the time. How would that change your analysis in <xref ref="inv2-7-g" text="custom">Question 7</xref> and would the p-value be larger or smaller?</p>
     </statement>
     <solution>
       <p>Now our hypotheses would be <m>H_0: \pi = 0.10</m> vs. <m>H_a: \pi > 0.10</m>. With a sample proportion of 0.5588, our p-value would be much, much smaller in this case.</p>
