@@ -19,6 +19,41 @@
       <p>Median: <var width="15"/> NTU</p>
       <p>Is a normal distribution reasonable? <var width="60" height="3"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="100.31" tolerance="0.5">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="100.31" tolerance="2">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. Calculate the mean of the turbidity values.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="75.50" tolerance="0.5">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="75.50" tolerance="2">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. Find the median of the turbidity values.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="(no|not|not\s+reasonable|skewed|right\s+skewed)">
+          <feedback><p>Correct! The distribution is skewed to the right and not well modelled by a normal distribution.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please provide an answer.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>The mean is 100.31 NTU and the median is 75.50 NTU. The distribution is skewed to the right and not well modelled by a normal distribution.</p>
       <image source="images/Inv2.8solsa.jpg" width="70%">
@@ -32,8 +67,57 @@
     <title>Apply log transformation</title>
     <statement>
       <p>Carry out a log transformation (See <xref ref="investigation2-2" text="custom">Investigation 2.2, question 9</xref>) and report the mean, median, and standard deviation of the transformed data. Verify that a log-normal probability model is reasonable for these data.</p>
-      <p><var width="60" height="5"/></p>
+      <p>Mean (log turbidity): <var width="15"/> log NTU</p>
+      <p>Median (log turbidity): <var width="15"/> log NTU</p>
+      <p>Standard deviation (log turbidity): <var width="15"/> log NTU</p>
+      <p>Is a normal distribution reasonable for the log-transformed data? <var width="60" height="3"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="4.3011" tolerance="0.01">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="4.3011" tolerance="0.05">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. Calculate the mean of the log-transformed turbidity values.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="4.3241" tolerance="0.01">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="4.3241" tolerance="0.05">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. Find the median of the log-transformed turbidity values.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.6988" tolerance="0.01">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="0.6988" tolerance="0.05">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. Calculate the standard deviation of the log-transformed turbidity values.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="(yes|reasonable|normal|approximately|symmetric)">
+          <feedback><p>Correct! The log-transformed data is reasonably well modeled by a normal distribution.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please provide an answer.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>The log-turbidity values are reasonably well modeled by a normal distribution, with mean 4.3011 log NTU and median 4.3241 log NTU.</p>
       <p>(We could also compare the original observations to the log normal distribution.)</p>
@@ -69,6 +153,82 @@
       
       <p>Comparisons: <var width="60" height="5"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="100.3" tolerance="0.5">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="100.3" tolerance="2">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. This should be the mean of the original turbidity values.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="4.608" tolerance="0.01">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="4.608" tolerance="0.05">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. This should be ln(mean of original values).</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="4.301" tolerance="0.01">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="4.301" tolerance="0.05">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. This should be the mean of the log-transformed values.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="75.5" tolerance="0.5">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="75.5" tolerance="2">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. This should be the median of the original turbidity values.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="4.324" tolerance="0.01">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="4.324" tolerance="0.05">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. This should be ln(median of original values).</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="4.324" tolerance="0.01">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="4.324" tolerance="0.05">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. This should be the median of the log-transformed values.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please provide an answer.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>The mean and median values of the transformed data are similar as we would expect with the transformed data now being symmetric.</p>
       <p>The median turbidity value (before transforming) was 75.5. The natural log of this value is 4.3241. This is the same as the median of the log-turbidity values.</p>
@@ -99,7 +259,6 @@
     <title>Explain median vs. mean transformation</title>
     <statement>
       <p>Explain why the median(log(turbidity)) is expected to be the same as log(median(turbidity)), but this interchangeability is not expected to work for the mean.</p>
-      <p><var width="60" height="5"/></p>
     </statement>
     <solution>
       <p>We expect the medians to match because the median is essentially the middle value (slightly untrue with an even number of observations) and the same observation will still be the median value after the log transformation. However, the mean utilizes the numerical values and the relative distances between observations is changed with the log transformation.</p>
@@ -115,7 +274,6 @@
     <title>Calculate confidence interval for transformed data</title>
     <statement>
       <p>Use a one-sample <em>t</em>-confidence interval to estimate the mean of the log-turbidity value for this river.</p>
-      <p><var width="60" height="5"/></p>
     </statement>
     <solution>
       <p>We are 95% confident the population mean (so also the population median with symmetric data) is in this interval.</p>
