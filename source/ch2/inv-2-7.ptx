@@ -17,9 +17,7 @@
     <title>Identify sampling method</title>
     <statement>
       <p>Would you consider this sampling from a population or from a random process?</p>
-      <p><var width="60" height="3"/></p>
       <p>What are the observational units?</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>Random process. The individual water "samples" are the observational units. This is probably better thought of as sampling from a never ending process.</p>
@@ -31,7 +29,6 @@
     <title>Assess sampling method</title>
     <statement>
       <p>Because the dissolved oxygen measurements were taken in the same location at fixed time intervals, would you consider this a simple random sample? Do you think the sample is likely to be representative of the river conditions? Explain.</p>
-      <p><var width="60" height="5"/></p>
     </statement>
     <solution>
       <p>This is more like a systematic sample but is likely to be representative as long as there aren't major changes in the river during the time period.</p>
@@ -71,6 +68,70 @@
       <p><m>H_0: </m> <var width="5"/> <var width="5"/> <var width="5"/></p>
       <p><m>H_a: </m> <var width="5"/> <var width="5"/> <var width="5"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please provide an answer.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="(μ|mu)">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. Use μ for the population mean.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="=">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. The null hypothesis uses =</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="5" tolerance="0.01">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="5" tolerance="0.1">
+          <feedback><p>Close! Check the value.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. What is the standard level mentioned?</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="(μ|mu)">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. Use μ for the population mean.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="(&lt;|<)">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. What direction is "less than"?</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="5" tolerance="0.01">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="5" tolerance="0.1">
+          <feedback><p>Close! Check the value.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. What is the standard level mentioned?</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Let <m>\mu</m> represent the long-run mean dissolved oxygen in this river.</p>
       <p><m>H_0: \mu = 5.0</m> mg/l</p>
@@ -83,23 +144,38 @@
     <title>Assess validity of <em>t</em>-test</title>
     <statement>
       <p>Is the one-sample <em>t</em>-test likely to be valid for these data? Explain why or why not.</p>
-      <p><var width="60" height="5"/></p>
     </statement>
     <solution>
       <p>The sample size is 34 and the data are not severely skewed so perhaps the <em>t</em> procedures for the population mean will be valid (but not a prediction interval).</p>
     </solution>
     <response/>
   </exercise>
-
+<p>An alternative analysis involves recoding the observations as "compliant" and "not compliant." If we say a measurement is non-compliant when the dissolved oxygen is below 5.0 mg/l, how many non-compliant measurements do we have in this data set?</p>
   <exercise xml:id="inv2-7-f">
     <title>Calculate proportion non-compliant</title>
     <statement>
-      <p>An alternative analysis involves recoding the observations as "compliant" and "not compliant." If we say a measurement is non-compliant when the dissolved oxygen is below 5.0 mg/l, how many non-compliant measurements do we have in this data set? What proportion of the sample is below 5.0 mg/l (non-compliant)?</p>
+      <p> What proportion of the sample is below 5.0 mg/l (non-compliant)?</p>
     <hint>
       <p>What do you want to do with the observation that is equal to 5.0?</p>
     </hint>
-      <p><var width="60" height="5"/></p>
+      <p><var width="10"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="0.5588" tolerance="0.01">
+          <feedback><p>Correct! 19/34 ≈ 0.5588</p></feedback>
+        </condition>
+        <condition number="0.5588" tolerance="0.05">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition number="0.5882" tolerance="0.01">
+          <feedback><p>Close! Did you include the observation equal to 5.0? Typically we count values strictly below the threshold.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. Count how many observations are below 5.0 mg/l and divide by the total number of observations.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Nineteen of the 34 measurements are less than 5 (56% "non-compliant"). One observation is equal to 5 (need to decide whether you want to count that as compliant or not).</p>
     </solution>
@@ -140,8 +216,6 @@
     <title>Compare to <em>t</em>-test</title>
     <statement>
       <p>Identify one advantage to this analysis over the one-sample <em>t</em>-test. Identify one disadvantage of this analysis over the one-sample <em>t</em>-test.</p>
-      <p>Advantage: <var width="60" height="5"/></p>
-      <p>Disadvantage: <var width="60" height="5"/></p>
     </statement>
     <solution>
       <p>We do not have to worry about the shape of the sample distribution or the sample size to use the binomial test. However, we only get to talk about whether or not they are non-compliant, not how small the actual observed oxygen levels are.</p>
@@ -153,7 +227,6 @@
     <title>Alternative criterion</title>
     <statement>
       <p>The researchers actually wanted to decide whether the river was non-compliant more than 10% of the time. How would that change your analysis in <xref ref="inv2-7-g" text="custom">question 7</xref> and would the p-value be larger or smaller?</p>
-      <p><var width="60" height="5"/></p>
     </statement>
     <solution>
       <p>Now our hypotheses would be <m>H_0: \pi = 0.10</m> vs. <m>H_a: \pi > 0.10</m>. With a sample proportion of 0.5588, our p-value would be much, much smaller in this case.</p>
