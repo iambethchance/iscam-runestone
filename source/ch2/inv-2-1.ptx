@@ -145,8 +145,10 @@ attach(births)    # Now R knows what the "birthweight" variable is
     <hint>
       <title>JMP Instructions</title>
       <p><ul>
-        <li><p>Choose File &gt; New &gt; Data table. Open the USbirthsJan2024.txt (raw data) link from the data files page and select all the observations and the variable names and copy the data into the clipboard. Return to the data table in JMP and select Edit &gt; Paste with Column Names.</p></li>
-        <li><p>Or if the .txt file is saved on your computer, you can choose File &gt; Open and use the pull-down menu to change the file type.</p></li>
+        <li><p>Choose <term index="no">File &gt; New &gt; Data table</term>. Open the <url href="http://www.rossmanchance.com/iscam4/data/USbirthsJan2024.txt">USbirthsJan2024.txt</url> (raw data) link from the data files <url href="https://www.rossmanchance.com/iscam4/files.html">page</url>.</li>
+        <li><p>Highlight and select all the observations and the variable names and copy the data into the clipboard.</p></li> 
+        <li><p>Return to the data table in JMP and select <term index="no">Edit &gt; Paste with Column Names</term>.</p></li>
+        <p>Or if the .txt file is saved on your computer,</p><li><p> you can choose <term index="no">File &gt; Open<term> and use the pull-down menu to change the file type.</p></li>
       </ul></p>
     </hint>
     </statement>
@@ -195,10 +197,10 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
     <hint>
       <title>JMP Instructions</title>
       <p><ul>
-        <li><p>Select <alert>Graph &gt; Graph Builder</alert></p></li>
+        <li><p>Select <term index="no">Graph &gt; Graph Builder</term></p></li>
         <li><p>Drag the birthweight variable from the list on the left to the X axis.</p></li>
         <li><p>Select the far left graph type that is only dots.</p></li>
-        <li><p>Use the pull-down menu to change the Jitter style to <alert>Positive Grid</alert>.</p></li>
+        <li><p>Use the pull-down menu to change the Jitter style to <term index="no">Positive Grid</term>.</p></li>
       </ul></p>
       <image source="images/JMPdotplot.png" width="40%">
         <description>JMP Graph Builder interface for creating dotplots</description>
@@ -266,12 +268,12 @@ nrow(births2)
     </hint>
     <hint>
       <title>JMP Instructions</title>
-      <p><ol>
-        <li><p>Use the Rows menu to select Row Selection &gt; Select Where</p></li>
+      <p><ul>
+        <li><p>Use the <term index="no">Rows</ term> menu to select <term index="no">Row Selection &gt; Select WhereM</term></p></li>
         <li><p>Specify you want to select the rows where birth weight is equals 9999</p></li>
-        <li><p>Press OK.</p></li>
-        <li><p>Then select Rows &gt; Hide and Exclude</p></li>
-      </ol></p>
+        <li><p>Press <term index="no">OK</term>.</p></li>
+        <li><p>Then select <term index="no">Rows &gt; Hide and Exclude</term></p></li>
+      </ul></p>
       <image source="images/JMProwselection.png" width="60%">
         <description>JMP Row Selection dialog for subsetting data</description>
       </image>
@@ -412,7 +414,7 @@ hist(births2$birthweight, xlab="birth weight")
       <p>How would you characterize the shape, center, and variability of these birthweights? (Remember to put your comments in context, e.g., "The distribution of January birthweights in 2024 was …")</p>
     </statement>
     <solution>
-      <p>The distribution of January 2024 birthweights was slightly skewed to the left. Most of the weights are between 2000 and 5000 grams, with a peak around 3200 grams.</p>
+      <p>The distribution of January 2024 birthweights was slightly skewed to the left. Most of the weights were between 2000 and 5000 grams, with a peak around 3200 grams.</p>
     </solution>
     <response/>
   </exercise>
@@ -427,21 +429,21 @@ hist(births2$birthweight, xlab="birth weight")
     </solution>
     <response/>
   </exercise>
-  
+  <p>Now, further subset the <c>births2</c> data based on whether or not the pregnancy lasted at least 37 weeks. </p>
   <exercise xml:id="inv2-1-h" label="I2.1h">
     <title>Subset by gestation period</title>
     <statement>
-      <p>Now, further subset the <c>births2</c> data based on whether or not the pregnancy lasted at least 37 weeks. How many observations do you end up with?</p>
     <hint>
       <title>R Hints</title>
-      <p>Edit the previous command, using births2 (two places). Use "==" for an equality comparison (i.e., <c>OEG == 2</c>).</p>
+      <p>Edit the previous command <c>births2 = births[which(births$birthweight < 9999), ] </c> to create <c>births3</c> from <c>births2</c>, using "==" for an equality comparison (i.e., <c>OEG == 2</c>).</p>
     </hint>
     <hint>
-      <title>JMP Hints</title>
+      <title>JMP Hints</title>Proceed as in Question 6 and now set two conditions:
         <image source="images/Inv2-1h-solsJMP.png" width="60%">
           <description>JMP output showing selected rows</description>
         </image>
     </hint>
+      <p>How many observations do you end up with?</p>
     </statement>
     <setup>
       <var>
@@ -461,14 +463,13 @@ hist(births2$birthweight, xlab="birth weight")
       <p>265,676 observations</p>
       <p>R command: <c>births3=births2[which(births2$OEG == 2 ), ]</c></p>
     </solution>
-    <response/>
   </exercise>
   
   <exercise xml:id="inv2-1-i" label="I2.1i">
     <title>Assess symmetry after subsetting</title>
     <statement>
       <p>After this step do we have a more symmetric distribution? <var width="30"/></p>
-      <p>What is a downside to subsetting the dataset in this way? <var width="30"/></p>
+      <p>What is a downside to subsetting the dataset in this way? <var width="60"/></p>
     </statement>
       <setup>
         <var>
@@ -477,14 +478,21 @@ hist(births2$birthweight, xlab="birth weight")
               <p>Correct! The distribution does appear more symmetric after removing premature births, but see the Solution for a possible downside.</p>
             </feedback>
           </condition>
-          <condition string=".*(more|symmetric|More|Symmetric).*">
+          <condition string=".*">
             <feedback>
-              <p>You're on the right track. A simple "yes" answer is sufficient here.</p>
+              <p>After removing premature births, does the distribution look more symmetric? Consider the shape of the histogram.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string=".+">
+            <feedback>
+              <p>Response recorded.</p>
             </feedback>
           </condition>
           <condition string=".*">
             <feedback>
-              <p>After removing premature births, does the distribution look more symmetric? Consider the shape of the histogram.</p>
+              <p>Please provide an answer.</p>
             </feedback>
           </condition>
         </var>
@@ -504,7 +512,7 @@ hist(births2$birthweight, xlab="birth weight")
   <exercise xml:id="tech-detour-numerical-summaries">
     <title>Technology Detour <mdash/> Numerical Summaries</title>
     <statement>
-      <p>Calculate numerical summaries (mean, median, standard deviation, skewness) for the subsetted birth weight data (births3).</p>
+      <p>Calculate numerical summaries (mean, median, standard deviation, skewness) for the subsetted birth weight data (<c>births3</c>).</p>
     <hint>
       <title>R Instructions</title>
       <p>Use the <c>iscamsummary</c> function to get numerical summaries:</p>
@@ -517,13 +525,14 @@ iscamsummary(births3$birthweight, digits=2)
         </input>
       </program>
       <p>Expected output:</p>
-      <image source="images/Inv2-1j-solsR.jpg" width="60%">
+      <image source="images/Inv2-1j-solsR.jpg" width="100%">
         <description>R numerical summaries for birth weights</description>
       </image>
     </hint>
     <hint>
       <title>JMP Instructions</title>
-      <p>See the Analyze &gt; Distribution output from creating the histogram and/or use Analyze &gt; Tabulate for custom summaries.</p>
+      <p>See the <term index="no">Analyze &gt; Distribution</term> output from creating the histogram and/or use 
+      <term index="no">Analyze &gt; Tabulate</term> for custom summaries.</p>
       <p>Expected output:</p>
       <image source="images/Inv2-1j-solsJMP2.png" width="40%">
         <description>JMP numerical summaries for birth weights</description>
@@ -687,7 +696,7 @@ iscamaddnorm(births3$birthweight)
     <title>Technology Detour <mdash/> Checking Normal Distribution Properties</title>
     <statement>
       <p>Another method for comparing your data to a theoretical normal distribution is to see whether certain properties of a normal distribution hold true. In Chapter 1, you learned that 95% of observations in a normal distribution should fall within two standard deviations of the mean.</p>
-      <p>Calculate the percentage of the birthweights (in births3) that fall within 2 standard deviations of the mean.</p>
+      <p>Calculate the percentage of the birthweights (in <c>births3</c>) that fall within 2 standard deviations of the mean.</p>
     <hint>
       <title>R Instructions</title>
       <p>Create a Boolean (true/false) variable to identify observations within 2 SD:</p>
@@ -827,18 +836,18 @@ qqline(birthweight, datax=TRUE)
         <description>Normal probability calculation for low birth weight</description>
       </image>
     </hint>
-      <p>probability: <var width="10"/></p>
+      <p>probability (decimal): <var width="10"/></p>
       </statement>
       <setup>
         <var>
           <condition number="0.035" tolerance="0.005">
             <feedback>
-              <p>Correct! The probability is approximately 0.035 (or 3.5%).</p>
+              <p>Correct! The probability is approximately 0.035.</p>
             </feedback>
           </condition>
           <condition number="3.5" tolerance="0.5">
             <feedback>
-              <p>Correct! The probability is approximately 3.5% (or 0.035).</p>
+              <p>Report the probability as a decimal, but can interpret as 3.5% of the time ... </p>
             </feedback>
           </condition>
           <condition number="0.035" tolerance="0.015">
@@ -898,7 +907,7 @@ qqline(birthweight, datax=TRUE)
     <exercise xml:id="practice-2-1a-a" label="PP2.1A.1">
       <title>Compare dotplot and histogram</title>
       <statement>
-        <p>Create and include a dotplot and a histogram of the FCI values. Which graph do you prefer? Why?</p>
+        <p>Create a dotplot and a histogram of the FCI values. Which graph do you prefer? Why?</p>
       </statement>
       <response/>
     </exercise>
@@ -906,7 +915,7 @@ qqline(birthweight, datax=TRUE)
     <exercise xml:id="practice-2-1a-b" label="PP2.1A.2">
       <title>Assess normality with probability plot</title>
       <statement>
-        <p>Create and include a normal probability plot of the FCI values. What do you conclude from this graph? Explain your reasoning.</p>
+        <p>Create a normal probability plot of the FCI values. What do you conclude from this graph? Explain your reasoning.</p>
       </statement>
       <response/>
     </exercise>
@@ -947,7 +956,7 @@ qqline(birthweight, datax=TRUE)
     <exercise xml:id="practice-2-1b-a" label="PP2.1B.1">
       <title>Create dotplot with active title</title>
       <statement>
-        <p>Create and include a well-labeled dotplot of the performance lengths. Include an "active title."</p>
+        <p>Create a well-labeled dotplot of the performance lengths. Include an "active title." Report your axis labels and your title.</p>
       </statement>
       <response/>
     </exercise>
@@ -995,10 +1004,14 @@ qqline(birthweight, datax=TRUE)
       <hint>
         <title>In R</title>
         <p><c>mydata = rnorm(100, 2, 5)</c></p>
+        <p><c>qqnorm(mydata); qqline(mydata)</c></p>
       </hint>
       <hint>
         <title>In JMP</title>
-        <p>In new worksheet, choose Columns &gt; New Column. Under Initialize Data set the Number of rows to 100. Under Column Properties, select Formula. Then select Random &gt; Random Normal and specify (2,5).</p>
+        <p>In new worksheet, choose <term index="no">Columns &gt; New Column</term>. 
+        Under Initialize Data set the Number of rows to 100. 
+        Under Column Properties, select Formula. Then select 
+        <term index="no">Random &gt; Random Normal</term> and specify (2,5).</p>
       </hint>
       </statement>
       <response/>
@@ -1011,10 +1024,11 @@ qqline(birthweight, datax=TRUE)
       <hint>
         <title>In R</title>
         <p><c>mydata = rchisq(100, 2)</c></p>
+        <p><c>qqnorm(mydata); qqline(mydata)</c></p>
       </hint>
       <hint>
         <title>In JMP</title>
-        <p>Select Random &gt; Random ChiSquare and enter 2 as the "df"</p>
+        <p>Select <term index="no">Random &gt; Random ChiSquare</term> and enter 2 as the "df"</p>
       </hint>
       </statement>
       <response/>
