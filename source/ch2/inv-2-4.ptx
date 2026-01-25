@@ -31,7 +31,7 @@
       (To convey that these are population values, we will use Greek letters to represent their values, <m>\mu = 167</m>
        and <m>\sigma = 35</m>.)</p>
        <p> If we also assume that the weight distribution has an approximately normal-shape,
-       below is possible outline of the distribution of the weights of the population of roughly 225 million adult Americans in 2005.</p>
+       below is a possible outline of the distribution of the weights of the population of roughly 225 million adult Americans in 2005.</p>
     </paragraphs>
           <image source="images/Inv2.4b.jpg" width="50%">
           <description>Possible population distribution of weights</description>
@@ -48,16 +48,16 @@
     </hint>
       <p>The observational units are: <var width="30"/></p>
       <p>The variable is <var width="15"/>, </p>
-      <p>This variable is </p>
+      <p>Is the variable quantitative or categorical?</p>
     </statement>
     <setup>
       <var case="insensitive">
-        <condition string="boats|boat trips|trips|samples|sample|tour boats">
+        <condition string="boats|boat trips|trips|samples|sample|tour boats" correct="yes">
           <feedback><p>Correct!</p></feedback>
         </condition>
       </var>
       <var case="insensitive">
-        <condition string="average weight|mean weight|average weight of passengers|mean weight of passengers|average weight of 47 passengers">
+        <condition string="average weight|mean weight|average weight of passengers|mean weight of passengers|average weight of 47 passengers" correct="yes">
           <feedback><p>Correct!</p></feedback>
         </condition>
       </var>
@@ -107,6 +107,16 @@ with 47 passengers each. The variable is the average weight of the 47 passengers
       <p><em>Prediction:</em> Where do you think the distribution of sample means will be centered?</p>
       <p><var width="10"/> pounds</p>
     </statement>
+    <setup>
+      <var>
+        <condition string="^\s*\d+\.?\d*\s*$" correct="yes">
+          <feedback><p>Answer saved.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter a number.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <response/>
   </exercise>
   
@@ -117,7 +127,7 @@ with 47 passengers each. The variable is the average weight of the 47 passengers
     </statement>
     <choices randomize="yes">
       <choice><statement><p>More variability</p></statement></choice>
-      <choice><statement><p>Less variability</p></statement></choice>
+      <choice correct="yes"><statement><p>Less variability</p></statement></choice>
       <choice><statement><p>Same variability</p></statement></choice>
     </choices>
     <response/>
@@ -127,11 +137,12 @@ with 47 passengers each. The variable is the average weight of the 47 passengers
     <title>Compare probabilities</title>
     <statement>
       <p><m>P(\text{average weight} &gt; 159.6)</m> <var form="buttons" width="10"/> <m>P(\text{weight} &gt; 159.6)</m></p>
+      <hint>Keep in mind the observation of interest is below the mean</hint>
     </statement>
     <choices randomize="yes">
-      <choice><statement><p>LARGER</p></statement></choice>
-      <choice><statement><p>SMALLER</p></statement></choice>
-      <choice><statement><p>EQUAL</p></statement></choice>
+      <choice correct="yes"><statement><p>larger</p></statement></choice>
+      <choice ><statement><p>smaller</p></statement></choice>
+      <choice><statement><p>equal</p></statement></choice>
     </choices>
     <response/>
   </exercise>
@@ -140,8 +151,9 @@ with 47 passengers each. The variable is the average weight of the 47 passengers
     <title>Simulation Analysis</title>
     
     <p>To investigate this probability, we will generate random samples from a 
-    hypothetical population of adults' weights: 
-     <url href="https://www.rossmanchance.com/iscam4/data/WeightPopulations.txt">WeightPopulations.txt</url> data file and pretend each column is a different population of 20,000 adult tourists, each with a population mean weight (<m>\mu</m>) of 167 lbs and a population standard deviation (<m>\sigma</m>) of 35 lbs.</p>
+    hypothetical population of adults' weights. Open the
+     <url href="https://www.rossmanchance.com/iscam3/data/WeightPopulations.txt">WeightPopulations.txt</url> data file 
+     and pretend each column is a different population of 20,000 adult tourists, each with a population mean weight (<m>\mu</m>) of 167 lbs and a population standard deviation (<m>\sigma</m>) of 35 lbs.</p>
 
 <p> Using the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample.html?hideExtras=1">Sampling from Finite Population</url> applet
  (below or open in own window), carry out the following steps:</p>
