@@ -154,7 +154,8 @@ attach(births)    # Now R knows what the "birthweight" variable is
         <li><p>Or if the .txt file is saved on your computer,
         <ul><li><p> Choose <term index="no">File &gt; Open</term>.</p></li>
         <li><p>Use the pull-down menu to change the file type from all JMP files to Text Files
-        </p></li></ul>
+        </p></li>
+        <li><p>Select the file</p></li></ul>
         </p></li>
         </ul></p>
             </hint>
@@ -276,7 +277,7 @@ nrow(births2)
     <hint>
       <title>JMP Instructions</title>
       <p><ul>
-        <li><p>Use the <term index="no">Rows</term> menu to select <term index="no">Row Selection &gt; Select WhereM</term></p></li>
+        <li><p>Use the <term index="no">Rows</term> menu to select <term index="no">Row Selection &gt; Select Where</term></p></li>
         <li><p>Specify you want to select the rows where birth weight is equals 9999</p></li>
         <li><p>Press <term index="no">OK</term>.</p></li>
         <li><p>Then select <term index="no">Rows &gt; Hide and Exclude</term></p></li>
@@ -344,14 +345,14 @@ hist(births2$birthweight, xlab="birth weight")
     </hint>
     <hint>
       <title>JMP Instructions</title>
-      <p><ol>
-        <li><p>Choose Analyze &gt; Distribution</p></li>
-        <li><p>Drag birth weight to the Y, Columns box (or click on it and press the button)</p></li>
-        <li><p>Click OK.</p></li>
-        <li><p>Use the hot spot and choose Histogram Options &gt; Vertical (to unselect).</p></li>
-        <li><p>Right click on one of the values and select Add Axis Label and enter the variable description.</p></li>
-        <li><p>See File &gt; Preferences to change some of the default settings</p></li>
-      </ol></p>
+      <p><ul>
+        <li><p>Choose <term index="no">Analyze &gt; Distribution</term></p></li>
+        <li><p>Drag birth weight to the <term index="no">Y, Columns</term> box (or click on it and press the button)</p></li>
+        <li><p>Click <term index="no">OK</term>.</p></li>
+        <li><p>Use the hot spot and choose <term index="no">Histogram Options &gt; Vertical</term> (to unselect).</p></li>
+        <li><p>Right click on one of the values and select <term index="no">Add Axis Label</term> and enter the variable description.</p></li>
+        <li><p>See <term index="no">File &gt; Preferences</term> to change some of the default settings</p></li>
+      </ul></p>
       <image source="images/JMPAnalyzeDistribution.png" width="60%">
         <description>JMP Analyze Distribution dialog for creating histograms</description>
       </image>
@@ -421,7 +422,7 @@ hist(births2$birthweight, xlab="birth weight")
       <p>How would you characterize the shape, center, and variability of these birthweights? (Remember to put your comments in context, e.g., "The distribution of January birthweights in 2024 was …")</p>
     </statement>
     <solution>
-      <p>The distribution of January 2024 birthweights was slightly skewed to the left. Most of the weights were between 2000 and 5000 grams, with a peak around 3200 grams.</p>
+      <p>The distribution of January 2024 birthweights is slightly skewed to the left. Most of the weights are between 2000 and 5000 grams, with a peak around 3200 grams.</p>
     </solution>
     <response/>
   </exercise>
@@ -432,7 +433,7 @@ hist(births2$birthweight, xlab="birth weight")
       <p>You may have noticed a few more lower weight babies than we might have expected (if we assume a "random" biological characteristic will be fairly symmetric and bell-shaped). Can you suggest an explanation for the excess of lower birth weights seen in this distribution?</p>
     </statement>
     <solution>
-      <p>Premature births?</p>
+      <p>Premature births? This would explain a cluster of lower birth weights.</p>
     </solution>
     <response/>
   </exercise>
@@ -440,17 +441,18 @@ hist(births2$birthweight, xlab="birth weight")
   <exercise xml:id="inv2-1-h" label="I2.1h">
     <title>Subset by gestation period</title>
     <statement>
+          <p>How many observations do you end up with?</p> <var width="10"/></p>
     <hint>
       <title>R Hints</title>
       <p>Edit the previous command <c>births2 = births[which(births$birthweight &lt; 9999), ] </c> to create <c>births3</c> from <c>births2</c>, using "==" for an equality comparison (i.e., <c>OEG == 2</c>).</p>
     </hint>
     <hint>
       <title>JMP Hints</title>Proceed as in Question 6 and now set two conditions:
+       <p> Return to the <term index="no">Rows</term> menu and select <term index="no">Row Selection &gt; Select Where</term> to add the second condition
         <image source="images/Inv2-1h-solsJMP.png" width="60%">
           <description>JMP output showing selected rows</description>
         </image>
     </hint>
-      <p>How many observations do you end up with?</p>
     </statement>
     <setup>
       <var>
@@ -642,7 +644,7 @@ iscamsummary(births3$birthweight, digits=2)
   <paragraphs xml:id="fitting-model">
     <title>Fitting a Model</title>
     
-    <p>Recall from Chapter 1 the normal probability distribution has some very nice properties and allows us to predict the behavior of our variable. For example, we might want to assume birth weights follow a normal distribution and estimate how often a baby will be of low birth weight (under 2500 grams according to the International Statistical Classification of Diseases, 10th revision, World Health Organization, 2011) based on these data.</p>
+    <p>Recall from Chapter 1 the normal probability distribution has some very nice properties and allows us to predict the behavior of our variable. For example, we might want to assume birth weights follow a normal distribution and estimate how often a baby will be of low birth weight (under 2500 grams according to the <url href="https://icd.who.int/browse10/Content/statichtml/ICD10Volume2_en_2010.pdf">International Statistical Classification of Diseases, 10th revision, World Health Organization, 2011</url>) based on these data.</p>
   </paragraphs>
   
   <exercise xml:id="inv2-1-l" label="I2.1l">
@@ -718,13 +720,13 @@ table(within2sd)/length(births3$birthweight)
     </hint>
     <hint>
       <title>JMP Instructions</title>
-      <p><ol>
+      <p><ul>
         <li><p>Calculate (by hand) the mean ± 2SD limits using your numerical summaries.</p></li>
         <li><p>In the data window, double click on an empty column to activate it and name it "within2sd"</p></li>
         <li><p>Right click on the column name and select Formula</p></li>
-        <li><p>From Functions (grouped) select Conditional. Enter conditions for birth weight to be between the two limits to equal 1, 0 otherwise.</p></li>
-        <li><p>Then use Analyze &gt; Distribution on this column and report the mean (the proportion of ones).</p></li>
-      </ol></p>
+        <li><p>From <term index="no">Functions (grouped)</term> select <term index="no">Conditional</term>. Enter conditions for birth weight to be between the two limits to equal 1, 0 otherwise.</p></li>
+        <li><p>Then use <term index="no">Analyze &gt; Distribution</term> on this column and report the mean (the proportion of ones).</p></li>
+      </ul></p>
     </hint>
     </statement>
     <solution>
@@ -774,7 +776,7 @@ table(within2sd)/length(births3$birthweight)
       <p>How well does this percentage match to what would be predicted if the data were behaving like a normal distribution?</p>
     </statement>
     <solution>
-      <p>Very close.</p>
+      <p>Should find very close to the predicted 95% indicatign our (subsetted) data is behaving like a normal distribuiton in this respect.</p>
     </solution>
     <response/>
   </exercise>
@@ -799,7 +801,7 @@ qqline(birthweight, datax=TRUE)
     </hint>
     <hint>
       <title>JMP Instructions</title>
-      <p>In the Distribution window, use the red triangle (hot spot) next to the variable name and select Normal Quantile Plot.</p>
+      <p>In the Distribution window, use the red triangle (hot spot) next to the variable name and select <term index="no">Normal Quantile Plot</term>.</p>
       <p>Expected output:</p>
       <image source="images/Inv2-1p-solsJMP.png" width="60%">
         <description>JMP normal probability plot for birth weights</description>
@@ -814,10 +816,8 @@ qqline(birthweight, datax=TRUE)
   <exercise xml:id="inv2-1-p" label="I2.1p">
     <title>Assess normal probability plot</title>
     <statement>
-      <p>Do the observations deviate much from a line? If so how?</p>
-    <hint>
+      <p>Do the observations deviate much from a line? If so how?</p>  
       <p>What does this suggest about how the birth weight data values differ from what we would predict for a normal distribution (e.g., smallest values are smaller than expected or larger than expected)? Is this consistent with what you saw in the histogram?</p>
-    </hint>
     </statement>
     <solution>
       <p>The graph is fairly linear except for the ends. The lowest values seem smaller than they should be and the largest values seem larger than they should be. You may or may not have seen these "heavier tails" as easily in the histogram.</p>
