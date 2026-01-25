@@ -219,7 +219,7 @@
     <title>Explore with simulation</title>
   </paragraphs>
   
-<p> We have created a population distribution of 20,000 body temperatures (<url href="https://www.rossmanchance.com/iscam4/data/BodyTempPop.txt">BodyTempPop.txt</url>).
+<p> We have created a population distribution of 20,000 body temperatures (<url href="https://www.rossmanchance.com/iscam3/data/BodyTempPop.txt">BodyTempPop.txt</url>).
 Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample.html?population=finitepop">Sampling from a Finite Population</url> applet and type the <c>BodyTempPop.txt</c> file name into the empty Population data window.</p>
     <interactive iframe="https://www.rossmanchance.com/applets/2021/sampling/OneSample.html?hideExtras=1" width="165%" aspect="3:2"/>
  
@@ -408,7 +408,7 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
       <description>Combined view of distribution tail comparisons</description>
     </image>
     
-    <p>To model the sampling distribution of the standardized statistic <m>\frac{\bar{x} - \mu}{s/\sqrt{n}}</m>, we need a density curve with <em>heavier tails</em> than the standard normal distribution. William S. Gosset, a chemist turned statistician, showed in 1908, while working for the Guinness Breweries in Dublin, that a "t probability curve" provides a better model for the sampling distribution of this standardized statistic when the population of observations follows a normal distribution.</p>
+    <p>To model the sampling distribution of the standardized statistic <m>\frac{\bar{x} - \mu}{s/\sqrt{n}}</m>, we need a density curve with <em>heavier tails</em> than the standard normal distribution. William S. Gosset, a chemist turned statistician, showed in 1908, while working for the Guinness Breweries in Dublin, that a "<em>t</em> probability curve" provides a better model for the sampling distribution of this standardized statistic when the population of observations follows a normal distribution.</p>
   </paragraphs>
   <ul><li><p>Check the <alert>Overlay <m>t</m> Distribution</alert> box. </p></li></ul>
   <exercise xml:id="inv2-5-m" label="I7.2.13">
@@ -623,10 +623,10 @@ iscaminvt(0.95, 4, "between")</input>
       </hint>
       <hint>
         <title>JMP Instructions</title>
-        <p>Use the <url href="https://www.jmp.com/en_us/learning-library/videos/distribution-calculator.html" visual="jmp.com/learning-library/videos/distribution-calculator.html">Distribution Calculator</url> in JMP:</p>
+        <p>Use the Distribution Calculator in JMP:</p>
         <p><ul>
           <li><p>Use the Distribution menu to select <m>t</m></p></li>
-          <li><p>Specify the degrees of freedom (n - 1)</p></li>
+          <li><p>Specify the degrees of freedom (<m>n - 1</m>)</p></li>
           <li><p>Choose Input probability and calculate quantiles</p></li>
           <li><p>Specify Central Probability and enter the confidence level (e.g., .95)</p></li>
         </ul></p>
@@ -799,7 +799,12 @@ iscaminvt(0.95, 4, "between")</input>
       </var>
     </setup>
     <solution>
-      <p>The <em>t</em> critical value of 2.179 is much closer to the <em>z</em> critical value of 1.96 with a larger sample size. Compared to the <m>t</m> critical value from <xref ref="inv2-5-t" text="custom">Question 20</xref>, the current critical value has decreased (is smaller) suggesting that the <em>t</em> critical value will approach the <m>z</m> critical value as the sample size increases. </p>
+      <p>The <m>t</m> critical value of 2.179 is much closer to the <m>z</m> 
+      critical value of 1.96 with a larger sample size. Compared to the 
+      <m>t</m> critical value from <xref ref="inv2-5-u" text="custom">
+      Question 21</xref>, the current critical value has decreased 
+      (is smaller) suggesting that the <m>t</m> critical value will 
+      approach the <m>z</m> critical value as the sample size increases. </p>
       <image source="images/Inv2.5vsols.png" width="60%">
         <description>t probability calculator showing t* value for df=12</description>
       </image>
@@ -832,7 +837,7 @@ iscaminvt(0.95, 4, "between")</input>
         </condition>
         <condition number="2.179" tolerance="0.01">
           <feedback>
-            <p>That's the <m>t^*</m> value for df = 12 (n = 13). You need df = 129 for n = 130.</p>
+            <p>That's the <m>t^*</m> value for df = 12 (<m>n = 13</m>). You need df = 129 for <m>n = 130</m>.</p>
           </feedback>
         </condition>
         <condition string=".*">
@@ -938,7 +943,7 @@ iscaminvt(0.95, 4, "between")</input>
             </image>
           </stack>
         </sidebyside>
-            <p>For the body temperature study, enter n = 130, mean = 98.249, SD = 0.733. Set the hypothesized value to 98.6 and select a two-sided alternative.</p>
+            <p>For the body temperature study, enter <m>n</m> = 130, mean = 98.249, SD = 0.733. Set the hypothesized value to 98.6 and select a two-sided alternative.</p>
       </hint>
       <hint>
         <title>R/Sage Instructions</title>
@@ -985,12 +990,12 @@ t.test(body_temps, mu=98.6, alternative="two.sided", conf.level=0.95)
         </ul></p>
         <p>OR</p>
         <p><ul>
-          <li><p>Open the ISCAM Journal file > <term text="custom">Hypothesis Test</term> for One Mean</p></li>
+          <li><p>Open the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn">ISCAM Journal file</url> > <term text="custom">Hypothesis Test for One Mean</term></p></li>
           <li><p>Choose Raw Data (and pick the column) or Summary Statistics (and then specify the sample size, sample mean, and sample standard deviation)</p></li>
           <li><p>Be sure to choose the <m>t</m>-test Test Type and specify the alternative hypothesis</p></li>
           <li><p>In the ISCAM Journal file > <term text="custom">Confidence Interval for One Mean</term></p></li>
           <li><p>Choose the <m>t</m> interval type and specify confidence level</p></li>
-          <li><p>You can also use the <url href="https://www.jmp.com/en_us/learning-library/videos/distribution-calculator.html" visual="jmp.com/learning-library/videos/distribution-calculator.html">Distribution Calculator</url> to find critical values</p></li>
+          <li><p>You can also use the Distribution Calculator to find critical values</p></li>
         </ul></p>
       </hint>
       <setup>
@@ -1024,10 +1029,16 @@ t.test(body_temps, mu=98.6, alternative="two.sided", conf.level=0.95)
   <exercise xml:id="inv2-5-y" label="I7.2.25">
     <title>Use technology to verify calculations</title>
     <statement>
-      <p>Use the technology detour above to verify your by-hand calculations and 
+      <p>Use the technology instructions above to verify your by-hand calculations and 
       summarize the conclusions you would draw from this study (both from the p-value and the confidence interval, including the population you are willing to generalize to). Also include interpretations, in context, of your p-value and your confidence level.</p>
     </statement>
     <response/>
+    <solution>
+    <img src="images/Inv2.5yR.jpg" width="60%" alt="R output for one sample t-test and confidence interval"/>
+    <img src="images/Inv2.5ysolsApplet.png" width="60%" alt="Theory-Based Inference applet output for one sample t-test and confidence interval"/>
+    <ul><li>There is essentially a 0% chance of observing a <em>t</em>-statistic of −5.46 or more negative or a <em>t</em>-statistic of at least 5.46 (or at least as extreme as a sample mean of 98.249), if the population mean body temperature were really 98.6.</li>
+<li>We are 95% confident that the actual population mean body temperature of all healthy adults (though we would like more information about how this sample was selected from the larger population) is anywhere between 98.122oF to 98.376oF. (Our interval was constructed with a method that would successfully capture the population mean 95% of the time in the long run.)</li></ul>
+
   </exercise>
   
   <assemblage xml:id="study-conclusions-2-5">
@@ -1047,7 +1058,7 @@ t.test(body_temps, mu=98.6, alternative="two.sided", conf.level=0.95)
     <exercise xml:id="practice-2-5a-a" label="PP2.5A.1">
       <title>Coverage rate for skewed population</title>
       <statement>
-        <p>Continue with the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1">Simulating Confidence Intervals applet</url>. Simulating Confidence Intervals applet. Explore the coverage rate of the <m>t</m>-procedure with random samples from an Exponential (skewed) population for <m>n = 5</m>, <m>n = 100</m>, and <m>n = 200</m>. Assess and summarize the performance of this <m>t</m>-procedure in each case.</p>
+        <p>Continue with the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1">Simulating Confidence Intervals applet</url>. Explore the coverage rate of the <m>t</m>-procedure with random samples from an Exponential (skewed) population for <m>n = 5</m>, <m>n = 100</m>, and <m>n = 200</m>. Assess and summarize the performance of this <m>t</m>-procedure in each case.</p>
       </statement>
       <response/>
     </exercise>
