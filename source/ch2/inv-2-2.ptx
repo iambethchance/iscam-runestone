@@ -22,7 +22,7 @@
     <title>Predict your reaction time</title>
     <statement>
       <p>How long do you think you would wait before you honked? (in seconds)</p>
-      <p><var width="10"/></p>
+      <p><var width="10" check-me="Save"/></p>
     </statement>
     <setup>
       <var>
@@ -335,7 +335,7 @@ lnresponsetime = log(responsetime)
       <title>JMP Instructions</title>
       <p>Create a new column and edit the formula. 
       Type or use your mouse to select <term index="no">Transcendental &gt; Log</term> 
-      to create Log(responsetime). Press <term index="no">OK</term>.</p>
+      to create <c>Log(responsetime)</c>. Press <term index="no">OK</term>.</p>
     </hint>
     </statement>
   </exercise>
@@ -459,7 +459,7 @@ pexp(2, rate = 1/4.25)
       <title>JMP Instructions</title>
       <p>Using the <term index="no">Distribution Calculator</term> and select the 
       <term index="no">Exponential</term> distribution. Specify a scale parameter of 1/4.25. 
-      Choose X &lt;= Qa and enter 2 for Qa (we don't need to worry about strict vs. non-strict inequalities here)</p>
+      Choose <term index="no">X &lt;= Qa</term> and enter 2 for Qa (we don't need to worry about strict vs. non-strict inequalities here)</p>
     </hint>
     </statement>
   </exercise>
@@ -467,7 +467,7 @@ pexp(2, rate = 1/4.25)
   <exercise xml:id="inv2-2-k" label="I6.2.11">
     <title>Compare exponential probability to previous estimates</title>
     <statement>
-      <p>How does it compare to your estimate in <xref ref="inv2-2-h" text="title"/> and the result in <xref ref="inv2-2-i" text="title"/>?</p>
+      <p>How does it compare to your estimate in <xref ref="inv2-2-h" >Question 12</xref> and the result in <xref ref="inv2-2-i" >Question 13</xref>?</p>
     </statement>
     <solution>
       <p>This way overpredicts how often we will get a response time less than 2 seconds (0.3754).</p>
@@ -481,7 +481,7 @@ pexp(2, rate = 1/4.25)
   <exercise xml:id="inv2-2-l" label="I6.2.12">
     <title>Lognormal distribution</title>
     <statement>
-      <p>Repeat <xref ref="inv2-2-j" text="custom">Question 12</xref> and <xref ref="inv2-2-k" text="custom">Question 13</xref> with a "lognormal" distribution.</p>
+      <p>Repeat <xref ref="inv2-2-h" text="custom">Question 12</xref> and <xref ref="inv2-2-i" text="custom">Question 13</xref> with a "lognormal" distribution.</p>
       <p><em>Note:</em> This is equivalent to fitting the normal distribution on the log-transformed data!</p>
     <hint>
       <title>In R</title>
@@ -547,7 +547,7 @@ plnorm(2, meanlog = 1.292, sdlog = 0.5238)
   <assemblage xml:id="study-conclusions-2-2">
     <title>Study Conclusions</title>
     
-    <p>In this study, we found that the amount of time a blocked driver waits before responding follows a skewed right distribution with a mean of 4.25 seconds and a median of 3.24 seconds, with a few drivers waiting more than 10 seconds. Although the dataset is small, we might consider using these data to build a mathematical model for these skewed data, either using a transformation or a probability model other than the normal distribution, to help predict future results (e.g., a wait time of less than 2 seconds). These researchers were actually interested in whether the "social status" of the blocked car was related to how long it took before people honked. They found that "the mean and median response times decreased monotonically with the status of car, except when the blocked car was very small." Similar results had been found in an earlier study by Doob and Gross in the United States (1968) which varied the status of the blocking car. However, neither study was replicated by a Swiss study (Jann, Suhner, <ampersand/> Marioni, 1995), perhaps due to cultural differences.</p>
+    <p>In this study, we found that the amount of time a blocked driver waits before responding follows a skewed right distribution with a mean of 4.25 seconds and a median of 3.24 seconds, with a few drivers waiting more than 10 seconds. Although the dataset is small, we might consider using these data to build a mathematical model for these skewed data, either using a transformation or a probability model other than the normal distribution, to help predict future results (e.g., a wait time of less than 2 seconds). These researchers were actually interested in whether the "social status" of the blocked car was related to how long it took before people honked. They found that "the mean and median response times decreased monotonically with the status of car, except when the blocked car was very small." Similar results had been found in an earlier study by < url href="https://psycnet.apa.org/record/1969-03945-001">Doob and Gross</url> in the United States (1968) which varied the status of the blocking car. However, neither study was replicated by a Swiss study (<url href="https://dokumen.pub/social-dilemmas-institutions-and-the-evolution-of-cooperation-1nbsped-9783110471953-9783110472974-9783110470697.html">Jann, Suhner, <ampersand/> Marioni, 1995</url>), perhaps due to cultural differences.</p>
   </assemblage>
   
   </exercises>
