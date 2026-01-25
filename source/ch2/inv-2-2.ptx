@@ -24,6 +24,15 @@
       <p>How long do you think you would wait before you honked? (in seconds)</p>
       <p><var width="10"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback>
+            <p>Answer saved.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
   </exercise>
   
   <exercise xml:id="inv2-2-b" label="I6.2.2">
@@ -206,7 +215,7 @@
   <exercise xml:id="inv2-2-e" label="I6.2.5">
     <title>Create boxplot by hand</title>
     <statement>
-      <p>Create by hand a boxplot for these data. Which display do you prefer, the boxplot or the histogram? Why?</p>
+      <p>Create a boxplot for these data by hand. Which display do you prefer, the boxplot or the histogram? Why?</p>
     </statement>
     <solution>
       <p>Example boxplot:</p>
@@ -238,8 +247,8 @@
       <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url>:</p>
       <p><ul>
         <li><p>Paste in the data.</p></li>
-        <li><p>Check the Add Boxplot box.</p></li>
-        <li><p>Check the Show outliers box.</p></li>
+        <li><p>Check the <term index="no">Add Boxplot</term> box.</p></li>
+        <li><p>Check the <term index="no">Show outliers</term> box.</p></li>
       </ul></p>
       <p>Expected output:</p>
       <image source="images/Inv2-2f-Applet.jpg" width="60%">
@@ -277,7 +286,8 @@ iscamboxplot(honking$responsetime, xlab="Time until reaction (seconds)")
     </hint>
     <hint>
       <title>JMP Instructions</title>
-      <p>In the Distributions window, use the red triangle (hot spot) next to the variable name and select Outlier Boxplot.</p>
+      <p>In the Distributions window, use the red triangle (hot spot) 
+      next to the variable name and select <term index="no">Outlier Boxplot</term>.</p>
       <p>Expected output:</p>
       <image source="images/Inv2-2f-JMP.jpg" width="60%">
         <description>JMP modified boxplot showing outliers</description>
@@ -300,7 +310,7 @@ iscamboxplot(honking$responsetime, xlab="Time until reaction (seconds)")
     <response/>
   </exercise>
   
-  <p>These data are not well modelled by a normal distribution. So can we still make predictions? There are a couple of strategies. One would be to consider whether a rescaling or transformation of the data might create a more normal-looking distribution, allowing us to use the methods from Investigation 2.1. In this case, we need a transformation that will downsize the large values more than the small values. Log transformations are often very helpful in this regard.</p>
+  <p>These data are not well modelled by a normal distribution. So can we still make predictions? There are a couple of strategies. One would be to consider whether a rescaling or transformation of the data might create a more normal-looking distribution, allowing us to use the methods from <xref ref="inv-2-1" text="title"/>. In this case, we need a transformation that will downsize the large values more than the small values. Log transformations are often very helpful in this regard.</p>
   
   <assemblage xml:id="def-data-transformation">
     <title>Definition: Data Transformation</title>
@@ -323,7 +333,9 @@ lnresponsetime = log(responsetime)
     </hint>
     <hint>
       <title>JMP Instructions</title>
-      <p>Create a new column and edit the formula. Type or use your mouse to select Transcendental &gt; Log to create Log(responsetime). Press OK.</p>
+      <p>Create a new column and edit the formula. 
+      Type or use your mouse to select <term index="no">Transcendental &gt; Log</term> 
+      to create Log(responsetime). Press <term index="no">OK</term>.</p>
     </hint>
     </statement>
   </exercise>
@@ -402,7 +414,8 @@ iscamaddexp(responsetime)          # overlay exponential model
     </hint>
     <hint>
       <title>JMP Instructions</title>
-      <p>In the Distribution window, use the hot spot to select Continuous Fit &gt; Exponential.</p>
+      <p>In the Distribution window, use the hot spot to select 
+      <term index="no">Continuous Fit &gt; Exponential</term>.</p>
     </hint>
     </statement>
   </exercise>
@@ -444,7 +457,9 @@ pexp(2, rate = 1/4.25)
     </hint>
     <hint>
       <title>JMP Instructions</title>
-      <p>Using the Distribution Calculator and select the Exponential distribution. Specify a scale parameter of 1/4.25. Choose X &lt;= Qa and enter 2 for Qa (we don't need to worry about strict vs. non-strict inequalities here)</p>
+      <p>Using the <term index="no">Distribution Calculator</term> and select the 
+      <term index="no">Exponential</term> distribution. Specify a scale parameter of 1/4.25. 
+      Choose X &lt;= Qa and enter 2 for Qa (we don't need to worry about strict vs. non-strict inequalities here)</p>
     </hint>
     </statement>
   </exercise>
@@ -452,7 +467,7 @@ pexp(2, rate = 1/4.25)
   <exercise xml:id="inv2-2-k" label="I6.2.11">
     <title>Compare exponential probability to previous estimates</title>
     <statement>
-      <p>How does it compare to your estimate in <xref ref="inv2-2-h" text="custom">Question 9</xref> and the result in <xref ref="inv2-2-i" text="custom">Question 10</xref>?</p>
+      <p>How does it compare to your estimate in <xref ref="inv2-2-h" text="title"/> and the result in <xref ref="inv2-2-i" text="title"/>?</p>
     </statement>
     <solution>
       <p>This way overpredicts how often we will get a response time less than 2 seconds (0.3754).</p>
@@ -466,7 +481,7 @@ pexp(2, rate = 1/4.25)
   <exercise xml:id="inv2-2-l" label="I6.2.12">
     <title>Lognormal distribution</title>
     <statement>
-      <p>Repeat <xref ref="inv2-2-j" text="custom">Question 16</xref> and <xref ref="inv2-2-k" text="custom">Question 17</xref> with a "lognormal" distribution.</p>
+      <p>Repeat <xref ref="inv2-2-j" text="custom">Question 12</xref> and <xref ref="inv2-2-k" text="custom">Question 13</xref> with a "lognormal" distribution.</p>
       <p><em>Note:</em> This is equivalent to fitting the normal distribution on the log-transformed data!</p>
     <hint>
       <title>In R</title>
@@ -480,7 +495,7 @@ plnorm(2, meanlog = 1.292, sdlog = 0.5238)
     </hint>
     <hint>
       <title>In JMP</title>
-      <p>Scroll down the Distribution list and choose the Lognormal distribution with location = 1.292 and scale = 0.5238.</p>
+      <p>Scroll down the <term index="no">Distribution</term> list and choose the <term index="no">Lognormal</term> distribution with location = 1.292 and scale = 0.5238.</p>
     </hint>
     </statement>
     <solution>
@@ -539,7 +554,7 @@ plnorm(2, meanlog = 1.292, sdlog = 0.5238)
   <subsection xml:id="practice2-2A">
     <title>Practice Problem 2.2A</title>
     
-    <p>A group of Cal Poly students (Sasscer, Mease, Tanenbaum, and Hansen, 2009) conducted the following study: volunteers were to say "go," and then to say "stop" when they believed 30 seconds had passed. The researchers asked the participants to not count in their heads and recorded how much time had actually passed. The data are in <url href="https://www.rossmanchance.com/iscam4/data/30seconds.txt" visual="rossmanchance.com/iscam4/data/30seconds.txt">30seconds.txt</url>.</p>
+    <p>A group of Cal Poly students (Sasscer, Mease, Tanenbaum, and Hansen, 2009) conducted the following study: volunteers were to say "go," and then to say "stop" when they believed 30 seconds had passed. The researchers asked the participants to not count in their heads and recorded how much time had actually passed. The data are in <url href="https://www.rossmanchance.com/iscam3/data/30seconds.txt" visual="rossmanchance.com/iscam4/data/30seconds.txt">30seconds.txt</url>.</p>
     
     <exercise xml:id="practice-2-2a-a" label="PP2.2A.1">
       <title>Examine distribution of 30-second estimates</title>
@@ -560,7 +575,7 @@ plnorm(2, meanlog = 1.292, sdlog = 0.5238)
     <exercise xml:id="practice-2-2a-c" label="PP2.2A.3">
       <title>Evaluate log transformation</title>
       <statement>
-        <p>Does a log transformation succeed in creating a normal distribution? Explain how you might have predicted this answer based on the first graph you looked at in part (a).</p>
+        <p>Does a log transformation succeed in creating a normal distribution? Explain how you might have predicted this answer based on the first graph you looked at in Checkpoint  8.2.1.</p>
       </statement>
       <response/>
     </exercise>
