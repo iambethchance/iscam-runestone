@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigation 4.4: Lingering Effects of Sleep Deprivation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            background-color: #ecf0f1;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        
+        .section-title {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .intro {
+            background-color: #ebf5fb;
+            padding: 20px;
+            border-left: 4px solid #3498db;
+            margin-bottom: 25px;
+            border-radius: 5px;
+        }
+        
+        .study-design {
+            display: flex;
+            align-items: start;
+            gap: 20px;
+            margin: 20px 0;
+            background-color: #fff9e6;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .study-design-text {
+            flex: 1.5;
+        }
+        
+        .study-design-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .data-display {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .data-label {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 5px;
+        }
+        
+        .exercise {
+            background-color: #fff;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .exercise-title {
+            color: #2980b9;
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        .exercise-statement {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .hint {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .hint::before {
+            content: "💡 Hint: ";
+            font-weight: bold;
+            color: #856404;
+        }
+        
+        .solution {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .solution.show {
+            display: block;
+        }
+        
+        .solution-header {
+            font-weight: bold;
+            color: #155724;
+            margin-bottom: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .solution-header::before {
+            content: "▶ ";
+        }
+        
+        .solution.show .solution-header::before {
+            content: "▼ ";
+        }
+        
+        .solution-content {
+            display: none;
+            margin-top: 10px;
+        }
+        
+        .solution.show .solution-content {
+            display: block;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 80px;
+            padding: 10px;
+            border: 2px solid #ced4da;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 0.95em;
+            resize: vertical;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        input[type="text"] {
+            padding: 8px;
+            border: 2px solid #ced4da;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .choice-group {
+            margin: 15px 0;
+        }
+        
+        .choice {
+            padding: 10px;
+            margin: 8px 0;
+            background-color: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .choice:hover {
+            background-color: #e9ecef;
+            border-color: #3498db;
+        }
+        
+        .choice input[type="radio"] {
+            margin-right: 10px;
+        }
+        
+        .show-solution-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.95em;
+            margin-top: 10px;
+            transition: background-color 0.2s;
+        }
+        
+        .show-solution-btn:hover {
+            background-color: #218838;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .image-placeholder {
+            background-color: #e9ecef;
+            padding: 60px 20px;
+            border: 2px dashed #adb5bd;
+            border-radius: 8px;
+            color: #6c757d;
+            font-style: italic;
+        }
+        
+        .code-block {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-left: 4px solid #6c757d;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .assemblage {
+            background-color: #e8f4f8;
+            border: 2px solid #0077be;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .assemblage-title {
+            color: #0077be;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .tech-detour {
+            background-color: #fff8e1;
+            border: 2px solid #ffa000;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .tech-detour-title {
+            color: #e65100;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        ul {
+            margin-left: 30px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        p {
+            margin: 12px 0;
+        }
+        
+        .math {
+            font-style: italic;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 20px;
+            }
+            
+            .show-solution-btn {
+                display: none;
+            }
+            
+            .solution {
+                display: block !important;
+            }
+            
+            .solution-content {
+                display: block !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Investigation 4.4: Randomization Tests</h1>
+        
+        <div class="intro">
+            <p>The previous section focused on quantitative data arising from two independent random samples. This section will focus on quantitative data arising from randomized experiments. We will again consider simulation-based, exact, and theory-based p-values, as well as what assumptions we need to make for confidence intervals.</p>
+        </div>
+        
+        <h2>Investigation 4.4: Lingering Effects of Sleep Deprivation</h2>
+        
+        <div class="intro">
+            <p>Researchers have established that sleep deprivation has a harmful effect on visual learning (the subject does not consolidate information to improve on the task). Stickgold, James, and Hobson (<a href="https://www.nature.com/articles/nn1200_1237" target="_blank">2000</a>) investigated whether subjects could "make up" for sleep deprivation by getting a full night's sleep in subsequent nights.</p>
+        </div>
+        
+        <div class="study-design">
+            <div class="study-design-text">
+                <p>This study involved randomly assigning 21 subjects (volunteers between the ages of 18 and 25) to one of two groups: one group was deprived of sleep on the night following training with a visual discrimination task, and the other group was permitted unrestricted sleep on that first night. Both groups were allowed unrestricted sleep on the following two nights, and then were re-tested on the third day.</p>
+            </div>
+            <div class="study-design-image">
+                <img src="assets/images/Inv4.4intro.png" alt="Introduction to the sleep deprivation study">
+            </div>
+        </div>
+        
+        <p>Subjects' performance on the test was recorded as the minimum time (in milliseconds) between stimuli appearing on a computer screen for which they could accurately report what they had seen on the screen. Previous studies had shown that subjects deprived of sleep performed significantly worse the following day, but it was not clear how long these negative effects would last. The data presented here are the improvements in reaction times (in milliseconds), so a negative value indicates a decrease in performance.</p>
+        
+        <div class="data-display">
+            <div class="data-label">Sleep deprivation group (<em>n</em> = 11):</div>
+            <p>-10.7, 4.5, 2.2, 21.3, -14.7, -10.7, 9.6, 2.4, 21.8, 7.2, 10.0</p>
+        </div>
+        
+        <div class="data-display">
+            <div class="data-label">Unrestricted sleep group (<em>n</em> = 10):</div>
+            <p>25.2, 14.5, -7.0, 12.6, 34.5, 45.6, 11.6, 18.6, 12.1, 30.5</p>
+        </div>
+        
+        <!-- Study Design Section -->
+        <div class="section-title">Study Design</div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.1: Experiment or Observational Study</div>
+            <div class="exercise-statement">
+                <p>Is this an experiment or an observational study?</p>
+                <div class="choice-group">
+                    <div class="choice">
+                        <input type="radio" name="q1" id="q1a"> <label for="q1a">Experiment</label>
+                    </div>
+                    <div class="choice">
+                        <input type="radio" name="q1" id="q1b"> <label for="q1b">Observational study</label>
+                    </div>
+                </div>
+                <p><strong>Explain:</strong></p>
+                <textarea placeholder="Type your explanation here..."></textarea>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p>This is an <strong>experiment</strong> because researchers determined which subjects would be sleep deprived.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.2: Identify Variables</div>
+            <div class="exercise-statement">
+                <p>Identify the explanatory (EV) and response (RV) variables. Also classify each as being categorical or quantitative.</p>
+                <p><strong>EV:</strong> <input type="text" style="width: 300px;"></p>
+                <p><strong>Type:</strong> <input type="text" style="width: 200px;"></p>
+                <p><strong>RV:</strong> <input type="text" style="width: 300px;"></p>
+                <p><strong>Type:</strong> <input type="text" style="width: 200px;"></p>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p><strong>EV:</strong> Was the subject sleep deprived? <strong>Type:</strong> Binary categorical</p>
+                    <p><strong>RV:</strong> What was the subject's improvement score? <strong>Type:</strong> Quantitative</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.3: State Hypotheses</div>
+            <div class="exercise-statement">
+                <p>Write out the null and alternative hypotheses, in words, for this research study.</p>
+                <textarea placeholder="Type your hypotheses here..."></textarea>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p><strong>H₀:</strong> There is no difference in improvement scores on average between these two treatments (in the long run).</p>
+                    <p><strong>Hₐ:</strong> On average, improvement scores are higher for unrestricted sleep treatment.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.4: One-sided or Two-sided</div>
+            <div class="exercise-statement">
+                <p>Is your alternative hypothesis one-sided or two-sided? What does this imply about the types of response values you would expect to see in each treatment group?</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+                <div class="hint">Positive or negative?</div>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p>The alternative hypothesis is one-sided; we expect to see positive improvement scores in each group, but higher scores in the unrestricted sleep group.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Descriptive Statistics Section -->
+        <div class="section-title">Descriptive Statistics</div>
+        
+        <p>The following dotplots reveal the distributions of improvements between the two groups:</p>
+        
+        <div class="image-container">
+            <img src="assets/images/Inv4.4e.png" alt="Dotplots comparing improvement scores between sleep deprived and unrestricted sleep groups" style="width: 80%;">
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.5: Preliminary Evidence</div>
+            <div class="exercise-statement">
+                <p>Do these data provide preliminary evidence that the harmful effects of sleep deprivation linger three days later? Explain your reasoning.</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+                <div class="hint">Are all the improvement scores in one group higher than all the improvement scores in the other group? Is there a tendency for higher improvement scores in one group three days later?</div>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p>On average, the improvement score was higher for unrestricted group. We see a tendency for higher improvement scores in the unrestricted group (the dotplot is shifted to the right compared to the sleep deprived group dotplot).</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.6: Calculate Observed Difference</div>
+            <div class="exercise-statement">
+                <p>There are several ways we could choose to measure the tendency observed in checkpoint 4.4.5. A common choice of statistic is of course the difference in group means. Calculate this statistic by subtracting the "deprived" group's value from the "unrestricted" group's value.</p>
+                <p><strong>Observed difference in sample means:</strong> <span class="math">x̄<sub>unrestricted</sub> - x̄<sub>deprived</sub></span> = <input type="text" style="width: 100px;"></p>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p><span class="math">x̄<sub>deprived</sub></span> = 3.90 ms</p>
+                    <p><span class="math">x̄<sub>unrestricted</sub></span> = 19.82 ms</p>
+                    <p><strong>Difference:</strong> 19.82 - 3.90 = <strong>15.92 ms</strong></p>
+                    <p>Note: The observed difference (unrestricted - deprived) is 15.92 ms.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.7: Could It Be Chance</div>
+            <div class="exercise-statement">
+                <p>Is it possible that the differences seen here could have occurred just by chance variation, due to the random assignment of subjects to groups, even if there were really no effect of the sleep condition on improvement?</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p>It is possible — random assignment alone could conceivably lead to a large difference in the group means.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.8: Source of Chance</div>
+            <div class="exercise-statement">
+                <p>As usual, we want to know how plausible it is for us to obtain a difference in sample means at least as extreme as the observed value by chance alone. What is the source of "chance" in this study?</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p><strong>Random assignment</strong></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.9: Outline Simulation</div>
+            <div class="exercise-statement">
+                <p>Outline the steps of a simulation analysis that would explore the "could have been" outcomes under the null hypothesis by modelling the randomness described in checkpoint 4.4.8.</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p>We want to simulate the random assignment by assuming everyone would get the same improvement score, regardless of which group they end up in, and randomly assign the subjects into 2 groups of <em>n</em>₁ = 11 and <em>n</em>₂ = 10. Then see how frequently you get <span class="math">x̄₁ - x̄₂ > 15.92</span>.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Statistical Inference Section -->
+        <div class="section-title">Statistical Inference</div>
+        
+        <p>As with the "dolphin therapy" experiment from Chapter 3, we again need to judge the strength of evidence that the experimental data provide in support of the researchers' conjecture that sleep deprivation has a harmful effect on learning. We are now working with a quantitative response variable rather than a categorical one, but we will use the same basic logic of statistical significance: We will ask whether the observed experimental results are very unlikely to have occurred by chance variation if the explanatory variable has no effect, that is, if the values in the two groups are interchangeable. To simulate this randomization test: We will take the observed response variable outcomes, randomly distribute these numerical values between the two groups, compute the statistic of interest (e.g., the difference in group means), repeat this process a large number of times, and see how often the random assignment process alone produces a difference in group means as extreme as in the actual research study. This is similar to what you considered in Investigation 4.1. However, this time it is not really feasible to list out all possible C(21,10) = 352,716 random assignments and consider the value of the statistic for each one, so we will simulate a large number of random assignments instead. Note, we need to know the value of <span class="math">(x̄₁ - x̄₂)</span>, not just the "number of successes" as with the dolphin therapy study.</p>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.10: Physical Simulation</div>
+            <div class="exercise-statement">
+                <p>Take a set of 21 index cards, and write each of the improvement values on a card. Then shuffle the cards and deal out 10 of them to represent the subjects randomly assigned to the "unrestricted sleep" group and 11 to represent the "sleep deprived group." Calculate the mean of the improvements in each group. Then calculate the difference in group means, subtracting in the same order as before.</p>
+                <p><strong>Simulated difference in means</strong> (<span class="math">x̄<sub>unrestricted</sub> - x̄<sub>deprived</sub></span>): <input type="text" style="width: 100px;"></p>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.11: Compare to Observed</div>
+            <div class="exercise-statement">
+                <p>Is your simulated result for the difference in means as extreme as the actual experimental result? Explain. Why is looking at this one simulated difference not enough to assess statistical significance?</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p>Results will vary. Looking at just one simulated difference is not enough because we need to understand the entire distribution of what could happen by chance alone to determine how often (what proportion of the time) random assignment alone produces results as extreme as what we observed.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.12: Combine Class Results</div>
+            <div class="exercise-statement">
+                <p>Combine your results with your classmates to produce a dotplot of the difference in group means.</p>
+                <textarea placeholder="Describe your dotplot here..."></textarea>
+            </div>
+        </div>
+        
+        <p>Simulating more repetitions would provide a better understanding of how significant (i.e., unlikely to have happened by random assignment alone) the observed experimental results are. In other words, more repetitions will enable us to approximate the p-value more accurately. We will again turn to technology to perform the simulation more quickly and efficiently.</p>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.13: Use Applet for Simulation</div>
+            <div class="exercise-statement">
+                <p>Open the <a href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm" target="_blank">Comparing Groups (Quantitative) applet</a>. You will see dotplots of the research results. Verify the calculation of the observed difference in group means. (This applet subtracts the top row from the bottom row.)</p>
+                <ul>
+                    <li>Check the Show Shuffle Options box.</li>
+                    <li>Select the Plot radio button.</li>
+                    <li>Press the Shuffle Responses button.</li>
+                </ul>
+                <p>The applet combines all the scores into one pile, reassigns the group labels (red and black coloring) at random, and then redistributes the observations to the two treatment groups, just like you did with the index cards.</p>
+                <p><strong>What did you find for the difference in group means?</strong> <input type="text" style="width: 100px;"></p>
+                <p><strong>Is this more extreme than the observed difference in group means in the research study?</strong> <input type="text" style="width: 100px;"></p>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.14: More Repetitions</div>
+            <div class="exercise-statement">
+                <p>Press Shuffle Responses four more times. With each new "could have been" result (each new random assignment), the applet calculates the difference in group means and adds a dot to the dotplot to the right. Identify what each dot represents in the dotplot on the far right.</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p>Each dot is the value of <span class="math">x̄₁ - x̄₂</span> after one reshuffling of the data values (What is the difference in sample means with each random assignment?).</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.15: Expected Mean of Null Distribution</div>
+            <div class="exercise-statement">
+                <p>As we conduct more and more repetitions, what do you expect the mean of this null distribution of difference in group means to be close to? Explain.</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p><strong>Zero</strong> (under null hypothesis)</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.16: Generate Full Distribution</div>
+            <div class="exercise-statement">
+                <p>Change the Number of repetitions from 1 to 995 (to produce a total of 1,000 repetitions). Press Shuffle Responses. Describe the shape, mean, and standard deviation of the resulting dotplot. Explain what is represented by this standard deviation.</p>
+                <p><strong>Shape:</strong> <input type="text" style="width: 200px;"></p>
+                <p><strong>Mean:</strong> <input type="text" style="width: 100px;"></p>
+                <p><strong>Standard deviation:</strong> <input type="text" style="width: 100px;"></p>
+                <p><strong>Interpretation:</strong></p>
+                <textarea placeholder="Explain what the standard deviation represents..."></textarea>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p><strong>Shape:</strong> symmetric</p>
+                    <p><strong>Mean:</strong> ≈ 0</p>
+                    <p><strong>SD:</strong> ≈ 7</p>
+                    <p><strong>Interpretation:</strong> typical deviation from the mean</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.17: Calculate p-value</div>
+            <div class="exercise-statement">
+                <p>Now enter the observed difference in group means (checkpoint 4.4.6) from the research study into the Count Samples box, use the Greater Than option (to match our alternative hypothesis), and press the Count button. What does the applet report for the empirical p-value?</p>
+                <p><strong>p-value:</strong> <input type="text" style="width: 100px;"></p>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p>Counting ≥ 15.92 (this is the direction specified by the alternative hypothesis), the p-value should be about <strong>0.007</strong>.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.18: Interpret p-value</div>
+            <div class="exercise-statement">
+                <p>Provide an interpretation of this p-value in context (make sure you address the statistic, the source of the randomness in the study, and what you mean by "more extreme").</p>
+                <textarea placeholder="Type your interpretation here..."></textarea>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p>The p-value is the percentage of random assignments, when the null hypothesis is true (H₀: μ<sub>unrestricted</sub> - μ<sub>deprived</sub> = 0, no treatment effect) that will have <span class="math">x̄<sub>unrestricted</sub> - x̄<sub>deprived</sub></span> ≥ 15.92 by chance (random sampling) alone.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Conclusions Section -->
+        <div class="section-title">Conclusions</div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.19: Statistical Significance</div>
+            <div class="exercise-statement">
+                <p>What conclusion would you draw from this simulation analysis regarding the question of whether the learning improvements in the sleep deprived group are statistically significantly lower (on average) than those in the unrestricted sleep group? Also explain the reasoning process by which your conclusion follows from the simulation results.</p>
+                <textarea placeholder="Type your conclusion here..."></textarea>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p>With a p-value below 0.01, reject H₀ because p-value is small, in favor of Hₐ: μ<sub>unrestricted</sub> - μ<sub>deprived</sub> > 0. We have convincing evidence that the observed difference in means is not just due to random chance but instead that the underlying treatment mean for the unrestricted group is higher than for the sleep deprived treatment.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.20: Causation</div>
+            <div class="exercise-statement">
+                <p>Does the design of this study allow you to conclude that the reduction in improvement scores is caused by the sleep deprivation? Explain.</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p>Yes, because of the random assignment to treatment groups, and the result was statistically significant.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.21: Generalizability</div>
+            <div class="exercise-statement">
+                <p>To what "population" is it reasonable to generalize these results?</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p>Maybe volunteers between 18-25 years old (but not clear whether this study used any random sampling).</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Exact p-value Section -->
+        <div class="section-title">Exact p-value?</div>
+        
+        <p>Although not as convenient as before, we can determine the exact p-value for this randomization test by considering all the different possible random assignments of these 21 subjects into groups of 11 and 10, determining the difference in means (or medians) for each, and then counting how many are at least as extreme as the observed difference.</p>
+        
+        <p>The following histogram (produced using the <code>combn</code> function in R, from the <code>combinat</code> package, assuming <code>imprvs</code> contains the response variable values) shows the distribution of all 352,716 possible differences in group means.</p>
+        
+        <div class="image-container">
+            <img src="assets/images/Inv4.4v.png" alt="Histogram showing exact randomization distribution of all 352,716 possible differences in group means" style="width: 60%;">
+        </div>
+        
+        <div class="code-block">
+indices = 1:21
+allcombs = combn(21, 10)
+
+diffs = 1:ncol(allcombs)
+
+for (i in 1:ncol(allcombs)){
+  group1=imprvs[allcombs[,i]]
+  group2=imprvs[setdiff(indices, allcombs[,i])]
+  diffs[i]=mean(group1)-mean(group2)
+}
+
+hist(diffs)
+abline(v=15.92, col=2)
+
+# approx. run time: 1 min
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.22: Compare Simulation to Exact</div>
+            <div class="exercise-statement">
+                <p>Do your simulation results reasonably approximate this null distribution?</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p>The distributions are quite similar.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Checkpoint 4.4.23: Calculate Exact p-value</div>
+            <div class="exercise-statement">
+                <p>It turns out that 2533 of the 352,716 different random assignments produce a difference in group means of 15.92 milliseconds or larger. Use this information to determine the exact p-value of this randomization test. Is the approximate p-value from your simulation close?</p>
+                <p><strong>Exact p-value:</strong> <input type="text" style="width: 150px;"></p>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p>2533/352,716 = <strong>0.0072</strong></p>
+                    <p>This should be similar to the approximate p-value from 1000 repetitions of the random assignment.</p>
+                </div>
+            </div>
+        </div>
+        
+        <h3>Discussion</h3>
+        
+        <p>The exact randomization distribution consists of every possible random assignment and calculates the statistic of interest (e.g., difference in means) for each one. Then we simply count how many of the configurations result in a value of the statistic at least as extreme (as defined by the alternative hypothesis) as the actual observed result. As you might expect, it can be extremely tedious, even with computers, to list out all of these possible random assignments. And these group sizes are relatively small! One shortcut is to only count how many assignments give results more extreme than the one observed, but as you will see we can often appeal to a mathematical model as well.</p>
+        
+        <!-- Technology Detour -->
+        <div class="tech-detour">
+            <div class="tech-detour-title">Technology Detour — Simulating a Randomization Test for a Quantitative Response</div>
+            
+            <p><strong>Step 1:</strong> Randomly reorder the group membership labels (keeping the same number in each group)</p>
+            <p><strong>Step 2:</strong> Calculate the new difference in means (or other statistic) using the reordered group labels</p>
+            <p><strong>Step 3:</strong> Repeat Steps 1 and 2 many times.</p>
+            <p>Look at the distribution of the statistic, including the mean and standard deviation, and count how many of the simulated statistics are as or more extreme as the observed.</p>
+            
+            <p><strong>Applet:</strong> <a href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm" target="_blank">Comparing Groups (Quantitative)</a></p>
+            
+            <p><strong>In R:</strong> See <a href="https://www.rossmanchance.com/iscam3/data/RandomizationTestQuantR.html" target="_blank">RandomizationTestQuantR.html</a> (with Sleep Deprivation file loaded and attached)</p>
+            
+            <p><strong>In JMP:</strong> See <a href="https://www.rossmanchance.com/iscam3/data/RandomizationTestQuantJMP.html" target="_blank">RandomizationTestQuantJMP.html</a></p>
+        </div>
+        
+        <!-- Study Conclusions -->
+        <div class="assemblage">
+            <div class="assemblage-title">Study Conclusions</div>
+            
+            <p>These data come from a randomized, comparative experiment. The dotplots and descriptive statistics reveal that, even three days later, the sleep-deprived subjects tended (on average) to have lower improvements than those permitted unrestricted sleep. To investigate whether this difference is larger than could be expected from random assignment alone (assuming no real difference between the two treatment conditions, our null hypothesis), you simulated a <strong>randomization test</strong> by assigning the 21 measurements (improvement scores) to the two groups at random. You should have found that random assignment alone rarely produced differences in group means as extreme as in the actual study (the "exact" p-value is less than 0.01). Thus, we have fairly strong evidence that the average learning improvement is genuinely lower for the sleep deprived subjects. Moreover, because this was a randomized comparative experiment and not an observational study, we can draw a causal conclusion that the sleep deprivation was the cause of the lower learning improvements. However, the subjects were college-aged volunteers, so we may not want to generalize these results to a much different population.</p>
+        </div>
+        
+        <!-- Practice Problems -->
+        <h2>Practice Problem 4.4A</h2>
+        
+        <div class="exercise">
+            <div class="exercise-title">Practice 4.4A.1: Interpret Figure 1</div>
+            <div class="exercise-statement">
+                <p>Consider <a href="https://www.nature.com/articles/nn1200_1237/figures/1" target="_blank">Figure 1</a> in the Stickgold et al. study. What information was the graph intending to convey?</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Practice 4.4A.2: Compare Graph Types</div>
+            <div class="exercise-statement">
+                <p>What important details are not conveyed in Figure 1 that dotplots would have shown better?</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Practice 4.4A.3: Compare Simulation Approaches</div>
+            <div class="exercise-statement">
+                <p>Explain how the simulation analysis conducted in this investigation differs from Investigation 4.2. (What is the random process being simulated? What assumptions are underlying the simulation?)</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+            </div>
+            <button class="show-solution-btn" onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <div class="solution-content">
+                    <p>In Investigation 4.2 (comparing elephant walking distances), we simulated the random sampling process from two populations under the assumption that the population means are equal. In Investigation 4.4, we simulated the random assignment process in an experiment under the assumption that the treatment has no effect (so the response values would be the same regardless of which group the subject was assigned to). Investigation 4.2 deals with observational data and random sampling; Investigation 4.4 deals with experimental data and random assignment.</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Practice Problem 4.4B</h2>
+        
+        <div class="exercise">
+            <div class="exercise-title">Practice 4.4B.1: Analyze Hypothetical Data</div>
+            <div class="exercise-statement">
+                <p>Produce numerical and graphical summaries for the data in <a href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/FakeSleepDeprivation.txt" target="_blank">FakeSleepDeprivation.txt</a>, representing a new set of 21 responses for the sleep deprivation study. Comment on how the shapes, centers, and variability for the two distributions compare between these data and the original data.</p>
+                <textarea placeholder="Type your analysis here..."></textarea>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Practice 4.4B.2: Conduct Randomization Test</div>
+            <div class="exercise-statement">
+                <p>Use technology (see Technology Detour) to carry out a randomization test to compare the improvements for the sleep deprived and unrestricted sleep groups using the hypothetical data. Indicate how you approximated the p-value.</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+            </div>
+        </div>
+        
+        <div class="exercise">
+            <div class="exercise-title">Practice 4.4B.3: Compare p-values</div>
+            <div class="exercise-statement">
+                <p>How does the p-value for the hypothetical data compare to the p-value for the original data? Explain why this makes sense based on what you learned about how the data sets compared in checkpoint 4.4B.1.</p>
+                <textarea placeholder="Type your answer here..."></textarea>
+            </div>
+        </div>
+        
+        <div style="margin-top: 50px; padding-top: 20px; border-top: 2px solid #dee2e6; color: #6c757d; font-size: 0.9em; text-align: center;">
+            <p>Investigation 4.4: Lingering Effects of Sleep Deprivation</p>
+            <p>Based on material from ISCAM (Investigation in Statistics, Chance and Money) by Chance and Rossman</p>
+        </div>
+    </div>
+    
+    <script>
+        function toggleSolution(button) {
+            const solution = button.nextElementSibling;
+            if (solution.classList.contains('show')) {
+                solution.classList.remove('show');
+                button.textContent = 'Show Solution';
+            } else {
+                solution.classList.add('show');
+                button.textContent = 'Hide Solution';
+            }
+        }
+    </script>
+</body>
+</html>
