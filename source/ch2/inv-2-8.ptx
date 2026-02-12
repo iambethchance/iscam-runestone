@@ -32,7 +32,7 @@
         </condition>
       </var>
       <var>
-        <condition number="75.50" tolerance="0.5">
+        <condition number="75.50" tolerance="0.01">
           <feedback><p>Correct!</p></feedback>
         </condition>
         <condition number="75.50" tolerance="2">
@@ -66,7 +66,7 @@
   <exercise xml:id="inv2-8-b">
     <title>Apply log transformation</title>
     <statement>
-      <p>Carry out a log transformation (See <xref ref="investigation2-2" text="custom">Investigation 2.2, question 9</xref>) and report the mean, median, and standard deviation of the transformed data. Verify that a log-normal probability model is reasonable for these data.</p>
+      <p>Carry out a log transformation (See <xref ref="investigation2-2" text="custom">Investigation 2.2, Question 9</xref>) and report the mean, median, and standard deviation of the transformed data. Verify that a log-normal probability model is reasonable for these data.</p>
       <p>Mean (log turbidity): <var width="15"/> log NTU</p>
       <p>Median (log turbidity): <var width="15"/> log NTU</p>
       <p>Standard deviation (log turbidity): <var width="15"/> log NTU</p>
@@ -96,10 +96,10 @@
         </condition>
       </var>
       <var>
-        <condition number="0.6988" tolerance="0.01">
+        <condition number="0.7988" tolerance="0.01">
           <feedback><p>Correct!</p></feedback>
         </condition>
-        <condition number="0.6988" tolerance="0.05">
+        <condition number="0.7988" tolerance="0.05">
           <feedback><p>Close! Check your calculation.</p></feedback>
         </condition>
         <condition string=".*">
@@ -267,7 +267,7 @@
   </exercise>
 
   <aside><title>Theory-Based Inference Applet</title>
-    <p><url href="http://www.rossmanchance.com/applets/2021/onemeant/OneMeanT.htm" visual="rossmanchance.com/applets/2021/onemeant/OneMeanT.htm">Theory-Based Inference applet</url></p>
+    <p><url href="http://www.rossmanchance.com/applets/2021/tbia/TBIA.htm" visual="rossmanchance.com/applets/2021/tbia/TBIA.htm">Theory-Based Inference applet</url></p>
   </aside>
 
   <exercise xml:id="inv2-8-e">
@@ -290,8 +290,8 @@
       <p>Back-transform the endpoints of this interval to return to the original units and interpret the interval in context.</p>
     </statement>
     <solution>
-      <p>(exp population median ln turbidity) = (exp ln population median turbidity) = population median turbidity</p>
-      <p><m>e^{4.2009} = 66.75</m></p>
+      <p><m> e^{mean ln turbidity} \sim e^{ median ln turbidity} = e^{  ln median turbitidy} = median turbidity</m></p>
+            <p><m>e^{4.2009} = 66.75</m></p>
       <p><m>e^{4.4013} = 81.56</m></p>
       <p>We are 95% confident that the population median turbidity for this river as a whole is between 66.75 and 81.56 NTU.</p>
     </solution>
@@ -311,7 +311,7 @@
   <subsection xml:id="practice2-8">
     <title>Practice Problem 2.8</title>
 
-    <p>Return to the <c>honking.txt</c> data from <xref ref="investigation2-2" text="custom">Investigation 2.2</xref>.</p>
+    <p>Return to the <c><url href="http://www.rossmanchance.com/iscam2/data/Honking.txt" visual="rossmanchance.com/iscam2/data/Honking.txt">Honking.txt</url></c> data from <xref ref="investigation2-2" text="custom">Investigation 2.2</xref>.</p>
 
     <exercise xml:id="practice-2-8-a">
       <title>Calculate confidence interval for log response time</title>
