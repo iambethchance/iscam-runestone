@@ -821,7 +821,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     
     </exercises>
 
- <assemblage>
+ <paragraphs>
       <title>Technology Detour – Two-sample <em>z</em>-procedures</title>
       
       <hint>
@@ -898,7 +898,8 @@ invisible()
         </sidebyside>
         <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use "pooled estimate of variance." This reports the <em>z</em>-score as well.)</p>
       </hint>
-    </assemblage>
+    <p>Note: Data are "stacked" if each column represents a different variable (e.g., year surveyed and hearing condition) and they are "unstacked" if each column represents a different group (e.g., 1998 and 2002).</p>
+    </paragraphs>
 
   <subsection xml:id="practice3-1A">
     <title>Practice Problem 3.1A</title>
@@ -958,22 +959,25 @@ invisible()
       <response/>
     </exercise>
 
-    <p>Note: Data are "stacked" if each column represents a different variable (e.g., year surveyed and hearing condition) and they are "unstacked" if each column represents a different group (e.g., 1998 and 2002).</p>
   </subsection>
 
    
-    <paragraphs xml:id="tech-detour-simulation-proportions">
+    <assemblage xml:id="tech-detour-simulation-proportions">
       <title>Technology Detour – Simulating Proportions from Independent Random Samples</title>
-<br/>      
+      <p></p>
       <p>Simulation Steps:</p>
-      <ol>
+      <p><ol>
         <li><p>Generate a random sample of 2928 observations from a binomial process with <m>\pi = .173</m></p></li>
         <li><p>Generate a random sample of 1771 observations from a binomial process with <m>\pi = .173</m></p></li>
         <li><p>Convert the sample counts into sample proportions</p></li>
         <li><p>Calculate the difference in the sample proportions</p></li>
         <li><p>Repeat steps 1-4 a large number of times.</p></li>
-      </ol>
+      </ol></p>
       <p>You should explore the individual <m>\hat{p}</m> distributions but most focus on the distribution of <m>\hat{p}_1 - \hat{p}_2</m>, including the mean, standard deviation, and whether the distribution behaves like a normal distribution.</p>
+    </assemblage>
+
+    <paragraphs>
+      <title>Technology Detour – Simulation Instructions</title>
       <hint>
         <title>R Instructions</title>
         <p>Generate a random sample for 1994:</p>
