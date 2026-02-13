@@ -3,7 +3,7 @@
   <title>Investigation 3.1: Teen Hearing Loss (cont.)</title>
 <exercises><title>The Study</title>
   <introduction>
-    <p>The Shargorodsky, Curhan, Curhan, and Eavey (<url href="https://jamanetwork.com/journals/jama/fullarticle/186427">2010</url>) study from <xref ref="inv-1-14" text="custom">Investigation 1.14</xref> actually focused on comparing the current hearing loss rate among teens (12-19 years) to previous years to see whether teen hearing loss is increasing, possibly due to heavier use of ear buds. In addition to the 1771 participants in the NHANES 2005-6 study (333 with some level of hearing loss), they also had hearing loss data on 2928 teens from NHANES III (1988-1994), with 480 showing some level of hearing loss. Our goal is to assess whether the difference between these two samples can be considered statistically significant.</p>
+    <p>The Shargorodsky, Curhan, Curhan, and Eavey (<url href="https://jamanetwork.com/journals/jama/fullarticle/186427">2010</url>) study from <xref ref="inv-1-14" text="custom">Investigation 1.14</xref> actually focused on comparing the current hearing loss rate among teens (12-19 years) to previous years to see whether teen hearing loss is increasing, possibly due to heavier use of ear buds. In addition to the 1,771 participants in the NHANES 2005-6 study (333 with some level of hearing loss), they also had hearing loss data on 2,928 teens from NHANES III (1988-1994), with 480 showing some level of hearing loss. Our goal is to assess whether the difference between these two samples can be considered statistically significant.</p>
     
     <image source="images/Inv3.1intro.png" width="80%"/>
   </introduction>
@@ -13,7 +13,7 @@
     <statement>
       <p>What is the primary difference between this study and those examined in <em>ISCAM</em> Chapters 1 and 2?</p>
     </statement>
-    <solution><p>different: compare 2 proportions to each other</p></solution>
+    <solution><p>Comparing two samples to each other</p></solution>
     <response/>
   </exercise>
 
@@ -31,7 +31,7 @@
         <condition string=".*"/>
       </var>
       <var>
-        <condition string="(?i)^\s*(whether\s+or\s+not\s+(has|have)\s+hearing\s+loss|hearing\s+loss\s*(yes/no|yes-no)|some\s+hearing\s+loss)\s*$">
+        <condition string="^\s*([Ww]hether\s+or\s+not\s+([Hh]as|[Hh]ave)\s+[Hh]earing\s+[Ll]oss|[Hh]earing\s+[Ll]oss\s*([Yy]es/[Nn]o|[Yy]es-[Nn]o)|[Ss]ome\s+[Hh]earing\s+[Ll]oss)\s*$">
           <feedback>
             <p>Correct. The variable is whether or not a teen has hearing loss.</p>
           </feedback>
@@ -61,7 +61,7 @@
       <title>Two-Way Table</title>
       <statement>
 <p> Complete the following 2 × 2 table <em>of counts</em>.</p>
-        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" rowheaders="yes">
           <row header="yes">
             <cell></cell>
             <cell>1988-1994</cell>
@@ -69,19 +69,19 @@
             <cell>Total</cell>
           </row>
           <row>
-            <cell halign="left"><strong>Some hearing loss</strong></cell>
+            <cell halign="left">Some hearing loss</cell>
             <cell><var width="10"/></cell>
             <cell><var width="10"/></cell>
             <cell><var width="10"/></cell>
           </row>
           <row>
-            <cell halign="left"><alert>No hearing loss</alert></cell>
+            <cell halign="left">No hearing loss</cell>
             <cell><var width="10"/></cell>
             <cell><var width="10"/></cell>
             <cell><var width="10"/></cell>
           </row>
           <row>
-            <cell halign="left"><alert>Total</alert></cell>
+            <cell halign="left">Total</cell>
             <cell>2928</cell>
             <cell>1771</cell>
             <cell><var width="10"/></cell>
@@ -290,7 +290,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
         would be if the population proportions were the same.</p>
     <sidebyside widths="60% 35%" margins="0% 0%" valign="top">
       <stack>
-        <p> We can answer this question by modeling the sampling variability, arising from taking random samples from these populations, for the difference in two sample proportions. Investigating this sampling variability will help us to assess whether this particular difference in sample proportions is strong evidence that the population proportions actually differ.</p>
+        <p> We can answer this question by modeling the sampling variability, arising from taking independent random samples from these populations, for the difference in two sample proportions. Investigating this sampling variability will help us to assess whether this particular difference in sample proportions is strong evidence that the population proportions actually differ.</p>
       </stack>
       <image source="images/Inv3.1animated.gif" width="100%">
         <description>Animated illustration of sampling variability in two proportions</description>
@@ -307,7 +307,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <setup>
         <!-- H0 var 1: parameter expression (accept "pi94 - pi06" or just "pi94") -->
         <var>
-          <condition string="(?i)^\s*(pi|π)\s*_?\{?\s*(94|1994|1)\}?\s*(-\s*(pi|π)\s*_?\{?\s*(06|2006|2)\}?)?\s*$">
+          <condition string="^\s*[Pp][Ii]\s*_?\s*(94|1994|1)\s*(-\s*[Pp][Ii]\s*_?\s*(06|2006|2))?\s*$">
             <feedback><p>Correct!</p></feedback>
           </condition>
           <condition string=".*">
@@ -325,7 +325,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
         </var>
         <!-- H0 var 3: value (accept "0" for difference form or "pi06" for equality form) -->
         <var>
-          <condition string="(?i)^\s*(0|(pi|π)\s*_?\{?\s*(06|2006|2)\}?)\s*$">
+          <condition string="^\s*(0|[Pp][Ii]\s*_?\s*(06|2006|2))\s*$">
             <feedback><p>Correct!</p></feedback>
           </condition>
           <condition string=".*">
@@ -334,7 +334,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
         </var>
         <!-- Ha var 4: parameter expression (same as var 1) -->
         <var>
-          <condition string="(?i)^\s*(pi|π)\s*_?\{?\s*(94|1994|1)\}?\s*(-\s*(pi|π)\s*_?\{?\s*(06|2006|2)\}?)?\s*$">
+          <condition string="^\s*[Pp][Ii]\s*_?\s*(94|1994|1)\s*(-\s*[Pp][Ii]\s*_?\s*(06|2006|2))?\s*$">
             <feedback><p>Correct!</p></feedback>
           </condition>
           <condition string=".*">
@@ -352,7 +352,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
         </var>
         <!-- Ha var 6: value (accept "0" for difference form or "pi06" for inequality form) -->
         <var>
-          <condition string="(?i)^\s*(0|(pi|π)\s*_?\{?\s*(06|2006|2)\}?)\s*$">
+          <condition string="^\s*(0|[Pp][Ii]\s*_?\s*(06|2006|2))\s*$">
             <feedback><p>Correct!</p></feedback>
           </condition>
           <condition string=".*">
@@ -393,7 +393,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
           <condition number="0.173" tolerance="0.001">
             <feedback><p>Correct! 813/4699 ≈ 0.173</p></feedback>
           </condition>
-          <condition string="(?i)^\s*813\s*/\s*4699\s*$">
+          <condition string="^\s*813\s*/\s*4699\s*$">
             <feedback><p>Correct! 813/4699 ≈ 0.173</p></feedback>
           </condition>
           <condition string=".*">
@@ -401,7 +401,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
           </condition>
         </var>
       </setup>
-      <solution><p>= 813/4699 = 0.173</p></solution>
+      <solution><p><m>\hat{\pi}</m> = 813/4699 = 0.173</p></solution>
       <response/>
     </exercise>
 
@@ -412,8 +412,8 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <response/>
     </exercise>
 
-    <p>We will begin our simulation analysis by assuming the population proportion is actually 
-    this value (<m>\pi = (480 + 333)/(2928 + 1771) = 0.173</m>). We simulate the drawing of two different random samples from this population, one to represent the 1994 study and the other for the 2006 study. Then we examine the distribution of the difference in the conditional proportions with some hearing loss between these two years. Finally, we repeat this random sampling process for many trials. [Note: We can assume <m>\pi = 0.173</m> without loss of generality, but you might want to verify this with other values for <m>\pi</m> as well.]</p>
+    <p>We will begin our simulation analysis by assuming the (common) population proportion is actually 
+    this value (<m>\pi = 0.173</m>). We simulate the drawing of two different random samples from this population, one to represent the 1994 study and the other for the 2006 study. Then we examine the distribution of the difference in the conditional proportions with some hearing loss between these two years. Finally, we repeat this random sampling process for many trials. [Note: We can assume <m>\pi = 0.173</m> without loss of generality, but you might want to verify this with other values for <m>\pi</m> as well.]</p>
      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url> to randomly sample one "could have been" difference in conditional proportions <em>assuming the null hypothesis is true</em>.</p>
         <p><ul>
           <li><p>Specify .173 as the process probability for both populations.</p></li>
@@ -435,23 +435,23 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       </statement>
       <setup>
         <var>
-          <condition string=".+">
+          <condition string=".+" correct="yes">
             <feedback><p>Response recorded.</p></feedback>
           </condition>
         </var>
         <var>
-          <condition string=".+">
+          <condition string=".+" correct="yes">
             <feedback><p>Response recorded.</p></feedback>
           </condition>
         </var>
         <var>
-          <condition string=".+">
+          <condition string=".+" correct="yes">
             <feedback><p>Response recorded.</p></feedback>
           </condition>
         </var>
       </setup>
       <solution>
-        <p>Example results, =0.185 and  = 0.157 for a difference of 0.028.</p>
+        <p>Example results,<m>\hat{p}_1</m> =0.185 and <m>\hat{p}_2</m> = 0.157 for a difference of 0.028.</p>
         <image source="images/Inv3.1solsl.jpg" width="60%"/>
       </solution>
       <response/>
@@ -460,15 +460,15 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     <exercise xml:id="inv3-1-m">
       <title>Variability</title>
       <statement>
-        <p>Will everyone in the class get the same answers to <xref ref="inv3-1-l" text="custom">question 12</xref>? Explain.</p>
+        <p>Will everyone in the class get the same answers to <xref ref="inv3-1-l" text="custom">Question 12</xref>? Explain.</p>
         <p><var width="60" height="3"/></p>
       </statement>
       <setup>
         <var>
-          <condition string="(?i)(?=.*\bno\b)(?=.*\b(sampl|random|variab)).*">
+          <condition string="(?=.*\b[Nn][Oo]\b)(?=.*\b([Ss]ampl|[Rr]andom|[Vv]ariab)).*">
             <feedback><p>Correct! Because of random sampling variability, everyone will get different results.</p></feedback>
           </condition>
-          <condition string="(?i).*\bno\b.*">
+          <condition string=".*\b[Nn][Oo]\b.*">
             <feedback><p>Correct that the answer is no, but be sure to explain why (think about sampling variability).</p></feedback>
           </condition>
           <condition string=".*">
@@ -523,10 +523,10 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       </statement>
       <setup>
         <var>
-          <condition string="(?i)(?=.*\byes\b)(?=.*\bnormal\b).*">
+          <condition string="(?=.*\b[Yy][Ee][Ss]\b)(?=.*\b[Nn]ormal\b).*">
             <feedback><p>Correct! The distribution of differences looks like a normal distribution.</p></feedback>
           </condition>
-          <condition string="(?i).*\bnormal\b.*">
+          <condition string=".*\b[Nn]ormal\b.*">
             <feedback><p>Yes, the normal distribution!</p></feedback>
           </condition>
           <condition string=".*">
@@ -563,7 +563,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
         <p>How does the variability (SD) of the <em>difference</em> in <m>\hat{p}</m> values compare to the variability of the individual <m>\hat{p}</m> distributions?</p>
       </statement>
       <choices>
-        <choice><statement>equal</statement></choice>
+        <choice><statement>Equal</statement></choice>
         <choice correct="yes"><statement>Larger</statement></choice>
         <choice><statement>Smaller</statement></choice>
       </choices>
@@ -575,7 +575,6 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <title>Variability Explanation</title>
       <statement>
         <p>Explain why this makes intuitive sense.</p>
-        <p><var width="60" height="5"/></p>
       </statement>
       <solution><p>This makes sense because we now have two sources of variability and the overall amount of variation will grow. (For example, we could get two extreme results, in opposite directions, and end up with a large difference.)</p></solution>
       <response/>
@@ -683,7 +682,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
         </var>
         <!-- interpretation: open-ended -->
         <var>
-          <condition string=".+">
+          <condition string=".+" corret="yes">
             <feedback><p>Response recorded.</p></feedback>
           </condition>
         </var>
@@ -711,25 +710,26 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <response/>
     </exercise>
 
+    <aside>
+      <title>Normal Probability Calculator applet</title>
+      <p><url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="rossmanchance.com/applets/2021/normcalc/NormCalc.html">Normal Probability Calculator applet</url></p>
+    </aside>
+
     <exercise xml:id="inv3-1-x">
       <title>Theoretical p-value</title>
-      <aside>
-        <title>Normal Probability Calculator applet</title>
-        <p><url href="https://www.rossmanchance.com/applets/2021/normcalc/normcalc.htm" visual="rossmanchance.com/applets/2021/normcalc/normcalc.htm">Normal Probability Calculator applet</url></p>
-      </aside>
-      <statement><p>Use technology to compute the p-value for this standardized statistic using the standard normal distribution and compare it to your simulation results.</p>
+      <statement><p>Use technology (or refer to your previous applet results) to compute the p-value for this standardized statistic using the standard normal distribution (mean 0, SD 1) and compare it to your simulation results.</p>
       <var width = "10"/></statement>
       <setup>
         <var>
           <condition number="0.017" tolerance="0.003">
-            <feedback><p>Correct! P(Z &lt; -2.12) ≈ 0.017</p></feedback>
+            <feedback><p>Correct! P(Z &leq; -2.12) ≈ 0.017</p></feedback>
           </condition>
           <condition string=".*">
-            <feedback><p>Find P(Z &lt; -2.12) using the standard normal distribution.</p></feedback>
+            <feedback><p>Find P(Z &leq; -2.12) using the standard normal distribution.</p></feedback>
           </condition>
         </var>
       </setup>
-      <solution><p>P(Z &lt; -2.12) ≈ 0.017, should be in the ballpark of your simulation results</p></solution>
+      <solution><p>P(Z &leq; -2.12) ≈ 0.017, should be in the ballpark of your simulation results</p></solution>
       <response/>
     </exercise>
 
@@ -743,7 +743,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     <exercise xml:id="inv3-1-y">
       <title>CI Standard Error</title>
       <statement>
-        <p>Calculate this version of the standard error. Is it much different from what you calculated in <xref ref="inv3-1-v" text="custom">question 22</xref>?</p>
+        <p>Calculate this version of the standard error. Is it much different from what you calculated in <xref ref="inv3-1-v" text="custom">Question 23</xref>?</p>
         <p>SE = <var width="10"/></p>
         <p><var width="60" height="3"/></p>
       </statement>
@@ -757,7 +757,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
           </condition>
         </var>
         <var>
-          <condition string=".+">
+          <condition string=".+" correct="yes">
             <feedback><p>Response recorded.</p></feedback>
           </condition>
         </var>
@@ -771,7 +771,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
 
     <exercise xml:id="inv3-1-z">
       <title>95% Confidence Interval</title>
-      <statement><p>Calculate and interpret a 95% confidence interval to compare hearing loss of American teenagers in these two years. Is this confidence interval consistent with your test of significance? Why is it theoretically possible the interval would not be consistent with the test of significance?</p></statement>
+      <statement><p>Calculate (by hand) and interpret a 95% confidence interval to compare hearing loss of American teenagers in these two years. Is this confidence interval consistent with your test of significance? Why is it theoretically possible the interval would not be consistent with the test of significance?</p></statement>
       <solution>
         <p>estimate ± (critical value)(standard error)</p>
         <p><m>\hat{p}_1 - \hat{p}_2 \pm z^*\sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m></p>
