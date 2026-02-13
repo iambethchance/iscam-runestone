@@ -3,7 +3,7 @@
   <title>Investigation 3.1: Teen Hearing Loss (cont.)</title>
 <exercises><title>The Study</title>
   <introduction>
-    <p>The Shargorodsky, Curhan, Curhan, and Eavey (<url href="https://jamanetwork.com/journals/jama/fullarticle/186427">2010</url>) study from <xref ref="inv-1-14" text="custom">Investigation 1.14</xref> actually focused on comparing the current hearing loss rate among teens (12-19 years) to previous years to see whether teen hearing loss is increasing, possibly due to heavier use of ear buds. In addition to the 1771 participants in the NHANES 2005-6 study (333 with some level of hearing loss), they also had hearing loss data on 2928 teens from NHANES III (1988-1994), with 480 showing some level of hearing loss. Our goal is to assess whether the difference between these two groups can be considered statistically significant.</p>
+    <p>The Shargorodsky, Curhan, Curhan, and Eavey (<url href="https://jamanetwork.com/journals/jama/fullarticle/186427">2010</url>) study from <xref ref="inv-1-14" text="custom">Investigation 1.14</xref> actually focused on comparing the current hearing loss rate among teens (12-19 years) to previous years to see whether teen hearing loss is increasing, possibly due to heavier use of ear buds. In addition to the 1771 participants in the NHANES 2005-6 study (333 with some level of hearing loss), they also had hearing loss data on 2928 teens from NHANES III (1988-1994), with 480 showing some level of hearing loss. Our goal is to assess whether the difference between these two samples can be considered statistically significant.</p>
     
     <image source="images/Inv3.1intro.png" width="80%"/>
   </introduction>
@@ -12,7 +12,6 @@
     <title>Study Design Difference</title>
     <statement>
       <p>What is the primary difference between this study and those examined in <em>ISCAM</em> Chapters 1 and 2?</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution><p>different: compare 2 proportions to each other</p></solution>
     <response/>
@@ -27,6 +26,23 @@
       <p><var width="60" height="3"/></p>
       <p>Identify the variable type.</p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".*"/>
+      </var>
+      <var>
+        <condition string="(?i)^\s*(whether\s+or\s+not\s+(has|have)\s+hearing\s+loss|hearing\s+loss\s*(yes/no|yes-no)|some\s+hearing\s+loss)\s*$">
+          <feedback>
+            <p>Correct. The variable is whether or not a teen has hearing loss.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Look for wording like "whether or not have hearing loss."</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <choices>
       <choice correct="yes"><statement>Categorical</statement></choice>
       <choice><statement>Quantitative</statement></choice>
@@ -40,11 +56,11 @@
 
   <paragraphs>
     <title>Descriptive Statistics</title>
-    
+           <p>When we have two samples for a binary categorical variable, it is often useful to organize the data using a <alert>two-way table</alert>.</p> 
     <exercise xml:id="inv3-1-c">
       <title>Two-Way Table</title>
       <statement>
-        <p>When we have two samples for a binary categorical variable, it is often useful to organize the data using a two-way table. Complete the following 2 × 2 table <em>of counts</em>.</p>
+<p> Complete the following 2 × 2 table <em>of counts</em>.</p>
         <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
           <row header="yes">
             <cell></cell>
@@ -53,25 +69,90 @@
             <cell>Total</cell>
           </row>
           <row>
-            <cell>Some hearing loss</cell>
+            <cell halign="left"><strong>Some hearing loss</strong></cell>
             <cell><var width="10"/></cell>
             <cell><var width="10"/></cell>
             <cell><var width="10"/></cell>
           </row>
           <row>
-            <cell>No hearing loss</cell>
+            <cell halign="left"><alert>No hearing loss</alert></cell>
             <cell><var width="10"/></cell>
             <cell><var width="10"/></cell>
             <cell><var width="10"/></cell>
           </row>
           <row>
-            <cell>Total</cell>
+            <cell halign="left"><alert>Total</alert></cell>
             <cell>2928</cell>
             <cell>1771</cell>
             <cell><var width="10"/></cell>
           </row>
         </tabular>
       </statement>
+      <setup>
+        <!-- Row 1: Some hearing loss, 1988-1994 -->
+        <var>
+          <condition number="480" tolerance="0">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>This is the number of teens with some hearing loss in 1988-1994.</p></feedback>
+          </condition>
+        </var>
+        <!-- Row 1: Some hearing loss, 2005-2006 -->
+        <var>
+          <condition number="333" tolerance="0">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>This is the number of teens with some hearing loss in 2005-2006.</p></feedback>
+          </condition>
+        </var>
+        <!-- Row 1: Some hearing loss, Total -->
+        <var>
+          <condition number="813" tolerance="0">
+            <feedback><p>Correct! 480 + 333 = 813</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Add the two values in this row.</p></feedback>
+          </condition>
+        </var>
+        <!-- Row 2: No hearing loss, 1988-1994 -->
+        <var>
+          <condition number="2448" tolerance="0">
+            <feedback><p>Correct! 2928 - 480 = 2448</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Subtract the hearing loss count from the column total.</p></feedback>
+          </condition>
+        </var>
+        <!-- Row 2: No hearing loss, 2005-2006 -->
+        <var>
+          <condition number="1438" tolerance="0">
+            <feedback><p>Correct! 1771 - 333 = 1438</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Subtract the hearing loss count from the column total.</p></feedback>
+          </condition>
+        </var>
+        <!-- Row 2: No hearing loss, Total -->
+        <var>
+          <condition number="3886" tolerance="0">
+            <feedback><p>Correct! 2448 + 1438 = 3886</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Add the two values in this row.</p></feedback>
+          </condition>
+        </var>
+        <!-- Row 3: Total -->
+        <var>
+          <condition number="4699" tolerance="0">
+            <feedback><p>Correct! 2928 + 1771 = 4699</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Add the two column totals.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
           <row header="yes">
@@ -81,19 +162,19 @@
             <cell>Total</cell>
           </row>
           <row>
-            <cell>Some hearing loss</cell>
+            <cell halign="left"><alert>Some hearing loss</alert></cell>
             <cell>480</cell>
             <cell>333</cell>
             <cell>813</cell>
           </row>
           <row>
-            <cell>No hearing loss</cell>
+            <cell halign="left"><alert>No hearing loss</alert></cell>
             <cell>2448</cell>
             <cell>1438</cell>
             <cell>3886</cell>
           </row>
           <row>
-            <cell>Total</cell>
+            <cell halign="left"><alert>Total</alert></cell>
             <cell>2928</cell>
             <cell>1771</cell>
             <cell>4699</cell>
@@ -122,7 +203,7 @@
       <p>The simplest statistic for comparing a binary variable between two groups is the difference in the proportion of "successes" for each group. These proportions, calculated separately for each group rather than looking at the overall proportion, are called <term>conditional proportions</term><idx><h>conditional proportions</h></idx>.</p>
     </assemblage>
 
-    <p>In this case, we compute the difference in the <em>proportion</em> of teens with some level of hearing loss between the two years (<m>\hat{p}_{94} - \hat{p}_{06} = 480/2928 - 333/1771</m>).</p>
+    <p>In this case, we compute the difference in the <em>proportion</em> of teens with some level of hearing loss between the two years <m>(\hat{p}_{94} - \hat{p}_{06} = 480/2928 - 333/1771)</m>.</p>
 
     <p>The next step is to examine an effective graphical summary for comparing the two groups.</p>
 
@@ -220,9 +301,65 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <title>Hypotheses</title>
       <statement>
         <p>Let <m>\pi_{94}</m> represent the proportion of all American teenagers in 1994 with at least some hearing loss, and similarly for <m>\pi_{06}</m>. Define the parameter of interest to be <m>\pi_{94} - \pi_{06}</m>, the difference in the population proportions between these two years. State appropriate null and alternative hypotheses about this parameter to reflect the researchers' conjecture that hearing loss by teens is becoming more prevalent.</p>
-        <p><m>H_0: </m> <var width="5"/> <var width="5"/> <var width="5"/></p>
-        <p><m>H_a: </m> <var width="5"/> <var width="5"/> <var width="5"/></p>
+        <p><m>H_0: </m> <var width="15"/> <var width="5"/> <var width="10"/></p>
+        <p><m>H_a: </m> <var width="15"/> <var width="5"/> <var width="10"/></p>
       </statement>
+      <setup>
+        <!-- H0 var 1: parameter expression (accept "pi94 - pi06" or just "pi94") -->
+        <var>
+          <condition string="(?i)^\s*(pi|π)\s*_?\{?\s*(94|1994|1)\}?\s*(-\s*(pi|π)\s*_?\{?\s*(06|2006|2)\}?)?\s*$">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use pi94 - pi06 (difference form) or pi94 (equality form).</p></feedback>
+          </condition>
+        </var>
+        <!-- H0 var 2: relation (should be =) -->
+        <var>
+          <condition string="^\s*=\s*$">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The null hypothesis states the two proportions are equal.</p></feedback>
+          </condition>
+        </var>
+        <!-- H0 var 3: value (accept "0" for difference form or "pi06" for equality form) -->
+        <var>
+          <condition string="(?i)^\s*(0|(pi|π)\s*_?\{?\s*(06|2006|2)\}?)\s*$">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use 0 (if difference form) or pi06 (if equality form).</p></feedback>
+          </condition>
+        </var>
+        <!-- Ha var 4: parameter expression (same as var 1) -->
+        <var>
+          <condition string="(?i)^\s*(pi|π)\s*_?\{?\s*(94|1994|1)\}?\s*(-\s*(pi|π)\s*_?\{?\s*(06|2006|2)\}?)?\s*$">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use pi94 - pi06 (difference form) or pi94 (inequality form).</p></feedback>
+          </condition>
+        </var>
+        <!-- Ha var 5: relation (should be <) -->
+        <var>
+          <condition string="^\s*&lt;\s*$">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>If hearing loss is increasing, the 1994 proportion is less than the 2006 proportion.</p></feedback>
+          </condition>
+        </var>
+        <!-- Ha var 6: value (accept "0" for difference form or "pi06" for inequality form) -->
+        <var>
+          <condition string="(?i)^\s*(0|(pi|π)\s*_?\{?\s*(06|2006|2)\}?)\s*$">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use 0 (if difference form) or pi06 (if inequality form).</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p><m>H_0: \pi_{94} = \pi_{06}</m> or <m>\pi_{94} - \pi_{06} = 0</m> (the population proportions are the same)</p>
         <p><m>H_a: \pi_{94} - \pi_{06} &lt; 0</m> or <m>\pi_{94} &lt; \pi_{06}</m> (a higher rate of hearing loss in 2006 than in 1994)</p>
@@ -243,14 +380,27 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <solution><p>We sample from two random processes but we keep the process probability the same between them.</p></solution>
       <response/>
     </exercise>
-
+<p>So under the null hypothesis we really only have one value of <m>\pi</m> to estimate – the common population proportion with hearing loss for these two years.</p>
     <exercise xml:id="inv3-1-j">
       <title>Pooled Estimate</title>
-      <statement><p>So under the null hypothesis we really only have one value of <m>\pi</m> to estimate – the common population proportion with hearing loss for these two years. What is your best estimate for <m>\pi</m> from the sample data?</p>
+      <statement><p> What is your best estimate for <m>\pi</m> from the sample data (assuming the null hypothesis is true)?</p>
  <hint>
         <p>Think about combining the two years together.</p>
       </hint>
     <var width = "10"/>     </statement>
+      <setup>
+        <var>
+          <condition number="0.173" tolerance="0.001">
+            <feedback><p>Correct! 813/4699 ≈ 0.173</p></feedback>
+          </condition>
+          <condition string="(?i)^\s*813\s*/\s*4699\s*$">
+            <feedback><p>Correct! 813/4699 ≈ 0.173</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Combine the total number of successes (480 + 333) divided by the total sample size (2928 + 1771).</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <solution><p>= 813/4699 = 0.173</p></solution>
       <response/>
     </exercise>
@@ -283,6 +433,23 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       </hint>
       <p><m>\hat{p}_1 = </m><var width="10"/> <m>\hat{p}_2 = </m><var width="10"/> <m>\hat{p}_1 - \hat{p}_2 = </m><var width="10"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>Example results, =0.185 and  = 0.157 for a difference of 0.028.</p>
         <image source="images/Inv3.1solsl.jpg" width="60%"/>
@@ -296,13 +463,26 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
         <p>Will everyone in the class get the same answers to <xref ref="inv3-1-l" text="custom">question 12</xref>? Explain.</p>
         <p><var width="60" height="3"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string="(?i)(?=.*\bno\b)(?=.*\b(sampl|random|variab)).*">
+            <feedback><p>Correct! Because of random sampling variability, everyone will get different results.</p></feedback>
+          </condition>
+          <condition string="(?i).*\bno\b.*">
+            <feedback><p>Correct that the answer is no, but be sure to explain why (think about sampling variability).</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The answer is no — because of random sampling variability, each person's simulation will produce different results.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <solution><p>No, because of the randomness in the sampling process not everyone will get the same answers to checkpoint 16.</p></solution>
       <response/>
     </exercise>
 
     <p>To learn about the pattern of variation in our statistic, we want to generate many more outcomes assuming the null hypothesis to be true.</p>
 <ul><li>Change the <alert>Number of samples</alert> from 1 to 999</li>
-<li>Press <alert>Draw Samples</alert> for a total of 1,000 independent random samples. 
+<li>Press <alert>Draw Samples</alert> for a total of 1,000 independent pairs of random samples. 
 </li></ul>
     <exercise xml:id="inv3-1-n">
       <title>Many Repetitions</title>
@@ -341,13 +521,30 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
         <p> However, did the histogram of <m>\hat{p}_1 - \hat{p}_2</m> values you examined remind you of any other probability distribution?</p>
         <p><var width="60" height="3"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string="(?i)(?=.*\byes\b)(?=.*\bnormal\b).*">
+            <feedback><p>Correct! The distribution of differences looks like a normal distribution.</p></feedback>
+          </condition>
+          <condition string="(?i).*\bnormal\b.*">
+            <feedback><p>Yes, the normal distribution!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Think about a well-known bell-shaped distribution — the normal distribution.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <solution><p>The normal distribution</p></solution>
       <response/>
     </exercise>
 <ul><li>Check the <alert>Normal Approximation</alert> box to overlay a normal curve on your null distribution to evaluate whether the simulated differences appear to "line up" with observations from a standard normal distribution. </li></ul>
     <exercise xml:id="inv3-1-q">
       <title>Normal Approximation</title>
-      <statement><p>Does the normal model appear to be a reasonable approximation to the null distribution?<var width="5"/></p></statement>
+      <statement><p>Does the normal model appear to be a reasonable approximation to the null distribution?</p></statement>
+      <choices>
+        <choice correct="yes"><statement>Yes</statement></choice>
+        <choice><statement>No</statement></choice>
+      </choices>
       <solution>
         <p>Yes, example results below</p>
         <image source="images/Inv3.1solsq.jpg" width="60%"/>
@@ -370,11 +567,17 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
         <choice correct="yes"><statement>Larger</statement></choice>
         <choice><statement>Smaller</statement></choice>
       </choices>
+      <solution><p>Larger. This makes sense because we now have two sources of variability and the overall amount of variation will grow. (For example, we could get two extreme results, in opposite directions, and end up with a large difference.)</p></solution>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="inv3-1-r2">
+      <title>Variability Explanation</title>
       <statement>
         <p>Explain why this makes intuitive sense.</p>
         <p><var width="60" height="5"/></p>
       </statement>
-      <solution><p>Larger. This makes sense because we now have two sources of variability and the overall amount of variation will grow. (For example, we could get two extreme results, in opposite directions, and end up with a large difference.)</p></solution>
+      <solution><p>This makes sense because we now have two sources of variability and the overall amount of variation will grow. (For example, we could get two extreme results, in opposite directions, and end up with a large difference.)</p></solution>
       <response/>
     </exercise>
 
@@ -441,6 +644,50 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
         <p>interpretation:</p>
         <p><var width="60" height="3"/></p>
       </statement>
+      <setup>
+        <!-- p-hat_94 - p-hat_06 = 480/2928 - 333/1771 ≈ -0.024 -->
+        <var>
+          <condition number="-0.024" tolerance="0.002">
+            <feedback><p>Correct! 480/2928 - 333/1771 ≈ -0.024</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Calculate 480/2928 − 333/1771.</p></feedback>
+          </condition>
+        </var>
+        <!-- p-hat pooled = 813/4699 ≈ 0.173 -->
+        <var>
+          <condition number="0.173" tolerance="0.001">
+            <feedback><p>Correct! 813/4699 ≈ 0.173</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Combine the total successes (480 + 333) divided by total sample size (2928 + 1771).</p></feedback>
+          </condition>
+        </var>
+        <!-- SE ≈ 0.0113 -->
+        <var>
+          <condition number="0.0113" tolerance="0.001">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use the formula sqrt(p̂(1−p̂)(1/n₁ + 1/n₂)) with p̂ = 0.173.</p></feedback>
+          </condition>
+        </var>
+        <!-- z ≈ -2.12 -->
+        <var>
+          <condition number="-2.12" tolerance="0.15">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Divide the observed difference (-0.024) by the standard error.</p></feedback>
+          </condition>
+        </var>
+        <!-- interpretation: open-ended -->
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p><m>\hat{p}_{94} - \hat{p}_{06}</m> = -0.024</p>
         <p><m>\hat{p}</m> = 0.173</p>
@@ -455,8 +702,11 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <title>Compare SE</title>
       <statement>
         <p>Is the standard error close to the empirical standard deviation from your simulation results?</p>
-        <p><var width="60" height="3"/></p>
       </statement>
+      <choices>
+        <choice correct="yes"><statement>Yes</statement></choice>
+        <choice><statement>No</statement></choice>
+      </choices>
       <solution><p>yes (.0113 vs. .011 for example)</p></solution>
       <response/>
     </exercise>
@@ -469,6 +719,16 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       </aside>
       <statement><p>Use technology to compute the p-value for this standardized statistic using the standard normal distribution and compare it to your simulation results.</p>
       <var width = "10"/></statement>
+      <setup>
+        <var>
+          <condition number="0.017" tolerance="0.003">
+            <feedback><p>Correct! P(Z &lt; -2.12) ≈ 0.017</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Find P(Z &lt; -2.12) using the standard normal distribution.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <solution><p>P(Z &lt; -2.12) ≈ 0.017, should be in the ballpark of your simulation results</p></solution>
       <response/>
     </exercise>
@@ -484,8 +744,24 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <title>CI Standard Error</title>
       <statement>
         <p>Calculate this version of the standard error. Is it much different from what you calculated in <xref ref="inv3-1-v" text="custom">question 22</xref>?</p>
-        <p><var width="60" height="5"/></p>
+        <p>SE = <var width="10"/></p>
+        <p><var width="60" height="3"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition number="0.0115" tolerance="0.001">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use the formula sqrt(p̂₁(1−p̂₁)/n₁ + p̂₂(1−p̂₂)/n₂) with p̂₁ = 480/2928 and p̂₂ = 333/1771.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>SE(<m>\hat{p}_{94} - \hat{p}_{06}</m>) = <m>\sqrt{\frac{.164(1-.164)}{2928} + \frac{.188(1-.188)}{1771}}</m> = 0.0115</p>
         <p>This is  similar to the pooled SE of 0.0113.</p>
@@ -538,12 +814,12 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       
       <hint>
         <title>Theory-Based Inference applet</title>
-        <p>In <url href="https://www.rossmanchance.com/applets/2021/tbimodeling/tbimodeling.html">Theory-Based Inference applet</url></p>
+        <p>In <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url></p>
         <p><ul>
           <li><p>Select <term index="no">Two proportions</term></p></li>
           <li><p>Check the box to paste in 2 columns of data (stacked or unstacked) and press <term index="no">Use Data</term> or specify the sample sizes and either the sample counts or the sample proportions and press <term index="no">Calculate</term>.</p></li>
           <li><p>For the test, check the box for <term index="no">Test of Significance</term>. Keep the hypothesized difference at zero and set the direction of the alternative, press <alert>Calculate</alert>.</p></li>
-          <li><p>For the confidence interval, check the <term index="no">Confidence Interval</term>box, specify the confidence level and press <term index="no">Calculate CI</term></p></li>
+          <li><p>For the confidence interval, check the <term index="no">Confidence Interval</term> box, specify the confidence level and press <term index="no">Calculate CI</term></p></li>
         </ul></p>
         <sidebyside widths="45% 45%">
           <image source="images/Inv3.1TBI1.png"/>
@@ -676,7 +952,7 @@ invisible()
    
     <paragraphs xml:id="tech-detour-simulation-proportions">
       <title>Technology Detour – Simulating Proportions from Independent Random Samples</title>
-      
+<br/>      
       <p>Simulation Steps:</p>
       <ol>
         <li><p>Generate a random sample of 2928 observations from a binomial process with <m>\pi = .173</m></p></li>
