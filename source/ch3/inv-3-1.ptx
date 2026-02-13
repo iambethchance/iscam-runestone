@@ -532,11 +532,8 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       </statement>
       <setup>
         <var>
-          <condition string="(?=.*\b[Yy][Ee][Ss]\b)(?=.*\b[Nn]ormal\b).*">
+          <condition string=".*\b[Nn]ormal\b.*">
             <feedback><p>Correct! The distribution of differences looks like a normal distribution.</p></feedback>
-          </condition>
-          <condition string=".*\b[Nn]ormal\b.*" correct="yes">
-            <feedback><p>Yes, the normal distribution!</p></feedback>
           </condition>
           <condition string=".*">
             <feedback><p>Think about a well-known bell-shaped distribution — the normal distribution.</p></feedback>
@@ -824,7 +821,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     
     </exercises>
 
- <paragraphs>
+ <assemblage>
       <title>Technology Detour – Two-sample <em>z</em>-procedures</title>
       
       <hint>
@@ -901,7 +898,7 @@ invisible()
         </sidebyside>
         <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use "pooled estimate of variance." This reports the <em>z</em>-score as well.)</p>
       </hint>
-    </paragraphs>
+    </assemblage>
 
   <subsection xml:id="practice3-1A">
     <title>Practice Problem 3.1A</title>
