@@ -435,23 +435,32 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       </statement>
       <setup>
         <var>
-          <condition string=".+" correct="yes">
+          <condition string=".+">
             <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter a value.</p></feedback>
           </condition>
         </var>
         <var>
-          <condition string=".+" correct="yes">
+          <condition string=".+">
             <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter a value.</p></feedback>
           </condition>
         </var>
         <var>
-          <condition string=".+" correct="yes">
+          <condition string=".+">
             <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter a value.</p></feedback>
           </condition>
         </var>
       </setup>
       <solution>
-        <p>Example results,<m>\hat{p}_1</m> =0.185 and <m>\hat{p}_2</m> = 0.157 for a difference of 0.028.</p>
+        <p>Example results, <m>\hat{p}_1</m> =0.185 and <m>\hat{p}_2</m> = 0.157 for a difference of 0.028.</p>
         <image source="images/Inv3.1solsl.jpg" width="60%"/>
       </solution>
       <response/>
@@ -526,7 +535,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
           <condition string="(?=.*\b[Yy][Ee][Ss]\b)(?=.*\b[Nn]ormal\b).*">
             <feedback><p>Correct! The distribution of differences looks like a normal distribution.</p></feedback>
           </condition>
-          <condition string=".*\b[Nn]ormal\b.*">
+          <condition string=".*\b[Nn]ormal\b.*" correct="yes">
             <feedback><p>Yes, the normal distribution!</p></feedback>
           </condition>
           <condition string=".*">
@@ -682,8 +691,11 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
         </var>
         <!-- interpretation: open-ended -->
         <var>
-          <condition string=".+" corret="yes">
+          <condition string=".+">
             <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter your interpretation.</p></feedback>
           </condition>
         </var>
       </setup>
@@ -757,8 +769,11 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
           </condition>
         </var>
         <var>
-          <condition string=".+" correct="yes">
+          <condition string=".+">
             <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter a response.</p></feedback>
           </condition>
         </var>
       </setup>
