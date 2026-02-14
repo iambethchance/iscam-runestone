@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="inv-3-6">
   <title>Investigation 3.6: Is Yawning Contagious?</title>
+<introduction>
+  <p><em>In this investigation, learn how to calculate an "exact" p-value for the randomization distribution you just simulated.</em></p>
+</introduction>
 
 <exercises xml:id="investigation3-6" hidden-label="yes">
 <title>The Study</title>  
@@ -248,10 +251,10 @@
   </exercise>
 
   <paragraphs>
-    <p>Open the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?twobytwo=1">Analyzing Two-way Tables applet</url>.</p>
+    <p>Open the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?twobytwo=1&hideExtras=1">Analyzing Two-way Tables applet</url>.</p>
     <p><ul>
       <li>Paste in the raw data and press <alert>Use Data</alert> or enter the titles and counts of a two-way table and press <alert>Use Table</alert>. (Or check the 2×2 box and enter the cell values and headers). Or use the version below.</li>
-      <li>Select <em>GroupA</em> Successes as the <alert>Statistic</alert>.</li>
+      <li>Select <em>GroupA Successes</em> as the <alert>Statistic</alert>.</li>
       <li>Check the <alert>Show Shuffle Options</alert> box.</li>
       <li>Set <alert>Number of Shuffles</alert> to 1000.</li>
       <li>Press <alert>Shuffle</alert>.</li>
@@ -310,7 +313,7 @@
     <statement>
       <p>How many ways altogether are there to randomly assign these 50 subjects into one group of 34 (yawn-seed group) and the remaining group of 16 (no-yawn-seed group)?</p>
       <hint>
-        <p>Recall what you saw earlier with the binomial distribution and counting the number of ways to obtain S successes and F failures in n trials. See the Technical Details in Investigation 1.1.</p>
+        <p>Recall what you saw earlier with the binomial distribution and counting the number of ways to obtain S successes and F failures in <m>n</m> trials. See the Technical Details in Investigation 1.1.</p>
       </hint>
       <p><var width="40"/></p>
     </statement>
@@ -349,10 +352,7 @@
     </statement>
     <setup>
       <var>
-        <condition number="1001" tolerance="0">
-          <feedback><p>Correct! C(14, 10) = 1,001.</p></feedback>
-        </condition>
-        <condition string=".*[Cc]\(14.*10\).*">
+        <condition string="1001|1,001|.*[Cc]\(14.*10\).*">
           <feedback><p>Correct! C(14, 10) = 1,001.</p></feedback>
         </condition>
         <condition string=".*">
@@ -360,22 +360,19 @@
         </condition>
       </var>
       <var>
-        <condition number="125167700" tolerance="100">
+        <condition string="125167700|125,167,700|.*[Cc]\(36.*24\).*">
           <feedback><p>Correct! C(36, 24) = 125,167,700.</p></feedback>
-        </condition>
-        <condition string=".*[Cc]\(36.*24\).*|.*125.*167.*700.*">
-          <feedback><p>Correct!</p></feedback>
         </condition>
         <condition string=".*">
           <feedback><p>Calculate C(36, 24) = 36!/(24! × 12!) = 125,167,700.</p></feedback>
         </condition>
       </var>
       <var>
-        <condition string=".*[Mm]ultipl.*|.*1001.*125.*|.*125.*1001.*|.*1\.25.*10.*11.*">
+        <condition string=".*[Mm]ultipl.*|.*1001.*125.*|.*125.*1001.*|.*1\.25.*10.*11.*|.*[Cc]\(.*\).*\*.*[Cc]\(.*\).*">
           <feedback><p>Correct! Multiply: 1,001 × 125,167,700.</p></feedback>
         </condition>
         <condition string=".+">
-          <feedback><p>Response recorded.</p></feedback>
+          <feedback><p>Response recorded. Multiply the number of ways to select successes by the number of ways to select failures.</p></feedback>
         </condition>
         <condition string=".*">
           <feedback><p>Multiply the number of ways to select successes by the number of ways to select failures.</p></feedback>
@@ -568,64 +565,55 @@
 
   <p class="horizontal-rule"> </p>
 
-  <paragraphs xml:id="tech-detour-hypergeometric-inv3-6">
+  <assemblage xml:id="tech-detour-hypergeometric-inv3-6">
     <title>Technology Detour – Calculating Hypergeometric Probabilities (Fisher's Exact Test)</title>
+    <p>Use technology to calculate hypergeometric probabilities (Fisher's Exact Test) for two-way tables. You need to specify the total number of observations (<m>N</m>), the number of successes (<m>M</m>), and the sample size (<m>n</m>).</p>
+  </assemblage>
 
-    <exercise xml:id="tech-detour-hypergeometric-applet-inv3-6" label="Hypergeometric - Applet - Inv 3.6">
-      <title>Calculating Hypergeometric Probabilities in Analyzing Two-way Tables applet</title>
-      <statement>
-        <p>In the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?hideExtras=1">Analyzing Two-way Tables applet</url>.</p>
-        <p><ul>
-          <li>Enter the two-way table</li>
-          <li>Check the box for <entry index="no">Show Fisher's Exact Test</entry> in the lower left corner</li>
-          <li>A check box will appear for determining the two-sided p-value</li>
-        </ul></p>
-      </statement>
-      <solution>
-        <p>Example applet output:</p>
-        <image source="images/Inv3.6applet.jpg" width="70%"/>
-      </solution>
-      <response/>
-    </exercise>
-
-    <exercise xml:id="tech-detour-hypergeometric-r-inv3-6" label="Hypergeometric - R - Inv 3.6">
-      <title>Calculating Hypergeometric Probabilities in R</title>
-      <statement>
-        <p>The iscamhyperprob function takes the following inputs:</p>
-        <p><ul>
-          <li><c>k</c>, the observed value of interest (or the difference in conditional proportions, assumed if value is less than one, including negative)</li>
-          <li><c>total</c>, the total number of observations in the two-way table</li>
-          <li><c>succ</c>, the overall number of successes in the table</li>
-          <li><c>n</c>, the number of observations in "group A"</li>
-          <li><c>lower.tail</c>, a Boolean which is TRUE or FALSE</li>
-        </ul></p>
-        <p>For example: <c>iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)</c></p>
-      </statement>
-      <solution>
-        <p>Example R output:</p>
-        <image source="images/Inv3.6solsR.jpg" width="70%"/>
-      </solution>
-      <response/>
-    </exercise>
-
-    <exercise xml:id="tech-detour-hypergeometric-jmp-inv3-6" label="Hypergeometric - JMP - Inv 3.6">
-      <title>Calculating Hypergeometric Probabilities in JMP</title>
-      <statement>
-        <p>Using the Distribution Calculator:</p>
-        <p><ul>
-          <li>Choose Hypergeometric from the Distribution menu</li>
-          <li>Specify the values of Population Size = table total, Number of Items = total number of successes, Sample Size = group 1 total</li>
-          <li>Select Input quantiles and compute probabilities</li>
-          <li>Specify the tail probability and enter Qa = number of successes in "group A"</li>
-        </ul></p>
-        <p>Keep in mind: To find <m>P(X \geq k)</m> use <m>P(X > k-1)</m>.</p>
-      </statement>
-      <solution>
-        <p>Example JMP output:</p>
-        <image source="images/Inv3.6solsJMP.png" width="70%"/>
-      </solution>
-      <response/>
-    </exercise>
+  <paragraphs>
+    <hint>
+      <title>Applet Instructions</title>
+      <p>In the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?usetwobytwo=1">Analyzing Two-way Tables applet</url>:</p>
+      <p><ul>
+        <li>Enter the two-way table</li>
+        <li>Check the box for <alert>Show Fisher's Exact Test</alert> in the lower left corner</li>
+        <li>A check box will appear for determining the two-sided p-value</li>
+      </ul></p>
+      <p>Example applet output:</p>
+      <image source="images/Inv3.6applet.jpg" width="70%"/>
+    </hint>
+    <hint>
+      <title>R Instructions</title>
+      <p>The <c>iscamhyperprob</c> function takes the following inputs:</p>
+      <p><ul>
+        <li><c>k</c>, the observed value of interest (or the difference in conditional proportions, assumed if value is less than one, including negative)</li>
+        <li><c>total</c>, the total number of observations in the two-way table</li>
+        <li><c>succ</c>, the overall number of successes in the table</li>
+        <li><c>n</c>, the number of observations in "group A"</li>
+        <li><c>lower.tail</c>, a Boolean which is TRUE or FALSE</li>
+      </ul></p>
+      <p>For example:</p>
+      <sage language="r">
+        <input>
+iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
+        </input>
+      </sage>
+      <p>Example R output:</p>
+      <image source="images/Inv3.6solsR.jpg" width="70%"/>
+    </hint>
+    <hint>
+      <title>JMP Instructions</title>
+      <p>Using the Distribution Calculator:</p>
+      <p><ul>
+        <li>Choose Hypergeometric from the Distribution menu</li>
+        <li>Specify the values of Population Size = table total, Number of Items = total number of successes, Sample Size = group 1 total</li>
+        <li>Select Input quantiles and compute probabilities</li>
+        <li>Specify the tail probability and enter Qa = number of successes in "group A"</li>
+      </ul></p>
+      <p>Keep in mind: To find <m>P(X \geq k)</m> use <m>P(X > k-1)</m>.</p>
+      <p>Example JMP output:</p>
+      <image source="images/Inv3.6solsJMP.png" width="70%"/>
+    </hint>
   </paragraphs>
 
   <p class="horizontal-rule"> </p>
@@ -655,16 +643,46 @@
   <exercise xml:id="inv3-6-n">
     <title>Alternative Setup - Not Yawning</title>
     <statement>
-      <p>Set up and carry out the calculation to determine the exact p-value where you define the success to be "not yawning" and the group of interest to be the yawn seed group.</p>
-      <p><var width="60" height="4"/></p>
+      <p>Set up and carry out the calculation to determine the exact p-value where you define the success to be "not yawning" and the group of interest to be the yawn seed group. </p>
+      <p>Let X = <var width="60" height="4"/></p>
+      <p>Find P(X <var width="20" height="4"/><var width="20" height="4"/></p>
+      <p>p-value <var width="60" height="4"/></p>
     </statement>
     <setup>
+      <!-- Let X = ... -->
       <var>
+        <condition string=".*[Nn]on.?yawn.*|.*[Nn]ot\s+yawn.*|.*[Dd]id(n't| not)\s+yawn.*|.*36.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
         <condition string=".+">
-          <feedback><p>Response recorded.</p></feedback>
+          <feedback><p>Response recorded. X should represent the number of non-yawners in the yawn seed group.</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>Please show your setup and calculation.</p></feedback>
+          <feedback><p>Define X as the number of non-yawners in the yawn seed group.</p></feedback>
+        </condition>
+      </var>
+      <!-- P(X ___ ) inequality -->
+      <var>
+        <condition string=".*≤.*24.*|.*&lt;=.*24.*|.*less.*24.*">
+          <feedback><p>Correct! P(X ≤ 24).</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded. The setup should be P(X ≤ 24).</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Since "not yawning" is now the success, we want P(X ≤ 24).</p></feedback>
+        </condition>
+      </var>
+      <!-- p-value result -->
+      <var>
+        <condition number="0.5128" tolerance="0.005">
+          <feedback><p>Correct! The p-value is 0.5128.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded. The exact p-value should be 0.5128.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Use the hypergeometric distribution with M = 36, n = 34, N = 50.</p></feedback>
         </condition>
       </var>
     </setup>
@@ -679,15 +697,45 @@
     <title>Alternative Setup - No Seed Group</title>
     <statement>
       <p>Set up and carry out the calculation to determine the exact p-value, where you focus on the number that did not yawn in the no-yawn-seed group. Show that you obtain the same exact p-value as before.</p>
-      <p><var width="60" height="4"/></p>
+      <p>Let X = <var width="60" height="4"/></p>
+      <p>Find P(X <var width="20" height="4"/><var width="20" height="4"/></p>
+      <p>p-value <var width="60" height="4"/></p>
     </statement>
     <setup>
+      <!-- Let X = ... -->
       <var>
+        <condition string=".*[Nn]on.?yawn.*|.*[Nn]ot\s+yawn.*|.*[Dd]id(n't| not)\s+yawn.*|.*36.*|.*16.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
         <condition string=".+">
-          <feedback><p>Response recorded.</p></feedback>
+          <feedback><p>Response recorded. X should represent the number of non-yawners in the no-seed group.</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>Please show your setup and calculation.</p></feedback>
+          <feedback><p>Define X as the number of non-yawners in the no-yawn-seed group.</p></feedback>
+        </condition>
+      </var>
+      <!-- P(X ___ ) inequality -->
+      <var>
+        <condition string=".*≥.*12.*|.*&gt;=.*12.*|.*greater.*12.*">
+          <feedback><p>Correct! P(X ≥ 12).</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded. The setup should be P(X ≥ 12).</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Since we focus on non-yawners in the no-seed group, we want P(X ≥ 12).</p></feedback>
+        </condition>
+      </var>
+      <!-- p-value result -->
+      <var>
+        <condition number="0.5128" tolerance="0.005">
+          <feedback><p>Correct! The p-value is 0.5128.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded. The exact p-value should be 0.5128.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Use the hypergeometric distribution with M = 36, n = 16, N = 50.</p></feedback>
         </condition>
       </var>
     </setup>
@@ -733,7 +781,6 @@
     <title>MythBusters Conclusion</title>
     <statement>
       <p>On the <em>MythBusters</em> program, the hosts concluded that, based on the observed difference in conditional proportions and the large sample size, there is "little doubt, yawning seems to be contagious." Do you agree?</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <setup>
       <var>
@@ -755,7 +802,6 @@
     <title>Generalizability</title>
     <statement>
       <p>To what population are you willing to generalize these results? Explain your reasoning.</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <setup>
       <var>
