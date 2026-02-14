@@ -16,12 +16,37 @@
       <p>Explanatory variable: <var width="40"/></p>
       <p>Response variable: <var width="40"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".*[Ss]ubject.*|.*[Pp]atient.*|.*[Pp]eople.*|.*[Vv]olunteer.*|.*[Dd]epress.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The observational units are the 30 subjects with clinical depression.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Dd]olphin.*|.*[Tt]reatment.*|.*[Tt]herap.*|.*[Gg]roup.*|.*[Ss]wimm.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The explanatory variable is the treatment group (dolphin therapy or control).</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Ii]mprov.*|.*[Dd]epress.*|.*[Ss]ymptom.*|.*[Ss]ubstantial.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The response variable is whether or not the subject showed substantial improvement.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Observational units: 30 subjects with clinical depression</p>
       <p>Explanatory variable: Treatment group (dolphin therapy or control)</p>
       <p>Response variable: Whether or not the subject showed substantial improvement</p>
     </solution>
-    <response/>
   </exercise>
 
   <exercise xml:id="inv3-5-b">
@@ -75,11 +100,28 @@
       <p>What proportion of all subjects showed substantial improvement? <var width="10"/></p>
       <p>What proportion of subjects who were given dolphin therapy improved? <var width="10"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string="\s*0?\.43[0-9]*\s*|.*13\s*/\s*30.*">
+          <feedback><p>Correct! 13/30 ≈ 0.433.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate 13/30 ≈ 0.433.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="\s*0?\.6[67][0-9]*\s*|.*10\s*/\s*15.*|.*2\s*/\s*3.*">
+          <feedback><p>Correct! 10/15 ≈ 0.667.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate 10/15 ≈ 0.667.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Overall: 13/30 = 0.433</p>
       <p>Dolphin therapy: 10/15 = 0.667</p>
     </solution>
-    <response/>
   </exercise>
 
   <exercise xml:id="inv3-5-c">
@@ -89,10 +131,35 @@
       <p>Calculate the conditional proportion of substantial improvement for the control group: <var width="10"/></p>
       <p>Calculate the difference in the conditional proportions (dolphin therapy - control): <var width="10"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string="\s*0?\.6[67][0-9]*\s*|.*10\s*/\s*15.*|.*2\s*/\s*3.*">
+          <feedback><p>Correct! 10/15 ≈ 0.667.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate 10/15 ≈ 0.667.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="\s*0?\.20*\s*|.*3\s*/\s*15.*|.*1\s*/\s*5.*">
+          <feedback><p>Correct! 3/15 = 0.200.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate 3/15 = 0.200.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="\s*0?\.4[67][0-9]*\s*|.*7\s*/\s*15.*">
+          <feedback><p>Correct! 0.667 - 0.200 = 0.467.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate 0.667 - 0.200 = 0.467.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Dolphin therapy: 10/15 = 0.667; Control: 3/15 = 0.200; Difference: 0.667 - 0.200 = 0.467</p>
     </solution>
-    <response/>
   </exercise>
 
   <exercise xml:id="inv3-5-d">
@@ -129,11 +196,60 @@
       <p><m>H_0</m>: <var width="10"/> <var width="5"/> <var width="10"/></p>
       <p><m>H_a</m>: <var width="10"/> <var width="5"/> <var width="10"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Enter the parameter for the null hypothesis.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="\s*=\s*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The null hypothesis uses = (equals).</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="\s*0\s*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The null hypothesis value is 0 (no difference).</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Enter the parameter for the alternative hypothesis.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="\s*>\s*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The alternative hypothesis uses > (greater than) since researchers conjectured dolphin therapy is more effective.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string="\s*0\s*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The alternative hypothesis value is 0.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m>H_0</m>: <m>\pi_{dolphin} - \pi_{control} = 0</m> (no difference in probability of improvement)</p>
       <p><m>H_a</m>: <m>\pi_{dolphin} - \pi_{control} > 0</m> (dolphin therapy has higher probability of improvement)</p>
     </solution>
-    <response/>
   </exercise>
 
   <exercise xml:id="inv3-5-g">
@@ -185,10 +301,51 @@
       <p>Also calculate the difference in the conditional proportions (dolphin – control) from this first simulated repetition, and indicate whether this simulated result is as extreme as the observed result:</p>
       <p><var width="60" height="2"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".*[0-9].*">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter a number.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[0-9].*">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter a number.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[0-9].*">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter a number.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[0-9].*">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter a number.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please calculate the difference and compare to the observed result.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Results will vary.</p>
     </solution>
-    <response/>
   </exercise>
 
   <exercise xml:id="inv3-5-i">
@@ -233,10 +390,75 @@
         </tabular>
       <p><term>Note:</term> You may have noticed that once you entered the number of improvers in the Dolphin Group into the table, the other entries in the table were pre-determined due to the "fixed margins." So for our statistic, we could either report the difference in the conditional proportions <em>or</em> the number of successes (improvers) in the Dolphin group as these give equivalent information.</p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".*[0-9].*">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter a number.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[0-9].*">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter a number.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[0-9].*">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter a number.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[0-9].*">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter a number.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[0-9].*">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter a number.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[0-9].*">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter a number.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[0-9].*">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter a number.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[0-9].*">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter a number.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Results will vary.</p>
     </solution>
-    <response/>
   </exercise>
 
   <paragraphs>
@@ -289,10 +511,22 @@
       <p> Does the number of successes vary among the repetitions?</p>
       <var width = "5"/>
     </statement>
+    <setup>
+      <var>
+        <condition string=".*[Yy]es.*">
+          <feedback><p>Correct! The number of successes in the dolphin group varies from repetition to repetition.</p></feedback>
+        </condition>
+        <condition string=".*[Nn]o.*">
+          <feedback><p>The number of successes should vary because random assignment produces different group compositions each time.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter Yes or No.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Yes, the number of successes in the dolphin group varies from repetition to repetition.</p>
     </solution>
-    <response/>
   </exercise>
 <ul><li>Enter 995 for the <alert>Number of Shuffles</alert>. </li></ul>
 <p>This produces a total of 1,000 repetitions of the simulated random assignment process under the null hypothesis (the "null distribution" or a "randomization distribution"). </p>
@@ -317,10 +551,27 @@
       <p>Based on the resulting dotplot, does it seem like the actual experimental results would be surprising to arise solely from the random assignment process under the null hypothesis that dolphin therapy is not effective? Explain.</p>
       <p><var width="60" height="3"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string="\s*10\s*">
+          <feedback><p>Correct! There were 10 improvers in the dolphin therapy group.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Look at the two-way table: 10 subjects in the dolphin therapy group showed substantial improvement.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please explain whether the observed result appears surprising.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>There were 10 improvers in the dolphin therapy group. Yes, this appears to be in the upper tail of the distribution, suggesting it would be surprising to get this result by chance alone.</p>
     </solution>
-    <response/>
   </exercise>
 <ul><li>In the <alert>Count Samples</alert> box, enter the observed statistic from the actual study and press <alert>Count</alert> to have the applet count the number of repetitions with 10 or more successes in the Dolphin group. </li></ul>
   <exercise xml:id="inv3-5-p">
@@ -329,11 +580,20 @@
       <p>In what proportion of your 1000 simulated random assignments were the results as (or more) extreme as the actual study?</p>
       <p><var width="20"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".*0?\.0[0-5][0-9]*.*">
+          <feedback><p>Response recorded. The p-value should be approximately 0.02 to 0.04.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Enter the proportion of simulated results as extreme as observed. Should be approximately 0.02 to 0.04.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>The p-value should be approximately 0.02 to 0.04 (will vary slightly due to randomness).</p>
       <image source="images/Inv3.5solsp.png" width="70%"/>
     </solution>
-    <response/>
   </exercise>
 
   <exercise xml:id="inv3-5-q">
@@ -345,10 +605,43 @@
       <p>How would you estimate the p-value now? <var width="40"/></p>
       <p>How does the p-value change? <var width="40"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please describe how the null distribution changes.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please explain whether this makes sense.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please explain how you would estimate the p-value.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please describe how the p-value changes.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>The null distribution is now centered at 0 (since we expect no difference under the null hypothesis). The shape is similar but the scale has changed. The p-value is estimated by counting how many repetitions have a difference of 0.467 or larger, and should be approximately the same as before.</p>
     </solution>
-    <response/>
   </exercise>
 
   <exercise xml:id="inv3-5-r">
