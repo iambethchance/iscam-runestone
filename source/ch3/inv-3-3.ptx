@@ -223,26 +223,29 @@
   <exercise xml:id="inv3-3-h">
     <title>Repeat Re-randomization</title>
     <statement>
-      <p>Was the difference in proportions that are right-handed the same this time?</p>
+      <p>Was the difference in proportions that are right-handed the same this time? <var width="10"/></p>
     </statement>
-    <choices>
-      <choice correct="yes">
-        <statement><p>Yes</p></statement>
-        <feedback><p>It is possible but unlikely to get the exact same difference. Results will vary.</p></feedback>
-      </choice>
-      <choice correct="yes">
-        <statement><p>No</p></statement>
-        <feedback><p>Most likely the difference changed. Results will vary with each randomization.</p></feedback>
-      </choice>
-    </choices>
+    <setup>
+      <var>
+        <condition string=".*[Yy]es.*">
+          <feedback><p>It is possible but unlikely to get the exact same difference. Results will vary.</p></feedback>
+        </condition>
+        <condition string=".*[Nn]o.*">
+          <feedback><p>Most likely the difference changed. Results will vary with each randomization.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter Yes or No.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Results will vary but it's quite probable the difference will change.</p>
     </solution>
   </exercise>
 <ul>
-<li>Change the <alert>Number of repetitions</alert> from 1 to 1998 (for 2000 total), and press the <alert>Randomize</alert> button.</li>
-<li> The dotplot will display the difference between the two proportions of right-handed graders for each of the 2,000 repetitions of the random assignment process. 
-</li></ul>
+<li>Change the <alert>Number of repetitions</alert> from 1 to 1998 (for 2000 total), and press the <alert>Randomize</alert> button.</li></ul>
+<p> The dotplot will display the difference between the two proportions of right-handed graders for each of the 2,000 repetitions of the random assignment process. 
+</p>
   <exercise xml:id="inv3-3-i">
     <title>Multiple Repetitions</title>
     <statement>
@@ -251,9 +254,6 @@
     </statement>
     <setup>
       <var>
-        <condition number="0" tolerance="0.05">
-          <feedback><p>Correct! The distribution centers around zero.</p></feedback>
-        </condition>
         <condition string=".*[Zz]ero.*|.*0.*">
           <feedback><p>Correct! The distribution centers around zero.</p></feedback>
         </condition>
@@ -267,9 +267,9 @@
       <image source="images/Inv3.3solsi.png" width="70%"/>
     </solution>
   </exercise>
-<ul><li>Press the <alert>Show Graphs</alert> button and then click on the most extreme dot (positive or negative) in the <em>Difference in sample proportions</em> graph.</li>
-<li> The Group graphs should update to show the groups. 
-</li></ul>
+<ul><li>Press the <alert>Show Graphs</alert> button and then click on the most extreme dot (positive or negative) in the <em>Difference in sample proportions</em> graph.</li></ul>
+<p> The Group graphs should update to show the groups. 
+</p>
   <exercise xml:id="inv3-3-j">
     <title>Extreme Values</title>
     <statement>
@@ -317,7 +317,9 @@
     <p>Having more right-handers than left-handers in the sample isn't a problem, but a 12/4 split in right-handers between the treatment groups would be problematic, because then if the treatment group that had all right-handed graders showed lower scores, we wouldn't know whether it was because of the writing style or something about right-handers. But with random assignment, such an unequal split is unlikely. Instead, the random assignment usually creates an 8/8 split or a 9/7 split. In this case, we will trust that the groups are balanced on the handedness variable and so handedness is not confounded with score.</p>
   </paragraphs>
 <paragraphs>
-<p>Maybe older graders tend to give higher scores... we would like the age distribution to be similar between the two treatment groups as well. In the applet, use the pull-down menu to switch from the handedness variable to the <alert>age</alert> variable. The dotplot now displays the differences in <em>average</em> age between Group 1 and Group 2 for these 2000 repetitions. 
+<p>Maybe older graders tend to give higher scores... we would like the age distribution to be similar between the two treatment groups as well.</p>
+<ul><li><p> In the applet, use the pull-down menu to switch from the handedness variable to the <alert>age</alert> variable.</p></li></ul>
+<p> The dotplot now displays the differences in <em>average</em> age between Group 1 and Group 2 for these 2000 repetitions. 
 </p>
 </paragraphs>
   <exercise xml:id="inv3-3-m">
@@ -392,7 +394,7 @@
 
   <paragraphs>
     <title>Discussion</title>
-    <p>The primary goal of <em>random assignment</em> is to create groups that equalize any potential confounding variables between the groups, creating explanatory variable groups that overall differ only by the explanatory variable imposed. Note that this "balancing out" applies equally well to variables that can be observed (such as educational background and age) and variables that may not have been recorded (such as amount of sleep) or that cannot be observed in advance (such as when they will grade the essays). Although we could have forced variables like age and handedness to be equally distributed between the two groups, the virtue of random assignment is that it also tends to balance out variables that we might not have thought of before the start of the study and variables that we might not be able to see or control (e.g., eyesight). Thus, when we observe a "statistically significant" difference in the response variable between the two groups at the end of the study, we feel more comfortable attributing this difference to the explanatory variable (e.g., style of writing on the essay) because that <strong>should have been the only difference between the groups</strong>.</p>
+    <p>The primary goal of <em>random assignment</em> is to create groups that equalize any potential confounding variables between the groups, creating explanatory variable groups that overall differ only by the explanatory variable imposed. Note that this "balancing out" applies equally well to variables that can be observed (such as educational background and age) and variables that may not have been recorded (such as amount of sleep) or that cannot be observed in advance (such as when they will grade the essays). Although we could have forced variables like age and handedness to be equally distributed between the two groups, the virtue of random assignment is that it also tends to balance out variables that we might not have thought of before the start of the study and variables that we might not be able to see or control (e.g., eyesight). Thus, when we observe a "statistically significant" difference in the response variable between the two groups at the end of the study, we feel more comfortable attributing this difference to the explanatory variable (e.g., style of writing on the essay) because  <term index="no">that should have been the only difference between the groups</term>.</p>
   </paragraphs>
 
   <exercise xml:id="inv3-3-p">
