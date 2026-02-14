@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <section xml:id="inv-3-3">
   <title>Investigation 3.3: Handwriting and SAT Scores</title>
   <introduction>
     <p><em>How data are collected can have a large impact on the types of conclusions we are able to draw from the study.</em></p>
   </introduction>
-<subsection>
 <exercises><title> The Study</title>
   <introduction>
     <sidebyside widths="60% 35%" margins="0% 0%">
@@ -16,7 +16,7 @@
   <exercise xml:id="inv3-3-a">
     <title>Identify Variables</title>
     <statement>
-x`      <p>Explanatory: <var width="40"/></p>
+      <p>Explanatory: <var width="40"/></p>
       <p>Response: <var width="40"/></p>
     </statement>
     <setup>
@@ -45,32 +45,27 @@ x`      <p>Explanatory: <var width="40"/></p>
 
   <exercise xml:id="inv3-3-a-classify">
     <title>Classify Variables</title>
-    <task>
-      <statement>
-        <p>Classify the writing style variable.</p>
-      </statement>
-      <choices>
-        <choice correct="yes">
-          <statement><p>Categorical</p></statement>
-        </choice>
-        <choice>
-          <statement><p>Quantitative</p></statement>
-        </choice>
-      </choices>
-    </task>
-    <task>
-      <statement>
-        <p>Classify the SAT score variable.</p>
-      </statement>
-      <choices>
-        <choice>
-          <statement><p>Categorical</p></statement>
-        </choice>
-        <choice correct="yes">
-          <statement><p>Quantitative</p></statement>
-        </choice>
-      </choices>
-    </task>
+    <statement>
+      <p>Classify the writing style and SAT score variables.</p>
+    </statement>
+    <choices>
+      <choice correct="yes">
+        <statement><p>Writing style: categorical; SAT score: quantitative</p></statement>
+        <feedback><p>Correct! Writing style (cursive vs. block) is categorical and SAT score is quantitative.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Writing style: quantitative; SAT score: categorical</p></statement>
+        <feedback><p>It's the other way around. Writing style (cursive vs. block) is categorical and SAT score is quantitative.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Writing style: categorical; SAT score: categorical</p></statement>
+        <feedback><p>Writing style is categorical, but SAT score is quantitative (a numerical measurement).</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Writing style: quantitative; SAT score: quantitative</p></statement>
+        <feedback><p>SAT score is quantitative, but writing style (cursive vs. block) is categorical, not quantitative.</p></feedback>
+      </choice>
+    </choices>
     <solution>
       <p>Writing style: categorical and binary</p>
       <p>SAT score: quantitative</p>
@@ -231,11 +226,11 @@ x`      <p>Explanatory: <var width="40"/></p>
       <p>Was the difference in proportions that are right-handed the same this time?</p>
     </statement>
     <choices>
-      <choice>
+      <choice correct="yes">
         <statement><p>Yes</p></statement>
         <feedback><p>It is possible but unlikely to get the exact same difference. Results will vary.</p></feedback>
       </choice>
-      <choice>
+      <choice correct="yes">
         <statement><p>No</p></statement>
         <feedback><p>Most likely the difference changed. Results will vary with each randomization.</p></feedback>
       </choice>
@@ -347,33 +342,52 @@ x`      <p>Explanatory: <var width="40"/></p>
     </solution>
   </exercise>
 <paragraphs>
- <p>Graders are volunteer high school or college instructors. Suppose college instructors tend to score differently than high school instructors. Select the <alert>Reveal school?</alert> radio button and then select the <em>school</em> variable from the pull-down list. The applet shows you this school information for each subject and also the differences in the proportions of high school instructors in the two treatment groups. 
+ <p>Graders are volunteer high school or college instructors. Suppose college instructors tend to score differently than high school instructors. </p>
+ <ul><li><p>Select the <alert>Reveal school?</alert> radio button and then select the <em>school</em> variable from the pull-down list.</p></li></ul>
+ <p> The applet shows you this school information for each subject and also the differences in the proportions of high school instructors in the two treatment groups. 
 </p></paragraphs>
   <exercise xml:id="inv3-3-n">
     <title>School Variable</title>
     <statement>
-     <p>Does this variable <em>tend</em> to equalize between the two groups in the long run? Explain.</p>
-      <p><var width="60" height="4"/></p>
+     <p>Does this variable <em>tend</em> to equalize between the two groups in the long run?</p>
     </statement>
+    <choices>
+      <choice correct="yes">
+        <statement><p>Yes</p></statement>
+        <feedback><p>Correct! The distribution of differences is centered around zero, showing random assignment tends to balance the school variable between groups.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>No</p></statement>
+        <feedback><p>Look at the center of the dotplot — the differences should be centered around zero, indicating random assignment does tend to equalize this variable.</p></feedback>
+      </choice>
+    </choices>
     <solution>
       <p>Yes, the center of this distribution is also approximately zero.</p>
       <image source="images/Inv3.3solsn.png" width="70%"/>
     </solution>
-    <response/>
   </exercise>
 
-<ul><li> <p>Suppose there were other variables that might impact scoring accuracy that we might not even keep track of, like how much sleep the grader got the night before. Select the <alert>Reveal sleep?</alert> button and select the <em>Sleep</em> variable from the pull-down list to display the results for Sleep. </p></li></ul>  
+<p>Suppose there were other variables that might impact scoring accuracy that we might not even keep track of, like how much sleep the grader got the night before. </p>
+<ul><li> <p>Select the <alert>Reveal sleep?</alert> button and select the <em>Sleep</em> variable from the pull-down list to display the results for Sleep. </p></li></ul>  
   <exercise xml:id="inv3-3-o">
     <title>Sleep Variable</title>
     <statement>
-     Does random assignment generally succeed in equalizing this variable between the two groups or is there a tendency for one group to always have higher amounts of sleep? Explain.
-      <p><var width="60" height="4"/></p>
+     <p>Does random assignment generally succeed in equalizing this variable between the two groups?</p>
     </statement>
+    <choices>
+      <choice correct="yes">
+        <statement><p>Yes</p></statement>
+        <feedback><p>Correct! The distribution of differences is centered around zero, showing random assignment tends to equalize sleep between groups.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>No</p></statement>
+        <feedback><p>Look at the center of the dotplot — the differences should be centered around zero, indicating random assignment does tend to equalize this variable.</p></feedback>
+      </choice>
+    </choices>
     <solution>
       <p>Yes, the center of this distribution is also approximately zero.</p>
       <image source="images/Inv3.3solso.png" width="70%"/>
     </solution>
-    <response/>
   </exercise>
 
   <paragraphs>
@@ -402,7 +416,6 @@ x`      <p>Explanatory: <var width="40"/></p>
   <image source="images/Inv3.3table.png" width="85%"/>
   </insight>
 </exercises>
-</subsection>
   <subsection xml:id="practice3-3">
     <title>Practice Problem 3.3</title>
     
