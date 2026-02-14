@@ -9,7 +9,7 @@
     <li><p>Simulation: Random samples from binomial processes with common <m>\pi</m></p></li>
     <li><p>Two-sample <em>z</em>-test:</p>
     <p>The standardized statistic <m>z_0 = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1} + \frac{1}{n_2})}}</m> where <m>\hat{p} = \frac{X_1+X_2}{n_1+n_2} = \frac{\text{total number of successes}}{\text{total number in study}}</m></p>
-    <p>is well approximated by the standard normal distribution when <m>n_1\hat{p} > 5</m>, <m>n_1(1 - \hat{p}) > 5</m>, <m>n_2\hat{p} > 5</m> and <m>n_2(1 - \hat{p}) > 5</m>, where <m>\hat{p}</m> is the proportion of successes combining the 2 groups.</p></li>
+    <p>is well approximated by the standard normal distribution when <m>n_1\hat{p} \geq 5</m>, <m>n_1(1 - \hat{p}) \geq 5</m>, <m>n_2\hat{p} \geq 5</m> and <m>n_2(1 - \hat{p}) \geq 5</m>, where <m>\hat{p}</m> is the proportion of successes combining the 2 groups.</p></li>
   </ol></p>
 
   <p><term>Approximate (100 × C)% Confidence interval for <m>\pi_1 - \pi_2</m>:</term></p>
@@ -17,8 +17,8 @@
     <li><p>Two-sample <em>z</em>-interval:</p>
     <p>An approximate (100 × C)% interval: <m>(\hat{p}_1 - \hat{p}_2) \pm z^* \sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1} + \frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}</m></p>
     <p>where <m>z^*</m> is the <m>100 \times (1 - C)/2</m>th percentile from the standard normal distribution.</p>
-    <p>This method is considered valid when <m>n_1\hat{p}_1 > 5</m>, <m>n_1(1 - \hat{p}_1) > 5</m>, <m>n_2\hat{p}_2 > 5</m>, and <m>n_2(1 - \hat{p}_2) > 5</m>.</p></li>
-    <li><p>Or the Wilson or Wald adjustment can be made on the sample proportions and sample sizes first.</p></li>
+    <p>This method is considered valid when <m>n_1\hat{p}_1 \geq 5</m>, <m>n_1(1 - \hat{p}_1) \geq 5</m>, <m>n_2\hat{p}_2 \geq 5</m>, and <m>n_2(1 - \hat{p}_2) \geq 5</m>.</p></li>
+    <li><p>Or a "plus four" (1 success and 1 failure in each group) adjustment can be made on the sample proportions and sample sizes first.</p></li>
   </ol></p>
 
   <p><alert>Note:</alert> We can simplify the technical conditions by verifying that you have independent random samples from two processes or large populations (or one random sample classified by a binary variable) and at least 5 successes and 5 failures in each group.</p>

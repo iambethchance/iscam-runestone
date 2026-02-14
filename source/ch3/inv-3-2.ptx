@@ -72,26 +72,24 @@
       <p>Explanatory variable: Lighting condition; Response variable: Eye condition. The lighting condition came first in time (before age 2) and we are interested in whether it affects later eye condition.</p>
     </solution>
   </exercise>
-<p>Calculate conditional proportions to measure the difference in the rate of near sightedness between the children with and without lighted rooms in this sample. (Use appropriate symbols.) Also produce a segmented bar graph to compare the eye condition of the two lighting groups. 
-  <aside>
-    <title>Output</title>
-      <p><m>\hat{p}_{light} = 188/307 = 0.612</m>; <m>\hat{p}_{dark} = 18/172 = 0.105</m></p>
-      <p><m>\hat{p}_{light} - \hat{p}_{dark} = 0.612 - 0.105 = 0.507</m></p>
-    <image source="images/Inv3.2solsb.png" width="80%"/>
-  </aside>
-</p>
+  <aside>Theory-based inference applet
+    <p><url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet: two proportions</url></p>
+    </aside>
+<p>Calculate conditional proportions to measure the difference in the rate of near sightedness between the children with and without lighted rooms in this sample. (Use appropriate symbols.) Also produce a segmented bar graph to compare the eye condition of the two lighting groups. </p>
 
   <exercise xml:id="inv3-2-b">
     <title>Conditional Proportions and Graph</title>
     <statement>
-      <p>Comment on what your graph reveals about differences in eye condition between these lighting groups. Do you think this difference will be statistically significant? Explain.</p>
+      <p>Comment on what your numbers and graph reveals about differences in eye condition between these lighting groups. Do you think this difference will be statistically significant? Explain.</p>
     </statement>
     <solution>
+      <p><m>\hat{p}_{light} = 188/307 = 0.612</m>; <m>\hat{p}_{dark} = 18/172 = 0.105</m></p>
+      <p><m>\hat{p}_{light} - \hat{p}_{dark} = 0.612 - 0.105 = 0.507</m></p>
+      <image source="images/Inv3.2solsb.png" width="80%"/>
       <p>The segmented bar graph should show a much larger proportion of near-sighted children in the "some light" group compared to the "darkness" group. This difference appears very large and should be statistically significant.</p>
     </solution>
     <response/>
   </exercise>
-
   <paragraphs>
     <title>Discussion</title>
     <p>In the previous investigation, the researchers literally took two distinct random samples from two different groups of teens. In this study, the data arose from one sample and each child in the sample was classified according to two variables: <em>lighting condition</em> and <em>eye condition</em>. A natural research question here might be "Does use of nightlights and room lights increase the rate of near-sightedness in children?" In such a situation, we can instead phrase our hypotheses in terms of the <em>association</em> between the two variables:</p>
@@ -126,8 +124,9 @@
     <statement>
       <p>Use technology to perform a two-sample <m>z</m>-test to compare the proportion with near sightedness between these two groups. Report the standardized statistic and p-value. Also report and interpret a 95% confidence interval from these data.</p>
       <aside><title>Theory-Based Inference Applet</title>
-        <p><url href="http://www.rossmanchance.com/applets/2021/tbia/TBIA.html"/></p>
+        <p><url href="http://www.rossmanchance.com/applets/2021/tbia/TBIA.html" visual = "rossmanchance.com/applets/2021/normcalc/NormCalc.html">applet</url></p>
       </aside>
+
       <p>Standardized statistic: <var width="10"/></p>
       <p>p-value: <var width="10"/></p>
       <p>95% confidence interval: <var width="30"/></p>
@@ -136,8 +135,8 @@
     <setup>
       <!-- z ≈ 10.2 -->
       <var>
-        <condition number="10.2" tolerance="0.5">
-          <feedback><p>Correct!</p></feedback>
+        <condition number="10.8" tolerance="0.5">
+          <feedback><p>Correct! The standardized statistic is approximately 10.8.</p></feedback>
         </condition>
         <condition string=".*">
           <feedback><p>Use the two-sample z-test formula with p̂_light = 188/307 and p̂_dark = 18/172.</p></feedback>
@@ -149,16 +148,16 @@
           <feedback><p>Correct! The p-value is essentially 0 (less than 0.001).</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>With z ≈ 10.2, the p-value is essentially 0 (less than 0.001).</p></feedback>
+          <feedback><p>With z ≈ 10.8, the p-value is essentially 0 (less than 0.001).</p></feedback>
         </condition>
       </var>
       <!-- 95% CI: approximately (0.44, 0.58) -->
       <var>
-        <condition string=".*0\.4[0-9].*0\.5[5-9].*">
-          <feedback><p>Correct! The 95% CI is approximately (0.41, 0.60) or similar.</p></feedback>
+        <condition string=".*0\.4[4-5].*0\.5[5-9].*">
+          <feedback><p>Correct! The 95% CI is approximately (0.44, 0.58) or similar.</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>Use the confidence interval formula for the difference in two proportions. The interval should be approximately (0.41, 0.60).</p></feedback>
+          <feedback><p>Use the confidence interval formula for the difference in two proportions. The interval should be approximately (0.44, 0.58).</p></feedback>
         </condition>
       </var>
       <!-- CI Interpretation: open-ended, give credit for submitting -->
