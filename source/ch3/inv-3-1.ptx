@@ -719,15 +719,15 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <response/>
     </exercise>
 
+   
+    <exercise xml:id="inv3-1-x">
+      <title>Theoretical p-value</title>
+      <statement><p>Use technology (or refer to your previous applet results) to compute the p-value for this standardized statistic using the standard normal distribution (mean 0, SD 1) and compare it to your simulation results.</p>
     <aside>
       <title>Normal Probability Calculator applet</title>
       <p><url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="rossmanchance.com/applets/2021/normcalc/NormCalc.html">Normal Probability Calculator applet</url></p>
     </aside>
-
-    <exercise xml:id="inv3-1-x">
-      <title>Theoretical p-value</title>
-      <statement><p>Use technology (or refer to your previous applet results) to compute the p-value for this standardized statistic using the standard normal distribution (mean 0, SD 1) and compare it to your simulation results.</p>
-      <var width = "10"/></statement>
+   <var width = "10"/></statement>
       <setup>
         <var>
           <condition number="0.017" tolerance="0.003">
@@ -807,7 +807,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <statement><p>Summarize your conclusions from this study. Be sure to address statistical significance, statistical confidence, and the populations you are willing to generalize the results to. Also, are you willing to conclude that the change in the <em>prevalence</em> of hearing loss is due to the increased use of ear buds among teenagers between 1994 and 2006? Explain why or why not.</p></statement>
       <solution>
         <p>The change in the likelihood of some hearing loss in these two samples is statistically significant (p-value = 0.017 from z-test) and we are 95% confident that the population proportion is 0.001 to 0.047 higher "now" than before among all American teenagers (representative samples by NHANES).</p>
-        <p>NOTE: The adjective "statistically significant" (didn't happen by chance alone) applies to the sample data, not the population data.</p>
+        <p><alert>NOTE</alert>: The adjective "statistically significant" (didn't happen by chance alone) applies to the sample data, not the population data.</p>
       </solution>
       <response/>
     </exercise>
@@ -884,7 +884,7 @@ invisible()
           <li>The p-value in the Pearson row matches a two-sided <em>z</em>-test.</li>
           <li>For a confidence interval, use the hot spot to select <term index="no">Two Sample Test for Proportions</term></li>
         </ul>
-        <p><em>Note:</em> Here you can change which outcome is considered success. This also reports an "adjusted Wald" p-value</p>
+        <p><alert>Note:</alert> Here you can change which outcome is considered success. This also reports an "adjusted Wald" p-value</p>
         
         <sidebyside widths="50% 45%" valign="top">
           <stack>
@@ -898,7 +898,7 @@ invisible()
         </sidebyside>
         <p>(This works for raw data too, but be careful how you specify the explanatory and response variables and use "pooled estimate of variance." This reports the <em>z</em>-score as well.)</p>
       </hint>
-    <p>Note: Data are "stacked" if each column represents a different variable (e.g., year surveyed and hearing condition) and they are "unstacked" if each column represents a different group (e.g., 1998 and 2002).</p>
+    <p><alert>Note:</alert> Data are "stacked" if each column represents a different variable (e.g., year surveyed and hearing condition) and they are "unstacked" if each column represents a different group (e.g., 1998 and 2002).</p>
     </paragraphs>
 
   <subsection xml:id="practice3-1A">
@@ -977,7 +977,6 @@ invisible()
     </assemblage>
 
     <paragraphs>
-      <title>Technology Detour – Simulation Instructions</title>
       <hint>
         <title>R Instructions</title>
         <p>Generate a random sample for 1994:</p>

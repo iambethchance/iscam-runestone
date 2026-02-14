@@ -13,7 +13,6 @@
 
     <p>Between January and June 1998, the parents of 479 children who were seen as outpatients in a university pediatric ophthalmology clinic completed a questionnaire (children who had already developed serious eye conditions were excluded). One of the questions asked was "Under which lighting condition did/does your child sleep at night?" before the age of 2 years.</p>
 
-      <alert>Lighting Condition and Eye Condition</alert>
       <tabular top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
         <col halign="left"/>
         <col halign="center"/>
@@ -73,15 +72,21 @@
       <p>Explanatory variable: Lighting condition; Response variable: Eye condition. The lighting condition came first in time (before age 2) and we are interested in whether it affects later eye condition.</p>
     </solution>
   </exercise>
-<p>Calculate conditional proportions to measure the difference in the rate of near sightedness between the children with and without lighted rooms in this sample. (Use appropriate symbols.) Also produce a segmented bar graph to compare the eye condition of the two lighting groups. </p>
+<p>Calculate conditional proportions to measure the difference in the rate of near sightedness between the children with and without lighted rooms in this sample. (Use appropriate symbols.) Also produce a segmented bar graph to compare the eye condition of the two lighting groups. 
+  <aside>
+    <title>Output</title>
+      <p><m>\hat{p}_{light} = 188/307 = 0.612</m>; <m>\hat{p}_{dark} = 18/172 = 0.105</m></p>
+      <p><m>\hat{p}_{light} - \hat{p}_{dark} = 0.612 - 0.105 = 0.507</m></p>
+    <image source="images/Inv3.2solsb.png" width="80%"/>
+  </aside>
+</p>
+
   <exercise xml:id="inv3-2-b">
     <title>Conditional Proportions and Graph</title>
     <statement>
-      <p>Comment on what this graph reveals about differences in eye condition between these lighting groups. Do you think this difference will be statistically significant? Explain.</p>
+      <p>Comment on what your graph reveals about differences in eye condition between these lighting groups. Do you think this difference will be statistically significant? Explain.</p>
     </statement>
     <solution>
-      <p><m>\hat{p}_{light} = 188/307 = 0.612</m>; <m>\hat{p}_{dark} = 18/172 = 0.105</m></p>
-      <p><m>\hat{p}_{light} - \hat{p}_{dark} = 0.612 - 0.105 = 0.507</m></p>
       <p>The segmented bar graph should show a much larger proportion of near-sighted children in the "some light" group compared to the "darkness" group. This difference appears very large and should be statistically significant.</p>
     </solution>
     <response/>
@@ -128,6 +133,44 @@
       <p>95% confidence interval: <var width="30"/></p>
       <p>CI Interpretation: <var width="60" height="5"/></p>
     </statement>
+    <setup>
+      <!-- z ≈ 10.2 -->
+      <var>
+        <condition number="10.2" tolerance="0.5">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Use the two-sample z-test formula with p̂_light = 188/307 and p̂_dark = 18/172.</p></feedback>
+        </condition>
+      </var>
+      <!-- p-value < 0.001 -->
+      <var>
+        <condition number="0" tolerance="0.001">
+          <feedback><p>Correct! The p-value is essentially 0 (less than 0.001).</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>With z ≈ 10.2, the p-value is essentially 0 (less than 0.001).</p></feedback>
+        </condition>
+      </var>
+      <!-- 95% CI: approximately (0.44, 0.58) -->
+      <var>
+        <condition string=".*0\.4[0-9].*0\.5[5-9].*">
+          <feedback><p>Correct! The 95% CI is approximately (0.41, 0.60) or similar.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Use the confidence interval formula for the difference in two proportions. The interval should be approximately (0.41, 0.60).</p></feedback>
+        </condition>
+      </var>
+      <!-- CI Interpretation: open-ended, give credit for submitting -->
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter your interpretation of the confidence interval.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Standardized statistic: <m>z \approx 10.2</m></p>
       <p>p-value: <m>\lt 0.001</m></p>
@@ -157,7 +200,7 @@
       <p>In some studies, we may consider one variable the explanatory variable that we suspect has an effect on the response variable. However, in some studies often there may be other <term>confounding variables</term><idx><h>confounding variable</h></idx> that also differ between the <em>explanatory variable</em> groups <em>and</em> have a potential effect on the <em>response</em> variable.</p>
     </assemblage>
 
-    <p>Your alternative explanation in <xref ref="inv3-2-e" text="custom">question 6</xref> probably identified a potential confounding variable. For example, <em>eye condition of the parents</em> may be related to the explanatory variable (parents with poorer sight are more likely to use room lighting) and to the response variable (children of near-sighted parents are more likely to be near-sighted themselves). Because this confounding variable changes with the explanatory variable, we have no way of separating out the effects of this variable and those of the explanatory variable. This prevents us from drawing a cause-and-effect conclusion between <em>lighting condition</em> and <em>eye condition</em>.</p>
+    <p>Your alternative explanation in <xref ref="inv3-2-e" text="custom">Question 6</xref> probably identified a potential confounding variable. For example, <em>eye condition of the parents</em> may be related to the explanatory variable (parents with poorer sight are more likely to use room lighting) and to the response variable (children of near-sighted parents are more likely to be near-sighted themselves). Because this confounding variable changes with the explanatory variable, we have no way of separating out the effects of this variable and those of the explanatory variable. This prevents us from drawing a cause-and-effect conclusion between <em>lighting condition</em> and <em>eye condition</em>.</p>
 
     <p>One way to visualize confounding is to examine a diagram of the study design. For the night-light and eye condition study we considered lighting the explanatory variable and eye condition the response.</p>
 
