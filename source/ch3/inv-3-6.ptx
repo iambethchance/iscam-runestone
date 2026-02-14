@@ -100,27 +100,27 @@
     <statement>
       <p>Create a two-way table summarizing the results, <em>using the explanatory variable as the column variable</em>.</p>
         <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor"
-        row-headers="true">
+        row-headers="yes">
           <row header="yes">
-            <cell>Outcome \ Treatment</cell>
-            <cell halign="left">Yawn Seed</cell>
-            <cell halign="left">No Yawn Seed</cell>
+            <cell> Outcome \ Treatment </cell>
+            <cell> Yawn Seed </cell>
+            <cell> No Yawn Seed </cell>
+            <cell> Totals </cell>
+          </row>
+          <row>
+            <cell halign="left">Yawned</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+          <row>
+            <cell halign="left">Did not yawn</cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+            <cell><var width="5"/></cell>
+          </row>
+          <row>
             <cell halign="left">Totals</cell>
-          </row>
-          <row>
-            <cell>Yawned</cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-          </row>
-          <row>
-            <cell>Did not yawn</cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-            <cell><var width="5"/></cell>
-          </row>
-          <row>
-            <cell>Totals</cell>
             <cell><var width="5"/></cell>
             <cell><var width="5"/></cell>
             <cell><var width="5"/></cell>
@@ -260,7 +260,7 @@
       <li>Press <alert>Shuffle</alert>.</li>
     </ul></p>
   </paragraphs>
-<interactive iframe="https://www.rossmanchance.com/applets/2021/test/ChiSqShuffle.htm?yawning=2" width="160%" aspect="3:2"/>
+<interactive iframe="https://www.rossmanchance.com/applets/2021/test/ChiSqShuffle.htm?yawning=2&amp;hideExtras=1" width="160%" aspect="3:2"/>
   <exercise xml:id="inv3-6-e">
     <title>Describe Randomization Distribution</title>
     <statement>
@@ -283,7 +283,7 @@
   <exercise xml:id="inv3-6-f">
     <title>Estimate p-value</title>
     <statement>
-      <p>Report your p-value: <var width="30"/></p>
+      <p>Report your estimate of the p-value: <var width="15"/></p>
     </statement>
     <setup>
       <var>
@@ -565,17 +565,19 @@
 
   <p class="horizontal-rule"> </p>
 
-  <assemblage xml:id="tech-detour-hypergeometric-inv3-6">
+  <paragraphs xml:id="tech-detour-hypergeometric-inv3-6">
     <title>Technology Detour – Calculating Hypergeometric Probabilities (Fisher's Exact Test)</title>
     <p>Use technology to calculate hypergeometric probabilities (Fisher's Exact Test) for two-way tables. You need to specify the total number of observations (<m>N</m>), the number of successes (<m>M</m>), and the sample size (<m>n</m>).</p>
-  </assemblage>
+  </paragraphs>
 
   <paragraphs>
     <hint>
       <title>Applet Instructions</title>
       <p>In the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?usetwobytwo=1">Analyzing Two-way Tables applet</url>:</p>
       <p><ul>
+        <li>Choose the 2×2 box to enter the cell values and headers for a two-way table</li>
         <li>Enter the two-way table</li>
+        <li>Press <alert>Use Table</alert></li>
         <li>Check the box for <alert>Show Fisher's Exact Test</alert> in the lower left corner</li>
         <li>A check box will appear for determining the two-sided p-value</li>
       </ul></p>
@@ -595,7 +597,13 @@
       <p>For example:</p>
       <sage language="r">
         <input>
+        <![CDATA[
+# Load ISCAM functions from GitHub
+invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R"))
+
+#Calculate probability from hypergeometric distribution
 iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
+]]>
         </input>
       </sage>
       <p>Example R output:</p>
@@ -605,10 +613,10 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
       <title>JMP Instructions</title>
       <p>Using the Distribution Calculator:</p>
       <p><ul>
-        <li>Choose Hypergeometric from the Distribution menu</li>
+        <li>Choose <term index="no">Hypergeometric</term> from the Distribution menu</li>
         <li>Specify the values of Population Size = table total, Number of Items = total number of successes, Sample Size = group 1 total</li>
-        <li>Select Input quantiles and compute probabilities</li>
-        <li>Specify the tail probability and enter Qa = number of successes in "group A"</li>
+        <li>Select <term index="no">Input quantiles and compute probabilities</term></li>
+        <li>Specify the upper tail probability and enter Qa = number of successes in "group A" (minus 1)</li>
       </ul></p>
       <p>Keep in mind: To find <m>P(X \geq k)</m> use <m>P(X > k-1)</m>.</p>
       <p>Example JMP output:</p>
@@ -618,26 +626,24 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
 
   <p class="horizontal-rule"> </p>
 
-  <exercise xml:id="inv3-6-m">
-    <title>Technology Calculation</title>
+  <exercise xml:id="inv3-6-m" label="inv3-6-m">
+    <title>Exact p-value</title>
     <statement>
-      <p>Calculate this hypergeometric probability using technology (using one of the methods above).</p>
-      <p><var width="60" height="2"/></p>
+      <p>Calculate this hypergeometric probability using technology (using one of the methods above). Did the technology confirm your by-hand calculation?</p>
     </statement>
-    <setup>
-      <var>
-        <condition string=".+">
-          <feedback><p>Response recorded.</p></feedback>
-        </condition>
-        <condition string=".*">
-          <feedback><p>Please enter your calculation.</p></feedback>
-        </condition>
-      </var>
-    </setup>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><p>Yes, the technology confirmed the by-hand p-value of approximately 0.5128.</p></statement>
+        <feedback><p>Correct! The technology should give the same exact p-value.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>No, the technology gave a noticeably different p-value.</p></statement>
+        <feedback><p>Double-check your technology inputs: N = 50, M = 14, n = 34, k = 10, upper tail. You should get approximately 0.5128.</p></feedback>
+      </choice>
+    </choices>
     <solution>
       <p><m>P(X ≥ 10)</m> with <m>M = 14</m>, <m>n = 34</m>, <m>N = 50</m>; p-value = 0.5128</p>
     </solution>
-    <response/>
   </exercise>
 
   <exercise xml:id="inv3-6-n">
@@ -675,7 +681,7 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
       </var>
       <!-- p-value result -->
       <var>
-        <condition number="0.5128" tolerance="0.005">
+        <condition string="0?\.51\d*">
           <feedback><p>Correct! The p-value is 0.5128.</p></feedback>
         </condition>
         <condition string=".+">
@@ -699,7 +705,7 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
       <p>Set up and carry out the calculation to determine the exact p-value, where you focus on the number that did not yawn in the no-yawn-seed group. Show that you obtain the same exact p-value as before.</p>
       <p>Let X = <var width="60" height="4"/></p>
       <p>Find P(X <var width="20" height="4"/><var width="20" height="4"/></p>
-      <p>p-value <var width="60" height="4"/></p>
+      <p>same p-value? <var width="60" height="4"/></p>
     </statement>
     <setup>
       <!-- Let X = ... -->
@@ -726,16 +732,16 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
           <feedback><p>Since we focus on non-yawners in the no-seed group, we want P(X ≥ 12).</p></feedback>
         </condition>
       </var>
-      <!-- p-value result -->
+      <!-- same p-value? -->
       <var>
-        <condition number="0.5128" tolerance="0.005">
-          <feedback><p>Correct! The p-value is 0.5128.</p></feedback>
+        <condition string=".*[Yy][Ee][Ss].*">
+          <feedback><p>Correct! The p-value is the same: 0.5128.</p></feedback>
         </condition>
-        <condition string=".+">
-          <feedback><p>Response recorded. The exact p-value should be 0.5128.</p></feedback>
+        <condition string=".*[Nn][Oo].*">
+          <feedback><p>Double-check your calculation. With M = 36, n = 16, N = 50, P(X ≥ 12) = 0.5128, the same as before.</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>Use the hypergeometric distribution with M = 36, n = 16, N = 50.</p></feedback>
+          <feedback><p>Answer yes or no: did you obtain the same p-value of 0.5128?</p></feedback>
         </condition>
       </var>
     </setup>
@@ -751,7 +757,7 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
     <p>You should see that there are several equivalent ways to set up the probability calculation. Make sure it is clear how you define success/failure and which group you are considering "group A." This will help you determine the numerical values for <m>N</m>, <m>M</m>, and <m>n</m> in the calculation.</p>
     <p>Below is a graph of the Hypergeometric distribution with <m>N = 50</m>, <m>M = 14</m>, and <m>n = 34</m>.</p>
     <image source="images/Inv3.6hyper.png" width="70%"/>
-    <p>Using probability rules, you can show that the expected value of this distribution is <m>\mu = (14/50) \times 34 = 9.52</m> yawners in yawn seed group and the standard deviation of the probability distribution is the square root of <m>n \times (M/N) \times (N – M)/N \times (N – n)/(N – 1) = 1.496</m> yawners.</p>
+    <p>Using probability rules, you can show that the expected value of this distribution is <m> (14/50) \times 34 = 9.52</m> yawners in yawn seed group and the standard deviation of the probability distribution is the square root of <m>n \times (M/N) \times (N – M)/N \times (N – n)/(N – 1) = 1.496</m> yawners.</p>
   </paragraphs>
 
   <exercise xml:id="inv3-6-p">
