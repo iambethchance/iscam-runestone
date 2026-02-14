@@ -98,7 +98,7 @@
     <title>For Practice</title>
     <statement>
       <p>What proportion of all subjects showed substantial improvement? <var width="10"/></p>
-      <p>What proportion of subjects who were given dolphin therapy improved? <var width="10"/></p>
+      <p>What proportion of all subjects were given dolphin therapy and improved? <var width="10"/></p>
     </statement>
     <setup>
       <var>
@@ -110,17 +110,17 @@
         </condition>
       </var>
       <var>
-        <condition string="\s*0?\.6[67][0-9]*\s*|.*10\s*/\s*15.*|.*2\s*/\s*3.*">
-          <feedback><p>Correct! 10/15 ≈ 0.667.</p></feedback>
+        <condition string="\s*0?\.3[34][34]*\s*|.*10\s*/\s*30.*|.*1\s*/\s*3.*">
+          <feedback><p>Correct! 10/30 ≈ 0.333.</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>Calculate 10/15 ≈ 0.667.</p></feedback>
+          <feedback><p>Calculate 10/30 ≈ 0.333.</p></feedback>
         </condition>
       </var>
     </setup>
     <solution>
       <p>Overall: 13/30 = 0.433</p>
-      <p>Dolphin therapy: 10/15 = 0.667</p>
+      <p>Dolphin therapy: 10/30 = 0.333</p>
     </solution>
   </exercise>
 
@@ -168,7 +168,7 @@
       <p>Do the data appear to support the claim that dolphin therapy is more effective than the control program?</p>
     </statement>
     <solution>
-      <p>Yes, a much higher proportion improved in the dolphin therapy group (66.7%) compared to the control group (20%).</p>
+      <p>Yes, a much higher percentage improved in the dolphin therapy group (66.7%) compared to the control group (20%).</p>
     </solution>
     <response/>
   </exercise>
@@ -198,51 +198,81 @@
     </statement>
     <setup>
       <var>
-        <condition string=".+">
-          <feedback><p>Response recorded.</p></feedback>
+        <condition string=".*[Pp]i.*-.*[Pp]i.*|.*[Pp]i.*[Dd].*-.*[Cc].*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Pp]i.*[Dd]olphin.*|.*[Pp]i.*[Dd].*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Pp][_1].*-.*[Pp][_2].*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Pp][_1].*">
+          <feedback><p>Correct!</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>Enter the parameter for the null hypothesis.</p></feedback>
+          <feedback><p>Use the parameter defined above, e.g., pi_dolphin - pi_control or pi_dolphin.</p></feedback>
         </condition>
       </var>
       <var>
         <condition string="\s*=\s*">
           <feedback><p>Correct!</p></feedback>
         </condition>
+        <condition string="\s*-\s*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
         <condition string=".*">
-          <feedback><p>The null hypothesis uses = (equals).</p></feedback>
+          <feedback><p>The null hypothesis uses = (equals) or - (minus) depending on format.</p></feedback>
         </condition>
       </var>
       <var>
         <condition string="\s*0\s*">
           <feedback><p>Correct!</p></feedback>
         </condition>
+        <condition string=".*[Cc]ontrol.*|.*[Dd]olphin.*|.*[Pp]i.*|.*p[_2].*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
         <condition string=".*">
-          <feedback><p>The null hypothesis value is 0 (no difference).</p></feedback>
+          <feedback><p>Enter 0 (if using difference format) or the second parameter (if using equality format).</p></feedback>
         </condition>
       </var>
       <var>
-        <condition string=".+">
-          <feedback><p>Response recorded.</p></feedback>
+        <condition string=".*[Pp]i.*-.*[Pp]i.*|.*[Pp]i.*[Dd].*-.*[Cc].*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Pp]i.*[Dd]olphin.*|.*[Pp]i.*[Dd].*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Pp][_1].*-.*[Pp][_2].*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Pp][_1].*">
+          <feedback><p>Correct!</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>Enter the parameter for the alternative hypothesis.</p></feedback>
+          <feedback><p>Use the parameter defined above, e.g., pi_dolphin - pi_control or pi_dolphin.</p></feedback>
         </condition>
       </var>
       <var>
         <condition string="\s*>\s*">
           <feedback><p>Correct!</p></feedback>
         </condition>
+        <condition string="\s*-\s*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
         <condition string=".*">
-          <feedback><p>The alternative hypothesis uses > (greater than) since researchers conjectured dolphin therapy is more effective.</p></feedback>
+          <feedback><p>The alternative hypothesis uses > (greater than) or - (minus) depending on format.</p></feedback>
         </condition>
       </var>
       <var>
         <condition string="\s*0\s*">
           <feedback><p>Correct!</p></feedback>
         </condition>
+        <condition string=".*[Cc]ontrol.*|.*[Dd]olphin.*|.*[Pp]i.*|.*p[_2].*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
         <condition string=".*">
-          <feedback><p>The alternative hypothesis value is 0.</p></feedback>
+          <feedback><p>Enter 0 (if using difference format) or the second parameter (if using equality format).</p></feedback>
         </condition>
       </var>
     </setup>
@@ -264,7 +294,7 @@
   </exercise>
 
   <paragraphs>
-    <p>One way to model this situation is by assuming 13 of the 30 people were going to demonstrate substantial improvement regardless of whether they swam with or without dolphins. Then the key question is how unlikely is it for the random assignment process alone to randomly place 10 or more of these 13 improvers into the dolphin therapy group (that is, a difference in the conditional proportions that improve of 0.467 or larger)? If the answer is that this observed difference would be very surprising if the dolphin and control therapies were equally effective, then we would have strong evidence to conclude that dolphin therapy <em>is</em> more effective.</p>
+    <p>One way to model this situation is by assuming 13 of the 30 people were going to demonstrate substantial improvement regardless of whether they swam with or without dolphins. Then the key question is <term index="no">how unlikely is it for the random assignment process alone to randomly place 10 or more of these 13 improvers into the dolphin therapy group</term> (that is, a difference in the conditional proportions that improve of 0.467 or larger)? If the answer is that this observed difference would be very surprising if the dolphin and control therapies were equally effective, then we would have strong evidence to conclude that dolphin therapy <em>is</em> more effective.</p>
   </paragraphs>
 
   <exercise xml:id="inv3-5-h">
@@ -272,7 +302,7 @@
     <statement>
       <p>To model the chance variability inherent in the random assignment process, under the null hypothesis, take a set of 30 playing cards or index cards, one for each participant in the study. Designate 13 of them to represent improvements (e.g., red suited cards, blue colored index cards, or S-labeled index cards) and then mark 17 of them to represent non-improvements (e.g., black suited cards, green colored index cards, or F-labeled index cards). Shuffle the cards and deal out two groups: 15 of the "subjects" to the dolphin therapy group and 15 to the control group. Complete the following two-way table to show your "could have been" result under the null hypothesis.</p>
       <p>Simulation Repetition #1:</p>
-        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" rowheaders="yes">
           <row header="yes">
             <cell></cell>
             <cell>Dolphin Therapy</cell>
@@ -353,7 +383,7 @@
     <statement>
       <p>Repeat this hypothetical random assignment two more times and record the "could have been" tables:</p>
       <p>Repetition 2:</p>
-        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" rowheaders="yes">
           <row header="yes">
             <cell></cell>
             <cell>Dolphin</cell>
@@ -378,7 +408,7 @@
             <cell>Control</cell>
           </row>
           <row>
-            <cell>Yes</cell>
+            <cell halign="left">Yes</cell>
             <cell><var width="5"/></cell>
             <cell><var width="5"/></cell>
           </row>
@@ -595,11 +625,12 @@
       <image source="images/Inv3.5solsp.png" width="70%"/>
     </solution>
   </exercise>
-
+<p>We said above that it would be equivalent to look at the difference in the conditional proportions.</p>
+<ul><li><p> Use the <alert>Statistic</alert> pull-down menu to select <em>Difference in proportions.</p></li></ul>
+      
   <exercise xml:id="inv3-5-q">
     <title>Difference in Proportions</title>
     <statement>
-      <p>We said above that it would be equivalent to look at the difference in the conditional proportions. Use the Statistic pull-down menu to select Difference in proportions.</p>
       <p>How does the null distribution (including the mean) change? <var width="40"/></p>
       <p>Does this make sense? <var width="40"/></p>
       <p>How would you estimate the p-value now? <var width="40"/></p>
