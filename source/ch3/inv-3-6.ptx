@@ -2,7 +2,7 @@
 <section xml:id="inv-3-6">
   <title>Investigation 3.6: Is Yawning Contagious?</title>
 <introduction>
-  <p><em>In this investigation, learn how to calculate an "exact" p-value for the randomization distribution you just simulated.</em></p>
+  <p><em>In this investigation, you will learn how to calculate an "exact" p-value for the randomization distribution you just simulated.</em></p>
 </introduction>
 
 <exercises xml:id="investigation3-6" hidden-label="yes">
@@ -102,10 +102,10 @@
         <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor"
         row-headers="yes">
           <row header="yes">
-            <cell> Outcome \ Treatment </cell>
-            <cell> Yawn Seed </cell>
-            <cell> No Yawn Seed </cell>
-            <cell> Totals </cell>
+            <cell> Outcome \ Treatment&nbsp; </cell>
+            <cell>&nbsp; Yawn Seed&nbsp; </cell>
+            <cell>&nbsp; No Yawn Seed&nbsp; </cell>
+            <cell>&nbsp; Totals&nbsp; </cell>
           </row>
           <row>
             <cell halign="left">Yawned</cell>
@@ -576,7 +576,7 @@
       <p>In the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?usetwobytwo=1">Analyzing Two-way Tables applet</url>:</p>
       <p><ul>
         <li>Choose the 2×2 box to enter the cell values and headers for a two-way table</li>
-        <li>Enter the two-way table</li>
+        <li>Enter the two-way table (and row and column headers)</li>
         <li>Press <alert>Use Table</alert></li>
         <li>Check the box for <alert>Show Fisher's Exact Test</alert> in the lower left corner</li>
         <li>A check box will appear for determining the two-sided p-value</li>
@@ -633,12 +633,12 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
     </statement>
     <choices randomize="no">
       <choice correct="yes">
-        <statement><p>Yes, the technology confirmed the by-hand p-value of approximately 0.5128.</p></statement>
+        <statement><p>Yes, the technology confirmed the by-hand p-value.</p></statement>
         <feedback><p>Correct! The technology should give the same exact p-value.</p></feedback>
       </choice>
       <choice>
         <statement><p>No, the technology gave a noticeably different p-value.</p></statement>
-        <feedback><p>Double-check your technology inputs: N = 50, M = 14, n = 34, k = 10, upper tail. You should get approximately 0.5128.</p></feedback>
+        <feedback><p>Double-check your technology inputs: N = 50, M = 14, n = 34, k = 10, upper tail. You should get 0.5128.</p></feedback>
       </choice>
     </choices>
     <solution>
@@ -669,7 +669,7 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
       </var>
       <!-- P(X ___ ) inequality -->
       <var>
-        <condition string=".*≤.*24.*|.*&lt;=.*24.*|.*less.*24.*">
+        <condition string=".*<=.*24.*|.*&lt;=.*24.*|.*less.*24.*">
           <feedback><p>Correct! P(X ≤ 24).</p></feedback>
         </condition>
         <condition string=".+">
@@ -705,7 +705,7 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
       <p>Set up and carry out the calculation to determine the exact p-value, where you focus on the number that did not yawn in the no-yawn-seed group. Show that you obtain the same exact p-value as before.</p>
       <p>Let X = <var width="60" height="4"/></p>
       <p>Find P(X <var width="20" height="4"/><var width="20" height="4"/></p>
-      <p>same p-value? <var width="60" height="4"/></p>
+      <p>same p-value? <var width="10"/></p>
     </statement>
     <setup>
       <!-- Let X = ... -->
@@ -722,7 +722,7 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
       </var>
       <!-- P(X ___ ) inequality -->
       <var>
-        <condition string=".*≥.*12.*|.*&gt;=.*12.*|.*greater.*12.*">
+        <condition string=".*>=.*12.*|.*&gt;=.*12.*|.*greater.*12.*">
           <feedback><p>Correct! P(X ≥ 12).</p></feedback>
         </condition>
         <condition string=".+">
@@ -734,10 +734,10 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
       </var>
       <!-- same p-value? -->
       <var>
-        <condition string=".*[Yy][Ee][Ss].*">
+        <condition string="[Yy]es">
           <feedback><p>Correct! The p-value is the same: 0.5128.</p></feedback>
         </condition>
-        <condition string=".*[Nn][Oo].*">
+        <condition string="[Nn]o">
           <feedback><p>Double-check your calculation. With M = 36, n = 16, N = 50, P(X ≥ 12) = 0.5128, the same as before.</p></feedback>
         </condition>
         <condition string=".*">
