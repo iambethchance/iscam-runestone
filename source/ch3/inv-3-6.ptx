@@ -667,16 +667,28 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
           <feedback><p>Define X as the number of non-yawners in the yawn seed group.</p></feedback>
         </condition>
       </var>
-      <!-- P(X ___ ) inequality -->
+      <!-- P(X ___ ) inequality symbol -->
       <var>
-        <condition string=".*&lt;=.*24.*|.*less.*24.*">
-          <feedback><p>Correct! P(X ≤ 24).</p></feedback>
+        <condition string=".*&lt;=.*|.*≤.*|.*less.*">
+          <feedback><p>Correct! ≤</p></feedback>
         </condition>
         <condition string=".+">
-          <feedback><p>Response recorded. The setup should be P(X ≤ 24).</p></feedback>
+          <feedback><p>Response recorded. The inequality should be ≤.</p></feedback>
         </condition>
         <condition string=".*">
           <feedback><p>Since "not yawning" is now the success, we want P(X ≤ 24).</p></feedback>
+        </condition>
+      </var>
+      <!-- P(X ___ ) inequality number -->
+      <var>
+        <condition number="24" tolerance="0">
+          <feedback><p>Correct! P(X ≤ 24).</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded. The observed count of non-yawners in the seed group is 24.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>How many non-yawners were in the yawn seed group?</p></feedback>
         </condition>
       </var>
       <!-- p-value result -->
@@ -720,16 +732,28 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
           <feedback><p>Define X as the number of non-yawners in the no-yawn-seed group.</p></feedback>
         </condition>
       </var>
-      <!-- P(X ___ ) inequality -->
+      <!-- P(X ___ ) inequality symbol -->
       <var>
-        <condition string=".*&gt;=.*12.*|.*greater.*12.*">
-          <feedback><p>Correct! P(X ≥ 12).</p></feedback>
+        <condition string=".*&gt;=.*|.*≥.*|.*greater.*">
+          <feedback><p>Correct! ≥</p></feedback>
         </condition>
         <condition string=".+">
-          <feedback><p>Response recorded. The setup should be P(X ≥ 12).</p></feedback>
+          <feedback><p>Response recorded. The inequality should be ≥.</p></feedback>
         </condition>
         <condition string=".*">
           <feedback><p>Since we focus on non-yawners in the no-seed group, we want P(X ≥ 12).</p></feedback>
+        </condition>
+      </var>
+      <!-- P(X ___ ) inequality number -->
+      <var>
+        <condition number="12" tolerance="0">
+          <feedback><p>Correct! P(X ≥ 12).</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded. The observed count of non-yawners in the no-seed group is 12.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>How many non-yawners were in the no-seed group?</p></feedback>
         </condition>
       </var>
       <!-- same p-value? -->
