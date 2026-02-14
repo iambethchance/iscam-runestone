@@ -227,11 +227,8 @@
     </statement>
     <setup>
       <var>
-        <condition string=".*[Yy]es.*">
-          <feedback><p>It is possible but unlikely to get the exact same difference. Results will vary.</p></feedback>
-        </condition>
-        <condition string=".*[Nn]o.*">
-          <feedback><p>Most likely the difference changed. Results will vary with each randomization.</p></feedback>
+        <condition string=".*[Yy]es.*|.*[Nn]o.*">
+          <feedback><p>Results will vary with each randomization.</p></feedback>
         </condition>
         <condition string=".*">
           <feedback><p>Please enter Yes or No.</p></feedback>
@@ -316,7 +313,7 @@
     <title>Discussion</title>
     <p>Having more right-handers than left-handers in the sample isn't a problem, but a 12/4 split in right-handers between the treatment groups would be problematic, because then if the treatment group that had all right-handed graders showed lower scores, we wouldn't know whether it was because of the writing style or something about right-handers. But with random assignment, such an unequal split is unlikely. Instead, the random assignment usually creates an 8/8 split or a 9/7 split. In this case, we will trust that the groups are balanced on the handedness variable and so handedness is not confounded with score.</p>
   </paragraphs>
-<paragraphs>
+<paragraphs title="Other Variables">
 <p>Maybe older graders tend to give higher scores... we would like the age distribution to be similar between the two treatment groups as well.</p>
 <ul><li><p> In the applet, use the pull-down menu to switch from the handedness variable to the <alert>age</alert> variable.</p></li></ul>
 <p> The dotplot now displays the differences in <em>average</em> age between Group 1 and Group 2 for these 2000 repetitions. 
