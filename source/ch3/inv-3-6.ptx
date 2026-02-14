@@ -762,7 +762,7 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
           <feedback><p>Correct! The p-value is the same: 0.5128.</p></feedback>
         </condition>
         <condition string="[Nn]o">
-          <feedback><p>Double-check your calculation. With M = 36, n = 16, N = 50, P(X ≥ 12) = 0.5128, the same as before.</p></feedback>
+          <feedback><p>Double-check your calculation. With <m>M = 36, n = 16, N = 50, P(X ≥ 12) = 0.5128</m>, the same as before.</p></feedback>
         </condition>
         <condition string=".*">
           <feedback><p>Answer yes or no: did you obtain the same p-value of 0.5128?</p></feedback>
@@ -862,18 +862,7 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
       <title>Evidence Against Contagious Yawning</title>
       <statement>
         <p>For the <em>MythBusters</em> study (p-value > 0.5), is it reasonable to conclude from this study that we have strong evidence that yawning is not contagious? Explain.</p>
-        <p><var width="60" height="3"/></p>
       </statement>
-      <setup>
-        <var>
-          <condition string=".+">
-            <feedback><p>Response recorded.</p></feedback>
-          </condition>
-          <condition string=".*">
-            <feedback><p>Please enter your response.</p></feedback>
-          </condition>
-        </var>
-      </setup>
       <response/>
     </exercise>
 
@@ -881,18 +870,7 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
       <title>Sample Size and Power</title>
       <statement>
         <p>Explain, in this context, what is meant in the Study Conclusions box by "the researchers could try the study again with a larger sample size to increase the power of their test" and why that is a reasonable recommendation here.</p>
-        <p><var width="60" height="3"/></p>
       </statement>
-      <setup>
-        <var>
-          <condition string=".+">
-            <feedback><p>Response recorded.</p></feedback>
-          </condition>
-          <condition string=".*">
-            <feedback><p>Please enter your response.</p></feedback>
-          </condition>
-        </var>
-      </setup>
       <response/>
     </exercise>
 
@@ -900,18 +878,7 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
       <title>Hypergeometric vs Binomial</title>
       <statement>
         <p>To calculate the p-value here, why are we using the hypergeometric distribution instead of the binomial distribution?</p>
-        <p><var width="60" height="3"/></p>
       </statement>
-      <setup>
-        <var>
-          <condition string=".+">
-            <feedback><p>Response recorded.</p></feedback>
-          </condition>
-          <condition string=".*">
-            <feedback><p>Please enter your response.</p></feedback>
-          </condition>
-        </var>
-      </setup>
       <response/>
     </exercise>
   </subsection>
@@ -1056,16 +1023,62 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
     <exercise xml:id="practice-3-6-c-a">
       <title>Alternative Setup - Not Yawning</title>
       <statement>
-        <p>Suppose I wanted to treat "not yawning" as a success. Consider <m>Y</m> = number of non-yawners in the yawn seed group. Show how to set up the hypergeometric calculation of <m>P(Y = 24) = C(</m>_, _<m>) \times C(</m>_, _<m>) / C(_, _)</m>.</p>
-        <p><var width="60" height="2"/></p>
+        <p>Suppose I wanted to treat "not yawning" as a success. Consider <m>Y</m> = number of non-yawners in the yawn seed group. Show how to set up the hypergeometric calculation of</p>
+        <p><m>P(Y = 24) = C(</m><var width="5"/>, <var width="5"/><m>) \times C(</m><var width="5"/>, <var width="5"/><m>) / C(</m><var width="5"/>, <var width="5"/>)</p>
       </statement>
       <setup>
+        <!-- C(M, k): M = number of successes (non-yawners) = 36 -->
         <var>
-          <condition string=".+">
-            <feedback><p>Response recorded.</p></feedback>
+          <condition number="36" tolerance="0">
+            <feedback><p>Correct! M = 36 non-yawners total.</p></feedback>
           </condition>
           <condition string=".*">
-            <feedback><p>Please enter your answer.</p></feedback>
+            <feedback><p>How many total non-yawners (successes) are there? 24 + 12 = 36.</p></feedback>
+          </condition>
+        </var>
+        <!-- C(M, k): k = 24 non-yawners in seed group -->
+        <var>
+          <condition number="24" tolerance="0">
+            <feedback><p>Correct! k = 24 non-yawners in the seed group.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>How many non-yawners were in the yawn seed group?</p></feedback>
+          </condition>
+        </var>
+        <!-- C(N-M, n-k): N-M = 14 yawners (failures) -->
+        <var>
+          <condition number="14" tolerance="0">
+            <feedback><p>Correct! N - M = 50 - 36 = 14 yawners.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>How many total yawners (failures) are there? 50 - 36 = 14.</p></feedback>
+          </condition>
+        </var>
+        <!-- C(N-M, n-k): n-k = 10 yawners in seed group -->
+        <var>
+          <condition number="10" tolerance="0">
+            <feedback><p>Correct! n - k = 34 - 24 = 10 yawners in the seed group.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>How many yawners were in the yawn seed group? 34 - 24 = 10.</p></feedback>
+          </condition>
+        </var>
+        <!-- C(N, n): N = 50 total -->
+        <var>
+          <condition number="50" tolerance="0">
+            <feedback><p>Correct! N = 50 total subjects.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>What is the total number of subjects?</p></feedback>
+          </condition>
+        </var>
+        <!-- C(N, n): n = 34 in seed group -->
+        <var>
+          <condition number="34" tolerance="0">
+            <feedback><p>Correct! n = 34 in the yawn seed group.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>How many subjects were in the yawn seed group?</p></feedback>
           </condition>
         </var>
       </setup>
@@ -1114,18 +1127,7 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
       <title>Importance of Blinding</title>
       <statement>
         <p>In the Yawning study, why was it important that the subjects didn't know what the study was about when they were led into the room?</p>
-        <p><var width="60" height="3"/></p>
       </statement>
-      <setup>
-        <var>
-          <condition string=".+">
-            <feedback><p>Response recorded.</p></feedback>
-          </condition>
-          <condition string=".*">
-            <feedback><p>Please enter your answer.</p></feedback>
-          </condition>
-        </var>
-      </setup>
       <response/>
     </exercise>
 
@@ -1133,18 +1135,7 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
       <title>Unequal Sample Sizes</title>
       <statement>
         <p>In the Yawning study, is it a problem that the sample sizes for the Yawn seed and the No Yawn seed group aren't equal? Explain.</p>
-        <p><var width="60" height="3"/></p>
       </statement>
-      <setup>
-        <var>
-          <condition string=".+">
-            <feedback><p>Response recorded.</p></feedback>
-          </condition>
-          <condition string=".*">
-            <feedback><p>Please enter your answer.</p></feedback>
-          </condition>
-        </var>
-      </setup>
       <response/>
     </exercise>
   </subsection>
