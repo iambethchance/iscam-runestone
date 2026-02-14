@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="inv-3-6">
   <title>Investigation 3.6: Is Yawning Contagious?</title>
-<subsection>
+
 <exercises xml:id="investigation3-6" hidden-label="yes">
 <title>The Study</title>  
   <introduction>
@@ -12,7 +12,7 @@
         <url href="https://www.youtube.com/watch?v=bCCCxV3nNgs"/>
       </image>
     </sidebyside>
-<p>For some of the subjects, the attendee yawned while leading them to two of the rooms (planting a yawn "seed"), whereas for the other subjects the attendee did not yawn. As time passed, the researchers watched (via a hidden camera) to see which subjects yawned.</p>  </introduction>
+<p>For some of the subjects, the attendee yawned while leading them to two of the rooms (planting a yawn "seed"), whereas for the other subjects the attendee did not yawn while leading to a third room. As time passed, the researchers watched (via a hidden camera) to see which subjects yawned.</p>  </introduction>
 
   <exercise xml:id="inv3-6-a">
     <title>Identify Variables</title>
@@ -21,6 +21,24 @@
       <p>EV: <var width="40"/></p>
       <p>RV: <var width="40"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".*[Ss]eed.*|.*[Pp]lant.*|.*[Aa]ttend.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The EV is whether the subject was given a yawn seed or not.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Yy]awn.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The RV is whether the subject yawned or not.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>EV: given seed or not</p>
       <p>RV: whether yawned or not</p>
@@ -36,6 +54,32 @@
       <p><m>H_0</m>: <var width="50"/></p>
       <p><m>H_a</m>: <var width="50"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Define the parameter as the difference in probabilities of yawning (seeded - control).</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*=\s*0.*|.*no\s*(diff|assoc|effect).*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>H₀ should state no difference: π_s - π_c = 0.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*>\s*0.*|.*greater.*|.*higher.*|.*more.*|.*increase.*|.*contagious.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Hₐ should reflect the conjecture that the seed increases yawning probability (π_s - π_c > 0).</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Parameter: π<subscript>s</subscript> - π<subscript>c</subscript> = difference in probability of yawning (seeded - control)</p>
       <p><m>H_0</m>: π<subscript>s</subscript> - π<subscript>c</subscript> = 0 (no association between seeding/not and yawning/not)</p>
@@ -52,13 +96,13 @@
     <title>Create Two-Way Table</title>
     <statement>
       <p>Create a two-way table summarizing the results, <em>using the explanatory variable as the column variable</em>.</p>
-      <table>
-        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor"
+        row-headers="true">
           <row header="yes">
-            <cell></cell>
-            <cell>Yawn Seed</cell>
-            <cell>No Yawn Seed</cell>
-            <cell>Totals</cell>
+            <cell>Outcome \ Treatment</cell>
+            <cell halign="left">Yawn Seed</cell>
+            <cell halign="left">No Yawn Seed</cell>
+            <cell halign="left">Totals</cell>
           </row>
           <row>
             <cell>Yawned</cell>
@@ -79,16 +123,92 @@
             <cell><var width="5"/></cell>
           </row>
         </tabular>
-      </table>
     </statement>
+    <setup>
+      <!-- Yawned row -->
+      <var>
+        <condition number="10" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>10 of the 34 yawn-seed subjects yawned.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="4" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>4 of the 16 no-seed subjects yawned.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="14" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Total yawners: 10 + 4 = 14.</p></feedback>
+        </condition>
+      </var>
+      <!-- Did not yawn row -->
+      <var>
+        <condition number="24" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>34 - 10 = 24 seed subjects did not yawn.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="12" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>16 - 4 = 12 no-seed subjects did not yawn.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="36" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Total non-yawners: 24 + 12 = 36.</p></feedback>
+        </condition>
+      </var>
+      <!-- Totals row -->
+      <var>
+        <condition number="34" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>34 subjects were in the yawn-seed group.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="16" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>16 subjects were in the no-seed group.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="50" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Total: 34 + 16 = 50 subjects.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
-      <table>
-        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor"
+        row-headers="yes">
           <row header="yes">
-            <cell></cell>
-            <cell>Yawn Seed</cell>
-            <cell>No Yawn Seed</cell>
-            <cell>Totals</cell>
+            <cell>Outcome \ Treatment</cell>
+            <cell halign="left">Yawn Seed</cell>
+            <cell halign="left">No Yawn Seed</cell>
+            <cell halign="left">Totals</cell>
           </row>
           <row>
             <cell>Yawned</cell>
@@ -109,7 +229,6 @@
             <cell>50</cell>
           </row>
         </tabular>
-      </table>
     </solution>
     <response/>
   </exercise>
@@ -121,7 +240,6 @@
       <hint>
         <p>How many cards? How many of each type? How many would you deal out? What would you record? How would you find the p-value?</p>
       </hint>
-      <p><var width="60" height="5"/></p>
     </statement>
     <solution>
       <p>50 cards: 14 red, 36 blue. Shuffle. Deal out 34 to "group A." Record the number of red cards in Group A. Repeat many times. Calculate the proportion of red-card-counts that are 10 or higher.</p>
@@ -132,19 +250,18 @@
   <paragraphs>
     <p>Open the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?twobytwo=1">Analyzing Two-way Tables applet</url>.</p>
     <p><ul>
-      <li>Paste in the raw data and press Use Data or enter the titles and counts of a two-way table and press Use Table. (Or check the 2×2 box and enter the cell values and headers). Or use the version below.</li>
-      <li>Select GroupA Successes as the <alert>Statistic</alert>.</li>
+      <li>Paste in the raw data and press <alert>Use Data</alert> or enter the titles and counts of a two-way table and press <alert>Use Table</alert>. (Or check the 2×2 box and enter the cell values and headers). Or use the version below.</li>
+      <li>Select <em>GroupA</em> Successes as the <alert>Statistic</alert>.</li>
       <li>Check the <alert>Show Shuffle Options</alert> box.</li>
       <li>Set <alert>Number of Shuffles</alert> to 1000.</li>
       <li>Press <alert>Shuffle</alert>.</li>
     </ul></p>
   </paragraphs>
-<interactive iframe="https:://www.rossmanchance.com/applets/2021/test/ChiSqShuffle.htm?yawning=2" width="100%" height="600px"/>
+<interactive iframe="https://www.rossmanchance.com/applets/2021/test/ChiSqShuffle.htm?yawning=2" width="160%" aspect="3:2"/>
   <exercise xml:id="inv3-6-e">
     <title>Describe Randomization Distribution</title>
     <statement>
       <p>Briefly describe this randomization (null) distribution: What is its shape? What is the mean? What is the standard deviation?</p>
-      <p><var width="60" height="4"/></p>
     </statement>
     <solution>
       <p>Symmetric (but with gaps depending on rounding/bins), mean(π̂<subscript>1</subscript> - π̂<subscript>2</subscript>) ≈ 0, sd(π̂<subscript>1</subscript> - π̂<subscript>2</subscript>) ≈ 0.14</p>
@@ -154,16 +271,27 @@
     <response/>
   </exercise>
 
+      <p><ul>
+        <li>Specify the observed number of successes in the <alert>Count Samples</alert> box.</li>
+        <li>Then indicate whether the research conjecture expected a larger or smaller number of successes in the seed treatment by choosing <em>Greater Than</em> or <em>Less Than</e> from the pull-down menu.</li>
+        <li>Then press the <alert>Count</alert> button.</li>
+      </ul></p>
+
   <exercise xml:id="inv3-6-f">
     <title>Estimate p-value</title>
     <statement>
-      <p><ul>
-        <li>Specify the observed number of successes in the Count Samples box.</li>
-        <li>Then indicate whether the research conjecture expected a larger or smaller number of successes in the seed treatment by choosing Greater Than or Less Than from the pull-down menu.</li>
-        <li>Then press the Count button.</li>
-      </ul></p>
       <p>Report your p-value: <var width="30"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="0.51" tolerance="0.15">
+          <feedback><p>Correct! The p-value should be approximately 0.5.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The p-value should be approximately 0.5.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>p-value about 0.5</p>
     </solution>
@@ -186,6 +314,19 @@
       </hint>
       <p><var width="40"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".*[Cc]\(50.*34\).*|.*50!.*|.*4\.9.*10.*|.*4923.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded. The answer is C(50, 34) = 50!/(34! × 16!) ≈ 4.92 × 10¹².</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Use the combinations formula C(50, 34).</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>C(50, 34) = 50!/(34! × 16!) = 4.92 × 10<m>^{12}</m> possible ways to randomly assign 34 people to group A</p>
     </solution>
@@ -206,6 +347,41 @@
       </hint>
       <p>Total: <var width="20"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="1001" tolerance="0">
+          <feedback><p>Correct! C(14, 10) = 1,001.</p></feedback>
+        </condition>
+        <condition string=".*[Cc]\(14.*10\).*">
+          <feedback><p>Correct! C(14, 10) = 1,001.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate C(14, 10) = 14!/(10! × 4!) = 1,001.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="125167700" tolerance="100">
+          <feedback><p>Correct! C(36, 24) = 125,167,700.</p></feedback>
+        </condition>
+        <condition string=".*[Cc]\(36.*24\).*|.*125.*167.*700.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate C(36, 24) = 36!/(24! × 12!) = 125,167,700.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Mm]ultipl.*|.*1001.*125.*|.*125.*1001.*|.*1\.25.*10.*11.*">
+          <feedback><p>Correct! Multiply: 1,001 × 125,167,700.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Multiply the number of ways to select successes by the number of ways to select failures.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Successes: C(14, 10) = 1,001</p>
       <p>Failures: C(36, 24) = 125,167,700</p>
@@ -217,12 +393,22 @@
   <exercise xml:id="inv3-6-i">
     <title>Calculate Exact Probability</title>
     <statement>
-      <p>To determine the exact probability that random assignment would produce exactly 10 successes and 24 failures into the group of 34 subjects, divide your calculation in <xref ref="inv3-6-h" text="custom">checkpoint 9</xref> by your calculation in <xref ref="inv3-6-g" text="custom">checkpoint 8</xref>.</p>
+      <p>To determine the exact probability that random assignment would produce exactly 10 successes and 24 failures into the group of 34 subjects, divide your calculation in <xref ref="inv3-6-h" text="custom">Question 8</xref> by your calculation in <xref ref="inv3-6-g" text="custom">Question 7</xref>.</p>
       <hint>
         <p>Divide the total number of ways to obtain the observed configuration by the total number of ways to assign subjects.</p>
       </hint>
       <p><var width="30"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="0.254" tolerance="0.005">
+          <feedback><p>Correct! P(X = 10) ≈ 0.2545.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Divide C(14,10) × C(36,24) by C(50,34) to get ≈ 0.2545.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>X = # successes in group A</p>
       <p>P(X = 10) = (1,001 × 125,167,700) / 4.92 × 10<m>^{12}</m> = 0.254</p>
@@ -233,9 +419,19 @@
   <exercise xml:id="inv3-6-j">
     <title>Is this the p-value?</title>
     <statement>
-      <p>Explain why your answer to (i) is <em>not</em> yet the p-value for this study.</p>
+      <p>Explain why your answer to Question 9 is <em>not</em> yet the p-value for this study.</p>
       <p><var width="60" height="3"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The p-value requires P(X ≥ 10), not just P(X = 10).</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>No, the p-value would be P(X ≥ 10), not P(X = 10)</p>
     </solution>
@@ -266,6 +462,53 @@
       <p>Why do we stop at 14?</p>
       <p><var width="60" height="2"/></p>
     </statement>
+    <setup>
+      <!-- P(X=11) -->
+      <var>
+        <condition number="0.1708" tolerance="0.005">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>P(X = 11) = C(14,11) × C(36,23) / C(50,34) ≈ 0.1708.</p></feedback>
+        </condition>
+      </var>
+      <!-- P(X=12) -->
+      <var>
+        <condition number="0.0702" tolerance="0.005">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>P(X = 12) = C(14,12) × C(36,22) / C(50,34) ≈ 0.0702.</p></feedback>
+        </condition>
+      </var>
+      <!-- P(X=13) -->
+      <var>
+        <condition number="0.0158" tolerance="0.005">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>P(X = 13) = C(14,13) × C(36,21) / C(50,34) ≈ 0.0158.</p></feedback>
+        </condition>
+      </var>
+      <!-- P(X=14) -->
+      <var>
+        <condition number="0.0015" tolerance="0.002">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>P(X = 14) = C(14,14) × C(36,20) / C(50,34) ≈ 0.0015.</p></feedback>
+        </condition>
+      </var>
+      <!-- Why stop at 14 -->
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>We stop at 14 because there are only 14 total successes.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>P(X = 11) ≈ 0.1708; P(X = 12) ≈ 0.0702; P(X = 13) ≈ 0.0158; P(X = 14) ≈ 0.0015</p>
       <p>We stop at 14 because this is the total # successes</p>
@@ -281,6 +524,35 @@
       <p>Comparison: <var width="40"/></p>
       <p>Interpretation: <var width="60" height="3"/></p>
     </statement>
+    <setup>
+      <!-- Exact p-value -->
+      <var>
+        <condition number="0.513" tolerance="0.005">
+          <feedback><p>Correct! The exact p-value is 0.5128.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Sum: 0.254 + 0.1708 + 0.0702 + 0.0158 + 0.0015 = 0.5128.</p></feedback>
+        </condition>
+      </var>
+      <!-- Comparison -->
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Compare to your simulation p-value.</p></feedback>
+        </condition>
+      </var>
+      <!-- Interpretation -->
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Interpret the p-value in context of the random assignment.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Exact p-value: 0.254 + 0.1708 + 0.0702 + 0.0158 + 0.0015 = 0.5128</p>
       <p>Comparison: similar to simulation</p>
@@ -305,7 +577,7 @@
         <p>In the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?hideExtras=1">Analyzing Two-way Tables applet</url>.</p>
         <p><ul>
           <li>Enter the two-way table</li>
-          <li>Check the box for <alert>Show Fisher's Exact Test</alert> in the lower left corner</li>
+          <li>Check the box for <entry index="no">Show Fisher's Exact Test</entry> in the lower left corner</li>
           <li>A check box will appear for determining the two-sided p-value</li>
         </ul></p>
       </statement>
@@ -364,6 +636,16 @@
       <p>Calculate this hypergeometric probability using technology (using one of the methods above).</p>
       <p><var width="60" height="2"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter your calculation.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m>P(X ≥ 10)</m> with <m>M = 14</m>, <m>n = 34</m>, <m>N = 50</m>; p-value = 0.5128</p>
     </solution>
@@ -376,6 +658,16 @@
       <p>Set up and carry out the calculation to determine the exact p-value where you define the success to be "not yawning" and the group of interest to be the yawn seed group.</p>
       <p><var width="60" height="4"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please show your setup and calculation.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m>P(X ≤ 24)</m> with <m>M = 36</m>, <m>n = 34</m>, <m>N = 50</m> = 0.5128</p>
       <image source="images/Inv3.6solsn.png" width="70%"/>
@@ -389,6 +681,16 @@
       <p>Set up and carry out the calculation to determine the exact p-value, where you focus on the number that did not yawn in the no-yawn-seed group. Show that you obtain the same exact p-value as before.</p>
       <p><var width="60" height="4"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please show your setup and calculation.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m>P(X ≥ 12)</m> with <m>M = 36</m>, <m>n = 16</m>, <m>N = 50</m> = 0.5128</p>
       <image source="images/Inv3.6solso.jpg" width="70%"/>
@@ -410,6 +712,16 @@
       <p>Compare this graph and the mean and standard deviation values to your simulation results.</p>
       <p><var width="60" height="3"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please compare the theoretical and simulation results.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>The simulation results should be very similar, including the mean and standard deviation values when using the count scale.</p>
 <p> Example results</p>      <image source="images/Inv3.6solsp.jpg" width="70%"/>
@@ -423,6 +735,16 @@
       <p>On the <em>MythBusters</em> program, the hosts concluded that, based on the observed difference in conditional proportions and the large sample size, there is "little doubt, yawning seems to be contagious." Do you agree?</p>
       <p><var width="60" height="3"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Consider the p-value when evaluating this claim.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>The p-value is not small so we fail to reject H<subscript>0</subscript>. We do not have convincing evidence of a seeding effect.</p>
     </solution>
@@ -435,6 +757,16 @@
       <p>To what population are you willing to generalize these results? Explain your reasoning.</p>
       <p><var width="60" height="3"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Consider the sampling method used in this study.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>No! We are not able to discount "chance" (random assignment) as the explanation for the observed difference in the sample proportions. We should be cautious about generalizing beyond volunteers at a local flea market, as this was not a random sample from a broader population.</p>
     </solution>
@@ -446,7 +778,6 @@
     <p>With a large p-value of 0.513 (Fisher's Exact Test), we do not have any evidence that the difference between the two groups (with and without yawn seed) was created from something other than the random assignment process. If there was nothing to the theory that yawning is contagious, by "luck of the draw" alone, we would expect 10 or more of the yawners to end up in the yawn seed group in more than 50% of random assignments. Although the study results were in the conjectured direction, the difference between the yawning proportions was not large enough to convince us that the probability of yawning is truly larger when a yawn seed is planted. The researchers could try the study again with a larger sample size to increase the power of their test. The researchers also may want to be cautious in generalizing these results beyond the population of volunteers at a local flea market or how naturalistic the setting of leading individuals to a small room to wait is.</p>
   </assemblage>
 </exercises>
-</subsection>
 
   <subsection xml:id="practice3-6A">
     <title>Practice Problem 3.6A</title>
@@ -457,6 +788,16 @@
         <p>For the <em>MythBusters</em> study (p-value > 0.5), is it reasonable to conclude from this study that we have strong evidence that yawning is not contagious? Explain.</p>
         <p><var width="60" height="3"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter your response.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
 
@@ -466,6 +807,16 @@
         <p>Explain, in this context, what is meant in the Study Conclusions box by "the researchers could try the study again with a larger sample size to increase the power of their test" and why that is a reasonable recommendation here.</p>
         <p><var width="60" height="3"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter your response.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
 
@@ -475,6 +826,16 @@
         <p>To calculate the p-value here, why are we using the hypergeometric distribution instead of the binomial distribution?</p>
         <p><var width="60" height="3"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter your response.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
   </subsection>
@@ -489,7 +850,7 @@
         <col halign="center"/>
         <col halign="center"/>
         <row header="yes">
-          <cell></cell>
+          <cell>Outcome \ Treatment</cell>
           <cell>Dolphin Therapy</cell>
           <cell>Control Group</cell>
           <cell>Total</cell>
@@ -523,6 +884,32 @@
         <p><m>M</m> = <var width="10"/></p>
         <p><m>n</m> = <var width="10"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter your answer.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter your answer.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter your answer.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
 
@@ -535,6 +922,16 @@
         </hint>
         <p><m>P(X</m> <var width="20"/>)</p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter your answer.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
 
@@ -544,6 +941,16 @@
         <p>Calculate this exact p-value, either by hand or with technology. Comment on whether this p-value is similar to the approximate one from your simulation results. (Be sure it's clear how you calculated this value.)</p>
         <p><var width="60" height="4"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter your answer.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
 
@@ -553,6 +960,16 @@
         <p>Suppose that the dolphin study had involved twice as many subjects, again with half randomly assigned to each group, and with the same proportion of improvers in each group. Determine the exact p-value in this case, and comment on whether/how it changes from the p-value with the real data. Explain why this makes sense.</p>
         <p><var width="60" height="4"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter your answer.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
   </subsection>
@@ -563,9 +980,19 @@
     <exercise xml:id="practice-3-6-c-a">
       <title>Alternative Setup - Not Yawning</title>
       <statement>
-        <p>Suppose I wanted to treat "not yawning" as a success. Consider <m>Y</m> = number of non-yawners in the yawn seed group. Show how to set up the hypergeometric calculation of <m>P(Y = 24) = C(</m>_, _<m>) \times C(</m>_, _<m>) / C(</m>_, _<m>)</m>.</p>
+        <p>Suppose I wanted to treat "not yawning" as a success. Consider <m>Y</m> = number of non-yawners in the yawn seed group. Show how to set up the hypergeometric calculation of <m>P(Y = 24) = C(</m>_, _<m>) \times C(</m>_, _<m>) / C(_, _)</m>.</p>
         <p><var width="60" height="2"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter your answer.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
 
@@ -575,6 +1002,16 @@
         <p>Use technology to calculate the probability of 24 or fewer non-yawners in the YawnSeed group using the hypergeometric distribution. (Include output.) How does this compare to the probability of 10 or more yawners in the YawnSeed group?</p>
         <p><var width="60" height="4"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter your answer.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
 
@@ -584,6 +1021,16 @@
         <p>Suppose I want to find the probability of 4 or fewer yawners in the No Seed group. Identify the values of <m>N</m>, <m>M</m>, <m>n</m>, and <m>k</m>. Use technology to calculate the probability of 4 or fewer yawners in the No Seed group using the hypergeometric distribution. (Include readable output.)</p>
         <p><var width="60" height="4"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter your answer.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
 
@@ -593,6 +1040,16 @@
         <p>In the Yawning study, why was it important that the subjects didn't know what the study was about when they were led into the room?</p>
         <p><var width="60" height="3"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter your answer.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
 
@@ -602,6 +1059,16 @@
         <p>In the Yawning study, is it a problem that the sample sizes for the Yawn seed and the No Yawn seed group aren't equal? Explain.</p>
         <p><var width="60" height="3"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Please enter your answer.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
   </subsection>
