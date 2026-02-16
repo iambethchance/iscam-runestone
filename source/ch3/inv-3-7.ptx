@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="inv-3-7">
   <title>Investigation 3.7: CPR vs. Chest Compressions</title>
-<exercises> xml:id="investigation3-7" hidden-label="yes">
+<introduction>
+In this investigation, you will apply the procedures you have just learned to a student comparing different ways of responding to a heart attack.
+</introduction>
+<exercises xml:id="investigation3-7" hidden-label="yes">
     <title>The Study</title>
   <introduction>
     <sidebyside widths="65% 30%" margins="0% 5%">
@@ -25,6 +28,32 @@
         <li correct="yes">Experimental</li>
       </var></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".*[Cc]ase.*|.*[Pp]atient.*|.*518.*|.*[Hh]eart.*|.*[Pp]erson.*|.*[Pp]eople.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The observational units are the 518 cases (patients who experienced heart attacks).</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*CPR.*|.*CC.*|.*[Cc]hest.*|.*[Tt]reatment.*|.*[Mm]ethod.*|.*[Ii]nstruct.*|.*[Dd]ispatch.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The explanatory variable is the type of instructions given (CPR vs. CC alone).</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Ss]urviv.*|.*[Dd]ischarg.*|.*[Dd]ied.*|.*[Ll]iv.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The response variable is whether the patient survived to discharge.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Observational units = 518 cases</p>
       <p>Explanatory variable = whether they were given CPR or CC instructions</p>
@@ -40,9 +69,9 @@
       <p>Construct a two-way table to summarize the results of this study. Remember to put the explanatory variable in the columns.</p>
         <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
           <row header="yes">
-            <cell halign="left">Method</cell>
+            <cell halign="left">Outcome \ Method</cell>
             <cell >CPR</cell>
-            <cell >CC alone</cell>
+            <cell >&#160;CC alone&#160;</cell>
             <cell >Total</cell>
           </row>
           <row>
@@ -65,6 +94,83 @@
           </row>
         </tabular>
     </statement>
+    <setup>
+      <!-- Survived row -->
+      <var>
+        <condition number="29" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>29 of 278 CPR patients survived.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="35" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>35 of 240 CC patients survived.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="64" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Total survivors: 29 + 35 = 64.</p></feedback>
+        </condition>
+      </var>
+      <!-- Did not survive row -->
+      <var>
+        <condition number="249" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>278 - 29 = 249 CPR patients did not survive.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="205" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>240 - 35 = 205 CC patients did not survive.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="454" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Total non-survivors: 249 + 205 = 454.</p></feedback>
+        </condition>
+      </var>
+      <!-- Totals row -->
+      <var>
+        <condition number="278" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>278 patients were in the CPR group.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="240" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>240 patients were in the CC group.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="518" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Total: 278 + 240 = 518 patients.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
         <tabular top="minor" bottom="minor" left="minor" right="minor">
           <col halign="left"/>
@@ -106,6 +212,19 @@
       <p>Calculate the difference in the conditional proportions who survived (CC – CPR). Does this seem to be a noteworthy difference to you?</p>
       <p><var width="60" height="3"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".*0?\.04\d*.*">
+          <feedback><p>Correct! The difference is approximately 0.042.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded. The difference should be 35/240 - 29/278 ≈ 0.042.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate 35/240 - 29/278.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m>\hat{p}_{CC} - \hat{p}_{CPR} = 35/240 - 29/278 = 0.0415</m></p>
       <p>Opinions will vary on whether this difference appears noteworthy.</p>
@@ -113,10 +232,6 @@
     <response/>
   </exercise>
 
-  <aside>
-    <title>Two-way Table Applet</title>
-    <p>You can use the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?twobytwo=1&amp;hideExtras=1">Two-way Table applet</url> to calculate Fisher's Exact Test.</p>
-  </aside>
 
 
   <exercise xml:id="inv3-7-d">
@@ -127,7 +242,94 @@
       <p>p-value = <m>P(X</m> <var width="5"/> <var width="5"/>) = <var width="15"/></p>
       <p>where <m>X</m> follows a hypergeometric distribution with <m>N</m> = <var width="5"/>, <m>M</m> = <var width="5"/>, and <m>n</m> = <var width="5"/></p>
       <p>Interpretation: <var width="60" height="3"/></p>
+  <aside>
+    <title>Two-way Table Applet</title>
+    <p>You can use the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?twobytwo=1&amp;hideExtras=1">Two-way Table applet</url> to calculate Fisher's Exact Test.</p>
+  </aside>
     </statement>
+    <setup>
+      <!-- X represents -->
+      <var>
+        <condition string=".*[Ss]urviv.*CPR.*|.*CPR.*[Ss]urviv.*|.*[Ss]urviv.*[Ss]tandard.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded. X should represent the number of survivors in the CPR group.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>X represents the number of survivors in the CPR group.</p></feedback>
+        </condition>
+      </var>
+      <!-- inequality symbol -->
+      <var>
+        <condition string=".*&lt;.*|.*≤.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded. The inequality should be ≤ (since we expect fewer survivors in CPR if CC is better).</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>We want P(X ≤ 29) since we expect fewer survivors in CPR if CC is better.</p></feedback>
+        </condition>
+      </var>
+      <!-- number -->
+      <var>
+        <condition number="29" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The observed number of survivors in the CPR group is 29.</p></feedback>
+        </condition>
+      </var>
+      <!-- p-value -->
+      <var>
+        <condition number="0.097" tolerance="0.005">
+          <feedback><p>Correct! The exact p-value is approximately 0.0974.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded. The exact p-value should be approximately 0.0974.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Use the hypergeometric distribution to calculate P(X ≤ 29).</p></feedback>
+        </condition>
+      </var>
+      <!-- N -->
+      <var>
+        <condition number="518" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>N is the total number of patients: 518.</p></feedback>
+        </condition>
+      </var>
+      <!-- M -->
+      <var>
+        <condition number="64" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>M is the total number of survivors: 64.</p></feedback>
+        </condition>
+      </var>
+      <!-- n -->
+      <var>
+        <condition number="278" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>n is the number of patients in the CPR group: 278.</p></feedback>
+        </condition>
+      </var>
+      <!-- Interpretation -->
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Interpret the p-value in context of the random assignment.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Let <m>X</m> represent the number of survivors in the CPR group. Note, we are assessing the strength of evidence that the probability of survival is higher with CC alone.</p>
       <p>exact p-value = <m>P(X \lt 29)</m> with <m>M = 64</m>, <m>n = 278</m>, <m>N = 518</m>) = 0.0973</p>
@@ -151,7 +353,7 @@
     <response/>
   </exercise>
 
-    <p>Because the sample sizes are large in this study, you should not be surprised that the probability distribution in <xref ref="inv3-7-d" text="custom">question 4</xref> is approximately normal. The large sample sizes allow us to approximate the hypergeometric distribution with a normal distribution. Thus, with large samples sizes (e.g., at least 5 successes and at least 5 failures in each group), an alternative to Fisher's Exact Test is the two-sample <em>z</em>-test that you studied in Investigation 3.1.</p>
+    <p>Because the sample sizes are large in this study, you should not be surprised that the probability distribution in <xref ref="inv3-7-d" text="custom">Question 4</xref> is approximately normal. The large sample sizes allow us to approximate the hypergeometric distribution with a normal distribution. Thus, with large samples sizes (e.g., at least 5 successes and at least 5 failures in each group), an alternative to Fisher's Exact Test is the two-sample <em>z</em>-test that you studied in Investigation 3.1.</p>
 
   <aside>
     <title>Theory-Based Inference Applet</title>
@@ -164,6 +366,16 @@
       <p>Use technology to obtain the two-sample <em>z</em>-test statistic and p-value for this study. Compare this p-value to the one from Fisher's Exact Test; are they similar?</p>
       <p><var width="60" height="3"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Compare the z-test p-value to Fisher's Exact Test p-value.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>The p-value is a little smaller (0.076) compared to the exact p-value of 0.0973.</p>
       
@@ -192,6 +404,19 @@
       <p>Suggest a way of improving the approximation of the p-value.</p>
       <p><var width="60" height="2"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".*[Cc]ontinuity.*">
+          <feedback><p>Correct! A continuity correction improves the normal approximation.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Think about how to adjust the normal approximation to better match the exact distribution.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>continuity correction</p>
     </solution>
@@ -207,6 +432,16 @@
       </hint>
       <p><var width="60" height="3"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Compare the normal approximation with and without continuity correction.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>To make sure the probability mass at 29 is included, we could consider finding the probability for something just above 29 (e.g., 29.5 and 34.5) or applying an Adjusted Wald correction (adding one success and one failure to each sample), though that seems to work better for the confidence interval performance than matching the p-value to the exact. In this case, the adjusted Wald moves the statistic further from zero but with a larger se so the p-value doesn't change much.</p>
       <p>The p-value from the normal distribution is a little low but the continuity correction makes the approximation much more accurate.</p>
@@ -237,6 +472,16 @@
       <p>Do the data from this study provide convincing evidence that CC alone is better than standard CPR at the 10% significance level? Explain. How about the 5% level of significance?</p>
       <p><var width="60" height="4"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Compare the p-value to the 10% and 5% significance levels.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>The exact p-value of 0.09736 is below 0.10, so we would consider this convincing evidence at the 10% level but not at the 5% level of significance.</p>
     </solution>
@@ -257,6 +502,16 @@
       </hint>
       <p><var width="60" height="4"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Use technology to find the 95% confidence interval.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Using the two-sample z-interval:</p>
       <p>95% CI for <m>\pi_{CPR} - \pi_{CC}</m>: (-0.0988, 0.0158)</p>
@@ -348,6 +603,16 @@
         <p>Calculate the difference in conditional proportions and compare it to the original study.</p>
         <p><var width="60" height="2"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Calculate the difference in proportions: 0.81 - 0.62 = 0.19.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
 
@@ -357,6 +622,16 @@
         <p>Without calculating, do you suspect the p-value for comparing this new response variable between the two groups will be larger or smaller or about the same as the p-value you determined above? Explain your reasoning.</p>
         <p><var width="60" height="3"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Consider how the larger difference in proportions affects the p-value.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
   </subsection>
@@ -372,6 +647,16 @@
         <p>Calculate the difference in conditional proportions and compare it to the original study.</p>
         <p><var width="60" height="2"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Calculate 47/351 - 44/399 and compare to the original difference.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
 
@@ -381,6 +666,16 @@
         <p>Without calculating, do you suspect the p-value for this comparison will be larger, smaller, or the same as the p-value you determined? Explain your reasoning.</p>
         <p><var width="60" height="3"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Consider the effect of larger sample size on the p-value.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
   </subsection>
