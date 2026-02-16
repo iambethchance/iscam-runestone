@@ -25,6 +25,10 @@ just learned to a study comparing different ways of responding to a heart attack
       <p>Observational units: <var width="40"/></p>
       <p>Explanatory: <var width="40"/></p>
       <p>Response: <var width="40"/></p>
+      <p>Type of study: <var form="buttons">
+        <li correct="yes">Experiment</li>
+        <li>Observational study</li>
+      </var></p>
     </statement>
     <setup>
       <var>
@@ -52,10 +56,6 @@ just learned to a study comparing different ways of responding to a heart attack
         </condition>
       </var>
     </setup>
-   <choices random="yes">
-      <choice correct="yes"><statement>Experiment</statement></choice>
-      <choice><statement>Observational</statement></choice>
-    </choices>
 
     <solution>
       <p>Observational units = 518 cases (or victims of heart attack, or bystanders)</p>
@@ -439,8 +439,14 @@ just learned to a study comparing different ways of responding to a heart attack
     </statement>
     <setup>
       <var>
+        <condition string=".*0?\.097[34].*">
+          <feedback><p>Correct! The continuity-corrected p-value is approximately 0.0974, very close to the exact p-value of 0.0973.</p></feedback>
+        </condition>
+        <condition string=".*0?\.076.*">
+          <feedback><p>That's the p-value without the continuity correction. Try using 34.5 instead of 35.</p></feedback>
+        </condition>
         <condition string=".+">
-          <feedback><p>Response recorded.</p></feedback>
+          <feedback><p>Response recorded. The continuity-corrected p-value should be approximately 0.0974.</p></feedback>
         </condition>
         <condition string=".*">
           <feedback><p>Compare the normal approximation with and without continuity correction.</p></feedback>
@@ -585,14 +591,6 @@ just learned to a study comparing different ways of responding to a heart attack
       <p>(iv) the p-value? <var width="20"/></p>
       <p>(v) confidence interval? <var width="20"/></p>
     </statement>
-    <solution>
-      <p>(i) The observed statistic would now be positive 0.042 — change sign</p>
-      <p>(ii) The standardized statistic would now be positive (but same magnitude) — change sign</p>
-      <p>(iii) The alternative hypothesis would now be <m>\pi_{CC} - \pi_{CPR} &gt; 0</m> — change direction</p>
-      <p>(iv) The p-value, now the probability of a statistic above 0.042, would be the same — no change</p>
-      <p>(v) The endpoints of the confidence interval will reverse sign — both endpoints change sign</p>
-      <p>Note: Even with a 90% confidence level, zero is captured in the interval, even though we rejected the null hypothesis for a 10% level of significance. This can happen when you compare a one-sided p-value to a confidence interval which corresponds to a two-sided p-value. The other issue is even 0.0896 is not all that large of a value, so even if you consider the difference statistically significant, it's not clear whether the CC treatment has a "large" benefit.</p>
-    </solution>
     <setup>
       <var>
         <condition string=".*[Cc]hange\s*sign.*|.*[Oo]pposite\s*sign.*">
@@ -653,6 +651,14 @@ just learned to a study comparing different ways of responding to a heart attack
         </condition>
       </var>
     </setup>
+    <solution>
+      <p>(i) The observed statistic would now be positive 0.042 — change sign</p>
+      <p>(ii) The standardized statistic would now be positive (but same magnitude) — change sign</p>
+      <p>(iii) The alternative hypothesis would now be <m>\pi_{CC} - \pi_{CPR} &gt; 0</m> — change direction</p>
+      <p>(iv) The p-value, now the probability of a statistic above 0.042, would be the same — no change</p>
+      <p>(v) The endpoints of the confidence interval will reverse sign — both endpoints change sign</p>
+      <p>Note: Even with a 90% confidence level, zero is captured in the interval, even though we rejected the null hypothesis for a 10% level of significance. This can happen when you compare a one-sided p-value to a confidence interval which corresponds to a two-sided p-value. The other issue is even 0.0896 is not all that large of a value, so even if you consider the difference statistically significant, it's not clear whether the CC treatment has a "large" benefit.</p>
+    </solution>
     <response/>
   </exercise>
 </exercises>
@@ -665,18 +671,7 @@ just learned to a study comparing different ways of responding to a heart attack
       <title>Difference in Proportions</title>
       <statement>
         <p>Calculate the difference in conditional proportions and compare it to the original study.</p>
-        <p><var width="60" height="2"/></p>
-      </statement>
-      <setup>
-        <var>
-          <condition string=".+">
-            <feedback><p>Response recorded.</p></feedback>
-          </condition>
-          <condition string=".*">
-            <feedback><p>Calculate the difference in proportions: 0.81 - 0.62 = 0.19.</p></feedback>
-          </condition>
-        </var>
-      </setup>
+        </statement>
       <response/>
     </exercise>
 
@@ -684,18 +679,7 @@ just learned to a study comparing different ways of responding to a heart attack
       <title>p-value Comparison</title>
       <statement>
         <p>Without calculating, do you suspect the p-value for comparing this new response variable between the two groups will be larger or smaller or about the same as the p-value you determined above? Explain your reasoning.</p>
-        <p><var width="60" height="3"/></p>
       </statement>
-      <setup>
-        <var>
-          <condition string=".+">
-            <feedback><p>Response recorded.</p></feedback>
-          </condition>
-          <condition string=".*">
-            <feedback><p>Consider how the larger difference in proportions affects the p-value.</p></feedback>
-          </condition>
-        </var>
-      </setup>
       <response/>
     </exercise>
   </subsection>
@@ -709,18 +693,7 @@ just learned to a study comparing different ways of responding to a heart attack
       <title>Combined Study Difference</title>
       <statement>
         <p>Calculate the difference in conditional proportions and compare it to the original study.</p>
-        <p><var width="60" height="2"/></p>
       </statement>
-      <setup>
-        <var>
-          <condition string=".+">
-            <feedback><p>Response recorded.</p></feedback>
-          </condition>
-          <condition string=".*">
-            <feedback><p>Calculate 47/351 - 44/399 and compare to the original difference.</p></feedback>
-          </condition>
-        </var>
-      </setup>
       <response/>
     </exercise>
 
@@ -730,16 +703,6 @@ just learned to a study comparing different ways of responding to a heart attack
         <p>Without calculating, do you suspect the p-value for this comparison will be larger, smaller, or the same as the p-value you determined? Explain your reasoning.</p>
         <p><var width="60" height="3"/></p>
       </statement>
-      <setup>
-        <var>
-          <condition string=".+">
-            <feedback><p>Response recorded.</p></feedback>
-          </condition>
-          <condition string=".*">
-            <feedback><p>Consider the effect of larger sample size on the p-value.</p></feedback>
-          </condition>
-        </var>
-      </setup>
       <response/>
     </exercise>
   </subsection>
