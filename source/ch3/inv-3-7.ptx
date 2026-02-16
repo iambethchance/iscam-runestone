@@ -82,7 +82,7 @@ just learned to a study comparing different ways of responding to a heart attack
         <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
           <row header="yes">
             <cell halign="left">Outcome \ Method&#160;</cell>
-            <cell >CPR</cell>
+            <cell >&#160;CPR&#160;</cell>
             <cell >&#160;CC alone&#160;</cell>
             <cell >Total</cell>
           </row>
@@ -184,14 +184,14 @@ just learned to a study comparing different ways of responding to a heart attack
       </var>
     </setup>
     <solution>
-        <tabular top="minor" bottom="minor" left="minor" right="minor">
+        <tabular top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
           <col halign="left"/>
           <col halign="center" width="18%"/>
           <col halign="center" width="18%"/>
           <col halign="center" width="18%"/>
           <row header="yes">
-            <cell></cell>
-            <cell>CPR</cell>
+            <cell halign="left">Outcome \ Treatment</cell>
+            <cell>   CPR   </cell>
             <cell>CC alone</cell>
             <cell>Total</cell>
           </row>
@@ -368,12 +368,13 @@ just learned to a study comparing different ways of responding to a heart attack
     <response/>
   </exercise>
 
-    <p>Because the sample sizes are large in this study, you should not be surprised that the probability distribution in <xref ref="inv3-7-d" text="custom">Question 5</xref> is approximately normal. The large sample sizes allow us to approximate the hypergeometric distribution with a normal distribution. Thus, with large samples sizes (e.g., at least 5 successes and at least 5 failures in each group), an alternative to Fisher's Exact Test is the two-sample <em>z</em>-test that you studied in Investigation 3.1.</p>
+    <p>Because the sample sizes are large in this study, you should not be surprised that the probability distribution in <xref ref="inv3-7-d" text="custom">Question 5</xref> is approximately normal. The large sample sizes allow us to approximate the hypergeometric distribution with a normal distribution. Thus, with large samples sizes (e.g., at least 5 successes and at least 5 failures in each group), an alternative to Fisher's Exact Test is the two-sample <em>z</em>-test that you studied in <xref ref="inv-3-1" text="custom">Investigation 3.1</xref>.</p>
 
   <exercise xml:id="inv3-7-e">
     <title>Two-Sample <em>z</em>-test</title>
     <statement>
       <p>Use technology to obtain the two-sample <em>z</em>-test statistic and p-value for this study. Compare this p-value to the one from Fisher's Exact Test; are they similar?</p>
+      <hint>In the applet, you can now check a box to Show <em>z</em>-test output.</hint>
       <p><var width="60" height="3"/></p>
     </statement>
   <aside>
@@ -442,7 +443,7 @@ just learned to a study comparing different ways of responding to a heart attack
     <statement>
       <p>(Optional): Compare the normal approximation with a continuity correction to the hypergeometric calculation.</p>
       <hint>
-        <p>e.g., Use the Analyzing Two-way Tables applet to compare the normal approximation to Fisher's Exact Test. In R, use iscamhypernorm(29, 518, 64, 278, TRUE)</p>
+        <p>e.g., Use simulation in the Analyzing Two-way Tables applet to adjust the count samples box. In R, use iscamhypernorm(29, 518, 64, 278, TRUE)</p>
       </hint>
       <p><var width="60" height="3"/></p>
     </statement>
