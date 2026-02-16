@@ -203,8 +203,32 @@
     <hint>
       <p>To back-transform, take the exponential of the endpoints of the confidence interval, e.g., <m>e^{4.201}</m></p>
     </hint>
-    <response/>
+      <p>95% CI for median turbidity: (<var width="10"/>, <var width="10"/>) NTU</p>
     </statement>
+    <setup>
+      <var>
+        <condition number="66.75" tolerance="0.5">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="66.75" tolerance="2">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Back-transform the lower endpoint: <m>e^{4.2009}</m></p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="81.56" tolerance="0.5">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition number="81.56" tolerance="2">
+          <feedback><p>Close! Check your calculation.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Back-transform the upper endpoint: <m>e^{4.4013}</m></p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m> e^{mean\ ln\ turbidity} \sim e^{median\ ln\ turbidity} = e^{ln\ median\ turbidity} = median\ turbidity</m></p>
             <p><m>e^{4.2009} = 66.75</m></p>
