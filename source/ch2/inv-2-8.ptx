@@ -4,16 +4,19 @@
 
 <exercises xml:id="investigation2-8" hidden-label="yes">
   <title>The Study</title>
-  <sidebyside widths="65% 30%" valign="top">
-    <p>Another measure of water quality is turbidity, the degree of opaqueness produced in water by suspended particulate matter. Turbidity can be measured by seeing how light is scattered and/or absorbed by organic and inorganic material. Larger nephelometric turbidity units (NTU) indicate increased turbidity and decreased light penetration. If there is too much turbidity, then not enough light may be penetrating the water, affecting photosynthesis to the surface and leading to less dissolved oxygen. </p>
+  <sidebyside widths="65% 30%" valign="top" margins="0% 0%">
+    <p>Another measure of water quality is <url href="https://en.wikipedia.org/wiki/Turbidity">turbidity</url>, the degree of opaqueness produced in water by suspended particulate matter. Turbidity can be measured by seeing how light is scattered and/or absorbed by organic and inorganic material. Larger nephelometric turbidity units (NTU) indicate increased turbidity and decreased light penetration. If there is too much turbidity, then not enough light may be penetrating the water, affecting photosynthesis to the surface and leading to less dissolved oxygen. </p>
     <image source="images/Inv2.8intro.jpg">
       <description>Water turbidity measurement</description>
     </image>
   </sidebyside>
-<p><url href="https://archive.epa.gov/nheerl/arm/web/pdf/calm_appc.pdf">Riggs (2002)</url> provides 244 turbidity monthly readings that were recorded between 1980-2000 from a reach of the Mermentau River in Southwest Louisiana (<url href="http://www.rossmanchance.com/iscam2/data/turbidity.txt" visual="rossmanchance.com/iscam2/data/turbidity.txt"><c>MermentauTurbidity.txt</c></url>). The unit of analysis was the monthly mean turbidity (NTU) computed from each month's systematic sample of 21 turbidity measurements. The investigators wanted to determine whether the mean turbidity was greater than the local criterion value of 150 NTU.</p>
+<p><url href="https://archive.epa.gov/nheerl/arm/web/pdf/calm_appc.pdf">Riggs (2002)</url> provides 244 turbidity monthly readings that were recorded between 1980-2000 from a reach of the Mermentau River in Southwest Louisiana (<url href="http://www.rossmanchance.com/iscam2/data/MermentauTurbidity.txt" visual="rossmanchance.com/iscam4/data/MermentauTurbidity.txt"><c>MermentauTurbidity.txt</c></url>). The unit of analysis was the monthly mean turbidity (NTU) computed from each month's systematic sample of 21 turbidity measurements. The investigators wanted to determine whether the mean turbidity was greater than the local criterion value of 150 NTU.</p>
   <exercise xml:id="inv2-8-a">
     <title>Analyze original turbidity distribution</title>
     <statement>
+      <aside><title>Descriptive Statistics Applet</title>
+    <p><url href="http://www.rossmanchance.com/applets/2021/descstat/Dotplot.html?data=https://www.rossmanchance.com/iscam4/data/turbidity.txt" visual="rossmanchance.com/applets/2021/descstat/Dotplot.html">Descriptive Statistics applet</url> with data</p>
+  </aside>
       <p>Find the mean and median of the turbidity measurements and confirm that a normal probability is not reasonable for these data.</p>
       <p>Mean: <var width="15"/> NTU</p>
       <p>Median: <var width="15"/> NTU</p>
@@ -66,6 +69,7 @@
   <exercise xml:id="inv2-8-b">
     <title>Apply log transformation</title>
     <statement>
+    <aside><title>Log Transformation</title> You can use either log base 10 or natural log, just be consistent, or continue with the applet above, selecting <em>ln(turbidity)</em> as the variable to analyze.</aside>
       <p>Carry out a log transformation (See <xref ref="investigation2-2" text="custom">Investigation 2.2, Question 9</xref>) and report the mean, median, and standard deviation of the transformed data. Verify that a log-normal probability model is reasonable for these data.</p>
       <p>Mean (log turbidity): <var width="15"/> log NTU</p>
       <p>Median (log turbidity): <var width="15"/> log NTU</p>
@@ -111,7 +115,7 @@
           <feedback><p>Correct! The log-transformed data is reasonably well modeled by a normal distribution.</p></feedback>
         </condition>
         <condition string=".+">
-          <feedback><p>Response recorded.</p></feedback>
+          <feedback><p>Does the distribution appear mound-shaped and symmetric now?</p></feedback>
         </condition>
         <condition string=".*">
           <feedback><p>Please provide an answer.</p></feedback>
@@ -131,126 +135,34 @@
   <exercise xml:id="inv2-8-c">
     <title>Compare original and transformed statistics</title>
     <statement>
-      <p>Are the mean and median values of the logged data values similar to each other? Is the mean of the logged turbidity values similar to the log of the mean of the turbidity values? Is the median of the logged turbidity values similar to the log of the median of the turbidity values?</p>      
-        <alert>Comparison of Original and Transformed Values</alert>
-        <tabular>
+    Consider the table of results
+        <tabular row-headers="yes" column-headers="yes">
           <row header="yes">
             <cell>Original scale</cell>
-            <cell>Log of original values</cell>
-            <cell>Transformed scale</cell>
-          </row>
-          <row>
-            <cell>Mean = <var width="10"/></cell>
-            <cell>Log (mean) = <var width="10"/></cell>
-            <cell>Mean (log turbidity) = <var width="10"/></cell>
-          </row>
-          <row>
-            <cell>Median = <var width="10"/></cell>
-            <cell>Log (median) = <var width="10"/></cell>
-            <cell>Median (log turbidity) = <var width="10"/></cell>
-          </row>
-        </tabular>
-      
-      <p>Comparisons: <var width="60" height="5"/></p>
-    </statement>
-    <setup>
-      <var>
-        <condition number="100.3" tolerance="0.5">
-          <feedback><p>Correct!</p></feedback>
-        </condition>
-        <condition number="100.3" tolerance="2">
-          <feedback><p>Close! Check your calculation.</p></feedback>
-        </condition>
-        <condition string=".*">
-          <feedback><p>Not quite. This should be the mean of the original turbidity values.</p></feedback>
-        </condition>
-      </var>
-      <var>
-        <condition number="4.608" tolerance="0.01">
-          <feedback><p>Correct!</p></feedback>
-        </condition>
-        <condition number="4.608" tolerance="0.05">
-          <feedback><p>Close! Check your calculation.</p></feedback>
-        </condition>
-        <condition string=".*">
-          <feedback><p>Not quite. This should be ln(mean of original values).</p></feedback>
-        </condition>
-      </var>
-      <var>
-        <condition number="4.301" tolerance="0.01">
-          <feedback><p>Correct!</p></feedback>
-        </condition>
-        <condition number="4.301" tolerance="0.05">
-          <feedback><p>Close! Check your calculation.</p></feedback>
-        </condition>
-        <condition string=".*">
-          <feedback><p>Not quite. This should be the mean of the log-transformed values.</p></feedback>
-        </condition>
-      </var>
-      <var>
-        <condition number="75.5" tolerance="0.5">
-          <feedback><p>Correct!</p></feedback>
-        </condition>
-        <condition number="75.5" tolerance="2">
-          <feedback><p>Close! Check your calculation.</p></feedback>
-        </condition>
-        <condition string=".*">
-          <feedback><p>Not quite. This should be the median of the original turbidity values.</p></feedback>
-        </condition>
-      </var>
-      <var>
-        <condition number="4.324" tolerance="0.01">
-          <feedback><p>Correct!</p></feedback>
-        </condition>
-        <condition number="4.324" tolerance="0.05">
-          <feedback><p>Close! Check your calculation.</p></feedback>
-        </condition>
-        <condition string=".*">
-          <feedback><p>Not quite. This should be ln(median of original values).</p></feedback>
-        </condition>
-      </var>
-      <var>
-        <condition number="4.324" tolerance="0.01">
-          <feedback><p>Correct!</p></feedback>
-        </condition>
-        <condition number="4.324" tolerance="0.05">
-          <feedback><p>Close! Check your calculation.</p></feedback>
-        </condition>
-        <condition string=".*">
-          <feedback><p>Not quite. This should be the median of the log-transformed values.</p></feedback>
-        </condition>
-      </var>
-      <var>
-        <condition string=".+">
-          <feedback><p>Response recorded.</p></feedback>
-        </condition>
-        <condition string=".*">
-          <feedback><p>Please provide an answer.</p></feedback>
-        </condition>
-      </var>
-    </setup>
-    <solution>
-      <p>The mean and median values of the transformed data are similar as we would expect with the transformed data now being symmetric.</p>
-      <p>The median turbidity value (before transforming) was 75.5. The natural log of this value is 4.3241. This is the same as the median of the log-turbidity values.</p>
-      <p>The mean turbidity value (before transforming) was 100.307. The natural log of this value is 4.6082, which is not the same as the mean of the log-turbidity values.</p>
-      
-        <tabular>
-          <row header="yes">
-            <cell>Original scale</cell>
-            <cell>Log of original values</cell>
+            <cell>Ln of original values</cell>
             <cell>Transformed scale</cell>
           </row>
           <row>
             <cell>Mean = 100.3</cell>
-            <cell>Log (mean) = 4.608</cell>
-            <cell>Mean (log turbidity) = 4.301</cell>
+            <cell>Ln(mean) = 4.608</cell>
+            <cell>Mean(ln turbidity) = 4.301</cell>
           </row>
           <row>
             <cell>Median = 75.5</cell>
-            <cell>Log (median) = 4.324</cell>
-            <cell>Median (log turbidity) = 4.324</cell>
+            <cell>Ln(median) = 4.324</cell>
+            <cell>Median(ln turbidity) = 4.324</cell>
           </row>
         </tabular>
+      <p>Are the mean and median values of the logged data values similar to each other? Is the mean of the logged turbidity values similar to the log of the mean of the turbidity values? Is the median of the logged turbidity values similar to the log of the median of the turbidity values?</p>      
+        
+      <p>Comparisons: </p>
+    </statement>
+    <setup>
+    <solution>
+      <p>The mean and median values of the transformed data are similar as we would expect with the transformed data now being symmetric.</p>
+      <p>The median turbidity value (before transforming) was 75.5. The natural log of this value is 4.3241. This is the same as the median of the log-turbidity values.</p>
+      <p>The mean turbidity value (before transforming) was 100.307. The natural log of this value is 4.6082, which is <em>not</em> the same as the mean of the log-turbidity values.</p>
+      
     </solution>
     <response/>
   </exercise>
@@ -266,14 +178,14 @@
     <response/>
   </exercise>
 
-  <aside><title>Theory-Based Inference Applet</title>
-    <p><url href="http://www.rossmanchance.com/applets/2021/tbia/TBIA.html" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url></p>
-  </aside>
-
+ 
   <exercise xml:id="inv2-8-e">
     <title>Calculate confidence interval for transformed data</title>
     <statement>
-      <p>Use a one-sample <em>t</em>-confidence interval to estimate the mean of the log-turbidity value for this river.</p>
+  <aside><title>Theory-Based Inference Applet</title>
+    <p><url href="http://www.rossmanchance.com/applets/2021/tbia/TBIA.html" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url> (use summary statistics)</p>
+  </aside>
+     <p>Use a one-sample <em>t</em>-confidence interval to estimate the mean of the log-turbidity value for this river.</p>
     </statement>
     <solution>
       <p>We are 95% confident the population mean (so also the population median with symmetric data) is in this interval.</p>
@@ -287,8 +199,11 @@
   <exercise xml:id="inv2-8-f">
     <title>Back-transform and interpret interval</title>
     <statement>
-      <p>Back-transform the endpoints of this interval to return to the original units and interpret the interval in context.</p>
+      <p>Use your calculator to back-transform the endpoints of this interval to return to the original units and interpret the interval in context.</p>
     </statement>
+    <hint>
+      <p>To back-transform, take the exponential of the endpoints of the confidence interval, e.g., <m>e^{4.201}</m></p>
+    </hint>
     <solution>
       <p><m> e^{mean\ ln\ turbidity} \sim e^{median\ ln\ turbidity} = e^{ln\ median\ turbidity} = median\ turbidity</m></p>
             <p><m>e^{4.2009} = 66.75</m></p>
@@ -298,10 +213,10 @@
     <response/>
   </exercise>
 
-  <assemblage>
+  <paragraphs>
     <title>Discussion: Transformations and Back-Transformation</title>
     <p>Once you create a symmetric distribution, the mean and median will be similar. However, although transforming the data does not affect the ordering of the observations, it does impact the scaling of the values. So whereas the median of the transformed data is equal to taking the log of the median of the original data (at least with an odd number of observations), this does not hold for the mean. So when we back-transform our interval for the center of the population distribution, we will interpret this in terms of the median value rather than the mean value.</p>
-  </assemblage>
+  </paragraphs>
 
   <assemblage>
     <title>Study Conclusions</title>
