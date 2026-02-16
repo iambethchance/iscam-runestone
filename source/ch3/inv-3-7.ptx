@@ -2,8 +2,8 @@
 <section xml:id="inv-3-7">
   <title>Investigation 3.7: CPR vs. Chest Compressions</title>
 <introduction>
-In this investigation, you will apply the procedures you have just learned to a student comparing different ways of responding to a heart attack.
-</introduction>
+<p><em>In this investigation, you will apply the procedures you have just learned to a student comparing different ways of responding to a heart attack.
+</p></em><</introduction>
 <exercises xml:id="investigation3-7" hidden-label="yes">
     <title>The Study</title>
   <introduction>
@@ -23,18 +23,14 @@ In this investigation, you will apply the procedures you have just learned to a 
       <p>Observational units: <var width="40"/></p>
       <p>Explanatory: <var width="40"/></p>
       <p>Response: <var width="40"/></p>
-      <p>Type of study: <var form="buttons" width="15">
-        <li>Observational</li>
-        <li correct="yes">Experimental</li>
-      </var></p>
     </statement>
     <setup>
       <var>
-        <condition string=".*[Cc]ase.*|.*[Pp]atient.*|.*518.*|.*[Hh]eart.*|.*[Pp]erson.*|.*[Pp]eople.*">
+        <condition string=".*[Cc]ase.*|.*[Pp]atient.*|.*518.*|.*[Hh]eart.*|.*[Pp]erson.*|.*[Pp]eople.*[Bb]ystanders.*">
           <feedback><p>Correct!</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>The observational units are the 518 cases (patients who experienced heart attacks).</p></feedback>
+          <feedback><p>How many observations were made?</p></feedback>
         </condition>
       </var>
       <var>
@@ -42,7 +38,7 @@ In this investigation, you will apply the procedures you have just learned to a 
           <feedback><p>Correct!</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>The explanatory variable is the type of instructions given (CPR vs. CC alone).</p></feedback>
+          <feedback><p>What variable do we think is making a difference in the outcome?</p></feedback>
         </condition>
       </var>
       <var>
@@ -50,15 +46,20 @@ In this investigation, you will apply the procedures you have just learned to a 
           <feedback><p>Correct!</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>The response variable is whether the patient survived to discharge.</p></feedback>
+          <feedback><p>What is the "outcome" variable we are interested in?</p></feedback>
         </condition>
       </var>
     </setup>
+   <choices random="yes">
+      <choice correct="yes"><statement>Experiment</statement></choice>
+      <choice><statement>Observational</statement></choice>
+    </choices>
+
     <solution>
-      <p>Observational units = 518 cases</p>
-      <p>Explanatory variable = whether they were given CPR or CC instructions</p>
-      <p>Response variable = whether the patient survived to discharge from the hospital</p>
-      <p>Type of Study = experimental</p>
+      <p>Observational units = 518 cases (or victims of heart attack, or bystanders)</p>
+      <p>Explanatory variable = whether they were given CPR or CC instructions (binary)</p>
+      <p>Response variable = whether the patient survived to discharge from the hospital (binary)</p>
+      <p>Type of Study = experimental, because they are assigning the type of instruction to the bystanders</p>
     </solution>
     <response/>
   </exercise>
@@ -69,7 +70,7 @@ In this investigation, you will apply the procedures you have just learned to a 
       <p>Construct a two-way table to summarize the results of this study. Remember to put the explanatory variable in the columns.</p>
         <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
           <row header="yes">
-            <cell halign="left">Outcome \ Method</cell>
+            <cell halign="left">Outcome \ Method&#160;</cell>
             <cell >CPR</cell>
             <cell >&#160;CC alone&#160;</cell>
             <cell >Total</cell>
@@ -214,6 +215,9 @@ In this investigation, you will apply the procedures you have just learned to a 
     </statement>
     <setup>
       <var>
+        <condition string=".*-\s*0?\.04\d*.*">
+          <feedback><p>Check the direction of subtraction. The question asks for CC – CPR, so the difference should be positive.</p></feedback>
+        </condition>
         <condition string=".*0?\.04\d*.*">
           <feedback><p>Correct! The difference is approximately 0.042.</p></feedback>
         </condition>
@@ -250,35 +254,35 @@ In this investigation, you will apply the procedures you have just learned to a 
     <setup>
       <!-- X represents -->
       <var>
-        <condition string=".*[Ss]urviv.*CPR.*|.*CPR.*[Ss]urviv.*|.*[Ss]urviv.*[Ss]tandard.*">
+        <condition string=".*[Ss]urviv.*CC.*|.*CC.*[Ss]urviv.*|.*[Ss]urviv.*[Cc]hest\s*[Cc]omp.*">
           <feedback><p>Correct!</p></feedback>
         </condition>
         <condition string=".+">
-          <feedback><p>Response recorded. X should represent the number of survivors in the CPR group.</p></feedback>
+          <feedback><p>Response recorded. X should represent the number of survivors in the CC group.</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>X represents the number of survivors in the CPR group.</p></feedback>
+          <feedback><p>X represents the number of survivors in the CC group.</p></feedback>
         </condition>
       </var>
       <!-- inequality symbol -->
       <var>
-        <condition string=".*&lt;.*|.*≤.*">
+        <condition string=".*&gt;.*|.*≥.*">
           <feedback><p>Correct!</p></feedback>
         </condition>
         <condition string=".+">
-          <feedback><p>Response recorded. The inequality should be ≤ (since we expect fewer survivors in CPR if CC is better).</p></feedback>
+          <feedback><p>Response recorded. The inequality should be ≥ (since we expect more survivors in CC if CC is better).</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>We want P(X ≤ 29) since we expect fewer survivors in CPR if CC is better.</p></feedback>
+          <feedback><p>We want P(X ≥ 35) since we expect more survivors in CC if CC is better.</p></feedback>
         </condition>
       </var>
       <!-- number -->
       <var>
-        <condition number="29" tolerance="0">
+        <condition number="35" tolerance="0">
           <feedback><p>Correct!</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>The observed number of survivors in the CPR group is 29.</p></feedback>
+          <feedback><p>The observed number of survivors in the CC group is 35.</p></feedback>
         </condition>
       </var>
       <!-- p-value -->
@@ -290,7 +294,7 @@ In this investigation, you will apply the procedures you have just learned to a 
           <feedback><p>Response recorded. The exact p-value should be approximately 0.0974.</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>Use the hypergeometric distribution to calculate P(X ≤ 29).</p></feedback>
+          <feedback><p>Use the hypergeometric distribution to calculate P(X ≥ 35).</p></feedback>
         </condition>
       </var>
       <!-- N -->
@@ -313,11 +317,11 @@ In this investigation, you will apply the procedures you have just learned to a 
       </var>
       <!-- n -->
       <var>
-        <condition number="278" tolerance="0">
+        <condition number="240" tolerance="0">
           <feedback><p>Correct!</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>n is the number of patients in the CPR group: 278.</p></feedback>
+          <feedback><p>n is the number of patients in the CC group: 240.</p></feedback>
         </condition>
       </var>
       <!-- Interpretation -->
@@ -331,9 +335,9 @@ In this investigation, you will apply the procedures you have just learned to a 
       </var>
     </setup>
     <solution>
-      <p>Let <m>X</m> represent the number of survivors in the CPR group. Note, we are assessing the strength of evidence that the probability of survival is higher with CC alone.</p>
-      <p>exact p-value = <m>P(X \lt 29)</m> with <m>M = 64</m>, <m>n = 278</m>, <m>N = 518</m>) = 0.0973</p>
-      <p>Interpretation: If the two treatments were equally effective, there would be about a 9.7% chance of getting 29 or fewer survivors in the CPR group of 278 patients when randomly assigning all 518 patients to the two treatment groups.</p>
+      <p>Let <m>X</m> represent the number of survivors in the CC group. Note, we are assessing the strength of evidence that the probability of survival is higher with CC alone.</p>
+      <p>exact p-value = <m>P(X \geq 35)</m> with <m>M = 64</m>, <m>n = 240</m>, <m>N = 518</m>) = 0.0974</p>
+      <p>Interpretation: If the two treatments were equally effective, there would be about a 9.7% chance of getting 35 or more survivors in the CC group of 240 patients when randomly assigning all 518 patients to the two treatment groups.</p>
       
       <example>
         <title>Applet output</title>
@@ -355,17 +359,16 @@ In this investigation, you will apply the procedures you have just learned to a 
 
     <p>Because the sample sizes are large in this study, you should not be surprised that the probability distribution in <xref ref="inv3-7-d" text="custom">Question 4</xref> is approximately normal. The large sample sizes allow us to approximate the hypergeometric distribution with a normal distribution. Thus, with large samples sizes (e.g., at least 5 successes and at least 5 failures in each group), an alternative to Fisher's Exact Test is the two-sample <em>z</em>-test that you studied in Investigation 3.1.</p>
 
-  <aside>
-    <title>Theory-Based Inference Applet</title>
-    <p>You can use the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?hideExtras=1">Theory-Based Inference applet</url> to calculate the two-sample <em>z</em>-test statistic and p-value.</p>
-  </aside>
-
   <exercise xml:id="inv3-7-e">
     <title>Two-Sample <em>z</em>-test</title>
     <statement>
       <p>Use technology to obtain the two-sample <em>z</em>-test statistic and p-value for this study. Compare this p-value to the one from Fisher's Exact Test; are they similar?</p>
       <p><var width="60" height="3"/></p>
     </statement>
+  <aside>
+    <title>Theory-Based Inference Applet</title>
+    <p>You can use the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?hideExtras=1">Theory-Based Inference applet</url> to calculate the two-sample <em>z</em>-test statistic and p-value.</p>
+  </aside>
     <setup>
       <var>
         <condition string=".+">
