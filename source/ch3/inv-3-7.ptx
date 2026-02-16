@@ -25,10 +25,6 @@ just learned to a study comparing different ways of responding to a heart attack
       <p>Observational units: <var width="40"/></p>
       <p>Explanatory: <var width="40"/></p>
       <p>Response: <var width="40"/></p>
-      <p>Type of study: <var form="buttons">
-        <li correct="yes">Experiment</li>
-        <li>Observational study</li>
-      </var></p>
     </statement>
     <setup>
       <var>
@@ -56,12 +52,25 @@ just learned to a study comparing different ways of responding to a heart attack
         </condition>
       </var>
     </setup>
-
     <solution>
       <p>Observational units = 518 cases (or victims of heart attack, or bystanders)</p>
       <p>Explanatory variable = whether they were given CPR or CC instructions (binary)</p>
       <p>Response variable = whether the patient survived to discharge from the hospital (binary)</p>
-      <p>Type of Study = experimental, because they are assigning the type of instruction to the bystanders</p>
+    </solution>
+    <response/>
+  </exercise>
+
+  <exercise xml:id="inv3-7-a2">
+    <title>Study Type</title>
+    <statement>
+      <p>Is this an observational study or an experiment?</p>
+    </statement>
+    <choices randomize="yes">
+      <choice correct="yes"><statement><p>Experiment</p></statement></choice>
+      <choice><statement><p>Observational study</p></statement></choice>
+    </choices>
+    <solution>
+      <p>This is an experiment because they are randomly assigning the type of instruction to the bystanders.</p>
     </solution>
     <response/>
   </exercise>
@@ -439,7 +448,7 @@ just learned to a study comparing different ways of responding to a heart attack
     </statement>
     <setup>
       <var>
-        <condition string=".*0?\.097[34].*">
+        <condition string=".*\.097[34].*">
           <feedback><p>Correct! The continuity-corrected p-value is approximately 0.0974, very close to the exact p-value of 0.0973.</p></feedback>
         </condition>
         <condition string=".*0?\.076.*">
@@ -701,7 +710,6 @@ just learned to a study comparing different ways of responding to a heart attack
       <title>Combined Study p-value</title>
       <statement>
         <p>Without calculating, do you suspect the p-value for this comparison will be larger, smaller, or the same as the p-value you determined? Explain your reasoning.</p>
-        <p><var width="60" height="3"/></p>
       </statement>
       <response/>
     </exercise>
