@@ -2,7 +2,8 @@
 <section xml:id="inv-3-7">
   <title>Investigation 3.7: CPR vs. Chest Compressions</title>
 <introduction>
-<p><em>In this investigation, you will apply the procedures you have just learned to a student comparing different ways of responding to a heart attack.
+<p><em>In this investigation, you will apply the procedures you have 
+just learned to a study comparing different ways of responding to a heart attack.
 </em></p>
 </introduction>
 <exercises xml:id="investigation3-7" hidden-label="yes">
@@ -410,11 +411,11 @@
     </statement>
     <setup>
       <var>
-        <condition string=".*[Cc]ontinuity.*">
+        <condition string=".*[Cc]ontinuity.*[Uu]se 34.5.*|.*[Cc]ontinuity.*[Aa]pproximation.*|.*[Cc]ontinuity.*[Cc]orrection.*|.*[Cc]ontinuity.*[Aa]djustment.*">
           <feedback><p>Correct! A continuity correction improves the normal approximation.</p></feedback>
         </condition>
         <condition string=".+">
-          <feedback><p>Response recorded.</p></feedback>
+          <feedback><p>Check solution</p></feedback>
         </condition>
         <condition string=".*">
           <feedback><p>Think about how to adjust the normal approximation to better match the exact distribution.</p></feedback>
@@ -422,7 +423,7 @@
       </var>
     </setup>
     <solution>
-      <p>continuity correction</p>
+      <p>continuity correction, finding <m>P(X ≥ 34.5)</m></p>
     </solution>
     <response/>
   </exercise>
@@ -447,8 +448,9 @@
       </var>
     </setup>
     <solution>
-      <p>To make sure the probability mass at 29 is included, we could consider finding the probability for something just above 29 (e.g., 29.5 and 34.5) or applying an Adjusted Wald correction (adding one success and one failure to each sample), though that seems to work better for the confidence interval performance than matching the p-value to the exact. In this case, the adjusted Wald moves the statistic further from zero but with a larger se so the p-value doesn't change much.</p>
-      <p>The p-value from the normal distribution is a little low but the continuity correction makes the approximation much more accurate.</p>
+      <p>To make sure the probability mass at 35 is included, we could consider finding the probability for something just below 35 (e.g., 34.5) 
+      This changes the p-value approximation from .0763 to .0974, closer to the FET p-value of .0973. 
+      </p>
       
       <example>
         <title>Applet</title>
@@ -464,6 +466,7 @@
       
       <example>
         <title>JMP</title>
+        JMP uses an "adjusted wald" approach of adding one success and one failure to each group.
         <image source="images/Inv3.7solsgJMP.png" width="70%"/>
       </example>
     </solution>
@@ -478,8 +481,11 @@
     </statement>
     <setup>
       <var>
+        <condition string=".*[Yy]es.*[Nn]o.*">
+          <feedback><p>Correct! The p-value is below 0.10 (significant at 10%) but not below 0.05 (not significant at 5%).</p></feedback>
+        </condition>
         <condition string=".+">
-          <feedback><p>Response recorded.</p></feedback>
+          <feedback><p>Response recorded. The p-value of ~0.097 is below 0.10 but above 0.05.</p></feedback>
         </condition>
         <condition string=".*">
           <feedback><p>Compare the p-value to the 10% and 5% significance levels.</p></feedback>
@@ -492,10 +498,6 @@
     <response/>
   </exercise>
 
-  <aside>
-    <title>Theory-Based Inference Applet</title>
-    <p>You can use the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?hideExtras=1">Theory-Based Inference applet</url> to calculate the confidence interval.</p>
-  </aside>
 <p>An advantage to using the <em>z</em>-procedures is being able to easily produce a confidence interval for the parameter. </p>
 <exercise xml:id="inv3-7-i">
     <title>Confidence Interval</title>
@@ -504,15 +506,48 @@
       <hint>
         <p>Think carefully about what the relevant parameter is in this study.</p>
       </hint>
-      <p><var width="60" height="4"/></p>
+      <p>95% CI: (<var width="10"/>, <var width="10"/>)</p>
+      <p>Interpretation: <var width="60" height="3"/></p>
     </statement>
+  <aside>
+    <title>Theory-Based Inference Applet</title>
+    <p>You can use the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?hideExtras=1">Theory-Based Inference applet</url> to calculate the confidence interval.</p>
+  </aside>
     <setup>
+      <var>
+        <condition number="-0.099" tolerance="0.01">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*-0?\.01[456]\d*.*|.*0?\.01[456]\d*.*">
+          <feedback><p>Check the order of subtraction. The lower endpoint should be around -0.099.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>The lower endpoint should be around -0.099 (for CPR - CC).</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Use technology to find the 95% confidence interval.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="0.016" tolerance="0.01">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*0?\.09[89]\d*.*|.*-0?\.09[89]\d*.*">
+          <feedback><p>Check the order of subtraction. The upper endpoint should be around 0.016.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>The upper endpoint should be around 0.016 (for CPR - CC).</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Use technology to find the 95% confidence interval.</p></feedback>
+        </condition>
+      </var>
       <var>
         <condition string=".+">
           <feedback><p>Response recorded.</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>Use technology to find the 95% confidence interval.</p></feedback>
+          <feedback><p>Interpret the confidence interval in context.</p></feedback>
         </condition>
       </var>
     </setup>
@@ -544,55 +579,80 @@
     <title>Reversing the Subtraction</title>
     <statement>
       <p>Suppose you had defined the parameter by subtracting in the other direction (e.g., CPR – CC instead of CC – CPR). How would that change:</p>
-      <p>(i) the observed statistic? <var form="buttons" width="30">
-        <li correct="yes">Same value(s) but opposite sign</li>
-        <li>Larger</li>
-        <li>Smaller</li>
-        <li>Less than</li>
-        <li>Greater than</li>
-        <li>No change</li>
-      </var></p>
-      <p>(ii) the standardized statistic? <var form="buttons" width="30">
-        <li correct="yes">Same value(s) but opposite sign</li>
-        <li>Larger</li>
-        <li>Smaller</li>
-        <li>Less than</li>
-        <li>Greater than</li>
-        <li>No change</li>
-      </var></p>
-      <p>(iii) the alternative hypothesis? <var form="buttons" width="40">
-        <li>Same value(s) but opposite sign</li>
-        <li>Larger</li>
-        <li>Smaller</li>
-        <li correct="yes">Less than</li>
-        <li>Greater than</li>
-        <li>No change</li>
-      </var></p>
-      <p>(iv) the p-value? <var form="buttons" width="30">
-        <li>Same value(s) but opposite sign</li>
-        <li>Larger</li>
-        <li>Smaller</li>
-        <li>Less than</li>
-        <li>Greater than</li>
-        <li correct="yes">No change</li>
-      </var></p>
-      <p>(v) confidence interval? <var form="buttons" width="40">
-        <li correct="yes">Same value(s) but opposite sign</li>
-        <li>Larger</li>
-        <li>Smaller</li>
-        <li>Less than</li>
-        <li>Greater than</li>
-        <li>No change</li>
-      </var></p>
+      <p>(i) the observed statistic? <var width="20"/></p>
+      <p>(ii) the standardized statistic? <var width="20"/></p>
+      <p>(iii) the alternative hypothesis? <var width="20"/></p>
+      <p>(iv) the p-value? <var width="20"/></p>
+      <p>(v) confidence interval? <var width="20"/></p>
     </statement>
     <solution>
-      <p>(i) The observed statistic would now be positive 0.042</p>
-      <p>(ii) The standardized statistic would now be positive (but same magnitude)</p>
-      <p>(iii) The alternative hypothesis would now be <m>\pi_{CC} - \pi_{CPR} > 0</m></p>
-      <p>(iv) The p-value, now the probability of a statistic above 0.042, would be the same</p>
-      <p>(v) The endpoints of the confidence interval will reverse sign</p>
+      <p>(i) The observed statistic would now be positive 0.042 — change sign</p>
+      <p>(ii) The standardized statistic would now be positive (but same magnitude) — change sign</p>
+      <p>(iii) The alternative hypothesis would now be <m>\pi_{CC} - \pi_{CPR} &gt; 0</m> — change direction</p>
+      <p>(iv) The p-value, now the probability of a statistic above 0.042, would be the same — no change</p>
+      <p>(v) The endpoints of the confidence interval will reverse sign — both endpoints change sign</p>
       <p>Note: Even with a 90% confidence level, zero is captured in the interval, even though we rejected the null hypothesis for a 10% level of significance. This can happen when you compare a one-sided p-value to a confidence interval which corresponds to a two-sided p-value. The other issue is even 0.0896 is not all that large of a value, so even if you consider the difference statistically significant, it's not clear whether the CC treatment has a "large" benefit.</p>
     </solution>
+    <setup>
+      <var>
+        <condition string=".*[Cc]hange\s*sign.*|.*[Oo]pposite\s*sign.*">
+          <feedback><p>Correct! The observed statistic changes sign.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>The statistic would change sign (e.g., -0.042 becomes +0.042).</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>How does reversing the subtraction affect the observed statistic?</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Cc]hange\s*sign.*|.*[Oo]pposite\s*sign.*">
+          <feedback><p>Correct! The standardized statistic changes sign.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>The standardized statistic would change sign (same magnitude, opposite sign).</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>How does reversing the subtraction affect the standardized statistic?</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Cc]hange\s*direction.*">
+          <feedback><p>Correct! The alternative hypothesis changes direction.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>The alternative hypothesis would change direction (e.g., less than becomes greater than).</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>How does reversing the subtraction affect the alternative hypothesis?</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Nn]o\s*change.*|.*[Ss]ame.*">
+          <feedback><p>Correct! The p-value does not change.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>The p-value stays the same — no change.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>How does reversing the subtraction affect the p-value?</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Bb]oth.*[Cc]hange\s*sign.*|.*[Ee]ndpoints.*[Cc]hange\s*sign.*|.*[Cc]hange\s*sign.*[Bb]oth.*">
+          <feedback><p>Correct! Both endpoints of the confidence interval change sign.</p></feedback>
+        </condition>
+        <condition string=".*[Cc]hange\s*sign.*">
+          <feedback><p>Yes, change sign — but be specific that both endpoints change sign.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Both endpoints of the confidence interval change sign.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>How does reversing the subtraction affect the confidence interval?</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <response/>
   </exercise>
 </exercises>
