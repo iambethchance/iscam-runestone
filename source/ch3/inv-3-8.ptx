@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="inv-3-8">
   <title>Investigation 3.8: Peanut Allergies</title>
+<introduction>In this investigation you will see a situation where we may want to use a different parameter for comparing two groups on a quantitative variable. Which means we then need to think about the sampling/randomization distribution of the new statistic.</introduction>
 <exercises xml:id="investigation3-8" hidden-label="yes">
 <title>The Study</title>
   <introduction>
@@ -60,7 +61,7 @@
           <feedback><p>Correct! 13/378 ≈ 0.034.</p></feedback>
         </condition>
         <condition string=".*13/378.*|.*13\s*/\s*378.*">
-          <feedback><p>Correct!</p></feedback>
+          <feedback><p>Right fraction! Now enter the decimal value.</p></feedback>
         </condition>
         <condition string=".+">
           <feedback><p>Calculate 13/378.</p></feedback>
@@ -75,7 +76,7 @@
           <feedback><p>Correct! 11/183 ≈ 0.060.</p></feedback>
         </condition>
         <condition string=".*11/183.*|.*11\s*/\s*183.*">
-          <feedback><p>Correct!</p></feedback>
+          <feedback><p>Right fraction! Now enter the decimal value.</p></feedback>
         </condition>
         <condition string=".+">
           <feedback><p>Calculate 11/183.</p></feedback>
@@ -90,7 +91,7 @@
           <feedback><p>Correct! 2/195 ≈ 0.010.</p></feedback>
         </condition>
         <condition string=".*2/195.*|.*2\s*/\s*195.*">
-          <feedback><p>Correct!</p></feedback>
+          <feedback><p>Right fraction! Now enter the decimal value.</p></feedback>
         </condition>
         <condition string=".+">
           <feedback><p>Calculate 2/195.</p></feedback>
@@ -126,11 +127,11 @@
       <hint>
         <p>State the hypotheses in symbols and in words. Define the random variable and outcomes of interest in computing your p-value.</p>
       </hint>
+      <aside>
+        <title>Two-way Table Applet</title>
+        <p>You can use the <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqShuffle.htm?twobytwo=1&amp;hideExtras=1">Two-way Table applet</url> to calculate Fisher's Exact Test.</p>
+      </aside>
     </statement>
-  <aside>
-    <title>Two-way Table Applet</title>
-    <p>You can use the <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqShuffle.htm?twobytwo=1&amp;hideExtras=1">Two-way Table applet</url> to calculate Fisher's Exact Test.</p>
-  </aside>
     <solution>
       <p>H<subscript>0</subscript>: π<subscript>avoid</subscript> = π<subscript>consume</subscript> (no difference in allergy probability)</p>
       <p>H<subscript>a</subscript>: π<subscript>avoid</subscript> > π<subscript>consume</subscript> (higher allergy probability with avoidance)</p>
@@ -259,6 +260,7 @@
     <statement>
       <p>Where does the observed value of the relative risk from the actual study fall in the null distribution of the relative risks? What proportion of the simulated relative risks are at least this extreme?</p>
     </statement>
+    <hint>Use the <term index="no">Count Samples</term> button in the applet. Do you want "greater than", "less than", or "beyond"?</hint>
     <solution>
       <p>The observed value (5.85) should be far out in the right tail. Very few (less than 1%) of the simulated values should be this extreme or more.</p>
       <image source="images/Inv3.8solsg.png" width="60%"/>
@@ -301,7 +303,7 @@
   <exercise xml:id="inv3-8-j">
     <title>Log Transformation</title>
     <statement>
-      <p> To verify this, check the ln relative risk box (in the lower left corner, or choose from pull-down menu) to take the natural log of each relative risk value and display a new histogram of these transformed values. Is the distribution of the <em>lnrelrisk</em> well modeled by a normal distribution?</p>
+      <p> To verify this, check the <term index="no">ln relative risk</term> box (in the lower left corner, or choose from pull-down menu) to take the natural log of each relative risk value and display a new histogram of these transformed values. Is the distribution of the <em>lnrelrisk</em> well modeled by a normal distribution?</p>
     </statement>
     <choices randomize="no">
       <choice correct="yes">
@@ -343,7 +345,7 @@
           <feedback><p>Correct! Results will vary but should be around 0.8-1.0.</p></feedback>
         </condition>
         <condition string=".+">
-          <feedback><p>Report the standard deviation from the simulated ln(relative risk) distribution. It should be around 0.8-1.0.</p></feedback>
+          <feedback><p>Report the standard deviation from the simulated ln(relative risk) distribution. </p></feedback>
         </condition>
         <condition string=".*">
           <feedback><p>Find the SD from the applet's simulated ln(relative risk) distribution.</p></feedback>
@@ -459,7 +461,7 @@
           <feedback><p>Correct!</p></feedback>
         </condition>
         <condition string=".+">
-          <feedback><p>Use the formula: √((1/11 - 1/183) + (1/2 - 1/195)).</p></feedback>
+          <feedback><p>Use the formula: <m>\sqrt{(1/11 - 1/183) + (1/2 - 1/195)}</m>.</p></feedback>
         </condition>
         <condition string=".*">
           <feedback><p>Plug the counts A=11, B=172, C=2, D=193 into the SE formula.</p></feedback>
@@ -493,13 +495,13 @@
   </exercise>
 
   <paragraphs>
-    <p><term>Note:</term> The variability in the statistic under the null hypothesis (as estimated by the simulation) should be in the ballpark but not all that close to the variability in the statistic estimated from the data. If we used a pooled <m>\hat{p}</m>, modelling the null hypothesis to be true, the results are usually a bit more similar: Assuming null hypothesis is true: <m>\sqrt{1/6.34 - 1/183 + 1/6.76 - 1/195} \approx 0.543</m>. In a case like this where we have strong evidence against the null hypothesis, using the observed counts is more appropriate.</p>
+    <p><term>Note:</term> The variability in the statistic under the null hypothesis (as estimated by the simulation) should be in the ballpark but not all that close to the variability in the statistic estimated from the data. If we used a pooled <m>\hat{p}</m>, modelling the null hypothesis to be true, the results are usually a bit more similar: Assuming null hypothesis is true: <m>\sqrt{1/6.34 - 1/183 + 1/6.76 - 1/195} \approx 0.543</m>. In a case like this where we have strong evidence against the null hypothesis, using the observed counts is more appropriate than using the SD from the null distribution.</p>
   </paragraphs>
 
   <exercise xml:id="inv3-8-p">
     <title>Confidence Interval Formula</title>
     <statement>
-      <p>Now that you have a statistic (ln rel risk) that has a sampling distribution that is approximately normal and you have a value for the standard deviation of the statistic from <xref ref="inv3-8-o" text="custom">Question 15</xref>, what general formula can we use to determine a confidence interval for the parameter?</p>
+      <p>Now that you have a statistic (ln rel risk) that has a sampling distribution that is approximately normal and you have a value for the standard deviation of the statistic from <xref ref="inv3-8-o" text="custom">Question 15</xref>, what <em>general formula</em> can we use to determine a confidence interval for the parameter?</p>
     </statement>
     <solution>
       <p>statistic ± (critical value) × SE</p>
@@ -558,7 +560,7 @@
       </var>
       <!-- Upper endpoint -->
       <var>
-        <condition number="3.261" tolerance="0.03">
+        <condition number="3.261" tolerance="0.05">
           <feedback><p>Correct! 1.767 + 1.494 ≈ 3.261.</p></feedback>
         </condition>
         <condition string=".+">
@@ -713,7 +715,6 @@
     <title>Midpoint of CI</title>
     <statement>
       <p>Is the midpoint of this confidence interval for the population relative risk equal to the observed value of the sample relative risk? Explain why this makes sense.</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>No, the midpoint is <m>e^{1.767} = 5.85</m>, which equals the observed relative risk. But the interval (1.31, 26.08) is not symmetric around 5.85 because we're working on the log scale and then exponentiating back.</p>
