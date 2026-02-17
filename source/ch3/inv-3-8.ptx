@@ -232,7 +232,7 @@
   </exercise>
 
   <paragraphs>
-    <p>Of course, now we would also like a confidence interval for the corresponding parameter, the ratio of the underlying probabilities of allergy between these two treatments. When we produced confidence intervals for other parameters, we examined the sampling distribution of the corresponding statistic to see how values of that statistic varied under repeated random sampling. So now let's examine the behavior of the relative risk of conditional proportions using the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?twobytwo=1&amp;hideExtras=1">Analyzing Two-Way Tables applet</url> to simulate the random assignment process (as opposed to simulating the random sampling from a binomial process) under the (null) assumption that there's no difference between the two treatments. [See the <xref ref="tech-detour-two-way" text="custom">Technology Detour</xref> for software instructions.]</p>
+    <p>Of course, now we would also like a confidence interval for the corresponding parameter, the ratio of the underlying probabilities of allergy between these two treatments. When we produced confidence intervals for other parameters, we examined the sampling distribution of the corresponding statistic to see how values of that statistic varied under repeated random sampling. So now let's examine the behavior of the relative risk of conditional proportions using the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?twobytwo=1&amp;hideExtras=1">Analyzing Two-Way Tables applet</url> to simulate the random assignment process (as opposed to simulating the random sampling from a binomial process) under the (null) assumption that there's no difference between the two treatments. [Optional: See the <xref ref="tech-detour-two-way" text="custom">Technology Detour</xref> at the end of Ch. 3 for instructions on conduting the simulation with R or JMP.]</p>
   </paragraphs>
 
   <exercise xml:id="inv3-8-f">
@@ -259,8 +259,8 @@
     <title>Observed Value in Null Distribution</title>
     <statement>
       <p>Where does the observed value of the relative risk from the actual study fall in the null distribution of the relative risks? What proportion of the simulated relative risks are at least this extreme?</p>
-    </statement>
     <hint>Use the <term index="no">Count Samples</term> button in the applet. Do you want "greater than", "less than", or "beyond"?</hint>
+    </statement>
     <solution>
       <p>The observed value (5.85) should be far out in the right tail. Very few (less than 1%) of the simulated values should be this extreme or more.</p>
       <image source="images/Inv3.8solsg.png" width="60%"/>
@@ -694,8 +694,8 @@
         <condition number="1" tolerance="0">
           <feedback><p>Correct! A relative risk of 1 means no difference between the groups.</p></feedback>
         </condition>
-        <condition string=".*[Oo]ne.*|.*\b1\b.*">
-          <feedback><p>Correct! A relative risk of 1 means no difference.</p></feedback>
+        <condition string=".*[Oo]ne.*">
+          <feedback><p>Right idea! Enter the numeric value.</p></feedback>
         </condition>
         <condition string=".+">
           <feedback><p>What value of a ratio indicates "no difference" between two groups?</p></feedback>
