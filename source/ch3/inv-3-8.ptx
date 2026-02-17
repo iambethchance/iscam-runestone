@@ -44,11 +44,71 @@
   </introduction>
 
   <exercise xml:id="inv3-8-a">
-    <title>Calculate Proportions</title>
+    <title>Calculate Conditional Proportions</title>
     <statement>
-      <p>Calculate the proportion of children who developed a peanut allergy. Then calculate the proportion of children developing a peanut allergy in each group. Does this appear to be a large difference to you?</p>
-      <p><var width="60" height="4"/></p>
+      <p>Calculate the proportion of children who developed a peanut allergy. </p>
+      <p><var width="15"/></p>
+      <p>Then calculate the proportion of children developing a peanut allergy in each group. </p>
+      <p><m>\hat{p}_{PA} = </m><var width="15"/>; <m>\hat{p}_{PC} = </m><var width="15"/></p>
+      <p>Does this appear to be a large difference to you?</p>
+      <p><var width="60" height="2"/></p>
     </statement>
+    <setup>
+      <!-- Overall proportion -->
+      <var>
+        <condition number="0.034" tolerance="0.002">
+          <feedback><p>Correct! 13/378 ≈ 0.034.</p></feedback>
+        </condition>
+        <condition string=".*13/378.*|.*13\s*/\s*378.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Calculate 13/378.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>How many total children developed a peanut allergy out of 378?</p></feedback>
+        </condition>
+      </var>
+      <!-- p-hat PA (peanut avoidance) -->
+      <var>
+        <condition number="0.060" tolerance="0.002">
+          <feedback><p>Correct! 11/183 ≈ 0.060.</p></feedback>
+        </condition>
+        <condition string=".*11/183.*|.*11\s*/\s*183.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Calculate 11/183.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>How many in the peanut avoidance group developed an allergy out of 183?</p></feedback>
+        </condition>
+      </var>
+      <!-- p-hat PC (peanut consumption) -->
+      <var>
+        <condition number="0.010" tolerance="0.002">
+          <feedback><p>Correct! 2/195 ≈ 0.010.</p></feedback>
+        </condition>
+        <condition string=".*2/195.*|.*2\s*/\s*195.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Calculate 2/195.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>How many in the peanut consumption group developed an allergy out of 195?</p></feedback>
+        </condition>
+      </var>
+      <!-- Large difference? -->
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Compare the two conditional proportions.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Overall: 13/378 = 0.034 or 3.4%</p>
       <p>Avoidance: 11/183 = 0.060 or 6.0%</p>
@@ -58,10 +118,6 @@
     <response/>
   </exercise>
 
-  <aside>
-    <title>Two-way Table Applet</title>
-    <p>You can use the <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqShuffle.htm?twobytwo=1&amp;hideExtras=1">Two-way Table applet</url> to calculate Fisher's Exact Test.</p>
-  </aside>
 
   <exercise xml:id="inv3-8-b">
     <title>Fisher's Exact Test</title>
@@ -70,8 +126,11 @@
       <hint>
         <p>State the hypotheses in symbols and in words. Define the random variable and outcomes of interest in computing your p-value.</p>
       </hint>
-      <p><var width="60" height="6"/></p>
     </statement>
+  <aside>
+    <title>Two-way Table Applet</title>
+    <p>You can use the <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqShuffle.htm?twobytwo=1&amp;hideExtras=1">Two-way Table applet</url> to calculate Fisher's Exact Test.</p>
+  </aside>
     <solution>
       <p>H<subscript>0</subscript>: π<subscript>avoid</subscript> = π<subscript>consume</subscript> (no difference in allergy probability)</p>
       <p>H<subscript>a</subscript>: π<subscript>avoid</subscript> > π<subscript>consume</subscript> (higher allergy probability with avoidance)</p>
@@ -87,7 +146,6 @@
     <title>Comparing Proportions</title>
     <statement>
       <p>Would you feel any differently about the magnitude of the difference in proportions if the conditional proportions developing a peanut allergy had been 0.500 and 0.55? Explain.</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>Yes, a difference of 0.05 (5 percentage points) seems much less impressive when the base rates are 50% and 55% compared to 1% and 6%. The absolute difference is the same, but the relative change is quite different.</p>
@@ -113,7 +171,32 @@
     <title>Calculate Relative Risk</title>
     <statement>
       <p>Determine and interpret the ratio of the conditional proportions who developed peanut allergy between the peanut avoiders and the peanut consumers in this study.</p>
+      <p>Relative risk = <var width="15"/></p>
+      <p>Interpretation: <var width="60" height="2"/></p>
     </statement>
+    <setup>
+      <!-- Relative risk value -->
+      <var>
+        <condition number="5.85" tolerance="0.1">
+          <feedback><p>Correct! 0.060/0.010 ≈ 5.85.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Divide the proportion with allergy in the avoidance group by the proportion in the consumption group.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate the ratio of the two conditional proportions.</p></feedback>
+        </condition>
+      </var>
+      <!-- Interpretation -->
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Interpret what the relative risk value means in context.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Relative risk = 0.060 / 0.010 = 5.85</p>
       <p>Children who avoided peanuts were about 5.85 times more likely to develop a peanut allergy than children who consumed peanuts.</p>
@@ -125,8 +208,21 @@
     <title>Percentage Change</title>
     <statement>
       <p>Because we are now working with a ratio, we can also interpret this statistic in terms of percentage change. Subtract one from the relative risk value and multiply by 100% to determine what percentage higher the proportion who developed a peanut allergy is in the avoidance group compared to the consumption group.</p>
-      <p><var width="40"/></p>
+      <p>The proportion with a peanut allergy in the peanut avoidance group is <var width="15"/>% larger than in the peanut consumption group </p>
     </statement>
+    <setup>
+      <var>
+        <condition number="485" tolerance="5">
+          <feedback><p>Correct! (5.85 - 1) × 100% = 485%.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Subtract 1 from the relative risk and multiply by 100%.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate (RR - 1) × 100%.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>(5.85 - 1) × 100% = 485%</p>
       <p>The proportion who developed a peanut allergy is 485% higher in the avoidance group.</p>
@@ -146,10 +242,9 @@
         <li>Check the <term index="no">2×2 box</term></li>
         <li>Enter the two-way table into the applet and press <term index="no">Use Table</term>.</li>
         <li>Generate 10,000 random shuffles.</li>
-        <li>Use the <term index="no">Statistic</term> pull-down menu to select Relative Risk.</li>
+        <li>Use the <term index="no">Statistic</term> pull-down menu to select <em>Relative Risk</em>.</li>
       </ul></p>
       <p>Describe the behavior of the null distribution of relative risk values.</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>The distribution should be centered around 1 (no difference) and skewed to the right.</p>
@@ -163,7 +258,6 @@
     <title>Observed Value in Null Distribution</title>
     <statement>
       <p>Where does the observed value of the relative risk from the actual study fall in the null distribution of the relative risks? What proportion of the simulated relative risks are at least this extreme?</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>The observed value (5.85) should be far out in the right tail. Very few (less than 1%) of the simulated values should be this extreme or more.</p>
@@ -183,7 +277,6 @@
       <hint>
         <p>Remember the assumption behind your simulation analysis.</p>
       </hint>
-      <p><var width="60" height="2"/></p>
     </statement>
     <solution>
       <p>Under the null hypothesis, the two treatments are equally effective, so the ratio of the probabilities should be 1 (no difference).</p>
@@ -195,7 +288,6 @@
     <title>Skewness</title>
     <statement>
       <p>You should notice skewness in the distribution of relative risk values. Explain why it is not surprising for the distribution of this statistic to be skewed to the right (especially with smaller sample sizes).</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>A ratio can be any positive value. Values close to 1 are restricted to fall between 0 and 2, but large ratios can extend far to the right (e.g., 5, 10, 100, etc.). This creates right skewness.</p>
@@ -209,9 +301,18 @@
   <exercise xml:id="inv3-8-j">
     <title>Log Transformation</title>
     <statement>
-      <p> To verify this, check the ln relative risk box (in the lower left corner, or choose from pull-down menu) to take the natural log of each relative risk value and display a new histogram of these transformed values. Describe the shape of this distribution. Is the distribution of the <em>lnrelrisk</em> well modeled by a normal distribution?</p>
-      <p><var width="60" height="3"/></p>
+      <p> To verify this, check the ln relative risk box (in the lower left corner, or choose from pull-down menu) to take the natural log of each relative risk value and display a new histogram of these transformed values. Is the distribution of the <em>lnrelrisk</em> well modeled by a normal distribution?</p>
     </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><p>Yes</p></statement>
+        <feedback><p>Correct! After taking the natural log, the distribution should be approximately symmetric and bell-shaped.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>No</p></statement>
+        <feedback><p>Look at the shape of the histogram of ln(relative risk) values. It should be approximately symmetric and bell-shaped.</p></feedback>
+      </choice>
+    </choices>
     <solution>
       <p>After taking the natural log, the distribution should be approximately symmetric and bell-shaped (normal).</p>
       <image source="images/Inv3.8solsj.png" width="70%"/>
@@ -223,7 +324,6 @@
     <title>Mean of Log Relative Risk</title>
     <statement>
       <p>What is the mean of the simulated <em>lnrelrisk</em> values? Why does this value make sense?</p>
-      <p><var width="60" height="2"/></p>
     </statement>
     <solution>
       <p>The mean should be close to 0, which makes sense because ln(1) = 0.</p>
@@ -235,8 +335,21 @@
     <title>Standard Deviation</title>
     <statement>
       <p>What is the standard deviation of the <em>lnrelrisk</em> values?</p>
-      <p><var width="20"/></p>
+      <p><var width="15"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="0.9" tolerance="0.3">
+          <feedback><p>Correct! Results will vary but should be around 0.8-1.0.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Report the standard deviation from the simulated ln(relative risk) distribution. It should be around 0.8-1.0.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Find the SD from the applet's simulated ln(relative risk) distribution.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Results will vary but should be around 0.8-1.0.</p>
     </solution>
@@ -246,9 +359,54 @@
   <exercise xml:id="inv3-8-m">
     <title>Observed Log Relative Risk</title>
     <statement>
-      <p>Calculate the observed value of <m>ln(\hat{p}_1/\hat{p}_2)</m> for this study (but don't round up). Where does this value fall (near in the middle or in the tail) of this simulated distribution of <em>lnrelrisk</em> values? Find the empirical p-value by counting the number of <em>lnrelrisk</em> values at least as extreme.</p>
-      <p><var width="60" height="3"/></p>
+      <p>Calculate the observed value of <m>ln(\hat{p}_1/\hat{p}_2)</m> for this study (but don't round up).</p>
+      <p><m>ln(RR) = </m><var width="15"/></p>
+      <p>Where does this value fall in the simulated distribution of <em>lnrelrisk</em> values?</p>
+      <p><var width="20"/></p>
+      <p>Find the empirical p-value by counting the number of <em>lnrelrisk</em> values at least as extreme.</p>
+      <p><var width="15"/></p>
     </statement>
+    <setup>
+      <!-- ln(RR) -->
+      <var>
+        <condition number="1.767" tolerance="0.02">
+          <feedback><p>Correct! ln(5.85) ≈ 1.767.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Calculate ln(5.85).</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Take the natural log of the relative risk value.</p></feedback>
+        </condition>
+      </var>
+      <!-- Where does it fall? -->
+      <var>
+        <condition string=".*[Tt]ail.*">
+          <feedback><p>Correct! The observed value falls far in the right tail.</p></feedback>
+        </condition>
+        <condition string=".*[Ee]xtreme.*|.*[Ff]ar.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Is it near the middle or in the tail of the distribution?</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Look at where 1.767 falls relative to the simulated values.</p></feedback>
+        </condition>
+      </var>
+      <!-- Empirical p-value -->
+      <var>
+        <condition number="0.007" tolerance="0.004">
+          <feedback><p>Correct! The p-value should be around 0.007-0.008.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Count the proportion of simulated lnrelrisk values that are at least as large as 1.767.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>What proportion of the simulated values are at least as extreme as the observed?</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>ln(5.85) = 1.767. This should fall far in the right tail of the distribution, with a p-value around 0.007-0.008.</p>
     </solution>
@@ -262,7 +420,6 @@
       <hint>
         <p>What does change about the distribution when you take the natural log of every value?</p>
       </hint>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>No, the p-value has not changed. Taking the log is a monotonic transformation, so it doesn't change the ranking of values or which ones are extreme.</p>
@@ -285,9 +442,48 @@
   <exercise xml:id="inv3-8-o">
     <title>Calculate Standard Error</title>
     <statement>
-      <p>Calculate the value of this standard error of the ln(rel risk) for this study. Interpret this value and compare it to the standard deviation from your simulated <em>lnrelrisk</em> values.</p>
-      <p><var width="60" height="3"/></p>
+      <p>Calculate the value of this standard error of the ln(rel risk) for this study.</p>
+      <p><m>SE(\ln(RR)) = </m><var width="15"/></p>
+      <p>Interpret this value.</p>
+      <p><var width="60" height="2"/></p>
+      <p>How does this compare to the standard deviation from your simulated <em>lnrelrisk</em> values?</p>
+      <p><var width="60" height="2"/></p>
     </statement>
+    <setup>
+      <!-- SE value -->
+      <var>
+        <condition number="0.762" tolerance="0.01">
+          <feedback><p>Correct! SE = √(0.0854 + 0.4949) = √0.5803 ≈ 0.762.</p></feedback>
+        </condition>
+        <condition number="0.76" tolerance="0.02">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Use the formula: √((1/11 - 1/183) + (1/2 - 1/195)).</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Plug the counts A=11, B=172, C=2, D=193 into the SE formula.</p></feedback>
+        </condition>
+      </var>
+      <!-- Interpretation -->
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>What does this standard error tell you about the variability of ln(relative risk)?</p></feedback>
+        </condition>
+      </var>
+      <!-- Comparison to simulation SD -->
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Is this SE close to or different from the simulation SD? Why might they differ?</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <me>SE = \sqrt{\left(\frac{1}{11} - \frac{1}{183}\right) + \left(\frac{1}{2} - \frac{1}{195}\right)} </me>
       <me>= \sqrt{0.0854 + 0.4949} = \sqrt{0.5803} = 0.762</me>
@@ -304,7 +500,6 @@
     <title>Confidence Interval Formula</title>
     <statement>
       <p>Now that you have a statistic (ln rel risk) that has a sampling distribution that is approximately normal and you have a value for the standard deviation of the statistic from <xref ref="inv3-8-o" text="custom">Question 15</xref>, what general formula can we use to determine a confidence interval for the parameter?</p>
-      <p><var width="60" height="2"/></p>
     </statement>
     <solution>
       <p>statistic ± (critical value) × SE</p>
@@ -317,8 +512,63 @@
     <title>Calculate Confidence Interval</title>
     <statement>
       <p>Calculate the midpoint, 95% margin-of-error, and 95% confidence interval endpoints using the observed value of ln(rel risk) as the statistic and using the standard error calculated in <xref ref="inv3-8-o" text="custom">Question 15</xref>.</p>
-      <p><var width="60" height="3"/></p>
+      <p>Midpoint: <var width="15"/></p>
+      <p>95% margin of error: <var width="15"/></p>
+      <p>95% CI: (<var width="15"/>, <var width="15"/>)</p>
     </statement>
+    <setup>
+      <!-- Midpoint -->
+      <var>
+        <condition number="1.767" tolerance="0.02">
+          <feedback><p>Correct! ln(5.85) ≈ 1.767.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>The midpoint is the observed value of ln(relative risk).</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate ln(5.85).</p></feedback>
+        </condition>
+      </var>
+      <!-- Margin of error -->
+      <var>
+        <condition number="1.494" tolerance="0.02">
+          <feedback><p>Correct! 1.96 × 0.762 ≈ 1.494.</p></feedback>
+        </condition>
+        <condition number="1.49" tolerance="0.03">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Multiply 1.96 × SE(ln RR) = 1.96 × 0.762.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>For a 95% CI, the margin of error is 1.96 × SE.</p></feedback>
+        </condition>
+      </var>
+      <!-- Lower endpoint -->
+      <var>
+        <condition number="0.273" tolerance="0.03">
+          <feedback><p>Correct! 1.767 - 1.494 ≈ 0.273.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Subtract the margin of error from the midpoint.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Lower endpoint = midpoint - margin of error.</p></feedback>
+        </condition>
+      </var>
+      <!-- Upper endpoint -->
+      <var>
+        <condition number="3.261" tolerance="0.03">
+          <feedback><p>Correct! 1.767 + 1.494 ≈ 3.261.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Add the margin of error to the midpoint.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Upper endpoint = midpoint + margin of error.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Midpoint: ln(5.85) = 1.767</p>
       <p>Margin of error: 1.96 × 0.762 = 1.494</p>
@@ -330,9 +580,22 @@
   <exercise xml:id="inv3-8-r">
     <title>Parameter Estimated</title>
     <statement>
-      <p>What parameter does the confidence interval in <xref ref="inv3-8-q" text="custom">question 17</xref> estimate?</p>
+      <p>What parameter does the confidence interval in <xref ref="inv3-8-q" text="custom">Question 17</xref> estimate?</p>
       <p><var width="40"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".*[Ll]n.*[Rr]elative\s*[Rr]isk.*|.*[Ll]n.*[Rr]atio.*|.*[Ll]og.*[Rr]elative\s*[Rr]isk.*|.*[Nn]atural\s*[Ll]og.*[Rr]atio.*|.*[Ll]n.*RR.*">
+          <feedback><p>Correct! The parameter is ln(π₁/π₂), the natural log of the relative risk.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Think about what statistic the interval was built around. We used ln(relative risk), so the parameter is the natural log of the population relative risk.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>What transformation did we apply to the relative risk before building the interval?</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>ln(π<subscript>avoid</subscript> / π<subscript>consume</subscript>), the natural log of the relative risk</p>
     </solution>
@@ -342,9 +605,46 @@
   <exercise xml:id="inv3-8-s">
     <title>Exponentiate Endpoints</title>
     <statement>
-      <p>Exponentiate the endpoints of this interval to obtain a confidence interval for the ratio of the probabilities of developing a peanut allergy between these two treatments. Interpret this interval.</p>
-      <p><var width="60" height="3"/></p>
+      <p>Exponentiate the endpoints of this interval to obtain a confidence interval for the ratio of the probabilities of developing a peanut allergy between these two treatments.</p>
+      <p>95% CI for relative risk: (<var width="15"/>, <var width="15"/>)</p>
+      <p>Interpret this interval.</p>
+      <p><var width="60" height="2"/></p>
     </statement>
+    <setup>
+      <!-- Lower endpoint -->
+      <var>
+        <condition number="1.31" tolerance="0.05">
+          <feedback><p>Correct! e^0.273 ≈ 1.31.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Exponentiate the lower endpoint of the ln(RR) interval: e^0.273.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate e raised to the lower endpoint of your CI for ln(RR).</p></feedback>
+        </condition>
+      </var>
+      <!-- Upper endpoint -->
+      <var>
+        <condition number="26.08" tolerance="0.5">
+          <feedback><p>Correct! e^3.261 ≈ 26.08.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Exponentiate the upper endpoint of the ln(RR) interval: e^3.261.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate e raised to the upper endpoint of your CI for ln(RR).</p></feedback>
+        </condition>
+      </var>
+      <!-- Interpretation -->
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Interpret what this interval means in context of the peanut allergy study.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>95% CI for relative risk: <m>(e^{0.273}, e^{3.261}) = (1.31, 26.08)</m></p>
       <p>We are 95% confident that children who avoid peanuts are between 1.31 and 26.08 times more likely to develop a peanut allergy than children who consume peanuts.</p>
@@ -355,9 +655,54 @@
   <exercise xml:id="inv3-8-t">
     <title>Zero in Interval?</title>
     <statement>
-      <p>Is zero in this interval? Do we care? What value is of interest instead?</p>
-      <p><var width="60" height="2"/></p>
+      <p>Is zero in this interval?</p>
+      <p><var width="15"/></p>
+      <p>Do we care?</p>
+      <p><var width="15"/></p>
+      <p>What value is of interest instead?</p>
+      <p><var width="15"/></p>
     </statement>
+    <setup>
+      <!-- Is zero in the interval? -->
+      <var>
+        <condition string=".*[Nn][Oo].*">
+          <feedback><p>Correct! Zero is not in the interval (1.31, 26.08).</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Is 0 between 1.31 and 26.08?</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Check whether 0 falls within the confidence interval.</p></feedback>
+        </condition>
+      </var>
+      <!-- Do we care? -->
+      <var>
+        <condition string=".*[Nn][Oo].*">
+          <feedback><p>Correct! For a ratio, zero is not the relevant benchmark value.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>Think about what parameter this interval estimates. Is it a difference or a ratio?</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Consider whether zero is meaningful for a relative risk interval.</p></feedback>
+        </condition>
+      </var>
+      <!-- What value is of interest? -->
+      <var>
+        <condition number="1" tolerance="0">
+          <feedback><p>Correct! A relative risk of 1 means no difference between the groups.</p></feedback>
+        </condition>
+        <condition string=".*[Oo]ne.*|.*\b1\b.*">
+          <feedback><p>Correct! A relative risk of 1 means no difference.</p></feedback>
+        </condition>
+        <condition string=".+">
+          <feedback><p>What value of a ratio indicates "no difference" between two groups?</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Think about what relative risk value means the two probabilities are equal.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>No, zero is not in the interval, but that's not relevant. For relative risk, the value of interest is 1 (no difference). Because 1 is not in the interval, we have evidence of a difference.</p>
     </solution>
@@ -380,8 +725,17 @@
     <title>Compare to Applet</title>
     <statement>
       <p>How do the intervals compare?</p>
-      <p><var width="60" height="2"/></p>
     </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><p>Similar</p></statement>
+        <feedback><p>Correct! The intervals should match closely.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>Very different</p></statement>
+        <feedback><p>Check the applet's 95% CI for relative risk. The intervals should be very close to each other.</p></feedback>
+      </choice>
+    </choices>
     <solution>
       <p>The intervals should match closely.</p>
       <image source="images/Inv3.8solsv.jpg" width="70%"/>
@@ -393,7 +747,6 @@
     <title>Coverage Probability</title>
     <statement>
       <p>Suppose you used this method to construct a confidence interval for each of the 1,000 simulated random samples that you generated in <xref ref="inv3-8-f" text="custom">Question 6</xref>. Because our simulation assumes the null hypothesis to be true, do you expect the value 1 to be in these intervals? All of them? Most of them? What percentage of them? Explain.</p>
-      <p><var width="60" height="3"/></p>
     </statement>
     <solution>
       <p>We would expect about 95% of the intervals to contain the value 1, because under the null hypothesis, the true relative risk is 1, and we're using 95% confidence intervals.</p>
@@ -418,7 +771,6 @@
       <title>Confidence Interval for No Allergy</title>
       <statement>
         <p>For the peanut allergy study, find a 95% confidence interval for the probability of not developing a peanut allergy comparing the consumption treatment to the avoidance treatment.</p>
-        <p><var width="60" height="2"/></p>
       </statement>
       <response/>
     </exercise>
@@ -427,7 +779,6 @@
       <title>Interpret Interval</title>
       <statement>
         <p>Provide a one-sentence interpretation of the interval in the previous question.</p>
-        <p><var width="60" height="2"/></p>
       </statement>
       <response/>
     </exercise>
@@ -436,7 +787,6 @@
       <title>Compare Intervals</title>
       <statement>
         <p>Is the interval the same or closely related to the one you found in Investigation 3.8? Does one interval provide strong evidence of a treatment effect? Which interval would you report to new parents?</p>
-        <p><var width="60" height="3"/></p>
       </statement>
       <response/>
     </exercise>
@@ -445,7 +795,6 @@
       <title>Statistical Power</title>
       <statement>
         <p>The article reports that "the power to detect a difference in risk of 30 percentage points was 80.0%." Explain what this means in your own words.</p>
-        <p><var width="60" height="3"/></p>
       </statement>
       <response/>
     </exercise>
@@ -460,7 +809,6 @@
       <title>Relative Risk CI</title>
       <statement>
         <p>Calculate and interpret a confidence interval for the ratio of the probabilities (relative risk) of satisfaction for these two procedures.</p>
-        <p><var width="60" height="4"/></p>
       </statement>
       <response/>
     </exercise>
@@ -469,7 +817,6 @@
       <title>Interpretation</title>
       <statement>
         <p>What does your interval in the previous checkpoint indicate about whether those receiving the orthopedic surgery are significantly more likely that those receiving a sham surgery to report satisfaction after 12 months? Explain your reasoning.</p>
-        <p><var width="60" height="3"/></p>
       </statement>
       <response/>
     </exercise>
