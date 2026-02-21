@@ -6,7 +6,7 @@
   <title>Investigation 4.2: The Elephants in the Room</title>
   
   <introduction>
-    <sidebyside widths="60% 25%" valign="top">
+    <sidebyside widths="60% 25%" valign="top" margins="0% 0%">
       <p>Researchers Holdgate et al. (<url href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4944962/">2016</url>) studied walking behavior of elephants in North American zoos to see whether there is a difference in average distance traveled by African and Asian elephants in captivity. They put GPS loggers on 33 African elephants and 23 Asian elephants, and measured the distance (in kilometers) the elephants walked per day.</p>
       
       <image source="images/Inv4.2intro.png" width="100%">
@@ -40,7 +40,7 @@
           <li><p>Copy the data to the clipboard. In the applet, check the <term index="no">Stacked</term> box. Press <term index="no">Clear</term> 
           and paste the data into the Sample data window and press <term index="no">Use Data</term>. (Or type elephants.txt in the empty Paste data window.)</p></li>
           <li><p>Use the <term index="no">Separate by</term> pull-down menu to select the Species categorical variable</p></li>
-          <li><p>You have radio button options for <term index="no">Histograms</term> and <term index="no">Boxplots</term> .</p></li>
+          <li><p>You have radio button options for <term index="no">Histograms</term> and <term index="no">Boxplots</term>.</p></li>
         </ul>
       </hint>
       
@@ -215,25 +215,81 @@ iscamsummary(elephants$Distance, elephants$Species)
           <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
             <col width="20%"/>
             <row header="yes">
-              <cell>Species</cell>
+              <cell halign="left">Species</cell>
               <cell><em>n</em></cell>
               <cell>Mean</cell>
               <cell>SD</cell>
             </row>
             <row>
-              <cell>African</cell>
+              <cell halign="left">African</cell>
               <cell><var width="5"/></cell>
               <cell><var width="8"/></cell>
               <cell><var width="8"/></cell>
             </row>
             <row>
-              <cell>Asian</cell>
+              <cell halign="left">Asian</cell>
               <cell><var width="5"/></cell>
               <cell><var width="8"/></cell>
               <cell><var width="8"/></cell>
             </row>
           </tabular>
       </statement>
+      <setup>
+        <!-- African n -->
+        <var>
+          <condition number="33" tolerance="0">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>There are 33 African elephants.</p></feedback>
+          </condition>
+        </var>
+        <!-- African mean -->
+        <var>
+          <condition number="5.40" tolerance="0.02">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The mean distance for African elephants is approximately 5.40 km.</p></feedback>
+          </condition>
+        </var>
+        <!-- African SD -->
+        <var>
+          <condition number="1.47" tolerance="0.02">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The SD for African elephants is approximately 1.47 km.</p></feedback>
+          </condition>
+        </var>
+        <!-- Asian n -->
+        <var>
+          <condition number="23" tolerance="0">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>There are 23 Asian elephants.</p></feedback>
+          </condition>
+        </var>
+        <!-- Asian mean -->
+        <var>
+          <condition number="5.30" tolerance="0.02">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The mean distance for Asian elephants is approximately 5.30 km.</p></feedback>
+          </condition>
+        </var>
+        <!-- Asian SD -->
+        <var>
+          <condition number="3.41" tolerance="0.02">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The SD for Asian elephants is approximately 3.41 km.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
     
@@ -294,7 +350,7 @@ Players without a team affiliation or without a listed salary were not included 
             <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
               <row header="yes">
                 <cell>League</cell>
-                <cell><em>n</em></cell>
+                <cell><em>N</em></cell>
                 <cell>Mean</cell>
                 <cell>SD</cell>
               </row>
@@ -319,6 +375,74 @@ Players without a team affiliation or without a listed salary were not included 
           <p>Use the applet to find the population parameters from the data file.</p>
         </hint>
         </statement>
+        <setup>
+          <!-- Western N -->
+          <var>
+            <condition number="243" tolerance="2">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The Western conference has approximately 243 players.</p></feedback>
+            </condition>
+          </var>
+          <!-- Western mean -->
+          <var>
+            <condition number="11.7" tolerance="0.3">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The mean Western salary is approximately 11.7 million.</p></feedback>
+            </condition>
+          </var>
+          <!-- Western SD -->
+          <var>
+            <condition number="13.8" tolerance="0.3">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The SD for Western salaries is approximately 13.8 million.</p></feedback>
+            </condition>
+          </var>
+          <!-- Eastern N -->
+          <var>
+            <condition number="229" tolerance="2">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The Eastern conference has approximately 229 players.</p></feedback>
+            </condition>
+          </var>
+          <!-- Eastern mean -->
+          <var>
+            <condition number="11.3" tolerance="0.3">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The mean Eastern salary is approximately 11.3 million.</p></feedback>
+            </condition>
+          </var>
+          <!-- Eastern SD -->
+          <var>
+            <condition number="13.3" tolerance="0.3">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The SD for Eastern salaries is approximately 13.3 million.</p></feedback>
+            </condition>
+          </var>
+          <!-- Symbols -->
+          <var>
+            <condition string=".+">
+              <feedback><p>Thank you for your response.</p></feedback>
+            </condition>
+          </var>
+          <!-- Shapes -->
+          <var>
+            <condition string=".+">
+              <feedback><p>Thank you for your response.</p></feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p>The population sizes are approximately 243 Western and 229 Eastern players. The mean salaries are approximately <m>\mu_{\text{West}} = 11.7</m> million and <m>\mu_{\text{East}} = 11.3</m> million. The standard deviations are approximately <m>\sigma_{\text{West}} = 13.8</m> million and <m>\sigma_{\text{East}} = 13.3</m> million. Both distributions are strongly right-skewed as expected for salary data.</p>
         </solution>
@@ -363,6 +487,56 @@ Players without a team affiliation or without a listed salary were not included 
         </hint>
           <p><var width="50"/></p>
         </statement>
+        <setup>
+          <!-- Western n (fixed at 20) -->
+          <var>
+            <condition number="20" tolerance="0">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>You were asked to sample 20 from each conference.</p></feedback>
+            </condition>
+          </var>
+          <!-- Western mean (varies) -->
+          <var>
+            <condition string=".+">
+              <feedback><p>Answers will vary by sample.</p></feedback>
+            </condition>
+          </var>
+          <!-- Western SD (varies) -->
+          <var>
+            <condition string=".+">
+              <feedback><p>Answers will vary by sample.</p></feedback>
+            </condition>
+          </var>
+          <!-- Eastern n (fixed at 20) -->
+          <var>
+            <condition number="20" tolerance="0">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>You were asked to sample 20 from each conference.</p></feedback>
+            </condition>
+          </var>
+          <!-- Eastern mean (varies) -->
+          <var>
+            <condition string=".+">
+              <feedback><p>Answers will vary by sample.</p></feedback>
+            </condition>
+          </var>
+          <!-- Eastern SD (varies) -->
+          <var>
+            <condition string=".+">
+              <feedback><p>Answers will vary by sample.</p></feedback>
+            </condition>
+          </var>
+          <!-- Comparison text -->
+          <var>
+            <condition string=".+">
+              <feedback><p>Thank you for your response.</p></feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p>Sample results will vary, but the sample means should be reasonably close to the population means, and the sample standard deviations should be reasonably close to the population standard deviations. The sample distributions may appear less skewed than the population distributions due to smaller sample sizes.</p>
         </solution>
@@ -476,7 +650,7 @@ Players without a team affiliation or without a listed salary were not included 
       </exercise>
       
       <exercise xml:id="prob-detour-2means-l" label="PD4.2.12">
-        <title>Using Sample Standard Deviations</title>
+        <title>Third assumption</title>
         <statement>
           <p>A third, but perhaps the biggest, issue is that the population standard deviations are unknown. Suggest a formula for estimating the standard deviation of the difference in sample means.</p>
         <hint>
@@ -489,7 +663,9 @@ Players without a team affiliation or without a listed salary were not included 
         <response/>
       </exercise>
       
-      So then what we really need to know about is the distribution of <m>t = \frac{(\bar{x}_1 - \bar{x}_2) - (\mu_1 - \mu_2)}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</m>. 
+      <paragraphs><p>
+      So then what we really need to know about is the distribution of <m>t = \frac{(\bar{X}_1 - \bar{X}_2) - (\mu_1 - \mu_2)}{\sqrt{S_1^2/n_1 + S_2^2/n_2}}</m>.
+      </p></paragraphs> 
       In the applet, 
       <ul><li>Use the <alert>Statistic</alert> pull-down menu to select the <m>t</m>-statistic and then examine the distribution of this statistic. 
       </li></ul>
@@ -513,8 +689,8 @@ Players without a team affiliation or without a listed salary were not included 
       <p>One remaining question is what to use for the degrees of freedom for the <m>t</m>-distribution. In the one-sample case (Chapter 2) we used <m>n - 1</m>. For two samples, it's actually more complicated. The <url href="https://www.rossmanchance.com/iscam3/glossary_files/Satterthwaite.htm">Welch-Satterthwaite</url> approximation for degrees of freedom involves the sample sizes and the unknown population standard deviations, though it doesn't always result in integer values. We will leave this calculation up to technology. You only need to realize that the degrees of freedom are related to the sample sizes and as the sample sizes become large, the <m>t</m>-distribution loses more and more of the heaviness in the tails and approaches the (standard) normal distribution. If you need to determine a p-value or critical value <q>by hand,</q> we suggest using the following simple approximation for the degrees of freedom: <m>\min(n_1 - 1, n_2 - 1)</m>, the smaller of the two sample sizes minus one.</p>
       </paragraphs>
       
-      <sidebyside widths="60% 35%" valign="top">
-        <p>In this case, we could use 19 as the approximate degrees of freedom. Notice that this sample size is large enough that the <m>t</m>-distribution looks a lot like the normal distribution as well, which should agree with your observation in Checkpoint 15.1.29. But we will continue to use the <m>t</m>-distribution rather than the normal distribution to still account for additional variation from our estimates of the population standard deviations.</p>
+      <sidebyside widths="60% 35%" valign="top" margins="0">
+        <p>In this case, we could use 19 as the approximate degrees of freedom. Notice that this sample size is large enough that the <m>t</m>-distribution looks a lot like the normal distribution as well, which should agree with your observation in Question 22. But we will continue to use the <m>t</m>-distribution rather than the normal distribution to still account for additional variation from our estimates of the population standard deviations.</p>
         
         <image source="images/Inv4.2tnorm.png" width="100%">
           <description>Comparison of <m>t</m>-distribution with 19 df and normal distribution</description>
@@ -536,12 +712,12 @@ Players without a team affiliation or without a listed salary were not included 
         
         <p><alert>Approximate degrees of freedom:</alert> Compare this to a <m>t</m>-distribution with degrees of freedom equal to the smaller of the two sample sizes minus one: <m>\min(n_1, n_2) - 1</m>.</p>
         
-        <p><alert>Technical conditions:</alert> These procedures are considered valid if the sample distributions are reasonably symmetric or the sample sizes are both at least 20.</p>
+        <p><alert>Technical conditions:</alert> These procedures are considered valid if the sample distributions are reasonably symmetric or the sample sizes are both at least 20.  Also consider whether you are sampling from a random process or large populations.</p>
       </assemblage>
       
 <p><alert>Using Technology to Carry out the Two-Sample <m>t</m>-Tests</alert>
 In using technology, you need to consider how the data are available: Do you have the “raw data” (meaning all the individual data values) or just the summary statistics (sample sizes, means, SDs)? Most software packages will assume raw data is “stacked” – each column represents a different variable (all response variable values in one column, the explanatory variable in a second column). Also notice that being able to run the <m>t</m>-test 
-with only the summary data is one advantage the <m>t</m>-test has over the simulation. But also keep in mind that the t-output is valid only when the population distributions are normal or the sample sizes are large. When reporting your results, make sure you specify which technology you used, because different software use different degrees of freedom. You will also need to watch for the direction of subtraction that the software packages use automatically (often alphabetical by group name).</p>
+with only the summary data is one advantage the <m>t</m>-test has over the simulation. But also keep in mind that the <m>t</m>-output is valid only when the population distributions are normal or the sample sizes are large. When reporting your results, make sure you specify which technology you used, because different software use different degrees of freedom. You will also need to watch for the direction of subtraction that the software packages use automatically (often alphabetical by group name).</p>
 
 <p>There is also a version of the two-sample <m>t</m>-test that makes an additional assumption – the population standard deviations are equal. The standardized statistic has the following form:
   <me>t = \frac{(\bar{x}_1 - \bar{x}_2) - 0}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}</me>
@@ -551,7 +727,7 @@ with only the summary data is one advantage the <m>t</m>-test has over the simul
       <exercise xml:id="inv4-2-tech" label="I4.2.TECH">
         <title>Technology Detours</title>
         <statement>
-          <p>Use technology to conduct a two-sample <m>t</m>-test using different tools (expand the hints below for instructions).</p>
+          <p>Expand the hints below for instructions for different software tools.</p>
 
         <hint>
           <title>In Applet - Theory-Based Inference (Summary Data)</title>
@@ -655,7 +831,6 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
             <li><p>Press <term index="no">Calculate</term></p></li>
           </ul>
         </hint>
-          <p>Record your p-value here:           <var width="10"/></p>
         </statement>
         <response/>
       </exercise>
@@ -684,7 +859,7 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
         <statement>
           <p>Use technology to decide whether there is a statistically significant difference between the average walking distance of the African and Asian elephant populations. State the hypotheses, define any symbols you use, report the test-statistic and p-value. Include one-sentence interpretations of both the standardized statistic and the p-value in context. What conclusion do you draw?</p>
         <hint>
-          <p>Use one of the technology tools below to conduct the two-sample <m>t</m>-test.</p>
+          <p>Use one of the technology instructions above to conduct the two-sample <m>t</m>-test.</p>
         </hint>
         </statement>
         <solution>
