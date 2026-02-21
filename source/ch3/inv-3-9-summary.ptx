@@ -5,6 +5,10 @@
   <p>For tables of the form:</p>
   <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
     <row>
+      <cell><m>Group 1</m></cell>
+      <cell><m>Group 2</m></cell>
+      </row>
+    <row>
       <cell><m>A</m></cell>
       <cell><m>B</m></cell>
     </row>
@@ -23,7 +27,10 @@
 
     <p><term>Statistic:</term> Odds ratio (typically set up to be larger than one) = <m>\frac{A \times D}{B \times C}</m> or equivalently <m>\frac{\text{odds}_1}{\text{odds}_2} = \frac{\frac{\hat{p}_1}{1-\hat{p}_1}}{\frac{\hat{p}_2}{1-\hat{p}_2}}</m></p>
 
-    <p><term>Hypotheses:</term> <m>H_0: \tau = 1</m> or <m>\ln(\tau) = 0</m>; <m>H_a: \tau &lt; 1</m>, <m>\tau &gt; 1</m>, or <m>\tau \neq 1</m> (or equivalently using <m>\ln(\tau)</m>)</p>
+    <p><term>Hypotheses:</term> <br\>
+    <m>H_0: \tau = 1</m> or <m>\ln(\tau) = 0</m>; 
+    <br\>
+    <m>H_a: \tau &lt; 1</m>, <m>\tau &gt; 1</m>, or <m>\tau \neq 1</m> (or equivalently using <m>\ln(\tau)</m>)</p>
 
     <p><term>p-value:</term> Fisher's Exact Test or normal approximation on <m>\ln(\text{odds ratio})</m></p>
 
@@ -32,12 +39,12 @@
 
     <p><term>Technology:</term></p>
     <p><ul>
-      <li><p><term>In Two-way Tables applet:</term> Choose Odds Ratio as statistic and check box for 95% CI</p></li>
+      <li><p><term>In Two-way Tables applet:</term> Choose <term index="no">Odds Ratio</term> as statistic and check box for <term index="no">95% CI</term></p></li>
       <li>
-        <p><term>In R:</term> You can install the fmsb package and use the oddsratio command.</p>
+        <p><term>In R:</term> You can install the <c>fmsb</c> package and use the <c>oddsratio</c> command.</p>
         <p><c>fmsb::oddsratio(A, B, C, D, conf.level, p.calc.by.independence = TRUE)</c></p>
       </li>
-      <li><p><term>In JMP:</term> From the Contingency Analysis hot spot, choose Odds Ratio</p></li>
+      <li><p><term>In JMP:</term> From the Contingency Analysis hot spot, choose <term index="no">Odds Ratio</term></p></li>
     </ul></p>
   </assemblage>
 
