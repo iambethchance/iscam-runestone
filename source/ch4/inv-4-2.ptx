@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="investigation4-2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Comparing Groups</title>
-  
+  <introduction><p><em>In this investigation, you will consider how to compare two groups on a quanttiative response.  Then you will take a detour to learn about the details of "two-sample t-procedures" for inference about the difference in means between two groups.</em></p></introduction>
   <exercises xml:id="exercises-4-2" hidden-label="yes">
   <title>Investigation 4.2: The Elephants in the Room</title>
   
@@ -162,7 +162,7 @@ par(mfrow=c(1,1))
       </solution>
     </exercise>
     
-    <p>And we can calculate separate summary statistics for the two species:</p>
+    <p>And we can calculate separate summary statistics for the two species.</p>
     
   <exercise xml:id="inv4-2-d1" label="I4.2.3">
     <title>Calculate Numerical Summaries</title>
@@ -311,7 +311,9 @@ iscamsummary(elephants$Distance, elephants$Species)
       <response/>
     </exercise>
     
-    <section xml:id="prob-detour-two-means">
+    </exercises>
+    
+    <subsection xml:id="prob-detour-two-means">
       <title>Probability Detour: Sampling Distribution of Difference in Two Means</title>
       
       <p>To understand how <em>differences in sample means</em> behave, let's explore 
@@ -349,13 +351,13 @@ Players without a team affiliation or without a listed salary were not included 
             <title>Population Parameters for NBA Salaries by Conference</title>
             <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
               <row header="yes">
-                <cell>League</cell>
-                <cell><em>N</em></cell>
+                <cell halign="left">League</cell>
+                <cell><em>Count</em></cell>
                 <cell>Mean</cell>
                 <cell>SD</cell>
               </row>
               <row>
-                <cell>Western</cell>
+                <cell halign="left">Western</cell>
                 <cell><var width="5"/></cell>
                 <cell><var width="8"/></cell>
                 <cell><var width="8"/></cell>
@@ -433,18 +435,18 @@ Players without a team affiliation or without a listed salary were not included 
           <!-- Symbols -->
           <var>
             <condition string=".+">
-              <feedback><p>Thank you for your response.</p></feedback>
+              <feedback><p>Response recorded</p></feedback>
             </condition>
           </var>
           <!-- Shapes -->
           <var>
             <condition string=".+">
-              <feedback><p>Thank you for your response.</p></feedback>
+              <feedback><p>Response recorded</p></feedback>
             </condition>
           </var>
         </setup>
         <solution>
-          <p>The population sizes are approximately 243 Western and 229 Eastern players. The mean salaries are approximately <m>\mu_{\text{West}} = 11.7</m> million and <m>\mu_{\text{East}} = 11.3</m> million. The standard deviations are approximately <m>\sigma_{\text{West}} = 13.8</m> million and <m>\sigma_{\text{East}} = 13.3</m> million. Both distributions are strongly right-skewed as expected for salary data.</p>
+          <p>The population sizes are approximately <m>N_{\text{West}}</m>=243 Western and <m>N_{\text{East}}</m>=229 Eastern players. The mean salaries are approximately <m>\mu_{\text{West}} = 11.7</m> million dollars and <m>\mu_{\text{East}} = 11.3</m> million dollars. The standard deviations are approximately <m>\sigma_{\text{West}} = 13.8</m> million dollars and <m>\sigma_{\text{East}} = 13.3</m> million dollars. Both distributions are strongly right-skewed as expected for salary data.</p>
         </solution>
         <response/>
       </exercise>
@@ -832,12 +834,11 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
           </ul>
         </hint>
         </statement>
-        <response/>
       </exercise>
 
-    </section>
+    </subsection>
     
-    <section xml:id="elephants-continued">
+    <subsection xml:id="elephants-continued">
       <title>Back to the Elephants</title>
       
       <exercise xml:id="inv4-2-i" label="I4.2.13">
@@ -889,9 +890,7 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
       </assemblage>
       
       <p>Keep in mind that the <m>t</m>-tests only tell us about whether the centers of the distributions are significantly different. They don't help us analyze other potentially interesting differences in the two distributions.</p>
-    </section>
-    
-    </exercises>
+    </subsection>
     
   <subsection xml:id="practice-problem-4-2a">
     <title>Practice Problem 4.2A</title>
