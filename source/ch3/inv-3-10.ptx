@@ -4,7 +4,7 @@
 <exercises xml:id="investigation3-10" hidden-label="yes">
 <title>The Study</title>
   <introduction>
-    <sidebyside widths="60% 35%">
+    <sidebyside widths="60% 35%" margins="0% 0%">
       <p>Connor et al. (<url href="https://pubmed.ncbi.nlm.nih.gov/12003884/" visual="pubmed.ncbi.nlm.nih.gov"><em>British Medical Journal</em>, May 2002</url>) reported on a study that investigated whether sleeplessness is related to car crashes. The researchers identified all drivers or passengers of eligible light vehicles who were admitted to a hospital or died as a result of a car crash on public roads in the Auckland, New Zealand region between April 1998 and July 1999.</p>
       <image source="images/Inv3.10intro.png">
         <description>Introduction image for Investigation 3.10</description>
@@ -22,6 +22,40 @@
       <p>Response variable: <var width="50"/></p>
       <p>Type of study: <var width="50"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".*[Dd]river.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The observational units are the drivers in Auckland, New Zealand.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Ss]leep.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The explanatory variable is whether the driver got a full night's sleep in the previous week.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Cc]rash.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The response variable is whether the driver was involved in a car crash.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Cc]ase.*[Cc]ontrol.*|.*[Cc]ontrol.*[Cc]ase.*">
+          <feedback><p>Correct! This is a case-control study.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>This is a case-control observational study (researchers selected crash cases and non-crash controls, then looked back at sleep patterns).</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Observational units: Drivers in Auckland, New Zealand</p>
       <p>Explanatory variable: Whether got a full night's sleep in previous week (categorical: yes/no)</p>
@@ -36,12 +70,13 @@
     <statement>
       <p>Organize these sample data into a 2 × 2 table:</p>
 
-        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor"
+        row-headers="yes">
           <row header="yes">
             <cell></cell>
-            <cell>No full night's sleep in past week ("sleep deprived")</cell>
-            <cell>At least one full night's sleep in past week ("not sleep deprived")</cell>
-            <cell>Sample sizes</cell>
+            <cell>No full night's sleep in past week <br/>("sleep deprived")</cell>
+            <cell>At least one full night's sleep in past week <br/>("not sleep deprived")</cell>
+            <cell>Total</cell>
           </row>
           <row>
             <cell>Crash</cell>
@@ -63,6 +98,56 @@
           </row>
         </tabular>
     </statement>
+    <setup>
+      <var>
+        <condition number="61" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>61 crash drivers were sleep deprived (given in the problem).</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="474" tolerance="0">
+          <feedback><p>Correct! 535 − 61 = 474.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>535 − 61 = 474 crash drivers were not sleep deprived.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="44" tolerance="0">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>44 no-crash drivers were sleep deprived (given in the problem).</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="544" tolerance="0">
+          <feedback><p>Correct! 588 − 44 = 544.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>588 − 44 = 544 no-crash drivers were not sleep deprived.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="105" tolerance="0">
+          <feedback><p>Correct! 61 + 44 = 105.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>61 + 44 = 105 total sleep deprived.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="1018" tolerance="0">
+          <feedback><p>Correct! 474 + 544 = 1018.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>474 + 544 = 1018 total not sleep deprived.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <table>
         <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
@@ -100,8 +185,39 @@
     <title>Calculate Appropriate Statistic</title>
     <statement>
       <p>Which statistic (odds ratio or relative risk) is most appropriate to calculate from this table, considering how the data were collected? Calculate and interpret this statistic. Does the value of this statistic support the researchers' conjecture? Explain.</p>
-      <p><response/></p>
+      <p>Most appropriate statistic: <var width="20"/></p>
+      <p>Value = <var width="10"/></p>
+      <p>Interpretation: <var width="60" height="3"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition string=".*[Oo]dds\s*[Rr]atio.*">
+          <feedback><p>Correct! The odds ratio is most appropriate for a case-control study.</p></feedback>
+        </condition>
+        <condition string=".*[Rr]elative\s*[Rr]isk.*">
+          <feedback><p>Since this is a case-control study, the odds ratio is more appropriate than relative risk.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>For a case-control study, the odds ratio is the most appropriate statistic.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="1.59" tolerance="0.03">
+          <feedback><p>Correct! (61/44)/(474/544) ≈ 1.59.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate (61/44)/(474/544) ≈ 1.59.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Interpret the odds ratio in context.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Because this is a case-control study, the odds ratio is the most appropriate statistic. The researchers controlled the number of crash and no-crash drivers, so we cannot meaningfully calculate the risk of having a crash.</p>
       <p>Odds ratio = (61/44) / (474/544) = 1.386 / 0.871 = 1.59</p>
@@ -118,11 +234,11 @@
   <exercise xml:id="inv3-10-d">
     <title>Simulation Design</title>
     <statement>
-      <p>Outline the steps of a simulation that models the randomness in this study and helps you assess how unusual the statistic is that you calculated in <xref ref="inv3-10-c" text="custom">question 5</xref> when the null hypothesis is true. Include a statement of the null and alternative hypotheses for your choice of parameter.</p>
+      <p>Outline the steps of a simulation that models the randomness in this study and helps you assess how unusual the statistic is that you calculated in <xref ref="inv3-10-c" text="custom">question 3</xref> when the null hypothesis is true. Include a statement of the null and alternative hypotheses for your choice of parameter.</p>
       <p><response/></p>
     </statement>
     <solution>
-      <p>We could replicate the sampling design by sampling independently from two binomial processes with the same probability of success (this will model H₀: τ = 1). One process will represent the sampling of the crash victims (n = 535) and the other will represent the sampling of the no-crash population (n = 588).</p>
+      <p>We could replicate the sampling design by sampling independently from two binomial processes with the same probability of success (this will model <m>H+0: \tau = 1</m>). One process will represent the sampling of the crash victims (n = 535) and the other will represent the sampling of the no-crash population (n = 588).</p>
       <p>Let <m>\tau</m> represent the population odds ratio.</p>
       <p>H<subscript>0</subscript>: <m>\tau</m> = 1 (the odds of being sleep deprived are the same for crash and no-crash drivers)</p>
       <p>H<subscript>a</subscript>: <m>\tau</m> > 1 (the odds of being sleep deprived are higher for crash drivers)</p>
@@ -170,8 +286,44 @@
     <title>Confidence Interval</title>
     <statement>
       <p>Calculate and interpret a 95% confidence interval for your choice of parameter.</p>
-      <p><response/></p>
+      <p>SE(ln odds ratio) = <var width="10"/></p>
+      <p>95% CI for odds ratio: (<var width="10"/>, <var width="10"/>)</p>
+      <p>Interpretation: <var width="60" height="3"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="0.2075" tolerance="0.005">
+          <feedback><p>Correct! SE = √(1/61 + 1/44 + 1/474 + 1/544) ≈ 0.2075.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate √(1/61 + 1/44 + 1/474 + 1/544) ≈ 0.2075.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="1.06" tolerance="0.03">
+          <feedback><p>Correct! e^(0.4637 − 1.96 × 0.2075) ≈ 1.06.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Lower bound: e^(ln(1.59) − 1.96 × SE) ≈ 1.06.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="2.39" tolerance="0.05">
+          <feedback><p>Correct! e^(0.4637 + 1.96 × 0.2075) ≈ 2.39.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Upper bound: e^(ln(1.59) + 1.96 × SE) ≈ 2.39.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Interpret the confidence interval in terms of the odds of being in a car crash for sleep-deprived vs. non-sleep-deprived drivers.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Theoretical standard error for the log odds ratio:</p>
       <p>SE(ln odds ratio) = <m>\sqrt{\frac{1}{61} + \frac{1}{44} + \frac{1}{474} + \frac{1}{544}}</m> ≈ <m>\sqrt{0.0164 + 0.0227 + 0.0021 + 0.0018}</m> ≈ <m>\sqrt{0.043}</m> ≈ 0.2075</p>
@@ -263,7 +415,7 @@
             <p>Case-control</p>
           </statement>
         </choice>
-        <choice>
+        <choice correct="yes">
           <statement>
             <p>Cohort</p>
           </statement>
@@ -281,8 +433,27 @@
       <title>Calculate Odds Ratio</title>
       <statement>
         <p>Calculate and interpret an odds ratio from the two-way table.</p>
-        <p><response/></p>
+        <p>Odds ratio = <var width="10"/></p>
+        <p>Interpretation: <var width="60" height="3"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition number="10.78" tolerance="0.1">
+            <feedback><p>Correct! (397 × 108778)/(51 × 78557) ≈ 10.78.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Calculate (397 × 108778)/(51 × 78557) ≈ 10.78.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Interpret the odds ratio in context of smoking and lung cancer deaths.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
 
@@ -290,8 +461,35 @@
       <title>Confidence Interval</title>
       <statement>
         <p>Produce and interpret a 95% confidence interval for the population odds ratio.</p>
-        <p><response/></p>
+        <p>95% CI for odds ratio: (<var width="10"/>, <var width="10"/>)</p>
+        <p>Interpretation: <var width="60" height="3"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition number="8.05" tolerance="0.3">
+            <feedback><p>Correct! Lower bound ≈ e^(ln(10.78) − 1.96 × 0.149) ≈ 8.05.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>SE = √(1/397 + 1/51 + 1/78557 + 1/108778) ≈ 0.149. Lower = e^(ln(10.78) − 1.96 × 0.149) ≈ 8.05.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="14.44" tolerance="0.5">
+            <feedback><p>Correct! Upper bound ≈ e^(ln(10.78) + 1.96 × 0.149) ≈ 14.44.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Upper = e^(ln(10.78) + 1.96 × 0.149) ≈ 14.44.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Interpret the confidence interval in terms of the odds of lung cancer death for regular vs. non-regular smokers.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
     </exercise>
 
