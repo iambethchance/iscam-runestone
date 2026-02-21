@@ -122,9 +122,9 @@
   <exercise xml:id="inv3-9-d">
     <title>Original Relative Risk</title>
     <statement>
-      <p> Calculate this value. Is it similar to <xref ref="inv3-9-c" text="custom">Question 3</xref>?</p>
+      <p> Calculate this value. </p>
       <p>Smokers were <var width="10"/> times more likely to have lung cancer than non-smokers.</p>
-      <p>Is this similar to the value in Question 3? <var width="40"/></p>
+      <p>Is this value similar to <xref ref="inv3-9-c" text="custom">Question 3</xref>?<var width="40"/></p>
     </statement>
     <setup>
       <var>
@@ -173,7 +173,7 @@
   <assemblage>
     <title>Definition: Odds Ratio</title>
     <p>The <term>odds ratio</term><idx><h>odds ratio</h></idx> is another way to compare conditional proportions in a 2 × 2 table.</p>
-    <p><m>Odds\ ratio = \frac{\frac{\hat{p}_1}{1-\hat{p}_1}}{\frac{\hat{p}_2}{1-\hat{p}_2}} = \frac{\frac{number\ of\ successes\ in\ group\ 1}{number\ of\ failures\ in\ group\ 1}}{\frac{number\ of\ successes\ in\ group\ 2}{number\ of\ failures\ in\ group\ 2}}</m></p>
+    <p><m>Sample Odds\ ratio = \frac{\frac{\hat{p}_1}{1-\hat{p}_1}}{\frac{\hat{p}_2}{1-\hat{p}_2}} = \frac{\frac{number\ of\ successes\ in\ group\ 1}{number\ of\ failures\ in\ group\ 1}}{\frac{number\ of\ successes\ in\ group\ 2}{number\ of\ failures\ in\ group\ 2}}</m></p>
     <p>Like relative risk, if the odds ratio is 3, this is interpreted as "the odds of success in the 'top' group are 3 times (or 200%) higher than the odds of success in the 'bottom' group." However, the relative risk and the odds ratio are not always similar in value.</p>
   </assemblage>
 
@@ -210,7 +210,7 @@
     <setup>
       <var>
         <condition number="9.39" tolerance="0.05">
-          <feedback><p>Correct! (583/576)/(22/204) ≈ 9.39. This matches Question 6 (the odds ratio is invariant to which variable you treat as the response).</p></feedback>
+          <feedback><p>Correct! (583/576)/(22/204) ≈ 9.39. This matches Question 5 (the odds ratio is invariant to which variable you treat as the response).</p></feedback>
         </condition>
         <condition string=".*">
           <feedback><p>Calculate (583/576)/(22/204) ≈ 9.39.</p></feedback>
@@ -219,7 +219,7 @@
     </setup>
     <solution>
       <p>Odds ratio of lung cancer = (583/576)/(22/204) ≈ 9.39</p>
-      <p>The odds of lung cancer are 9.39 times higher for heavy smokers than for light smokers. This does not match question 4 but does match question 6.</p>
+      <p>The odds of lung cancer are 9.39 times higher for heavy smokers than for light smokers. This does not match Question 4 but does match Question 5.</p>
     </solution>
     <response/>
   </exercise>
@@ -486,14 +486,14 @@
   </assemblage>
 </exercises>
   <subsection xml:id="practice3-9A">
-    <title>Practice Problem 3.9A: Abuse and Violence Study</title>
+    <title>Practice Problem 3.9A</title>
 
     <p>A researcher searched court records to find 908 individuals who had been victims of abuse as children (11 years or younger). She then found 667 individuals, with similar demographic characteristics, who had not been abused as children. Based on a search through subsequent years of court records, she determined how many in each of these groups became involved in violent crimes (<url href="https://www.ojp.gov/ncjrs/virtual-library/abstracts/does-violence-beget-violence-critical-examination-literature" visual="ojp.gov">Widom, 1989</url>). The results are shown below:</p>
 
       <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
         <col halign="left"/>
         <row header="yes">
-          <cell>Crim \ Outcome</cell>
+          <cell>Crime \ Abuse</cell>
           <cell>Abuse victim</cell>
           <cell>Control</cell>
         </row>
@@ -513,18 +513,16 @@
       <title>Study Design</title>
       <statement>
         <p>Is this an observational study or an experiment? If observational, which type?</p>
-        <p><var width="60" height="2"/></p>
+        <p><response/></p>
       </statement>
-      <response/>
     </exercise>
 
     <exercise xml:id="practice-3-9-a-2">
       <title>Calculate Odds Ratio</title>
       <statement>
         <p>Calculate and interpret the odds ratio of being involved in a violent crime between these two groups.</p>
-        <p><var width="60" height="3"/></p>
+        <p><response/></p>
       </statement>
-      <response/>
     </exercise>
 
     <exercise xml:id="practice-3-9-a-3">
@@ -532,15 +530,14 @@
       <statement>
         <p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1">Comparing Two Population Proportions applet</url> to</p>
         <p><ul>
-          <li>Create a sampling distribution for the odds ratio [Hint: Which variable was "controlled" by the researcher? What is your estimated common probability of success?]</li>
+          <li>Create a sampling distribution for the odds ratio [<em>Hint</em>: Which variable was "controlled" by the researcher? What is your estimated common probability of success?]</li>
           <li>Find the empirical p-value (be sure it's clear how you do so)</li>
           <li>Create a sampling distribution for the log-odds ratio. Does the normal approximation appear appropriate? Report the mean and standard deviation of this distribution.</li>
           <li>Find the empirical p-value using the log odds ratio (be sure it's clear how you do so). How do the p-values compare?</li>
           <li>Check the Normal approximation box to approximate the p-value from the normal distribution. How does the p-value compare?</li>
         </ul></p>
-        <p><var width="60" height="8"/></p>
+        <p><response/></p>
       </statement>
-      <response/>
     </exercise>
 
     <exercise xml:id="practice-3-9-a-4">
@@ -552,94 +549,84 @@
           <li>Create a randomization distribution for the log-odds ratio and find the empirical p-value.</li>
           <li>Overlay the normal approximation and report the p-value.</li>
         </ul></p>
-        <p><var width="60" height="6"/></p>
+        <p><response/></p>
       </statement>
-      <response/>
     </exercise>
 
     <exercise xml:id="practice-3-9-a-5">
       <title>Fisher's Exact Test</title>
       <statement>
         <p>Report the p-value from Fisher's Exact Test. Which of the previous p-values is this closest to? Why? Do the p-values vary much? Which would you consider the "best"? Why?</p>
-        <p><var width="60" height="4"/></p>
+        <p><response/></p>
       </statement>
-      <response/>
     </exercise>
 
     <exercise xml:id="practice-3-9-a-6">
       <title>Causation</title>
       <statement>
         <p>Is it reasonable to conclude that being a victim of abuse as a child causes individuals to be more likely to be violent toward others afterwards? Explain.</p>
-        <p><var width="60" height="3"/></p>
+        <p><response/></p>
       </statement>
-      <response/>
     </exercise>
 
     <exercise xml:id="practice-3-9-a-7">
       <title>Confidence Interval</title>
       <statement>
         <p>Calculate and interpret a 95% confidence interval for the population odds ratio.</p>
-        <p><var width="60" height="3"/></p>
+        <p><response/></p>
       </statement>
-      <response/>
     </exercise>
 
     <exercise xml:id="practice-3-9-a-8">
       <title>Generalization</title>
       <statement>
         <p>Is it reasonable to generalize these results to all abuse and non-abuse victims? Explain.</p>
-        <p><var width="60" height="3"/></p>
+        <p><response/></p>
       </statement>
-      <response/>
     </exercise>
   </subsection>
 
   <subsection xml:id="practice3-9B">
-    <title>Practice Problem 3.9B: Comparing Relative Risk and Odds Ratio</title>
+    <title>Practice Problem 3.9B
 
     <exercise xml:id="practice-3-9-b-1">
       <title>Relative Risk Calculation</title>
       <statement>
         <p>Suppose that individuals in Group 1 have a 2/3 probability of success, and those in Group 2 have a 1/2 probability of success. Calculate and interpret the relative risk of success, comparing Group 1 to Group 2.</p>
-        <p><var width="60" height="3"/></p>
+        <p><response/></p>
       </statement>
-      <response/>
     </exercise>
 
     <exercise xml:id="practice-3-9-b-2">
       <title>Odds Calculation</title>
       <statement>
         <p>Calculate and interpret the odds of success for Group 1.</p>
-        <p><var width="60" height="2"/></p>
+        <p><response/></p>
       </statement>
-      <response/>
     </exercise>
 
     <exercise xml:id="practice-3-9-b-3">
       <title>Odds Ratio Calculation</title>
       <statement>
         <p>Calculate and interpret the odds ratio of success, comparing Group 1 to Group 2.</p>
-        <p><var width="60" height="3"/></p>
+        <p><response/></p>
       </statement>
-      <response/>
     </exercise>
 
     <exercise xml:id="practice-3-9-b-4">
       <title>Compare Different Probabilities</title>
       <statement>
         <p>Suppose Group 3 has a 0.1 probability of success, and Group 4 has a 0.05 probability of success. Repeat the RR and OR calculations.</p>
-        <p><var width="60" height="4"/></p>
+        <p><response/></p>
       </statement>
-      <response/>
     </exercise>
 
     <exercise xml:id="practice-3-9-b-5">
       <title>Comparing Relative Risk and Odds Ratio</title>
       <statement>
         <p>In which case (Groups 1 and 2, or Groups 3 and 4) are the relative risk and odds ratio more similar? Why?</p>
-        <p><var width="60" height="4"/></p>
+        <p><response/></p>
       </statement>
-      <response/>
     </exercise>
   </subsection>
 
