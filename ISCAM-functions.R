@@ -3,51 +3,61 @@
 # Source: https://github.com/ISCAM4/ISCAM
 
 # ============================================================================
+# INTERNAL HELPERS
+# ============================================================================
+
+# Stub for help shortcut (not functional in Sage cells)
+.iscam_maybe_help <- function(first_arg, topic = NULL) {
+  if (!is.character(first_arg) || length(first_arg) != 1 || first_arg != "?") {
+    return(FALSE)
+  }
+  cat("Help is not available in Sage cells. See the ISCAM package documentation.\n")
+  invisible(TRUE)
+}
+
+# Compute summary statistics for one numeric vector (from ISCAM package)
+.getSummaryStats <- function(x) {
+  curried_quantile <- function(prob) {
+    unname(quantile(x, probs = prob, na.rm = TRUE))
+  }
+  sample_skewness <- function(x) {
+    x <- x[!is.na(x)]
+    d <- x - mean(x)
+    sum(d^3) / sum(d^2)^1.5 * length(x)^0.5
+  }
+  data.frame(
+    Missing = sum(is.na(x)),
+    n = length(x) - sum(is.na(x)),
+    Min = min(x, na.rm = TRUE),
+    Q1 = curried_quantile(0.25),
+    Median = median(x, na.rm = TRUE),
+    Q3 = curried_quantile(0.75),
+    Max = max(x, na.rm = TRUE),
+    Mean = mean(x, na.rm = TRUE),
+    SD = sd(x, na.rm = TRUE),
+    Skewness = sample_skewness(x)
+  )
+}
+
+# ============================================================================
 # SUMMARY STATISTICS
 # ============================================================================
 
-# Summary function for grouped data
-iscamsummary <- function(variable, by = NULL, data = NULL) {
-  if (!is.null(data)) {
-    variable <- data[[deparse(substitute(variable))]]
-    if (!is.null(by)) {
-      by <- data[[deparse(substitute(by))]]
-    }
+# Summary function (matching ISCAM package version)
+iscamsummary <- function(x, explanatory = NULL, digits = 3) {
+  if (.iscam_maybe_help(x, "iscamsummary")) {
+    return(invisible())
   }
-  
-  if (is.null(by)) {
-    # Single variable summary
-    result <- list(
-      n = length(variable),
-      mean = mean(variable, na.rm = TRUE),
-      sd = sd(variable, na.rm = TRUE),
-      min = min(variable, na.rm = TRUE),
-      Q1 = quantile(variable, 0.25, na.rm = TRUE),
-      median = median(variable, na.rm = TRUE),
-      Q3 = quantile(variable, 0.75, na.rm = TRUE),
-      max = max(variable, na.rm = TRUE)
-    )
-    print(data.frame(result))
+
+  if (is.null(explanatory)) {
+    output <- .getSummaryStats(x)
   } else {
-    # Grouped summary
-    cat("\nSummary Statistics by Group:\n\n")
-    groups <- unique(by)
-    for (g in groups) {
-      cat(paste0("Group: ", g, "\n"))
-      subset_data <- variable[by == g]
-      result <- data.frame(
-        n = length(subset_data),
-        mean = mean(subset_data, na.rm = TRUE),
-        sd = sd(subset_data, na.rm = TRUE),
-        min = min(subset_data, na.rm = TRUE),
-        median = median(subset_data, na.rm = TRUE),
-        max = max(subset_data, na.rm = TRUE)
-      )
-      print(result)
-      cat("\n")
-    }
+    output <- as.data.frame(do.call(
+      rbind,
+      tapply(x, explanatory, .getSummaryStats)
+    ))
   }
-  invisible(NULL)
+  round(output, digits)
 }
 
 # ============================================================================
