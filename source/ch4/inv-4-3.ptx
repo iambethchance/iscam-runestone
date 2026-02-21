@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="investigation4-3" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Factors Influencing Significance</title>
-  
-  <exercises xml:id="exercises-4-3" hidden-label="yes">
   <title>Investigation 4.3: Left-Handedness and Life Expectancy</title>
+  <introduction>In this investigation you will explore which factors impact the size of the p-values/our assessment of statistical significance.
+  </introduction>
+  <exercises xml:id="exercises-4-3" hidden-label="yes">
+  <title>The Study</title>
   
   <introduction>
-    <sidebyside widths="60% 35%">
+    <sidebyside widths="60% 35%" margins="0% 0%">
       <p>Psychologist Stanley Coren has conducted several studies investigating the life expectancy of left-handers compared to right-handers, believing that the stress of being left-handed in a right-handed world leads to earlier deaths among the left-handers.</p>
       <image source="images/Inv4.3intro.png">
         <description>Introduction to the left-handedness and life expectancy study</description>
@@ -100,6 +101,62 @@
       <p>Null hypothesis: <m>H_0</m>: <var width="5"/> <var width="3"/> <var width="5"/></p>
       <p>Alternative hypothesis: <m>H_a</m>: <var width="5"/> <var width="3"/> <var width="5"/></p>
     </statement>
+    <setup>
+      <!-- H0 left side: mu_L or mu_L - mu_R -->
+      <var>
+        <condition string=".*[μm]u.*[lL].*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Use mu_L or mu_L - mu_R for the left side.</p></feedback>
+        </condition>
+      </var>
+      <!-- H0 operator: = -->
+      <var>
+        <condition string="=">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The null hypothesis uses = (equality).</p></feedback>
+        </condition>
+      </var>
+      <!-- H0 right side: mu_R or 0 -->
+      <var>
+        <condition string="0|.*[μm]u.*[rR].*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Use mu_R (if left side is mu_L) or 0 (if left side is mu_L - mu_R).</p></feedback>
+        </condition>
+      </var>
+      <!-- Ha left side: mu_L or mu_L - mu_R -->
+      <var>
+        <condition string=".*[μm]u.*[lL].*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Use mu_L or mu_L - mu_R for the left side.</p></feedback>
+        </condition>
+      </var>
+      <!-- Ha operator: < -->
+      <var>
+        <condition string="&lt;">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Based on the research conjecture, left-handers die sooner, so mu_L &lt; mu_R.</p></feedback>
+        </condition>
+      </var>
+      <!-- Ha right side: mu_R or 0 -->
+      <var>
+        <condition string="0|.*[μm]u.*[rR].*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Use mu_R (if left side is mu_L) or 0 (if left side is mu_L - mu_R).</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m>H_0: \mu_L = \mu_R</m> (left-handers and right-handers have the same mean lifetime)</p>
       <p><m>H_a: \mu_L &lt; \mu_R</m> (left-handers have a shorter mean lifetime than right-handers)</p>
@@ -189,16 +246,44 @@
       </row>
     </tabular>
   
-  <exercise xml:id="inv4-3-e" label="I4.3.5">
-    <title>Comparing Scenarios</title>
+  <exercise xml:id="inv4-3-e1" label="I4.3.5a">
+    <title>Comparing Scenarios: Effect of Standard Deviation</title>
     <statement>
-      <p>For the following pairs of scenarios from the table above, which do you believe will result in the lower p-value, that is, stronger evidence against the null hypothesis?</p>
-      
-      <p>Scenario 2 p-value <var width="15"/> Scenario 3 p-value</p>
-      
-      <p>Scenario 3 p-value <var width="15"/> Scenario 4 p-value</p>
+      <p>Scenarios 2 and 3 have the same sample means and sample sizes but different standard deviations (SD = 15 vs. SD = 25). Which scenario will produce stronger evidence against the null hypothesis (lower p-value)? Match each scenario to the strength of evidence.</p>
     </statement>
-    <response/>
+    <matches>
+      <match>
+        <premise>Scenario 2 (SD = 15)</premise>
+        <response>Stronger evidence (lower p-value)</response>
+      </match>
+      <match>
+        <premise>Scenario 3 (SD = 25)</premise>
+        <response>Weaker evidence (higher p-value)</response>
+      </match>
+    </matches>
+    <solution>
+      <p>Scenario 2 (SD = 15) provides stronger evidence because less variability within groups makes it easier to detect a difference between groups.</p>
+    </solution>
+  </exercise>
+  
+  <exercise xml:id="inv4-3-e2" label="I4.3.5b">
+    <title>Comparing Scenarios: Effect of Sample Size</title>
+    <statement>
+      <p>Scenarios 3 and 4 have the same sample means and standard deviations but different sample sizes for left-handers (<m>n_L</m> = 50 vs. <m>n_L</m> = 10). Which scenario will produce stronger evidence against the null hypothesis (lower p-value)? Match each scenario to the strength of evidence.</p>
+    </statement>
+    <matches>
+      <match>
+        <premise>Scenario 3 (<m>n_L</m> = 50)</premise>
+        <response>Stronger evidence (lower p-value)</response>
+      </match>
+      <match>
+        <premise>Scenario 4 (<m>n_L</m> = 10)</premise>
+        <response>Weaker evidence (higher p-value)</response>
+      </match>
+    </matches>
+    <solution>
+      <p>Scenario 3 (<m>n_L</m> = 50) provides stronger evidence because a larger sample size in the smaller group reduces the standard error, making it easier to detect a difference.</p>
+    </solution>
   </exercise>
   
   <exercise xml:id="inv4-3-f" label="I4.3.6">
@@ -245,6 +330,143 @@
         </row>
       </tabular>
     </statement>
+    <setup>
+      <!-- Scenario 1: t-statistic -->
+      <var>
+        <condition number="-5.66" tolerance="0.05">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The t-statistic for Scenario 1 is approximately -5.66.</p></feedback>
+        </condition>
+      </var>
+      <!-- Scenario 1: p-value -->
+      <var>
+        <condition number="0" tolerance="0.001">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The p-value for Scenario 1 is approximately 0.000 (very small).</p></feedback>
+        </condition>
+      </var>
+      <!-- Scenario 1: Significant? -->
+      <var>
+        <condition string="[Yy]es">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>p-value is less than 0.01, so yes, it is significant.</p></feedback>
+        </condition>
+      </var>
+      <!-- Scenario 2: t-statistic -->
+      <var>
+        <condition number="-4.13" tolerance="0.05">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The t-statistic for Scenario 2 is approximately -4.13.</p></feedback>
+        </condition>
+      </var>
+      <!-- Scenario 2: p-value -->
+      <var>
+        <condition number="0" tolerance="0.001">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The p-value for Scenario 2 is approximately 0.000 (very small).</p></feedback>
+        </condition>
+      </var>
+      <!-- Scenario 2: Significant? -->
+      <var>
+        <condition string="[Yy]es">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>p-value is less than 0.01, so yes, it is significant.</p></feedback>
+        </condition>
+      </var>
+      <!-- Scenario 3: t-statistic -->
+      <var>
+        <condition number="-2.48" tolerance="0.05">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The t-statistic for Scenario 3 is approximately -2.48.</p></feedback>
+        </condition>
+      </var>
+      <!-- Scenario 3: p-value -->
+      <var>
+        <condition number="0.00813" tolerance="0.002">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The p-value for Scenario 3 is approximately 0.008.</p></feedback>
+        </condition>
+      </var>
+      <!-- Scenario 3: Significant? -->
+      <var>
+        <condition string="[Yy]es.*">
+          <feedback><p>Correct! Barely, since 0.008 is just under 0.01.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>p-value (0.008) is less than 0.01, so yes (barely) significant.</p></feedback>
+        </condition>
+      </var>
+      <!-- Scenario 4: t-statistic -->
+      <var>
+        <condition number="-1.13" tolerance="0.05">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The t-statistic for Scenario 4 is approximately -1.13.</p></feedback>
+        </condition>
+      </var>
+      <!-- Scenario 4: p-value -->
+      <var>
+        <condition number="0.144" tolerance="0.005">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The p-value for Scenario 4 is approximately 0.144.</p></feedback>
+        </condition>
+      </var>
+      <!-- Scenario 4: Significant? -->
+      <var>
+        <condition string="[Nn]o">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>p-value (0.144) is greater than 0.01, so no, it is not significant.</p></feedback>
+        </condition>
+      </var>
+      <!-- Scenario 5: t-statistic -->
+      <var>
+        <condition number="-1.70" tolerance="0.05">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The t-statistic for Scenario 5 is approximately -1.70.</p></feedback>
+        </condition>
+      </var>
+      <!-- Scenario 5: p-value -->
+      <var>
+        <condition number="0.0449" tolerance="0.003">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The p-value for Scenario 5 is approximately 0.045.</p></feedback>
+        </condition>
+      </var>
+      <!-- Scenario 5: Significant? -->
+      <var>
+        <condition string="[Nn]o">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>p-value (0.045) is greater than 0.01, so no, it is not significant at the 1% level.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <tabular halign="center">
         <row header="yes" bottom="major">
@@ -377,7 +599,7 @@
 <subsection xml:id="practice4-3B">
   <title>Practice Problem 4.3B</title>
   
-  <p>Recall the study on children's television viewing habits for two schools in San Jose, CA from Practice Problem 2.6B (<url href="https://pubmed.ncbi.nlm.nih.gov/10608376/">Robinson, 1999</url>). The researcher wanted to study whether a new classroom curriculum could reduce children's television viewing habits, which might in turn help to prevent obesity. One of the schools, chosen at random, incorporated an 18-lesson, 6-month classroom curriculum designed to reduce watching television and playing video games, whereas the other school made no changes to its curriculum. Both before the curriculum intervention, all children were asked to report how many hours per week they spent on these activities.</p>
+  <p>Recall the study on children's television viewing habits for two schools in San Jose, CA from <xref ref="practice2-6B" text="custom">Practice Problem 2.6B</xref> (<url href="https://pubmed.ncbi.nlm.nih.gov/10608376/">Robinson, 1999</url>). The researcher wanted to study whether a new classroom curriculum could reduce children's television viewing habits, which might in turn help to prevent obesity. One of the schools, chosen at random, incorporated an 18-lesson, 6-month classroom curriculum designed to reduce watching television and playing video games, whereas the other school made no changes to its curriculum. Both before the curriculum intervention, all children were asked to report how many hours per week they spent on these activities.</p>
   
   <p>The following summary statistics pertain to the reports of television watching, in hours per week, prior to the intervention:</p>
   
