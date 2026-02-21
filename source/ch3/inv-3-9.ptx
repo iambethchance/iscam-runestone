@@ -12,7 +12,7 @@
 <p>      <alert>Wynder and Graham Study</alert>
       <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
         <col halign="left"/>
-        <row header="yes">
+        <row header="yes">Cancer \ Smoking
           <cell>Response</cell>
           <cell>None or Light smoker (0-9 cigarettes per day)</cell>
           <cell>Moderate to Heavy smoker (10-35+ per day)</cell>
@@ -43,14 +43,16 @@
   <exercise xml:id="inv3-9-a">
     <title>Baseline Rate</title>
     <statement>
-      <p>What is the estimate of the baseline rate of lung cancer from this table? Does that seem to be a reasonable estimate to you? How is this related to the design of the study?</p>
+      <p>What is the estimate of the baseline rate of lung cancer from this table? Does that seem to be a reasonable estimate to you? How is this related to the design of the study? Explain.</p>
     </statement>
-      <p><response/></p>    
+    <response/>
     <solution>
       <p>Baseline risk ≈ 605/1385 = 0.437. It does not seem reasonable to believe that almost half of the population at that time was a lung cancer patient. This large proportion happens because the researchers controlled how many lung cancer and non-lung cancer patients would be in the study (and probably consciously trying to make them similar) rather than randomly selecting patients in general and seeing how many had lung cancer (recording the variable "naturally").</p>
     </solution>
   </exercise>
-
+<paragraphs>
+    <p>In the previous investigation, we found 3.4% of children in the sample had a peanut allergy. This seems like a reasonable estimate for the overall base rate because whether a child developed an allergy was observed "naturally," the frequency of those outcomes was in no way influenced by the researchers. However, in this study, the researchers had some control over the breakdown of lung cancer patients and control patients.</p>
+</paragraphs>
   <assemblage>
     <title>Definition: Types of Observational Studies</title>
     <p>There are three main types of observational studies:</p>
@@ -60,12 +62,6 @@
       <li><term>Case-control study</term><idx><h>case-control study</h></idx>: The researchers identify observational units in each response variable category (the "cases" and the "controls") and then determine the explanatory variable outcome for each observational unit. How the controls are selected is very important in determining the comparability of the groups. These are often retrospective designs in that the researchers may need to "look back" at historical data on the observational units.</li>
     </ul></p>
   </assemblage>
-
-  <paragraphs>
-    <p>In the previous investigation, we found 3.4% of children in the sample had a peanut allergy. This seems like a reasonable estimate for the overall base rate because whether a child developed an allergy was observed "naturally," the frequency of those outcomes was in no way influenced by the researchers. However, in this study, the researchers had some control over the breakdown of lung cancer patients and control patients.</p>
-
-    <p>An advantage of case-control studies is when you are studying a "rare event," you can ensure a large enough number of "successes" and fairly balanced group sizes. However, a disadvantage is that it does not make sense to calculate "risk" or likelihood of success from a case-control study, because the distribution of the response variable has been manipulated/determined by the researcher.</p>
-  </paragraphs>
 
   <exercise xml:id="inv3-9-b">
     <title>Study Classification</title>
@@ -94,6 +90,10 @@
       <p>This is a case-control study: the researchers found cases of lung cancer and then other similar patients without lung cancer (controls). Having lung cancer or not is the response variable.</p>
     </solution>
   </exercise>
+  <paragraphs>
+    <p>An advantage of case-control studies is when you are studying a "rare event," you can ensure a large enough number of "successes" and fairly balanced group sizes. However, a disadvantage is that it does not make sense to calculate "risk" or likelihood of success from a case-control study, because the distribution of the response variable has been manipulated/determined by the researcher.</p>
+  </paragraphs>
+
 <p>One alternative would be to calculate the relative risk of being in the heavy smoker group (which was observed naturally), comparing those with lung cancer to those without lung cancer (control).</p>
   <exercise xml:id="inv3-9-c">
     <title>Alternative Relative Risk</title>
@@ -101,6 +101,16 @@
       <p> Calculate this value.</p>
       <p>Lung cancer patients were <var width="10"/> times more likely to be heavy smokers than control patients.</p>
     </statement>
+    <setup>
+      <var>
+        <condition number="1.30" tolerance="0.02">
+          <feedback><p>Correct! (583/605)/(576/780) ≈ 1.30.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate (583/605)/(576/780) ≈ 1.30.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Relative risk of being a heavy smoker = (583/605)/(576/780) ≈ 1.30</p>
       <p>The lung cancer patients were about 1.3 times more likely to be heavy smokers compared to the patients without lung cancer.</p>
@@ -112,12 +122,34 @@
   <exercise xml:id="inv3-9-d">
     <title>Original Relative Risk</title>
     <statement>
-      <p> Calculate this value. Is it similar to <xref ref="inv3-9-c" text="custom">question 4</xref>?</p>
+      <p> Calculate this value. Is it similar to <xref ref="inv3-9-c" text="custom">Question 3</xref>?</p>
       <p>Smokers were <var width="10"/> times more likely to have lung cancer than non-smokers.</p>
+      <p>Is this similar to the value in Question 3? <var width="40"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="5.17" tolerance="0.05">
+          <feedback><p>Correct! (583/1159)/(22/226) ≈ 5.17.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate (583/1159)/(22/226) ≈ 5.17.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Nn]o.*|.*[Nn]ot.*|.*[Dd]iff.*">
+          <feedback><p>Correct! 5.17 is not at all similar to 1.30.</p></feedback>
+        </condition>
+        <condition string=".*[Yy]es.*|.*[Ss]imilar.*|.*[Ss]ame.*">
+          <feedback><p>Actually, 5.17 is quite different from 1.30. Switching the roles of the variables changes the relative risk considerably.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>No, 5.17 is not at all similar to 1.30 from Question 3.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Relative risk of being in the lung cancer group = (583/1159)/(22/226) ≈ 5.17</p>
-      <p>The heavy smokers were 5.17 times more likely to have lung cancer compared to the light smokers. This value is not at all similar to the relative risk calculated in question 4.</p>
+      <p>The heavy smokers were 5.17 times more likely to have lung cancer compared to the light smokers. This value is not at all similar to the relative risk calculated in Question 3.</p>
     </solution>
     <response/>
   </exercise>
@@ -141,30 +173,50 @@
   <assemblage>
     <title>Definition: Odds Ratio</title>
     <p>The <term>odds ratio</term><idx><h>odds ratio</h></idx> is another way to compare conditional proportions in a 2 × 2 table.</p>
-    <p><m>Odds\ ratio = \frac{\frac{number\ of\ successes\ in\ group\ 1}{number\ of\ failures\ in\ group\ 1}}{\frac{number\ of\ successes\ in\ group\ 2}{number\ of\ failures\ in\ group\ 2}}</m></p>
+    <p><m>Odds\ ratio = \frac{\frac{\hat{p}_1}{1-\hat{p}_1}}{\frac{\hat{p}_2}{1-\hat{p}_2}} = \frac{\frac{number\ of\ successes\ in\ group\ 1}{number\ of\ failures\ in\ group\ 1}}{\frac{number\ of\ successes\ in\ group\ 2}{number\ of\ failures\ in\ group\ 2}}</m></p>
     <p>Like relative risk, if the odds ratio is 3, this is interpreted as "the odds of success in the 'top' group are 3 times (or 200%) higher than the odds of success in the 'bottom' group." However, the relative risk and the odds ratio are not always similar in value.</p>
   </assemblage>
 
   <exercise xml:id="inv3-9-e">
-    <title>Odds Ratio: Heavy Smoker</title>
+    <title>Odds Ratio: Heavy Smoker as success</title>
     <statement>
-      <p>Calculate and interpret the odds ratio comparing the odds of being a heavy smoker (rather than light smoker) for the lung cancer patients to the odds of being a heavy smoker in the control group. Does this match <xref ref="inv3-9-c" text="custom">question 4</xref>?</p>
+      <p>Calculate and interpret the odds ratio comparing the odds of being a heavy smoker (rather than light smoker) for the lung cancer patients to the odds of being a heavy smoker in the control group. Does this match <xref ref="inv3-9-c" text="custom">Question 3</xref>?</p>
       <p>The odds of being a heavy smoker are <var width="10"/> times higher for lung cancer patients than controls.</p>
     </statement>
+    <setup>
+      <var>
+        <condition number="9.39" tolerance="0.05">
+          <feedback><p>Correct! (583/22)/(576/204) ≈ 9.39.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate (583/22)/(576/204) ≈ 9.39.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Odds ratio of being heavy smoker = (583/22)/(576/204) ≈ 9.39</p>
       <p>The odds of being a heavy smoker were 9.39 times higher for lung cancer patients than for control patients.</p>
-      <p>This does not match question 4.</p>
+      <p>This does not match Question 4.</p>
     </solution>
     <response/>
   </exercise>
 
   <exercise xml:id="inv3-9-f">
-    <title>Odds Ratio: Lung Cancer</title>
+    <title>Odds Ratio: Lung Cancer as success</title>
     <statement>
-      <p>Calculate and interpret the odds ratio comparing the odds of lung cancer for the smokers to the odds of lung cancer for the nonsmokers. Does this match <xref ref="inv3-9-d" text="custom">question 4</xref> or <xref ref="inv3-9-e" text="custom">question 6</xref>?</p>
+      <p>Calculate and interpret the odds ratio comparing the odds of lung cancer for the smokers to the odds of lung cancer for the nonsmokers. Does this match <xref ref="inv3-9-d" text="custom">Question 4</xref> or <xref ref="inv3-9-e" text="custom">Question 5</xref>?</p>
       <p>The odds of lung cancer are <var width="10"/> times higher for smokers than non-smokers.</p>
     </statement>
+    <setup>
+      <var>
+        <condition number="9.39" tolerance="0.05">
+          <feedback><p>Correct! (583/576)/(22/204) ≈ 9.39. This matches Question 6 (the odds ratio is invariant to which variable you treat as the response).</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate (583/576)/(22/204) ≈ 9.39.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Odds ratio of lung cancer = (583/576)/(22/204) ≈ 9.39</p>
       <p>The odds of lung cancer are 9.39 times higher for heavy smokers than for light smokers. This does not match question 4 but does match question 6.</p>
@@ -193,6 +245,62 @@
       <p><m>H_0</m>: <var width="10"/> <var width="5"/> <var width="10"/></p>
       <p><m>H_a</m>: <var width="10"/> <var width="5"/> <var width="10"/></p>
     </statement>
+    <setup>
+      <!-- H0: parameter -->
+      <var>
+        <condition string=".*[Tt]au.*|.*τ.*|.*[Oo]dds\s*[Rr]atio.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Use τ (tau), the population odds ratio.</p></feedback>
+        </condition>
+      </var>
+      <!-- H0: symbol -->
+      <var>
+        <condition string=".*=.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The null hypothesis uses =.</p></feedback>
+        </condition>
+      </var>
+      <!-- H0: value -->
+      <var>
+        <condition number="1" tolerance="0">
+          <feedback><p>Correct! Under the null, the odds ratio equals 1 (no association).</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Under the null hypothesis, τ = 1 (odds ratio of 1 means no association).</p></feedback>
+        </condition>
+      </var>
+      <!-- Ha: parameter -->
+      <var>
+        <condition string=".*[Tt]au.*|.*τ.*|.*[Oo]dds\s*[Rr]atio.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Use τ (tau), the population odds ratio.</p></feedback>
+        </condition>
+      </var>
+      <!-- Ha: symbol -->
+      <var>
+        <condition string=".*&gt;.*|.*greater.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The alternative hypothesis uses &gt; (greater than).</p></feedback>
+        </condition>
+      </var>
+      <!-- Ha: value -->
+      <var>
+        <condition number="1" tolerance="0">
+          <feedback><p>Correct! The alternative is τ &gt; 1.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The alternative is τ &gt; 1 (higher odds of being a heavy smoker for lung cancer patients).</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>H<subscript>0</subscript>: <m>\tau = 1</m> (the population odds ratio is one, there is no association between smoking level and lung cancer status)</p>
       <p>H<subscript>a</subscript>: <m>\tau > 1</m> (the population odds ratio of being a heavy smoker are higher for lung cancer patients; aka, the population odds of lung cancer are higher for heavy smokers)</p>
@@ -201,7 +309,7 @@
   </exercise>
 
   <paragraphs>
-    <p>To simulate outcomes for a case-control study, we can treat the numbers of cases (lung cancer patients) and control patients as fixed, and randomly sample from each population, determining the proportion that are in group B (e.g., heavy smokers). Under the null hypothesis, we could use 1159/1385 ≈ 0.837 as the common probability of success in the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1">Comparing Two Population Proportions applet</url> and generate a sampling distribution of odds ratios.</p>
+    <p>To simulate outcomes for a case-control study, we can treat the numbers of cases (lung cancer patients) and control patients as fixed, and randomly sample from each of these populations, determining the proportion that are "success" (e.g., heavy smokers). Under the null hypothesis, we could use 1159/1385 ≈ 0.837 as the common probability of success in the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1">Comparing Two Population Proportions applet</url> and generate a sampling distribution of odds ratios.</p>
 
     <image source="images/Inv3.9ORsim.png" width="70%"/>
 
@@ -239,8 +347,35 @@
     <hint>
       <p>Remember you have two choices for interpreting this parameter.</p>
     </hint>
-      <p><var width="60" height="5"/></p>
+      <p>SE(ln odds ratio) = <var width="10"/></p>
+      <p>95% CI for log odds ratio: (<var width="10"/>, <var width="10"/>)</p>
     </statement>
+    <setup>
+      <var>
+        <condition number="0.232" tolerance="0.005">
+          <feedback><p>Correct! SE = √(1/22 + 1/583 + 1/204 + 1/576) ≈ 0.232.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Calculate √(1/22 + 1/583 + 1/204 + 1/576) ≈ 0.232.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="1.784" tolerance="0.02">
+          <feedback><p>Correct! Lower bound = ln(9.385) − 1.96(0.232) ≈ 1.784.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Lower bound = ln(9.385) − 1.96(0.232) ≈ 1.784.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="2.694" tolerance="0.02">
+          <feedback><p>Correct! Upper bound = ln(9.385) + 1.96(0.232) ≈ 2.694.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Upper bound = ln(9.385) + 1.96(0.232) ≈ 2.694.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>SE(ln odds ratio) = <m>\sqrt{1/22 + 1/583 + 1/204 + 1/576}</m> ≈ 0.232</p>
       <p>95% confidence interval for log odds ratio: ln(9.385) ± 1.96(0.232) ≈ (1.784, 2.694)</p>
@@ -251,9 +386,36 @@
   <exercise xml:id="inv3-9-i">
     <title>Back-Transform Interval</title>
     <statement>
-      <p>Back-transform the end-points of the interval in <xref ref="inv3-9-h" text="custom">question 9</xref> and interpret your results.</p>
-      <p><var width="60" height="4"/></p>
+      <p>Back-transform the end-points of the interval in <xref ref="inv3-9-h" text="custom">Question 8</xref> and interpret your results.</p>
+      <p>95% CI for odds ratio: (<var width="10"/>, <var width="10"/>)</p>
+      <p>Interpretation: <var width="60" height="3"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="5.96" tolerance="0.15">
+          <feedback><p>Correct! e^1.784 ≈ 5.96.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Back-transform: e^1.784 ≈ 5.96.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition number="14.79" tolerance="0.3">
+          <feedback><p>Correct! e^2.694 ≈ 14.79.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Back-transform: e^2.694 ≈ 14.79.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Interpret the confidence interval in terms of the odds of lung cancer for heavy vs. light smokers.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>95% confidence interval for odds ratio: (<m>e^{1.784}</m>, <m>e^{2.694}</m>) ≈ (5.96, 14.79)</p>
       <p>We are 95% confident that the heavy smokers' odds of being a lung cancer patient rather than a control patient are 5.96 to 14.79 times higher than the odds for a light smoker being a lung cancer patient rather than a control patient. (This is the alternative interpretation of the value of tau defined in g.)</p>
@@ -264,7 +426,7 @@
   <exercise xml:id="inv3-9-j">
     <title>Interval Contains One?</title>
     <statement>
-      <p>Does the interval found in <xref ref="inv3-9-i" text="custom">question 9</xref> contain the value one? Discuss the implications of whether or not the interval contains the value one.</p>
+      <p>Does the interval found in <xref ref="inv3-9-i" text="custom">Question 8</xref> contain the value one? Discuss the implications of whether or not the interval contains the value one.</p>
       <p><response/></p>
     </statement>
     <solution>
@@ -331,7 +493,7 @@
       <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
         <col halign="left"/>
         <row header="yes">
-          <cell>Response</cell>
+          <cell>Crim \ Outcome</cell>
           <cell>Abuse victim</cell>
           <cell>Control</cell>
         </row>
