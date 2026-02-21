@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="inv-3-10">
   <title>Investigation 3.10: Sleepy Drivers</title>
-<exercises xml:id="investigation3-10" hidden-label="yes">
+<introduction>This investigation reviews and applies the concepts of case-control studies and odds ratios. </introduction><exercises xml:id="investigation3-10" hidden-label="yes">
 <title>The Study</title>
   <introduction>
     <sidebyside widths="60% 35%" margins="0% 0%">
@@ -184,10 +184,10 @@
   <exercise xml:id="inv3-10-c">
     <title>Calculate Appropriate Statistic</title>
     <statement>
-      <p>Which statistic (odds ratio or relative risk) is most appropriate to calculate from this table, considering how the data were collected? Calculate and interpret this statistic. Does the value of this statistic support the researchers' conjecture? Explain.</p>
+      <p>Which statistic (odds ratio or relative risk) is most appropriate to calculate from this table, considering how the data were collected? Calculate this statistic. Does the value of this statistic support the researchers' conjecture? Explain.</p>
       <p>Most appropriate statistic: <var width="20"/></p>
       <p>Value = <var width="10"/></p>
-      <p>Interpretation: <var width="60" height="3"/></p>
+      <p>As conjectured? <var width="60" height="3"/></p>
     </statement>
     <setup>
       <var>
@@ -234,7 +234,7 @@
   <exercise xml:id="inv3-10-d">
     <title>Simulation Design</title>
     <statement>
-      <p>Outline the steps of a simulation that models the randomness in this study and helps you assess how unusual the statistic is that you calculated in <xref ref="inv3-10-c" text="custom">question 3</xref> when the null hypothesis is true. Include a statement of the null and alternative hypotheses for your choice of parameter.</p>
+      <p>Outline the steps of a simulation that models the randomness in this study and helps you assess how unusual the statistic is that you calculated in <xref ref="inv3-10-c" text="custom">Question 3</xref> when the null hypothesis is true. Include a statement of the null and alternative hypotheses for your choice of parameter.</p>
       <p><response/></p>
     </statement>
     <solution>
@@ -259,7 +259,7 @@
     <title>Carry Out Simulation</title>
     <statement>
       <p>Use technology to carry out your simulation and draw your conclusions.</p>
-      <aside>
+      <aside><title>Two-way Tables applet</title>
         <p>You can use the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?twobytwo=1">Analyzing Two-way Tables applet</url> to carry out your simulation.</p>
       </aside>
     <hint>
@@ -333,13 +333,13 @@
       <p>This interval does not capture one, so we have statistically significant evidence of an increase in odds for those without a full night's sleep.</p>
     </solution>
     <solution>
-      <title>Solution using R</title>
+      <title>R Output</title>
          <image source="images/Inv3.10solsfR.png" width="70%">
           <description>R output showing confidence interval calculation for odds ratio</description>
         </image>
     </solution>
     <solution>
-      <title>Solution using JMP</title>
+      <title>JMP Output</title>
         <image source="images/Inv3.10solsfJMP.png" width="70%">
           <description>JMP output showing confidence interval calculation for odds ratio</description>
         </image>
@@ -377,7 +377,7 @@
       <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
         <col halign="left"/>
         <row header="yes">
-          <cell>Cancer | Smoking</cell>
+          <cell>Cancer \ Smoking</cell>
           <cell>Not regular smoker</cell>
           <cell>Regular smoker</cell>
           <cell>Total</cell>
