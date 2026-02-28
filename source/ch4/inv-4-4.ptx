@@ -233,7 +233,8 @@
         <response/>
       </exercise>
     
-  <p><alert>Statistical Inference</alert></p>
+
+  <p><title>Statistical Inference</title></p>
       
   <p>As with the <q>dolphin therapy</q> experiment from Chapter 3, we again need to judge the strength of evidence that the experimental data provide in support of the researchers' conjecture that sleep deprivation has a harmful effect on learning. We are now working with a quantitative response variable rather than a categorical one, but we will use the same basic logic of statistical significance: We will ask whether the observed experimental results are very unlikely to have occurred by chance variation if the explanatory variable has no effect, that is, if the values in the two groups are interchangeable. To simulate this randomization test: We will take the observed response variable outcomes, randomly distribute these numerical values between the two groups, compute the statistic of interest (e.g., the difference in group means), repeat this process a large number of times, and see how often the random assignment process alone produces a difference in group means as extreme as in the actual research study. This is similar to what you considered in Investigation 4.1. However, this time it is not really feasible to list out all possible <m>C(21,10) = 352,716</m> random assignments and consider the value of the statistic for each one, so we will simulate a large number of random assignments instead. Note, we need to know the value of <m>(\bar{x}_1 - \bar{x}_2)</m>, not just the <q>number of successes</q> as with the dolphin therapy study.</p>
       
@@ -265,6 +266,14 @@
         <response/>
       </exercise>
       
+  <aside>
+    <title>Randomization Animation</title>
+    <p>The following animation illustrates the randomization process for comparing two means. Click the image to view the full animation.</p>
+    <image source="images/2MeansSleepDeprivation.gif" width="80%">
+      <description>Animated illustration of the randomization test for comparing two means in the sleep deprivation study</description>
+    </image>
+  </aside>
+
       <p>Simulating more repetitions would provide a better understanding of how significant (i.e., unlikely to have happened by random assignment alone) the observed experimental results are. In other words, more repetitions will enable us to approximate the p-value more accurately. We will again turn to technology to perform the simulation more quickly and efficiently.</p>
 
           <p>Open the <url href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm">Comparing Groups (Quantitative) applet</url>. You will see dotplots of the research results. Verify the calculation of the observed difference in group means. (This applet subtracts the top row from the bottom row.)</p>
