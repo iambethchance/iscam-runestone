@@ -37,8 +37,7 @@
         <title><url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm" visual="rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url></title>
         <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url> to create comparative graphs:</p>
         <ul>
-          <li><p>Copy the data to the clipboard or use this  <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm?data=https://www.rossmanchance.com/iscam3/data/elephants.txt">link</url>. In the applet, check the <term index="no">Stacked</term> box. Press <term index="no">Clear</term> 
-          and paste the data into the Sample data window and press <term index="no">Use Data</term>. (Or type elephants.txt in the empty Paste data window.)</p></li>
+          <li><p>Copy the data to the clipboard. In the applet, check the <term index="no">Stacked</term> box. Press <term index="no">Clear</term> and paste the data into the Sample data window and press <term index="no">Use Data</term>. (Or type elephants.txt in the empty Paste data window.) (Or use this  <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm?data=https://www.rossmanchance.com/iscam3/data/elephants.txt">link</url> and press the <term index="no">Use Data</term> button</p></li>
           <li><p>Use the <term index="no">Separate by</term> pull-down menu to select the Species categorical variable</p></li>
           <li><p>You have radio button options for <term index="no">Histograms</term> and <term index="no">Boxplots</term>.</p></li>
         </ul>
@@ -171,10 +170,8 @@ par(mfrow=c(1,1))
       
       <hint>
         <title><url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm" visual="rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url></title>
-        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url> (<url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm?data=https://www.rossmanchance.com/iscam3/data/elephants.txt">with data)</url> to calculate numerical summaries:</p>
-        <ul>
-          <li><p>Check the Mean: Actual and Std dev: Actual boxes (at least)</p></li>
-        </ul>
+        <p>
+          Check the Mean: Actual and Std dev: Actual boxes (at least)</p>
       </hint>
       
       <hint>
@@ -221,7 +218,7 @@ iscamsummary(elephants$Distance, elephants$Species)
               <cell>SD</cell>
             </row>
             <row>
-              <cell halign="left"><space/>African<space/></cell>
+              <cell halign="left">&#160;African&#160;</cell>
               <cell><var width="5"/></cell>
               <cell><var width="8"/></cell>
               <cell><var width="8"/></cell>
@@ -357,7 +354,7 @@ Players without a team affiliation or without a listed salary were not included 
                 <cell>SD</cell>
               </row>
               <row>
-                <cell halign="left"><space/>Western<space/></cell>
+                <cell halign="left">&#160;Western&#160;</cell>
                 <cell><var width="5"/></cell>
                 <cell><var width="8"/></cell>
                 <cell><var width="8"/></cell>
@@ -452,7 +449,7 @@ Players without a team affiliation or without a listed salary were not included 
       </exercise>
           <p>Select a random sample of 20 players from each conference:</p>
           <ul>
-            <li><p>Check the <term index="no">Show Sampling Options</term> box.</p></li>
+            <li><p>Check the <term index="no">Show Sampling Options</term> box. (You may have to scroll right in ther applet.)</p></li>
             <li><p>Specify sample sizes of 20 for each sample and press <term index="no">Draw Samples</term>.</p></li>
             <li><p>Select the <term index="no">Plot</term> radio button.</p></li>
           </ul>
@@ -471,7 +468,7 @@ Players without a team affiliation or without a listed salary were not included 
                 <cell>SD</cell>
               </row>
               <row>
-                <cell><space/>Western<space/></cell>
+                <cell>&#160;Western&#160;</cell>
                 <cell><var width="5"/></cell>
                 <cell><var width="8"/></cell>
                 <cell><var width="8"/></cell>
@@ -849,7 +846,7 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
         </hint>
         </statement>
         <solution>
-          <p>Yes, the technical conditions are met. The sample distributions are reasonably symmetric (based on the dotplots and boxplots), and both sample sizes are less than 20 but the distributions don't show strong skewness, so the <m>t</m>-procedures should be valid.</p>
+          <p>Yes, the technical conditions are met. The sample distributions are reasonably symmetric (based on the dotplots and boxplots), and both sample sizes are less than 20 but the distributions don't show strong skewness, so the <m>t</m>-procedures should be valid. (Though you might want to worry about the population sizes?)</p>
         </solution>
         <response/>
       </exercise>
@@ -885,7 +882,7 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
       <assemblage xml:id="study-conclusions-4-2">
         <title>Study Conclusions</title>
         
-        <p>In this study, the mean distance walked is similar for these two species (<m>\bar{x}_{African} = 5.40</m> vs. <m>\bar{x}_{Asian}5.30</m> km) and the sample sizes are not super large (<m>n_{African}= 33</m>  and <m>n_{Asian}= 23</m>), with a fair bit of variation in walking distances within each species (<m>s_{\text{African}} = 1.47</m> vs <m>s_{\text{Asian}} = 3.41</m> km). For these reasons, we do not expect a small p-value. The distributions are fairly symmetric so the unpooled <m>t</m>-test should be valid (the standard deviations are not very similar, so we would not feel comfortable assuming equal population variances). The unpooled <m>t</m>-test statistic of 0.131 is small, yielding a two-sided p-value of 0.897. We fail to reject the null hypothesis that the population mean walking distances are the same. These data do not provide convincing evidence of a difference in walking distances, on average, between Asian and African elephants in American zoos. A 95% confidence interval tells us that its plausible that, in these two populations, African elephants average up to 1.45 km less to 1.65 km more than Asian elephants. It might be interesting to further explore the larger variation in walking distances among the Asian elephants. We should also be aware that we have sampled a large fraction of the populations and should consider some <q>finite population corrections</q> which would only further increase the standard deviation.</p>
+        <p>In this study, the mean distance walked is similar for these two species (<m>\bar{x}_{African} = 5.40</m> vs. <m>\bar{x}_{Asian} = 5.30</m> km) and the sample sizes are not super large (<m>n_{African}= 33</m>  and <m>n_{Asian}= 23</m>), with a fair bit of variation in walking distances within each species (<m>s_{\text{African}} = 1.47</m> vs. <m>s_{\text{Asian}} = 3.41</m> km). For these reasons, we do not expect a small p-value. The distributions are fairly symmetric so the unpooled <m>t</m>-test should be valid (the standard deviations are not very similar, so we would not feel comfortable assuming equal population variances). The unpooled <m>t</m>-test statistic of 0.131 is small, yielding a two-sided p-value of 0.897. We fail to reject the null hypothesis that the population mean walking distances are the same. These data do not provide convincing evidence of a difference in walking distances, on average, between Asian and African elephants in American zoos. A 95% confidence interval tells us that its plausible that, in these two populations, African elephants average up to 1.45 km less to 1.65 km more than Asian elephants. It might be interesting to further explore the larger variation in walking distances among the Asian elephants. We should also be aware that we have sampled a large fraction of the populations and should consider some <q>finite population corrections</q> which would only further increase the standard deviation.</p>
       </assemblage>
       
       <p>Keep in mind that the <m>t</m>-tests only tell us about whether the centers of the distributions are significantly different. They don't help us analyze other potentially interesting differences in the two distributions.</p>
