@@ -21,7 +21,7 @@
     <p>Unrestricted sleep group (<m>n = 10</m>): 25.2, 14.5, -7.0, 12.6, 34.5, 45.6, 11.6, 18.6, 12.1, 30.5</p>
   </introduction>
   
-  <p><alert>Study Design</alert></p>
+  <p><title>Study Design</title></p>
       
   <exercise xml:id="inv4-4-a" label="I4.4.1">
         <title>Experiment or Observational Study</title>
@@ -145,7 +145,7 @@
         </solution>
   </exercise>
     
-  <p><alert>Descriptive Statistics</alert></p>
+  <p><title>Descriptive Statistics</title></p>
       
   <p>The following dotplots reveal the distributions of improvements between the two groups:</p>
       
@@ -171,15 +171,24 @@
         <title>Calculate Observed Difference</title>
         <statement>
           <p>There are several ways we could choose to measure the tendency observed in <xref ref="inv4-4-e" text="custom">Question 5</xref>. A common choice of statistic is of course the difference in group means. Calculate this statistic by subtracting the <q>deprived</q> group's value from the <q>unrestricted</q> group's value.</p>
-          <p>Observed difference in sample means: <m>\bar{x}_{\text{unrestricted}} - \bar{x}_{\text{deprived}} = </m> <var width="10"/></p>
+          <p>Observed difference in sample means: <m>\bar{x}_{\text{unrestricted}} - \bar{x}_{\text{deprived}} = </m> <var width="10"/> ms</p>
         </statement>
+        <setup>
+          <var>
+            <condition number="15.92" tolerance="0.1">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The observed difference is 19.82 - 3.90 = 15.92 ms.</p></feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p><m>\bar{x}_{\text{deprived}} = 3.90</m> ms</p>
           <p><m>\bar{x}_{\text{unrestricted}} = 19.82</m> ms</p>
           <p>Difference: <m>19.82 - 3.90 = 15.92</m> ms</p>
           <p>Note: The observed difference (unres - deprived) is <m>15.92</m> ms. </p>
         </solution>
-        <response/>
       </exercise>
       
       <exercise xml:id="inv4-4-g" label="I4.4.7">
@@ -187,10 +196,19 @@
         <statement>
           <p>Is it possible that the differences seen here could have occurred just by chance variation, due to the random assignment of subjects to groups, even if there were really no effect of the sleep condition on improvement?</p>
         </statement>
+        <choices randomize="yes">
+          <choice correct="yes">
+            <statement><p>Yes</p></statement>
+            <feedback><p>Correct! Random assignment alone could conceivably lead to a large difference in the group means.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p>No</p></statement>
+            <feedback><p>Actually, it is possible — random assignment alone could conceivably lead to a large difference in the group means, even if there is no real effect.</p></feedback>
+          </choice>
+        </choices>
         <solution>
           <p>It is possible <mdash/> random assignment alone could conceivably lead to a large difference in the group means.</p>
         </solution>
-        <response/>
       </exercise>
       
       <exercise xml:id="inv4-4-h" label="I4.4.8">
