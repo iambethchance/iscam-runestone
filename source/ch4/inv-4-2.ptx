@@ -37,7 +37,7 @@
         <title><url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm" visual="rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url></title>
         <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url> to create comparative graphs:</p>
         <ul>
-          <li><p>Copy the data to the clipboard. In the applet, check the <term index="no">Stacked</term> box. Press <term index="no">Clear</term> 
+          <li><p>Copy the data to the clipboard or use this  <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm?data=https://www.rossmanchance.com/iscam3/data/elephants.txt">link</url>. In the applet, check the <term index="no">Stacked</term> box. Press <term index="no">Clear</term> 
           and paste the data into the Sample data window and press <term index="no">Use Data</term>. (Or type elephants.txt in the empty Paste data window.)</p></li>
           <li><p>Use the <term index="no">Separate by</term> pull-down menu to select the Species categorical variable</p></li>
           <li><p>You have radio button options for <term index="no">Histograms</term> and <term index="no">Boxplots</term>.</p></li>
@@ -100,7 +100,7 @@ par(mfrow=c(1,1))
             <p>OR</p>
             <ul>
               <li><p>Select <term index="no">Graph > Graph Builder</term>.</p></li>
-              <li><p>Drag <em>Distance</em> to the <term index="no">X axis</term> and <em>Species</em> to the <term index="no">Y axis</term>.</p></li>
+              <li><p>Drag <em>Distance</em> to the <term index="no">X axis</term> and <em> Species </em> to the <term index="no">Y axis</term>.</p></li>
               <li><p>Use the icons across the top to change to boxplots and histograms.</p></li>
               <li><p>Press <term index="no">Done</term> to complete the graph.</p></li>
               <li><p>See also <term index="no">Analyze > Tabulate</term>.</p></li>
@@ -171,7 +171,7 @@ par(mfrow=c(1,1))
       
       <hint>
         <title><url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm" visual="rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url></title>
-        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url> to calculate numerical summaries:</p>
+        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url> (<url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm?data=https://www.rossmanchance.com/iscam3/data/elephants.txt">with data)</url> to calculate numerical summaries:</p>
         <ul>
           <li><p>Check the Mean: Actual and Std dev: Actual boxes (at least)</p></li>
         </ul>
@@ -221,7 +221,7 @@ iscamsummary(elephants$Distance, elephants$Species)
               <cell>SD</cell>
             </row>
             <row>
-              <cell halign="left">African</cell>
+              <cell halign="left"><space/>African<space/></cell>
               <cell><var width="5"/></cell>
               <cell><var width="8"/></cell>
               <cell><var width="8"/></cell>
@@ -357,7 +357,7 @@ Players without a team affiliation or without a listed salary were not included 
                 <cell>SD</cell>
               </row>
               <row>
-                <cell halign="left">Western</cell>
+                <cell halign="left"><space/>Western<space/></cell>
                 <cell><var width="5"/></cell>
                 <cell><var width="8"/></cell>
                 <cell><var width="8"/></cell>
@@ -471,7 +471,7 @@ Players without a team affiliation or without a listed salary were not included 
                 <cell>SD</cell>
               </row>
               <row>
-                <cell>Western</cell>
+                <cell><space/>Western<space/></cell>
                 <cell><var width="5"/></cell>
                 <cell><var width="8"/></cell>
                 <cell><var width="8"/></cell>
@@ -707,7 +707,7 @@ Players without a team affiliation or without a listed salary were not included 
         <p><alert>Parameter:</alert> <m>\mu_1 - \mu_2</m> = the difference in the population means</p>
         
         <p><alert>To test <m>H_0: \mu_1 - \mu_2 = 0</m></alert></p>
-        <p>Standardized statistic: <me>t = \frac{(\bar{x}_1 - \bar{x}_2) - 0}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</me></p>
+        <p><alert>Standardized statistic</alert>: <me>t = \frac{(\bar{x}_1 - \bar{x}_2) - 0}{\sqrt{s_1^2/n_1 + s_2^2/n_2}}</me></p>
         
         <p><alert><m>t</m>-Confidence interval for <m>\mu_1 - \mu_2</m></alert></p>
         <p><me>(\bar{x}_1 - \bar{x}_2) \pm t^* \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}</me></p>
@@ -745,6 +745,24 @@ with only the summary data is one advantage the <m>t</m>-test has over the simul
             <li><p>Check the <term index="no">Test of Significance</term> box</p></li>
             <li><p>Choose the alternative hypothesis</p></li>
             <li><p>Press <term index="no">Calculate</term> to get the test statistic, degrees of freedom, and p-value</p></li>
+          </ul>
+        </hint>
+        <hint>
+          <title>In Applet - Theory-Based Inference (Raw Data)</title>
+          <p>Use the Theory-Based Inference applet with raw data:</p>
+          
+          <image source="images/Inv4.2TBIA2.png" width="40%">
+            <description>Theory-Based Inference applet for unpooled two-sample t-test with raw data</description>
+          </image>
+          <ul>
+            <li><p>Select "Two Means" from the <term index="no">Scenario</term> pull-down menu</p></li>
+            <li><p>Copy the data to the clipboard, check the <term index="no">Paste data</term>
+             box, select the <term index="no">Stacked</term> box if that’s the data format 
+             (explanatory variable in first column), press <term index="no">Clear</term>, 
+             click in the data window and paste the data. Press <term index="no">Use Data</term>.</p></li>
+            <li><p>Check the <term index="no">Test of Significance</term> box.</p></li>
+            <li><p>Specify the hypothesized difference and direction of the alternative.</p></li>
+            <li><p>Press <term index="no">Calculate</term></p></li>
           </ul>
         </hint>
         <hint>
@@ -815,24 +833,6 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
                 <ul><li><p>To change the confidence level, use the hot spot to select <term index="no">Set <m>\alpha</m> level</term> to <m>1-C</m>.</p></li></ul></li>
                 </ul>
         </hint>
-        <hint>
-          <title>In Applet - Theory-Based Inference (Raw Data)</title>
-          <p>Use the Theory-Based Inference applet with raw data:</p>
-          
-          <image source="images/Inv4.2TBIA2.png" width="40%">
-            <description>Theory-Based Inference applet for unpooled two-sample t-test with raw data</description>
-          </image>
-          <ul>
-            <li><p>Select "Two Means" from the <term index="no">Scenario</term> pull-down menu</p></li>
-            <li><p>Copy the data to the clipboard, check the <term index="no">Paste data</term>
-             box, select the <term index="no">Stacked</term> box if that’s the data format 
-             (explanatory variable in first column), press <term index="no">Clear</term>, 
-             click in the data window and paste the data. Press <term index="no">Use Data</term>.</p></li>
-            <li><p>Check the <term index="no">Test of Significance</term> box.</p></li>
-            <li><p>Specify the hypothesized difference and direction of the alternative.</p></li>
-            <li><p>Press <term index="no">Calculate</term></p></li>
-          </ul>
-        </hint>
         </statement>
       </exercise>
 
@@ -885,7 +885,7 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
       <assemblage xml:id="study-conclusions-4-2">
         <title>Study Conclusions</title>
         
-        <p>In this study, the mean distance walked is similar for these two species (5.40 vs. 5.30 km) and the sample sizes are not super large (33 and 23), with a fair bit of variation in walking distances within each species (<m>s_{\text{African}} = 1.47</m> vs <m>s_{\text{Asian}} = 3.41</m> km). For these reasons, we do not expect a small p-value. The distributions are fairly symmetric so the unpooled <m>t</m>-test should be valid (the standard deviations are not very similar, so we would not feel comfortable assuming equal population variances). The unpooled <m>t</m>-test statistic of 0.131 is small, yielding a two-sided p-value of 0.897. We fail to reject the null hypothesis that the population mean walking distances are the same. These data do not provide convincing evidence of a difference in walking distances, on average, between Asian and African elephants in American zoos. A 95% confidence interval tells us that its plausible that, in these two populations, African elephants average up to 1.45 km less to 1.65 km more than Asian elephants. It might be interesting to further explore the larger variation in walking distances among the Asian elephants. We should also be aware that we have sampled a large fraction of the populations and should consider some <q>finite population corrections</q> which would only further increase the standard deviation.</p>
+        <p>In this study, the mean distance walked is similar for these two species (<m>\bar{x}_{African} = 5.40</m> vs. <m>\bar{x}_{Asian}5.30</m> km) and the sample sizes are not super large (<m>n_{African}= 33</m>  and <m>n_{Asian}= 23</m>), with a fair bit of variation in walking distances within each species (<m>s_{\text{African}} = 1.47</m> vs <m>s_{\text{Asian}} = 3.41</m> km). For these reasons, we do not expect a small p-value. The distributions are fairly symmetric so the unpooled <m>t</m>-test should be valid (the standard deviations are not very similar, so we would not feel comfortable assuming equal population variances). The unpooled <m>t</m>-test statistic of 0.131 is small, yielding a two-sided p-value of 0.897. We fail to reject the null hypothesis that the population mean walking distances are the same. These data do not provide convincing evidence of a difference in walking distances, on average, between Asian and African elephants in American zoos. A 95% confidence interval tells us that its plausible that, in these two populations, African elephants average up to 1.45 km less to 1.65 km more than Asian elephants. It might be interesting to further explore the larger variation in walking distances among the Asian elephants. We should also be aware that we have sampled a large fraction of the populations and should consider some <q>finite population corrections</q> which would only further increase the standard deviation.</p>
       </assemblage>
       
       <p>Keep in mind that the <m>t</m>-tests only tell us about whether the centers of the distributions are significantly different. They don't help us analyze other potentially interesting differences in the two distributions.</p>
@@ -895,7 +895,7 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
     
     <p>Open the <url href="https://www.rossmanchance.com/applets/2021/twoboot/TwoBoot.html?hideExtras=1">Sampling from Two Sample Bootstrapping applet</url>.</p>
     <ul>
-      <li><p>Enter <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt">elephants.txt</url> in the data window and press <alert>Use Data</alert> (twice).</p></li>
+      <li><p>Type <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt">elephants.txt</url> in the data window and press <alert>Use Data</alert> (twice).</p></li>
       <li><p>Check <alert>Show Sampling Options</alert></p></li>
       <li><p>Press <alert>Bootstrap Samples</alert></p></li>
       <li><p>Look at the Plot display.</p></li>
@@ -989,7 +989,7 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
     
     <aside>
       <title>Theory-Based Inference Applet</title>
-      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference for Two Sample Means applet</url> to check your conjecture.</p>
+      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet<url> for Two Means </url> to check your conjecture.</p>
     </aside>
     
     <exercise xml:id="practice-4-2-c-2" label="PP4.2C.2">
