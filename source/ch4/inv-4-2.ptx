@@ -37,7 +37,7 @@
         <title><url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm" visual="rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url></title>
         <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url> to create comparative graphs:</p>
         <ul>
-          <li><p>Copy the data to the clipboard. In the applet, check the <term index="no">Stacked</term> box. Press <term index="no">Clear</term> and paste the data into the Sample data window and press <term index="no">Use Data</term>. (Or type elephants.txt in the empty Paste data window.) (Or use this  <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm?data=https://www.rossmanchance.com/iscam3/data/elephants.txt">link</url> and press the <term index="no">Use Data</term> button</p></li>
+          <li><p>Copy the data to the clipboard. In the applet, check the <term index="no">Stacked</term> box. Press <term index="no">Clear</term> and paste the data into the Sample data window and press <term index="no">Use Data</term>. (Or type elephants.txt in the empty Paste data window.) (Or use this  <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm?data=https://www.rossmanchance.com/iscam3/data/elephants.txt">link</url> and press the <term index="no">Use Data</term> button.)</p></li>
           <li><p>Use the <term index="no">Separate by</term> pull-down menu to select the Species categorical variable</p></li>
           <li><p>You have radio button options for <term index="no">Histograms</term> and <term index="no">Boxplots</term>.</p></li>
         </ul>
@@ -354,7 +354,7 @@ Players without a team affiliation or without a listed salary were not included 
                 <cell>SD</cell>
               </row>
               <row>
-                <cell halign="left">&#160;Western&#160;</cell>
+                <cell halign="left">Western&#160;&#160;</cell>
                 <cell><var width="5"/></cell>
                 <cell><var width="8"/></cell>
                 <cell><var width="8"/></cell>
@@ -462,19 +462,19 @@ Players without a team affiliation or without a listed salary were not included 
             <alert>Sample Statistics for NBA Salaries by Conference</alert>
 <p>            <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
               <row header="yes">
-                <cell>League</cell>
+                <cell halign="left">League</cell>
                 <cell><em>n</em></cell>
                 <cell>Mean</cell>
                 <cell>SD</cell>
               </row>
               <row>
-                <cell>&#160;Western&#160;</cell>
+                <cell halign="left">Western&#160;&#160;</cell>
                 <cell><var width="5"/></cell>
                 <cell><var width="8"/></cell>
                 <cell><var width="8"/></cell>
               </row>
               <row>
-                <cell>Eastern</cell>
+                <cell halign="left">Eastern&#160;&#160;</cell>
                 <cell><var width="5"/></cell>
                 <cell><var width="8"/></cell>
                 <cell><var width="8"/></cell>
@@ -714,7 +714,7 @@ Players without a team affiliation or without a listed salary were not included 
         <p><alert>Technical conditions:</alert> These procedures are considered valid if the sample distributions are reasonably symmetric or the sample sizes are both at least 20.  Also consider whether you are sampling from a random process or large populations.</p>
       </assemblage>
       
-<p><alert>Using Technology to Carry out the Two-Sample <m>t</m>-Tests</alert>
+<p><title>Using Technology to Carry out the Two-Sample <m>t</m>-Tests</title>
 In using technology, you need to consider how the data are available: Do you have the “raw data” (meaning all the individual data values) or just the summary statistics (sample sizes, means, SDs)? Most software packages will assume raw data is “stacked” – each column represents a different variable (all response variable values in one column, the explanatory variable in a second column). Also notice that being able to run the <m>t</m>-test 
 with only the summary data is one advantage the <m>t</m>-test has over the simulation. But also keep in mind that the <m>t</m>-output is valid only when the population distributions are normal or the sample sizes are large. When reporting your results, make sure you specify which technology you used, because different software use different degrees of freedom. You will also need to watch for the direction of subtraction that the software packages use automatically (often alphabetical by group name).</p>
 
@@ -882,7 +882,7 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
       <assemblage xml:id="study-conclusions-4-2">
         <title>Study Conclusions</title>
         
-        <p>In this study, the mean distance walked is similar for these two species (<m>\bar{x}_{African} = 5.40</m> vs. <m>\bar{x}_{Asian} = 5.30</m> km) and the sample sizes are not super large (<m>n_{African}= 33</m>  and <m>n_{Asian}= 23</m>), with a fair bit of variation in walking distances within each species (<m>s_{\text{African}} = 1.47</m> vs. <m>s_{\text{Asian}} = 3.41</m> km). For these reasons, we do not expect a small p-value. The distributions are fairly symmetric so the unpooled <m>t</m>-test should be valid (the standard deviations are not very similar, so we would not feel comfortable assuming equal population variances). The unpooled <m>t</m>-test statistic of 0.131 is small, yielding a two-sided p-value of 0.897. We fail to reject the null hypothesis that the population mean walking distances are the same. These data do not provide convincing evidence of a difference in walking distances, on average, between Asian and African elephants in American zoos. A 95% confidence interval tells us that its plausible that, in these two populations, African elephants average up to 1.45 km less to 1.65 km more than Asian elephants. It might be interesting to further explore the larger variation in walking distances among the Asian elephants. We should also be aware that we have sampled a large fraction of the populations and should consider some <q>finite population corrections</q> which would only further increase the standard deviation.</p>
+        <p>In this study, the mean distance walked is similar for these two species (<m>\bar{x}_{African} = 5.40</m> vs. <m>\bar{x}_{Asian} = 5.30</m> km) and the sample sizes are not super large (<m>n_{African}= 33</m>  and <m>n_{Asian}= 23</m>), with a fair bit of variation in walking distances within each species (<m>s_{African} = 1.47</m> vs. <m>s_{Asian} = 3.41</m> km). For these reasons, we do not expect a small p-value. The distributions are fairly symmetric so the unpooled <m>t</m>-test should be valid (the standard deviations are not very similar, so we would not feel comfortable assuming equal population variances). The unpooled <m>t</m>-test statistic of 0.131 is small, yielding a two-sided p-value of 0.897. We fail to reject the null hypothesis that the population mean walking distances are the same. These data do not provide convincing evidence of a difference in walking distances, on average, between Asian and African elephants in American zoos. A 95% confidence interval tells us that its plausible that, in these two populations, African elephants average up to 1.45 km less to 1.65 km more than Asian elephants. It might be interesting to further explore the larger variation in walking distances among the Asian elephants. We should also be aware that we have sampled a large fraction of the populations and should consider some <q>finite population corrections</q> which would only further increase the standard deviation.</p>
       </assemblage>
       
       <p>Keep in mind that the <m>t</m>-tests only tell us about whether the centers of the distributions are significantly different. They don't help us analyze other potentially interesting differences in the two distributions.</p>

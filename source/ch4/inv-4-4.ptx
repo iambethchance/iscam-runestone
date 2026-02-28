@@ -54,11 +54,69 @@
           <p>RV: <var width="40"/></p>
           <p>type: <var width="20"/></p>
         </statement>
+        <setup>
+          <!-- EV -->
+          <var>
+            <condition string=".*[Ss]leep.*">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*[Gg]roup.*">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*[Tt]reatment.*">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The explanatory variable is the sleep condition (whether the subject was sleep deprived or had unrestricted sleep).</p></feedback>
+            </condition>
+          </var>
+          <!-- EV type -->
+          <var>
+            <condition string=".*[Cc]ategorical.*">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*[Bb]inary.*">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The explanatory variable is binary categorical (two groups).</p></feedback>
+            </condition>
+          </var>
+          <!-- RV -->
+          <var>
+            <condition string=".*[Ii]mprovement.*">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*[Rr]eaction.*">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*[Tt]ime.*">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*[Pp]erformance.*">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The response variable is the improvement in reaction time (in milliseconds).</p></feedback>
+            </condition>
+          </var>
+          <!-- RV type -->
+          <var>
+            <condition string=".*[Qq]uantitative.*">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*[Nn]umerical.*">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The response variable is quantitative (measured in milliseconds).</p></feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p>EV: Was the subject sleep deprived? type: Binary categorical</p>
           <p>RV: What was the subject's improvement score? type: Quantitative</p>
         </solution>
-        <response/>
       </exercise>
       
       <exercise xml:id="inv4-4-c" label="I4.4.3">
@@ -112,7 +170,7 @@
       <exercise xml:id="inv4-4-f" label="I4.4.6">
         <title>Calculate Observed Difference</title>
         <statement>
-          <p>There are several ways we could choose to measure the tendency observed in <xref ref="inv4-4-e" text="custom">checkpoint 16.1.5</xref>. A common choice of statistic is of course the difference in group means. Calculate this statistic by subtracting the <q>deprived</q> group's value from the <q>unrestricted</q> group's value.</p>
+          <p>There are several ways we could choose to measure the tendency observed in <xref ref="inv4-4-e" text="custom">Question 5</xref>. A common choice of statistic is of course the difference in group means. Calculate this statistic by subtracting the <q>deprived</q> group's value from the <q>unrestricted</q> group's value.</p>
           <p>Observed difference in sample means: <m>\bar{x}_{\text{unrestricted}} - \bar{x}_{\text{deprived}} = </m> <var width="10"/></p>
         </statement>
         <solution>
@@ -149,7 +207,7 @@
       <exercise xml:id="inv4-4-i" label="I4.4.9">
         <title>Outline Simulation</title>
         <statement>
-          <p>Outline the steps of a simulation analysis that would explore the <q>could have been</q> outcomes under the null hypothesis by modelling the randomness described in <xref ref="inv4-4-h" text="custom">checkpoint 16.1.8</xref>.</p>
+          <p>Outline the steps of a simulation analysis that would explore the <q>could have been</q> outcomes under the null hypothesis by modelling the randomness described in <xref ref="inv4-4-h" text="custom">Question 8</xref>.</p>
         </statement>
         <solution>
           <p>We want to simulate the random assignment by assuming everyone would get the same improvement score, regardless of which group they end up in, and randomly assign the subjects into 2 groups of <m>n_1 = 11</m> and <m>n_2 = 10</m>. Then see how frequently you get <m>\bar{x}_1 - \bar{x}_2 > 15.92</m>.</p>
@@ -190,27 +248,32 @@
       </exercise>
       
       <p>Simulating more repetitions would provide a better understanding of how significant (i.e., unlikely to have happened by random assignment alone) the observed experimental results are. In other words, more repetitions will enable us to approximate the p-value more accurately. We will again turn to technology to perform the simulation more quickly and efficiently.</p>
+
+          <p>Open the <url href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm">Comparing Groups (Quantitative) applet</url>. You will see dotplots of the research results. Verify the calculation of the observed difference in group means. (This applet subtracts the top row from the bottom row.)</p>
+          <ul>
+            <li><p>Check the <alert>Show Shuffle Options</alert> box.</p></li>
+            <li><p>Select the <alert>Plot</alert> radio button.</p></li>
+            <li><p>Press the <alert>Shuffle Responses</alert> button.</p></li>
+          </ul>
+          <p>The applet combines all the scores into one pile, reassigns the group labels (red and black coloring) at random, and then redistributes the observations to the two treatment groups, just like you did with the index cards.</p>
       
       <exercise xml:id="inv4-4-m" label="I4.4.13">
         <title>Use Applet for Simulation</title>
         <statement>
-          <p>Open the <url href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm">Comparing Groups (Quantitative) applet</url>. You will see dotplots of the research results. Verify the calculation of the observed difference in group means. (This applet subtracts the top row from the bottom row.)</p>
-          <ul>
-            <li><p>Check the Show Shuffle Options box.</p></li>
-            <li><p>Select the Plot radio button.</p></li>
-            <li><p>Press the Shuffle Responses button.</p></li>
-          </ul>
-          <p>The applet combines all the scores into one pile, reassigns the group labels (red and black coloring) at random, and then redistributes the observations to the two treatment groups, just like you did with the index cards.</p>
           <p>What did you find for the difference in group means? <var width="10"/></p>
           <p>Is this more extreme than the observed difference in group means in the research study? <var width="10"/></p>
         </statement>
         <response/>
       </exercise>
-      
+
+<ul><li>
+          <p>Press <alert>Shuffle Responses</alert> four more times. With each new <q>could have been</q> result (each new random assignment), the applet calculates the difference in group means and adds a dot to the dotplot to the right.
+          </li></ul>
+
       <exercise xml:id="inv4-4-n" label="I4.4.14">
         <title>More Repetitions</title>
         <statement>
-          <p>Press Shuffle Responses four more times. With each new <q>could have been</q> result (each new random assignment), the applet calculates the difference in group means and adds a dot to the dotplot to the right. Identify what each dot represents in the dotplot on the far right.</p>
+ Identify what each dot represents in the dotplot on the far right.</p>
         </statement>
         <solution>
           <p>Each dot is the value of <m>\bar{x}_1 - \bar{x}_2</m> after one reshuffling of the data values (What is the difference in sample means with each random assignment?).</p>
@@ -229,15 +292,58 @@
         <response/>
       </exercise>
       
+      <ul><li><p>Change the <alert>Number of repetitions</alert> from 1 to 995 (to produce a total of 1,000 repetitions). Press <alert>Shuffle Responses</alert>. </p></li></ul>
+
       <exercise xml:id="inv4-4-p" label="I4.4.16">
         <title>Generate Full Distribution</title>
         <statement>
-          <p>Change the Number of repetitions from 1 to 995 (to produce a total of 1,000 repetitions). Press Shuffle Responses. Describe the shape, mean, and standard deviation of the resulting dotplot. Explain what is represented by this standard deviation.</p>
+          <p>Describe the shape, mean, and standard deviation of the resulting dotplot. Explain what is represented by this standard deviation.</p>
           <p>Shape: <var width="30"/></p>
           <p>Mean: <var width="10"/></p>
           <p>Standard deviation: <var width="10"/></p>
           <p>Interpretation: <var width="60"/></p>
         </statement>
+        <setup>
+          <!-- Shape -->
+          <var>
+            <condition string=".*[Ss]ymmetric.*">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*[Bb]ell.*">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*[Nn]ormal.*">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The distribution should be approximately symmetric (bell-shaped).</p></feedback>
+            </condition>
+          </var>
+          <!-- Mean -->
+          <var>
+            <condition number="0" tolerance="1">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The mean should be approximately 0.</p></feedback>
+            </condition>
+          </var>
+          <!-- Standard deviation -->
+          <var>
+            <condition number="7" tolerance="1.5">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The standard deviation should be approximately 7.</p></feedback>
+            </condition>
+          </var>
+          <!-- Interpretation -->
+          <var>
+            <condition string=".+">
+              <feedback><p>Response recorded. The standard deviation represents the typical distance that a difference in group means (from random assignment alone) falls from 0.</p></feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p>Shape: symmetric</p>
           <p>Mean: <m>\approx 0</m></p>
@@ -252,11 +358,22 @@
         <response/>
       </exercise>
       
+      <ul><li><p>Now enter the observed difference in group means (Question 6) from the research study into the <alert>Count Samples</alert> box, use the <alert>Greater Than</alert> option (to match our alternative hypothesis), and press the <alert>Count</alert> button. </p></li></ul>
       <exercise xml:id="inv4-4-q" label="I4.4.17">
         <title>Calculate p-value</title>
         <statement>
-          <p>Now enter the observed difference in group means (checkpoint 16.1.6) from the research study into the Count Samples box, use the Greater Than option (to match our alternative hypothesis), and press the Count button. What does the applet report for the empirical p-value?</p>
+          <p>What does the applet report for the empirical p-value? <var width="10"/></p>
         </statement>
+        <setup>
+          <var>
+            <condition number="0.007" tolerance="0.005">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The p-value should be approximately 0.007. Make sure you are counting differences greater than or equal to 15.92.</p></feedback>
+            </condition>
+          </var>
+        </setup>
         <solution>
           <p>Counting <m>\geq 15.92</m> (this is the direction specified by the alternative hypothesis), the p-value should be about 0.007.</p>
           <!-- TODO: Missing image file: Inv4.4solsq.png -->
@@ -264,7 +381,6 @@
             <description>Example randomization distribution with p-value calculation</description>
           </image> -->
         </solution>
-        <response/>
       </exercise>
       
       <exercise xml:id="inv4-4-r" label="I4.4.18">
@@ -278,7 +394,7 @@
         <response/>
       </exercise>
     
-  <p><alert>Conclusions</alert></p>
+  <p><title>Conclusions</title></p>
       
   <exercise xml:id="inv4-4-s" label="I4.4.19">
         <title>Statistical Significance</title>
@@ -313,7 +429,7 @@
         <response/>
       </exercise>
     
-  <p><alert>Exact p-value?</alert></p>
+  <p><title>Exact p-value?</title></p>
       
   <p>Although not as convenient as before, we can determine the exact p-value for this randomization test by considering all the different possible random assignments of these 21 subjects into groups of 11 and 10, determining the difference in means (or medians) for each, and then counting how many are at least as extreme as the observed difference.</p>
       
