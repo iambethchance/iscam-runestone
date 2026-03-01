@@ -6,19 +6,15 @@
 #investigation4-4 { border-top: 10px solid red !important; }
 */
 
-/* Keep main content at readable width */
+/* Let PreTeXt defaults control content width (696px) and page width (1200px).
+   Allow interactive elements to overflow the content area into the wider page. */
 .ptx-content {
-    max-width: 850px !important;
+    overflow: visible !important;
 }
 
-/* Make the page wrapper wider to allow interactive elements to expand */
-.ptx-page {
-    max-width: 1200px
-}
-
-/* Make figures and interactive elements break out to wider width */
+/* Non-interactive figures stay at content width */
 figure {
-    max-width: 850px !important;
+    max-width: 696px !important;
     margin-left: auto;
     margin-right: auto;
 }
