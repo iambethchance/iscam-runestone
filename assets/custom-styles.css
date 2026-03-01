@@ -25,10 +25,17 @@ figure {
     overflow: visible !important;
 }
 
-.interactive-iframe-container > iframe {
+.interactive-iframe-container > iframe,
+.ptx-content section > iframe,
+.ptx-content .paragraphs > iframe {
     max-width: 1400px !important;
     width: 100% !important;
     min-height: 600px;
+}
+
+/* Allow content sections containing wide iframes to overflow */
+.ptx-content section:has(> iframe) {
+    overflow: visible !important;
 }
 
 
