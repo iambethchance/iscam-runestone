@@ -6,6 +6,25 @@ This is a conversion of **ISCAM: Investigating Statistical Concepts, Application
 
 The book uses an investigation-based, inquiry-first pedagogy aimed at mathematically inclined students. Content is organized as numbered investigations within chapters.
 
+## Dev Environment Setup (first time on a new machine)
+
+**1. Install uv** — run this in PowerShell (not Git Bash):
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+**2. Create a virtual environment and install pretext** — in Git Bash from the project root:
+```bash
+uv venv
+source .venv/Scripts/activate
+uv pip install -r requirements.txt
+```
+
+**3. Activate the venv on subsequent sessions:**
+```bash
+source .venv/Scripts/activate
+```
+
 ## Build Commands
 
 ```bash
