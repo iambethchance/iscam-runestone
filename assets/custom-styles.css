@@ -19,20 +19,18 @@ figure {
 
 
 /* Specifically target iframes to be much wider */
-iframe {
+/* Override PreTeXt's .interactive-iframe-container which constrains iframes */
+.interactive-iframe-container {
+    max-width: 1400px !important;
+    overflow: visible !important;
+}
+
+.interactive-iframe-container > iframe {
     max-width: 1400px !important;
     width: 100% !important;
     min-height: 600px;
 }
-section.exercises .interactive-iframe-container{
-    overflow: visible !important;
-}
 
-/* Interactive elements should use much more width */
-.ptx-content .interactive {
-    max-width: 1400px !important;
-    width: 100% !important;
-}
 
 /* Custom styling for convention elements */
 .ptx-content article.convention {
