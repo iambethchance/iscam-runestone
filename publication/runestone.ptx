@@ -6,10 +6,9 @@
   </source>
 
   <!-- HTML-Specific Options -->
-  <html>
-    <css>
-      <file source="custom-styles.css"/>
-    </css>
+  <html design-width="900">
+    <css/>
+    <!-- Note: custom-styles.css is loaded via html.css.extra stringparam in project.ptx -->
     <platform host="runestone"/>
     <baseurl href="https://runestone.academy"/>
     
@@ -18,6 +17,11 @@
     
     <!-- Calculator option -->
     <calculator model="geogebra-classic"/>
+    
+    <!-- Interactives: allow iframe applets to resize responsively -->
+    <interactives resize-behavior="responsive">
+      <iframe resize-behavior="responsive"/>
+    </interactives>
     
     <!-- Enable SageCell for executable code -->
     <sage>
