@@ -1,0 +1,271 @@
+/* Custom CSS for wider content display */
+
+/* DIAGNOSTIC CANARY — scoped to inv-4-4 only. Remove after testing.
+   If you see a red bar at the top of the inv-4-4 page on Runestone,
+   this CSS file IS being loaded. 
+#investigation4-4 { border-top: 10px solid red !important; }
+*/
+
+/* Widen content area from PreTeXt default (696px) to 800px for readability.
+   Allow interactive elements to overflow the content area into the wider page. */
+.ptx-main .ptx-content {
+    max-width: 800px !important;
+    overflow: visible !important;
+}
+
+/* Non-interactive figures stay at content width */
+figure {
+    max-width: 800px !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Specifically target iframes to be much wider */
+/* Override PreTeXt's .interactive-iframe-container which constrains iframes */
+.interactive-iframe-container {
+    max-width: none !important;
+    width: 1100px !important;
+    overflow: visible !important;
+}
+
+.interactive-iframe-container > iframe,
+.ptx-content section > iframe,
+.ptx-content .paragraphs > iframe {
+    max-width: 1400px !important;
+    width: 100% !important;
+    min-height: 600px;
+}
+
+/* Allow content sections containing wide iframes to overflow */
+.ptx-content section:has(> iframe) {
+    overflow: visible !important;
+}
+
+
+/* Custom styling for convention elements */
+.ptx-content article.convention {
+    background-color: #f0f8ff !important; /* light blue background */
+    border-left: 4px solid #4682b4 !important; /* steel blue left border */
+    padding: 1em !important;
+    margin: 1em 0 !important;
+}
+
+.ptx-content article.convention .heading {
+    color: #4682b4 !important;
+    font-weight: bold !important;
+}
+
+/* Reduce spacing between consecutive hint elements */
+.ptx-content article.hint + article.hint {
+    margin-top: 0.5em !important;
+}
+
+/* Reduce spacing after sidebyside elements */
+.ptx-content .sidebyside {
+    margin-bottom: 0.5em !important;
+}
+
+/* Make interactive figures break out of normal content width */
+figure.figure-like:has(.interactive) {
+    max-width: none !important;
+    width: 1100px !important;
+    overflow: visible !important;
+}
+
+/* Sticky/Floating Applet Styles */
+.sticky-applet-container {
+    position: relative;
+}
+
+.sticky-applet-container.is-sticky .interactive {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 500px;
+    height: 400px;
+    z-index: 1000;
+    background: white;
+    border: 2px solid #4682b4;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.sticky-applet-container.is-sticky .interactive iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+.sticky-applet-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: #4682b4;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    display: none;
+}
+
+.sticky-applet-toggle:hover {
+    background: #5a9bd4;
+}
+
+.sticky-applet-toggle.show {
+    display: block;
+    margin-right: auto !important;
+}
+
+/* Removed section padding that was causing unwanted indentation */
+
+/* Scale down Random Babies applet to 50% so everything is visible */
+#random-babies-applet,
+.ptx-content #random-babies-applet,
+div[id="random-babies-applet"] {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow: hidden !important;
+    transform-origin: top center !important;
+}
+
+#random-babies-applet iframe,
+.ptx-content #random-babies-applet iframe,
+div[id="random-babies-applet"] iframe {
+    transform: scale(0.5) !important;
+    transform-origin: top center !important;
+    width: 200% !important; /* Compensate for 0.5 scale */
+    height: 1600px !important;
+    max-width: none !important;
+    border: 1px solid #ccc !important;
+}
+
+/* Colored backgrounds for definitions, remarks, and assemblages */
+.definition-like {
+    background-color: #e8f4f8 !important;
+    border-left: 4px solid #4a90a4 !important;
+    padding: 1em !important;
+    border-radius: 4px !important;
+    margin-bottom: 1em !important;
+}
+
+.remark-like {
+    background-color: #fff4e6 !important;
+    border-left: 4px solid #ff9800 !important;
+    padding: 1em !important;
+    border-radius: 4px !important;
+    margin-bottom: 1em !important;
+}
+
+/* Default assemblage style - light blue for definitions */
+.assemblage-like {
+    --assemblage-like-body-background: #e8f4f8 !important;
+    --assemblage-like-border-color: #4a90a4 !important;
+    background-color: #e8f4f8 !important;
+    border-left: 4px solid #4a90a4 !important;
+    padding: 1em !important;
+    border-radius: 4px !important;
+    margin-bottom: 1em !important;
+}
+
+/* Terminology Detour assemblages - light purple/lavender */
+.ptx-content article.assemblage.assemblage-like#def-standard-deviation,
+.ptx-content article.assemblage.assemblage-like#def-standardizing,
+.ptx-content article.assemblage.assemblage-like#def-random-process,
+.ptx-content article.assemblage.assemblage-like#def-sample-space,
+.ptx-content article.assemblage.assemblage-like#def-random-variable {
+    --assemblage-like-body-background: #f3e5f5 !important;
+    --assemblage-like-border-color: #9c27b0 !important;
+}
+
+.ptx-content article.assemblage.assemblage-like#def-standard-deviation *,
+.ptx-content article.assemblage.assemblage-like#def-standardizing *,
+.ptx-content article.assemblage.assemblage-like#def-random-process *,
+.ptx-content article.assemblage.assemblage-like#def-sample-space *,
+.ptx-content article.assemblage.assemblage-like#def-random-variable * {
+    --assemblage-like-body-background: #f3e5f5 !important;
+    --assemblage-like-border-color: #9c27b0 !important;
+}
+
+/* Force asides to stay in main content area, not margin */
+.ptx-content aside.aside-like {
+    float: none !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+}
+
+/* Horizontal rule style for separating sections */
+.ptx-content p.horizontal-rule {
+    border-top: 2px solid #999 !important;
+    margin: 2em 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+    line-height: 0 !important;
+    font-size: 0 !important;
+}
+
+/* Remove background and border from Investigation 1.3 Exercise 1 */
+.ptx-content #I1-3-1,
+.ptx-content article#I1-3-1,
+.ptx-content .exercise-like#I1-3-1,
+article.exercise-like#I1-3-1 {
+    background: none !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-left: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    padding-left: 0 !important;
+}
+
+.ptx-content #I1-3-1 .exercise-statement,
+.ptx-content #I1-3-1 > * {
+    background: none !important;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+/* Add padding to table cells to prevent text from touching borders */
+.ptx-content table td,
+.ptx-content table th {
+    padding: 0.4em 0.6em !important;
+}
+
+/* Hide the exercises division heading to avoid double headers */
+h3.heading.hide-type,
+.ptx-content h3.heading.hide-type,
+section.exercises h3.heading.hide-type,
+body h3.heading.hide-type,
+html body h3.heading.hide-type {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    line-height: 0 !important;
+    font-size: 0 !important;
+    opacity: 0 !important;
+}
+
+/* Blockquote styling - italic serif for journal excerpts */
+.ptx-content blockquote {
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-style: italic !important;
+    border-left: 3px solid #999 !important;
+    padding-left: 1.2em !important;
+    margin: 1em 2em !important;
+    color: #333 !important;
+}
