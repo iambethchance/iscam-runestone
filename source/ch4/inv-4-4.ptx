@@ -37,9 +37,6 @@
           </choice>
         </choices>
         <response/>
-        <statement>
-          <p>Explain: <var width="60"/></p>
-        </statement>
         <solution>
           <p>This is an experiment because researchers determined which subjects would be sleep deprived.</p>
         </solution>
@@ -216,10 +213,23 @@
         <statement>
           <p>As usual, we want to know how plausible it is for us to obtain a difference in sample means at least as extreme as the observed value by chance alone. What is the source of <q>chance</q> in this study?</p>
         </statement>
+        <choices randomize="yes">
+          <choice correct="yes">
+            <statement><p>Random assignment</p></statement>
+            <feedback><p>Correct! The researchers randomly assigned subjects to the two treatment groups.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p>Random sampling</p></statement>
+            <feedback><p>Not quite. The subjects were volunteers, not randomly sampled. The randomness comes from the random assignment to treatment groups.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p>Random choice</p></statement>
+            <feedback><p>Not quite. The randomness in this study comes from the random assignment of subjects to treatment groups.</p></feedback>
+          </choice>
+        </choices>
         <solution>
           <p>Random assignment</p>
         </solution>
-        <response/>
       </exercise>
       
       <exercise xml:id="inv4-4-i" label="I4.4.9">
@@ -236,7 +246,7 @@
 
   <p><title>Statistical Inference</title></p>
       
-  <p>As with the <q>dolphin therapy</q> experiment from Chapter 3, we again need to judge the strength of evidence that the experimental data provide in support of the researchers' conjecture that sleep deprivation has a harmful effect on learning. We are now working with a quantitative response variable rather than a categorical one, but we will use the same basic logic of statistical significance: We will ask whether the observed experimental results are very unlikely to have occurred by chance variation if the explanatory variable has no effect, that is, if the values in the two groups are interchangeable. To simulate this randomization test: We will take the observed response variable outcomes, randomly distribute these numerical values between the two groups, compute the statistic of interest (e.g., the difference in group means), repeat this process a large number of times, and see how often the random assignment process alone produces a difference in group means as extreme as in the actual research study. This is similar to what you considered in Investigation 4.1. However, this time it is not really feasible to list out all possible <m>C(21,10) = 352,716</m> random assignments and consider the value of the statistic for each one, so we will simulate a large number of random assignments instead. Note, we need to know the value of <m>(\bar{x}_1 - \bar{x}_2)</m>, not just the <q>number of successes</q> as with the dolphin therapy study.</p>
+  <p>As with the <q>dolphin therapy</q> experiment from Chapter 3, we again need to judge the strength of evidence that the experimental data provide in support of the researchers' conjecture that sleep deprivation has a harmful effect on learning. We are now working with a quantitative response variable rather than a categorical one, but we will use the same basic logic of statistical significance: We will ask whether the observed experimental results are very unlikely to have occurred by chance variation if the explanatory variable has no effect, that is, if the values in the two groups are interchangeable. To simulate this randomization test: We will take the observed response variable outcomes, randomly distribute these numerical values between the two groups, compute the statistic of interest (e.g., the difference in group means), repeat this process a large number of times, and see how often the random assignment process alone produces a difference in group means as extreme as in the actual research study. This is similar to what you considered in <xref ref="investigation4-1" text="custom">Investigation 4.1</xref>. However, this time it is not really feasible to list out all possible <m>C(21,10) = 352,716</m> random assignments and consider the value of the statistic for each one, so we will simulate a large number of random assignments instead. Note, we need to know the value of <m>(\bar{x}_1 - \bar{x}_2)</m>, not just the <q>number of successes</q> as with the dolphin therapy study.</p>
       
       <exercise xml:id="inv4-4-j" label="I4.4.10">
         <title>Physical Simulation</title>
@@ -244,7 +254,13 @@
           <p>Take a set of 21 index cards, and write each of the improvement values on a card. Then shuffle the cards and deal out 10 of them to represent the subjects randomly assigned to the <q>unrestricted sleep</q> group and 11 to represent the <q>sleep deprived group.</q> Calculate the mean of the improvements in each group. Then calculate the difference in group means, subtracting in the same order as before.</p>
           <p>Simulated difference in means (<m>\bar{x}_{\text{unrestricted}} - \bar{x}_{\text{deprived}}</m>): <var width="10"/></p>
         </statement>
-        <response/>
+        <setup>
+          <var>
+            <condition string=".+">
+              <feedback><p>Response recorded.</p></feedback>
+            </condition>
+          </var>
+        </setup>
       </exercise>
       
       <exercise xml:id="inv4-4-k" label="I4.4.11">
@@ -290,7 +306,18 @@
           <p>What did you find for the difference in group means? <var width="10"/></p>
           <p>Is this more extreme than the observed difference in group means in the research study? <var width="10"/></p>
         </statement>
-        <response/>
+        <setup>
+          <var>
+            <condition string=".+">
+              <feedback><p>Response recorded.</p></feedback>
+            </condition>
+          </var>
+          <var>
+            <condition string=".+">
+              <feedback><p>Response recorded.</p></feedback>
+            </condition>
+          </var>
+        </setup>
       </exercise>
 
 <ul><li>
@@ -558,10 +585,10 @@ abline(v=15.92, col=2)
     <exercise xml:id="pp4-4a-3" label="PP4.4A.3">
       <title>Compare Simulation Approaches</title>
       <statement>
-        <p>Explain how the simulation analysis conducted in this investigation differs from Investigation 4.2. (What is the random process being simulated? What assumptions are underlying the simulation?)</p>
+        <p>Explain how the simulation analysis conducted in this investigation differs from <xref ref="investigation4-2" text="custom">Investigation 4.2</xref>. (What is the random process being simulated? What assumptions are underlying the simulation?)</p>
       </statement>
       <solution>
-        <p>In Investigation 4.2 (comparing elephant walking distances), we simulated the random sampling process from two populations under the assumption that the population means are equal. In Investigation 4.4, we simulated the random assignment process in an experiment under the assumption that the treatment has no effect (so the response values would be the same regardless of which group the subject was assigned to). Investigation 4.2 deals with observational data and random sampling; Investigation 4.4 deals with experimental data and random assignment.</p>
+        <p>In <xref ref="investigation4-2" text="custom">Investigation 4.2</xref> (comparing elephant walking distances), we simulated the random sampling process from two populations under the assumption that the population means are equal. In Investigation 4.4, we simulated the random assignment process in an experiment under the assumption that the treatment has no effect (so the response values would be the same regardless of which group the subject was assigned to). <xref ref="investigation4-2" text="custom">Investigation 4.2</xref> deals with observational data and random sampling; Investigation 4.4 deals with experimental data and random assignment.</p>
       </solution>
       <response/>
     </exercise>
