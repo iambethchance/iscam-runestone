@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="investigation4-6" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Two-sample <em>t</em>-confidence intervals</title>
-  
-  <exercises xml:id="exercises-4-6" hidden-label="yes">
   <title>Investigation 4.6: Ice Cream Serving Sizes</title>
   
+  <exercises xml:id="exercises-4-6" hidden-label="yes">
+  <title>Two-sample <em>t</em>-confidence intervals</title>
+  
   <introduction>
-    <sidebyside widths="70% 25%">
+    <sidebyside widths="70% 25%" margins = "0% 0%">
       <stack>
         <p>Researchers conducted a study in which they invited members of the Department of Food Science and Nutritional Science (faculty, graduate students, and staff) at a large midwestern university to an ice cream social (<em>Mindless Eating: Why we eat more than we think</em>, <url href="http://www.brianwansink.com/uploads/5/5/8/1/55817101/intro.___chapter_1_-_mindless_eating.pdf">Wansink et al., 2006</url>). The participants were randomly given either a 17- or a 34-ounce bowl.  </p>
       </stack>
@@ -18,9 +18,10 @@
   
   <p>Participants individually helped themselves to the available ice cream in the cafeteria line, unaware that other participants had been given different-sized bowls. The suspicion was that even nutrition experts would tend to take more ice cream when given a larger bowl. Sample results for the actual volumes of ice cream taken (in ounces) are summarized in the following table:</p>        
   
-  <tabular halign="center" top="medium" bottom="medium" left="medium" right="medium">
+  <tabular halign="center" top="medium" bottom="medium" left="medium" right="medium"
+  row-headers="yes">
     <row header="yes" bottom="medium">
-      <cell right="medium"></cell>
+      <cell right="medium">Size \ Stats</cell>
       <cell right="medium">Sample size</cell>
       <cell right="medium">Sample mean</cell>
       <cell>Sample SD</cell>
@@ -48,11 +49,45 @@
         <p>Explanatory: <var width="40"/></p>
         <p>Response: <var width="40"/></p>
       </statement>
+      <setup>
+        <!-- Explanatory variable -->
+        <var>
+          <condition string=".*[Bb]owl.*">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*[Ss]ize.*">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The explanatory variable is the bowl size (17-oz or 34-oz), which is categorical and binary.</p></feedback>
+          </condition>
+        </var>
+        <!-- Response variable -->
+        <var>
+          <condition string=".*[Ii]ce\s*[Cc]ream.*">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*[Oo]unce.*">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*[Ss]erving.*">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*[Aa]mount.*">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*[Vv]olume.*">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The response variable is the amount (ounces) of ice cream served, which is quantitative.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>Explanatory = What was the bowl size? (categorical and binary)</p>
         <p>Response = How many ounces of ice cream did the subject take? (quantitative)</p>
       </solution>
-      <response/>
     </exercise>
     
     <exercise xml:id="inv4-6-b" label="I4.6.2">
@@ -71,26 +106,38 @@
     <exercise xml:id="inv4-6-c" label="I4.6.3">
       <title>Randomization Test Feasibility</title>
       <statement>
-        <p>Would it be possible for you to carry out a randomization test using simulation with the information presented here? Explain.</p>
+        <p>Would it be possible for you to carry out a randomization test using simulation with the information presented here?</p>
+      </statement>
+      <choices>
+        <choice>
+          <statement><p>Yes</p></statement>
+          <feedback><p>A randomization test requires the individual data values to reassign to groups. We only have summary statistics (means and standard deviations) here.</p></feedback>
+        </choice>
+        <choice correct="yes">
+          <statement><p>No</p></statement>
+          <feedback><p>Correct! We would need the individual data values to carry out a randomization test. We only have summary statistics here.</p></feedback>
+        </choice>
+      </choices>
+      <statement>
+        <p>Explain: <var width="60"/></p>
       </statement>
       <solution>
-        <p>No, need the individual values.</p>
+        <p>No, we need the individual values to reassign them to groups in a randomization test.</p>
       </solution>
-      <response/>
     </exercise>
   
-  <p><alert>Statistical Analysis</alert></p>
+  <p><title>Statistical Analysis</title></p>
     
-  <aside>
-    <title>Applet</title>
-      <p><url href="https://www.rossmanchance.com/applets/2021/tintmeanstheory/TwoMeanTheory.html">Theory-Based Inference</url></p>
-    </aside>
     
     <exercise xml:id="inv4-6-d" label="I4.6.4">
       <title>Two-Sample <em>t</em>-Test and Confidence Interval</title>
       <statement>
         <p>Use technology to carry out a two-sample <em>t</em>-test to determine whether individuals given a 34-oz bowl have a tendency to serve themselves more ice cream than individuals given a 17-oz bowl. Be sure to report your standardized statistic and p-value. Also determine a 95% <em>t</em>-confidence interval for the difference in the long-run average serving size. State conclusion that addresses the statistical significance of the data, the magnitude of the difference in the population, whether you are willing to draw a cause-and-effect conclusion, and the population to which you are willing to generalize the results.</p>
       </statement>
+  <aside>
+    <title>Theory-Based Inference Applet</title>
+      <p><url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference</url> (with Two Means)</p>
+    </aside>
       <solution>
         <p>With a p-value = 0.027 &lt; 0.05, we would conclude that we do have convincing evidence that the larger bowl size causes (this was a randomized experiment) nutrition experts (not a random sample) to take larger servings of ice cream.</p>
         <image source="images/Inv4.6solsd.png" width="60%">
