@@ -242,12 +242,9 @@ article.exercise-like#I1-3-1 {
     padding: 0.4em 0.6em !important;
 }
 
-/* Hide the exercises division heading to avoid double headers */
-h3.heading.hide-type,
-.ptx-content h3.heading.hide-type,
-section.exercises h3.heading.hide-type,
-body h3.heading.hide-type,
-html body h3.heading.hide-type {
+/* Hide ONLY the exercises division heading to avoid double headers.
+   Do NOT hide subsection headings (e.g., Practice Problem titles). */
+section.exercises > h3.heading.hide-type {
     display: none !important;
     visibility: hidden !important;
     height: 0 !important;
