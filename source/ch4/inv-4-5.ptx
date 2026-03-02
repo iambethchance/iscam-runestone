@@ -46,17 +46,20 @@
   
   <p><alert>Standard Error Estimation</alert></p>
     
-  <p>In Investigation 4.2, we estimated the standard error of the difference in sample means using the sample standard deviations:</p>
+  <p>In <xref ref="investigation4-2" text="custom">Investigation 4.2</xref>, we estimated the standard error of the difference in sample means using the sample standard deviations:</p>
     <p><me>SE(\bar{X}_1-\bar{X}_2) = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}</me></p>
     
+    <p>For the sleep deprivation data, the sample standard deviations are:</p>
+        <p><m>s_{\text{unrestricted}} = 14.73</m> ms and <m>s_{\text{deprived}} = 12.17</m> ms</p>
+
     <exercise xml:id="inv4-5-c" label="I4.5.3">
       <title>Compute Standard Error</title>
       <statement>
-        <p>For the sleep deprivation data, the sample standard deviations are:</p>
-        <p><m>s_{\text{unrestricted}} = 14.73</m> ms and <m>s_{\text{deprived}} = 12.17</m> ms</p>
-        <p>Use these values to compute the standard error for the difference in sample means. Compare this to the standard deviation you observed in the applet/for the exact randomization distribution. In particular, does this formula appear to over- or under-estimate the variability?</p>
+        <p>
+        <p>Use these values to compute the standard error for the difference in sample means. </p>
         <p>Standard error = <var width="20"/></p>
-        <p>Comparison: <var width="60"/></p>
+        <p>Compare this to the standard deviation you observed in the applet/for the exact randomization distribution. In particular, does this formula appear to over- or under-estimate the variability?</p>
+        <p><var width="80"/></p>
       </statement>
       <solution>
         <p>SE = <m>\sqrt{14.73^2/10 + 12.17^2/11} \approx 5.93</m></p>
@@ -68,14 +71,14 @@
   <paragraphs>
     <title>Discussion</title>
     
-    <p>In Investigation 4.2, we stated that <m>SD(\bar{X}_1-\bar{X}_2) = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}</m>, because under the assumption that the two samples are independent, variances add. In a randomization test, however, the two samples are not independent: If one group gets all of the large responses, the other group must have all of the small responses and the difference in group means will be large. Consequently, the standard error formula from Investigation 4.2 will underestimate the shuffle-to-shuffle variation in the statistic. The discrepancy between the standard deviations for the difference in means is largest when the groups are more different: When we shuffle the responses back to the groups, any value can go into either group, but if there is a genuine difference between the treatments, then a score of 40 would be unlikely to come from say the deprived treatment. So how do we estimate the standard deviation of the randomization distribution? Turns out, we are less concerned with that. What we really want to be able to do is predict the behavior of the standardized statistic.</p>
+    <p>In <xref ref="investigation4-2" text="custom">Investigation 4.2</xref>, we stated that <m>SD(\bar{X}_1-\bar{X}_2) = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}</m>, because under the assumption that the two samples are independent, variances add. In a randomization test, however, the two samples are not independent: If one group gets all of the large responses, the other group must have all of the small responses and the difference in group means will be large. Consequently, the standard error formula from <xref ref="investigation4-2" text="custom">Investigation 4.2</xref> will underestimate the shuffle-to-shuffle variation in the statistic. The discrepancy between the standard deviations for the difference in means is largest when the groups are more different: When we shuffle the responses back to the groups, any value can go into either group, but if there is a genuine difference between the treatments, then a score of 40 would be unlikely to come from say the deprived treatment. So how do we estimate the standard deviation of the randomization distribution? Turns out, we are less concerned with that. What we really want to be able to do is predict the behavior of the standardized statistic.</p>
   </paragraphs>
   
   <p><title>But what about the <em>t</em>-statistic?</title></p>  
   <exercise xml:id="inv4-5-d" label="I4.5.4">
       <title>Calculate <em>t</em>-statistic</title>
       <statement>
-        <p>Calculate the two-sample <em>t</em>-statistic from Investigation 4.2 and give a one-sentence interpretation.</p>
+        <p>Calculate the two-sample <em>t</em>-statistic from <xref ref="investigation4-2" text="custom">Investigation 4.2</xref> and give a one-sentence interpretation.</p>
         <p><me>t = \frac{(\bar{x}_{\text{unres}} - \bar{x}_{\text{depr}}) - 0}{\sqrt{\frac{s_{\text{unres}}^2}{n_{\text{unres}}} + \frac{s_{\text{depr}}^2}{n_{\text{depr}}}}}</me></p>
         <p><m>t =</m> <var width="15"/></p>
         <p>Interpretation: <var width="60"/></p>
@@ -95,14 +98,14 @@
     <exercise xml:id="inv4-5-e" label="I4.5.5">
       <title>Re-randomization with <em>t</em>-statistic</title>
       <statement>
-        <p>Use the Comparing Groups (Quantitative) applet to create a re-randomization null distribution. Change the Statistic pull-down menu to <em>t</em>-statistic and find the p-value using the value in <xref ref="inv4-5-d" text="custom">Checkpoint I4.5.4</xref>. Is this the same p-value we found when we used the difference in means as the statistic in <xref ref="inv4-4-q" text="custom">Checkpoint I4.4.17</xref>?</p>
+        <p>Use the Comparing Groups (Quantitative) applet to create a re-randomization null distribution. Change the Statistic pull-down menu to <em>t</em>-statistic and find the p-value using the value in <xref ref="inv4-5-d" text="custom">Question 4</xref>. Is this the same p-value we found when we used the difference in means as the statistic in <xref ref="inv4-4-q" text="custom">Investigation 4.4, Question 4</xref>?</p>
       </statement>
       <solution>
         <p>Example results:</p>
         <image source="images/Inv4.5solse.png" width="60%">
           <description>Simulated randomization distribution using t-statistic</description>
         </image>
-        <p>The p-value (.0079) is similar, but probably not an exact match to Investigation 4.4 (e.g., 0.0090).</p>
+        <p>The p-value (.0079) is similar, but probably not an exact match to <xref ref="investigation4-4" text="custom">Investigation 4.4</xref> (e.g., 0.0090).</p>
       </solution>
       <response/>
     </exercise>
@@ -110,7 +113,7 @@
     <exercise xml:id="inv4-5-f" label="I4.5.6">
       <title>Exact p-value for <em>t</em>-statistic</title>
       <statement>
-        <p>If we use similar code to that in Investigation 4.4 to find the exact distribution of these <em>t</em>-statistics, we can find the exact p-value for the <em>t</em>-statistic is 0.00748. Is this similar to the simulation results?</p>
+        <p>If we use similar code to that in <xref ref="investigation4-4" text="custom">Investigation 4.4</xref> to find the exact distribution of these <em>t</em>-statistics, we can find the exact p-value for the <em>t</em>-statistic is 0.00748. Is this similar to the simulation results?</p>
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
@@ -126,11 +129,35 @@
       </solution>
     </exercise>
     
+    <ul><li><p>Check the box to <alert>Overlay the <em>t</em> distribution</alert>. </p></li></ul>
     <exercise xml:id="inv4-5-g" label="I4.5.7">
       <title>Overlay <em>t</em>-distribution</title>
       <statement>
-        <p>Check the box to Overlay the <em>t</em> distribution. Does it appear to be a reasonable model for the simulated null distribution? Does the p-value from the <em>t</em>-distribution appear to reasonably approximate the exact p-value?</p>
+        <p>Does it appear to be a reasonable model for the simulated null distribution?</p>
       </statement>
+      <choices>
+        <choice correct="yes">
+          <statement><p>Yes</p></statement>
+          <feedback><p>Correct! The <em>t</em>-distribution provides a reasonable model for the simulated null distribution.</p></feedback>
+        </choice>
+        <choice>
+          <statement><p>No</p></statement>
+          <feedback><p>Actually, the <em>t</em>-distribution should provide a reasonable model for the simulated null distribution.</p></feedback>
+        </choice>
+      </choices>
+      <statement>
+        <p>Does the p-value from the <em>t</em>-distribution appear to reasonably approximate the exact p-value?</p>
+      </statement>
+      <choices>
+        <choice correct="yes">
+          <statement><p>Yes</p></statement>
+          <feedback><p>Correct! The <em>t</em>-distribution p-value reasonably approximates the exact p-value.</p></feedback>
+        </choice>
+        <choice>
+          <statement><p>No</p></statement>
+          <feedback><p>Actually, the <em>t</em>-distribution p-value does reasonably approximate the exact p-value.</p></feedback>
+        </choice>
+      </choices>
       <solution>
         <p>The <em>t</em> distribution should provide a reasonable model.</p>
         <p>Example results:</p>
@@ -138,12 +165,11 @@
           <description>Simulated randomization distribution with t-distribution overlay</description>
         </image>
       </solution>
-      <response/>
     </exercise>
     
     <p><title>Discussion:</title> The <em>t</em>-distribution comes to the rescue again, compensating for the underestimation in the variability, and in most situations (moderate and large sample sizes) gives an adequate approximation to the exact randomization distribution. Note the applet reports 17.56 as the degrees of freedom. This comes from the <url href="https://www.rossmanchance.com/iscam3/glossary_files/Satterthwaite.htm">Welch-Satterthwaite approximation</url> because the exact degrees of freedom are unknown in this case.</p>
     
-    <p>We will consider the <em>t</em> distribution to be a reasonable approximation for the randomization distribution of the <em>t</em> statistic as long as either (similar to what you witnessed in Investigation 4.2):</p>
+    <p>We will consider the <em>t</em> distribution to be a reasonable approximation for the randomization distribution of the <em>t</em> statistic as long as either (similar to what you witnessed in <xref ref="investigation4-2" text="custom">Investigation 4.2</xref>):</p>
     <ul>
       <li><p>The data in both groups are symmetric and bell-shaped. When this is the case, we have evidence that the <q>treatment populations</q> are normally distributed. When this is true, the randomization distribution of the differences in group means will also follow a normal distribution.</p></li></ul>
       <p>OR</p><ul><li><p>The two sample sizes are large. Typically, the sample sizes can be as small as 5, especially if the two groups have similar sample sizes and similar distribution shapes, but conventionally 20 is used as cut-off for how large each sample should be to use this approximation. Examine graphs of your data first. If the sample distributions are not symmetric or have unusual observations, you will want larger sample sizes.</p></li>
