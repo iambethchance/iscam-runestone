@@ -44,7 +44,7 @@
       <response/>
     </exercise>
   
-  <p><alert>Standard Error Estimation</alert></p>
+  <p><title>Standard Error Estimation</title></p>
     
   <p>In <xref ref="investigation4-2" text="custom">Investigation 4.2</xref>, we estimated the standard error of the difference in sample means using the sample standard deviations:</p>
     <p><me>SE(\bar{X}_1-\bar{X}_2) = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}</me></p>
@@ -58,7 +58,7 @@
         <p>Use these values to compute the standard error for the difference in sample means. </p>
         <p>Standard error = <var width="20"/></p>
         <p>Compare this to the standard deviation you observed in the applet/for the exact randomization distribution. In particular, does this formula appear to over- or under-estimate the variability?</p>
-        <p><var width="80"/></p>
+        <p><var width="65"/></p>
       </statement>
       <solution>
         <p>SE = <m>\sqrt{14.73^2/10 + 12.17^2/11} \approx 5.93</m></p>
@@ -89,10 +89,6 @@
       <response/>
     </exercise>
     
-    <aside>
-      <title>Applet</title>
-      <p><url href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm">Comparing Groups (Quantitative)</url></p>
-    </aside>
     
     <exercise xml:id="inv4-5-e" label="I4.5.5">
       <title>Re-randomization with <em>t</em>-statistic</title>
@@ -108,6 +104,10 @@
       </solution>
       <response/>
     </exercise>
+    <aside>
+      <title>Applet</title>
+      <p><url href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm">Comparing Groups (Quantitative)</url></p>
+    </aside>
     
     <exercise xml:id="inv4-5-f" label="I4.5.6">
       <title>Exact p-value for <em>t</em>-statistic</title>
@@ -132,29 +132,25 @@
     <exercise xml:id="inv4-5-g" label="I4.5.7">
       <title>Overlay <em>t</em>-distribution</title>
       <statement>
-        <p>Does it appear to be a reasonable model for the simulated null distribution?</p>
+        <p>(a) Does it appear to be a reasonable model for the simulated null distribution?</p>
+        <p>(b) Does the p-value from the <em>t</em>-distribution appear to reasonably approximate the exact p-value?</p>
       </statement>
-      <choices>
+      <choices randomize="yes">
         <choice correct="yes">
-          <statement><p>Yes</p></statement>
-          <feedback><p>Correct! The <em>t</em>-distribution provides a reasonable model for the simulated null distribution.</p></feedback>
+          <statement><p>(a) Yes, (b) Yes</p></statement>
+          <feedback><p>Correct! The <em>t</em>-distribution provides a reasonable model for the simulated null distribution, and its p-value reasonably approximates the exact p-value.</p></feedback>
         </choice>
         <choice>
-          <statement><p>No</p></statement>
-          <feedback><p>Actually, the <em>t</em>-distribution should provide a reasonable model for the simulated null distribution.</p></feedback>
-        </choice>
-      </choices>
-      <statement>
-        <p>Does the p-value from the <em>t</em>-distribution appear to reasonably approximate the exact p-value?</p>
-      </statement>
-      <choices>
-        <choice correct="yes">
-          <statement><p>Yes</p></statement>
-          <feedback><p>Correct! The <em>t</em>-distribution p-value reasonably approximates the exact p-value.</p></feedback>
+          <statement><p>(a) Yes, (b) No</p></statement>
+          <feedback><p>The <em>t</em>-distribution does provide a reasonable model, but the p-value from the <em>t</em>-distribution also reasonably approximates the exact p-value.</p></feedback>
         </choice>
         <choice>
-          <statement><p>No</p></statement>
-          <feedback><p>Actually, the <em>t</em>-distribution p-value does reasonably approximate the exact p-value.</p></feedback>
+          <statement><p>(a) No, (b) Yes</p></statement>
+          <feedback><p>Actually, the <em>t</em>-distribution does provide a reasonable model for the simulated null distribution.</p></feedback>
+        </choice>
+        <choice>
+          <statement><p>(a) No, (b) No</p></statement>
+          <feedback><p>Actually, the <em>t</em>-distribution provides a reasonable model and its p-value reasonably approximates the exact p-value.</p></feedback>
         </choice>
       </choices>
       <solution>
