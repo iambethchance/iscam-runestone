@@ -32,12 +32,55 @@
       <p>Explanatory: <var width="50"/></p>
       <p>Response: <var width="50"/></p>
     </statement>
+    <setup>
+      <!-- Observational/experimental units -->
+      <var>
+        <condition string=".*[Cc]loud.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Dd]ay.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The observational/experimental units are the 52 clouds (or days).</p></feedback>
+        </condition>
+      </var>
+      <!-- Explanatory variable -->
+      <var>
+        <condition string=".*[Ss]eed.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Ss]ilver.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Tt]reatment.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The explanatory variable is whether the cloud was seeded with silver iodide (binary categorical).</p></feedback>
+        </condition>
+      </var>
+      <!-- Response variable -->
+      <var>
+        <condition string=".*[Rr]ain.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Aa]cre.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Vv]olume.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The response variable is the volume of rainfall measured in acre-feet (quantitative).</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Observational/experimental units: The 52 clouds (or days)</p>
       <p>Explanatory: Was the cloud seeded? (binary categorical)</p>
       <p>Response: How many acre-feet of rain was measured from the cloud? (quantitative)</p>
     </solution>
-    <response/>
   </exercise>
   
   <exercise xml:id="inv4-7-b" label="I4.7.2">
@@ -141,16 +184,16 @@
     <response/>
   </exercise>
 
+  <aside>
+    <title>Applet</title>
+    <p><url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1">Theory-Based Inference</url> applet</p>
+  </aside>
 
   <exercise xml:id="inv4-7-e" label="I4.7.5">
     <title>Conduct Two-Sample <em>t</em>-Test</title>
     <statement>
       <p>Regardless of your answer to <xref ref="inv4-7-d" text="custom">Question 4</xref>, carry out a two-sample <em>t</em>-test and a confidence interval to determine the strength of evidence of higher average rainfall with the seeded clouds.</p>
     </statement>
-  <aside>
-    <title>Applet</title>
-    <p><url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1">Theory-Based Inference</url> applet</p>
-  </aside>
     <solution>
       <p>Using technology, the two-sample <em>t</em>-test gives a two-sided p-value = 0.054. We have moderate evidence of a difference in the mean rainfall for these two treatments. The one-sided p-value can be found by taking <m>0.054/2 = 0.027</m> because the observed difference is in the conjectured direction. We have strong evidence that, on average, seeded clouds have more rainfall than unseeded clouds.</p>
       <image source="images/Inv4.7solseR.png" width="70%">
