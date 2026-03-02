@@ -6,15 +6,16 @@
 #investigation4-4 { border-top: 10px solid red !important; }
 */
 
-/* Let PreTeXt defaults control content width (696px) and page width (1200px).
+/* Widen content area from PreTeXt default (696px) to 900px for readability.
    Allow interactive elements to overflow the content area into the wider page. */
-.ptx-content {
+.ptx-main .ptx-content {
+    max-width: 900px !important;
     overflow: visible !important;
 }
 
 /* Non-interactive figures stay at content width */
 figure {
-    max-width: 696px !important;
+    max-width: 900px !important;
     margin-left: auto;
     margin-right: auto;
 }
@@ -24,6 +25,8 @@ figure {
 /* Override PreTeXt's .interactive-iframe-container which constrains iframes */
 .interactive-iframe-container {
     max-width: 1400px !important;
+    width: 150% !important;
+    margin-left: -25% !important;
     overflow: visible !important;
 }
 
@@ -67,8 +70,8 @@ figure {
 /* Make interactive figures break out of normal content width */
 figure.figure-like:has(.interactive) {
     max-width: 1400px !important;
-    width: 100% !important;
-    margin-left: auto !important;
+    width: 150% !important;
+    margin-left: -25% !important;
 }
 
 /* Sticky/Floating Applet Styles */
@@ -122,11 +125,7 @@ figure.figure-like:has(.interactive) {
     margin-right: auto !important;
 }
 
-/* Normal content sections stay at readable width */
-.ptx-content section {
-    padding-left: 1em;
-    padding-right: 1em;
-}
+/* Removed section padding that was causing unwanted indentation */
 
 /* Scale down Random Babies applet to 50% so everything is visible */
 #random-babies-applet,
