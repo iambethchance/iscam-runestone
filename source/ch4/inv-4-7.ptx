@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="investigation4-7" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Strategies for Non-normal Data</title>
+  <title>Investigation 4.7: Cloud Seeding</title>
   
   <exercises xml:id="exercises-4-7" hidden-label="yes">
-  <title>Investigation 4.7: Lingering Effects of Sleep Deprivation (cont.)</title>
+  <title>Strategies for Non-normal Data</title>
   \
   <introduction>
-    <sidebyside widths="70% 25%">
+    <sidebyside widths="70% 25%" margins = "0% 0%">
       <stack>
         <p>The 2024 movie <em>Twisters</em> mentions how injecting silver iodide into clouds can convert atmospheric moisture into rain. Scientists have long considered this for increasing rainfall in drought regions. In one study, researchers in southern Florida explored whether injecting silver iodide into cumulus clouds would lead to increased rainfall. On each of 52 days that were judged to be suitable for cloud seeding, a target cloud was identified and a plane flew through the target cloud in order to seed it. Randomization was used to determine whether or not to load a seeding mechanism and seed the target cloud with silver iodide on that day. </p>
       </stack>
@@ -22,7 +22,7 @@
     <p>4.1, 7.7, 17.5, 31.4, 32.7, 40.6, 92.4, 115.3, 118.3, 119.0, 129.6, 198.6, 200.7, 242.5, 255.0, 274.7, 274.7, 302.8, 334.1, 430.0, 489.1, 703.4, 978.0, 1656.0, 1697.8, 2745.6</p>
   </introduction>
   
-  <p><alert>Study Design</alert></p>
+  <p><title>Study Design</title></p>
   
   <exercise xml:id="inv4-7-a" label="I4.7.1">
     <title>Identify Variables</title>
@@ -62,7 +62,7 @@
     </solution>
   </exercise>
   
-  <p><alert>Descriptive Statistics</alert></p>
+  <p><title>Descriptive Statistics</title></p>
   
   <p>Below are graphical displays and summary statistics for these two distributions:</p>
   
@@ -141,16 +141,16 @@
     <response/>
   </exercise>
 
-  <aside>
-    <title>Applet</title>
-    <p><url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1">Theory-Based Inference</url> applet</p>
-  </aside>
 
   <exercise xml:id="inv4-7-e" label="I4.7.5">
     <title>Conduct Two-Sample <em>t</em>-Test</title>
     <statement>
-      <p>Regardless of your answer to <xref ref="inv4-7-d" text="custom">checkpoint 16.4.4</xref>, carry out a two-sample <em>t</em>-test and a confidence interval to determine the strength of evidence of higher average rainfall with the seeded clouds.</p>
+      <p>Regardless of your answer to <xref ref="inv4-7-d" text="custom">Question 4</xref>, carry out a two-sample <em>t</em>-test and a confidence interval to determine the strength of evidence of higher average rainfall with the seeded clouds.</p>
     </statement>
+  <aside>
+    <title>Applet</title>
+    <p><url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1">Theory-Based Inference</url> applet</p>
+  </aside>
     <solution>
       <p>Using technology, the two-sample <em>t</em>-test gives a two-sided p-value = 0.054. We have moderate evidence of a difference in the mean rainfall for these two treatments. The one-sided p-value can be found by taking <m>0.054/2 = 0.027</m> because the observed difference is in the conjectured direction. We have strong evidence that, on average, seeded clouds have more rainfall than unseeded clouds.</p>
       <image source="images/Inv4.7solseR.png" width="70%">
@@ -177,14 +177,15 @@
     <response/>
   </exercise>
   
-  <p><alert>Choice of Statistic</alert></p>
+  <p><title>Choice of Statistic</title></p>
   
   <p>One approach to compensate for the skewness and outliers in these rainfall distributions is to analyze the difference in medians instead of the difference in means. Fortunately, an advantage of the randomization test is that it applies just as well, and just as easily, to comparing medians.</p>
   
+  <ul><li><p>Modify the previous code from the <url href="tech-detour-two-way.html">Technology Detour - Simulating random assignment</url> (remember to load/attach the CloudSeeding.txt data, to match the sample sizes in the actual study, and to consider the difference in medians as the statistic), or use the <url href="https://www.rossmanchance.com/applets/2021/anovashuffle/AnovaShuffle.htm?hideExtras=2">Comparing Groups (Quantitative) applet</url>, to calculate an empirical p-value for the difference in medians for this study. </p></li></ul>
   <exercise xml:id="inv4-7-g" label="I4.7.7">
     <title>Randomization Test for Medians</title>
     <statement>
-      <p>Modify the previous code from the <url href="tech-detour-two-way.html">Technology Detour - Simulating random assignment</url> (remember to load/attach the CloudSeeding.txt data, to match the sample sizes in the actual study, and to consider the difference in medians as the statistic), or use the <url href="https://www.rossmanchance.com/applets/2021/anovashuffle/AnovaShuffle.htm?hideExtras=2">Comparing Groups (Quantitative) applet</url>, to calculate an empirical p-value for the difference in medians for this study. Report the p-value and your conclusion about the effect of cloud seeding on median rainfall amounts.</p>
+      <p>Report the p-value and your conclusion about the effect of cloud seeding on median rainfall amounts.</p>
     <hint>
       <p>What is the observed difference?</p>
     </hint>
@@ -211,29 +212,24 @@
   
   <p>Although we can certainly use simulation this way to approximate the p-value, it is not feasible to find the <q>exact</q> randomization distribution for a data set of this size. We also notice that the distribution of the difference in medians has less <q>smoothness</q> than the distribution of the differences in means, as certain combinations values are just not possible from a discrete distribution.</p>
   
-  <p><alert>Data Transformation</alert></p>
+  <p><title>Data Transformation</title></p>
   
   <p>Another approach you saw earlier (<xref ref="inv-2-8">Investigation 2.8</xref>) is to transform the data first.</p>
   
-  <exercise xml:id="inv4-7-i" label="I4.7.9">
-    <title>Log Transformation</title>
-    <statement>
-      <p>Determine the (natural) logged rainfall values.</p>
+      <ul><li><p>Determine the (natural) logged rainfall values.</p>
+
       <ul>
         <li><p>In R: <c>lnrainfall = log(rainfall)</c></p></li>
         <li><p>In JMP: Create a new column with a formula for <c>log(rainfall)</c></p></li>
       </ul>
-    </statement>
-    <solution>
-      <p>Applying the natural log transformation to all rainfall values in both groups should give 0 and 1.589 for the first two values in the unseeded treatment group.</p>
-    </solution>
-    <response/>
-  </exercise>
-  
+      </li>
+  <li>      <p>Create dotplots and/or histograms of ln rainfall amounts by treatment.</p>
+</li>
+</ul>
+
   <exercise xml:id="inv4-7-j" label="I4.7.10">
     <title>Examine Transformed Data</title>
     <statement>
-      <p>Create dotplots and/or histograms of ln rainfall amounts by treatment.</p>
       <p>Would you consider the shapes of the distributions to be more symmetric than the original data?</p>
       <p>Would you consider the variability to now be more similar between the two groups?</p>
       <p>Is there still evidence of a positive shift in (ln) rainfall amounts for the seeded clouds?</p>
@@ -301,7 +297,7 @@
   <exercise xml:id="inv4-7-n" label="I4.7.14">
     <title>Back-Transformation</title>
     <statement>
-      <p>Perform the back-transformations and interpret the new confidence interval in terms of a ratio of treatment medians.</p>
+      <p>Perform the back-transformations and interpret the new confidence interval in terms of a ratio of treatment <em>medians</em>.</p>
     </statement>
     <solution>
       <p>The confidence interval (0.2409, 2.0471) is for the difference in the population means of the logged rainfall volumes.</p>

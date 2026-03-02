@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="investigation4-5" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Two-sample <em>t</em>-tests</title>
+  <title>Investigation 4.5: Lingering effects of sleep deprivation (cont.)</title>
   
   <exercises xml:id="exercises-4-5" hidden-label="yes">
-  <title>Investigation 4.5: Lingering Effects of Sleep Deprivation (cont.)</title>
+  <title>Two-sample <em>t</em>-tests</title>
   
   <introduction>
     <p>Reconsider the exact randomization distribution of the differences in sample means for the Sleep Deprivation study. Previously you determined simulation-based p-values and the exact p-value. Now we will explore modeling the randomization distribution of the difference in sample means with a probability distribution.</p>
@@ -71,7 +71,8 @@
     <p>In Investigation 4.2, we stated that <m>SD(\bar{X}_1-\bar{X}_2) = \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}</m>, because under the assumption that the two samples are independent, variances add. In a randomization test, however, the two samples are not independent: If one group gets all of the large responses, the other group must have all of the small responses and the difference in group means will be large. Consequently, the standard error formula from Investigation 4.2 will underestimate the shuffle-to-shuffle variation in the statistic. The discrepancy between the standard deviations for the difference in means is largest when the groups are more different: When we shuffle the responses back to the groups, any value can go into either group, but if there is a genuine difference between the treatments, then a score of 40 would be unlikely to come from say the deprived treatment. So how do we estimate the standard deviation of the randomization distribution? Turns out, we are less concerned with that. What we really want to be able to do is predict the behavior of the standardized statistic.</p>
   </paragraphs>
   
-  <p><alert>But what about the <em>t</em>-statistic?</alert></p>  <exercise xml:id="inv4-5-d" label="I4.5.4">
+  <p><title>But what about the <em>t</em>-statistic?</title></p>  
+  <exercise xml:id="inv4-5-d" label="I4.5.4">
       <title>Calculate <em>t</em>-statistic</title>
       <statement>
         <p>Calculate the two-sample <em>t</em>-statistic from Investigation 4.2 and give a one-sentence interpretation.</p>
@@ -140,7 +141,7 @@
       <response/>
     </exercise>
     
-    <p><alert>Discussion:</alert> The <em>t</em>-distribution comes to the rescue again, compensating for the underestimation in the variability, and in most situations (moderate and large sample sizes) gives an adequate approximation to the exact randomization distribution. Note the applet reports 17.56 as the degrees of freedom. This comes from the <url href="https://www.rossmanchance.com/iscam3/glossary_files/Satterthwaite.htm">Welch-Satterthwaite approximation</url> because the exact degrees of freedom are unknown in this case.</p>
+    <p><title>Discussion:</title> The <em>t</em>-distribution comes to the rescue again, compensating for the underestimation in the variability, and in most situations (moderate and large sample sizes) gives an adequate approximation to the exact randomization distribution. Note the applet reports 17.56 as the degrees of freedom. This comes from the <url href="https://www.rossmanchance.com/iscam3/glossary_files/Satterthwaite.htm">Welch-Satterthwaite approximation</url> because the exact degrees of freedom are unknown in this case.</p>
     
     <p>We will consider the <em>t</em> distribution to be a reasonable approximation for the randomization distribution of the <em>t</em> statistic as long as either (similar to what you witnessed in Investigation 4.2):</p>
     <ul>
@@ -150,12 +151,12 @@
     
   <p>In summary, we will often apply the same two-sample <em>t</em>-procedures to both randomized experiments and to independent random samples. The distinction between these two sources of randomness will be most important in drawing your final conclusions (e.g., causation, generalizability). The advantage to the <em>t</em>-procedures over the exact randomization distribution is convenience, especially in calculating a confidence interval.</p>
   
-  <p><alert>Confidence Interval</alert></p>
-    
+  <p><title>Confidence Interval</title></p>
+     <p>Using the 95% <em>t</em>-confidence interval <m>(\bar{x}_{\text{unres}} - \bar{x}_{\text{depr}}) \pm t^* \sqrt{\frac{s_{\text{unres}}^2}{n_{\text{unres}}} + \frac{s_{\text{depr}}^2}{n_{\text{depr}}}}</m>, we find (3.44, 28.40).</p>
   <exercise xml:id="inv4-5-h" label="I4.5.8">
       <title>Interpret Confidence Interval</title>
       <statement>
-        <p>Using the 95% <em>t</em>-confidence interval <m>(\bar{x}_{\text{unres}} - \bar{x}_{\text{depr}}) \pm t^* \sqrt{\frac{s_{\text{unres}}^2}{n_{\text{unres}}} + \frac{s_{\text{depr}}^2}{n_{\text{depr}}}}</m>, we find (3.44, 28.40). Write a one-sentence interpretation of this interval in context, being especially clear how you are defining the parameter for this randomized experiment.</p>
+       <p>Write a one-sentence interpretation of this interval in context, being especially clear how you are defining the parameter for this randomized experiment.</p>
       </statement>
       <solution>
         <p>We are 95% confident the long-run average improvement scores for those who are not sleep deprived are between 3.44 and 28.40 ms larger than for those who are sleep deprived.</p>
