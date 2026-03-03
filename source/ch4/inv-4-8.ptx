@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="investigation4-8" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Independent vs. Paired Designs</title>
+  <title>Investigation 4.8: Speed It Up</title>
   
   <exercises xml:id="exercises-4-8" hidden-label="yes">
-  <title>Investigation 4.8: Speed It Up</title>
+  <title>Independent vs. Paired Designs</title>
 
   <introduction>
-    <sidebyside widths="70% 25%">
+    <sidebyside widths="70% 25%" margins="0% 0%">
       <stack>
         <p>Student researchers (Coutin <ampersand/> Heffler, 2021) wanted to know whether listening to up-tempo music causes college students to tend to type faster. To collect their data (number of words typed correctly in one minute), the students planned to use the 60-second Easy-Text typing test (<url href="https://www.typingtest.com/">TypingTest.com</url>). </p>
       </stack>
@@ -17,6 +17,7 @@
 <p>They recruited 34 college students from groups they were associated with on campus (e.g., athletic teams, musical groups). For the up-tempo music they selected <em>Overture to Candide</em> performed by the London Symphony Orchestra.</p>    <p>Let <m>\mu_{nomusic}</m> represent the population mean typing speed without the music and <m>\mu_{music}</m> the population mean typing speed with the music.</p>
   </introduction>
   
+  <p><title>Ask a Research Question</title></p> 
   <exercise xml:id="inv4-8-a" label="I4.8.1">
     <title>State Hypotheses</title>
     <statement>
@@ -34,17 +35,78 @@
     </solution>
   </exercise>
   
-  <p><alert>Design</alert></p>
+  <p><title>Design</title></p>
   
   <exercise xml:id="inv4-8-b" label="I4.8.2">
     <title>Completely Randomized Design</title>
     <statement>
-      <p>Describe a completely randomized design for conducting this study. Identify the experimental units and variables of interest. Classify the variables as explanatory and response, as well as quantitative or categorical.</p>
-      <p>Design: <var width="60"/></p>
-      <p>Experimental units: <var width="60"/></p>
-      <p>Explanatory variable: <var width="40"/> Type: <var width="20"/></p>
-      <p>Response variable: <var width="40"/> Type: <var width="20"/></p>
+      <p>Describe a completely randomized design for conducting this study. </p>
+      <p>Identify the experimental units and variables of interest. Classify the variables as explanatory and response, as well as quantitative or categorical.</p>
+      <p>Explanatory variable: <var width="40"/> </p><p>Type: <var width="20"/></p>
+      <p>Response variable: <var width="40"/> </p><p>Type: <var width="20"/></p>
     </statement>
+    <setup>
+      <!-- EV -->
+      <var>
+        <condition string=".*[Mm]usic.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Ll]isten.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Tt]reatment.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Gg]roup.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The explanatory variable is whether or not the music is playing.</p></feedback>
+        </condition>
+      </var>
+      <!-- EV type -->
+      <var>
+        <condition string=".*[Cc]ategorical.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Bb]inary.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The explanatory variable is categorical (two groups: music vs. no music).</p></feedback>
+        </condition>
+      </var>
+      <!-- RV -->
+      <var>
+        <condition string=".*[Tt]yp.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Ss]peed.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Ww]ords.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*wpm.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The response variable is typing speed (words per minute).</p></feedback>
+        </condition>
+      </var>
+      <!-- RV type -->
+      <var>
+        <condition string=".*[Qq]uantitative.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*[Nn]umerical.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The response variable is quantitative (measured in words per minute).</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <response/>
     <solution>
       <p>Completely randomized design</p>
@@ -158,7 +220,7 @@
     </stack>
   </sidebyside>
 
-  <p><alert>Alternative study design</alert></p>
+  <p><title>Alternative study design</title></p>
   <p>But there is another way we can improve the design of this study for detecting differences in typing speeds without using any additional people!</p>
   
   <exercise xml:id="inv4-8-h" label="I4.8.8">
