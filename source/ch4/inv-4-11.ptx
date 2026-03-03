@@ -6,7 +6,7 @@
   <title>Investigation 4.11: Smoke Alarms</title>
 
   <introduction>
-    <sidebyside widths="60% 35%" valign="top">
+    <sidebyside widths="60% 35%" valign="top" margins="0% 0%">>
       <stack>
         <p>A study published in the journal <em>Pediatrics</em> (<url href="https://pubmed.ncbi.nlm.nih.gov/17015555/">Smith et al., 2006</url>) addressed the important issue of how to awaken children during a house fire so they can escape safely. Researchers worked with a volunteer sample of 24 healthy children aged 6-12 by training them to perform a simulated self-rescue escape procedure when they heard an alarm. Researchers then compared the children's reactions to two kinds of alarms: a conventional smoke alarm and a personalized recording of the mother's voice saying the child's name and urging him or her to wake up. All 24 children were exposed to both kinds of alarms, with the order determined randomly.</p>
       </stack>
@@ -56,7 +56,64 @@
       <p>Type of Study: <var width="40"/></p>
       <p>Randomness: <var width="60"/></p>
     </statement>
-    <response/>
+    <setup>
+      <var>
+        <condition string=".*[Cc]hild.*|.*[Kk]id.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The observational units are the 24 children in the study.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Aa]larm.*|.*[Tt]ype.*[Aa]larm.*|.*[Vv]oice.*|.*[Cc]onventional.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The explanatory variable is the type of alarm (mother's voice vs. conventional).</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Cc]ategor.*|.*[Bb]inary.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The type is binary categorical.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Ww]ake.*|.*[Ww]oke.*|.*[Aa]wake.*|.*[Rr]espon.*|.*[Ee]scape.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The response variable is whether or not the child woke up.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Cc]ategor.*|.*[Bb]inary.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The type is binary categorical.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Ee]xperiment.*|.*[Mm]atched.*[Pp]air.*|.*[Pp]aired.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>This is a matched pairs experiment.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Pp]air.*|.*[Oo]rder.*|.*[Rr]andom.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The order of which alarm was used first was randomly determined (paired design).</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><ul>
         <li><p>Obs units: 24 children</p></li>
@@ -98,9 +155,9 @@
     <title>Create Two-Way Table</title>
     <statement>
       <p>Complete the following table.</p>
-      <tabular row-headers="yes">
+      <tabular row-headers="yes" top="minor" bottom="minor" left="minor" right="minor">
         <row header="yes">
-          <cell halign="left"></cell>
+          <cell halign="left">Mom \ Conventional</cell>
           <cell>Awakened to conventional alarm</cell>
           <cell>Did not awaken to conventional alarm</cell>
           <cell>Row total</cell>
@@ -135,7 +192,7 @@
 
   <!-- Column headers -->
   <row header="yes">
-    <cell></cell>
+    <cell>Mom \ Conventional</cell>
     <cell>Awakened to conventional</cell>
     <cell>Did not awaken to conventional</cell>
     <cell>Row total</cell>
@@ -172,7 +229,16 @@
       <p>How many children responded differently to the two alarms? (We will treat these "non-ties" as our sample size.)</p>
       <p>Number of children: <var form="numeric" width="10"/></p>
     </statement>
-    <response/>
+    <setup>
+      <var>
+        <condition number="9">
+          <feedback><p>Correct! 9 children (the off-diagonal cells) responded differently to the two alarms.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Count the children who woke to one alarm but not the other (the off-diagonal cells in the two-way table).</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><m>9 + 0 = 9</m> children responded differently to the two alarms.</p>
     </solution>
@@ -181,11 +247,11 @@
   <exercise xml:id="inv4-11-f" label="I4.11.6">
     <title>Mother's Voice Only</title>
     <statement>
-      <p>Of the children you identified in <xref ref="inv4-11-e">Checkpoint I4.11.5</xref>, how many woke to the mom's voice alarm only? What proportion of the children you identified in <xref ref="inv4-11-e">Checkpoint I4.11.5</xref> is this?</p>
+      <p>Of the children you identified in <xref ref="inv4-11-e" text="Question 5"> Question 5</xref>, how many woke to the mom's voice alarm only? What proportion of the children you identified in <xref ref="inv4-11-e" text="Question 5"> Question 5</xref> is this?</p>
     </statement>
     <response/>
     <solution>
-      <p>None of the children in (e) awoke to only the conventional alarm. This is a proportion of 0.</p>
+      <p>None of the children in Question 5 awoke to only the conventional alarm. This is a proportion of 0.</p>
     </solution>
   </exercise>
   
@@ -195,7 +261,16 @@
       <p>Suppose there was no difference in the effectiveness of the two alarms in the long-run. If a child does react differently to the two alarms (wakes to one but not the other), how often would you expect the "success alarm" to be the mother's voice in the long run?</p>
       <p>Probability: <var width="10"/></p>
     </statement>
-    <response/>
+    <setup>
+      <var>
+        <condition string=".*0?\.5.*|.*1/2.*|.*half.*|.*50%.*|.*50 ?percent.*">
+          <feedback><p>Correct! Under the null hypothesis, each non-tie is equally likely to favor either alarm, so the probability is 0.5.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>If both alarms are equally effective, a child who responds to only one alarm would be equally likely to respond to either one — probability 0.5.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>Half the time</p>
     </solution>
@@ -208,7 +283,56 @@
       <p><m>H_0:</m><var width="5"/> <var width="5"/> <var width="10"/></p>
       <p><m>H_a:</m><var width="5"/> <var width="5"/> <var width="10"/></p>
     </statement>
-    <response/>
+    <setup>
+      <var>
+        <condition string=".*[Pp]i.*|.*π.*|.*p.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The parameter is π (pi), the probability of waking to mom's voice among non-ties.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*=.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The null hypothesis uses = (equals).</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*0?\.5.*|.*1/2.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Under the null, the probability is 0.50 (equally likely to wake to either alarm).</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*[Pp]i.*|.*π.*|.*p.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The parameter is π (pi).</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*&gt;.*|.*>.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The alternative uses > (greater than), since we're testing if mom's voice is more effective.</p></feedback>
+        </condition>
+      </var>
+      <var>
+        <condition string=".*0?\.5.*|.*1/2.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The alternative tests whether π is greater than 0.50.</p></feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p><br/><m>H_0: \pi = 0.50</m></p>
       <p><m>H_a: \pi > 0.50</m></p>
@@ -269,9 +393,9 @@
       <title>Complete the Table</title>
       <statement>
         <p>Two children did not escape to either kind of alarm. Use this information to complete the following table:</p>
-        <tabular row-headers="yes">
+        <tabular row-headers="yes" top="minor" bottom="minor" left="minor" right="minor">
           <row header="yes">
-            <cell></cell>
+            <cell>Mom \ Conv</cell>
             <cell>Escaped to conventional alarm</cell>
             <cell>Did not escape to conventional alarm</cell>
             <cell>Total</cell>
@@ -313,7 +437,13 @@
         <p>Use the binomial distribution to calculate the exact p-value for this test.</p>
         <p>p-value: <var form="numeric" width="10"/></p>
       </statement>
-      <response/>
+      <setup>
+        <var>
+          <condition string=".*">
+            <feedback><p>Your answer has been recorded.</p></feedback>
+          </condition>
+        </var>
+      </setup>
     </exercise>
     
     <exercise xml:id="practice-4-11-5" label="P4.11.5">
