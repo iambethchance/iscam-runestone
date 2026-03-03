@@ -252,15 +252,9 @@
         <title>Physical Simulation</title>
         <statement>
           <p>Take a set of 21 index cards, and write each of the improvement values on a card. Then shuffle the cards and deal out 10 of them to represent the subjects randomly assigned to the <q>unrestricted sleep</q> group and 11 to represent the <q>sleep deprived group.</q> Calculate the mean of the improvements in each group. Then calculate the difference in group means, subtracting in the same order as before.</p>
-          <p>Simulated difference in means (<m>\bar{x}_{\text{unrestricted}} - \bar{x}_{\text{deprived}}</m>): <var width="10"/></p>
+          <p>Simulated difference in means (<m>\bar{x}_{\text{unrestricted}} - \bar{x}_{\text{deprived}}</m>):</p>
         </statement>
-        <setup>
-          <var>
-            <condition string=".+">
-              <feedback><p>Response recorded.</p></feedback>
-            </condition>
-          </var>
-        </setup>
+        <response/>
       </exercise>
       
       <exercise xml:id="inv4-4-k" label="I4.4.11">
@@ -277,7 +271,7 @@
       <exercise xml:id="inv4-4-l" label="I4.4.12">
         <title>Combine Class Results</title>
         <statement>
-          <p>Combine your results with your classmates to produce a dotplot of the difference in group means.</p>
+          <p>Combine your results with your classmates to produce a dotplot of the difference in group means. What do you learn?</p>
         </statement>
         <response/>
       </exercise>
@@ -303,21 +297,10 @@
       <exercise xml:id="inv4-4-m" label="I4.4.13">
         <title>Use Applet for Simulation</title>
         <statement>
-          <p>What did you find for the difference in group means? <var width="10"/></p>
-          <p>Is this more extreme than the observed difference in group means in the research study? <var width="10"/></p>
+          <p>What did you find for the difference in group means?</p>
+          <p>Is this more extreme than the observed difference in group means in the research study?</p>
         </statement>
-        <setup>
-          <var>
-            <condition string=".+">
-              <feedback><p>Response recorded.</p></feedback>
-            </condition>
-          </var>
-          <var>
-            <condition string=".+">
-              <feedback><p>Response recorded.</p></feedback>
-            </condition>
-          </var>
-        </setup>
+        <response/>
       </exercise>
 
 <ul><li>
@@ -516,10 +499,19 @@ abline(v=15.92, col=2)
         <statement>
           <p>Do your simulation results reasonably approximate this null distribution?</p>
         </statement>
+        <choices randomize="yes">
+          <choice correct="yes">
+            <statement><p>Yes</p></statement>
+            <feedback><p>Correct! The simulation results should closely approximate the exact randomization distribution.</p></feedback>
+          </choice>
+          <choice>
+            <statement><p>No</p></statement>
+            <feedback><p>Actually, the simulation results should reasonably approximate the exact distribution — the distributions are quite similar.</p></feedback>
+          </choice>
+        </choices>
         <solution>
           <p>The distributions are quite similar.</p>
         </solution>
-        <response/>
       </exercise>
       
       <exercise xml:id="inv4-4-w" label="I4.4.23">

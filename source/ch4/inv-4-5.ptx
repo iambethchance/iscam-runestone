@@ -58,13 +58,31 @@
         <p>Use these values to compute the standard error for the difference in sample means. </p>
         <p>Standard error = <var width="20"/></p>
         <p>Compare this to the standard deviation you observed in the applet/for the exact randomization distribution. In particular, does this formula appear to over- or under-estimate the variability?</p>
-        <p><var width="65"/></p>
       </statement>
+      <choices randomize="yes">
+        <choice>
+          <statement><p>Over-estimate</p></statement>
+          <feedback><p>The SE formula actually underestimates the variability because the two groups are not independent in a randomization test.</p></feedback>
+        </choice>
+        <choice correct="yes">
+          <statement><p>Under-estimate</p></statement>
+          <feedback><p>Correct! The SE formula underestimates the variability (SE ≈ 5.93 vs. SD ≈ 6.74) because the two groups are not independent in a randomization test.</p></feedback>
+        </choice>
+      </choices>
+      <setup>
+        <var>
+          <condition number="5.93" tolerance="0.1">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>SE = √(14.73²/10 + 12.17²/11) ≈ 5.93</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>SE = <m>\sqrt{14.73^2/10 + 12.17^2/11} \approx 5.93</m></p>
         <p>This should be somewhat near the simulated value but does slightly underestimate the variability (SD = 6.74).</p>
     </solution>
-    <response/>
   </exercise>
   
   <paragraphs>
@@ -82,11 +100,28 @@
         <p><m>t =</m> <var width="15"/></p>
         <p>Interpretation: <var width="60"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition number="2.685" tolerance="0.05">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition number="2.69" tolerance="0.05">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>t = (15.92 - 0) / 5.93 ≈ 2.685</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string=".+">
+            <feedback><p>Response recorded. The observed difference in sample means is about 2.69 standard errors above the hypothesized difference of zero.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <solution>
         <p>Standardized statistic <m>t = \frac{15.92 - 0}{5.93} \approx 2.685</m></p>
         <p>The observed difference in sample means is 2.69 standard errors above the hypothesized difference of zero.</p>
       </solution>
-      <response/>
     </exercise>
     
     
@@ -94,6 +129,10 @@
       <title>Re-randomization with <em>t</em>-statistic</title>
       <statement>
         <p>Use the Comparing Groups (Quantitative) applet to create a re-randomization null distribution. Change the Statistic pull-down menu to <em>t</em>-statistic and find the p-value using the value in <xref ref="inv4-5-d" text="custom">Question 4</xref>. Is this the same p-value we found when we used the difference in means as the statistic in <xref ref="inv4-4-q" text="custom">Investigation 4.4, Question 4</xref>?</p>
+        <aside>
+          <title>Applet</title>
+          <p><url href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm">Comparing Groups (Quantitative)</url></p>
+        </aside>
       </statement>
       <solution>
         <p>Example results:</p>
@@ -104,15 +143,11 @@
       </solution>
       <response/>
     </exercise>
-    <aside>
-      <title>Applet</title>
-      <p><url href="https://www.rossmanchance.com/applets/2021/comparinggroups/CompGroups.htm">Comparing Groups (Quantitative)</url></p>
-    </aside>
     
     <exercise xml:id="inv4-5-f" label="I4.5.6">
       <title>Exact p-value for <em>t</em>-statistic</title>
       <statement>
-        <p>If we use similar code to that in <xref ref="investigation4-4" text="custom">Investigation 4.4</xref> to find the exact distribution of these <em>t</em>-statistics, we can find the exact p-value for the <em>t</em>-statistic is 0.00748. Is this similar to the simulation results?</p>
+        <p>If we use similar code to that in <xref ref="tech-detour-4-4" text="custom">Investigation 4.4</xref> to find the exact distribution of these <em>t</em>-statistics, we can find the exact p-value for the <em>t</em>-statistic is 0.00748. Is this similar to the simulation results?</p>
       </statement>
       <choices randomize="yes">
         <choice correct="yes">
@@ -218,7 +253,7 @@
     </exercise>
     
     <p>The following summary statistics pertain to the reports of television watching at the conclusion of the study:</p>
-    <tabular halign="center" top="medium" bottom="medium" left="medium" right="medium">
+    <tabular halign="center" top="medium" bottom="medium" left="medium" right="medium" row-headers="yes">
       <row header="yes" bottom="medium">
         <cell halign="left" right="medium">Follow-up</cell>
         <cell right="medium">Sample size</cell>
