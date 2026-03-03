@@ -310,7 +310,7 @@ iscamsummary(elephants$Distance, elephants$Species)
     
     </exercises>
     
-    <exercises xml:id="prob-detour-two-means">
+    <subsection xml:id="prob-detour-two-means">
       <title>Probability Detour: Sampling Distribution of Difference in Two Means</title>
       
       <p>To understand how <em>differences in sample means</em> behave, let's explore 
@@ -683,7 +683,9 @@ Players without a team affiliation or without a listed salary were not included 
         <response/>
       </exercise>
       
-      <paragraphs><p><title>Discussion:</title> The sample sizes of 20 for each group appear to be large enough for a <m>t</m>-distribution (even a normal distribution) to reasonably approximate the distribution of this statistic. If the population distributions had themselves been normally distributed (and large), then a <m>t</m>-distribution will be a good approximation of the statistic for any sample sizes. The more skewed the population shapes, the larger the sample sizes need to be for you to safely use the <m>t</m>-distribution. Notice even with these very skewed populations, because their shapes and sample sizes were similar, we didn't need very large sample sizes at all for the standardized statistic to follow a <m>t</m>-distribution.</p>
+      <paragraphs>
+        <title>Discussion</title>
+        <p>The sample sizes of 20 for each group appear to be large enough for a <m>t</m>-distribution (even a normal distribution) to reasonably approximate the distribution of this statistic. If the population distributions had themselves been normally distributed (and large), then a <m>t</m>-distribution will be a good approximation of the statistic for any sample sizes. The more skewed the population shapes, the larger the sample sizes need to be for you to safely use the <m>t</m>-distribution. Notice even with these very skewed populations, because their shapes and sample sizes were similar, we didn't need very large sample sizes at all for the standardized statistic to follow a <m>t</m>-distribution.</p>
       
       <p>One remaining question is what to use for the degrees of freedom for the <m>t</m>-distribution. In the one-sample case (Chapter 2) we used <m>n - 1</m>. For two samples, it's actually more complicated. The <url href="https://www.rossmanchance.com/iscam3/glossary_files/Satterthwaite.htm">Welch-Satterthwaite</url> approximation for degrees of freedom involves the sample sizes and the unknown population standard deviations, though it doesn't always result in integer values. We will leave this calculation up to technology. You only need to realize that the degrees of freedom are related to the sample sizes and as the sample sizes become large, the <m>t</m>-distribution loses more and more of the heaviness in the tails and approaches the (standard) normal distribution. If you need to determine a p-value or critical value <q>by hand,</q> we suggest using the following simple approximation for the degrees of freedom: <m>\min(n_1 - 1, n_2 - 1)</m>, the smaller of the two sample sizes minus one.</p>
       </paragraphs>
@@ -714,14 +716,16 @@ Players without a team affiliation or without a listed salary were not included 
         <p><alert>Technical conditions:</alert> These procedures are considered valid if the sample distributions are reasonably symmetric or the sample sizes are both at least 20.  Also consider whether you are sampling from a random process or large populations.</p>
       </assemblage>
       
-<p><title>Using Technology to Carry out the Two-Sample <m>t</m>-Tests</title>
-In using technology, you need to consider how the data are available: Do you have the “raw data” (meaning all the individual data values) or just the summary statistics (sample sizes, means, SDs)? Most software packages will assume raw data is “stacked” – each column represents a different variable (all response variable values in one column, the explanatory variable in a second column). Also notice that being able to run the <m>t</m>-test 
+<paragraphs>
+<title>Using Technology to Carry out the Two-Sample <m>t</m>-Tests</title>
+<p>In using technology, you need to consider how the data are available: Do you have the “raw data” (meaning all the individual data values) or just the summary statistics (sample sizes, means, SDs)? Most software packages will assume raw data is “stacked” – each column represents a different variable (all response variable values in one column, the explanatory variable in a second column). Also notice that being able to run the <m>t</m>-test 
 with only the summary data is one advantage the <m>t</m>-test has over the simulation. But also keep in mind that the <m>t</m>-output is valid only when the population distributions are normal or the sample sizes are large. When reporting your results, make sure you specify which technology you used, because different software use different degrees of freedom. You will also need to watch for the direction of subtraction that the software packages use automatically (often alphabetical by group name).</p>
 
 <p>There is also a version of the two-sample <m>t</m>-test that makes an additional assumption – the population standard deviations are equal. The standardized statistic has the following form:
   <me>t = \frac{(\bar{x}_1 - \bar{x}_2) - 0}{s_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}</me>
   where <m>s_p = \sqrt{\frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1 + n_2 - 2}}</m>, a pooled estimate of the common SD.</p>
 <p>This <q>pooled <m>t</m>-test</q> has some advantages (namely higher power), when the population standard deviations are equal. However, this additional condition can be difficult to assess from your sample data. The benefits do not appear to outweigh the risks of applying this assumption when you shouldn't. So in this text we will focus on <q>unpooled <m>t</m>-tests</q> only.</p>
+</paragraphs>
       
       <exercise xml:id="inv4-2-tech" label="I4.2.TECH">
         <title>Technology Detours</title>
@@ -833,9 +837,9 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
         </statement>
       </exercise>
 
-</exercises>
+</subsection>
     
-    <exercises xml:id="elephants-continued">
+    <subsection xml:id="elephants-continued">
       <title>Back to the Elephants</title>
       <exercise xml:id="inv4-2-i" label="I4.2.13">
         <title>Technical Conditions</title>
@@ -886,7 +890,7 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
       </assemblage>
       
       <p>Keep in mind that the <m>t</m>-tests only tell us about whether the centers of the distributions are significantly different. They don't help us analyze other potentially interesting differences in the two distributions.</p>
-    </exercises>   
+    </subsection>   
   <subsection xml:id="practice-problem-4-2a">
     <title>Practice Problem 4.2A</title>
     
