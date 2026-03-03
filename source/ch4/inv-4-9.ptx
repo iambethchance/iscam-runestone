@@ -19,7 +19,7 @@
   <exercise xml:id="inv4-9-a" label="I4.9.1">
     <title>Compare to Previous Results</title>
     <statement>
-      <p>Compare these results to the results in <xref ref="investigation4-8">Investigation 4.8</xref>. What has changed? Will these changes impact the p-value? If so, how?</p>
+      <p>Compare these results to the results in <xref ref="investigation4-8" text="Investigation 4.8">Investigation 4.8</xref>. What has changed? Will these changes impact the p-value? If so, how?</p>
     </statement>
     <response/>
     <solution>
@@ -178,13 +178,14 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     <statement>
       <p>What do you notice about the high outliers after each shuffle?</p>
     </statement>
+    <response/>
     <solution>
-    Example solutions:
+      <p>Notice that the same three people are the high outliers, but the two responses may swap between the treatment groups.</p>
+<p>        Example solutions:
       <image source="images/Inv4.9solsh.png" width="70%">
         <description>Distribution of 1000 simulated mean differences from re-randomizations</description>
-      </image>
-      <p>Notice that the same three people are the high outliers, but the two responses may swap between the treatment groups.</p>
-    </solution>
+      </image></p>
+</solution>
   </exercise>
   
   <exercise xml:id="inv4-9-i" label="I4.9.9">
@@ -370,13 +371,10 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
   
   <paragraphs>
     <title>Discussion</title>
-    <p>&#160;</p>
-  </paragraphs>
-  
-  <p>To compare two groups on a quantitative variable, a more powerful study design than randomly assigning individuals to two groups, if possible, is to pair individuals (or take two measurements on each individual) and measure both responses in each pair (See Example 4.4). This pairing accounts for the variability from individual to individual and allows for a more direct comparison between the two conditions of interest. For example, if two measurements are taken on each individual, there should not be any other systematic differences between the measurements other than the treatment effect. Randomizing will still be important in determining the order of the two treatments, thereby eliminating order as a potential confounding variable. By accounting for the variability in individuals, this should increase the power of the test of significance, making it easier to detect a difference between the two conditions if one really exists. To analyze such data, perform a matched-pairs randomization test or a (one sample) <em>t</em>-test on the differences.</p>
+    <p>To compare two groups on a quantitative variable, a more powerful study design than randomly assigning individuals to two groups, if possible, is to pair individuals (or take two measurements on each individual) and measure both responses in each pair (See Example 4.4). This pairing accounts for the variability from individual to individual and allows for a more direct comparison between the two conditions of interest. For example, if two measurements are taken on each individual, there should not be any other systematic differences between the measurements other than the treatment effect. Randomizing will still be important in determining the order of the two treatments, thereby eliminating order as a potential confounding variable. By accounting for the variability in individuals, this should increase the power of the test of significance, making it easier to detect a difference between the two conditions if one really exists. To analyze such data, perform a matched-pairs randomization test or a (one sample) <em>t</em>-test on the differences.</p>
   
   <p><alert>Note:</alert> The standard error of the difference in means is equivalent to <m>SE(\bar{X}_1 - \bar{X}_2) = \sqrt{\frac{s_1^2 + s_2^2 - 2rs_1s_2}{n}}</m>, which shows how the positive correlation between the two sets of measurements (<m>r</m>) reduces the estimated standard error of the statistic.</p>
-  
+  </paragraphs>
   <assemblage>
     <title>Study Conclusions</title>
     <p>A paired experiment comparing typing speeds with and without up-tempo classical music (Overture to Candide performed by the London Symphony Orchestra) found participants were significantly faster on average with the music. A paired <em>t</em>-test on the mean difference give a one-sided p-value of 0.006, similar to the simulation-based p-value using "random swapping" of the speeds to represent no difference between the two treatment conditions. We are 95% confident that participants like those in this study (e.g., college students, music students or athletes willing to help out a friend) type, on average, 0.63 to 4.61 more words per minute when listening to the up-tempo music. This evidence is much stronger than when we only compared the participants on their first tests, because of both effectively doubling the sample size and also reducing the amount of "unexplained variation" in the response variable. The person-to-person variation in typing speeds was around 15 wpm, compared to the person-to-person variation in difference in typing speeds which was around 5 wpm. A further analysis could compare the average improvement with music between the music students and the athletes.</p>
@@ -398,7 +396,7 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     <exercise xml:id="practice-4-9a-2" label="P4.9A.2">
       <title>Power with SD = 5</title>
       <statement>
-        <p>Repeat (a) assuming the sample standard deviations are 5 wpm.</p>
+        <p>Repeat the previous question assuming the sample standard deviations are 5 wpm.</p>
       </statement>
       <response/>
     </exercise>
