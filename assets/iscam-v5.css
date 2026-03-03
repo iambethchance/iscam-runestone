@@ -253,9 +253,9 @@ article.exercise-like#I1-3-1 {
     padding: 0.4em 0.6em !important;
 }
 
-/* Hide ONLY the exercises division heading to avoid double headers.
-   Do NOT hide subsection headings (e.g., Practice Problem titles). */
-section.exercises > h3.heading.hide-type {
+/* Hide exercises division headings that duplicate the section title (e.g., main investigation headings).
+   Use :not() to KEEP headings visible for special exercises blocks like Probability Detour and Back to Elephants. */
+section.exercises:not(#prob-detour-two-means):not(#elephants-continued) > h3.heading.hide-type {
     display: none !important;
     visibility: hidden !important;
     height: 0 !important;
