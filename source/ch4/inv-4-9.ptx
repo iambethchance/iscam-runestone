@@ -119,7 +119,10 @@
   
   <p>It actually doesn't matter whether we use the "difference in means" or the "mean difference" as our statistic/parameter. What is important is how we estimate the chance variation in that statistic, assuming the null hypothesis is true.</p>
   
-  <p><title>Simulation</title></p>
+  <paragraphs>
+    <title>Simulation</title>
+    <p>&#160;</p>
+  </paragraphs>
   
   <exercise xml:id="inv4-9-g" label="I4.9.7">
     <title>Simulation Design</title>
@@ -171,14 +174,16 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
   </ul></p>
   
   <exercise label="inv4-9-example-results">
-    <title>Example results</title>
+    <title>Tracking the randomized values</title>
     <statement>
-      <p></p>
+      <p>What do you notice about the high outliers after each shuffle?</p>
     </statement>
     <solution>
+    Example solutions:
       <image source="images/Inv4.9solsh.png" width="70%">
         <description>Distribution of 1000 simulated mean differences from re-randomizations</description>
       </image>
+      <p>Notice that the same three people are the high outliers, but the two responses may swap between the treatment groups.</p>
     </solution>
   </exercise>
   
@@ -234,7 +239,10 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     </solution>
   </exercise>
   
-  <p><title>Mathematical Model</title></p>
+  <paragraphs>
+    <title>Mathematical Model</title>
+    <p>&#160;</p>
+  </paragraphs>
   
   <exercise xml:id="inv4-9-m" label="I4.9.13">
     <title>Normal Distribution Model</title>
@@ -360,7 +368,10 @@ pvalue=2*sum(meandiff[i] > 2.62) /1000
     </solution>
   </exercise>
   
-  <p><title>Discussion</title></p>
+  <paragraphs>
+    <title>Discussion</title>
+    <p>&#160;</p>
+  </paragraphs>
   
   <p>To compare two groups on a quantitative variable, a more powerful study design than randomly assigning individuals to two groups, if possible, is to pair individuals (or take two measurements on each individual) and measure both responses in each pair (See Example 4.4). This pairing accounts for the variability from individual to individual and allows for a more direct comparison between the two conditions of interest. For example, if two measurements are taken on each individual, there should not be any other systematic differences between the measurements other than the treatment effect. Randomizing will still be important in determining the order of the two treatments, thereby eliminating order as a potential confounding variable. By accounting for the variability in individuals, this should increase the power of the test of significance, making it easier to detect a difference between the two conditions if one really exists. To analyze such data, perform a matched-pairs randomization test or a (one sample) <em>t</em>-test on the differences.</p>
   
