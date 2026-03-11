@@ -14,15 +14,6 @@
       <p>Address the questions posed in the introduction about designing a comparison shopping study with adequate power.</p>
     </statement>
     <response/>
-
-    <h2>Power Calculations in R</h2>
-    <p>R has a built-in function for power calculations for one or two-sample <em>t</em>-tests, <code>power.t.test()</code>. The arguments to these functions are the sample size (for each group), the difference in means to detect, the standard deviation of the data (for each group), the significance level, and whether the test is one-sided or two-sided. You can leave any one of these arguments blank and R will calculate it for you. For example, to calculate the power of a two-sample test with 30 items at each store, a difference of $0.20, a standard deviation of $2.00, and a significance level of 0.05, you would run:</p>
-    <c>
-power.t.test(n = 30, delta = 0.20, sd = 2.00, sig.level = 0.05, type = "two.sample", alternative = "two.sided")
-</c>
-<h2>Power Calculations in JMP</h2>
-<p>In JMP, you can use the "Power and Sample Size" platform to carry out power calculations for a one or two-sample <em>t</em>-test. For example, you can choose DOE > Sample Size Explorers > Power > Power for Two Independent Sample Means, specify Two-sided, don't know population standard deviation. Go to the Difference to Detect graph and set that value to 0.20 and then change Group 1 SD and Group 2 SD to 2.00. Then you can read off the power for a given sample size or you can adjust the sample size to achieve the desired power.</p>
-</p>
    <solution>
       <p>The original study had access to an inventory list and was able to use a systematic sample to select one item from each of 30 pages. This required the students to find each item in the store, but each student was only given one item to find. If you needed to find all the items yourself, you might consider a multistage sampling plan where you number the aisles, randomly select an aisle, then within the aisle you could randomly select a side, and then randomly select a shelf, and then randomly select a distance down the aisle. This randomly selects and finds the items all in one step! You could then find those same items at the second store (matched pairs) or repeat this process at the second store (independent samples).</p>
 
@@ -75,5 +66,13 @@ power.t.test(n = 30, delta = 0.20, sd = 2.00, sig.level = 0.05, type = "two.samp
 
       <p>There is a huge improvement with the paired design, though our probability of detecting a difference is still only 80% when the average difference is actually 20 cents. This probability drops to about 53% with 28 items, so it's important to aim for more observations than your power calculation reveals to account for attrition in the sample. But keep in mind that for a very small difference, especially with lots of natural variation in the responses, a very large sample size would be needed and may not be practical. It's important to discuss "what is a meaningful difference to detect" with the subject matter experts.</p>
     </solution>
-  </exercise>
+</exercise>
+<alert>Power Calculations in R</alert>
+    <p>R has a built-in function for power calculations for one or two-sample <em>t</em>-tests, <code>power.t.test()</code>. The arguments to these functions are the sample size (for each group), the difference in means to detect, the standard deviation of the data (for each group), the significance level, and whether the test is one-sided or two-sided. You can leave any one of these arguments blank and R will calculate it for you. For example, to calculate the power of a two-sample test with 30 items at each store, a difference of $0.20, a standard deviation of $2.00, and a significance level of 0.05, you would run:</p>
+    <c>
+power.t.test(n = 30, delta = 0.20, sd = 2.00, sig.level = 0.05, type = "two.sample", alternative = "two.sided")
+</c>
+<alert>Power Calculations in JMP</alert>
+<p>In JMP, you can use the "Power and Sample Size" platform to carry out power calculations for a one or two-sample <em>t</em>-test. For example, you can choose DOE > Sample Size Explorers > Power > Power for Two Independent Sample Means, specify Two-sided, don't know population standard deviation. Go to the Difference to Detect graph and set that value to 0.20 and then change Group 1 SD and Group 2 SD to 2.00. Then you can read off the power for a given sample size or you can adjust the sample size to achieve the desired power.</p>
+</p>
 </section>
