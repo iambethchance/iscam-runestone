@@ -71,11 +71,11 @@
   <paragraphs>
     <title>Power Calculations in R</title>
     <p>R has a built-in function for power calculations for one or two-sample <em>t</em>-tests, <c>power.t.test()</c>. The arguments to these functions are the sample size (for each group), the difference in means to detect, the standard deviation of the data (for each group), the significance level, and whether the test is one-sided or two-sided. You can leave any one of these arguments blank and R will calculate it for you. For example, to calculate the power of a two-sample test with 30 items at each store, a difference of $0.20, a standard deviation of $2.00, and a significance level of 0.05, you would run:</p>
-    <sage language="r">
+    <program language="r">
       <input>
 power.t.test(n = 30, delta = 0.20, sd = 2.00, sig.level = 0.05, type = "two.sample", alternative = "two.sided")
       </input>
-    </sage>
+    </program>
   </paragraphs>
 
   <paragraphs>
