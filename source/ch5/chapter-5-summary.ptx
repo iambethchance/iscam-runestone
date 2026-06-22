@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="chapter5-summary">
+  <title>Chapter 5 Summary</title>
+
+  <p>In this chapter, you explored procedures for analyzing two or more groups and for analyzing relationships. As in earlier chapters, you saw that different study designs could lead to the same mathematical computations, but also remember to consider the study design when drawing your final conclusions. In particular, you should think about which variables were controlled by the researchers and which were not.</p>
+
+  <p>A very common procedure to use with two-way tables is the chi-squared procedure. You saw that this reduces to the two-sample <m>z</m>-test in the case of two groups. The chi-squared procedure is a large sample procedure and Fisher's Exact Test can be used with smaller sample sizes. A parallel procedure for comparing several means is Analysis of Variance, which models the ratio of the variability between groups to the variability within groups using the <m>F</m> distribution.</p>
+
+  <p>Regression is a very important field of study and your next course in statistics will probably be entirely about regression models. We scratched the surface here by looking at the appropriate numerical and graphical summaries for analyzing the relationship between two quantitative variables (scatterplots and correlation coefficient) and least squares regression models for linear relationships. In deciding whether you have a statistically significant relationship, the <m>t</m>-statistic uses the common standardized statistic form that you saw in earlier chapters <m>(\text{observed} - \text{hypothesized})/\text{standard error}</m>, where the standard error of the sample slopes depends on the sample size, the variability in the <m>x</m> values and the vertical spread about the regression line.</p>
+
+  <p>These calculations are complex to carry out by hand, but our focus is on knowing when to use which procedure, how to check the validity of the procedure, and how to interpret the resulting output. Learning to effectively interpret and communicate statistical results is at least as important a skill as learning which computer menus to use!</p>
+
+  <subsection>
+    <title>Technology Summary</title>
+
+    <p>In this chapter, you learned how to use software to perform chi-squared tests, ANOVA, and inference for regression. You also learned how to create scatterplots, including coded scatterplots, and calculate correlation coefficients. You used applets to explore properties of <m>F</m>-statistics, regression lines, and regression coefficients. Though we hope these have given you some memorable visual images, you will generally use software to carry out specific analyses.</p>
+  </subsection>
+
+  <subsection>
+    <title>Choice of Procedures for Comparing Several Populations, Exploring Relationships</title>
+
+    <tabular>
+      <row header="yes">
+        <cell>Setting</cell>
+        <cell><m>EV</m>: Categorical<newline/><m>RV</m>: Categorical</cell>
+        <cell><m>EV</m>: Categorical<newline/><m>RV</m>: Quantitative</cell>
+        <cell><m>EV</m>: Quantitative<newline/><m>RV</m>: Quantitative</cell>
+      </row>
+      <row>
+        <cell>Graphical summary</cell>
+        <cell>Segmented bar graph</cell>
+        <cell>Stacked boxplots</cell>
+        <cell>Scatterplot</cell>
+      </row>
+      <row>
+        <cell>Numerical summary</cell>
+        <cell>Conditional proportions</cell>
+        <cell>Group means and standard deviations</cell>
+        <cell>Correlation coefficient</cell>
+      </row>
+      <row>
+        <cell>Procedure name</cell>
+        <cell>Chi-squared</cell>
+        <cell>ANOVA</cell>
+        <cell>Regression</cell>
+      </row>
+      <row>
+        <cell>Valid to use theory-based procedure if</cell>
+        <cell><ul><li>All expected counts <m>> 1</m>, at least 80% of expected counts <m>> 5</m></li><li>Data are simple random samples or independently chosen random samples or random assignment</li></ul></cell>
+        <cell><ul><li>Independent SRSs or random assignment</li><li>Populations normal (probability plots of samples)</li><li>Variances are equal (<m>s_{\max}/s_{\min} < 2</m>)</li></ul></cell>
+        <cell><ul><li>Linear relationship (residuals vs. <m>x</m>)</li><li>Independent observations (e.g., random samples or randomization)</li><li>Normality of response at each <m>x</m> value (probability plot/histogram of residuals)</li><li>Equal variance of <m>y</m> at each <m>x</m> value (residuals vs. <m>x</m>)</li></ul></cell>
+      </row>
+      <row>
+        <cell>Null hypothesis</cell>
+        <cell><m>H_0</m>: Response variable distributions are the same or <m>H_0</m>: no association between response variable and explanatory variable</cell>
+        <cell><m>H_0: \mu_1 = \cdots = \mu_I</m> or <m>H_a</m>: treatment means are equal</cell>
+        <cell><m>H_0: \beta_1 = 0</m> (no relationship between response variable and explanatory variable)</cell>
+      </row>
+      <row>
+        <cell>Test statistic</cell>
+        <cell><m>\chi^2 = \sum \frac{(O-E)^2}{E}</m></cell>
+        <cell><m>F = MST/MSE</m></cell>
+        <cell><m>t_0 = \frac{\beta_1 - \text{hypothesized value}}{SE_{\beta_1}}</m></cell>
+      </row>
+      <row>
+        <cell>Distribution for <m>p</m>-value</cell>
+        <cell>Chi-squared with <m>(c-1)(r-1)</m> df</cell>
+        <cell><m>F</m> with <m>I-1, n-I</m> df</cell>
+        <cell><m>t</m> with <m>n-2</m> df</cell>
+      </row>
+    </tabular>
+
+    <tabular>
+      <row header="yes">
+        <cell/>
+        <cell/>
+      </row>
+      <row>
+        <cell><strong>R</strong></cell>
+        <cell><c>chisq.test</c>, <c>summary(aov(response~x))</c>, <c>summary(lm(response~x))</c></cell>
+      </row>
+      <row>
+        <cell><strong>Minitab</strong></cell>
+        <cell>Stat > Tables > Chi-square Test for Association; Stat > ANOVA > One-way; Stat > Regression > Regression > Fit Regression Model</cell>
+      </row>
+      <row>
+        <cell><strong>JMP</strong></cell>
+        <cell>Analyze > Fit Y by X (for all three procedures)</cell>
+      </row>
+      <row>
+        <cell><strong>Applet</strong></cell>
+        <cell>Analyzing Two-way Tables; Comparing Groups (Quantitative); Analyzing Two Quantitative Variables</cell>
+      </row>
+    </tabular>
+  </subsection>
+
+  <subsection>
+    <title>Quick Reference to ISCAM R Workspace Functions and Other R Commands</title>
+
+    <tabular>
+      <row header="yes">
+        <cell>Procedure Desired</cell>
+        <cell>Function Name (Options)</cell>
+      </row>
+      <row>
+        <cell>Normal Probability Plot</cell>
+        <cell><c>qqnorm(data)</c></cell>
+      </row>
+      <row>
+        <cell>Probability Plot</cell>
+        <cell><c>qqplot(data from distribution, your data)</c></cell>
+      </row>
+      <row>
+        <cell>Probabilities from Chi-squared distribution</cell>
+        <cell><c>iscamchisqprob(xval, df)</c> returns upper tail probability</cell>
+      </row>
+      <row>
+        <cell>Chi-squared Test</cell>
+        <cell><c>chisq.test(table(data))</c>; <c>chisq.test(table(data))$expected</c>; <c>$residuals</c></cell>
+      </row>
+      <row>
+        <cell>One-way ANOVA</cell>
+        <cell><c>summary(aov(response~explanatory))</c></cell>
+      </row>
+      <row>
+        <cell>Probabilities from F distribution</cell>
+        <cell><c>pf(x, df1, df2, lower.tail=FALSE)</c></cell>
+      </row>
+      <row>
+        <cell>Scatterplot</cell>
+        <cell><c>plot(explanatory, response)</c></cell>
+      </row>
+      <row>
+        <cell>Correlation coefficient</cell>
+        <cell><c>cor(x, y)</c></cell>
+      </row>
+      <row>
+        <cell>Least Squares Regression Line</cell>
+        <cell><c>lm(response~explanatory)</c>; <c>lm(response~explanatory)$residuals</c></cell>
+      </row>
+      <row>
+        <cell>Coded Scatterplot</cell>
+        <cell><c>plot(response~explanatory, col=groups)</c></cell>
+      </row>
+      <row>
+        <cell>Inference for regression</cell>
+        <cell><c>summary(lm(response~explanatory))</c></cell>
+      </row>
+      <row>
+        <cell>Prediction intervals</cell>
+        <cell><c>predict(lm(response~explanatory), newdata=data.frame(explanatory-value), interval="prediction"</c> or <c>"confidence")</c></cell>
+      </row>
+      <row>
+        <cell>Superimpose y = x line</cell>
+        <cell><c>lines(response, response)</c></cell>
+      </row>
+      <row>
+        <cell>Superimpose regression line</cell>
+        <cell><c>abline(lm(response~explanatory))</c></cell>
+      </row>
+    </tabular>
+  </subsection>
+
+  <subsection>
+    <title>Quick Reference to Minitab Commands</title>
+
+    <tabular>
+      <row header="yes">
+        <cell>Procedure Desired</cell>
+        <cell>Menu</cell>
+      </row>
+      <row>
+        <cell>Probability Plot</cell>
+        <cell>Graph > Probability Plot</cell>
+      </row>
+      <row>
+        <cell>Probabilities from Chi-Square distribution</cell>
+        <cell>Graph > Probability Distribution Plot</cell>
+      </row>
+      <row>
+        <cell>Chi-square Test</cell>
+        <cell>Stat > Tables > Chi-Square Test for Association; Stat > Tables > Cross Tabulation and Chi-Square</cell>
+      </row>
+      <row>
+        <cell>One-way ANOVA</cell>
+        <cell>Stat > ANOVA > One-way</cell>
+      </row>
+      <row>
+        <cell>Probabilities from F distribution</cell>
+        <cell>Graph > Probability Distribution Plot</cell>
+      </row>
+      <row>
+        <cell>Scatterplot</cell>
+        <cell>Graph > Scatterplot</cell>
+      </row>
+      <row>
+        <cell>Correlation coefficient</cell>
+        <cell>Stat > Basic Statistics > Correlation</cell>
+      </row>
+      <row>
+        <cell>Least Squares Regression Line</cell>
+        <cell>Stat > Regression > Fitted Line Plot; Storage: Residuals</cell>
+      </row>
+      <row>
+        <cell>Coded Scatterplot</cell>
+        <cell>Graph > Scatterplot, With Groups</cell>
+      </row>
+      <row>
+        <cell>Inference for Regression</cell>
+        <cell>Stat > Regression > Regression > Fit Regression Model</cell>
+      </row>
+      <row>
+        <cell>Prediction Intervals</cell>
+        <cell>After running the model: Stat > Regression > Regression > Predict</cell>
+      </row>
+      <row>
+        <cell>Superimpose y = x line</cell>
+        <cell>right click, Add > Calculated Line</cell>
+      </row>
+      <row>
+        <cell>Superimpose regression line</cell>
+        <cell>Stat > Regression > Fitted Line Plot; right click on scatterplot, Add > Regression Fit</cell>
+      </row>
+    </tabular>
+  </subsection>
+
+  <subsection>
+    <title>Quick Reference to JMP Commands</title>
+
+    <tabular>
+      <row header="yes">
+        <cell>Procedure Desired</cell>
+        <cell>Menu; Hot spot</cell>
+      </row>
+      <row>
+        <cell>Normal Probability Plot</cell>
+        <cell>Analyze > Distribution; Normal quantile plot</cell>
+      </row>
+      <row>
+        <cell>Probability Plot</cell>
+        <cell>Analyze > Distribution; Continuous Fit</cell>
+      </row>
+      <row>
+        <cell>Probabilities from Chi-squared distribution</cell>
+        <cell>Distribution Calculator</cell>
+      </row>
+      <row>
+        <cell>Chi-squared Test</cell>
+        <cell>Analyze > Fit Y by X</cell>
+      </row>
+      <row>
+        <cell>One-way ANOVA</cell>
+        <cell>Analyze > Fit Y by X; Means/ANOVA/Pooled t</cell>
+      </row>
+      <row>
+        <cell>Probabilities from F distribution</cell>
+        <cell>Distribution Calculator</cell>
+      </row>
+      <row>
+        <cell>Scatterplot</cell>
+        <cell>Analyze > Fit Y by X</cell>
+      </row>
+      <row>
+        <cell>Correlation coefficient</cell>
+        <cell>Analyze > Multivariate Methods > Multivariate</cell>
+      </row>
+      <row>
+        <cell>Least Squares Regression Line</cell>
+        <cell>Analyze > Fit Y by X; Fit Line</cell>
+      </row>
+      <row>
+        <cell>Coded Scatterplot</cell>
+        <cell>Analyze > Fit Y by X; By</cell>
+      </row>
+      <row>
+        <cell>Inference for regression</cell>
+        <cell>Analyze > Fit Y by X; Fit Line</cell>
+      </row>
+      <row>
+        <cell>Prediction intervals</cell>
+        <cell>Analyze > Fit Y by X; Fit Line; Linear Fit > Mean Confidence Interval Formula or Individual Confidence Interval Formula</cell>
+      </row>
+      <row>
+        <cell>Superimpose y = x line</cell>
+        <cell>Analyze > Fit Y by X; Fit Special</cell>
+      </row>
+      <row>
+        <cell>Superimpose regression line</cell>
+        <cell>Analyze > Fit Y by X; Fit Line</cell>
+      </row>
+    </tabular>
+  </subsection>
+</section>
