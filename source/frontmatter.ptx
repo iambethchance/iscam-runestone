@@ -1,42 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <frontmatter xml:id="frontmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
   <bibinfo>
-    <title>ISCAM: Investigating Statistical Concepts, Applications, and Methods</title>
-  </bibinfo>
-
-  <titlepage>
-    <image source="images/ChanceCoverColor.jpg" width="60%">
-      <description>ISCAM Book Cover</description>
-    </image>
     <author>
       <personname>Beth L. Chance</personname>
-      <institution>Cal Poly - San Luis Obispo</institution>
     </author>
     <author>
       <personname>Allan J. Rossman</personname>
-      <institution>Cal Poly - San Luis Obispo</institution>
     </author>
-    <date>Build: November 20, 2025 - 3:45 PM</date>
+  </bibinfo>
+
+  <titlepage>
+    <titlepage-items>
+      <image source="images/ChanceCoverColor.jpg" width="60%">
+        <description><p>ISCAM Book Cover</p></description>
+      </image>
+      <author>
+        <personname>Beth L. Chance</personname>
+        <institution>Cal Poly - San Luis Obispo</institution>
+      </author>
+      <author>
+        <personname>Allan J. Rossman</personname>
+        <institution>Cal Poly - San Luis Obispo</institution>
+      </author>
+      <date>Build: November 20, 2025 - 3:45 PM</date>
+    </titlepage-items>
   </titlepage>
 
   <preface xml:id="to-the-student">
     <title>To the Student</title>
     
     <image source="images/ChanceCoverColor.jpg" width="40%">
-      <description>ISCAM Book Cover</description>
+      <description><p>ISCAM Book Cover</p></description>
     </image>
     
     <p>Statistics is a mathematical science.</p>
     
     <p>Although this is a very short sentence, perhaps a self-evident one, and certainly one of the shortest that you will find in this book, we want to draw your attention to several things about it:</p>
     
-    <ul>
-      <li><p>We use the singular "is" and not the plural "are." It is certainly grammatically correct and more common usage to say "statistics are...", but that use of the term refers to statistics as numerical values. In this sentence we mean statistics as a field of study, one that has its own concepts and techniques, and one that can be exciting to study and practice.</p></li>
-      
-      <li><p>We use "mathematical" as an adjective. Statistics certainly makes use of much mathematics, but it is a separate discipline and not a branch of mathematics. Many, perhaps most, of the concepts and methods in statistics are mathematical in nature, but there are also many that do not involve mathematics. You will see an example of this early in the book as you study the difference between observational studies and controlled experiments. You will find that even in cases where the mathematical aspects of two situations may be identical, the scope of one's conclusions depends crucially on how the data were collected, a statistical rather than a mathematical consideration.</p></li>
-      
-      <li><p>We use the noun "science." Statistics is the science of gaining insight from data. Data are (notice the plural here) pieces of information (often but not always numerical) gathered on people or objects or processes. The science of statistics involves all aspects of inquiry about data. Well-designed studies begin with a research question or hypothesis, devise a plan for collecting data to address that issue, proceed to gather the data and analyze them, and then often make inferences about how the findings generalize beyond the particular group being studied. Statistics concerns itself with all phases of this process and therefore encompasses the scientific method.</p></li>
-    </ul>
+    <p>1. We use the singular "is" and not the plural "are." It is certainly grammatically correct and more common usage to say "statistics are...", but that use of the term refers to statistics as numerical values. In this sentence we mean statistics as a field of study, one that has its own concepts and techniques, and one that can be exciting to study and practice.</p>
+    <p>2. We use "mathematical" as an adjective. Statistics certainly makes use of much mathematics, but it is a separate discipline and not a branch of mathematics. Many, perhaps most, of the concepts and methods in statistics are mathematical in nature, but there are also many that do not involve mathematics. You will see an example of this early in the book as you study the difference between observational studies and controlled experiments. You will find that even in cases where the mathematical aspects of two situations may be identical, the scope of one's conclusions depends crucially on how the data were collected, a statistical rather than a mathematical consideration.</p>
+    <p>3. We use the noun "science." Statistics is the science of gaining insight from data. Data are (notice the plural here) pieces of information (often but not always numerical) gathered on people or objects or processes. The science of statistics involves all aspects of inquiry about data. Well-designed studies begin with a research question or hypothesis, devise a plan for collecting data to address that issue, proceed to gather the data and analyze them, and then often make inferences about how the findings generalize beyond the particular group being studied. Statistics concerns itself with all phases of this process and therefore encompasses the scientific method.</p>
     
     <p>In these materials, our goal is to introduce you to this practice of statistics, to help you think about the applications of statistics and to study the mathematical underpinnings of the statistical methods. Most of all, we hope you will find fun and engaging examples. Statistics is a vitally important subject, and also fun to study and practice, largely because it brings you into contact with all kinds of interesting questions. You will analyze data from medical studies, legal cases, psychology experiments, sociological studies, and many other contexts. To paraphrase the late statistician John Tukey, "the best thing about statistics is that it allows you to play in everyone's backyard." You never know what you might learn in a statistics class!</p>
     
@@ -64,27 +67,20 @@
       <p><alert>Important:</alert> Each Sage cell starts fresh - variables from one cell are not available in other cells. This is why you'll see data creation code repeated in cells throughout an investigation.</p>
       
       <p><alert>Advantages:</alert></p>
-      <ul>
-        <li><p>No software installation required</p></li>
-        <li><p>Works on any device with a web browser, however Mac users may have additional error messages pop up. Closing those messages (perhaps pressing <c>Evaluate (R)</c> again) and even supressing them (e.g., Chrome) should allow the R code to render.  You will probably also often see a message in the output starting with <c>&lt;rpy2&gt;</c> which can be safely ignored.</p></li>
-        <li><p>Great for quick explorations and learning concepts</p></li>
-      </ul>
+      <p>1. No software installation required.</p>
+      <p>2. Works on any device with a web browser, however Mac users may have additional error messages pop up. Closing those messages (perhaps pressing <c>Evaluate (R)</c> again) and even supressing them (e.g., Chrome) should allow the R code to render. You will probably also often see a message in the output starting with <c>&lt;rpy2&gt;</c> which can be safely ignored.</p>
+      <p>3. Great for quick explorations and learning concepts.</p>
       
       <p><alert>Limitations:</alert></p>
-      <ul>
-        <li><p>Additional wrapper functions are used to load the ISCAM data files and applets.  These are not required for using R with say RStudio. So if your goal is to become more proficient in R, you may want to copy and paste (and adjust) the commands into an R script. </p></li>
-        <li><p>Each cell runs independently (no persistent workspace)</p></li>
-      </ul>
+      <p>1. Additional wrapper functions are used to load the ISCAM data files and applets. These are not required for using R with say RStudio. So if your goal is to become more proficient in R, you may want to copy and paste (and adjust) the commands into an R script.</p>
+      <p>2. Each cell runs independently (no persistent workspace).</p>
     </paragraphs>
     
     <paragraphs xml:id="rstudio">
-      <title>Using RStudio</title>      
- <br/>
+      <title>Using RStudio</title>
       <p><alert>Options:</alert></p>
-      <ul>
-        <li><p><url href="https://posit.cloud">Posit Cloud</url> (formerly RStudio Cloud) - free browser-based RStudio</p></li>
-        <li><p><url href="https://posit.co/download/rstudio-desktop/">RStudio Desktop</url> - install on your computer</p></li>
-      </ul>
+      <p>1. <url href="https://posit.cloud">Posit Cloud</url> (formerly RStudio Cloud) - free browser-based RStudio.</p>
+      <p>2. <url href="https://posit.co/download/rstudio-desktop/">RStudio Desktop</url> - install on your computer.</p>
     </paragraphs>
     
     <paragraphs xml:id="data-files">
@@ -93,10 +89,8 @@
       <p>Data files for this textbook are available at <url href="https://www.rossmanchance.com/iscam4/files.html">ISCAM Data Files</url>.</p>
       
       <p>You can access the <alert>ISCAM workspace functions</alert> used in this text by either:</p>
-      <ul>
-        <li><p>Using <c>load(url("http://www.rossmanchance.com/iscam4/ISCAMData.RData"))</c> in R or RStudio</p></li>
-        <li><p>Installing the package: <c>install.packages("ISCAM")</c> and then use <c>library(ISCAM)</c></p></li>
-      </ul>
+      <p>1. Using <c>load(url("http://www.rossmanchance.com/iscam4/ISCAMData.RData"))</c> in R or RStudio.</p>
+      <p>2. Installing the package: <c>install.packages("ISCAM")</c> and then use <c>library(ISCAM)</c>.</p>
     </paragraphs>
     
     <paragraphs xml:id="jmp-software">
