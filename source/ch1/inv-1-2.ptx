@@ -127,18 +127,18 @@
   </exercise>
   
   <p>We will think of the sample of 8 attempts as identical observations from a random process, and we are choosing between two possibilities:</p>
-  <p><ol>
+  <ol>
     <li><p>Yukon can understand behavioral cues,</p></li>
     <li><p>Yukon does not consistently understand behavioral cues and is guessing randomly.</p></li>
-  </ol></p>
+  </ol>
   
   <assemblage xml:id="def-hypotheses-1-2b">
     <title>Definition: Hypotheses</title>
     <p>In drawing conclusions beyond our sample data to the underlying random process, we will often be choosing between two competing claims about the underlying process:</p>
-    <p><ul>
+    <ul>
       <li><p>The <term>null hypothesis</term><idx><h>null hypothesis</h><h>the "by chance alone" explanation</h></idx>, which is the "by chance alone" explanation;</p></li>
       <li><p>The <term>alternative hypothesis</term><idx><h>alternative hypothesis</h><h>what researchers hope to show</h></idx>, which is usually what the researchers are hoping to show.</p></li>
-    </ul></p>
+    </ul>
     
     <p>In Investigation 1.1, the null hypothesis was that infants (in general) choose equally among the two toys in the long run. The alternative hypothesis was that infants have a genuine preference for the helper toy.</p>
   </assemblage>
@@ -180,7 +180,7 @@
   </exercise>
 
 <paragraphs><title>Carry out the simulation</title>
-      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url> to carry out 1,000 repetitions of the simulation. Check the <alert>Summary Statistics</alert> box and report the mean and standard deviation of your simulated distribution of "could have been" outcomes.</p>
+      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" visual="new">One Proportion Inference applet</url> to carry out 1,000 repetitions of the simulation. Check the <alert>Summary Statistics</alert> box and report the mean and standard deviation of your simulated distribution of "could have been" outcomes.</p>
 </paragraphs>
   <interactive iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="3:2"/>
 
@@ -217,7 +217,7 @@
     
     <p>In Investigation 1.1, the observed result (14) was pretty far in the tail of the distribution and you probably agreed that we could consider it unusual. This result (6 out of 8) is not as inconsistent with the null hypothesis; so where do we "draw the line"? First, we need agree on a measure of "rareness." We could just calculate the theoretical probability of 6 heads in 8 tosses (0.1094), but keep in mind that if we have a larger sample size (e.g., 100 tosses), then any individual outcome (e.g., 62 heads) will have a small probability. So we want to judge how extreme our observation is relative to the other observations in the simulated distribution. One way to do this is to count how many outcomes are as or even more extreme (even further from the expected value) than the observed outcome. For example, if we tell you that only 1% of rattlesnakes are longer than 2.5 meters, then you know to be very surprised to see a 3-meter rattlesnake and you may even begin to think that what you are looking at is not a rattlesnake at all!</p>
     
-    <p><ul><li>In the applet, enter 6 in the <alert>Count Samples</alert> box and keep the "as extreme as" button to greater than or equal to, <m>\geq</m>. </li></ul></p>
+    <ul><li>In the applet, enter 6 in the <alert>Count Samples</alert> box and keep the "as extreme as" button to greater than or equal to, <m>\geq</m>. </li></ul>
     <exercise xml:id="inv1-2b-h" label="I1.2b.8">
       <title>Calculate p-value</title>
       <statement>
@@ -245,12 +245,12 @@
       <p>Because the simulation assumes the null hypothesis to be true, we can refer to the distribution you simulated as the <term>null distribution</term><idx><h>null distribution</h><h>distribution assuming null hypothesis is true</h></idx>. When you determine the proportion of the results in the null distribution that are at least as extreme as the observed result, you are estimating a probability. We will refer to this probability as the <term>p-value</term><idx><h>p-value</h><h>probability of results as extreme as observed, assuming null hypothesis</h></idx>. We use the p-value to evaluate the strength of evidence against the null hypothesis.</p>
       
       <p>The smaller the p-value, the stronger the evidence against the null hypothesis. There are no hard-and-fast cut-off values for gauging the smallness of a p-value, but generally speaking:</p>
-      <p><ul>
+      <ul>
         <li><p>A p-value above 0.10 constitutes little or no evidence against the null hypothesis.</p></li>
         <li><p>A p-value below 0.10 but above 0.05 constitutes moderate evidence against the null hypothesis.</p></li>
         <li><p>A p-value below 0.05 but above 0.01 constitutes strong evidence against the null hypothesis.</p></li>
         <li><p>A p-value below 0.01 constitutes very strong evidence against the null hypothesis.</p></li>
-      </ul></p>
+      </ul>
     </assemblage>
     
     <exercise xml:id="inv1-2b-i" label="I1.2b.9">
@@ -290,12 +290,12 @@
     <assemblage xml:id="def-binomial-random-variable-1-2b">
       <title>Definition: Binomial Random Variable</title>
       <p>A <term>Binomial random variable</term><idx><h>binomial random variable</h><h>counts successes in independent trials</h></idx> counts the number of successes in a random process with the following properties:</p>
-      <p><ul>
+      <ul>
         <li><p>Each trial results in either "success" or "failure" (we have a binary categorical variable).</p></li>
         <li><p>The trials are independent: The outcome of one trial does not change the probability of success on the next trial.</p></li>
         <li><p>The probability of success, <m>\pi</m>, is constant across the trials.</p></li>
         <li><p>There are a fixed number of trials, <m>n</m>.</p></li>
-      </ul></p>
+      </ul>
       
       <p>If the number of successes, <m>X</m>, is a binomial random variable, then we can say <m>X \sim \text{Binomial}(n, \pi)</m>.</p>
     </assemblage>
@@ -401,7 +401,7 @@
         </solution>
       </exercise>
       
-      <ul><li>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url>, check the <alert>Exact Binomial</alert> box. (Optional: See <xref ref="tech-detour-1-1" text="custom">Technology Detour</xref> at the end of this investigation for R/JMP instructions.) </li></ul>
+      <ul><li>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" visual="new">One Proportion Inference applet</url>, check the <alert>Exact Binomial</alert> box. (Optional: See <xref ref="tech-detour-1-1" text="custom">Technology Detour</xref> at the end of this investigation for R/JMP instructions.) </li></ul>
       <exercise xml:id="inv1-2b-n" label="I1.2b.14">
       <title>Confirm with technology</title>
         <statement>
@@ -473,12 +473,12 @@
           <p>Make sure you have the ISCAM Workspace loaded.</p>
           
           <p>The <c>iscambinomprob</c> function takes the following inputs:</p>
-          <p><ul>
+          <ul>
             <li><p><c>k</c> = the observed value you want to calculate the probability about</p></li>
             <li><p><c>n</c> = the sample size of the binomial distribution</p></li>
             <li><p><c>prob</c> = the probability of success in the binomial distribution</p></li>
             <li><p><c>lower.tail</c> = TRUE if you want the probability less than or equal to the observed value, FALSE if you want the probability greater than or equal to the observed value</p></li>
-          </ul></p>
+          </ul>
           
           <p>For the Friend or Foe study, run the following code:</p>
           <sage language="r">
@@ -503,17 +503,17 @@ iscambinomprob(k=14, n=16, prob=0.5, lower.tail=FALSE)
         </hint>
         <hint>
           <title>JMP Instructions</title>
-          <p>Using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url> (Download this file to your computer and then open the .jrn file to launch JMP.)</p>
+          <p>Using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" visual="new">ISCAM Journal File</url> (Download this file to your computer and then open the .jrn file to launch JMP.)</p>
           
           <sidebyside widths="55% 40%" valign="top">
             <stack>
-              <p><ul>
+              <ul>
                 <li><p>Select <term index="no">Binomial</term> from the Distribution pull down menu.</p></li>
                 <li><p>Specify the values of the probability of success (<m>\pi</m>) and n (the sample size).</p></li>
                 <li><p>Leave the <term index="no">Type of Calculation</term> as is.</p></li>
                 <li><p>Select <term index="no">Probability Option</term> <m>X \geq Q_a</m> but specify <m>Q_a</m> to equal <m>k-1</m> (e.g., 13).</p></li>
                 <li><p>Press <term index="no">Enter</term>.</p></li>
-              </ul></p>
+              </ul>
       
             </stack>
             <stack>
@@ -582,7 +582,7 @@ iscambinomprob(k=14, n=16, prob=0.5, lower.tail=FALSE)
   <subsection xml:id="practice1-2bB">
     <title>Practice Problem 1.2B</title>
     
-    <p>A study in <em>Psychonomic Bulletin and Review</em> (<url href="https://psycnet.apa.org/record/2007-18366-015" target="_blank">Lea, Thomas, Lamkin, <ampersand/> Bell, 2007</url>) presented evidence that "people use facial prototypes when they encounter different names." Similar to one of the experiments they conducted, you will be asked to match photos of two faces to the names Tim and Bob. The researchers wrote that their participants "overwhelmingly agreed" on which face belonged to Tim. You will conduct a similar study in class to see whether your class also agrees with which face is Tim's more than you would expect from random chance (here "random chance" = there is no facial prototyping and people pick a name for the face on the left at random).</p>
+    <p>A study in <em>Psychonomic Bulletin and Review</em> (<url href="https://psycnet.apa.org/record/2007-18366-015" visual="new">Lea, Thomas, Lamkin, <ampersand/> Bell, 2007</url>) presented evidence that "people use facial prototypes when they encounter different names." Similar to one of the experiments they conducted, you will be asked to match photos of two faces to the names Tim and Bob. The researchers wrote that their participants "overwhelmingly agreed" on which face belonged to Tim. You will conduct a similar study in class to see whether your class also agrees with which face is Tim's more than you would expect from random chance (here "random chance" = there is no facial prototyping and people pick a name for the face on the left at random).</p>
     
     <exercise xml:id="practice-1-2bb-a" label="PP1.2bB.1">
       <title>Identify Process and Variable</title>
@@ -609,7 +609,7 @@ iscambinomprob(k=14, n=16, prob=0.5, lower.tail=FALSE)
     </exercise>
     
       <aside><title>One Proportion Inference applet</title>
-        <p><url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" target="_blank">One Proportion Inference applet</url></p>
+        <p><url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" visual="new">One Proportion Inference applet</url></p>
       </aside>
     <exercise xml:id="practice-1-2bb-d" label="PP1.2bB.4">
       <title>Calculate p-value and Conclude</title>
