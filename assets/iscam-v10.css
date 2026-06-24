@@ -279,11 +279,23 @@ section.exercises:not(#prob-detour-two-means):not(#elephants-continued) > h3.hea
     color: #333 !important;
 }
 
-/* Hide only the word "Chapter" in chapter page headings; keep the number. */
+/* Hide full chapter prefix ("Chapter" and number) in chapter headings. */
 .ptx-content section.chapter > .heading > span.type,
+.ptx-content section.chapter > .heading > span.codenumber,
 .ptx-content section.chapter > .heading > span.type + span.space,
+.ptx-content section.chapter > .heading > span.codenumber + span.space,
 section.chapter > .heading > span.type,
-section.chapter > .heading > span.type + span.space {
+section.chapter > .heading > span.codenumber,
+section.chapter > .heading > span.type + span.space,
+section.chapter > .heading > span.codenumber + span.space,
+main .ptx-content section.chapter > h1.heading > span.type,
+main .ptx-content section.chapter > h1.heading > span.codenumber,
+main .ptx-content section.chapter > h1.heading > span.type + span.space,
+main .ptx-content section.chapter > h1.heading > span.codenumber + span.space,
+main .ptx-content section.chapter > h2.heading > span.type,
+main .ptx-content section.chapter > h2.heading > span.codenumber,
+main .ptx-content section.chapter > h2.heading > span.type + span.space,
+main .ptx-content section.chapter > h2.heading > span.codenumber + span.space {
     display: none !important;
 }
 
