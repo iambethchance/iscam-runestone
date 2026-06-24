@@ -278,3 +278,11 @@ section.exercises:not(#prob-detour-two-means):not(#elephants-continued) > h3.hea
     margin: 1em 2em !important;
     color: #333 !important;
 }
+
+/* Hide only the visual Chapter prefix/number in chapter page headings. */
+.ptx-content section.chapter > h2.heading > span.type,
+.ptx-content section.chapter > h2.heading > span.codenumber,
+.ptx-content section.chapter > h2.heading > span.type + span.space,
+.ptx-content section.chapter > h2.heading > span.codenumber + span.space {
+    display: none !important;
+}
