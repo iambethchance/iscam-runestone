@@ -330,7 +330,7 @@
     <response/>
     <solution>
       <p>For example, <m>\pi = 0.54</m> is in the 99% CI (0.529 to 0.749) but not in the 95% CI (0.557 to 0.727).</p>
-      <p>This means that if we tested <m>H_0: \pi = 0.54</m> vs. <m>H_a: \pi \neq 0.54</m>:</p>
+      <p>This means that if we tested <m>H_0\!:\pi = 0.54</m> vs. <m>H_a\!:\pi \neq 0.54</m>:</p>
       <ul>
         <li><p>The two-sided p-value would be between 0.01 and 0.05</p></li>
         <li><p>We would reject <m>H_0</m> at the 0.05 significance level</p></li>
@@ -342,7 +342,7 @@
   
   <assemblage xml:id="study-conclusions-1-6">
     <title>Study Conclusions</title>
-    <p>The researchers are assuming they have a representative sample from a binomial random process and want to estimate <m>\pi</m>, the underlying probability that a randomly selected kissing couple leans to the right. Based on this sample of 124 observations, we estimate <m>\pi</m> to be close to <m>\hat{p} = 80/124 = 0.645</m>. However, we know there is some sampling variability, so we want to find an interval of values that appear to be plausible values of <m>\pi</m>. We do this by finding the values of <m>\pi_0</m> for which the two-sided p-value (<m>H_0: \pi = \pi_0</m> vs. <m>H_a: \pi \neq \pi_0</m>) is greater than 0.05. These are all the values of the parameter such that our sample result is not overly surprising. You should have found this "95% confidence interval," using the "smallest tail probability" approach, to be approximately 0.557 to 0.727 (results from using different software or the applet will differ slightly). Thus, based on these sample results, we are "confident" that the actual value of <m>\pi</m>, the probability a random kissing couple leans right, is between 0.56 and 0.73.</p>
+    <p>The researchers are assuming they have a representative sample from a binomial random process and want to estimate <m>\pi</m>, the underlying probability that a randomly selected kissing couple leans to the right. Based on this sample of 124 observations, we estimate <m>\pi</m> to be close to <m>\hat{p} = 80/124 = 0.645</m>. However, we know there is some sampling variability, so we want to find an interval of values that appear to be plausible values of <m>\pi</m>. We do this by finding the values of <m>\pi_0</m> for which the two-sided p-value (<m>H_0\!:\pi = \pi_0</m> vs. <m>H_a\!:\pi \neq \pi_0</m>) is greater than 0.05. These are all the values of the parameter such that our sample result is not overly surprising. You should have found this "95% confidence interval," using the "smallest tail probability" approach, to be approximately 0.557 to 0.727 (results from using different software or the applet will differ slightly). Thus, based on these sample results, we are "confident" that the actual value of <m>\pi</m>, the probability a random kissing couple leans right, is between 0.56 and 0.73.</p>
     
     <p>A 99% confidence interval for <m>\pi</m> extends from 0.529 to 0.749 (a smaller lower endpoint and a larger upper endpoint, but a similar midpoint) and therefore includes additional plausible values of the parameter compared to the 95% interval. The 99% confidence interval is wider than the 95% interval because a higher level of confidence requires more "room for error." You will learn other methods for calculating confidence intervals for a binomial process in the next section.</p>
   </assemblage>
@@ -532,7 +532,7 @@ iscambinomtest(observed = 80, n = 124, conf.level = 0.99)
     <exercise xml:id="PP1-6-3" label="PP1.6.3">
       <title>CI and Hypothesis Test Duality</title>
       <statement>
-        <p>Based on the interval in the previous question, if you were to test <m>H_0: \pi = 0.20</m> vs. <m>H_a: \pi \neq 0.20</m>, would you reject or fail to reject the null hypothesis? Explain how you know the conclusion based on the confidence interval without actually conducting the test.</p>
+        <p>Based on the interval in the previous question, if you were to test <m>H_0\!:\pi = 0.20</m> vs. <m>H_a\!:\pi \neq 0.20</m>, would you reject or fail to reject the null hypothesis? Explain how you know the conclusion based on the confidence interval without actually conducting the test.</p>
       </statement>
       <response/>
     </exercise>
