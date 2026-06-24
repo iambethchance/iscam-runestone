@@ -314,27 +314,27 @@ section.exercises:not(#prob-detour-two-means):not(#elephants-continued) > h3.hea
     color: #333 !important;
 }
 
-/* Hide full chapter prefix ("Chapter" and number) in chapter headings. */
-.ptx-content section.chapter > .heading > span.type,
-.ptx-content section.chapter > .heading > span.codenumber,
-.ptx-content section.chapter > .heading > span.type + span.space,
-.ptx-content section.chapter > .heading > span.codenumber + span.space,
-section.chapter > .heading > span.type,
-section.chapter > .heading > span.codenumber,
-section.chapter > .heading > span.type + span.space,
-section.chapter > .heading > span.codenumber + span.space,
-main .ptx-content section.chapter > h1.heading > span.type,
-main .ptx-content section.chapter > h1.heading > span.codenumber,
-main .ptx-content section.chapter > h1.heading > span.type + span.space,
-main .ptx-content section.chapter > h1.heading > span.codenumber + span.space,
-main .ptx-content section.chapter > h2.heading > span.type,
-main .ptx-content section.chapter > h2.heading > span.codenumber,
-main .ptx-content section.chapter > h2.heading > span.type + span.space,
-main .ptx-content section.chapter > h2.heading > span.codenumber + span.space {
+/* Hide full chapter prefix ("Chapter" and number) only for Chapter 1 page. */
+.ptx-content section.chapter#chapter1 > .heading > span.type,
+.ptx-content section.chapter#chapter1 > .heading > span.codenumber,
+.ptx-content section.chapter#chapter1 > .heading > span.type + span.space,
+.ptx-content section.chapter#chapter1 > .heading > span.codenumber + span.space,
+section.chapter#chapter1 > .heading > span.type,
+section.chapter#chapter1 > .heading > span.codenumber,
+section.chapter#chapter1 > .heading > span.type + span.space,
+section.chapter#chapter1 > .heading > span.codenumber + span.space,
+main .ptx-content section.chapter#chapter1 > h1.heading > span.type,
+main .ptx-content section.chapter#chapter1 > h1.heading > span.codenumber,
+main .ptx-content section.chapter#chapter1 > h1.heading > span.type + span.space,
+main .ptx-content section.chapter#chapter1 > h1.heading > span.codenumber + span.space,
+main .ptx-content section.chapter#chapter1 > h2.heading > span.type,
+main .ptx-content section.chapter#chapter1 > h2.heading > span.codenumber,
+main .ptx-content section.chapter#chapter1 > h2.heading > span.type + span.space,
+main .ptx-content section.chapter#chapter1 > h2.heading > span.codenumber + span.space {
     display: none !important;
 }
 
-/* Hide auto section numbers (e.g., 3.1) in chapter landing-page summary links. */
-.ptx-content section.chapter > nav.summary-links span.codenumber {
+/* Hide auto section numbers in Chapter 1 landing-page summary links only. */
+.ptx-content section.chapter#chapter1 > nav.summary-links span.codenumber {
     display: none !important;
 }
