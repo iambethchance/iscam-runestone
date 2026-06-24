@@ -190,7 +190,7 @@
   </exercise>
   
   <paragraphs>
-    <title>What if our original hypotheses had been <m>H_0: \pi = 0.55</m> vs. <m>H_a: \pi \neq 0.55</m>?</title>
+    <title>What if our original hypotheses had been <m>H_0\!: \pi = 0.55</m> vs. <m>H_a\!: \pi \neq 0.55</m>?</title>
     
     <exercise xml:id="I1-5-8" label="I1.5.8">
       <title>Alternative Null Hypothesis</title>
@@ -222,12 +222,12 @@
         <var>
           <condition number="0.1020" tolerance="0.001">
             <feedback>
-              <p>Correct! P(X ≤ 3) = 0.1020 when n = 10 and π = 0.55.</p>
+              <p>Correct! P(X ≤ 3) = 0.1020 when <m>n</m> = 10 and <m>\pi</m> = 0.55.</p>
             </feedback>
           </condition>
           <condition number="0.102" tolerance="0.002">
             <feedback>
-              <p>Correct! P(X ≤ 3) ≈ 0.102 when n = 10 and π = 0.55.</p>
+              <p>Correct! P(X ≤ 3) ≈ 0.102 when <m>n</m> = 10 and <m>\pi</m> = 0.55.</p>
             </feedback>
           </condition>
           <condition number="0.10" tolerance="0.01">
@@ -250,7 +250,7 @@
     <exercise xml:id="I1-5-10" label="I1.5.10">
       <title>Right Tail Comparison</title>
       <statement>
-        <p>Now find P(X ≥ 7) when π = 0.55. How does it compare to P(X ≤ 3)? Why does this make sense?</p>
+        <p>Now find P(X ≥ 7) when <m>\pi</m> = 0.55. How does it compare to P(X ≤ 3)? Why does this make sense?</p>
       <hint>
         <p>Is 7 further from the expected value than 3 is?</p>
       </hint>
@@ -262,7 +262,7 @@
     </exercise>
   </paragraphs>
   
-  <p>In this text, we will consider outcomes "more extreme" than the observed outcome if the "tail probability" is less than or equal to the tail probability of the observed outcome. So for this null hypothesis (π = 0.55), because P(X ≥ 7) > P(X ≤ 3), we would not consider x = 7 to be "more extreme" than x = 3. Therefore, we would not include x = 7 in the p-value calculation. Notice, this distinction arose once our binomial distribution was not symmetric (π ≠ 0.50).</p>
+  <p>In this text, we will consider outcomes "more extreme" than the observed outcome if the "tail probability" is less than or equal to the tail probability of the observed outcome. So for this null hypothesis (<m>\pi</m> = 0.55), because P(X ≥ 7) > P(X ≤ 3), we would not consider x = 7 to be "more extreme" than x = 3. Therefore, we would not include x = 7 in the p-value calculation. Notice, this distinction arose once our binomial distribution was not symmetric (<m>\pi</m> ≠ 0.50).</p>
   
   <exercise xml:id="I1-5-11" label="I1.5.11">
     <title>Find More Extreme Value</title>
@@ -277,12 +277,12 @@
       <var>
         <condition number="0.0996" tolerance="0.001">
           <feedback>
-            <p>Correct! P(X ≥ 8) = 0.0996 when n = 10 and π = 0.55.</p>
+            <p>Correct! P(X ≥ 8) = 0.0996 when <m>n</m> = 10 and <m>\pi</m> = 0.55.</p>
           </feedback>
         </condition>
         <condition number="0.100" tolerance="0.002">
           <feedback>
-            <p>Correct! P(X ≥ 8) ≈ 0.100 when n = 10 and π = 0.55.</p>
+            <p>Correct! P(X ≥ 8) ≈ 0.100 when <m>n</m> = 10 and <m>\pi</m> = 0.55.</p>
           </feedback>
         </condition>
         <condition number="0.10" tolerance="0.01">
@@ -320,7 +320,7 @@
   </exercise>
   
   <exercise xml:id="I1-5-12" label="I1.5.12">
-    <title>Two-Sided p-value for π = 0.55</title>
+    <title>Two-Sided p-value for <m>\pi</m> = 0.55</title>
     <statement>
       <p>Calculate the two-sided p-value as P(X ≤ 3) + P(X ≥ 8): <var width="10"/></p>
     <hint>
@@ -421,21 +421,21 @@
         <p><url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" visual="new">One Proportion Inference applet</url></p>
       </aside>
     <hint>
-      <p>Use <em>n</em> = 48, observed = 19, π = 0.5, and check the <term index="no">two-sided box</term>.</p>
+      <p>Use <m>n</m> = 48, observed = 19, <m>\pi</m> = 0.5, and check the <term index="no">two-sided box</term>.</p>
     </hint>
     </statement>
     <response/>
     <solution>
         <image source="images/inv1.5buttered.png" width="60%">
-          <description>Two-sided binomial test for <m>n</m> = 48, π = 0.5, observed = 19</description>
+          <description>Two-sided binomial test for <m>n</m> = 48, <m>\pi</m> = 0.5, observed = 19</description>
         </image>
-      <p>The p-value is not small (p-value = 0.1934, which is larger than 0.05), so we fail to reject the null hypothesis that π = 0.50. We conclude it is plausible that buttered toast is equally likely to land up or down when dropped from the top of a building.</p>
+      <p>The p-value is not small (p-value = 0.1934, which is larger than 0.05), so we fail to reject the null hypothesis that <m>\pi</m> = 0.50. We conclude it is plausible that buttered toast is equally likely to land up or down when dropped from the top of a building.</p>
     </solution>
   </exercise>
   
   <assemblage xml:id="study-conclusions-1-5">
     <title>Study Conclusions</title>
-    <p>These data (19 out of 48) do not provide convincing evidence against the null hypothesis that toast buttered on one side is equally likely to land butter side up or down (two-sided p-value = 0.1934). In other words, it is plausible that this is a 50/50 process. However, this analysis cannot be used as proof that π = 0.50, as other values could be plausible as well. The sample data allow for many (technically, infinitely many) plausible values of this probability, as you will explore in the next investigation.</p>
+    <p>These data (19 out of 48) do not provide convincing evidence against the null hypothesis that toast buttered on one side is equally likely to land butter side up or down (two-sided p-value = 0.1934). In other words, it is plausible that this is a 50/50 process. However, this analysis cannot be used as proof that <m>\pi</m> = 0.50, as other values could be plausible as well. The sample data allow for many (technically, infinitely many) plausible values of this probability, as you will explore in the next investigation.</p>
   </assemblage>
   
   <paragraphs>
@@ -460,12 +460,12 @@
       <var>
         <condition number="0.1934" tolerance="0.001">
           <feedback>
-            <p>Correct! The two-sided p-value is 0.1934 for 19 successes in 48 trials with π = 0.5.</p>
+            <p>Correct! The two-sided p-value is 0.1934 for 19 successes in 48 trials with <m>\pi</m> = 0.5.</p>
           </feedback>
         </condition>
         <condition number="0.193" tolerance="0.002">
           <feedback>
-            <p>Correct! The two-sided p-value is approximately 0.193 for 19 successes in 48 trials with π = 0.5.</p>
+            <p>Correct! The two-sided p-value is approximately 0.193 for 19 successes in 48 trials with <m>\pi</m> = 0.5.</p>
           </feedback>
         </condition>
         <condition number="0.19" tolerance="0.01">
@@ -475,7 +475,7 @@
         </condition>
         <condition string=".*">
           <feedback>
-            <p>Not quite. Use technology to find the two-sided p-value for 19 successes in 48 trials when π = 0.5. The p-value should be around 0.19.</p>
+            <p>Not quite. Use technology to find the two-sided p-value for 19 successes in 48 trials when <m>\pi</m> = 0.5. The p-value should be around 0.19.</p>
           </feedback>
         </condition>
       </var>
@@ -542,7 +542,7 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
     <exercise xml:id="PP1-5-2" label="PP1.5.2">
       <title>Apply Alternative Method</title>
       <statement>
-        <p>Return to the pilot study with 3 successes out of <em>n</em> = 10 drops. Based on this new approach, which values above 5 would you consider more extreme than 3 when <m>\pi</m> = 0.55? Document your justification. What is the resulting two-sided p-value? </p>
+        <p>Return to the pilot study with 3 successes out of <m>n</m> = 10 drops. Based on this new approach, which values above 5 would you consider more extreme than 3 when <m>\pi</m> = 0.55? Document your justification. What is the resulting two-sided p-value? </p>
 <hint>Use <em>As extreme as =</em> in the applet. Confirm your results by changing the pull-down menu from "tails" to "individual."</hint>
       </statement>
       <response/>
@@ -551,7 +551,7 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
     <exercise xml:id="PP1-5-3" label="PP1.5.3">
       <title>Strange Behavior with Extreme Observations</title>
       <statement>
-        <p>Suppose <em>n</em> = 20 and you observed 0 successes. Find the two-sided p-values using the approach suggested in  the previous question for π = 0.13, π = 0.145, and π = 0.15. According to the two-sided p-values, which of these values are plausible for π at the 10% level of significance? What strange behavior do you observe?</p>
+        <p>Suppose <m>n</m> = 20 and you observed 0 successes. Find the two-sided p-values using the approach suggested in  the previous question for <m>\pi</m> = 0.13, <m>\pi</m> = 0.145, and <m>\pi</m> = 0.15. According to the two-sided p-values, which of these values are plausible for <m>\pi</m> at the 10% level of significance? What strange behavior do you observe?</p>
       </statement> 
       <response/>
     </exercise>
