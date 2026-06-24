@@ -13,7 +13,7 @@
         <description>Halloween treats and toys</description>
       </image>
     </sidebyside>
-<p>Schwartz, Chen, and Brownell (<url href="https://pubmed.ncbi.nlm.nih.gov/12859885/" visual="pubmed.ncbi.nlm.nih.gov/12859885">2003</url>) examined whether children would be willing to take a small toy instead of candy at when trick-or-treating on Halloween. They had seven homes in 5 different towns in Connecticut present children with a plate of 4 toys (stretch pumpkin men, large glow-in-the-dark insects, Halloween theme stickers, and Halloween theme pencils) and a plate of 4 different name brand candies (lollipops, fruit-flavored chewy candies, fruit-flavored crunchy wafers, and "sweet and tart" hard candies) to see whether children were more likely to choose the candy or the toy. The houses alternated whether the toys were on the left or on the right. Data were recorded for 284 children between the ages of 3 and 14 (who did not ask for both types of treats).
+<p>Schwartz, Chen, and Brownell (<url href="https://pubmed.ncbi.nlm.nih.gov/12859885/" visual="new">2003</url>) examined whether children would be willing to take a small toy instead of candy when trick-or-treating on Halloween. They had seven homes in 5 different towns in Connecticut present children with a plate of 4 toys (stretch pumpkin men, large glow-in-the-dark insects, Halloween theme stickers, and Halloween theme pencils) and a plate of 4 different name brand candies (lollipops, fruit-flavored chewy candies, fruit-flavored crunchy wafers, and "sweet and tart" hard candies) to see whether children were more likely to choose the candy or the toy. The houses alternated whether the toys were on the left or on the right. Data were recorded for 284 children between the ages of 3 and 14 (who did not ask for both types of treats).
       </p>
     <exercise xml:id="I1-8-a" label="I1.8a">
       <title>Identify Sample and Variable</title>
@@ -63,8 +63,7 @@
       </hint>
 <!---    <var width = "40"/> -->
       </statement>
-      <response>
-      </response>
+      <response/>
       <solution>
         <p>
           The parameter of interest is the probability (or long-run proportion) that a child, when presented with a choice between toys and candy while trick-or-treating, will choose the toy.
@@ -378,7 +377,10 @@
 
     <p>
       The normal approximation is typically applied to the null distribution of sample proportions rather than sample counts.
-    <ul><li>In the applet, use the radio button to toggle the <term index="no">Choice of Statistic</term> to Proportion of heads. </li></ul></p>
+    </p>
+    <ul>
+      <li>In the applet, use the radio button to toggle the <term index="no">Choice of Statistic</term> to Proportion of heads.</li>
+    </ul>
 
     <exercise xml:id="I1-8-i" label="I1.8i">
       <title>Switch to Proportions</title>
@@ -539,7 +541,7 @@
       <title>Calculate p-value from <em>z</em>-statistic</title>
       <statement>
         <p>
-          Use technology to find the corresponding p-value. [<em>Hints</em>: You can calculate the probability from the z-value using standard normal distribution (mean 0, SD 1), e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="rossmanchance.com/applets/2021/normcalc/NormCalc.html">Normal Probability Calculator</url> applet; or use the Technology Detour below to carry out a one-sample <em>z</em>-test.]
+          Use technology to find the corresponding p-value. [<em>Hints</em>: You can calculate the probability from the z-value using standard normal distribution (mean 0, SD 1), e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="new">Normal Probability Calculator</url> applet; or use the Technology Detour below to carry out a one-sample <em>z</em>-test.]
         </p>
         <p>
           p-value = <var width="10"/>
@@ -598,21 +600,19 @@
         </var>
       </setup>
       <hint>
-        <title><url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference Applet</url></title>
+        <title><url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="new">Theory-Based Inference Applet</url></title>
         <sidebyside widths="55% 40%" valign="top">
           <stack>
             <p>
-              Use the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference Applet</url> to conduct a one proportion <em>z</em>-test:
+              Use the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="new">Theory-Based Inference Applet</url> to conduct a one proportion <em>z</em>-test:
             </p>
-            <p>
-              <ul>
-                <li>Enter the sample size and either the count or the proportion of successes, press <term index="no">Calculate</term> to display sample data.</li>
-                <li>Check the box for <term index="no">Test of significance</term></li>
-                <li>Specify the hypothesized value</li>
-                <li>Use the button to specify the direction of the alternative.</li>
-                <li>Press the <term index="no">Calculate</term> button.</li>
-              </ul>
-            </p>
+            <ul>
+              <li>Enter the sample size and either the count or the proportion of successes, press <term index="no">Calculate</term> to display sample data.</li>
+              <li>Check the box for <term index="no">Test of significance</term></li>
+              <li>Specify the hypothesized value</li>
+              <li>Use the button to specify the direction of the alternative.</li>
+              <li>Press the <term index="no">Calculate</term> button.</li>
+            </ul>
             <p>
               For the Halloween study, enter <m>n</m> = 284 and either 135 successes or 0.475 as the proportion. Set the hypothesized value to 0.5 and select a two-sided alternative.
             </p>
@@ -632,14 +632,12 @@
         <p>
           Use R to conduct a one proportion <em>z</em>-test. The <c>iscamonepropztest(observed, n, hypothesized, alternative)</c> function takes the following inputs:
         </p>
-        <p>
-          <ul>
-            <li><c>observed</c> = the observation of interest (count or proportion)</li>
-            <li><c>n</c> = the sample size</li>
-            <li><c>hypothesized</c> = the hypothesized process probability (<m>\pi</m>)</li>
-            <li><c>alternative</c> = "less", "greater", or "two.sided"</li>
-          </ul>
-        </p>
+        <ul>
+          <li><c>observed</c> = the observation of interest (count or proportion)</li>
+          <li><c>n</c> = the sample size</li>
+          <li><c>hypothesized</c> = the hypothesized process probability (<m>\pi</m>)</li>
+          <li><c>alternative</c> = "less", "greater", or "two.sided"</li>
+        </ul>
         <p>
           For the Halloween study, you could use:
         </p>
@@ -662,49 +660,41 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
         <p>
           The function will display a graph showing the standard normal distribution with the test statistic and shaded p-value region, along with:
         </p>
-        <p>
-          <ul>
-            <li>Sample proportion: 0.4754</li>
-            <li><em>z</em>-statistic: -0.84</li>
-            <li>Two-sided p-value: 0.40</li>
-          </ul>
-        </p>
+        <ul>
+          <li>Sample proportion: 0.4754</li>
+          <li><em>z</em>-statistic: -0.84</li>
+          <li>Two-sided p-value: 0.40</li>
+        </ul>
       </hint>
       <hint>
         <title>JMP Instructions</title>
         <p>
-          Using the <url href="http://www.rossmanchance.com/iscam3/data/ISCAM_Journal.jrn" visual="rossmanchance.com/iscam3/data/ISCAM_Journal.jrn">ISCAM Journal file</url> in JMP, select Hypothesis Test for One Proportion:
+          Using the <url href="http://www.rossmanchance.com/iscam3/data/ISCAM_Journal.jrn" visual="new">ISCAM Journal file</url> in JMP, select Hypothesis Test for One Proportion:
         </p>
-        <p>
-          <ul>
-            <li>Use Raw Data or Summary Stats</li>
-            <li>Remember to specify a direction for the alternative, a hypothesized proportion, and a significance level (e.g., .05)</li>
-          </ul>
-        </p>
+        <ul>
+          <li>Use Raw Data or Summary Stats</li>
+          <li>Remember to specify a direction for the alternative, a hypothesized proportion, and a significance level (e.g., .05)</li>
+        </ul>
         <p>
           For the Halloween study:
         </p>
-        <p>
-          <ul>
-            <li>Select Summary Stats</li>
-            <li>Enter <m>n</m> = 284, number of successes = 135</li>
-            <li>Hypothesized proportion = 0.5</li>
-            <li>Select "not equal" for two-sided test</li>
-            <li>Significance level = 0.05</li>
-          </ul>
-        </p>
+        <ul>
+          <li>Select Summary Stats</li>
+          <li>Enter <m>n</m> = 284, number of successes = 135</li>
+          <li>Hypothesized proportion = 0.5</li>
+          <li>Select "not equal" for two-sided test</li>
+          <li>Significance level = 0.05</li>
+        </ul>
         <p>
           JMP will display a comprehensive output including:
         </p>
-        <p>
-          <ul>
-            <li>Sample proportion: 0.475</li>
-            <li>Standard error: 0.0297</li>
-            <li><em>z</em>-statistic: -0.84</li>
-            <li>Two-sided p-value: 0.40</li>
-            <li>A visual representation of the test</li>
-          </ul>
-        </p>
+        <ul>
+          <li>Sample proportion: 0.475</li>
+          <li>Standard error: 0.0297</li>
+          <li><em>z</em>-statistic: -0.84</li>
+          <li>Two-sided p-value: 0.40</li>
+          <li>A visual representation of the test</li>
+        </ul>
         <p>
           The output will indicate that we fail to reject the null hypothesis at the 0.05 significance level.
         </p>
@@ -815,10 +805,10 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
 
     <p>
       To make the normal probability (which is finding <m>P(X &lt; 135)</m> closer to the binomial probability, which finds <m>P(X \leq 135) = P(X &lt; 135) + P(X = 135)</m>, we want to include more of the area under the normal curve above 135 in our calculation. A continuity correction does this by using the normal distribution to find <m>P(X &lt; 135.5)</m> instead. This does not change the binomial probability but should enlarge the normal probability.
-    <ul><li>
-     In the One Proportion Inference applet, specify 135.5 in the <alert>As Extreme As</alert> box (if using number of successes as the statistic, otherwise use <m>135.5/284 \approx 0.477</m> instead) and press <alert>Count</alert>. 
-     </li></ul>
-     </p>
+    </p>
+    <ul>
+      <li>In the One Proportion Inference applet, specify 135.5 in the <alert>As Extreme As</alert> box (if using number of successes as the statistic, otherwise use <m>135.5/284 \approx 0.477</m> instead) and press <alert>Count</alert>.</li>
+    </ul>
     <exercise xml:id="I1-8-r" label="I1.8r">
       <title>Apply Continuity Correction</title>
       <statement>
@@ -858,7 +848,7 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
       </statement>
       <setup>
         <var>
-          <condition number="0.438" tolerance="0.001">>
+          <condition number="0.438" tolerance="0.001">
             <feedback>
               <p>Correct! With the continuity correction, the p-value is approximately 0.438.</p>
             </feedback>
@@ -872,11 +862,9 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
             <p>
               Use the Theory-Based Inference applet to apply a continuity correction:
             </p>
-            <p>
-              <ul>
-                <li>Check the <term index="no">continuity correction</term> box to apply the continuity correction to the standardized statistic and p-value.</li>
-              </ul>
-            </p>
+            <ul>
+              <li>Check the <term index="no">continuity correction</term> box to apply the continuity correction to the standardized statistic and p-value.</li>
+            </ul>
             <p>
               For the Halloween study, after entering the data (<m>n</m> = 284, 135 successes), check the <term index="no">continuity correction</term> box and observe how the p-value changes.
             </p>
@@ -891,14 +879,12 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
         <p>
           The <c>iscambinomnorm(k, n, prob, direction)</c> function gives a visual of the continuity correction. It takes the following inputs:
         </p>
-        <p>
-          <ul>
-            <li><m>k</m> = the observation of interest</li>
-            <li><m>n</m> = the sample size</li>
-            <li>prob = the process probability (<m>\pi</m>)</li>
-            <li>direction = "less", "greater", or "two.sided"</li>
-          </ul>
-        </p>
+        <ul>
+          <li><m>k</m> = the observation of interest</li>
+          <li><m>n</m> = the sample size</li>
+          <li>prob = the process probability (<m>\pi</m>)</li>
+          <li>direction = "less", "greater", or "two.sided"</li>
+        </ul>
         <p>
           For the Halloween study, try:
         </p>
@@ -913,14 +899,12 @@ iscambinomnorm(135, 284, 0.5, "two.sided")
         <p>
           This function creates a graph showing:
         </p>
-        <p>
-          <ul>
-            <li>The binomial distribution (bars)</li>
-            <li>The normal approximation (curve)</li>
-            <li>The continuity correction boundaries at 135.5 and 148.5</li>
-            <li>The corrected p-value of approximately 0.4382</li>
-          </ul>
-        </p>
+        <ul>
+          <li>The binomial distribution (bars)</li>
+          <li>The normal approximation (curve)</li>
+          <li>The continuity correction boundaries at 135.5 and 148.5</li>
+          <li>The corrected p-value of approximately 0.4382</li>
+        </ul>
         <p>
           The visualization clearly shows how the continuity correction includes more area under the normal curve to better match the binomial probabilities.
         </p>
@@ -929,13 +913,11 @@ iscambinomnorm(135, 284, 0.5, "two.sided")
         <p>
           With the continuity correction applied:
         </p>
-        <p>
-          <ul>
-            <li>The p-value changes from approximately 0.4061 to 0.4382</li>
-            <li>This is much closer to the exact binomial p-value of 0.4405</li>
-            <li>The continuity correction adjusts for the fact that we're using a continuous distribution (normal) to approximate a discrete distribution (binomial)</li>
-          </ul>
-        </p>
+        <ul>
+          <li>The p-value changes from approximately 0.4061 to 0.4382</li>
+          <li>This is much closer to the exact binomial p-value of 0.4405</li>
+          <li>The continuity correction adjusts for the fact that we're using a continuous distribution (normal) to approximate a discrete distribution (binomial)</li>
+        </ul>
         <image source="images/inv1-8r-contcorr.jpg" width="80%">
           <description>Theory-Based Inference applet showing continuity correction applied to Halloween study</description>
         </image>
