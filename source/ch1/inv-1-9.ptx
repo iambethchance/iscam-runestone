@@ -228,10 +228,9 @@
         <p>
           The <term><m>(100 \times C)</m>% critical value</term>, <m>z^*</m>, is the <m>z</m>-score value such that <m>P(-z^* \leq Z \leq z^*) = C</m> where <m>C</m> is any specified probability value, and <m>Z</m> represents a normal distribution with mean 0 and SD 1.
         </p>
-<paragraphs>        <image source="images/Inv1.9cv.png" width="100%">
+        <image source="images/Inv1.9cv.png" width="100%">
           <description>Critical value illustration showing shaded middle area under normal curve</description>
         </image>
-        </paragraphs>
       </sidebyside>
       <p>
         <em>Note:</em> We use the symbol <m>z^*</m> to distinguish this value, found based on the confidence level, from <m>z_0</m>, the observed <m>z</m>-score for the data.
@@ -258,14 +257,12 @@
       <hint>
         <title>Normal Probability Calculator</title>
         <p>
-          In <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="rossmanchance.com/applets/2021/normcalc/NormCalc.html">Normal Probability Calculator</url> applet:
+          In <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="new">Normal Probability Calculator</url> applet:
         </p>
-        <p>
-          <ul>
-            <li><p>You can leave the mean set to zero and the standard deviation to 1 and the variable is "<em>z</em>-scores."</p></li>
-            <li><p>Check the box next to the first <m>&lt;</m> sign and specify the probability value to correspond to the lower tail probability of interest: <m>(1-C)/2</m>. Press Enter/Return and it will display the negative <m>z^*</m>-value.</p></li>
-          </ul>
-        </p>
+        <ul>
+          <li><p>You can leave the mean set to zero and the standard deviation to 1 and the variable is "<em>z</em>-scores."</p></li>
+          <li><p>Check the box next to the first <m>&lt;</m> sign and specify the probability value to correspond to the lower tail probability of interest: <m>(1-C)/2</m>. Press Enter/Return and it will display the negative <m>z^*</m>-value.</p></li>
+        </ul>
         <p>For 95% confidence, use probability 0.025 in the lower tail (or 0.975 for upper tail).</p>
       </hint>
       <hint>
@@ -273,14 +270,12 @@
         <p>
           The <c>iscaminvnorm</c> function takes the following inputs:
         </p>
-        <p>
-          <ul>
-            <li><p><c>prob1</c> = probability of interest</p></li>
-            <li><p><c>mean</c> = the mean of the normal distribution (default = 0)</p></li>
-            <li><p><c>sd</c> = the standard deviation of the normal distribution (default = 1)</p></li>
-            <li><p><c>direction</c> = whether the probability of interest was in the lower tail ("below"), upper tail ("above"), both tails ("outside"), or in the middle of the distribution ("between")</p></li>
-          </ul>
-        </p>
+        <ul>
+          <li><p><c>prob1</c> = probability of interest</p></li>
+          <li><p><c>mean</c> = the mean of the normal distribution (default = 0)</p></li>
+          <li><p><c>sd</c> = the standard deviation of the normal distribution (default = 1)</p></li>
+          <li><p><c>direction</c> = whether the probability of interest was in the lower tail ("below"), upper tail ("above"), both tails ("outside"), or in the middle of the distribution ("between")</p></li>
+        </ul>
         <sage language="r">
           <input>
 <![CDATA[
@@ -293,17 +288,15 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
       <hint>
         <title>JMP Instructions</title>
         <p>
-          In JMP using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url>:
+          In JMP using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" visual="new">ISCAM Journal File</url>:
         </p>
-        <p>
-          <ol>
-            <li><p>From the Distribution pull-down menu, select <term index="no">Normal</term> (at the top of the list)</p></li>
-            <li><p>Specify the values for the mean (0) and standard deviation (1)</p></li>
-            <li><p>Change the <term index="no">Type of Calculation</term> to <em>Input probability and calculate quantiles</em></p></li>
-            <li><p>Select <term index="no">Central Probability</term> and specify the confidence level (e.g., 0.95)</p></li>
-            <li><p>Press <term index="no">Enter/Return</term>.</p></li>
-          </ol>
-        </p>
+        <ol>
+          <li><p>From the Distribution pull-down menu, select <term index="no">Normal</term> (at the top of the list)</p></li>
+          <li><p>Specify the values for the mean (0) and standard deviation (1)</p></li>
+          <li><p>Change the <term index="no">Type of Calculation</term> to <em>Input probability and calculate quantiles</em></p></li>
+          <li><p>Select <term index="no">Central Probability</term> and specify the confidence level (e.g., 0.95)</p></li>
+          <li><p>Press <term index="no">Enter/Return</term>.</p></li>
+        </ol>
  <!--       <p>The critical value should be approximately 1.96.</p>-->
       </hint>
       <setup>
@@ -489,24 +482,22 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
       Although 95% is the most common confidence level, a few other confidence levels and their corresponding critical values are shown in the table below.
     </p>
 
-<paragraphs>
-      <tabular halign="center" row-headers="yes">
-        <row header="yes" bottom="minor">
-          <cell>Confidence level</cell>
-          <cell>90%</cell>
-          <cell>95%</cell>
-          <cell>99%</cell>
-          <cell>99.9%</cell>
-        </row>
-        <row>
-          <cell>Critical value <m>z^*</m></cell>
-          <cell>1.645</cell>
-          <cell>1.960</cell>
-          <cell>2.576</cell>
-          <cell>3.291</cell>
-        </row>
-      </tabular>
-    </paragraphs>
+    <tabular halign="center" row-headers="yes">
+      <row header="yes" bottom="minor">
+        <cell>Confidence level</cell>
+        <cell>90%</cell>
+        <cell>95%</cell>
+        <cell>99%</cell>
+        <cell>99.9%</cell>
+      </row>
+      <row>
+        <cell>Critical value <m>z^*</m></cell>
+        <cell>1.645</cell>
+        <cell>1.960</cell>
+        <cell>2.576</cell>
+        <cell>3.291</cell>
+      </row>
+    </tabular>
     <exercise xml:id="I1-9-l" label="I1.9l">
       <title>Calculate 90% Confidence Interval</title>
       <statement>
@@ -677,15 +668,13 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         <p>
           Use the <c>iscamonepropztest</c> function to calculate the <em>z</em>-confidence interval. The function takes the following inputs:
         </p>
-        <p>
-          <ul>
-            <li><p><c>observed</c> = number of successes or the sample proportion (<m>\hat{p}</m>)</p></li>
-            <li><p><c>n</c> = sample size</p></li>
-            <li><p><c>hypothesized</c> = hypothesized value (optional, for hypothesis tests)</p></li>
-            <li><p><c>alternative</c> = "greater", "less", or "two.sided" (optional, for hypothesis tests)</p></li>
-            <li><p><c>conf.level</c> = confidence level (as percentage or decimal)</p></li>
-          </ul>
-        </p>
+        <ul>
+          <li><p><c>observed</c> = number of successes or the sample proportion (<m>\hat{p}</m>)</p></li>
+          <li><p><c>n</c> = sample size</p></li>
+          <li><p><c>hypothesized</c> = hypothesized value (optional, for hypothesis tests)</p></li>
+          <li><p><c>alternative</c> = "greater", "less", or "two.sided" (optional, for hypothesis tests)</p></li>
+          <li><p><c>conf.level</c> = confidence level (as percentage or decimal)</p></li>
+        </ul>
         <p>If you don't specify a hypothesized value and alternative, be sure to label the confidence level.</p>
         <sage language="r">
           <input>
@@ -698,32 +687,28 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
       </hint>
       <hint>
         <title>JMP Instructions</title>
-        <p>
-          <ul>
-            <li><p>Open the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal file</url> and select <term index="no">Confidence Interval for One Proportion</term></p></li>
-            <li><p>Specify Raw Data (column of outcomes) or Summary Stats</p></li>
-            <li><p>With Summary Stats, keep the radio button set to <term index="no">Normal Approximation</term></p></li>
-            <li><p>Enter the number of successes (80) and sample size (124)</p></li>
-            <li><p>Set the confidence level to 90%</p></li>
-          </ul>
-        </p>
+        <ul>
+          <li><p>Open the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" visual="new">ISCAM Journal file</url> and select <term index="no">Confidence Interval for One Proportion</term></p></li>
+          <li><p>Specify Raw Data (column of outcomes) or Summary Stats</p></li>
+          <li><p>With Summary Stats, keep the radio button set to <term index="no">Normal Approximation</term></p></li>
+          <li><p>Enter the number of successes (80) and sample size (124)</p></li>
+          <li><p>Set the confidence level to 90%</p></li>
+        </ul>
         <p>The output will show the 90% <m>z</m>-confidence interval.</p>
       </hint>
       <hint>
         <title>Theory-Based Inference Applet Instructions</title>
         <p>
-          Using the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url>:
+          Using the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="new">Theory-Based Inference applet</url>:
         </p>
-        <p>
-          <ul>
-            <li><p>Keep the pull-down menu set to <term index="no">One proportion</term>.</p></li>
-            <li><p>Specify the sample size <m>n</m> = 124 and either the count (80) or the sample proportion (0.645).</p></li>
-            <li><p>Press <term index="no">Calculate</term>.</p></li>
-            <li><p>Check the box for <term index="no">Confidence interval</term></p></li>
-            <li><p>Change the <term index="no">confidence level</term> to 90%</p></li>
-            <li><p>Press the <term index="no">Calculate CI</term> button</p></li>
-          </ul>
-        </p>
+        <ul>
+          <li><p>Keep the pull-down menu set to <term index="no">One proportion</term>.</p></li>
+          <li><p>Specify the sample size <m>n</m> = 124 and either the count (80) or the sample proportion (0.645).</p></li>
+          <li><p>Press <term index="no">Calculate</term>.</p></li>
+          <li><p>Check the box for <term index="no">Confidence interval</term></p></li>
+          <li><p>Change the <term index="no">confidence level</term> to 90%</p></li>
+          <li><p>Press the <term index="no">Calculate CI</term> button</p></li>
+        </ul>
         <p>The applet will display the 90% <m>z</m>-confidence interval.</p>
       </hint>
       <setup>
@@ -781,12 +766,10 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
         <p>
           How do the widths of the <m>z</m>-intervals compare to the Exact Binomial Confidence Intervals reported by R?
         </p>
-        <p>
-          <ul>
-            <li><p>90 percent confidence interval: <c>(0.5684, 0.7166)</c></p></li>
-            <li><p>95 percent confidence interval: <c>(0.5542, 0.7290)</c></p></li>
-          </ul>
-        </p>
+        <ul>
+          <li><p>90 percent confidence interval: <c>(0.5684, 0.7166)</c></p></li>
+          <li><p>95 percent confidence interval: <c>(0.5542, 0.7290)</c></p></li>
+        </ul>
       <hint>
         <p>
           Calculate the widths of both the <m>z</m>-intervals and the exact binomial intervals for comparison.
