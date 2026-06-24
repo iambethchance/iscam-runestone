@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-5-13">
+  <title>Investigation 5.13: Cat Jumping (cont.)</title>
+
+  <exercises xml:id="exercises5-13" hidden-label="yes">
+    <title>The Study</title>
+
+    <p>Revisit Cat Jumping data and perform regression inference for takeoff velocity vs percent body fat.</p>
+
+    <exercise xml:id="inv5-13-a" label="I5.13.a"><title>Fit Regression Equation</title><statement><p>(a) Determine least-squares line for predicting velocity from percent body fat.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-13-b" label="I5.13.b"><title>Normality of Residuals</title><statement><p>(b) Produce histogram and normal probability plot of residuals; assess normality.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-13-c" label="I5.13.c"><title>Equal Variance and Linearity</title><statement><p>(c) Use residual plot vs explanatory variable (or predicted values) to assess equal variance and linearity.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-13-d" label="I5.13.d"><title>Test for Negative Association</title><statement><p>(d) State hypotheses, report test statistic and p-value, and conclude.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-13-e" label="I5.13.e"><title>Confirm t Formula</title><statement><p>(e) Verify t-statistic equals <m>b_1/SE(b_1)</m> for slope test against zero.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-13-f" label="I5.13.f"><title>95% CI for Slope</title><statement><p>(f) Compute 95% confidence interval for population slope by hand.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-13-g" label="I5.13.g"><title>Interpret Slope Interval</title><statement><p>(g) Interpret interval in context.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-13-h" label="I5.13.h"><title>Point Predictions</title><statement><p>(h) Predict velocity at 25% and 50% body fat.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-13-i" label="I5.13.i"><title>Precision Comparison</title><statement><p>(i) Which prediction is more reliable and why?</p></statement><response/></exercise>
+
+    <paragraphs>
+      <title>Technology Detour: Prediction Intervals</title>
+      <p><alert>R:</alert> use <c>predict(lm(...), newdata=..., interval="prediction")</c>.</p>
+      <p><alert>JMP:</alert> Linear Fit options for individual confidence interval formulas.</p>
+    </paragraphs>
+
+    <exercise xml:id="inv5-13-j" label="I5.13.j"><title>Prediction Interval at 25%</title><statement><p>(j) Report and interpret 95% prediction interval at 25% body fat; identify midpoint.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-13-k" label="I5.13.k"><title>Prediction Interval at 50%</title><statement><p>(k) Repeat at 50% and compare interval widths.</p></statement><response/></exercise>
+
+    <assemblage>
+      <title>Definition</title>
+      <p>Prediction intervals are for individual responses; confidence intervals at x are for mean response.</p>
+    </assemblage>
+
+    <paragraphs>
+      <title>Technology Detour: Confidence Intervals</title>
+      <p><alert>R:</alert> use <c>interval="confidence"</c>.</p>
+      <p><alert>JMP:</alert> Linear Fit options for mean confidence interval formulas.</p>
+    </paragraphs>
+
+    <exercise xml:id="inv5-13-l" label="I5.13.l"><title>Confidence Interval at 25%</title><statement><p>(l) Report and interpret 95% confidence interval for mean velocity at 25% body fat; identify midpoint.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-13-m" label="I5.13.m"><title>Compare PI and CI</title><statement><p>(m) Compare confidence and prediction intervals and explain width difference.</p></statement><response/></exercise>
+
+    <assemblage>
+      <title>Study Conclusions</title>
+      <p>With model conditions reasonably met, t-based slope inference and interval procedures provide interpretable uncertainty for both average and individual predictions.</p>
+    </assemblage>
+
+    <exercise xml:id="inv5-13-practice" label="I5.13.practice"><title>Practice Problem 5.13</title><statement><p>Apply these interval methods to Talley 5K data for specific runner ages and evaluate validity via residual plots.</p></statement><response/></exercise>
+  </exercises>
+</section>
