@@ -2,7 +2,7 @@
 <section xml:id="inv-5-1">
   <title>Investigation 5.1: Dr. Spock's Trial</title>
 
-  <subsection xml:id="exercises5-1">
+  <exercises xml:id="exercises5-1" hidden-label="yes">
     <title>The Study</title>
 
     <introduction>
@@ -21,7 +21,7 @@
 
       <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
         <row header="yes">
-          <cell>Jury list\Judge</cell>
+          <cell></cell>
           <cell>Judge 1</cell>
           <cell>Judge 2</cell>
           <cell>Judge 3</cell>
@@ -32,7 +32,7 @@
           <cell>Total</cell>
         </row>
         <row>
-          <cell halign="left">Women</cell>
+          <cell halign="left">Women on jury list</cell>
           <cell>119</cell>
           <cell>197</cell>
           <cell>118</cell>
@@ -43,7 +43,7 @@
           <cell>776</cell>
         </row>
         <row>
-          <cell halign="left">Men</cell>
+          <cell halign="left">Men on jury list</cell>
           <cell>235</cell>
           <cell>533</cell>
           <cell>287</cell>
@@ -255,13 +255,13 @@
         <title>Use Applet</title>
         <statement>
           <p>(n) Use the Analyzing Two-Way Tables - Samples applet: <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqSample.htm">ChiSqSample</url>.</p>
-          <list>
-            <item><p>In the data window, type: <c>Spock.txt</c>.</p></item>
-            <item><p>Press <c>Use Data</c>, then press <c>Use Table</c>.</p></item>
-            <item><p>Check <c>Show Sampling Options</c>.</p></item>
-            <item><p>Use 1000 for Number of Samples and press <c>Draw Samples</c>.</p></item>
-            <item><p>Use the pull-down to switch the statistic to the chi-squared value.</p></item>
-          </list>
+          <ul>
+            <li><p>In the data window, type: <c>Spock.txt</c>.</p></li>
+            <li><p>Press <c>Use Data</c>, then press <c>Use Table</c>.</p></li>
+            <li><p>Check <c>Show Sampling Options</c>.</p></li>
+            <li><p>Use 1000 for Number of Samples and press <c>Draw Samples</c>.</p></li>
+            <li><p>Use the pull-down to switch the statistic to the chi-squared value.</p></li>
+          </ul>
         </statement>
         <response/>
       </exercise>
@@ -309,12 +309,12 @@
       <paragraphs>
         <title>Technology Detour - Chi-squared Probabilities</title>
 
-        <list>
-          <item><p><alert>Applet:</alert> Use the <url href="http://www.rossmanchance.com/applets/2021/test/chiCalc.htm">Chi-squared Probability Calculator</url> and specify degrees of freedom, observed value, and direction.</p></item>
-          <item><p><alert>R:</alert> Use <c>iscamchisqprob(xval, df)</c>, where <c>xval</c> is the observed statistic and <c>df</c> is degrees of freedom.</p></item>
-          <item><p><alert>Minitab:</alert> Graph > Probability Distribution Plot (View Probability), choose Chi-Square, set df and right-tail cutoff.</p></item>
-          <item><p><alert>JMP:</alert> Distribution Calculator, choose Chi Square, set df, and compute <c>X &gt; Qa</c> for the observed value.</p></item>
-        </list>
+        <ul>
+          <li><p><alert>Applet:</alert> Use the <url href="http://www.rossmanchance.com/applets/2021/test/chiCalc.htm">Chi-squared Probability Calculator</url> and specify degrees of freedom, observed value, and direction.</p></li>
+          <li><p><alert>R:</alert> Use <c>iscamchisqprob(xval, df)</c>, where <c>xval</c> is the observed statistic and <c>df</c> is degrees of freedom.</p></li>
+          <li><p><alert>Minitab:</alert> Graph > Probability Distribution Plot (View Probability), choose Chi-Square, set df and right-tail cutoff.</p></li>
+          <li><p><alert>JMP:</alert> Distribution Calculator, choose Chi Square, set df, and compute <c>X &gt; Qa</c> for the observed value.</p></li>
+        </ul>
       </paragraphs>
 
       <exercise xml:id="inv5-1-s">
@@ -379,13 +379,13 @@
 
     <paragraphs>
       <title>Technology Detour - Simulating Randomization Test for Two-Way Tables</title>
-      <list>
-        <item><p><alert>Applet:</alert> <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqSample.htm">Analyzing Two-way Tables - Sampling</url></p></item>
-        <item><p><alert>R:</alert> Run <url href="http://www.rossmanchance.com/iscam2/data/Spock.R">Spock.R</url> to generate chi-squared values.</p></item>
-        <item><p><alert>Minitab:</alert> Use <url href="http://www.rossmanchance.com/iscam2/data/SpockSim.mac">SpockSim.mac</url> to generate simulated chi-squared values.</p></item>
-        <item><p><alert>JMP:</alert> Open <url href="http://www.rossmanchance.com/iscam3/data/Spock.jmp">Spock.jmp</url> and run the simulation script.</p></item>
-      </list>
+      <ul>
+        <li><p><alert>Applet:</alert> <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqSample.htm">Analyzing Two-way Tables - Sampling</url></p></li>
+        <li><p><alert>R:</alert> Run <url href="http://www.rossmanchance.com/iscam2/data/Spock.R">Spock.R</url> to generate chi-squared values.</p></li>
+        <li><p><alert>Minitab:</alert> Use <url href="http://www.rossmanchance.com/iscam2/data/SpockSim.mac">SpockSim.mac</url> to generate simulated chi-squared values.</p></li>
+        <li><p><alert>JMP:</alert> Open <url href="http://www.rossmanchance.com/iscam3/data/Spock.jmp">Spock.jmp</url> and run the simulation script.</p></li>
+      </ul>
     </paragraphs>
 
-  </subsection>
+  </exercises>
 </section>
