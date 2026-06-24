@@ -403,6 +403,38 @@ main .ptx-content section.chapter#chapter2 > h2.heading > span.codenumber + span
     display: none !important;
 }
 
+/* Hide full chapter prefix ("Chapter" and number) for chapter3 landing page title. */
+.ptx-content section.chapter#chapter3 > .heading > span.type,
+.ptx-content section.chapter#chapter3 > .heading > span.codenumber,
+.ptx-content section.chapter#chapter3 > .heading > span.type + span.space,
+.ptx-content section.chapter#chapter3 > .heading > span.codenumber + span.space,
+section.chapter#chapter3 > .heading > span.type,
+section.chapter#chapter3 > .heading > span.codenumber,
+section.chapter#chapter3 > .heading > span.type + span.space,
+section.chapter#chapter3 > .heading > span.codenumber + span.space,
+main .ptx-content section.chapter#chapter3 > h1.heading > span.type,
+main .ptx-content section.chapter#chapter3 > h1.heading > span.codenumber,
+main .ptx-content section.chapter#chapter3 > h1.heading > span.type + span.space,
+main .ptx-content section.chapter#chapter3 > h1.heading > span.codenumber + span.space,
+main .ptx-content section.chapter#chapter3 > h2.heading > span.type,
+main .ptx-content section.chapter#chapter3 > h2.heading > span.codenumber,
+main .ptx-content section.chapter#chapter3 > h2.heading > span.type + span.space,
+main .ptx-content section.chapter#chapter3 > h2.heading > span.codenumber + span.space {
+    display: none !important;
+}
+
+/* Extra-robust chapter3 heading hide in case structure varies by target/template. */
+#chapter3 h1.heading > span.type,
+#chapter3 h1.heading > span.codenumber,
+#chapter3 h1.heading > span.type + span.space,
+#chapter3 h1.heading > span.codenumber + span.space,
+#chapter3 h2.heading > span.type,
+#chapter3 h2.heading > span.codenumber,
+#chapter3 h2.heading > span.type + span.space,
+#chapter3 h2.heading > span.codenumber + span.space {
+    display: none !important;
+}
+
 /* Hide section number prefix on Investigation 1.9 page heading only (remove 4.5). */
 #investigation-1-9 h1.heading > span.codenumber,
 #investigation-1-9 h1.heading > span.codenumber + span.space,

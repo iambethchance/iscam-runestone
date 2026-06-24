@@ -201,20 +201,18 @@
           According to the distribution in <xref ref="I1-11-b" text="custom">Question 2</xref>, what proportion of the 329 sessions would need to be successful ("hits"), in order to reject the null hypothesis in <xref ref="I1-11-a" text="custom">Question 1</xref> in favor of the alternative hypothesis at the 5% level of significance?
         </p>
         <p>
-          In the <url href="https://www.rossmanchance.com/applets/2021/power/power.html?hideExtras=1" visual="rossmanchance.com/applets/2021/power/power.html">Power Simulation applet</url>:
+          In the <url href="https://www.rossmanchance.com/applets/2021/power/power.html?hideExtras=1" visual="new">Power Simulation applet</url>:
         </p>
-  <p>
-          <ul>
-            <li><p>Specify the <alert>Hypothesized probability of success</alert>: 0.25</p></li>
-            <li><p>Specify the <alert>Sample size</alert>: 329</p></li>
-            <li><p>Specify the <alert>Number of repetitions</alert>: 1000</p></li>
-            <li><p>Press <alert>Draw Samples</alert></p></li>
-            <li><p>Choose <alert>Proportion of successes</alert> as the statistic</p></li>
-            <li><p>Use the pull-down menu to set the <alert>Level of Significance</alert> to 0.05</p></li>
-            <li><p>Press <alert>Count</alert></p></li>
-            <li><p>Check the <alert>Normal Approximation</alert> and <alert>Summary Stats</alert> boxes to verify <xref ref="I1-11-b" text="custom">Question 2</xref></p></li>
-          </ul>
-        </p>
+        <ul>
+          <li><p>Specify the <alert>Hypothesized probability of success</alert>: 0.25</p></li>
+          <li><p>Specify the <alert>Sample size</alert>: 329</p></li>
+          <li><p>Specify the <alert>Number of repetitions</alert>: 1000</p></li>
+          <li><p>Press <alert>Draw Samples</alert></p></li>
+          <li><p>Choose <alert>Proportion of successes</alert> as the statistic</p></li>
+          <li><p>Use the pull-down menu to set the <alert>Level of Significance</alert> to 0.05</p></li>
+          <li><p>Press <alert>Count</alert></p></li>
+          <li><p>Check the <alert>Normal Approximation</alert> and <alert>Summary Stats</alert> boxes to verify <xref ref="I1-11-b" text="custom">Question 2</xref></p></li>
+        </ul>
         <interactive iframe="https://www.rossmanchance.com/applets/2021/power/power.html?hideExtras=1" width="160%" aspect="3:2"/>
        
     <exercise xml:id="I1-11-c" label="I1.11c">
@@ -333,14 +331,12 @@
         <p>
           In the applet:
         </p>
-        <p>
-          <ul>
-            <li><p>Change the <alert>Alternative probability of success</alert> value to 0.30</p></li>
-            <li><p>Check the <alert>Show alternative</alert> box</p></li>
-            <li><p>Press <alert>Draw Samples</alert></p></li>
-            <li><p>Press <alert>Count</alert></p></li>
-          </ul>
-        </p>
+        <ul>
+          <li><p>Change the <alert>Alternative probability of success</alert> value to 0.30</p></li>
+          <li><p>Check the <alert>Show alternative</alert> box</p></li>
+          <li><p>Press <alert>Draw Samples</alert></p></li>
+          <li><p>Press <alert>Count</alert></p></li>
+        </ul>
 
     <exercise xml:id="I1-11-f" label="I1.11f">
       <title>Interpret Output </title>
@@ -517,11 +513,10 @@
 <p>
 Suppose the study had only involved 35 sessions. Because the sample size is small, use of the Central Limit Theorem is questionable. 
 </p>
-<p>
-<ul><li>Uncheck the <alert>Normal Approximation</alert> box and check the <alert>Exact Binomial</alert> box.</li>
-<li> Specify a hypothesized probability of 0.25, an alternative probability of 0.35, and a level of significance of 0.05. </li>
+<ul>
+  <li>Uncheck the <alert>Normal Approximation</alert> box and check the <alert>Exact Binomial</alert> box.</li>
+  <li>Specify a hypothesized probability of 0.25, an alternative probability of 0.35, and a level of significance of 0.05.</li>
 </ul>
-</p>
 </paragraphs>
     <exercise xml:id="I1-11-i" label="I1.11i">
       <title>Small Sample Size with Exact Binomial</title>
@@ -627,15 +622,13 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
           <p>
             The <c>iscambinompower</c> and <c>iscamnormpower</c> functions use the following inputs:
           </p>
-          <p>
-            <ul>
-              <li><p><c>LOS</c> = the desired level of significance (<m>\alpha</m>)</p></li>
-              <li><p><c>n</c> = the sample size (number of trials)</p></li>
-              <li><p><c>prob1</c> = the process probability (<m>\pi</m>) under the null hypothesis</p></li>
-              <li><p><c>alternative</c> = "less", "greater", or "two.sided"</p></li>
-              <li><p><c>prob2</c> = the alternative probability of success</p></li>
-            </ul>
-          </p>
+          <ul>
+            <li><p><c>LOS</c> = the desired level of significance (<m>\alpha</m>)</p></li>
+            <li><p><c>n</c> = the sample size (number of trials)</p></li>
+            <li><p><c>prob1</c> = the process probability (<m>\pi</m>) under the null hypothesis</p></li>
+            <li><p><c>alternative</c> = "less", "greater", or "two.sided"</p></li>
+            <li><p><c>prob2</c> = the alternative probability of success</p></li>
+          </ul>
           <p>
             For example: <c>iscamnormpower(LOS=.05, n=20, prob1=.25, alternative="greater", prob2=0.333)</c>
           </p>
@@ -651,14 +644,12 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
           <p>
             In JMP:
           </p>
-          <p>
-            <ul>
-              <li><p>Choose <alert>DOE > Sample Size Explorers > Power > Power for One Sample Proportion</alert></p></li>
-              <li><p>Specify the form of the alternative, the level of significance (<m>\alpha</m>), an alternative probability of success, and set the Test Method to Normal Approximation.</p></li>
-              <li><p>Specify the Sample Size, the null probability of success (Assumed Proportion), and alternative probability of success (Alternative Proportion).</p></li>
-              <li><p>Press <alert>Enter</alert>.</p></li>
-            </ul>
-          </p>
+          <ul>
+            <li><p>Choose <alert>DOE > Sample Size Explorers > Power > Power for One Sample Proportion</alert></p></li>
+            <li><p>Specify the form of the alternative, the level of significance (<m>\alpha</m>), an alternative probability of success, and set the Test Method to Normal Approximation.</p></li>
+            <li><p>Specify the Sample Size, the null probability of success (Assumed Proportion), and alternative probability of success (Alternative Proportion).</p></li>
+            <li><p>Press <alert>Enter</alert>.</p></li>
+          </ul>
           <image source="images/Inv1.11-kJMPsol.png" width="80%">
             <description>JMP Sample Size Explorer output showing power calculations</description>
           </image>
@@ -756,12 +747,10 @@ Suppose the study had only involved 35 sessions. Because the sample size is smal
       <p>
         In any test of significance, we need to guard against two types of errors:
       </p>
-      <p>
-        <ul>
-          <li><p><term>Type I error</term> = falsely rejecting a true null hypothesis ("false alarm")</p></li>
-          <li><p><term>Type II error</term> = failing to reject a false null hypothesis ("missed opportunity")</p></li>
-        </ul>
-      </p>
+      <ul>
+        <li><p><term>Type I error</term> = falsely rejecting a true null hypothesis ("false alarm")</p></li>
+        <li><p><term>Type II error</term> = failing to reject a false null hypothesis ("missed opportunity")</p></li>
+      </ul>
       <p>
         We control the probability of a Type I error by stating a level of significance before we collect any data. We chiefly control the probability of a Type II error by determining what sample size is needed in a study to achieve a desired level of power. To do so, you need to establish in advance how false you think the null hypothesis is/what size of a difference you want to be able to detect. This is often done through subject-matter knowledge or prior study results.
       </p>

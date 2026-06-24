@@ -80,14 +80,12 @@
       </setup>
       <hint><title>R</title>
         <p>Use the <c>iscambinomtest()</c> function with the following parameters:</p>
-        <p>
-          <ul>
-            <li><p><c>observed</c> = number of successes (8)</p></li>
-            <li><p><c>n</c> = sample size (10)</p></li>
-            <li><p><c>alternative</c> = "two.sided" (for confidence intervals)</p></li>
-            <li><p><c>conf.level</c> = confidence level (0.95 or 95)</p></li>
-          </ul>
-        </p>
+        <ul>
+          <li><p><c>observed</c> = number of successes (8)</p></li>
+          <li><p><c>n</c> = sample size (10)</p></li>
+          <li><p><c>alternative</c> = "two.sided" (for confidence intervals)</p></li>
+          <li><p><c>conf.level</c> = confidence level (0.95 or 95)</p></li>
+        </ul>
         <sage language="r">
           <input>
 <![CDATA[
@@ -228,13 +226,11 @@ iscambinomtest(observed = 8, n = 10, alternative = "two.sided", conf.level = 0.9
         </p>
       <hint><title>R/Sage instructions</title>
         <p>Use the <c>iscamonepropztest()</c> function with the following parameters:</p>
-        <p>
-          <ul>
-            <li><p><c>observed</c> = number of successes (8)</p></li>
-            <li><p><c>n</c> = sample size (10)</p></li>
-            <li><p><c>conf.level</c> = confidence level (0.95 or 95)</p></li>
-          </ul>
-        </p>
+        <ul>
+          <li><p><c>observed</c> = number of successes (8)</p></li>
+          <li><p><c>n</c> = sample size (10)</p></li>
+          <li><p><c>conf.level</c> = confidence level (0.95 or 95)</p></li>
+        </ul>
         <sage language="r">
           <input>
 <![CDATA[
@@ -316,19 +312,17 @@ iscamonepropztest(observed = 8, n = 10, conf.level = 0.95)
 
 <paragraphs>
         <p>
-          Using the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html" visual="rossmanchance.com/applets/2021/confsim/ConfSim.html">Simulating Confidence Intervals applet</url>.
+          Using the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html" visual="new">Simulating Confidence Intervals applet</url>.
         </p>
         <p>
           Suppose the actual process probability of death is 0.15 and you plan to take a sample of 10 operations and apply the <m>z</m>-interval (aka Wald) method.
         </p>
         <sidebyside widths="55% 40%">
-          <p>
-            <ul>
-              <li><p>Set the value of <m>\pi</m> to 0.15 and the Sample size (<m>n</m>) to 10.</p></li>
-              <li><p>Press <alert>Sample</alert>.</p></li>
-              <li><p>Click on the interval to see the endpoint(s), midpoint, and width (verify).</p></li>
-            </ul>
-          </p>
+          <ul>
+            <li><p>Set the value of <m>\pi</m> to 0.15 and the Sample size (<m>n</m>) to 10.</p></li>
+            <li><p>Press <alert>Sample</alert>.</p></li>
+            <li><p>Click on the interval to see the endpoint(s), midpoint, and width (verify).</p></li>
+          </ul>
           <image source="images/Inv1.10applet1.png" width="100%">
             <description>Simulating Confidence Intervals applet showing single interval for pi=0.15, n=10</description>
           </image>
@@ -410,11 +404,9 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
     </p>
 <paragraphs>
         <sidebyside widths="55% 40%">
-          <p>
-            <ul>
-              <li>Use the <alert>Method</alert> pull-down menu to select <alert>Exact Binomial</alert> and continue to press <alert>Sample</alert> until you generate at least 1,000 confidence intervals from a process with <m>\pi = 0.15</m> and <m>n = 10</m>.</li>
-            </ul>
-          </p>
+          <ul>
+            <li>Use the <alert>Method</alert> pull-down menu to select <alert>Exact Binomial</alert> and continue to press <alert>Sample</alert> until you generate at least 1,000 confidence intervals from a process with <m>\pi = 0.15</m> and <m>n = 10</m>.</li>
+          </ul>
           <image source="images/inv1.10applet3.png" width="100%">
             <description>Simulating Confidence Intervals applet showing Exact Binomial method</description>
           </image>
@@ -497,13 +489,11 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
 
     <assemblage xml:id="plus-four-definition">
       <title>Definition: <term>Plus Four</term> 95% Confidence Interval for <m>\pi</m></title>
-      <p>
-        <ul>
-          <li><p>Determine the number of successes (<m>X</m>) and sample size (<m>n</m>) in the study</p></li>
-          <li><p>Increase the number of successes by two and the sample size by four, and calculate a new proportion: <m>\tilde{p} = (X + 2)/(n + 4)</m>. Make this value the midpoint of the interval.</p></li>
-          <li><p>Use the <m>z</m>-interval procedure as above for the augmented sample size of <m>(n + 4)</m>: <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{n+4}}</m></p></li>
-        </ul>
-      </p>
+      <ul>
+        <li><p>Determine the number of successes (<m>X</m>) and sample size (<m>n</m>) in the study</p></li>
+        <li><p>Increase the number of successes by two and the sample size by four, and calculate a new proportion: <m>\tilde{p} = (X + 2)/(n + 4)</m>. Make this value the midpoint of the interval.</p></li>
+        <li><p>Use the <m>z</m>-interval procedure as above for the augmented sample size of <m>(n + 4)</m>: <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{n+4}}</m></p></li>
+      </ul>
       <p>
         In short, with 95% confidence, the idea is to pretend you have 2 more successes and 2 more failures than you really did. For confidence levels other than 95%, researchers have recommended using the <em>Adjusted Wald</em> method: <m>\tilde{p} = (X + 0.5(z^*)^2)/(n + (z^*)^2)</m> and <m>\tilde{n} = n + (z^*)^2</m> so the interval becomes <m>\tilde{p} \pm z^* \sqrt{\frac{\tilde{p}(1-\tilde{p})}{\tilde{n}}}</m>.
       </p>
@@ -514,12 +504,10 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
           Investigate the reliability of the Plus Four procedure using the applet:
         </p>
         <sidebyside widths="55% 40%">
-          <p>
-            <ul>
-              <li><p>Use the <alert>Method</alert> pull-down menu to change from Exact Binomial to Plus Four (95%).</p></li>
-              <li><p>Generate at least 1,000 confidence intervals from a process with <m>\pi = 0.15</m> and <m>n = 10</m>.</p></li>
-            </ul>
-          </p>
+          <ul>
+            <li><p>Use the <alert>Method</alert> pull-down menu to change from Exact Binomial to Plus Four (95%).</p></li>
+            <li><p>Generate at least 1,000 confidence intervals from a process with <m>\pi = 0.15</m> and <m>n = 10</m>.</p></li>
+          </ul>
           <image source="images/inv1.10applet5.png" width="100%">
             <description>Simulating Confidence Intervals applet showing Plus Four method</description>
           </image>
@@ -913,7 +901,7 @@ Change the <alert>Number of intervals</alert> to 100 and press <alert>Sample</al
       <title>Practice Problem 1.10A</title>
 
       <p>
-        Return to your exploration using the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1" visual="rossmanchance.com/applets/2021/confsim/ConfSim.html">Simulating Confidence Intervals applet</url>. Assume that <m>\pi = 0.667</m> is the probability that a kissing couple leans to the right.
+        Return to your exploration using the <url href="https://www.rossmanchance.com/applets/2021/confsim/ConfSim.html?hideExtras=1" visual="new">Simulating Confidence Intervals applet</url>. Assume that <m>\pi = 0.667</m> is the probability that a kissing couple leans to the right.
       </p>
 
       <exercise xml:id="practice-1-10a-a" label="PP1.10A.1">
