@@ -1,0 +1,42 @@
+﻿Fixed 47 dot bullets (level 1, 0.5" indent)
+Fixed 50 'o' sub-bullets (level 2, 1.0" indent)
+Fixed 10 wingdings sub-sub-bullets (level 3, 1.5" indent)
+Total: 107 paragraphs fixed
+python : Traceback (most recent call last):
+At line:1 char:1
++ python fix_bullets.py 2>&1 | Out-File bullet_fix_output.txt -Encoding ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last) 
+   ::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\bchance\repos\iscam-runestone\fix_bullets.py", line 132, in 
+<module>
+    doc.save(FILEPATH)
+    ~~~~~~~~^^^^^^^^^^
+  File "C:\Users\bchance\AppData\Local\Programs\Python\Python314\Lib\site-packa
+ges\docx\document.py", line 204, in save
+    self._part.save(path_or_stream)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\bchance\AppData\Local\Programs\Python\Python314\Lib\site-packa
+ges\docx\parts\document.py", line 114, in save
+    self.package.save(path_or_stream)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\bchance\AppData\Local\Programs\Python\Python314\Lib\site-packa
+ges\docx\opc\package.py", line 166, in save
+    PackageWriter.write(pkg_file, self.rels, self.parts)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bchance\AppData\Local\Programs\Python\Python314\Lib\site-packa
+ges\docx\opc\pkgwriter.py", line 34, in write
+    phys_writer = PhysPkgWriter(pkg_file)
+  File "C:\Users\bchance\AppData\Local\Programs\Python\Python314\Lib\site-packa
+ges\docx\opc\phys_pkg.py", line 109, in __init__
+    self._zipf = ZipFile(pkg_file, "w", compression=ZIP_DEFLATED)
+                 ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\bchance\AppData\Local\Programs\Python\Python314\Lib\zipfile\__
+init__.py", line 1440, in __init__
+    self.fp = io.open(file, filemode)
+              ~~~~~~~^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 
+'c:\\Users\\bchance\\Dropbox\\My Documents\\Classes\\Stat 301 - Win 
+26\\lectures\\finalreview.docx'
