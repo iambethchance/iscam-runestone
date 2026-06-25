@@ -599,3 +599,9 @@ section#chapter5.chapter > h2.heading > span.codenumber + span.space {
 #ptx-sidebar #ptx-toc li.toc-item.toc-chapter > ul.structural.toc-item-list > li.toc-item.toc-section > .toc-title-box {
     padding-left: 0.55rem;
 }
+
+/* Sidebar TOC: selectively indent Section 2.2 and 2.3 top-level entries only. */
+#ptx-sidebar #ptx-toc li.toc-item.toc-chapter > .toc-title-box:has(> a.internal[href="chapter5.html"]),
+#ptx-sidebar #ptx-toc li.toc-item.toc-chapter > .toc-title-box:has(> a.internal[href="chapter6.html"]) {
+    padding-left: 0.55rem;
+}
