@@ -46,11 +46,11 @@
         <title>Descriptive Statistics Applet</title>
         <p><url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url></p>
       </aside>
-      <p><ul>
+      <ul>
         <li><p>Use technology to create a histogram and describe the behavior of the data – shape, center, spread, outliers (suggest an explanation?).</p></li>
         <li><p>Then overlay a normal probability model. Do these data behave like a normal distribution? If not, how do they deviate from normality? Does the shape make sense in this context?</p></li>
         <li><p>Also examine a normal probability plot and discuss how deviations from the line correspond to the nonnormal shape you are observing.</p></li>
-      </ul></p>
+      </ul>
       <hint>
         <p>Were the observed response times/quantiles placed on the vertical or the horizontal axis?</p>
       </hint>
@@ -249,11 +249,11 @@
     <hint>
       <title>Applet Instructions</title>
       <p>Use the <url href="https://www.rossmanchance.com/applets/2021/descstats/Dotplot.htm">Descriptive Statistics applet</url>:</p>
-      <p><ul>
+      <ul>
         <li><p>Paste in the data.</p></li>
         <li><p>Check the <term index="no">Add Boxplot</term> box.</p></li>
         <li><p>Check the <term index="no">Show outliers</term> box.</p></li>
-      </ul></p>
+      </ul>
       <p>Expected output:</p>
       <image source="images/Inv2-2f-Applet.jpg" width="60%">
         <description>Applet modified boxplot showing outliers</description>
@@ -263,12 +263,12 @@
       <title>R Instructions</title>
       <p>Use the <c>boxplot</c> or <c>iscamboxplot</c> function:</p>
       <program language="r">
-        <input>
+        <code>
 boxplot(responsetime, ylab="time until reaction",    # Adds labels
         horizontal=TRUE)                              # Makes horizontal
 # OR
 iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
-        </input>
+        </code>
       </program>
       <p>Expected output:</p>
       <image source="images/Inv2-2f-R.jpg" width="60%">
@@ -330,9 +330,9 @@ iscamboxplot(honking$responsetime, xlab="Time until reaction (seconds)")
     <hint>
       <title>R Instructions</title>
       <program language="r">
-        <input>
+        <code>
 lnresponsetime = log(responsetime)
-        </input>
+        </code>
       </program>
     </hint>
     <hint>
@@ -407,13 +407,13 @@ lnresponsetime = log(responsetime)
       <title>R Instructions</title>
       <p>For the qqplot we have to first get the quantiles:</p>
       <program language="r">
-        <input>
+        <code>
 theoquant = qexp(ppoints(12))      # Generates 1/n quantiles for 12 observations
                                     # from exponential distribution
 hist(theoquant)                     
 qqplot(responsetime, theoquant)    # Your data vs. quantiles. Look for a line.
 iscamaddexp(responsetime)          # overlay exponential model
-        </input>
+        </code>
       </program>
     </hint>
     <hint>
@@ -490,11 +490,11 @@ pexp(2, rate = 1/4.25)
     <hint>
       <title>In R</title>
       <program language="r" interactive="sage">
-        <input>
+        <code>
 qqplot(responsetime, qlnorm(ppoints(12)))
 iscamaddlnorm(responsetime)
 plnorm(2, meanlog = 1.292, sdlog = 0.5238)
-        </input>
+        </code>
       </program>
     </hint>
     <hint>
