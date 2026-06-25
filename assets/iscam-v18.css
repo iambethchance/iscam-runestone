@@ -595,20 +595,25 @@ section#chapter5.chapter > h2.heading > span.codenumber + span.space {
     display: none !important;
 }
 
-/* Sidebar TOC: subtle indent for chapter sections (e.g., Chapter 1 sections under intro). */
-#ptx-sidebar #ptx-toc li.toc-item.toc-chapter > ul.structural.toc-item-list > li.toc-item.toc-section > .toc-title-box {
-    padding-left: 0.55rem;
+/* Section 2 summary assemblages - salmon (match Ch1 summary box style). */
+.ptx-content article.assemblage.assemblage-like#one-sample-t-summary,
+.ptx-content article.assemblage.assemblage-like#prediction-interval-summary {
+    --assemblage-like-body-background: #F8DDD8 !important;
+    --assemblage-like-border-color: #E6B3A8 !important;
+    background-color: #F8DDD8 !important;
+    border-left: 4px solid #E6B3A8 !important;
 }
 
-/* Sidebar TOC: selectively indent Section 2.2 and 2.3 top-level entries only. */
-#ptx-sidebar #ptx-toc li.toc-item.toc-chapter > .toc-title-box:has(> a.internal[href="chapter5.html"]),
-#ptx-sidebar #ptx-toc li.toc-item.toc-chapter > .toc-title-box:has(> a.internal[href="chapter6.html"]) {
-    padding-left: 0.55rem;
+.ptx-content article.assemblage.assemblage-like#one-sample-t-summary *,
+.ptx-content article.assemblage.assemblage-like#prediction-interval-summary * {
+    --assemblage-like-body-background: #F8DDD8 !important;
+    --assemblage-like-border-color: #E6B3A8 !important;
+    background-color: #F8DDD8 !important;
 }
 
-/* Fallback: indent link text for browsers that do not fully support :has(). */
-#ptx-sidebar #ptx-toc li.toc-item.toc-chapter > .toc-title-box > a.internal[href="chapter5.html"],
-#ptx-sidebar #ptx-toc li.toc-item.toc-chapter > .toc-title-box > a.internal[href="chapter6.html"] {
-    display: inline-block;
-    padding-left: 0.55rem;
+/* Color alert labels (H_0 colon, etc.) in Ch2 summary assemblages. */
+.ptx-content article.assemblage.assemblage-like#one-sample-t-summary em.alert,
+.ptx-content article.assemblage.assemblage-like#prediction-interval-summary em.alert {
+    color: #8B3A2F !important;
+    background-color: transparent !important;
 }
