@@ -605,3 +605,10 @@ section#chapter5.chapter > h2.heading > span.codenumber + span.space {
 #ptx-sidebar #ptx-toc li.toc-item.toc-chapter > .toc-title-box:has(> a.internal[href="chapter6.html"]) {
     padding-left: 0.55rem;
 }
+
+/* Fallback: indent link text for browsers that do not fully support :has(). */
+#ptx-sidebar #ptx-toc li.toc-item.toc-chapter > .toc-title-box > a.internal[href="chapter5.html"],
+#ptx-sidebar #ptx-toc li.toc-item.toc-chapter > .toc-title-box > a.internal[href="chapter6.html"] {
+    display: inline-block;
+    padding-left: 0.55rem;
+}
