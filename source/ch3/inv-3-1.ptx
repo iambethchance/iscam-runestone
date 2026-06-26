@@ -259,13 +259,13 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <hint>
         <title>JMP Instructions</title>
         <p>You can specify the counts from the two-way table, but you have to do so in "column format" (each row is a combination of the two variables and the counts are all in one column)</p>
-        <p><ul>
+        <ul>
           <li><p>Select <term index="no">Analyze > Fit Y by X</term> .</p></li>
           <li><p>Click Hearing Loss then click the <term index="no">Y, Response</term> button (or drag).</p></li>
           <li><p>Click Year then click the <term index="no">X, Factor</term> button (or drag). (With raw data, you would be done here.)</p></li>
           <li><p>Finally click <term index="no">Count</term> then the <term index="no">Freq</term> button. Click <term index="no">OK</term>.</p></li>
           <li><p>Right-click on one of the bars and select <term index="no">Cell Labelling > Show Percents</term>.</p></li>
-        </ul></p>
+        </ul>
         <p>JMP creates a "Mosaic Plot" (the column widths also reflect the relative sample sizes). An extended two-way table is shown below the Mosaic Plot although the rows and columns are reversed. Click the red Contingency Table arrow and uncheck Col% and Total% to see a less cluttered table.</p>
       </hint>
     </paragraphs>
@@ -425,12 +425,12 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     <p>We will begin our simulation analysis by assuming the (common) population proportion is actually 
     this value (<m>\pi = 0.173</m>). We simulate the drawing of two different random samples from this population, one to represent the 1994 study and the other for the 2006 study. Then we examine the distribution of the difference in the conditional proportions with some hearing loss between these two years. Finally, we repeat this random sampling process for many trials. [Note: We can assume <m>\pi = 0.173</m> without loss of generality, but you might want to verify this with other values for <m>\pi</m> as well.]</p>
      <p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url> to randomly sample one "could have been" difference in conditional proportions <em>assuming the null hypothesis is true</em>.</p>
-        <p><ul>
+        <ul>
           <li><p>Specify .173 as the process probability for both populations.</p></li>
           <li><p>Specify 2928 and 1771 as the two sample sizes.</p></li>
           <li><p>Leave the <alert>Number of samples</alert> set to 1.</p></li>
           <li><p>Press <alert>Draw Samples</alert>.</p></li>
-        </ul></p>
+        </ul>
    
   <interactive iframe="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html?hideExtras=1" width="160%" aspect="3:2"/>
     
@@ -500,9 +500,8 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     </exercise>
 
     <p>To learn about the pattern of variation in our statistic, we want to generate many more outcomes assuming the null hypothesis to be true.</p>
-<ul><li>Change the <alert>Number of samples</alert> from 1 to 999</li>
-<li>Press <alert>Draw Samples</alert> for a total of 1,000 independent pairs of random samples. 
-</li></ul>
+<ul><li><p>Change the <alert>Number of samples</alert> from 1 to 999.</p></li>
+<li><p>Press <alert>Draw Samples</alert> for a total of 1,000 independent pairs of random samples.</p></li></ul>
     <exercise xml:id="inv3-1-n">
       <title>Many Repetitions</title>
       <statement><p>Describe the distribution of <m>\hat{p}_1</m> values, the distribution of <m>\hat{p}_2</m> values, and the distribution of <m>\hat{p}_1 - \hat{p}_2</m> values. Does the distribution of difference in proportions behave as you expected? In particular, does the mean of this distribution make sense? (How does it compare to the means of the individual <m>\hat{p}</m> distributions?) Explain.</p></statement>
@@ -514,8 +513,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       </solution>
       <response/>
     </exercise>
-<ul><li>Now determine the empirical p-value by counting how often the simulated difference in conditional proportions is at least as extreme as the actual value observed in the study by entering the observed value in the <alert>Count Samples</alert> box and pressing the <alert>Count</alert> button. (Make sure the direction matches the alternative hypothesis.) 
-</li></ul>
+<ul><li><p>Now determine the empirical p-value by counting how often the simulated difference in conditional proportions is at least as extreme as the actual value observed in the study by entering the observed value in the <alert>Count Samples</alert> box and pressing the <alert>Count</alert> button. (Make sure the direction matches the alternative hypothesis.)</p></li></ul>
      ￼
      ￼
     <exercise xml:id="inv3-1-o">
@@ -553,7 +551,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <solution><p>The normal distribution</p></solution>
       <response/>
     </exercise>
-<ul><li>Check the <alert>Normal Approximation</alert> box to overlay a normal curve on your null distribution to evaluate whether the simulated differences appear to "line up" with observations from a standard normal distribution. </li></ul>
+<ul><li><p>Check the <alert>Normal Approximation</alert> box to overlay a normal curve on your null distribution to evaluate whether the simulated differences appear to "line up" with observations from a standard normal distribution.</p></li></ul>
     <exercise xml:id="inv3-1-q">
       <title>Normal Approximation</title>
       <statement><p>Does the normal model appear to be a reasonable approximation to the null distribution?</p></statement>
@@ -837,12 +835,12 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <hint>
         <title>Theory-Based Inference applet</title>
         <p>In <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url></p>
-        <p><ul>
+        <ul>
           <li><p>Select <term index="no">Two proportions</term></p></li>
           <li><p>Check the box to paste in 2 columns of data (stacked or unstacked) and press <term index="no">Use Data</term> or specify the sample sizes and either the sample counts or the sample proportions and press <term index="no">Calculate</term>.</p></li>
           <li><p>For the test, check the box for <term index="no">Test of Significance</term>. Keep the hypothesized difference at zero and set the direction of the alternative, press <alert>Calculate</alert>.</p></li>
           <li><p>For the confidence interval, check the <term index="no">Confidence Interval</term> box, specify the confidence level and press <term index="no">Calculate CI</term></p></li>
-        </ul></p>
+        </ul>
         <sidebyside widths="45% 45%">
           <image source="images/Inv3.1TBI1.png"/>
           <image source="images/Inv3.1TBI2.png"/>
@@ -851,7 +849,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <hint>
         <title>R Instructions</title>
         <p>The <c>iscamtwopropztest</c> function takes the following inputs:</p>
-        <p><ul>
+        <ul>
           <li><p><c>observed1</c> = either the number of successes or sample proportion for first group</p></li>
           <li><p><c>n1</c> = sample size for first group</p></li>
           <li><p><c>observed2</c> = count or proportion for second group</p></li>
@@ -859,7 +857,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
           <li><p><c>hypothesized</c> = hypothesized difference (default is 0)</p></li>
           <li><p><c>alternative</c> = "less", "greater", or "two.sided" for the direction of the alternative hypothesis</p></li>
           <li><p><c>conf.level</c> = the confidence level (e.g., 0.95 for 95%)</p></li>
-        </ul></p>
+        </ul>
         
         <p>For the hearing loss study:</p>
         <sage language="r">
@@ -882,27 +880,27 @@ invisible()
         <title>JMP Instructions</title>
         <sidebyside widths="50% 45%" valign="top">
           <stack>
-            <p><ul>
+            <ul>
               <li><p><em>With raw data or after specifying the two-way table in column format</em>, select <term index="no">Analyze > Fit Y by X</term> and specify the categorical response variable (<term index="no">Y, Response</term>) and the categorical explanatory variable (<term index="no">X, Factor</term>)</p></li>
-              <ul><li>Specify the counts if using a two-way table (and "year" is seen as a categorical variable)</li></ul>
+              <ul><li><p>Specify the counts if using a two-way table (and "year" is seen as a categorical variable)</p></li></ul>
               <li><p>Press <term index="no">OK</term>.</p></li>
-            </ul></p>
+            </ul>
           </stack>
           <image source="images/Inv3.1JMP1.png"/>
         </sidebyside>
         <ul>
-          <li>The p-value in the Pearson row matches a two-sided <em>z</em>-test.</li>
-          <li>For a confidence interval, use the hot spot to select <term index="no">Two Sample Test for Proportions</term></li>
+          <li><p>The p-value in the Pearson row matches a two-sided <em>z</em>-test.</p></li>
+          <li><p>For a confidence interval, use the hot spot to select <term index="no">Two Sample Test for Proportions</term></p></li>
         </ul>
         <p><alert>Note:</alert> Here you can change which outcome is considered success. This also reports an "adjusted Wald" p-value</p>
         
         <sidebyside widths="50% 45%" valign="top">
           <stack>
-            <p><ul>
+            <ul>
               <li><p><em>With summary data</em> use the <url href="http://www.rossmanchance.com/iscam3/data/ISCAM_Journal.jrn">ISCAM Journal file</url>: Hypothesis Test for Two Proportions</p></li>
               <li><p>Specify the form of the alternative hypothesis</p></li>
               <li><p>Enter the number of successes and the sample sizes</p></li>
-            </ul></p>
+            </ul>
           </stack>
           <image source="images/Inv3.1JMP2.png"/>
         </sidebyside>
@@ -976,13 +974,13 @@ invisible()
       <title>Technology Detour – Simulating Proportions from Independent Random Samples</title>
       <p></p>
       <p>Simulation Steps:</p>
-      <p><ol>
+      <ol>
         <li><p>Generate a random sample of 2928 observations from a binomial process with <m>\pi = .173</m></p></li>
         <li><p>Generate a random sample of 1771 observations from a binomial process with <m>\pi = .173</m></p></li>
         <li><p>Convert the sample counts into sample proportions</p></li>
         <li><p>Calculate the difference in the sample proportions</p></li>
         <li><p>Repeat steps 1-4 a large number of times.</p></li>
-      </ol></p>
+      </ol>
       <p>You should explore the individual <m>\hat{p}</m> distributions but most focus on the distribution of <m>\hat{p}_1 - \hat{p}_2</m>, including the mean, standard deviation, and whether the distribution behaves like a normal distribution.</p>
     </assemblage>
 
@@ -1051,24 +1049,24 @@ invisible()  # Suppress any remaining output
       <hint>
         <title>JMP Instructions</title>
         <p>Generate a random sample for 1994:</p>
-        <p><ul>
+        <ul>
           <li><p>In an empty Data window, select <term index="no">Cols > New Column</term>. 
           Name the column count1994, and specify 1 row. Create a formula and select <term index="no">Random > Random Binomial</term>. Specify <em>n</em> = 2928 and <em>p</em> = 0.173. Press <term index="no">OK</term></p></li>
-        </ul></p>
+        </ul>
         <p>Generate 1000 random samples from each year, calculate the proportions, find the differences:</p>
-        <p><ul>
+        <ul>
           <li><p>Create a new column but specify 1000 as the number of rows and repeat the above commands. (After creating the first column, you can double click on a second column to activate it, and then right click to open the formula editor.)</p></li>
           <li><p>Then create a new column/formula where you compute the difference in the proportions: count1994/2928 – count2006/1771. Call this column diff.</p></li>
-        </ul></p>
+        </ul>
         <p>Display the generated distributions:</p>
-        <p><ul>
+        <ul>
           <li><p>Choose <term index="no">Analyze > Distribution</term> and specify the differences column.</p></li>
           <li><p>Create a new column with a "conditional if" formula for diff <m>\leq</m> -0.024 ("true" or "false"). Then use <term index="no">Analyze > Distribution</term> to tally this column.</p></li>
-        </ul></p>
+        </ul>
         <p>Compare to a normal distribution:</p>
-        <p><ul>
+        <ul>
           <li><p>Use the diff hot spot to select <term index="no">Continuous Distribution > Normal</term> and to select <term index="no">Normal Quantile Plot</term>.</p></li>
-        </ul></p>
+        </ul>
       </hint>
     </paragraphs>
 </section>
