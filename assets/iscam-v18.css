@@ -649,3 +649,10 @@ section#chapter6.chapter > h2.heading > span.codenumber + span.space {
     color: #8B3A2F !important;
     background-color: transparent !important;
 }
+
+/* Reduce blank lines between consecutive hint/solution expandable items. */
+.ptx-content details.hint-like + details.hint-like,
+.ptx-content details.hint-like + details.solution-like,
+.ptx-content details.solution-like + details.hint-like {
+    margin-top: 0.2em !important;
+}
