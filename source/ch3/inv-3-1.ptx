@@ -311,8 +311,8 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <title>Hypotheses</title>
       <statement>
         <p>Let <m>\pi_{94}</m> represent the proportion of all American teenagers in 1994 with at least some hearing loss, and similarly for <m>\pi_{06}</m>. Define the parameter of interest to be <m>\pi_{94} - \pi_{06}</m>, the difference in the population proportions between these two years. State appropriate null and alternative hypotheses about this parameter to reflect the researchers' conjecture that hearing loss by teens is becoming more prevalent.</p>
-        <p><m>H_0: </m> <var width="15"/> <var width="5"/> <var width="10"/></p>
-        <p><m>H_a: </m> <var width="15"/> <var width="5"/> <var width="10"/></p>
+        <p><m>H_0\!: </m> <var width="15"/> <var width="5"/> <var width="10"/></p>
+        <p><m>H_a\!: </m> <var width="15"/> <var width="5"/> <var width="10"/></p>
       </statement>
       <setup>
         <!-- H0 var 1: parameter expression (accept "pi94 - pi06" or just "pi94") -->
@@ -371,8 +371,8 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
         </var>
       </setup>
       <solution>
-        <p><m>H_0: \pi_{94} = \pi_{06}</m> or <m>\pi_{94} - \pi_{06} = 0</m> (the population proportions are the same)</p>
-        <p><m>H_a: \pi_{94} - \pi_{06} &lt; 0</m> or <m>\pi_{94} &lt; \pi_{06}</m> (a higher rate of hearing loss in 2006 than in 1994)</p>
+        <p><m>H_0\!: \pi_{94} = \pi_{06}</m> or <m>\pi_{94} - \pi_{06} = 0</m> (the population proportions are the same)</p>
+        <p><m>H_a\!: \pi_{94} - \pi_{06} &lt; 0</m> or <m>\pi_{94} &lt; \pi_{06}</m> (a higher rate of hearing loss in 2006 than in 1994)</p>
         <p>Success = some hearing loss</p>
       </solution>
       <response/>
@@ -619,7 +619,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     <assemblage>
       <title>Central Limit Theorem for the difference in two sample proportions</title>
       <p>When taking two independent samples (of sizes <m>n_1</m> and <m>n_2</m>) from large populations, the distribution of the difference in the sample proportions <m>(\hat{p}_1 - \hat{p}_2)</m> is approximately normal with mean equal to <m>\pi_1 - \pi_2</m> and standard deviation equal to <m>SD(\hat{p}_1 - \hat{p}_2) = \sqrt{\frac{\pi_1(1-\pi_1)}{n_1} + \frac{\pi_2(1-\pi_2)}{n_2}}</m>.</p>
-      <p>Under the null hypothesis <m>H_0: \pi_1 - \pi_2 = 0</m>, the standard deviation simplifies to <m>\sqrt{\pi(1-\pi)(\frac{1}{n_1} + \frac{1}{n_2})}</m> where <m>\pi</m> is the common population proportion.</p>
+      <p>Under the null hypothesis <m>H_0\!: \pi_1 - \pi_2 = 0</m>, the standard deviation simplifies to <m>\sqrt{\pi(1-\pi)(\frac{1}{n_1} + \frac{1}{n_2})}</m> where <m>\pi</m> is the common population proportion.</p>
       <p><term>Technical Conditions:</term> We will consider the normal model appropriate if the sample sizes are large, namely <m>n_1\pi_1 > 5</m>, <m>n_1(1 - \pi_1) > 5</m>, <m>n_2\pi_2 > 5</m>, <m>n_2(1 - \pi_2) > 5</m>, and the populations are large compared to the sample sizes.</p>
       <p>Note: The variability in the differences in sample proportions is larger than the variability of individual sample proportions. In fact, the <em>variances</em> (standard deviation squared) add, and then we take the square root of the sum of variances to find the standard deviation.</p>
     </assemblage>
@@ -634,7 +634,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     <p>Then use we use this value to calculate the standard error of <m>\hat{p}_1 - \hat{p}_2</m> to be:</p>
     <p><m>SE(\hat{p}_1 - \hat{p}_2) = \sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1} + \frac{1}{n_2})}</m></p>
 
-<p>Use these theoretical results to suggest the general <em>formula</em> for a standardized statistic and a method for calculating a p-value to test <m>H_0: \pi_1 - \pi_2 = 0</m> (also expressed as <m>H_0: \pi_1 = \pi_2</m>) versus the alternative <m>H_a: \pi_1 - \pi_2 &lt; 0</m> (or <m>H_a: \pi_1 &lt; \pi_2</m>). (This is referred to as the <term>two-sample z-test</term><idx><h>two-sample z-test</h></idx> or <term>two proportion z-test</term><idx><h>two proportion z-test</h></idx>.)</p>
+<p>Use these theoretical results to suggest the general <em>formula</em> for a standardized statistic and a method for calculating a p-value to test <m>H_0\!: \pi_1 - \pi_2 = 0</m> (also expressed as <m>H_0\!: \pi_1 = \pi_2</m>) versus the alternative <m>H_a \pi_1 - \pi_2 &lt; 0</m> (or <m>H_a\!: \pi_1 &lt; \pi_2</m>). (This is referred to as the <term>two-sample z-test</term><idx><h>two-sample z-test</h></idx> or <term>two proportion z-test</term><idx><h>two proportion z-test</h></idx>.)</p>
 
     <exercise xml:id="inv3-1-u">
       <title>Standardized Statistic Formula</title>
@@ -982,9 +982,8 @@ invisible()
         <li><p>Repeat steps 1-4 a large number of times.</p></li>
       </ol>
       <p>You should explore the individual <m>\hat{p}</m> distributions but most focus on the distribution of <m>\hat{p}_1 - \hat{p}_2</m>, including the mean, standard deviation, and whether the distribution behaves like a normal distribution.</p>
-    </assemblage>
 
-    <paragraphs>
+      <paragraphs>
       <hint>
         <title>R Instructions</title>
         <p>Generate a random sample for 1994:</p>
@@ -1069,4 +1068,5 @@ invisible()  # Suppress any remaining output
         </ul>
       </hint>
     </paragraphs>
+    </assemblage>
 </section>
