@@ -252,13 +252,13 @@
 
   <paragraphs>
     <p>Open the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?twobytwo=1">Analyzing Two-way Tables applet</url>.</p>
-    <p><ul>
-      <li>Paste in the raw data and press <alert>Use Data</alert> or enter the titles and counts of a two-way table and press <alert>Use Table</alert>. (Or check the 2×2 box and enter the cell values and headers). Or use the version below.</li>
-      <li>Select <em>GroupA Successes</em> as the <alert>Statistic</alert>.</li>
-      <li>Check the <alert>Show Shuffle Options</alert> box.</li>
-      <li>Set <alert>Number of Shuffles</alert> to 1000.</li>
-      <li>Press <alert>Shuffle</alert>.</li>
-    </ul></p>
+    <ul>
+      <li><p>Paste in the raw data and press <alert>Use Data</alert> or enter the titles and counts of a two-way table and press <alert>Use Table</alert>. (Or check the 2×2 box and enter the cell values and headers). Or use the version below.</p></li>
+      <li><p>Select <em>GroupA Successes</em> as the <alert>Statistic</alert>.</p></li>
+      <li><p>Check the <alert>Show Shuffle Options</alert> box.</p></li>
+      <li><p>Set <alert>Number of Shuffles</alert> to 1000.</p></li>
+      <li><p>Press <alert>Shuffle</alert>.</p></li>
+    </ul>
   </paragraphs>
 <interactive iframe="https://www.rossmanchance.com/applets/2021/test/ChiSqShuffle.htm?yawning=2&amp;hideExtras=1" width="160%" aspect="3:2"/>
   <exercise xml:id="inv3-6-e">
@@ -274,11 +274,11 @@
     <response/>
   </exercise>
 
-      <p><ul>
-        <li>Specify the observed number of successes in the <alert>Count Samples</alert> box.</li>
-        <li>Then indicate whether the research conjecture expected a larger or smaller number of successes in the seed treatment by choosing <em>Greater Than</em> or <em>Less Than</em> from the pull-down menu.</li>
-        <li>Then press the <alert>Count</alert> button.</li>
-      </ul></p>
+      <ul>
+        <li><p>Specify the observed number of successes in the <alert>Count Samples</alert> box.</p></li>
+        <li><p>Then indicate whether the research conjecture expected a larger or smaller number of successes in the seed treatment by choosing <em>Greater Than</em> or <em>Less Than</em> from the pull-down menu.</p></li>
+        <li><p>Then press the <alert>Count</alert> button.</p></li>
+      </ul>
 
   <exercise xml:id="inv3-6-f">
     <title>Estimate p-value</title>
@@ -574,26 +574,26 @@
     <hint>
       <title>Applet Instructions</title>
       <p>In the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?usetwobytwo=1">Analyzing Two-way Tables applet</url>:</p>
-      <p><ul>
-        <li>Choose the 2×2 box to enter the cell values and headers for a two-way table</li>
-        <li>Enter the two-way table (and row and column headers)</li>
-        <li>Press <alert>Use Table</alert></li>
-        <li>Check the box for <alert>Show Fisher's Exact Test</alert> in the lower left corner</li>
-        <li>A check box will appear for determining the two-sided p-value</li>
-      </ul></p>
+      <ul>
+        <li><p>Choose the 2×2 box to enter the cell values and headers for a two-way table</p></li>
+        <li><p>Enter the two-way table (and row and column headers)</p></li>
+        <li><p>Press <alert>Use Table</alert></p></li>
+        <li><p>Check the box for <alert>Show Fisher's Exact Test</alert> in the lower left corner</p></li>
+        <li><p>A check box will appear for determining the two-sided p-value</p></li>
+      </ul>
       <p>Example applet output:</p>
       <image source="images/Inv3.6applet.jpg" width="70%"/>
     </hint>
     <hint>
       <title>R Instructions</title>
       <p>The <c>iscamhyperprob</c> function takes the following inputs:</p>
-      <p><ul>
-        <li><c>k</c>, the observed value of interest (or the difference in conditional proportions, assumed if value is less than one, including negative)</li>
-        <li><c>total</c>, the total number of observations in the two-way table</li>
-        <li><c>succ</c>, the overall number of successes in the table</li>
-        <li><c>n</c>, the number of observations in "group A"</li>
-        <li><c>lower.tail</c>, a Boolean which is TRUE or FALSE</li>
-      </ul></p>
+      <ul>
+        <li><p><c>k</c>, the observed value of interest (or the difference in conditional proportions, assumed if value is less than one, including negative)</p></li>
+        <li><p><c>total</c>, the total number of observations in the two-way table</p></li>
+        <li><p><c>succ</c>, the overall number of successes in the table</p></li>
+        <li><p><c>n</c>, the number of observations in "group A"</p></li>
+        <li><p><c>lower.tail</c>, a Boolean which is TRUE or FALSE</p></li>
+      </ul>
       <p>For example:</p>
       <sage language="r">
         <input>
@@ -612,12 +612,12 @@ iscamhyperprob(k=10, total=50, succ=14, n=34, lower.tail=FALSE)
     <hint>
       <title>JMP Instructions</title>
       <p>Using the Distribution Calculator:</p>
-      <p><ul>
-        <li>Choose <term index="no">Hypergeometric</term> from the Distribution menu</li>
-        <li>Specify the values of Population Size = table total, Number of Items = total number of successes, Sample Size = group 1 total</li>
-        <li>Select <term index="no">Input quantiles and compute probabilities</term></li>
-        <li>Specify the upper tail probability and enter Qa = number of successes in "group A" (minus 1)</li>
-      </ul></p>
+      <ul>
+        <li><p>Choose <term index="no">Hypergeometric</term> from the Distribution menu</p></li>
+        <li><p>Specify the values of Population Size = table total, Number of Items = total number of successes, Sample Size = group 1 total</p></li>
+        <li><p>Select <term index="no">Input quantiles and compute probabilities</term></p></li>
+        <li><p>Specify the upper tail probability and enter Qa = number of successes in "group A" (minus 1)</p></li>
+      </ul>
       <p>Keep in mind: To find <m>P(X \geq k)</m> use <m>P(X > k-1)</m>.</p>
       <p>Example JMP output:</p>
       <image source="images/Inv3.6solsJMP.png" width="70%"/>
