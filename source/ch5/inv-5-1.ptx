@@ -28,7 +28,7 @@
           <cell>Total</cell>
         </row>
         <row>
-          <cell halign="left"><alert>Women</alert></cell>
+          <cell halign="left"><strong>Women</strong></cell>
           <cell>119</cell>
           <cell>197</cell>
           <cell>118</cell>
@@ -39,7 +39,7 @@
           <cell>776</cell>
         </row>
         <row>
-          <cell halign="left"><alert>Men</alert></cell>
+          <cell halign="left"><strong>Men</strong></cell>
           <cell>235</cell>
           <cell>533</cell>
           <cell>287</cell>
@@ -50,7 +50,7 @@
           <cell>2199</cell>
         </row>
         <row>
-          <cell halign="left">Total</cell>
+          <cell halign="left"><strong>Total</strong></cell>
           <cell>354</cell>
           <cell>730</cell>
           <cell>405</cell>
@@ -445,10 +445,6 @@
               <li><p>Load the Spock data into the applet and run the simulation.</p></li>
               <li><p>Use the applet output to inspect the simulated chi-squared distribution.</p></li>
             </ul>
-            <p><url href="images/inv5-1TD1.jpg">Solution link (Applet screenshot)</url></p>
-            <image source="images/inv5-1TD1.jpg" width="55%">
-              <description>Applet solution screenshot for chi-squared simulation</description>
-            </image>
           </hint>
 
           <hint>
@@ -458,10 +454,6 @@
               <li><p>To create a normal probability plot: <c>qqnorm(chisqvalues)</c></p></li>
               <li><p>To create a QQ plot with values from a chi-squared distribution: <c>qqplot(chisqsum, qchisq(ppoints(1000), df = 6))</c></p></li>
             </ul>
-            <p><url href="images/inv5-1TD2.jpg">Solution link (R screenshot)</url></p>
-            <image source="images/inv5-1TD2.jpg" width="55%">
-              <description>R solution screenshot for chi-squared simulation</description>
-            </image>
           </hint>
 
           <hint>
@@ -471,16 +463,37 @@
               <li><p>To create a normal probability plot: choose <strong>Analyze &gt; Distribution</strong>, select the <c>chisqstat</c> column, and then use the hot spot to select <strong>Normal Quantile Plot</strong>.</p></li>
               <li><p>The chi-squared distribution is equivalent to a Gamma distribution with shape <m>6/2 = 3</m> and scale <m>2</m>. Use the hot spot to select <strong>Continuous Fit &gt; Gamma</strong>.</p></li>
             </ul>
-            <p><url href="images/inv5-1TD3.jpg">Solution link (JMP screenshot 1)</url></p>
+          </hint>
+        </statement>
+        <solution>
+          <paragraphs>
+            <title>Applet</title>
+            <p>The normal quantile plot shows noticeable curvature rather than a straight-line pattern, so the simulated chi-squared values do not appear to follow a normal distribution well.</p>
+            <image source="images/inv5-1TD1.jpg" width="55%">
+              <description>Applet solution screenshot for chi-squared simulation</description>
+            </image>
+          </paragraphs>
+
+          <paragraphs>
+            <title>R</title>
+            <p>The R output leads to the same conclusion: the normal probability plot bends upward in the right tail, which indicates right skew and suggests that a normal model is not appropriate for this null distribution.</p>
+            <image source="images/inv5-1TD2.jpg" width="55%">
+              <description>R solution screenshot for chi-squared simulation</description>
+            </image>
+          </paragraphs>
+
+          <paragraphs>
+            <title>JMP</title>
+            <p>In JMP, the normal quantile plot again shows clear departure from linearity, reinforcing that the null distribution is not approximately normal.</p>
             <image source="images/inv5-1TD3.jpg" width="55%">
               <description>JMP solution screenshot showing normal quantile plot workflow</description>
             </image>
-            <p><url href="images/inv5-1TD4.jpg">Solution link (JMP screenshot 2)</url></p>
+            <p>Fitting the corresponding gamma distribution produces a much better match, which is consistent with using a chi-squared model for this statistic.</p>
             <image source="images/inv5-1TD4.jpg" width="55%">
               <description>JMP solution screenshot showing gamma fit workflow</description>
             </image>
-          </hint>
-        </statement>
+          </paragraphs>
+        </solution>
       </exercise>
     </paragraphs>
 
