@@ -21,7 +21,7 @@
 
       <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
         <row header="yes">
-          <cell></cell>
+          <cell>Jury lists</cell>
           <cell>Judge 1</cell>
           <cell>Judge 2</cell>
           <cell>Judge 3</cell>
@@ -31,8 +31,8 @@
           <cell>Judge 7</cell>
           <cell>Total</cell>
         </row>
-        <row>
-          <cell halign="left">Women on jury list</cell>
+        <row header="yes">
+          <cell halign="left">Women</cell>
           <cell>119</cell>
           <cell>197</cell>
           <cell>118</cell>
@@ -42,8 +42,8 @@
           <cell>86</cell>
           <cell>776</cell>
         </row>
-        <row>
-          <cell halign="left">Men on jury list</cell>
+        <row header="yes">
+          <cell halign="left">Men</cell>
           <cell>235</cell>
           <cell>533</cell>
           <cell>287</cell>
@@ -73,7 +73,7 @@
       <exercise xml:id="inv5-1-a">
         <title>Compare Sample Proportions</title>
         <statement>
-          <p>(a) Calculate the proportion of women on the jury list for each judge. Also create a segmented bar graph or mosaic plot to compare these distributions. How do the judges compare?</p>
+          <p>Calculate the proportion of women on the jury list for each judge. Also create a segmented bar graph or mosaic plot to compare these distributions. How do the judges compare?</p>
         </statement>
         <response/>
       </exercise>
@@ -81,7 +81,7 @@
       <exercise xml:id="inv5-1-b">
         <title>State Hypotheses</title>
         <statement>
-          <p>(b) Let <m>p_i</m> represent the long-run probability of judge <m>i</m> selecting a female for the jury list. State a null and an alternative hypothesis for testing whether these data provide reason to doubt that the probability of women on jury lists is the same for all seven judges.</p>
+          <p>Let <m>p_i</m> represent the long-run probability of judge <m>i</m> selecting a female for the jury list. State a null and an alternative hypothesis for testing whether these data provide reason to doubt that the probability of women on jury lists is the same for all seven judges.</p>
           <p><em>Note:</em> The null hypothesis states only that the probabilities are equal; it does not specify a particular value for this common probability. The alternative states that at least one probability differs.</p>
         </statement>
         <response/>
@@ -94,7 +94,7 @@
       <exercise xml:id="inv5-1-c">
         <title>Propose a Statistic</title>
         <statement>
-          <p>(c) Suggest a standardized statistic (formula based on your observed sample data) for assessing the strength of evidence against the null hypothesis. Write your statistic as a formula or rule for obtaining one number that takes into account information relevant to comparing all seven groups.</p>
+          <p>Suggest a standardized statistic (formula based on your observed sample data) for assessing the strength of evidence against the null hypothesis. Write your statistic as a formula or rule for obtaining one number that takes into account information relevant to comparing all seven groups.</p>
         </statement>
         <response/>
       </exercise>
@@ -102,11 +102,7 @@
       <exercise xml:id="inv5-1-d">
         <title>Pairwise Differences</title>
         <statement>
-          <p>(d) One possibility is to compare all sample proportions to each other by looking at all pairwise differences. How many such pairs are there? Could we simply sum these differences?</p>
-          <assemblage>
-            <title>Definition: Mean Group Difference</title>
-            <p>One possible statistic for measuring how much the sample proportions differ from each other is the <term>Mean Group Difference</term>, which finds the absolute value of each pairwise difference, sums these values, and divides by the number of differences.</p>
-          </assemblage>
+          <p>One possibility is to compare all sample proportions to each other by looking at all pairwise differences. How many such pairs are there? Could we simply sum these differences?</p>
         </statement>
         <response/>
       </exercise>
@@ -114,17 +110,21 @@
       <exercise xml:id="inv5-1-e">
         <title>Interpret Statistic Values</title>
         <statement>
-          <p>(e) What types of values do you expect this statistic to have when the null hypothesis is true? What about if the null hypothesis is false?</p>
+          <p>What types of values do you expect this statistic to have when the null hypothesis is true? What about if the null hypothesis is false?</p>
         </statement>
         <response/>
       </exercise>
-
+  <assemblage>
+            <title>Definition: Mean Group Difference</title>
+            <p>One possible statistic for measuring how much the sample proportions differ from each other is the <term>Mean Group Difference</term>, which finds the absolute value of each pairwise difference, sums these values, and divides by the number of differences.</p>
+          </assemblage>
+        
       <p>Although we could consider using the Mean Group Difference statistic here, a more common statistic is the chi-squared statistic. Rather than looking at all differences among the groups, it focuses on how each cell count differs from its expected value under the null hypothesis and then sums this up across all cells.</p>
 
       <exercise xml:id="inv5-1-f">
         <title>Estimate Common Probability</title>
         <statement>
-          <p>(f) Assuming the null hypothesis is true and each judge has the same probability of a female juror in his pool, suggest an estimate for this common probability.</p>
+          <p>Assuming the null hypothesis is true and each judge has the same probability of a female juror in his pool, suggest an estimate for this common probability.</p>
         </statement>
         <response/>
       </exercise>
@@ -132,7 +132,7 @@
       <exercise xml:id="inv5-1-g">
         <title>Expected Counts for Judge 1</title>
         <statement>
-          <p>(g) Judge 1 had 354 jurors on the list. If the long-run proportion of women were 0.261, how many would you expect to be female? How many would you expect to be male?</p>
+          <p>Judge 1 had 354 jurors on the list. If the long-run proportion of women were 0.261, how many would you expect to be female? How many would you expect to be male?</p>
           <p><em>Recall:</em> An expected value does not need to be an integer.</p>
         </statement>
         <response/>
@@ -141,7 +141,7 @@
       <exercise xml:id="inv5-1-h">
         <title>Expected Counts for Judge 2</title>
         <statement>
-          <p>(h) How many jurors on Judge 2's list would you expect to be female if his long-run proportion were also 0.261? How many would you expect to be male?</p>
+          <p>How many jurors on Judge 2's list would you expect to be female if his long-run proportion were also 0.261? How many would you expect to be male?</p>
         </statement>
         <response/>
       </exercise>
@@ -149,7 +149,7 @@
       <exercise xml:id="inv5-1-i">
         <title>Complete Expected Counts Table</title>
         <statement>
-          <p>(i) Enter your expected counts below the observed counts in the following table.</p>
+          <p>Enter your expected counts below the observed counts in the following table.</p>
           <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
             <row header="yes">
               <cell></cell>
@@ -173,8 +173,8 @@
             </row>
             <row>
               <cell halign="left">Women (Expected)</cell>
-              <cell><var width="8"/></cell>
-              <cell><var width="8"/></cell>
+              <cell><var width="5"/></cell>
+              <cell><var width="5"/></cell>
               <cell>105.71</cell>
               <cell>58.99</cell>
               <cell>28.97</cell>
@@ -193,8 +193,8 @@
             </row>
             <row>
               <cell halign="left">Men (Expected)</cell>
-              <cell><var width="8"/></cell>
-              <cell><var width="8"/></cell>
+              <cell><var width="5"/></cell>
+              <cell><var width="5"/></cell>
               <cell>299.30</cell>
               <cell>167.01</cell>
               <cell>82.03</cell>
@@ -209,7 +209,7 @@
       <exercise xml:id="inv5-1-j">
         <title>Observed vs. Expected</title>
         <statement>
-          <p>(j) Are the observed counts equal to the expected counts in each cell? Is it possible that the long-run probability of a female juror is the same for each judge and that the observed differences are due to random chance alone?</p>
+          <p>Are the observed counts equal to the expected counts in each cell? Is it possible that the long-run probability of a female juror is the same for each judge and that the observed differences are due to random chance alone?</p>
         </statement>
         <response/>
       </exercise>
@@ -224,7 +224,7 @@
       <exercise xml:id="inv5-1-k">
         <title>Compute Chi-squared Statistic</title>
         <statement>
-          <p>(k) Calculate this standardized statistic for the two-way table above. Fill in the missing terms for the first two judges and then sum all terms.</p>
+          <p>Calculate this standardized statistic for the two-way table above. Fill in the missing terms for the first two judges and then sum all terms.</p>
         </statement>
         <response/>
       </exercise>
@@ -232,7 +232,7 @@
       <exercise xml:id="inv5-1-l">
         <title>Direction of Evidence</title>
         <statement>
-          <p>(l) What types of chi-squared values (large, small, positive, negative) constitute evidence against the null hypothesis of equal long-run probabilities? Explain.</p>
+          <p>What types of chi-squared values (large, small, positive, negative) constitute evidence against the null hypothesis of equal long-run probabilities? Explain.</p>
         </statement>
         <response/>
       </exercise>
@@ -246,15 +246,12 @@
       <exercise xml:id="inv5-1-m">
         <title>Simulation Plan</title>
         <statement>
-          <p>(m) Outline the steps you would use to generate random data for each judge under the null hypothesis that the probability of a juror being female is the same for each judge.</p>
+          <p>Outline the steps you would use to generate random data for each judge under the null hypothesis that the probability of a juror being female is the same for each judge.</p>
         </statement>
         <response/>
       </exercise>
 
-      <exercise xml:id="inv5-1-n">
-        <title>Use Applet</title>
-        <statement>
-          <p>(n) Use the Analyzing Two-Way Tables - Samples applet: <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqSample.htm">ChiSqSample</url>.</p>
+          <p>Use the Analyzing Two-Way Tables - Samples <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqSample.htm">applet</url>.</p>
           <ul>
             <li><p>In the data window, type: <c>Spock.txt</c>.</p></li>
             <li><p>Press <c>Use Data</c>, then press <c>Use Table</c>.</p></li>
@@ -262,14 +259,11 @@
             <li><p>Use 1000 for Number of Samples and press <c>Draw Samples</c>.</p></li>
             <li><p>Use the pull-down to switch the statistic to the chi-squared value.</p></li>
           </ul>
-        </statement>
-        <response/>
-      </exercise>
 
       <exercise xml:id="inv5-1-o">
         <title>Describe Null Distribution</title>
         <statement>
-          <p>(o) Describe the shape, center, and variability of the simulated null distribution.</p>
+          <p>Describe the shape, center, and variability of the simulated null distribution.</p>
         </statement>
         <response/>
       </exercise>
@@ -277,7 +271,7 @@
       <exercise xml:id="inv5-1-p">
         <title>Empirical p-value and Conclusion</title>
         <statement>
-          <p>(p) Based on your simulation, determine the proportion of simulated values that are as large or larger than your value from part (k). Does this empirical p-value provide convincing evidence that the observed discrepancy is larger than expected by chance? What do you conclude about whether the seven judges had the same long-run probability of selecting a female juror?</p>
+          <p>Based on your simulation, determine the proportion of simulated values that are as large or larger than your chi-squared value. Does this empirical p-value provide convincing evidence that the observed discrepancy is larger than expected by chance? What do you conclude about whether the seven judges had the same long-run probability of selecting a female juror?</p>
         </statement>
         <response/>
       </exercise>
@@ -289,7 +283,7 @@
       <exercise xml:id="inv5-1-q">
         <title>Normal Model Check</title>
         <statement>
-          <p>(q) Does the normal distribution appear to adequately predict the behavior of the simulated null distribution of the chi-squared statistic?</p>
+          <p>Does the normal distribution appear to adequately predict the behavior of the simulated null distribution of the chi-squared statistic?</p>
         </statement>
         <response/>
       </exercise>
@@ -297,7 +291,7 @@
       <exercise xml:id="inv5-1-r">
         <title>Chi-squared Model Check</title>
         <statement>
-          <p>(r) Check the applet option to overlay a chi-squared distribution. Does this model appear to adequately predict the simulated null distribution?</p>
+          <p>Check the applet option to overlay a chi-squared distribution. Does this model appear to adequately predict the simulated null distribution?</p>
         </statement>
         <response/>
       </exercise>
@@ -320,7 +314,7 @@
       <exercise xml:id="inv5-1-s">
         <title>Compare p-values</title>
         <statement>
-          <p>(s) How does this model-based p-value compare to the empirical p-value from part (p)?</p>
+          <p>How does this model-based p-value compare to the empirical p-value from your simulation?</p>
         </statement>
         <response/>
       </exercise>
@@ -330,7 +324,7 @@
       <exercise xml:id="inv5-1-t">
         <title>Largest Chi-squared Components</title>
         <statement>
-          <p>(t) Return to the sum you calculated in part (k). Which cell comparisons provide the largest standardized discrepancies between observed and expected counts?</p>
+          <p>Return to the chi-squared sum you calculated above. Which cell comparisons provide the largest standardized discrepancies between observed and expected counts?</p>
         </statement>
         <response/>
       </exercise>
@@ -338,7 +332,7 @@
       <exercise xml:id="inv5-1-u">
         <title>Direction of Largest Discrepancies</title>
         <statement>
-          <p>(u) For the cells identified in part (t), which is larger: observed or expected counts? Explain the implications.</p>
+          <p>For the cells you identified above, which is larger: observed or expected counts? Explain the implications.</p>
         </statement>
         <response/>
       </exercise>
@@ -346,13 +340,13 @@
       <exercise xml:id="inv5-1-v">
         <title>Identify Judge in Spock Case</title>
         <statement>
-          <p>(v) Which judge do you believe tried Dr. Spock's case? Explain.</p>
+          <p>Which judge do you believe tried Dr. Spock's case? Explain.</p>
         </statement>
         <response/>
       </exercise>
     </paragraphs>
 
-    <assemblage>
+    <assemblage xml:id="study-conclusions-5-1">
       <title>Study Conclusions</title>
       <p>In this study, we modeled the jury-panel selections as independent binomial processes and compared seven sample proportions at once. One judge clearly stood out. If the judges truly had the same long-run probability of selecting women, differences as large as those observed would be extremely unlikely by chance alone. Thus the data provide strong evidence that the long-run probability of a juror being female was not the same across all seven judges. The largest contributions to the chi-squared statistic came from Judge 7, with substantially fewer women and more men than expected. This was Judge Ford, assigned to Dr. Spock's case.</p>
 
@@ -366,17 +360,6 @@
       <p>A key advantage of this test is that it provides a single overall p-value across all group comparisons, helping control the overall Type I error rate.</p>
     </paragraphs>
 
-    <exercise xml:id="inv5-1-practice">
-      <title>Practice Problem 5.1</title>
-      <statement>
-        <p>Why not just use two-sample <m>z</m>-procedures to compare pairs of proportions?</p>
-        <p>(a) How many two-group comparisons are there among 7 judges?</p>
-        <p>(b) If the significance level is 0.05, what is the Type I error probability for any one comparison?</p>
-        <p>(c) What about the probability of at least one Type I error among all these comparisons: larger or smaller than 0.05? Explain.</p>
-      </statement>
-      <response/>
-    </exercise>
-
     <paragraphs>
       <title>Technology Detour - Simulating Randomization Test for Two-Way Tables</title>
       <ul>
@@ -388,4 +371,19 @@
     </paragraphs>
 
   </exercises>
+
+  <subsection xml:id="practice-5-1">
+    <title>Practice Problem 5.1</title>
+
+    <exercise xml:id="practice-5-1-1" label="P5.1.1">
+      <title>Multiple Comparisons</title>
+      <statement>
+        <p>Why not just use two-sample <m>z</m>-procedures to compare pairs of proportions?</p>
+        <p>How many two-group comparisons are there among 7 judges?</p>
+        <p>If the significance level is 0.05, what is the Type I error probability for any one comparison?</p>
+        <p>What about the probability of at least one Type I error among all these comparisons: larger or smaller than 0.05? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
 </section>
