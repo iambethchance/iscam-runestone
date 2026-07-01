@@ -56,39 +56,9 @@ figure {
     font-weight: bold !important;
 }
 
-/* Keep hint/solution dropdown rows visually compact like inv 3-9 */
-.ptx-content details.hint.solution-like {
-    margin-top: 0.15em !important;
-    margin-bottom: 0.15em !important;
-}
-
-.ptx-content details.hint.solution-like + details.hint.solution-like {
-    margin-top: 0 !important;
-}
-
-.ptx-content section.paragraphs > details.hint.solution-like {
-    margin-top: 0.15em !important;
-    margin-bottom: 0.15em !important;
-}
-
-.ptx-content section.paragraphs > details.hint.solution-like + details.hint.solution-like {
-    margin-top: 0 !important;
-}
-
-/* Chapter 4 section-wrapper pages: hide auto 'Chapter N' prefix before section titles */
-#chapter4-1 > h2.heading > .type,
-#chapter4-1 > h2.heading > .codenumber,
-#chapter4-1 > h2.heading > .heading-divison-mark__space,
-#chapter4-2 > h2.heading > .type,
-#chapter4-2 > h2.heading > .codenumber,
-#chapter4-2 > h2.heading > .heading-divison-mark__space,
-#chapter4-3 > h2.heading > .type,
-#chapter4-3 > h2.heading > .codenumber,
-#chapter4-3 > h2.heading > .heading-divison-mark__space,
-#chapter4-4 > h2.heading > .type,
-#chapter4-4 > h2.heading > .codenumber,
-#chapter4-4 > h2.heading > .heading-divison-mark__space {
-    display: none !important;
+/* Reduce spacing between consecutive hint elements */
+.ptx-content article.hint + article.hint {
+    margin-top: 0.5em !important;
 }
 
 /* Reduce spacing after sidebyside elements */
@@ -225,16 +195,14 @@ div[id="random-babies-applet"] iframe {
 }
 
 /* Study Conclusions assemblages - light green */
-.ptx-content article.assemblage.assemblage-like[id^="study-conclusions"],
-.ptx-content article.assemblage.assemblage-like[id*="study-conclusions"] {
+.ptx-content article.assemblage.assemblage-like[id^="study-conclusions"] {
     --assemblage-like-body-background: #E8F5E9 !important;
     --assemblage-like-border-color: #66BB6A !important;
     background-color: #E8F5E9 !important;
     border-left: 4px solid #66BB6A !important;
 }
 
-.ptx-content article.assemblage.assemblage-like[id^="study-conclusions"] *,
-.ptx-content article.assemblage.assemblage-like[id*="study-conclusions"] * {
+.ptx-content article.assemblage.assemblage-like[id^="study-conclusions"] * {
     --assemblage-like-body-background: #E8F5E9 !important;
     --assemblage-like-border-color: #66BB6A !important;
     background-color: #E8F5E9 !important;
@@ -295,48 +263,6 @@ div[id="random-babies-applet"] iframe {
 
 .ptx-content #summary-z-procedures article.assemblage.assemblage-like *,
 .ptx-content article.assemblage.assemblage-like[id^="summary-z-procedures"] * {
-    --assemblage-like-body-background: #F8DDD8 !important;
-    --assemblage-like-border-color: #E6B3A8 !important;
-    background-color: #F8DDD8 !important;
-}
-
-/* Summary two-proportion z-test assemblages (ch3) - salmon. */
-.ptx-content article.assemblage.assemblage-like[id^="summary-two-proportion"] {
-    --assemblage-like-body-background: #F8DDD8 !important;
-    --assemblage-like-border-color: #E6B3A8 !important;
-    background-color: #F8DDD8 !important;
-    border-left: 4px solid #E6B3A8 !important;
-}
-
-.ptx-content article.assemblage.assemblage-like[id^="summary-two-proportion"] * {
-    --assemblage-like-body-background: #F8DDD8 !important;
-    --assemblage-like-border-color: #E6B3A8 !important;
-    background-color: #F8DDD8 !important;
-}
-
-/* Summary relative risk assemblage (ch3) - salmon. */
-.ptx-content article.assemblage.assemblage-like[id^="summary-relative-risk"] {
-    --assemblage-like-body-background: #F8DDD8 !important;
-    --assemblage-like-border-color: #E6B3A8 !important;
-    background-color: #F8DDD8 !important;
-    border-left: 4px solid #E6B3A8 !important;
-}
-
-.ptx-content article.assemblage.assemblage-like[id^="summary-relative-risk"] * {
-    --assemblage-like-body-background: #F8DDD8 !important;
-    --assemblage-like-border-color: #E6B3A8 !important;
-    background-color: #F8DDD8 !important;
-}
-
-/* Summary odds ratio assemblage (ch3) - salmon. */
-.ptx-content article.assemblage.assemblage-like[id^="summary-odds-ratio"] {
-    --assemblage-like-body-background: #F8DDD8 !important;
-    --assemblage-like-border-color: #E6B3A8 !important;
-    background-color: #F8DDD8 !important;
-    border-left: 4px solid #E6B3A8 !important;
-}
-
-.ptx-content article.assemblage.assemblage-like[id^="summary-odds-ratio"] * {
     --assemblage-like-body-background: #F8DDD8 !important;
     --assemblage-like-border-color: #E6B3A8 !important;
     background-color: #F8DDD8 !important;
@@ -533,76 +459,6 @@ section#chapter3.chapter > h2.heading > span.codenumber + span.space {
     display: none !important;
 }
 
-/* Hide full chapter prefix ("Chapter" and number) for chapter3-intro page title. */
-.ptx-content section.chapter#chapter3-intro > .heading > span.type,
-.ptx-content section.chapter#chapter3-intro > .heading > span.codenumber,
-.ptx-content section.chapter#chapter3-intro > .heading > span.type + span.space,
-.ptx-content section.chapter#chapter3-intro > .heading > span.codenumber + span.space,
-section.chapter#chapter3-intro > .heading > span.type,
-section.chapter#chapter3-intro > .heading > span.codenumber,
-section.chapter#chapter3-intro > .heading > span.type + span.space,
-section.chapter#chapter3-intro > .heading > span.codenumber + span.space,
-main .ptx-content section.chapter#chapter3-intro > h1.heading > span.type,
-main .ptx-content section.chapter#chapter3-intro > h1.heading > span.codenumber,
-main .ptx-content section.chapter#chapter3-intro > h1.heading > span.type + span.space,
-main .ptx-content section.chapter#chapter3-intro > h1.heading > span.codenumber + span.space,
-main .ptx-content section.chapter#chapter3-intro > h2.heading > span.type,
-main .ptx-content section.chapter#chapter3-intro > h2.heading > span.codenumber,
-main .ptx-content section.chapter#chapter3-intro > h2.heading > span.type + span.space,
-main .ptx-content section.chapter#chapter3-intro > h2.heading > span.codenumber + span.space,
-#chapter3-intro h1.heading > span.type,
-#chapter3-intro h1.heading > span.codenumber,
-#chapter3-intro h1.heading > span.type + span.space,
-#chapter3-intro h1.heading > span.codenumber + span.space,
-#chapter3-intro h2.heading > span.type,
-#chapter3-intro h2.heading > span.codenumber,
-#chapter3-intro h2.heading > span.type + span.space,
-#chapter3-intro h2.heading > span.codenumber + span.space,
-section#chapter3-intro.chapter > h2.heading > span.type,
-section#chapter3-intro.chapter > h2.heading > span.codenumber,
-section#chapter3-intro.chapter > h2.heading > span.type + span.space,
-section#chapter3-intro.chapter > h2.heading > span.codenumber + span.space {
-    display: none !important;
-}
-
-/* Hide full chapter prefix ("Chapter" and number) for chapter3-1 page title (section 3.1 wrapper). */
-.ptx-content section.chapter#chapter3-1 > .heading > span.type,
-.ptx-content section.chapter#chapter3-1 > .heading > span.codenumber,
-.ptx-content section.chapter#chapter3-1 > .heading > span.type + span.space,
-.ptx-content section.chapter#chapter3-1 > .heading > span.codenumber + span.space,
-section.chapter#chapter3-1 > .heading > span.type,
-section.chapter#chapter3-1 > .heading > span.codenumber,
-section.chapter#chapter3-1 > .heading > span.type + span.space,
-section.chapter#chapter3-1 > .heading > span.codenumber + span.space,
-main .ptx-content section.chapter#chapter3-1 > h2.heading > span.type,
-main .ptx-content section.chapter#chapter3-1 > h2.heading > span.codenumber,
-main .ptx-content section.chapter#chapter3-1 > h2.heading > span.type + span.space,
-main .ptx-content section.chapter#chapter3-1 > h2.heading > span.codenumber + span.space,
-#chapter3-1 h2.heading > span.type,
-#chapter3-1 h2.heading > span.codenumber,
-#chapter3-1 h2.heading > span.type + span.space,
-#chapter3-1 h2.heading > span.codenumber + span.space,
-section#chapter3-1.chapter > h2.heading > span.type,
-section#chapter3-1.chapter > h2.heading > span.codenumber,
-section#chapter3-1.chapter > h2.heading > span.type + span.space,
-section#chapter3-1.chapter > h2.heading > span.codenumber + span.space {
-    display: none !important;
-}
-
-/* Hide full chapter prefix for chapter3-2 and chapter3-3 page titles. */
-#chapter3-2 h2.heading span.type, #chapter3-2 h2.heading span.codenumber, #chapter3-2 h2.heading span.space,
-#chapter3-3 h2.heading span.type, #chapter3-3 h2.heading span.codenumber, #chapter3-3 h2.heading span.space,
-section#chapter3-2.chapter > h2.heading > span.type,
-section#chapter3-2.chapter > h2.heading > span.codenumber,
-section#chapter3-2.chapter > h2.heading > span.type + span.space,
-section#chapter3-2.chapter > h2.heading > span.codenumber + span.space,
-section#chapter3-3.chapter > h2.heading > span.type,
-section#chapter3-3.chapter > h2.heading > span.codenumber,
-section#chapter3-3.chapter > h2.heading > span.type + span.space,
-section#chapter3-3.chapter > h2.heading > span.codenumber + span.space {
-    display: none !important;
-}
-
 /* Hide full chapter prefix ("Chapter" and number) for chapter1-wrap-up page title. */
 .ptx-content section.chapter#chapter1-wrap-up > .heading > span.type,
 .ptx-content section.chapter#chapter1-wrap-up > .heading > span.codenumber,
@@ -731,38 +587,6 @@ section#chapter5.chapter > h2.heading > span.codenumber + span.space {
     display: none !important;
 }
 
-/* Hide full chapter prefix ("Chapter" and number) for chapter6 page title (section 2-3 wrapper). */
-.ptx-content section.chapter#chapter6 > .heading > span.type,
-.ptx-content section.chapter#chapter6 > .heading > span.codenumber,
-.ptx-content section.chapter#chapter6 > .heading > span.type + span.space,
-.ptx-content section.chapter#chapter6 > .heading > span.codenumber + span.space,
-section.chapter#chapter6 > .heading > span.type,
-section.chapter#chapter6 > .heading > span.codenumber,
-section.chapter#chapter6 > .heading > span.type + span.space,
-section.chapter#chapter6 > .heading > span.codenumber + span.space,
-main .ptx-content section.chapter#chapter6 > h1.heading > span.type,
-main .ptx-content section.chapter#chapter6 > h1.heading > span.codenumber,
-main .ptx-content section.chapter#chapter6 > h1.heading > span.type + span.space,
-main .ptx-content section.chapter#chapter6 > h1.heading > span.codenumber + span.space,
-main .ptx-content section.chapter#chapter6 > h2.heading > span.type,
-main .ptx-content section.chapter#chapter6 > h2.heading > span.codenumber,
-main .ptx-content section.chapter#chapter6 > h2.heading > span.type + span.space,
-main .ptx-content section.chapter#chapter6 > h2.heading > span.codenumber + span.space,
-#chapter6 h1.heading > span.type,
-#chapter6 h1.heading > span.codenumber,
-#chapter6 h1.heading > span.type + span.space,
-#chapter6 h1.heading > span.codenumber + span.space,
-#chapter6 h2.heading > span.type,
-#chapter6 h2.heading > span.codenumber,
-#chapter6 h2.heading > span.type + span.space,
-#chapter6 h2.heading > span.codenumber + span.space,
-section#chapter6.chapter > h2.heading > span.type,
-section#chapter6.chapter > h2.heading > span.codenumber,
-section#chapter6.chapter > h2.heading > span.type + span.space,
-section#chapter6.chapter > h2.heading > span.codenumber + span.space {
-    display: none !important;
-}
-
 /* Hide section number prefix on Investigation 1.9 page heading only (remove 4.5). */
 #investigation-1-9 h1.heading > span.codenumber,
 #investigation-1-9 h1.heading > span.codenumber + span.space,
@@ -771,43 +595,20 @@ section#chapter6.chapter > h2.heading > span.codenumber + span.space {
     display: none !important;
 }
 
-/* Section 2 summary assemblages - salmon (match Ch1 summary box style). */
-.ptx-content article.assemblage.assemblage-like#one-sample-t-summary,
-.ptx-content article.assemblage.assemblage-like#prediction-interval-summary {
-    --assemblage-like-body-background: #F8DDD8 !important;
-    --assemblage-like-border-color: #E6B3A8 !important;
-    background-color: #F8DDD8 !important;
-    border-left: 4px solid #E6B3A8 !important;
+/* Sidebar TOC: subtle indent for chapter sections (e.g., Chapter 1 sections under intro). */
+#ptx-sidebar #ptx-toc li.toc-item.toc-chapter > ul.structural.toc-item-list > li.toc-item.toc-section > .toc-title-box {
+    padding-left: 0.55rem;
 }
 
-.ptx-content article.assemblage.assemblage-like#one-sample-t-summary *,
-.ptx-content article.assemblage.assemblage-like#prediction-interval-summary * {
-    --assemblage-like-body-background: #F8DDD8 !important;
-    --assemblage-like-border-color: #E6B3A8 !important;
-    background-color: #F8DDD8 !important;
+/* Sidebar TOC: selectively indent Section 2.2 and 2.3 top-level entries only. */
+#ptx-sidebar #ptx-toc li.toc-item.toc-chapter > .toc-title-box:has(> a.internal[href="chapter5.html"]),
+#ptx-sidebar #ptx-toc li.toc-item.toc-chapter > .toc-title-box:has(> a.internal[href="chapter6.html"]) {
+    padding-left: 0.55rem;
 }
 
-/* Reduce blank lines between consecutive hint/solution expandable items. */
-.ptx-content details.hint-like + details.hint-like,
-.ptx-content details.hint-like + details.solution-like,
-.ptx-content details.solution-like + details.hint-like {
-    margin-top: 0.2em !important;
-}
-
-/* FALLBACK heading-prefix hides using descendant selectors (no child combinator).
-   These supplement the child-combinator rules above in case Runestone's build
-   wraps headings in an intermediate element. */
-#chapter1 h2.heading span.type, #chapter1 h2.heading span.codenumber, #chapter1 h2.heading span.space,
-#chapter2 h2.heading span.type, #chapter2 h2.heading span.codenumber, #chapter2 h2.heading span.space,
-#chapter3 h2.heading span.type, #chapter3 h2.heading span.codenumber, #chapter3 h2.heading span.space,
-#chapter3-intro h2.heading span.type, #chapter3-intro h2.heading span.codenumber, #chapter3-intro h2.heading span.space,
-#chapter3-1 h2.heading span.type, #chapter3-1 h2.heading span.codenumber, #chapter3-1 h2.heading span.space,
-#chapter3-2 h2.heading span.type, #chapter3-2 h2.heading span.codenumber, #chapter3-2 h2.heading span.space,
-#chapter3-3 h2.heading span.type, #chapter3-3 h2.heading span.codenumber, #chapter3-3 h2.heading span.space,
-#chapter1-wrap-up h2.heading span.type, #chapter1-wrap-up h2.heading span.codenumber, #chapter1-wrap-up h2.heading span.space,
-#chapter2-intro h2.heading span.type, #chapter2-intro h2.heading span.codenumber, #chapter2-intro h2.heading span.space,
-#chapter2-sec1 h2.heading span.type, #chapter2-sec1 h2.heading span.codenumber, #chapter2-sec1 h2.heading span.space,
-#chapter5 h2.heading span.type, #chapter5 h2.heading span.codenumber, #chapter5 h2.heading span.space,
-#chapter6 h2.heading span.type, #chapter6 h2.heading span.codenumber, #chapter6 h2.heading span.space {
-    display: none !important;
+/* Fallback: indent link text for browsers that do not fully support :has(). */
+#ptx-sidebar #ptx-toc li.toc-item.toc-chapter > .toc-title-box > a.internal[href="chapter5.html"],
+#ptx-sidebar #ptx-toc li.toc-item.toc-chapter > .toc-title-box > a.internal[href="chapter6.html"] {
+    display: inline-block;
+    padding-left: 0.55rem;
 }
