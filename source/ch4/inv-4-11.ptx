@@ -6,7 +6,7 @@
   <title>McNemar's Test</title>
 
   <introduction>
-    <sidebyside widths="60% 35%" valign="top" margins="0% 0%">>
+    <sidebyside widths="60% 35%" valign="top" margins="0% 0%">
       <stack>
         <p>A study published in the journal <em>Pediatrics</em> (<url href="https://pubmed.ncbi.nlm.nih.gov/17015555/">Smith et al., 2006</url>) addressed the important issue of how to awaken children during a house fire so they can escape safely. Researchers worked with a volunteer sample of 24 healthy children aged 6-12 by training them to perform a simulated self-rescue escape procedure when they heard an alarm. Researchers then compared the children's reactions to two kinds of alarms: a conventional smoke alarm and a personalized recording of the mother's voice saying the child's name and urging him or her to wake up. All 24 children were exposed to both kinds of alarms, with the order determined randomly.</p>
       </stack>
@@ -132,7 +132,7 @@
     </statement>
     <response/>
     <solution>
-      <p>The research question is whether a child was more likely to wake up to the mom's voice than to the conventional alarm. If we let <m>\pi_1</m> and <m>\pi_2</m> represent these two probabilities, we can write this as <m>H_0: \pi_1 = \pi_2</m> vs <m>H_a: \pi_1 > \pi_2</m> but we need to keep in mind that these are not independent samples. In the data, <m>23/24 \approx 0.958</m> woke up to the mom's voice; <m>14/24 \approx 0.583</m> woke up to the conventional alarm. This provides strong preliminary evidence that the probability of waking is larger with the mom's voice, but we can't apply Fisher's Exact Test because this was not a randomized experiment with two separate treatments - we do not have two independent random samples.</p>
+      <p>The research question is whether a child was more likely to wake up to the mom's voice than to the conventional alarm. If we let <m>\pi_1</m> and <m>\pi_2</m> represent these two probabilities, we can write this as <m>H_0\!: \pi_1 = \pi_2</m> vs <m>H_a\!: \pi_1 > \pi_2</m> but we need to keep in mind that these are not independent samples. In the data, <m>23/24 \approx 0.958</m> woke up to the mom's voice; <m>14/24 \approx 0.583</m> woke up to the conventional alarm. This provides strong preliminary evidence that the probability of waking is larger with the mom's voice, but we can't apply Fisher's Exact Test because this was not a randomized experiment with two separate treatments - we do not have two independent random samples.</p>
     </solution>
   </exercise>
   
@@ -280,8 +280,8 @@
     <title>State Hypotheses</title>
     <statement>
       <p>Let <m>\pi</m> represent the probability of waking to the mother's voice alarm when a child wakes to only one of the two alarms. State appropriate null and alternative hypotheses in terms of <m>\pi</m> for deciding whether the mother's voice is the more effective alarm.</p>
-      <p><m>H_0:</m><var width="5"/> <var width="5"/> <var width="10"/></p>
-      <p><m>H_a:</m><var width="5"/> <var width="5"/> <var width="10"/></p>
+      <p><m>H_0\!: \pi = 0.50</m></p>
+      <p><m>H_a\!: \pi > 0.50</m></p>
     </statement>
     <setup>
       <var>
@@ -334,8 +334,8 @@
       </var>
     </setup>
     <solution>
-      <p><br/><m>H_0: \pi = 0.50</m></p>
-      <p><m>H_a: \pi > 0.50</m></p>
+      <p><m>H_0\!: \pi = 0.50</m></p>
+      <p><m>H_a\!: \pi > 0.50</m></p>
       <p>where <m>\pi</m> = probability of waking to the mother's voice alarm when a child wakes to only one of the two alarms (equally likely to wake up to only mom and only conventional alarm under null; more likely to wake up to mom only than to conventional only under alternative)</p>
     </solution>
   </exercise>
@@ -363,7 +363,7 @@
     </statement>
     <response/>
     <solution>
-      <p>We have strong evidence (p-value = 0.00195) to reject <m>H_0: \pi = 0.5</m> (equally likely to wake up to mom/conventional) when only wake up to one of the two alarms. This is convincing evidence that mom's voice increases (causation because this was a randomized matched-pairs experiment) the likelihood of waking up, at least for children like those in this study (healthy children aged 6-12).</p>
+      <p>We have strong evidence (p-value = 0.00195) to reject <m>H_0\!: \pi = 0.5</m> (equally likely to wake up to mom/conventional) when only wake up to one of the two alarms. This is convincing evidence that mom's voice increases (causation because this was a randomized matched-pairs experiment) the likelihood of waking up, at least for children like those in this study (healthy children aged 6-12).</p>
     </solution>
   </exercise>
   
