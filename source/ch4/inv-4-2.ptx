@@ -662,9 +662,9 @@ Players without a team affiliation or without a listed salary were not included 
         <response/>
       </exercise>
       
-      <paragraphs><p>
+      <p>
       So then what we really need to know about is the distribution of <m>t = \frac{(\bar{X}_1 - \bar{X}_2) - (\mu_1 - \mu_2)}{\sqrt{S_1^2/n_1 + S_2^2/n_2}}</m>.
-      </p></paragraphs> 
+      </p>
       In the applet, 
       <ul><li>Use the <alert>Statistic</alert> pull-down menu to select the <m>t</m>-statistic and then examine the distribution of this statistic. 
       </li></ul>
@@ -792,13 +792,13 @@ invisible(iscamtwosamplet(x1=5.4, sd1=1.47, n1=33, x2=5.3, sd2=3.41, n2=23,
 <hint>          <title>In R (raw data) </title>
           <p>Use R to conduct a two-sample <m>t</m>-test:</p>
           <program language="r">
-            <input>
+            <code>
 # For example, with NBA data, you would use something like 
 t.test(salary~conference, alt="two.sided", var.equal=FALSE)
 
 # Note: var.equal=FALSE uses the unpooled (Welch) version
 # This is the default and recommended when variances may differ
-            </input>
+            </code>
           </program>
         </hint>
         <hint>
