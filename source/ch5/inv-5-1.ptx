@@ -7,7 +7,7 @@
 
     <introduction>
       <p>The well-known pediatrician and child development author Dr. Benjamin Spock was also an anti-Vietnam War activist. In 1968 he was put on trial and convicted on charges of conspiracy to violate the Selective Service Act (encouraging young men to avoid the draft). The case was tried by Judge Ford in Boston's Federal courthouse. A peculiar aspect of this case was that his jury contained no women.</p>
-      <sidebyside widths="58% 38%" margins="0% 0%">
+      <sidebyside widths="45% 50%" margins="0% 0%">
     <stack>
       <p>A lawyer writing about the case that same year in the Chicago Law Review said, "Of all defendants at such trials, Dr. Spock, who had given wise and welcome advice on child-bearing to millions of mothers, would have liked women on his jury" (see <url href="https://chicagounbound.uchicago.edu/cgi/viewcontent.cgi?article=12016&amp;context=journal_articles">Ziesel, 1969</url>). Opinion polls also showed that women were generally more opposed to the Vietnam War than men.</p>
       
@@ -31,7 +31,7 @@
           <cell>Judge 7</cell>
           <cell>Total</cell>
         </row>
-        <row header="yes">
+        <row>
           <cell halign="left">Women</cell>
           <cell>119</cell>
           <cell>197</cell>
@@ -42,7 +42,7 @@
           <cell>86</cell>
           <cell>776</cell>
         </row>
-        <row header="yes">
+        <row>
           <cell halign="left">Men</cell>
           <cell>235</cell>
           <cell>533</cell>
@@ -54,7 +54,7 @@
           <cell>2199</cell>
         </row>
         <row>
-          <cell halign="left">Total</cell>
+          <cell halign="left"><alert>Total</alert></cell>
           <cell>354</cell>
           <cell>730</cell>
           <cell>405</cell>
@@ -76,15 +76,24 @@
           <p>Calculate the proportion of women on the jury list for each judge. Also create a segmented bar graph or mosaic plot to compare these distributions. How do the judges compare?</p>
         </statement>
         <response/>
+        <solution>
+          <p>The sample proportions of women on the jury lists are approximately:</p>
+          <p>Judge 1: 0.336, Judge 2: 0.270, Judge 3: 0.291, Judge 4: 0.341, Judge 5: 0.270, Judge 6: 0.270, Judge 7: 0.144.</p>
+          <p>There is some variability among the judges, but Judge 7 in particular has a much lower percentage of women on the jury list.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="inv5-1-b">
         <title>State Hypotheses</title>
         <statement>
-          <p>Let <m>p_i</m> represent the long-run probability of judge <m>i</m> selecting a female for the jury list. State a null and an alternative hypothesis for testing whether these data provide reason to doubt that the probability of women on jury lists is the same for all seven judges.</p>
+          <p>Let <m>\pi_i</m> represent the long-run probability of judge <m>i</m> selecting a female for the jury list. State a null and an alternative hypothesis for testing whether these data provide reason to doubt that the probability of women on jury lists is the same for all seven judges.</p>
           <p><em>Note:</em> The null hypothesis states only that the probabilities are equal; it does not specify a particular value for this common probability. The alternative states that at least one probability differs.</p>
         </statement>
         <response/>
+        <solution>
+          <p><m>H_0: p_1 = p_2 = p_3 = p_4 = p_5 = p_6 = p_7</m></p>
+          <p><m>H_a:</m> at least one judge has a different long-run probability of selecting a female juror.</p>
+        </solution>
       </exercise>
     </paragraphs>
 
@@ -97,6 +106,9 @@
           <p>Suggest a standardized statistic (formula based on your observed sample data) for assessing the strength of evidence against the null hypothesis. Write your statistic as a formula or rule for obtaining one number that takes into account information relevant to comparing all seven groups.</p>
         </statement>
         <response/>
+        <solution>
+          <p>Answers will vary. Any reasonable statistic that summarizes how different the seven sample proportions are from one another could be proposed.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="inv5-1-d">
@@ -105,6 +117,10 @@
           <p>One possibility is to compare all sample proportions to each other by looking at all pairwise differences. How many such pairs are there? Could we simply sum these differences?</p>
         </statement>
         <response/>
+        <solution>
+          <p>There are <m>{7 \choose 2} = 21</m> pairs.</p>
+          <p>We would not want to simply sum the pairwise differences because positive and negative differences could cancel each other out.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="inv5-1-e">
@@ -113,6 +129,9 @@
           <p>What types of values do you expect this statistic to have when the null hypothesis is true? What about if the null hypothesis is false?</p>
         </statement>
         <response/>
+        <solution>
+          <p>Large values of a statistic that measures group differences would indicate evidence against the null hypothesis. Small values would be more consistent with the null hypothesis being true.</p>
+        </solution>
       </exercise>
   <assemblage>
             <title>Definition: Mean Group Difference</title>
@@ -127,6 +146,10 @@
           <p>Assuming the null hypothesis is true and each judge has the same probability of a female juror in his pool, suggest an estimate for this common probability.</p>
         </statement>
         <response/>
+        <solution>
+          <p>A reasonable estimate is the overall proportion of women in the combined data:</p>
+          <p><m>\hat{p} = 776/2975 \approx 0.261</m>.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="inv5-1-g">
@@ -136,6 +159,10 @@
           <p><em>Recall:</em> An expected value does not need to be an integer.</p>
         </statement>
         <response/>
+        <solution>
+          <p>Expected women: <m>0.261(354) = 92.39</m></p>
+          <p>Expected men: <m>354 - 92.39 = 261.61</m></p>
+        </solution>
       </exercise>
 
       <exercise xml:id="inv5-1-h">
@@ -144,6 +171,10 @@
           <p>How many jurors on Judge 2's list would you expect to be female if his long-run proportion were also 0.261? How many would you expect to be male?</p>
         </statement>
         <response/>
+        <solution>
+          <p>Expected women: <m>0.261(730) = 190.53</m></p>
+          <p>Expected men: <m>730 - 190.53 = 538.47</m></p>
+        </solution>
       </exercise>
 
       <exercise xml:id="inv5-1-i">
@@ -152,7 +183,7 @@
           <p>Enter your expected counts below the observed counts in the following table.</p>
           <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
             <row header="yes">
-              <cell></cell>
+              <cell>Jury lists</cell>
               <cell>Judge 1</cell>
               <cell>Judge 2</cell>
               <cell>Judge 3</cell>
@@ -204,6 +235,12 @@
           </tabular>
         </statement>
         <response/>
+        <solution>
+          <p>The missing expected counts are:</p>
+          <p>Judge 1: women 92.39, men 261.61</p>
+          <p>Judge 2: women 190.53, men 538.47</p>
+          <p>The remaining expected counts are those already shown in the table.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="inv5-1-j">
@@ -212,6 +249,9 @@
           <p>Are the observed counts equal to the expected counts in each cell? Is it possible that the long-run probability of a female juror is the same for each judge and that the observed differences are due to random chance alone?</p>
         </statement>
         <response/>
+        <solution>
+          <p>The observed counts and expected counts are not equal. However, that discrepancy could still be due to random chance alone, so we need to assess how unusual the overall discrepancy is under the null hypothesis.</p>
+        </solution>
       </exercise>
 
       <assemblage>
@@ -227,6 +267,9 @@
           <p>Calculate this standardized statistic for the two-way table above. Fill in the missing terms for the first two judges and then sum all terms.</p>
         </statement>
         <response/>
+        <solution>
+          <p>The chi-squared sum is approximately <m>62.68</m>.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="inv5-1-l">
@@ -235,6 +278,9 @@
           <p>What types of chi-squared values (large, small, positive, negative) constitute evidence against the null hypothesis of equal long-run probabilities? Explain.</p>
         </statement>
         <response/>
+        <solution>
+          <p>The chi-squared statistic is always nonnegative. Large values provide evidence against the null hypothesis; smaller values are more consistent with the null hypothesis being true.</p>
+        </solution>
       </exercise>
     </paragraphs>
 
@@ -249,6 +295,9 @@
           <p>Outline the steps you would use to generate random data for each judge under the null hypothesis that the probability of a juror being female is the same for each judge.</p>
         </statement>
         <response/>
+        <solution>
+          <p>Generate random jury-list outcomes for each judge using the same probability of selecting a female juror, while keeping each judge's sample size fixed. For each simulated data set, compute the chi-squared statistic. Repeat many times to build a null distribution of chi-squared values and compare the observed value to that distribution.</p>
+        </solution>
       </exercise>
 
           <p>Use the Analyzing Two-Way Tables - Samples <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqSample.htm">applet</url>.</p>
@@ -266,6 +315,9 @@
           <p>Describe the shape, center, and variability of the simulated null distribution.</p>
         </statement>
         <response/>
+        <solution>
+          <p>The simulated null distribution is skewed to the right. Its center should be around 6.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="inv5-1-p">
@@ -274,6 +326,10 @@
           <p>Based on your simulation, determine the proportion of simulated values that are as large or larger than your chi-squared value. Does this empirical p-value provide convincing evidence that the observed discrepancy is larger than expected by chance? What do you conclude about whether the seven judges had the same long-run probability of selecting a female juror?</p>
         </statement>
         <response/>
+        <solution>
+          <p>None of the simulated chi-squared values should be anywhere near <m>62.68</m>, so the empirical p-value is approximately 0.</p>
+          <p>This provides very strong evidence that the observed discrepancy is too large to attribute to random chance alone, so we conclude that the seven judges did not all have the same long-run probability of selecting a female juror.</p>
+        </solution>
       </exercise>
     </paragraphs>
 
@@ -286,6 +342,9 @@
           <p>Does the normal distribution appear to adequately predict the behavior of the simulated null distribution of the chi-squared statistic?</p>
         </statement>
         <response/>
+        <solution>
+          <p>No. The null distribution is skewed to the right, not approximately symmetric like a normal distribution.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="inv5-1-r">
@@ -294,6 +353,9 @@
           <p>Check the applet option to overlay a chi-squared distribution. Does this model appear to adequately predict the simulated null distribution?</p>
         </statement>
         <response/>
+        <solution>
+          <p>Yes. The chi-squared distribution appears to be a reasonable model for this null distribution.</p>
+        </solution>
       </exercise>
 
       <p>The chi-squared distribution is skewed right and provides a reasonable model for this statistic for large sample sizes. We typically use this model when all expected counts are at least 1 and at least 80% of expected counts are at least 5.</p>
@@ -317,6 +379,9 @@
           <p>How does this model-based p-value compare to the empirical p-value from your simulation?</p>
         </statement>
         <response/>
+        <solution>
+          <p>Because the observed chi-squared statistic is so large, the model-based p-value is also approximately 0, so it agrees closely with the empirical p-value from the simulation.</p>
+        </solution>
       </exercise>
 
       <p><alert>Discussion:</alert> If the null hypothesis is rejected, the conclusion is that at least one population proportion differs from the rest, but the test itself does not identify exactly which one(s). To learn more, inspect the component terms in the chi-squared sum.</p>
@@ -327,6 +392,9 @@
           <p>Return to the chi-squared sum you calculated above. Which cell comparisons provide the largest standardized discrepancies between observed and expected counts?</p>
         </statement>
         <response/>
+        <solution>
+          <p>The largest contributions come from Judge 7's cells.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="inv5-1-u">
@@ -335,6 +403,9 @@
           <p>For the cells you identified above, which is larger: observed or expected counts? Explain the implications.</p>
         </statement>
         <response/>
+        <solution>
+          <p>For Judge 7, the observed number of women is less than expected and the observed number of men is greater than expected. This suggests that Judge 7 selected fewer women than would be expected under the equal-probability model.</p>
+        </solution>
       </exercise>
 
       <exercise xml:id="inv5-1-v">
@@ -343,6 +414,9 @@
           <p>Which judge do you believe tried Dr. Spock's case? Explain.</p>
         </statement>
         <response/>
+        <solution>
+          <p>Judge 7. This judge stands out as having fewer women than expected, which matches the description of Judge Ford in Dr. Spock's case.</p>
+        </solution>
       </exercise>
     </paragraphs>
 
