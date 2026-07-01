@@ -7,14 +7,10 @@
 
     <introduction>
       <p>The well-known pediatrician and child development author Dr. Benjamin Spock was also an anti-Vietnam War activist. In 1968 he was put on trial and convicted on charges of conspiracy to violate the Selective Service Act (encouraging young men to avoid the draft). The case was tried by Judge Ford in Boston's Federal courthouse. A peculiar aspect of this case was that his jury contained no women.</p>
-      <sidebyside widths="45% 50%" margins="0% 0%">
-    <stack>
       <p>A lawyer writing about the case that same year in the Chicago Law Review said, "Of all defendants at such trials, Dr. Spock, who had given wise and welcome advice on child-bearing to millions of mothers, would have liked women on his jury" (see <url href="https://chicagounbound.uchicago.edu/cgi/viewcontent.cgi?article=12016&amp;context=journal_articles">Ziesel, 1969</url>). Opinion polls also showed that women were generally more opposed to the Vietnam War than men.</p>
-      
-    </stack>
+<p>      
     <image source="images/SpockJury.jpg" width="100%"/>
-  </sidebyside>
-
+</p>
      <p>In the Boston District Court, jurors are selected in three stages. The Clerk of the Court is supposed to select 300 names at random from the City Directory. In Dr. Spock's trial, this sample included only 102 women, even though 53% of the eligible jurors in the district were female. At the next stage, the judge selects 30 or more names from those in the box to constitute the venire. Judge Ford chose 100 potential jurors out of these 300 people, and his choices included only 9 women. Finally, 12 actual jurors are selected after interrogation by both the prosecutor and the defense counsel. Only one potential female juror came before the court and she was dismissed by the prosecution.</p>
 
       <p>In filing his appeal, Spock's lawyers argued that Judge Ford had a history of venires in which women were systematically underrepresented. They compared the gender breakdown of this judge's venires with the venires of six other judges in the same Boston court from a recent sample of court cases. Records revealed the following data:</p>
@@ -32,7 +28,7 @@
           <cell>Total</cell>
         </row>
         <row>
-          <cell halign="left">Women</cell>
+          <cell halign="left"><alert>Women</alert></cell>
           <cell>119</cell>
           <cell>197</cell>
           <cell>118</cell>
@@ -43,7 +39,7 @@
           <cell>776</cell>
         </row>
         <row>
-          <cell halign="left">Men</cell>
+          <cell halign="left"><alert>Men</alert></cell>
           <cell>235</cell>
           <cell>533</cell>
           <cell>287</cell>
@@ -54,7 +50,7 @@
           <cell>2199</cell>
         </row>
         <row>
-          <cell halign="left"><alert>Total</alert></cell>
+          <cell halign="left">Total</cell>
           <cell>354</cell>
           <cell>730</cell>
           <cell>405</cell>
@@ -91,8 +87,8 @@
         </statement>
         <response/>
         <solution>
-          <p><m>H_0: p_1 = p_2 = p_3 = p_4 = p_5 = p_6 = p_7</m></p>
-          <p><m>H_a:</m> at least one judge has a different long-run probability of selecting a female juror.</p>
+          <p><m>H_0\!: \pi_1 = \pi_2 = \pi_3 = \pi_4 = \pi_5 = \pi_6 = \pi_7</m></p>
+          <p><m>H_a\!:</m> at least one judge has a different long-run probability of selecting a female juror.</p>
         </solution>
       </exercise>
     </paragraphs>
@@ -148,7 +144,7 @@
         <response/>
         <solution>
           <p>A reasonable estimate is the overall proportion of women in the combined data:</p>
-          <p><m>\hat{p} = 776/2975 \approx 0.261</m>.</p>
+          <p><m>\hat{\pi} = 776/2975 \approx 0.261</m>.</p>
         </solution>
       </exercise>
 
@@ -160,8 +156,8 @@
         </statement>
         <response/>
         <solution>
-          <p>Expected women: <m>0.261(354) = 92.39</m></p>
-          <p>Expected men: <m>354 - 92.39 = 261.61</m></p>
+          <p>Expected number of women: <m>0.261(354) = 92.39</m></p>
+          <p>Expected number of men: <m>354 - 92.39 = 261.61</m></p>
         </solution>
       </exercise>
 
@@ -172,8 +168,8 @@
         </statement>
         <response/>
         <solution>
-          <p>Expected women: <m>0.261(730) = 190.53</m></p>
-          <p>Expected men: <m>730 - 190.53 = 538.47</m></p>
+          <p>Expected number of women: <m>0.261(730) = 190.53</m></p>
+          <p>Expected number of men: <m>730 - 190.53 = 538.47</m></p>
         </solution>
       </exercise>
 
@@ -435,13 +431,57 @@
     </paragraphs>
 
     <paragraphs>
-      <title>Technology Detour - Simulating Randomization Test for Two-Way Tables</title>
-      <ul>
-        <li><p><alert>Applet:</alert> <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqSample.htm">Analyzing Two-way Tables - Sampling</url></p></li>
-        <li><p><alert>R:</alert> Run <url href="http://www.rossmanchance.com/iscam2/data/Spock.R">Spock.R</url> to generate chi-squared values.</p></li>
-        <li><p><alert>Minitab:</alert> Use <url href="http://www.rossmanchance.com/iscam2/data/SpockSim.mac">SpockSim.mac</url> to generate simulated chi-squared values.</p></li>
-        <li><p><alert>JMP:</alert> Open <url href="http://www.rossmanchance.com/iscam3/data/Spock.jmp">Spock.jmp</url> and run the simulation script.</p></li>
-      </ul>
+      <title>Technology Detour - Simulating Sampling Distribution for Chi-Square Statistic</title>
+
+      <exercise xml:id="inv5-1-tech-detour-chi-square-sim">
+        <title>Choose Technology Instructions</title>
+        <statement>
+          <p>Choose one set of instructions by opening a hint below.</p>
+
+          <hint>
+            <title>Applet Instructions</title>
+            <p>Use the <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqSample.htm">Analyzing Two-way Tables - Sampling applet</url>.</p>
+            <ul>
+              <li><p>Load the Spock data into the applet and run the simulation.</p></li>
+              <li><p>Use the applet output to inspect the simulated chi-squared distribution.</p></li>
+            </ul>
+            <p><url href="images/inv5-1TD1.jpg">Solution link (Applet screenshot)</url></p>
+            <image source="images/inv5-1TD1.jpg" width="55%">
+              <description>Applet solution screenshot for chi-squared simulation</description>
+            </image>
+          </hint>
+
+          <hint>
+            <title>R Instructions</title>
+            <p>Run <url href="http://www.rossmanchance.com/iscam2/data/Spock.R">Spock.R</url> to generate chi-squared values.</p>
+            <ul>
+              <li><p>To create a normal probability plot: <c>qqnorm(chisqvalues)</c></p></li>
+              <li><p>To create a QQ plot with values from a chi-squared distribution: <c>qqplot(chisqsum, qchisq(ppoints(1000), df = 6))</c></p></li>
+            </ul>
+            <p><url href="images/inv5-1TD2.jpg">Solution link (R screenshot)</url></p>
+            <image source="images/inv5-1TD2.jpg" width="55%">
+              <description>R solution screenshot for chi-squared simulation</description>
+            </image>
+          </hint>
+
+          <hint>
+            <title>JMP Instructions</title>
+            <p>Open <url href="http://www.rossmanchance.com/iscam3/data/Spock.jmp">Spock.jmp</url> and run the simulation script.</p>
+            <ul>
+              <li><p>To create a normal probability plot: choose <strong>Analyze &gt; Distribution</strong>, select the <c>chisqstat</c> column, and then use the hot spot to select <strong>Normal Quantile Plot</strong>.</p></li>
+              <li><p>The chi-squared distribution is equivalent to a Gamma distribution with shape <m>6/2 = 3</m> and scale <m>2</m>. Use the hot spot to select <strong>Continuous Fit &gt; Gamma</strong>.</p></li>
+            </ul>
+            <p><url href="images/inv5-1TD3.jpg">Solution link (JMP screenshot 1)</url></p>
+            <image source="images/inv5-1TD3.jpg" width="55%">
+              <description>JMP solution screenshot showing normal quantile plot workflow</description>
+            </image>
+            <p><url href="images/inv5-1TD4.jpg">Solution link (JMP screenshot 2)</url></p>
+            <image source="images/inv5-1TD4.jpg" width="55%">
+              <description>JMP solution screenshot showing gamma fit workflow</description>
+            </image>
+          </hint>
+        </statement>
+      </exercise>
     </paragraphs>
 
   </exercises>
@@ -449,12 +489,29 @@
   <subsection xml:id="practice-5-1">
     <title>Practice Problem 5.1</title>
 
+    <introduction>
+      <p>One question that you may be asking is why not just use the two-sample <m>z</m>-procedures to compare pairs of proportions? We could do this for two groups at a time, e.g., comparing Judge 1 to Judge 2 and then Judge 3 to Judge 5 and so on.</p>
+    </introduction>
+
     <exercise xml:id="practice-5-1-1" label="P5.1.1">
-      <title>Multiple Comparisons</title>
+      <title>Number of Comparisons</title>
       <statement>
-        <p>Why not just use two-sample <m>z</m>-procedures to compare pairs of proportions?</p>
         <p>How many two-group comparisons are there among 7 judges?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-1-2" label="P5.1.2">
+      <title>Type I Error for One Comparison</title>
+      <statement>
         <p>If the significance level is 0.05, what is the Type I error probability for any one comparison?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-1-3" label="P5.1.3">
+      <title>At Least One Type I Error</title>
+      <statement>
         <p>What about the probability of at least one Type I error among all these comparisons: larger or smaller than 0.05? Explain.</p>
       </statement>
       <response/>
