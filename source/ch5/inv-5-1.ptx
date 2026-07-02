@@ -411,8 +411,9 @@
 
     </paragraphs>
 
-<paragraphs>    <title>Discussion</title>
-<p>If the null hypothesis is rejected, the conclusion we draw is that at least one of the population proportions differs from the rest, but we don't have much information about which one. It could be that one explanatory variable group is behaving much differently than the rest or they could all be different. One way to gain more information about the nature of the differences between the <m>\pi_i</m> values is to compare the components of the chi-squared statistic sum.</p>
+    <paragraphs>
+      <title>Discussion</title>
+      <p>If the null hypothesis is rejected, the conclusion we draw is that at least one of the population proportions differs from the rest, but we don't have much information about which one. It could be that one explanatory variable group is behaving much differently than the rest or they could all be different. One way to gain more information about the nature of the differences between the <m>\pi_i</m> values is to compare the components of the chi-squared statistic sum.</p>
 
       <exercise xml:id="inv5-1-t">
         <title>Largest Chi-squared Components</title>
@@ -498,15 +499,15 @@
           <paragraphs>
             <title>Applet</title>
             <p>The normal quantile plot shows noticeable curvature rather than a straight-line pattern, so the simulated chi-squared values do not appear to follow a normal distribution well.</p>
-            <image source="images/inv5-1TD1.jpg" width="55%">
-              <description>Applet solution screenshot for chi-squared simulation</description>
-            </image>
           </paragraphs>
 
           <paragraphs>
             <title>R</title>
             <p>The R output leads to the same conclusion: the normal probability plot bends upward in the right tail, which indicates right skew and suggests that a normal model is not appropriate for this null distribution.</p>
-            <image source="images/inv5-1TD2.jpg" width="55%">
+            <image source="images/inv5-1TD1.jpg" width="35%">
+             <description>Applet solution screenshot for chi-squared simulation</description>
+            </image>
+            <image source="images/inv5-1TD2.jpg" width="35%">
               <description>R solution screenshot for chi-squared simulation</description>
             </image>
           </paragraphs>
@@ -514,13 +515,14 @@
           <paragraphs>
             <title>JMP</title>
             <p>In JMP, the normal quantile plot again shows clear departure from linearity, reinforcing that the null distribution is not approximately normal.</p>
-            <image source="images/inv5-1TD3.jpg" width="55%">
-              <description>JMP solution screenshot showing normal quantile plot workflow</description>
-            </image>
-            <p>Fitting the corresponding gamma distribution produces a much better match, which is consistent with using a chi-squared model for this statistic.</p>
             <image source="images/inv5-1TD4.jpg" width="55%">
               <description>JMP solution screenshot showing gamma fit workflow</description>
             </image>
+            <p>Fitting the corresponding gamma distribution produces a much better match, which is consistent with using a chi-squared model for this statistic.</p>
+                        <image source="images/inv5-1TD3.jpg" width="55%">
+              <description>JMP solution screenshot showing normal quantile plot workflow</description>
+            </image>
+
           </paragraphs>
         </solution>
       </exercise>
