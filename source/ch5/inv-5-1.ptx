@@ -99,7 +99,7 @@
       <exercise xml:id="inv5-1-c">
         <title>Propose a Statistic</title>
         <statement>
-          <p>Suggest a standardized statistic (formula based on your observed sample data) for assessing the strength of evidence against the null hypothesis. Write your statistic as a formula or rule for obtaining one number that takes into account information relevant to comparing all seven groups.</p>
+          <p>Suggest a statistic (formula based on your observed sample data) for assessing the strength of evidence against the null hypothesis. </p><p><em>Hint</em>: Write your statistic as a formula or rule for obtaining one number that takes into account information relevant to comparing all seven groups.</p>
         </statement>
         <response/>
         <solution>
@@ -119,6 +119,10 @@
         </solution>
       </exercise>
 
+  <assemblage>
+            <title>Definition: Mean Group Difference</title>
+            <p>One possible statistic for measuring how much the sample proportions differ from each other is the <term>Mean Group Difference</term>, which finds the absolute value of each pairwise difference <m>|\hat{p}_i - \hat{p}_j|</m>, sums these values, and divides by the number of differences.</p>
+          </assemblage>
       <exercise xml:id="inv5-1-e">
         <title>Interpret Statistic Values</title>
         <statement>
@@ -129,12 +133,8 @@
           <p>Large values of a statistic that measures group differences would indicate evidence against the null hypothesis. Small values would be more consistent with the null hypothesis being true.</p>
         </solution>
       </exercise>
-  <assemblage>
-            <title>Definition: Mean Group Difference</title>
-            <p>One possible statistic for measuring how much the sample proportions differ from each other is the <term>Mean Group Difference</term>, which finds the absolute value of each pairwise difference, sums these values, and divides by the number of differences.</p>
-          </assemblage>
         
-      <p>Although we could consider using the Mean Group Difference statistic here, a more common statistic is the chi-squared statistic. Rather than looking at all differences among the groups, it focuses on how each cell count differs from its expected value under the null hypothesis and then sums this up across all cells.</p>
+      <p>Although we could consider using the Mean Group Difference statistic here, a more common statistic is the <em>chi-squared statistic</em>. Rather than looking at all differences among the groups, it focuses on how each cell count differs from its expected value under the null hypothesis and then sums this up across all cells.</p>
 
       <exercise xml:id="inv5-1-f">
         <title>Estimate Common Probability</title>
@@ -253,7 +253,7 @@
       <assemblage>
         <title>Chi-squared Test Statistic</title>
         <p>The chi-squared test statistic is used to compare observed and expected counts in a two-way table:</p>
-        <p><me>\chi^2 = \sum \frac{(\text{observed} - \text{expected})^2}{\text{expected}}</me></p>
+        <p><me>\chi^2 = \sum_{i=1}^{r} \sum_{j=1}^{c} \frac{(observed_{ij} - expected_{ij})^2}{expected_{ij}}</me></p>
         <p>This standardized statistic computes a discrepancy for each cell and sums across all cells.</p>
       </assemblage>
 
@@ -296,12 +296,13 @@
         </solution>
       </exercise>
 
-          <p>Use the Analyzing Two-Way Tables - Samples <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqSample.htm">applet</url>.</p>
+          <p>Use the <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqSample.htm">Analyzing Two-Way Tables - Samples applet</url>.</p>
           <ul>
             <li><p>In the data window, type: <c>Spock.txt</c>.</p></li>
-            <li><p>Press <c>Use Data</c>, then press <c>Use Table</c>.</p></li>
-            <li><p>Check <c>Show Sampling Options</c>.</p></li>
-            <li><p>Use 1000 for Number of Samples and press <c>Draw Samples</c>.</p></li>
+            <li><p>Press <strong>Use Data</strong>, then press <strong>Use Table</strong>.</p></li>
+            <li><p>Check <strong>Show Sampling Options</strong>.</p></li>
+            <ul><li>The default is to assume <m>\pi</m> = 776/2975 <m>\approx</m> 0.261 for the probability of a female juror for each judge.</li></ul>
+            <li><p>Use 1000 for Number of Samples and press <strong>Draw Samples</strong>.</p></li>
             <li><p>Use the pull-down to switch the statistic to the chi-squared value.</p></li>
           </ul>
 
@@ -331,6 +332,7 @@
 
     <paragraphs>
       <title>Mathematical Model</title>
+<p>Rather than rely on simulation to produce (approximate) p-values for this test, we can use a probability model to approximate the sampling distribution of the chi-squared test statistic. We just need to find the right one.</p>
 
       <exercise xml:id="inv5-1-q">
         <title>Normal Model Check</title>
@@ -346,7 +348,7 @@
       <exercise xml:id="inv5-1-r">
         <title>Chi-squared Model Check</title>
         <statement>
-          <p>Check the applet option to overlay a chi-squared distribution. Does this model appear to adequately predict the simulated null distribution?</p>
+          <p>Check the <strong>Overlay Chi-squared distribution</strong>. Does this model appear to adequately predict the simulated null distribution?</p>
         </statement>
         <response/>
         <solution>
@@ -354,19 +356,37 @@
         </solution>
       </exercise>
 
-      <p>The chi-squared distribution is skewed right and provides a reasonable model for this statistic for large sample sizes. We typically use this model when all expected counts are at least 1 and at least 80% of expected counts are at least 5.</p>
+      <assemblage><p>The chi-squared distribution is skewed right and provides a reasonable model for this statistic for large sample sizes. We typically use this model when all expected counts are at least 1 and at least 80% of expected counts are at least 5.</p>
 
-      <p>When comparing several population proportions, the chi-squared degrees of freedom are <m>c-1</m>, where <m>c</m> is the number of explanatory variable categories.</p>
+      <p>When comparing several population proportions, the chi-squared degrees of freedom are equal to the number of explanatory variable categories minus 1, <m>c-1</m>, this makes sense because once we specify the number of observations in <m>c - 1</m> categories, the last category is forced to assume the value that allows the observed counts to sum to the sample size.</p>
+      </assemblage>
 
+<p>For large sample sizes, we will use the chi-squared distribution to approximate the p-value.</p>
       <paragraphs>
         <title>Technology Detour - Chi-squared Probabilities</title>
 
-        <ul>
-          <li><p><alert>Applet:</alert> Use the <url href="http://www.rossmanchance.com/applets/2021/test/chiCalc.htm">Chi-squared Probability Calculator</url> and specify degrees of freedom, observed value, and direction.</p></li>
-          <li><p><alert>R:</alert> Use <c>iscamchisqprob(xval, df)</c>, where <c>xval</c> is the observed statistic and <c>df</c> is degrees of freedom.</p></li>
-          <li><p><alert>Minitab:</alert> Graph > Probability Distribution Plot (View Probability), choose Chi-Square, set df and right-tail cutoff.</p></li>
-          <li><p><alert>JMP:</alert> Distribution Calculator, choose Chi Square, set df, and compute <c>X &gt; Qa</c> for the observed value.</p></li>
-        </ul>
+        <exercise xml:id="inv5-1-tech-detour-chi-squared-probabilities">
+          <title>Choose Technology Instructions</title>
+          <statement>
+            <p>Choose one set of instructions by opening a hint below.</p>
+
+            <hint>
+              <title>Applet Instructions</title>
+              <p>Use the <url href="http://www.rossmanchance.com/applets/2021/test/chiCalc.htm">Chi-squared Probability Calculator</url> and specify degrees of freedom, observed value, and direction.</p>
+            </hint>
+
+            <hint>
+              <title>R Instructions</title>
+              <p>Use <c>is.chisqprob(xval, df)</c>, where <c>xval</c> is the observed statistic and <c>df</c> is degrees of freedom.</p>
+            </hint>
+
+            <hint>
+              <title>JMP Instructions</title>
+              <p>Use the <strong>Distribution Calculator</strong> and select the <strong>Chi Square</strong> distribution. Enter 6 as the degrees of freedom (DF) and press Enter. Leave the type of calculation to <strong>Input quantiles…</strong>. You want <strong>X &gt; Qa</strong> and specify 62.68 for Qa.</p>
+            </hint>
+          </statement>
+          <solution/>
+        </exercise>
       </paragraphs>
 
       <exercise xml:id="inv5-1-s">
@@ -380,12 +400,15 @@
         </solution>
       </exercise>
 
-      <p><alert>Discussion:</alert> If the null hypothesis is rejected, the conclusion is that at least one population proportion differs from the rest, but the test itself does not identify exactly which one(s). To learn more, inspect the component terms in the chi-squared sum.</p>
+    </paragraphs>
+
+<paragraphs>    <title>Discussion</title>
+<p> If the null hypothesis is rejected, the conclusion we draw is that at least one of the population proportions differs from the rest, but we don't have much information about which one(s). It could be that one explanatory variable group is behaving much differently than the rest or they could all be different. One way to gain more information about the nature of the differences between the <m>\pi_i</m> values is to compare the components of the chi-squared statistic sum.</p>
 
       <exercise xml:id="inv5-1-t">
         <title>Largest Chi-squared Components</title>
         <statement>
-          <p>Return to the chi-squared sum you calculated above. Which cell comparisons provide the largest standardized discrepancies between observed and expected counts?</p>
+          <p>Return to the chi-squared sum you calculated above. Which cell comparison(s) provide the largest (standardized) discrepancies between the observed counts and the expected counts?</p>
         </statement>
         <response/>
         <solution>
@@ -396,7 +419,7 @@
       <exercise xml:id="inv5-1-u">
         <title>Direction of Largest Discrepancies</title>
         <statement>
-          <p>For the cells you identified above, which is larger: observed or expected counts? Explain the implications.</p>
+          <p>For the cells you identified above, which is larger: the observed counts or the expected counts? Explain the implications of this comparison.</p>
         </statement>
         <response/>
         <solution>
@@ -418,23 +441,20 @@
 
     <assemblage xml:id="study-conclusions-5-1">
       <title>Study Conclusions</title>
-      <p>In this study, we modeled the jury-panel selections as independent binomial processes and compared seven sample proportions at once. One judge clearly stood out. If the judges truly had the same long-run probability of selecting women, differences as large as those observed would be extremely unlikely by chance alone. Thus the data provide strong evidence that the long-run probability of a juror being female was not the same across all seven judges. The largest contributions to the chi-squared statistic came from Judge 7, with substantially fewer women and more men than expected. This was Judge Ford, assigned to Dr. Spock's case.</p>
-
-      <p>Because these data are observational and not generated by a true random mechanism, a cause-and-effect conclusion is not warranted. Still, the p-value quantifies how surprising these outcomes would be under the equal-probability model.</p>
+      <p>In this study, we wanted to think of the jury panel selection processes as independent binomial processes with potentially the same probability of success. We considered each of the venires we had as independent random samples from these different processes, and we wanted to compare the 7 sample proportions all at once. One judge clearly stood out compared to the others in these sample data. If we consider these results to be representative of the overall jury selection process, the very small p-value indicates that if in fact the judges’ selections of jurors were independent random processes with the same probability of selecting a woman, then it would be almost impossible to observe sample proportions differing by this much (as measured by the Mean Group Difference or the Chi-squared statistic) by chance alone. Thus, the sample data provide strong evidence that the long-run probability of a juror being female is not the same among all seven judges. The largest contributions to the <m>\Chi^2</m> test statistic, by far, come from judge 7, who has many more men than would be expected and many fewer women than would be expected on his jury lists. This was indeed Judge Ford, the judge assigned to Dr. Spock’s case. In fact, there are two issues with this judge: The sampling from the city directory led to a far smaller percentage of women (29%) than the city population (53%) across all the judges, and then the proportion of women selected by Judge Ford dipped even lower to around 15% women. (By the way, the Court of Appeals reversed Spock’s conviction on other grounds without considering the jury selection issue.) Although this p-value is hypothetical in nature (there was not a true random mechanism used in generating these outcomes), and we cannot draw a cause-and-effect conclusion because of the observational nature of the data, the p-value does provides a measure of how very surprising these results would be to occur by chance alone.</p>
     </assemblage>
 
     <paragraphs>
       <title>Technical Conditions</title>
-      <p>The chi-squared distribution approximates the sampling distribution of the chi-squared statistic when data arise from independent binomial random variables. This approximation is generally considered valid when all expected counts are at least 1 and at least 80% of expected counts are at least 5.</p>
-      <p>The data should come from independent random samples or from a randomized comparative experiment. This procedure is often called a chi-squared test of homogeneity.</p>
-      <p>A key advantage of this test is that it provides a single overall p-value across all group comparisons, helping control the overall Type I error rate.</p>
+      <p>The chi-squared distribution approximates the sampling distribution of the chi-squared statistic when data arise from independent binomial random variables. This approximation is considered valid as long as at least 80% of the expected cell counts are at least 5 and all of the individual expected cell counts are at least one. Notice we are discussing the <em>expected</em> cell counts here, not the observed cell counts. The data also need to have been collected from independent random samples or from a randomized comparative experiment. This is often called a <em>chi-squared test of homogeneity</em>.</p>
+      <p>The advantage of a Chi-squared Test is that it provides an overall p-value for all the comparisons at once which controls the overall probability of a Type I error. If the p-value is not significant, we usually do not check all of the individual comparisons. If the p-value is significant, then we can do more formal follow-up analyses to see where the difference(s) are arising. If we run many tests on the same data set, we are always concerned about an inflated overall Type I error rate.</p>
     </paragraphs>
 
     <paragraphs>
-      <title>Technology Detour - Simulating Sampling Distribution for Chi-Square Statistic</title>
+      <title>Technology Detour</title>
 
       <exercise xml:id="inv5-1-tech-detour-chi-square-sim">
-        <title>Choose Technology Instructions</title>
+        <title>Simulating Sampling Distribution for Chi-Square Statistic</title>
         <statement>
           <p>Choose one set of instructions by opening a hint below.</p>
 
