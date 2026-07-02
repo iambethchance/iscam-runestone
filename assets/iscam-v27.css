@@ -865,18 +865,27 @@ main .ptx-content section#section5-1-intro > h2.heading > span.codenumber + span
 /* inv-5-1a three-year count table: make columns more balanced than default. */
 #newspaper-three-year-counts-table table {
     table-layout: fixed !important;
-    width: 108% !important;
-    max-width: 108% !important;
+    width: 104% !important;
+    max-width: 104% !important;
 }
 
-#newspaper-three-year-counts-table table th:first-child,
-#newspaper-three-year-counts-table table td:first-child {
-    width: 34% !important;
+#newspaper-three-year-counts-table table th,
+#newspaper-three-year-counts-table table td {
+    width: 25% !important;
+    white-space: normal !important;
 }
 
-#newspaper-three-year-counts-table table th:not(:first-child),
-#newspaper-three-year-counts-table table td:not(:first-child) {
-    width: 22% !important;
+/* inv-5-1a header emphasis: only row/column headers should be bold. */
+#newspaper-three-year-counts-table table thead th,
+#newspaper-three-year-counts-table table tbody th,
+#newspaper-2x2-collapse-table table thead th,
+#newspaper-2x2-collapse-table table tbody th {
+    font-weight: 700 !important;
+}
+
+#newspaper-three-year-counts-table table td,
+#newspaper-2x2-collapse-table table td {
+    font-weight: 400 !important;
 }
 
 /* Hide full chapter prefix ("Chapter" and number) for chapter5-2 page title. */

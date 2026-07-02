@@ -9,13 +9,14 @@
       <stack>
         <p>With the proliferation of the Internet and 24-hour cable news outlets, it has become much easier for people to hear much more information, much more quickly. This has raised concerns that some news organizations may try to report information before it has been properly verified. A media believability survey has been conducted since 1985 (under the direction of the Pew Research Center for the People and the Press since 1996) to examine whether different news organizations have been losing credibility over time.</p>
 
-        <p>The survey is based on telephone interviews among a national sample of adults 18 years or older living in the continental United States. One question asked respondents to rate believability on a 4-to-1 scale, where 4 means they believe all or most of what the organization says and 1 means they believe almost nothing.</p>
+      
       </stack>
-      <image source="images/inv5-1a.png" width="100%">
+      <image source="images/inv-5-1a-intro.JPG" width="100%">
         <description>Newspaper credibility illustration</description>
       </image>
     </sidebyside>
-
+  <p>The survey is based on telephone interviews among a national sample of adults 18 years or older living in the continental United States. One question asked respondents to rate believability on a 4-to-1 scale, where 4 means they believe all or most of what the organization says and 1 means they believe almost nothing.</p>
+  
     <exercise xml:id="inv5-1a-a">
       <title>Rotate the Organization List</title>
       <statement>
@@ -92,31 +93,31 @@
             <cell>2006</cell>
             <cell>2012</cell>
           </row>
-          <row header="yes">
+          <row>
             <cell halign="left">Believe almost all (4)</cell>
             <cell>265</cell>
             <cell>181</cell>
             <cell>183</cell>
           </row>
-          <row header="yes">
+          <row>
             <cell halign="left">3</cell>
             <cell>353</cell>
             <cell>371</cell>
             <cell>342</cell>
           </row>
-          <row header="yes">
+          <row>
             <cell halign="left">2</cell>
             <cell>235</cell>
             <cell>261</cell>
             <cell>268</cell>
           </row>
-          <row header="yes">
+          <row>
             <cell halign="left">Believe almost nothing (1)</cell>
             <cell>69</cell>
             <cell>120</cell>
             <cell>129</cell>
           </row>
-          <row header="yes">
+          <row>
             <cell halign="left">Total</cell>
             <cell>922</cell>
             <cell>933</cell>
@@ -197,8 +198,8 @@
       <title>Chi-square Test Statistic</title>
       <p>We use the same chi-square statistic, now with more than two categories for the response variable:</p>
       <p><me>\chi^2 = \sum_{i=1}^{r}\sum_{j=1}^{c} \frac{(O_{ij}-E_{ij})^2}{E_{ij}}</me></p>
-      <p>where <m>r</m> is the number of rows and <m>c</m> is the number of columns. Degrees of freedom are <m>(r-1)(c-1)</m>.</p>
-      <p>This model is considered appropriate if at least 80% of expected counts are at least 5 and all expected counts are at least 1.</p>
+      <p>where <m>r</m> is the number of rows and <m>c</m> is the number of columns in the two-way table. This statistic often follows a <em>chi-squared distribution</em> with <em>degrees of freedom</em> <m>(r-1)(c-1)</m>.</p>
+      <p>We will consider this distribution valid as long as at least 80% of expected counts are at least 5 and all expected counts are at least 1.</p>
     </assemblage>
 
     <exercise xml:id="inv5-1a-j">
@@ -222,25 +223,53 @@
 
           <hint>
             <title>Applet Instructions</title>
-            <p>Use <url href="http://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?FET=1">Analyzing Two-way Tables</url> and paste either raw data or a two-way table.</p>
+            <p>In the <url href="http://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?FET=1">Analyzing Two-way Tables applet</url>:</p>
+            <ul>
+              <li><p>Paste either the raw data (press <alert>Use Data</alert>) or the two-way table (press <alert>Use Table</alert>) into the Sample data box, using one-word category names.</p></li>
+              <li><p>Check the <alert>Show X^2 Output</alert> box.</p></li>
+              <li><p>Check the <alert>Show table</alert> box to see observed counts.</p></li>
+            </ul>
+            <p>The applet reports the observed <m>X^2</m> value, degrees of freedom, and cell contributions.</p>
+            <image source="ch5applet1.png" width="26%">
+              <description>Sample data input window in the applet</description>
+            </image>
+            <image source="ch5applet2.png" width="20%">
+              <description>Show X squared output checkbox in the applet</description>
+            </image>
+            <image source="chapter5applet3.png" width="20%">
+              <description>Show table checkbox in the applet</description>
+            </image>
           </hint>
 
           <hint>
             <title>R Instructions</title>
-            <p>Use <c>chisq.test()</c> with either a matrix of counts or a two-way table from raw data. You can inspect expected counts with <c>chisq.test(data)$expected</c> and residuals with <c>chisq.test(data)$residuals</c>.</p>
-          </hint>
-
-          <hint>
-            <title>Minitab Instructions</title>
-            <p>Use Stat &gt; Tables &gt; Chi-Square Test for Association with either summarized counts or raw data columns.</p>
+            <ul>
+              <li><p>If you have counts for the two-way table, pass the table with:
+<code> &gt; spocktable = matrix(c(119, 235, 197, 533, 118, 287, 77, 149, 30, 81, 149, 403, 86, 511), ncol=7)</code>
+<code> &gt; chisq.test(spocktable)</code></p></li>
+              <li><p>For raw data (e.g., in <c>spock</c>), create and pass a frequency table:
+<code> &gt; chisq.test(table(spock))</code></p></li>
+            </ul>
+            <p>Use <c>chisq.test(data)$expected</c> and <c>chisq.test(data)$residuals</c> for more output.</p>
           </hint>
 
           <hint>
             <title>JMP Instructions</title>
+            
+<ul><li>The data must be in “stacked format” (one column with the EV categories, one column with the RV categories). Each row can represent an observation or each row can represent a unique combination of variables and then you can a column of counts (“tallied”).</li>
+<li> Choose <alert> Analyze > Fit Y by X</alert></li>
+<li>	Specify the response variable (<alert>Y, columns</alert>) and the explanatory variable (<alert>X, factor</alert>)
+<ul><li>	If the data is tallied, specify the column of counts in the <alert>Freq</alert> box.</li></ul></li>
+<li>	Press <alert>OK</alert>. The chi-square statistic we calculated above is in the <alert>Pearson</alert> row.</li>
+</ul>
+
+            <image source="inv5-1jmp.png" width="34%">
+              <description>Fit Y by X role assignment in JMP</description>
+            </image>
+            
             <p>Use Analyze &gt; Fit Y by X, with response as Y and year as X. For tallied data, supply a frequency column.</p>
           </hint>
         </statement>
-        <solution/>
       </exercise>
     </paragraphs>
 
@@ -266,19 +295,19 @@
           <cell>1998 sample</cell>
           <cell>Total</cell>
         </row>
-        <row header="yes">
+        <row>
           <cell halign="left">Largely believable</cell>
           <cell>525</cell>
           <cell>618</cell>
           <cell>1209</cell>
         </row>
-        <row header="yes">
+        <row>
           <cell halign="left">Not largely believable</cell>
           <cell>397</cell>
           <cell>304</cell>
           <cell>701</cell>
         </row>
-        <row header="yes">
+        <row>
           <cell halign="left">Total</cell>
           <cell>922</cell>
           <cell>922</cell>
@@ -311,11 +340,13 @@
 
     <paragraphs>
       <title>Discussion</title>
-      <p>The chi-squared procedure can compare two or more proportions. For two proportions, chi-squared and the two-sided two-proportion <m>z</m>-test are equivalent: the chi-squared statistic equals <m>z^2</m>, and the p-values agree for a two-sided test. For one-sided alternatives, use the two-proportion <m>z</m>-test. With more than two proportions, use chi-squared.</p>
+      <p>The chi-squared procedure can be used to compare two or more proportions. When there are only two proportions, the procedure is equivalent to a two-sided <m>z</m>-test for proportions from Chapter 3. The chi-squared test statistic is equal to <m>z^2</m> and the chi-squared p-value is equal to the two-sided p-value for the two-sample <m>z</m>-test. If the alternative hypothesis is two-sided, you can use either procedure. If the alternative hypothesis is one-sided, then you should carry out the two-sample <m>z</m>-test to obtain the one-sided p-value. If there are more than two proportions, then you must use the chi-squared procedure, which will only assess whether or not at least one population proportion differs from the others.</p>
 
-      <p>For a 2x2 table, Fisher's Exact Test is another option and is always valid when conditioning on margins.</p>
+      <p>For a <m>2\times 2</m> two-way table, another alternative is Fisher's Exact Test as you learned in Chapter 3. It is always appropriate to carry out Fisher's Exact Test (if you are willing to fix the row and column totals), though it may be a bit less convenient with huge sample sizes (which becomes less of an issue with each new computer chip).</p>
 
-      <p>Also remember that chi-squared tests detect evidence of association in general; they do not directly test a specific directional trend unless that is built into a different model.</p>
+      <p>However, of all three of these procedures, the two-sample <m>z</m>-procedure is the only one that also enables us to calculate a confidence interval to estimate the magnitude of the difference in the two population proportions.</p>
+
+      <p>Keep in mind that chi-squared tests look for evidence of any association. They do not care which is the explanatory variable and which is the response variable, and they do not look for specific types of association, like time trend.</p>
     </paragraphs>
 
     <exercise xml:id="inv5-1a-practice">
@@ -326,16 +357,10 @@
         <p>August 1989 (1507 respondents): 4 = 32%, 3 = 47%, 2 = 14%, 1 = 2%, cannot rate = 5%.</p>
         <p>February 1993 (2001 respondents): 4 = 31%, 3 = 42%, 2 = 18%, 1 = 6%, cannot rate = 3%.</p>
 
-        <ol>
-          <li><p>Is the difference in the distribution of believability ratings statistically significant between these two years?</p></li>
-          <li><p>Is this convincing evidence that the GM explosion segment caused a decrease in NBC News believability?</p></li>
-        </ol>
+        <p>Is the difference in the distribution of believability ratings statistically significant between these two years?</p>
+        <p>Is this convincing evidence that the GM explosion segment caused a decrease in NBC News believability?</p>
       </statement>
       <response/>
-      <solution>
-        <p>Using the two-year rating distributions (after removing cannot-rate responses), a chi-square test indicates a statistically significant difference in believability distribution between the two years.</p>
-        <p>This does not by itself establish causation. The polling comparison is observational, so the GM segment may be associated with the decline, but other changes over time could also contribute.</p>
-      </solution>
     </exercise>
 
   </exercises>
