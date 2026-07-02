@@ -843,37 +843,31 @@ main .ptx-content section#section5-1-intro > h2.heading > span.codenumber + span
     font-style: normal !important;
 }
 
+/* inv-5-2 story-title column headers: smaller and italicized (exclude first blank and Total columns). */
+#morals-story-counts-table table thead th:nth-child(n+2):nth-child(-n+5),
+#morals-story-obs-exp-table table thead th:nth-child(n+2):nth-child(-n+5) {
+    font-size: 0.88em !important;
+    font-style: italic !important;
+}
+
 /* inv-5-1a tables: row headers should be bold but not italic. */
 #inv-5-1a table tbody th {
     font-weight: 700 !important;
     font-style: normal !important;
 }
 
-/* inv-5-1a percentage table: keep columns visually equal, allow slight right overflow. */
-#newspaper-2006-percent-table table {
-    table-layout: fixed !important;
-    width: 108% !important;
-    max-width: 108% !important;
+/* inv-5-3 table: row/column headers bold, body counts regular. */
+#nightlights-eye-table table thead th,
+#nightlights-eye-table table tbody th {
+    font-weight: 700 !important;
+    font-style: normal !important;
 }
 
-#newspaper-2006-percent-table table th,
-#newspaper-2006-percent-table table td {
-    width: 20% !important;
-    white-space: normal !important;
+#nightlights-eye-table table td {
+    font-weight: 400 !important;
 }
 
-/* inv-5-1a three-year count table: make columns more balanced than default. */
-#newspaper-three-year-counts-table table {
-    table-layout: fixed !important;
-    width: 104% !important;
-    max-width: 104% !important;
-}
-
-#newspaper-three-year-counts-table table th,
-#newspaper-three-year-counts-table table td {
-    width: 25% !important;
-    white-space: normal !important;
-}
+/* inv-5-1a table widths are set inline with <col width="..."/> in source/ch5/inv-5-1a.ptx. */
 
 /* inv-5-1a header emphasis: only row/column headers should be bold. */
 #newspaper-three-year-counts-table table thead th,

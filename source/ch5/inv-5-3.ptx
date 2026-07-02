@@ -5,9 +5,13 @@
   <exercises xml:id="exercises5-3" hidden-label="yes">
     <title>The Study</title>
 
-    <p>Recall <xref ref="investigation-3-2" text="custom">Investigation 3.2</xref>, where we examined a simplified version of the Quinn, Shin, Maguire, and Stone (1999) study of childhood lighting exposure and eye refraction. Here we use three categories for each variable.</p>
+    <p>Recall <xref ref="inv-3-2" text="custom">Investigation 3.2</xref>, where we examined a simplified version of the Quinn, Shin, Maguire, and Stone (1999) study of childhood lighting exposure and eye refraction. Here we use three categories for each variable.</p>
 
-    <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+    <image source="images/inv-5-3intro.jpeg" width="42%">
+      <description>Investigation 5.3 introduction image</description>
+    </image>
+
+    <tabular xml:id="nightlights-eye-table" halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
       <row header="yes">
         <cell></cell>
         <cell>Dark</cell>
@@ -50,7 +54,7 @@
     <p><m>H_0</m>: no association between lighting type and eye condition in the population.</p>
     <p><m>H_a</m>: there is an association.</p>
 
-    <p>This is a chi-squared test of association.</p>
+    <p>This is a <em>chi-squared test of association.</em></p>
 
     <exercise xml:id="inv5-3-a">
       <title>Simulation Plan</title>
@@ -68,7 +72,7 @@
     <exercise xml:id="inv5-3-b">
       <title>Expected Count Calculation</title>
       <statement>
-        <p>Use the general formula to calculate the expected count for the Room light and Far-sighted cell.</p>
+        <p>Use the general formula to calculate the expected count for the <em>Room light, Far-sighted</em> cell.</p>
       </statement>
       <response/>
       <solution>
@@ -110,48 +114,60 @@
       </solution>
     </exercise>
 
-    <assemblage>
+    <assemblage xml:id="study-conclusions-5-3">
       <title>Study Conclusions</title>
       <p>The segmented bar graph suggests near-sightedness increases with lighting level in this sample. A chi-squared test of association is appropriate because expected counts are sufficiently large. The p-value is extremely small, indicating strong evidence of association between lighting and eye condition in the population represented by this sample. The largest cell discrepancies are fewer near-sighted children than expected in the dark group and more than expected in the room-light group.</p>
       <p>Because this is an observational study, a cause-and-effect conclusion is not warranted. Confounding variables (for example, parental vision and related household lighting choices) may explain part of the observed association. Generalization should also be cautious because children were not sampled as a simple random sample from all children.</p>
     </assemblage>
+  </exercises>
 
-    <exercise xml:id="inv5-3-practice">
-      <title>Practice Problem 5.3</title>
+  <subsection xml:id="practice-5-3">
+    <title>Practice Problem 5.3</title>
+
+    <introduction>
+      <p>The following table classifies births in 2002 by mother's race and gestation length:</p>
+      <tabular xml:id="births-race-gestation-table" halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
+        <row header="yes">
+          <cell></cell>
+          <cell>White (non-Hispanic)</cell>
+          <cell>Black (non-Hispanic)</cell>
+          <cell>Hispanic</cell>
+        </row>
+        <row>
+          <cell halign="left">Pre-term (under 37 weeks)</cell>
+          <cell>251,132</cell>
+          <cell>101,423</cell>
+          <cell>99,510</cell>
+        </row>
+        <row>
+          <cell halign="left">Full term (37-42 weeks)</cell>
+          <cell>1,885,189</cell>
+          <cell>435,923</cell>
+          <cell>692,314</cell>
+        </row>
+        <row>
+          <cell halign="left">Post-term (over 42 weeks)</cell>
+          <cell>149,898</cell>
+          <cell>36,896</cell>
+          <cell>64,997</cell>
+        </row>
+      </tabular>
+    </introduction>
+
+    <exercise xml:id="practice-5-3-1" label="P5.3.1">
+      <title>Chi-squared Test of Association</title>
       <statement>
-        <p>The following table classifies births in 2002 by mother's race and gestation length:</p>
-        <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
-          <row header="yes">
-            <cell></cell>
-            <cell>White (non-Hispanic)</cell>
-            <cell>Black (non-Hispanic)</cell>
-            <cell>Hispanic</cell>
-          </row>
-          <row>
-            <cell halign="left">Pre-term (under 37 weeks)</cell>
-            <cell>251132</cell>
-            <cell>101423</cell>
-            <cell>99510</cell>
-          </row>
-          <row>
-            <cell halign="left">Full term (37-42 weeks)</cell>
-            <cell>1885189</cell>
-            <cell>435923</cell>
-            <cell>692314</cell>
-          </row>
-          <row>
-            <cell halign="left">Post-term (over 42 weeks)</cell>
-            <cell>149898</cell>
-            <cell>36896</cell>
-            <cell>64997</cell>
-          </row>
-        </tabular>
-
         <p>Conduct a chi-squared test of association and report hypotheses, conditions, statistic, p-value, and conclusion.</p>
-        <p>Which two or three cells contribute most to <m>\chi^2</m>? Are observed counts above or below expected in those cells, and what does that reveal?</p>
       </statement>
       <response/>
     </exercise>
 
-  </exercises>
+    <exercise xml:id="practice-5-3-2" label="P5.3.2">
+      <title>Largest Cell Contributions</title>
+      <statement>
+        <p>Which two or three cells contribute most to <m>\chi^2</m>? Are observed counts above or below expected in those cells, and what does that reveal?</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
 </section>
