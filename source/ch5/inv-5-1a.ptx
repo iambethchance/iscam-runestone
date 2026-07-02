@@ -42,6 +42,11 @@
     <p>When asked about "The daily newspaper you are most familiar with," the percentage distribution of 1,004 responses in June 2006 was:</p>
 
     <tabular xml:id="newspaper-2006-percent-table" halign="center" top="minor" bottom="minor" left="minor" right="minor">
+      <col halign="center" width="20%"/>
+      <col halign="center" width="20%"/>
+      <col halign="center" width="20%"/>
+      <col halign="center" width="20%"/>
+      <col halign="center" width="20%"/>
       <row header="yes">
         <cell>Believe all or almost all (4)</cell>
         <cell>3</cell>
@@ -87,6 +92,10 @@
       <statement>
         <p>Enter your 2006 values from the earlier count-conversion question in the table:</p>
         <tabular xml:id="newspaper-three-year-counts-table" halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
+          <col halign="center" width="25%"/>
+          <col halign="center" width="25%"/>
+          <col halign="center" width="25%"/>
+          <col halign="center" width="25%"/>
           <row header="yes">
             <cell>Response \ Year</cell>
             <cell>1998</cell>
@@ -230,13 +239,13 @@
               <li><p>Check the <alert>Show table</alert> box to see observed counts.</p></li>
             </ul>
             <p>The applet reports the observed <m>X^2</m> value, degrees of freedom, and cell contributions.</p>
-            <image source="ch5applet1.png" width="26%">
+            <image source="images/ch5applet1.png" width="26%">
               <description>Sample data input window in the applet</description>
             </image>
-            <image source="ch5applet2.png" width="20%">
+            <image source="images/ch5applet2.png" width="20%">
               <description>Show X squared output checkbox in the applet</description>
             </image>
-            <image source="chapter5applet3.png" width="20%">
+            <image source="images/chapter5applet3.png" width="20%">
               <description>Show table checkbox in the applet</description>
             </image>
           </hint>
@@ -244,9 +253,9 @@
           <hint>
             <title>R Instructions</title>
             <ul>
-              <li><p>If you have counts for the two-way table, pass the table with:
-<code> &gt; spocktable = matrix(c(119, 235, 197, 533, 118, 287, 77, 149, 30, 81, 149, 403, 86, 511), ncol=7)</code>
-<code> &gt; chisq.test(spocktable)</code></p></li>
+              <li><p>If you have counts for the two-way table, pass the table with:</p><p>
+<c> &gt; spocktable = matrix(c(119, 235, 197, 533, 118, 287, 77, 149, 30, 81, 149, 403, 86, 511), ncol=7)</c></p><p>
+<c> &gt; chisq.test(spocktable)</c></p></li>
               <li><p>For raw data (e.g., in <c>spock</c>), create and pass a frequency table:
 <code> &gt; chisq.test(table(spock))</code></p></li>
             </ul>
@@ -263,11 +272,10 @@
 <li>	Press <alert>OK</alert>. The chi-square statistic we calculated above is in the <alert>Pearson</alert> row.</li>
 </ul>
 
-            <image source="inv5-1jmp.png" width="34%">
+            <image source="images/inv5-1jmp.png" width="34%">
               <description>Fit Y by X role assignment in JMP</description>
             </image>
             
-            <p>Use Analyze &gt; Fit Y by X, with response as Y and year as X. For tallied data, supply a frequency column.</p>
           </hint>
         </statement>
       </exercise>
@@ -349,19 +357,75 @@
       <p>Keep in mind that chi-squared tests look for evidence of any association. They do not care which is the explanatory variable and which is the response variable, and they do not look for specific types of association, like time trend.</p>
     </paragraphs>
 
-    <exercise xml:id="inv5-1a-practice">
-      <title>Practice Problem 5.1A</title>
+  </exercises>
+
+  <subsection xml:id="practice-5-1a">
+    <title>Practice Problem 5.1A</title>
+
+    <introduction>
+      <p>In February of 1993, NBC News admitted that it staged the explosion of a General Motors truck during a segment of the program Dateline NBC in November of 1992. The segment included crash footage that explosively showed how the gas tanks of certain old GM trucks could catch fire in a sideways collision. In a nationwide poll of adults (Times Mirror News Interest Index) conducted in August, 1989, 1507 respondents gave NBC news the following believability ratings.</p>
+
+      <tabular xml:id="nbc-believability-1989-table" halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <col halign="center" width="20%"/>
+        <col halign="center" width="20%"/>
+        <col halign="center" width="20%"/>
+        <col halign="center" width="20%"/>
+        <col halign="center" width="20%"/>
+        <row header="yes">
+          <cell>Believe 4</cell>
+          <cell>3</cell>
+          <cell>2</cell>
+          <cell>Cannot believe 1</cell>
+          <cell>Cannot rate</cell>
+        </row>
+        <row>
+          <cell>32%</cell>
+          <cell>47%</cell>
+          <cell>14%</cell>
+          <cell>2%</cell>
+          <cell>5%</cell>
+        </row>
+      </tabular>
+
+      <p>The same poll conducted Feb. 12-27, 1993 saw 2001 respondents give the following results:</p>
+
+      <tabular xml:id="nbc-believability-1993-table" halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <col halign="center" width="20%"/>
+        <col halign="center" width="20%"/>
+        <col halign="center" width="20%"/>
+        <col halign="center" width="20%"/>
+        <col halign="center" width="20%"/>
+        <row header="yes">
+          <cell>Believe 4</cell>
+          <cell>3</cell>
+          <cell>2</cell>
+          <cell>Cannot believe 1</cell>
+          <cell>Cannot rate</cell>
+        </row>
+        <row>
+          <cell>31%</cell>
+          <cell>42%</cell>
+          <cell>18%</cell>
+          <cell>6%</cell>
+          <cell>3%</cell>
+        </row>
+      </tabular>
+    </introduction>
+
+    <exercise xml:id="practice-5-1a-1" label="P5.1A.1">
+      <title>Compare Believability Distributions</title>
       <statement>
-        <p>In 1992, NBC News admitted that it staged part of the General Motors truck explosion footage aired on Dateline NBC. Compare believability ratings from two polls:</p>
-
-        <p>August 1989 (1507 respondents): 4 = 32%, 3 = 47%, 2 = 14%, 1 = 2%, cannot rate = 5%.</p>
-        <p>February 1993 (2001 respondents): 4 = 31%, 3 = 42%, 2 = 18%, 1 = 6%, cannot rate = 3%.</p>
-
         <p>Is the difference in the distribution of believability ratings statistically significant between these two years?</p>
-        <p>Is this convincing evidence that the GM explosion segment caused a decrease in NBC News believability?</p>
       </statement>
       <response/>
     </exercise>
 
-  </exercises>
+    <exercise xml:id="practice-5-1a-2" label="P5.1A.2">
+      <title>Interpret Causation Claim</title>
+      <statement>
+        <p>Is this convincing evidence that the General Motors explosion caused a decrease in the believability of NBC News?</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
 </section>
