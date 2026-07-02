@@ -5,7 +5,14 @@
   <exercises xml:id="exercises5-2" hidden-label="yes">
     <title>The Study</title>
 
-    <p>Lee et al. (2014) examined whether classic stories about moral behavior influence whether children lie. They studied three moral stories (Pinocchio, The Boy Who Cried Wolf, and George Washington and the Cherry Tree) and one control story (The Tortoise and the Hare). Children ages 3-7 completed a temptation-resistance task and then were asked whether they had peeked. Suppose the results for children who peeked were:</p>
+    <sidebyside widths="70% 25%" margins="0% 0%" valign="top">
+      <stack>
+        <p>Lee et al. (<url>https://ggsc.berkeley.edu/images/uploads/Lee_et_al_2014_Can_Classic_Moral_Stories_Promote_Honesty_in_Children.pdf</url>, 2014) examined whether classic stories about moral behavior influence whether children lie. They studied three moral stories (Pinocchio, The Boy Who Cried Wolf, and George Washington and the Cherry Tree) and one control story (The Tortoise and the Hare). Children ages 3-7 completed a temptation-resistance task and then were asked whether they had peeked. Suppose the results for children who peeked were:</p>
+      </stack>
+      <image source="images/inv-5-2intro.jpg" width="82%">
+        <description>Illustration for Investigation 5.2</description>
+      </image>
+    </sidebyside>
 
     <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
       <row header="yes">
@@ -16,7 +23,7 @@
         <cell>Boy Who Cried Wolf</cell>
         <cell>Total</cell>
       </row>
-      <row header="yes">
+      <row>
         <cell halign="left">Confessed</cell>
         <cell>20</cell>
         <cell>22</cell>
@@ -24,7 +31,7 @@
         <cell>16</cell>
         <cell>71</cell>
       </row>
-      <row header="yes">
+      <row>
         <cell halign="left">Did not (lied)</cell>
         <cell>44</cell>
         <cell>22</cell>
@@ -32,7 +39,7 @@
         <cell>30</cell>
         <cell>127</cell>
       </row>
-      <row header="yes">
+      <row>
         <cell halign="left">Total</cell>
         <cell>64</cell>
         <cell>44</cell>
@@ -89,7 +96,7 @@
         <cell>Boy Who Cried Wolf</cell>
         <cell>Total</cell>
       </row>
-      <row header="yes">
+      <row>
         <cell halign="left">Confessed</cell>
         <cell>20 (22.95)</cell>
         <cell>22 (15.78)</cell>
@@ -97,7 +104,7 @@
         <cell>16 (16.49)</cell>
         <cell>71</cell>
       </row>
-      <row header="yes">
+      <row>
         <cell halign="left">Did not (lied)</cell>
         <cell>44 (41.05)</cell>
         <cell>22 (28.22)</cell>
@@ -105,7 +112,7 @@
         <cell>30 (29.51)</cell>
         <cell>127</cell>
       </row>
-      <row header="yes">
+      <row>
         <cell halign="left">Total</cell>
         <cell>64</cell>
         <cell>44</cell>
@@ -120,7 +127,24 @@
     <exercise xml:id="inv5-2-d">
       <title>Simulation with Applet</title>
       <statement>
-        <p>Use the Analyzing Two-way Tables applet and enter the two-way table (without totals, using one-word labels). Use story as explanatory variable, run a large number of shuffles, choose chi-squared as the statistic, and compute an empirical p-value.</p>
+        <p>Use the applet to generate a randomization distribution and compute an empirical p-value for this study.</p>
+        <aside>
+          <title>Analyzing Two-way Tables Applet</title>
+          <p>Use the <url href="http://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?FET=1">Analyzing Two-way Tables applet</url>.</p>
+        </aside>
+        <hint>
+          <title>Applet Instructions</title>
+          <sidebyside widths="66% 29%" margins="0% 0%" valign="top">
+            <stack>
+              <p>Enter the two-way table (without totals and using only one-word variable names) into the Sample Data box and press <alert>Use Table</alert>.</p>
+              <p>Make sure the story is being used as the explanatory variable or press the <alert>(explanatory, response)</alert> button. Check the <alert>Show Shuffle Options</alert> box, enter a large number of shuffles, and press <alert>Shuffle</alert>.</p>
+              <p>Use the pull-down menu to set the Statistic choice to the Chi-squared (<m>\chi^2</m>) statistic. Compute an empirical p-value based on the simulated chi-squared values.</p>
+            </stack>
+            <image source="images/inv-5-2d.jpeg" width="100%">
+              <description>Analyzing Two-way Tables applet setup for Investigation 5.2</description>
+            </image>
+          </sidebyside>
+        </hint>
       </statement>
       <response/>
       <solution>
@@ -166,21 +190,55 @@
 
     <assemblage xml:id="study-conclusions-5-2">
       <title>Study Conclusions</title>
-      <p>The observed confession proportions were 0.313 (control), 0.500 (George Washington), 0.295 (Pinocchio), and 0.348 (Boy Who Cried Wolf). Although the pattern suggests higher confession in the George Washington group, a chi-squared test with these data is not statistically significant (<m>\chi^2 = 5.202</m>, <m>p = 0.158</m>). Thus these data do not provide convincing evidence that story type influences the probability of confession in this setting.</p>
+      <p>Examining the conditional proportions that confessed across the four stories (0.313, 0.500, 0.295, 0.348), we see the children were more likely to confess when read the George Washington story compared to the negative consequences stories or the neutral story. A chi-squared test (valid because all expected cell counts are larger than 5) however does not find these differences to be statistically significant (<m>X^2 = 5.202</m>, <m>p-value = 0.158</m>). We do not have convincing evidence that the type of story influences Canadian children's likelihood of confessing their indiscretion in this situation. Still, the results are in the direction conjectured by the researchers, and larger sample sizes may find significant results if this study was repeated.</p>
     </assemblage>
+  </exercises>
 
-    <exercise xml:id="inv5-2-practice">
-      <title>Practice Problem 5.2</title>
+  <subsection xml:id="practice-5-2">
+    <title>Practice Problem 5.2</title>
+
+    <introduction>
+      <p>Suppose we compare only George Washington to the control (Tortoise and the Hare).</p>
+    </introduction>
+
+    <exercise xml:id="practice-5-2-1" label="P5.2.1">
+      <title>Validity of Chi-squared Test</title>
       <statement>
-        <p>Suppose we compare only George Washington to the control (Tortoise and the Hare).</p>
         <p>Would a chi-squared test be valid for these data? Explain.</p>
-        <p>What are the degrees of freedom?</p>
-        <p>Use technology to calculate the chi-squared statistic and p-value. What do you conclude?</p>
-        <p>Use technology for a two-sample <m>z</m>-test. How does the two-sided p-value compare with the chi-squared result?</p>
-        <p>Use Fisher's Exact Test. How does that p-value compare?</p>
       </statement>
       <response/>
     </exercise>
 
-  </exercises>
+    <exercise xml:id="practice-5-2-2" label="P5.2.2">
+      <title>Degrees of Freedom</title>
+      <statement>
+        <p>What are the degrees of freedom?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-2-3" label="P5.2.3">
+      <title>Chi-squared Test Output</title>
+      <statement>
+        <p>Use technology to calculate the chi-squared statistic and p-value. What do you conclude?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-2-4" label="P5.2.4">
+      <title>Two-sample <m>z</m>-test Comparison</title>
+      <statement>
+        <p>Use technology for a two-sample <m>z</m>-test. How does the two-sided p-value compare with the chi-squared result?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-2-5" label="P5.2.5">
+      <title>Fisher's Exact Test Comparison</title>
+      <statement>
+        <p>Use Fisher's Exact Test. How does that p-value compare?</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
 </section>
