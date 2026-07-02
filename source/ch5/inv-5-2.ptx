@@ -7,7 +7,7 @@
 
     <p>Lee et al. (2014) examined whether classic stories about moral behavior influence whether children lie. They studied three moral stories (Pinocchio, The Boy Who Cried Wolf, and George Washington and the Cherry Tree) and one control story (The Tortoise and the Hare). Children ages 3-7 completed a temptation-resistance task and then were asked whether they had peeked. Suppose the results for children who peeked were:</p>
 
-    <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+    <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
       <row header="yes">
         <cell></cell>
         <cell>Tortoise and Hare (control)</cell>
@@ -16,7 +16,7 @@
         <cell>Boy Who Cried Wolf</cell>
         <cell>Total</cell>
       </row>
-      <row>
+      <row header="yes">
         <cell halign="left">Confessed</cell>
         <cell>20</cell>
         <cell>22</cell>
@@ -24,7 +24,7 @@
         <cell>16</cell>
         <cell>71</cell>
       </row>
-      <row>
+      <row header="yes">
         <cell halign="left">Did not (lied)</cell>
         <cell>44</cell>
         <cell>22</cell>
@@ -32,7 +32,7 @@
         <cell>30</cell>
         <cell>127</cell>
       </row>
-      <row>
+      <row header="yes">
         <cell halign="left">Total</cell>
         <cell>64</cell>
         <cell>44</cell>
@@ -42,33 +42,45 @@
       </row>
     </tabular>
 
-    <exercise xml:id="inv5-2-a" label="I5.2.a">
+    <exercise xml:id="inv5-2-a">
       <title>Observational Study or Experiment?</title>
       <statement>
-        <p>(a) Was this an observational study or an experiment?</p>
+        <p>Was this an observational study or an experiment?</p>
       </statement>
       <response/>
+      <solution>
+        <p>This was a randomized comparative experiment, because the researchers determined which story each child heard.</p>
+      </solution>
     </exercise>
 
-    <exercise xml:id="inv5-2-b" label="I5.2.b">
+    <exercise xml:id="inv5-2-b">
       <title>Identify Variables</title>
       <statement>
-        <p>(b) Identify the explanatory variable and response variable. Classify each as quantitative or categorical.</p>
+        <p>Identify the explanatory variable and response variable. Classify each as quantitative or categorical.</p>
       </statement>
       <response/>
+      <solution>
+        <p>Explanatory variable: story type (categorical).</p>
+        <p>Response variable: whether the child confessed (categorical).</p>
+      </solution>
     </exercise>
 
-    <exercise xml:id="inv5-2-c" label="I5.2.c">
+    <exercise xml:id="inv5-2-c">
       <title>State Hypotheses</title>
       <statement>
-        <p>(c) State appropriate null and alternative hypotheses for this research question in symbols and/or words. Define any symbols used.</p>
+        <p>State appropriate null and alternative hypotheses for this research question in symbols and/or words. Define any symbols used.</p>
       </statement>
       <response/>
+      <solution>
+        <p>Let <m>\pi_j</m> be the long-run probability of confession for story group <m>j</m>.</p>
+        <p><m>H_0\!: \pi_{\text{tortoise}} = \pi_{\text{Washington}} = \pi_{\text{Pinocchio}} = \pi_{\text{wolf}}</m></p>
+        <p><m>H_a\!:</m> not all of these probabilities are equal (at least one differs).</p>
+      </solution>
     </exercise>
 
     <p>The following table displays both observed and expected counts:</p>
 
-    <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+    <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
       <row header="yes">
         <cell></cell>
         <cell>Tortoise and Hare (control)</cell>
@@ -77,7 +89,7 @@
         <cell>Boy Who Cried Wolf</cell>
         <cell>Total</cell>
       </row>
-      <row>
+      <row header="yes">
         <cell halign="left">Confessed</cell>
         <cell>20 (22.95)</cell>
         <cell>22 (15.78)</cell>
@@ -85,7 +97,7 @@
         <cell>16 (16.49)</cell>
         <cell>71</cell>
       </row>
-      <row>
+      <row header="yes">
         <cell halign="left">Did not (lied)</cell>
         <cell>44 (41.05)</cell>
         <cell>22 (28.22)</cell>
@@ -93,7 +105,7 @@
         <cell>30 (29.51)</cell>
         <cell>127</cell>
       </row>
-      <row>
+      <row header="yes">
         <cell halign="left">Total</cell>
         <cell>64</cell>
         <cell>44</cell>
@@ -105,56 +117,76 @@
 
     <p>To model this randomized experiment under the null, we shuffle confession outcomes among story groups while preserving the group sizes.</p>
 
-    <exercise xml:id="inv5-2-d" label="I5.2.d">
+    <exercise xml:id="inv5-2-d">
       <title>Simulation with Applet</title>
       <statement>
-        <p>(d) Use the Analyzing Two-way Tables applet and enter the two-way table (without totals, using one-word labels). Use story as explanatory variable, run a large number of shuffles, choose chi-squared as the statistic, and compute an empirical p-value.</p>
+        <p>Use the Analyzing Two-way Tables applet and enter the two-way table (without totals, using one-word labels). Use story as explanatory variable, run a large number of shuffles, choose chi-squared as the statistic, and compute an empirical p-value.</p>
       </statement>
       <response/>
+      <solution>
+        <p>Answers will vary slightly by simulation run, but with many shuffles the empirical p-value should be around 0.16.</p>
+      </solution>
     </exercise>
 
-    <exercise xml:id="inv5-2-e" label="I5.2.e">
+    <exercise xml:id="inv5-2-e">
       <title>Overlay Chi-square Model</title>
       <statement>
-        <p>(e) Overlay the chi-square distribution (df = 3). Does it appear to model the simulated null distribution reasonably well? Explain.</p>
+        <p>Overlay the chi-square distribution (df = 3). Does it appear to model the simulated null distribution reasonably well? Explain.</p>
       </statement>
       <response/>
+      <solution>
+        <p>Yes. The chi-squared distribution with <m>df=3</m> is a reasonable model for the simulated null distribution here, and the model-based p-value is close to the simulation p-value.</p>
+      </solution>
     </exercise>
 
     <p>When data arise from a randomized experiment, the chi-squared model is generally appropriate if at least 80% of expected counts are at least 5 and all are at least 1.</p>
 
-    <exercise xml:id="inv5-2-f" label="I5.2.f">
+    <exercise xml:id="inv5-2-f">
       <title>Technology Output</title>
       <statement>
-        <p>(f) Use technology to carry out the chi-squared test. Report the chi-squared statistic, degrees of freedom, and p-value.</p>
+        <p>Use technology to carry out the chi-squared test. Report the chi-squared statistic, degrees of freedom, and p-value.</p>
       </statement>
       <response/>
+      <solution>
+        <p>A representative output is <m>\chi^2 \approx 5.20</m> with <m>df=3</m> and <m>p\approx 0.16</m>.</p>
+      </solution>
     </exercise>
 
-    <exercise xml:id="inv5-2-g" label="I5.2.g">
+    <exercise xml:id="inv5-2-g">
       <title>Largest Cell Contributions</title>
       <statement>
-        <p>(g) Examine chi-squared cell contributions (or residuals). Which cell(s) contribute most to the chi-squared sum? Compare observed to expected counts in those cells. What do these comparisons suggest about which stories may make children more likely to confess?</p>
+        <p>Examine chi-squared cell contributions (or residuals). Which cells contribute most to the chi-squared sum? Compare observed to expected counts in those cells. What do these comparisons suggest about which stories may make children more likely to confess?</p>
       </statement>
       <response/>
+      <solution>
+        <p>The largest contributions come from the George Washington column (both the confessed and did-not-confess cells).</p>
+        <p>For George Washington, the observed confessed count is larger than expected and the observed did-not-confess count is smaller than expected, suggesting this story may increase confession relative to the others.</p>
+      </solution>
     </exercise>
 
-    <assemblage>
+    <assemblage xml:id="study-conclusions-5-2">
       <title>Study Conclusions</title>
       <p>The observed confession proportions were 0.313 (control), 0.500 (George Washington), 0.295 (Pinocchio), and 0.348 (Boy Who Cried Wolf). Although the pattern suggests higher confession in the George Washington group, a chi-squared test with these data is not statistically significant (<m>\chi^2 = 5.202</m>, <m>p = 0.158</m>). Thus these data do not provide convincing evidence that story type influences the probability of confession in this setting.</p>
     </assemblage>
 
-    <exercise xml:id="inv5-2-practice" label="I5.2.practice">
+    <exercise xml:id="inv5-2-practice">
       <title>Practice Problem 5.2</title>
       <statement>
         <p>Suppose we compare only George Washington to the control (Tortoise and the Hare).</p>
-        <p>(a) Would a chi-squared test be valid for these data? Explain.</p>
-        <p>(b) What are the degrees of freedom?</p>
-        <p>(c) Use technology to calculate the chi-squared statistic and p-value. What do you conclude?</p>
-        <p>(d) Use technology for a two-sample <m>z</m>-test. How does the two-sided p-value compare with part (c)?</p>
-        <p>(e) Use Fisher's Exact Test. How does that p-value compare?</p>
+        <p>Would a chi-squared test be valid for these data? Explain.</p>
+        <p>What are the degrees of freedom?</p>
+        <p>Use technology to calculate the chi-squared statistic and p-value. What do you conclude?</p>
+        <p>Use technology for a two-sample <m>z</m>-test. How does the two-sided p-value compare with the chi-squared result?</p>
+        <p>Use Fisher's Exact Test. How does that p-value compare?</p>
       </statement>
       <response/>
+      <solution>
+        <p>Yes. A chi-squared test is valid because all expected counts in this <m>2\times 2</m> table are above 5.</p>
+        <p><m>df=(2-1)(2-1)=1</m>.</p>
+        <p>Chi-squared test results are approximately <m>\chi^2\approx 3.86</m>, <m>df=1</m>, and two-sided <m>p\approx 0.05</m> (about 0.049 to 0.050 depending on software details).</p>
+        <p>The two-sample <m>z</m>-test gives essentially the same two-sided p-value as the chi-squared result, because for a <m>2\times2</m> table the test statistics satisfy <m>z^2=\chi^2</m>.</p>
+        <p>Fisher's Exact Test is typically slightly larger here but of similar magnitude; it leads to the same practical conclusion (marginal evidence, not strong at conventional cutoffs).</p>
+      </solution>
     </exercise>
 
   </exercises>

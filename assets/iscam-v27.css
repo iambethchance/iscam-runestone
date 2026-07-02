@@ -837,6 +837,48 @@ main .ptx-content section#section5-1-intro > h2.heading > span.codenumber + span
     font-weight: 700 !important;
 }
 
+/* inv-5-2 tables: row headers should be bold but not italic. */
+#inv-5-2 table tbody th {
+    font-weight: 700 !important;
+    font-style: normal !important;
+}
+
+/* inv-5-1a tables: row headers should be bold but not italic. */
+#inv-5-1a table tbody th {
+    font-weight: 700 !important;
+    font-style: normal !important;
+}
+
+/* inv-5-1a percentage table: keep columns visually equal, allow slight right overflow. */
+#newspaper-2006-percent-table table {
+    table-layout: fixed !important;
+    width: 108% !important;
+    max-width: 108% !important;
+}
+
+#newspaper-2006-percent-table table th,
+#newspaper-2006-percent-table table td {
+    width: 20% !important;
+    white-space: normal !important;
+}
+
+/* inv-5-1a three-year count table: make columns more balanced than default. */
+#newspaper-three-year-counts-table table {
+    table-layout: fixed !important;
+    width: 108% !important;
+    max-width: 108% !important;
+}
+
+#newspaper-three-year-counts-table table th:first-child,
+#newspaper-three-year-counts-table table td:first-child {
+    width: 34% !important;
+}
+
+#newspaper-three-year-counts-table table th:not(:first-child),
+#newspaper-three-year-counts-table table td:not(:first-child) {
+    width: 22% !important;
+}
+
 /* Hide full chapter prefix ("Chapter" and number) for chapter5-2 page title. */
 .ptx-content section.chapter#chapter5-2 > .heading > span.type,
 .ptx-content section.chapter#chapter5-2 > .heading > span.codenumber,
