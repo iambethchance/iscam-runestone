@@ -134,13 +134,13 @@
     <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
       <stack>
         <p><em>A</em></p>
-        <image source="images/inv5-4boxplota.jpeg" width="100%">
+        <image source="images/inv5-4boxplota-v2.jpeg" width="100%">
           <description>First set of boxplots for Investigation 5.4</description>
         </image>
       </stack>
       <stack>
         <p><em>B</em></p>
-        <image source="images/inv5-4boxplotb.jpeg" width="100%">
+        <image source="images/inv5-4boxplotb-v2.jpeg" width="100%">
           <description>Second set of boxplots for Investigation 5.4</description>
         </image>
       </stack>
@@ -339,10 +339,10 @@
       <title>Within-group Variability</title>
       <statement>
         <p>Calculate the average group variance across the five groups (square each group SD, then average).</p>
-      </statement>
       <hint>
         <p>Square each group's standard deviation to obtain its variance, and then take the average of those five values.</p>
       </hint>
+      </statement>
       <response/>
       <solution>
         <p>average variance = <m>(1.586^2 + 1.482^2 + 1.533^2 + 1.794^2 + 1.748^2)/5 = 13.3357/5 = 2.67</m>.</p>
@@ -372,7 +372,7 @@
       <title>Compute Variability Ratio</title>
       <statement>
         <p>Compute the ratio: <xref ref="inv5-4-m" text="custom">Question 14</xref> divided by <xref ref="inv5-4-o" text="custom">Question 16</xref>. 
-        <me>F = between-group variability / within-group variability</me></p>
+        <me>F = between-group\ variability / within-group \ variability</me></p>
         <p>How many times larger is between-group variability than within-group variability?</p>
       </statement>
       <response/>
@@ -431,7 +431,7 @@
       </solution>
     </exercise>
 
-    <assemblage xml:id="probability-detour-5-4-f-result"><p><em>Probability Result:</em> For large samples, the null distribution of this statistic is well modeled by an <em>F</em> distribution with parameters <m> number of groups -1 </m> and <m> overall sample size - number of groups </m>, the degrees of freedom of the numerator and the denominator respectively.</p>
+    <assemblage xml:id="probability-detour-5-4-f-result"><title>Probability Result:</title> For large samples, the null distribution of this statistic is well modeled by an <em>F</em> distribution with parameters <m> number\ of\ groups - 1 </m> and <m> overall\ sample\ size - number\ of\ groups </m>, the degrees of freedom of the numerator and the denominator respectively.</p>
 </assemblage>
 
     <exercise xml:id="inv5-4-v" label="I5.4.v">
@@ -518,6 +518,53 @@
       </solution>
     </exercise>
 
+    <assemblage>
+      <title>Study Conclusions</title>
+      <p>The distributions of qualification scores in the five treatment groups look reasonably symmetric with similar standard deviations, so it is appropriate to apply the Analysis of Variance procedure. There is moderate evidence that the mean qualification ratings differ depending on the type of disability (p-value = 0.030). Descriptively, the candidates with crutches appear to have higher ratings on average, and the candidates with hearing impairments tend to have slightly lower ratings. (Other follow-up procedures could be used to determine which group means differ significantly from which others.) This was a randomized experiment, so we can attribute these differences in qualification scores to the disability shown. But we must be cautious about considering the students in this study to be representative of a larger population, particularly a population of employers who make actual hiring decisions.
+</p>
+    </assemblage>
+
+  </exercises>
+
+  <subsection xml:id="practice-5-4">
+    <title>Practice Problem 5.4</title>
+
+    <exercise xml:id="practice-5-4-1" label="P5.4.1">
+      <title>Compare Boxplot Scenarios</title>
+      <statement>
+        <p>Reconsider the boxplots from <xref ref="inv5-4-e" text="custom">Question 5</xref>. Explain how they compare and how this will affect the calculation of the <em>F</em>-statistic and lead to different p-values. Explain based on how the <em>F</em>-statistic is calculated which set of boxplots will have the smaller p-value.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <introduction>
+      <p>Lifetimes of notable people in nine occupational categories were gathered from <em>The World Almanac and Book of Facts.</em></p>
+    </introduction>
+
+    <exercise xml:id="practice-5-4-2" label="P5.4.2">
+      <title>Count Pairwise Occupation Comparisons</title>
+      <statement>
+        <p>How many different <em>pairs</em> of occupations can be considered?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-4-3" label="P5.4.3">
+      <title>ANOVA vs Many Two-sample <m>t</m>-tests</title>
+      <statement>
+        <p>Explain why conducting an ANOVA is different from conducting separate two-sample <em>t</em>-tests on all possible pairs of occupations. Include an explanation for why it would be inappropriate to do all of those separate two-sample <em>t</em>-tests.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-4-4" label="P5.4.4">
+      <title>What ANOVA Rejection Implies</title>
+      <statement>
+        <p>Would rejecting the null hypothesis in ANOVA allow you to conclude that every occupation being studied has a different population mean lifetime from every other occupation? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+
     <assemblage xml:id="terminology-detour-5-4">
       <title>Terminology Detour</title>
       <p>Suppose we compare <m>I</m> group means, with group sample sizes <m>n_i</m>. The overall sample size will be denoted by  <m>n=\sum n_i</m>.</p>
@@ -536,56 +583,15 @@
          <stack>
            <p>When the null hypothesis is true, this test statistic should be close to 1. So larger values of <em>F</em> provide evidence against the null hypothesis. The corresponding p-value comes from a probability distribution called the <em>F</em> distribution with <m>I - 1</m> and <m>n - I</m> degrees of freedom.</p>
          </stack>
-         <image source="images/inv5-4v.jpg" width="100%">
+         <image source="images/fdist.png" width="100%">
            <description>F distribution reference graphic for Investigation 5.4</description>
          </image>
        </sidebyside>
        <p> We will use this <em>F</em> distribution to approximate both the sampling distribution of this test statistic in repeated samples from the same population (<m>H_0\!: \mu_1 = … = \mu_I</m>) and the randomization distribution for a randomized experiment (H_0: no treatment effect) as long as the technical conditions (above) are met.</p>
        <p>Because we are focusing on the variance of group means, this procedure is termed Analysis of Variance (ANOVA). With one explanatory variable, this is called <em>one-way ANOVA</em>.</p>
-      
     </assemblage>
 
-    <assemblage>
-      <title>Study Conclusions</title>
-      <p>The distributions of qualification scores in the five treatment groups look reasonably symmetric with similar standard deviations, so it is appropriate to apply the Analysis of Variance procedure. There is moderate evidence that the mean qualification ratings differ depending on the type of disability (p-value = 0.030). Descriptively, the candidates with crutches appear to have higher ratings on average, and the candidates with hearing impairments tend to have slightly lower ratings. (Other follow-up procedures could be used to determine which group means differ significantly from which others.) This was a randomized experiment, so we can attribute these differences in qualification scores to the disability shown. But we must be cautious about considering the students in this study to be representative of a larger population, particularly a population of employers who make actual hiring decisions.
-</p>
-    </assemblage>
-
-    <exercise xml:id="inv5-4-practice-a" label="I5.4A">
-      <title>Practice Problem 5.4A</title>
-      <statement>
-        <p>Reconsider the boxplots from <xref ref="inv5-4-e" text="custom">Question 5</xref>. Explain how they compare and how this will affect the calculation of the <em>F</em>-statistic and lead to different p-values. Explain based on how the <em>F</em>-statistic is calculated which set of boxplots will have the smaller p-value.</p>
-      </statement>
-      <response/>
-    </exercise>
-
-    <p>Lifetimes of notable people in nine occupational categories were gathered from <em>The World Almanac and Book of Facts.</em></p>
-
-    <exercise xml:id="inv5-4-practice-b1">
-      <title>Practice Problem 5.4B</title>
-      <statement>
-        <p>How many different <em>pairs</em> of occupations can be considered?</p>
-      </statement>
-      <response/>
-    </exercise>
-
-    <exercise xml:id="inv5-4-practice-b2">
-      <title>Practice Problem 5.4B</title>
-      <statement>
-        <p>Explain why conducting an ANOVA is different from conducting separate two-sample <em>t</em>-tests on all possible pairs of occupations. Include an explanation for why it would be inappropriate to do all of those separate two-sample <em>t</em>-tests.</p>
-      </statement>
-      <response/>
-    </exercise>
-
-    <exercise xml:id="inv5-4-practice-b3">
-      <title>Practice Problem 5.4B</title>
-      <statement>
-        <p>Would rejecting the null hypothesis in ANOVA allow you to conclude that every occupation being studied has a different population mean lifetime from every other occupation? Explain.</p>
-      </statement>
-      <response/>
-    </exercise>
-
-  </exercises>
+  </subsection>
 </section>
 
 
