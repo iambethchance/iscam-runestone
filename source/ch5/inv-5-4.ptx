@@ -110,18 +110,18 @@
       </statement>
       <response/>
       <solution>
-        <p>Example results: The distribution will have a slight skew to the right, be centered around 0.5, with a standard deviation of around 0.2. Observed Mean Group Diff = 0.931.</p>
-      </solution>
-    </exercise>
-
-    <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
-      <image source="images/inv5-4g.jpg" width="100%">
+        <p>Example results: 
+            <image source="images/inv5-4g.jpg" width="100%">
         <description>Applet output for Investigation 5.4g</description>
       </image>
-      <image source="images/inv5-4g2.jpg" width="100%">
+  The distribution will have a slight skew to the right, be centered around 0.5, with a standard deviation of around 0.2.   Observed Mean Group Diff = 0.931. 
+    <image source="images/inv5-4g2.jpg" width="100%">
         <description>Additional applet output for Investigation 5.4g</description>
       </image>
-    </sidebyside>
+    
+</p>
+      </solution>
+    </exercise>
 
     <p>Consider the following sets of boxplots.</p>
 
@@ -244,7 +244,7 @@
     <exercise xml:id="inv5-4-i2" label="I5.4.i2">
       <title>Interpret SD for None Category</title>
       <statement>
-        <p>Write a one-sentence description of the sample standard deviation of the none category.</p>
+        <p>Write a one-sentence description of the sample standard deviation of the <em>none</em> category.</p>
       </statement>
       <response/>
       <solution>
@@ -252,13 +252,24 @@
       </solution>
     </exercise>
 
-    <p>This time, rather than focusing on differences in groups, we will examine <em>deviations</em> in the group means.</p>
+    <p>Now focus on deviations in group means from the overall mean.</p>
 
     <exercise xml:id="inv5-4-j" label="I5.4.j">
       <title>Overall Mean</title>
       <statement>
-        <p>What is the overall mean applicant qualification rating assigned by the 70 students?</p>
+        <p>What is the overall mean applicant qualification rating across all 70 students?</p>
+        <p><var width="8"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition number="4.929" tolerance="0.001">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. The overall mean is 4.929.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
       <solution>
         <p>The overall mean is 4.929.</p>
@@ -268,7 +279,7 @@
     <exercise xml:id="inv5-4-k" label="I5.4.k">
       <title>SD of Group Means</title>
       <statement>
-        <p>If we were to treat the five sample means as five observations, calculate the standard deviation of these five values. What is the denominator of your calculation?</p>
+        <p>Treat the five sample means as five observations. Compute their standard deviation. What denominator appears in this calculation?</p>
       </statement>
       <response/>
       <solution>
@@ -276,7 +287,7 @@
         <p>The variance would be not taking the square root, approximately <m>0.545</m>.</p>
       </solution>
     </exercise>
-<p><em>Recall</em>Squaring the standard deviation gives us the <em>variance</em> of the values.</p>
+<p><em>Recall</em>: Squaring the standard deviation gives us the <em>variance</em> of the values.</p>
     <exercise xml:id="inv5-4-l" label="I5.4.l">
       <title>Equal Contribution of Means?</title>
       <statement>
@@ -288,12 +299,12 @@
       </solution>
     </exercise>
 
-    <p>Our measure of the <em>variability between groups</em> or "treatment effect" will be the <em>weighted variance</em> across the groups, where the weights are sample sizes.</p>
+    <p>Define between-group variability as a weighted variance across group means, weighted by group sample sizes.</p>
 
     <exercise xml:id="inv5-4-m" label="I5.4.m">
       <title>Between-group Variability (Equal <m>n</m>'s)</title>
       <statement>
-        <p>In this case, the sample sizes were equal to 14 in each group, so you can simply multiply your answer to Checkpoint I5.4.k by 14 to measure the variability between groups.</p>
+        <p>Here each group has size 14. Multiply your result from <xref ref="inv5-4-k" text="custom">question 12</xref> by 14 to obtain the between-group variability measure.</p>
       </statement>
       <response/>
       <solution>
@@ -301,11 +312,11 @@
       </solution>
     </exercise>
 
-<p>But now we want to compare this variation to decide if it’s large, more than we might expect to see by random chance alone, reflecting that not everyone gives the same rating scores, even to the same applicant.</p>
+<p>But now we want to compare this variation to decide whether it’s large, more than we might expect to see by random chance alone, reflecting that not everyone gives the same rating scores, even to the same applicant.</p>
     <exercise xml:id="inv5-4-n" label="I5.4.n">
       <title>Measure Natural Variation</title>
       <statement>
-        <p> Suggest a way for measuring this “natural” variation for these data.</p>
+        <p>Suggest a measure for the natural variation in these data that does not directly reflect treatment differences.</p>
       </statement>
       <response/>
       <solution>
@@ -313,18 +324,14 @@
       </solution>
     </exercise>
 
-<p> We could look at the variation in employment ratings (e.g., overall standard deviation), but some of that
-variation is due to the different types of disabilities. However, we can look at the variation in the ratings
-within each type of disability. If we believe these variances are the same, we can simply average across
-the categories, paying a bit more attention to any categories with more observations. (You considered
-something similar back in Investigation 3.5)</p>
+    <p>A natural choice is the pooled within-group variance.</p>
 
 
     <exercise xml:id="inv5-4-o" label="I5.4.o">
       <title>Within-group Variability</title>
       <statement>
-        <p>Calculate the average variance across the five groups.</p>
-        </statement>
+        <p>Compute the average group variance across the five groups (square each group SD, then average).</p>
+      </statement>
       <hint>
         <p>Square each group's standard deviation to obtain its variance, and then take the average of those five values.</p>
       </hint>
@@ -334,30 +341,25 @@ something similar back in Investigation 3.5)</p>
       </solution>
     </exercise>
 
-    <p>When the sample sizes are not equal, the more general formula for this <em>pooled variance</em>, weighted by
-sample size, is:
-This provides an overall estimate of the “within-group” variability, which simplifies to the average of
-the group variances when the sample sizes are equal. The denominator simplifies to <m>n – I</m>, where <m>n</m> is the
-total number of observations in the data set and <m>I</m> is the number of groups being compared.</p>
+    <p>For unequal sample sizes, use the pooled-variance form weighted by group sample sizes, with denominator <m>n-I</m>.</p>
 
     <exercise xml:id="inv5-4-p" label="I5.4.p">
       <title>Equal Variability Assumption</title>
       <statement>
-        <p>In calculating a pooled variance, you are implicitly assuming that the variability is the same across the groups. Explain how the sample statistics reveal that this is a reasonable belief for these data.</p>
+        <p>Explain why it is reasonable here to assume similar within-group variability across the groups.</p>
       </statement>
       <response/>
       <solution>
-        <p>The sample standard deviations reported in (i) are fairly similar to each other.</p>
+        <p>The sample standard deviations reported in <xref ref="inv5-4-i" text="custom">question 9</xref> are fairly similar to each other.</p>
       </solution>
     </exercise>
 
-    <p>Our standardized statistic will consider the ratio of the variability between groups to the variability
-within groups.</p>
+    <p>The standardized statistic compares between-group to within-group variability.</p>
 
     <exercise xml:id="inv5-4-q" label="I5.4.q">
       <title>Compute Variability Ratio</title>
       <statement>
-        <p>Compute the ratio: Checkpoint I5.4.m divided by Checkpoint I5.4.o. How many times larger is between-group variability than within-group variability?</p>
+        <p>Compute the ratio: <xref ref="inv5-4-m" text="custom">question 14</xref> divided by <xref ref="inv5-4-o" text="custom">question 16</xref>. How many times larger is between-group variability than within-group variability?</p>
       </statement>
       <response/>
       <solution>
@@ -368,7 +370,7 @@ within groups.</p>
     <exercise xml:id="inv5-4-r" label="I5.4.r">
       <title>Range of Ratio</title>
       <statement>
-        <p>What is the smallest possible value that this ratio could ever assume? The largest?</p>
+        <p>What is the smallest possible value of this ratio? The largest?</p>
       </statement>
       <response/>
       <solution>
@@ -379,7 +381,7 @@ within groups.</p>
     <exercise xml:id="inv5-4-s" label="I5.4.s">
       <title>Evidence Direction for Ratio</title>
       <statement>
-        <p>What types of values (large, small, positive, negative) will this ratio have when the null hypothesis is false, that is, when the population means are not all equal?</p>
+        <p>When the null is false (not all population means are equal), what kinds of values of this ratio provide evidence against the null?</p>
       </statement>
       <response/>
       <solution>
@@ -392,7 +394,7 @@ within groups.</p>
     <exercise xml:id="inv5-4-t" label="I5.4.t">
       <title><em>F-</em>statistic Null Distribution</title>
       <statement>
-        <p> Describe the behavior of the null distribution and compute the empirical p-value.</p>
+        <p>In the applet, switch the statistic to the F-statistic. Describe the null distribution (shape, mean, SD) and compute the empirical p-value.</p>
       </statement>
       <response/>
       <solution>
@@ -403,7 +405,7 @@ within groups.</p>
     <exercise xml:id="inv5-4-u" label="I5.4.u">
       <title>Compare p-values Across Statistics</title>
       <statement>
-        <p>Has the p-value changed much from when we used the Mean Group Difference statistic?</p>
+        <p>Compare this p-value to the one from Mean Group Difference. Did it change much?</p>
       </statement>
       <response/>
       <solution>
@@ -426,7 +428,7 @@ within groups.</p>
     <exercise xml:id="inv5-4-w" label="I5.4.w">
       <title>Technology Confirmation (ANOVA)</title>
       <statement>
-        <p>Confirm your calculations using technology. Because we are comparing variances, this is called an <em>Analysis of Variance</em> or <em>ANOVA</em> procedure.</p>
+        <p>Confirm your calculations with ANOVA technology output.</p>
       </statement>
       <hint>
         <title>Technology Detour: ANOVA</title>
@@ -436,13 +438,13 @@ within groups.</p>
       </hint>
       <response/>
       <solution>
-        <p>The empirical p-value is similar than the ANOVA table's p-value.</p>
+        <p>The empirical p-value is similar to the ANOVA table's p-value.</p>
       </solution>
     </exercise>
 
     <paragraphs>
       <title>Technical Conditions</title>
-      <p>The ANOVA F-model requires approximately normal group distributions, equal population standard deviations, and independence.</p>
+      <p>The ANOVA <em>F</em>-model requires approximately normal group distributions, equal population standard deviations, and independence.</p>
       <p>Practical checks in this course:</p>
       <ul>
         <li><p>Each group's distribution appears reasonably well behaved (normal plot, dotplot, or histogram).</p></li>
@@ -454,7 +456,7 @@ within groups.</p>
     <exercise xml:id="inv5-4-x" label="I5.4.x">
       <title>Check Conditions with Data</title>
       <statement>
-        <p>Is there evidence of non-normality in these sample data? Calculate the ratio of the largest to smallest standard deviation; is this less than 2? (In the applet, check the box to Overlay <em>F</em> distribution to help assess the fit.)</p>
+        <p>Is there evidence of non-normality? Compute the largest-to-smallest sample SD ratio and assess whether it is less than 2.</p>
       </statement>
       <response/>
       <solution>
@@ -465,7 +467,7 @@ within groups.</p>
     <exercise xml:id="inv5-4-y" label="I5.4.y">
       <title>Conclusions Paragraph</title>
       <statement>
-        <p>Write a paragraph summarizing your conclusions for this study. Be sure to address issues of causation and generalizability as well as statistical significance.</p>
+        <p>Write a paragraph summarizing conclusions for this study, including significance, causation, and generalizability.</p>
       </statement>
       <response/>
       <solution>
