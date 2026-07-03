@@ -2,18 +2,7 @@
 <section xml:id="section5-1-summary">
   <title>Section 5.1 Summary</title>
 
-  <p>This section extended Chapter 3 ideas from two-group categorical comparisons to situations with more than two groups and/or more than two response categories.</p>
+  <p>This section introduced you to the chi-squared test. You saw that this test arises in three different settings. One of these settings is comparing the proportions of success across two or more populations, when independent random samples are taken from the populations or we have a randomized experiment. Another setting is comparing the entire distributions of a categorical response variable (which could include more than just two categories) across two or more populations (treatments), again assuming independent random samples from each population or a randomized experiment. The chi-squared test in these two scenarios is testing homogeneity of proportions. The final setting to which the chi-squared test applies is testing independence between two categorical variables when a random sample is drawn from a population and the observational units are classified according to two categorical variables.</p>
 
-  <paragraphs>
-    <title>What to Remember</title>
-    <p><alert>One unified procedure:</alert> The same chi-squared framework handles homogeneity and association questions with the same computational structure.</p>
-    <p><alert>Design drives interpretation:</alert> Randomized experiments support causal conclusions (for the studied participants), while observational studies support association statements but not causation.</p>
-    <p><alert>Beyond p-values:</alert> Cell contributions/residuals explain where the evidence is coming from and help tell the practical story.</p>
-    <p><alert>Connections to prior methods:</alert> For a <m>2\times 2</m> table, chi-squared results align closely with two-proportion <m>z</m>-tests (with <m>z^2 \approx \chi^2</m> for two-sided tests).</p>
-  </paragraphs>
-
-  <assemblage xml:id="section5-1-next-steps">
-    <title>Looking Ahead</title>
-    <p>In the next section, you will use an analogous strategy for comparing several population means. The key idea will again be to compare variability explained by groups to natural variability within groups, this time with the ANOVA <m>F</m>-statistic.</p>
-  </assemblage>
+  <p>You have found that the same chi-squared test procedure applies to all of these settings. The test statistic is based on comparing observed counts in the two-way table to what counts would be expected if the null hypothesis were true. You used simulation to investigate the sampling distribution of the chi-squared test statistic, and studied the conditions under which that sampling/randomization distribution can be well-approximated by the chi-squared probability distribution, providing an approximation of the test's p-value. Finally, you learned that when the test indicates a statistically significant result, you can further analyze the contributions of the individual cells in the table to the calculation of that test statistic to learn more about the nature of the association. Example 5.1 presents an application of the chi-squared procedure.</p>
 </section>

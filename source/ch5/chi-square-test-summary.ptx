@@ -1,28 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="chi-square-test-summary-5-1">
-  <title>Chi-square Test Summary</title>
+  <title>Summary of Chi-squared Tests</title>
 
-  <p>The chi-squared framework in this section uses one common structure across different study designs.</p>
+  <assemblage xml:id="chi-square-test-summary-box">
+    <title>Summary of Chi-squared Tests</title>
+    <p><em>Test of homogeneity:</em> Data are independent random samples from <m>I</m> different populations/processes or from a randomized experiment with <m>I</m> treatments.</p>
+    <p><m>H_0\!: \pi_1 = \cdots = \pi_I</m> where <m>\pi_i</m> is the probability of success for population (treatment) <m>i</m>.</p>
+    <p><m>H_a\!:</m> at least <m>\pi_i</m> differs from the rest.</p>
+    <p>OR</p>
+    <p><m>H_0</m>: the response variable distributions are the same in each population (treatment).</p>
+    <p><m>H_a</m>: at least one population (treatment) distribution differs from the others.</p>
 
-  <assemblage>
-    <title>Core Setup</title>
-    <p><alert>Statistic:</alert> <m>\chi^2 = \sum \frac{(O-E)^2}{E}</m></p>
-    <p><alert>Degrees of freedom:</alert> <m>(r-1)(c-1)</m></p>
-    <p><alert>Direction of evidence:</alert> larger chi-squared values provide stronger evidence against <m>H_0</m>.</p>
-    <p><alert>Expected count formula:</alert> <m>E = \frac{(\text{row total})(\text{column total})}{\text{table total}}</m></p>
+    <p><em>Test of association:</em> Data are one random sample from a large population, cross-classified by two categorical variables.</p>
+    <p><m>H_0\!:</m> no association between <em>variable 1</em> and <em>variable 2</em> in the population.</p>
+    <p><m>H_a\!:</m> there is an association between <em>variable 1</em> and <em>variable 2</em>.</p>
+
+    <p><alert>Chi-square Statistic:</alert> <m>\chi^2 = \sum_{i=1}^{r} \sum_{j=1}^{c} \frac{(Observed_{ij}-Expected_{ij})^2}{Expected_{ij}}</m></p>
+    <p>The (upper tail) p-value is calculated from the chi-square distribution with <m>(r - 1)(c - 1)</m> degrees of freedom.</p>
+
     <p><alert>Technical conditions:</alert> at least 80% of expected counts are at least 5, and all expected counts are at least 1.</p>
   </assemblage>
 
-  <paragraphs>
-    <title>Design-Specific Interpretation</title>
-    <p><alert>Homogeneity setting:</alert> multiple populations or treatment groups are compared on one categorical response variable.</p>
-    <p><m>H_0</m>: the population distributions are the same across groups.</p>
-    <p><m>H_a</m>: at least one group distribution differs.</p>
+  <exercise xml:id="chi-square-tech-instructions-5-1">
+    <title>Technology Instructions</title>
+    <statement>
+      <p>Use the hint links below to reveal software-specific instructions.</p>
+    </statement>
+    <hint>
+      <title>Applet Instructions</title>
+      <p>Use the <url href="http://www.rossmanchance.com/applets/ChisqShuffle.htm">Analyzing Two-way Tables applet</url>.</p>
+      <ul>
+        <li>You can paste in raw data or the two way table. Remember to use one-word variable names and categories.</li>
+        <li>Check the Show Table and Show X^2 output boxes.</li>
+      </ul>
+    </hint>
+    <hint>
+      <title>R Instructions</title>
+      <ul>
+        <li>Create a matrix of the observed counts and use <c>chisq.test(matrix)</c>.</li>
+        <li>To access the expected counts and (unsquared) chi-squared contributions use <c>chisq.test(matrix)$expected</c> and <c>chisq.test(matrix)$residuals</c>.</li>
+      </ul>
+    </hint>
+    <hint>
+      <title>JMP Instructions</title>
+      <ul>
+        <li>With two nominal columns (and perhaps a column of counts), choose Analyze &gt; Fit Y by X. Report the Pearson chi-square and p-value.</li>
+        <li>Use the Contingency Table hot spot to turn on the Cell Chi Square values.</li>
+      </ul>
+    </hint>
+  </exercise>
 
-    <p><alert>Association setting:</alert> one random sample is cross-classified by two categorical variables.</p>
-    <p><m>H_0</m>: no population association between variables.</p>
-    <p><m>H_a</m>: there is a population association.</p>
-  </paragraphs>
+  <p><alert>Follow-up analysis</alert>: After computing the p-value, examine the largest cell contributions or residuals to describe where observed counts differ most from expected counts.</p>
 
-  <p>After computing the p-value, examine the largest cell contributions or residuals to describe where observed counts differ most from expected counts.</p>
 </section>
