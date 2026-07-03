@@ -48,9 +48,9 @@
       <col halign="center" width="20%"/>
       <col halign="center" width="20%"/>
       <row header="yes">
-        <cell>Believe all or almost all (4)</cell>
-        <cell>3</cell>
-        <cell>2</cell>
+        <cell>Believe all or <newline/> almost all (4)</cell>
+        <cell>Rating <newline/> 3</cell>
+        <cell>Rating <newline/> 2</cell>
         <cell>Believe almost nothing (1)</cell>
         <cell>Cannot rate</cell>
       </row>
@@ -66,7 +66,7 @@
     <exercise xml:id="inv5-1a-c">
       <title>Convert Percentages to Counts</title>
       <statement>
-        <p>Convert these percentages into observed counts among those who felt they could rate their daily newspaper. In other words, eliminate the "cannot rate" responses.</p>
+        <p>Convert these percentages into observed counts among those who felt they could rate their daily newspaper. In other words, eliminate the "can't rate" folks from consideration.</p>
       </statement>
       <response/>
       <solution>
@@ -77,7 +77,7 @@
     <exercise xml:id="inv5-1a-d">
       <title>Compare Response Variable Types</title>
       <statement>
-        <p>How does the response variable in this study differ from the response variable in <xref ref="inv-5-1" text="custom">Investigation 5.1</xref>?</p>
+        <p>How does the response variable in this study differ to that in <xref ref="inv-5-1" text="custom">Investigation 5.1</xref>?</p>
       </statement>
       <response/>
       <solution>
@@ -165,7 +165,7 @@
     <exercise xml:id="inv5-1a-g">
       <title>Expected Count for 2006 Rating 4</title>
       <statement>
-        <p>If the proportion who believe all or almost all of what they read was the same in all three populations, how many in the 2006 sample would you expect to give rating 4?</p>
+        <p>If the proportion who believe all or almost all of what they read was the same in all three populations, how many in the 2006 sample would you expect to believe all or almost all of what they read?</p>
       </statement>
       <response/>
       <solution>
@@ -176,7 +176,7 @@
     <exercise xml:id="inv5-1a-h">
       <title>Expected Count for 2012 Rating 1</title>
       <statement>
-        <p>What is the expected number of rating-1 responses in 2012?</p>
+        <p>What is the expected number of 1 raters in 2012?</p>
       </statement>
       <response/>
       <solution>
@@ -194,7 +194,8 @@
     <exercise xml:id="inv5-1a-i">
       <title>State Hypotheses</title>
       <statement>
-        <p>State null and alternative hypotheses for assessing whether the distribution of responses differs among the three years. State with symbols and in words.</p>
+        <p>State the null and alternative hypotheses for assessing whether the sample data provide strong evidence that the distribution of responses differs among the three years.</p>
+        <p>How would you do this with symbols? What could you say in words?</p>
       </statement>
       <response/>
       <solution>
@@ -256,8 +257,8 @@
               <li><p>If you have counts for the two-way table, pass the table with:</p><p>
 <c> &gt; spocktable = matrix(c(119, 235, 197, 533, 118, 287, 77, 149, 30, 81, 149, 403, 86, 511), ncol=7)</c></p><p>
 <c> &gt; chisq.test(spocktable)</c></p></li>
-              <li><p>For raw data (e.g., in <c>spock</c>), create and pass a frequency table:
-<code> &gt; chisq.test(table(spock))</code></p></li>
+              <li><p>For raw data (e.g., in <c>spock</c>), create and pass a frequency table:</p><p>
+<c> &gt; chisq.test(table(spock))</c></p></li>
             </ul>
             <p>Use <c>chisq.test(data)$expected</c> and <c>chisq.test(data)$residuals</c> for more output.</p>
           </hint>
@@ -284,7 +285,7 @@
     <exercise xml:id="inv5-1a-k">
       <title>Compute Test Statistic and p-value</title>
       <statement>
-        <p>Use technology to calculate the chi-squared statistic, verify the degrees of freedom, and find the p-value. Do you reject or fail to reject the null hypothesis?</p>
+        <p>Use technology (see Technology Detour) to calculate the chi-squared statistic, verify the degrees of freedom, and calculate the p-value. Do you reject or fail to reject the null hypothesis?</p>
       </statement>
       <response/>
       <solution>
@@ -326,7 +327,7 @@
       <exercise xml:id="inv5-1a-l">
         <title>Chi-squared Test on 2x2 Table</title>
         <statement>
-          <p>Use technology to carry out a chi-squared test for whether the population proportion giving a largely believable rating differs between 1998 and 2012. Report the statistic, degrees of freedom, and p-value.</p>
+          <p>Use technology to carry out a chi-squared test to decide whether the difference in the population proportions giving a largely believable rating differed significantly between the two years. Report the standardized statistic, degrees of freedom, and p-value.</p>
         </statement>
         <response/>
         <solution>
@@ -337,7 +338,7 @@
       <exercise xml:id="inv5-1a-m">
         <title>Two-proportion <m>z</m>-test Comparison</title>
         <statement>
-          <p>Carry out a two-sided two-proportion <m>z</m>-test for the same 2x2 table. Report the standardized statistic and p-value. How do the p-values compare? What relationship do you observe between the standardized statistics?</p>
+          <p>Now carry out a two-sided two-proportion <m>z</m>-test for this table. Report the standardized statistic and p-value. How do the p-values compare? What do you think is the relationship between the standardized statistics?</p>
         </statement>
         <response/>
         <solution>
@@ -363,7 +364,7 @@
     <title>Practice Problem 5.1A</title>
 
     <introduction>
-      <p>In February of 1993, NBC News admitted that it staged the explosion of a General Motors truck during a segment of the program Dateline NBC in November of 1992. The segment included crash footage that explosively showed how the gas tanks of certain old GM trucks could catch fire in a sideways collision. In a nationwide poll of adults (Times Mirror News Interest Index) conducted in August, 1989, 1507 respondents gave NBC news the following believability ratings.</p>
+      <p>In February of 1993, NBC News admitted that it staged the explosion of a General Motors truck during a segment of the program Dateline NBC in November of 1992. The segment included crash footage that explosively showed how the gas tanks of certain old GM trucks could catch fire in a sideways collision. In a nationwide poll of adults (<em>Times Mirror News Interest Index</em>) conducted in August, 1989, 1507 respondents gave NBC news the following believability ratings.</p>
 
       <tabular xml:id="nbc-believability-1989-table" halign="center" top="minor" bottom="minor" left="minor" right="minor">
         <col halign="center" width="20%"/>
