@@ -25,6 +25,9 @@
         <p>Identify the observational units, explanatory variable, and response variable in this study. Identify each variable as quantitative or categorical. Is this an observational study or an experiment? Explain.</p>
       </statement>
       <response/>
+      <solution>
+        <p>The observational units are undergraduate students and the explanatory variable is the type of disability, the response variable is the rating of candidate's qualifications. This is an experiment as the undergraduate students were randomly assigned to view one of the types of disabilities.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="inv5-4-b" label="I5.4.b">
@@ -33,6 +36,11 @@
         <p>State a null and an alternative hypothesis to reflect the researchers' conjecture. Be sure to define any parameter symbols you use.</p>
       </statement>
       <response/>
+      <solution>
+        <p>Let <m>\mu_i</m> = the true treatment effect for disability type <m>i</m>.</p>
+        <p><m>H_0\!: \mu_{amp} = \mu_{crutch} = \mu_{hear} = \mu_{none} = \mu_{wheel}</m></p>
+        <p><m>H_a\!:</m> at least one of the <m>\mu</m>'s differs from the rest.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="inv5-4-c" label="I5.4.c">
@@ -41,6 +49,10 @@
         <p>Explain what a Type I error and a Type II error represent in this context.</p>
       </statement>
       <response/>
+      <solution>
+        <p>Type I Error = thinking there is a difference in the effect of the disability types when there is not.</p>
+        <p>Type II Error = thinking there is a not a difference in the effect of the disability types when there is.</p>
+      </solution>
     </exercise>
 
     <p>The mean applicant qualification scores for the five groups are amputee 4.429, crutches 5.921, hearing 4.050, none 4.900, and wheelchair 5.343. </p>
@@ -51,6 +63,9 @@
         <p>What additional pieces of information do you need in order to decide whether these sample means are significantly different (more than you might expect by the random assignment process alone)?</p>
       </statement>
       <response/>
+      <solution>
+        <p>Sample sizes, degree of overlap of the two distributions.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="inv5-4-e" label="I5.4.e">
@@ -59,6 +74,10 @@
         <p>Suggest a statistic that you could use to measure how much these five sample means differ. Outline a simulation you could perform to create a null distribution for your statistic. What types of values of your statistic will you consider evidence against the null hypothesis (large, small, near 0)?</p>
       </statement>
       <response/>
+      <solution>
+        <p>Suggestions for statistic will vary but consider statistics involving deviations of the sample means from the overall mean or deviations of the sample means from each other. Then you would reassign the response outcomes to the disabilities (mimicking the random assignment process), calculate the statistic, repeat many times and see how often you get a statistic at least as extreme as what the researchers observed in this study. If you used a Mean Absolute Difference or Sum of Squared Deviations type of statistic, this would be closer to zero when the null hypothesis is true and large values would be evidence against the null hypothesis.</p>
+        <p>For example, we could put the 70 rating scores on index cards and then randomly assign 14 cards to 5 different groups and see what value of the chi-squared test statistic we get for each randomization.</p>
+      </solution>
     </exercise>
 
     <p>One approach is to use a Mean Group Difference, similar to what we discussed in Section 5.1, and to simulate the re-assigning of the given employment rating scores to the five types of disabilities.</p>
@@ -73,30 +92,43 @@
     </ul>
 
     <exercise xml:id="inv5-4-f" label="I5.4.f">
-      <title>Applet Setup and Interpretation</title>
+      <title>Interpretation</title>
       <statement>
         <p>What random process is the applet simulating?</p>
       </statement>
       <response/>
+      <solution>
+        <p>Random assignment of subjects to disabilities.</p>
+      </solution>
     </exercise>
 
+<ul><li><p>Change the <alert>Number of Shuffles</alert> to a large number and press <alert>Shuffle Responses</alert>. </p></li></ul>
     <exercise xml:id="inv5-4-g" label="I5.4.g">
       <title>Empirical p-value from Mean Group Diff</title>
       <statement>
-        <p>Change the <alert>Number of Shuffles</alert> to a large number and press <alert>Shuffle Responses</alert>. Examine the null distribution of the Mean Group Diff statistic and determine the empirical p-value.</p>
+        <p>Examine the null distribution of the Mean Group Diff statistic and determine the empirical p-value.</p>
       </statement>
       <response/>
+      <solution>
+        <p>Example results: The distribution will have a slight skew to the right, be centered around 0.5, with a standard deviation of around 0.2. Observed Mean Group Diff = 0.931.</p>
+      </solution>
     </exercise>
 
     <p>Consider the following sets of boxplots.</p>
 
     <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
-      <image source="images/inv5-4boxplota.jpeg" width="100%">
-        <description>First set of boxplots for Investigation 5.4</description>
-      </image>
-      <image source="images/inv5-4boxplotb.jpeg" width="100%">
-        <description>Second set of boxplots for Investigation 5.4</description>
-      </image>
+      <stack>
+        <p><em>A</em></p>
+        <image source="images/inv5-4boxplota.jpeg" width="100%">
+          <description>First set of boxplots for Investigation 5.4</description>
+        </image>
+      </stack>
+      <stack>
+        <p><em>B</em></p>
+        <image source="images/inv5-4boxplotb.jpeg" width="100%">
+          <description>Second set of boxplots for Investigation 5.4</description>
+        </image>
+      </stack>
     </sidebyside>
 
     <exercise xml:id="inv5-4-h" label="I5.4.h">
@@ -105,10 +137,13 @@
         <p>What is the same and what is different about the distributions displayed by these boxplots? In which group do you believe the evidence will be stronger that at least one population mean differs from the others? Explain. How will the Mean Group Difference statistics compare?</p>
       </statement>
       <response/>
+      <solution>
+        <p>The means (and sample sizes) are the same but the "within group" variability (spread of the individual distributions) differs. The observations in B are more consistent (smaller sample standard deviations). This should provide stronger evidence that the difference in group means is not just by random chance alone. The Mean Group Diff statistic is the same in both cases because it only examines the differences in means.</p>
+      </solution>
     </exercise>
 
-<paragraphs><title>Discussion:</title>
-    <p> With similar group means, larger within-group variability weakens evidence for mean differences. Smaller within-group variability strengthens evidence because observed mean differences stand out more relative to natural variation.</p>
+<paragraphs><title>Discussion</title>
+    <p> In the above boxplots, the sample mean scores are roughly the same for graphs A and B (6.2, 4.4, 7.1, 3.1, 7.0), but the variability within each group is much larger for the distributions in graph A. This larger amount of “within-sample” variation makes the differences in sample means seem not as extreme compared to graph B. Graph B displays less within-sample variability and so the differences in the sample means appear more extreme and provide more evidence that the crutches scores and the hearing scores did not come from the same population with the same population mean. So rather than reporting only the Mean Group Difference statistic, we will now explore another “standardized” statistic that is more meaningful on its own and, turns out, has more power. Our goal will be for this statistic to reflect not only the differences in the sample means, but to also reflect the “natural variation” in the data themselves.</p>
 </paragraphs>
     <exercise xml:id="inv5-4-i" label="I5.4.i">
       <title>Record Descriptive Statistics</title>
@@ -148,7 +183,6 @@
             <cell><var width="8"/></cell>
           </row>
         </tabular>
-        <p>Write a one sentence description of the sample standard deviation of the none category.</p>
       </statement>
       <setup>
         <var>
@@ -193,9 +227,23 @@
         </var>
       </setup>
       <response/>
+      <solution>
+        <p>SDs: 1.794, 1.586, 1.482, 1.533, 1.748.</p>
+      </solution>
     </exercise>
 
-    <p>Now focus on deviations in group means from the overall mean.</p>
+    <exercise xml:id="inv5-4-i2" label="I5.4.i2">
+      <title>Interpret SD for None Category</title>
+      <statement>
+        <p>Write a one-sentence description of the sample standard deviation of the none category.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>This tells us that there was variability in the ratings giving to the "none" candidate by the 14 students who viewed that tape. Most of the ratings were within 1.794 of the mean rating. This was one of the more variable categories.</p>
+      </solution>
+    </exercise>
+
+    <p>This time, rather than focusing on differences in groups, we will examine <em>deviations</em> in the group means.</p>
 
     <exercise xml:id="inv5-4-j" label="I5.4.j">
       <title>Overall Mean</title>
@@ -203,6 +251,9 @@
         <p>What is the overall mean applicant qualification rating assigned by the 70 students?</p>
       </statement>
       <response/>
+      <solution>
+        <p>The overall mean is 4.929.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="inv5-4-k" label="I5.4.k">
@@ -211,48 +262,74 @@
         <p>If we were to treat the five sample means as five observations, calculate the standard deviation of these five values. What is the denominator of your calculation?</p>
       </statement>
       <response/>
+      <solution>
+        <p><m>(4.9 - 4.929)^2 + (4.429 - 4.929)^2 + (5.921 - 4.929)^2 + (4.050 - 4.929)^2 + (5.343 - 4.929)^2</m> divided by 4, and then taking the square root: <m>0.738</m>.</p>
+        <p>The variance would be not taking the square root, approximately <m>0.545</m>.</p>
+      </solution>
     </exercise>
-
+<p><em>Recall</em>Squaring the standard deviation gives us the <em>variance</em> of the values.</p>
     <exercise xml:id="inv5-4-l" label="I5.4.l">
       <title>Equal Contribution of Means?</title>
       <statement>
         <p>Is it reasonable to allow each of these sample means to have the same relative contribution to our overall measure of variability between group means? Explain.</p>
       </statement>
       <response/>
+      <solution>
+        <p>Yes, because the sample sizes are all equal.</p>
+      </solution>
     </exercise>
 
-    <p>Define between-group variability as a weighted variance across group means, weighted by group sample sizes.</p>
+    <p>Our measure of the <em>variability between groups</em> or "treatment effect" will be the <em>weighted variance</em> across the groups, where the weights are sample sizes.</p>
 
     <exercise xml:id="inv5-4-m" label="I5.4.m">
       <title>Between-group Variability (Equal <m>n</m>'s)</title>
       <statement>
-        <p>In this case, the sample sizes were equal to 14 in each group, so you can simply multiply your answer to (k) by 14 to measure the variability between groups.</p>
+        <p>In this case, the sample sizes were equal to 14 in each group, so you can simply multiply your answer to Checkpoint I5.4.k by 14 to measure the variability between groups.</p>
       </statement>
       <response/>
+      <solution>
+        <p><m>14(0.545)=7.63</m>.</p>
+      </solution>
     </exercise>
 
+<p>But now we want to compare this variation to decide if it’s large, more than we might expect to see by random chance alone, reflecting that not everyone gives the same rating scores, even to the same applicant.</p>
     <exercise xml:id="inv5-4-n" label="I5.4.n">
       <title>Measure Natural Variation</title>
       <statement>
-        <p>Suggest a way for measuring this "natural" variation for these data.</p>
+        <p> Suggest a way for measuring this “natural” variation for these data.</p>
       </statement>
       <response/>
+      <solution>
+        <p>Suggestions will vary.</p>
+      </solution>
     </exercise>
 
-    <p>A natural choice is the pooled within-group variance.</p>
+<p> We could look at the variation in employment ratings (e.g., overall standard deviation), but some of that
+variation is due to the different types of disabilities. However, we can look at the variation in the ratings
+within each type of disability. If we believe these variances are the same, we can simply average across
+the categories, paying a bit more attention to any categories with more observations. (You considered
+something similar back in Investigation 3.5)</p>
+
 
     <exercise xml:id="inv5-4-o" label="I5.4.o">
       <title>Within-group Variability</title>
       <statement>
         <p>Calculate the average variance across the five groups.</p>
-      </statement>
+        </statement>
       <hint>
         <p>Square each group's standard deviation to obtain its variance, and then take the average of those five values.</p>
       </hint>
       <response/>
+      <solution>
+        <p>average variance = <m>(1.586^2 + 1.482^2 + 1.533^2 + 1.794^2 + 1.748^2)/5 = 13.3357/5 = 2.67</m>.</p>
+      </solution>
     </exercise>
 
-    <p>For unequal sample sizes, use the pooled-variance form weighted by group sample sizes, with denominator <m>n-I</m>.</p>
+    <p>When the sample sizes are not equal, the more general formula for this <em>pooled variance</em>, weighted by
+sample size, is:
+This provides an overall estimate of the “within-group” variability, which simplifies to the average of
+the group variances when the sample sizes are equal. The denominator simplifies to <m>n – I</m>, where <m>n</m> is the
+total number of observations in the data set and <m>I</m> is the number of groups being compared.</p>
 
     <exercise xml:id="inv5-4-p" label="I5.4.p">
       <title>Equal Variability Assumption</title>
@@ -260,9 +337,13 @@
         <p>In calculating a pooled variance, you are implicitly assuming that the variability is the same across the groups. Explain how the sample statistics reveal that this is a reasonable belief for these data.</p>
       </statement>
       <response/>
+      <solution>
+        <p>The sample standard deviations reported in (i) are fairly similar to each other.</p>
+      </solution>
     </exercise>
 
-    <p>The standardized statistic compares between-group to within-group variability.</p>
+    <p>Our standardized statistic will consider the ratio of the variability between groups to the variability
+within groups.</p>
 
     <exercise xml:id="inv5-4-q" label="I5.4.q">
       <title>Compute Variability Ratio</title>
@@ -270,6 +351,9 @@
         <p>Compute the ratio: Checkpoint I5.4.m divided by Checkpoint I5.4.o. How many times larger is between-group variability than within-group variability?</p>
       </statement>
       <response/>
+      <solution>
+        <p><m>7.63/2.67 = 2.86</m>; the between group variation is almost 3 times larger than the "natural" variation in these data.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="inv5-4-r" label="I5.4.r">
@@ -278,6 +362,9 @@
         <p>What is the smallest possible value that this ratio could ever assume? The largest?</p>
       </statement>
       <response/>
+      <solution>
+        <p>Smallest value is zero which would result if there was no between group variation. There is no upper bound on the value this ratio can assume.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="inv5-4-s" label="I5.4.s">
@@ -286,14 +373,22 @@
         <p>What types of values (large, small, positive, negative) will this ratio have when the null hypothesis is false, that is, when the population means are not all equal?</p>
       </statement>
       <response/>
+      <solution>
+        <p>This ratio will be large when the null hypothesis is false and small when it is true (but always nonnegative). In fact, when <m>H_0</m> is true, the ratio should be approximately one.</p>
+      </solution>
     </exercise>
+
+<ul><li><p>In the Comparing Groups (Quantitative) applet, use the pull-down Statistic menu to select <em>F</em>-statistic (named after R.A. Fisher).</p></li></ul>
 
     <exercise xml:id="inv5-4-t" label="I5.4.t">
       <title><em>F-</em>statistic Null Distribution</title>
       <statement>
-        <p>In the Comparing Groups (Quantitative) applet, use the pull-down Statistic menu to select <em>F</em>-statistic (named after R.A. Fisher). Describe the behavior of the null distribution and compute the empirical p-value.</p>
+        <p> Describe the behavior of the null distribution and compute the empirical p-value.</p>
       </statement>
       <response/>
+      <solution>
+        <p>Example results: The shape is skewed to the right with a mean around 1 and SD around 0.7.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="inv5-4-u" label="I5.4.u">
@@ -302,8 +397,10 @@
         <p>Has the p-value changed much from when we used the Mean Group Difference statistic?</p>
       </statement>
       <response/>
+      <solution>
+        <p>This p-value is similar (but a bit larger) than we found with the Mean Group Diff statistic.</p>
+      </solution>
     </exercise>
-
     <p>For large samples, the null distribution of this statistic is modeled by an F distribution with numerator df <m>I-1</m> and denominator df <m>n-I</m>.</p>
 
     <exercise xml:id="inv5-4-v" label="I5.4.v">
@@ -312,6 +409,9 @@
         <p>Check the Overlay <em>F</em> distribution box. Does it appear to provide a reasonable approximation to the simulated null distribution? How are you deciding?</p>
       </statement>
       <response/>
+      <solution>
+        <p>We see that the F distribution provides a good model of the simulated null distribution.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="inv5-4-w" label="I5.4.w">
@@ -326,6 +426,9 @@
         <p><alert>Applet:</alert> use Comparing Groups (Quantitative), then check Show ANOVA Table.</p>
       </hint>
       <response/>
+      <solution>
+        <p>The empirical p-value is similar than the ANOVA table's p-value.</p>
+      </solution>
     </exercise>
 
     <paragraphs>
@@ -345,6 +448,9 @@
         <p>Is there evidence of non-normality in these sample data? Calculate the ratio of the largest to smallest standard deviation; is this less than 2? (In the applet, check the box to Overlay <em>F</em> distribution to help assess the fit.)</p>
       </statement>
       <response/>
+      <solution>
+        <p>There is no evidence of nonnormality and the ratio of the largest to smallest sample standard deviation (<m>1.794/1.482</m>) is less than 2.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="inv5-4-y" label="I5.4.y">
@@ -353,6 +459,9 @@
         <p>Write a paragraph summarizing your conclusions for this study. Be sure to address issues of causation and generalizability as well as statistical significance.</p>
       </statement>
       <response/>
+      <solution>
+        <p>There is moderate evidence that these average qualification ratings differ more than we would expect from the randomization process alone. There is at least one disability that has a different effect on the qualification ratings than the other disabilities. The ANOVA procedure appears valid since the observed treatment group distributions look reasonably normal and treatment group standard deviations are also similar.</p>
+      </solution>
     </exercise>
 
     <assemblage xml:id="terminology-detour-5-4">
@@ -409,4 +518,9 @@
 
   </exercises>
 </section>
+
+
+
+
+
 
