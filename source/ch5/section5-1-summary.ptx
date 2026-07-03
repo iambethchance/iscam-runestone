@@ -2,32 +2,18 @@
 <section xml:id="section5-1-summary">
   <title>Section 5.1 Summary</title>
 
-  <p>This section introduced the chi-squared test in three related settings: comparing proportions across populations/treatments, comparing full categorical distributions across populations/treatments, and testing association between two categorical variables in one random sample.</p>
-
-  <p>Across all settings, the mechanics are the same: compare observed cell counts to expected counts under the null model and summarize discrepancies with the chi-squared statistic.</p>
-
-  <assemblage>
-    <title>Summary of Chi-squared Tests</title>
-    <p><alert>Test of homogeneity:</alert> Data are independent random samples from multiple populations/processes or from a randomized experiment with multiple treatments.</p>
-    <p><m>H_0</m>: group distributions are the same (or <m>p_1 = p_2 = \cdots = p_I</m> in the binary-response case).</p>
-    <p><m>H_a</m>: at least one group distribution differs.</p>
-
-    <p><alert>Test of association:</alert> Data are one random sample cross-classified by two categorical variables.</p>
-    <p><m>H_0</m>: no association between variable 1 and variable 2 in the population.</p>
-    <p><m>H_a</m>: there is an association.</p>
-
-    <p><alert>Test statistic:</alert> <m>\chi^2 = \sum \frac{(O-E)^2}{E}</m></p>
-    <p><alert>Degrees of freedom:</alert> <m>(r-1)(c-1)</m></p>
-    <p><alert>Technical conditions:</alert> at least 80% of expected counts are at least 5, and all expected counts are at least 1.</p>
-  </assemblage>
+  <p>This section extended Chapter 3 ideas from two-group categorical comparisons to situations with more than two groups and/or more than two response categories.</p>
 
   <paragraphs>
-    <title>Technology Notes</title>
-    <p><alert>R:</alert> Build a matrix of counts and use <c>chisq.test(matrix)</c>. Inspect <c>$expected</c> and <c>$residuals</c> for diagnostics.</p>
-    <p><alert>Minitab:</alert> Stat &gt; Tables &gt; Chi-Square Test for Association with raw or summarized data.</p>
-    <p><alert>JMP:</alert> Analyze &gt; Fit Y by X with nominal variables (and frequency column if tallied).</p>
-    <p><alert>Applet:</alert> Paste raw data or a two-way table into the Analyzing Two-way Tables applet and inspect table, <m>\chi^2</m>, and contributions.</p>
+    <title>What to Remember</title>
+    <p><alert>One unified procedure:</alert> The same chi-squared framework handles homogeneity and association questions with the same computational structure.</p>
+    <p><alert>Design drives interpretation:</alert> Randomized experiments support causal conclusions (for the studied participants), while observational studies support association statements but not causation.</p>
+    <p><alert>Beyond p-values:</alert> Cell contributions/residuals explain where the evidence is coming from and help tell the practical story.</p>
+    <p><alert>Connections to prior methods:</alert> For a <m>2\times 2</m> table, chi-squared results align closely with two-proportion <m>z</m>-tests (with <m>z^2 \approx \chi^2</m> for two-sided tests).</p>
   </paragraphs>
 
-  <p>When the test is significant, examining individual cell contributions helps describe the nature of the association. The data collection method still determines what conclusions are justified about causation and generalizability.</p>
+  <assemblage xml:id="section5-1-next-steps">
+    <title>Looking Ahead</title>
+    <p>In the next section, you will use an analogous strategy for comparing several population means. The key idea will again be to compare variability explained by groups to natural variability within groups, this time with the ANOVA <m>F</m>-statistic.</p>
+  </assemblage>
 </section>
