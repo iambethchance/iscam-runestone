@@ -7,22 +7,22 @@
 
     <p>Data in <c>hypoHt.txt</c> model height observations for boys at ages 2, 3, and 4. This investigation develops regression-model conditions.</p>
 
-    <exercise xml:id="inv5-12-a" label="I5.12.a"><title>Identify Variables</title><statement><p>(a) Identify explanatory and response variables.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-12-b" label="I5.12.b"><title>Within vs Between Variability</title><statement><p>(b) Compare within-age variability to differences in age-group means.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-12-c" label="I5.12.c"><title>No-Association Plausibility</title><statement><p>(c) Could a large sample slope/correlation arise by chance if population association were absent?</p></statement><response/></exercise>
-    <exercise xml:id="inv5-12-d" label="I5.12.d"><title>Simulation Strategy</title><statement><p>(d) Describe how to simulate under no-association to assess plausibility.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-12-a" label="I5.12.a"><title>Identify Variables</title><statement><p>(a) Identify explanatory and response variables.</p></statement><response/><solution><p>Explanatory variable is age and the response variable is height.</p></solution></exercise>
+    <exercise xml:id="inv5-12-b" label="I5.12.b"><title>Within vs Between Variability</title><statement><p>(b) Compare within-age variability to differences in age-group means.</p></statement><response/><solution><p>We expect there to be variability in the boys' heights within ages but we also expect a tendency for the 3 year old boys to be taller than the 2 year old boys in general.</p></solution></exercise>
+    <exercise xml:id="inv5-12-c" label="I5.12.c"><title>No-Association Plausibility</title><statement><p>(c) Could a large sample slope/correlation arise by chance if population association were absent?</p></statement><response/><solution><p>It is possible that the sample slope differs from zero by chance.</p></solution></exercise>
+    <exercise xml:id="inv5-12-d" label="I5.12.d"><title>Simulation Strategy</title><statement><p>(d) Describe how to simulate under no-association to assess plausibility.</p></statement><response/><solution><p>We could investigate what the lines look like when we choose random samples from a population where we know the population slope is equal to zero.</p></solution></exercise>
 
     <assemblage>
       <title>Basic Regression Model Conditions</title>
       <p>The mean response is linear in x, response SD is constant across x, and response is normally distributed at each x value.</p>
     </assemblage>
 
-    <exercise xml:id="inv5-12-e" label="I5.12.e"><title>Check by Group</title><statement><p>(e) Compare shape, means, and SDs by age category to assess model assumptions.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-12-f" label="I5.12.f"><title>Condition Assessment</title><statement><p>(f) Based on grouped views, comment on whether conditions appear met.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-12-e" label="I5.12.e"><title>Check by Group</title><statement><p>(e) Compare shape, means, and SDs by age category to assess model assumptions.</p></statement><response/><solution><p>Example output: The distributions look roughly normal with similar variability but different centers. The means each differ by about 6.</p></solution></exercise>
+    <exercise xml:id="inv5-12-f" label="I5.12.f"><title>Condition Assessment</title><statement><p>(f) Based on grouped views, comment on whether conditions appear met.</p></statement><response/><solution><p>These conditions do appear to be met for the Berkeley boys' heights. We have a normal distribution at each <m>x</m> and the spread of each distribution is similar.</p></solution></exercise>
 
     <p>When repeated x values are sparse, residual plots become primary diagnostics.</p>
 
-    <exercise xml:id="inv5-12-g" label="I5.12.g"><title>Residual Plots and Diagnostics</title><statement><p>(g) Use residual-vs-x and residual normality plots to evaluate linearity, equal variance, and normality.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-12-h" label="I5.12.h"><title>Condition Summary</title><statement><p>(h) Summarize whether each model condition appears satisfied.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-12-g" label="I5.12.g"><title>Residual Plots and Diagnostics</title><statement><p>(g) Use residual-vs-x and residual normality plots to evaluate linearity, equal variance, and normality.</p></statement><response/><solution><p>The residual plots show data that satisfy these conditions nicely, and in this case we would consider the <m>t</m>-procedures from Investigation 5.10 to be valid.</p></solution></exercise>
+    <exercise xml:id="inv5-12-h" label="I5.12.h"><title>Condition Summary</title><statement><p>(h) Summarize whether each model condition appears satisfied.</p></statement><response/><solution><p>These regression-model conditions appear satisfied for this data set.</p></solution></exercise>
   </exercises>
 </section>

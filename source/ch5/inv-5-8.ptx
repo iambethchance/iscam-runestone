@@ -7,33 +7,33 @@
 
     <p>This investigation uses student height and foot-length data to build least-squares regression ideas from prediction error.</p>
 
-    <exercise xml:id="inv5-8-a" label="I5.8.a"><title>Identify Variables</title><statement><p>(a) Identify observational units, explanatory variable, and response variable.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-b" label="I5.8.b"><title>Baseline Prediction</title><statement><p>(b) Predict height from the sample of heights alone with one number.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-c" label="I5.8.c"><title>Prediction Error</title><statement><p>(c) Would that prediction always be correct?</p></statement><response/></exercise>
+    <exercise xml:id="inv5-8-a" label="I5.8.a"><title>Identify Variables</title><statement><p>(a) Identify observational units, explanatory variable, and response variable.</p></statement><response/><solution><p>The observational units are the students, the explanatory variable is the person's foot length and the response variable is the person's height.</p></solution></exercise>
+    <exercise xml:id="inv5-8-b" label="I5.8.b"><title>Baseline Prediction</title><statement><p>(b) Predict height from the sample of heights alone with one number.</p></statement><response/><solution><p>The mean height of the 20 students: 67.75 inches.</p></solution></exercise>
+    <exercise xml:id="inv5-8-c" label="I5.8.c"><title>Prediction Error</title><statement><p>(c) Would that prediction always be correct?</p></statement><response/><solution><p>No.</p></solution></exercise>
 
     <assemblage>
       <title>Definition: Residual</title>
       <p>Residual for observation <m>i</m> is <m>y_i-\hat{y}_i</m>.</p>
     </assemblage>
 
-    <exercise xml:id="inv5-8-d" label="I5.8.d"><title>Compute Residuals</title><statement><p>(d) Complete residual table and compare overestimation vs underestimation counts.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-e" label="I5.8.e"><title>Sign of Residual</title><statement><p>(e) Interpret positive and negative residuals.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-f" label="I5.8.f"><title>Overall Error Metric</title><statement><p>(f) Suggest a way to combine residuals to quantify overall error.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-g" label="I5.8.g"><title>Why Sum of Residuals Fails</title><statement><p>(g) Compute sum of residuals and explain why it is not useful for fit quality.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-h" label="I5.8.h"><title>Proof Sum Residuals from Mean</title><statement><p>(h) Show mathematically that residuals from the sample mean sum to zero.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-i" label="I5.8.i"><title>Alternative Criteria</title><statement><p>(i) Suggest two alternatives that avoid cancellation.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-j" label="I5.8.j"><title>Calculus Minimization</title><statement><p>(j) Use calculus to show minimizing sum of squared errors over a constant predictor yields the sample mean.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-8-d" label="I5.8.d"><title>Compute Residuals</title><statement><p>(d) Complete residual table and compare overestimation vs underestimation counts.</p></statement><response/><solution><p>We overestimated 11 times and underestimated 9 times.</p></solution></exercise>
+    <exercise xml:id="inv5-8-e" label="I5.8.e"><title>Sign of Residual</title><statement><p>(e) Interpret positive and negative residuals.</p></statement><response/><solution><p>The residual is positive if the observation is above the fitted value and negative if the observation is below the fitted value.</p></solution></exercise>
+    <exercise xml:id="inv5-8-f" label="I5.8.f"><title>Overall Error Metric</title><statement><p>(f) Suggest a way to combine residuals to quantify overall error.</p></statement><response/><solution><p>We could sum all the residuals as a measure of "total prediction error".</p></solution></exercise>
+    <exercise xml:id="inv5-8-g" label="I5.8.g"><title>Why Sum of Residuals Fails</title><statement><p>(g) Compute sum of residuals and explain why it is not useful for fit quality.</p></statement><response/><solution><p>The sum is zero.</p></solution></exercise>
+    <exercise xml:id="inv5-8-h" label="I5.8.h"><title>Proof Sum Residuals from Mean</title><statement><p>(h) Show mathematically that residuals from the sample mean sum to zero.</p></statement><response/><solution><p><m>\sum(y_i-\bar{y})=\sum y_i-\sum\bar{y}=\sum y_i-\bar{y}n=\sum y_i-\sum y_i=0</m>.</p></solution></exercise>
+    <exercise xml:id="inv5-8-i" label="I5.8.i"><title>Alternative Criteria</title><statement><p>(i) Suggest two alternatives that avoid cancellation.</p></statement><response/><solution><p>Could consider sum of squared residuals or sum of absolute residuals.</p></solution></exercise>
+    <exercise xml:id="inv5-8-j" label="I5.8.j"><title>Calculus Minimization</title><statement><p>(j) Use calculus to show minimizing sum of squared errors over a constant predictor yields the sample mean.</p></statement><response/><solution><p>Taking the derivative of <m>S(m)=\sum(y_i-m)^2</m> and setting equal to zero gives <m>(-2)\sum(y_i-m)=0</m>. Solving yields <m>m=\sum y_i/n</m>, the sample mean. Therefore, using the sample mean as our estimate minimizes the sum of squared residuals, giving us the "best" prediction.</p></solution></exercise>
 
     <paragraphs>
       <title>Predicting Height from Foot Length</title>
-      <exercise xml:id="inv5-8-k" label="I5.8.k"><title>Describe Scatterplot</title><statement><p>(k) Describe association between height and foot length.</p></statement><response/></exercise>
-      <exercise xml:id="inv5-8-l" label="I5.8.l"><title>Movable Line</title><statement><p>(l) Use applet movable line and record your best-fit equation.</p></statement><response/></exercise>
-      <exercise xml:id="inv5-8-m" label="I5.8.m"><title>Compare Class Lines</title><statement><p>(m) Did everyone get the same equation?</p></statement><response/></exercise>
-      <exercise xml:id="inv5-8-n" label="I5.8.n"><title>Best-Line Criterion</title><statement><p>(n) Propose a criterion for deciding which line is best.</p></statement><response/></exercise>
-      <exercise xml:id="inv5-8-o" label="I5.8.o"><title>Absolute Error Criterion</title><statement><p>(o) Compute SAE for your line and compare across class.</p></statement><response/></exercise>
-      <exercise xml:id="inv5-8-p" label="I5.8.p"><title>Squared Error Criterion</title><statement><p>(p) Compute SSE for your line and compare.</p></statement><response/></exercise>
-      <exercise xml:id="inv5-8-q" label="I5.8.q"><title>Improve Line for SSE</title><statement><p>(q) Adjust line to minimize SSE and report equation.</p></statement><response/></exercise>
-      <exercise xml:id="inv5-8-r" label="I5.8.r"><title>Least Squares Line</title><statement><p>(r) Use applet regression line and compare with your line.</p></statement><response/></exercise>
+      <exercise xml:id="inv5-8-k" label="I5.8.k"><title>Describe Scatterplot</title><statement><p>(k) Describe association between height and foot length.</p></statement><response/><solution><p>There is a fairly strong (<m>r=0.711</m>), positive, linear association between <em>height</em> and <em>footlength</em>. As expected, people with larger (above average) feet tend to also be taller (above average height).</p></solution></exercise>
+      <exercise xml:id="inv5-8-l" label="I5.8.l"><title>Movable Line</title><statement><p>(l) Use applet movable line and record your best-fit equation.</p></statement><response/><solution><p>Lines will vary.</p></solution></exercise>
+      <exercise xml:id="inv5-8-m" label="I5.8.m"><title>Compare Class Lines</title><statement><p>(m) Did everyone get the same equation?</p></statement><response/><solution><p>Lines will vary.</p></solution></exercise>
+      <exercise xml:id="inv5-8-n" label="I5.8.n"><title>Best-Line Criterion</title><statement><p>(n) Propose a criterion for deciding which line is best.</p></statement><response/><solution><p>Suggestions will vary.</p></solution></exercise>
+      <exercise xml:id="inv5-8-o" label="I5.8.o"><title>Absolute Error Criterion</title><statement><p>(o) Compute SAE for your line and compare across class.</p></statement><response/><solution><p>The best (smallest) SAE will vary.</p></solution></exercise>
+      <exercise xml:id="inv5-8-p" label="I5.8.p"><title>Squared Error Criterion</title><statement><p>(p) Compute SSE for your line and compare.</p></statement><response/><solution><p>The smallest SSE will vary.</p></solution></exercise>
+      <exercise xml:id="inv5-8-q" label="I5.8.q"><title>Improve Line for SSE</title><statement><p>(q) Adjust line to minimize SSE and report equation.</p></statement><response/><solution><p>Equation and resulting SSE values will vary.</p></solution></exercise>
+      <exercise xml:id="inv5-8-r" label="I5.8.r"><title>Least Squares Line</title><statement><p>(r) Use applet regression line and compare with your line.</p></statement><response/><solution><p>equation: <m>\hat{y}=38.302+1.033\cdot\text{foot size}</m>.</p><p><m>SSE=235</m>.</p><p>No should have been able to obtain a smaller SSE value.</p></solution></exercise>
     </paragraphs>
 
     <assemblage>
@@ -41,29 +41,29 @@
       <p>The least squares line minimizes SSE among all lines.</p>
     </assemblage>
 
-    <exercise xml:id="inv5-8-s" label="I5.8.s"><title>How to Determine Coefficients</title><statement><p>(s) Suggest a technique to determine slope and intercept from data.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-t" label="I5.8.t"><title>Derivatives for SSE</title><statement><p>(t) Differentiate SSE with respect to intercept and slope.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-u" label="I5.8.u"><title>Solve Normal Equations</title><statement><p>(u) Solve for least-squares coefficients.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-v" label="I5.8.v"><title>Compute Coefficients from Summaries</title><statement><p>(v) Use summary statistics and <m>b_1=r s_y/s_x</m>, <m>b_0=\bar{y}-b_1\bar{x}</m>.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-w" label="I5.8.w"><title>Predictions and Slope Meaning</title><statement><p>(w) Predict heights at two nearby foot lengths and relate difference to slope.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-x" label="I5.8.x"><title>Interpret Slope</title><statement><p>(x) Interpret slope in context.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-y" label="I5.8.y"><title>Interpret Intercept</title><statement><p>(y) Interpret intercept and discuss meaningfulness.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-z" label="I5.8.z"><title>Extrapolation</title><statement><p>(z) Predict at far-out x and explain why this is less reliable.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-8-s" label="I5.8.s"><title>How to Determine Coefficients</title><statement><p>(s) Suggest a technique to determine slope and intercept from data.</p></statement><response/><solution><p>Taking the derivative.</p></solution></exercise>
+    <exercise xml:id="inv5-8-t" label="I5.8.t"><title>Derivatives for SSE</title><statement><p>(t) Differentiate SSE with respect to intercept and slope.</p></statement><response/><solution><p>derivative with respect to <m>b_0</m>: <m>\sum(-2)(y_i-b_0-b_1x_i)</m>.</p><p>derivative with respect to <m>b_1</m>: <m>\sum(-2x_i)(y_i-b_0-b_1x_i)</m>.</p></solution></exercise>
+    <exercise xml:id="inv5-8-u" label="I5.8.u"><title>Solve Normal Equations</title><statement><p>(u) Solve for least-squares coefficients.</p></statement><response/><solution><p>Setting derivatives to zero gives the normal equations and solving yields the least-squares coefficient formulas for <m>b_0</m> and <m>b_1</m>.</p></solution></exercise>
+    <exercise xml:id="inv5-8-v" label="I5.8.v"><title>Compute Coefficients from Summaries</title><statement><p>(v) Use summary statistics and <m>b_1=r s_y/s_x</m>, <m>b_0=\bar{y}-b_1\bar{x}</m>.</p></statement><response/><solution><p><m>b_1=.711(5.00/3.45)=1.03</m>.</p><p><m>b_0=67.75-1.03(28.5)=38.4</m>.</p><p><m>\text{predicted height}=38.4+1.03\cdot \text{footlength}</m>.</p><p>Note: Will be lots of rounding discrepancies.</p></solution></exercise>
+    <exercise xml:id="inv5-8-w" label="I5.8.w"><title>Predictions and Slope Meaning</title><statement><p>(w) Predict heights at two nearby foot lengths and relate difference to slope.</p></statement><response/><solution><p>if <em>footlength</em>= 28 cm, we predict a height of <m>38.4+1.03(28)=67.24</m> inches.</p><p>if <em>footlength</em>= 29 cm, we predict <m>38.4+1.03(29)=68.27</m> inches.</p><p>difference = <m>68.27-67.24=1.03</m> which is the same as the slope of the regression line.</p></solution></exercise>
+    <exercise xml:id="inv5-8-x" label="I5.8.x"><title>Interpret Slope</title><statement><p>(x) Interpret slope in context.</p></statement><response/><solution><p>The slope is the predicted difference in height for foot lengths that differ by 1 cm.</p></solution></exercise>
+    <exercise xml:id="inv5-8-y" label="I5.8.y"><title>Interpret Intercept</title><statement><p>(y) Interpret intercept and discuss meaningfulness.</p></statement><response/><solution><p>The intercept is the predicted height for an individual whose foot length is zero, though it is not all that reasonable to predict someone's height if their foot length is zero.</p></solution></exercise>
+    <exercise xml:id="inv5-8-z" label="I5.8.z"><title>Extrapolation</title><statement><p>(z) Predict at far-out x and explain why this is less reliable.</p></statement><response/><solution><p><m>\text{predicted height}=38.4+1.03\cdot\text{footlength}</m>.</p><p>The foot length of 44 cm is very far outside the range of the <m>x</m> values that were in the data set, so we might not be completely convinced the same relationship extends to such extreme values.</p></solution></exercise>
 
     <assemblage>
       <title>Definition: Extrapolation</title>
       <p>Extrapolation is prediction outside observed x-range and is usually ill-advised.</p>
     </assemblage>
 
-    <exercise xml:id="inv5-8-aa" label="I5.8.aa"><title>SSE from Mean Line</title><statement><p>(aa) Compute SSE when predicting with <m>\bar{y}</m> only.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-8-bb" label="I5.8.bb"><title>Coefficient of Determination</title><statement><p>(bb) Compute percentage SSE reduction from mean line to regression line and interpret as <m>R^2</m>.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-8-aa" label="I5.8.aa"><title>SSE from Mean Line</title><statement><p>(aa) Compute SSE when predicting with <m>\bar{y}</m> only.</p></statement><response/><solution><p><m>SSE(\bar{y})=475.75</m>.</p></solution></exercise>
+    <exercise xml:id="inv5-8-bb" label="I5.8.bb"><title>Coefficient of Determination</title><statement><p>(bb) Compute percentage SSE reduction from mean line to regression line and interpret as <m>R^2</m>.</p></statement><response/><solution><p><m>100\%\times(475.75-235)/475.75=50.6\%</m>.</p></solution></exercise>
 
     <assemblage>
       <title>Definition: Coefficient of Determination</title>
       <p><m>R^2</m> is the proportion of response variability explained by regression on the explanatory variable.</p>
     </assemblage>
 
-    <exercise xml:id="inv5-8-cc" label="I5.8.cc"><title>Residual Standard Deviation</title><statement><p>(cc) Compute and interpret <m>s=\sqrt{SSE/(n-2)}</m>.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-8-cc" label="I5.8.cc"><title>Residual Standard Deviation</title><statement><p>(cc) Compute and interpret <m>s=\sqrt{SSE/(n-2)}</m>.</p></statement><response/><solution><p><m>\sqrt{235/18}\approx 3.61</m>.</p><p>The observations tend to fall about 3.61 inches from the regression line. This is a typical prediction error. About 95% of the time we will be able to use this model to predict someone's height within 7.2 inches. We have reduced the typical prediction error from about 5 inches to 3.61 inches.</p></solution></exercise>
 
     <assemblage>
       <title>Study Conclusions</title>

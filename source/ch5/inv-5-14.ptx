@@ -7,16 +7,16 @@
 
     <p>Students collected a stratified sample of California home sales (<c>housing.txt</c>) to model selling price from square footage.</p>
 
-    <exercise xml:id="inv5-14-a" label="I5.14.a"><title>Initial Linear Fit</title><statement><p>(a) Determine least-squares line and interpret <m>R^2</m>.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-14-b" label="I5.14.b"><title>Model Plausibility</title><statement><p>(b) Based on scatterplot, does basic linear model seem appropriate?</p></statement><response/></exercise>
-    <exercise xml:id="inv5-14-c" label="I5.14.c"><title>Residual Normality</title><statement><p>(c) Use residual histogram/normal plot to assess normality.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-14-d" label="I5.14.d"><title>Residual Pattern Checks</title><statement><p>(d) Plot residuals vs square footage and assess curvature/equal variance.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-14-a" label="I5.14.a"><title>Initial Linear Fit</title><statement><p>(a) Determine least-squares line and interpret <m>R^2</m>.</p></statement><response/><solution><p>The regression equation is <em>predicted price</em> = 65930 + 202 <em>square foot</em>. <m>r^2=42.1\%</m>.</p></solution></exercise>
+    <exercise xml:id="inv5-14-b" label="I5.14.b"><title>Model Plausibility</title><statement><p>(b) Based on scatterplot, does basic linear model seem appropriate?</p></statement><response/><solution><p>Yes.</p></solution></exercise>
+    <exercise xml:id="inv5-14-c" label="I5.14.c"><title>Residual Normality</title><statement><p>(c) Use residual histogram/normal plot to assess normality.</p></statement><response/><solution><p>The residuals appear to be skewed to the right and not following a normal distribution.</p></solution></exercise>
+    <exercise xml:id="inv5-14-d" label="I5.14.d"><title>Residual Pattern Checks</title><statement><p>(d) Plot residuals vs square footage and assess curvature/equal variance.</p></statement><response/><solution><p>There does not appear to be strong curvature but the spread does appear to increase across the graph.</p></solution></exercise>
 
     <p>If model conditions are violated, transformations can improve fit.</p>
 
-    <exercise xml:id="inv5-14-e" label="I5.14.e"><title>Log Transformation</title><statement><p>(e) Transform both variables with log base 10, refit, and reassess residual diagnostics.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-14-f" label="I5.14.f"><title>Interpret Transformed Slope</title><statement><p>(f) Interpret transformed-model slope in context.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-14-g" label="I5.14.g"><title>Back-Transformed Prediction</title><statement><p>(g) Predict price for a 3000 sq ft house and back-transform to original dollars.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-14-e" label="I5.14.e"><title>Log Transformation</title><statement><p>(e) Transform both variables with log base 10, refit, and reassess residual diagnostics.</p></statement><response/><solution><p>Although not perfect, these variables do appear to better follow the basic regression model. The residuals appear less skewed and there is less variation in the "width" of the residuals at different values of the explanatory variable. There does not appear to be any curvature in the relationship either.</p></solution></exercise>
+    <exercise xml:id="inv5-14-f" label="I5.14.f"><title>Interpret Transformed Slope</title><statement><p>(f) Interpret transformed-model slope in context.</p></statement><response/><solution><p>The regression equation is <em>predicted logprice</em> = 2.70 + 0.890 <em>logsqft</em>. If the log square footage increases by one (which corresponds to a ten-fold increase in square footage), we predicted the log price will increase by .890 (which corresponds to a <m>10^{.89}</m>-fold increase in price). If the log square footage is equal to 0 (square footage = 1), the predicted log price is 2.70 (price = <m>10^{2.70}</m>).</p></solution></exercise>
+    <exercise xml:id="inv5-14-g" label="I5.14.g"><title>Back-Transformed Prediction</title><statement><p>(g) Predict price for a 3000 sq ft house and back-transform to original dollars.</p></statement><response/><solution><p><em>predicted logprice</em> = <m>2.70+.890\log_{10}(3000)=5.79</m>.</p><p>So the predicted price is <m>10^{5.79}=\$623,215</m>.</p></solution></exercise>
 
     <assemblage>
       <title>Discussion</title>

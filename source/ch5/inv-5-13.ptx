@@ -7,15 +7,15 @@
 
     <p>Revisit Cat Jumping data and perform regression inference for takeoff velocity vs percent body fat.</p>
 
-    <exercise xml:id="inv5-13-a" label="I5.13.a"><title>Fit Regression Equation</title><statement><p>(a) Determine least-squares line for predicting velocity from percent body fat.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-13-b" label="I5.13.b"><title>Normality of Residuals</title><statement><p>(b) Produce histogram and normal probability plot of residuals; assess normality.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-13-c" label="I5.13.c"><title>Equal Variance and Linearity</title><statement><p>(c) Use residual plot vs explanatory variable (or predicted values) to assess equal variance and linearity.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-13-d" label="I5.13.d"><title>Test for Negative Association</title><statement><p>(d) State hypotheses, report test statistic and p-value, and conclude.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-13-e" label="I5.13.e"><title>Confirm t Formula</title><statement><p>(e) Verify t-statistic equals <m>b_1/SE(b_1)</m> for slope test against zero.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-13-f" label="I5.13.f"><title>95% CI for Slope</title><statement><p>(f) Compute 95% confidence interval for population slope by hand.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-13-g" label="I5.13.g"><title>Interpret Slope Interval</title><statement><p>(g) Interpret interval in context.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-13-h" label="I5.13.h"><title>Point Predictions</title><statement><p>(h) Predict velocity at 25% and 50% body fat.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-13-i" label="I5.13.i"><title>Precision Comparison</title><statement><p>(i) Which prediction is more reliable and why?</p></statement><response/></exercise>
+    <exercise xml:id="inv5-13-a" label="I5.13.a"><title>Fit Regression Equation</title><statement><p>(a) Determine least-squares line for predicting velocity from percent body fat.</p></statement><response/><solution><p>Minitab results for predicted velocity (equation from software output).</p></solution></exercise>
+    <exercise xml:id="inv5-13-b" label="I5.13.b"><title>Normality of Residuals</title><statement><p>(b) Produce histogram and normal probability plot of residuals; assess normality.</p></statement><response/><solution><p>It's hard to tell much with a small sample size and we do have the one extreme outlier, but otherwise, the normality condition would appear satisfied.</p></solution></exercise>
+    <exercise xml:id="inv5-13-c" label="I5.13.c"><title>Equal Variance and Linearity</title><statement><p>(c) Use residual plot vs explanatory variable (or predicted values) to assess equal variance and linearity.</p></statement><response/><solution><p>If we separate the one huge outlier, the remaining residuals are in a rectangular box from -25 to 25. The lack of any strong curvature indicates the linearity condition is reasonable and the lack of major "fanning" in the residuals indicates the equal variance condition is met.</p></solution></exercise>
+    <exercise xml:id="inv5-13-d" label="I5.13.d"><title>Test for Negative Association</title><statement><p>(d) State hypotheses, report test statistic and p-value, and conclude.</p></statement><response/><solution><p>Let <m>\beta</m> represent the population slope between takeoff velocity and percentage body fat for all cats.</p><p><m>H_0\!: \beta=0</m> (no association between takeoff velocity and percentage body fat in the population).</p><p><m>H_a\!: \beta&lt;0</m> (negative association).</p><p>With a <m>t</m>-statistic of -3.343 and a p-value of 0.003 &lt; .05, we would reject the null hypothesis at the 5% level of significance and conclude that we have convincing evidence of a negative association between percentage body fat and takeoff velocity in this population of cats.</p></solution></exercise>
+    <exercise xml:id="inv5-13-e" label="I5.13.e"><title>Confirm t Formula</title><statement><p>(e) Verify t-statistic equals <m>b_1/SE(b_1)</m> for slope test against zero.</p></statement><response/><solution><p><m>t=-1.9534/.5688\approx -3.43</m>.</p></solution></exercise>
+    <exercise xml:id="inv5-13-f" label="I5.13.f"><title>95% CI for Slope</title><statement><p>(f) Compute 95% confidence interval for population slope by hand.</p></statement><response/><solution><p>If we use 2 as the critical value, we would find -1.9534 plus/minus 2(.5688) which gives (-3.091, -0.8158).</p><p>If we use a <m>t</m> critical value for 95% confidence and 18-2 = 16 d.f, we would find -1.9534 plus/minus 2.1199(.5688) which gives (-3.1592, -0.7476).</p></solution></exercise>
+    <exercise xml:id="inv5-13-g" label="I5.13.g"><title>Interpret Slope Interval</title><statement><p>(g) Interpret interval in context.</p></statement><response/><solution><p>We are 95% confident that each one percentage point increase in body fat is associated with a .75 to 3.16 decrease in takeoff velocity (cm/sec).</p></solution></exercise>
+    <exercise xml:id="inv5-13-h" label="I5.13.h"><title>Point Predictions</title><statement><p>(h) Predict velocity at 25% and 50% body fat.</p></statement><response/><solution><p>25%: predicted velocity <m>=397.65-1.9534(25)\approx 348.82</m> cm/sec.</p><p>50%: 299.98 cm/sec.</p></solution></exercise>
+    <exercise xml:id="inv5-13-i" label="I5.13.i"><title>Precision Comparison</title><statement><p>(i) Which prediction is more reliable and why?</p></statement><response/><solution><p>Should have more faith in the prediction for 25% body fat as that value is in the main part of our data but we don't have a lot of information for cats with body fat percentages around 50%.</p></solution></exercise>
 
     <paragraphs>
       <title>Technology Detour: Prediction Intervals</title>
@@ -23,8 +23,8 @@
       <p><alert>JMP:</alert> Linear Fit options for individual confidence interval formulas.</p>
     </paragraphs>
 
-    <exercise xml:id="inv5-13-j" label="I5.13.j"><title>Prediction Interval at 25%</title><statement><p>(j) Report and interpret 95% prediction interval at 25% body fat; identify midpoint.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-13-k" label="I5.13.k"><title>Prediction Interval at 50%</title><statement><p>(k) Repeat at 50% and compare interval widths.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-13-j" label="I5.13.j"><title>Prediction Interval at 25%</title><statement><p>(j) Report and interpret 95% prediction interval at 25% body fat; identify midpoint.</p></statement><response/><solution><p>Midpoint is our prediction of 348.82. We are 95% confident that the takeoff velocity for a cat with 25% body fat will be between 292.37 cm/sec and 405.26 cm/sec.</p></solution></exercise>
+    <exercise xml:id="inv5-13-k" label="I5.13.k"><title>Prediction Interval at 50%</title><statement><p>(k) Repeat at 50% and compare interval widths.</p></statement><response/><solution><p>The midpoint is lower (now at 299.98) but the width is <m>362.34-237.62=124.72</m> (compared to <m>405.26-292.37=112.89</m>) is larger. This makes sense because we don't expect predictions at 50% body fat to be as precise, but we expect lower take off velocity for these heavier cats.</p></solution></exercise>
 
     <assemblage>
       <title>Definition</title>
@@ -37,8 +37,8 @@
       <p><alert>JMP:</alert> Linear Fit options for mean confidence interval formulas.</p>
     </paragraphs>
 
-    <exercise xml:id="inv5-13-l" label="I5.13.l"><title>Confidence Interval at 25%</title><statement><p>(l) Report and interpret 95% confidence interval for mean velocity at 25% body fat; identify midpoint.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-13-m" label="I5.13.m"><title>Compare PI and CI</title><statement><p>(m) Compare confidence and prediction intervals and explain width difference.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-13-l" label="I5.13.l"><title>Confidence Interval at 25%</title><statement><p>(l) Report and interpret 95% confidence interval for mean velocity at 25% body fat; identify midpoint.</p></statement><response/><solution><p>The midpoint is the same (348.82). We are 95% confident that the <em>average</em> takeoff velocity for <em>all cats</em> with 25% body fat is between 335.45 and 362.19 cm/sec.</p></solution></exercise>
+    <exercise xml:id="inv5-13-m" label="I5.13.m"><title>Compare PI and CI</title><statement><p>(m) Compare confidence and prediction intervals and explain width difference.</p></statement><response/><solution><p>The interval is narrower because it is easier to predict an average than an individual observation.</p></solution></exercise>
 
     <assemblage>
       <title>Study Conclusions</title>
