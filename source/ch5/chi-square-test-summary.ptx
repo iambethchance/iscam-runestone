@@ -5,27 +5,41 @@
   <assemblage xml:id="chi-square-test-summary-box">
     <title>Summary of Chi-squared Tests</title>
     <p><em>Test of homogeneity:</em> Data are independent random samples from <m>I</m> different populations/processes or from a randomized experiment with <m>I</m> treatments.</p>
-    <p><m>H_0\!: \pi_1 = \cdots = \pi_I</m> where <m>\pi_i</m> is the probability of success for population (treatment) <m>i</m>.</p>
-    <p><m>H_a\!:</m> at least <m>\pi_i</m> differs from the rest.</p>
+    <ul>
+      <li><p><m>H_0\!: \pi_1 = \cdots = \pi_I</m> where <m>\pi_i</m> is the probability of success for population (treatment) <m>i</m>.</p></li>
+      <li><p><m>H_a\!:</m> at least <m>\pi_i</m> differs from the rest.</p></li>
+    </ul>
     <p>OR</p>
-    <p><m>H_0</m>: the response variable distributions are the same in each population (treatment).</p>
-    <p><m>H_a</m>: at least one population (treatment) distribution differs from the others.</p>
+    <ul>
+      <li><p><m>H_0</m>: the response variable distributions are the same in each population (treatment).</p></li>
+      <li><p><m>H_a</m>: at least one population (treatment) distribution differs from the others.</p></li>
+    </ul>
 
     <p><em>Test of association:</em> Data are one random sample from a large population, cross-classified by two categorical variables.</p>
-    <p><m>H_0\!:</m> no association between <em>variable 1</em> and <em>variable 2</em> in the population.</p>
-    <p><m>H_a\!:</m> there is an association between <em>variable 1</em> and <em>variable 2</em>.</p>
+    <ul>
+      <li><p><m>H_0\!:</m> no association between <em>variable 1</em> and <em>variable 2</em> in the population.</p></li>
+      <li><p><m>H_a\!:</m> there is an association between <em>variable 1</em> and <em>variable 2</em>.</p></li>
+    </ul>
 
-    <p><alert>Chi-square Statistic:</alert> <m>\chi^2 = \sum_{i=1}^{r} \sum_{j=1}^{c} \frac{(Observed_{ij}-Expected_{ij})^2}{Expected_{ij}}</m></p>
+    <sidebyside widths="62% 33%" margins="0% 0%" valign="top">
+      <stack>
+        <p><alert>Chi-square Statistic:</alert> <m>\chi^2 = \sum_{i=1}^{r} \sum_{j=1}^{c} \frac{(Observed_{ij}-Expected_{ij})^2}{Expected_{ij}}</m></p>
+      </stack>
+      <image source="images/chisqDist.jpeg" width="100%">
+        <description>Chi-square distribution used for upper-tail p-values</description>
+      </image>
+    </sidebyside>
     <p>The (upper tail) p-value is calculated from the chi-square distribution with <m>(r - 1)(c - 1)</m> degrees of freedom.</p>
 
     <p><alert>Technical conditions:</alert> at least 80% of expected counts are at least 5, and all expected counts are at least 1.</p>
+
+      <p><alert>Follow-up analysis</alert>: After computing the p-value, examine the largest cell contributions or residuals to describe where observed counts differ most from expected counts.</p>
+
   </assemblage>
 
-  <exercise xml:id="chi-square-tech-instructions-5-1">
+  <paragraphs>
     <title>Technology Instructions</title>
-    <statement>
-      <p>Use the hint links below to reveal software-specific instructions.</p>
-    </statement>
+    <p>Use the hint links below to reveal software-specific instructions.</p>
     <hint>
       <title>Applet Instructions</title>
       <p>Use the <url href="http://www.rossmanchance.com/applets/ChisqShuffle.htm">Analyzing Two-way Tables applet</url>.</p>
@@ -43,13 +57,19 @@
     </hint>
     <hint>
       <title>JMP Instructions</title>
-      <ul>
-        <li>With two nominal columns (and perhaps a column of counts), choose Analyze &gt; Fit Y by X. Report the Pearson chi-square and p-value.</li>
-        <li>Use the Contingency Table hot spot to turn on the Cell Chi Square values.</li>
-      </ul>
+      <sidebyside widths="62% 33%" margins="0% 0%" valign="top">
+        <stack>
+          <ul>
+            <li>With two nominal columns (and perhaps a column of counts), choose Analyze &gt; Fit Y by X. Report the Pearson chi-square and p-value.</li>
+            <li>Use the Contingency Table hot spot to turn on the Cell Chi Square values.</li>
+          </ul>
+        </stack>
+        <image source="images/5-1-sumJMP.jpeg" width="100%">
+          <description>JMP data page layout for chi-square test setup</description>
+        </image>
+      </sidebyside>
     </hint>
-  </exercise>
+  </paragraphs>
 
-  <p><alert>Follow-up analysis</alert>: After computing the p-value, examine the largest cell contributions or residuals to describe where observed counts differ most from expected counts.</p>
 
 </section>
