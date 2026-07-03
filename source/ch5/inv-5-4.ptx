@@ -372,7 +372,7 @@
       <title>Compute Variability Ratio</title>
       <statement>
         <p>Compute the ratio: <xref ref="inv5-4-m" text="custom">Question 14</xref> divided by <xref ref="inv5-4-o" text="custom">Question 16</xref>. 
-        <me>F = between-group\ variability / within-group \ variability</me></p>
+        </p><p><em>F = between-group variability / within-group variability</em></p>
         <p>How many times larger is between-group variability than within-group variability?</p>
       </statement>
       <response/>
@@ -432,8 +432,8 @@
     </exercise>
 
     <assemblage xml:id="probability-detour-5-4-f-result">
-      <title>Probability Result:</title>
-      <p>For large samples, the null distribution of this statistic is well modeled by an <em>F</em> distribution with parameters <m> number\ of\ groups - 1 </m> and <m> overall\ sample\ size - number\ of\ groups </m>, the degrees of freedom of the numerator and the denominator respectively.</p>
+      <title>Probability Result</title>
+      <p>For large samples, the null distribution of this statistic is well modeled by an <em>F</em> distribution with parameters <em> number of groups</em> - 1  and <em> overall sample size - number of groups </em>, the degrees of freedom of the numerator and the denominator respectively.</p>
     </assemblage>
 
     <exercise xml:id="inv5-4-v" label="I5.4.v">
@@ -459,12 +459,19 @@
         <p>Confirm your calculations with ANOVA technology output.</p>
       </statement>
       <hint>
-        <title>Technology Detour: ANOVA</title>
-        <p><alert>R:</alert><ul><li>If you have the data in a response vector and an explanatory vector, you can use <c>summary(aov(response~explanatory))</c></li></ul>This will output the Mean Square values in the Mean Sq column, first for the treatment group (the disability row) and then for the error term (Residuals).</p>
+        <title>R Detour</title>
+        <p>If you have the data in a response vector and an explanatory vector, you can use <c>summary(aov(response~explanatory))</c>.</p>
+        <p>This will output the Mean Square values in the Mean Sq column, first for the treatment group (the disability row) and then for the error term (Residuals).</p>
+      </hint>
+      <hint>
+        <title>JMP Detour</title>
         <p><alert>JMP:</alert><ul><li>	With the quantitative variable in one column and the explanatory variable in another column, choose <strong> Analyze &gt; Fit Y by X</strong>, then Oneway Analysis &gt; Means/Anova.</li>
         <li> Specify the quantitative variable in the <strong>Y, Column</strong> box and the explanatory variable in the <strong>X, Factor</strong> box.</li>
         <li>Open the <strong>Oneway Analysis</strong> hot spot and select <strong>Means/Anova</strong>.</li></ul></p>
-        <p><alert>Applet:</alert> In the <url href="http://www.rossmanchance.com/applets/AnovaShuffle.htm"> Comparing Groups (Quantitative)</url>
+      </hint>
+      <hint>
+        <title>Applet Detour</title>
+        <p>In the <url href="http://www.rossmanchance.com/applets/AnovaShuffle.htm">Comparing Groups (Quantitative)</url> applet:</p>
         <ul><li> Paste data into Sample data box, being sure to clarify which is the explanatory variable. </li>
         <li> Press <strong>Use Data</strong></li>
         <li>Check the <strong> Show ANOVA Table</strong> box.</li></ul></p>
@@ -576,7 +583,7 @@
       <me>SS_{groups} = \sum_{i=1}^I n_i(\bar{x}_i - \bar{x})^2</me>.</p> 
       <p> We will then “average” these values by considering how many groups were involved. This quantity will be referred to as the “mean square for groups.”</p>
  <me>MS_{groups}=SS_{groups}/(I-1)</me>.
- <p> Note, if we fix the overall mean, once we know <me>I - 1</me> of the group means, the value of the <m>i^{th}</m> mean is determined. So the degrees of freedom of this quantity is <m>I - 1</m>.</p>
+ <p> Note, if we fix the overall mean, once we know <m>I - 1</m> of the group means, the value of the <m>i^{th}</m> mean is determined. So the degrees of freedom of this quantity is <m>I - 1</m>.</p>
  <p>The within-group variability will be measured by the pooled variance. In general, each term will be weighted by the sample size of that group. We will again divide by an indication of the overall sample size across the groups. We will refer to this quantity as the “mean squares for error,” <em>MSE</em>.
  <me>MSE = \frac{\sum_{i=1}^I (n_i - 1)s_i^2}{n - I}</me> which has <m>n - I</m> degrees of freedom.</p>
  <p>The test statistic is then the ratio of these “mean square” quantities:</p>
@@ -589,7 +596,7 @@
            <description>F distribution reference graphic for Investigation 5.4</description>
          </image>
        </sidebyside>
-       <p> We will use this <em>F</em> distribution to approximate both the sampling distribution of this test statistic in repeated samples from the same population (<m>H_0\!: \mu_1 = … = \mu_I</m>) and the randomization distribution for a randomized experiment (H_0: no treatment effect) as long as the technical conditions (above) are met.</p>
+       <p> We will use this <em>F</em> distribution to approximate both the sampling distribution of this test statistic in repeated samples from the same population (<m>H_0\!: \mu_1 = … = \mu_I</m>) and the randomization distribution for a randomized experiment (<m>H_0\!:</m> no treatment effect) as long as the technical conditions (above) are met.</p>
        <p>Because we are focusing on the variance of group means, this procedure is termed Analysis of Variance (ANOVA). With one explanatory variable, this is called <em>one-way ANOVA</em>.</p>
     </assemblage>
 
