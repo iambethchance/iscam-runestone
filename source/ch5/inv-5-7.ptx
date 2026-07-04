@@ -8,16 +8,17 @@
     <introduction>
       <sidebyside widths="63% 34%" margins="0% 0%" valign="top">
         <stack>
-          <p>Some have cited <q>Drive for show, putt for dough</q> as the oldest cliché in golf. The message is that the best way to improve one's scoring average in golf is to focus on improving putting, as opposed to, say, distance off the initial drive, even though the latter usually garners more ooh's and aah's. To see whether this philosophy has merit, we need to examine whether there is a relationship between putting ability and overall scoring, and whether that relationship is stronger than the relationship between scoring average and driving distance. The file <url href="http://www.rossmanchance.com/iscam3/data/golfers18.txt">golfers18.txt</url> contains the 2018 statistics (through the September 2018, downloaded May 2019) on the top 100 PGA golfers (based on scoring), downloaded from <url href="http://www.pgatour.com/stats/">http://www.pgatour.com/stats/</url>. Three of the variables recorded include:</p>
+          <p>Some have cited <q>Drive for show, putt for dough</q> as the oldest cliché in golf. The message is that the best way to improve one's scoring average in golf is to focus on improving putting, as opposed to, say, distance off the initial drive, even though the latter usually garners more ooh's and aah's. </p>       </stack>
+        <image source="images/putting.jpg" width="100%" decorative="yes"/>
+      </sidebyside>
+    </introduction>
+<paragraphs><p>To see whether this philosophy has merit, we need to examine whether there is a relationship between putting ability and overall scoring, and whether that relationship is stronger than the relationship between scoring average and driving distance. The file <url href="http://www.rossmanchance.com/iscam3/data/golfers18.txt">golfers18.txt</url> contains the 2018 statistics (through the September 2018, downloaded May 2019) on the top 100 PGA golfers (based on scoring), downloaded from <url href="http://www.pgatour.com/stats/">http://www.pgatour.com/stats/</url>. Three of the variables recorded include:</p>
           <ul>
             <li><p><term>Scoring average:</term> A weighted average which takes the stroke average of the field into account. It is computed by adding a player's total strokes to an adjustment, and dividing by the total rounds played. This average is subtracted from par to create an adjustment for each round. Keep in mind that in golf low scores, as measured by number of strokes, are better than high scores.</p></li>
             <li><p><term>Driving distance:</term> Average number of yards per measured drive. These drives are measured on two holes per round, carefully selected to face in opposite directions to counteract the effects of wind. Drives are measured to the point where they come to rest, regardless of whether or not they hit the fairway.</p></li>
             <li><p><term>Putting average:</term> On holes where the green is hit in regulation, the total number of putts is divided by the total holes played.</p></li>
           </ul>
-        </stack>
-        <image source="images/inv5-7-quad-putting.png" width="100%" decorative="yes"/>
-      </sidebyside>
-    </introduction>
+ </p></paragraphs>
 
     <exercise xml:id="inv5-7-a">
       <title>Direction Conjecture: Driving</title>
@@ -196,7 +197,7 @@
       <statement>
         <p>Based on these correlation coefficient values and/or the definition/formula, what do you think is the largest value that <m>r</m> can assume? What is the smallest value?</p>
         <hint>
-          <p>It's not zero.</p>
+          <p>The smallest value is not zero.</p>
         </hint>
       </statement>
       <response/>
@@ -247,11 +248,12 @@
     <paragraphs>
       <title>Discussion</title>
       <p>The correlation coefficient, <m>r</m>, provides a measure of the strength and direction of the linear relationship between two variables. This is a unitless quantity which has the advantage that it will be invariant to changes in scale (if we started looking at money in British pounds instead of American dollars, our measure of the strength of the relationship will not change) or if we reverse which we call the explanatory and response variables. A value of <m>r</m> close to zero indicates that the variables do not have a strong linear relationship. However, this does not preclude them from having a very strong but non-linear relationship. A scatterplot should be examined before interpreting the value of <m>r</m>. If the relationship is not linear, there are alternative measures of the strength of the association that can be used or the variables can be transformed and the transformed variables analyzed instead. If the relationship is linear, a correlation coefficient close to 1 or <m>-1</m> indicates a very strong relationship. The values of <m>r</m> form a continuum: as the linear association becomes weaker, the value of <m>r</m> becomes closer to zero.</p>
-      <assemblage>
-        <title>Insight</title>
+   </paragraphs>
+    <insight xml:id="correlation-insight">
+    <title>Points to keep in mind</title>
+
         <p>The correlation coefficient will always be a number between <m>-1</m> and 1, inclusive. It will obtain the value of 1 or <m>-1</m> if the points fall along a perfect line (with negative or positive slope, respectively).</p>
-      </assemblage>
-    </paragraphs>
+      </insight>
   </exercises>
 
   <subsection xml:id="practice-5-7A">
