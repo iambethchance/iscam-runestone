@@ -1,1 +1,8 @@
-pretext == 2.33.2
+pretext == 2.43.1
+
+# Needed for `pretext validate` (RELAX NG schema check): pretext shells out to a
+# `jing` executable on PATH. jingtrang provides a cross-platform pyjing entrypoint;
+# see scripts/setup-jing.ps1 for the one-time shim that exposes it as `jing`.
+# Requires a Java runtime installed separately (e.g. `winget install EclipseAdoptium.Temurin.21.JRE`).
+jingtrang == 0.1.2
+setuptools < 81  # jingtrang imports pkg_resources, removed in newer setuptools

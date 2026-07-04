@@ -6,6 +6,63 @@ This is a conversion of **ISCAM: Investigating Statistical Concepts, Application
 
 The book uses an investigation-based, inquiry-first pedagogy: content is organized as numbered **Investigations** within chapters, each walking through a real study with a sequence of guided exercises, ending in "Study Conclusions" and one or more "Practice Problem" subsections.
 
+## ⚠️ Content Fidelity Mandate — READ THIS FIRST
+
+**This project is a _format conversion_, not an editorial rewrite. The job is to move the exact
+content of the source textbook into PreTeXt — nothing more.**
+
+The authoritative source of truth for content is the Word document
+[`source/iscam4_RJMPFall25.docm`](source/iscam4_RJMPFall25.docm) (the current gold master; if a
+newer dated `.docm` appears in `source/`, confirm with the author which is canonical). Every
+question, discussion paragraph, definition, technology instruction, study conclusion, and
+practice problem in a `.ptx` file must match the wording in that Word document **verbatim**.
+
+You may ONLY change what is required to express the content in PreTeXt XML, specifically:
+- Wrapping text in the correct PreTeXt elements (`<p>`, `<exercise>`, `<statement>`, `<term>`,
+  `<q>`, `<alert>`, `<tabular>`, etc.).
+- XML-encoding characters (`&lt;`, `&amp;`), converting straight/curly quotes to `<q>…</q>`,
+  em dashes to `<mdash/>`, etc.
+- Adding structural attributes the format needs (`xml:id`, `label`).
+- Placing images/applets/data where the Word doc shows them.
+
+You may **NOT**, unless the author explicitly asks in this session:
+- Reword, paraphrase, condense, "tighten," or "improve" any question or discussion text.
+- Invent solutions/answers from your own statistical knowledge. **The `RJMPFall25` doc is the
+  _student_ version — most questions have blank answer spaces.** Solution text comes from a
+  **separate author-supplied instructor key**, not from you. So: don't fabricate solutions, but
+  also don't assume existing `<solution>` blocks are wrong just because they aren't in the
+  student doc — they were likely sourced from the instructor key. **Leave `<solution>` content
+  alone unless the author says otherwise.**
+- Drop content that is in the doc (data tables, full multi-platform technology instructions,
+  terminology detours, transition sentences between parts, etc.).
+- Renumber or relabel questions in a way that departs from the doc's own lettering/numbering.
+
+**Known hazard:** several existing `.ptx` files (e.g. `source/ch5/inv-5-6.ptx`) were generated
+by an earlier LLM pass that silently paraphrased and compressed the **question / discussion /
+detour / conclusion wording** (the `<solution>` blocks came from the instructor key and are
+generally fine). When touching any converted file, diff the non-solution text against the Word
+doc first (see the extraction workflow below) and restore verbatim wording before doing anything
+else. Treat "the `.ptx` already says X" as suspect for question/body text until verified against
+the doc; leave solutions as-is.
+
+### Extracting the Word doc for comparison
+
+`.docm` is a zip of OOXML. To pull readable text for a diff (run from repo root; write scratch
+files to the temp scratchpad, never the repo):
+
+```bash
+# 1. unzip the main document part
+unzip -o -q source/iscam4_RJMPFall25.docm word/document.xml -d "$SCRATCH/docm"
+# 2. extract paragraph text with the committed helper
+uv run --with lxml python scripts/extract_docx.py "$SCRATCH/docm/word/document.xml" "$SCRATCH/fulltext.txt"
+# 3. find the investigation's line range, then read just that slice
+grep -n "Investigation 5.6" "$SCRATCH/fulltext.txt"
+```
+
+[`scripts/extract_docx.py`](scripts/extract_docx.py) emits one line per Word paragraph; the
+paragraph list preserves question order and the blank answer lines that mark the student version.
+Write the extracted text to the scratchpad, never the repo.
+
 GitHub remote: `iambethchance/iscam-runestone`, branch `master`. Runestone Academy builds directly from this branch — there is no separate deploy step for normal edits (see Deployment below).
 
 ### Platform background
@@ -21,6 +78,10 @@ Separately, Runestone distinguishes **open books** (no login, self-paced) from *
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
+**Always use `uv` for anything Python** (installs, running scripts): `uv pip install …`,
+`uv run python …`. `uv` is already installed. Don't call bare `pip`/`python` for environment
+changes.
+
 **2. Create a virtual environment and install pretext** — in Git Bash from the project root:
 ```bash
 uv venv
@@ -33,12 +94,35 @@ uv pip install -r requirements.txt
 source .venv/Scripts/activate
 ```
 
-`requirements.txt` pins `pretext==2.33.2`. `pretext build` may print a notice that a newer version is available — that's expected; don't upgrade without checking that the newer CLI doesn't change output structure Runestone depends on.
+**4. (Optional but recommended) enable `pretext validate`** — needs a Java-backed `jing`:
+```bash
+# install a JRE once (PowerShell): winget install EclipseAdoptium.Temurin.21.JRE
+#   (the installer adds java to the machine PATH — open a FRESH terminal afterward)
+powershell -ExecutionPolicy ByPass -File scripts/setup-jing.ps1   # creates the jing shim
+```
+`requirements.txt` already includes `jingtrang`; without the JRE + shim, `pretext validate` just
+reports "no validator available" and skips (the build itself still works).
+
+### PreTeXt version — keep it matched to Runestone's server
+
+`requirements.txt` pins **`pretext==2.43.1`**. This is deliberate: **Runestone Academy does not use
+your `requirements.txt`** — its server (the `RunestoneInteractive/rs` codebase) builds with its
+*own* pinned pretext (~2.43 as of mid-2026) via the PreTeXt Python API in-process. The local pin is
+kept close to the server's to minimize "builds/looks fine locally, breaks or renders differently
+after the Runestone rebuild" drift. (The project historically ran 2.33.2 and hit exactly this
+class of surprise.) When bumping the local pin, prefer whatever the current Runestone server runs,
+and re-run a full build + `scripts/ptx_lint.py` afterward, since newer pretext is stricter (e.g.
+2.4x rejects dotted `@label` values that 2.33 tolerated).
+
+There is **no supported way to reproduce the Runestone server build exactly** locally (its build
+path isn't published as an author workflow). So the realistic safety net is: match the version,
+lint, build, and **always read the "view latest log" link in Runestone's author interface after a
+server rebuild** — that server log is the final source of truth for what deployed.
 
 ## Build Commands
 
 ```bash
-# Build for Runestone target
+# Build for Runestone target (what Runestone actually builds)
 pretext build runestone
 
 # Preview locally (opens at http://localhost:8128)
@@ -46,9 +130,22 @@ pretext view runestone
 
 # Build for plain HTML target
 pretext build html
+
+# Repo-specific pre-push linter (fast; catches build-breakers + local-vs-Runestone traps)
+uv run python scripts/ptx_lint.py
+
+# Strict RELAX-NG schema validation (needs the jing shim + JRE; see setup step 4)
+pretext validate
 ```
 
-Builds routinely emit warnings (deprecation notices, some chapter 5 xref warnings) that have been treated as non-fatal/out-of-scope historically. Don't assume a clean build is required before committing — but do check that the specific file you touched didn't introduce a *new* warning or error.
+**Fatal vs. non-fatal is the key distinction.** `pretext build` prints many `* PTX:ERROR:` /
+`* PTX:BUG:` lines that are **non-fatal** — the build still completes and deploys. Only a trailing
+`critical:` … "Failed to build without errors" actually stops the build (in this repo, almost
+always a dangling `<xref>`). Known-tolerated non-fatal noise: 900+ dotted-`@label` errors and
+`hN template … aside` BUG lines, both book-wide. So: don't chase a "clean" build; instead confirm
+(a) no `critical:` failure and (b) the file you touched didn't add a *new* error — grep the log for
+your file's ids rather than reading all ~1900 lines. Run `scripts/ptx_lint.py` first; it isolates
+the handful of findings that matter (see the `ptx-lint` skill for how to read each finding type).
 
 ## Repository Layout
 
@@ -175,6 +272,15 @@ Workflow:
 Project-specific Claude Code skills live in `.claude/skills/` and are tracked in git (unlike the rest of `.claude/`, which stays local via `.gitignore`). Current skills:
 
 - `new-investigation` — scaffold a new Investigation `.ptx` file following the structure above.
+- `ptx-lint` — pre-push lint/validate workflow: runs `scripts/ptx_lint.py`, a real build, and
+  (optionally) `pretext validate`, and explains how to interpret each finding and the
+  fatal-vs-non-fatal build output.
+
+Helper scripts in [`scripts/`](scripts/):
+- `ptx_lint.py` — the repo-specific linter (dangling xrefs, image case/existence, dotted labels,
+  `<p>`-wrapped lists, orphaned files).
+- `extract_docx.py` — dump Word-doc paragraph text for verbatim fidelity diffs.
+- `setup-jing.ps1` — one-time shim so `pretext validate` finds a `jing` validator.
 
 ## Key Reference Docs in This Repo
 
