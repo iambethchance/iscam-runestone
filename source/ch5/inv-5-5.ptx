@@ -86,6 +86,15 @@
         <statement>
           <p>Confirm your calculations using technology.</p>
 
+          <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
+            <image source="images/inv5-5techR.png" width="100%">
+              <description>R output for Investigation 5.5 technology detour</description>
+            </image>
+            <image source="images/inv5-5techJMP.jpg" width="100%">
+              <description>JMP output for Investigation 5.5 technology detour</description>
+            </image>
+          </sidebyside>
+
           <hint>
             <title>Applet Instructions</title>
             <p>Use the <url href="http://www.rossmanchance.com/applets/2021/test/fCalc.htm"><em>F</em> Probability Calculator applet</url>.</p>
@@ -103,8 +112,8 @@
           </hint>
 
           <hint>
-            <title>Expected Result</title>
-            <p>You should obtain <m><em>F</em> = 226/7.73 = 29.2</m>. The p-value is approximately zero.</p>
+            <title>Solution</title>
+            <p>You should obtain <em>F</em> = 226/7.73 = 29.2. The p-value is approximately zero.</p>
           </hint>
         </statement>
       </exercise>
@@ -117,7 +126,7 @@
       </statement>
       <response/>
       <solution>
-        <p>The variation between types of music appears larger than the variation in amount spent between diners.</p>
+        <p>The variation between types of music appears larger than the variation in amount spent between diners. (MSGroups is much larger than MSError).</p>
       </solution>
     </exercise>
 
@@ -134,7 +143,7 @@
 
     <assemblage xml:id="study-conclusions-5-5">
       <title>Study Conclusions</title>
-      <p>The classical music nights had the largest sample mean spending. The reported ANOVA result (<m>F=31.48</m>, very small p-value) gives strong evidence of differences in group means. However, independence is questionable because treatments were assigned by evening rather than to individual diners, so evening-level effects may be confounded with music condition. Thus descriptive differences are clear, but causal interpretation and broader generalization require caution.</p>
+      <p>In this study, a larger average amount was spent while classical music was playing. With such a large test statistic and such a small p-value (<em>F</em> = 31.48, p-value <m>\approx</m> 0), we have very strong evidence that the observed differences in the sample means could not have arisen by chance alone. However, we need to assess the technical conditions before we could know whether this inferential procedure is valid with these data. Although the equal standard deviation assumption seems reasonable (because 3.332/2.243 < 2), we do not have the sample data to examine the shapes of the sample distributions. Still, the sample sizes are large and the <em>F</em> procedure is fairly robust to departures from the normality condition. However, we should not consider these observations to be independent within each group, because the treatments were assigned to the evenings, not to the individual diners. In this sense, we only have a few replications per evening and ANOVA is not the appropriate analysis. Descriptively it appears that the average amount spent is larger when classical music is playing, but because of the confounding with evening, it’s possible that classical music was played on certain days of the week and that that led to more spending. This was a randomized experiment, so if it weren’t for the concern about independence, we would have been able to draw a cause-and-effect conclusion from the type of music played and the amount spent. We would want to be very cautious in generalizing these results to other restaurants and even other times of the year.</p>
     </assemblage>
 
   </exercises>
@@ -143,7 +152,7 @@
     <title>Practice Problem 5.5A</title>
 
     <introduction>
-      <p>Another way to analyze the data for the trial of Dr. Spock is to look at the percentages of women on the different venires and determine whether the mean percentage of women is equal across the seven judges. These data are in <url href="http://www.rossmanchance.com/iscam2/data/SpockPers.txt">SpockPers.txt</url>.</p>
+      <p>Another way to analyze the data for the trial of Dr. Spock is to look at the percentages of women on the different venires and determine whether the mean percentage of women is equal across the seven judges. Below are the percentages of women on the venires for a recent sample from each of the judges. These data are below and in <url href="http://www.rossmanchance.com/iscam2/data/SpockPers.txt">SpockPers.txt</url>.</p>
       <tabular xml:id="practice-5-5a-judge-table" halign="center" top="minor" bottom="minor" left="minor" right="minor">
         <row header="yes">
           <cell>Judge 1</cell>
@@ -241,7 +250,7 @@
     <exercise xml:id="practice-5-5-1" label="P5.5A.1">
       <title>What New Information Does ANOVA Add?</title>
       <statement>
-        <p>Explain what information we learn from analyzing the data this way that we did not see when we carried out the chi-squared test on the overall proportion of women for each judge. Why might this information be useful?</p>
+        <p>Explain what information we learn from analyzing the data this way that we did not see when we carried out the Chi-squared test on the overall proportion of women for each judge. Why might this information be useful?</p>
       </statement>
       <response/>
     </exercise>
@@ -281,7 +290,7 @@
     <exercise xml:id="practice-5-5-5" label="P5.5B.1">
       <title>Two-sample <m>t</m>-test</title>
       <statement>
-        <p>Carry out a two-sided two-sample pooled <em>t</em>-test (use the technology option that assumes the variances are equal) to assess whether there is a statistically significant difference in the average ratings assigned to these two groups.</p>
+        <p>Carry out a two-sided two-sample pooled <em>t</em>-test (see Investigation 4.2: use the technology option that assumes the variances are equal) to assess whether there is a statistically significant difference in the average ratings assigned to these two groups.</p>
       </statement>
       <response/>
     </exercise>
@@ -305,7 +314,7 @@
     <exercise xml:id="practice-5-5-8" label="P5.5B.4">
       <title>When to Use <m>t</m> vs ANOVA</title>
       <statement>
-        <p>Suggest, in general, a situation where the two-sample <em>t</em>-procedure would be preferred and a situation where the ANOVA procedure would be preferred.</p>
+        <p>Suggest, in general, a situation where the two-sample <em>t</em>-procedure would be preferred and a situation where the ANOVA procedure would be preferred. [Hint: What would be true about the research question?]</p>
       </statement>
       <response/>
     </exercise>
