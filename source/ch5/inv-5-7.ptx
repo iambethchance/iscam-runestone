@@ -5,36 +5,92 @@
   <exercises xml:id="exercises5-7" hidden-label="yes">
     <title>The Study</title>
 
-    <p>This investigation compares how PGA scoring average relates to driving distance and putting average using <c>golfers18.txt</c>.</p>
+    <p>Some have cited <q>Drive for show, putt for dough</q> as the oldest cliché in golf. The message is that the best way to improve one's scoring average in golf is to focus on improving putting, as opposed to, say, distance off the initial drive, even though the latter usually garners more ooh's and aah's. To see whether this philosophy has merit, we need to examine whether there is a relationship between putting ability and overall scoring, and whether that relationship is stronger than the relationship between scoring average and driving distance. The file <c>golfers18.txt</c> contains the 2018 statistics (through the September 2018, downloaded May 2019) on the top 100 PGA golfers (based on scoring), downloaded from <url href="http://www.pgatour.com/stats/">http://www.pgatour.com/stats/</url>. Three of the variables recorded include:</p>
 
-    <exercise xml:id="inv5-7-a" label="I5.7.a"><title>Direction Conjecture: Driving</title><statement><p>(a) Predict direction of association between scoring average and driving distance.</p></statement><response/><solution><p>Negative, golfers that hit further will tend to be the same golfers with lower scores.</p></solution></exercise>
-    <exercise xml:id="inv5-7-b" label="I5.7.b"><title>Direction Conjecture: Putting</title><statement><p>(b) Predict direction of association between scoring average and putting average.</p></statement><response/><solution><p>Positive, golfers that hit more putts will tend to be the same golfers with higher scores.</p></solution></exercise>
-    <exercise xml:id="inv5-7-c" label="I5.7.c"><title>Compare Scatterplots</title><statement><p>(c) Produce both scatterplots and compare direction, form, and strength.</p></statement><response/><solution><p>The relationship between average score and average driving distance does appear to be negative. The relationship between average score and putting average appears positive and to be stronger than the first relationship. (Both graphs have some outliers worth investigating.)</p></solution></exercise>
-    <exercise xml:id="inv5-7-d" label="I5.7.d"><title>Quadrant Reasoning</title><statement><p>(d) With mean lines shown, identify aligned vs non-aligned quadrants for both plots.</p></statement><response/><solution><p>average score vs. average putts has more points in quadrants I and III.</p><p>average score vs. driving has more points in quadrants II and IV.</p><p>There appear to be fewer "unaligned points" in the average score vs. average putts graph.</p></solution></exercise>
+    <p><term>Scoring average:</term> A weighted average which takes the stroke average of the field into account. It is computed by adding a player's total strokes to an adjustment, and dividing by the total rounds played. This average is subtracted from par to create an adjustment for each round. Keep in mind that in golf low scores, as measured by number of strokes, are better than high scores.</p>
+    <p><term>Driving distance:</term> Average number of yards per measured drive. These drives are measured on two holes per round, carefully selected to face in opposite directions to counteract the effects of wind. Drives are measured to the point where they come to rest, regardless of whether or not they hit the fairway.</p>
+    <p><term>Putting average:</term> On holes where the green is hit in regulation, the total number of putts is divided by the total holes played.</p>
+
+    <exercise xml:id="inv5-7-a" label="I5.7.a"><title>Direction Conjecture: Driving</title><statement><p>(a) Do you expect the relationship between scoring average and driving distance to be positive or negative? Explain.</p></statement><response/><solution><p>Negative, golfers that hit further will tend to be the same golfers with lower scores.</p></solution></exercise>
+    <exercise xml:id="inv5-7-b" label="I5.7.b"><title>Direction Conjecture: Putting</title><statement><p>(b) Do you expect the relationship between scoring average and putting average to be positive or negative? Explain.</p></statement><response/><solution><p>Positive, golfers that hit more putts will tend to be the same golfers with higher scores.</p></solution></exercise>
+    <exercise xml:id="inv5-7-c" label="I5.7.c"><title>Compare Scatterplots</title><statement><p>(c) Open the data file and examine a scatterplot of average score vs. driving distance and a scatterplot of average score vs. average putts. Describe each scatterplot. Do the relationships confirm your expectations in (a) and (b)? Does one relationship appear to be stronger than the other? If so, which?</p></statement><response/><solution><p>The relationship between average score and average driving distance does appear to be negative. The relationship between average score and putting average appears positive and to be stronger than the first relationship. (Both graphs have some outliers worth investigating.)</p></solution></exercise>
+
+    <p>To further analyze these data, we need a numerical way of measuring the strength of the association between the two variables. We will do this with the correlation coefficient.</p>
+
+    <p>The following are the above scatterplots with the <m>\bar{x}</m> and <m>\bar{y}</m> lines superimposed.</p>
+    <!-- TODO(image): the gold Word doc shows the two scatterplots (average score vs. average putts, and average score vs. driving) with the mean lines drawn and the four quadrants (I-IV) labeled. Image assets not yet available; add <image> refs when supplied. -->
+
+    <exercise xml:id="inv5-7-d" label="I5.7.d"><title>Quadrant Reasoning</title><statement><p>(d) For the average score vs. average putts scatterplot, in which quadrants are most of the points located? For the average score vs. driving scatterplot? Which scatterplot seems to have fewer points in the <q>non-aligned</q> quadrants?</p></statement><response/><solution><p>average score vs. average putts has more points in quadrants I and III.</p><p>average score vs. driving has more points in quadrants II and IV.</p><p>There appear to be fewer "unaligned points" in the average score vs. average putts graph.</p></solution></exercise>
 
     <assemblage>
       <title>Definition: Correlation Coefficient</title>
-      <p>The correlation coefficient <m>r</m> measures strength and direction of a linear relationship and is unitless.</p>
+      <p>A numerical measure of the strength of a linear relationship is the correlation coefficient, <m>r</m>.</p>
+      <!-- NOTE(formula): the gold Word doc prints the correlation-coefficient formula here as an
+           embedded equation that did not survive text extraction. The form below is reconstructed
+           from the doc's surrounding prose (means/standard deviations of the explanatory and
+           response variables; the z-score product term that is positive in quadrants I/III).
+           VERIFY against the doc's actual equation image before treating as final. -->
+      <p><me>r = \frac{1}{n-1} \sum \left( \frac{x_i - \bar{x}}{s_x} \right)\left( \frac{y_i - \bar{y}}{s_y} \right)</me></p>
+      <p>where <m>\bar{x}</m> and <m>s_x</m> are the mean and standard deviation of the explanatory variable, respectively, and <m>\bar{y}</m> and <m>s_y</m> are the mean and standard deviation of the response variable.</p>
+      <p>Notice that when a point <m>(x_i, y_i)</m> is in quadrant I or III, the term <m>\left( \frac{x_i - \bar{x}}{s_x} \right)\left( \frac{y_i - \bar{y}}{s_y} \right)</m> will be positive. When a point is in quadrant II or IV, this term is negative. Where there is a positive association, most of the points are in quadrants I and III, so the correlation coefficient is positive. Similarly, when there is a negative association, most of the points will be in quadrants II and IV, so the correlation coefficient turns out to be negative. The more observations that are in the <q>aligned</q> quadrants, and the closer the points fall to a straight line, the larger the value of the correlation coefficient.</p>
     </assemblage>
 
-    <exercise xml:id="inv5-7-e" label="I5.7.e"><title>Units of r</title><statement><p>(e) Use the formula to determine the units of <m>r</m> for putts vs strokes.</p></statement><response/><solution><p>no measurement units.</p></solution></exercise>
-    <exercise xml:id="inv5-7-f" label="I5.7.f"><title>Interpret r=0</title><statement><p>(f) If correlation equals zero, what might the scatterplot look like?</p></statement><response/><solution><p>the points will have random scatter, observations with below average <m>x</m> values will have both below and above average <m>y</m> values, observations with above average <m>x</m> values will have both below and above average <m>y</m> values.</p></solution></exercise>
-    <exercise xml:id="inv5-7-g" label="I5.7.g"><title>Correlation with Itself</title><statement><p>(g) What is the correlation of a variable with itself?</p></statement><response/><solution><p>1.</p></solution></exercise>
-    <exercise xml:id="inv5-7-h" label="I5.7.h"><title>Resistance</title><statement><p>(h) Is correlation resistant to outliers? Explain.</p></statement><response/><solution><p>no, involves means, standard deviations, and squared terms, all of which should contribute to it not being resistant to outliers.</p></solution></exercise>
-    <exercise xml:id="inv5-7-i" label="I5.7.i"><title>Rank Correlations from Plots</title><statement><p>(i) Rank provided scatterplots from strongest negative to strongest positive correlation.</p></statement><response/><solution><p>rankings may vary.</p></solution></exercise>
-    <exercise xml:id="inv5-7-j" label="I5.7.j"><title>Compute Correlations with Technology</title><statement><p>(j) Compute and record correlation coefficients for each plot pair using applet/R/JMP.</p></statement><response/><solution><p>Example values from strongest negative to strongest positive: -0.819, -0.765, -0.451, -0.090, 0.485, 0.632, 0.888.</p></solution></exercise>
-    <exercise xml:id="inv5-7-k" label="I5.7.k"><title>Range of r</title><statement><p>(k) State smallest and largest possible values of <m>r</m>.</p></statement><response/><solution><p>smallest in absolute value: 0, largest in absolute value: 1.</p></solution></exercise>
-    <exercise xml:id="inv5-7-l" label="I5.7.l"><title>Sign of r</title><statement><p>(l) What sign of <m>r</m> corresponds to negative vs positive association?</p></statement><response/><solution><p><m>r</m> will be negative when the association is negative and positive if the association is positive.</p></solution></exercise>
-    <exercise xml:id="inv5-7-m" label="I5.7.m"><title>Meaning of r near 0</title><statement><p>(m) What does <m>r</m> near zero signify?</p></statement><response/><solution><p>no (linear) association.</p></solution></exercise>
-    <exercise xml:id="inv5-7-n" label="I5.7.n"><title>Meaning of r near +-1</title><statement><p>(n) What does <m>r</m> close to 1 or -1 signify?</p></statement><response/><solution><p>perfect linear relationship.</p></solution></exercise>
-    <exercise xml:id="inv5-7-o" label="I5.7.o"><title>Cliche Check</title><statement><p>(o) Which variable has stronger correlation with scoring average: driving distance or putting average? Does this support the cliche?</p></statement><response/><solution><p>scoring average and putting average which does support the cliche that putting is more related to overall scoring than driving distance.</p></solution></exercise>
+    <exercise xml:id="inv5-7-e" label="I5.7.e"><title>Units of r</title><statement><p>(e) Let <m>x</m> represent the average number of putts and <m>y</m> represent the average number of strokes. Use the definition of the correlation coefficient above to determine the measurement units of the correlation coefficient <m>r</m> in terms of putts and strokes.</p></statement><response/><solution><p>no measurement units.</p></solution></exercise>
+    <exercise xml:id="inv5-7-f" label="I5.7.f"><title>Interpret r=0</title><statement><p>(f) If the correlation coefficient between two variables equals zero, what do you think the scatterplot will look like?</p></statement><response/><solution><p>the points will have random scatter, observations with below average <m>x</m> values will have both below and above average <m>y</m> values, observations with above average <m>x</m> values will have both below and above average <m>y</m> values.</p></solution></exercise>
+    <exercise xml:id="inv5-7-g" label="I5.7.g"><title>Correlation with Itself</title><statement><p>(g) Suppose we find the correlation coefficient of a variable with itself. Substitute <m>x_i</m> in for <m>y_i</m> (and so <m>\bar{x}</m> and <m>\bar{y}</m> and <m>s_x</m> for <m>s_y</m>) in the above equation. Simplify. What is the correlation coefficient equal to?</p></statement><response/><solution><p>1.</p></solution></exercise>
+    <exercise xml:id="inv5-7-h" label="I5.7.h"><title>Resistance</title><statement><p>(h) Do you think the correlation coefficient will be a resistant measure of association? Explain.</p></statement><response/><solution><p>no, involves means, standard deviations, and squared terms, all of which should contribute to it not being resistant to outliers.</p></solution></exercise>
+    <exercise xml:id="inv5-7-i" label="I5.7.i"><title>Rank Correlations from Plots</title><statement><p>(i) The following scatterplots display 7 pairs of variables for these golfers. Rank these graphs in order from strongest negative correlation to strongest positive correlation.</p>
+      <!-- TODO(image): the gold Word doc shows 7 labeled scatterplots (A-G) here for ranking. Image assets not yet available; add <image> refs when supplied. -->
+    </statement><response/><solution><p>rankings may vary.</p></solution></exercise>
+
+    <paragraphs>
+      <title>Technology Detour: Correlation Coefficient</title>
+      <p><alert>In Two Quantitative Variables applet</alert></p>
+      <ul>
+        <li><p>Use the pull-down menus to change the response and explanatory variable pairs. Check the Correlation coefficient box.</p></li>
+      </ul>
+      <p><alert>In R</alert></p>
+      <ul>
+        <li><p><c>cor(x, y)</c></p></li>
+      </ul>
+      <p><alert>In Minitab</alert></p>
+      <ul>
+        <li><p>Choose Stat &gt; Basic Statistics &gt; Correlation and enter the pair of variables. You can unselect the <q>Show p-values</q> box for now. Alternatively, type <c>corr cx cy</c>.</p></li>
+      </ul>
+      <p><alert>In JMP</alert></p>
+      <ul>
+        <li><p>You can select Analyze &gt; Multivariate Methods &gt; Multivariate and specify two columns (or more) in the Y, Columns box and press OK. The numbers are the correlation coefficients for that row variable and that column variable.</p></li>
+      </ul>
+    </paragraphs>
+
+    <exercise xml:id="inv5-7-j" label="I5.7.j"><title>Compute Correlations with Technology</title><statement><p>(j) Use technology to determine the correlation coefficient for each of the above scatterplots. Record the values of these correlation coefficients.</p></statement><response/><solution><p>Example values from strongest negative to strongest positive: -0.819, -0.765, -0.451, -0.090, 0.485, 0.632, 0.888.</p></solution></exercise>
+    <exercise xml:id="inv5-7-k" label="I5.7.k"><title>Range of r</title><statement><p>(k) Based on these correlation coefficient values and/or the definition/formula, what do you think is the largest value that <m>r</m> can assume? What is the smallest value? [Hint: It's not zero.]</p></statement><response/><solution><p>smallest in absolute value: 0, largest in absolute value: 1.</p></solution></exercise>
+    <exercise xml:id="inv5-7-l" label="I5.7.l"><title>Sign of r</title><statement><p>(l) If the association is negative, what values will <m>r</m> have? What if the association is positive?</p></statement><response/><solution><p><m>r</m> will be negative when the association is negative and positive if the association is positive.</p></solution></exercise>
+    <exercise xml:id="inv5-7-m" label="I5.7.m"><title>Meaning of r near 0</title><statement><p>(m) What does a correlation coefficient equal to zero signify?</p></statement><response/><solution><p>no (linear) association.</p></solution></exercise>
+    <exercise xml:id="inv5-7-n" label="I5.7.n"><title>Meaning of r near +-1</title><statement><p>(n) What does a correlation coefficient close to 1 or <m>-1</m> signify?</p></statement><response/><solution><p>perfect linear relationship.</p></solution></exercise>
+    <exercise xml:id="inv5-7-o" label="I5.7.o"><title>Cliche Check</title><statement><p>(o) Which has a stronger correlation coefficient with scoring average: driving distance or average putts? Does this support the cliché? Explain.</p></statement><response/><solution><p>scoring average and putting average which does support the cliche that putting is more related to overall scoring than driving distance.</p></solution></exercise>
 
     <assemblage>
       <title>Study Conclusions</title>
-      <p>The putting relationship with scoring average is typically stronger than the driving relationship in these data. Correlation quantifies linear association and should always be interpreted alongside scatterplots.</p>
+      <p>The correlation coefficient for scoring average and average putts indicates a moderately strong positive linear association (<m>r = 0.516</m>) whereas the correlation coefficient for scoring average and driving indicates a weaker negative association (<m>r = -0.321</m>). This appears to support that putting performance is more strongly related to a PGA golfer's overall scoring average than the golfer's driving distance, as the cliché would suggest. We must keep in mind that these data are only for only the first 2.5 months of the season (when most golfers have played only around 6–8 events) and may not be representative of the scores and money earnings later in the year.</p>
     </assemblage>
 
-    <exercise xml:id="inv5-7-practice-a" label="I5.7A"><title>Practice Problem 5.7A</title><statement><p>Reason about correlation when final exam scores are fixed transformations of midterm scores.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-7-practice-b" label="I5.7B"><title>Practice Problem 5.7B</title><statement><p>Match house-price scatterplots to correlation values and justify.</p></statement><response/></exercise>
+    <p><term>Discussion:</term> The correlation coefficient, <m>r</m>, provides a measure of the strength and direction of the linear relationship between two variables. This is a unitless quantity which has the advantage that it will be invariant to changes in scale (if we started looking at money in British pounds instead of American dollars, our measure of the strength of the relationship will not change) or if we reverse which we call the explanatory and response variables. A value of <m>r</m> close to zero indicates that the variables do not have a strong linear relationship. However, this does not preclude them from having a very strong but non-linear relationship. A scatterplot should be examined before interpreting the value of <m>r</m>. If the relationship is not linear, there are alternative measures of the strength of the association that can be used or the variables can be transformed and the transformed variables analyzed instead. If the relationship is linear, a correlation coefficient close to 1 or <m>-1</m> indicates a very strong relationship. The values of <m>r</m> form a continuum: as the linear association becomes weaker, the value of <m>r</m> becomes closer to zero.</p>
+
+    <p>The correlation coefficient will always be a number between <m>-1</m> and 1, inclusive. It will obtain the value of 1 or <m>-1</m> if the points fall along a perfect line (with negative or positive slope, respectively).</p>
+
+    <exercise xml:id="inv5-7-practice-a" label="I5.7A"><title>Practice Problem 5.7A</title><statement>
+      <p>Suppose that we record the midterm exam score and the final exam score for every student in a class. What would the value of the correlation coefficient be if every student in the class scored:</p>
+      <p>(a) Ten points higher on the final than on the midterm?</p>
+      <p>(b) Five points lower on the final than on the midterm?</p>
+      <p>(c) Twice as many points on the final exam as on the midterm?</p>
+      <p>Explain your answer in each part. [Hint: You might first want to draw yourself a scatterplot of hypothetical data that fit the stated conditions.]</p>
+    </statement><response/></exercise>
+
+    <exercise xml:id="inv5-7-practice-b" label="I5.7B"><title>Practice Problem 5.7B</title><statement>
+      <p>(a) The following scatterplots look at the relationships between house prices and four other variables. How does the strength of the linear relationship between price and square footage compare to the strength of the relationships in the first 3 graphs?</p>
+      <!-- TODO(image): the gold Word doc shows four house-price scatterplots here. Image assets not yet available; add <image> refs when supplied. -->
+      <p>(b) The correlations for these four graphs are 0.284, 0.394, 0.649, 0.760. Which correlation coefficient do you think corresponds to which graph? Explain your reasoning. (Note: Each graph has the same number of houses, but you may have multiple houses indicated by an individual dot.)</p>
+    </statement><response/></exercise>
   </exercises>
 </section>
