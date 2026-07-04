@@ -5,46 +5,272 @@
   <exercises xml:id="exercises5-13" hidden-label="yes">
     <title>The Study</title>
 
-    <p>Revisit Cat Jumping data and perform regression inference for takeoff velocity vs percent body fat.</p>
+    <introduction>
+      <p>Reconsider the data from <xref ref="inv-5-6" text="custom">Investigation 5.6</xref> about factors that are related to a cat's jumping ability (<url href="http://www.rossmanchance.com/iscam2/data/CatJumping.txt">CatJumping.txt</url>).</p>
+    </introduction>
 
-    <exercise xml:id="inv5-13-a" label="I5.13.a"><title>Fit Regression Equation</title><statement><p>(a) Determine least-squares line for predicting velocity from percent body fat.</p></statement><response/><solution><p>Minitab results for predicted velocity (equation from software output).</p></solution></exercise>
-    <exercise xml:id="inv5-13-b" label="I5.13.b"><title>Normality of Residuals</title><statement><p>(b) Produce histogram and normal probability plot of residuals; assess normality.</p></statement><response/><solution><p>It's hard to tell much with a small sample size and we do have the one extreme outlier, but otherwise, the normality condition would appear satisfied.</p></solution></exercise>
-    <exercise xml:id="inv5-13-c" label="I5.13.c"><title>Equal Variance and Linearity</title><statement><p>(c) Use residual plot vs explanatory variable (or predicted values) to assess equal variance and linearity.</p></statement><response/><solution><p>If we separate the one huge outlier, the remaining residuals are in a rectangular box from -25 to 25. The lack of any strong curvature indicates the linearity condition is reasonable and the lack of major "fanning" in the residuals indicates the equal variance condition is met.</p></solution></exercise>
-    <exercise xml:id="inv5-13-d" label="I5.13.d"><title>Test for Negative Association</title><statement><p>(d) State hypotheses, report test statistic and p-value, and conclude.</p></statement><response/><solution><p>Let <m>\beta</m> represent the population slope between takeoff velocity and percentage body fat for all cats.</p><p><m>H_0\!: \beta=0</m> (no association between takeoff velocity and percentage body fat in the population).</p><p><m>H_a\!: \beta&lt;0</m> (negative association).</p><p>With a <m>t</m>-statistic of -3.343 and a p-value of 0.003 &lt; .05, we would reject the null hypothesis at the 5% level of significance and conclude that we have convincing evidence of a negative association between percentage body fat and takeoff velocity in this population of cats.</p></solution></exercise>
-    <exercise xml:id="inv5-13-e" label="I5.13.e"><title>Confirm t Formula</title><statement><p>(e) Verify t-statistic equals <m>b_1/SE(b_1)</m> for slope test against zero.</p></statement><response/><solution><p><m>t=-1.9534/.5688\approx -3.43</m>.</p></solution></exercise>
-    <exercise xml:id="inv5-13-f" label="I5.13.f"><title>95% CI for Slope</title><statement><p>(f) Compute 95% confidence interval for population slope by hand.</p></statement><response/><solution><p>If we use 2 as the critical value, we would find -1.9534 plus/minus 2(.5688) which gives (-3.091, -0.8158).</p><p>If we use a <m>t</m> critical value for 95% confidence and 18-2 = 16 d.f, we would find -1.9534 plus/minus 2.1199(.5688) which gives (-3.1592, -0.7476).</p></solution></exercise>
-    <exercise xml:id="inv5-13-g" label="I5.13.g"><title>Interpret Slope Interval</title><statement><p>(g) Interpret interval in context.</p></statement><response/><solution><p>We are 95% confident that each one percentage point increase in body fat is associated with a .75 to 3.16 decrease in takeoff velocity (cm/sec).</p></solution></exercise>
-    <exercise xml:id="inv5-13-h" label="I5.13.h"><title>Point Predictions</title><statement><p>(h) Predict velocity at 25% and 50% body fat.</p></statement><response/><solution><p>25%: predicted velocity <m>=397.65-1.9534(25)\approx 348.82</m> cm/sec.</p><p>50%: 299.98 cm/sec.</p></solution></exercise>
-    <exercise xml:id="inv5-13-i" label="I5.13.i"><title>Precision Comparison</title><statement><p>(i) Which prediction is more reliable and why?</p></statement><response/><solution><p>Should have more faith in the prediction for 25% body fat as that value is in the main part of our data but we don't have a lot of information for cats with body fat percentages around 50%.</p></solution></exercise>
+    <exercise xml:id="inv5-13-a">
+      <title>Least Squares Line</title>
+      <statement>
+        <p>Use technology (e.g., <url href="http://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables</url> applet) to determine the equation of the least squares line for predicting a cat's takeoff <em>velocity</em> from its percentage of body fat (<em>PctBodyFat</em>). Record the equation of this line, using good statistical notation.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>Example output:</p>
+        <image source="images/inv-5-13-sol-a.png" width="45%">
+          <description><p>Regression Equation output: velocity = 397.7 minus 1.953 percentbodyfat.</p></description>
+        </image>
+      </solution>
+    </exercise>
 
-    <paragraphs>
-      <title>Technology Detour: Prediction Intervals</title>
-      <p><alert>R:</alert> use <c>predict(lm(...), newdata=..., interval="prediction")</c>.</p>
-      <p><alert>JMP:</alert> Linear Fit options for individual confidence interval formulas.</p>
-    </paragraphs>
+    <exercise xml:id="inv5-13-b">
+      <title>Normality of Residuals</title>
+      <statement>
+        <p>Produce a histogram and a normal probability plot of the residuals of this regression.</p>
+        <p>Does the normality condition appear to be satisfied?</p>
+        <hint>
+          <title>Applet Instructions</title>
+          <p>Check <alert>Show Residuals</alert> box.</p>
+        </hint>
+        <hint>
+          <title>R Instructions</title>
+          <p>You can access the residuals by using <c>lm(price~sqft)$residuals</c></p>
+        </hint>
+        <hint>
+          <title>JMP Instructions</title>
+          <p>Use the <alert>linear fit</alert> hot spot to <alert>Plot Residuals</alert></p>
+        </hint>
+      </statement>
+      <response/>
+      <solution>
+        <p>Example output:</p>
+        <image source="images/inv-5-13-sol-b1.jpg" width="45%">
+          <description><p>Histogram of the residuals, roughly mound-shaped between -40 and 30 with one extreme outlier near 80.</p></description>
+        </image>
+        <image source="images/inv-5-13-sol-b2.jpg" width="40%">
+          <description><p>Normal probability plot of the residuals with 95 percent confidence bands; the points fall close to the line except one point in the upper right.</p></description>
+        </image>
+        <p>It's hard to tell much with a small sample size and we do have the one extreme outlier, but otherwise, the normality condition would appear satisfied.</p>
+      </solution>
+    </exercise>
 
-    <exercise xml:id="inv5-13-j" label="I5.13.j"><title>Prediction Interval at 25%</title><statement><p>(j) Report and interpret 95% prediction interval at 25% body fat; identify midpoint.</p></statement><response/><solution><p>Midpoint is our prediction of 348.82. We are 95% confident that the takeoff velocity for a cat with 25% body fat will be between 292.37 cm/sec and 405.26 cm/sec.</p></solution></exercise>
-    <exercise xml:id="inv5-13-k" label="I5.13.k"><title>Prediction Interval at 50%</title><statement><p>(k) Repeat at 50% and compare interval widths.</p></statement><response/><solution><p>The midpoint is lower (now at 299.98) but the width is <m>362.34-237.62=124.72</m> (compared to <m>405.26-292.37=112.89</m>) is larger. This makes sense because we don't expect predictions at 50% body fat to be as precise, but we expect lower take off velocity for these heavier cats.</p></solution></exercise>
+    <exercise xml:id="inv5-13-c">
+      <title>Equal Variance and Linearity</title>
+      <statement>
+        <p>Examine a graph of the residuals vs. the percentage of body fat variable (or vs. the predicted values). Does the equal variance condition appear to be met? Does the linearity condition appear to be met?</p>
+      </statement>
+      <response/>
+      <solution>
+        <image source="images/inv-5-13-sol-c.jpg" width="45%">
+          <description><p>Scatterplot of residuals versus percentbodyfat showing a random scatter of points mostly between -25 and 25 with one large positive outlier near 75.</p></description>
+        </image>
+        <p>If we separate the one huge outlier, the remaining residuals are in a rectangular box from -25 to 25. The lack of any strong curvature indicates the linearity condition is reasonable and the lack of major <q>fanning</q> in the residuals indicates the equal variance condition is met.</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="inv5-13-d">
+      <title>Test the Association</title>
+      <statement>
+        <p>Consider testing whether the sample data provide strong evidence that percentage of body fat has a negative association with takeoff velocity in the population. State the hypotheses to be tested, and report (from the output) the value of the appropriate standardized statistic and p-value. (In the applet, check the <alert>Statistical model</alert> box.) Summarize your conclusion.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>Let <m>\beta</m> represent the population slope between takeoff velocity and percentage body fat for all cats.</p>
+        <p><m>H_0</m>: <m>\beta = 0</m> (no association between takeoff velocity and percentage body fat in the population)</p>
+        <p><m>H_a</m>: <m>\beta \lt 0</m> (negative association)</p>
+        <image source="images/inv-5-13-sol-d.png" width="55%">
+          <description><p>Coefficients table: Constant 397.7 with SE 17.0, T-value 23.44, p-value 0.000; percentbodyfat -1.953 with SE 0.569, T-value -3.43, p-value 0.003.</p></description>
+        </image>
+        <p>With a <m>t</m>-statistic of <m>-3.343</m> and a p-value of <m>0.003 \lt .05</m>, we would reject the null hypothesis at the 5% level of significance and conclude that we have convincing evidence of a negative association between percentage body and takeoff velocity in this population of cats.</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="inv5-13-e">
+      <title>Confirm the t-statistic</title>
+      <statement>
+        <p>Confirm that the <em>t</em>-test statistic for the hypotheses in <xref ref="inv5-13-d" text="custom">Question 4</xref> is equal to <m>b_1/SE(b_1)</m>.</p>
+      </statement>
+      <response/>
+      <solution><p><m>t = -1.9534/.5688 \approx -3.43</m>.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-13-f">
+      <title>Confidence Interval by Hand</title>
+      <statement>
+        <p>Use a <em>t</em>-procedure and the values of <m>b_1</m> and <m>SE(b_1)</m> to produce (by hand) a 95% confidence interval for the population slope <m>\beta_1</m>.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>If we use 2 as the critical value, we would find <m>-1.9534 \pm 2(.5688)</m> which gives <m>(-3.091, -0.8158)</m></p>
+        <p>If we use a <m>t</m> critical value for 95% confidence and <m>18-2 = 16</m> d.f, we would find <m>-1.9534 \pm 2.1199(.5688)</m> which gives <m>(-3.1592, -0.7476)</m></p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="inv5-13-g">
+      <title>Interpret the Interval</title>
+      <statement>
+        <p>Interpret the confidence interval that you produced in <xref ref="inv5-13-f" text="custom">Question 6</xref>. Be sure to interpret not only the interval itself but also what the slope coefficient means in this context.</p>
+      </statement>
+      <response/>
+      <solution><p>We are 95% confident that each one percentage point increase in body fat is associated with a .75 to 3.16 decrease in takeoff velocity (cm/sec).</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-13-h">
+      <title>Two Predictions</title>
+      <statement>
+        <p>Use the equation of the least squares line to predict the takeoff velocity for a cat with 25 percent body fat. Then do the same for a cat with 50 percent body fat.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>25%: <m>\widehat{\text{velocity}} = 397.65 - 1.9534(25) \approx 348.82</m> cm/sec.</p>
+        <p>50%: 299.98 cm/sec</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="inv5-13-i">
+      <title>Comfort and Precision</title>
+      <statement>
+        <p>Which of the two predictions in <xref ref="inv5-13-h" text="custom">Question 8</xref> do you feel more comfortable with? Which do you suspect would be more <em>precise</em>? Explain.</p>
+      </statement>
+      <response/>
+      <solution><p>Should have more faith in the prediction for 25% body fat as that value is in the main part of our data but we don't have a lot of information for cats with body fat percentages around 50%.</p></solution>
+    </exercise>
+
+    <p>Rather than only report one number as our prediction, we would like specify a confidence interval that indicates our <q>accurate</q> or precise we believe our prediction to be. The following procedure is valid if the basic regression model conditions are met.</p>
+
+    <exercise xml:id="inv5-13-j">
+      <title>Prediction Interval</title>
+      <statement>
+        <p>Report the 95% <url href="http://www.rossmanchance.com/iscam3/glossary.html#prediction1">prediction interval</url> for the takeoff velocity of a cat with 25% body fat. Also determine the midpoint of this interval; does its value look familiar? Also interpret what this interval reveals.</p>
+        <hint>
+          <title>R Instructions</title>
+          <p>Use the <c>predict</c> command, passing in the variables for the linear model but also a <q>new data</q> data frame for the value(s) you want predictions for (but giving them the same name as your explanatory variable). For example:</p>
+          <p><c>predict(lm(velocity~percentbodyfat), newdata= data.frame(percentbodyfat=25), interval="prediction")</c></p>
+        </hint>
+        <hint>
+          <title>JMP Instructions</title>
+          <ul>
+            <li><p>From the <alert>Linear Fit</alert> hot spot select <alert>Indiv Confidence Interval Formula</alert>.</p></li>
+            <li><p>JMP will add two columns to your table that use a <alert>Formula</alert> to compute the upper and lower endpoints of prediction intervals for all <m>x</m>-values of your data. Add new rows and enter new values for the explanatory variable to calculate prediction intervals for data other than those in the given dataset.</p></li>
+          </ul>
+        </hint>
+      </statement>
+      <response/>
+      <solution>
+        <p>Example output:</p>
+        <image source="images/inv-5-13-sol-j.png" width="25%">
+          <description><p>95 percent prediction interval output: (292.374, 405.262).</p></description>
+        </image>
+        <p>Midpoint is our prediction of 348.82. We are 95% confident that the takeoff velocity for a cat with 25% body fat will be between 292.37 cm/sec and 405.26 cm/sec.</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="inv5-13-k">
+      <title>Prediction Interval at 50%</title>
+      <statement>
+        <p>Repeat <xref ref="inv5-13-j" text="custom">Question 10</xref> to obtain a 95% prediction interval for the takeoff velocity of a cat with 50% body fat. Which interval is wider? Is this what you predicted in <xref ref="inv5-13-i" text="custom">Question 9</xref>?</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>Example output:</p>
+        <image source="images/inv-5-13-sol-k.png" width="25%">
+          <description><p>95 percent prediction interval output: (237.624, 362.341).</p></description>
+        </image>
+        <p>The midpoint is lower (now at 299.98) but the width is <m>362.34-237.62 = 124.72</m> (compared to <m>405.26-292.37 = 112.89</m>) is larger. This makes sense because we don't expect predictions at 50% body fat to be as precise, but we expect lower take off velocity for these heavier cats.</p>
+      </solution>
+    </exercise>
+
+    <p>As you saw in Investigation 2.6, the level of precision will also depend on whether we want to predict the mean response or an individual response outcome.</p>
 
     <assemblage>
-      <title>Definition</title>
-      <p>Prediction intervals are for individual responses; confidence intervals at x are for mean response.</p>
+      <title>Definition: Prediction and Confidence Intervals</title>
+      <p>Statistical packages compute both <q>prediction intervals</q> and <q>confidence intervals.</q> A prediction interval gives us the interval of plausible values for an individual response at a particular value of the explanatory variable. A confidence interval gives us the set of plausible values for the <em>mean</em> response at a particular value of the explanatory variable.</p>
     </assemblage>
 
-    <paragraphs>
-      <title>Technology Detour: Confidence Intervals</title>
-      <p><alert>R:</alert> use <c>interval="confidence"</c>.</p>
-      <p><alert>JMP:</alert> Linear Fit options for mean confidence interval formulas.</p>
-    </paragraphs>
+    <exercise xml:id="inv5-13-l">
+      <title>Confidence Interval for the Mean Response</title>
+      <statement>
+        <p>What does your technology report for the 95% confidence interval for the average takeoff velocity among all cats that have 25% body fat? Also determine the midpoint of this interval; does its value look familiar? Also interpret what this interval reveals.</p>
+        <hint>
+          <title>R Instructions</title>
+          <p>use <c>interval="confidence"</c></p>
+        </hint>
+        <hint>
+          <title>JMP Instructions</title>
+          <p>From the <alert>Linear Fit</alert> hot spot select <alert>Mean Confidence Interval Formula</alert>.</p>
+        </hint>
+      </statement>
+      <response/>
+      <solution>
+        <p>Example output:</p>
+        <image source="images/inv-5-13-sol-l.png" width="40%">
+          <description><p>Prediction output: Fit 348.818, SE Fit 6.30652, 95 percent confidence interval (335.449, 362.187).</p></description>
+        </image>
+        <p>The midpoint is the same (348.82). We are 95% confident that the <em>average</em> takeoff velocity for <em>all cats</em> with 25% body fat is between 335.45 and 362.19 cm/sec.</p>
+      </solution>
+    </exercise>
 
-    <exercise xml:id="inv5-13-l" label="I5.13.l"><title>Confidence Interval at 25%</title><statement><p>(l) Report and interpret 95% confidence interval for mean velocity at 25% body fat; identify midpoint.</p></statement><response/><solution><p>The midpoint is the same (348.82). We are 95% confident that the <em>average</em> takeoff velocity for <em>all cats</em> with 25% body fat is between 335.45 and 362.19 cm/sec.</p></solution></exercise>
-    <exercise xml:id="inv5-13-m" label="I5.13.m"><title>Compare PI and CI</title><statement><p>(m) Compare confidence and prediction intervals and explain width difference.</p></statement><response/><solution><p>The interval is narrower because it is easier to predict an average than an individual observation.</p></solution></exercise>
+    <exercise xml:id="inv5-13-m">
+      <title>Compare the Two Intervals</title>
+      <statement>
+        <p>How does the interval in <xref ref="inv5-13-l" text="custom">Question 12</xref> compare to the interval in <xref ref="inv5-13-j" text="custom">Question 10</xref>? Why does this relationship make sense? Explain.</p>
+      </statement>
+      <response/>
+      <solution><p>The interval is narrower because it is easier to predict an average than an individual observation.</p></solution>
+    </exercise>
 
-    <assemblage>
+    <assemblage xml:id="study-conclusions-5-13">
       <title>Study Conclusions</title>
-      <p>With model conditions reasonably met, t-based slope inference and interval procedures provide interpretable uncertainty for both average and individual predictions.</p>
+      <p>Technology tells us that we are 95% confident that a cat with 25% body fat would have a takeoff velocity between 292.4 and 405.3 cm/sec. But if we were to consider the population of all cats with 25% body fat, we are 95% confident that the <em>mean</em> takeoff velocity of these cats is between 335.5 and 362.2 cm/sec, a much narrower interval. These procedures are valid because the analysis of the residual plots did not reveal any strong departures from the basic regression model conditions.</p>
     </assemblage>
 
-    <exercise xml:id="inv5-13-practice" label="I5.13.practice"><title>Practice Problem 5.13</title><statement><p>Apply these interval methods to Talley 5K data for specific runner ages and evaluate validity via residual plots.</p></statement><response/></exercise>
+    <p>Note: As with other <em>t</em> procedures, these procedures are fairly robust to the normality condition if you have a larger sample size <em>except</em> the prediction interval calculation.</p>
   </exercises>
+
+  <subsection xml:id="practice-5-13">
+    <title>Practice Problem 5.13</title>
+    <introduction>
+      <p>Reconsider the 5K race results (<url href="http://www.rossmanchance.com/iscam3/data/Talley5K2013.txt">Talley5K2013.txt</url>) from <xref ref="inv-5-10" text="custom">Investigation 5.10</xref>.</p>
+    </introduction>
+
+    <exercise xml:id="practice-5-13-1" label="P5.13.1">
+      <title>Mean Finishing Time CI</title>
+      <statement>
+        <p>Determine and interpret a 95% confidence interval for the mean finishing time of all 25-year-old runners in the population.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-13-2" label="P5.13.2">
+      <title>Predict Joy Montoya's Time</title>
+      <statement>
+        <p>Joy Montoya, a 43-year-old female, did not appear in the first set of results. Use these data to predict her finishing time.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-13-3" label="P5.13.3">
+      <title>Compare the Intervals</title>
+      <statement>
+        <p>How do the intervals in <xref ref="practice-5-13-1" text="custom">Question 1</xref> and <xref ref="practice-5-13-2" text="custom">Question 2</xref> compare <mdash/> Midpoint? Width? Explain why each has changed (or not) the way it has.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-13-4" label="P5.13.4">
+      <title>Repeat for Laure James</title>
+      <statement>
+        <p>Repeat <xref ref="practice-5-13-2" text="custom">Question 2</xref> and <xref ref="practice-5-13-3" text="custom">Question 3</xref> for Laure James, a 53-year-old female who also didn't appear in the original results.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-13-5" label="P5.13.5">
+      <title>Validity of the Intervals</title>
+      <statement>
+        <p>Do you consider the above interval calculations to be valid? (Examine and discuss residual plots.)</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
 </section>
