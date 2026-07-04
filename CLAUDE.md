@@ -225,8 +225,13 @@ them for every investigation:
    (auto-numbered). Split a multi-part practice problem into separate exercises.
 6. **Technology instructions use the hint-reveal format:** inside a `<statement>`, one `<hint>` per
    platform — `<hint><title>Applet Instructions</title>…</hint>`, then `R Instructions`,
-   `Minitab Instructions`, `JMP Instructions`. Either fold them into the relevant question or make a
-   standalone `<paragraphs><title>Technology Detour</title><exercise>…</exercise></paragraphs>`.
+   `JMP Instructions`. Either fold them into the relevant question or make a standalone
+   `<paragraphs><title>Technology Detour</title><exercise>…</exercise></paragraphs>`. Keep the
+   instructions **verbatim from the source PDF/Word doc**, including the applet-name/package
+   hyperlinks (get exact URLs from the PDF's link annotations — `page.get_links()` in PyMuPDF).
+   **NO Minitab.** Per the author, drop all Minitab instructions everywhere — do not add them, and
+   remove any you find. (The current Win26 source PDF has already removed Minitab from its detours,
+   so "verbatim to source" and "no Minitab" agree.)
 7. **Study background / intro goes in `<introduction>` inside `<exercises>`.**
 8. **`<image>` `<description>` must wrap its text in `<p>`** (`<description><p>…</p></description>`),
    not bare text — the current schema requires it.
