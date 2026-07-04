@@ -419,6 +419,68 @@ article.exercise-like#I1-3-1 {
     padding: 0.4em 0.6em !important;
 }
 
+/* I5.5A practice table: do not draw borders for intentionally blank cells. */
+#practice-5-5a table.tabular td:empty,
+.ptx-content #practice-5-5a table.tabular td:empty {
+    border: none !important;
+}
+
+/* Robust fallback: remove borders for the known blank cells in P5.5A judge table.
+   This avoids dependence on :empty behavior in downstream HTML rendering. */
+#practice-5-5a-judge-table tr:nth-child(4) td:nth-child(6),
+#practice-5-5a-judge-table tr:nth-child(5) td:nth-child(6),
+#practice-5-5a-judge-table tr:nth-child(6) td:nth-child(6),
+#practice-5-5a-judge-table tr:nth-child(7) td:nth-child(5),
+#practice-5-5a-judge-table tr:nth-child(7) td:nth-child(6),
+#practice-5-5a-judge-table tr:nth-child(8) td:nth-child(3),
+#practice-5-5a-judge-table tr:nth-child(8) td:nth-child(4),
+#practice-5-5a-judge-table tr:nth-child(8) td:nth-child(5),
+#practice-5-5a-judge-table tr:nth-child(8) td:nth-child(6),
+#practice-5-5a-judge-table tr:nth-child(9) td:nth-child(3),
+#practice-5-5a-judge-table tr:nth-child(9) td:nth-child(4),
+#practice-5-5a-judge-table tr:nth-child(9) td:nth-child(5),
+#practice-5-5a-judge-table tr:nth-child(9) td:nth-child(6),
+#practice-5-5a-judge-table tr:nth-child(10) td:nth-child(3),
+#practice-5-5a-judge-table tr:nth-child(10) td:nth-child(4),
+#practice-5-5a-judge-table tr:nth-child(10) td:nth-child(5),
+#practice-5-5a-judge-table tr:nth-child(10) td:nth-child(6),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(4) td:nth-child(6),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(5) td:nth-child(6),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(6) td:nth-child(6),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(7) td:nth-child(5),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(7) td:nth-child(6),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(8) td:nth-child(3),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(8) td:nth-child(4),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(8) td:nth-child(5),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(8) td:nth-child(6),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(9) td:nth-child(3),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(9) td:nth-child(4),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(9) td:nth-child(5),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(9) td:nth-child(6),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(10) td:nth-child(3),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(10) td:nth-child(4),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(10) td:nth-child(5),
+.ptx-content #practice-5-5a-judge-table tr:nth-child(10) td:nth-child(6),
+article#I5\.5A table.tabular tr:nth-child(4) td:nth-child(6),
+article#I5\.5A table.tabular tr:nth-child(5) td:nth-child(6),
+article#I5\.5A table.tabular tr:nth-child(6) td:nth-child(6),
+article#I5\.5A table.tabular tr:nth-child(7) td:nth-child(5),
+article#I5\.5A table.tabular tr:nth-child(7) td:nth-child(6),
+article#I5\.5A table.tabular tr:nth-child(8) td:nth-child(3),
+article#I5\.5A table.tabular tr:nth-child(8) td:nth-child(4),
+article#I5\.5A table.tabular tr:nth-child(8) td:nth-child(5),
+article#I5\.5A table.tabular tr:nth-child(8) td:nth-child(6),
+article#I5\.5A table.tabular tr:nth-child(9) td:nth-child(3),
+article#I5\.5A table.tabular tr:nth-child(9) td:nth-child(4),
+article#I5\.5A table.tabular tr:nth-child(9) td:nth-child(5),
+article#I5\.5A table.tabular tr:nth-child(9) td:nth-child(6),
+article#I5\.5A table.tabular tr:nth-child(10) td:nth-child(3),
+article#I5\.5A table.tabular tr:nth-child(10) td:nth-child(4),
+article#I5\.5A table.tabular tr:nth-child(10) td:nth-child(5),
+article#I5\.5A table.tabular tr:nth-child(10) td:nth-child(6) {
+    border: none !important;
+}
+
 /* I5.4.i fill-in table: force fit inside content box (Runestone ids vary by renderer). */
 article#I5\.4\.i,
 article#inv5-4-i {

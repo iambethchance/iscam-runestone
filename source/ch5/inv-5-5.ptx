@@ -78,25 +78,39 @@
       </solution>
     </exercise>
 
-    <exercise xml:id="inv5-5-tech-f" label="I5.5.c">
-      <title>Technology Instructions: Calculate <em>F</em> and p-value</title>
-      <statement>
-        <p>Calculate the <em>F</em>-statistic by hand and use technology to determine the p-value.</p>
-      </statement>
-      <hint>
-        <title>Technology Options</title>
-        <p><alert><em>F</em> Probability Calculator applet:</alert> <url href="http://www.rossmanchance.com/applets/2021/test/fCalc.htm">fCalc</url>.</p>
-        <p><alert>R:</alert> <c>pf(x, df1, df2, lower.tail=FALSE)</c>.</p>
-        <p><alert>JMP:</alert> Distribution Calculator &gt; F, with upper-tail probability.</p>
-      </hint>
-      <hint>
-        <title>Solution Hint</title>
-        <p><m><em>F</em> = 226/7.73 = 29.2</m>. Compare to an <m>F</m> distribution with df = 2 and 390. The p-value is approximately zero.</p>
-      </hint>
-      <response/>
-    </exercise>
+    <paragraphs>
+      <title>Technology Detour </title>
 
-    <exercise xml:id="inv5-5-c" label="I5.5.c2">
+      <exercise xml:id="inv5-5-tech-detour-anova">
+        <title>ANOVA Calculations</title>
+        <statement>
+          <p>Confirm your calculations using technology.</p>
+
+          <hint>
+            <title>Applet Instructions</title>
+            <p>Use the <url href="http://www.rossmanchance.com/applets/2021/test/fCalc.htm"><em>F</em> Probability Calculator applet</url>.</p>
+            <p>Enter your observed <m>F</m> value and use the upper-tail probability.</p>
+          </hint>
+
+          <hint>
+            <title>R Instructions</title>
+            <p>Use <c>pf(x, df1, df2, lower.tail=FALSE)</c> with <c>x = 29.2</c>, <c>df1 = 2</c>, and <c>df2 = 390</c>.</p>
+          </hint>
+
+          <hint>
+            <title>JMP Instructions</title>
+            <p>Use Distribution Calculator, choose <em>F</em>, and compute the upper-tail probability for <m>F = 29.2</m> with df 2 and 390.</p>
+          </hint>
+
+          <hint>
+            <title>Expected Result</title>
+            <p>You should obtain <m><em>F</em> = 226/7.73 = 29.2</m>. The p-value is approximately zero.</p>
+          </hint>
+        </statement>
+      </exercise>
+    </paragraphs>
+
+    <exercise xml:id="inv5-5-c" label="I5.5.c">
       <title>Interpret Relative Variation</title>
       <statement>
         <p>Which appears to be larger, the variation in amount spent between diners or the variation in amount spent between types of music?</p>
@@ -130,7 +144,7 @@
 
     <introduction>
       <p>Another way to analyze the data for the trial of Dr. Spock is to look at the percentages of women on the different venires and determine whether the mean percentage of women is equal across the seven judges. These data are in <url href="http://www.rossmanchance.com/iscam2/data/SpockPers.txt">SpockPers.txt</url>.</p>
-      <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+      <tabular xml:id="practice-5-5a-judge-table" halign="center" top="minor" bottom="minor" left="minor" right="minor">
         <row header="yes">
           <cell>Judge 1</cell>
           <cell>Judge 2</cell>
