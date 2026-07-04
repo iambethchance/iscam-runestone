@@ -35,8 +35,8 @@ uv run playwright install chromium
    ```bash
    # whole page:
    uv run python scripts/screenshot_build.py inv-5-7.html "$SCRATCH/inv57.png" --target runestone
-   # just one element by CSS selector (faster to read, focused):
-   uv run python scripts/screenshot_build.py inv-5-7.html "$SCRATCH/def.png" --selector ".definition-like"
+   # just one element by CSS selector (faster to read, focused), e.g. an assemblage/definition box:
+   uv run python scripts/screenshot_build.py inv-5-7.html "$SCRATCH/def.png" --selector ".assemblage"
    ```
    The script serves `output/<target>/` over a local HTTP server (so relative CSS/JS and MathJax
    resolve like a real browser), waits for MathJax to finish typesetting, then captures the PNG.

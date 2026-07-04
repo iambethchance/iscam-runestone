@@ -45,22 +45,37 @@ doc first (see the extraction workflow below) and restore verbatim wording befor
 else. Treat "the `.ptx` already says X" as suspect for question/body text until verified against
 the doc; leave solutions as-is.
 
-### Extracting the Word doc for comparison
+### Reading the gold source for comparison
 
-`.docm` is a zip of OOXML. To pull readable text for a diff (run from repo root; write scratch
-files to the temp scratchpad, never the repo):
+There are two source artifacts, both under `source/` and both `.gitignore`d (never commit them):
 
+- **`iscam4_RJMPWin26.pdf`** — Winter 2026 PDF. **Preferred gold source: read it visually.** It
+  shows equations, scatterplot images, and table layouts that text extraction loses (this is how
+  the Inv 5.7 correlation formula was verified). Rendered PNGs are legible and reliable.
+- **`iscam4_RJMPFall25.docm`** — Fall 2025 Word doc. Older; useful as a text stream for grep/diff.
+  **Note the version gap:** if the PDF and docm disagree, the PDF (Win26) is newer — prefer it.
+
+**Read the PDF visually** (Claude's Read tool needs poppler, absent here, so rasterize with
+PyMuPDF; run from repo root, write PNGs to the scratchpad, never the repo):
 ```bash
-# 1. unzip the main document part
+# 1. find the page number(s) for an investigation
+uv run --with pypdf python -c "import pypdf; r=pypdf.PdfReader('source/iscam4_RJMPWin26.pdf'); \
+  [print(i+1) for i,p in enumerate(r.pages) if 'Investigation 5.7:' in (p.extract_text() or '')]"
+# 2. render that page range to PNGs, then Read each PNG
+uv run --with pymupdf python scripts/pdf_pages.py source/iscam4_RJMPWin26.pdf 352-359 "$SCRATCH/inv57"
+```
+(The PDF's printed page number is one less than the file page index — file page 352 shows "351".)
+
+**Text stream from the Word doc** (faster for prose grep/diff, but drops equations/images):
+```bash
 unzip -o -q source/iscam4_RJMPFall25.docm word/document.xml -d "$SCRATCH/docm"
-# 2. extract paragraph text with the committed helper
 uv run --with lxml python scripts/extract_docx.py "$SCRATCH/docm/word/document.xml" "$SCRATCH/fulltext.txt"
-# 3. find the investigation's line range, then read just that slice
-grep -n "Investigation 5.6" "$SCRATCH/fulltext.txt"
+grep -n "Investigation 5.6" "$SCRATCH/fulltext.txt"   # then read that line slice
 ```
 
-[`scripts/extract_docx.py`](scripts/extract_docx.py) emits one line per Word paragraph; the
-paragraph list preserves question order and the blank answer lines that mark the student version.
+Helpers: [`scripts/pdf_pages.py`](scripts/pdf_pages.py) (PDF page → PNG),
+[`scripts/extract_docx.py`](scripts/extract_docx.py) (Word paragraphs → text; preserves the blank
+answer lines that mark the student version).
 Write the extracted text to the scratchpad, never the repo.
 
 GitHub remote: `iambethchance/iscam-runestone`, branch `master`. Runestone Academy builds directly from this branch — there is no separate deploy step for normal edits (see Deployment below).
