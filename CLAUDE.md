@@ -103,6 +103,17 @@ powershell -ExecutionPolicy ByPass -File scripts/setup-jing.ps1   # creates the 
 `requirements.txt` already includes `jingtrang`; without the JRE + shim, `pretext validate` just
 reports "no validator available" and skips (the build itself still works).
 
+**5. (Optional) enable visual QA of the build with Playwright** — lets you (and Claude, via
+screenshot → image) actually *see* how a built page renders (MathJax formulas, images, tables),
+which raw HTML can't show. Install only on machines doing visual QA; it pulls a ~150 MB Chromium
+and is **intentionally not in `requirements.txt`** (don't burden every dev / the Runestone build):
+```bash
+uv pip install playwright
+uv run playwright install chromium
+```
+Then build a target and use `scripts/screenshot_build.py` — see the `view-build` skill for the
+workflow. This is the recommended way to verify a page renders correctly before/after pushing.
+
 ### PreTeXt version — keep it matched to Runestone's server
 
 `requirements.txt` pins **`pretext==2.43.1`**. This is deliberate: **Runestone Academy does not use
@@ -275,12 +286,16 @@ Project-specific Claude Code skills live in `.claude/skills/` and are tracked in
 - `ptx-lint` — pre-push lint/validate workflow: runs `scripts/ptx_lint.py`, a real build, and
   (optionally) `pretext validate`, and explains how to interpret each finding and the
   fatal-vs-non-fatal build output.
+- `view-build` — visually inspect a rendered page (screenshot → view) to confirm formulas/images/
+  tables render; requires the optional Playwright install (setup step 5).
 
 Helper scripts in [`scripts/`](scripts/):
 - `ptx_lint.py` — the repo-specific linter (dangling xrefs, image case/existence, dotted labels,
   `<p>`-wrapped lists, orphaned files).
 - `extract_docx.py` — dump Word-doc paragraph text for verbatim fidelity diffs.
 - `setup-jing.ps1` — one-time shim so `pretext validate` finds a `jing` validator.
+- `screenshot_build.py` — render a built page to PNG for visual QA (needs Playwright; see the
+  `view-build` skill).
 
 ## Key Reference Docs in This Repo
 
