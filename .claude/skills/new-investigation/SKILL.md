@@ -6,7 +6,15 @@ description: Scaffold a new ISCAM Investigation .ptx file (exercises, hints, sol
 # new-investigation
 
 Scaffolds a new Investigation section file for the ISCAM Runestone book, matching the
-structure used throughout the book (canonical reference: `source/ch1/inv-1-1.ptx`).
+structure used throughout the book.
+
+**Reference file: `source/ch5/inv-5-1.ptx`** — this is the author-approved, Runestone-verified
+formatting template. Match it. Before writing, read CLAUDE.md's "Runestone formatting conventions"
+section (no `(a)`/`(b)` prefixes; `xml:id` only on main exercises, no `label`; Study Conclusions
+needs `xml:id="study-conclusions-N-M"`; cross-refs via `<xref … text="custom">Question N</xref>`;
+practice problems in a `<subsection>` outside `<exercises>`; technology instructions as per-platform
+`<hint>` reveals; `<image><description>` wraps text in `<p>`). Pull `<solution>` text verbatim from
+the official solutions site (see CLAUDE.md "Pulling official solutions").
 
 This is an authoring aid, not a code generator — most of the value is in asking the right
 questions up front and then holding to the established XML conventions exactly, rather than
