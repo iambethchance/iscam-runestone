@@ -202,9 +202,51 @@ data/                          # local mirror of raw datasets (.txt), also hoste
 
 ## Authoring Conventions
 
+### Runestone formatting conventions — the reference file is `source/ch5/inv-5-1.ptx`
+
+**`source/ch5/inv-5-1.ptx` is the gold-standard, author-approved formatting template. Match it,
+not the older ch1 files.** The author verified these against the Runestone-rendered output; follow
+them for every investigation:
+
+1. **No `(a)`/`(b)`/`(c)` prefixes in question text.** Runestone auto-numbers exercises (they render
+   as "1.", "2.", …). Strip the letter prefixes from statements.
+2. **Main exercises carry `xml:id` only — no `label` attribute.** Runestone numbers them; adding a
+   `label` (especially a dotted one like `I5.7.a`) is both unnecessary and a lint/build error.
+   *Practice-problem* exercises are the exception: they take a `label` like `P5.7A.1`.
+3. **Study Conclusions must be `<assemblage xml:id="study-conclusions-N-M">`** (e.g.
+   `study-conclusions-5-7`). That id is what the CSS targets to give the box its green styling; a
+   plain `<assemblage>` renders in the wrong color.
+4. **Cross-reference other questions with `<xref ref="inv5-7-a" text="custom">Question 1</xref>`.**
+   The `text="custom">Question N` matches the visible auto-numbering; a bare `<xref ref="…"/>`
+   renders the verbose internal number ("Exercise 26.2.1.1"). Never write "see part (a)" as plain
+   text once the letters are gone.
+5. **Practice problems go in `<subsection xml:id="practice-N-M">` OUTSIDE `</exercises>`** (a child
+   of `<section>`), with shared setup in `<introduction>` and each part as its own `<exercise>`
+   (auto-numbered). Split a multi-part practice problem into separate exercises.
+6. **Technology instructions use the hint-reveal format:** inside a `<statement>`, one `<hint>` per
+   platform — `<hint><title>Applet Instructions</title>…</hint>`, then `R Instructions`,
+   `Minitab Instructions`, `JMP Instructions`. Either fold them into the relevant question or make a
+   standalone `<paragraphs><title>Technology Detour</title><exercise>…</exercise></paragraphs>`.
+7. **Study background / intro goes in `<introduction>` inside `<exercises>`.**
+8. **`<image>` `<description>` must wrap its text in `<p>`** (`<description><p>…</p></description>`),
+   not bare text — the current schema requires it.
+
+### Pulling official solutions (verbatim)
+
+`<solution>` blocks should be taken **verbatim from the official brief-solutions site**, not
+paraphrased or invented. Some solutions include images (technology output) — pull those too.
+
+- URL: `https://www.rossmanchance.com/iscam4/solutions/chapter<N>.html?part=all&software=all`
+- It's HTTP Basic Auth; **credentials are in `.claude/solutions-access.md` (local, gitignored —
+  never commit them; this repo is public).** Ask the author (bchance) if that file is missing.
+- Fetch with Playwright `http_credentials` (rossmanchance.com is not Cloudflare-blocked, unlike
+  runestone.academy). Then diff each `<solution>` against the site text; download and commit any
+  solution images referenced.
+
 ### PreTeXt XML structure for an Investigation
 
-Use `source/ch1/inv-1-1.ptx` as the reference template. The consistent shape:
+The condensed skeleton below shows the overall shape (follow `inv-5-1.ptx` for the exact,
+approved formatting and the conventions above):
 
 ```xml
 <section xml:id="invN-M">
