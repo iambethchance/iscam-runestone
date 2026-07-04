@@ -18,7 +18,14 @@
     <p>In this investigation, you will examine the following data, also available in the file <url href="http://www.rossmanchance.com/iscam2/data/CatJumping.txt">CatJumping.txt</url>:</p>
     </introduction>
 
-    <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
+    <tabular top="minor" bottom="minor" left="minor" right="minor">
+      <col halign="left"/>
+      <col halign="center"/>
+      <col halign="center"/>
+      <col halign="center"/>
+      <col halign="center"/>
+      <col halign="center"/>
+      <col halign="center"/>
       <row header="yes" bottom="major">
         <cell>ID</cell>
         <cell>Sex</cell>
@@ -57,7 +64,7 @@
     </paragraphs>
 
     <paragraphs>
-      <title>Technology Detour</title>
+      <title>Technology Detour: Scatterplots</title>
       <exercise xml:id="inv5-6-tech-detour-scatterplot">
         <title>Scatterplot Instructions</title>
         <statement>
@@ -65,17 +72,26 @@
 
           <hint>
             <title>Applet Instructions</title>
-            <p>Place velocity in response and body mass in explanatory.</p>
+            <p>In <url href="https://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables</url> applet (or <url href="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm">Two Quantitative Variables</url> applet)</p>
+            <ul>
+              <li><p>Drag the velocity variable to the Response box and check <alert>Show descriptive</alert> box (<xref ref="inv5-6-a" text="custom">Question 1</xref>).</p></li>
+              <li><p>Drag bodymass to the Explanatory box.</p></li>
+            </ul>
           </hint>
 
           <hint>
             <title>R Instructions</title>
-            <p><c>plot(bodymass, velocity)</c> or <c>plot(velocity~bodymass)</c>.</p>
+            <p><c>plot(bodymass, velocity)</c> or <c>plot(velocity~bodymass)</c></p>
+            <p><c>scatterplot(bodymass, velocity)</c> (the <c>scatterplot</c> function is in the <url href="http://cran.r-project.org/web/packages/car/index.html">car</url> package)</p>
           </hint>
 
           <hint>
             <title>JMP Instructions</title>
-            <p>Analyze &gt; Fit Y by X.</p>
+            <ul>
+              <li><p>With two columns of quantitative variables, choose <alert>Analyze &gt; Fit Y by X</alert>.</p></li>
+              <li><p>Select velocity as the <alert>Y, Response</alert> entry and bodymass as the <alert>X, Factor</alert> variable.</p></li>
+              <li><p>Click <alert>OK</alert>.</p></li>
+            </ul>
           </hint>
         </statement>
       </exercise>
@@ -87,11 +103,12 @@
 
       <assemblage>
         <title>Terminology Detour</title>
-        <p><strong>Scatterplots</strong> are useful for displaying the relationship between two quantitative variables. If one variable has been defined as the response variable and the other as the explanatory variable, we will put the response variable on the vertical axis and the explanatory variable along the horizontal axis.</p>
+        <p><url href="http://www.rossmanchance.com/iscam3/glossary.html#scatterplot">Scatterplots</url> are useful for displaying the relationship between two quantitative variables. If one variable has been defined as the response variable and the other as the explanatory variable, we will put the response variable on the vertical axis and the explanatory variable along the horizontal axis.</p>
         <p>In describing scatterplots you will describe the overall pattern between the two variables focusing primarily on three things:</p>
-        <p><em>Direction</em>: Is there a positive association (small values of y tend to occur with small values of x and large values of y tend to occur with large values of x) or a negative association (small values of y tend to occur at large values of x and vice versa)?</p>
-        <ul><li><em>Linearity</em>: Is the overall pattern in the scatterplot linear or not?</li>
-        <li><em>Strength</em>: How closely are the observations following the observed pattern?</li>
+        <ul>
+          <li><p><em>Direction</em>: Is there a positive association (small values of y tend to occur with small values of x and large values of y tend to occur with large values of x) or a negative association (small values of y tend to occur at large values of x and vice versa)?</p></li>
+          <li><p><em>Linearity</em>: Is the overall pattern in the scatterplot linear or not?</p></li>
+          <li><p><em>Strength</em>: How closely are the observations following the observed pattern?</p></li>
         </ul>
         </assemblage>
     </paragraphs>
@@ -115,17 +132,25 @@
 
           <hint>
             <title>Applet Instructions</title>
-            <p>Drag Sex to Subset By.</p>
+            <p>In <url href="https://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables</url> applet</p>
+            <ul><li><p>Drag the Sex variable to the <alert>Subset By</alert> box.</p></li></ul>
+            <p>In <url href="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm">Two Quantitative Variables</url> applet</p>
+            <ul><li><p>Use <alert>Color by</alert> pull-down menu to select Sex variable.</p></li></ul>
           </hint>
 
           <hint>
             <title>R Instructions</title>
-            <p>Create the scatterplot as before, but pass a categorical variable as a color vector. For example, <c>plot(velocity~bodymass, col=sex)</c>.</p>
+            <p>Create the scatterplot as before, but pass a categorical variable as a color vector. For example: <c>plot(velocity~bodymass, col=sex)</c></p>
           </hint>
 
           <hint>
             <title>JMP Instructions</title>
-            <p>Right-click in the plot and choose Row Legend. Select a categorical variable from the Columns List. Press OK.</p>
+            <ul>
+              <li><p>Create the scatterplot as before.</p></li>
+              <li><p>Right-click in the plot and choose <alert>Row Legend</alert>.</p></li>
+              <li><p>Select a categorical variable from the <alert>Columns List</alert>.</p></li>
+              <li><p>Press <alert>OK</alert>.</p></li>
+            </ul>
           </hint>
         </statement>
       </exercise>
