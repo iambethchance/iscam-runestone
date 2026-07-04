@@ -5,49 +5,331 @@
   <exercises xml:id="exercises5-10" hidden-label="yes">
     <title>The Study</title>
 
-    <p>Data from a local 5K race include age and finish time for 248 runners. The goal is to assess whether finish time changes with age.</p>
+    <introduction>
+      <sidebyside widths="63% 34%" margins="0% 0%" valign="top">
+        <stack>
+          <p>Many communities offer racing events for amateur runners, such as 5K (approximately 3.1 miles) races. At the end of the event, awards are often given out to runners with the fastest times, often to the top three finishers in different age groups. But does running time really change with age for amateur runners? To investigate this, one of the authors downloaded the race results for a local 5K race in May 2013 (<url href="http://www.rossmanchance.com/iscam2/data/Talley5K2013.txt">Talley5K2013.txt</url>). Data for 248 runners included age (in years) and finish time (in minutes).</p>
+        </stack>
+        <image source="images/5K.jpeg" width="100%" decorative="yes"/>
+      </sidebyside>
+    </introduction>
 
-    <exercise xml:id="inv5-10-a" label="I5.10.a"><title>Identify Variables</title><statement><p>(a) Identify explanatory and response variables.</p></statement><response/><solution><p>The explanatory variable of interest here is age and the response variable is finishing time.</p></solution></exercise>
-    <exercise xml:id="inv5-10-b" label="I5.10.b"><title>Conjecture Direction and Form</title><statement><p>(b) Predict direction, linearity, and likely significance of association.</p></statement><response/><solution><p>We might expect older people to tend to be slower (larger finish times) so a positive association. Conjectures about form and strength will vary.</p></solution></exercise>
-    <exercise xml:id="inv5-10-c" label="I5.10.c"><title>Scatterplot and Data Features</title><statement><p>(c) Plot finish time vs age and discuss unusual features/outliers.</p></statement><response/><solution><p>We do notice a weak, positive, linear association between time and age. There is also an extreme outlier, a rather young runner who took almost 80 minutes. The outlier could be due to an injury during the race.</p></solution></exercise>
-    <exercise xml:id="inv5-10-d" label="I5.10.d"><title>Refit Without Outlier</title><statement><p>(d) Remove outlier and report regression equation and slope interpretation.</p></statement><response/><solution><p>With each one-year increase in age, we predict .1403 hours (about 8 minutes) to be added to the finish time, on average.</p></solution></exercise>
-    <exercise xml:id="inv5-10-e" label="I5.10.e"><title>Sampling-Variability Question</title><statement><p>(e) Could observed slope arise by chance if no population association exists? Outline investigation approach.</p></statement><response/><solution><p>It's possible. We need to know how unusual a slope of .1403 (or more extreme) is for a random sample of 247 runners from a population with no association.</p></solution></exercise>
+    <exercise xml:id="inv5-10-a">
+      <title>Identify Variables</title>
+      <statement><p>Identify the explanatory and response variables for this research question.</p></statement>
+      <response/>
+      <solution><p>The explanatory variable of interest here is age and the response variable is finishing time.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-b">
+      <title>Predict Direction, Form, Significance</title>
+      <statement><p>Do you expect the relationship between finish time and age to be positive or negative? Do you expect it to be linear (which implies what)? Do you think the association between these variables will be statistically significant?</p></statement>
+      <response/>
+      <solution><p>We might expect older people to tend to be slower (larger finish times) so a positive association. Conjectures about form and strength will vary.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-c">
+      <title>Produce Scatterplot</title>
+      <statement><p>Use technology to produce a scatterplot of finish time vs. age. [You can copy the data into Excel, using Data &gt; Text to Columns and delimiting by spaces, and then copy the last two columns (age, time) into the Analyzing Two Quantitative Variables applet, using age as the explanatory variable.] Do you want to change any of your answers to <xref ref="inv5-10-b" text="custom">Question 2</xref> in light of this graph? Also discuss any other unusual features of the data.</p></statement>
+      <response/>
+      <solution><p>We do notice a weak, positive, linear association between time and age. There is also an extreme outlier <mdash/> a rather young runner who took almost 80 minutes. The outlier could be due to an injury during the race?</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-d">
+      <title>Remove Outlier; Regression Line</title>
+      <statement><p>Remove the outlier from the data window (the name was a duplicate and the time was later dropped from the official published results, row #248), press Use Data again, and determine the least-squares regression equation for predicting finish time from age. Interpret the slope coefficient in context.</p></statement>
+      <response/>
+      <solution><p>With each one-year increase in age, we predict about 0.1403 minutes to be added to the finish time, on average.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-e">
+      <title>Could Association Be Chance?</title>
+      <statement><p>Suppose we consider the remaining 247 runners to be a random sample from some larger population. Is it possible that there is no association between age and finishing time in this larger population, but we just happened to find such an association in this sample? How might we investigate how plausible this explanation is?</p></statement>
+      <response/>
+      <solution><p>It's possible. We need to know how unusual a slope of .1403 (or more extreme) is for a random sample of 247 runners from a population with no association.</p></solution>
+    </exercise>
 
     <assemblage>
       <title>Terminology Detour</title>
-      <p>Use <m>b_0, b_1</m> for sample intercept/slope and <m>\beta_0, \beta_1</m> for population parameters.</p>
+      <p>To differentiate between the population regression line and the sample regression line, we will continue to use <m>b_0</m> and <m>b_1</m> to denote the sample statistics for the intercept and slope, respectively (or alternatively <m>\hat{\beta}_0</m> and <m>\hat{\beta}_1</m>). The corresponding population parameters will be denoted by <m>\beta_0</m> and <m>\beta_1</m>.</p>
     </assemblage>
 
-    <exercise xml:id="inv5-10-f" label="I5.10.f"><title>Hypotheses for Slope</title><statement><p>(f) State null and alternative hypotheses for testing whether finish time changes with age.</p></statement><response/><solution><p>This would imply a population slope of zero. <m>H_0</m>: no association between finish time (population slope = 0) and age vs. <m>H_a</m>: a positive association between finish time and age (population slope &gt; 0).</p></solution></exercise>
-    <exercise xml:id="inv5-10-g" label="I5.10.g"><title>Compute Sample Summaries</title><statement><p>(g) Obtain means, SDs, and regression residual SD from data.</p></statement><response/><solution><p>Note: I removed the runner, not just the finishing time. <m>s\approx 8.265</m> min.</p></solution></exercise>
-    <exercise xml:id="inv5-10-h" label="I5.10.h"><title>Design Null Population</title><statement><p>(h) Build a null population with <m>\beta_1=0</m> and matching sample characteristics; draw one sample and compare slopes.</p></statement><response/><solution><p>The sample regression line shouldn't exactly match the population regression line (<m>\beta_1=0</m>).</p></solution></exercise>
-    <exercise xml:id="inv5-10-i" label="I5.10.i"><title>Second Sample and Variability</title><statement><p>(i) Draw another sample; compare regression line and discuss sampling variability.</p></statement><response/><solution><p>The sample regression line is expected to vary from sample to sample.</p></solution></exercise>
-    <exercise xml:id="inv5-10-j" label="I5.10.j"><title>Many Sample Lines</title><statement><p>(j) Draw many sample lines and describe variation pattern.</p></statement><response/><solution><p>The lines form a criss-crossing pattern, like a bow-tie or cat whiskers.</p></solution></exercise>
-    <exercise xml:id="inv5-10-k" label="I5.10.k"><title>Null Distribution of Slopes</title><statement><p>(k) Describe shape, center, and SD of null slope distribution.</p></statement><response/><solution><p>The shape should be symmetric with a mean around zero and a standard deviation of about 0.03.</p></solution></exercise>
-    <exercise xml:id="inv5-10-l" label="I5.10.l"><title>Expected Center</title><statement><p>(l) Is center as expected under null? Explain.</p></statement><response/><solution><p>We expect the average sample slope to be close to zero, the value of the population slope. This shows that the sample slope is an unbiased estimator of the population slope.</p></solution></exercise>
-    <exercise xml:id="inv5-10-m" label="I5.10.m"><title>Change Sigma</title><statement><p>(m) Reduce sigma and describe population scatterplot change.</p></statement><response/><solution><p>The vertical distances from the points to the horizontal regression line will be smaller.</p></solution></exercise>
-    <exercise xml:id="inv5-10-n" label="I5.10.n"><title>Predict Effect of Sigma Change</title><statement><p>(n) Predict effect on slope distribution.</p></statement><response/><solution><p>Conjectures will vary.</p></solution></exercise>
-    <exercise xml:id="inv5-10-o" label="I5.10.o"><title>Check Sigma Prediction</title><statement><p>(o) Simulate and evaluate prediction from part (n).</p></statement><response/><solution><p>There should be less sample-to-sample variability in the sample slopes (smaller standard deviation).</p></solution></exercise>
-    <exercise xml:id="inv5-10-p" label="I5.10.p"><title>Change SD(X)</title><statement><p>(p) Modify SD(X); predict effect on slope and intercept sampling distributions.</p></statement><response/><solution><p>The horizontal distances from the points to the <m>\bar{x}</m> value will be smaller (less horizontal width to the population scatterplot). Predictions will vary.</p></solution></exercise>
-    <exercise xml:id="inv5-10-q" label="I5.10.q"><title>Check SD(X) Prediction</title><statement><p>(q) Simulate and evaluate predictions from part (p).</p></statement><response/><solution><p>There will actually be more sample-to-sample variability in the sample slopes (larger standard deviation).</p></solution></exercise>
-    <exercise xml:id="inv5-10-r" label="I5.10.r"><title>Change Sample Size</title><statement><p>(r) Reduce sample size and predict effect on slope distribution.</p></statement><response/><solution><p>Might conjecture the sampling distribution to have less variability when the samples are based on larger sample sizes.</p></solution></exercise>
-    <exercise xml:id="inv5-10-s" label="I5.10.s"><title>Check Sample Size Prediction</title><statement><p>(s) Simulate and evaluate prediction from part (r).</p></statement><response/><solution><p>The standard deviation of the slopes should decrease.</p></solution></exercise>
-    <exercise xml:id="inv5-10-t" label="I5.10.t"><title>Summarize Effects</title><statement><p>(t) Summarize effects of sigma, SD(X), and n on slope sampling distribution.</p></statement><response/><solution><p>With a larger value of <m>\sigma</m>, there is more variability in the distribution of sample slopes.</p><p>With a larger value of <m>s_x</m>, there will be less variability in the distribution of sample slopes.</p><p>With a larger sample size, there will be less variability in the distribution of sample slopes.</p></solution></exercise>
-    <exercise xml:id="inv5-10-u" label="I5.10.u"><title>Intuition</title><statement><p>(u) Explain intuitively why these effects occur.</p></statement><response/><solution><p>When there is less variation away from the regression line, there will be less variation in the sample regression lines, it is more difficult to get "extreme" sample regression lines. When there is less variability in the explanatory variable, we are not given as much information about the relationship between the two variables and it will be easier to get more extreme sample results. Larger samples, as we often see, lead to less sampling variability in our statistic.</p></solution></exercise>
-    <exercise xml:id="inv5-10-v" label="I5.10.v"><title>Formula Consistency</title><statement><p>(v) Compare simulation behavior to formula for SD of slope estimator.</p></statement><response/><solution><p>Yes, <m>n</m> and <m>s_x^2</m> are in the denominator and <m>\sigma</m> is in the numerator.</p></solution></exercise>
-    <exercise xml:id="inv5-10-w" label="I5.10.w"><title>Observed Slope Under Null</title><statement><p>(w) Locate observed slope in null distribution and estimate p-value.</p></statement><response/><solution><p>Example results: 0.14 is in the tail of the simulated null distribution, it does not seem likely that if the population slope was zero we would observe a sample slope as extreme as 0.140 just by chance.</p></solution></exercise>
-    <exercise xml:id="inv5-10-x" label="I5.10.x"><title>Alternative Null Slope</title><statement><p>(x) Repeat simulation for a nonzero null slope and assess plausibility.</p></statement><response/><solution><p>Example results: The distribution of sample means will now center around 0.10. Now the value of 0.14 is not so extreme. Here we found such a slope or larger about 10% of the time. The value of 0.10 appears to be plausible for <m>\beta_1</m>.</p></solution></exercise>
+    <exercise xml:id="inv5-10-f">
+      <title>State Hypotheses</title>
+      <statement><p>If there were no relationship between finish time and age in the population, what would this imply about the value of the population slope? State null and alternative hypotheses to reflect the research question that 5K runner finishing times change with age. (Do you think they will increase or decrease?)</p></statement>
+      <response/>
+      <solution><p>This would imply a population slope of zero. <m>H_0</m>: no association between finish time (population slope = 0) and age vs. <m>H_a</m>: a positive association between finish time and age (population slope <m>&gt; 0</m>).</p></solution>
+    </exercise>
+
+    <p>We now want to assess the statistical significance of the association between variables in this sample. Following our usual logic, we will approach this question by assessing how unusual it would be to obtain a sample slope coefficient of <m>b_1 = 0.140</m> (or more extreme) with a random sample of 247 runners from a population with no association between the variables (i.e., with a population slope coefficient of <m>\beta_1 = 0</m>). We will do this by creating such a population and repeatedly taking random samples from it, calculating the sample slope each time.</p>
+
+    <p>First, let's think about what we want this population to look like.</p>
+
+    <exercise xml:id="inv5-10-g">
+      <title>Sample Summary Statistics</title>
+      <statement>
+        <p>Determine the sample mean and standard deviation of the remaining individual variables in our sample (In the applet, you can check the Show descriptive box in the bottom left corner):</p>
+        <p>Finish time Mean = <var width="8"/> Standard deviation = <var width="8"/></p>
+        <p>Age Mean = <var width="8"/> Standard deviation = <var width="8"/></p>
+        <p>Also check the box to reveal the value of <m>s</m> from the regression model (<m>\sqrt{SSE/(n-2)}</m>):</p>
+        <p>Regression SE = <var width="8"/></p>
+      </statement>
+      <response/>
+      <solution><p>Note: I removed the runner, not just the finishing time. <m>s = 8.265</m> min.</p></solution>
+    </exercise>
+
+    <p>So one approach is to create a population that has similar characteristics as this sample, but with a population slope coefficient of zero.</p>
+
+    <p><em>Technical note:</em> You also want to think about whether you want to model random sampling from a bivariate population, or random sampling of finishing times at each age. We will start with the first approach, but classical regression theory (Investigation 5.12) assumes the second.</p>
+
+    <p>In the Analyzing Two Quantitative Variables applet, check the <alert>Design Population</alert> box in the bottom left corner. Use the pull-down menu to select the Bivariate structure for the population (assumes normal distributions for both the explanatory and response variables). We will create a population of runners where there is no relationship between finish time and age. To match the above context:</p>
+    <ul>
+      <li><p>Use the mean of the time variable, 32.36, as the population intercept. Because we are forcing <m>\beta_1 = 0</m>, this says that the population regression line is constant at <m>\bar{y} = 32.36</m> minutes.</p></li>
+      <li><p>Use the <m>x</m> mean and <m>x</m> standard deviation to match the values you found in <xref ref="inv5-10-g" text="custom">Question 7</xref> for age after removing the outlier.</p></li>
+      <li><p>Use the standard error of the residuals as sigma, representing the variability about the population regression line (should be smaller than the SD(Y) you found in <xref ref="inv5-10-g" text="custom">Question 7</xref>).</p></li>
+      <li><p>Press the <alert>Create Population</alert> button.</p></li>
+    </ul>
+    <p>So the population of 20,000 runners we are creating here mostly matches the characteristics of the observed sample data. The key difference here is that we are assuming the population slope is equal to zero.</p>
+
+    <exercise xml:id="inv5-10-h">
+      <title>Draw One Sample</title>
+      <statement><p>Check the <alert>Show Sampling Options</alert> box and set the sample size to be 247, choose the Slope as the statistic, and press the <alert>Draw Samples</alert> button. Make sure Show Regression Line is checked on the left and record the Most Recent Regression Line equation displayed in blue. Did you obtain the same sample regression line as from the observed race results (check the <q>Show Original Regression Line</q> box) or as in the hypothesized population (in light blue)?</p></statement>
+      <response/>
+      <solution><p>The sample regression line shouldn't exactly match the population regression line (<m>\beta_1 = 0</m>).</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-i">
+      <title>Draw Another Sample</title>
+      <statement><p>Press the <alert>Draw Samples</alert> button again to get a new sample regression line (in blue, the previous turns grey). Did you obtain the same sample regression line as in <xref ref="inv5-10-h" text="custom">Question 8</xref>?</p></statement>
+      <response/>
+      <solution><p>The sample regression line is expected to vary from sample to sample.</p></solution>
+    </exercise>
+
+    <p><term>Discussion:</term> These questions reveal once again the omnipresent phenomenon of sampling variability. Just as you have seen that the value of a sample mean varies from sample to sample, the value of a sample proportion varies from sample to sample, and the value of a chi-squared statistic varies from sample to sample, now you see that the value of a sample regression line also varies from sample to sample. Once again we can use simulation to explore the long-run pattern of this variation, approximating the sampling distribution of the sample slope coefficient.</p>
+
+    <exercise xml:id="inv5-10-j">
+      <title>Twenty Samples</title>
+      <statement><p>Change the Number of Samples from 1 to 20. Press the <alert>Draw Samples</alert> button five times. Describe the pattern of variation that you see in the simulated regression lines.</p></statement>
+      <response/>
+      <solution><p>The lines form a criss-crossing pattern, like a bow-tie or cat whiskers.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-k">
+      <title>Null Distribution of Slopes</title>
+      <statement>
+        <p>Now change the number of samples to 1000 and press the <alert>Draw Samples</alert> button. Describe the shape, mean, and standard deviation of the null distribution of sample slopes.</p>
+        <p>Shape: <var width="10"/></p>
+        <p>Mean: <var width="8"/> Standard deviation: <var width="8"/></p>
+      </statement>
+      <response/>
+      <solution><p>The shape should be symmetric with a mean around zero and a standard deviation of about 0.03.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-l">
+      <title>Interpret the Mean</title>
+      <statement><p>Is the mean of this distribution of sample slopes roughly what you expected? Explain.</p></statement>
+      <response/>
+      <solution><p>We expect the average sample slope to be close to zero, the value of the population slope. This shows that the sample slope is an unbiased estimator of the population slope.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-m">
+      <title>Decrease Sigma</title>
+      <statement><p>Now change the value of sigma from 8.265 to 4.29 and press Create Population. How does this change the scatterplot?</p></statement>
+      <response/>
+      <solution><p>The vertical distances from the points to the horizontal regression line will be smaller.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-n">
+      <title>Predict Effect on Slope Distribution</title>
+      <statement><p>How do you think this will change the behavior of the distribution of sample slopes? (shape, center, variability)</p></statement>
+      <response/>
+      <solution><p>Conjectures will vary.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-o">
+      <title>Check Conjecture (Sigma)</title>
+      <statement><p>Press the <alert>Draw Samples</alert> button. Was your conjecture in <xref ref="inv5-10-n" text="custom">Question 14</xref> correct? Be sure to comment on shape, center, and variability of the null distribution.</p></statement>
+      <response/>
+      <solution><p>There should be less sample-to-sample variability in the sample slopes (smaller standard deviation).</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-p">
+      <title>Decrease x Variability</title>
+      <statement>
+        <p>Change the value of sigma back to 8.265 (and press Create Population) but now change the value of <m>x</m> std from 16.849 to 8.45. Press the <alert>Create Population</alert> button. How does this change the population scatterplot? How do you think this will change the behavior of the distribution of sample slopes and the distribution of the sample intercepts?</p>
+        <p>Change to scatterplot: <var width="12"/></p>
+        <p>Prediction: <var width="12"/></p>
+      </statement>
+      <response/>
+      <solution><p>The horizontal distances from the points to the <m>\bar{x}</m> value will be smaller (less horizontal width to the population scatterplot). Predictions will vary.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-q">
+      <title>Check Conjecture (x std)</title>
+      <statement><p>Press the <alert>Draw Samples</alert> button. Was your conjecture in <xref ref="inv5-10-p" text="custom">Question 16</xref> correct?</p></statement>
+      <response/>
+      <solution><p>There will actually be more sample-to-sample variability in the sample slopes (larger standard deviation).</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-r">
+      <title>Decrease Sample Size</title>
+      <statement><p>Change the value of <m>x</m> std back to 16.849 (Press Create Population) and change the sample size from 247 to 125. Conjecture what will happen to the sampling distribution of the sample slopes.</p></statement>
+      <response/>
+      <solution><p>Might conjecture the sampling distribution to have less variability when the samples are based on larger sample sizes.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-s">
+      <title>Check Conjecture (n)</title>
+      <statement><p>Press Draw Samples. Was your prediction correct?</p></statement>
+      <response/>
+      <solution><p>The standard deviation of the slopes should decrease.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-t">
+      <title>Summarize the Three Effects</title>
+      <statement>
+        <p>Summarize how each of these quantities affect the sampling distribution of the sample slope:</p>
+        <ul>
+          <li><p>The variability about the regression line, <m>\sigma</m> (sigma)</p></li>
+          <li><p>The variability in the explanatory variable, SD(X)</p></li>
+          <li><p>The sample size, <m>n</m>.</p></li>
+        </ul>
+      </statement>
+      <response/>
+      <solution>
+        <p>With a larger value of <m>\sigma</m>, there is more variability in the distribution of sample slopes.</p>
+        <p>With a larger value of <m>s_x</m>, there will be less variability in the distribution of sample slopes.</p>
+        <p>With a larger sample size, there will be less variability in the distribution of sample slopes.</p>
+      </solution>
+    </exercise>
 
     <assemblage>
-      <title>Study Conclusions</title>
-      <p>These data typically provide strong evidence that finish time and age are associated in this runner population context; large observed slope values are highly unlikely under a no-association model.</p>
+      <p>You should have made the following observations (when the technical conditions are met):</p>
+      <ul>
+        <li><p>The distribution of sample slopes is approximately normal.</p></li>
+        <li><p>The mean of the distributions of sample slopes equals the population slope <m>\beta_1</m>.</p></li>
+        <li><p>The variability in the sample slopes increases if we increase <m>\sigma</m>.</p></li>
+        <li><p>The variability in the sample slopes increases if we decrease <m>s_x</m>.</p></li>
+        <li><p>The variability in the sample slopes decreases if we increase <m>n</m>.</p></li>
+      </ul>
     </assemblage>
 
-    <exercise xml:id="inv5-10-y" label="I5.10.y"><title>Estimate Sigma</title><statement><p>(y) Suggest how to estimate population residual SD from sample data.</p></statement><response/><solution><p>Suggestions will vary, but can use the <m>s</m> value calculated earlier.</p></solution></exercise>
-    <exercise xml:id="inv5-10-z" label="I5.10.z"><title>Standardize Slope</title><statement><p>(z) Compute standardized slope statistic.</p></statement><response/><solution><p>By hand: <m>t=.14/.03\approx4.67</m>, which will have a small p-value (df = 247-2 = 245).</p></solution></exercise>
-    <exercise xml:id="inv5-10-aa" label="I5.10.aa"><title>Technology Confirmation</title><statement><p>(aa) Confirm t-statistic and p-value with technology output.</p></statement><response/><solution><p>The technology uses 0.03128 as the value of the standard error rather than the estimate from the simulation.</p></solution></exercise>
+    <exercise xml:id="inv5-10-u">
+      <title>Explain Intuition</title>
+      <statement><p>Explain why each of the last 3 observations make intuitive sense. [You may want to recall the pictures from the applet.]</p></statement>
+      <response/>
+      <solution>
+        <p>When there is less variation away from the regression line, there will be less variation in the sample regression lines, it is more difficult to get <q>extreme</q> sample regression lines.</p>
+        <p>When there is less variability in the explanatory variable, we are not given as much information about the relationship between the two variables and it will be easier to get more extreme sample results.</p>
+        <p>Larger samples, as we often see, lead to less sampling variability in our statistic.</p>
+      </solution>
+    </exercise>
 
-    <exercise xml:id="inv5-10-practice-a" label="I5.10A"><title>Practice Problem 5.10A</title><statement><p>Repeat analysis without removing outlier and compare results.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-10-practice-b" label="I5.10B"><title>Practice Problem 5.10B</title><statement><p>Compare unofficial and official race files and reassess evidence strength.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-10-v">
+      <title>Formula for SD of the Slope</title>
+      <statement>
+        <p>Are the last three observations consistent with the following formula for the standard deviation of the sample slope, <m>SD(b_1)</m>? Explain.</p>
+        <p><me>SD(b_1) = \frac{s}{s_x\sqrt{n-1}}</me></p>
+      </statement>
+      <response/>
+      <solution><p>Yes, <m>n</m> and <m>s_x^2</m> are in the denominator and <m>s</m> is in the numerator.</p></solution>
+    </exercise>
+
+    <p>Back to the question at hand: Is it plausible that the observed sample slope (<m>b_1 = 0.140</m>) came from a population with no association between the variables and so a population slope <m>\beta_1 = 0</m>?</p>
+
+    <exercise xml:id="inv5-10-w">
+      <title>Assess Plausibility (slope = 0)</title>
+      <statement><p>Return to (or recreate) the dotplot of the sample slopes for the first simulation. Where does 0.140 fall in this null distribution? Is it plausible that the population slope is really zero and we obtained a sample slope as big as 0.140 just by chance? How often did such a sample slope occur in your 1000 samples? In all the samples obtained by your class?</p></statement>
+      <response/>
+      <solution><p>0.14 is in the tail of the simulated null distribution; it does not seem likely that if the population slope was zero we would observe a sample slope as extreme as 0.140 just by chance.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-10-x">
+      <title>Assess Plausibility (slope = 0.10)</title>
+      <statement><p>Change the population slope to .10 and press Create Population. Draw 1000 samples and examine the new hypothesized population and the new sampling distribution of the sample slopes. (You may want to press Rescale.) Where is the center? Roughly how often did you get a sample slope as big as 0.140 or bigger? Does it seem plausible that the students' regression line came from a population with <m>\beta_1 = 0.10</m>?</p></statement>
+      <response/>
+      <solution><p>The distribution of sample means will now center around 0.10. Now the value of 0.14 is not so extreme. Here we found such a slope or larger about 10% of the time. The value of 0.10 appears to be plausible for <m>\beta_1</m>.</p></solution>
+    </exercise>
+
+    <assemblage xml:id="study-conclusions-5-10">
+      <title>Study Conclusions</title>
+      <p>These sample data provide extremely strong evidence of a relationship between age and finishing time for the population of amateur runners similar to those in this sample. The above simulation shows that if there were no relationship in the population (<m>\beta_1 = 0</m>), then we would pretty much never see a sample slope as large as 0.140 just by chance (random sampling). We should be a bit cautious in generalizing these results to a larger sample as they were not a random sample. We might want to limit ourselves to 5K racers in similar types of towns.</p>
+    </assemblage>
+
+    <p><term>Discussion:</term> As you have seen several times in this course, the sampling distribution of a statistic can often be well described by a mathematical model. This is also true in the regression setting. As when we focused on analyzing the individual population mean or comparing two population means, we need to first consider a way to estimate the (nuisance) standard deviation parameter.</p>
+
+    <exercise xml:id="inv5-10-y">
+      <title>Estimate the Standard Deviation</title>
+      <statement><p>If <m>\sigma</m> represents the common standard deviation of the response values about the regression line, suggest a way of estimating <m>\sigma</m> from the sample data.</p></statement>
+      <response/>
+      <solution><p>Suggestions will vary, but can use the <m>s</m> value calculated earlier.</p></solution>
+    </exercise>
+
+    <assemblage>
+      <p>If the conditions for the basic regression model (Investigation 5.12) are met, then if we standardize the sample slopes:</p>
+      <p><me>t_0 = \frac{b_1 - \beta_1}{SE(b_1)}</me></p>
+      <p>where <m>SE(b_1) = \dfrac{s}{s_x\sqrt{n-1}}</m> and <m>s = \sqrt{\dfrac{\sum_{i=1}^{n}(\text{residual}_i)^2}{n-2}}</m>, these standardized values can be shown to be well approximated by a <m>t</m>-distribution with <m>n - 2</m> degrees of freedom. Note that we lose a second degree of freedom because we are estimating both the slope and the intercept from the sample data.</p>
+    </assemblage>
+
+    <exercise xml:id="inv5-10-z">
+      <title>Compute the Standardized Statistic</title>
+      <statement><p>Using the standard deviation for the slopes you found in <xref ref="inv5-10-w" text="custom">Question 23</xref>, calculate the standardized statistic.</p></statement>
+      <response/>
+      <solution><p>By hand: <m>t = .14/.03 \approx 4.67</m>, which will have a small p-value (<m>df = 247 - 2 = 245</m>).</p></solution>
+    </exercise>
+
+    <p>Once we have the t-statistic or t-ratio, we can use the Student's t-distribution to compute one- or two-sided p-values depending on the research question regarding the slope.</p>
+
+    <exercise xml:id="inv5-10-aa">
+      <title>Compare with Technology</title>
+      <statement>
+        <p>Compare the t-ratio and p-value calculations based on the formula in <xref ref="inv5-10-y" text="custom">Question 25</xref> using technology.</p>
+        <hint>
+          <title>R Instructions</title>
+          <p>Use <c>summary(lm(time~age))</c></p>
+        </hint>
+        <hint>
+          <title>JMP Instructions</title>
+          <p><alert>Analyze &gt; Fit Y by X</alert></p>
+        </hint>
+        <hint>
+          <title>Applet Instructions</title>
+          <p>Uncheck the <alert>Design Population</alert> box, and check the <alert>Regression Table</alert> box.</p>
+        </hint>
+      </statement>
+      <response/>
+      <solution><p>The technology uses 0.03128 as the value of <m>SE(b_1)</m> rather than the estimate from the simulation.</p></solution>
+    </exercise>
   </exercises>
+
+  <subsection xml:id="practice-5-10A">
+    <title>Practice Problem 5.10A</title>
+    <exercise xml:id="practice-5-10a-1" label="P5.10A.1">
+      <title>Keep the Outlier</title>
+      <statement><p>Recreate this analysis (simulation as in <xref ref="inv5-10-w" text="custom">Question 23</xref> and t-test as in <xref ref="inv5-10-z" text="custom">Question 26</xref>) without first removing the outlier. Do the results change much? If so, how? In the expected manner? Explain.</p></statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice-5-10B">
+    <title>Practice Problem 5.10B</title>
+    <introduction>
+      <p>The official published results for the 2013 race can be found online.</p>
+    </introduction>
+    <exercise xml:id="practice-5-10b-1" label="P5.10B.1">
+      <title>Compare Datasets</title>
+      <statement><p>Load these data into your technology and then compare the two datasets.</p></statement>
+      <response/>
+    </exercise>
+    <exercise xml:id="practice-5-10b-2" label="P5.10B.2">
+      <title>Identify a Second Difference</title>
+      <statement><p>Identify a second difference (apart from Scharlach_1 disappearing) between the unofficial and the official results.</p></statement>
+      <response/>
+    </exercise>
+    <exercise xml:id="practice-5-10b-3" label="P5.10B.3">
+      <title>Compare Strength of Evidence</title>
+      <statement><p>How does the strength of evidence of a relationship between time and age differ for this dataset?</p></statement>
+      <response/>
+    </exercise>
+  </subsection>
 </section>
