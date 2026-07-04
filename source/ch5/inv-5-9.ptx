@@ -5,32 +5,217 @@
   <exercises xml:id="exercises5-9" hidden-label="yes">
     <title>The Study</title>
 
-    <p>Using <c>TopTenMovies.txt</c>, investigate whether higher audience ratings are associated with greater box-office revenue.</p>
+    <introduction>
+      <sidebyside widths="63% 34%" margins="0% 0%" valign="top">
+        <stack>
+          <p>Is there a tendency for movies that garner better audience reviews to also earn more money at the box office? The <url href="https://www.rossmanchance.com/iscam3/data/TopTenMovies.txt">TopTenMovies.txt</url> data file contains the world-wide movie gross, adjusted to be in 2015 dollars, for each movie, along with the IMDB rating (Source: <url href="https://www.crowdflower.com/data-for-everyone/">https://www.crowdflower.com/data-for-everyone/</url>).</p>
+        </stack>
+        <image source="images/imdb.jpeg" width="100%" decorative="yes"/>
+      </sidebyside>
+    </introduction>
 
-    <exercise xml:id="inv5-9-a" label="I5.9.a"><title>Identify Study Variables</title><statement><p>(a) Identify observational units, explanatory variable, and response variable with types.</p></statement><response/><solution><p>The observational units are the Top Ten movies, the explanatory variable is the IMDB ratings (quantitative) and the response variable is the box office revenue (quantitative).</p></solution></exercise>
-    <exercise xml:id="inv5-9-b" label="I5.9.b"><title>Initial Scatterplot</title><statement><p>(b) Plot adjusted revenue vs IMDB rating and describe association.</p></statement><response/><solution><p>If we treat box office revenue as the response variable there is a moderate positive linear relationship between box office revenue and the IMDB ratings.</p></solution></exercise>
-    <exercise xml:id="inv5-9-c" label="I5.9.c"><title>Largest Residuals</title><statement><p>(c) Identify movies with largest absolute residuals and interpret what large residual means.</p></statement><response/><solution><p>The movies with the largest residuals are <em>Titanic</em> and <em>Avatar</em>. These movies had much higher box office revenues than we would have predicted based on the IMDB ratings.</p></solution></exercise>
-    <exercise xml:id="inv5-9-d" label="I5.9.d"><title>Correlation</title><statement><p>(d) Compute and interpret correlation.</p></statement><response/><solution><p>The correlation coefficient is <m>r=0.269</m> indicating a weakish, positive linear relationship.</p></solution></exercise>
-    <exercise xml:id="inv5-9-e" label="I5.9.e"><title>Regression Equation</title><statement><p>(e) Determine least-squares line, interpret slope and intercept.</p></statement><response/><solution><p>The regression equation is <m>\text{predicted income}=-232431603+109913810\cdot \text{imdb\_rating}</m>.</p><p>The intercept is the predicted revenue (2015 dollars) if the IMDB rating is (way below the minimum in our dataset).</p><p>The slope is the predicted increase in box office revenues (2015 dollars) associated with a 1 point increase in the IMDB rating.</p></solution></exercise>
-    <exercise xml:id="inv5-9-f" label="I5.9.f"><title>Rescale Response</title><statement><p>(f) Convert revenue to millions and repeat analysis; compare effects on scatterplot, correlation, slope, and intercept.</p></statement><response/><solution><p>New equation: <em>predicted income</em> = -232.43 + 109.9 <em>imdb_rating</em>, everything is now interpreted in terms of millions of dollars, but the association itself does not change form or strength.</p></solution></exercise>
-    <exercise xml:id="inv5-9-g" label="I5.9.g"><title>Interpret R2 and s</title><statement><p>(g) Report and interpret <m>R^2</m> and <m>s</m>.</p></statement><response/><solution><p><m>R^2=7.25\%</m> indicating that the regression on the IMBD rating explains about 7% of the variation in the box office revenues.</p><p><m>s=328.5</m> indicating that this model predicts the box office revenue with a typical prediction error of about 328 million dollars.</p></solution></exercise>
+    <exercise xml:id="inv5-9-a">
+      <title>Identify Study Variables</title>
+      <statement>
+        <p>Identify the observational units in this study. Also identify the explanatory and response variables, and classify them as categorical or quantitative.</p>
+      </statement>
+      <response/>
+      <solution><p>The observational units are the Top Ten movies, the explanatory variable is the IMDB ratings (quantitative) and the response variable is the box office revenue (quantitative).</p></solution>
+    </exercise>
 
-    <exercise xml:id="inv5-9-h" label="I5.9.h"><title>Coded Scatterplot by MPAA</title><statement><p>(h) Create coded scatterplot and separate lines by MPAA rating. Describe differences in relationships by category.</p></statement><response/><solution><p>Most of the R movies are below the overall. The PG movies tend to be above the others with the same IMDB ratings. (Observations may vary a bit).</p></solution></exercise>
-    <exercise xml:id="inv5-9-i" label="I5.9.i"><title>Coded Scatterplot by Genre</title><statement><p>(i) Repeat coded analysis with primary genre and summarize findings.</p></statement><response/><solution><p>Most of the Fantasy movies appear to earn more than predicted based on the IMDB ratings. (Observations may vary a bit). Would be fruitful to collapse the variable to a smaller number of categories.</p></solution></exercise>
-    <exercise xml:id="inv5-9-j" label="I5.9.j"><title>Influence Check by Removing Extreme Y</title><statement><p>(j) Remove two movies above 2 billion and recompute scatterplot, correlation, and regression line.</p></statement><response/><solution><p>Recomputed values will vary slightly by software run settings.</p></solution></exercise>
-    <exercise xml:id="inv5-9-k" label="I5.9.k"><title>Effect of Removing Points</title><statement><p>(k) Describe how removal changed results.</p></statement><response/><solution><p>The slope is a little smaller and the correlation coefficient is a little larger (<m>R^2=.075</m>), but overall, not much change. This is not a huge surprise given the size of the dataset and that the two observations did not have extreme values for the IMDB ratings.</p></solution></exercise>
+    <exercise xml:id="inv5-9-b">
+      <title>Initial Scatterplot</title>
+      <statement>
+        <p>Produce a scatterplot to determine whether the IMDB rating appears to help predict the box office income (adjusted). Describe the relationship between the two variables as exhibited in the scatterplot.</p>
+        <image source="images/inv5-9-scatter.png" width="65%">
+          <description><p>Scatterplot of adjusted box office revenue (in dollars) versus IMDB rating, showing a weak positive association with two very high revenue outliers.</p></description>
+        </image>
+      </statement>
+      <response/>
+      <solution><p>If we treat box office revenue as the response variable there is a moderate positive linear relationship between box office revenue and the IMDB ratings.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-9-c">
+      <title>Largest Residuals</title>
+      <statement>
+        <p>Identify the two or three points that you believe have the largest (in absolute value) residuals. Identify these movies by name.</p>
+        <ul>
+          <li><p>In Two Quantitative Variables applet: You can mouse-click on an observation to reveal the row number. (You can also make movie the Color by variable and then mouse-click.)</p></li>
+          <li><p>In R: You can use a command like <c>movies[adjusted &gt; 250, ]</c></p></li>
+          <li><p>In JMP: Drag your mouse in the scatterplot to highlight the block of points. The rest will grey out. These observations will now be highlighted in the Data window. Use the Escape button in the Data window to unselect.</p></li>
+        </ul>
+        <p>What does it mean for these movies to have such large residuals?</p>
+      </statement>
+      <response/>
+      <solution><p>The movies with the largest residuals are <em>Titanic</em> and <em>Avatar</em>. These movies had much higher box office revenues than we would have predicted based on the IMDB ratings.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-9-d">
+      <title>Correlation Coefficient</title>
+      <statement>
+        <p>Determine, report, and interpret the value of the correlation coefficient.</p>
+      </statement>
+      <response/>
+      <solution><p>The correlation coefficient is <m>r = 0.269</m> indicating a weakish, positive linear relationship.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-9-e">
+      <title>Regression Equation</title>
+      <statement>
+        <p>Use technology to determine the least squares regression line for predicting the box office gross from the IMDB rating. Report the equation for this line. Also interpret the slope and intercept of this line in context.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>The regression equation is <m>\widehat{\text{income}} = -232431603 + 109913810 \cdot \text{imdb\_rating}</m>.</p>
+        <p>The intercept is the predicted revenue (2015 dollars) if the IMDB rating is 0 (way below the minimum in our dataset).</p>
+        <p>The slope is the predicted increase in box office revenues (2015 dollars) associated with a 1 point increase in the IMDB rating.</p>
+      </solution>
+    </exercise>
+
+    <p>The slope is rather small because the dollar amounts are so large. One way to improve the presentation of the results is to work with the response variable in millions of dollars.</p>
+
+    <exercise xml:id="inv5-9-f">
+      <title>Rescale Response</title>
+      <statement>
+        <p>Rescale the response variable to be in millions of dollars and repeat your analysis (scatterplot, correlation coefficient, regression line). How was the behavior of the scatterplot changed? The correlation coefficient? How have the slope and intercept changed? Could you have predicted these changes?</p>
+      </statement>
+      <response/>
+      <solution><p>New equation: <m>\widehat{\text{income}} = -232.43 + 109.9 \cdot \text{imdb\_rating}</m>, everything is now interpreted in terms of millions of dollars, but the association itself does not change form or strength.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-9-g">
+      <title>Interpret r-squared and s</title>
+      <statement>
+        <p>Report the value of <m>r^2</m> and <m>s</m> provide interpretations in this context.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p><m>r^2 = 7.25\%</m> indicating that the regression on the IMDB rating explains about 7% of the variation in the box office revenues.</p>
+        <p><m>s = 328.5</m> indicating that this model predicts the box office revenue with a typical prediction error of about 328 million dollars.</p>
+      </solution>
+    </exercise>
+
+    <paragraphs>
+      <title>Technology Detour: Creating a Coded Scatterplot (with Separate Lines)</title>
+      <p>Create a coded scatterplot, with different regression lines for each MPAA rating (rating).</p>
+      <exercise xml:id="inv5-9-tech-detour-coded">
+        <title>Coded Scatterplot Instructions</title>
+        <statement>
+          <p>Create a coded scatterplot with a separate regression line for each MPAA rating category.</p>
+          <hint>
+            <title>R Instructions</title>
+            <p>Create the coded scatterplot: <c>plot(adjusted~imdb_rating, col=as.numeric(factor(MPAArating)))</c></p>
+            <p>Add the separate lines for each category, e.g.: <c>abline(lm(adjusted[MPAArating=="G"]~imdb_rating[MPAArating=="G"]))</c></p>
+            <p>To cycle through the categories, create a column for the four categories and create a loop:</p>
+            <pre>code=c("G", "PG", "PG-13", "R")
+for (i in 1:4){
+  abline(lm(adjusted[MPAArating==code[i]]~imdb_rating[MPAArating==code[i]]), col=i)
+}</pre>
+            <p>To add a legend: <c>legend("topleft", legend=code, col=1:4, pch=1)</c></p>
+          </hint>
+          <hint>
+            <title>JMP Instructions</title>
+            <ul>
+              <li><p>Choose <alert>Graph &gt; Graph Builder</alert>.</p></li>
+              <li><p>Draw adjusted to the Y axis and imdb_rating to the X axis.</p></li>
+              <li><p>Select the 3rd icon to display the regression line.</p></li>
+              <li><p>Uncheck the box for Confidence of Fit.</p></li>
+              <li><p>Drag the <q>MPAArating</q> variable to the Overlay box.</p></li>
+            </ul>
+          </hint>
+          <hint>
+            <title>Applet Instructions</title>
+            <p>In <url href="http://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables</url> applet (or the <url href="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm">Two Quantitative Variables</url> applet for the color-coded graph alone)</p>
+            <ul>
+              <li><p>Copy and paste the columns and press <alert>Use Data</alert>.</p></li>
+              <li><p>Drag adjusted to the Response box and imdb_rating to the Explanatory box. Drag MPAArating to the Subset by box.</p></li>
+              <li><p>Check the <alert>Show Equation</alert> box.</p></li>
+              <li><p>You can also check the box for separate graphs.</p></li>
+            </ul>
+          </hint>
+        </statement>
+      </exercise>
+    </paragraphs>
+
+    <exercise xml:id="inv5-9-h">
+      <title>Coded Scatterplot by MPAA Rating</title>
+      <statement>
+        <p>Describe what this coded scatterplot reveals about whether the relationship between box office income and IMDB ratings differs across the various MPAA rating categories. In particular, does any rating category tend to have higher box office values than you would expect for the score they received from IMDB reviewers? Is there a rating category tending toward lower box office revenues than expected? Explain.</p>
+      </statement>
+      <response/>
+      <solution><p>Most of the R movies are below the overall. The PG movies tend to be above the others with the same IMDB ratings. (Observations may vary a bit).</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-9-i">
+      <title>Coded Scatterplot by Genre</title>
+      <statement>
+        <p>Repeat <xref ref="inv5-9-h" text="custom">Question 8</xref> using the primary movie genre (e.g., comedy) as the categorical variable (Genre_1). Summarize what you learn.</p>
+      </statement>
+      <response/>
+      <solution><p>Most of the Fantasy movies appear to earn more than predicted based on the IMDB ratings. (Observations may vary a bit). Would be fruitful to collapse the variable to a smaller number of categories.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-9-j">
+      <title>Remove Two Highest-Revenue Movies</title>
+      <statement>
+        <p>In analyzing these movies, the researchers also looked at the data set after removing the 2 movies that earned more than $2 billion. Subset the data (e.g., Investigation 2.1) and then examine the scatterplot, correlation coefficient, and least-squares regression line for predicting the movie income from the IMDB ratings for these data.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="inv5-9-k">
+      <title>Effect of Removing Points</title>
+      <statement>
+        <p>Describe the effect of removing these 2 movies from the analysis.</p>
+      </statement>
+      <response/>
+      <solution><p>The slope is a little smaller and the correlation coefficient is a little larger (<m>R^2 = .075</m>), but overall, not much change. This is not a huge surprise given the size of the dataset and that the two observations did not have extreme values for the IMDB ratings.</p></solution>
+    </exercise>
 
     <assemblage>
       <title>Definition: Influential Observation</title>
-      <p>An observation is influential if removing it substantially changes <m>r</m> and/or regression coefficients, often due to extreme x-values.</p>
+      <p>An observation or set of observations is considered <term>influential</term> if removing the observation from the data set substantially changes the values of the correlation coefficient and/or the least squares regression equation. Typically, observations that have extreme explanatory variable outcomes (far below or far above <m>\bar{x}</m>) are potentially influential. To measure the influence of an observation, it is removed, and measures are calculated for how much the summary results change. It is not always the case that the points with the largest residuals are the most influential.</p>
+      <p>In this example you should have seen that removing those two movies does not noticeably impact the analysis results because they are not extreme in the <m>x</m> direction.</p>
     </assemblage>
 
-    <assemblage>
+    <assemblage xml:id="study-conclusions-5-9">
       <title>Study Conclusions</title>
-      <p>IMDB rating appears weakly positively related to adjusted revenue. Category-based overlays can reveal systematic under/over-prediction by rating class or genre. Very large residuals in y are not always influential if x is not extreme.</p>
+      <p>There does appear to be a weak relationship between the IMDB ratings and the amount of money the movie makes at the box office, with higher rated movies tending to make more money. If the IMDB rating increases by 1 point (out of 10), we predict the movie will make about 110 million more dollars. There are 2 clear outliers in terms of revenue (Avatar and Titanic) but they are not influential in the regression analysis. It is interesting that this model tends to underpredict revenues for PG-13 movies and overpredict revenues for R-rated movies, and that R-rating movies don't seem as <q>impacted</q> by IMDB review scores. A next step in this analysis might be to collapse the number of Genre categories (e.g., combining Adventure, Animation, Fantasy categories, to see if there is a tendency to underpredict their revenues).</p>
     </assemblage>
-
-    <exercise xml:id="inv5-9-practice-a" label="I5.9A"><title>Practice Problem 5.9A</title><statement><p>Compare resistance of least-squares and least-absolute-error lines to outliers, and investigate with applet.</p></statement><response/></exercise>
-    <exercise xml:id="inv5-9-practice-b" label="I5.9B"><title>Practice Problem 5.9B</title><statement><p>Repeat movie analysis using Rotten Tomatoes score as explanatory variable.</p></statement><response/></exercise>
   </exercises>
+
+  <subsection xml:id="practice-5-9">
+    <title>Practice Problem 5.9</title>
+    <introduction>
+      <p>Reconsider the idea of influential observations:</p>
+    </introduction>
+
+    <exercise xml:id="practice-5-9-1" label="P5.9.1">
+      <title>Resistant Criterion</title>
+      <statement>
+        <p>Which do you think will be more resistant to outliers, the regression line that minimizes the sum of squared errors or the regression line that minimizes the sum of the absolute errors? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-9-2" label="P5.9.2">
+      <title>Investigate with Applet</title>
+      <statement>
+        <p>Investigate your conjecture using the Analyzing Two Quantitative Variables applet. Write a short paragraph summarizing your analysis and your observations.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice-5-9B">
+    <title>Practice Problem 5.9B</title>
+
+    <exercise xml:id="practice-5-9b-1" label="P5.9B.1">
+      <title>Rotten Tomatoes Predictor</title>
+      <statement>
+        <p>Repeat the analysis for the movie data using the Rotten Tomato scores (rt_score) to predict world-wide revenue. Summarize how the results compare.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
 </section>
