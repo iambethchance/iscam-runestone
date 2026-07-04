@@ -8,14 +8,14 @@
     <introduction>
     <sidebyside widths="63% 34%" margins="0% 0%" valign="top">
       <stack>
-        <p>Evolutionary biologists are often interested in “form-function relationships” to help explain evolution history of say an animal species. Harris and Steudel (2002) investigated factors that are related to the jumping ability of domestic cats. Because jump ability and height are largely dependent on takeoff velocity, several traits were recorded for 18 healthy adult cats such as relative limb length, relative extensor muscle mass, body mass, fat mass relative to lean body mass, and the percentage of fast-twitch muscle fibers to see which might best explain maximum takeoff velocity (based on high-speed videos).</p>
+        <p>Evolutionary biologists are often interested in “form-function relationships” to help explain evolution history of say an animal species. Harris and Steudel (<url href="https://www.researchgate.net/publication/297933051_The_relationship_between_maximum_jumping_performance_and_hind_limb_morphologyphysiology_in_domestic_cats_Felis_silvestris_catus">2002</url>) investigated factors that are related to the jumping ability of domestic cats. </p>
       </stack>
       <image source="images/catjumping.jpg" width="100%">
         <description><p>Cat jumping study image</p></description>
       </image>
     </sidebyside>
-
-    <p>In this investigation, you will examine the following data, also available in the file <c>CatJumping.txt</c>:</p>
+<p>Because jump ability and height are largely dependent on takeoff velocity, several traits were recorded for 18 healthy adult cats such as relative limb length, relative extensor muscle mass, body mass, fat mass relative to lean body mass, and the percentage of fast-twitch muscle fibers to see which might best explain maximum takeoff velocity (based on high-speed videos).</p>
+    <p>In this investigation, you will examine the following data, also available in the file <url href="http://www.rossmanchance.com/iscam2/data/CatJumping.txt">CatJumping.txt</url>:</p>
     </introduction>
 
     <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
@@ -51,27 +51,38 @@
     <paragraphs>
       <title>Collecting the Data</title>
       <exercise xml:id="inv5-6-a" label="I5.6.a"><title>Identify Units and Response</title><statement><p>Identify the observational units and the primary response variable of interest here. Also classify this variable as quantitative or categorical.</p></statement><response/><solution><p>The observational units are the 18 cats and the primary response variable is takeoff velocity which is quantitative.</p></solution></exercise>
-      <exercise xml:id="inv5-6-b" label="I5.6.b"><title>Univariate Summary of Velocity</title><statement><p>Open the CatJumping.txt data file and produce numerical and graphical summaries of the takeoff velocity variable. Describe the distribution of takeoff velocities in this sample (shape, center, variability, unusual observations).</p></statement><response/><solution><p>The distribution is pretty symmetric or slightly skewed to the right (though depending on bin choices might see a visual outlier in the 420 bin). Most cats had a velocity around 320-380 cm/sec but one was as small as 286.30 cm/sec and the high outlier was at 410.80 cm/sec.</p><p>Note: 300 cm/sec corresponds to about 6.7 miles per hour.</p></solution></exercise>
-      <exercise xml:id="inv5-6-c" label="I5.6.c"><title>Single-Value Prediction</title><statement><p>Based on your analysis in (b), if you were going to randomly select a domestic cat, what is your best prediction of its takeoff velocity?</p></statement><response/><solution><p>Might pick the mean of 343.28 cm/sec.</p></solution></exercise>
+      <exercise xml:id="inv5-6-b" label="I5.6.b"><title>Univariate Summary of Velocity</title><statement><p>Open the <url href="http://www.rossmanchance.com/iscam2/data/CatJumping.txt">CatJumping.txt</url> data file and produce numerical and graphical summaries of the takeoff velocity variable. Describe the distribution of takeoff velocities in this sample (shape, center, variability, unusual observations).</p></statement><response/><solution><p>The distribution is pretty symmetric or slightly skewed to the right (though depending on bin choices might see a visual outlier in the 420 bin). Most cats had a velocity around 320-380 cm/sec but one was as small as 286.30 cm/sec and the high outlier was at 410.80 cm/sec.</p><p>Note: 300 cm/sec corresponds to about 6.7 miles per hour.</p></solution></exercise>
+      <exercise xml:id="inv5-6-c" label="I5.6.c"><title>Single-Value Prediction</title><statement><p>Based on your analysis of takeoff velocity, if you were going to randomly select a domestic cat, what is your best prediction of its takeoff velocity?</p></statement><response/><solution><p>Might pick the mean of 343.28 cm/sec.</p></solution></exercise>
       <exercise xml:id="inv5-6-d" label="I5.6.d"><title>Body Mass Conjecture</title><statement><p>Do you think there will be a relationship between a cat’s takeoff velocity and its body mass? If so, do you think heavier cats will tend to have larger or smaller takeoff velocities than lighter cats?</p></statement><response/><solution><p>Heavier cats might tend to have lower velocities.</p></solution></exercise>
     </paragraphs>
 
     <paragraphs>
       <title>Technology Detour</title>
-      <p><alert>Applet:</alert> Place velocity in response and body mass in explanatory.</p>
-      <p><alert>R:</alert> <c>plot(bodymass, velocity)</c> or <c>plot(velocity~bodymass)</c>.</p>
-      <p><alert>JMP:</alert> Analyze &gt; Fit Y by X.</p>
+      <exercise xml:id="inv5-6-tech-detour-scatterplot">
+        <title>Scatterplot Instructions</title>
+        <statement>
+          <p>Confirm your scatterplot of takeoff velocity vs. body mass using technology.</p>
+
+          <hint>
+            <title>Applet Instructions</title>
+            <p>Place velocity in response and body mass in explanatory.</p>
+          </hint>
+
+          <hint>
+            <title>R Instructions</title>
+            <p><c>plot(bodymass, velocity)</c> or <c>plot(velocity~bodymass)</c>.</p>
+          </hint>
+
+          <hint>
+            <title>JMP Instructions</title>
+            <p>Analyze &gt; Fit Y by X.</p>
+          </hint>
+        </statement>
+      </exercise>
     </paragraphs>
 
     <paragraphs>
-      <title>Technology Detour: Coded Scatterplots</title>
-      <p><alert>Applet:</alert> Drag Sex to Subset By.</p>
-      <p><alert>R:</alert> Create the scatterplot as before, but pass a categorical variable as a color vector. For example, <c>plot(velocity~bodymass, col=sex)</c>.</p>
-      <p><alert>JMP:</alert> Right-click in the plot and choose Row Legend. Select a categorical variable from the Columns List. Press OK.</p>
-    </paragraphs>
-
-    <paragraphs>
-      <exercise xml:id="inv5-6-e" label="I5.6.e"><title>Describe Body Mass Relationship</title><statement><p>Describe the relationship between a cat’s takeoff velocity and its body mass, as displayed in this scatterplot. Does this pattern confirm your expectation in (d)?</p></statement><response/><solution><p>Overall, heavier cats tend to have lower velocity (though one of the heaviest cats had the largest velocity).</p></solution></exercise>
+      <exercise xml:id="inv5-6-e" label="I5.6.e"><title>Describe Body Mass Relationship</title><statement><p>Describe the relationship between a cat’s takeoff velocity and its body mass, as displayed in this scatterplot. Does this pattern confirm your earlier expectation?</p></statement><response/><solution><p>Overall, heavier cats tend to have lower velocity (though one of the heaviest cats had the largest velocity).</p></solution></exercise>
       <exercise xml:id="inv5-6-f" label="I5.6.f"><title>Identify Outlier Cats</title><statement><p>Do any of these cats appear to be outliers in the sense that its pair of values (body mass, takeoff velocity) does not fit the pattern of the majority of cats? If so, identify the ID for that cat and describe what’s different about this cat (in context).</p></statement><response/><solution><p>ID: C</p><p>This cat has a much larger velocity than we would expect overall and for its weight.</p></solution></exercise>
 
       <assemblage>
@@ -83,6 +94,34 @@
         <p>Strength: How closely are the observations following the observed pattern?</p>
         <p>The above scatterplot reveals a fairly strong, negative association between body mass and takeoff velocity, meaning that heavier cats tend to have a smaller takeoff velocity than larger cats. The relationship is somewhat linear but has a bit of a curved pattern. There is one outlier cat (cat C) with a very high takeoff velocity despite having a very large body mass.</p>
       </assemblage>
+    </paragraphs>
+
+    <paragraphs>
+    </paragraphs>
+
+    <paragraphs>
+      <title>Technology Detour: Coded Scatterplots</title>
+      <exercise xml:id="inv5-6-tech-detour-coded-scatterplots">
+        <title>Coded Scatterplot Instructions</title>
+        <statement>
+          <p>Use technology to create a coded scatterplot of takeoff velocity vs. body mass.</p>
+
+          <hint>
+            <title>Applet Instructions</title>
+            <p>Drag Sex to Subset By.</p>
+          </hint>
+
+          <hint>
+            <title>R Instructions</title>
+            <p>Create the scatterplot as before, but pass a categorical variable as a color vector. For example, <c>plot(velocity~bodymass, col=sex)</c>.</p>
+          </hint>
+
+          <hint>
+            <title>JMP Instructions</title>
+            <p>Right-click in the plot and choose Row Legend. Select a categorical variable from the Columns List. Press OK.</p>
+          </hint>
+        </statement>
+      </exercise>
     </paragraphs>
 
     <paragraphs>
@@ -102,7 +141,7 @@
     <title>Practice Problem 5.6</title>
 
     <introduction>
-      <p>The dataset <c>KYDerby25.txt</c> contains information on each running of the Kentucky Derby since 1875. The speeds of the winning horses have been calculated (taking into account the change in track length in 1896).</p>
+      <p>The dataset <url href="https://www.rossmanchance.com/KYDerby25.txt">KYDerby25.txt</url> contains information on each running of the Kentucky Derby since 1875. The speeds of the winning horses have been calculated (taking into account the change in track length in 1896).</p>
     </introduction>
 
     <exercise xml:id="practice-5-6-1" label="P5.6.1">
