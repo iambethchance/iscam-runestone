@@ -27,7 +27,7 @@
       <title>Predicting Heights</title>
 
       <p>Below are the heights (in inches) of 20 students in a statistics class:</p>
-      <p><term>74   66   77   67   56   65   64   70   62   67   66   64   69   73   74   70   65   72   71   63</term></p>
+      <p>74   66   77   67   56   65   64   70   62   67   66   64   69   73   74   70   65   72   71   63</p>
 
       <exercise xml:id="inv5-8-b">
         <title>Baseline Prediction</title>
@@ -53,16 +53,18 @@
         <p><me>\text{residual}_i = y_i - \hat{y}_i</me></p>
       </assemblage>
 
+      <p>The table below shows the residuals for each of the above heights if we use the mean height, 67.75 inches, as the predicted value for each person. Calculate the last two residuals to complete the table.</p>
+      <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <row header="yes"><cell>Height</cell><cell>74</cell><cell>66</cell><cell>77</cell><cell>67</cell><cell>56</cell><cell>65</cell><cell>64</cell><cell>70</cell><cell>62</cell><cell>67</cell></row>
+        <row><cell>Residual</cell><cell>6.25</cell><cell>-1.75</cell><cell>9.25</cell><cell>-.75</cell><cell>-11.75</cell><cell>-2.75</cell><cell>-3.75</cell><cell>2.25</cell><cell>-5.75</cell><cell>-.75</cell></row>
+        <row header="yes"><cell>Height</cell><cell>66</cell><cell>64</cell><cell>69</cell><cell>73</cell><cell>74</cell><cell>70</cell><cell>65</cell><cell>72</cell><cell>71</cell><cell>63</cell></row>
+        <row><cell>Residual</cell><cell>-1.75</cell><cell>-3.75</cell><cell>1.25</cell><cell>5.25</cell><cell>6.25</cell><cell>2.25</cell><cell>-2.75</cell><cell>4.25</cell><cell></cell><cell></cell></row>
+      </tabular>
+
       <exercise xml:id="inv5-8-d">
         <title>Compute Residuals</title>
         <statement>
-          <p>The table below shows the residuals for each of the above heights if we use the mean height, 67.75 inches, as the predicted value for each person. Calculate the last two residuals to complete the table. How often did we overestimate? How often did we underestimate?</p>
-          <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
-            <row header="yes"><cell>Height</cell><cell>74</cell><cell>66</cell><cell>77</cell><cell>67</cell><cell>56</cell><cell>65</cell><cell>64</cell><cell>70</cell><cell>62</cell><cell>67</cell></row>
-            <row><cell>Residual</cell><cell>6.25</cell><cell>-1.75</cell><cell>9.25</cell><cell>-.75</cell><cell>-11.75</cell><cell>-2.75</cell><cell>-3.75</cell><cell>2.25</cell><cell>-5.75</cell><cell>-.75</cell></row>
-            <row header="yes"><cell>Height</cell><cell>66</cell><cell>64</cell><cell>69</cell><cell>73</cell><cell>74</cell><cell>70</cell><cell>65</cell><cell>72</cell><cell>71</cell><cell>63</cell></row>
-            <row><cell>Residual</cell><cell>-1.75</cell><cell>-3.75</cell><cell>1.25</cell><cell>5.25</cell><cell>6.25</cell><cell>2.25</cell><cell>-2.75</cell><cell>4.25</cell><cell><var width="5"/></cell><cell><var width="5"/></cell></row>
-          </tabular>
+          <p>How often did we overestimate? How often did we underestimate?</p>
         </statement>
         <response/>
         <solution><p>The last two residuals are 3.25 and <m>-4.75</m>. We overestimated 11 times and underestimated 9 times.</p></solution>
@@ -126,7 +128,7 @@
         </solution>
       </exercise>
 
-      <p>The Excel Exploration after this investigation asks you to consider minimizing other criteria, such as the sum of absolute residuals.</p>
+      <p>The <xref ref="excel-5-8-minimization" text="custom">Excel Exploration</xref> after this investigation asks you to consider minimizing other criteria, such as the sum of absolute residuals.</p>
     </paragraphs>
 
     <paragraphs>
@@ -154,7 +156,9 @@
       <exercise xml:id="inv5-8-l">
         <title>Movable Line</title>
         <statement>
-          <p>Move the line until you feel your line <q>best</q> summarizes the relationship between height and foot length for these data. Write down the final equation for your line. [Hint: Use good statistical notation, which means to use variables names (not generic <m>x</m> and <m>y</m>) and to put a <q>hat</q> over the response variable to indicate prediction.]</p>
+          <ul><li><p>Move the line until you feel your line <q>best</q> summarizes the relationship between height and foot length for these data.</p></li></ul>
+          <p>Write down the final equation for your line.</p>
+          <hint><p>Use good statistical notation, which means to use variables names (not generic <m>x</m> and <m>y</m>) and to put a <q>hat</q> over the response variable to indicate prediction.</p></hint>
         </statement>
         <response/>
         <solution><p>Lines will vary.</p></solution>
@@ -178,37 +182,41 @@
         <solution><p>Suggestions will vary.</p></solution>
       </exercise>
 
+      <ul><li><p>Check the <alert>Show Residuals</alert> box to visually represent these residuals for your line on the scatterplot. The applet also reports the sum of the absolute residuals (or SAE, the sum of absolute errors).</p></li></ul>
       <exercise xml:id="inv5-8-o">
         <title>Absolute Error Criterion</title>
         <statement>
-          <p>Check the <alert>Show Residuals</alert> box to visually represent these residuals for your line on the scatterplot. The applet also reports the sum of the absolute residuals (or SAE, the sum of absolute errors). Record this SAE value for your line. What is the best SAE in the class? (Does <q>best</q> correspond to the smallest or the largest value of SAE?)</p>
+          <p>Record this SAE value for your line. What is the best SAE in the class? (Does <q>best</q> correspond to the smallest or the largest value of SAE?)</p>
         </statement>
         <response/>
         <solution><p>The best (smallest) SAE will vary.</p></solution>
       </exercise>
 
+      <ul><li><p>A more common criterion for determining the <q>best</q> line is to instead look at the sum of the squared residuals (or sum of squared errors, SSE). Check the <alert>Show Squared Residuals</alert> box to visually represent them and to determine the SSE value for your line.</p></li></ul>
       <exercise xml:id="inv5-8-p">
         <title>Squared Error Criterion</title>
         <statement>
-          <p>A more common criterion for determining the <q>best</q> line is to instead look at the sum of the squared residuals (or sum of squared errors, SSE). Check the <alert>Show Squared Residuals</alert> box to visually represent them and to determine the SSE value for your line. What is the best SSE in the class?</p>
+          <p>What is the best SSE in the class?</p>
         </statement>
         <response/>
         <solution><p>The smallest SSE will vary.</p></solution>
       </exercise>
 
+      <ul><li><p>Continue to adjust your line until you think you have minimized the sum of the squared residuals.</p></li></ul>
       <exercise xml:id="inv5-8-q">
         <title>Improve Line for SSE</title>
         <statement>
-          <p>Continue to adjust your line until you think you have minimized the sum of the squared residuals. Report your new equation and new SSE value.</p>
+          <p>Report your new equation and new SSE value.</p>
         </statement>
         <response/>
         <solution><p>Equation and resulting SSE values will vary.</p></solution>
       </exercise>
 
+      <ul><li><p>Now check the <alert>Show Regression Line</alert> box to determine and display the equation for the line that actually does produce the smallest possible sum of squared residuals.</p></li></ul>
       <exercise xml:id="inv5-8-r">
         <title>Least Squares Line</title>
         <statement>
-          <p>Now check the <alert>Show Regression Line</alert> box to determine and display the equation for the line that actually does produce the smallest possible sum of squared residuals. Report its equation and SSE value. Did everyone obtain the same line/equation this time? How does it compare to your line? (You can also display the residuals and the squared residuals for this line.)</p>
+          <p>Report its equation and SSE value. Did everyone obtain the same line/equation this time? How does it compare to your line? (You can also display the residuals and the squared residuals for this line.)</p>
         </statement>
         <response/>
         <solution>
@@ -241,7 +249,8 @@
       <exercise xml:id="inv5-8-t">
         <title>Derivatives for SSE</title>
         <statement>
-          <p>Take the derivative with respect to <m>b_0</m> of the expression on the right. Then take the derivative of the original expression with respect to <m>b_1</m>. [Hints: Use the chain rule, and remember to treat the data values <m>x_i</m>'s and <m>y_i</m>'s as constants.]</p>
+          <p>Take the derivative with respect to <m>b_0</m> of the expression on the right. Then take the derivative of the original expression with respect to <m>b_1</m>.</p>
+          <hint><p>Use the chain rule, and remember to treat the data values <m>x_i</m>'s and <m>y_i</m>'s as constants.</p></hint>
         </statement>
         <response/>
         <solution>
@@ -312,7 +321,10 @@
         <solution><p>The intercept is the predicted height for an individual whose foot length is zero, though it is not all that reasonable to predict someone's height if their foot length is zero.</p></solution>
       </exercise>
 
-      <p><term>Discussion:</term> The slope coefficient of 1.03 indicates that the predicted height of a person increases by 1.03 inches for each additional centimeter of foot length. In other words, if one person's foot length is one cm longer than another's, we predict this person to be 1.03 inches taller than the other person. Notice we are being careful to talk about the <q>predicted</q> change or <q>average</q> change, because these are estimates based on the least squares line, not an exact mathematical relationship between height and foot length. The intercept coefficient can be interpreted as the predicted height for a person whose foot length is zero <mdash/> not a very sensible prediction in this context. In fact, the intercept will often be too far outside the range of <m>x</m> values for us to seriously consider its interpretation.</p>
+      <paragraphs>
+        <title>Discussion</title>
+        <p>The slope coefficient of 1.03 indicates that the predicted height of a person increases by 1.03 inches for each additional centimeter of foot length. In other words, if one person's foot length is one cm longer than another's, we predict this person to be 1.03 inches taller than the other person. Notice we are being careful to talk about the <q>predicted</q> change or <q>average</q> change, because these are estimates based on the least squares line, not an exact mathematical relationship between height and foot length. The intercept coefficient can be interpreted as the predicted height for a person whose foot length is zero <mdash/> not a very sensible prediction in this context. In fact, the intercept will often be too far outside the range of <m>x</m> values for us to seriously consider its interpretation.</p>
+      </paragraphs>
 
       <exercise xml:id="inv5-8-z">
         <title>Extrapolation</title>
@@ -337,10 +349,11 @@
 
       <p>One way to assess the usefulness of this least-squares line is to measure the improvement in our predictions by using the least-squares line instead of the <m>\bar{y}</m> line that assumes no knowledge about the explanatory variable.</p>
 
+      <ul><li><p>In the applet, uncheck and recheck the <alert>Show Movable Line</alert> box. Check the <alert>Show Squared Residuals</alert> box to determine the SSE if we were to use <m>\bar{y}</m> as our predicted value for every <m>x</m> (foot size).</p></li></ul>
       <exercise xml:id="inv5-8-aa">
         <title>SSE from Mean Line</title>
         <statement>
-          <p>In the applet, uncheck and recheck the <alert>Show Movable Line</alert> box. Check the <alert>Show Squared Residuals</alert> box to determine the SSE if we were to use <m>\bar{y}</m> as our predicted value for every <m>x</m> (foot size). Record this value.</p>
+          <p>Record this value.</p>
         </statement>
         <response/>
         <solution><p><m>SSE(\bar{y}) = 475.75</m></p></solution>
