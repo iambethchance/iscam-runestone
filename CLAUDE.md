@@ -232,9 +232,70 @@ them for every investigation:
    **NO Minitab.** Per the author, drop all Minitab instructions everywhere — do not add them, and
    remove any you find. (The current Win26 source PDF has already removed Minitab from its detours,
    so "verbatim to source" and "no Minitab" agree.)
-7. **Study background / intro goes in `<introduction>` inside `<exercises>`.**
+7. **Study background / intro goes in `<introduction>` inside `<exercises>`.** Investigation intros
+   typically use a side-by-side image box: `<introduction><sidebyside widths="63% 34%"
+   margins="0% 0%" valign="top"><stack><p>…intro…</p></stack><image source="images/x.jpeg"
+   width="100%" decorative="yes"/></sidebyside></introduction>`. Mark the decorative intro image
+   `decorative="yes"` — that suppresses both the required `<description>` and the info-icon.
 8. **`<image>` `<description>` must wrap its text in `<p>`** (`<description><p>…</p></description>`),
-   not bare text — the current schema requires it.
+   not bare text — the current schema requires it. (A `decorative="yes"` image takes no
+   description.) When several near-identical images would each get the same unhelpful alt text
+   (e.g. a set of "rank these plots" scatterplots), put one group `<description>` on the first and
+   none on the rest, rather than repeating identical text on every one.
+9. **Applet-action instructions go in a bullet, not buried in the question.** For "do X in the
+   applet, then answer Y", the author wants the *action* as a bullet and the *question* as the
+   statement text. Two placements, per the author's wording:
+   - "into a bullet" → `<ul><li><p>action</p></li></ul>` as the **first child of the `<statement>`**
+     (renders the bullet *inside* the exercise box), then the question `<p>`.
+   - "preceding/outside the exercise box" → put the `<ul>` **before the `<exercise>`** (a sibling,
+     directly in `<exercises>` or in a `<paragraphs>`); it renders *above/outside* the box.
+   Bold the UI element names (`New Sample`, `Show Regression Line`, …) with `<alert>`.
+10. **Embed rossmanchance applets** with `<interactive iframe="https://www.rossmanchance.com/…"
+    width="100%" aspect="3:2"/>` (use **https**, not the http link the PDF often shows — mixed
+    content is blocked on Runestone; verify the https URL loads first). `<interactive>` is **not
+    allowed inside `<introduction>`** — place it as a direct child of `<exercises>` or inside a
+    `<paragraphs>`. Known applet URLs: Multiple Variables → `/applets/2021/multreg/multreg.html`;
+    Two Quantitative Variables (a.k.a. "Analyzing Two Quantitative Variables") →
+    `/applets/RegShuffle.htm` (or `/applets/2021/regshuffle/regshuffle.htm`); Guess the Correlation
+    → `/applets/GuessCorrelation.html`. Get others from the PDF's link annotations.
+11. **A bracketed "[Hint: …]" in the source becomes a `<hint>`** child of `<statement>` (a reveal),
+    not inline text.
+
+### Section / chapter file structure
+
+A "Section 5.N" is a `<chapter>` file (`source/ch-5-N.ptx`, e.g. `chapter5-3`); each investigation
+is a `<section>` file under `source/ch5/` that the chapter `xi:include`s **as a sibling** (so each
+investigation gets its own page). The section's landing page is the chapter's `<introduction>` —
+put the intro paragraph plus the list of investigations there, as `<p><xref ref="inv-5-N"
+text="custom">Investigation 5.N: Title</xref> - blurb</p>` lines (see `ch-5-intro.ptx`/`ch-5-4.ptx`).
+The section **summary** is its own `<section>` file included last in the chapter (like
+`section5-3-summary.ptx`). **Do NOT** make a section-intro `<section>` that `xi:include`s the
+investigations inside itself — nesting `<section>` in `<section>` collapses them all into
+subsections on one page instead of separate pages (this was the bug fixed in Section 5.4).
+
+### PreTeXt gotchas — real errors vs. build-tolerated RNG noise
+
+The IDE/`pretext validate` flag **many** RNG errors the build actually tolerates, because the whole
+book uses `<exercises>` loosely (bare `<p>`/`<ul>`/`<assemblage>`/`<paragraphs>`/`<interactive>` as
+direct children; `<response>` and `<ul>` inside statements; dotted `@label`s). Treat those as noise
+— confirm with a real `pretext build runestone` (fatal = a trailing `critical:`, everything else is
+non-fatal). But these ARE real, build-breaking, and easy to introduce:
+
+- **Well-formedness / tag mismatch** (`critical: XML syntax … invalid`) stops the *entire* book
+  build before any page renders. A single stray `</p>` anywhere kills everything — if the build
+  dies with "Opening and ending tag mismatch", read that file/line and fix it (even if it's not the
+  file you were editing; the other machine has introduced these).
+- **`<me>`/`<men>`/`<md>` display math cannot be mixed inline with text in a `<p>`** — it must be
+  the sole content of its own `<p>` (`<p>lead-in text:</p><p><me>…</me></p>`). Inline math uses
+  `<m>`.
+- **`<var>` fill-in blanks only work inside an `<exercise>`.** If you move a table with `<var
+  width="5"/>` cells out to body content (e.g. "put the table before the question"), the `<var>`s
+  become invalid — replace them with empty `<cell></cell>`.
+- **Missing image** (`<image source>` not in `assets/`) and **case-mismatch** image paths are fatal
+  on Runestone's Linux even though they may work locally — `scripts/ptx_lint.py` catches both.
+
+When in doubt, run `scripts/ptx_lint.py` then `pretext build runestone`, and screenshot the page
+with `scripts/screenshot_build.py` to confirm new markup rendered (see the `view-build` skill).
 
 ### Pulling official solutions (verbatim)
 
