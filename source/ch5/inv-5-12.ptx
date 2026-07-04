@@ -5,24 +5,178 @@
   <exercises xml:id="exercises5-12" hidden-label="yes">
     <title>The Study</title>
 
-    <p>Data in <c>hypoHt.txt</c> model height observations for boys at ages 2, 3, and 4. This investigation develops regression-model conditions.</p>
+    <introduction>
+      <p>Suppose we have data on the height (in centimeters) of boys for 3 different random samples at ages 2, 3, 4. The data in <url href="http://www.rossmanchance.com/iscam2/data/hypoHt.txt">hypoHt.txt</url> are modeled after data from the Berkeley Guidance Study which monitored the height (and weight) of boys and girls born in Berkeley, California between January 1928 and June 1929.</p>
+    </introduction>
 
-    <exercise xml:id="inv5-12-a" label="I5.12.a"><title>Identify Variables</title><statement><p>(a) Identify explanatory and response variables.</p></statement><response/><solution><p>Explanatory variable is age and the response variable is height.</p></solution></exercise>
-    <exercise xml:id="inv5-12-b" label="I5.12.b"><title>Within vs Between Variability</title><statement><p>(b) Compare within-age variability to differences in age-group means.</p></statement><response/><solution><p>We expect there to be variability in the boys' heights within ages but we also expect a tendency for the 3 year old boys to be taller than the 2 year old boys in general.</p></solution></exercise>
-    <exercise xml:id="inv5-12-c" label="I5.12.c"><title>No-Association Plausibility</title><statement><p>(c) Could a large sample slope/correlation arise by chance if population association were absent?</p></statement><response/><solution><p>It is possible that the sample slope differs from zero by chance.</p></solution></exercise>
-    <exercise xml:id="inv5-12-d" label="I5.12.d"><title>Simulation Strategy</title><statement><p>(d) Describe how to simulate under no-association to assess plausibility.</p></statement><response/><solution><p>We could investigate what the lines look like when we choose random samples from a population where we know the population slope is equal to zero.</p></solution></exercise>
+    <exercise xml:id="inv5-12-a">
+      <title>Identify Variables</title>
+      <statement>
+        <p>Which is the explanatory variable and which is the response variable?</p>
+      </statement>
+      <response/>
+      <solution><p>Explanatory variable is age and the response variable is height.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-12-b">
+      <title>Within vs Between Variability</title>
+      <statement>
+        <p>Do you expect the 2-year-old boys to all have the same height? Do you expect the 3-year-old boys to all have the same height? Do you expect the mean height of the 3-year-old boys to be the same as the mean height of the 2-year-old boys? Explain.</p>
+      </statement>
+      <response/>
+      <solution><p>We expect there to be variability in the boys' heights within ages but we also expect a tendency for the 3 year old boys to be taller than the 2 year old boys in general.</p></solution>
+    </exercise>
+
+    <p>The regression equation for these sample data turns out to be <m>\widehat{\text{height}} = 75.2 + 6.47\,\text{age}</m>, with a correlation coefficient of <m>r = 0.857</m>.</p>
+
+    <exercise xml:id="inv5-12-c">
+      <title>No-Association Plausibility</title>
+      <statement>
+        <p>Is it possible that in the <em>population</em> of all Berkeley boys in the 1920s, there really is no linear relationship between age (2-4 years) and height, but that we obtained a correlation coefficient and sample slope coefficient this large just by random chance? Explain.</p>
+      </statement>
+      <response/>
+      <solution><p>It is possible that the sample slope differs from zero by chance.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-12-d">
+      <title>Simulation Strategy</title>
+      <statement>
+        <p>Describe how we might investigate the likelihood of obtaining such sample statistics by chance alone, if there really were no association between age and height in the population.</p>
+      </statement>
+      <response/>
+      <solution><p>We could investigate what the lines look like when we choose random samples from a population where we know the population slope is equal to zero.</p></solution>
+    </exercise>
+
+    <p>One way to determine whether our sample slope is significantly different from a conjectured value of the population slope is to assume a mathematical model.</p>
+
+    <p>To understand the most basic regression model, consider conditioning your data set on a particular value of <m>x</m>. For example, let's look at the distribution of heights for each age group.</p>
+
+    <sidebyside widths="60% 36%" margins="0% 0%" valign="top">
+      <stack>
+        <ul>
+          <li><p>Load the <url href="http://www.rossmanchance.com/iscam3/data/hypoHt2.txt">hypoHt2</url> data into the <url href="http://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables</url> applet.</p></li>
+          <li><p>Drag the <em>height</em> variable into the <alert>Response</alert> box. Then drag the <em>agecat</em> variable into the <alert>Subset By</alert> box.</p></li>
+          <li><p>Check the <alert>Show descriptive</alert> box</p></li>
+        </ul>
+      </stack>
+      <image source="images/inv-5-12-build-model.png" width="100%">
+        <description><p>Build model section of the Multiple Variables applet with age in the Variables list, height in the Response box, and agecat in the Subset By box.</p></description>
+      </image>
+    </sidebyside>
+
+    <exercise xml:id="inv5-12-e">
+      <title>Compare the Three Distributions</title>
+      <statement>
+        <p>Compare the shape, center, and variability of the three distributions:</p>
+        <p>How would you describe the shape of each distribution?</p>
+        <p>Numerically, how do the means differ for the three distributions? Has the average height increased roughly the same amount each year?</p>
+        <p>Is the variability in the heights roughly the same for each age group?</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>Example output</p>
+        <image source="images/inv-5-12-sol-e1.png" width="70%">
+          <description><p>Stacked dotplots of height for ages 2, 3, and 4; each age group's heights are roughly symmetric and shift to the right as age increases.</p></description>
+        </image>
+        <image source="images/inv-5-12-sol-e2.jpg" width="45%">
+          <description><p>Applet Results panel showing histograms of height for age2, age3, and age4 with means 88.24, 94.30, and 101.18.</p></description>
+        </image>
+        <image source="images/inv-5-12-sol-e3.png" width="45%">
+          <description><p>Show descriptive output: age4 n=40, mean=101.18, SD=2.95; age3 n=40, mean=94.30, SD=3.09; age2 n=40, mean=88.24, SD=2.83.</p></description>
+        </image>
+        <p>The distributions look roughly normal with similar variability but different centers. The means each differ by about 6.</p>
+      </solution>
+    </exercise>
 
     <assemblage>
-      <title>Basic Regression Model Conditions</title>
-      <p>The mean response is linear in x, response SD is constant across x, and response is normally distributed at each x value.</p>
+      <p>The <url href="http://www.rossmanchance.com/iscam3/glossary.html#basic">basic regression model</url> specifies the following conditions:
+      <ul>
+        <li><p>The relationship between the mean (expected value) of the response variable and the explanatory variable is linear: <m>E(Y \text{ at each } x) = \beta_0 + \beta_1 x</m>.</p></li>
+        <li><p>The variability of the observations at each value of <m>x</m>, <m>SD(Y \text{ at each } x)</m>, is constant. We will refer to this constant value as <m>\sigma</m>. This means that the variability of the (conditional) response variable distributions does not depend on <m>x</m>.</p></li>
+        <li><p>The distribution of the response variable at each value of <m>x</m> is normal.</p></li>
+      </ul></p>
     </assemblage>
 
-    <exercise xml:id="inv5-12-e" label="I5.12.e"><title>Check by Group</title><statement><p>(e) Compare shape, means, and SDs by age category to assess model assumptions.</p></statement><response/><solution><p>Example output: The distributions look roughly normal with similar variability but different centers. The means each differ by about 6.</p></solution></exercise>
-    <exercise xml:id="inv5-12-f" label="I5.12.f"><title>Condition Assessment</title><statement><p>(f) Based on grouped views, comment on whether conditions appear met.</p></statement><response/><solution><p>These conditions do appear to be met for the Berkeley boys' heights. We have a normal distribution at each <m>x</m> and the spread of each distribution is similar.</p></solution></exercise>
+    <p>To determine whether this mathematical model is appropriate we will check for three things: linearity, equal variance, and normality.</p>
 
-    <p>When repeated x values are sparse, residual plots become primary diagnostics.</p>
+    <exercise xml:id="inv5-12-f">
+      <title>Condition Assessment</title>
+      <statement>
+        <p>Do these conditions appear to be met for the Berkeley boys' heights? Explain.</p>
+      </statement>
+      <response/>
+      <solution><p>These conditions do appear to be met for the Berkeley boys' heights. We have a normal distribution at each <m>x</m> and the spread of each distribution is similar.</p></solution>
+    </exercise>
 
-    <exercise xml:id="inv5-12-g" label="I5.12.g"><title>Residual Plots and Diagnostics</title><statement><p>(g) Use residual-vs-x and residual normality plots to evaluate linearity, equal variance, and normality.</p></statement><response/><solution><p>The residual plots show data that satisfy these conditions nicely, and in this case we would consider the <m>t</m>-procedures from Investigation 5.10 to be valid.</p></solution></exercise>
-    <exercise xml:id="inv5-12-h" label="I5.12.h"><title>Condition Summary</title><statement><p>(h) Summarize whether each model condition appears satisfied.</p></statement><response/><solution><p>These regression-model conditions appear satisfied for this data set.</p></solution></exercise>
+    <p><term>Discussion:</term> In the above example, checking the conditions was straight forward because we could easily examine the distribution of the heights at the 3 different values of <m>x</m>. When we don't have many repeat values at each value of <m>x</m> we will need other ways to check these conditions. However, you should notice that the only thing that changes about the distribution of the response as we change <m>x</m> is the mean. So if we were to subtract the mean from each observation and pool these values together, then we should have one big distribution with mean 0, standard deviation equal to <m>\sigma</m>, and a normal shape.</p>
+
+    <image source="images/inv-5-12-model-diagrams.png" width="95%">
+      <description><p>Two diagrams. Left: a scatter of conditional distributions of the response variable at three values of the explanatory variable, each roughly normal, centered on the population regression line E(Y at x) = beta 0 plus beta 1 x. Right: the same three distributions after subtracting beta 0 plus beta 1 x, now all centered at a horizontal line at zero with common standard deviation sigma.</p></description>
+    </image>
+
+    <p>However we don't know <m>\beta_0</m> and <m>\beta_1</m>, the population regression coefficients, but we have their least squares estimates. If we subtract the fitted values from each response value, these differences are simply the residuals from the least squares regression. So to check the technical conditions we will use <em>residual plots</em>.</p>
+
+    <exercise xml:id="inv5-12-g">
+      <title>Residual Plots and Diagnostics</title>
+      <statement>
+        <p>In the applet, remove the <em>agecat</em> variable (back to the Variables list) and move the <em>age</em> variable into the <alert>Explanatory</alert> box. Check the <alert>Show Equation</alert> box. Check the <alert>Show residuals</alert> box.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>The residuals plots show data that satisfy these conditions nicely, and in this case we would consider the <m>t</m>-procedures from Investigation 5.10 to be valid.</p>
+        <image source="images/inv-5-12-sol-g1.jpg" width="40%">
+          <description><p>Applet Show residuals output: histogram of residuals centered at mean = 0.00 with SE = 2.953 (df = 118), roughly normal in shape.</p></description>
+        </image>
+        <image source="images/inv-5-12-sol-g2.jpg" width="40%">
+          <description><p>Plot of residuals versus predicted values showing three vertical bands of points, each centered around zero with similar spread.</p></description>
+        </image>
+      </solution>
+    </exercise>
+
+    <sidebyside widths="68% 28%" margins="0% 0%" valign="middle">
+      <stack>
+        <ul>
+          <li><p>The linearity condition is considered met if a plot of the residuals vs. the explanatory variable does not show any patterns such as curvature.</p></li>
+        </ul>
+      </stack>
+      <image source="images/inv-5-12-resid-linearity.png" width="100%">
+        <description><p>Scatterplot of residuals versus explanatory variable showing a random scatter of points with no curvature.</p></description>
+      </image>
+    </sidebyside>
+
+    <sidebyside widths="68% 28%" margins="0% 0%" valign="middle">
+      <stack>
+        <ul>
+          <li><p>The equal variance condition is considered met if a plot of the residuals vs. the explanatory variable shows the similarly variability in residuals across the values of <m>x</m>.</p></li>
+        </ul>
+      </stack>
+      <image source="images/inv-5-12-resid-equalvar.png" width="100%">
+        <description><p>Scatterplot of residuals versus explanatory variable with dashed horizontal bands showing similar spread in the residuals across the values of x.</p></description>
+      </image>
+    </sidebyside>
+
+    <sidebyside widths="68% 28%" margins="0% 0%" valign="middle">
+      <stack>
+        <ul>
+          <li><p>The normality condition is considered met if a histogram and/or normal probability plot of the residuals look normal.</p></li>
+        </ul>
+      </stack>
+      <image source="images/inv-5-12-resid-normality.png" width="100%">
+        <description><p>Histogram of residuals that is roughly symmetric and bell-shaped, centered at zero.</p></description>
+      </image>
+    </sidebyside>
+
+    <ul>
+      <li><p>Another condition is that the observations are independent. We will usually appeal to the data being collected randomly or randomization being used. The main thing is to make sure there is not something like time dependence in the data.</p></li>
+    </ul>
+
+    <exercise xml:id="inv5-12-h">
+      <title>Condition Summary</title>
+      <statement>
+        <p>Comment on whether you think each of these conditions is met for the Berkeley data.</p>
+      </statement>
+      <response/>
+      <solution><p>These regression-model conditions appear satisfied for this data set.</p></solution>
+    </exercise>
   </exercises>
 </section>
