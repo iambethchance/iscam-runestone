@@ -5,24 +5,172 @@
   <exercises xml:id="exercises5-14" hidden-label="yes">
     <title>The Study</title>
 
-    <p>Students collected a stratified sample of California home sales (<c>housing.txt</c>) to model selling price from square footage.</p>
+    <introduction>
+      <p>A group of students wanted to investigate which factors influence the price of a house (Koester, Davis, and Ross, 2003). They used <url href="http://www.househunt.com/">http://www.househunt.com</url>, limiting their search to single family homes in California. They collected a stratified sample by stratifying on three different regions in CA (northern, southern, and central), and then randomly selecting a sample from within each strata. They decided to focus on homes that were less than 5000 square feet and sold for less than $1.5 million. The file <url href="http://www.rossmanchance.com/iscam2/data/housing.txt">housing.txt</url> contains data for their final sample of 83 houses. Below is a scatterplot of the size vs. selling price for this sample.</p>
+      <image source="images/inv-5-14-scatter.png" width="60%">
+        <description><p>Scatterplot of price (in hundreds of thousands of dollars) versus square footage (in thousands) for 83 California houses, showing a positive association with more spread in prices for larger houses.</p></description>
+      </image>
+    </introduction>
 
-    <exercise xml:id="inv5-14-a" label="I5.14.a"><title>Initial Linear Fit</title><statement><p>(a) Determine least-squares line and interpret <m>R^2</m>.</p></statement><response/><solution><p>The regression equation is <em>predicted price</em> = 65930 + 202 <em>square foot</em>. <m>r^2=42.1\%</m>.</p></solution></exercise>
-    <exercise xml:id="inv5-14-b" label="I5.14.b"><title>Model Plausibility</title><statement><p>(b) Based on scatterplot, does basic linear model seem appropriate?</p></statement><response/><solution><p>Yes.</p></solution></exercise>
-    <exercise xml:id="inv5-14-c" label="I5.14.c"><title>Residual Normality</title><statement><p>(c) Use residual histogram/normal plot to assess normality.</p></statement><response/><solution><p>The residuals appear to be skewed to the right and not following a normal distribution.</p></solution></exercise>
-    <exercise xml:id="inv5-14-d" label="I5.14.d"><title>Residual Pattern Checks</title><statement><p>(d) Plot residuals vs square footage and assess curvature/equal variance.</p></statement><response/><solution><p>There does not appear to be strong curvature but the spread does appear to increase across the graph.</p></solution></exercise>
+    <exercise xml:id="inv5-14-a">
+      <title>Least Squares Line and r-squared</title>
+      <statement>
+        <p>Open the <c>housing</c> file and determine the least-squares regression line for these data. Also report and interpret the value of <m>r^2</m> for these data.</p>
+      </statement>
+      <response/>
+      <solution><p>The regression equation is <m>\widehat{\text{price}} = 65930 + 202\,\text{square foot}</m>. <m>r^2 = 42.1\%</m></p></solution>
+    </exercise>
 
-    <p>If model conditions are violated, transformations can improve fit.</p>
+    <exercise xml:id="inv5-14-b">
+      <title>Model Plausibility</title>
+      <statement>
+        <p>Based on the scatterplot, do these data appear to fit the basic linear regression model?</p>
+      </statement>
+      <response/>
+      <solution><p>Yes</p></solution>
+    </exercise>
 
-    <exercise xml:id="inv5-14-e" label="I5.14.e"><title>Log Transformation</title><statement><p>(e) Transform both variables with log base 10, refit, and reassess residual diagnostics.</p></statement><response/><solution><p>Although not perfect, these variables do appear to better follow the basic regression model. The residuals appear less skewed and there is less variation in the "width" of the residuals at different values of the explanatory variable. There does not appear to be any curvature in the relationship either.</p></solution></exercise>
-    <exercise xml:id="inv5-14-f" label="I5.14.f"><title>Interpret Transformed Slope</title><statement><p>(f) Interpret transformed-model slope in context.</p></statement><response/><solution><p>The regression equation is <em>predicted logprice</em> = 2.70 + 0.890 <em>logsqft</em>. If the log square footage increases by one (which corresponds to a ten-fold increase in square footage), we predicted the log price will increase by .890 (which corresponds to a <m>10^{.89}</m>-fold increase in price). If the log square footage is equal to 0 (square footage = 1), the predicted log price is 2.70 (price = <m>10^{2.70}</m>).</p></solution></exercise>
-    <exercise xml:id="inv5-14-g" label="I5.14.g"><title>Back-Transformed Prediction</title><statement><p>(g) Predict price for a 3000 sq ft house and back-transform to original dollars.</p></statement><response/><solution><p><em>predicted logprice</em> = <m>2.70+.890\log_{10}(3000)=5.79</m>.</p><p>So the predicted price is <m>10^{5.79}=\$623,215</m>.</p></solution></exercise>
+    <exercise xml:id="inv5-14-c">
+      <title>Residual Normality</title>
+      <statement>
+        <p>Produce a histogram and a normal probability plot of the residuals of this regression. Is it reasonable to consider the residuals as following the normal distribution? Explain.</p>
+      </statement>
+      <response/>
+      <solution>
+        <image source="images/inv-5-14-sol-c1.jpg" width="45%">
+          <description><p>Histogram of the residuals, skewed to the right with a peak just below zero.</p></description>
+        </image>
+        <image source="images/inv-5-14-sol-c2.jpg" width="42%">
+          <description><p>Normal probability plot of the residuals with 95 percent confidence bands; the points bend away from the line in both tails.</p></description>
+        </image>
+        <p>The residuals appear to be skewed to the right and not following a normal distribution.</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="inv5-14-d">
+      <title>Residual Pattern Checks</title>
+      <statement>
+        <p>Produce a scatterplot of the residuals vs. the square footage.</p>
+        <p>Does there appear to be curvature in this graph?</p>
+        <p>Does the variability in the residuals appear to be roughly constant across the graph?</p>
+      </statement>
+      <response/>
+      <solution>
+        <image source="images/inv-5-14-sol-d.jpg" width="45%">
+          <description><p>Scatterplot of residuals versus square footage; the residuals cluster closer to zero for smaller houses and spread out more for larger houses.</p></description>
+        </image>
+        <p>There does not appear to be strong curvature but the spread does appear to increase across the graph.</p>
+      </solution>
+    </exercise>
+
+    <p><term>Discussion</term>: It takes a while to become comfortable interpreting these residual plots, but the housing data do appear to have some problems. The residuals appear to cluster closer to zero for the smaller houses and to have more variability for the larger houses. This violates the condition of a constant standard deviation for each value of <m>x</m>. There is also a very slight hint of some curvature in this graph. The distribution of the residuals is clearly non-normal. This residual analysis gives us several reasons to <em>not</em> apply the basic regression model to these data.</p>
 
     <assemblage>
-      <title>Discussion</title>
-      <p>Transformations often improve normality and variance stability, but interpretation must account for transformed scale and often requires back-transformation.</p>
+      <p>When the regression model conditions are violated, we can often <em>transform</em> the data in the hopes that the new variables do meet the conditions.</p>
     </assemblage>
 
-    <exercise xml:id="inv5-14-practice" label="I5.14.practice"><title>Practice Problem 5.14</title><statement><p>Analyze <c>walmart.txt</c> with square-root and log transforms, select better model, predict for 2003, and report a 95% prediction interval.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-14-e">
+      <title>Log Transformation</title>
+      <statement>
+        <p>Take the log base 10 of both the house prices and sizes, storing the results as <em>logprice</em> and <em>logsqft</em>. [<em>Hint</em>: Keep in mind that R and JMP use <q>log</q> for natural log. Use <q>logten</q> in R and JMP for log base 10.] Produce the scatterplot and determine the regression equation to model the relationship between these two variables, storing the residuals. Examine the residual plots (histogram of residuals and residuals versus explanatory variable). Do these transformed variables appear to be more suitable for the basic regression model? Explain.</p>
+      </statement>
+      <response/>
+      <solution>
+        <image source="images/inv-5-14-sol-e1.jpg" width="42%">
+          <description><p>Scatterplot of logprice versus logsqft showing a positive linear association with fairly even scatter.</p></description>
+        </image>
+        <image source="images/inv-5-14-sol-e2.jpg" width="42%">
+          <description><p>Scatterplot of the residuals from the log-log regression versus logsqft, showing similar spread across the values of logsqft.</p></description>
+        </image>
+        <image source="images/inv-5-14-sol-e3.jpg" width="42%">
+          <description><p>Histogram of the residuals from the log-log regression, roughly symmetric and centered at zero.</p></description>
+        </image>
+        <image source="images/inv-5-14-sol-e4.jpg" width="42%">
+          <description><p>Normal probability plot of the residuals from the log-log regression; the points fall close to the line within the confidence bands.</p></description>
+        </image>
+        <p>Although not perfect, these variables do appear to better follow the basic regression model. The residuals appear less skewed and there is less variation in the <q>width</q> of the residuals at different values of the explanatory variable. There does not appear to be any curvature in the relationship either.</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="inv5-14-f">
+      <title>Interpret the Transformed Slope</title>
+      <statement>
+        <p>Interpret the slope coefficient in the regression model using the log transformed variables.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>The regression equation is <m>\widehat{\text{logprice}} = 2.70 + 0.890\,\text{logsqft}</m>.</p>
+        <p>If the log square footage increases by one (which corresponds to a ten-fold increase in square footage), we predicted the log price will increase by .890 (which corresponds to a <m>10^{.89}</m>-fold increase in price). If the log square footage is equal to 0 (square footage = 1), the predicted log price is 2.70 (price = <m>10^{2.70}</m>).</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="inv5-14-g">
+      <title>Back-Transformed Prediction</title>
+      <statement>
+        <p>Use the least squares regression line to predict the cost of a 3,000 square foot house. [<em>Hints</em>: Substitute <m>\log_{10}(3000)</m> into the right-hand side of the equation to obtain a prediction for the <m>\log_{10}(\text{price})</m>, and then raise 10 to this power to determine the predicted price. Similarly, you can back transform the endpoints of the confidence and prediction intervals from R.]</p>
+      </statement>
+      <response/>
+      <solution>
+        <p><m>\widehat{\text{logprice}} = 2.70 + .890\,\text{logten}(3000) = 5.79</m></p>
+        <p>So the predicted price is <m>10^{5.79} = \$623{,}215</m>.</p>
+      </solution>
+    </exercise>
+
+    <p><term>Discussion:</term> The log transformation has made improvements for both the normality condition and the equal variance condition. It is not uncommon for one transformation to <q>correct</q> more than one problem. We could continue to explore other transformations (e.g., square root and power transformations) until we find transformed data that are more appropriate for the basic regression model. Although these transformations are useful, we then have to be careful in how we interpret the regression coefficients and make predictions. If possible, it is usually most useful to <q>back-transform</q> to the original scale.</p>
   </exercises>
+
+  <subsection xml:id="practice-5-14">
+    <title>Practice Problem 5.14</title>
+    <introduction>
+      <p>The datafile <url href="http://www.rossmanchance.com/iscam2/data/walmart.txt">walmart.txt</url> contains data on the number of stores and the number of SuperCenters that Wal-Mart had in operation between 1989 and 2002.</p>
+    </introduction>
+
+    <exercise xml:id="practice-5-14-1" label="P5.14.1">
+      <title>Scatterplot Over Time</title>
+      <statement>
+        <p>Create a scatterplot of the number of SuperCenters that Wal-Mart has had in operation versus time.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-14-2" label="P5.14.2">
+      <title>Basic Model Appropriate?</title>
+      <statement>
+        <p>Would it be appropriate to use the basic regression model for these data? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-14-3" label="P5.14.3">
+      <title>Square Root Transformation</title>
+      <statement>
+        <p>Transform the SuperCenters variable by taking the square root. Would it be appropriate to use the basic regression model for the relationship between this variable and year? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-14-4" label="P5.14.4">
+      <title>Natural Log Transformation</title>
+      <statement>
+        <p>Transform the SuperCenters variable by taking the natural log. Would it be appropriate to use the basic regression model for the relationship between this variable and year? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-14-5" label="P5.14.5">
+      <title>Choose a Model and Predict</title>
+      <statement>
+        <p>Choose the best model from either <xref ref="practice-5-14-3" text="custom">Question 3</xref> or <xref ref="practice-5-14-4" text="custom">Question 4</xref> (and justify your choice), find the least-squares regression equation and use it to predict how many SuperCenters Wal-Mart had in operation in 2003.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-14-6" label="P5.14.6">
+      <title>Prediction Interval for 2003</title>
+      <statement>
+        <p>Report and interpret a 95% prediction interval for 2003.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
 </section>
