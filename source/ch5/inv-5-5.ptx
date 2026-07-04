@@ -5,7 +5,14 @@
   <exercises xml:id="exercises5-5" hidden-label="yes">
     <title>The Study</title>
 
-    <p>A British study (North, Shilcock, &amp; Hargreaves, <url href="https://www.researchgate.net/publication/249624546_The_Effect_of_Musical_Style_on_Restaurant_Customers'_Spending">2003</url>) examined whether the type of background music playing in a restaurant affected the amount of money that diners spent on their meals. The researchers asked a restaurant to alternate classical music, popular music, and silence on successive nights over 18 days.</p>
+    <sidebyside widths="62% 33%" margins="0% 0%" valign="top">
+      <stack>
+        <p>A British study (North, Shilcock, &amp; Hargreaves, <url href="https://www.researchgate.net/publication/249624546_The_Effect_of_Musical_Style_on_Restaurant_Customers'_Spending">2003</url>) examined whether the type of background music playing in a restaurant affected the amount of money that diners spent on their meals. The researchers asked a restaurant to alternate classical music, popular music, and silence on successive nights over 18 days.</p>
+      </stack>
+      <image source="images/restaurant.jpg" width="100%">
+        <description>Restaurant setting for the Investigation 5.5 study context</description>
+      </image>
+    </sidebyside>
 
     <p>The following summary statistics about the total bills were reported:</p>
 
@@ -29,84 +36,79 @@
         <cell>3.332</cell>
       </row>
       <row>
-        <assemblage xml:id="study-conclusions-5-5">
+        <cell halign="left">Sample size</cell>
         <cell><m>n_1=120</m></cell>
         <cell><m>n_2=142</m></cell>
         <cell><m>n_3=131</m></cell>
+      </row>
+    </tabular>
 
-      <exercise xml:id="inv5-5-f" label="I5.5.f">
-        <title>Second Simulation Draw</title>
-        <statement>
-          <p>Press the Draw Samples button again. Did you obtain the same <em>F</em>-statistic and p-value? Why not?</p>
-        </statement>
-        <response/>
-        <solution>
-          <p>Results will vary from sample to sample by chance.</p>
-        </solution>
-      </exercise>
+    <exercise xml:id="inv5-5-a" label="I5.5.a">
+      <title>State Hypotheses</title>
+      <statement>
+        <p>State the null and alternative hypotheses corresponding to the researchers' conjecture (in symbols and/or in words, be sure to define any symbols you use).</p>
+      </statement>
+      <response/>
+      <solution>
+        <p><m>H_0</m>: the true treatment means <m>(\mu_{class} = \mu_{pop} = \mu_{none})</m> are all equal.</p>
+        <p>Or <m>H_0</m>: the mean amounts spent in the long run are the same regardless of type of music being played.</p>
+        <p><m>H_a</m>: at least one true treatment mean differs.</p>
+        <p>Or <m>H_a</m>: at least one type of music shows a tendency for higher or lower spending amounts on average.</p>
+      </solution>
+    </exercise>
 
-      <exercise xml:id="inv5-5-g" label="I5.5.g">
-        <title>Many Draws Under Null</title>
-        <statement>
-          <p>Press the Draw Samples button 10-20 more times, watching how the boxplots, F, and p-values change. Did you ever obtain a p-value below 0.05? Is this possible? Would it be surprising? Explain.</p>
-        </statement>
-        <response/>
-        <solution>
-          <p>It will be possible to obtain a p-value below .05, but should happen less than 5% of the time (by chance alone).</p>
-        </solution>
-      </exercise>
+    <exercise xml:id="inv5-5-b" label="I5.5.b">
+      <title>Compute Key ANOVA Quantities</title>
+      <statement>
+        <p>Based on these summary statistics, calculate the overall (weighted) mean amount spent, the between-group variation, and the pooled standard deviation. Check the consistency of your calculations with the summary statistics reported above.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>weighted mean = <m>[120(24.13) + 142(21.91) + 131(21.70)]/(120+142+131) = 22.52</m> (this is in the "middle" of the 3 observed averages).</p>
+        <p>Between group variability.</p>
+        <p>Pooled variance = <m>[119(2.243^2)+141(2.627^2)+130(3.332^2)]/(119+141+130) = 7.73</m>.</p>
+        <p>Pooled std dev = <m>\sqrt{7.73} = 2.78</m> (this is in the "middle" of the observed standard deviations).</p>
+        <p>variability between groups = <m>120(24.13-22.52)^2 + 142(21.91-22.52)^2 + 132(21.7-22.52)^2/2 = 226</m>.</p>
+      </solution>
+    </exercise>
 
-      <exercise xml:id="inv5-5-h" label="I5.5.h">
-        <title>Increase One Mean</title>
-        <statement>
-          <p>Change the value of <m>\mu_1</m> to 24. Press the Draw Samples button 10-20 times. Do the resulting p-values tend to be larger or smaller than in (g)? Explain why this makes sense.</p>
-        </statement>
-        <response/>
-        <solution>
-          <p>Now all the p-values should be quite small. We should have more evidence against the null hypothesis in this case as it is indeed false.</p>
-        </solution>
-      </exercise>
+    <exercise xml:id="inv5-5-c" label="I5.5.c">
+      <title>Compute <em>F</em> and p-value</title>
+      <statement>
+        <p>Calculate the <em>F</em>-statistic by hand and use technology to determine the p-value.</p>
+      </statement>
+      <hint>
+        <title>Technology Options</title>
+        <p><alert><em>F</em> Probability Calculator applet:</alert> <url href="http://www.rossmanchance.com/applets/2021/test/fCalc.htm">fCalc</url>.</p>
+        <p><alert>R:</alert> <c>pf(x, df1, df2, lower.tail=FALSE)</c>.</p>
+        <p><alert>JMP:</alert> Distribution Calculator &gt; F, with upper-tail probability.</p>
+      </hint>
+      <statement>
+        <p>Which appears to be larger, the variation in amount spent between diners or the variation in amount spent between types of music?</p>
+      </statement>
+      <response/>
+      <solution>
+        <p><m><em>F</em> = 226/7.73 = 29.2</m>. Compare to an <m>F</m> distribution with df = 2 and 390.</p>
+        <p>The p-value is approximately zero.</p>
+      </solution>
+    </exercise>
 
-      <exercise xml:id="inv5-5-i" label="I5.5.i">
-        <title>Reduce Sample Sizes</title>
-        <statement>
-          <p>Change each of the sample sizes to 20 and press Draw Samples 10-20 times. Do the resulting p-values tend to be larger or smaller than in (h)? Explain why this makes sense.</p>
-        </statement>
-        <response/>
-        <solution>
-          <p>The p-values tend to be larger, there will be less evidence against the null hypothesis from the smaller sample sizes (more variability due to chance).</p>
-        </solution>
-      </exercise>
+    <exercise xml:id="inv5-5-d" label="I5.5.d">
+      <title>Assess ANOVA Conditions</title>
+      <statement>
+        <p>Do you consider this p-value to be valid? In other words, are the technical conditions for ANOVA met for this study design?</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>We would need to be able to verify the technical conditions (in fact, there is an issue here in that the treatments were assigned to the evenings and not the individual dinners).</p>
+      </solution>
+    </exercise>
 
-      <exercise xml:id="inv5-5-j" label="I5.5.j">
-        <title>Increase Population SD</title>
-        <statement>
-          <p>Press Draw Samples until you have a p-value less than 0.3. Now change the value of <m>\sigma</m> to 7. How does this affect the magnitude of the p-value? Explain why this relationship makes sense.</p>
-        </statement>
-        <response/>
-        <solution>
-          <p>Larger values of <m>\sigma</m> lead to larger p-values. This makes sense since larger values of <m>\sigma</m> correspond to more variability in the treatment groups, making it harder to detect differences between the groups.</p>
-        </solution>
-      </exercise>
+    <assemblage xml:id="study-conclusions-5-5">
+      <title>Study Conclusions</title>
+      <p>The classical music nights had the largest sample mean spending. The reported ANOVA result (<m>F=31.48</m>, very small p-value) gives strong evidence of differences in group means. However, independence is questionable because treatments were assigned by evening rather than to individual diners, so evening-level effects may be confounded with music condition. Thus descriptive differences are clear, but causal interpretation and broader generalization require caution.</p>
+    </assemblage>
 
-      <exercise xml:id="inv5-5-k" label="I5.5.k">
-        <title>Further Increase Mean Separation</title>
-        <statement>
-          <p>How does the p-value generally change if you now continue to increase the value of <m>\mu_1</m>? Explain why this relationship makes sense.</p>
-        </statement>
-        <response/>
-        <solution>
-          <p>The p-value will continue to get smaller since it will be easier to detect a difference when the size of the true difference is larger.</p>
-        </solution>
-      </exercise>
-    </paragraphs>
-
-    <paragraphs>
-      <title>Discussion</title>
-      <p>If the null hypothesis is true, then the p-value should vary uniformly between 0 and 1. In this case, the p-value will be less than 0.05 in 5% of all random samples, so 5% of samples would lead you to reject the null hypothesis even when it is true.</p>
-      <p>When the population means are further apart, the p-value is smaller. When the within-group variability is larger, the p-value is larger. When the sample sizes are larger and there is a difference among the population means, the p-value is smaller.</p>
-      <p>The p-value of any particular study is random, so we need to remember Type I and Type II errors. Committing a Type I error with analysis of variance indicates that we concluded the population means differ when they really do not differ. A Type II error indicates that we failed to conclude that at least one population mean differs when the population means are in actuality not all equal.</p>
-    </paragraphs>
   </exercises>
 
   <subsection xml:id="practice-5-5a">
