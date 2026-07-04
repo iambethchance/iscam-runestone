@@ -5,23 +5,141 @@
   <exercises xml:id="exercises5-11" hidden-label="yes">
     <title>The Study</title>
 
-    <p>This investigation uses a randomization (shuffle) test for regression slope significance, conditioning on observed data.</p>
+    <introduction>
+      <p>In the previous investigation, we analyzed the statistical significance of our sample data by replicating how often we might get a <em>random sample</em> of 247 runners (after removing an extreme outlier) with a slope this extreme from a larger population of runners that did not have an association between <em>finishing time</em> and <em>age</em>. In other words, we assumed there was no association between <em>finishing time</em> and <em>age</em> and the pairing of these values for our runners was just arbitrary. This suggests another way of assessing the statistical significance of our results.</p>
+    </introduction>
 
-    <exercise xml:id="inv5-11-a" label="I5.11.a"><title>Prepare Data</title><statement><p>(a) Load race data, remove outlier, and confirm regression equation.</p></statement><response/><solution><p>Regression setup/output values should match the previous investigation after removing the same outlier.</p></solution></exercise>
-    <exercise xml:id="inv5-11-b" label="I5.11.b"><title>Single Shuffle</title><statement><p>(b) Shuffle y-values once and compare resulting regression line strength to observed.</p></statement><response/><solution><p>The slope will most likely be smaller than observed (as well the correlation coefficient, indicating a weaker association).</p></solution></exercise>
-    <exercise xml:id="inv5-11-c" label="I5.11.c"><title>Repeated Shuffles</title><statement><p>(c) Shuffle repeatedly and describe emerging line patterns.</p></statement><response/><solution><p>You should get a negative association about half the time, but probably never one as extreme as the observed slope (red line).</p></solution></exercise>
-    <exercise xml:id="inv5-11-d" label="I5.11.d"><title>Null Slope Distribution</title><statement><p>(d) Draw many shuffles and describe null distribution of slopes; compare to Investigation 5.10 sampling approach.</p></statement><response/><solution><p>Example results: The shape is rather symmetric, centered around zero, with a standard deviation of about 0.03. This is similar to what we saw in Investigation 5.10.</p></solution></exercise>
-    <exercise xml:id="inv5-11-e" label="I5.11.e"><title>Empirical p-value</title><statement><p>(e) Estimate p-value by counting shuffled slopes as/extremer than observed.</p></statement><response/><solution><p>Example results: None of the simulated slopes was as extreme as the observed sample slope.</p></solution></exercise>
-    <exercise xml:id="inv5-11-f" label="I5.11.f"><title>Standardize Observed Slope</title><statement><p>(f) Standardize observed slope using shuffled SD.</p></statement><response/><solution><p>If we standardize, we again get something like <m>(0.14-0)/.03\approx 4.67</m>.</p><p>Using an observed t statistic of 4.49, we are again on the right edge of the distribution.</p></solution></exercise>
-    <exercise xml:id="inv5-11-g" label="I5.11.g"><title>t-statistic Comparison</title><statement><p>(g) Compare shuffled t-based p-value with Investigation 5.10 result.</p></statement><response/><solution><p>The results are very similar to the previous investigation.</p></solution></exercise>
-    <exercise xml:id="inv5-11-h" label="I5.11.h"><title>Overlay t Distribution</title><statement><p>(h) Assess t-distribution overlay fit for shuffled t-statistics.</p></statement><response/><solution><p>The <m>t</m>-distribution appears to be a good model for this randomization distribution.</p></solution></exercise>
-    <exercise xml:id="inv5-11-i" label="I5.11.i"><title>Regression Table Comparison</title><statement><p>(i) Compare applet regression-table SE to shuffled SD behavior.</p></statement><response/><solution><p>the two simulation models agree because we are getting a similar standard deviation of the sample/shuffled slopes. If the association had been stronger, this would not necessarily be the case. Also keep in mind the distinction between strength of evidence (which is strong here because the sample size is rather larger) and strength of association. This regression model explains less than 8% of the variability in finishing times.</p></solution></exercise>
+    <exercise xml:id="inv5-11-a">
+      <title>Confirm the Regression Equation</title>
+      <statement>
+        <p>Paste the <url href="http://www.rossmanchance.com/iscam3/data/Talley5K2013.txt">Talley5K2013.txt</url> data file into the <url href="http://www.rossmanchance.com/applets/RegShuffle.htm">Analyzing Two Quantitative Variables</url> applet. Press <alert>Use Data</alert> and make sure <em>age</em> is used as the explanatory variable (if not press the <alert>(response, explanatory)</alert> button to toggle their roles). Remove the outlier and check the <alert>Show Regression Line</alert> box and confirm the equation.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>Example output:</p>
+        <image source="images/inv-5-11-sol-a.png" width="40%">
+          <description><p>Applet output with Show Regression Line checked: predicted Time = 26.96 + 0.1403 times Age.</p></description>
+        </image>
+      </solution>
+    </exercise>
 
-    <assemblage>
-      <title>Discussion</title>
-      <p>Random sampling and random shuffling usually yield similar inferential conclusions, but shuffling conditions on observed x and y values and can be more flexible when population-model assumptions are uncertain.</p>
-    </assemblage>
+    <p>Another way to investigate whether the association observed in these sample data could have arisen by chance is a randomization test that shuffles the outcomes for one of the variables and reexamines the correlation coefficient and/or sample slope for the shuffled or re-randomized data.</p>
 
-    <exercise xml:id="inv5-11-practice" label="I5.11.practice"><title>Practice Problem 5.11</title><statement><p>Repeat this comparison using height and foot-length data from Investigation 5.8.</p></statement><response/></exercise>
+    <exercise xml:id="inv5-11-b">
+      <title>Single Shuffle</title>
+      <statement>
+        <p>Check the <alert>Show Shuffle Options</alert> box. Press the <alert>Shuffle Y-values</alert> box. Select the <alert>Plot</alert> radio button. Describe the blue line that appears. Is the association as strong as the one that we found in the actual data? How are you deciding?</p>
+      </statement>
+      <response/>
+      <solution><p>The slope will most likely be smaller than observed (as well the correlation coefficient, indicating a weaker association).</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-11-c">
+      <title>Repeated Shuffles</title>
+      <statement>
+        <p>Press the <alert>Shuffle Y-values</alert> button 5-10 more times. Do you ever find a negative association? Are any of the associations as strong as the one observed by the student group? What pattern is beginning to emerge in the blue regression lines on the scatterplot?</p>
+      </statement>
+      <response/>
+      <solution><p>You should get a negative association about half the time, but probably never one as extreme as the observed slope (red line).</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-11-d">
+      <title>Null Distribution of Shuffled Slopes</title>
+      <statement>
+        <p>Change <alert>Number of Shuffles</alert> to some large number (like 1000 or the difference between how many you have done so far and 1000) and press the <alert>Shuffle Y-values</alert> button. Describe the shape, center, and variability of the resulting distribution of re-randomized slopes. How does this distribution compare to the one you found in <xref ref="inv5-10-k" text="custom">Investigation 5.10, Question 11</xref>?</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>Example results</p>
+        <image source="images/inv-5-11-sol-d.jpg" width="40%">
+          <description><p>Histogram of 1000 shuffled slopes, roughly symmetric and centered near zero, with mean = -0.002 and SD = 0.032.</p></description>
+        </image>
+        <p>The shape is rather symmetric, centered around zero, with a standard deviation of about 0.03. This is similar to what we saw in Investigation 5.10.</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="inv5-11-e">
+      <title>Empirical p-value</title>
+      <statement>
+        <p>Use the applet to estimate the p-value by using the <alert>Count Samples</alert> box: choosing to count <q>beyond</q> (for the two-sided p-value) and specifying the observed sample slope. Press <alert>Count</alert>.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>Example results</p>
+        <image source="images/inv-5-11-sol-e.jpg" width="45%">
+          <description><p>Histogram of 1000 shuffled slopes with vertical lines at the observed slope in each tail; counting shuffles Beyond .1403 gives Count = 0/1000 (0.0000).</p></description>
+        </image>
+        <p>None of the simulated slopes was as extreme as the observed sample slope.</p>
+      </solution>
+    </exercise>
+
+    <p>You should see many similarities between the statistic distributions from random sampling (Inv 5.10) and random shuffling). So let's again consider applying the <em>t</em>-probability model to the standardized statistics.</p>
+
+    <exercise xml:id="inv5-11-f">
+      <title>Standardize Observed Slope</title>
+      <statement>
+        <p>Use the standard deviation for the slopes found in <xref ref="inv5-11-d" text="custom">Question 4</xref> and standardize the value of the observed sample slope.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>If we standardize, we again get something like <m>(0.14-0)/.03 \approx 4.67</m>.</p>
+        <p>Using an observed t statistic of 4.49, we are again on the right edge of the distribution.</p>
+        <image source="images/inv-5-11-sol-f.jpg" width="45%">
+          <description><p>Histogram of 1000 shuffled t-statistics with mean = -0.058 and SD = 0.993; counting shuffles Beyond 4.49 gives Count = 0/1000 (0.0000).</p></description>
+        </image>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="inv5-11-g">
+      <title>t-statistic p-value</title>
+      <statement>
+        <p>Now use the pull-down menu to select <alert>t-statistic</alert>. Use the applet to estimate the p-value corresponding to the observed <em>t</em>-statistic. How does it compare to the p-value you found in Investigation 5.10? (Note: The applet may complain due to rounding, estimation of the standard error.)</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>The results are very similar to the previous investigation.</p>
+        <image source="images/inv-5-11-sol-g.jpg" width="45%">
+          <description><p>Histogram of 1000 shuffled t-statistics with an overlaid t-distribution curve; the simulated count beyond 4.49 is 0/1000 and the theory-based p-value is less than 0.0001.</p></description>
+        </image>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="inv5-11-h">
+      <title>Overlay t-distribution</title>
+      <statement>
+        <p>Check the box to <alert>Overlay t-distribution</alert>. Does it appear to be a reasonable model of the shuffled <em>t</em>-statistics distribution?</p>
+      </statement>
+      <response/>
+      <solution><p>The <m>t</m>-distribution appears to be a good model for this randomization distribution.</p></solution>
+    </exercise>
+
+    <exercise xml:id="inv5-11-i">
+      <title>Regression Table Comparison</title>
+      <statement>
+        <p>Check the <alert>Regression Table</alert> box to compare your calculations (e.g., what value does the table use for <m>SE(\hat{\beta})</m>?</p>
+      </statement>
+      <response/>
+      <solution>
+        <image source="images/inv-5-11-sol-i.jpg" width="50%">
+          <description><p>Applet regression table: Intercept coefficient 26.961 with SE 1.314, t-stat 20.52, p-value less than 0.0001; Age coefficient 0.140 with SE 0.031, t-stat 4.49, p-value less than 0.0001.</p></description>
+        </image>
+        <p>Note: the two simulation models agree because we are getting a similar standard deviation of the sample/shuffled slopes. If the association had been stronger, this would not necessarily be the case. Also keep in mind the distinction between strength of evidence (which is strong here because the sample size is rather larger) and strength of association. This regression model explains less than 8% of the variability in finishing times!</p>
+      </solution>
+    </exercise>
+
+    <p><term>Discussion:</term> It is interesting to compare these two analysis approaches. In Investigation 5.10, we modeled repeated random sampling from a population but this required us to make certain assumptions about the data in the population (which we will spell out in more detail in the next Investigation). In Investigation 5.11, we didn't make any assumptions about a larger population; instead we modeled what the sample data could look like if the observed response values had been randomly paired, over and over again, with the observed explanatory variable values. This approach is sometimes referred to as <q>conditioning on the observed data.</q> It is not surprising that the results are similar for both approaches, but some consider the second approach to be more <q>flexible</q> and <q>less restrictive</q> in the assumptions it makes. However, the first approach allows for more elegant mathematical derivations predicting how the sampling distribution of sample slopes will behave.</p>
+
+    <p>If we had had a stronger association in our sample (and <m>s</m> and <m>s_y</m> were less similar in value), you would have seen more differences between these two approaches. In particular, the random shuffling will have a larger standard deviation of the sample slopes than the random sampling. We saw with random sampling that the variability in the slopes is controlled by <m>\sigma</m>, not by SD(Y). However, with random shuffling, any <m>x</m>-value can be paired with any <m>y</m>-value, so the slopes are able to <q>swing around</q> a little more freely especially with smaller sample sizes. When you view the Regression Table, the SD(<m>b_1</m>) reported there will correspond to random sampling.</p>
   </exercises>
+
+  <subsection xml:id="practice-5-11">
+    <title>Practice Problem 5.11</title>
+    <exercise xml:id="practice-5-11-1" label="P5.11.1">
+      <title>Confirm with Height and Foot Length Data</title>
+      <statement>
+        <p>Confirm the preceding paragraph using the <em>height</em> and <em>footlength</em> data of <xref ref="inv-5-8" text="custom">Investigation 5.8</xref>.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
 </section>
