@@ -5,27 +5,128 @@
   <exercises xml:id="exercises5-8-excel" hidden-label="yes">
     <title>Exploration Tasks</title>
 
-    <p>This activity compares minimization criteria for choosing a single-value predictor <m>m</m> for heights.</p>
+    <introduction>
+      <p>Another way to get around the problem revealed in <xref ref="inv5-8-g" text="custom">Question 7</xref> and <xref ref="inv5-8-h" text="custom">Question 8</xref> of Investigation 5.8, that the sum of residuals from the mean always equals zero, is to examine the sum of the absolute deviations.</p>
+      <p>Let's investigate whether there is a better number (call it <m>m</m>) than the mean to use for predicting height, in order to minimize our prediction errors. In general, this sum of absolute residuals (or SAE, sum of absolute errors) can be written:</p>
+      <p><me>SAE = \sum_{i=1}^{n} |y_i - m|</me></p>
+      <p>The problem with using the SAE is that it is not easily differentiable, so we cannot use calculus to determine the optimal value for <m>m</m>. Instead, we will use Excel to explore the behavior of SAE as a function of <m>m</m>. We will look for the value of <m>m</m> that minimizes SAE.</p>
+    </introduction>
 
-    <exercise xml:id="excel5-8-a" label="E5.8.a"><title>Compute SAE from Mean</title><statement><p>(a) Compute SAE using mean as predictor.</p></statement><response/></exercise>
-    <exercise xml:id="excel5-8-b" label="E5.8.b"><title>Compute SAE(m) in Spreadsheet</title><statement><p>(b) Fill formulas in <c>Heights.xls</c> and verify SAE at sample mean.</p></statement><response/></exercise>
-    <exercise xml:id="excel5-8-c" label="E5.8.c"><title>Graph SAE(m)</title><statement><p>(c) Graph SAE vs m, sketch shape, and describe its form.</p></statement><response/></exercise>
-    <exercise xml:id="excel5-8-d" label="E5.8.d"><title>Find Minimizer of SAE</title><statement><p>(d) Determine value(s) of m minimizing SAE and report minimum SAE.</p></statement><response/></exercise>
-    <exercise xml:id="excel5-8-e" label="E5.8.e"><title>Connect to Median</title><statement><p>(e) Relate minimizing m to ordered data and familiar location statistics.</p></statement><response/></exercise>
-    <exercise xml:id="excel5-8-f" label="E5.8.f"><title>Modify Middle Value</title><statement><p>(f) Change one middle value and reassess minimizer uniqueness.</p></statement><response/></exercise>
-    <exercise xml:id="excel5-8-g" label="E5.8.g"><title>Modify Extreme Value</title><statement><p>(g) Change largest value and compare effect on SAE minimizer.</p></statement><response/></exercise>
-    <exercise xml:id="excel5-8-h" label="E5.8.h"><title>General Conjecture</title><statement><p>(h) Conjecture rule for minimizing SAE from generic data.</p></statement><response/></exercise>
-    <exercise xml:id="excel5-8-i" label="E5.8.i"><title>MAE Criterion</title><statement><p>(i) Compare MAE(m) and SAE(m): shape and minimizer.</p></statement><response/></exercise>
+    <exercise xml:id="excel5-8-a">
+      <title>Compute SAE from Mean</title>
+      <statement>
+        <p>Using your results in the table in <xref ref="inv5-8-d" text="custom">Question 4</xref> of Investigation 5.8, calculate the sum of the absolute values of the residuals, using the mean height as the predicted value.</p>
+      </statement>
+      <response/>
+      <solution><p><m>SAE = 80.5</m></p></solution>
+    </exercise>
 
-    <p><alert>Discussion:</alert> SAE is piecewise linear and minimized by a median value (or median interval for even n).</p>
+    <exercise xml:id="excel5-8-b">
+      <title>Compute SAE(m) in Spreadsheet</title>
+      <statement>
+        <p>Open the Excel spreadsheet document Heights.xls. Notice that the 20 heights are in column A (sorted), and column B contains candidates for <m>m</m> from 65 to 70, in increments of 0.01. Click on cell C2, and notice that it contains a formula for SAE(<m>m</m>), which refers to the data values in column A and to the value of <m>m</m> from B2 (namely, <m>m = 65</m> in that cell). Use Excel's <q>fill down</q> feature to calculate the values of SAE(<m>m</m>) for the remainder of column C. [Hint: You can do this in one of several ways: With the C2 cell selected, double click on the box in the lower right corner, or pull the right corner of the highlighted C2 cell down to the end of the column, or highlight C2 and the cells to be filled and choose <alert>Edit &gt; Fill &gt; Down</alert>.] Confirm that the SAE value for the sample mean (67.75) agrees with what you calculated in <xref ref="excel5-8-a" text="custom">Question 1</xref>.</p>
+      </statement>
+      <response/>
+    </exercise>
 
-    <exercise xml:id="excel5-8-j" label="E5.8.j"><title>Least-Squares Minimizer Recall</title><statement><p>(j) Report m that minimizes SSE for these heights.</p></statement><response/></exercise>
-    <exercise xml:id="excel5-8-k" label="E5.8.k"><title>Graph SSE(m)</title><statement><p>(k) Graph SSE vs m, describe shape, and identify minimizer.</p></statement><response/></exercise>
-    <exercise xml:id="excel5-8-l" label="E5.8.l"><title>Outlier Sensitivity Comparison</title><statement><p>(l) Create extreme outlier and compare effects on SSE and SAE minimizers.</p></statement><response/></exercise>
+    <exercise xml:id="excel5-8-c">
+      <title>Graph SAE(m)</title>
+      <statement>
+        <p>To produce a graph of SAE as a function of <m>m</m>: Highlight columns B and C. Choose <alert>Insert &gt; Scatter</alert> and then choose the first option in the second row (Scatter with Smooth Lines) to construct a graph of this function. [Hint: After you create the graph, you may want to change the x-min and x-max values by double clicking on the horizontal axis and changing the Minimum and Maximum under Axis Options.] Reproduce a rough sketch of this graph below, and comment on the shape of this function. Does it seem to follow a familiar form, such as linear or parabolic or exponential? Explain.</p>
+      </statement>
+      <response/>
+      <solution><p>It looks like a piecewise parabola.</p></solution>
+    </exercise>
+
+    <exercise xml:id="excel5-8-d">
+      <title>Find Minimizer of SAE</title>
+      <statement>
+        <p>Does there seem to be a unique value of <m>m</m> that minimizes this SAE(<m>m</m>) function? If so, identify it. If not, describe all values of <m>m</m> that minimize the function. Also report the value of the SAE for this optimal value of <m>m</m>. [Hint: Search through the entries in column C to find the smallest value, and then read off the corresponding value in column B.]</p>
+      </statement>
+      <response/>
+      <solution><p>The function appears to be minimized at 67 in, with an SAE value around 79.</p></solution>
+    </exercise>
+
+    <exercise xml:id="excel5-8-e">
+      <title>Connect to Median</title>
+      <statement>
+        <p>Look through the sorted heights in column A. What do you notice about where this optimal value of <m>m</m> is located in the list of sorted heights? Does this remind you of a familiar statistic?</p>
+      </statement>
+      <response/>
+      <solution><p>There are 20 observations and 67 is the 10th (and 11th) value. An observation falling between the 10th and 11th observations is the median of the 20 values.</p></solution>
+    </exercise>
+
+    <exercise xml:id="excel5-8-f">
+      <title>Modify Middle Value</title>
+      <statement>
+        <p>Suppose the tenth largest height (in row 11) had been 66 inches instead of 67. Make this change to the spreadsheet (cell A11), and note that the graph of the SAE function is updated automatically. Now is there a unique value of <m>m</m> that minimizes this SAE(<m>m</m>) function? If so, identify it. If not, describe all values of <m>m</m> that minimize the function, and also report the (optimal, minimum) value of the SAE.</p>
+      </statement>
+      <response/>
+      <solution><p>This creates a flat spot in the graph. Now all values between 66 and 67 (inclusive) minimize the SAE at 80.</p></solution>
+    </exercise>
+
+    <exercise xml:id="excel5-8-g">
+      <title>Modify Extreme Value</title>
+      <statement>
+        <p>Return the tenth largest height back to 67 inches. Now suppose the tallest person in the sample had been 80 inches tall instead of 77. Make this change to the spreadsheet (cell A21) and note how the graph of the SAE function changes. Also report the value of the SAE.</p>
+      </statement>
+      <response/>
+      <solution><p>This just moves the graph up (with the same shape) to higher SAE values. The optimal <m>m</m> is still 67 with an SAE value of 82.</p></solution>
+    </exercise>
+
+    <exercise xml:id="excel5-8-h">
+      <title>General Conjecture</title>
+      <statement>
+        <p>Based on these findings, make a conjecture as to how one can determine, from a generic set of 20 data values, the value that minimizes the sum of the absolute prediction errors from the data values.</p>
+      </statement>
+      <response/>
+      <solution><p>The median (or any value between the 10th and 11th sorted values).</p></solution>
+    </exercise>
+
+    <exercise xml:id="excel5-8-i">
+      <title>MAE Criterion</title>
+      <statement>
+        <p>Consider a new minimization criterion: mean absolute error (MAE) criterion, which divides the SAE value by the number of observations. How would the MAE(<m>m</m>) function compare to the SAE(<m>m</m>) function? Would its minimum be achieved at the same value(s) of <m>m</m>? Explain.</p>
+      </statement>
+      <response/>
+      <solution><p>The values of the SAE would change, again proportionally, and the optimal <m>m</m> would remain the same.</p></solution>
+    </exercise>
+
+    <p><term>Discussion:</term> You should have found that the SAE function is piecewise linear. In other words, the function itself is not linear, but its component pieces are linear. In this case the function changes its slope precisely at the data values. The SAE function (and MAE function) are minimized at the median of the data and also at any value between (and including) the two middle values in the dataset (the 10th and 11th values in this case with <m>n = 20</m> values). It is a convenient convention to define the median as the average (midpoint) of those two middle values. The MAE has a bit more natural interpretation <mdash/> the average deviation of the values in the data set from the value of <m>m</m>.</p>
+
+    <p>Another criterion is to find the value of <m>m</m> that minimizes the sum of the squared deviations.</p>
+
+    <exercise xml:id="excel5-8-j">
+      <title>Least-Squares Minimizer Recall</title>
+      <statement>
+        <p>Recall from <xref ref="inv5-8-j" text="custom">Question 10</xref> of Investigation 5.8 the value of <m>m</m> that minimizes the sum of the squared prediction errors. Report this value of <m>m</m> for the height data.</p>
+      </statement>
+      <response/>
+      <solution><p>This was the mean, here 67.75 in.</p></solution>
+    </exercise>
+
+    <exercise xml:id="excel5-8-k">
+      <title>Graph SSE(m)</title>
+      <statement>
+        <p>Make sure that the data values in column A are back to their original values. Then click on cell D2 in the Excel spreadsheet, and notice that it gives the formula for the SSE (sum of squared errors) function. Fill this formula down the column and create a second graph to display the behavior of this function. [Hints: Click on column B and then hold the mouse down when you click on column D to highlight just those two columns before you insert the graph. You will probably want to double click on the y-axis scale to change its minimum value.] Does this function have a recognizable form, such as a polynomial? What is its shape? At what value of <m>m</m> is the function minimized? Does this value look familiar?</p>
+      </statement>
+      <response/>
+      <solution><p>This is now a parabola, minimized at <m>m = 67.75</m> in (the sample mean) with an SSE value of 475.75.</p></solution>
+    </exercise>
+
+    <exercise xml:id="excel5-8-l">
+      <title>Outlier Sensitivity Comparison</title>
+      <statement>
+        <p>Suppose there had been a clerical error in entering the height of the tallest student. Change the height of the tallest student from 77 inches to 770 and investigate the effect on the SSE function. Has the value of <m>m</m> that minimizes SSE changed? By how much? How does this compare to the effect of this clerical error on the SAE function and where it is minimized?</p>
+      </statement>
+      <response/>
+      <solution><p>This changes the function quite a bit and the optimal <m>m</m> is no longer displayed in the graph.</p></solution>
+    </exercise>
 
     <assemblage>
       <title>Discussion</title>
-      <p>Least squares has computational and uniqueness advantages but is less resistant to outliers than absolute-error criteria.</p>
+      <p>Although the SAE criteria would be more resistant to outliers, it does not always lead to a unique minimum (e.g., an even number of data values where the values of the middle pair are not equal). This has led to the more common criterion of least squares.</p>
+      <p>See the exercises for investigating additional minimization criteria, such as the median of absolute errors and maximum of absolute errors.</p>
     </assemblage>
   </exercises>
 </section>

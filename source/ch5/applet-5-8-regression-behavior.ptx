@@ -5,14 +5,71 @@
   <exercises xml:id="exercises5-8-applet" hidden-label="yes">
     <title>Exploration Tasks</title>
 
-    <p>Use the Analyzing Two Quantitative Variables applet with height and foot-length data.</p>
+    <introduction>
+      <p>Open the Analyzing Two Quantitative Variables applet. Recall the 20 observations are height and foot length for a sample of statistics students.</p>
+    </introduction>
 
-    <exercise xml:id="applet5-8-a" label="A5.8.a"><title>Baseline Regression Fit</title><statement><p>(a) Display regression line and judge whether it summarizes the linear relationship reasonably.</p></statement><response/></exercise>
-    <exercise xml:id="applet5-8-b" label="A5.8.b"><title>Predict Effect of High-Leverage Point</title><statement><p>(b) Predict effect of adding point (35, 60) on regression equation.</p></statement><response/></exercise>
-    <exercise xml:id="applet5-8-c" label="A5.8.c"><title>Add Point and Report New Equation</title><statement><p>(c) Add the point and report new equation.</p></statement><response/></exercise>
-    <exercise xml:id="applet5-8-d" label="A5.8.d"><title>Move New Point Vertically</title><statement><p>(d) Move the added point vertically and assess how strongly slope/intercept change.</p></statement><response/></exercise>
-    <exercise xml:id="applet5-8-e" label="A5.8.e"><title>Predict Effect of Central Point Movement</title><statement><p>(e) Revert and predict effect of moving point (29, 65) vertically.</p></statement><response/></exercise>
-    <exercise xml:id="applet5-8-f" label="A5.8.f"><title>Move Central Point</title><statement><p>(f) Move (29, 65) and compare influence to part (d).</p></statement><response/></exercise>
-    <exercise xml:id="applet5-8-g" label="A5.8.g"><title>Influence Comparison</title><statement><p>(g) Which point is more influential and why under least squares?</p></statement><response/></exercise>
+    <exercise xml:id="applet5-8-a">
+      <title>Baseline Regression Fit</title>
+      <statement>
+        <p>Check the <alert>Show Regression Line</alert> box. Does the regression line appear to do a reasonable job of summarizing the overall linear relationship in these data observations?</p>
+      </statement>
+      <response/>
+      <solution><p>Opinions may vary.</p></solution>
+    </exercise>
+
+    <exercise xml:id="applet5-8-b">
+      <title>Predict Effect of New Point</title>
+      <statement>
+        <p>If we were to add an observation with height 60 in and foot length 35 cm, predict whether, and if so how, the regression line will change.</p>
+      </statement>
+      <response/>
+      <solution><p>Should expect this observation to <q>pull the line down</q> (smaller slope).</p></solution>
+    </exercise>
+
+    <exercise xml:id="applet5-8-c">
+      <title>Add Point and Report New Equation</title>
+      <statement>
+        <p>Check <alert>Show data options</alert> and enter these coordinates (<m>x = 35</m>, <m>y = 60</m>) to add an observation. Press the <alert>Add</alert> button. Report the new regression equation.</p>
+      </statement>
+      <response/>
+      <solution><p>Regression equation will vary.</p></solution>
+    </exercise>
+
+    <exercise xml:id="applet5-8-d">
+      <title>Move New Point Vertically</title>
+      <statement>
+        <p>Check the <alert>Move observations</alert> box. Click on this new observation (it should change color) and hold the mouse button down and move the mouse vertically in both directions to change the <m>y</m> value of the observation (try hard not to change the <m>x</m> value). The applet automatically recalculates the new regression line depending on the new location of the point. Is it possible to make the regression line have a negative slope? Does the regression line appear to be affected by the location of this point? Is the impact strong or weak? Does this match your prediction?</p>
+      </statement>
+      <response/>
+      <solution><p>If you pull down far enough (e.g., height &lt; 20) then you can get the regression line to have a negative slope. This point does appear to have moderate impact on the regression line.</p></solution>
+    </exercise>
+
+    <exercise xml:id="applet5-8-e">
+      <title>Predict Effect of Central Point Movement</title>
+      <statement>
+        <p>Delete this new point and/or press the <alert>Revert</alert> button to return to the original data set. Now focus on the point located at (29, 65). If we move this point vertically, predict how the regression line will change. Do you think the change will be as dramatic as in <xref ref="applet5-8-c" text="custom">Question 3</xref>?</p>
+      </statement>
+      <response/>
+      <solution><p>predictions will vary.</p></solution>
+    </exercise>
+
+    <exercise xml:id="applet5-8-f">
+      <title>Move Central Point</title>
+      <statement>
+        <p>Repeat <xref ref="applet5-8-d" text="custom">Question 4</xref> using the point located at (29, 65). Does the regression line appear to be affected by the location of this point? Is the impact strong or weak (especially compared to the impact you witnessed in <xref ref="applet5-8-d" text="custom">Question 4</xref>)?</p>
+      </statement>
+      <response/>
+      <solution><p>The regression line does not appear to be nearly as affected by changes in the <m>y</m>-coordinate for this observation.</p></solution>
+    </exercise>
+
+    <exercise xml:id="applet5-8-g">
+      <title>Influence Comparison</title>
+      <statement>
+        <p>Which point was more influential on the equation of the regression line: (35, 60) or (29, 65)? Suggest an explanation for why the point you identified is more influential, keeping in mind the <q>least-squares criterion.</q></p>
+      </statement>
+      <response/>
+      <solution><p>(35, 60), because it has a more extreme (far from the average) <m>x</m>-coordinate.</p></solution>
+    </exercise>
   </exercises>
 </section>
