@@ -5,9 +5,9 @@
   <exercises xml:id="exercises5-5" hidden-label="yes">
     <title>The Study</title>
 
-    <p>A British study by North, Shilcock, and Hargreaves (2003) examined whether background music in a restaurant affected how much diners spent. The restaurant alternated classical music, popular music, and silence on successive nights over 18 days.</p>
+    <p>A British study (North, Shilcock, &amp; Hargreaves, <url href="https://www.researchgate.net/publication/249624546_The_Effect_of_Musical_Style_on_Restaurant_Customers'_Spending">2003</url>) examined whether the type of background music playing in a restaurant affected the amount of money that diners spent on their meals. The researchers asked a restaurant to alternate classical music, popular music, and silence on successive nights over 18 days.</p>
 
-    <p>Summary statistics for total bills were:</p>
+    <p>The following summary statistics about the total bills were reported:</p>
 
     <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
       <row header="yes">
@@ -29,99 +29,15 @@
         <cell>3.332</cell>
       </row>
       <row>
-        <cell halign="left">Sample size</cell>
+        <assemblage xml:id="study-conclusions-5-5">
         <cell><m>n_1=120</m></cell>
         <cell><m>n_2=142</m></cell>
         <cell><m>n_3=131</m></cell>
-      </row>
-    </tabular>
-
-    <exercise xml:id="inv5-5-a" label="I5.5.a">
-      <title>State Hypotheses</title>
-      <statement>
-        <p>(a) State null and alternative hypotheses corresponding to the researchers' conjecture, in symbols and/or words, and define any symbols used.</p>
-      </statement>
-      <response/>
-      <solution>
-        <p><m>H_0\!:</m> the true treatment means <m>(\mu_{class} = \mu_{pop} = \mu_{none})</m> are all equal.</p>
-        <p>Or <m>H_0\!:</m> the mean amounts spent in the long run are the same regardless of type of music being played.</p>
-        <p><m>H_a\!:</m> at least one true treatment mean differs.</p>
-        <p>Or <m>H_a\!:</m> at least one type of music shows a tendency for higher or lower spending amounts on average.</p>
-      </solution>
-    </exercise>
-
-    <exercise xml:id="inv5-5-b" label="I5.5.b">
-      <title>Compute Key ANOVA Quantities</title>
-      <statement>
-        <p>(b) Using the summary statistics, calculate the overall weighted mean amount spent, the between-group variability, and the pooled within-group variability. Check consistency with the reported overall mean 22.53 and overall SD 2.969.</p>
-      </statement>
-      <response/>
-      <solution>
-        <p>weighted mean = <m>[120(24.13) + 142(21.91) + 131(21.70)]/(120+142+131) = 22.52</m> (this is in the "middle" of the 3 observed averages).</p>
-        <p>Pooled variance = <m>[119(2.243^2)+141(2.627^2)+130(3.332^2)]/(119+141+130) = 7.73</m>.</p>
-        <p>Pooled standard deviation = <m>\sqrt{7.73} = 2.78</m> (this is in the "middle" of the observed standard deviations).</p>
-        <p>variability between groups = <m>120(24.13-22.52)^2 + 142(21.91-22.52)^2 + 132(21.7-22.52)^2</m> divided by 2 <m>= 226</m>.</p>
-      </solution>
-    </exercise>
-
-    <exercise xml:id="inv5-5-c" label="I5.5.c">
-      <title>Compute F and p-value</title>
-      <statement>
-        <p>(c) Calculate the F-statistic by hand and use technology to determine the p-value.</p>
-      </statement>
-      <hint>
-        <title>Technology Options</title>
-        <p><alert>F Probability Calculator:</alert> <url href="http://www.rossmanchance.com/applets/2021/test/fCalc.htm">fCalc</url>.</p>
-        <p><alert>R:</alert> <c>pf(x, df1, df2, lower.tail=FALSE)</c>.</p>
-        <p><alert>Minitab:</alert> Graph &gt; Probability Distribution Plot, Distribution = F.</p>
-        <p><alert>JMP:</alert> Distribution Calculator &gt; F, with upper-tail probability.</p>
-      </hint>
-      <statement>
-        <p>Which appears larger: variation in amount spent between diners or variation between music conditions?</p>
-      </statement>
-      <response/>
-      <solution>
-        <p><m>F=226/7.73=29.2</m>. Compare to an <m>F</m> distribution with df = 2 and 390.</p>
-        <p>The p-value is approximately zero.</p>
-      </solution>
-    </exercise>
-
-    <exercise xml:id="inv5-5-d" label="I5.5.d">
-      <title>Assess ANOVA Conditions</title>
-      <statement>
-        <p>(d) Do you consider this p-value valid? Are ANOVA technical conditions met for this design?</p>
-      </statement>
-      <response/>
-      <solution>
-        <p>We would need to be able to verify the technical conditions (in fact, there is an issue here in that the treatments were assigned to the evenings and not the individual dinners).</p>
-      </solution>
-    </exercise>
-
-    <assemblage>
-      <title>Study Conclusions</title>
-      <p>The classical music nights had the largest sample mean spending. The reported ANOVA result (<m>F=31.48</m>, very small p-value) gives strong evidence of differences in group means. However, independence is questionable because treatments were assigned by evening rather than to individual diners, so evening-level effects may be confounded with music condition. Thus descriptive differences are clear, but causal interpretation and broader generalization require caution.</p>
-    </assemblage>
-
-    <paragraphs xml:id="applet-5-2-anova">
-      <title>Applet Exploration: Exploring ANOVA</title>
-      <p>Open the Simulating ANOVA Tables applet: <url href="http://www.rossmanchance.com/applets/AnovaSim.html">AnovaSim</url>.</p>
-      <p>Set each population mean to 23, sample sizes to 120, 142, and 131, and population SD to 3.</p>
-
-      <exercise xml:id="inv5-5-e" label="I5.5.e">
-        <title>First Simulation Draw</title>
-        <statement>
-          <p>(e) Press Draw Samples once. What F-statistic and p-value do you obtain?</p>
-        </statement>
-        <response/>
-        <solution>
-          <p>Results will vary.</p>
-        </solution>
-      </exercise>
 
       <exercise xml:id="inv5-5-f" label="I5.5.f">
         <title>Second Simulation Draw</title>
         <statement>
-          <p>(f) Press Draw Samples again. Do you get the same F and p-value? Why or why not?</p>
+          <p>Press the Draw Samples button again. Did you obtain the same <em>F</em>-statistic and p-value? Why not?</p>
         </statement>
         <response/>
         <solution>
@@ -132,7 +48,7 @@
       <exercise xml:id="inv5-5-g" label="I5.5.g">
         <title>Many Draws Under Null</title>
         <statement>
-          <p>(g) Draw 10-20 more times and track boxplots, F, and p-values. Did you ever get p-value below 0.05? Is that possible under the null? Would it be surprising?</p>
+          <p>Press the Draw Samples button 10-20 more times, watching how the boxplots, F, and p-values change. Did you ever obtain a p-value below 0.05? Is this possible? Would it be surprising? Explain.</p>
         </statement>
         <response/>
         <solution>
@@ -143,7 +59,7 @@
       <exercise xml:id="inv5-5-h" label="I5.5.h">
         <title>Increase One Mean</title>
         <statement>
-          <p>(h) Change <m>\mu_1</m> to 24 and draw 10-20 times. Do p-values tend to be larger or smaller than in part (g)? Explain.</p>
+          <p>Change the value of <m>\mu_1</m> to 24. Press the Draw Samples button 10-20 times. Do the resulting p-values tend to be larger or smaller than in (g)? Explain why this makes sense.</p>
         </statement>
         <response/>
         <solution>
@@ -154,7 +70,7 @@
       <exercise xml:id="inv5-5-i" label="I5.5.i">
         <title>Reduce Sample Sizes</title>
         <statement>
-          <p>(i) Change each sample size to 20 and draw 10-20 times. Do p-values tend to be larger or smaller than in part (h)? Explain.</p>
+          <p>Change each of the sample sizes to 20 and press Draw Samples 10-20 times. Do the resulting p-values tend to be larger or smaller than in (h)? Explain why this makes sense.</p>
         </statement>
         <response/>
         <solution>
@@ -165,7 +81,7 @@
       <exercise xml:id="inv5-5-j" label="I5.5.j">
         <title>Increase Population SD</title>
         <statement>
-          <p>(j) Draw until p-value is below 0.3, then increase <m>\sigma</m> to 7. How does the p-value change and why?</p>
+          <p>Press Draw Samples until you have a p-value less than 0.3. Now change the value of <m>\sigma</m> to 7. How does this affect the magnitude of the p-value? Explain why this relationship makes sense.</p>
         </statement>
         <response/>
         <solution>
@@ -176,7 +92,7 @@
       <exercise xml:id="inv5-5-k" label="I5.5.k">
         <title>Further Increase Mean Separation</title>
         <statement>
-          <p>(k) Continue increasing <m>\mu_1</m>. How does the p-value generally change? Explain.</p>
+          <p>How does the p-value generally change if you now continue to increase the value of <m>\mu_1</m>? Explain why this relationship makes sense.</p>
         </statement>
         <response/>
         <solution>
@@ -185,33 +101,91 @@
       </exercise>
     </paragraphs>
 
-    <p><alert>Discussion:</alert> Under a true null hypothesis, p-values are uniformly distributed between 0 and 1. Power increases when group means are farther apart, when within-group variability is smaller, and when sample sizes are larger.</p>
-
-    <p>In ANOVA, a Type I error means concluding at least one population mean differs when all are equal. A Type II error means failing to detect differences when at least one population mean actually differs.</p>
-
-    <exercise xml:id="inv5-5-practice-a" label="I5.5A">
-      <title>Practice Problem 5.5A</title>
-      <statement>
-        <p>Analyze Dr. Spock venire percentages by judge (see <url href="http://www.rossmanchance.com/iscam2/data/SpockPers.txt">SpockPers.txt</url>):</p>
-        <p>(a) What do you learn from this analysis that the earlier chi-squared analysis did not show? Why is it useful?</p>
-        <p>(b) Produce numerical and graphical summaries across judges.</p>
-        <p>(c) Carry out ANOVA to test whether at least one judge has a different mean percentage.</p>
-        <p>(d) Comment on whether ANOVA technical conditions are met.</p>
-      </statement>
-      <response/>
-    </exercise>
-
-    <exercise xml:id="inv5-5-practice-b" label="I5.5B">
-      <title>Practice Problem 5.5B</title>
-      <statement>
-        <p>Revisit the Disability Discrimination study and compare wheelchair versus amputation groups only.</p>
-        <p>(a) Carry out a two-sided pooled two-sample t-test.</p>
-        <p>(b) Carry out ANOVA for the same two groups.</p>
-        <p>(c) Compare p-values and infer how the t and F statistics are related.</p>
-        <p>(d) Describe when two-sample t procedures are preferred and when ANOVA is preferred.</p>
-      </statement>
-      <response/>
-    </exercise>
-
+    <paragraphs>
+      <title>Discussion</title>
+      <p>If the null hypothesis is true, then the p-value should vary uniformly between 0 and 1. In this case, the p-value will be less than 0.05 in 5% of all random samples, so 5% of samples would lead you to reject the null hypothesis even when it is true.</p>
+      <p>When the population means are further apart, the p-value is smaller. When the within-group variability is larger, the p-value is larger. When the sample sizes are larger and there is a difference among the population means, the p-value is smaller.</p>
+      <p>The p-value of any particular study is random, so we need to remember Type I and Type II errors. Committing a Type I error with analysis of variance indicates that we concluded the population means differ when they really do not differ. A Type II error indicates that we failed to conclude that at least one population mean differs when the population means are in actuality not all equal.</p>
+    </paragraphs>
   </exercises>
+
+  <subsection xml:id="practice-5-5a">
+    <title>Practice Problem 5.5A</title>
+
+    <introduction>
+      <p>Another way to analyze the data for the trial of Dr. Spock is to look at the percentages of women on the different venires and determine whether the mean percentage of women is equal across the seven judges. These data are in <url href="http://www.rossmanchance.com/iscam2/data/SpockPers.txt">SpockPers.txt</url>.</p>
+    </introduction>
+
+    <exercise xml:id="practice-5-5-1" label="P5.5A.1">
+      <title>What New Information Does ANOVA Add?</title>
+      <statement>
+        <p>Explain what information we learn from analyzing the data this way that we did not see when we carried out the chi-squared test on the overall proportion of women for each judge. Why might this information be useful?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-5-2" label="P5.5A.2">
+      <title>Summarize Judge Percentages</title>
+      <statement>
+        <p>Produce numerical and graphical summaries to compare the percentages across the seven judges.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-5-3" label="P5.5A.3">
+      <title>Run ANOVA on Judge Percentages</title>
+      <statement>
+        <p>Carry out an ANOVA to test whether at least one judge has a different mean percentage. Did you state the null and alternative hypotheses in terms of population parameters or in terms of treatment effects?</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-5-4" label="P5.5A.4">
+      <title>Check Technical Conditions</title>
+      <statement>
+        <p>Comment on whether you believe the technical conditions for this procedure are met.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice-5-5b">
+    <title>Practice Problem 5.5B</title>
+
+    <introduction>
+      <p>Recall the Disability Discrimination study (<xref ref="inv-5-4" text="custom">Investigation 5.4</xref>). Suppose the researchers had been most interested in comparing the results for those in a wheelchair to those with leg amputation.</p>
+    </introduction>
+
+    <exercise xml:id="practice-5-5-5" label="P5.5B.1">
+      <title>Two-sample <m>t</m>-test</title>
+      <statement>
+        <p>Carry out a two-sided two-sample pooled <em>t</em>-test (use the technology option that assumes the variances are equal) to assess whether there is a statistically significant difference in the average ratings assigned to these two groups.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-5-6" label="P5.5B.2">
+      <title>ANOVA for the Same Two Groups</title>
+      <statement>
+        <p>Carry out an analysis of variance to assess whether there is a statistically significant difference in the average ratings assigned to these two groups.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-5-7" label="P5.5B.3">
+      <title>Relate the <m>t</m> and <m>F</m> Results</title>
+      <statement>
+        <p>How are the p-values from the two approaches related? How do you think the <em>t</em>-test statistic and the <em>F</em>-test statistic are related? Explain.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-5-5-8" label="P5.5B.4">
+      <title>When to Use <m>t</m> vs ANOVA</title>
+      <statement>
+        <p>Suggest, in general, a situation where the two-sample <em>t</em>-procedure would be preferred and a situation where the ANOVA procedure would be preferred.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
 </section>
