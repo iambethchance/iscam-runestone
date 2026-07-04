@@ -6,10 +6,17 @@
     <title>The Study</title>
 
     <introduction>
-      <p>Some have cited <q>Drive for show, putt for dough</q> as the oldest cliché in golf. The message is that the best way to improve one's scoring average in golf is to focus on improving putting, as opposed to, say, distance off the initial drive, even though the latter usually garners more ooh's and aah's. To see whether this philosophy has merit, we need to examine whether there is a relationship between putting ability and overall scoring, and whether that relationship is stronger than the relationship between scoring average and driving distance. The file <url href="http://www.rossmanchance.com/iscam3/data/golfers18.txt">golfers18.txt</url> contains the 2018 statistics (through the September 2018, downloaded May 2019) on the top 100 PGA golfers (based on scoring), downloaded from <url href="http://www.pgatour.com/stats/">http://www.pgatour.com/stats/</url>. Three of the variables recorded include:</p>
-      <p><term>Scoring average:</term> A weighted average which takes the stroke average of the field into account. It is computed by adding a player's total strokes to an adjustment, and dividing by the total rounds played. This average is subtracted from par to create an adjustment for each round. Keep in mind that in golf low scores, as measured by number of strokes, are better than high scores.</p>
-      <p><term>Driving distance:</term> Average number of yards per measured drive. These drives are measured on two holes per round, carefully selected to face in opposite directions to counteract the effects of wind. Drives are measured to the point where they come to rest, regardless of whether or not they hit the fairway.</p>
-      <p><term>Putting average:</term> On holes where the green is hit in regulation, the total number of putts is divided by the total holes played.</p>
+      <sidebyside widths="63% 34%" margins="0% 0%" valign="top">
+        <stack>
+          <p>Some have cited <q>Drive for show, putt for dough</q> as the oldest cliché in golf. The message is that the best way to improve one's scoring average in golf is to focus on improving putting, as opposed to, say, distance off the initial drive, even though the latter usually garners more ooh's and aah's. To see whether this philosophy has merit, we need to examine whether there is a relationship between putting ability and overall scoring, and whether that relationship is stronger than the relationship between scoring average and driving distance. The file <url href="http://www.rossmanchance.com/iscam3/data/golfers18.txt">golfers18.txt</url> contains the 2018 statistics (through the September 2018, downloaded May 2019) on the top 100 PGA golfers (based on scoring), downloaded from <url href="http://www.pgatour.com/stats/">http://www.pgatour.com/stats/</url>. Three of the variables recorded include:</p>
+          <ul>
+            <li><p><term>Scoring average:</term> A weighted average which takes the stroke average of the field into account. It is computed by adding a player's total strokes to an adjustment, and dividing by the total rounds played. This average is subtracted from par to create an adjustment for each round. Keep in mind that in golf low scores, as measured by number of strokes, are better than high scores.</p></li>
+            <li><p><term>Driving distance:</term> Average number of yards per measured drive. These drives are measured on two holes per round, carefully selected to face in opposite directions to counteract the effects of wind. Drives are measured to the point where they come to rest, regardless of whether or not they hit the fairway.</p></li>
+            <li><p><term>Putting average:</term> On holes where the green is hit in regulation, the total number of putts is divided by the total holes played.</p></li>
+          </ul>
+        </stack>
+        <image source="images/inv5-7-quad-putting.png" width="100%" decorative="yes"/>
+      </sidebyside>
     </introduction>
 
     <exercise xml:id="inv5-7-a">
@@ -77,7 +84,7 @@
     <p>Notice that when a point <m>(x_i, y_i)</m> is in quadrant I or III, the term <m>\left( \frac{x_i - \bar{x}}{s_x} \right)\left( \frac{y_i - \bar{y}}{s_y} \right)</m> will be positive. When a point is in quadrant II or IV, this term is negative. Where there is a positive association, most of the points are in quadrants I and III, so the correlation coefficient is positive. Similarly, when there is a negative association, most of the points will be in quadrants II and IV, so the correlation coefficient turns out to be negative. The more observations that are in the <q>aligned</q> quadrants, and the closer the points fall to a straight line, the larger the value of the correlation coefficient.</p>
 
     <exercise xml:id="inv5-7-e">
-      <title>Units of r</title>
+      <title>Units of <m>r</m></title>
       <statement>
         <p>Let <m>x</m> represent the average number of putts and <m>y</m> represent the average number of strokes. Use the definition of the correlation coefficient above to determine the measurement units of the correlation coefficient <m>r</m> in terms of putts and strokes.</p>
       </statement>
@@ -86,7 +93,7 @@
     </exercise>
 
     <exercise xml:id="inv5-7-f">
-      <title>Interpret r=0</title>
+      <title>Interpret <m>r = 0</m></title>
       <statement>
         <p>If the correlation coefficient between two variables equals zero, what do you think the scatterplot will look like?</p>
       </statement>
@@ -118,20 +125,49 @@
         <p>The following scatterplots display 7 pairs of variables for these golfers. Rank these graphs in order from strongest negative correlation to strongest positive correlation.</p>
         <sidebyside widths="30% 30% 30%" valign="top">
           <stack><p><alert>A:</alert></p><image source="images/inv5-7-rank-a.png"><description><p>Seven scatterplots labeled A through G, each of a pair of PGA golf statistics, shown for ranking by correlation strength.</p></description></image></stack>
-          <stack><p><alert>B:</alert></p><image source="images/inv5-7-rank-b.png"/></stack>
-          <stack><p><alert>C:</alert></p><image source="images/inv5-7-rank-c.png"/></stack>
+          <stack><p><alert>B:</alert></p><image source="images/inv5-7-rank-b.png" decorative="yes"/></stack>
+          <stack><p><alert>C:</alert></p><image source="images/inv5-7-rank-c.png" decorative="yes"/></stack>
         </sidebyside>
         <sidebyside widths="30% 30% 30%" valign="top">
-          <stack><p><alert>D:</alert></p><image source="images/inv5-7-rank-d.png"/></stack>
-          <stack><p><alert>E:</alert></p><image source="images/inv5-7-rank-e.png"/></stack>
-          <stack><p><alert>F:</alert></p><image source="images/inv5-7-rank-f.png"/></stack>
+          <stack><p><alert>D:</alert></p><image source="images/inv5-7-rank-d.png" decorative="yes"/></stack>
+          <stack><p><alert>E:</alert></p><image source="images/inv5-7-rank-e.png" decorative="yes"/></stack>
+          <stack><p><alert>F:</alert></p><image source="images/inv5-7-rank-f.png" decorative="yes"/></stack>
         </sidebyside>
         <sidebyside widths="30%" valign="top">
-          <stack><p><alert>G:</alert></p><image source="images/inv5-7-rank-g.png"/></stack>
+          <stack><p><alert>G:</alert></p><image source="images/inv5-7-rank-g.png" decorative="yes"/></stack>
         </sidebyside>
       </statement>
-      <response/>
-      <solution><p>rankings may vary.</p></solution>
+      <matches>
+        <match order="1">
+          <premise>Graph E</premise>
+          <response>1 (strongest negative)</response>
+        </match>
+        <match order="2">
+          <premise>Graph B</premise>
+          <response>2</response>
+        </match>
+        <match order="3">
+          <premise>Graph F</premise>
+          <response>3</response>
+        </match>
+        <match order="4">
+          <premise>Graph C</premise>
+          <response>4</response>
+        </match>
+        <match order="5">
+          <premise>Graph A</premise>
+          <response>5</response>
+        </match>
+        <match order="6">
+          <premise>Graph G</premise>
+          <response>6</response>
+        </match>
+        <match order="7">
+          <premise>Graph D</premise>
+          <response>7 (strongest positive)</response>
+        </match>
+      </matches>
+      <solution><p>From strongest negative to strongest positive: E, B, F, C, A, G, D.</p></solution>
     </exercise>
 
     <exercise xml:id="inv5-7-j">
@@ -156,16 +192,19 @@
     </exercise>
 
     <exercise xml:id="inv5-7-k">
-      <title>Range of r</title>
+      <title>Range of <m>r</m></title>
       <statement>
-        <p>Based on these correlation coefficient values and/or the definition/formula, what do you think is the largest value that <m>r</m> can assume? What is the smallest value? [Hint: It's not zero.]</p>
+        <p>Based on these correlation coefficient values and/or the definition/formula, what do you think is the largest value that <m>r</m> can assume? What is the smallest value?</p>
+        <hint>
+          <p>It's not zero.</p>
+        </hint>
       </statement>
       <response/>
       <solution><p>smallest in absolute value: 0, largest in absolute value: 1.</p></solution>
     </exercise>
 
     <exercise xml:id="inv5-7-l">
-      <title>Sign of r</title>
+      <title>Sign of <m>r</m></title>
       <statement>
         <p>If the association is negative, what values will <m>r</m> have? What if the association is positive?</p>
       </statement>
@@ -174,7 +213,7 @@
     </exercise>
 
     <exercise xml:id="inv5-7-m">
-      <title>Meaning of r near 0</title>
+      <title>Meaning of <m>r</m> near 0</title>
       <statement>
         <p>What does a correlation coefficient equal to zero signify?</p>
       </statement>
@@ -183,7 +222,7 @@
     </exercise>
 
     <exercise xml:id="inv5-7-n">
-      <title>Meaning of r near +-1</title>
+      <title>Meaning of <m>r</m> near +-1</title>
       <statement>
         <p>What does a correlation coefficient close to 1 or <m>-1</m> signify?</p>
       </statement>
@@ -208,7 +247,10 @@
     <paragraphs>
       <title>Discussion</title>
       <p>The correlation coefficient, <m>r</m>, provides a measure of the strength and direction of the linear relationship between two variables. This is a unitless quantity which has the advantage that it will be invariant to changes in scale (if we started looking at money in British pounds instead of American dollars, our measure of the strength of the relationship will not change) or if we reverse which we call the explanatory and response variables. A value of <m>r</m> close to zero indicates that the variables do not have a strong linear relationship. However, this does not preclude them from having a very strong but non-linear relationship. A scatterplot should be examined before interpreting the value of <m>r</m>. If the relationship is not linear, there are alternative measures of the strength of the association that can be used or the variables can be transformed and the transformed variables analyzed instead. If the relationship is linear, a correlation coefficient close to 1 or <m>-1</m> indicates a very strong relationship. The values of <m>r</m> form a continuum: as the linear association becomes weaker, the value of <m>r</m> becomes closer to zero.</p>
-      <p>The correlation coefficient will always be a number between <m>-1</m> and 1, inclusive. It will obtain the value of 1 or <m>-1</m> if the points fall along a perfect line (with negative or positive slope, respectively).</p>
+      <assemblage>
+        <title>Insight</title>
+        <p>The correlation coefficient will always be a number between <m>-1</m> and 1, inclusive. It will obtain the value of 1 or <m>-1</m> if the points fall along a perfect line (with negative or positive slope, respectively).</p>
+      </assemblage>
     </paragraphs>
   </exercises>
 
