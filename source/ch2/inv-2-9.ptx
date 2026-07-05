@@ -54,25 +54,26 @@
       <p>The <term>plug-in principle</term> states that the standard deviation of the bootstrap distribution provides a reasonable estimate of the standard deviation of the sampling distribution of the statistic.</p>
     </assemblage>
 
+    <p>Use technology to take a bootstrap sample from the heroin data.</p>
+
     <exercise xml:id="inv2-9-c">
       <title>Take a bootstrap sample</title>
       <statement>
-        <p>Use technology to take a bootstrap sample from the heroin data.</p>
-        <ul>
-            <li>
-              <p>In <alert>Sampling From Population</alert> applet: Follow the link for the <url href="https://www.rossmanchance.com/applets/OneSample.html?population=bootstrap">Bootstrapping</url> variation. Paste in the data and select the <em>times</em> variable. Check Show Sampling Options and set the Sample size to 238. Press Draw Samples. Set the Statistic radio button to Median.</p>
-            </li>
-            <li>
-              <p>In <alert>R</alert>:</p>
-              <p><cd>sample1 = sample(x=times, size=238, replace = TRUE)</cd></p>
-            </li>
-            <li>
-              <p>In <alert>JMP</alert>: In the <alert>Analyze &gt; Distribution</alert> output, in the <alert>Quantiles</alert> section, right click, and from the pop up menu select <alert>Bootstrap</alert>. Set the <alert>Number of Bootstrap Samples</alert> to one and press <alert>OK</alert>. This will open a new data window with the statistics from the bootstrap sample.</p>
-              <image source="tech_images/inv2-9-jmp-bootstrap.png" width="45%">
-                <description><p>JMP Quantiles output with right-click menu showing the Bootstrap option circled</p></description>
-              </image>
-            </li>
-        </ul>
+        <hint>
+          <title>Applet Instructions</title>
+          <p>In <alert>Sampling From Population</alert> applet: Follow the link for the <url href="https://www.rossmanchance.com/applets/OneSample.html?population=bootstrap">Bootstrapping</url> variation. Paste in the data and select the <em>times</em> variable. Check Show Sampling Options and set the Sample size to 238. Press Draw Samples. Set the Statistic radio button to Median.</p>
+        </hint>
+        <hint>
+          <title>R Instructions</title>
+          <p><cd>sample1 = sample(x=times, size=238, replace = TRUE)</cd></p>
+        </hint>
+        <hint>
+          <title>JMP Instructions</title>
+          <p>In the <alert>Analyze &gt; Distribution</alert> output, in the <alert>Quantiles</alert> section, right click, and from the pop up menu select <alert>Bootstrap</alert>. Set the <alert>Number of Bootstrap Samples</alert> to one and press <alert>OK</alert>. This will open a new data window with the statistics from the bootstrap sample.</p>
+          <image source="tech_images/inv2-9-jmp-bootstrap.png" width="45%">
+            <description><p>JMP Quantiles output with right-click menu showing the Bootstrap option circled</p></description>
+          </image>
+        </hint>
         <p>Report the median of your bootstrap sample.</p>
       </statement>
       <response/>
@@ -168,27 +169,28 @@ bootstrapmedians = sapply(resamples, median)
       <title>Discussion</title>
       <p>Once you get an estimate of the standard deviation of the statistic, there is still some consideration of how to construct a confidence interval. In this case, the distribution of medians should look fairly symmetric, so a symmetric confidence interval can work. In other cases, there are more complicated <q>adjustments</q> that can be made to get a bootstrap confidence interval. Discussion of these methods is beyond of the scope of this text, but you have seen an example of the power of bootstrapping <mdash/> you can create a distribution <em>for any statistic</em> that should have the same variability as the sampling distribution of that statistic, without having to pretend you know anything about the population!</p>
     </paragraphs>
-
+<paragraphs>
+        <p>Repeat this analysis, but now using the upper quartile (75% percentile) as the statistic.</p>
+        <hint>
+          <title>Applet Instructions</title>
+          <p>Select the Percentile radio button. Enter .75 in the box that appears and press Draw Samples.</p>
+        </hint>
+        <hint>
+          <title>R Instructions</title>
+          <p><cd>
+quantile(heroin$times, c(.75))
+bootstrap75th &lt;- sapply(resamples, p=.75)
+          </cd></p>
+        </hint>
+        <hint>
+          <title>JMP Instructions</title>
+          <p>Return to the earlier data window and select the bootstrap results for the 75.0% quartile.</p>
+        </hint>
+</paragraphs>
     <exercise xml:id="inv2-9-h">
       <title>Bootstrap the upper quartile</title>
       <statement>
-        <p>Repeat this analysis, but now using the upper quartile (75% percentile) as the statistic.</p>
-        <ul>
-            <li>
-              <p>In <alert>applet</alert>, select the Percentile radio button. Enter .75 in the box that appears and press Draw Samples.</p>
-            </li>
-            <li>
-              <p>In <alert>R</alert>:</p>
-              <p><cd>
-quantile(heroin$times, c(.75))
-bootstrap75th &lt;- sapply(resamples, p=.75)
-              </cd></p>
-            </li>
-            <li>
-              <p>In <alert>JMP</alert>: Return to the earlier data window and select the bootstrap results for the 75.0% quartile.</p>
-            </li>
-        </ul>
-      </statement>
+<p>Interpret your results.</p>      </statement>
       <response/>
       <solution>
         <p>In R, observed 585.5</p>
