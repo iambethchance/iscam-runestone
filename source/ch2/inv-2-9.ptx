@@ -30,7 +30,7 @@
   <exercise xml:id="inv2-9-b">
     <title>Consider a mathematical model</title>
     <statement>
-      <p>Explain why is <em>not</em> likely that we could find a simple mathematical model for the distribution of this variable.</p>
+      <p>Explain why it is <em>not</em> likely that we could find a simple mathematical model for the distribution of this variable.</p>
     </statement>
     <response/>
     <solution>
@@ -179,7 +179,7 @@ bootstrapmedians = sapply(resamples, median)
           <title>R Instructions</title>
           <p><cd>
 quantile(heroin$times, c(.75))
-bootstrap75th &lt;- sapply(resamples, p=.75)
+bootstrap75th &lt;- sapply(resamples, quantile, p=.75)
           </cd></p>
         </hint>
         <hint>
