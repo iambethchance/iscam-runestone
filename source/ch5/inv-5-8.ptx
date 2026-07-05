@@ -53,17 +53,16 @@
         <p><me>\text{residual}_i = y_i - \hat{y}_i</me></p>
       </assemblage>
 
-      <p>The table below shows the residuals for each of the above heights if we use the mean height, 67.75 inches, as the predicted value for each person. Calculate the last two residuals to complete the table.</p>
-      <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
-        <row header="yes"><cell>Height</cell><cell>74</cell><cell>66</cell><cell>77</cell><cell>67</cell><cell>56</cell><cell>65</cell><cell>64</cell><cell>70</cell><cell>62</cell><cell>67</cell></row>
-        <row><cell>Residual</cell><cell>6.25</cell><cell>-1.75</cell><cell>9.25</cell><cell>-.75</cell><cell>-11.75</cell><cell>-2.75</cell><cell>-3.75</cell><cell>2.25</cell><cell>-5.75</cell><cell>-.75</cell></row>
-        <row header="yes"><cell>Height</cell><cell>66</cell><cell>64</cell><cell>69</cell><cell>73</cell><cell>74</cell><cell>70</cell><cell>65</cell><cell>72</cell><cell>71</cell><cell>63</cell></row>
-        <row><cell>Residual</cell><cell>-1.75</cell><cell>-3.75</cell><cell>1.25</cell><cell>5.25</cell><cell>6.25</cell><cell>2.25</cell><cell>-2.75</cell><cell>4.25</cell><cell></cell><cell></cell></row>
-      </tabular>
-
       <exercise xml:id="inv5-8-d">
         <title>Compute Residuals</title>
         <statement>
+          <p>The table below shows the residuals for each of the above heights if we use the mean height, 67.75 inches, as the predicted value for each person. Calculate the last two residuals to complete the table.</p>
+          <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+            <row><cell>Height</cell><cell>74</cell><cell>66</cell><cell>77</cell><cell>67</cell><cell>56</cell><cell>65</cell><cell>64</cell><cell>70</cell><cell>62</cell><cell>67</cell></row>
+            <row><cell>Residual</cell><cell>6.25</cell><cell>-1.75</cell><cell>9.25</cell><cell>-.75</cell><cell>-11.75</cell><cell>-2.75</cell><cell>-3.75</cell><cell>2.25</cell><cell>-5.75</cell><cell>-.75</cell></row>
+            <row><cell>Height</cell><cell>66</cell><cell>64</cell><cell>69</cell><cell>73</cell><cell>74</cell><cell>70</cell><cell>65</cell><cell>72</cell><cell>71</cell><cell>63</cell></row>
+            <row><cell>Residual</cell><cell>-1.75</cell><cell>-3.75</cell><cell>1.25</cell><cell>5.25</cell><cell>6.25</cell><cell>2.25</cell><cell>-2.75</cell><cell>4.25</cell><cell><var width="5"/></cell><cell><var width="5"/></cell></row>
+          </tabular>
           <p>How often did we overestimate? How often did we underestimate?</p>
         </statement>
         <response/>
@@ -94,7 +93,7 @@
           <p>Calculate the sum of the residuals from <xref ref="inv5-8-d" text="custom">Question 4</xref>. Explain why taking the sum of residuals is not a useful way to measure overall prediction error.</p>
         </statement>
         <response/>
-        <solution><p>The sum is zero.</p></solution>
+        <solution><p>The sum is (will always be) zero.</p></solution>
       </exercise>
 
       <exercise xml:id="inv5-8-h">
@@ -118,7 +117,10 @@
       <exercise xml:id="inv5-8-j">
         <title>Calculus Minimization</title>
         <statement>
-          <p>Suppose that you want to use a single number (call it <m>m</m>) for predicting height. Use calculus to determine <m>m</m>, as a function of the data <m>y_i</m>'s, to minimize the sum of squared residuals from that prediction. [Hints: You are choosing <m>m</m> to minimize <m>S = \sum_{i=1}^{n}(y_i - m)^2</m>. Take the derivative with respect to <m>m</m>, set it equal to zero, and solve for <m>m</m>.] Interpret your answer for <m>m</m>.</p>
+          <p>Suppose that you want to use a single number (call it <m>m</m>) for predicting height. Use calculus to determine <m>m</m>, as a function of the data <m>y_i</m>'s, to minimize the sum of squared residuals from that prediction. Interpret your answer for <m>m</m>.</p>
+          <hint>
+            <p>You are choosing <m>m</m> to minimize <m>S = \sum_{i=1}^{n}(y_i - m)^2</m>. Take the derivative with respect to <m>m</m>, set it equal to zero, and solve for <m>m</m>.</p>
+          </hint>
         </statement>
         <response/>
         <solution>
@@ -153,10 +155,11 @@
 
       <p>If you now place your mouse over the green square on one of the ends of the line and drag, you can change the slope of the line. You can also use the mouse to move the green square in the middle of the line up and down vertically to change the intercept of the line.</p>
 
+          <ul><li><p>Move the line until you feel your line <q>best</q> summarizes the relationship between height and foot length for these data.</p></li></ul>
+
       <exercise xml:id="inv5-8-l">
         <title>Movable Line</title>
         <statement>
-          <ul><li><p>Move the line until you feel your line <q>best</q> summarizes the relationship between height and foot length for these data.</p></li></ul>
           <p>Write down the final equation for your line.</p>
           <hint><p>Use good statistical notation, which means to use variables names (not generic <m>x</m> and <m>y</m>) and to put a <q>hat</q> over the response variable to indicate prediction.</p></hint>
         </statement>
@@ -191,37 +194,37 @@
         <response/>
         <solution><p>The best (smallest) SAE will vary.</p></solution>
       </exercise>
-
-      <ul><li><p>A more common criterion for determining the <q>best</q> line is to instead look at the sum of the squared residuals (or sum of squared errors, SSE). Check the <alert>Show Squared Residuals</alert> box to visually represent them and to determine the SSE value for your line.</p></li></ul>
+<paragraphs><p>A more common criterion for determining the <q>best</q> line is to instead look at the sum of the squared residuals (or sum of squared errors, SSE). </p></paragraphs>
+      <ul><li><p>Check the <alert>Show Squared Residuals</alert> box to visually represent them and to determine the SSE value for your line.</p></li></ul>
       <exercise xml:id="inv5-8-p">
         <title>Squared Error Criterion</title>
         <statement>
-          <p>What is the best SSE in the class?</p>
+          <p>What is the best SSError in the class?</p>
         </statement>
         <response/>
-        <solution><p>The smallest SSE will vary.</p></solution>
+        <solution><p>The smallest SSError will vary.</p></solution>
       </exercise>
 
       <ul><li><p>Continue to adjust your line until you think you have minimized the sum of the squared residuals.</p></li></ul>
       <exercise xml:id="inv5-8-q">
         <title>Improve Line for SSE</title>
         <statement>
-          <p>Report your new equation and new SSE value.</p>
+          <p>Report your new equation and new SSError value.</p>
         </statement>
         <response/>
-        <solution><p>Equation and resulting SSE values will vary.</p></solution>
+        <solution><p>Equation and resulting SSError values will vary.</p></solution>
       </exercise>
 
       <ul><li><p>Now check the <alert>Show Regression Line</alert> box to determine and display the equation for the line that actually does produce the smallest possible sum of squared residuals.</p></li></ul>
       <exercise xml:id="inv5-8-r">
         <title>Least Squares Line</title>
         <statement>
-          <p>Report its equation and SSE value. Did everyone obtain the same line/equation this time? How does it compare to your line? (You can also display the residuals and the squared residuals for this line.)</p>
+          <p>Report its equation and SSError value. Did everyone obtain the same line/equation this time? How does it compare to your line? (You can also display the residuals and the squared residuals for this line.)</p>
         </statement>
         <response/>
         <solution>
           <p>equation: <m>\widehat{\text{height}} = 38.302 + 1.033 \cdot \text{foot size}</m></p>
-          <p><m>SSE = 235</m></p>
+          <p><m>SSError = 235</m></p>
           <p>No, everyone should obtain the same regression line, and no one should have been able to obtain a smaller SSE value.</p>
         </solution>
       </exercise>
@@ -262,7 +265,10 @@
       <exercise xml:id="inv5-8-u">
         <title>Solve Normal Equations</title>
         <statement>
-          <p>Set these (partial) derivatives equal to zero and solve simultaneously for the values of <m>b_0</m> and <m>b_1</m>. [Hints: Solve the first equation for <m>b_0</m>. Then solve the second equation for <m>b_1</m> (substituting in the expression for <m>b_0</m> using the summation notation).]</p>
+          <p>Set these (partial) derivatives equal to zero and solve simultaneously for the values of <m>b_0</m> and <m>b_1</m>.</p>
+          <hint>
+            <p>Solve the first equation for <m>b_0</m>. Then solve the second equation for <m>b_1</m> (substituting in the expression for <m>b_0</m> using the summation notation).</p>
+          </hint>
         </statement>
         <response/>
         <solution>

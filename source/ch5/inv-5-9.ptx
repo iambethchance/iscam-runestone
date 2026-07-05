@@ -27,24 +27,31 @@
       <title>Initial Scatterplot</title>
       <statement>
         <p>Produce a scatterplot to determine whether the IMDB rating appears to help predict the box office income (adjusted). Describe the relationship between the two variables as exhibited in the scatterplot.</p>
-        <image source="images/inv5-9-scatter.png" width="65%">
-          <description><p>Scatterplot of adjusted box office revenue (in dollars) versus IMDB rating, showing a weak positive association with two very high revenue outliers.</p></description>
-        </image>
       </statement>
       <response/>
-      <solution><p>If we treat box office revenue as the response variable there is a moderate positive linear relationship between box office revenue and the IMDB ratings.</p></solution>
+      <solution><p>        <image source="images/inv5-9-scatter.png" width="65%">
+          <description><p>Scatterplot of adjusted box office revenue (in dollars) versus IMDB rating, showing a weak positive association with two very high revenue outliers.</p></description>
+        </image>
+If we treat box office revenue as the response variable there is a moderate positive linear relationship between box office revenue and the IMDB ratings.</p></solution>
     </exercise>
 
     <exercise xml:id="inv5-9-c">
       <title>Largest Residuals</title>
       <statement>
         <p>Identify the two or three points that you believe have the largest (in absolute value) residuals. Identify these movies by name.</p>
-        <ul>
-          <li><p>In Two Quantitative Variables applet: You can mouse-click on an observation to reveal the row number. (You can also make movie the Color by variable and then mouse-click.)</p></li>
-          <li><p>In R: You can use a command like <c>movies[adjusted &gt; 250, ]</c></p></li>
-          <li><p>In JMP: Drag your mouse in the scatterplot to highlight the block of points. The rest will grey out. These observations will now be highlighted in the Data window. Use the Escape button in the Data window to unselect.</p></li>
-        </ul>
         <p>What does it mean for these movies to have such large residuals?</p>
+        <hint>
+          <title>Applet Instructions</title>
+          <p>In Two Quantitative Variables applet: You can mouse-click on an observation to reveal the row number. (You can also make movie the Color by variable and then mouse-click.)</p>
+        </hint>
+        <hint>
+          <title>R Instructions</title>
+          <p>You can use a command like <c>movies[adjusted &gt; 250, ]</c></p>
+        </hint>
+        <hint>
+          <title>JMP Instructions</title>
+          <p>Drag your mouse in the scatterplot to highlight the block of points. The rest will grey out. These observations will now be highlighted in the Data window. Use the Escape button in the Data window to unselect.</p>
+        </hint>
       </statement>
       <response/>
       <solution><p>The movies with the largest residuals are <em>Titanic</em> and <em>Avatar</em>. These movies had much higher box office revenues than we would have predicted based on the IMDB ratings.</p></solution>
@@ -86,7 +93,7 @@
     <exercise xml:id="inv5-9-g">
       <title>Interpret r-squared and s</title>
       <statement>
-        <p>Report the value of <m>r^2</m> and <m>s</m> provide interpretations in this context.</p>
+        <p>Report the values of <m>r^2</m> and <m>s</m> and provide interpretations in this context.</p>
       </statement>
       <response/>
       <solution>
@@ -96,8 +103,7 @@
     </exercise>
 
     <paragraphs>
-      <title>Technology Detour: Creating a Coded Scatterplot (with Separate Lines)</title>
-      <p>Create a coded scatterplot, with different regression lines for each MPAA rating (rating).</p>
+      <title>Technology Detour:</title>
       <exercise xml:id="inv5-9-tech-detour-coded">
         <title>Coded Scatterplot Instructions</title>
         <statement>
@@ -122,6 +128,9 @@ for (i in 1:4){
               <li><p>Uncheck the box for Confidence of Fit.</p></li>
               <li><p>Drag the <q>MPAArating</q> variable to the Overlay box.</p></li>
             </ul>
+            <image source="images/inv-5-9-jmp-icons.png" width="20%">
+              <description><p>Row of three JMP Graph Builder element icons; the third icon adds the regression line.</p></description>
+            </image>
           </hint>
           <hint>
             <title>Applet Instructions</title>
@@ -143,7 +152,16 @@ for (i in 1:4){
         <p>Describe what this coded scatterplot reveals about whether the relationship between box office income and IMDB ratings differs across the various MPAA rating categories. In particular, does any rating category tend to have higher box office values than you would expect for the score they received from IMDB reviewers? Is there a rating category tending toward lower box office revenues than expected? Explain.</p>
       </statement>
       <response/>
-      <solution><p>Most of the R movies are below the overall. The PG movies tend to be above the others with the same IMDB ratings. (Observations may vary a bit).</p></solution>
+      <solution>
+        <p>R and applet output</p>
+        <image source="images/inv-5-9-sol-h1.jpg" width="48%">
+          <description><p>R coded scatterplot of adjusted revenue (millions) versus IMDB rating with separate regression lines and a legend for the G, PG, PG-13, and R rating categories.</p></description>
+        </image>
+        <image source="images/inv-5-9-sol-h2.jpg" width="48%">
+          <description><p>Applet Results with four separate scatterplots by MPAA rating (PG-13, PG, G, R), each with its own regression line, and the Show equation output listing the four fitted equations.</p></description>
+        </image>
+        <p>Most of the R movies are below the overall. The PG movies tend to be above the others with the same IMDB ratings. (Observations may vary a bit).</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="inv5-9-i">
@@ -152,15 +170,28 @@ for (i in 1:4){
         <p>Repeat <xref ref="inv5-9-h" text="custom">Question 8</xref> using the primary movie genre (e.g., comedy) as the categorical variable (Genre_1). Summarize what you learn.</p>
       </statement>
       <response/>
-      <solution><p>Most of the Fantasy movies appear to earn more than predicted based on the IMDB ratings. (Observations may vary a bit). Would be fruitful to collapse the variable to a smaller number of categories.</p></solution>
+      <solution>
+        <image source="images/inv-5-9-sol-i.jpg" width="55%">
+          <description><p>Applet scatterplot of adjusted revenue versus IMDB rating with a separate regression line for each of the many Genre_1 categories, with a legend listing the genres.</p></description>
+        </image>
+        <p>Most of the Fantasy movies appear to earn more than predicted based on the IMDB ratings. (Observations may vary a bit). Would be fruitful to collapse the variable to a smaller number of categories.</p>
+      </solution>
     </exercise>
 
     <exercise xml:id="inv5-9-j">
       <title>Remove Two Highest-Revenue Movies</title>
       <statement>
-        <p>In analyzing these movies, the researchers also looked at the data set after removing the 2 movies that earned more than $2 billion. Subset the data (e.g., Investigation 2.1) and then examine the scatterplot, correlation coefficient, and least-squares regression line for predicting the movie income from the IMDB ratings for these data.</p>
+        <p>In analyzing these movies, the researchers also looked at the data set after removing the 2 movies that earned more than $2 billion. Subset the data (e.g., <xref ref="inv-2-1" text="custom">Investigation 2.1</xref>) and then examine the scatterplot, correlation coefficient, and least-squares regression line for predicting the movie income from the IMDB ratings for these data.</p>
       </statement>
       <response/>
+      <solution>
+        <image source="images/inv-5-9-sol-j1.jpg" width="48%">
+          <description><p>Coded scatterplot of adjusted revenue (millions) versus IMDB rating after removing the two movies that earned more than 2 billion dollars.</p></description>
+        </image>
+        <image source="images/inv-5-9-sol-j2.png" width="30%">
+          <description><p>R coefficients output for the subset data: Intercept -156.84 and imdb_rating slope 97.58.</p></description>
+        </image>
+      </solution>
     </exercise>
 
     <exercise xml:id="inv5-9-k">
@@ -180,7 +211,7 @@ for (i in 1:4){
 
     <assemblage xml:id="study-conclusions-5-9">
       <title>Study Conclusions</title>
-      <p>There does appear to be a weak relationship between the IMDB ratings and the amount of money the movie makes at the box office, with higher rated movies tending to make more money. If the IMDB rating increases by 1 point (out of 10), we predict the movie will make about 110 million more dollars. There are 2 clear outliers in terms of revenue (Avatar and Titanic) but they are not influential in the regression analysis. It is interesting that this model tends to underpredict revenues for PG-13 movies and overpredict revenues for R-rated movies, and that R-rating movies don't seem as <q>impacted</q> by IMDB review scores. A next step in this analysis might be to collapse the number of Genre categories (e.g., combining Adventure, Animation, Fantasy categories, to see if there is a tendency to underpredict their revenues).</p>
+      <p>There does appear to be a weak relationship between the IMDB ratings and the amount of money the movie makes at the box office, with higher rated movies tending to make more money. If the IMDB rating increases by 1 point (out of 10), we predict the movie will make about 110 million more dollars. There are 2 clear outliers in terms of revenue (<em>Avatar</em> and <em>Titanic</em>) but they are not influential in the regression analysis. It is interesting that this model tends to underpredict revenues for PG-13 movies and overpredict revenues for R-rated movies, and that R-rating movies don't seem as <q>impacted</q> by IMDB review scores. A next step in this analysis might be to collapse the number of Genre categories (e.g., combining Adventure, Animation, Fantasy categories, to see whether there is a tendency to underpredict their revenues).</p>
     </assemblage>
   </exercises>
 
@@ -201,7 +232,7 @@ for (i in 1:4){
     <exercise xml:id="practice-5-9-2" label="P5.9.2">
       <title>Investigate with Applet</title>
       <statement>
-        <p>Investigate your conjecture using the Analyzing Two Quantitative Variables applet. Write a short paragraph summarizing your analysis and your observations.</p>
+        <p>Investigate your conjecture using the <url href="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm?hideExtras=1">Analyzing Two Quantitative Variables applet</url>. Write a short paragraph summarizing your analysis and your observations.</p>
       </statement>
       <response/>
     </exercise>
