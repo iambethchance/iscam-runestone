@@ -49,7 +49,7 @@
 
       <assemblage>
         <title>Definition: Residual</title>
-        <p>A <term>residual</term> is the difference between the predicted value and the observed value. If we let <m>y_i</m> represent the <m>i</m>th observed value and <m>\hat{y}_i</m> represent the predicted or <q>fitted</q> value, then</p>
+        <p>A <term>residual</term><idx><h>residual</h><h>difference between observed and predicted value</h></idx> is the difference between the predicted value and the observed value. If we let <m>y_i</m> represent the <m>i</m>th observed value and <m>\hat{y}_i</m> represent the predicted or <q>fitted</q> value, then</p>
         <p><me>\text{residual}_i = y_i - \hat{y}_i</me></p>
       </assemblage>
 
@@ -231,7 +231,7 @@
 
       <assemblage>
         <title>Definition: Least Squares Line</title>
-        <p>The line that minimizes the sum of squared residuals is called the <term>least squares line</term>, or simply the <term>regression line</term>, or even the <term>least squares regression line</term>.</p>
+        <p>The line that minimizes the sum of squared residuals is called the <term>least squares line</term><idx><h>least squares line</h><h>line minimizing sum of squared residuals</h></idx><idx><h>regression line</h></idx>, or simply the <term>regression line</term>, or even the <term>least squares regression line</term>.</p>
       </assemblage>
 
       <exercise xml:id="inv5-8-s">
@@ -346,7 +346,7 @@
 
       <assemblage>
         <title>Definition: Extrapolation</title>
-        <p><term>Extrapolation</term> refers to making predictions outside the range of the explanatory variable values in the data set used to determine the regression line. It is generally ill-advised.</p>
+        <p><term>Extrapolation</term><idx><h>extrapolation</h><h>predicting outside the range of the data</h></idx> refers to making predictions outside the range of the explanatory variable values in the data set used to determine the regression line. It is generally ill-advised.</p>
       </assemblage>
     </paragraphs>
 
@@ -377,7 +377,7 @@
 
       <assemblage>
         <title>Definition: Coefficient of Determination</title>
-        <p>The preceding expression indicates the reduction in the prediction errors from using the least squares line instead of the <m>\bar{y}</m> line. This is referred to as the <term>coefficient of determination</term>, interpreted as the percentage of the variability in the response variable that is explained by the least-squares regression line with the explanatory variable. This provides us with a measure of how accurate our predictions will be and is most useful for comparing different models (e.g., different choices of explanatory variable). The coefficient of determination is equal to the square of the correlation coefficient and so is denoted by <m>r^2</m> or <m>R^2</m> (and is often pronounced <q>r-squared</q>).</p>
+        <p>The preceding expression indicates the reduction in the prediction errors from using the least squares line instead of the <m>\bar{y}</m> line. This is referred to as the <term>coefficient of determination</term><idx><h>coefficient of determination (r-squared)</h><h>percentage of variability explained by the regression</h></idx>, interpreted as the percentage of the variability in the response variable that is explained by the least-squares regression line with the explanatory variable. This provides us with a measure of how accurate our predictions will be and is most useful for comparing different models (e.g., different choices of explanatory variable). The coefficient of determination is equal to the square of the correlation coefficient and so is denoted by <m>r^2</m> or <m>R^2</m> (and is often pronounced <q>r-squared</q>).</p>
       </assemblage>
 
       <p>Another measure of the quality of the fit is <m>s</m>, the standard deviation of the residuals. This is a measure of the unexplained variability about the regression line and gives us an idea of how accurate our predictions should be (the actual response should be within <m>2s</m> of the predicted response). If <m>s</m> is much smaller than the variability in the response variable (<m>s_y</m>) then we have explained a good amount of variability in <m>y</m>. Most statistical packages report <m>s</m>, or it can be found from <m>\sqrt{SSError/(n-2)}</m>.</p>
