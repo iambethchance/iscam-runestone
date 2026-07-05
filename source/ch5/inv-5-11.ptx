@@ -9,11 +9,11 @@
       <p>In the previous investigation, we analyzed the statistical significance of our sample data by replicating how often we might get a <em>random sample</em> of 247 runners (after removing an extreme outlier) with a slope this extreme from a larger population of runners that did not have an association between <em>finishing time</em> and <em>age</em>. In other words, we assumed there was no association between <em>finishing time</em> and <em>age</em> and the pairing of these values for our runners was just arbitrary. This suggests another way of assessing the statistical significance of our results.</p>
     </introduction>
 
-<ul><li><p>Paste the <url href="http://www.rossmanchance.com/iscam3/data/Talley5K2013.txt">Talley5K2013.txt</url> data file into the <url href="http://www.rossmanchance.com/applets/RegShuffle.htm">Analyzing Two Quantitative Variables</url> applet. Press <alert>Use Data</alert> and make sure <em>age</em> is used as the explanatory variable (if not press the <alert>(response, explanatory)</alert> button to toggle their roles). Remove the outlier and check the <alert>Show Regression Line</alert> box.</p></li></ul>
+<ul><li>Paste the <url href="http://www.rossmanchance.com/iscam3/data/Talley5K2013.txt">Talley5K2013.txt</url> data file into the <url href="http://www.rossmanchance.com/applets/RegShuffle.htm">Analyzing Two Quantitative Variables</url> applet.</li><li>Press <alert>Use Data</alert> and make sure <em>age</em> is used as the explanatory variable (if not press the <alert>(response, explanatory)</alert> button to toggle their roles). </li><li>Remove the outlier and check the <alert>Show Regression Line</alert> box.</li></ul>
     <exercise xml:id="inv5-11-a">
-      <title>Confirm the Regression Equation</title>
+      <title>Regression Equation</title>
       <statement>
-        <p>Confirm the equation.</p>
+        <p>Report the regression equation.</p>
       </statement>
       <response/>
       <solution>
@@ -62,7 +62,7 @@
       </solution>
     </exercise>
 
-<ul><li><p>Use the applet to estimate the p-value by using the <alert>Count Samples</alert> box: choosing to count <q>beyond</q> (for the two-sided p-value) and specifying the observed sample slope. Press <alert>Count</alert>.</p></li></ul>
+<ul><li><p>Use the applet to estimate the p-value by using the <alert>Count Samples</alert> box: choosing to count <q>beyond</q> (for the two-sided p-value) and specifying the observed sample slope.</p></li><li><p> Press <alert>Count</alert>.</p></li></ul>
     <exercise xml:id="inv5-11-e">
       <title>Empirical p-value</title>
       <statement>
@@ -97,7 +97,7 @@
 
 <ul><li><p>Now use the pull-down menu to select <alert>t-statistic</alert>.</p></li></ul>
     <exercise xml:id="inv5-11-g">
-      <title>t-statistic p-value</title>
+      <title><em>t</em>-statistic p-value</title>
       <statement>
         <p>Use the applet to estimate the p-value corresponding to the observed <em>t</em>-statistic. How does it compare to the p-value you found in <xref ref="inv-5-10" text="custom">Investigation 5.10</xref>? (Note: The applet may complain due to rounding, estimation of the standard error.)</p>
       </statement>
@@ -105,19 +105,19 @@
       <solution>
         <p>The results are very similar to the previous investigation.</p>
         <image source="images/inv-5-11-sol-g.jpg" width="45%">
-          <description><p>Histogram of 1000 shuffled t-statistics with an overlaid t-distribution curve; the simulated count beyond 4.49 is 0/1000 and the theory-based p-value is less than 0.0001.</p></description>
+          <description><p>Histogram of 1000 shuffled t-statistics with an overlaid <em>t</em>-distribution curve; the simulated count beyond 4.49 is 0/1000 and the theory-based p-value is less than 0.0001.</p></description>
         </image>
       </solution>
     </exercise>
 
-<ul><li><p>Check the box to <alert>Overlay t-distribution</alert>.</p></li></ul>
+<ul><li><p>Check the box to <alert>Overlay <em>t</em>-distribution</alert>.</p></li></ul>
     <exercise xml:id="inv5-11-h">
-      <title>Overlay t-distribution</title>
+      <title>Overlay <em>t</em>-distribution</title>
       <statement>
         <p>Does it appear to be a reasonable model of the shuffled <em>t</em>-statistics distribution?</p>
       </statement>
       <response/>
-      <solution><p>The <m>t</m>-distribution appears to be a good model for this randomization distribution.</p></solution>
+      <solution><p>The <em>t</em>-distribution appears to be a good model for this randomization distribution.</p></solution>
     </exercise>
 
 <ul><li><p>Check the <alert>Regression Table</alert> box.</p></li></ul>
@@ -135,9 +135,10 @@
       </solution>
     </exercise>
 
-    <p><term>Discussion:</term> It is interesting to compare these two analysis approaches. In Investigation 5.10, we modeled repeated random sampling from a population but this required us to make certain assumptions about the data in the population (which we will spell out in more detail in the next Investigation). In Investigation 5.11, we didn't make any assumptions about a larger population; instead we modeled what the sample data could look like if the observed response values had been randomly paired, over and over again, with the observed explanatory variable values. This approach is sometimes referred to as <q>conditioning on the observed data.</q> It is not surprising that the results are similar for both approaches, but some consider the second approach to be more <q>flexible</q> and <q>less restrictive</q> in the assumptions it makes. However, the first approach allows for more elegant mathematical derivations predicting how the sampling distribution of sample slopes will behave.</p>
+    <paragraphs><title>Discussion</title><p> It is interesting to compare these two analysis approaches. In Investigation 5.10, we modeled repeated random sampling from a population but this required us to make certain assumptions about the data in the population (which we will spell out in more detail in the next Investigation). In Investigation 5.11, we didn't make any assumptions about a larger population; instead we modeled what the sample data could look like if the observed response values had been randomly paired, over and over again, with the observed explanatory variable values. This approach is sometimes referred to as <q>conditioning on the observed data.</q> It is not surprising that the results are similar for both approaches, but some consider the second approach to be more <q>flexible</q> and <q>less restrictive</q> in the assumptions it makes. However, the first approach allows for more elegant mathematical derivations predicting how the sampling distribution of sample slopes will behave.</p>
 
     <p>If we had had a stronger association in our sample (and <m>s</m> and <m>s_y</m> were less similar in value), you would have seen more differences between these two approaches. In particular, the random shuffling will have a larger standard deviation of the sample slopes than the random sampling. We saw with random sampling that the variability in the slopes is controlled by <m>\sigma</m>, not by SD(Y). However, with random shuffling, any <m>x</m>-value can be paired with any <m>y</m>-value, so the slopes are able to <q>swing around</q> a little more freely especially with smaller sample sizes. When you view the Regression Table, the SD(<m>b_1</m>) reported there will correspond to random sampling.</p>
+    </paragraphs>
   </exercises>
 
   <subsection xml:id="practice-5-11">

@@ -6,7 +6,12 @@
     <title>The Study</title>
 
     <introduction>
-      <p>Suppose we have data on the height (in centimeters) of boys for 3 different random samples at ages 2, 3, 4. The data in <url href="http://www.rossmanchance.com/iscam2/data/hypoHt.txt">hypoHt.txt</url> are modeled after data from the Berkeley Guidance Study which monitored the height (and weight) of boys and girls born in Berkeley, California between January 1928 and June 1929.</p>
+      <sidebyside widths="63% 34%" margins="0% 0%" valign="top">
+        <stack>
+          <p>Suppose we have data on the height (in centimeters) of boys for 3 different random samples at ages 2, 3, 4. The data in <url href="http://www.rossmanchance.com/iscam2/data/hypoHt.txt">hypoHt.txt</url> are modeled after data from the Berkeley Guidance Study which monitored the height (and weight) of boys and girls born in Berkeley, California between January 1928 and June 1929.</p>
+        </stack>
+        <image source="images/boyheights.jpeg" width="100%" decorative="yes"/>
+      </sidebyside>
     </introduction>
 
     <exercise xml:id="inv5-12-a">
@@ -64,6 +69,8 @@
       </image>
     </sidebyside>
 
+    <interactive iframe="https://www.rossmanchance.com/applets/2021/multreg/multreg.html?hideExtras=1" width="160%" aspect="3:2"/>
+
     <exercise xml:id="inv5-12-e">
       <title>Compare the Three Distributions</title>
       <statement>
@@ -108,30 +115,22 @@
       <solution><p>These conditions do appear to be met for the Berkeley boys' heights. We have a normal distribution at each <m>x</m> and the spread of each distribution is similar.</p></solution>
     </exercise>
 
-    <p><term>Discussion:</term> In the above example, checking the conditions was straight forward because we could easily examine the distribution of the heights at the 3 different values of <m>x</m>. When we don't have many repeat values at each value of <m>x</m> we will need other ways to check these conditions. However, you should notice that the only thing that changes about the distribution of the response as we change <m>x</m> is the mean. So if we were to subtract the mean from each observation and pool these values together, then we should have one big distribution with mean 0, standard deviation equal to <m>\sigma</m>, and a normal shape.</p>
+    <paragraphs>
+      <title>Discussion</title>
+      <p>In the above example, checking the conditions was straight forward because we could easily examine the distribution of the heights at the 3 different values of <m>x</m>. When we don't have many repeat values at each value of <m>x</m> we will need other ways to check these conditions. However, you should notice that the only thing that changes about the distribution of the response as we change <m>x</m> is the mean. So if we were to subtract the mean from each observation and pool these values together, then we should have one big distribution with mean 0, standard deviation equal to <m>\sigma</m>, and a normal shape.</p>
 
-    <image source="images/inv-5-12-model-diagrams.png" width="95%">
-      <description><p>Two diagrams. Left: a scatter of conditional distributions of the response variable at three values of the explanatory variable, each roughly normal, centered on the population regression line E(Y at x) = beta 0 plus beta 1 x. Right: the same three distributions after subtracting beta 0 plus beta 1 x, now all centered at a horizontal line at zero with common standard deviation sigma.</p></description>
-    </image>
+      <image source="images/inv-5-12-model-diagrams.png" width="95%">
+        <description><p>Two diagrams. Left: a scatter of conditional distributions of the response variable at three values of the explanatory variable, each roughly normal, centered on the population regression line E(Y at x) = beta 0 plus beta 1 x. Right: the same three distributions after subtracting beta 0 plus beta 1 x, now all centered at a horizontal line at zero with common standard deviation sigma.</p></description>
+      </image>
 
-    <p>However we don't know <m>\beta_0</m> and <m>\beta_1</m>, the population regression coefficients, but we have their least squares estimates. If we subtract the fitted values from each response value, these differences are simply the residuals from the least squares regression. So to check the technical conditions we will use <em>residual plots</em>.</p>
+      <p>However we don't know <m>\beta_0</m> and <m>\beta_1</m>, the population regression coefficients, but we have their least squares estimates. If we subtract the fitted values from each response value, these differences are simply the residuals from the least squares regression. So to check the technical conditions we will use <em>residual plots</em>.</p>
+    </paragraphs>
 
-    <exercise xml:id="inv5-12-g">
-      <title>Residual Plots and Diagnostics</title>
-      <statement>
-        <p>In the applet, remove the <em>agecat</em> variable (back to the Variables list) and move the <em>age</em> variable into the <alert>Explanatory</alert> box. Check the <alert>Show Equation</alert> box. Check the <alert>Show residuals</alert> box.</p>
-      </statement>
-      <response/>
-      <solution>
-        <p>The residuals plots show data that satisfy these conditions nicely, and in this case we would consider the <m>t</m>-procedures from Investigation 5.10 to be valid.</p>
-        <image source="images/inv-5-12-sol-g1.jpg" width="40%">
-          <description><p>Applet Show residuals output: histogram of residuals centered at mean = 0.00 with SE = 2.953 (df = 118), roughly normal in shape.</p></description>
-        </image>
-        <image source="images/inv-5-12-sol-g2.jpg" width="40%">
-          <description><p>Plot of residuals versus predicted values showing three vertical bands of points, each centered around zero with similar spread.</p></description>
-        </image>
-      </solution>
-    </exercise>
+    <ul>
+      <li><p>In the applet, remove the <em>agecat</em> variable (back to the Variables list) and move the <em>age</em> variable into the <alert>Explanatory</alert> box.</p></li>
+      <li><p>Check the <alert>Show Equation</alert> box.</p></li>
+      <li><p>Check the <alert>Show residuals</alert> box.</p></li>
+    </ul>
 
     <sidebyside widths="68% 28%" margins="0% 0%" valign="middle">
       <stack>
@@ -176,7 +175,15 @@
         <p>Comment on whether you think each of these conditions is met for the Berkeley data.</p>
       </statement>
       <response/>
-      <solution><p>These regression-model conditions appear satisfied for this data set.</p></solution>
+      <solution>
+        <p>The residuals plots show data that satisfy these conditions nicely, and in this case we would consider the <m>t</m>-procedures from <xref ref="inv-5-10" text="custom">Investigation 5.10</xref> to be valid.</p>
+        <image source="images/inv-5-12-sol-g1.jpg" width="40%">
+          <description><p>Applet Show residuals output: histogram of residuals centered at mean = 0.00 with SE = 2.953 (df = 118), roughly normal in shape.</p></description>
+        </image>
+        <image source="images/inv-5-12-sol-g2.jpg" width="40%">
+          <description><p>Plot of residuals versus predicted values showing three vertical bands of points, each centered around zero with similar spread.</p></description>
+        </image>
+      </solution>
     </exercise>
   </exercises>
 </section>
