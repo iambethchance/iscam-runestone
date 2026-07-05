@@ -63,8 +63,56 @@
       <exercise xml:id="inv5-8-d">
         <title>Compute Residuals</title>
         <statement>
-          <p>Calculate the last two residuals to complete the table. </p><p>How often did we overestimate? How often did we underestimate?</p>
+          <p>Calculate the last two residuals to complete the table. </p>
+          <p>Residual for the 71-inch person: <var width="8"/> Residual for the 63-inch person: <var width="8"/></p>
+          <p>How often did we overestimate? <var width="5"/> How often did we underestimate? <var width="5"/></p>
         </statement>
+        <setup>
+        <var>
+          <condition number="3.25" tolerance="0.01">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition number="-3.25" tolerance="0.01">
+            <feedback><p>Check the sign: residual = observed minus predicted, and this height (71) is above the mean (67.75).</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. residual = observed height minus 67.75.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="-4.75" tolerance="0.01">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition number="4.75" tolerance="0.01">
+            <feedback><p>Check the sign: residual = observed minus predicted, and this height (63) is below the mean (67.75).</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. residual = observed height minus 67.75.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="11" tolerance="0.001">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition number="9" tolerance="0.001">
+            <feedback><p>Careful: we overestimate when the prediction (67.75) is larger than the observed height, i.e., when the residual is negative.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. Count the negative residuals (including the two you just calculated).</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="9" tolerance="0.001">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition number="11" tolerance="0.001">
+            <feedback><p>Careful: we underestimate when the prediction (67.75) is smaller than the observed height, i.e., when the residual is positive.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. Count the positive residuals (including the two you just calculated).</p></feedback>
+          </condition>
+        </var>
+        </setup>
         <response/>
         <solution><p>The last two residuals are 3.25 and <m>-4.75</m>. We overestimated 11 times and underestimated 9 times.</p></solution>
       </exercise>

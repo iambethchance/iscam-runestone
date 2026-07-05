@@ -90,6 +90,63 @@
         <p>Also check the box to reveal the value of <m>s</m> from the regression model <m>\sqrt{SSE/(n-2)}</m>:</p>
         <p>Regression SE = <var width="8"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition number="32.364" tolerance="0.01">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition number="38.51" tolerance="0.05">
+            <feedback><p>That looks like the mean age; this blank asks for the mean finish time.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. Check the Show descriptive box in the applet (mean finish time in minutes).</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="8.581" tolerance="0.01">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition number="16.85" tolerance="0.05">
+            <feedback><p>That looks like the standard deviation of age; this blank asks about finish time.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. Check the Show descriptive box in the applet (SD of finish time).</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="38.51" tolerance="0.01">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition number="32.364" tolerance="0.05">
+            <feedback><p>That looks like the mean finish time; this blank asks for the mean age.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. Check the Show descriptive box in the applet (mean age in years).</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="16.85" tolerance="0.01">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition number="8.581" tolerance="0.05">
+            <feedback><p>That looks like the standard deviation of finish time; this blank asks about age.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. Check the Show descriptive box in the applet (SD of age).</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="8.265" tolerance="0.01">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition number="8.581" tolerance="0.05">
+            <feedback><p>That is the standard deviation of the finish times; the regression SE is the standard deviation of the residuals, sqrt(SSE/(n-2)).</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. Check the box to reveal s from the regression model.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
       <solution>
         <image source="images/inv-5-10-sol-g.png" width="35%">
