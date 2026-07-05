@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="summary-inference-regression-section">
+  <title>Summary of Inference for Regression</title>
+
+  <assemblage xml:id="summary-inference-regression">
+    <title>Summary of Inference for Regression</title>
+
+    <p>To test <m>H_0\!: \beta_1 =</m> hypothesized slope vs. <m>H_a\!: \beta_1 \neq</m> hypothesized slope</p>
+
+    <p>The standardized statistic: <m>t = \dfrac{b_1 - \text{hypothesized slope}}{SE(b_1)}</m> follows a <em>t</em>-distribution with df = <m>n - 2</m></p>
+
+    <p>An approximate <m>100 \times C\%</m> confidence interval formula is <m>b_1 \pm t_{n-2}\,SE(b_1)</m> where <m>-t_{n-2}</m> is the <m>100 \times (1 - C)/2</m> percentile of the student <em>t</em>-distribution with <m>n - 2</m> degrees of freedom.</p>
+
+    <p>These procedures are valid as long as
+    <ul>
+      <li><p>L: There is a linear relationship between the response and explanatory variable.</p></li>
+      <li><p>I: The observations are independent.</p></li>
+      <li><p>N: The response follows a normal distribution for each value of <m>x</m>.</p></li>
+      <li><p>E: The standard deviation of the responses is the equal at each value of <m>x</m>.</p></li>
+    </ul></p>
+
+    <p>These conditions are checked by examining the residual plots: residuals vs. explanatory variable and histogram/normal probability plot of the residuals.</p>
+
+    <p><term>Technology:</term> Most packages automatically report the <em>two-sided</em> p-value. This p-value can be divided in half to obtain a one-sided p-value (assuming the observed slope is in the direction conjectured).
+    <ul>
+      <li><p><alert>Analyzing Two Quantitative Variables</alert> applet or <alert>Multiple Variables</alert> applet</p></li>
+      <li><p><term>R:</term> <c>summary(lm(response~explanatory)</c></p></li>
+      <li><p><term>JMP:</term> Analyze &gt; Fit Y by X</p></li>
+    </ul></p>
+  </assemblage>
+
+  <p><term>Discussion</term>: Typically, we are most interested in testing whether the population slope coefficient equals zero, as that would suggest that the population regression line is flat and so the explanatory variable is of no use in predicting the response variable. Because testing whether the slope coefficient is zero tests whether the regression model with this explanatory variable is of any use, it is sometimes called a <em>model utility test</em>.</p>
+
+  <p>There are situations where we might want to test other values of the population slope, for example <m>\beta_1 = 1</m> (do <m>x</m> and <m>y</m> change at the same rate?). We can also use the same approach to carry out tests and create confidence intervals for the population intercept. However, these are less useful in practice, in particular because the intercept is often far outside the range of data and does not have a meaningful interpretation.</p>
+
+  <p>Checking the technical conditions is an important step of the process. Notice that you will typically fit the regression model first to obtain the residuals to allow you to assess the model. As with ANOVA, these <em>t</em> procedures are fairly robust to departures from normality. If the conditions are violated, you can again explore transformations of the data.</p>
+</section>

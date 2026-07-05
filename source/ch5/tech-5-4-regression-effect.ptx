@@ -5,18 +5,211 @@
   <exercises xml:id="exercises5-4-tech" hidden-label="yes">
     <title>The Study</title>
 
-    <p>Using <c>Masters18.txt</c>, examine first-round vs second-round golf scores to study regression to the mean.</p>
+    <introduction>
+      <p>In the 2018 Masters golf tournament, Jordan Speith had a score of 66 in the first round but a score of 74 in the second round. Keep in mind that in golf, lower scores are better than higher scores. Is this evidence that he choked? The data file <url href="http://www.rossmanchance.com/iscam3/data/Masters18.txt">Masters18.txt</url> contains golfers' scores in the first two rounds of the 2018 Masters.</p>
+    </introduction>
 
-    <exercise xml:id="tech5-4-a" label="T5.4.a"><title>Scatterplot and Correlation</title><statement><p>(a) Plot round 2 vs round 1 and describe association direction and strength.</p></statement><response/></exercise>
-    <exercise xml:id="tech5-4-b" label="T5.4.b"><title>Sort and List Extremes</title><statement><p>(b) Sort by round-1 score and list top ten and bottom ten with round-2 scores.</p></statement><response/></exercise>
-    <exercise xml:id="tech5-4-c" label="T5.4.c"><title>Improvement Counts</title><statement><p>(c) Count improvements in each group.</p></statement><response/></exercise>
-    <exercise xml:id="tech5-4-d" label="T5.4.d"><title>Compare Improvement Rates</title><statement><p>(d) Which group improved more and by how much?</p></statement><response/></exercise>
-    <exercise xml:id="tech5-4-e" label="T5.4.e"><title>Median Round-2 Scores</title><statement><p>(e) Compare median round-2 scores for top-ten and bottom-ten first-round groups.</p></statement><response/></exercise>
-    <exercise xml:id="tech5-4-f" label="T5.4.f"><title>y=x Line Interpretation</title><statement><p>(f) Add <m>y=x</m> line and identify examples of improvements and declines.</p></statement><response/></exercise>
-    <exercise xml:id="tech5-4-g" label="T5.4.g"><title>Compare Candidate Lines</title><statement><p>(g) Evaluate whether <m>y=x</m> is a good summary and predict regression slope relative to 1.</p></statement><response/></exercise>
-    <exercise xml:id="tech5-4-h" label="T5.4.h"><title>Mean Line Comparison</title><statement><p>(h) Add <m>\bar{y}</m> line and compare with expected regression line.</p></statement><response/></exercise>
-    <exercise xml:id="tech5-4-i" label="T5.4.i"><title>Add Regression Line</title><statement><p>(i) Add regression line and describe location relative to previous lines.</p></statement><response/></exercise>
-    <exercise xml:id="tech5-4-j" label="T5.4.j"><title>Regression Equation and Slope</title><statement><p>(j) Report equation and explain why slope tends to be less than 1 when SDs are similar.</p></statement><response/></exercise>
-    <exercise xml:id="tech5-4-k" label="T5.4.k"><title>Regression to Mean Interpretation</title><statement><p>(k) Explain why slope less than 1 implies very good first rounds tend to worsen and poor first rounds tend to improve.</p></statement><response/></exercise>
+    <exercise xml:id="tech5-4-a">
+      <title>Scatterplot and Correlation</title>
+      <statement>
+        <p>Use technology to construct a scatterplot of second round score vs. first round score. Also calculate the correlation coefficient between these two variables. Does it reveal an association between scores in these two rounds? If so, is it positive or negative? Would you call it weak, moderate, or strong?</p>
+      </statement>
+      <response/>
+      <solution>
+        <image source="images/tech-5-4-sol-a.jpg" width="45%">
+          <description><p>Scatterplot of second round score (R2) versus first round score (R1) for the 2018 Masters golfers, showing a scattered cloud of points with a weak to moderate positive association.</p></description>
+        </image>
+        <p><m>r = 0.345</m></p>
+        <p>There is a moderate, linear, positive association between the round1 and round2 scores.</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="tech5-4-b">
+      <title>Sort and List Extremes</title>
+      <statement>
+        <p>Use technology to sort the data according to the golfers' first-round scores:</p>
+        <hint>
+          <title>R Instructions</title>
+          <p><c>mydata=data.frame(golfer, round1, round2)</c></p>
+          <p><c>sortdata=mydata[order(mydata[,2]),]</c></p>
+        </hint>
+        <hint>
+          <title>JMP Instructions</title>
+          <p>Select <alert>Tables &gt; Sort</alert>.</p>
+          <p>Add the round1 column to the <alert>By</alert> list. Then add the golfer and round2 columns.</p>
+          <p>(<em>Note</em>: JMP will sort in the order the columns are entered in the <alert>By</alert> box.)</p>
+          <p>You can change from ascending to descending order if you like, and you can check the Replace Table box if you wish to overwrite the original table (not recommended).</p>
+          <image source="images/tech-5-4-jmp-sort.png" width="35%">
+            <description><p>JMP Sort dialog with round1, golfer, and round2 in the By list and By and Remove buttons.</p></description>
+          </image>
+        </hint>
+        <p>List the ten golfers who scored lowest in the first round, along with their scores in both rounds. Then list the ten golfers who scored highest in the first round, along with their scores in both rounds.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>Top ten:</p>
+        <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
+          <row header="yes"><cell>Golfer</cell><cell>Round 1</cell><cell>Round 2</cell></row>
+          <row><cell>JordanSpieth</cell><cell>66</cell><cell>74</cell></row>
+          <row><cell>TonyFinau</cell><cell>68</cell><cell>74</cell></row>
+          <row><cell>MattKuchar</cell><cell>68</cell><cell>75</cell></row>
+          <row><cell>PatrickReed</cell><cell>69</cell><cell>66</cell></row>
+          <row><cell>HenrikStenson</cell><cell>69</cell><cell>70</cell></row>
+          <row><cell>RoryMcIlroy</cell><cell>69</cell><cell>71</cell></row>
+          <row><cell>CharleyHoffman</cell><cell>69</cell><cell>73</cell></row>
+          <row><cell>AdamHadwin</cell><cell>69</cell><cell>75</cell></row>
+          <row><cell>LiHaotong</cell><cell>69</cell><cell>76</cell></row>
+          <row><cell>RafaelCabrera</cell><cell>69</cell><cell>76</cell></row>
+        </tabular>
+        <p>Bottom ten:</p>
+        <tabular halign="left" top="minor" bottom="minor" left="minor" right="minor">
+          <row header="yes"><cell>Golfer</cell><cell>Round 1</cell><cell>Round 2</cell></row>
+          <row><cell>RossFisher</cell><cell>78</cell><cell>74</cell></row>
+          <row><cell>TrevorImmelman</cell><cell>78</cell><cell>75</cell></row>
+          <row><cell>GaryWoodland</cell><cell>78</cell><cell>76</cell></row>
+          <row><cell>MarkO'Meara</cell><cell>78</cell><cell>81</cell></row>
+          <row><cell>KiradechAphibarnrat</cell><cell>79</cell><cell>70</cell></row>
+          <row><cell>IanWoosnam</cell><cell>79</cell><cell>76</cell></row>
+          <row><cell>LinYuxin</cell><cell>79</cell><cell>80</cell></row>
+          <row><cell>SergioGarcia</cell><cell>81</cell><cell>78</cell></row>
+          <row><cell>MattParziale</cell><cell>81</cell><cell>79</cell></row>
+          <row><cell>HarryEllis</cell><cell>86</cell><cell>80</cell></row>
+        </tabular>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="tech5-4-c">
+      <title>Improvement Counts</title>
+      <statement>
+        <p>How many of the <q>top ten</q> from the first round improved (scored lower) in the second round than the first? How many of the <q>bottom ten</q> from the first round improved?</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>For the top ten: one golfer (Patrick Reed) had a lower second round score</p>
+        <p>For the bottom ten: Eight of the ten golfers improved (lowered) their scores</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="tech5-4-d">
+      <title>Compare Improvement Rates</title>
+      <statement>
+        <p>Which group saw more people improve? Is this difference small or substantial?</p>
+      </statement>
+      <response/>
+      <solution><p>The bottom ten group saw substantially more (8 vs 0) people improve.</p></solution>
+    </exercise>
+
+    <exercise xml:id="tech5-4-e">
+      <title>Median Round-2 Scores</title>
+      <statement>
+        <p>Determine the median second round score for the two groups (the <q>top ten</q> from round one and the <q>bottom ten</q> from round one). Which group tended to score better (lower) in the second round?</p>
+      </statement>
+      <response/>
+      <solution><p>The median (sorting first) round 2 score for the top ten is 74 and for the bottom ten it's 77. The top ten golfers tended to score better than the bottom ten golfers in the second round.</p></solution>
+    </exercise>
+
+    <exercise xml:id="tech5-4-f">
+      <title>Add the y = x Line</title>
+      <statement>
+        <p>Add the <q><m>y = x</m></q> line to your scatterplot.</p>
+        <hint>
+          <title>R Instructions</title>
+          <p><c>lines(round1, round1)</c></p>
+        </hint>
+        <hint>
+          <title>JMP Instructions</title>
+          <p>Click the red <alert>Bivariate Fit</alert> arrow and select <alert>Fit Special</alert>; Check the box for <alert>Constrain Intercept to</alert>: and put <alert>0</alert> in the box; Check the box for <alert>Constrain Slope to</alert>: and put <alert>1</alert> in the box; Click <alert>OK.</alert></p>
+        </hint>
+        <p>Identify any golfers by name who improved in the second round after scoring in the top ten of the first round. Identify any golfers by name who did worse in the second round after scoring in the bottom ten of the first round.</p>
+      </statement>
+      <response/>
+      <solution>
+        <image source="images/tech-5-4-sol-f.jpg" width="48%">
+          <description><p>Scatterplot of R2 versus R1 with the y equals x line added; the top-ten golfers are boxed at the lower left with one point below the line, and two bottom-ten points are marked above the line at the right.</p></description>
+        </image>
+        <p>One golfer from the original top ten (on the left) is below the line (Patrick Reed, the eventual champion) and two from the original bottom ten are above the line (Mark O'Meara and Lin Yuxin). [Two golfers in the original top ten had identical scores in the two ground.]</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="tech5-4-g">
+      <title>Evaluate the y = x Line</title>
+      <statement>
+        <p>Do you think the <q><m>y = x</m></q> line does a good job of summarizing the relationship? How do you think the regression line will compare? Will the slope be greater or smaller?</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>The line doesn't really go through the <q>middle</q> of the points. It's too low for small round 1 scores and too high for larger round 1 scores.</p>
+        <p>Expect the regression line to have a smaller slope.</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="tech5-4-h">
+      <title>Add the Mean Line</title>
+      <statement>
+        <p>Add the <m>\bar{y}</m> line to the scatterplot.</p>
+        <hint>
+          <title>R Instructions</title>
+          <p><c>abline(h=mean(round2))</c></p>
+        </hint>
+        <hint>
+          <title>JMP Instructions</title>
+          <p>Click the <alert>Bivariate Fit</alert> hot spot and select <alert>Fit Mean.</alert></p>
+        </hint>
+        <p>Do you think this line does a good job of summarizing the relationship? How do you think the regression line will compare? Will the slope be greater or smaller?</p>
+      </statement>
+      <response/>
+      <solution>
+        <image source="images/tech-5-4-sol-h.jpg" width="48%">
+          <description><p>Scatterplot of R2 versus R1 with the y equals x line and a horizontal dashed line at the mean second-round score of 74.56.</p></description>
+        </image>
+        <p>This line does not summarize the relationship well either. It's a little too high for lower round 1 scores and too low for higher round 1 scores. We expect the regression line to have a larger slope.</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="tech5-4-i">
+      <title>Add the Regression Line</title>
+      <statement>
+        <p>Now add the regression line to the scatterplot.</p>
+        <hint>
+          <title>R Instructions</title>
+          <p><c>abline(lm(round2~round1), col=3)</c></p>
+        </hint>
+        <hint>
+          <title>JMP Instructions</title>
+          <p>Click the red <alert>Bivariate Fit</alert> arrow and select <alert>Fit Line</alert>.</p>
+        </hint>
+        <p>Where does the regression line fall compared to the two earlier lines?</p>
+      </statement>
+      <response/>
+      <solution>
+        <image source="images/tech-5-4-sol-i.jpg" width="48%">
+          <description><p>Scatterplot of R2 versus R1 with three lines: the steep y equals x line, the horizontal mean line at 74.56, and the red regression line falling between them.</p></description>
+        </image>
+        <p>The regression line falls <q>in between</q> the other two lines</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="tech5-4-j">
+      <title>Regression Equation and Slope</title>
+      <statement>
+        <p>Determine the regression equation. Is the slope less than one? Explain why this is to be expected whenever the two standard deviations are similar.</p>
+        <hint>
+          <p>Recall that the slope coefficient can be expressed as <m>b = r(s_y)/(s_x)</m>.</p>
+        </hint>
+      </statement>
+      <response/>
+      <solution><p>The regression slope of .3533 is less than one, in fact very close to the value of <m>r</m>.</p></solution>
+    </exercise>
+
+    <exercise xml:id="tech5-4-k">
+      <title>Regression to the Mean Interpretation</title>
+      <statement>
+        <p>Explain why your answer to <xref ref="tech5-4-j" text="custom">Question 10</xref> suggests that golfers with poor first round scores will tend to improve but golfers with good first round scores will tend to worsen.</p>
+      </statement>
+      <response/>
+      <solution><p>We expect poor first round scores to be below the mean but not by as much. We expect good (low) first round scores to be followed by second round scores that are above the mean but not by as much (by a fraction).</p></solution>
+    </exercise>
+
+    <p><em>This phenomenon is sometimes called the regression effect or regression to the mean. Sir Francis Galton first discussed this effect in the late 1880s when he examined data on the heights of parents and children, calling it regression to mediocrity.</em></p>
   </exercises>
 </section>
