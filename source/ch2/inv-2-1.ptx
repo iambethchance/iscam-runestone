@@ -39,7 +39,7 @@
   <paragraphs>
     <title>Exploring the Data</title>
     
-  <exercise xml:id="inv2-1-a" label="I2.1a">
+  <exercise xml:id="inv2-1-a" label="I2-1a">
     <title>Representativeness of data</title>
     <statement>
       <p>Are these data likely to be representative of birth weights for all 3,638,436 U.S. births in 2024? Explain.</p>
@@ -48,7 +48,7 @@
       <p>If time of year or season is related to characteristics of babies when they are born, then this may not be representative for the rest of the year.</p>
     </solution>
     <response/>
-  </exercise>    <exercise xml:id="inv2-1-b" label="I2.1b">
+  </exercise>    <exercise xml:id="inv2-1-b" label="I2-1b">
       <title>Variable type</title>
       <statement>
         <p>Is the variable <em>birthweight</em> quantitative or categorical?</p>
@@ -224,7 +224,7 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
     </solution>
   </exercise>
   
-  <exercise xml:id="inv2-1-c" label="I2.1c">
+  <exercise xml:id="inv2-1-c" label="I2-1c">
     <title>Describe dotplot</title>
     <statement>
       <p>Describe what you see.</p>
@@ -296,7 +296,7 @@ nrow(births2)
     </solution>
   </exercise>
   
-  <exercise xml:id="inv2-1-d" label="I2.1d">
+  <exercise xml:id="inv2-1-d" label="I2-1d">
     <title>Recreate dotplot with subsetted data</title>
     <statement>
       <p>Recreate the dotplot with the subsetted data and describe what you see.</p>
@@ -367,7 +367,7 @@ hist(births2$birthweight, xlab="birth weight")
     </solution>
   </exercise>
   
-  <exercise xml:id="inv2-1-e" label="I2.1e">
+  <exercise xml:id="inv2-1-e" label="I2-1e">
     <title>Compare dotplot and histogram</title>
     <statement>
       <p>Create a histogram for the subsetted data (<c>births2</c>) and compare the information revealed by the dotplots and the histograms. Do you feel one display is more effective at displaying information about birth weights than the other? Explain.</p>
@@ -416,7 +416,7 @@ hist(births2$birthweight, xlab="birth weight")
     <p>It is also very important to note any observations that do not follow the overall pattern (e.g., "outliers") as they may reveal errors in the data or other important features to pay attention to.</p>
   </assemblage>
   
-  <exercise xml:id="inv2-1-f" label="I2.1f">
+  <exercise xml:id="inv2-1-f" label="I2-1f">
     <title>Characterize the distribution</title>
     <statement>
       <p>How would you characterize the shape, center, and variability of these birthweights? (Remember to put your comments in context, e.g., "The distribution of January birthweights in 2024 was …")</p>
@@ -427,7 +427,7 @@ hist(births2$birthweight, xlab="birth weight")
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-1-g" label="I2.1g">
+  <exercise xml:id="inv2-1-g" label="I2-1g">
     <title>Explain lower weight babies</title>
     <statement>
       <p>You may have noticed a few more lower weight babies than we might have expected (if we assume a "random" biological characteristic will be fairly symmetric and bell-shaped). Can you suggest an explanation for the excess of lower birth weights seen in this distribution?</p>
@@ -438,7 +438,7 @@ hist(births2$birthweight, xlab="birth weight")
     <response/>
   </exercise>
   <p>Now, further subset the <c>births2</c> data based on whether or not the pregnancy lasted at least 37 weeks. </p>
-  <exercise xml:id="inv2-1-h" label="I2.1h">
+  <exercise xml:id="inv2-1-h" label="I2-1h">
     <title>Subset by gestation period</title>
     <statement>
           <p>How many observations do you end up with? <var width="10"/></p>
@@ -474,7 +474,7 @@ hist(births2$birthweight, xlab="birth weight")
     </solution>
   </exercise>
   
-  <exercise xml:id="inv2-1-i" label="I2.1i">
+  <exercise xml:id="inv2-1-i" label="I2-1i">
     <title>Assess symmetry after subsetting</title>
     <statement>
       <p>After this step do we have a more symmetric distribution? <var width="30"/></p>
@@ -553,7 +553,7 @@ iscamsummary(births3$birthweight, digits=2)
     </solution>
   </exercise>
   
-  <exercise xml:id="inv2-1-j" label="I2.1j">
+  <exercise xml:id="inv2-1-j" label="I2-1j">
     <title>Report numerical summaries</title>
     <statement>
       <p>Determine the mean, standard deviation, and skewness of these data.</p>
@@ -617,7 +617,7 @@ iscamsummary(births3$birthweight, digits=2)
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-1-j2" label="I2.1j2">
+  <exercise xml:id="inv2-1-j2" label="I2-1j2">
     <title>Interpret numerical summaries</title>
     <statement>
       <p>Interpret the mean, standard deviation, and skewness values in context.</p>
@@ -630,7 +630,7 @@ iscamsummary(births3$birthweight, digits=2)
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-1-k" label="I2.1k">
+  <exercise xml:id="inv2-1-k" label="I2-1k">
     <title>Effect of outliers</title>
     <statement>
       <p>How would the mean and standard deviations values compare if we had not removed the 9999 and low birthweight values?</p>
@@ -647,7 +647,7 @@ iscamsummary(births3$birthweight, digits=2)
     <p>Recall from Chapter 1 the normal probability distribution has some very nice properties and allows us to predict the behavior of our variable. For example, we might want to assume birth weights follow a normal distribution and estimate how often a baby will be of low birth weight (under 2500 grams according to the <url href="https://icd.who.int/browse10/Content/statichtml/ICD10Volume2_en_2010.pdf">International Statistical Classification of Diseases, 10th revision, World Health Organization, 2011</url>) based on these data.</p>
   </paragraphs>
   
-  <exercise xml:id="inv2-1-l" label="I2.1l">
+  <exercise xml:id="inv2-1-l" label="I2-1l">
     <title>Assess normality</title>
     <statement>
       <p>Do these birth weight data appear to behave like a normal distribution? How are you deciding?</p>
@@ -690,7 +690,7 @@ iscamaddnorm(births3$birthweight)
     </solution>
   </exercise>
   
-  <exercise xml:id="inv2-1-m" label="I2.1m">
+  <exercise xml:id="inv2-1-m" label="I2-1m">
     <title>Assess normal overlay fit</title>
     <statement>
       <p>Discuss any deviations from the pattern of a normal distribution.</p>
@@ -734,7 +734,7 @@ table(within2sd)/length(births3$birthweight)
     </solution>
   </exercise>
   
-  <exercise xml:id="inv2-1-n" label="I2.1n">
+  <exercise xml:id="inv2-1-n" label="I2-1n">
     <title>Percentage within 2 SD</title>
     <statement>
       <p>Report the percentage of the birthweights that fall within 2 standard deviations of the mean.</p>
@@ -770,7 +770,7 @@ table(within2sd)/length(births3$birthweight)
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-1-o" label="I2.1o">
+  <exercise xml:id="inv2-1-o" label="I2-1o">
     <title>Compare to normal prediction</title>
     <statement>
       <p>How well does this percentage match to what would be predicted if the data were behaving like a normal distribution?</p>
@@ -813,7 +813,7 @@ qqline(birthweight, datax=TRUE)
     </solution>
   </exercise>
   
-  <exercise xml:id="inv2-1-p" label="I2.1p">
+  <exercise xml:id="inv2-1-p" label="I2-1p">
     <title>Assess normal probability plot</title>
     <statement>
       <p>Do the observations deviate much from a line? If so how?</p>  
@@ -833,7 +833,7 @@ qqline(birthweight, datax=TRUE)
   
   <p>Suppose we were willing to assume that in general birth weights are approximately normally distributed with mean 3339 grams and standard deviation 462 grams. We can use this model to make predictions, like how often a baby will be of low birth weight, defined as 2500 grams or less.</p>
   
-  <exercise xml:id="inv2-1-q" label="I2.1q">
+  <exercise xml:id="inv2-1-q" label="I2-1q">
     <title>Calculate low birth weight probability</title>
     <statement>
       <p>Use technology (e.g., <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html?hideExtras=1">Normal Probability Calculator applet</url>) to calculate the normal distribution probability that a randomly selected baby will be of low birth weight. (Be sure to make sure your answer is consistent with a well-labeled sketch with the shaded area of interest!)</p>
@@ -875,7 +875,7 @@ qqline(birthweight, datax=TRUE)
     <response/>
   </exercise>
   
-  <exercise xml:id="inv2-1-r" label="I2.1r">
+  <exercise xml:id="inv2-1-r" label="I2-1r">
     <title>Compare to actual data</title>
     <statement>
       <p>Now examine the <c>births3</c> data: What percentage of the birth weights in this data set were at most 2500 grams? [Hint: Create a Boolean variable?] How does this compare to <xref ref="inv2-1-q" text="custom">the prediction in the previous question</xref>? Does this surprise you? Explain.</p>
@@ -911,7 +911,7 @@ qqline(birthweight, datax=TRUE)
     
     <p><em>Note: Make sure the columns parse correctly (e.g., Data &gt; Text to Columns in Excel?) and remove the last row before you start analyzing the data.</em></p>
     
-    <exercise xml:id="practice-2-1a-a" label="PP2.1A.1">
+    <exercise xml:id="practice-2-1a-a" label="PP2-1A-1">
       <title>Compare dotplot and histogram</title>
       <statement>
         <p>Create a dotplot and a histogram of the FCI values. Which graph do you prefer? Why?</p>
@@ -919,7 +919,7 @@ qqline(birthweight, datax=TRUE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-2-1a-b" label="PP2.1A.2">
+    <exercise xml:id="practice-2-1a-b" label="PP2-1A-2">
       <title>Assess normality with probability plot</title>
       <statement>
         <p>Create a normal probability plot of the FCI values. What do you conclude from this graph? Explain your reasoning.</p>
@@ -927,7 +927,7 @@ qqline(birthweight, datax=TRUE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-2-1a-c" label="PP2.1A.3">
+    <exercise xml:id="practice-2-1a-c" label="PP2-1A-3">
       <title>Analyze FCIPctChange distribution</title>
       <statement>
         <p>Create and include a dotplot of the FCIPctChange values which represent the percentage change in the FCI values from the previous year. Also report and summarize what you learn from the median.</p>
@@ -935,7 +935,7 @@ qqline(birthweight, datax=TRUE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-2-1a-d" label="PP2.1A.4">
+    <exercise xml:id="practice-2-1a-d" label="PP2-1A-4">
       <title>Identify outlier team</title>
       <statement>
         <p>The distribution of the FCIPctChange values shows a low visual outlier. Identify this team by name. What is special about this team?</p>
@@ -943,7 +943,7 @@ qqline(birthweight, datax=TRUE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-2-1a-e" label="PP2.1A.5">
+    <exercise xml:id="practice-2-1a-e" label="PP2-1A-5">
       <title>Identify unusual cap price</title>
       <statement>
         <p>Examine and include a stemplot of the cap prices. We see one team with an unusual value. Identify this team by name and suggest an explanation for its unusual cap price.</p>
@@ -960,7 +960,7 @@ qqline(birthweight, datax=TRUE)
     
     <p>The <url href="https://www.rossmanchance.com/iscam4/data/AnthemTimes2025.txt" visual="rossmanchance.com/iscam4/data/AnthemTimes2025.txt">AnthemTimes2025.txt</url> file has data on the length of the performance of the national anthem preceding the National Football League's Super Bowl for games from 1980 (Super Bowl 14) to 2025 (Super Bowl 58). Note: There are two columns for times (the first is from a colleague of mine watching and timing each one, the second one is from <url href="https://www.sportsbettingdime.com/guides/resources/super-bowl-national-anthem-lengths-over-under-betting-results/" visual="sportsbettingdime.com">sportsbettingdime</url>). Using sbdTime:</p>
     
-    <exercise xml:id="practice-2-1b-a" label="PP2.1B.1">
+    <exercise xml:id="practice-2-1b-a" label="PP2-1B-1">
       <title>Create dotplot with active title</title>
       <statement>
         <p>Create a well-labeled dotplot of the performance lengths. Include an "active title." Report your axis labels and your title.</p>
@@ -968,7 +968,7 @@ qqline(birthweight, datax=TRUE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-2-1b-b" label="PP2.1B.2">
+    <exercise xml:id="practice-2-1b-b" label="PP2-1B-2">
       <title>Describe distribution</title>
       <statement>
         <p>Give a brief description, in context, of the distribution, as if to someone who can't see your graph.</p>
@@ -976,7 +976,7 @@ qqline(birthweight, datax=TRUE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-2-1b-c" label="PP2.1B.3">
+    <exercise xml:id="practice-2-1b-c" label="PP2-1B-3">
       <title>Create boxplot and identify outliers</title>
       <statement>
         <p>Create and include a modified boxplot of the performance lengths. Identify any outliers shown in the boxplot by name.</p>
@@ -984,7 +984,7 @@ qqline(birthweight, datax=TRUE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-2-1b-d" label="PP2.1B.4">
+    <exercise xml:id="practice-2-1b-d" label="PP2-1B-4">
       <title>Report summary statistics</title>
       <statement>
         <p>Report the mean, median, and standard deviation. Include measurement units.</p>
@@ -992,7 +992,7 @@ qqline(birthweight, datax=TRUE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-2-1b-e" label="PP2.1B.5">
+    <exercise xml:id="practice-2-1b-e" label="PP2-1B-5">
       <title>Predict next Super Bowl length</title>
       <statement>
         <p>Give one number to predict the performance length in the next Super Bowl. Also include some indication of how accurate you think your prediction will be. (Cite any external information/additional analysis that you use.)</p>
@@ -1004,7 +1004,7 @@ qqline(birthweight, datax=TRUE)
   <subsection xml:id="practice2-1C">
     <title>Practice Problem 2.1C</title>
     
-    <exercise xml:id="practice-2-1c-a" label="PP2.1C.1">
+    <exercise xml:id="practice-2-1c-a" label="PP2-1C-1">
       <title>Generate random normal data and create probability plot</title>
       <statement>
         <p>Use statistical software to generate a random sample of 100 observations from a normal distribution with mean 2 and standard deviation 5. Create a normal probability plot of the generated data. Do the data follow a straight line?</p>
@@ -1024,7 +1024,7 @@ qqline(birthweight, datax=TRUE)
       <response/>
     </exercise>
     
-    <exercise xml:id="practice-2-1c-b" label="PP2.1C.2">
+    <exercise xml:id="practice-2-1c-b" label="PP2-1C-2">
       <title>Generate skewed data and compare probability plot</title>
       <statement>
         <p>Repeat the previous question for data that are skewed to the right. How does the behavior of the probability plot change? How would you interpret this plot without looking at the histogram?</p>

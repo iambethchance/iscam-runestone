@@ -29,7 +29,7 @@
     <p>&#160;</p>
   </paragraphs>
   
-  <exercise xml:id="inv4-7-a" label="I4.7.1">
+  <exercise xml:id="inv4-7-a" label="I4-7-1">
     <title>Identify Variables</title>
     <statement>
       <p>Identify the observational/experimental units, explanatory variable, and response variable.</p>
@@ -88,7 +88,7 @@
     </solution>
   </exercise>
   
-  <exercise xml:id="inv4-7-b" label="I4.7.2">
+  <exercise xml:id="inv4-7-b" label="I4-7-2">
     <title>Experiment or Observational Study</title>
     <statement>
       <p>Is this an experiment or an observational study?</p>
@@ -162,7 +162,7 @@
     </row>
   </tabular>
   
-  <exercise xml:id="inv4-7-c" label="I4.7.3">
+  <exercise xml:id="inv4-7-c" label="I4-7-3">
     <title>Preliminary Evidence</title>
     <statement>
       <p>Based on the graphs and summary statistics, is there preliminary evidence that cloud seeding is effective? (Include a calculation of the difference in the group means and in the group medians.)</p>
@@ -176,7 +176,7 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv4-7-d" label="I4.7.4">
+  <exercise xml:id="inv4-7-d" label="I4-7-4">
     <title>Validity of Two-Sample <em>t</em>-Test</title>
     <statement>
       <p>Would it be reasonable to apply a two-sample <em>t</em>-test to assess the statistical significance of the difference in the sample means? Explain.</p>
@@ -188,7 +188,7 @@
   </exercise>
 
  
-  <exercise xml:id="inv4-7-e" label="I4.7.5">
+  <exercise xml:id="inv4-7-e" label="I4-7-5">
     <title>Conduct Two-Sample <em>t</em>-Test</title>
     <statement>
       <p>Regardless of your answer to <xref ref="inv4-7-d" text="custom">Question 4</xref>, carry out a two-sample <em>t</em>-test and a confidence interval to determine the strength of evidence of higher average rainfall with the seeded clouds.</p>
@@ -212,7 +212,7 @@
   </exercise>
   
   
-  <exercise xml:id="inv4-7-f" label="I4.7.6">
+  <exercise xml:id="inv4-7-f" label="I4-7-6">
     <title>Alternative Approaches</title>
     <statement>
       <p>But if we don't totally trust these results, what other approaches have you learned that could be applied here instead of a two-sample <em>t</em>-test to assess the statistical significance of the difference in group means? (See <xref ref="inv-2-8">Investigation 2.8</xref> for a similar situation.)</p>
@@ -229,7 +229,7 @@
   </paragraphs>
   
   <ul><li><p>Modify the previous code from the <url href="tech-detour-two-way.html">Technology Detour - Simulating random assignment</url> (remember to load/attach the CloudSeeding.txt data, to match the sample sizes in the actual study, and to consider the difference in medians as the statistic), or use the <url href="https://www.rossmanchance.com/applets/2021/anovashuffle/AnovaShuffle.htm?hideExtras=2">Comparing Groups (Quantitative) applet</url>, to calculate an empirical p-value for the difference in medians for this study. </p></li></ul>
-  <exercise xml:id="inv4-7-g" label="I4.7.7">
+  <exercise xml:id="inv4-7-g" label="I4-7-7">
     <title>Randomization Test for Medians</title>
     <statement>
       <p>Report the p-value and your conclusion about the effect of cloud seeding on median rainfall amounts.</p>
@@ -246,7 +246,7 @@
     </solution>
   </exercise>
   
-  <exercise xml:id="inv4-7-h" label="I4.7.8">
+  <exercise xml:id="inv4-7-h" label="I4-7-8">
     <title>Normal Model for Median Differences</title>
     <statement>
       <p>Would it be reasonable to model the randomization distribution for the difference in medians with a normal or <em>t</em>-distribution? Explain. What about creating a confidence interval using statistic ± 2SD? What would this interval tell you?</p>
@@ -275,7 +275,7 @@
 </li>
 </ul>
 
-  <exercise xml:id="inv4-7-j" label="I4.7.10">
+  <exercise xml:id="inv4-7-j" label="I4-7-10">
     <title>Examine Transformed Data</title>
     <statement>
       <p>Would you consider the shapes of the distributions to be more symmetric than the original data?</p>
@@ -294,7 +294,7 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv4-7-k" label="I4.7.11">
+  <exercise xml:id="inv4-7-k" label="I4-7-11">
     <title>Validity After Transformation</title>
     <statement>
       <p>Would you consider it more reasonable to apply two-sample <em>t</em>-procedures to the transformed rainfall amounts than the original data? Explain.</p>
@@ -305,7 +305,7 @@
     <response/>
   </exercise>
   
-  <exercise xml:id="inv4-7-l" label="I4.7.12">
+  <exercise xml:id="inv4-7-l" label="I4-7-12">
     <title>Analysis of Transformed Data</title>
     <statement>
       <p>Calculate the one-sided p-value and the (two-sided) 95% confidence interval based on these data.</p>
@@ -325,7 +325,7 @@
     </solution>
   </exercise>
   
-  <exercise xml:id="inv4-7-m" label="I4.7.13">
+  <exercise xml:id="inv4-7-m" label="I4-7-13">
     <title>Compare Results</title>
     <statement>
       <p>How does this p-value compare to what you found from simulating a randomization distribution for the difference in medians? What conclusion would you draw from this p-value?</p>
@@ -342,7 +342,7 @@
     <p>It is fairly straight-forward to <q>back-transform</q> our transformation by exponentiating the endpoints of the interval. But we will again focus on the median rather than the mean as the transformed parameter. Also exponentiating an interval for a difference really gives us a ratio in the original scaling <m>[e^{x_1-x_2} = e^{x_1}/e^{x_2}]</m>. In other words, if group 1 is 2 points higher than group 2 on the log scale <m>(x_1 = x_2 + 2)</m>, then group 1 is <m>e^{x_2+2} = e^{x_2}(e^2)</m> or 7.4 times higher in the original scale (or 100 times larger on the log base 10 scale). Therefore, once we apply the back-transformation, we really have an interval of plausible values for the multiplicative change in the median of the response variable.</p>
   </paragraphs>
   
-  <exercise xml:id="inv4-7-n" label="I4.7.14">
+  <exercise xml:id="inv4-7-n" label="I4-7-14">
     <title>Back-Transformation</title>
     <statement>
       <p>Perform the back-transformations and interpret the new confidence interval in terms of a ratio of treatment <em>medians</em>.</p>
@@ -367,7 +367,7 @@
   <subsection xml:id="practice-4-7">
     <title>Practice Problem 4.7</title>
     
-    <exercise xml:id="PP4-7-a" label="PP4.7.1">
+    <exercise xml:id="PP4-7-a" label="PP4-7-1">
       <title>Compare Median Analyses to <em>t</em>-Test</title>
       <statement>
         <p>Compare these two analyses using medians to a two-sample <em>t</em>-test and a two-sample <em>t</em>-confidence interval on the original data.</p>
@@ -375,7 +375,7 @@
       <response/>
     </exercise>
     
-    <exercise xml:id="PP4-7-b" label="PP4.7.2">
+    <exercise xml:id="PP4-7-b" label="PP4-7-2">
       <title>Randomization Distribution for Means</title>
       <statement>
         <p>Examine the randomization distribution for the difference in means (and/or <em>t</em>-statistic). Do the <em>t</em> procedures end up being a reasonable approach for these data?</p>
