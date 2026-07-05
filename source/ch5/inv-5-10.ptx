@@ -271,7 +271,7 @@
       <title>Formula for SD of the Slope</title>
       <statement>
         <p>Are the last three observations consistent with the following formula for the standard deviation of the sample slope, <m>SD(b_1)</m>? Explain.</p>
-        <p><me>SD(b_1) = \sigma\sqrt{\frac{1}{(n-1)s_x^2}}</me></p>
+        <p><me>SD(b_1) = \sqrt{\frac{\sigma^2}{(n-1)s_x^2}}</me></p>
       </statement>
       <response/>
       <solution><p>Yes, <m>n</m> and <m>s_x^2</m> are in the denominator and <m>s</m> is in the numerator.</p></solution>
@@ -311,8 +311,8 @@
       <p>These sample data provide extremely strong evidence of a relationship between age and finishing time for the population of amateur runners similar to those in this sample. The above simulation shows that if there were no relationship in the population (<m>\beta_1 = 0</m>), then we would pretty much never see a sample slope as large as 0.140 just by chance (random sampling). We should be a bit cautious in generalizing these results to a larger sample as they were not a random sample. We might want to limit ourselves to 5K racers in similar types of towns.</p>
     </assemblage>
 
-<paragraphs><p><title>Discussion</title> The above simulation approach is a very intuitive way to assess the plausibility of a null hypothesis. However, it is not always practical to use this approach. In the next investigation, we will explore a more formal approach to assessing the plausibility of a null hypothesis in the regression setting.</p></paragraphs>
-    <p><term>Discussion:</term> As you have seen several times in this course, the sampling distribution of a statistic can often be well described by a mathematical model. This is also true in the regression setting. As when we focused on analyzing the individual population mean or comparing two population means, we need to first consider a way to estimate the (nuisance) standard deviation parameter.</p>
+<paragraphs><p>The above simulation approach is a very intuitive way to assess the plausibility of a null hypothesis. However, it is not always practical to use this approach. In the next investigation, we will explore a more formal approach to assessing the plausibility of a null hypothesis in the regression setting.</p></paragraphs>
+    <p><title>Discussion</title> As you have seen several times in this course, the sampling distribution of a statistic can often be well described by a mathematical model. This is also true in the regression setting. As when we focused on analyzing the individual population mean or comparing two population means, we need to first consider a way to estimate the (nuisance) standard deviation parameter.</p>
 
     <exercise xml:id="inv5-10-y">
       <title>Estimate the Standard Deviation</title>
@@ -354,7 +354,7 @@
         </hint>
       </statement>
       <response/>
-      <solution><p>The technology uses 0.03128 as the value of <m>SE(b_1)</m> rather than the estimate from the simulation.</p></solution>
+      <solution><p>The technology uses 0.0313 as the value of <m>SE(b_1)</m> rather than the estimate from the simulation, giving a <em>t</em>-value around 4.5.</p></solution>
     </exercise>
   </exercises>
 

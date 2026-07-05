@@ -73,7 +73,7 @@ If we treat box office revenue as the response variable there is a moderate posi
       </statement>
       <response/>
       <solution>
-        <p>The regression equation is <m>\widehat{\text{income}} = -232431603 + 109913810 \cdot \text{imdb\_rating}</m>.</p>
+        <p>The regression equation is <m>\hat{\text{income}} = -232431603 + 109913810 \cdot \text{imdb\_rating}</m>.</p>
         <p>The intercept is the predicted revenue (2015 dollars) if the IMDB rating is 0 (way below the minimum in our dataset).</p>
         <p>The slope is the predicted increase in box office revenues (2015 dollars) associated with a 1 point increase in the IMDB rating.</p>
       </solution>
@@ -87,7 +87,7 @@ If we treat box office revenue as the response variable there is a moderate posi
         <p>Rescale the response variable to be in millions of dollars and repeat your analysis (scatterplot, correlation coefficient, regression line). How was the behavior of the scatterplot changed? The correlation coefficient? How have the slope and intercept changed? Could you have predicted these changes?</p>
       </statement>
       <response/>
-      <solution><p>New equation: <m>\widehat{\text{income}} = -232.43 + 109.9 \cdot \text{imdb\_rating}</m>, everything is now interpreted in terms of millions of dollars, but the association itself does not change form or strength.</p></solution>
+      <solution><p>New equation: <m>\hat{\text{income}} = -232.43 + 109.9 \cdot \text{imdb\_rating}</m>, everything is now interpreted in terms of millions of dollars, but the association itself does not change form or strength.</p></solution>
     </exercise>
 
     <exercise xml:id="inv5-9-g">
@@ -103,9 +103,9 @@ If we treat box office revenue as the response variable there is a moderate posi
     </exercise>
 
     <paragraphs>
-      <title>Technology Detour:</title>
+      <title>Technology Detour</title>
       <exercise xml:id="inv5-9-tech-detour-coded">
-        <title>Coded Scatterplot Instructions</title>
+        <title>Coded Scatterplot With Lines Instructions</title>
         <statement>
           <p>Create a coded scatterplot with a separate regression line for each MPAA rating category.</p>
           <hint>
@@ -143,6 +143,15 @@ for (i in 1:4){
             </ul>
           </hint>
         </statement>
+        <solution>
+          <p>R and applet output</p>
+          <image source="images/inv-5-9-sol-h1.jpg" width="48%">
+            <description><p>R coded scatterplot of adjusted revenue (millions) versus IMDB rating with separate regression lines and a legend for the G, PG, PG-13, and R rating categories.</p></description>
+          </image>
+          <image source="images/inv-5-9-sol-h2.jpg" width="48%">
+            <description><p>Applet Results with four separate scatterplots by MPAA rating (PG-13, PG, G, R), each with its own regression line, and the Show equation output listing the four fitted equations.</p></description>
+          </image>
+        </solution>
       </exercise>
     </paragraphs>
 
@@ -153,13 +162,6 @@ for (i in 1:4){
       </statement>
       <response/>
       <solution>
-        <p>R and applet output</p>
-        <image source="images/inv-5-9-sol-h1.jpg" width="48%">
-          <description><p>R coded scatterplot of adjusted revenue (millions) versus IMDB rating with separate regression lines and a legend for the G, PG, PG-13, and R rating categories.</p></description>
-        </image>
-        <image source="images/inv-5-9-sol-h2.jpg" width="48%">
-          <description><p>Applet Results with four separate scatterplots by MPAA rating (PG-13, PG, G, R), each with its own regression line, and the Show equation output listing the four fitted equations.</p></description>
-        </image>
         <p>Most of the R movies are below the overall. The PG movies tend to be above the others with the same IMDB ratings. (Observations may vary a bit).</p>
       </solution>
     </exercise>

@@ -55,10 +55,10 @@
 
 <p>The table below shows the residuals for each of the above heights if we use the mean height, 67.75 inches, as the predicted value for each person. </p>
           <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
-            <row><cell>Height</cell><cell>74</cell><cell>66</cell><cell>77</cell><cell>67</cell><cell>56</cell><cell>65</cell><cell>64</cell><cell>70</cell><cell>62</cell><cell>67</cell></row>
-            <row><cell>Residual</cell><cell>6.25</cell><cell>-1.75</cell><cell>9.25</cell><cell>-.75</cell><cell>-11.75</cell><cell>-2.75</cell><cell>-3.75</cell><cell>2.25</cell><cell>-5.75</cell><cell>-.75</cell></row>
-            <row><cell>Height</cell><cell>66</cell><cell>64</cell><cell>69</cell><cell>73</cell><cell>74</cell><cell>70</cell><cell>65</cell><cell>72</cell><cell>71</cell><cell>63</cell></row>
-            <row><cell>Residual</cell><cell>-1.75</cell><cell>-3.75</cell><cell>1.25</cell><cell>5.25</cell><cell>6.25</cell><cell>2.25</cell><cell>-2.75</cell><cell>4.25</cell><cell>3.25</cell><cell>-4.75</cell></row>
+            <row><cell row-header="true">Height</cell><cell>74</cell><cell>66</cell><cell>77</cell><cell>67</cell><cell>56</cell><cell>65</cell><cell>64</cell><cell>70</cell><cell>62</cell><cell>67</cell></row>
+            <row bottom="major"><cell row-header="true">Residual</cell><cell>6.25</cell><cell>-1.75</cell><cell>9.25</cell><cell>-.75</cell><cell>-11.75</cell><cell>-2.75</cell><cell>-3.75</cell><cell>2.25</cell><cell>-5.75</cell><cell>-.75</cell></row>
+            <row><cell row-header="true">Height</cell><cell>66</cell><cell>64</cell><cell>69</cell><cell>73</cell><cell>74</cell><cell>70</cell><cell>65</cell><cell>72</cell><cell>71</cell><cell>63</cell></row>
+            <row><cell row-header="true">Residual</cell><cell>-1.75</cell><cell>-3.75</cell><cell>1.25</cell><cell>5.25</cell><cell>6.25</cell><cell>2.25</cell><cell>-2.75</cell><cell>4.25</cell><cell><nbsp/> </cell><cell> <nbsp/> </cell></row>
           </tabular>
       <exercise xml:id="inv5-8-d">
         <title>Compute Residuals</title>
@@ -151,7 +151,7 @@
         <solution><p>There is a fairly strong (<m>r = 0.711</m>), positive, linear association between <em>height</em> and <em>footlength</em>. As expected, people with larger (above average) feet tend to also be taller (above average height).</p></solution>
       </exercise>
 
-      <p>Open the Analyzing Two Quantitative Variables applet to see the scatterplot of the 20 students' height and foot measurements. Check the <alert>Show Movable Line</alert> box to add a blue line to the scatterplot. The equation for this initial line, <m>\widehat{\text{height}} = 67.75 + 0 \cdot \text{footlength}</m>, predicts the same height for all 20 students as you did in <xref ref="inv5-8-d" text="custom">Question 4</xref>. (Note: the <q>hat</q> over height indicates that the equation gives values for predicted height.)</p>
+      <p>Open the Analyzing Two Quantitative Variables applet to see the scatterplot of the 20 students' height and foot measurements. Check the <alert>Show Movable Line</alert> box to add a blue line to the scatterplot. The equation for this initial line, <m>\hat{\text{height}} = 67.75 + 0 \cdot \text{footlength}</m>, predicts the same height for all 20 students as you did in <xref ref="inv5-8-d" text="custom">Question 4</xref>. (Note: the <q>hat</q> over height indicates that the equation gives values for predicted height.)</p>
 
       <p>If you now place your mouse over the green square on one of the ends of the line and drag, you can change the slope of the line. You can also use the mouse to move the green square in the middle of the line up and down vertically to change the intercept of the line.</p>
 
@@ -194,8 +194,8 @@
         <response/>
         <solution><p>The best (smallest) SAE will vary.</p></solution>
       </exercise>
-<paragraphs><p>A more common criterion for determining the <q>best</q> line is to instead look at the sum of the squared residuals (or sum of squared errors, SSE). </p></paragraphs>
-      <ul><li><p>Check the <alert>Show Squared Residuals</alert> box to visually represent them and to determine the SSE value for your line.</p></li></ul>
+<paragraphs><p>A more common criterion for determining the <q>best</q> line is to instead look at the sum of the squared residuals (or sum of squared errors, SSError). </p></paragraphs>
+      <ul><li><p>Check the <alert>Show Squared Residuals</alert> box to visually represent them and to determine the SSError value for your line.</p></li></ul>
       <exercise xml:id="inv5-8-p">
         <title>Squared Error Criterion</title>
         <statement>
@@ -207,7 +207,7 @@
 
       <ul><li><p>Continue to adjust your line until you think you have minimized the sum of the squared residuals.</p></li></ul>
       <exercise xml:id="inv5-8-q">
-        <title>Improve Line for SSE</title>
+        <title>Improve Line for SSError</title>
         <statement>
           <p>Report your new equation and new SSError value.</p>
         </statement>
@@ -223,9 +223,9 @@
         </statement>
         <response/>
         <solution>
-          <p>equation: <m>\widehat{\text{height}} = 38.302 + 1.033 \cdot \text{foot size}</m></p>
+          <p>equation: <m>\hat{\text{height}} = 38.302 + 1.033 \cdot \text{foot size}</m></p>
           <p><m>SSError = 235</m></p>
-          <p>No, everyone should obtain the same regression line, and no one should have been able to obtain a smaller SSE value.</p>
+          <p>No, everyone should obtain the same regression line, and no one should have been able to obtain a smaller SSError value.</p>
         </solution>
       </exercise>
 
@@ -237,7 +237,7 @@
       <exercise xml:id="inv5-8-s">
         <title>How to Determine Coefficients</title>
         <statement>
-          <p>Suggest a technique for determining (based on the observed data <m>x_i</m>'s and <m>y_i</m>'s) the values of the slope and the intercept that minimize the SSE.</p>
+          <p>Suggest a technique for determining (based on the observed data <m>x_i</m>'s and <m>y_i</m>'s) the values of the slope and the intercept that minimize the SSError.</p>
         </statement>
         <response/>
         <solution><p>Taking the derivative (with respect to each coefficient), setting equal to zero, and solving.</p></solution>
@@ -247,10 +247,10 @@
     <paragraphs>
       <title>Least Squares Regression Line: Derivation of Coefficients</title>
 
-      <p>The least squares line <m>\hat{y} = b_0 + b_1 x</m> is determined by finding the values of the coefficients <m>b_0</m> and <m>b_1</m> that minimize the sum of the squared residuals, <m>SSE = \sum(y_i - \hat{y}_i)^2 = \sum_{i=1}^{n}(y_i - b_0 - b_1 x_i)^2</m>.</p>
+      <p>The least squares line <m>\hat{y} = b_0 + b_1 x</m> is determined by finding the values of the coefficients <m>b_0</m> and <m>b_1</m> that minimize the sum of the squared residuals, <m>SSError = \sum(y_i - \hat{y}_i)^2 = \sum_{i=1}^{n}(y_i - b_0 - b_1 x_i)^2</m>.</p>
 
       <exercise xml:id="inv5-8-t">
-        <title>Derivatives for SSE</title>
+        <title>Derivatives for SSError</title>
         <statement>
           <p>Take the derivative with respect to <m>b_0</m> of the expression on the right. Then take the derivative of the original expression with respect to <m>b_1</m>.</p>
           <hint><p>Use the chain rule, and remember to treat the data values <m>x_i</m>'s and <m>y_i</m>'s as constants.</p></hint>
@@ -291,7 +291,7 @@
         <solution>
           <p><m>b_1 = 0.711(5.00/3.45) = 1.03</m></p>
           <p><m>b_0 = 67.75 - 1.03(28.5) = 38.4</m></p>
-          <p><m>\widehat{\text{height}} = 38.4 + 1.03 \cdot \text{footlength}</m></p>
+          <p><m>\hat{\text{height}} = 38.4 + 1.03 \cdot \text{footlength}</m></p>
           <p>Note: Will be lots of rounding discrepancies.</p>
         </solution>
       </exercise>
@@ -339,7 +339,7 @@
         </statement>
         <response/>
         <solution>
-          <p><m>\widehat{\text{height}} = 38.4 + 1.03(44) \approx 83.7</m> inches.</p>
+          <p><m>\hat{\text{height}} = 38.4 + 1.03(44) \approx 83.7</m> inches.</p>
           <p>The foot length of 44 cm is very far outside the range of the <m>x</m> values that were in the data set, so we might not be completely convinced the same relationship extends to such extreme values.</p>
         </solution>
       </exercise>
@@ -357,19 +357,19 @@
 
       <ul><li><p>In the applet, uncheck and recheck the <alert>Show Movable Line</alert> box. Check the <alert>Show Squared Residuals</alert> box to determine the SSE if we were to use <m>\bar{y}</m> as our predicted value for every <m>x</m> (foot size).</p></li></ul>
       <exercise xml:id="inv5-8-aa">
-        <title>SSE from Mean Line</title>
+        <title>SSError from Mean Line</title>
         <statement>
           <p>Record this value.</p>
         </statement>
         <response/>
-        <solution><p><m>SSE(\bar{y}) = 475.75</m></p></solution>
+        <solution><p><m>SSError(\bar{y}) = 475.75</m></p></solution>
       </exercise>
 
       <exercise xml:id="inv5-8-bb">
         <title>Coefficient of Determination</title>
         <statement>
-          <p>Recall the SSE value for the regression line. Determine the percentage change in the SSE between the <m>\bar{y}</m> line and the regression line:</p>
-          <p><me>100\%\left[\frac{SSE(\bar{y}) - SSE(\text{least-squares})}{SSE(\bar{y})}\right] =</me></p>
+          <p>Recall the SSError value for the regression line. Determine the percentage change in the SSError between the <m>\bar{y}</m> line and the regression line:</p>
+          <p><me>100\%\left[\frac{SSError(\bar{y}) - SSError(\text{least-squares})}{SSError(\bar{y})}\right] =</me></p>
         </statement>
         <response/>
         <solution><p><m>100\% \times (475.75 - 235)/475.75 = 50.6\%</m></p></solution>
@@ -380,7 +380,7 @@
         <p>The preceding expression indicates the reduction in the prediction errors from using the least squares line instead of the <m>\bar{y}</m> line. This is referred to as the <term>coefficient of determination</term>, interpreted as the percentage of the variability in the response variable that is explained by the least-squares regression line with the explanatory variable. This provides us with a measure of how accurate our predictions will be and is most useful for comparing different models (e.g., different choices of explanatory variable). The coefficient of determination is equal to the square of the correlation coefficient and so is denoted by <m>r^2</m> or <m>R^2</m> (and is often pronounced <q>r-squared</q>).</p>
       </assemblage>
 
-      <p>Another measure of the quality of the fit is <m>s</m>, the standard deviation of the residuals. This is a measure of the unexplained variability about the regression line and gives us an idea of how accurate our predictions should be (the actual response should be within <m>2s</m> of the predicted response). If <m>s</m> is much smaller than the variability in the response variable (<m>s_y</m>) then we have explained a good amount of variability in <m>y</m>. Most statistical packages report <m>s</m>, or it can be found from <m>\sqrt{SSE/(n-2)}</m>.</p>
+      <p>Another measure of the quality of the fit is <m>s</m>, the standard deviation of the residuals. This is a measure of the unexplained variability about the regression line and gives us an idea of how accurate our predictions should be (the actual response should be within <m>2s</m> of the predicted response). If <m>s</m> is much smaller than the variability in the response variable (<m>s_y</m>) then we have explained a good amount of variability in <m>y</m>. Most statistical packages report <m>s</m>, or it can be found from <m>\sqrt{SSError/(n-2)}</m>.</p>
 
       <exercise xml:id="inv5-8-cc">
         <title>Residual Standard Deviation</title>
@@ -397,7 +397,7 @@
 
     <assemblage xml:id="study-conclusions-5-8">
       <title>Study Conclusions</title>
-      <p>There is a fairly strong positive linear association between the foot length of statistics students and their heights (<m>r = 0.711</m>). To predict heights from foot lengths, the least-squares regression line is <m>\widehat{\text{height}} = 38.3 + 1.03 \cdot \text{foot}</m>. This indicates that if one person's foot length measurement is one centimeter longer than another, we will predict that person's height to be 1.03 inches taller. This regression line has a coefficient of determination of 50.6%, indicating that 50.6% of the variability in heights is explained by this least squares regression line with foot length. The other 49.4% of the variability in heights is explained by other factors (perhaps including gender) and also by natural variation. So although the foot lengths are informative, they will not allow us to perfectly predict the heights of the students in this sample. The value of <m>s</m> is 3.61 inches, meaning we should be able to predict a person's height within 3.61 inches based only on the size of his or her foot.</p>
+      <p>There is a fairly strong positive linear association between the foot length of statistics students and their heights (<m>r = 0.711</m>). To predict heights from foot lengths, the least-squares regression line is <m>\hat{\text{height}} = 38.3 + 1.03 \cdot \text{foot}</m>. This indicates that if one person's foot length measurement is one centimeter longer than another, we will predict that person's height to be 1.03 inches taller. This regression line has a coefficient of determination of 50.6%, indicating that 50.6% of the variability in heights is explained by this least squares regression line with foot length. The other 49.4% of the variability in heights is explained by other factors (perhaps including gender) and also by natural variation. So although the foot lengths are informative, they will not allow us to perfectly predict the heights of the students in this sample. The value of <m>s</m> is 3.61 inches, meaning we should be able to predict a person's height within 3.61 inches based only on the size of his or her foot.</p>
     </assemblage>
 
     <paragraphs>

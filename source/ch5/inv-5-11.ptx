@@ -9,10 +9,11 @@
       <p>In the previous investigation, we analyzed the statistical significance of our sample data by replicating how often we might get a <em>random sample</em> of 247 runners (after removing an extreme outlier) with a slope this extreme from a larger population of runners that did not have an association between <em>finishing time</em> and <em>age</em>. In other words, we assumed there was no association between <em>finishing time</em> and <em>age</em> and the pairing of these values for our runners was just arbitrary. This suggests another way of assessing the statistical significance of our results.</p>
     </introduction>
 
+<ul><li><p>Paste the <url href="http://www.rossmanchance.com/iscam3/data/Talley5K2013.txt">Talley5K2013.txt</url> data file into the <url href="http://www.rossmanchance.com/applets/RegShuffle.htm">Analyzing Two Quantitative Variables</url> applet. Press <alert>Use Data</alert> and make sure <em>age</em> is used as the explanatory variable (if not press the <alert>(response, explanatory)</alert> button to toggle their roles). Remove the outlier and check the <alert>Show Regression Line</alert> box.</p></li></ul>
     <exercise xml:id="inv5-11-a">
       <title>Confirm the Regression Equation</title>
       <statement>
-        <p>Paste the <url href="http://www.rossmanchance.com/iscam3/data/Talley5K2013.txt">Talley5K2013.txt</url> data file into the <url href="http://www.rossmanchance.com/applets/RegShuffle.htm">Analyzing Two Quantitative Variables</url> applet. Press <alert>Use Data</alert> and make sure <em>age</em> is used as the explanatory variable (if not press the <alert>(response, explanatory)</alert> button to toggle their roles). Remove the outlier and check the <alert>Show Regression Line</alert> box and confirm the equation.</p>
+        <p>Confirm the equation.</p>
       </statement>
       <response/>
       <solution>
@@ -25,28 +26,31 @@
 
     <p>Another way to investigate whether the association observed in these sample data could have arisen by chance is a randomization test that shuffles the outcomes for one of the variables and reexamines the correlation coefficient and/or sample slope for the shuffled or re-randomized data.</p>
 
+<ul><li><p>Check the <alert>Show Shuffle Options</alert> box. Press the <alert>Shuffle Y-values</alert> box. Select the <alert>Plot</alert> radio button.</p></li></ul>
     <exercise xml:id="inv5-11-b">
       <title>Single Shuffle</title>
       <statement>
-        <p>Check the <alert>Show Shuffle Options</alert> box. Press the <alert>Shuffle Y-values</alert> box. Select the <alert>Plot</alert> radio button. Describe the blue line that appears. Is the association as strong as the one that we found in the actual data? How are you deciding?</p>
+        <p>Describe the blue line that appears. Is the association as strong as the one that we found in the actual data? How are you deciding?</p>
       </statement>
       <response/>
       <solution><p>The slope will most likely be smaller than observed (as well the correlation coefficient, indicating a weaker association).</p></solution>
     </exercise>
 
+<ul><li><p>Press the <alert>Shuffle Y-values</alert> button 5-10 more times.</p></li></ul>
     <exercise xml:id="inv5-11-c">
       <title>Repeated Shuffles</title>
       <statement>
-        <p>Press the <alert>Shuffle Y-values</alert> button 5-10 more times. Do you ever find a negative association? Are any of the associations as strong as the one observed by the student group? What pattern is beginning to emerge in the blue regression lines on the scatterplot?</p>
+        <p>Do you ever find a negative association? Are any of the associations as strong as the one observed by the student group? What pattern is beginning to emerge in the blue regression lines on the scatterplot?</p>
       </statement>
       <response/>
       <solution><p>You should get a negative association about half the time, but probably never one as extreme as the observed slope (red line).</p></solution>
     </exercise>
 
+<ul><li><p>Change <alert>Number of Shuffles</alert> to some large number (like 1000 or the difference between how many you have done so far and 1000) and press the <alert>Shuffle Y-values</alert> button.</p></li></ul>
     <exercise xml:id="inv5-11-d">
       <title>Null Distribution of Shuffled Slopes</title>
       <statement>
-        <p>Change <alert>Number of Shuffles</alert> to some large number (like 1000 or the difference between how many you have done so far and 1000) and press the <alert>Shuffle Y-values</alert> button. Describe the shape, center, and variability of the resulting distribution of re-randomized slopes. How does this distribution compare to the one you found in <xref ref="inv5-10-k" text="custom">Investigation 5.10, Question 11</xref>?</p>
+        <p>Describe the shape, center, and variability of the resulting distribution of re-randomized slopes. How does this distribution compare to the one you found in <xref ref="inv5-10-k" text="custom">Investigation 5.10, Question 11</xref>?</p>
       </statement>
       <response/>
       <solution>
@@ -58,10 +62,11 @@
       </solution>
     </exercise>
 
+<ul><li><p>Use the applet to estimate the p-value by using the <alert>Count Samples</alert> box: choosing to count <q>beyond</q> (for the two-sided p-value) and specifying the observed sample slope. Press <alert>Count</alert>.</p></li></ul>
     <exercise xml:id="inv5-11-e">
       <title>Empirical p-value</title>
       <statement>
-        <p>Use the applet to estimate the p-value by using the <alert>Count Samples</alert> box: choosing to count <q>beyond</q> (for the two-sided p-value) and specifying the observed sample slope. Press <alert>Count</alert>.</p>
+        <p>Report your estimated p-value.</p>
       </statement>
       <response/>
       <solution>
@@ -73,7 +78,7 @@
       </solution>
     </exercise>
 
-    <p>You should see many similarities between the statistic distributions from random sampling (Inv 5.10) and random shuffling). So let's again consider applying the <em>t</em>-probability model to the standardized statistics.</p>
+    <p>You should see many similarities between the statistic distributions from random sampling (<xref ref="inv-5-10" text="custom">Inv 5.10</xref>) and random shuffling). So let's again consider applying the <em>t</em>-probability model to the standardized statistics.</p>
 
     <exercise xml:id="inv5-11-f">
       <title>Standardize Observed Slope</title>
@@ -90,10 +95,11 @@
       </solution>
     </exercise>
 
+<ul><li><p>Now use the pull-down menu to select <alert>t-statistic</alert>.</p></li></ul>
     <exercise xml:id="inv5-11-g">
       <title>t-statistic p-value</title>
       <statement>
-        <p>Now use the pull-down menu to select <alert>t-statistic</alert>. Use the applet to estimate the p-value corresponding to the observed <em>t</em>-statistic. How does it compare to the p-value you found in Investigation 5.10? (Note: The applet may complain due to rounding, estimation of the standard error.)</p>
+        <p>Use the applet to estimate the p-value corresponding to the observed <em>t</em>-statistic. How does it compare to the p-value you found in <xref ref="inv-5-10" text="custom">Investigation 5.10</xref>? (Note: The applet may complain due to rounding, estimation of the standard error.)</p>
       </statement>
       <response/>
       <solution>
@@ -104,19 +110,21 @@
       </solution>
     </exercise>
 
+<ul><li><p>Check the box to <alert>Overlay t-distribution</alert>.</p></li></ul>
     <exercise xml:id="inv5-11-h">
       <title>Overlay t-distribution</title>
       <statement>
-        <p>Check the box to <alert>Overlay t-distribution</alert>. Does it appear to be a reasonable model of the shuffled <em>t</em>-statistics distribution?</p>
+        <p>Does it appear to be a reasonable model of the shuffled <em>t</em>-statistics distribution?</p>
       </statement>
       <response/>
       <solution><p>The <m>t</m>-distribution appears to be a good model for this randomization distribution.</p></solution>
     </exercise>
 
+<ul><li><p>Check the <alert>Regression Table</alert> box.</p></li></ul>
     <exercise xml:id="inv5-11-i">
       <title>Regression Table Comparison</title>
       <statement>
-        <p>Check the <alert>Regression Table</alert> box to compare your calculations (e.g., what value does the table use for <m>SE(\hat{\beta})</m>?</p>
+        <p>Compare your calculations (e.g., what value does the table use for <m>SE(\hat{\beta})</m>?</p>
       </statement>
       <response/>
       <solution>
