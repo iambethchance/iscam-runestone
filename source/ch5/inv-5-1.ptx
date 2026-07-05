@@ -75,6 +75,9 @@
         <solution>
           <p>The sample proportions of women on the jury lists are approximately:</p>
           <p>Judge 1: 0.336, Judge 2: 0.270, Judge 3: 0.291, Judge 4: 0.341, Judge 5: 0.270, Judge 6: 0.270, Judge 7: 0.144.</p>
+          <image source="images/inv5-1-sol-a.png" width="60%">
+            <description><p>Segmented bar graph of each judge's jury list split into women and men; Judge 7 shows a noticeably smaller proportion of women</p></description>
+          </image>
           <p>There is some variability among the judges, but Judge 7 in particular has a much lower percentage of women on the jury list.</p>
         </solution>
       </exercise>
@@ -154,7 +157,39 @@
         <statement>
           <p>How many jurors were on Judge 1's list? If you suppose the long-run proportion of women in his juries was 0.261, how many of these jurors would you expect to be female? How many would you expect to be male?</p>
           <p><em>Recall:</em> An expected value does not need to be an integer.</p>
+          <p>Number of jurors on Judge 1's list: <var width="6"/></p>
+          <p>Expected number of women: <var width="8"/></p>
+          <p>Expected number of men: <var width="8"/></p>
         </statement>
+        <setup>
+          <var>
+            <condition number="354" tolerance="0.5">
+              <feedback><p>Correct.</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>Try again. Total the women and men on Judge 1's jury list.</p></feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="92.39" tolerance="0.5">
+              <feedback><p>Correct.</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>Try again. Multiply 0.261 by the number of jurors on Judge 1's list.</p></feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="261.61" tolerance="0.5">
+              <feedback><p>Correct.</p></feedback>
+            </condition>
+            <condition number="92.39" tolerance="0.5">
+              <feedback><p>That is the expected number of women; this blank asks for the expected number of men.</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>Try again. Subtract the expected number of women from the total number of jurors.</p></feedback>
+            </condition>
+          </var>
+        </setup>
         <response/>
         <solution>
           <p>Expected number of women: <m>0.261(354) = 92.39</m></p>
@@ -296,20 +331,55 @@
         <title>Compute Chi-squared Statistic</title>
         <statement>
           <p>Calculate this standardized statistic for the above two-way table.</p>
-          <p><m>\chi^2 =</m> <var form="numeric" width="8"/> + <var form="numeric" width="8"/> + <m>\frac{(118 - 105.71)^2}{105.71} + \frac{(77 - 58.99)^2}{58.99} + \frac{(30 - 28.97)^2}{28.97}</m></p>
-          <p><m>\qquad + \frac{(149 - 144.07)^2}{144.07} + \frac{(86 - 155.82)^2}{155.82} +</m> <var form="numeric" width="8"/> + <var form="numeric" width="8"/> <m>+ \frac{(287 - 299.30)^2}{299.30}</m></p>
+          <p><m>\chi^2 =</m> <var width="16"/> + <var width="16"/> + <m>\frac{(118 - 105.71)^2}{105.71} + \frac{(77 - 58.99)^2}{58.99} + \frac{(30 - 28.97)^2}{28.97}</m></p>
+          <p><m>\qquad + \frac{(149 - 144.07)^2}{144.07} + \frac{(86 - 155.82)^2}{155.82} +</m> <var width="16"/> + <var width="16"/> <m>+ \frac{(287 - 299.30)^2}{299.30}</m></p>
           <p><m>\qquad + \frac{(149 - 167.01)^2}{167.01} + \frac{(81 - 82.03)^2}{82.03} + \frac{(403 - 407.93)^2}{407.93} + \frac{(511 - 441.18)^2}{441.18}</m></p>
           <p><m>\chi^2 =</m> <var form="numeric" width="8"/> + <var form="numeric" width="8"/> + <m>1.43 + 5.50 + 0.04 + 0.17</m></p>
           <p><m>\qquad + 31.29 +</m> <var form="numeric" width="8"/> + <var form="numeric" width="8"/> <m>+ 0.50 + 1.94</m></p>
           <p><m>\qquad + 0.01 + 0.06 + 11.06</m></p>
+          <hint>
+            <p>Fill in the missing terms for the first two judges and then sum all of the values together.</p>
+          </hint>
         </statement>
         <setup>
         <var>
+          <condition string="\(\s*119\s*-\s*92\.39\s*\)\s*(\^|\*\*)\s*2\s*/\s*92\.39">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. Each term has the form (observed - expected)^2/expected; this one uses the Judge 1 women cell of the table.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string="\(\s*197\s*-\s*190\.53\s*\)\s*(\^|\*\*)\s*2\s*/\s*190\.53">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. Each term has the form (observed - expected)^2/expected; this one uses the Judge 2 women cell of the table.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string="\(\s*235\s*-\s*261\.61\s*\)\s*(\^|\*\*)\s*2\s*/\s*261\.61">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. Each term has the form (observed - expected)^2/expected; this one uses the Judge 1 men cell of the table.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string="\(\s*533\s*-\s*53[89]\.47\s*\)\s*(\^|\*\*)\s*2\s*/\s*53[89]\.47">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. Each term has the form (observed - expected)^2/expected; this one uses the Judge 2 men cell of the table.</p></feedback>
+          </condition>
+        </var>
+        <var>
           <condition number="7.66" tolerance="0.05">
             <feedback><p>Correct.</p></feedback>
           </condition>
           <condition string=".*">
-            <feedback><p>Try again. This term is the Judge 1 women cell: (119-92.39)^2/92.39.</p></feedback>
+            <feedback><p>Try again. This term is the value of the Judge 1 women term.</p></feedback>
           </condition>
         </var>
         <var>
@@ -317,7 +387,7 @@
             <feedback><p>Correct.</p></feedback>
           </condition>
           <condition string=".*">
-            <feedback><p>Try again. This term is the Judge 2 women cell: (197-190.53)^2/190.53.</p></feedback>
+            <feedback><p>Try again. This term is the value of the Judge 2 women term.</p></feedback>
           </condition>
         </var>
         <var>
@@ -325,7 +395,7 @@
             <feedback><p>Correct.</p></feedback>
           </condition>
           <condition string=".*">
-            <feedback><p>Try again. This term is the Judge 1 men cell: (235-261.61)^2/261.61.</p></feedback>
+            <feedback><p>Try again. This term is the value of the Judge 1 men term.</p></feedback>
           </condition>
         </var>
         <var>
@@ -333,45 +403,10 @@
             <feedback><p>Correct.</p></feedback>
           </condition>
           <condition string=".*">
-            <feedback><p>Try again. This term is the Judge 2 men cell: (533-538.47)^2/538.47.</p></feedback>
-          </condition>
-        </var>
-        <var>
-          <condition number="7.66" tolerance="0.05">
-            <feedback><p>Correct.</p></feedback>
-          </condition>
-          <condition string=".*">
-            <feedback><p>Try again. Carry down the value you computed above for the Judge 1 women cell: (119-92.39)^2/92.39.</p></feedback>
-          </condition>
-        </var>
-        <var>
-          <condition number="0.22" tolerance="0.05">
-            <feedback><p>Correct.</p></feedback>
-          </condition>
-          <condition string=".*">
-            <feedback><p>Try again. Carry down the value you computed above for the Judge 2 women cell: (197-190.53)^2/190.53.</p></feedback>
-          </condition>
-        </var>
-        <var>
-          <condition number="2.71" tolerance="0.05">
-            <feedback><p>Correct.</p></feedback>
-          </condition>
-          <condition string=".*">
-            <feedback><p>Try again. Carry down the value you computed above for the Judge 1 men cell: (235-261.61)^2/261.61.</p></feedback>
-          </condition>
-        </var>
-        <var>
-          <condition number="0.07" tolerance="0.04">
-            <feedback><p>Correct.</p></feedback>
-          </condition>
-          <condition string=".*">
-            <feedback><p>Try again. Carry down the value you computed above for the Judge 2 men cell: (533-538.47)^2/538.47.</p></feedback>
+            <feedback><p>Try again. This term is the value of the Judge 2 men term.</p></feedback>
           </condition>
         </var>
         </setup>
-        <hint>
-          <p>Fill in the missing terms for the first two judges and then sum all of the values together.</p>
-        </hint>
         <response/>
         <solution>
           <p>The four missing components are approximately:</p>
