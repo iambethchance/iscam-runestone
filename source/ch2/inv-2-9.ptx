@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="inv-2-9" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Investigation 2.9: Heroin Treatment Times</title>
+
+<exercises xml:id="investigation2-9" hidden-label="yes">
+  <title>The Study</title>
+  <introduction>
+    <p>Rabe-Hesketh and Everitt (2000) report on a study by Caplehorn and Bell (<url href="https://pubmed.ncbi.nlm.nih.gov/1988793/">1991</url>) that investigated the times that heroin addicts remained in a clinic for methadone maintenance treatment. The data in <url href="http://www.rossmanchance.com/iscam2/data/heroin.txt" visual="rossmanchance.com/iscam2/data/heroin.txt"><c>heroin.txt</c></url> includes the amount of time that the subjects stayed in the facility until treatment was terminated (<em>times</em>, number of days). For about 37% of subjects, the study ended while they were still in the clinic (status = 0). Thus, their <q>survival time</q> has been <q>truncated.</q> For this reason, we might not want to focus on the mean survival time, but rather some other measure of a <q>typical</q> survival time. We will explore both the median and the 75th percentile. We will treat this group of 238 patients as representative of the population of heroin addicts.</p>
+  </introduction>
+
+  <exercise xml:id="inv2-9-a">
+    <title>Describe the survival times</title>
+    <statement>
+      <p>Produce and describe a histogram of the survival times for these patients.</p>
+      <hint>
+        <title>R Hint</title>
+        <p>We will just focus on the <em>times</em> data, so you can copy and load all the data and then let</p>
+        <p><cd>times = heroin$times</cd></p>
+      </hint>
+    </statement>
+    <response/>
+    <solution>
+      <p>The distribution of treatment times is skewed to the right, ranging from about 0 to 1000 days with a mean 402.6 days and median 367.5 days.</p>
+      <image source="images/inv2-9-sol-a.jpg" width="45%">
+        <description><p>Histogram of survival times, skewed to the right, ranging from about 0 to 1000 days</p></description>
+      </image>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="inv2-9-b">
+    <title>Consider a mathematical model</title>
+    <statement>
+      <p>Explain why is <em>not</em> likely that we could find a simple mathematical model for the distribution of this variable.</p>
+    </statement>
+    <response/>
+    <solution>
+      <p>The data do not appear to be unimodal. The models we have looked at so far (e.g., exponential, log normal) have all been unimodal. We also have to worry about the data having been truncated.</p>
+    </solution>
+  </exercise>
+
+  <paragraphs>
+    <title>Bootstrapping</title>
+    <p>Even though a sample size of <m>n = 238</m> is likely large enough for us to employ the Central Limit Theorem for the distribution of the sample mean, we may be more interested in the median or another statistic like a <q>trimmed mean.</q> However, we may not know a mathematical model for the sampling distribution of one of these other statistics. Of course, what we are most interested in is a measure of the sample-to-sample variability of that statistic. Previously, we estimated the standard error of the sample mean by using information from the sample (<m>s/\sqrt{n}</m>). But when such a formula does not exist, another method that is gaining in popularity is <em>bootstrapping</em>.</p>
+
+    <assemblage xml:id="def-bootstrap-sample">
+      <title>Definition: Bootstrap Sample</title>
+      <p>A <term>bootstrap sample</term> resamples the data from the existing sample, drawing the same number of observations, but <em>with replacement</em>. A bootstrap distribution is a collection of values of the statistic from lots of bootstrap samples.</p>
+    </assemblage>
+
+    <p>The reasoning behind this technique is that if the sample has been randomly selected, it should be representative of the population. Thus, it should give us information about the population and about samples drawn from that population. In other words, rather than assume a particular probability model for the population, bootstrapping assumes that the population looks just like the sample, replicated infinitely many times. By sampling with replacement from the original sample, and calculating the statistics of interest for each bootstrap sample, we gain information about the shape and spread of the sampling distribution of the statistic of interest.</p>
+
+    <assemblage xml:id="key-result-plug-in">
+      <title>Key Result</title>
+      <p>The <term>plug-in principle</term> states that the standard deviation of the bootstrap distribution provides a reasonable estimate of the standard deviation of the sampling distribution of the statistic.</p>
+    </assemblage>
+
+    <exercise xml:id="inv2-9-c">
+      <title>Take a bootstrap sample</title>
+      <statement>
+        <p>Use technology to take a bootstrap sample from the heroin data.</p>
+        <ul>
+            <li>
+              <p>In <alert>Sampling From Population</alert> applet: Follow the link for the <url href="https://www.rossmanchance.com/applets/OneSample.html?population=bootstrap">Bootstrapping</url> variation. Paste in the data and select the <em>times</em> variable. Check Show Sampling Options and set the Sample size to 238. Press Draw Samples. Set the Statistic radio button to Median.</p>
+            </li>
+            <li>
+              <p>In <alert>R</alert>:</p>
+              <p><cd>sample1 = sample(x=times, size=238, replace = TRUE)</cd></p>
+            </li>
+            <li>
+              <p>In <alert>JMP</alert>: In the <alert>Analyze &gt; Distribution</alert> output, in the <alert>Quantiles</alert> section, right click, and from the pop up menu select <alert>Bootstrap</alert>. Set the <alert>Number of Bootstrap Samples</alert> to one and press <alert>OK</alert>. This will open a new data window with the statistics from the bootstrap sample.</p>
+              <image source="tech_images/inv2-9-jmp-bootstrap.png" width="45%">
+                <description><p>JMP Quantiles output with right-click menu showing the Bootstrap option circled</p></description>
+              </image>
+            </li>
+        </ul>
+        <p>Report the median of your bootstrap sample.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>Results will vary from sample to sample.</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="inv2-9-d">
+      <title>Take another bootstrap sample</title>
+      <statement>
+        <p>Take another bootstrap sample. Did you get the same bootstrap sample median? Why or why not?</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>Results will vary, but highly unlikely you will get exactly the same sample median. Even though we are sampling 238 observations both times, because we are sampling with replacement, each sample consists of slightly different values, some repeating more than others, some not appearing.</p>
+      </solution>
+    </exercise>
+
+    <p>To estimate the sample-to-sample variation in our statistic (e.g., the median), we now want to repeat this process a large number of times.</p>
+
+    <exercise xml:id="inv2-9-e">
+      <title>Create a bootstrap distribution</title>
+      <statement>
+        <p>Use technology to create a bootstrap distribution from the heroin data.</p>
+        <hint>
+          <title>Applet Instructions</title>
+          <p>In <url href="https://www.rossmanchance.com/applets/OneSample.html?population=bootstrap">Sampling From Population/Bootstrapping</url> applet: Set the Number of samples to at least 998. Press Draw Samples.</p>
+        </hint>
+        <hint>
+          <title>R Instructions</title>
+          <p>Create a list of bootstrap samples and then apply the median to each sample:</p>
+          <p><cd>
+resamples =lapply(1:1000, function(i) sample(times, 238,replace=T))
+bootstrapmedians = sapply(resamples, median)
+          </cd></p>
+        </hint>
+        <hint>
+          <title>JMP Instructions</title>
+          <ul>
+            <li><p>Set the number of bootstrap samples to 1000.</p></li>
+            <li><p>Then find the output of the 1000 bootstrap sample medians and copy and paste those into a new data table.</p></li>
+          </ul>
+        </hint>
+      </statement>
+      <response/>
+      <solution>
+        <p>R output:</p>
+        <image source="images/inv2-9-sol-f-r.jpg" width="45%">
+          <description><p>Histogram of 1000 bootstrap medians from R, roughly symmetric and centered near 375</p></description>
+        </image>
+        <p>JMP output:</p>
+        <image source="images/inv2-9-sol-f-jmp.jpg" width="90%">
+          <description><p>JMP bootstrap output for the median: histogram, quantiles, summary statistics, and bootstrap confidence limits</p></description>
+        </image>
+        <p>Applet output:</p>
+        <image source="images/inv2-9-sol-f-applet.jpg" width="45%">
+          <description><p>Applet histogram of sample medians with mean 374.600 and SD 32.191</p></description>
+        </image>
+      </solution>
+    </exercise>
+
+    <p>You should now have a collection of the medians from 1000 different bootstrap samples.</p>
+
+    <exercise xml:id="inv2-9-f">
+      <title>Describe the bootstrap distribution</title>
+      <statement>
+        <p>Produce graphical and numerical summaries of the 1000 bootstrap medians. Describe the behavior of the bootstrap distribution.</p>
+      </statement>
+      <response/>
+      <solution>
+        <p>The distribution is pretty symmetric, centered around 375 days, with standard deviation around 32 days (results will vary).</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="inv2-9-g">
+      <title>Calculate a rough confidence interval</title>
+      <statement>
+        <p>Suggest a quick method for using the distribution in <xref ref="inv2-9-e" text="custom">Question 5</xref> to calculate a rough confidence interval for the population median. Calculate and interpret this interval.</p>
+        <hint>
+          <p>Recall our usual <em>estimate</em> <m>\pm</m> 2 <m>\times</m> <em>standard deviation of estimate</em>.</p>
+        </hint>
+      </statement>
+      <response/>
+      <solution>
+        <p>We could take the observed sample median (367.5) and add and subtract two SD(medians) <m>\approx</m> 32.</p>
+        <p>For example 367.5 <m>\pm</m> 2(32) = (303.5, 431.5)</p>
+        <p>We are 95% confident that the median treatment time in this population is between 303.5 and 431.5 days.</p>
+      </solution>
+    </exercise>
+
+    <paragraphs>
+      <title>Discussion</title>
+      <p>Once you get an estimate of the standard deviation of the statistic, there is still some consideration of how to construct a confidence interval. In this case, the distribution of medians should look fairly symmetric, so a symmetric confidence interval can work. In other cases, there are more complicated <q>adjustments</q> that can be made to get a bootstrap confidence interval. Discussion of these methods is beyond of the scope of this text, but you have seen an example of the power of bootstrapping <mdash/> you can create a distribution <em>for any statistic</em> that should have the same variability as the sampling distribution of that statistic, without having to pretend you know anything about the population!</p>
+    </paragraphs>
+
+    <exercise xml:id="inv2-9-h">
+      <title>Bootstrap the upper quartile</title>
+      <statement>
+        <p>Repeat this analysis, but now using the upper quartile (75% percentile) as the statistic.</p>
+        <ul>
+            <li>
+              <p>In <alert>applet</alert>, select the Percentile radio button. Enter .75 in the box that appears and press Draw Samples.</p>
+            </li>
+            <li>
+              <p>In <alert>R</alert>:</p>
+              <p><cd>
+quantile(heroin$times, c(.75))
+bootstrap75th &lt;- sapply(resamples, p=.75)
+              </cd></p>
+            </li>
+            <li>
+              <p>In <alert>JMP</alert>: Return to the earlier data window and select the bootstrap results for the 75.0% quartile.</p>
+            </li>
+        </ul>
+      </statement>
+      <response/>
+      <solution>
+        <p>In R, observed 585.5</p>
+        <p><cd>
+resamples &lt;- lapply(1:1000, function(i) sample(times, 238, replace=T))
+bootstrapmedians &lt;- sapply(resamples, quantile, p = .75)
+iscamsummary(bootstrapmedians)
+        </cd></p>
+        <p>585.5 <m>\pm</m> 2*25.19, 585.5 <m>\pm</m> 2*25.19 <m>\approx</m> (535.1, 635.9)</p>
+        <p>In JMP, observed = 588</p>
+        <image source="images/inv2-9-sol-h-jmp.jpg" width="90%">
+          <description><p>JMP bootstrap output for the 75% quartile: histogram, quantiles, summary statistics, and bootstrap confidence limits</p></description>
+        </image>
+        <p>588 <m>\pm</m> 2(25.57) = (536.9, 639.1), though distribution is not very symmetric</p>
+        <p>In applet, observed = 584</p>
+        <image source="images/inv2-9-sol-h-applet.png" width="55%">
+          <description><p>Applet histogram of bootstrap 75th percentiles with mean 586.460 and SD 25.228</p></description>
+        </image>
+        <p>585 <m>\pm</m> 2(25.228) = (534.5, 635.5)</p>
+      </solution>
+    </exercise>
+  </paragraphs>
+
+  <assemblage xml:id="study-conclusions-2-9">
+    <title>Study Conclusions</title>
+    <p>The distribution of treatment times was skewed to the right with a median of about 1 year (367.5 days) and interquartile range of 418.5 days. Because of the skewness and truncation in the data, we might prefer the median or even the third quartile as the statistic. Based on a bootstrap simulation, an approximate 95% confidence interval for the median treatment time in the population of heroin addicts is between 306 days and 430 days (but results will vary), while an approximate 95% confidence interval for the upper quartile is around 534 to 638 days (results will vary). The interval for the median includes lower values than a <em>t</em>-interval for the population mean (368, 437), because the <em>t</em>-procedure is more strongly affected by the skewness in the data. We would like to generalize these data to all heroin patients, but would like more information to ensure this sample is representative.</p>
+  </assemblage>
+</exercises>
+
+  <subsection xml:id="practice2-9A">
+    <title>Practice Problem 2.9A</title>
+
+    <p>In April 2014, the city of Flint Michigan switched its water supply to the Flint River in an effort to save money. The U.S. Environmental Protection Agency (EPA)'s Lead and Copper Rule states that if lead concentrations exceed an action level of 15 parts per billion (ppb) in more than 10% of homes sampled, then actions must be undertaken to control corrosion, and the public must be informed.  Consider the data in <url href="https://www.rossmanchance.com/iscam3/data/flint_mdeq.txt" visual="rossmanchance.com/iscam3/data/flint_mdeq.txt"><c>flint_mdeq.txt</c></url></p>
+
+    <exercise xml:id="practice-2-9A-a">
+      <title>Bootstrap interval for the 90th percentile</title>
+      <statement>
+        <p>Create a bootstrap confidence interval for the 90th percentile using the full dataset (<m>n = 71</m>). Describe your approach in detail.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <p>After the city submitted their data, the state instructed them to drop two of the values because they violated testing guidelines. One measurement was dropped because there was a water filter in the home <mdash/> which could give an artificially low measurement <mdash/> but actually this value was 104 ppb, the maximum by far. The other dropped value, 20 ppb, also on the high side, was dropped because it came from a business, not a home.</p>
+
+    <exercise xml:id="practice-2-9A-b">
+      <title>Compare after removing observations</title>
+      <statement>
+        <p>Create a bootstrap confidence interval after removing the two questionable observations (<m>n = 69</m>). How do the results compare?</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+
+  <subsection xml:id="practice2-9B">
+    <title>Practice Problem 2.9B</title>
+
+    <p>Return to the <url href="http://www.rossmanchance.com/iscam2/data/honking.txt" visual="rossmanchance.com/iscam2/data/honking.txt"><c>honking.txt</c></url> data from <xref ref="investigation2-2" text="custom">Investigation 2.2</xref>.</p>
+
+    <exercise xml:id="practice-2-9B-a">
+      <title>Consider the Central Limit Theorem</title>
+      <statement>
+        <p>Suggest a reason why the Central Limit Theorem may not apply with these data.</p>
+      </statement>
+      <response/>
+    </exercise>
+
+    <exercise xml:id="practice-2-9B-b">
+      <title>Bootstrap interval for the median</title>
+      <statement>
+        <p>Create and interpret an informal (<m>\pm</m> 2SE) bootstrap confidence interval for the population median.</p>
+      </statement>
+      <response/>
+    </exercise>
+  </subsection>
+</section>
