@@ -55,26 +55,28 @@
     </assemblage>
 
     <p>Use technology to take a bootstrap sample from the heroin data.</p>
-
-    <exercise xml:id="inv2-9-c">
-      <title>Take a bootstrap sample</title>
-      <statement>
-        <hint>
+<paragraphs>
+<hint>
           <title>Applet Instructions</title>
           <p>In <alert>Sampling From Population</alert> applet: Follow the link for the <url href="https://www.rossmanchance.com/applets/OneSample.html?population=bootstrap">Bootstrapping</url> variation. Paste in the data and select the <em>times</em> variable. Check Show Sampling Options and set the Sample size to 238. Press Draw Samples. Set the Statistic radio button to Median.</p>
         </hint>
-        <hint>
+<hint>
           <title>R Instructions</title>
           <p><cd>sample1 = sample(x=times, size=238, replace = TRUE)</cd></p>
         </hint>
-        <hint>
+<hint>
           <title>JMP Instructions</title>
           <p>In the <alert>Analyze &gt; Distribution</alert> output, in the <alert>Quantiles</alert> section, right click, and from the pop up menu select <alert>Bootstrap</alert>. Set the <alert>Number of Bootstrap Samples</alert> to one and press <alert>OK</alert>. This will open a new data window with the statistics from the bootstrap sample.</p>
           <image source="tech_images/inv2-9-jmp-bootstrap.png" width="45%">
             <description><p>JMP Quantiles output with right-click menu showing the Bootstrap option circled</p></description>
           </image>
         </hint>
-        <p>Report the median of your bootstrap sample.</p>
+</paragraphs>
+
+    <exercise xml:id="inv2-9-c">
+      <title>Take a bootstrap sample</title>
+      <statement>
+<p>Report the median of your bootstrap sample.</p>
       </statement>
       <response/>
       <solution>
@@ -95,15 +97,12 @@
 
     <p>To estimate the sample-to-sample variation in our statistic (e.g., the median), we now want to repeat this process a large number of times.</p>
 
-    <exercise xml:id="inv2-9-e">
-      <title>Create a bootstrap distribution</title>
-      <statement>
-        <p>Use technology to create a bootstrap distribution from the heroin data.</p>
-        <hint>
+    <paragraphs>
+<hint>
           <title>Applet Instructions</title>
           <p>In <url href="https://www.rossmanchance.com/applets/OneSample.html?population=bootstrap">Sampling From Population/Bootstrapping</url> applet: Set the Number of samples to at least 998. Press Draw Samples.</p>
         </hint>
-        <hint>
+<hint>
           <title>R Instructions</title>
           <p>Create a list of bootstrap samples and then apply the median to each sample:</p>
           <p><cd>
@@ -111,14 +110,20 @@ resamples =lapply(1:1000, function(i) sample(times, 238,replace=T))
 bootstrapmedians = sapply(resamples, median)
           </cd></p>
         </hint>
-        <hint>
+<hint>
           <title>JMP Instructions</title>
           <ul>
             <li><p>Set the number of bootstrap samples to 1000.</p></li>
             <li><p>Then find the output of the 1000 bootstrap sample medians and copy and paste those into a new data table.</p></li>
           </ul>
         </hint>
-      </statement>
+</paragraphs>
+
+    <exercise xml:id="inv2-9-e">
+      <title>Create a bootstrap distribution</title>
+      <statement>
+        <p>Use technology to create a bootstrap distribution from the heroin data.</p>
+</statement>
       <response/>
       <solution>
         <p>R output:</p>
