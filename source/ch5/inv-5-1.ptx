@@ -201,7 +201,30 @@
         <title>Expected Counts for Judge 2</title>
         <statement>
           <p>How many of the jurors on Judge 2's list would you expect to be female if his long-run proportion was also 0.261? How many would you expect to be male?</p>
+          <p>Expected number of women: <var width="8"/></p>
+          <p>Expected number of men: <var width="8"/></p>
         </statement>
+        <setup>
+          <var>
+            <condition number="190.53" tolerance="0.5">
+              <feedback><p>Correct.</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>Try again. Multiply 0.261 by the number of jurors on Judge 2's list (730).</p></feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="539.0" tolerance="1.2">
+              <feedback><p>Correct.</p></feedback>
+            </condition>
+            <condition number="190.53" tolerance="0.5">
+              <feedback><p>That is the expected number of women; this blank asks for the expected number of men.</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>Try again. Subtract the expected number of women from the total number of jurors on Judge 2's list.</p></feedback>
+            </condition>
+          </var>
+        </setup>
         <response/>
         <solution>
           <p>Expected number of women: <m>0.261(730) = 190.53</m></p>
