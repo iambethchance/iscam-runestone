@@ -56,18 +56,32 @@
     <paragraphs>
       <title>Collecting the Data</title>
       <exercise xml:id="inv5-6-a" label="I5.6.a"><title>Identify Units and Response</title><statement><p>Identify the observational units and the primary response variable of interest here. Also classify this variable as quantitative or categorical.</p></statement><response/><solution><p>The observational units are the 18 cats and the primary response variable is takeoff velocity which is quantitative.</p></solution></exercise>
-      <exercise xml:id="inv5-6-b" label="I5.6.b"><title>Univariate Summary of Velocity</title><statement><p>Open the <url href="http://www.rossmanchance.com/iscam2/data/CatJumping.txt">CatJumping.txt</url> data file and produce numerical and graphical summaries of the takeoff velocity variable. Describe the distribution of takeoff velocities in this sample (shape, center, variability, unusual observations).</p></statement><response/><solution><p>The distribution is pretty symmetric or slightly skewed to the right (though depending on bin choices might see a visual outlier in the 420 bin). Most cats had a velocity around 320-380 cm/sec but one was as small as 286.30 cm/sec and the high outlier was at 410.80 cm/sec.</p><p>Note: 300 cm/sec corresponds to about 6.7 miles per hour.</p></solution></exercise>
+      <exercise xml:id="inv5-6-b" label="I5.6.b"><title>Univariate Summary of Velocity</title><statement><p>Open the <url href="http://www.rossmanchance.com/iscam2/data/CatJumping.txt">CatJumping.txt</url> data file and produce numerical and graphical summaries of the takeoff velocity variable. Describe the distribution of takeoff velocities in this sample (shape, center, variability, unusual observations).</p></statement><response/><solution>
+        <p>JMP output:</p>
+        <image source="images/inv-5-6-sol-b-jmp.jpg" width="80%">
+          <description><p>JMP output for velocity: boxplot and histogram of takeoff velocity from 280 to 420 cm/sec, with Quantiles (median 339.55, quartiles 316.175 and 369.625, maximum 410.8, minimum 286.3) and Summary Statistics (mean 343.28, standard deviation 33.08, n = 18).</p></description>
+        </image>
+        <p>R output:</p>
+        <image source="images/inv-5-6-sol-b-r1.jpg" width="70%">
+          <description><p>R iscamsummary output for cats velocity: n = 18, minimum 286.3, Q1 317.25, median 339.55, Q3 368.4, maximum 410.8, mean 343.28, SD 33.077, skewness 0.222.</p></description>
+        </image>
+        <image source="images/inv-5-6-sol-b-r2.jpg" width="55%">
+          <description><p>R histogram of takeoff velocity with bins from 280 to 420 cm/sec; tallest bar between 300 and 320, roughly mound-shaped with single observations in the 280, 380, and 400 bins.</p></description>
+        </image>
+        <p>The distribution is pretty symmetric or slightly skewed to the right (though depending on bin choices might see a visual outlier in the 420 bin). Most cats had a velocity around 320-380 cm/sec but one was as small as 286.30 cm/sec and the high outlier was at 410.80 cm/sec.</p><p>Note: 300 cm/sec corresponds to about 6.7 miles per hour.</p></solution></exercise>
       <exercise xml:id="inv5-6-c" label="I5.6.c"><title>Single-Value Prediction</title><statement><p>Based on your analysis of takeoff velocity, if you were going to randomly select a domestic cat, what is your best prediction of its takeoff velocity?</p></statement><response/><solution><p>Might pick the mean of 343.28 cm/sec.</p></solution></exercise>
       <exercise xml:id="inv5-6-d" label="I5.6.d"><title>Body Mass Conjecture</title><statement><p>Do you think there will be a relationship between a cat’s takeoff velocity and its body mass? If so, do you think heavier cats will tend to have larger or smaller takeoff velocities than lighter cats?</p></statement><response/><solution><p>Heavier cats might tend to have lower velocities.</p></solution></exercise>
+
+      <p> We will need a new graphical summary to visually explore the relationship between two quantitative variables, the <em>scatterplot</em>. </p>
     </paragraphs>
+
 
     <paragraphs>
       <title>Technology Detour: Scatterplots</title>
       <exercise xml:id="inv5-6-tech-detour-scatterplot">
         <title>Scatterplot Instructions</title>
         <statement>
-          <p>Confirm your scatterplot of takeoff velocity vs. body mass using technology.</p>
-
+          
           <hint>
             <title>Applet Instructions</title>
             <p>In <url href="https://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables</url> applet (or <url href="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm">Two Quantitative Variables</url> applet)</p>
@@ -101,13 +115,13 @@
 
       <assemblage>
         <title>Terminology Detour</title>
-        <p><url href="http://www.rossmanchance.com/iscam3/glossary.html#scatterplot">Scatterplots</url> are useful for displaying the relationship between two quantitative variables. If one variable has been defined as the response variable and the other as the explanatory variable, we will put the response variable on the vertical axis and the explanatory variable along the horizontal axis.</p>
-        <p>In describing scatterplots you will describe the overall pattern between the two variables focusing primarily on three things:</p>
+        <p><term>Scatterplots</term> are useful for displaying the relationship between two quantitative variables. If one variable has been defined as the response variable and the other as the explanatory variable, we will put the response variable on the vertical axis and the explanatory variable along the horizontal axis.</p>
+        <p>In describing scatterplots you will describe the overall pattern between the two variables focusing primarily on three things:
         <ul>
           <li><p><em>Direction</em>: Is there a positive association (small values of y tend to occur with small values of x and large values of y tend to occur with large values of x) or a negative association (small values of y tend to occur at large values of x and vice versa)?</p></li>
           <li><p><em>Linearity</em>: Is the overall pattern in the scatterplot linear or not?</p></li>
           <li><p><em>Strength</em>: How closely are the observations following the observed pattern?</p></li>
-        </ul>
+        </ul></p>
         </assemblage>
     </paragraphs>
 
@@ -117,8 +131,8 @@
 
 
     <paragraphs>
-      <exercise xml:id="inv5-6-g" label="I5.6.g"><title>Percent Body Fat Relationship</title><statement><p>Now produce a scatterplot of takeoff velocity vs. percentage of body fat. Describe the association. Would you say that the association with velocity is stronger than with body mass? More or less linear?</p></statement><response/><solution><p>This also appears to be an overall trend of cats with higher body fat percentages having lower velocities on average, except for our same outlier.</p></solution></exercise>
-      <exercise xml:id="inv5-6-h" label="I5.6.h"><title>Other Predictors</title><statement><p>For the other two variables (hind limb length and muscle mass), would you expect to see a positive or negative association with takeoff velocity? Explain. Then look at scatterplots, and comment on whether the association is as you expected.</p></statement><response/><solution><p>conjectures will vary.</p><p>Muscle mass doesn’t appear to have as clear of a pattern but more muscle mass tends to have lower velocities.</p><p>Larger hind limb lengths tend to have larger velocities.</p></solution></exercise>
+      <exercise xml:id="inv5-6-g" label="I5.6.g"><title>Percent Body Fat Relationship</title><statement><p>Now produce a scatterplot of <em>takeoff velocity</em> vs. <em>percentage of body fat</em>. Describe the association. Would you say that the association with velocity is stronger than with body mass? More or less linear?</p></statement><response/><solution><p>This also appears to be an overall trend of cats with higher body fat percentages having lower velocities on average, except for our same outlier.</p></solution></exercise>
+      <exercise xml:id="inv5-6-h" label="I5.6.h"><title>Other Predictors</title><statement><p>For the other two variables (<em>hind limb length</em> and <em>muscle mass</em>), would you expect to see a positive or negative association with takeoff velocity? Explain. Then look at scatterplots, and comment on whether the association is as you expected.</p></statement><response/><solution><p>conjectures will vary.</p><p>Muscle mass doesn’t appear to have as clear of a pattern but more muscle mass tends to have lower velocities.</p><p>Larger hind limb lengths tend to have larger velocities.</p></solution></exercise>
     </paragraphs>
 
     <paragraphs>
@@ -126,14 +140,14 @@
       <exercise xml:id="inv5-6-tech-detour-coded-scatterplots">
         <title>Coded Scatterplot Instructions</title>
         <statement>
-          <p>Use technology to create a coded scatterplot of takeoff velocity vs. body mass that uses different symbols for male and female cats.</p>
+          <p>Use technology to create a coded scatterplot of <em>takeoff velocity</em> vs. <em>body mass</em> that uses different symbols for <em>male</em> and <em>female</em> cats.</p>
 
           <hint>
             <title>Applet Instructions</title>
             <p>In <url href="https://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables</url> applet</p>
-            <ul><li><p>Drag the Sex variable to the <alert>Subset By</alert> box.</p></li></ul>
+            <ul><li><p>Drag the <em>Sex</em> variable to the <alert>Subset By</alert> box.</p></li></ul>
             <p>In <url href="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm">Two Quantitative Variables</url> applet</p>
-            <ul><li><p>Use <alert>Color by</alert> pull-down menu to select Sex variable.</p></li></ul>
+            <ul><li><p>Use <alert>Color by</alert> pull-down menu to select <em>Sex</em> variable.</p></li></ul>
           </hint>
 
           <hint>
