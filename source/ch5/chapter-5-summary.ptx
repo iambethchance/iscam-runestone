@@ -13,7 +13,10 @@
   <subsection>
     <title>Technology Summary</title>
 
-    <p>In this chapter, you learned how to use software to perform chi-squared tests, ANOVA, and inference for regression. You also learned how to create scatterplots, including coded scatterplots, and calculate correlation coefficients. You used applets to explore properties of <m>F</m>-statistics, regression lines, and regression coefficients. Though we hope these have given you some memorable visual images, you will generally use software to carry out specific analyses.</p>
+    <p><ul>
+      <li><p>In this chapter, you learned how to use software to perform chi-squared tests, ANOVA, and inference for regression. You also learned how to create scatterplots, including coded scatterplots, and calculate correlation coefficients.</p></li>
+      <li><p>You used applets to explore properties of <m>F</m>-statistics, regression lines, and regression coefficients. Though we hope these have given you some memorable visual images, you will generally use software to carry out specific analyses.</p></li>
+    </ul></p>
   </subsection>
 
   <subsection>
@@ -51,7 +54,7 @@
       <row>
         <cell>Valid to use theory-based procedure if</cell>
         <cell>
-          <p>All expected counts <m>> 1</m>, at least 80% of expected counts <m>> 5</m></p>
+          <p>All expected counts <m>\geq 1</m>, at least 80% of expected counts <m>\geq 5</m></p>
           <p>Data are simple random samples or independently chosen random samples or random assignment</p>
         </cell>
         <cell>
@@ -76,7 +79,7 @@
         <cell>Test statistic</cell>
         <cell><m>\chi^2 = \sum \frac{(O-E)^2}{E}</m></cell>
         <cell><m>F = MST/MSE</m></cell>
-        <cell><m>t_0 = \frac{\beta_1 - \text{hypothesized value}}{SE_{\beta_1}}</m></cell>
+        <cell><m>t_0 = \frac{b_1 - \text{hypoth'd value}}{SE(b_1)}</m></cell>
       </row>
       <row>
         <cell>Distribution for <m>p</m>-value</cell>
@@ -94,10 +97,6 @@
       <row>
         <cell><strong>R</strong></cell>
         <cell><c>chisq.test</c>, <c>summary(aov(response~x))</c>, <c>summary(lm(response~x))</c></cell>
-      </row>
-      <row>
-        <cell><strong>Minitab</strong></cell>
-        <cell>Stat > Tables > Chi-square Test for Association; Stat > ANOVA > One-way; Stat > Regression > Regression > Fit Regression Model</cell>
       </row>
       <row>
         <cell><strong>JMP</strong></cell>
@@ -173,69 +172,6 @@
       <row>
         <cell>Superimpose regression line</cell>
         <cell><c>abline(lm(response~explanatory))</c></cell>
-      </row>
-    </tabular>
-  </subsection>
-
-  <subsection>
-    <title>Quick Reference to Minitab Commands</title>
-
-    <tabular>
-      <row header="yes">
-        <cell>Procedure Desired</cell>
-        <cell>Menu</cell>
-      </row>
-      <row>
-        <cell>Probability Plot</cell>
-        <cell>Graph > Probability Plot</cell>
-      </row>
-      <row>
-        <cell>Probabilities from Chi-Square distribution</cell>
-        <cell>Graph > Probability Distribution Plot</cell>
-      </row>
-      <row>
-        <cell>Chi-square Test</cell>
-        <cell>Stat > Tables > Chi-Square Test for Association; Stat > Tables > Cross Tabulation and Chi-Square</cell>
-      </row>
-      <row>
-        <cell>One-way ANOVA</cell>
-        <cell>Stat > ANOVA > One-way</cell>
-      </row>
-      <row>
-        <cell>Probabilities from F distribution</cell>
-        <cell>Graph > Probability Distribution Plot</cell>
-      </row>
-      <row>
-        <cell>Scatterplot</cell>
-        <cell>Graph > Scatterplot</cell>
-      </row>
-      <row>
-        <cell>Correlation coefficient</cell>
-        <cell>Stat > Basic Statistics > Correlation</cell>
-      </row>
-      <row>
-        <cell>Least Squares Regression Line</cell>
-        <cell>Stat > Regression > Fitted Line Plot; Storage: Residuals</cell>
-      </row>
-      <row>
-        <cell>Coded Scatterplot</cell>
-        <cell>Graph > Scatterplot, With Groups</cell>
-      </row>
-      <row>
-        <cell>Inference for Regression</cell>
-        <cell>Stat > Regression > Regression > Fit Regression Model</cell>
-      </row>
-      <row>
-        <cell>Prediction Intervals</cell>
-        <cell>After running the model: Stat > Regression > Regression > Predict</cell>
-      </row>
-      <row>
-        <cell>Superimpose y = x line</cell>
-        <cell>right click, Add > Calculated Line</cell>
-      </row>
-      <row>
-        <cell>Superimpose regression line</cell>
-        <cell>Stat > Regression > Fitted Line Plot; right click on scatterplot, Add > Regression Fit</cell>
       </row>
     </tabular>
   </subsection>
