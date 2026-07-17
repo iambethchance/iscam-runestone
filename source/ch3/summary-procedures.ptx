@@ -2,8 +2,6 @@
 <subsection xml:id="procedure-choice-ch3">
   <title>Choice of Procedures for Comparing Two Proportions</title>
 
-  <table>
-    <title>Procedure Selection Guide</title>
     <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
       <row header="yes">
         <cell>Study design</cell>
@@ -42,13 +40,31 @@
         <cell>exp of [ln(<m>AD/BC</m>) ± <m>z^*\sqrt{\frac{1}{A}+\frac{1}{B}+\frac{1}{C}+\frac{1}{D}}</m>]</cell>
       </row>
       <row>
+        <cell>R Commands</cell>
+        <cell halign="left"><line><c>iscamtwopropztest</c></line>
+        <line>• observed1 (either the number of successes or sample proportion for first group), n1 (sample size for first group), observed2 (count or proportion), and n2 for the second group</line>
+        <line>• Optional: hypothesized difference and alternative ("less", "greater", or "two.sided")</line>
+        <line>• Optional: conf.level</line></cell>
+        <cell halign="left"><line><c>fmsb::riskratio</c></line>
+        <line>riskratio(A, B, A+C, B+D, conf.level, p.calc.by.independence = TRUE)</line></cell>
+        <cell halign="left"><line><c>fisher.test</c></line>
+        <line>• matrix(c(A, C, B, D), nrow=2)</line>
+        <line>• alt= ("less", "greater", or "two.sided")</line>
+        <line>• Optional: conf.int = TRUE, conf.level</line></cell>
+      </row>
+      <row>
+        <cell>JMP</cell>
+        <cell>Analysis &gt; Fit Y by X or ISCAM Journal file</cell>
+        <cell>Select Relative Risk</cell>
+        <cell>Select Odds Ratio</cell>
+      </row>
+      <row>
         <cell>Applets</cell>
         <cell>Theory-based Inference &gt; Two proportions or Analyzing Two-way Tables</cell>
         <cell>Analyzing Two-way Tables applet &gt; Relative Risk</cell>
         <cell>Analyzing Two-way Tables applet &gt; Odds ratio</cell>
       </row>
     </tabular>
-  </table>
 
   <p><alert>Note:</alert> Fisher's Exact Test is usually considered a reasonable approximation to the p-value from independent random sampling.</p>
 
