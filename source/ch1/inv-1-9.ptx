@@ -498,11 +498,124 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         <cell>3.291</cell>
       </row>
     </tabular>
+  <paragraphs xml:id="tech-detour-z-intervals">
+    <title>Technology Detour <mdash/> One Proportion <em>z</em>-Confidence Intervals</title>
+
+    <exercise xml:id="tech-detour-z-intervals-ex" label="z-interval-Tech-Detour">
+      <title>One Proportion <em>z</em>-interval with Technology</title>
+      <statement>
+        <p>
+          Use technology (Applet, R, or JMP) to find one proportion <em>z</em>-confidence intervals for the kissing study (<m>n</m> = 124, 80 successes). For example, confirm the 95% confidence interval you calculated earlier. Choose one set of instructions below by clicking on a hint.
+        </p>
+        <p>
+          (Lower bound: <var width="10"/>, Upper bound: <var width="10"/>)
+        </p>
+      </statement>
+      <hint>
+        <title>R/Sage Instructions</title>
+        <p>
+          Use the <c>iscamonepropztest</c> function to calculate the <em>z</em>-confidence interval. The function takes the following inputs:
+        </p>
+        <ul>
+          <li><p><c>observed</c> = number of successes or the sample proportion (<m>\hat{p}</m>)</p></li>
+          <li><p><c>n</c> = sample size</p></li>
+          <li><p><c>hypothesized</c> = hypothesized value (optional, for hypothesis tests)</p></li>
+          <li><p><c>alternative</c> = "greater", "less", or "two.sided" (optional, for hypothesis tests)</p></li>
+          <li><p><c>conf.level</c> = confidence level (as percentage or decimal)</p></li>
+        </ul>
+        <p>If you don't specify a hypothesized value and alternative, be sure to label the confidence level.</p>
+        <sage language="r">
+          <input>
+<![CDATA[
+source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20260102')
+iscamonepropztest(observed = 80, n = 124, conf.level = 95)
+]]>
+          </input>
+        </sage>
+      </hint>
+      <hint>
+        <title>JMP Instructions</title>
+        <ul>
+          <li><p>Open the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" visual="new">ISCAM Journal file</url> and select <term index="no">Confidence Interval for One Proportion</term></p></li>
+          <li><p>Specify Raw Data (column of outcomes) or Summary Stats</p></li>
+          <li><p>With Summary Stats, keep the radio button set to <term index="no">Normal Approximation</term></p></li>
+          <li><p>Enter the number of successes (80) and sample size (124)</p></li>
+          <li><p>Set the confidence level to 95%</p></li>
+        </ul>
+        <p>The output will show the 95% <m>z</m>-confidence interval.</p>
+      </hint>
+      <hint>
+        <title>Theory-Based Inference Applet Instructions</title>
+        <p>
+          Using the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="new">Theory-Based Inference applet</url>:
+        </p>
+        <ul>
+          <li><p>Keep the pull-down menu set to <term index="no">One proportion</term>.</p></li>
+          <li><p>Specify the sample size <m>n</m> = 124 and either the count (80) or the sample proportion (0.645).</p></li>
+          <li><p>Press <term index="no">Calculate</term>.</p></li>
+          <li><p>Check the box for <term index="no">Confidence interval</term></p></li>
+          <li><p>Change the <term index="no">confidence level</term> to 95%</p></li>
+          <li><p>Press the <term index="no">Calculate CI</term> button</p></li>
+        </ul>
+        <p>The applet will display the 95% <m>z</m>-confidence interval.</p>
+      </hint>
+      <setup>
+        <var>
+          <condition number="0.561" tolerance="0.003">
+            <feedback>
+              <p>Correct! The lower bound is 0.561.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. Use technology to calculate the 95% confidence interval.</p>
+            </feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.729" tolerance="0.003">
+            <feedback>
+              <p>Correct! The upper bound is 0.729.</p>
+            </feedback>
+          </condition>
+          <condition string=".*">
+            <feedback>
+              <p>Not quite. Use technology to calculate the 95% confidence interval.</p>
+            </feedback>
+          </condition>
+        </var>
+      </setup>
+      <solution>
+        <p>
+          Example output from R:
+        </p>
+        <image source="images/inv1.9ksolR.png" width="80%">
+          <description>R output showing z-confidence interval for kissing study</description>
+        </image>
+        <image source="images/Inv1.9soll.png" width="60%">
+          <description>R plots of the 90% and 95% confidence intervals for the process probability, both centered at 0.6452, with the 95% interval wider</description>
+        </image>
+        <p>
+          Example output from JMP:
+        </p>
+        <image source="images/inv1.9kJMP.jpg" width="80%">
+          <description>JMP output showing z-confidence interval for kissing study</description>
+        </image>
+        <p>
+          Example output from Theory-Based Inference applet:
+        </p>
+        <image source="images/inv1.9ksolApplet.jpg" width="60%">
+          <description>Theory-Based Inference applet output showing z-confidence interval for kissing study</description>
+        </image>
+      </solution>
+    </exercise>
+  </paragraphs>
+
     <exercise xml:id="I1-9-l" label="I1-9l">
       <title>Calculate 90% Confidence Interval</title>
       <statement>
         <p>
-          Determine the 90% <m>z</m>-confidence interval for the probability that a kissing couple leans to the right. 
+          Use technology (see <xref ref="tech-detour-z-intervals" text="custom">Technology Detour</xref> above) to find and report the 90% <m>z</m>-confidence interval for the probability that a kissing couple leans to the right.
         </p>
         <hint>
           <p>
@@ -649,116 +762,6 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         </image>
       </solution>
     </exercise>
-
-  <paragraphs xml:id="tech-detour-z-intervals">
-    <title>Technology Detour <mdash/> One Proportion <em>z</em>-Confidence Intervals</title>
-
-    <exercise xml:id="tech-detour-z-intervals-ex" label="z-interval-Tech-Detour">
-      <title>One Proportion <em>z</em>-interval with Technology</title>
-      <statement>
-        <p>
-          Use technology (Applet, R, or JMP) to confirm your calculation of the one proportion <em>z</em>-test for the Halloween study (<m>n</m> = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
-        </p>
-        <p>
-          (Lower bound: <var width="10"/>, Upper bound: <var width="10"/>)
-        </p>
-      </statement>
-      <hint>
-        <title>R/Sage Instructions</title>
-        <p>
-          Use the <c>iscamonepropztest</c> function to calculate the <em>z</em>-confidence interval. The function takes the following inputs:
-        </p>
-        <ul>
-          <li><p><c>observed</c> = number of successes or the sample proportion (<m>\hat{p}</m>)</p></li>
-          <li><p><c>n</c> = sample size</p></li>
-          <li><p><c>hypothesized</c> = hypothesized value (optional, for hypothesis tests)</p></li>
-          <li><p><c>alternative</c> = "greater", "less", or "two.sided" (optional, for hypothesis tests)</p></li>
-          <li><p><c>conf.level</c> = confidence level (as percentage or decimal)</p></li>
-        </ul>
-        <p>If you don't specify a hypothesized value and alternative, be sure to label the confidence level.</p>
-        <sage language="r">
-          <input>
-<![CDATA[
-source('https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R?v=20260102')
-iscamonepropztest(observed = 80, n = 124, conf.level = 0.90)
-]]>
-          </input>
-        </sage>
-      </hint>
-      <hint>
-        <title>JMP Instructions</title>
-        <ul>
-          <li><p>Open the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" visual="new">ISCAM Journal file</url> and select <term index="no">Confidence Interval for One Proportion</term></p></li>
-          <li><p>Specify Raw Data (column of outcomes) or Summary Stats</p></li>
-          <li><p>With Summary Stats, keep the radio button set to <term index="no">Normal Approximation</term></p></li>
-          <li><p>Enter the number of successes (80) and sample size (124)</p></li>
-          <li><p>Set the confidence level to 90%</p></li>
-        </ul>
-        <p>The output will show the 90% <m>z</m>-confidence interval.</p>
-      </hint>
-      <hint>
-        <title>Theory-Based Inference Applet Instructions</title>
-        <p>
-          Using the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="new">Theory-Based Inference applet</url>:
-        </p>
-        <ul>
-          <li><p>Keep the pull-down menu set to <term index="no">One proportion</term>.</p></li>
-          <li><p>Specify the sample size <m>n</m> = 124 and either the count (80) or the sample proportion (0.645).</p></li>
-          <li><p>Press <term index="no">Calculate</term>.</p></li>
-          <li><p>Check the box for <term index="no">Confidence interval</term></p></li>
-          <li><p>Change the <term index="no">confidence level</term> to 90%</p></li>
-          <li><p>Press the <term index="no">Calculate CI</term> button</p></li>
-        </ul>
-        <p>The applet will display the 90% <m>z</m>-confidence interval.</p>
-      </hint>
-      <setup>
-        <var>
-          <condition number="0.574" tolerance="0.003">
-            <feedback>
-              <p>Correct! The lower bound is 0.574.</p>
-            </feedback>
-          </condition>
-          <condition string=".*">
-            <feedback>
-              <p>Not quite. Use technology to calculate the 90% confidence interval.</p>
-            </feedback>
-          </condition>
-        </var>
-        <var>
-          <condition number="0.716" tolerance="0.003">
-            <feedback>
-              <p>Correct! The upper bound is 0.716.</p>
-            </feedback>
-          </condition>
-          <condition string=".*">
-            <feedback>
-              <p>Not quite. Use technology to calculate the 90% confidence interval.</p>
-            </feedback>
-          </condition>
-        </var>
-      </setup>
-      <solution>
-        <p>
-          Example output from R:
-        </p>
-        <image source="images/inv1.9ksolR.png" width="80%">
-          <description>R output showing z-confidence interval for kissing study</description>
-        </image>
-        <p>
-          Example output from JMP:
-        </p>
-        <image source="images/inv1.9kJMP.jpg" width="80%">
-          <description>JMP output showing z-confidence interval for kissing study</description>
-        </image>
-        <p>
-          Example output from Theory-Based Inference applet:
-        </p>
-        <image source="images/inv1.9ksolApplet.jpg" width="60%">
-          <description>Theory-Based Inference applet output showing z-confidence interval for kissing study</description>
-        </image>
-      </solution>
-    </exercise>
-  </paragraphs>
 
     <exercise xml:id="I1-9-m" label="I1-9m">
       <title>Compare to Exact Binomial Intervals</title>
