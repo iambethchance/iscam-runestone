@@ -314,7 +314,7 @@ iscamsummary(elephants$Distance, elephants$Species)
       <p>To understand how <em>differences in sample means</em> behave, let's explore 
       a hypothetical scenario where we know the population distributions... </p>
 
-<p>The file <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/NBASalaries2025.txt">NBASalaries2025.txt</url> contains season salaries (in millions of dollars) for all NBA basketball players at the start of the 2025-26 season (downloaded from <url href="http://www.espn.com/nba/salaries">ESPN NBA salaries</url> July 2025). 
+<p>The file <url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/NBASalaries2026.txt">NBASalaries2026.txt</url> contains season salaries (in millions of dollars) for all NBA basketball players at the start of the 2025-26 season (downloaded from <url href="http://www.espn.com/nba/salaries">ESPN NBA salaries</url> July 2026). 
 Players without a team affiliation or without a listed salary were not included in the data set.    </p>
 
       <exercise xml:id="prob-detour-2means-a" label="PD4-2-1">
@@ -335,7 +335,7 @@ Players without a team affiliation or without a listed salary were not included 
       
       We will use the <url href="https://www.rossmanchance.com/applets/2021/twopopmodels/TwoPopSampling.html">Sampling from Two Populations applet</url> to explore sampling distributions of the difference in means.
       <interactive iframe="https://www.rossmanchance.com/applets/2021/twopopmodels/TwoPopSampling.html?hideExtras=1" width="160%" aspect="3:2"/>
-      <ul><li>Use the <alert>Select data</alert> pull-down menu to choose <em>NBA Salaries (2025)</em></li>
+      <ul><li>Use the <alert>Select data</alert> pull-down menu to choose <em>NBA Salaries (2026)</em></li>
       <li>Press <alert>Use Data</alert> to load the Salary and Conference population data into the applet.</li>
       </ul>
 
@@ -350,16 +350,19 @@ Players without a team affiliation or without a listed salary were not included 
                 <cell>Count</cell>
                 <cell>Mean</cell>
                 <cell>SD</cell>
+                <cell>Skew</cell>
               </row>
               <row>
                 <cell halign="left">Western&#160;&#160;</cell>
                 <cell><var width="5"/></cell>
                 <cell><var width="8"/></cell>
                 <cell><var width="8"/></cell>
+                <cell><var width="8"/></cell>
               </row>
               <row>
                 <cell halign="left">Eastern</cell>
                 <cell><var width="5"/></cell>
+                <cell><var width="8"/></cell>
                 <cell><var width="8"/></cell>
                 <cell><var width="8"/></cell>
               </row>
@@ -375,56 +378,56 @@ Players without a team affiliation or without a listed salary were not included 
         <setup>
           <!-- Western N -->
           <var>
-            <condition number="243" tolerance="2">
+            <condition number="164" tolerance="2">
               <feedback><p>Correct!</p></feedback>
             </condition>
             <condition string=".*">
-              <feedback><p>The Western conference has approximately 243 players.</p></feedback>
+              <feedback><p>The Western conference has approximately 164 players.</p></feedback>
             </condition>
           </var>
           <!-- Western mean -->
           <var>
-            <condition number="11.7" tolerance="0.3">
+            <condition number="15.9" tolerance="0.3">
               <feedback><p>Correct!</p></feedback>
             </condition>
             <condition string=".*">
-              <feedback><p>The mean Western salary is approximately 11.7 million.</p></feedback>
+              <feedback><p>The mean Western salary is approximately 15.9 million.</p></feedback>
             </condition>
           </var>
           <!-- Western SD -->
           <var>
-            <condition number="13.8" tolerance="0.3">
+            <condition number="15.5" tolerance="0.3">
               <feedback><p>Correct!</p></feedback>
             </condition>
             <condition string=".*">
-              <feedback><p>The SD for Western salaries is approximately 13.8 million.</p></feedback>
+              <feedback><p>The SD for Western salaries is approximately 15.5 million.</p></feedback>
             </condition>
           </var>
           <!-- Eastern N -->
           <var>
-            <condition number="229" tolerance="2">
+            <condition number="176" tolerance="2">
               <feedback><p>Correct!</p></feedback>
             </condition>
             <condition string=".*">
-              <feedback><p>The Eastern conference has approximately 229 players.</p></feedback>
+              <feedback><p>The Eastern conference has approximately 176 players.</p></feedback>
             </condition>
           </var>
           <!-- Eastern mean -->
           <var>
-            <condition number="11.3" tolerance="0.3">
+            <condition number="15.3" tolerance="0.3">
               <feedback><p>Correct!</p></feedback>
             </condition>
             <condition string=".*">
-              <feedback><p>The mean Eastern salary is approximately 11.3 million.</p></feedback>
+              <feedback><p>The mean Eastern salary is approximately 15.3 million.</p></feedback>
             </condition>
           </var>
           <!-- Eastern SD -->
           <var>
-            <condition number="13.3" tolerance="0.3">
+            <condition number="15.9" tolerance="0.3">
               <feedback><p>Correct!</p></feedback>
             </condition>
             <condition string=".*">
-              <feedback><p>The SD for Eastern salaries is approximately 13.3 million.</p></feedback>
+              <feedback><p>The SD for Eastern salaries is approximately 15.9 million.</p></feedback>
             </condition>
           </var>
           <!-- Symbols -->
@@ -441,7 +444,7 @@ Players without a team affiliation or without a listed salary were not included 
           </var>
         </setup>
         <solution>
-          <p>The population sizes are approximately <m>N_{\text{West}}</m> = 214 Western and <m>N_{\text{East}}</m> = 219 Eastern players. The mean salaries are approximately <m>\mu_{\text{West}} = 13.03</m> million dollars and <m>\mu_{\text{East}} = 12.24</m> million dollars. The standard deviations are approximately <m>\sigma_{\text{West}} = 13.9</m> million dollars and <m>\sigma_{\text{East}} = 13.5</m> million dollars. Both distributions are strongly right-skewed as expected for salary data (skewness values 1.69 and 1.56).</p>
+          <p>The population sizes are approximately <m>N_{\text{West}}</m> = 164 Western and <m>N_{\text{East}}</m> = 176 Eastern players. The mean salaries are approximately <m>\mu_{\text{West}} = 15.9</m> million dollars and <m>\mu_{\text{East}} = 15.3</m> million dollars. The standard deviations are approximately <m>\sigma_{\text{West}} = 15.5</m> million dollars and <m>\sigma_{\text{East}} = 15.9</m> million dollars. Both distributions are strongly right-skewed as expected for salary data (skewness values 1.22 and 1.35).</p>
         </solution>
         <response/>
       </exercise>
@@ -554,9 +557,9 @@ Players without a team affiliation or without a listed salary were not included 
           <p>Generate at least 1000 samples to see the shape of the sampling distribution.</p>
         </hint>
         </statement>
-        <solution>
-          <p>After generating 1000+ samples, you should see a distribution of differences in sample means that is approximately normal, centered near the difference in population means (about 0.8 million).</p>
-        </solution>
+<!--        <solution>
+          <p>After generating 1000+ samples, you should see a distribution of differences in sample means that is approximately normal, centered near the difference in population means (about 0.6 million).</p>
+        </solution> -->
 <!--       <response/> -->
       </exercise>
       
@@ -571,7 +574,7 @@ Players without a team affiliation or without a listed salary were not included 
         </hint>
         </statement>
         <solution>
-          <p>The sampling distribution of the difference in sample means is approximately normal (symmetric, bell-shaped), even though the individual salary distributions are strongly right-skewed. This illustrates the Central Limit Theorem for differences in means.</p>
+          <p>The sampling distribution of the difference in sample means is approximately normal (symmetric, bell-shaped, skewness around .4), even though the individual salary distributions are strongly right-skewed. This illustrates the Central Limit Theorem for differences in means.</p>
         </solution>
         <response/>
       </exercise>
@@ -582,7 +585,7 @@ Players without a team affiliation or without a listed salary were not included 
           <p>What is the approximate center of the sampling distribution? Is this what you expected?</p>
         </statement>
         <solution>
-          <p>The center is approximately at the difference in population means (<m>\mu_{\text{East}} - \mu_{\text{West}} \approx -0.8</m> million). This is expected because the difference in sample means is an unbiased estimator of the difference in population means.</p>
+          <p>The center is approximately at the difference in population means (<m>\mu_{\text{West}} - \mu_{\text{East}} \approx 0.6</m> million). This is expected because the difference in sample means is an unbiased estimator of the difference in population means.</p>
         </solution>
         <response/>
       </exercise>
@@ -604,9 +607,9 @@ Players without a team affiliation or without a listed salary were not included 
           <p>We know there should be less variability because we are talking about sample means rather than individual observations. But how much variability do we expect to find in the distribution of sample means taken from the Western conference? What about the Eastern conference? Is the variability in the difference in sample means larger or smaller than in the individual distributions?</p>
         </statement>
         <solution>
-          <p>For Western conference: <m>\sigma_{\bar{x}_{\text{West}}} = \sigma_{\text{West}}/\sqrt{n} = 13.9/\sqrt{20} \approx 3.11</m> million.</p>
-          <p>For Eastern conference: <m>\sigma_{\bar{x}_{\text{East}}} = \sigma_{\text{East}}/\sqrt{n} = 13.5/\sqrt{20} \approx 3.02</m> million.</p>
-          <p>The variability in the difference would be approximately <m>\sqrt{3.11^2 + 3.02^2} \approx 4.34</m> million, which is smaller than the individual population standard deviations but larger than either individual standard error.</p>
+          <p>For Western conference: <m>\sigma_{\bar{x}_{\text{West}}} = \sigma_{\text{West}}/\sqrt{n} = 15.5/\sqrt{20} \approx 3.47</m> million.</p>
+          <p>For Eastern conference: <m>\sigma_{\bar{x}_{\text{East}}} = \sigma_{\text{East}}/\sqrt{n} = 15.9/\sqrt{20} \approx 3.56</m> million.</p>
+          <p>The variability in the difference would be approximately <m>\sqrt{3.47^2 + 3.56^2} \approx 4.97</m> million, which is smaller than the individual population standard deviations but larger than either individual standard error.</p>
         </solution>
         <response/>
       </exercise>
@@ -627,7 +630,7 @@ Players without a team affiliation or without a listed salary were not included 
         </hint>
         </statement>
         <solution>
-          <p>Shape: The sampling distribution is approximately normal, even though the populations are skewed. Center: Approximately <m>\mu_{\text{East}} - \mu_{\text{West}} \approx -0.8</m> million. Spread: Standard deviation approximately 4.34 million, which matches the theoretical prediction <m>\sqrt{13.9^2/20 + 13.5^2/20} \approx 4.33</m> million.</p>
+          <p>Shape: The sampling distribution is approximately normal, even though the populations are skewed. Center: Approximately <m>\mu_{\text{West}} - \mu_{\text{East}} \approx 0.6</m> million. Spread: Standard deviation approximately 4.97 million, which matches the theoretical prediction <m>\sqrt{15.5^2/20 + 15.9^2/20} \approx 4.97</m> million.</p>
         </solution>
         <response/>
       </exercise>
@@ -691,7 +694,7 @@ Players without a team affiliation or without a listed salary were not included 
       </paragraphs>
       
       <sidebyside widths="60% 35%" valign="top" margins="0% 0%">
-        <p>In this case, we could use 19 as the approximate degrees of freedom. Notice that this sample size is large enough that the <m>t</m>-distribution looks a lot like the normal distribution as well, which should agree with your observation in Question 22. But we will continue to use the <m>t</m>-distribution rather than the normal distribution to still account for additional variation from our estimates of the population standard deviations.</p>
+        <p>In this case, we could use 19 as the approximate degrees of freedom. Notice that this sample size is large enough that the <m>t</m>-distribution looks a lot like the normal distribution as well, which should agree with your observation in <xref ref="prob-detour-2means-m" text="custom">Question 22</xref>. But we will continue to use the <m>t</m>-distribution rather than the normal distribution to still account for additional variation from our estimates of the population standard deviations.</p>
         
         <image source="images/Inv4.2tnorm.png" width="100%">
           <description>Comparison of <m>t</m>-distribution with 19 df and normal distribution</description>
