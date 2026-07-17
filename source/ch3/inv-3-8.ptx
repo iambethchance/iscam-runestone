@@ -438,8 +438,8 @@
   <assemblage>
     <title>Theoretical Result</title>
     <p>It can be shown that the standard error of the ln relative risk is approximated by:</p>
-    <p><me>SE(\ln(RR)) = \sqrt{\left(\frac{1}{A} - \frac{1}{A+B}\right) + \left(\frac{1}{C} - \frac{1}{C+D}\right)}</me></p>
-    <p>where <m>A</m>, <m>B</m>, <m>C</m>, and <m>D</m> are the observed counts in the 2×2 table of data, with <m>A</m> and <m>C</m> representing the number of "successes" in the two groups. Having this formula allows us to determine the variability from sample to sample without conducting the simulation first.</p>
+    <p><me>SE(\ln(RR)) = \sqrt{\left(\frac{1}{A} - \frac{1}{A+C}\right) + \left(\frac{1}{B} - \frac{1}{B+D}\right)}</me></p>
+    <p>where <m>A</m>, <m>B</m>, <m>C</m>, and <m>D</m> are the observed counts in the 2×2 table of data, with <m>A</m> and <m>B</m> representing the number of "successes" in the two groups. Having this formula allows us to determine the variability from sample to sample without conducting the simulation first.</p>
   </assemblage>
 
   <exercise xml:id="inv3-8-o">
@@ -465,7 +465,7 @@
           <feedback><p>Use the formula: <m>\sqrt{(1/11 - 1/183) + (1/2 - 1/195)}</m>.</p></feedback>
         </condition>
         <condition string=".*">
-          <feedback><p>Plug the counts A=11, B=172, C=2, D=193 into the SE formula.</p></feedback>
+          <feedback><p>Plug the counts A=11, B=2, C=172, D=193 into the SE formula.</p></feedback>
         </condition>
       </var>
       <!-- Interpretation -->
