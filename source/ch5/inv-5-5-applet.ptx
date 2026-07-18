@@ -11,9 +11,9 @@
         <p>Open the <url href="http://www.rossmanchance.com/applets/AnovaSim.html">Simulating ANOVA Tables applet</url>.</p>
         <p>The sliders and text boxes should specify:</p>
         <ul>
-          <li><p>23 as each population mean,</p></li>
-          <li><p>120, 142, and 131 as the sample sizes,</p></li>
-          <li><p>and 3 as the population standard deviation.</p></li>
+          <li><p>23 as each population mean</p></li>
+          <li><p>120, 142, and 131 as the sample sizes</p></li>
+          <li><p>3 as the population standard deviation.</p></li>
         </ul>
       </stack>
       <image source="images/anovasimapplet.png" width="100%">
@@ -70,7 +70,7 @@
       </solution>
     </exercise>
 
-<ul><li>Change each of the sample sizes to 20 and press Draw Samples 10-20 times. </li></ul>
+<ul><li><p>Change each of the sample sizes to 20 and press <alert>Draw Samples</alert> 10-20 times.</p></li></ul>
     <exercise xml:id="inv5-5-i" label="I5-5-i">
       <title>Reduce Sample Sizes</title>
       <statement>
@@ -82,7 +82,7 @@
       </solution>
     </exercise>
 
-<ul><li>Press <alert>Draw Samples</alert> until you have a p-value less than 0.3. Now change the value of <m>\sigma</m> to 7. </li></ul>
+<ul><li><p>Press <alert>Draw Samples</alert> until you have a p-value &lt; 0.3. Now change the value of <m>\sigma</m> to 7. (Drag the slider to decrease the value in increments of 0.1, or edit the orange value, watching how the p-value changes.)</p></li></ul>
     <exercise xml:id="inv5-5-j" label="I5-5-j">
       <title>Increase Population SD</title>
       <statement>
@@ -93,7 +93,6 @@
         <p>Larger values of <m>\sigma</m> lead to larger p-values. This makes sense since larger values of <m>\sigma</m> correspond to more variability in the treatment groups, making it harder to detect differences between the groups.</p>
       </solution>
     </exercise>
-<ul><li>Continue increasing <m>\mu_1</m></li></ul>
     <exercise xml:id="inv5-5-k" label="I5-5-k">
       <title>Further Increase Mean Separation</title>
       <statement>
@@ -105,9 +104,14 @@
       </solution>
     </exercise>
 
-    <paragraphs><title>Discussion</title> <p>If the null hypothesis is true, then the p-value should vary uniformly between 0 and 1. In this case, the p-value will be less than 0.05 in 5% of all random samples, so 5% of samples would lead you to reject the null hypothesis even when it is true.</p>
-    <p>When the population means are further apart, the p-value is smaller. When the within-group variability is larger, the p-value is larger. When the sample sizes are larger and there is a difference among the population means, the p-value is smaller.</p>
-    <p>The p-value of any particular study is random, so we need to remember Type I and Type II errors. Committing a Type I error with analysis of variance indicates that we concluded the population means differ when they really do not differ. A Type II error indicates that we failed to conclude that at least one population mean differs when the population means are in actuality not all equal.</p>
+    <paragraphs><title>Discussion</title>
+    <p>If the null hypothesis is true, then the p-value should vary uniformly between 0 and 1. In this case, for example, the p-value will be less than 0.05 in 5% of all random samples, so 5% of samples would you be led to reject the null hypothesis even when it is true. However, when there truly is a difference in the population means, our ability to detect that difference based on sample data is affected by several factors:</p>
+    <ul>
+      <li><p>When the population means are further apart, the p-value is smaller.</p></li>
+      <li><p>When the within-group variability is larger, the p-value is larger.</p></li>
+      <li><p>When the sample sizes are larger, and there is a difference among the population means, then the p-value is smaller.</p></li>
+    </ul>
+    <p>The p-value of any particular study is in essence random, so we need to remember the Type I and Type II errors that we could be making. Committing a Type I error with Analysis of Variance indicates that we concluded that the population means differ when they really don’t differ. Type II error indicates that we failed to conclude that at least one population mean differs when the population means are in actuality not all equal.</p>
 </paragraphs>
   </exercises>
 </section>

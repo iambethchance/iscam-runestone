@@ -5,19 +5,25 @@
   <exercises xml:id="exercises5-4" hidden-label="yes">
     <title>The Study</title>
 
-    <p>The U.S. Vocational Rehabilitation Act of 1973 prohibited discrimination against people with disabilities. Researchers later studied whether physical disabilities affect perceptions of employment qualifications (Cesare, Tannenbaum, and Dalessio, 1990).</p>
+    <p>The U.S. Vocational Rehabilitation Act of 1973 prohibited discrimination against people with physical disabilities. The act defined a disabled person as any individual who had a physical or mental impairment that limits the person&#8217;s major life activities. In 1984, disabled individuals in the labor force had an unemployment rate of 7% compared to 4.5% in the non-impaired labor force.</p>
 
     <sidebyside widths="62% 33%" margins="0% 0%" valign="top">
       <stack>
-        <p>They prepared videotaped interviews using the same actors and script each time. The only difference was the applicant condition:</p>
-        <p>no disability (control), leg amputation, Canadian crutches, hearing impairment, and wheelchair confinement.</p>
+        <p>Researchers conducted a study in the 1980s that examined whether physical disabilities affect people&#8217;s perceptions of employment qualifications (<url href="https://www.tandfonline.com/doi/abs/10.1207/s15327043hup0303_2">Cesare, Tannenbaum, &amp; Dalessio, 1990</url>). The researchers prepared videotaped job interviews, using the same actors and script each time. The only difference was that the job applicant appeared with different disabilities:</p>
+        <ul>
+          <li><p>No disability (control)</p></li>
+          <li><p>Leg amputation</p></li>
+          <li><p>Canadian crutches</p></li>
+          <li><p>Hearing impairment</p></li>
+          <li><p>Wheelchair confinement</p></li>
+        </ul>
       </stack>
       <image source="images/jobinterview.jpg" width="100%">
         <description>Job interview scene used as context for disability discrimination study</description>
       </image>
     </sidebyside>
 
-    <p>Seventy undergraduates were randomly assigned to view one videotape and then rated the applicant on ten questions using a 1-9 scale. The responses were averaged into one overall qualification score. The research question is whether mean ratings differ by disability condition.</p>
+    <p>Seventy undergraduate students from a large southeastern university were randomly assigned to view one of the videotapes, and they were then asked to rate each candidate on ten questions (e.g., applicant is qualified, applicant likely to be productive) using a 1-9 scale (e.g., 1 = typical response of an applicant likely to be rejected, 9 = typical response of an applicant likely to be hired). The responses were averaged across the 10 questions as an overall rating of each applicant. The research question is whether subjects tend to evaluate qualifications differently depending on the applicant&#8217;s disability.</p>
 
     <exercise xml:id="inv5-4-a" label="I5-4-a">
       <title>Identify Study Components</title>
@@ -74,7 +80,7 @@
       <title>Propose Statistic and Simulation</title>
       <statement>
         <ul>
-          <li><p>Suggest a statistic that you could use to measure how much these five sample means differ.</p></li>
+          <li><p>Suggest a standardized statistic that you could use to measure how much these five sample means differ.</p></li>
           <li><p>Outline a simulation you could perform to create a null distribution for your statistic.</p></li>
           <li><p>What types of values of your statistic will you consider evidence against the null hypothesis (large, small, near 0)?</p></li>
         </ul>
@@ -88,13 +94,11 @@
 
     <p>One approach is to use a Mean Group Difference, similar to what we discussed in Section 5.1, and to simulate the re-assigning of the given employment rating scores to the five types of disabilities.</p>
 
-    <p>Use the <url href="http://www.rossmanchance.com/applets/AnovaShuffle.htm">Comparing Groups (Quantitative) applet</url> and do the following:</p>
     <ul>
-      <li><p>Load <url href="http://www.rossmanchance.com/iscam2/data/DisabilityEmployment.txt">DisabilityEmployment.txt</url>, being sure to clarify which variable is explanatory and which is response.</p></li>
-      <li><p>Press <alert>Use Data</alert>.</p></li>
+      <li><p>Open the <url href="http://www.rossmanchance.com/applets/AnovaShuffle.htm">Comparing Groups (Quantitative)</url> applet.</p></li>
+      <li><p>Copy and paste the raw data (<url href="http://www.rossmanchance.com/iscam2/data/DisabilityEmployment.txt">DisabilityEmployment.txt</url>), being sure to clarify which is the explanatory variable, and press <alert>Use Data</alert>.</p></li>
       <li><p>Check the <alert>Show Shuffle Options</alert> box.</p></li>
-      <li><p>Select the <alert>Plot</alert> radio button.</p></li>
-      <li><p>Press <alert>Shuffle Responses</alert>.</p></li>
+      <li><p>Select the <alert>Plot</alert> radio button and press <alert>Shuffle Responses</alert>.</p></li>
     </ul>
 
     <exercise xml:id="inv5-4-f" label="I5-4-f">
@@ -168,10 +172,10 @@
           <row header="yes">
             <cell></cell>
             <cell>None</cell>
-            <cell>Ampu</cell>
-            <cell>Crut</cell>
-            <cell>Hear</cell>
-            <cell>Wheel</cell>
+            <cell>Amputee</cell>
+            <cell>Crutches</cell>
+            <cell>Hearing</cell>
+            <cell>Wheelchair</cell>
           </row>
           <row>
             <cell halign="left">Sample size</cell>
@@ -183,14 +187,14 @@
           </row>
           <row>
             <cell halign="left">Sample mean</cell>
-            <cell>4.90</cell>
-            <cell>4.43</cell>
-            <cell>5.92</cell>
-            <cell>4.05</cell>
-            <cell>5.34</cell>
+            <cell>4.9</cell>
+            <cell>4.429</cell>
+            <cell>5.921</cell>
+            <cell>4.050</cell>
+            <cell>5.343</cell>
           </row>
           <row>
-            <cell halign="left">Sample standard deviation</cell>
+            <cell halign="left">Sample std. dev.</cell>
             <cell><var width="8"/></cell>
             <cell><var width="8"/></cell>
             <cell><var width="8"/></cell>
@@ -250,7 +254,7 @@
     <exercise xml:id="inv5-4-i2" label="I5-4-i2">
       <title>Interpret SD for None Category</title>
       <statement>
-        <p>Write a one-sentence description of the sample standard deviation of the <em>None</em> category.</p>
+        <p>Write a one sentence description of the sample standard deviation of the none category.</p>
       </statement>
       <response/>
       <solution>
@@ -258,12 +262,12 @@
       </solution>
     </exercise>
 
-    <p>Now focus on deviations in group means from the overall mean.</p>
+    <p>This time, rather than focusing on differences in groups, we will examine deviations in the group means.</p>
 
     <exercise xml:id="inv5-4-j" label="I5-4-j">
       <title>Overall Mean</title>
       <statement>
-        <p>What is the overall mean applicant qualification rating across all 70 students?</p>
+        <p>What is the overall mean applicant qualification rating assigned by the 70 students?</p>
         <p><var width="8"/></p>
       </statement>
       <setup>
@@ -285,7 +289,7 @@
     <exercise xml:id="inv5-4-k" label="I5-4-k">
       <title>SD of Group Means</title>
       <statement>
-        <p>Treat the five sample means as five observations. Compute their standard deviation. What denominator appears in this calculation?</p>
+        <p>If we were to treat the five sample means as five observations, calculate the standard deviation of these five values. What is the denominator of your calculation?</p>
       </statement>
       <response/>
       <solution>
@@ -311,7 +315,7 @@
     <exercise xml:id="inv5-4-m" label="I5-4-m">
       <title>Between-group Variability (Equal <m>n</m>'s)</title>
       <statement>
-        <p>In this case, the sample sizes were equal to 14 in each group, so you can simply multiply your answer  <xref ref="inv5-4-k" text="custom">Question 12</xref> by 14 to measure the variability between groups.
+        <p>In this case, the sample sizes were equal to 14 in each group, so you can simply multiply your answer to <xref ref="inv5-4-k" text="custom">Question 12</xref> by 14 to measure the variability between groups.
 </p>
       </statement>
       <response/>
@@ -320,7 +324,7 @@
       </solution>
     </exercise>
 
-<p>But now we want to compare this variation to decide whether it’s large, more than we might expect to see by random chance alone, reflecting that not everyone gives the same rating scores, even to the same applicant.</p>
+<p>But now we want to compare this variation to decide if it’s large, more than we might expect to see by random chance alone, reflecting that not everyone gives the same rating scores, even to the same applicant.</p>
     <exercise xml:id="inv5-4-n" label="I5-4-n">
       <title>Measure Natural Variation</title>
       <statement>
@@ -338,7 +342,7 @@
     <exercise xml:id="inv5-4-o" label="I5-4-o">
       <title>Within-group Variability</title>
       <statement>
-        <p>Calculate the average group variance across the five groups (square each group SD, then average).</p>
+        <p>Calculate the average variance across the five groups.</p>
       <hint>
         <p>Square each group's standard deviation to obtain its variance, and then take the average of those five values.</p>
       </hint>
@@ -371,9 +375,9 @@
     <exercise xml:id="inv5-4-q" label="I5-4-q">
       <title>Compute Variability Ratio</title>
       <statement>
-        <p>Compute the ratio: <xref ref="inv5-4-m" text="custom">Question 14</xref> divided by <xref ref="inv5-4-o" text="custom">Question 16</xref>. 
+        <p>Calculate the ratio of your result from <xref ref="inv5-4-m" text="custom">Question 14</xref> divided by your result from <xref ref="inv5-4-o" text="custom">Question 16</xref>.
         </p><p><em>F = between-group variability / within-group variability</em></p>
-        <p>How many times larger is between-group variability than within-group variability?</p>
+        <p>How many times larger is the between-group variability compared to the within-group variability?</p>
       </statement>
       <response/>
       <solution>
@@ -384,7 +388,7 @@
     <exercise xml:id="inv5-4-r" label="I5-4-r">
       <title>Range of Ratio</title>
       <statement>
-        <p>What is the smallest possible value of this ratio? The largest?</p>
+        <p>What is the smallest possible value that this ratio could ever assume? The largest?</p>
       </statement>
       <response/>
       <solution>
@@ -403,12 +407,12 @@
       </solution>
     </exercise>
 
-<ul><li><p>In the Comparing Groups (Quantitative) applet, use the pull-down Statistic menu to select <em>F</em>-statistic (named after R.A. Fisher).</p></li></ul>
+<ul><li><p>In the Comparing Groups (Quantitative) applet, use the pull-down <alert>Statistic</alert> menu to select <em>F</em>-statistic (named after R. A. Fisher).</p></li></ul>
 
     <exercise xml:id="inv5-4-t" label="I5-4-t">
       <title><em>F-</em>statistic Null Distribution</title>
       <statement>
-        <p>Describe the null distribution (shape, mean, SD) and compute the empirical p-value.</p>
+        <p>Describe the behavior of the null distribution and compute the empirical p-value.</p>
       </statement>
       <response/>
       <solution>
@@ -433,7 +437,7 @@
 
     <assemblage xml:id="probability-detour-5-4-f-result">
       <title>Probability Result</title>
-      <p>For large samples, the null distribution of this statistic is well modeled by an <em>F</em> distribution with parameters <em> number of groups</em> - 1  and <em> overall sample size - number of groups </em>, the degrees of freedom of the numerator and the denominator respectively.</p>
+      <p>For large samples, this sampling distribution is well modeled by an <em>F</em> distribution with parameters <em>number of groups</em> &#8722; 1 and <em>overall sample size</em> &#8722; <em>number of groups</em>, the degrees of freedom of the numerator and denominator respectively.</p>
     </assemblage>
 
     <exercise xml:id="inv5-4-v" label="I5-4-v">
@@ -451,21 +455,19 @@
       </solution>
     </exercise>
 
-<p> Because we are comparing variances, this is called an <em>Analysis of Variance</em> or <em>ANOVA</em> procedure.</p>
-
     <paragraphs>
         <title>Technology Detour </title>
 
-        <exercise xml:id="inv5-1-tech-detour-anova">
+        <exercise xml:id="inv5-4-tech-detour-anova">
           <title>ANOVA Calculations</title>
           <statement>
-            <p>Confirm your calculations using technology. </p>
-          
+            <p>Confirm your calculations using technology. Because we are comparing variances, this is called an <em>Analysis of Variance</em> or <em>ANOVA</em> procedure.</p>
+
       <hint>
         <title>Applet Instructions</title>
         <p>Use the <url href="http://www.rossmanchance.com/applets/AnovaShuffle.htm">Comparing Groups (Quantitative)</url> applet.</p>
         <ul>
-          <li><p>Paste data into Sample Data box, being sure to clarify which variable is explanatory.</p></li>
+          <li><p>Paste data into Sample data box, being sure to clarify which is the explanatory variable.</p></li>
           <li><p>Press <strong>Use Data</strong>.</p></li>
           <li><p>Check the <strong>Show ANOVA Table</strong> box.</p></li>
         </ul>
@@ -473,15 +475,15 @@
 
       <hint>
         <title>R Instructions</title>
-        <p>If you have the data in a response vector and an explanatory vector, use <c>summary(aov(response~explanatory))</c>.</p>
-        <p>This outputs the Mean Sq values for the treatment row and Residuals row.</p>
+        <p>If you have the data in a response vector and an explanatory vector, you can use <c>summary(aov(response~explanatory))</c></p>
+        <p>This will output the Mean Square values in the Mean Sq column, first for the treatment group (the disability row) and then for the error term (Residuals).</p>
       </hint>
 
       <hint>
         <title>JMP Instructions</title>
         <ul>
-          <li><p>With the quantitative variable in one column and the explanatory variable in another, choose <strong>Analyze &gt; Fit Y by X</strong>, then Oneway Analysis &gt; Means/Anova.</p></li>
-          <li><p>Specify the quantitative variable in <strong>Y, Column</strong> and the explanatory variable in <strong>X, Factor</strong>.</p></li>
+          <li><p>With the quantitative variable in one column and the explanatory variable in another column, choose <strong>Analyze &gt; Fit Y by X</strong>.</p></li>
+          <li><p>Specify the quantitative variable in the <strong>Y, Column</strong> box and the explanatory variable in the <strong>X, Factor</strong> box.</p></li>
           <li><p>Open the <strong>Oneway Analysis</strong> hot spot and select <strong>Means/Anova</strong>.</p></li>
         </ul>
       </hint>
@@ -508,7 +510,7 @@
     <exercise xml:id="inv5-4-x" label="I5-4-x">
       <title>Check Conditions with Data</title>
       <statement>
-        <p>Is there evidence of non-normality? Compute the largest-to-smallest sample SD ratio and assess whether it is less than 2. (In the applet, check the box to Overlay <em>F</em> distribution to help assess the fit.)</p>
+        <p>Is there evidence of non-normality in these sample data? Calculate the ratio of the largest to smallest standard deviation; is this less than 2? (In the applet, check the box to Overlay <em>F</em> distribution to help assess the fit.)</p>
       </statement>
       <response/>
       <solution>
@@ -527,7 +529,7 @@
     <exercise xml:id="inv5-4-y" label="I5-4-y">
       <title>Conclusions Paragraph</title>
       <statement>
-        <p>Write a paragraph summarizing conclusions for this study, including significance, causation, and generalizability.</p>
+        <p>Write a paragraph summarizing your conclusions for this study. Be sure to address issues of causation and generalizability as well as statistical significance.</p>
       </statement>
       <response/>
       <solution>
@@ -535,7 +537,33 @@
       </solution>
     </exercise>
 
-    <assemblage>
+    <assemblage xml:id="terminology-detour-5-4">
+      <title>Terminology Detour</title>
+      <p>We will compare <m>I</m> group means, where each group has <m>n_i</m> observations. The overall sample size will be denoted by <m>n=\sum n_i</m>.</p>
+      <p><m>H_0</m>: There is no treatment effect or <m>H_0\!: \mu_1 = \cdots = \mu_I</m></p>
+      <p><m>H_a</m>: There is a treatment effect or <m>H_a\!:</m> at least one <m>\mu_i</m> differs from the rest</p>
+      <p>The between-group variability will be measured by looking at the sum of the squared deviations of the group means to the overall mean, <m>\bar{x}</m>. Each group mean is weighted by the sample size of that group. We will refer to this quantity as the “sum of squares for groups,” <em>SSgroups</em>.
+      <me>SS_{groups} = \sum_{i=1}^I n_i(\bar{x}_i - \bar{x})^2</me>.</p>
+      <p> We will then “average” these values by considering how many groups were involved. This quantity will be referred to as the “mean square for groups.”</p>
+ <me>MS_{groups}=SS_{groups}/(I-1)</me>.
+ <p> Note, if we fix the overall mean, once we know <m>I - 1</m> of the group means, the value of the <m>i^{th}</m> mean is determined. So the degrees of freedom of this quantity is <m>I - 1</m>.</p>
+ <p>The within-group variability will be measured by the pooled variance. In general, each term will be weighted by the sample size of that group. We will again divide by an indication of the overall sample size across the groups. We will refer to this quantity as the “mean squares for error,” <em>MSE</em>.
+ <me>MSE = \frac{\sum_{i=1}^I (n_i - 1)s_i^2}{n - I}</me> which has <m>n - I</m> degrees of freedom.</p>
+ <p>The test statistic is then the ratio of these “mean square” quantities:</p>
+       <me>F = MS_{groups}/MSE</me>
+       <sidebyside widths="62% 33%" margins="0% 0%" valign="top">
+         <stack>
+           <p>When the null hypothesis is true, this test statistic should be close to 1. So larger values of <em>F</em> provide evidence against the null hypothesis. The corresponding p-value comes from a probability distribution called the <em>F</em> distribution<idx><h>F distribution</h><h>reference distribution for ANOVA test statistic</h></idx> with <m>I - 1</m> and <m>n - I</m> degrees of freedom.</p>
+         </stack>
+         <image source="images/fdist.png" width="100%">
+           <description>F distribution reference graphic for Investigation 5.4</description>
+         </image>
+       </sidebyside>
+       <p> We will use this <em>F</em> distribution to approximate both the sampling distribution of this test statistic in repeated samples from the same population (<m>H_0\!: \mu_1 = … = \mu_I</m>) and the randomization distribution for a randomized experiment (<m>H_0\!:</m> no treatment effect) as long as the technical conditions (above) are met.</p>
+       <p>Because we are focusing on the variance of group means, this procedure is termed Analysis of Variance (ANOVA)<idx><h>analysis of variance (ANOVA)</h><h>comparing several group means</h></idx>. With one explanatory variable, this is called <em>one-way ANOVA</em>.</p>
+    </assemblage>
+
+    <assemblage xml:id="study-conclusions-5-4">
       <title>Study Conclusions</title>
       <p>The distributions of qualification scores in the five treatment groups look reasonably symmetric with similar standard deviations, so it is appropriate to apply the Analysis of Variance procedure. There is moderate evidence that the mean qualification ratings differ depending on the type of disability (p-value = 0.030). Descriptively, the candidates with crutches appear to have higher ratings on average, and the candidates with hearing impairments tend to have slightly lower ratings. (Other follow-up procedures could be used to determine which group means differ significantly from which others.) This was a randomized experiment, so we can attribute these differences in qualification scores to the disability shown. But we must be cautious about considering the students in this study to be representative of a larger population, particularly a population of employers who make actual hiring decisions.
 </p>
@@ -560,7 +588,7 @@
     <title>Practice Problem 5.4B</title>
 
     <introduction>
-      <p>Lifetimes of notable people in nine occupational categories were gathered from <em>The World Almanac and Book of Facts.</em></p>
+      <p>Lifetimes of notable people in nine different occupational categories were gathered from <em>The World Almanac and Book of Facts.</em></p>
     </introduction>
 
     <exercise xml:id="practice-5-4-2" label="P5-4B-1">
@@ -586,32 +614,6 @@
       </statement>
       <response/>
     </exercise>
-
-    <assemblage xml:id="terminology-detour-5-4">
-      <title>Terminology Detour</title>
-      <p>Suppose we compare <m>I</m> group means, with group sample sizes <m>n_i</m>. The overall sample size will be denoted by  <m>n=\sum n_i</m>.</p>
-      <p><m>H_0</m>: There is no treatment effect OR <m>\mu_1 = \cdots = \mu_I</m>.</p>
-      <p><m>H_a</m>: There is a treatment effect OR at least one <m>\mu_i</m> differs.</p>
-      <p>The between-group variability will be measured by looking at the sum of the squared deviations of the group means to the overall mean, <m>\bar{x}</m>. Each group mean is weighted by the sample size of that group. We will refer to this quantity as the “sum of squares for groups,” <em>SSgroups</em>.
-      <me>SS_{groups} = \sum_{i=1}^I n_i(\bar{x}_i - \bar{x})^2</me>.</p> 
-      <p> We will then “average” these values by considering how many groups were involved. This quantity will be referred to as the “mean square for groups.”</p>
- <me>MS_{groups}=SS_{groups}/(I-1)</me>.
- <p> Note, if we fix the overall mean, once we know <m>I - 1</m> of the group means, the value of the <m>i^{th}</m> mean is determined. So the degrees of freedom of this quantity is <m>I - 1</m>.</p>
- <p>The within-group variability will be measured by the pooled variance. In general, each term will be weighted by the sample size of that group. We will again divide by an indication of the overall sample size across the groups. We will refer to this quantity as the “mean squares for error,” <em>MSE</em>.
- <me>MSE = \frac{\sum_{i=1}^I (n_i - 1)s_i^2}{n - I}</me> which has <m>n - I</m> degrees of freedom.</p>
- <p>The test statistic is then the ratio of these “mean square” quantities:</p>
-       <me>F = MS_{groups}/MSE</me>
-       <sidebyside widths="62% 33%" margins="0% 0%" valign="top">
-         <stack>
-           <p>When the null hypothesis is true, this test statistic should be close to 1. So larger values of <em>F</em> provide evidence against the null hypothesis. The corresponding p-value comes from a probability distribution called the <em>F</em> distribution<idx><h>F distribution</h><h>reference distribution for ANOVA test statistic</h></idx> with <m>I - 1</m> and <m>n - I</m> degrees of freedom.</p>
-         </stack>
-         <image source="images/fdist.png" width="100%">
-           <description>F distribution reference graphic for Investigation 5.4</description>
-         </image>
-       </sidebyside>
-       <p> We will use this <em>F</em> distribution to approximate both the sampling distribution of this test statistic in repeated samples from the same population (<m>H_0\!: \mu_1 = … = \mu_I</m>) and the randomization distribution for a randomized experiment (<m>H_0\!:</m> no treatment effect) as long as the technical conditions (above) are met.</p>
-       <p>Because we are focusing on the variance of group means, this procedure is termed Analysis of Variance (ANOVA)<idx><h>analysis of variance (ANOVA)</h><h>comparing several group means</h></idx>. With one explanatory variable, this is called <em>one-way ANOVA</em>.</p>
-    </assemblage>
 
   </subsection>
 </section>

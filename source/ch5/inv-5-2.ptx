@@ -7,7 +7,7 @@
 
     <sidebyside widths="70% 25%" margins="0% 0%" valign="top">
       <stack>
-        <p>Lee et al. (<url href="https://ggsc.berkeley.edu/images/uploads/Lee_et_al_2014_Can_Classic_Moral_Stories_Promote_Honesty_in_Children.pdf">2014</url>) examined whether classic stories about moral behavior influence whether children lie. They studied three moral stories (<em>Pinocchio</em>, <em>The Boy Who Cried Wolf</em>, and <em>George Washington and the Cherry Tree</em>) and one control story (<em>The Tortoise and the Hare</em>). Children ages 3-7 completed a temptation-resistance task and then were asked whether they had peeked. Suppose the results for children who peeked were:</p>
+        <p>Lee et al. (<url href="https://ggsc.berkeley.edu/images/uploads/Lee_et_al_2014_Can_Classic_Moral_Stories_Promote_Honesty_in_Children.pdf">2014</url>) examined whether some classic stories about moral behavior actually influence whether or not kids lie. They examined the stories of <q>Pinocchio</q>, <q>The Boy Who Cried Wolf</q>, and <q>George Washington and the Cherry Tree</q>, as stories commonly used by teachers and parents to promote honesty, though in different ways (negative consequences of lying for the first two vs. positive consequences of truth telling in the third). Two hundred and sixty-eight Canadian children aged 3<ndash/>7 years were recruited for the study (children begin to tell lies around 2<ndash/>3 years of age). Children participated in a <q>temptation-resistance task</q> that has been used widely to study whether children choose to lie to hide a transgression (essentially peeking at the answer when left alone in the room for one minute) and then were read one of the three stories or a control story <mdash/> <q>The Tortoise and the Hare</q>. (The reader did not know whether or not they had peeked.) After the story, the child was asked whether or not he or she had peeked. Suppose the results for the children who peeked turned out like this:</p>
       </stack>
       <image source="images/inv-5-2intro.jpg" width="82%">
         <description>Illustration for Investigation 5.2</description>
@@ -17,10 +17,10 @@
     <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
       <row header="yes">
         <cell>Response \ Story </cell>
-        <cell>Tortoise (control)</cell>
+        <cell>Tortoise and Hare (control)</cell>
         <cell>George Washington</cell>
         <cell>Pinocchio</cell>
-        <cell>Wolf</cell>
+        <cell>Boy Who Cried Wolf</cell>
         <cell>Total</cell>
       </row>
       <row>
@@ -89,15 +89,15 @@
       </solution>
     </exercise>
 
-    <p>The following table displays both observed and expected counts:</p>
+    <p>The following table displays both the observed and the expected counts.</p>
 
     <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
       <row header="yes">
         <cell>Response \ Story</cell>
-        <cell>Tortoise (control)</cell>
+        <cell>Tortoise and Hare (control)</cell>
         <cell>George Washington</cell>
         <cell>Pinocchio</cell>
-        <cell>Wolf</cell>
+        <cell>Boy Who Cried Wolf</cell>
         <cell>Total</cell>
       </row>
       <row>
@@ -126,7 +126,7 @@
       </row>
     </tabular>
 
-    <p>To model this randomized experiment under the null, we shuffle confession outcomes among story groups while preserving the group sizes.</p>
+    <p>We see that the observed counts are not always equal to the expected counts, but perhaps the random assignment created groups that were slightly different prior to the start of the study, and these differences merely reflect those random variations. Of course we can investigate this by simulating binomial random sample as in <xref ref="inv-5-1" text="custom">Investigation 5.1</xref>, but this time we want to model the random assignment process rather than the random sampling process. In other words, we will assume whether or not a child confesses is not influenced by which story they are read, and we will shuffle and redistribute these outcomes among the explanatory variable groups.</p>
 
     <exercise xml:id="inv5-2-d">
       <title>Simulation with Applet</title>
@@ -134,7 +134,7 @@
         <p>Use the applet to generate a randomization distribution and compute an empirical p-value for this study.</p>
         <aside>
           <title>Analyzing Two-way Tables Applet</title>
-          <p>Use the <url href="http://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?FET=1">Analyzing Two-way Tables applet</url>.</p>
+          <p>Use the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?FET=1">Analyzing Two-way Tables applet</url>.</p>
         </aside>
         <hint>
           <title>Applet Instructions</title>
@@ -167,7 +167,7 @@
       </solution>
     </exercise>
 
-    <p>When data arise from a randomized experiment, the chi-squared model is generally appropriate if at least 80% of expected counts are at least 5 and all are at least 1.</p>
+    <p>When the two-way table arises from a randomized experiment, we can apply the chi-squared distribution to predict the randomization distribution of the chi-squared statistic as long as at least 80% of the expected cell counts are at least 5 and all of the individual expected cell counts are at least one.</p>
 
     <exercise xml:id="inv5-2-f">
       <title>Technology Output</title>
@@ -202,7 +202,7 @@
     <title>Practice Problem 5.2</title>
 
     <introduction>
-      <p>Suppose we compare only <em>George Washington</em> to the control (<em>Tortoise and the Hare</em>).</p>
+      <p>Suppose we had decided in advance to only compare the George Washington group to the control group (Tortoise and the Hare) to see whether there is a difference in the probability of confessing after hearing these two stories.</p>
     </introduction>
 
     <exercise xml:id="practice-5-2-1" label="P5-2-1">
@@ -216,7 +216,7 @@
     <exercise xml:id="practice-5-2-2" label="P5-2-2">
       <title>Degrees of Freedom</title>
       <statement>
-        <p>What are the degrees of freedom?</p>
+        <p>What are the degrees of freedom for this chi-squared statistic?</p>
       </statement>
       <response/>
     </exercise>
@@ -232,7 +232,7 @@
     <exercise xml:id="practice-5-2-4" label="P5-2-4">
       <title>Two-sample <m>z</m>-test Comparison</title>
       <statement>
-        <p>Use technology to calculate a two-sample <m>z</m>-test for these data. How does the (two-sided) p-value compare to what you found in Checkpoint 5.2.c?</p>
+        <p>Use technology to calculate a two-sample <m>z</m>-test for these data. How does the (two-sided) p-value compare to what you found in <xref ref="practice-5-2-3" text="custom">Question 3</xref>?</p>
       </statement>
       <response/>
     </exercise>

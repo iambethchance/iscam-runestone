@@ -14,32 +14,36 @@
       </image>
     </sidebyside>
 
-    <p>The following summary statistics about the total bills were reported:</p>
+    <p>The following summary statistics about the 393 total bills were reported:</p>
 
     <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
       <row header="yes">
-        <cell></cell>
+        <cell>Type</cell>
         <cell>Classical music</cell>
         <cell>Pop music</cell>
-        <cell>No music</cell>
+        <cell>No Music</cell>
+        <cell></cell>
       </row>
       <row>
-        <cell halign="left">Mean</cell>
+        <cell halign="left">Mean (£)</cell>
         <cell>24.13</cell>
         <cell>21.91</cell>
         <cell>21.70</cell>
+        <cell></cell>
       </row>
       <row>
-        <cell halign="left">SD</cell>
+        <cell halign="left">SD (£)</cell>
         <cell>2.243</cell>
         <cell>2.627</cell>
         <cell>3.332</cell>
+        <cell></cell>
       </row>
       <row>
         <cell halign="left">Sample size</cell>
         <cell><m>n_1=120</m></cell>
         <cell><m>n_2=142</m></cell>
         <cell><m>n_3=131</m></cell>
+        <cell><m>n=393</m></cell>
       </row>
     </tabular>
 
@@ -60,13 +64,10 @@
     <exercise xml:id="inv5-5-b" label="I5-5-b">
       <title>Calculate Key ANOVA Quantities</title>
       <statement>
-        <p>Based on these summary statistics, calculate:</p>
-        <ul>
-          <li><p>the overall (weighted) mean amount spent, <m>\bar{x} = \sum (n_i \bar{x}_i) / \sum n_i</m>,</p></li>
-          <li><p>the between-group variation, <m>MSG = \sum n_i (\bar{x}_i - \bar{x})^2 / (I-1)</m>,</p></li>
-          <li><p>and the pooled standard deviation, <m>MSE = \sum_{i = 1}^I (n_i - 1)s_i^2 / (n - I)</m>.</p></li>
-        </ul>
-        <p>Check the consistency of your calculations with the summary statistics reported above.</p>
+        <p>Based on these summary statistics, calculate the overall (weighted) mean amount spent, the between group variation, and the pooled standard deviation. Check the consistency of your calculations with the summary statistics reported above.</p>
+        <p>Overall (weighted) mean: <m>\bar{x} = \dfrac{\sum_{i=1}^{I} n_i \bar{x}_i}{n} =</m></p>
+        <p>Between group variability (MSG) = <m>\dfrac{\sum_{i=1}^{I} n_i (\bar{x}_i - \bar{x})^2}{I-1} =</m></p>
+        <p>Pooled standard deviation (MSE) = <m>\dfrac{\sum_{i=1}^{I} (n_i - 1)s_i^2}{n-I} =</m></p>
       </statement>
       <response/>
       <solution>
@@ -84,36 +85,18 @@
       <exercise xml:id="inv5-5-tech-detour-anova">
         <title>ANOVA Calculations</title>
         <statement>
-          <p>Confirm your calculations using technology.</p>
-
-          <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
-            <image source="images/inv5-5techR.png" width="100%">
-              <description>R output for Investigation 5.5 technology detour</description>
-            </image>
-            <image source="images/inv5-5techJMP.jpg" width="100%">
-              <description>JMP output for Investigation 5.5 technology detour</description>
-            </image>
-          </sidebyside>
-
+          <p>Calculate the <em>F</em>-statistic (by hand) and then use technology to determine the p-value (sketch and shade the corresponding randomization distribution):</p>
           <hint>
             <title>Applet Instructions</title>
-            <p>Use the <url href="http://www.rossmanchance.com/applets/2021/test/fCalc.htm"><em>F</em> Probability Calculator applet</url>.</p>
-            <p>Enter your observed <m>F</m> value and use the upper-tail probability.</p>
+            <p>In <url href="http://www.rossmanchance.com/applets/2021/test/fCalc.htm"><em>F</em> Probability Calculator applet</url>: Specify the degrees of freedom and the observed <em>F</em>-value, and the direction for the probability of interest.</p>
           </hint>
-
           <hint>
             <title>R Instructions</title>
-            <p>Use <c>pf(x, df1, df2, lower.tail=FALSE)</c> with <c>x = 29.2</c>, <c>df1 = 2</c>, and <c>df2 = 390</c>.</p>
+            <p>In R: <c>pf(x, df1, df2, lower.tail=FALSE)</c></p>
           </hint>
-
           <hint>
             <title>JMP Instructions</title>
-            <p>Use Distribution Calculator, choose <em>F</em>, and compute the upper-tail probability for <m>F = 29.2</m> with df 2 and 390.</p>
-          </hint>
-
-          <hint>
-            <title>Solution</title>
-            <p>You should obtain <em>F</em> = 226/7.73 = 29.2. The p-value is approximately zero.</p>
+            <p>In JMP: Distribution Calculator &gt; <em>F</em>, <alert>Input quantiles…</alert>, <alert>X &gt; Qa</alert></p>
           </hint>
         </statement>
       </exercise>
@@ -290,7 +273,7 @@
     <exercise xml:id="practice-5-5-5" label="P5-5B-1">
       <title>Two-sample <m>t</m>-test</title>
       <statement>
-        <p>Carry out a two-sided two-sample pooled <em>t</em>-test (see Investigation 4.2: use the technology option that assumes the variances are equal) to assess whether there is a statistically significant difference in the average ratings assigned to these two groups.</p>
+        <p>Carry out a two-sided two-sample pooled <em>t</em>-test (see <xref ref="inv4-2-pooled-t-test-discussion" text="custom">the pooled <m>t</m>-test discussion in Investigation 4.2</xref>; use the technology option that assumes the variances are equal) to assess whether there is a statistically significant difference in the average ratings assigned to these two groups.</p>
       </statement>
       <response/>
     </exercise>
@@ -306,7 +289,7 @@
     <exercise xml:id="practice-5-5-7" label="P5-5B-3">
       <title>Relate the <m>t</m> and <m>F</m> Results</title>
       <statement>
-        <p>How are the p-values from the two approaches related? How do you think the <em>t</em>-test statistic and the <em>F</em>-test statistic are related? Explain.</p>
+        <p>How are the p-values from <xref ref="practice-5-5-5" text="custom">Question 1</xref> and <xref ref="practice-5-5-6" text="custom">Question 2</xref> related? How do you think the <em>t</em>-test statistic and the <em>F</em>-test statistic are related? Explain.</p>
       </statement>
       <response/>
     </exercise>
@@ -314,7 +297,10 @@
     <exercise xml:id="practice-5-5-8" label="P5-5B-4">
       <title>When to Use <m>t</m> vs ANOVA</title>
       <statement>
-        <p>Suggest, in general, a situation where the two-sample <em>t</em>-procedure would be preferred and a situation where the ANOVA procedure would be preferred. [Hint: What would be true about the research question?]</p>
+        <p>Suggest (in general) a situation where the two-sample <em>t</em>-procedure would be preferred and a situation where the ANOVA procedure would be preferred.</p>
+        <hint>
+          <p>What would be true about the research question?</p>
+        </hint>
       </statement>
       <response/>
     </exercise>

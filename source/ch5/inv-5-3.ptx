@@ -5,7 +5,7 @@
   <exercises xml:id="exercises5-3" hidden-label="yes">
     <title>The Study</title>
 
-    <p>Recall <xref ref="inv-3-2" text="custom">Investigation 3.2</xref>, where we examined a simplified version of the Quinn, Shin, Maguire, and Stone (1999) study of childhood lighting exposure and eye refraction. Here we use three categories for each variable.</p>
+    <p>Recall from <xref ref="inv-3-2" text="custom">Investigation 3.2</xref> we examined a simplified version of the study published by Quinn, Shin, Maguire and Stone (1999) that examined the relationship between the type of lighting children were exposed to and subsequent eye refraction. Now we are able to look at 3 categories for each variable. Below is the two-way table and segmented bar graph from the study:</p>
 
     <tabular xml:id="nightlights-eye-table" halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
       <row header="yes">
@@ -50,17 +50,17 @@
     </image>
 
 
-    <p>Here we can view the data as one random sample cross-classified by lighting type and eye condition.</p>
+    <p>Rather than considering these data as arising from three independent random samples from binomial processes, we can consider the 479 patients as one random sample, where we have <em>cross-classified</em> the subjects according to the lighting type and the eye condition. But the calculations for the chi-squared statistic can be used exactly the same way.</p>
 
-    <p><m>H_0</m>: no association between lighting type and eye condition in the population.</p>
-    <p><m>H_a</m>: there is an association.</p>
-
-    <p>This is a <em>chi-squared test of association.</em></p>
+    <p>We will state the null and alternative hypotheses in terms of this association.</p>
+    <p><m>H_0</m>: no association between <em>type of lighting</em> and <em>eye condition</em> in the population</p>
+    <p><m>H_a</m>: there is an association</p>
+    <p>Note that the alternative hypothesis does not specify any particular kind of association (e.g., more near-sightedness with more light), just that the conditional distributions are not the same in the population. This is often referred to as a <em>Chi-squared test of association</em>.</p>
 
     <exercise xml:id="inv5-3-a">
       <title>Simulation Plan</title>
       <statement>
-        <p>Outline a simulation appropriate for this study design.</p>
+        <p>Outline a simulation that would be appropriate for this study design.</p>
       </statement>
       <response/>
       <solution>
@@ -68,7 +68,7 @@
       </solution>
     </exercise>
 
-    <p>When technical conditions are met, we generally use the chi-squared theoretical null model.</p>
+    <p>We could choose to carry out a different simulation to model how these data were collected (one random sample, cross-classified, aka <q>multinomial</q>), but when the technical conditions are met, we generally use the theoretical null distribution which will be the same if we fix the row and column totals. But be sure to keep the data collection methods in mind when you draw your final conclusions!</p>
 
     <exercise xml:id="inv5-3-b">
       <title>Expected Count Calculation</title>
@@ -117,9 +117,10 @@
 
     <assemblage xml:id="study-conclusions-5-3">
       <title>Study Conclusions</title>
-      <p>The segmented bar graph suggests near-sightedness increases with lighting level in this sample. A chi-squared test of association is appropriate because expected counts are sufficiently large. The p-value is extremely small, indicating strong evidence of association between lighting and eye condition in the population represented by this sample. The largest cell discrepancies are fewer near-sighted children than expected in the dark group and more than expected in the room-light group.</p>
-      <p>Because this is an observational study, a cause-and-effect conclusion is not warranted. Confounding variables (for example, parental vision and related household lighting choices) may explain part of the observed association. Generalization should also be cautious because children were not sampled as a simple random sample from all children.</p>
+      <p>The segmented bar graph reveals that for the children in this sample the incidence of near-sightedness increases as the level of lighting increases. When we have a random sample with two categorical variables, we can perform a chi-squared test of association. Because the expected counts are large (smallest is 14.25 &gt; 5), we can apply the chi-squared test to these data. The p-value of this chi-squared test is essentially zero, which says that if there were no association between eye condition and lighting in the population, then it's virtually impossible for chance alone to produce a table in which the conditional distributions would differ by as much as they did in the actual study. Thus, the sample data provide overwhelming evidence that there is indeed an association between eye condition and lighting in the population of children like those in this study. A closer analysis of the table and the chi-squared calculation reveals that there are many fewer children with near-sightedness than would be expected in the <q>darkness</q> group and many more children with near-sightedness than would be expected in the <q>room light</q> group. But remember the main lesson of this study from Chapter 3 <mdash/> we cannot draw a cause-and-effect conclusion between lighting and eye condition because this is an observational study. Several confounding variables could explain the observed association. For example, perhaps near-sighted children tend to have near-sighted parents who prefer to leave a light on because of their own vision difficulties, while also passing this genetic predisposition on to their children. We also have to be careful in generalizing from this sample to a larger population because the children were making voluntary visits to an eye doctor and were not selected at random from a larger population.</p>
     </assemblage>
+
+    <p>You should notice that the mechanics are exactly the same whether you are testing homogeneity of proportions, comparing the distributions across several populations/processes, or examining the association between two categorical variables. The difference lies in how the data were collected and therefore in the scope of conclusions that can be drawn.</p>
   </exercises>
 
   <subsection xml:id="practice-5-3">
