@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="investigation4-2" xmlns:xi="http://www.w3.org/2001/XInclude">
 <title>Investigation 4.2: The Elephants in the Room</title>
-  <subsection xml:id="study-4-2">
+  <exercises xml:id="exercises-4-2" hidden-label="yes">
     <title>The Study</title>
     <introduction>
       <sidebyside widths="60% 25%" valign="top" margins="0% 0%">
@@ -305,7 +305,7 @@ iscamsummary(elephants$Distance, elephants$Species)
       </statement>
       <response/>
     </exercise>
-  </subsection>
+  </exercises>
 
     <exercises xml:id="prob-detour-two-means">
       <title>Probability Detour: Sampling Distribution of Difference in Two Means</title>
@@ -741,19 +741,17 @@ with only the summary data is one advantage the <m>t</m>-test has over the simul
 <p>This <q>pooled <m>t</m>-test</q> has some advantages (namely higher power), when the population standard deviations are equal. However, this additional condition can be difficult to assess from your sample data. The benefits do not appear to outweigh the risks of applying this assumption when you shouldn't. So in this text we will focus on <q>unpooled <m>t</m>-tests</q> only.</p>
 </paragraphs>
       
-      <exercise xml:id="inv4-2-tech" label="I4-2-TECH">
+      <assemblage xml:id="inv4-2-tech">
         <title>Technology Detours</title>
-        <statement>
-          <p>Expand the hints below for instructions for different software tools.</p>
+        <p>Instructions for different software tools:</p>
 
-        <hint>
+        <aside>
           <title>In Applet - Theory-Based Inference (Summary Data)</title>
           <p>Using the <url href="https://www.rossmanchance.com/applets/2021/rbia/TBIA.html">Theory-Based Inference applet</url> to conduct a two-sample <m>t</m>-test</p>
           <p>For example:</p>
           <image source="images/Inv4.2TBIA.png" width="60%">
             <description>Theory-Based Inference applet for unpooled two-sample t-test with summary data</description>
           </image>
-          
           <ul>
             <li><p>Select "Two Means" from the <term index="no">Scenario</term> pull-down menu</p></li>
             <li><p>Enter the sample sizes, means, and standard deviations for each group. Press <term index="no">Calculate</term> to see a visual representation of the means and standard deviations.</p></li>
@@ -761,27 +759,28 @@ with only the summary data is one advantage the <m>t</m>-test has over the simul
             <li><p>Choose the alternative hypothesis</p></li>
             <li><p>Press <term index="no">Calculate</term> to get the test statistic, degrees of freedom, and p-value</p></li>
           </ul>
-        </hint>
-        <hint>
+        </aside>
+
+        <aside>
           <title>In Applet - Theory-Based Inference (Raw Data)</title>
           <p>Use the Theory-Based Inference applet with raw data:</p>
-          
           <image source="images/Inv4.2TBIA2.png" width="40%">
             <description>Theory-Based Inference applet for unpooled two-sample t-test with raw data</description>
           </image>
           <ul>
             <li><p>Select "Two Means" from the <term index="no">Scenario</term> pull-down menu</p></li>
             <li><p>Copy the data to the clipboard, check the <term index="no">Paste data</term>
-             box, select the <term index="no">Stacked</term> box if that’s the data format 
-             (explanatory variable in first column), press <term index="no">Clear</term>, 
+             box, select the <term index="no">Stacked</term> box if that’s the data format
+             (explanatory variable in first column), press <term index="no">Clear</term>,
              click in the data window and paste the data. Press <term index="no">Use Data</term>.</p></li>
             <li><p>Check the <term index="no">Test of Significance</term> box.</p></li>
             <li><p>Specify the hypothesized difference and direction of the alternative.</p></li>
             <li><p>Press <term index="no">Calculate</term></p></li>
           </ul>
-        </hint>
-        <hint>
-  <title>In R (summary data)</title>
+        </aside>
+
+        <aside>
+          <title>In R (summary data)</title>
           <p>The <c>iscamtwosamplet</c> function takes the following inputs:</p>
           <ul>
             <li><p>Group 1 mean, standard deviation, sample size (in that order)</p></li>
@@ -802,8 +801,10 @@ invisible(iscamtwosamplet(x1=5.4, sd1=1.47, n1=33, x2=5.3, sd2=3.41, n2=23,
                           invisible()
             </input>
           </sage>
-        </hint>
-<hint>          <title>In R (raw data) </title>
+        </aside>
+
+        <aside>
+          <title>In R (raw data)</title>
           <p>Use R to conduct a two-sample <m>t</m>-test:</p>
           <program language="r">
             <code>
@@ -814,8 +815,9 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
 # This is the default and recommended when variances may differ
             </code>
           </program>
-        </hint>
-        <hint>
+        </aside>
+
+        <aside>
           <title>In JMP (summary data)</title>
           <p>Use JMP to conduct a two-sample <m>t</m>-test with summary statistics:</p>
           <image source="images/Inv4.2JMP3.png" width="60%">
@@ -827,22 +829,24 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
             <li><p>Specify the alternative hypothesis and the sample means and sample standard deviations and press Enter.</p></li>
             <li><p>There is no simple CI calculator</p></li>
           </ul>
-        </hint>
-        <hint>
+        </aside>
+
+        <aside>
           <title>In JMP (raw data)</title>
           <p>Use JMP to conduct a two-sample <m>t</m>-test with stacked data:</p>
           <ul>
             <li><p>Choose <term index="no">Analyze > Fit Y by X</term></p></li>
             <li><p>Put the quantitative variable in <term index="no">Y, Response</term> and the categorical variable in <term index="no">X, Factor</term></p></li>
             <li><p>Press <term index="no">OK</term></p></li>
-          </ul>
-          <ul><li><p>Click on the red triangle next to <term index="no">Oneway Analysis</term> 
+            <li><p>Click on the red triangle next to <term index="no">Oneway Analysis</term>
                 and select <term index="no"><m>t</m> Test</term>. The output will include the 95% confidence interval, the t standardized statistic (and df), and 3 p-values. Pick the p-value that matches your alternative hypothesis.</p>
-                <ul><li><p>To change the confidence level, use the hot spot to select <term index="no">Set <m>\alpha</m> level</term> to <m>1-C</m>.</p></li></ul></li>
+                <ul>
+                  <li><p>To change the confidence level, use the hot spot to select <term index="no">Set <m>\alpha</m> level</term> to <m>1-C</m>.</p></li>
                 </ul>
-        </hint>
-        </statement>
-      </exercise>
+            </li>
+          </ul>
+        </aside>
+      </assemblage>
 
 </exercises>
     
