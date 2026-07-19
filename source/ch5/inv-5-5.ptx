@@ -60,11 +60,40 @@
     <exercise xml:id="inv5-5-b" label="I5-5-b">
       <title>Calculate Key ANOVA Quantities</title>
       <statement>
-        <p>Based on these summary statistics, calculate the overall (weighted) mean amount spent, the between group variation, and the pooled standard deviation. Check the consistency of your calculations with the summary statistics reported above.</p>
-        <p>Overall (weighted) mean: <m>\bar{x} = \dfrac{\sum_{i=1}^{I} n_i \bar{x}_i}{n} =</m></p>
-        <p>Between group variability (MSG) = <m>\dfrac{\sum_{i=1}^{I} n_i (\bar{x}_i - \bar{x})^2}{I-1} =</m></p>
-        <p>Pooled standard deviation (MSE) = <m>\dfrac{\sum_{i=1}^{I} (n_i - 1)s_i^2}{n-I} =</m></p>
+        <p>Based on these summary statistics, calculate the overall (weighted) mean amount spent, the between group variation, and the pooled variance. Check the consistency of your calculations with the summary statistics reported above.</p>
+        <p>Overall (weighted) mean: <m>\bar{x} = \dfrac{\sum_{i=1}^{I} n_i \bar{x}_i}{n} =</m> <var width="8"/></p>
+        <p>Between group variability (MSG) = <m>\dfrac{\sum_{i=1}^{I} n_i (\bar{x}_i - \bar{x})^2}{I-1} =</m> <var width="8"/></p>
+        <p>Pooled variance (MSE) = <m>\dfrac{\sum_{i=1}^{I} (n_i - 1)s_i^2}{n-I} =</m> <var width="8"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition number="22.52" tolerance="0.02">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. The weighted mean should be about 22.52.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="226" tolerance="1">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. MSG should be about 226.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="7.73" tolerance="0.05">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition number="2.78" tolerance="0.05">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Try again. Using the displayed MSE formula gives about 7.73 (its square root is about 2.78).</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
       <solution>
         <p>weighted mean = <m>[120(24.13) + 142(21.91) + 131(21.70)]/(120+142+131) = 22.52</m> (this is in the "middle" of the 3 observed averages).</p>
@@ -129,7 +158,7 @@
       </statement>
       <response/>
       <solution>
-        <p>The variation between types of music appears larger than the variation in amount spent between diners. With <m>F \approx 29.2</m>, the between-group variation is about 29 times larger than the within-group variation.</p>
+        <p>The variation between types of music appears larger than the variation in amount spent between diners. With <m>F \approx 29.2</m>, the between-group variation (types of music) is about 29 times larger than the within-group variation (between diners).</p>
       </solution>
     </exercise>
 
