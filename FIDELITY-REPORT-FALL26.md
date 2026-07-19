@@ -9,6 +9,17 @@
 
 *PDF page numbers below are file pages (printed page + 1).*
 
+## Consolidated findings: Inv 5.1 and Inv 5.1A (all in one place)
+
+This section lists only still-open items for source/ch5/inv-5-1.ptx and source/ch5/inv-5-1a.ptx.
+
+### source/ch5/inv-5-1.ptx
+- No still-open items.
+
+### source/ch5/inv-5-1a.ptx
+- Collapsed 2x2 table values differ from PDF print (PDF 645/1854 vs PTX 701/1844).
+  - Still open by design: the PDF printed values appear arithmetically inconsistent with row data; PTX appears silently corrected; author decision pending.
+
 ## Top-priority findings (author attention first)
 
 1. **Investigation B (`inv-b.ptx`) was substantially rewritten** — roughly a dozen PDF questions missing, merged, or replaced. Needs a full restoration pass.
