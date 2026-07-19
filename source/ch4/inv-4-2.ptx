@@ -741,11 +741,12 @@ with only the summary data is one advantage the <m>t</m>-test has over the simul
 <p>This <q>pooled <m>t</m>-test</q> has some advantages (namely higher power), when the population standard deviations are equal. However, this additional condition can be difficult to assess from your sample data. The benefits do not appear to outweigh the risks of applying this assumption when you shouldn't. So in this text we will focus on <q>unpooled <m>t</m>-tests</q> only.</p>
 </paragraphs>
       
-      <assemblage xml:id="inv4-2-tech">
+      <exercise xml:id="inv4-2-tech" label="I4-2-TECH">
         <title>Technology Detours</title>
-        <p>Instructions for different software tools:</p>
+        <statement>
+          <p>Expand the hints below for instructions for different software tools.</p>
 
-        <aside>
+        <hint>
           <title>In Applet - Theory-Based Inference (Summary Data)</title>
           <p>Using the <url href="https://www.rossmanchance.com/applets/2021/rbia/TBIA.html">Theory-Based Inference applet</url> to conduct a two-sample <m>t</m>-test</p>
           <p>For example:</p>
@@ -759,9 +760,9 @@ with only the summary data is one advantage the <m>t</m>-test has over the simul
             <li><p>Choose the alternative hypothesis</p></li>
             <li><p>Press <term index="no">Calculate</term> to get the test statistic, degrees of freedom, and p-value</p></li>
           </ul>
-        </aside>
+        </hint>
 
-        <aside>
+        <hint>
           <title>In Applet - Theory-Based Inference (Raw Data)</title>
           <p>Use the Theory-Based Inference applet with raw data:</p>
           <image source="images/Inv4.2TBIA2.png" width="40%">
@@ -777,9 +778,9 @@ with only the summary data is one advantage the <m>t</m>-test has over the simul
             <li><p>Specify the hypothesized difference and direction of the alternative.</p></li>
             <li><p>Press <term index="no">Calculate</term></p></li>
           </ul>
-        </aside>
+        </hint>
 
-        <aside>
+        <hint>
           <title>In R (summary data)</title>
           <p>The <c>iscamtwosamplet</c> function takes the following inputs:</p>
           <ul>
@@ -801,9 +802,9 @@ invisible(iscamtwosamplet(x1=5.4, sd1=1.47, n1=33, x2=5.3, sd2=3.41, n2=23,
                           invisible()
             </input>
           </sage>
-        </aside>
+        </hint>
 
-        <aside>
+        <hint>
           <title>In R (raw data)</title>
           <p>Use R to conduct a two-sample <m>t</m>-test:</p>
           <program language="r">
@@ -815,9 +816,9 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
 # This is the default and recommended when variances may differ
             </code>
           </program>
-        </aside>
+        </hint>
 
-        <aside>
+        <hint>
           <title>In JMP (summary data)</title>
           <p>Use JMP to conduct a two-sample <m>t</m>-test with summary statistics:</p>
           <image source="images/Inv4.2JMP3.png" width="60%">
@@ -829,9 +830,9 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
             <li><p>Specify the alternative hypothesis and the sample means and sample standard deviations and press Enter.</p></li>
             <li><p>There is no simple CI calculator</p></li>
           </ul>
-        </aside>
+        </hint>
 
-        <aside>
+        <hint>
           <title>In JMP (raw data)</title>
           <p>Use JMP to conduct a two-sample <m>t</m>-test with stacked data:</p>
           <ul>
@@ -845,8 +846,9 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
                 </ul>
             </li>
           </ul>
-        </aside>
-      </assemblage>
+        </hint>
+        </statement>
+      </exercise>
 
 </exercises>
     
