@@ -22,28 +22,24 @@
         <cell>Classical music</cell>
         <cell>Pop music</cell>
         <cell>No Music</cell>
-        <cell></cell>
       </row>
       <row>
         <cell halign="left">Mean (£)</cell>
         <cell>24.13</cell>
         <cell>21.91</cell>
         <cell>21.70</cell>
-        <cell></cell>
       </row>
       <row>
         <cell halign="left">SD (£)</cell>
         <cell>2.243</cell>
         <cell>2.627</cell>
         <cell>3.332</cell>
-        <cell></cell>
       </row>
       <row>
         <cell halign="left">Sample size</cell>
         <cell><m>n_1=120</m></cell>
         <cell><m>n_2=142</m></cell>
         <cell><m>n_3=131</m></cell>
-        <cell><m>n=393</m></cell>
       </row>
     </tabular>
 
@@ -82,10 +78,22 @@
     <paragraphs>
       <title>Technology Detour </title>
 
-      <exercise xml:id="inv5-5-tech-detour-anova">
-        <title>ANOVA Calculations</title>
+      <exercise xml:id="inv5-5-tech-detour-f">
+        <title>Calculate the <m>F</m>-statistic</title>
         <statement>
-          <p>Calculate the <em>F</em>-statistic (by hand) and then use technology to determine the p-value (sketch and shade the corresponding randomization distribution):</p>
+          <p>Using your earlier calculations of between-group variability and pooled within-group variability, calculate the <m>F</m>-statistic.</p>
+        </statement>
+        <response/>
+        <solution>
+          <p><m>F = \frac{\text{between-group variability}}{\text{within-group variability}}</m>. Using the values from earlier, this is approximately <m>\frac{226}{7.73} \approx 29.2</m> (minor differences may occur due to rounding).</p>
+        </solution>
+      </exercise>
+
+      <exercise xml:id="inv5-5-tech-detour-pvalue">
+        <title>Use technology to find the <m>p</m>-value</title>
+        <statement>
+          <p>Using your <m>F</m>-statistic from <xref ref="inv5-5-tech-detour-f" text="custom">Question 1</xref>, use technology to determine the <m>p</m>-value (sketch and shade the corresponding randomization distribution).</p>
+          <p>Enter the <m>p</m>-value you find: <var width="8"/></p>
           <hint>
             <title>Applet Instructions</title>
             <p>In <url href="http://www.rossmanchance.com/applets/2021/test/fCalc.htm"><em>F</em> Probability Calculator applet</url>: Specify the degrees of freedom and the observed <em>F</em>-value, and the direction for the probability of interest.</p>
@@ -96,9 +104,21 @@
           </hint>
           <hint>
             <title>JMP Instructions</title>
-            <p>In JMP: Distribution Calculator &gt; <em>F</em>, <alert>Input quantiles…</alert>, <alert>X &gt; Qa</alert></p>
+            <p>In JMP: Distribution Calculator &gt; <em>F</em>, Input quantiles…, X &gt; Qa
+            </p>
           </hint>
         </statement>
+        <solution>
+          <p>The <m>p</m>-value is very small (approximately 0, depending on rounding and software display). The small p-value makes sense with the large (e.g., much larger than 4) <m>F</m>-statistic.</p>
+          <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
+            <image source="images/inv5-5techR.png" width="100%">
+              <description><p>R output for Investigation 5.5 technology detour.</p></description>
+            </image>
+            <image source="images/inv5-5techJMP.jpg" width="100%">
+              <description><p>JMP output for Investigation 5.5 technology detour.</p></description>
+            </image>
+          </sidebyside>
+        </solution>
       </exercise>
     </paragraphs>
 
@@ -109,7 +129,7 @@
       </statement>
       <response/>
       <solution>
-        <p>The variation between types of music appears larger than the variation in amount spent between diners. (MSGroups is much larger than MSError).</p>
+        <p>The variation between types of music appears larger than the variation in amount spent between diners. With <m>F \approx 29.2</m>, the between-group variation is about 29 times larger than the within-group variation.</p>
       </solution>
     </exercise>
 
@@ -170,7 +190,7 @@
           <cell>27.5</cell>
           <cell>21.5</cell>
           <cell>23.5</cell>
-          <cell></cell>
+          <cell>&#160;</cell>
           <cell>13.3</cell>
         </row>
         <row>
@@ -179,7 +199,7 @@
           <cell>27.5</cell>
           <cell>27.9</cell>
           <cell>26.4</cell>
-          <cell></cell>
+          <cell>&#160;</cell>
           <cell>13.6</cell>
         </row>
         <row>
@@ -188,7 +208,7 @@
           <cell>30.5</cell>
           <cell>34.8</cell>
           <cell>26.7</cell>
-          <cell></cell>
+          <cell>&#160;</cell>
           <cell>15.0</cell>
         </row>
         <row>
@@ -196,26 +216,26 @@
           <cell>31.9</cell>
           <cell>40.2</cell>
           <cell>29.5</cell>
-          <cell></cell>
-          <cell></cell>
+          <cell>&#160;</cell>
+          <cell>&#160;</cell>
           <cell>17.7</cell>
         </row>
         <row>
           <cell>32.5</cell>
           <cell>29.8</cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
+          <cell>&#160;</cell>
+          <cell>&#160;</cell>
+          <cell>&#160;</cell>
+          <cell>&#160;</cell>
           <cell>18.6</cell>
         </row>
         <row>
           <cell>33.8</cell>
           <cell>31.9</cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
+          <cell>&#160;</cell>
+          <cell>&#160;</cell>
+          <cell>&#160;</cell>
+          <cell>&#160;</cell>
           <cell>23.1</cell>
         </row>
         <row>
