@@ -321,16 +321,14 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
     </exercise>
   </paragraphs>
 
-    <exercise xml:id="I1-9-g" label="I1-9g">
+    <exercise xml:id="I1-9-h" label="I1-9g">
       <title>Determine 95% confidence interval</title>
-      <statement>
-        <p>Using this more precise value for the multiplier, determine and interpret the 95% confidence interval for <m>\pi</m>.</p>
-      </statement>
-      <response/>
-      <solution>
-        <p>Using 1.96, the interval should be approximately (0.561, 0.729). So we are 95% confident that between 56.1% and 72.9% of all kissing couples lean to the right.</p>
-      </solution>
-    </exercise>
+<statement><p>Using this more precise value for the multiplier, determine and interpret the 95% confidence interval for <m>\pi</m>.
+</p></statement>
+<response\>
+<solution>
+<p>Using 1.96, the interval should be approximately  (0.561, 0.729). So we are 95% confident that between 56.1% and 72.9% of all kissing couples lean to the right.</p>
+</solution>
 
     <exercise xml:id="I1-9-h" label="I1-9h">
       <title>Compare to 90% Critical Value</title>
@@ -373,6 +371,9 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
       </solution>
     </exercise>
 
+<paragraphs><p>
+Putting these together, we have a <alert>one-sample z-interval</alert> (aka Wald interval) for a process probability:</p>
+</paragraphs>
     <assemblage xml:id="one-sample-z-interval">
       <title>One Sample <m>z</m>-Confidence Interval (Wald Interval) for <m>\pi</m></title>
       <p>
@@ -516,7 +517,7 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
       <title>One Proportion <em>z</em>-interval with Technology</title>
       <statement>
         <p>
-          Use technology (Applet, R, or JMP) to find one proportion <em>z</em>-confidence intervals for the kissing study (<m>n</m> = 124, 80 successes). For example, confirm the 95% confidence interval you calculated earlier. Choose one set of instructions below by clicking on a hint.
+          Use technology (Applet, R, or JMP) to find one proportion <em>z</em>-confidence intervals for the kissing study (<m>n</m> = 124, 80 successes). Report the results for the 95% confidence interval. 
         </p>
         <p>
           (Lower bound: <var width="10"/>, Upper bound: <var width="10"/>)
@@ -525,7 +526,7 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
       <hint>
         <title>R/Sage Instructions</title>
         <p>
-          Use the <c>iscamonepropztest</c> function to calculate the <em>z</em>-confidence interval. The function takes the following inputs:
+ The <c>iscamonepropztest</c> function takes the following inputs:
         </p>
         <ul>
           <li><p><c>observed</c> = number of successes or the sample proportion (<m>\hat{p}</m>)</p></li>
@@ -553,7 +554,6 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 95)
           <li><p>Enter the number of successes (80) and sample size (124)</p></li>
           <li><p>Set the confidence level to 95%</p></li>
         </ul>
-        <p>The output will show the 95% <m>z</m>-confidence interval.</p>
       </hint>
       <hint>
         <title>Theory-Based Inference Applet Instructions</title>
@@ -565,10 +565,9 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 95)
           <li><p>Specify the sample size <m>n</m> = 124 and either the count (80) or the sample proportion (0.645).</p></li>
           <li><p>Press <term index="no">Calculate</term>.</p></li>
           <li><p>Check the box for <term index="no">Confidence interval</term></p></li>
-          <li><p>Change the <term index="no">confidence level</term> to 95%</p></li>
-          <li><p>Press the <term index="no">Calculate CI</term> button</p></li>
-        </ul>
-        <p>The applet will display the 95% <m>z</m>-confidence interval.</p>
+          <li><p>Set the <term index="no">confidence level</term> to 95%</p></li>
+         <li><p>Press the <term index="no">Calculate CI</term> button</p></li>
+         </ul>
       </hint>
       <setup>
         <var>
