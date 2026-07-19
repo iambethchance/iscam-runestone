@@ -177,7 +177,7 @@
         </row>
         <row>
           <cell>Study design</cell>
-          <cell colspan="2">One binary variable</cell>
+          <cell colspan="2">One binary variable, constant probability of success, independent observations</cell>
         </row>
         <row>
           <cell>Parameter</cell>
@@ -200,43 +200,66 @@
           <line><m>SD(\hat{p}) = \sqrt{\pi(1-\pi)/n}\times</m><m>\sqrt{(N-n)/(N-1)}</m></line></cell>
         </row>
         <row>
-          <cell>Valid when (for <em>z</em> procedures)</cell>
-          <cell>At least 10 successes and 10 failures</cell>
-          <cell>Population size > 20<m>n</m>; At least 10 successes and 10 failures</cell>
+          <cell>R commands</cell>
+          <cell><line><c>iscambinomtest</c></line>
+          <line>• <em>observed</em> (number or proportion)</line>
+          <line>• <em>n</em> (sample size)</line>
+          <line>• <em>hypothesized probability</em> (<m>\pi_0</m>)</line>
+          <line>• <em>alternative</em> ("less", "greater", or "two.sided")</line></cell>
+          <cell><line><c>iscamhyperprob</c></line>
+          <line>• <em>k</em> (observed number of successes)</line>
+          <line>• <em>total</em> (population size)</line>
+          <line>• <em>succ</em> (hypothesized number of successes in population)</line>
+          <line>• <em>n</em> = sample size</line>
+          <line>• <em>lower.tail</em> (TRUE or FALSE)</line></cell>
+        </row>
+        <row>
+          <cell>JMP</cell>
+          <cell>Analyze > Distribution; Test probabilities (one-sided p-values)</cell>
+          <cell>Formula > Discrete Probability > Hypergeometric Distribution</cell>
+        </row>
+        <row>
+          <cell>Can use <em>z</em> procedures if</cell>
+          <cell>At least 10 successes and 10 failures in each group</cell>
+          <cell>Population size <m>\geq</m> 20<m>n</m>; At least 10 successes and 10 failures in each group</cell>
         </row>
         <row>
           <cell>Standardized statistic</cell>
           <cell colspan="2"><m>z_0 = (\hat{p} - \pi_0)/\sqrt{\pi_0(1-\pi_0)/n}</m></cell>
         </row>
         <row>
-          <cell>Confidence interval</cell>
-          <cell colspan="2"><line>Exact Binomial: all plausible values with two-sided p-value > 0.05;</line>
-          <line>Wald: <m>\hat{p} \pm z^*\sqrt{\hat{p}(1-\hat{p})/n}</m>;</line>
-          <line>Adjusted Wald: <m>\tilde{p} \pm z^*\sqrt{\tilde{p}(1-\tilde{p})/\tilde{n}}</m> where <m>\tilde{p} = (X + 0.5z^{*2})/(n + z^{*2})</m> and <m>\tilde{n} = n + z^{*2}</m>. For 95% confidence, add two successes and two failures.</line></cell>
+          <cell>R</cell>
+          <cell colspan="2"><c>iscamonepropztest</c></cell>
         </row>
         <row>
-          <cell>R Commands</cell>
-          <cell><line><c>iscamonepropztest</c></line>
-          <line>• Observed (either the number of successes or sample proportion)</line>
-          <line>• n (sample size)</line>
-          <line>• hypothesized probability (<m>\pi_0</m>)</line>
-          <line>• alternative ("less", "greater", or "two.sided")</line>
-          <line>• Optional: conf.level(s)</line></cell>
-          <cell><line><c>iscamhyperprob</c></line>
-          <line>• k (observed number of successes)</line>
-          <line>• total (population size)</line>
-          <line>• succ (hypothesized number of successes in population)</line>
-          <line>• n (sample size)</line>
-          <line>• lower.tail (TRUE or FALSE)</line></cell>
+          <cell></cell>
+          <cell colspan="2">• <em>Observed</em> (either the number of successes or sample proportion)<br/>• <em>n</em> (sample size)<br/>• <em>hypothesized probability</em> (<m>\pi_0</m>)<br/>• <em>alternative</em> ("less", "greater", or "two.sided")<br/>• <em>Optional: conf.level</em>(s)</cell>
         </row>
         <row>
           <cell>JMP</cell>
-          <cell>Analyze > Distribution (one-sided p-values)</cell>
-          <cell>Formula > Discrete Probability > Hypergeometric Distribution</cell>
+          <cell colspan="2">ISCAM Journal File > Hypothesis Test for One Proportion (raw or summary)</cell>
+        </row>
+        <row>
+          <cell>Confidence interval</cell>
+          <cell colspan="2"><line>Exact Binomial confidence interval (all plausible values for <m>\pi</m> with two-sided p-value larger than 0.05 (95% confidence))</line>
+          <line>Wald: <m>\hat{p} \pm z^*\sqrt{\hat{p}(1-\hat{p})/n}</m></line>
+          <line>Adjusted Wald: <m>\tilde{p} \pm z^*\sqrt{\tilde{p}(1-\tilde{p})/\tilde{n}}</m> where <m>\tilde{p} = (X + 0.5z^{*2})/(n + z^{*2})</m> and <m>\tilde{n} = n + z^{*2}</m> (For 95% confidence, add two successes and two failures.)</line></cell>
+        </row>
+        <row>
+          <cell>R Commands</cell>
+          <cell colspan="2"><c>iscamonepropztest(observed, n, conf.level)</c></cell>
+        </row>
+        <row>
+          <cell>Minitab</cell>
+          <cell colspan="2">Stat > Basic Statistics > 1 Proportion; Use "normal approximation" under Options > Method</cell>
+        </row>
+        <row>
+          <cell>JMP</cell>
+          <cell colspan="2">ISCAM Journal File > Confidence Interval for One Proportion</cell>
         </row>
         <row>
           <cell>TBI Applet</cell>
-          <cell colspan="2">One proportion scenario</cell>
+          <cell colspan="2">One proportion</cell>
         </row>
       </tabular>
   </subsection>
