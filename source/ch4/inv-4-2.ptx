@@ -821,15 +821,21 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
         <hint>
           <title>In JMP (summary data)</title>
           <p>Use JMP to conduct a two-sample <m>t</m>-test with summary statistics:</p>
-          <image source="images/Inv4.2JMP3.png" width="60%">
-            <description>JMP output for unpooled two-sample t-test</description>
-          </image>
-          <ul>
-            <li><p><url href="https://github.com/iambethchance/iscam-runestone/blob/master/assets/tech_images/JMP_Two_Means_HypTest_v1.jsl">ISCAM Journal file</url>: Hypothesis Test for Two Means</p></li>
-            <li><p>Choose the <m>t</m>-test and Unequal Variances</p></li>
-            <li><p>Specify the alternative hypothesis and the sample means and sample standard deviations and press Enter.</p></li>
-            <li><p>There is no simple CI calculator</p></li>
-          </ul>
+          <sidebyside widths="60% 35%" valign="top">
+            <stack>
+              <ul>
+                <li><p><url href="https://github.com/iambethchance/iscam-runestone/blob/master/assets/tech_images/JMP_Two_Means_HypTest_v1.jsl">ISCAM Journal file</url>: Hypothesis Test for Two Means</p></li>
+                <li><p>Choose the <m>t</m>-test and Unequal Variances</p></li>
+                <li><p>Specify the alternative hypothesis and the sample means and sample standard deviations and press Enter.</p></li>
+                <li><p>There is no simple CI calculator</p></li>
+              </ul>
+            </stack>
+            <stack>
+              <image source="images/Inv4.2JMP3.png" width="100%">
+                <description>JMP output for unpooled two-sample t-test</description>
+              </image>
+            </stack>
+          </sidebyside>
         </hint>
 
         <hint>
@@ -845,6 +851,29 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
                   <li><p>To change the confidence level, use the hot spot to select <term index="no">Set <m>\alpha</m> level</term> to <m>1-C</m>.</p></li>
                 </ul>
             </li>
+          </ul>
+        </hint>
+
+        <hint>
+          <title>Technology Detour - Unstacked data (each column is a group)</title>
+
+          <p><alert>In <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url>:</alert></p>
+          <ul>
+            <li><p>Press <term index="no">Clear</term> and do not check the <term index="no">Stacked</term> box before pasting the data.</p></li>
+          </ul>
+
+          <p><alert>In R (for NBA data first stack the data because each column is a variable):</alert></p>
+          <program language="r">
+            <code>
+StackedData = stack(salary.sample[, c("western", "eastern")])
+names(StackedData) = c("salary", "division")
+iscamdotplot(StackedData$salary, StackedData$division)
+iscamsummary(StackedData$salary, StackedData$division)
+            </code>
+          </program>
+          <p><alert>In JMP:</alert></p>
+          <ul>
+            <li><p>Choose <term index="no">Analyze &gt; Distribution</term> and use <term index="no">By</term> Conference.</p></li>
           </ul>
         </hint>
         </statement>
