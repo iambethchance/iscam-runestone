@@ -158,6 +158,8 @@
     <title>Technology Detour <mdash/> Loading in a Data File</title>
     <statement>
       <p>Use technology (R or JMP) to load the <url href="https://www.rossmanchance.com/iscam3/data/InfantData.txt">InfantData.txt</url> data file. Choose one set of instructions below by clicking on a hint.</p>
+      <p>       See also <xref ref="using-technology" text="custom">Using Technology with This Book</xref>.</p>
+ 
       <hint>
         <title>R Instructions</title>
         <p><alert>In RStudio</alert></p>
@@ -269,8 +271,7 @@ invisible(print(table(InfantData)))
     <exercise xml:id="tech-detour-bargraph-new" label="I1-1-6b">
       <title>Create Bar Graph with Technology</title>
       <statement>
-        <p>Use technology (R or JMP) to create a bar graph of these data. Choose one set of instructions below by clicking on a hint below.  
-        See also <xref ref="using-technology" text="custom">Using Technology with This Book</xref>.</p>
+        <p>Use technology (R or JMP) to create a bar graph of these data. Choose one set of instructions below by clicking on a hint below.</p>
       <hint>
         <title>R Instructions</title>
         <p><alert>Load data from GitHub and create bar graph </alert></p>
@@ -289,18 +290,12 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
         <p>Click the "Evaluate (R)" button to run the code.</p>
       </hint>
       <hint>
-        <title>JMP Instructions</title>
-        <ul>
-          <li> Choose <alert>File > New > Data table</alert>. Open the <url href="https://www.rossmanchance.com/iscam2/data/InfantData.txt">InfantData.txt</url> (raw data)
- link and select all the observations and the variable name (e.g., ctrl-A) and copy into the clipboard (e.g., ctrl-C).</li>
-        </ul>
+        <title>JMP Instructions (summary data)</title>
         <sidebyside widths="50% 45%" valign="top">
           <stack>
             <ul>
-              <li>Return to the data table in JMP and select <alert>Edit > Paste with Column Names</alert>.</li>
-              <li><p>Choose <alert>Analyze > Tabulate</alert></p></li>
-              <li><p>Drag the <c>choice</c> column to the Drop Zone for rows</p></li>
-              <li><p>Use the red triangle ("hot spot") menu and select <alert>Show Chart</alert></p></li>
+              <li><p>In the Tabulate window (from above), use the red down arrow in the upper left corner ("hot spot") and select <alert>Show Chart</alert>. This works best when using the Drop Zone for rows.</p></li>
+              <li><p>OR, if you have the categories and counts in a data window, choose <alert>Graph &gt; Graph Builder</alert>. Drag the variable names to the <m>x</m>-axis and the counts to the <m>y</m>-axis. Press the 7th icon to convert the chart to a bar graph.</p></li>
             </ul>
           </stack>
           <stack>
@@ -312,6 +307,13 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
             </image>
           </stack>
         </sidebyside>
+      </hint>
+      <hint>
+        <title>JMP Instructions (raw data)</title>
+        <ul>
+          <li><p>From the Data Table window, choose <alert>Graph &gt; Graph Builder</alert>. Drag the <c>choice</c> variable to the X-axis. Hover until the X-region shows the group labels and then let go. Press the 7th ("Bar") icon to convert the chart to a bar graph.</p></li>
+          <li><p>OR choose <alert>Analyze &gt; Distribution</alert>. With the <c>choice</c> column highlighted, press the <alert>Y, Columns</alert> button (or drag to the white box). Press <alert>OK</alert>. You can then use hot spot options (for example: horizontal bars, axis placement, labels, and bar separation).</p></li>
+        </ul>
       </hint>
       </statement>
       <solution>
