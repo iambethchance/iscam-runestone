@@ -178,16 +178,6 @@
         <p><alert>In R</alert></p>
         <p><em>Files from the web:</em> Open the <url href="https://www.rossmanchance.com/iscam3/data/InfantData.txt">InfantData.txt</url> (raw data) link from the data files page, select all, copy, and then in R use the following command (Keep in mind that R is case sensitive):</p>
         <program language="r">
-          <code>
-# PC:
-InfantData = read.table("clipboard", header=TRUE)
-
-# MAC:
-InfantData = read.table(pipe("pbpaste"), header=TRUE)
-          </code>
-        </program>
-        <p>You can also use a URL (in quotes). The <c>header</c> command indicates the variables have names.</p>
-        <p><em>Txt files on your computer:</em></p>
         <program language="r">
           <code>
 InfantData = read.table(file.choose(), header=T)
@@ -333,6 +323,16 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
         </image>
       </solution>
     </exercise>
+
+    <aside>
+      <title>Handy Reminders</title>
+      <ul>
+        <li><p><alert>In R</alert>: If you don't remember the inputs for a function, just use ? before the function, e.g., <c>?iscambinomtest</c>. Use the up arrow to return to earlier commands.</p></li>
+        <li><p><alert>In JMP</alert>: Remember to look under "hot spots" and that options will change across menu items.</p></li>
+        <li><p><alert>In R</alert>: For a bar graph from summary data, see <xref ref="tech-detour-r-bargraph-summary" text="custom">Bar Graphs in R (from summary data)</xref>.</p></li>
+        <li><p><alert>In JMP</alert>: For a bar graph from summary data, see <xref ref="tech-detour-jmp-bargraph-summary" text="custom">Bar Graphs - JMP (summary data)</xref>.</p></li>
+      </ul>
+    </aside>
   </paragraphs>
   
   <paragraphs>
@@ -451,16 +451,6 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
       <response/>
     </exercise>
 
-    <aside>
-      <title>Handy Reminders</title>
-      <ul>
-        <li><p><alert>In R</alert>: If you don't remember the inputs for a function, just use ? before the function, e.g., <c>?iscambinomtest</c>. Use the up arrow to return to earlier commands.</p></li>
-        <li><p><alert>In JMP</alert>: Remember to look under "hot spots" and that options will change across menu items.</p></li>
-        <li><p><alert>In R</alert>: For a bar graph from summary data, see <xref ref="tech-detour-r-bargraph-summary" text="custom">Bar Graphs in R (from summary data)</xref>.</p></li>
-        <li><p><alert>In JMP</alert>: For a bar graph from summary data, see <xref ref="tech-detour-jmp-bargraph-summary" text="custom">Bar Graphs - JMP (summary data)</xref>.</p></li>
-      </ul>
-    </aside>
-    
     <p>Our analysis approach is going to be to assume the second explanation is true (similar to how in a legal trial we assume a defendant is innocent), and then see whether our data are consistent or inconsistent with that assumption. To do this, we need to investigate the values we expect to see for the number choosing the helper toy when 16 infants are equally choosing between the two toys. As you saw with the Random Babies (<xref ref="invB" text="custom">Investigation B</xref>), we can simulate the outcomes of a random process to help us determine which outcomes are more or less likely to occur.</p>
     
     <exercise xml:id="inv1-1-k" label="I1-1-11">
@@ -680,6 +670,16 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
       </solution>
       <response/>
     </exercise>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Handy Reminders</title>
+    <ul>
+      <li><p><alert>In R</alert>: If you don't remember the inputs for a function, just use ? before the function, e.g., <c>?iscambinomtest</c>. Use the up arrow to return to earlier commands.</p></li>
+      <li><p><alert>In JMP</alert>: Remember to look under "hot spots" and that options will change across menu items.</p></li>
+      <li><p><alert>In R</alert>: For a bar graph from summary data, see <xref ref="tech-detour-r-bargraph-summary" text="custom">Bar Graphs in R (from summary data)</xref>.</p></li>
+      <li><p><alert>In JMP</alert>: For a bar graph from summary data, see <xref ref="tech-detour-jmp-bargraph-summary" text="custom">Bar Graphs - JMP (summary data)</xref>.</p></li>
+    </ul>
   </paragraphs>
   
   <paragraphs>
