@@ -367,9 +367,6 @@
           <p>Because the 28 outcomes corresponding to 6 successes are mutually exclusive (can't occur simultaneously), we can find the probability of at least one of them happening by adding all of the probabilities together:</p>
           <p><me>P(\text{SSFSSSFS}) + P(\text{SFSSSSSF}) + \ldots = 28 \times (0.5^8)</me></p>
           <p>What is the calculated product? <var width="5"/></p>
-          <p>In general, the binomial probability of obtaining <m>k</m> successes in a sequence of <m>n</m> independent trials with success probability <m>\pi</m> on each trial is:</p>
-          <p><me>P(X = k) = \binom{n}{k} \pi^k (1-\pi)^{n-k}</me></p>
-          <p>where <m>\binom{n}{k} = \frac{n!}{k!(n-k)!}</m></p>
         </statement>
         <setup>
           <var>
@@ -389,6 +386,13 @@
           <p>0.1094</p>
         </solution>
       </exercise>
+
+      <assemblage xml:id="probability-detour-binomial-probability-formula-1-2b">
+        <title>Probability Detour: Binomial Probability Formula</title>
+        <p>In general, the binomial probability of obtaining <m>k</m> successes in a sequence of <m>n</m> independent trials with success probability <m>\pi</m> on each trial is:</p>
+        <p><me>P(X = k) = \binom{n}{k} \pi^k (1-\pi)^{n-k}</me></p>
+        <p>where <m>\binom{n}{k} = \frac{n!}{k!(n-k)!}</m></p>
+      </assemblage>
       
       <exercise xml:id="inv1-2b-m" label="I1-2b-13">
         <title>Calculate Complete p-value</title>
@@ -477,81 +481,57 @@
   <exercise xml:id="tech-detour-binomial-1-2b">
     <title>Calculate Binomial Probabilities with Technology</title>
     <statement>
-      <p>Choose one set of instructions below by clicking on a hint. Adapt the instructions for the Wolf study.</p>
-      <p>Enter the probability you find. <var width="5"/></p>
-      <hint>
-          <title>Calculating Binomial Probabilities in R</title>
-          <p>Make sure you have the ISCAM Workspace loaded.</p>
-          
-          <p>The <c>iscambinomprob</c> function takes the following inputs:</p>
-          <ul>
-            <li><p><c>k</c> = the observed value you want to calculate the probability about</p></li>
-            <li><p><c>n</c> = the sample size of the binomial distribution</p></li>
-            <li><p><c>prob</c> = the probability of success in the binomial distribution</p></li>
-            <li><p><c>lower.tail</c> = TRUE if you want the probability less than or equal to the observed value, FALSE if you want the probability greater than or equal to the observed value</p></li>
-          </ul>
-          
-          <p>For the Friend or Foe study, run the following code:</p>
-          <sage language="r">
-            <input>
-<![CDATA[
-# Load ISCAM functions from GitHub
-invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R"))
-
-# Calculate binomial probability for 14 or more successes in 16 trials
-iscambinomprob(k=14, n=16, prob=0.5, lower.tail=FALSE)
-
-# Or without parameter names:
-# iscambinomprob(14, 16, 0.5, FALSE)
-]]>
-            </input>
-          </sage>
-          
-          <p>You should see both the probability appear in the output and a shaded binomial distribution graph.</p>
-          
-          <p><term index="no">R Reminder:</term> Yes, "FALSE" needs to be capitalized. The <c>lower.tail=FALSE</c> parameter gives you <m>P(X \geq k)</m>, while <c>lower.tail=TRUE</c> gives you <m>P(X \leq k)</m>.</p>
-          
-        </hint>
-        <hint>
-          <title>JMP Instructions</title>
-          <p>Using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" visual="new">ISCAM Journal File</url> (Download this file to your computer and then open the .jrn file to launch JMP.)</p>
-          
-          <sidebyside widths="55% 40%" valign="top">
-            <stack>
-              <ul>
-                <li><p>Select <term index="no">Binomial</term> from the Distribution pull down menu.</p></li>
-                <li><p>Specify the values of the probability of success (<m>\pi</m>) and n (the sample size).</p></li>
-                <li><p>Leave the <term index="no">Type of Calculation</term> as is.</p></li>
-                <li><p>Select <term index="no">Probability Option</term> <m>X \geq Q_a</m> but specify <m>Q_a</m> to equal <m>k-1</m> (e.g., 13).</p></li>
-                <li><p>Press <term index="no">Enter</term>.</p></li>
-              </ul>
-      
-            </stack>
-            <stack>
-              <image source="images/inv1-2-JMPa.png" width="100%">
-                <description>JMP Distribution Calculator input screen for binomial probabilities</description>
-              </image>
-              <image source="images/inv1-2-JMPb.png" width="100%">
-                <description>JMP Distribution Calculator output screen showing binomial distribution</description>
-              </image>
-            </stack>
-          </sidebyside>
-            <p><term index="no">JMP Reminder</term>
-                In JMP's Distribution Calculator, you need to subtract 1 from your observed value when using the <m>\geq</m> option because JMP calculates <m>P(X > Q_a)</m> as <m>P(X \geq Q_a + 1)</m>. So to get <m>P(X \geq 14)</m>, you enter 13 as <m>Q_a</m>.</p>
-          </hint>
+      <p>Use technology to calculate the binomial p-value for the wolf study with 6 successes in 8 attempts (assuming <m>H_0: \pi = 0.50</m>).</p>
+      <p><url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R" visual="new">R Instructions</url></p>
+      <p><url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" visual="new">JMP Instructions</url></p>
+      <p>What binomial p-value do you obtain? <var width="10"/></p>
     </statement>
+    <setup>
+      <var>
+        <condition number="0.1445" tolerance="0.005">
+          <feedback>
+            <p>Correct! The exact binomial p-value is about 0.1445.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Check that you are finding the upper-tail probability for 6 or more successes out of 8 when <m>\pi = 0.50</m>.</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>For the wolf study with 6 successes out of 8 trials, the binomial p-value should be 0.1445 as found in the applet.</p>
       <p>R output should report a binomial probability of approximately 0.1445 when adapted to <m>k = 6</m>, <m>n = 8</m>, and <m>prob = 0.5</m> with the upper tail.</p>
       <p>JMP output:</p>
       <sidebyside widths="55% 40%" valign="top">
-        <image source="images/inv1-2-JMPa.png" width="100%">
+        <image source="images/inv1-2-JMPa.png" width="60%">
           <description>JMP Distribution Calculator input screen for binomial probabilities</description>
         </image>
         <image source="images/inv1-2-JMPb.png" width="100%">
           <description>JMP Distribution Calculator output screen showing binomial distribution</description>
         </image>
       </sidebyside>
+    </solution>
+  </exercise>
+
+  <exercise xml:id="tech-detour-binomial-1-2b-confirm">
+    <title>Confirm Against the Applet</title>
+    <statement>
+      <p>Do you find the same probability calculation as the applet (0.1445)?</p>
+    </statement>
+    <choices randomize="no">
+      <choice correct="yes">
+        <statement><p>Yes</p></statement>
+        <feedback><p>Correct. The technology calculation should match the applet's exact binomial p-value.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>No</p></statement>
+        <feedback><p>Recheck that you used the upper tail for <m>P(X \geq 6)</m> with <m>n = 8</m> and <m>\pi = 0.50</m>.</p></feedback>
+      </choice>
+    </choices>
+    <solution>
+      <p>Yes.</p>
     </solution>
   </exercise>
 
