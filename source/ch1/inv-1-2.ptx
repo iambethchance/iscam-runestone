@@ -477,13 +477,58 @@
   </assemblage>
  
 <paragraphs xml:id="tech-detour-1-1">
-<title>Technology Detour – Calculating Binomial Probabilities</title>
   <exercise xml:id="tech-detour-binomial-1-2b">
-    <title>Calculate Binomial Probabilities with Technology</title>
+    <title>Technology Detour <mdash/> Calculating Binomial Probabilities</title>
     <statement>
-      <p>Use technology to calculate the binomial p-value for the wolf study with 6 successes in 8 attempts (assuming <m>H_0: \pi = 0.50</m>).</p>
-      <p><url href="https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R" visual="new">R Instructions</url></p>
-      <p><url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" visual="new">JMP Instructions</url></p>
+      <p>Use technology (R or JMP) to calculate the binomial p-value for the wolf study with 6 successes in 8 attempts, assuming <m>H_0: \pi = 0.50</m>. Choose one set of instructions below by clicking on a hint.</p>
+      <hint>
+        <title>R Instructions</title>
+        <p>Make sure you have the ISCAM Workspace loaded.</p>
+        <p>The <c>iscambinomprob</c> function takes the following inputs:</p>
+        <ul>
+          <li><p><c>k</c> = the observed value you want to calculate the probability about</p></li>
+          <li><p><c>n</c> = the sample size of the binomial distribution</p></li>
+          <li><p><c>prob</c> = the probability of success in the binomial distribution</p></li>
+          <li><p><c>lower.tail</c> = TRUE if you want the probability less than or equal to the observed value, FALSE if you want the probability greater than or equal to the observed value</p></li>
+        </ul>
+        <p>For the wolf study, run the following code:</p>
+        <sage language="r">
+          <input>
+<![CDATA[
+# Load ISCAM functions from GitHub
+invisible(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R"))
+
+# Calculate binomial probability for 6 or more successes in 8 trials
+iscambinomprob(k=6, n=8, prob=0.5, lower.tail=FALSE)
+]]>
+          </input>
+        </sage>
+        <p><term index="no">R Reminder:</term> Yes, <c>FALSE</c> needs to be capitalized. The <c>lower.tail=FALSE</c> parameter gives you <m>P(X \geq k)</m>.</p>
+      </hint>
+      <hint>
+        <title>JMP Instructions</title>
+        <p>Using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam4/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" visual="new">ISCAM Journal File</url> (download this file to your computer and then open the <c>.jrn</c> file to launch JMP):</p>
+        <sidebyside widths="55% 40%" valign="top">
+          <stack>
+            <ul>
+              <li><p>Select <term index="no">Binomial</term> from the Distribution pull down menu.</p></li>
+              <li><p>Specify the values of the probability of success (<m>\pi = 0.50</m>) and <m>n = 8</m>.</p></li>
+              <li><p>Leave the <term index="no">Type of Calculation</term> as is.</p></li>
+              <li><p>Select <term index="no">Probability Option</term> <m>X \geq Q_a</m> but specify <m>Q_a</m> to equal <m>5</m>.</p></li>
+              <li><p>Press <term index="no">Enter</term>.</p></li>
+            </ul>
+          </stack>
+          <stack>
+            <image source="images/inv1-2-JMPa.png" width="100%">
+              <description>JMP Distribution Calculator input screen for binomial probabilities</description>
+            </image>
+            <image source="images/inv1-2-JMPb.png" width="100%">
+              <description>JMP Distribution Calculator output screen showing binomial distribution</description>
+            </image>
+          </stack>
+        </sidebyside>
+        <p><term index="no">JMP Reminder:</term> In JMP's Distribution Calculator, you need to subtract 1 from your observed value when using the <m>\geq</m> option because JMP calculates <m>P(X > Q_a)</m> as <m>P(X \geq Q_a + 1)</m>. So to get <m>P(X \geq 6)</m>, you enter 5 as <m>Q_a</m>.</p>
+      </hint>
       <p>What binomial p-value do you obtain? <var width="10"/></p>
     </statement>
     <setup>
