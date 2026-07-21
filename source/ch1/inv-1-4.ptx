@@ -15,11 +15,11 @@
     <title>Define Sample and Variable</title>
     <statement>
       <p>Define the sample or random process for this study.</p>
-    </statement>
-    <response/>
     <hint>
       <p>Think about what is being observed repeatedly.</p>
     </hint>
+    </statement>
+    <response/>
     <solution>
       <p>The 10 most recent heart transplantation surgeries at St. George's Hospital (or more generally, heart transplantation surgeries at this hospital, across all the patients)</p>
     </solution>
@@ -126,10 +126,10 @@
     <title>Nothing Unusual Hypothesis</title>
     <statement>
       <p>If there is nothing unusual about the mortality rate for heart transplantations at this hospital (compared to other U.K. hospitals), what does this imply about the value of the probability of "success"?</p>
-      <p><m>\pi</m> <var width="5" /> <var width="10" /></p>
     <hint>
       <p>What was stated as the reasonable benchmark for comparison?</p>
     </hint>
+      <p><m>\pi</m> <var width="5" /> <var width="10" /></p>
     </statement>
     <setup>
       <var>
@@ -250,42 +250,11 @@
     </solution>
   </exercise>
 
-<paragraphs xml:id="tech-detour-1-4">
-<title>Technology Detour – Calculating Binomial Probabilities</title>
-<p>You could use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm">One Proportion Inference applet</url> to use simulation or the binomial distribution to find the p-value. Many statistical software packages will carry out a "Binomial test" directly.</p>
-</paragraphs>
-
-<exercise xml:id="tech-detour-binomial-1-4">
-    <title>Binomial Test of Significance</title>
-    <statement>
-      <p>Use R or JMP to find and report the p-value for the Heart Transplant study (8 deaths in 10 trials with hypothesized probability 0.15). Choose one set of instructions below by clicking on a hint. Report the p-value you find.</p>
-      <p>p-value: <var width="15"/></p>
-    </statement>
-    <setup>
-      <var>
-        <condition number="0.00000866" tolerance="0.000001">
-          <feedback>
-            <p>Correct! The p-value is 0.00000866 (or 8.665 × 10<m>^{-6}</m>). This extremely small p-value provides very strong evidence that the death rate at this hospital exceeds the national benchmark of 0.15.</p>
-          </feedback>
-        </condition>
-        <condition number="0.0000087" tolerance="0.0000001">
-          <feedback>
-            <p>Correct! The p-value is approximately 0.0000087 (or 8.7 × 10<m>^{-6}</m>). This extremely small p-value provides very strong evidence that the death rate at this hospital exceeds the national benchmark of 0.15.</p>
-          </feedback>
-        </condition>
-        <condition number="0.000009" tolerance="0.000001">
-          <feedback>
-            <p>Close! You've rounded the p-value. The more precise value is 0.00000866, but your answer correctly shows this is an extremely small p-value providing very strong evidence against the null hypothesis.</p>
-          </feedback>
-        </condition>
-        <condition string=".*">
-          <feedback>
-            <p>Not quite. Make sure you're finding P(X ≥ 8) when X ~ Binomial(10, 0.15) with a "greater than" alternative. The p-value should be very small (less than 0.00001).</p>
-          </feedback>
-        </condition>
-      </var>
-    </setup>
-          <hint>
+<exercise xml:id="tech-detour-1-4">
+  <title>Technology Detour <mdash/> Calculating Binomial Probabilities</title>
+  <statement>
+    <p>You could use the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm">One Proportion Inference applet</url> to use simulation or the binomial distribution to find the p-value. Many statistical software packages will carry out a <q>Binomial test</q> directly. Choose one set of instructions below by clicking on a hint.</p>
+    <hint>
         <title>R Instructions</title>
         <p>The <c>iscambinomtest</c> function takes the following inputs:</p>
         <ul>
@@ -350,6 +319,39 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
         <p><term index="no">Note:</term>
         "Not equal to" alternatives will be discussed in Investigation 1.5.</p>
       </hint>
+  </statement>
+</exercise>
+
+<exercise xml:id="tech-detour-binomial-1-4">
+    <title>Binomial Test of Significance</title>
+    <statement>
+      <p>Use R or JMP to find and report the p-value for the Heart Transplant study (8 deaths in 10 trials with hypothesized probability 0.15). Choose one set of instructions below by clicking on a hint. Report the p-value you find.</p>
+      <p>p-value: <var width="15"/></p>
+    </statement>
+    <setup>
+      <var>
+        <condition number="0.00000866" tolerance="0.000001">
+          <feedback>
+            <p>Correct! The p-value is 0.00000866 (or 8.665 × 10<m>^{-6}</m>). This extremely small p-value provides very strong evidence that the death rate at this hospital exceeds the national benchmark of 0.15.</p>
+          </feedback>
+        </condition>
+        <condition number="0.0000087" tolerance="0.0000001">
+          <feedback>
+            <p>Correct! The p-value is approximately 0.0000087 (or 8.7 × 10<m>^{-6}</m>). This extremely small p-value provides very strong evidence that the death rate at this hospital exceeds the national benchmark of 0.15.</p>
+          </feedback>
+        </condition>
+        <condition number="0.000009" tolerance="0.000001">
+          <feedback>
+            <p>Close! You've rounded the p-value. The more precise value is 0.00000866, but your answer correctly shows this is an extremely small p-value providing very strong evidence against the null hypothesis.</p>
+          </feedback>
+        </condition>
+        <condition string=".*">
+          <feedback>
+            <p>Not quite. Make sure you're finding P(X ≥ 8) when X ~ Binomial(10, 0.15) with a "greater than" alternative. The p-value should be very small (less than 0.00001).</p>
+          </feedback>
+        </condition>
+      </var>
+    </setup>
     <solution>
       <p>For the Heart Transplant study with 8 deaths out of 10 trials and a hypothesized probability of 0.15:</p>
       <p>p-value = P(X ≥ 8) = 0.00000866 (or 8.665 × 10<m>^{-6}</m>)</p>
@@ -480,7 +482,7 @@ iscambinomtest(observed=14, n=16, hypothesized=0.5, alternative="greater")
       </hint>      
 </statement>
       <response/>      
-      <hint>
+ <!--     <hint>
         <title>R option</title>
         <sage language="r">
           <input>
@@ -497,9 +499,9 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
       <hint>      
         <title>One Proportion Inference applet</title>
         <interactive xml:id="oneprop-applet-1-4-11d" iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="4:5"/>
-      </hint>
+      </hint> -->
       <solution>
-        <p>The null hypothesis would be <m>H_0: \pi = 0.85</m> and the alternative hypothesis would be <m>H_a: \pi &lt; 0.85</m>.</p>
+        <p>The null hypothesis would be <m>H_0\!: \pi = 0.85</m> and the alternative hypothesis would be <m>H_a\!: \pi &lt; 0.85</m>.</p>
           <image source="images/inv1.4sols2.jpg" width="60%">
             <description>Binomial distribution showing survival as success with pi=0.85</description>
           </image>
@@ -611,6 +613,9 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
       <statement>
         <p>Use technology to determine the binomial probability of finding at least 71 deaths in a sample of 361 if <m>\pi = 0.15</m>.</p>
         <p>p-value: <var width="10"/></p>
+      <hint>
+        <p>Use the One Proportion Inference applet or R or JMP with <m>n</m> = 361, observed = 71, and <m>\pi</m>=0.15, with "greater than"</p>
+      </hint>
       
 </statement>
       <setup>
@@ -632,10 +637,7 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
           </condition>
         </var>
       </setup>
-      <hint>
-        <p>Use the One Proportion Inference applet or R or JMP with n=361, observed=71, and π=0.15, with "greater than"</p>
-      </hint>
-            <hint>
+<!--            <hint>
         <title>R option</title>
         <sage xml:id="sage-inv-1-4-3" language="r">
           <input><![CDATA[
@@ -651,6 +653,7 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
         <title>One Proportion Inference applet</title>
         <interactive xml:id="oneprop-applet-1-4-11e" iframe="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm?hideExtras=1" width="160%" aspect="4:5"/>
       </hint>
+      -->
       <solution>
           <image source="images/inv1.4sols3.jpg" width="60%">
             <description>Binomial distribution for n=361 with pi=0.15 showing p-value</description>
@@ -769,13 +772,13 @@ iscambinomtest(observed=, n=, hypothesized=, alternative="")
     <title>Standardize Second Dataset</title>
     <statement>
       <p>How many standard deviations is the observed sample proportion above the hypothesized probability for the second dataset?</p>
+    <hint>
+      <p>Use <m>E(X) = n × π</m> and <m>SD(X) = \sqrt{n × π × (1-π)}</m>. Then calculate <m>(71 - E(X))/SD(X)</m>.</p>
+    </hint>
       
       <p>Expected value when <m>n = 361</m> and <m>\pi = 0.15</m>: <var width="10" /></p>
       <p>SD when <m>n = 361</m> and <m>\pi = 0.15</m>: <var width="10" /></p>
       <p>Number of standard deviations 71 is above the expected value: <var width="10" /></p>
-    <hint>
-      <p>Use <m>E(X) = n × π</m> and <m>SD(X) = \sqrt{n × π × (1-π)}</m>. Then calculate <m>(71 - E(X))/SD(X)</m>.</p>
-    </hint>
     </statement>
     <response/>
     <solution>
