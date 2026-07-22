@@ -8,7 +8,7 @@
   <introduction>
     <sidebyside widths="65% 30%" margins="0% 0%" valign="top">
       <stack>
-        <p>On October 2, 2005, the tour boat <em>Ethan Allen</em> capsized on Lake George in upstate New York. All 47 passengers on board were thrown into the lake, and 20 of them drowned. Although there were some claims that a large wave had hit the boat, an investigation by New York State Police (2006) concluded that the boat had been overloaded with heavy passengers. </p>
+        <p>On October 2, 2005, the tour boat <em>Ethan Allen</em> capsized on Lake George in upstate New York. All 47 passengers on board were thrown into the lake, and 20 of them drowned. Although there were some claims that a large wave had hit the boat, an investigation by New York State Police (2006) concluded that the boat had been overloaded. </p>
       </stack>
       
       <stack>
@@ -18,7 +18,9 @@
         <p><em>Ethan Allen tour boat on Lake George</em></p>
       </stack>
     </sidebyside>
-<p>In fact, the average weight of the 47 passengers was found to be 174 pounds; whereas the boat was designed with the assumption that passengers would average 140 pounds.</p> </introduction>
+<!-- <p>In fact, the average weight of the 47 passengers was found to be 174 pounds; whereas the boat was designed with the assumption that passengers would average 140 pounds.</p> -->
+
+</introduction>
   
   <exercise xml:id="inv2-4-a" label="I6-4-1">
     <title>Conjecture about weight distribution</title>
@@ -138,13 +140,23 @@ with 47 passengers each. The variable is the average weight of the 47 passengers
   <exercise xml:id="inv2-4-g" label="I6-4-7">
     <title>Compare probabilities</title>
     <statement>
+      <p>Do you think the probability of having the average weight exceed 159.574 pounds is larger or smaller than the probability of the weight of any one passenger exceeding 159.574 pounds?</p>
       <p><m>P(\text{average weight} &gt; 159.6)</m> <var form="buttons" width="10"/> <m>P(\text{weight} &gt; 159.6)</m></p>
-      <hint>Keep in mind the observation of interest is below the mean</hint>
+      <hint><p>Keep in mind the observation of interest is below the mean</p></hint>
     </statement>
     <choices randomize="yes">
-      <choice correct="yes"><statement><p>larger</p></statement></choice>
-      <choice ><statement><p>smaller</p></statement></choice>
-      <choice><statement><p>equal</p></statement></choice>
+      <choice correct="yes">
+        <statement><p>larger</p></statement>
+        <feedback><p>Correct! Because 159.6 is below the population mean, sample means (which vary less) will exceed 159.6 more often than individual weights.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>smaller</p></statement>
+        <feedback><p>Keep in mind that 159.6 is below the population mean.</p></feedback>
+      </choice>
+      <choice>
+        <statement><p>equal</p></statement>
+        <feedback><p>The distribution of sample means will behave differently than the distribution of weights.</p></feedback>
+      </choice>
     </choices>
     <response/>
   </exercise>
@@ -345,7 +357,7 @@ with 47 passengers each. The variable is the average weight of the 47 passengers
   <exercise xml:id="inv2-4-n" label="I6-4-14">
     <title>Count samples exceeding limit</title>
     <statement>
-      <p>To investigate the question posed in <xref ref="inv2-4-l" text="custom">Question 11</xref>, what conclusions can you draw from the count displayed by the applet?</p>
+      <p>What conclusions can you draw about the previous questions from the count displayed by the applet?</p>
     </statement>
     <response/>
     <solution>
@@ -485,10 +497,8 @@ Example results:</p>
       </li>
       </ul>
   <exercise xml:id="inv2-4-r" label="I6-4-18">
-    <title>Compare three populations</title>
+    <title>Compare distributions of sample means</title>
     <statement>
-      
-      <paragraphs>  <alert>Distribution of sample means comparison</alert></paragraphs>
         <tabular>
           <row header="yes">
             <cell>Population</cell>
@@ -497,19 +507,19 @@ Example results:</p>
             <cell>Standard deviation</cell>
           </row>
           <row>
-            <cell>Normal </cell>
+            <cell>Normal (<m>\mu = 167, \sigma = 35</m>) </cell>
             <cell><var width="10"/></cell>
             <cell><var width="10"/></cell>
             <cell><var width="10"/></cell>
           </row>
           <row>
-            <cell>Skewed right </cell>
+            <cell>Skewed right (<m>\mu = 167, \sigma = 35</m>) </cell>
             <cell><var width="10"/></cell>
             <cell><var width="10"/></cell>
             <cell><var width="10"/></cell>
           </row>
           <row>
-            <cell>Uniform </cell>
+            <cell>Uniform (<m>\mu = 167, \sigma = 35</m>) </cell>
             <cell><var width="10"/></cell>
             <cell><var width="10"/></cell>
             <cell><var width="10"/></cell>
@@ -653,8 +663,8 @@ Example results:</p>
       <li><p><term>Central Limit Theorem:</term> The shape will be normal if the population distribution is normal, or approximately normal if the sample size is large regardless of the shape of the population distribution.</p></li>
     </ul></p>
     
-    <p>The convention is to consider the sample size large enough if <m>n &gt; 30</m>. However, this rule really depends on the shape of the population. The more non-symmetric the population distribution, the larger the sample size necessary before the distribution of sample means is reasonably modeled by a normal distribution. You can use this table to change the sample size cut-off based on the value of the sample skewness.</p>
-    <tabular halign="center" row-headers="yes" col-headers="yes" left="minor" right="minor" top="minor" bottom="minor">
+    <p>The convention is to consider the sample size large enough if <m>n &gt; 30</m>. However, this rule really depends on the shape of the population. The more non-symmetric the population distribution, the larger the sample size necessary before the distribution of sample means is reasonably modeled by a normal distribution. A better approach would be <m> n \geq 36 \times skew^2</m> if you know the population skewness. </p>
+<!--    <tabular halign="center" row-headers="yes" col-headers="yes" left="minor" right="minor" top="minor" bottom="minor">
       <col halign="left"/>
       <col/>
       <col/>
@@ -680,7 +690,7 @@ Example results:</p>
         <cell>100</cell>
         <cell>165</cell>
       </row>
-    </tabular>
+    </tabular>-->
     <p>The population is considered large if it is more than 20 times the size of the sample.</p>
   </assemblage>
   
