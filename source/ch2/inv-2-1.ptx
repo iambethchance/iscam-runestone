@@ -16,7 +16,7 @@
         
         <ul>
           <li><p>Open this website and follow the Downloadable Data Files link for Birth. How large is the zip file for the U.S. data in 2024?</p></li>
-          <li><p>Open the <url href="https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2023.pdf">User's Guide for 2024</url>. How many births were recorded for the U.S. in 2024?</p></li>
+          <li><p>Open the <url href="https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/natality/UserGuide2024.pdf">User's Guide for 2024</url>. How many births were recorded for the U.S. in 2024?</p></li>
         </ul>
         
         </stack>
@@ -77,9 +77,8 @@
     <p>Our next step is to look at the data! As in Chapter 1, we will want to consider which graphical and numerical summaries reveal the most information about the distribution.</p>
   </paragraphs>
   
-  <exercise xml:id="tech-detour-access-quantitative">
+  <paragraphs xml:id="tech-detour-access-quantitative">
     <title>Technology Detour <mdash/> Loading in a Data File</title>
-    <statement>
       <p><alert>Accessing quantitative data:</alert> See the <xref ref="tech-detour-loading-1-1" text="custom">Technology Detour in Investigation 1.1</xref> for instructions on how to load data into your software. You may be able to copy and paste from the webpage (but not if too large), or download the file to your computer and open as tab delimited. Remember to search the help menus for more information if you have more complicated data files in the future.</p>
       <p>Access the <url href="http://www.rossmanchance.com/iscam4/data/USbirthsJan2024.txt">USbirthsJan2024.txt</url> data file.</p>
           <hint>
@@ -162,8 +161,7 @@ attach(births)    # Now R knows what the "birthweight" variable is
         </p></li>
         </ul>
             </hint>
-    </statement>
-  </exercise>
+  </paragraphs>
 
   <exercise xml:id="inv2-1-numobs">
     <title>Number of Observations</title>
@@ -192,10 +190,10 @@ attach(births)    # Now R knows what the "birthweight" variable is
   
   <p>Now use technology to create a dotplot of the birth weights.</p>
   
-  <exercise xml:id="tech-detour-dotplots">
+  <paragraphs xml:id="tech-detour-dotplots">
     <title>Technology Detour <mdash/> Creating Dotplots</title>
-    <statement>
       <p>Use technology to create a dotplot of the birth weights. Assuming you imported the data into "births".</p>
+      <p>A dotplot shows each numerical value individually (and is best with smaller datasets). Some packages may actually "bin" the values if the data set is large. If the dataset includes many distinct (non-repeated) values, this can make it more difficult to see the "clumping" in the data.</p>
     <hint>
       <title>R Instructions</title>
       <p>Use the <c>iscamdotplot</c> function to create a dotplot:</p>
@@ -229,11 +227,7 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
         <description>JMP dotplot of birth weights showing distribution</description>
       </image>
     </hint>
-    </statement>
-    <solution>
-      <p>A dotplot shows each numerical value individually (and is best with smaller datasets). Some packages may actually "bin" the values if the data set is large. If the dataset includes many distinct (non-repeated) values, this can make it more difficult to see the "clumping" in the data.</p>
-    </solution>
-  </exercise>
+  </paragraphs>
   
   <exercise xml:id="inv2-1-c" label="I2-1c">
     <title>Describe dotplot</title>
@@ -268,9 +262,8 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
     </aside>
   </paragraphs>
   
-  <exercise xml:id="tech-detour-subsetting">
+  <paragraphs xml:id="tech-detour-subsetting">
     <title>Technology Detour <mdash/> Subsetting the Data</title>
-    <statement>
       <p>Remove the observations with birthweight = 9999 (missing values) from the dataset.</p>
     <hint>
       <title>R Instructions</title>
@@ -301,11 +294,8 @@ nrow(births2)
         <description>JMP data table with excluded rows</description>
       </image>
     </hint>
-    </statement>
-    <solution>
       <p>After subsetting, you should have 297,558 observations (240 rows with birthweight = 9999 were removed from the original 297,798 observations).</p>
-    </solution>
-  </exercise>
+  </paragraphs>
   
   <exercise xml:id="inv2-1-d" label="I2-1d">
     <title>Recreate dotplot with subsetted data</title>
@@ -336,9 +326,8 @@ nrow(births2)
     <p>It may still be difficult to see much in the dotplot with such a large data set, especially if there are many distinct (non-repeated) values. One solution is to "bin" the observations. Some software packages (e.g., Minitab) will do that automatically even with a dotplot. Another approach is to use a different type of graph, a histogram, that groups the data into intervals of equal width (e.g., 1000-2000, 2000-3000, …) and then construct a bar for each interval with the height of the bar representing the number or proportion of observations in that interval. Notice these bars will be touching, unlike in a bar graph, to represent the continuous rather than categorical nature of the data.</p>
   </paragraphs>
   
-  <exercise xml:id="tech-detour-histograms">
+  <paragraphs xml:id="tech-detour-histograms">
     <title>Technology Detour <mdash/> Creating Histograms</title>
-    <statement>
       <p>Create a histogram for the subsetted birth weight data (<c>births2</c>).</p>
     <hint>
       <title>R Instructions</title>
@@ -372,11 +361,7 @@ hist(births2$birthweight, xlab="birth weight")
         <description>JMP histogram of birth weights showing distribution</description>
       </image>
     </hint>
-    </statement>
-    <solution>
-      <p>A histogram groups data into intervals of equal width and displays bars with heights representing the frequency or proportion of observations in each interval. The bars touch each other to represent the continuous nature of quantitative data.</p>
-    </solution>
-  </exercise>
+  </paragraphs>
   
   <exercise xml:id="inv2-1-e" label="I2-1e">
     <title>Compare dotplot and histogram</title>
@@ -458,7 +443,8 @@ hist(births2$birthweight, xlab="birth weight")
       <p>Edit the previous command <c>births2 = births[which(births$birthweight &lt; 9999), ] </c> to create <c>births3</c> from <c>births2</c>, using "==" for an equality comparison (i.e., <c>OEG == 2</c>).</p>
     </hint>
     <hint>
-      <title>JMP Hints</title>Proceed as in Question 6 and now set two conditions:
+      <title>JMP Hints</title>
+      <p>Proceed as in the Technology Detour <mdash/> Subsetting the Data (above) and now set two conditions:</p>
        <p> Return to the <term index="no">Rows</term> menu and select <term index="no">Row Selection &gt; Select Where</term> to add the second condition</p>
         <image source="images/Inv2-1h-solsJMP.png" width="60%">
           <description>JMP output showing selected rows</description>
@@ -529,9 +515,8 @@ hist(births2$birthweight, xlab="birth weight")
     <p>Let's use this as our final dataset and use technology to calculate some helpful numerical summaries of the distribution, namely ones that describe the center (e.g., mean, median), variability (e.g., standard deviation), and skewness. The <term>skewness statistic</term> involves <m>\Sigma((y_i-\bar{y})/s)^3</m>, so positive values indicate a distribution that is skewed right, negative values indicate a distribution that is skewed left, and values near zero indicate a symmetric distribution.</p>
   </paragraphs>
   
-  <exercise xml:id="tech-detour-numerical-summaries">
+  <paragraphs xml:id="tech-detour-numerical-summaries">
     <title>Technology Detour <mdash/> Numerical Summaries</title>
-    <statement>
       <p>Calculate numerical summaries (mean, median, standard deviation, skewness) for the subsetted birth weight data (<c>births3</c>).</p>
     <hint>
       <title>R Instructions</title>
@@ -558,11 +543,7 @@ iscamsummary(births3$birthweight, digits=2)
         <description>JMP numerical summaries for birth weights</description>
       </image>
     </hint>
-    </statement>
-    <solution>
-      <p>The numerical summaries provide measures of center (mean, median), spread (standard deviation, IQR), and shape (skewness). These complement the visual displays and allow for more precise descriptions of the distribution.</p>
-    </solution>
-  </exercise>
+  </paragraphs>
   
   <exercise xml:id="inv2-1-j" label="I2-1j">
     <title>Report numerical summaries</title>
@@ -669,9 +650,8 @@ iscamsummary(births3$birthweight, digits=2)
     <response/>
   </exercise>
   
-  <exercise xml:id="tech-detour-normal-overlay">
+  <paragraphs xml:id="tech-detour-normal-overlay">
     <title>Technology Detour <mdash/> Normal Distribution Overlay</title>
-    <statement>
       <p>Add an overlay of a theoretical normal distribution to see how well it matches the birth weight data, using the mean and standard deviation from the observed data.</p>
     <hint>
       <title>R Instructions</title>
@@ -695,11 +675,7 @@ iscamaddnorm(births3$birthweight)
         <description>JMP histogram with normal overlay for birth weights</description>
       </image>
     </hint>
-    </statement>
-    <solution>
-      <p>The normal curve overlay allows you to visually assess how well a normal distribution with the same mean and standard deviation fits your data. Look for areas where the bars deviate substantially from the curve.</p>
-    </solution>
-  </exercise>
+  </paragraphs>
   
   <exercise xml:id="inv2-1-m" label="I2-1m">
     <title>Assess normal overlay fit</title>
@@ -712,9 +688,8 @@ iscamaddnorm(births3$birthweight)
     <response/>
   </exercise>
   
-  <exercise xml:id="tech-detour-within-2sd">
+  <paragraphs xml:id="tech-detour-within-2sd">
     <title>Technology Detour <mdash/> Checking Normal Distribution Properties</title>
-    <statement>
       <p>Another method for comparing your data to a theoretical normal distribution is to see whether certain properties of a normal distribution hold true. In Chapter 1, you learned that 95% of observations in a normal distribution should fall within two standard deviations of the mean.</p>
       <p>Calculate the percentage of the birthweights (in <c>births3</c>) that fall within 2 standard deviations of the mean.</p>
     <hint>
@@ -739,11 +714,7 @@ table(within2sd)/length(births3$birthweight)
         <li><p>Then use <term index="no">Analyze &gt; Distribution</term> on this column and report the mean (the proportion of ones).</p></li>
       </ul>
     </hint>
-    </statement>
-    <solution>
-      <p>About 95% of these birthweights fall within two standard deviations of the mean birthweight, just as we would predict for a normal distribution.</p>
-    </solution>
-  </exercise>
+  </paragraphs>
   
   <exercise xml:id="inv2-1-n" label="I2-1n">
     <title>Percentage within 2 SD</title>
@@ -792,10 +763,12 @@ table(within2sd)/length(births3$birthweight)
     <response/>
   </exercise>
   
-  <exercise xml:id="tech-detour-normal-probability-plot">
+  <paragraphs><p>
+  Another way to assess the “fit” of a probability model to the data is with a <term> probability plot</term> (aka quantile plot). Probability plots work roughly like this: The computer determines how many observations are in the data set, and then reports the <em>z</em>-scores it would expect for the <m>1/n^{th}</m> percentiles (also called quantiles) for the probability model. The plot compares these z-scores to the observed data; if the z-scores “line up” with the observed data, then the probability plot supports that the data are behaving like the candidate distribution. The theory is that whether or not the observations follow a line can be easier to judge than whether a histogram follows a curve.</p></paragraphs>
+
+  <paragraphs xml:id="tech-detour-normal-probability-plot">
     <title>Technology Detour <mdash/> Normal Probability Plots</title>
-    <statement>
-      <p>Create a normal probability plot (also called a quantile plot) for the subsetted birth weight data. Probability plots work by comparing the observed data to the <em>z</em>-scores expected for a normal distribution; if the points "line up" along a straight line, this supports that the data are behaving like a normal distribution.</p>
+      <p>Create a normal probability plot for the subsetted birth weight data. </p>
     <hint>
       <title>R Instructions</title>
       <p>Use the <c>qqnorm</c> and <c>qqline</c> functions to create a normal probability plot:</p>
@@ -818,11 +791,7 @@ qqline(birthweight, datax=TRUE)
         <description>JMP normal probability plot for birth weights</description>
       </image>
     </hint>
-    </statement>
-    <solution>
-      <p>A normal probability plot is often easier to interpret than comparing a histogram to a curve. If the points follow a straight line, the data are consistent with a normal distribution. Deviations from the line, especially in the tails, indicate departures from normality.</p>
-    </solution>
-  </exercise>
+  </paragraphs>
   
   <exercise xml:id="inv2-1-p" label="I2-1p">
     <title>Assess normal probability plot</title>
