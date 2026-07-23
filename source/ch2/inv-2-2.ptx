@@ -242,9 +242,8 @@
     <p>A <term>modified boxplot</term> will display such outliers separately and then extend the whiskers to the most extreme non-outlier observation.</p>
   </assemblage>
   
-  <exercise xml:id="tech-detour-modified-boxplots">
+  <paragraphs xml:id="tech-detour-modified-boxplots">
     <title>Technology Detour <mdash/> Modified Boxplots</title>
-    <statement>
       <p>Create a "modified" boxplot for the honking response time data.</p>
     <hint>
       <title>Applet Instructions</title>
@@ -254,7 +253,9 @@
         <li><p>Check the <term index="no">Add Boxplot</term> box.</p></li>
         <li><p>Check the <term index="no">Show outliers</term> box.</p></li>
       </ul>
-      <p>Expected output:</p>
+    </hint>
+    <hint>
+      <title>Applet Output</title>
       <image source="images/Inv2-2f-Applet.jpg" width="60%">
         <description>Applet modified boxplot showing outliers</description>
       </image>
@@ -270,10 +271,6 @@ boxplot(responsetime, ylab="time until reaction",    # Adds labels
 iscamboxplot(responsetime, xlab="time until reaction")  # Uses quartiles
         </code>
       </program>
-      <p>Expected output:</p>
-      <image source="images/Inv2-2f-R.jpg" width="60%">
-        <description>R modified boxplot showing outliers</description>
-      </image>
       <p>Try it yourself:</p>
       <sage language="r">
         <input>
@@ -289,19 +286,27 @@ iscamboxplot(honking$responsetime, xlab="Time until reaction (seconds)")
       </sage>
     </hint>
     <hint>
+      <title>R Output</title>
+      <image source="images/Inv2-2f-R.jpg" width="60%">
+        <description>R modified boxplot showing outliers</description>
+      </image>
+    </hint>
+    <hint>
       <title>JMP Instructions</title>
       <p>In the Distributions window, use the red triangle (hot spot) 
       next to the variable name and select <term index="no">Outlier Boxplot</term>.</p>
-      <p>Expected output:</p>
+    </hint>
+    <hint>
+      <title>JMP Output</title>
       <image source="images/Inv2-2f-JMP.jpg" width="60%">
         <description>JMP modified boxplot showing outliers</description>
       </image>
     </hint>
-    </statement>
-    <solution>
+    <hint>
+      <title>Check Output</title>
       <p>A modified boxplot displays the five-number summary with whiskers extending to the most extreme non-outlier observations. Points beyond 1.5 × IQR from the quartiles are marked as outliers.</p>
-    </solution>
-  </exercise>
+    </hint>
+  </paragraphs>
   
   <exercise xml:id="inv2-2-f" label="I6-2-6">
     <title>Counting outliers</title>
@@ -323,9 +328,8 @@ iscamboxplot(honking$responsetime, xlab="Time until reaction (seconds)")
   
   <p>Create a new variable which is log(responsetime). (You can use either natural log or log base 10, but so we all do the same thing, let's use natural log here, which is the default in most software when you say "log.")</p>
   
-  <exercise xml:id="tech-detour-log-transformation">
+  <paragraphs xml:id="tech-detour-log-transformation">
     <title>Technology Detour <mdash/> Log Transformation</title>
-    <statement>
       <p>Create a log transformation of the response time data.</p>
     <hint>
       <title>R Instructions</title>
@@ -341,8 +345,7 @@ lnresponsetime = log(responsetime)
       Type or use your mouse to select <term index="no">Transcendental &gt; Log</term> 
       to create <c>Log(responsetime)</c>. Press <term index="no">OK</term>.</p>
     </hint>
-    </statement>
-  </exercise>
+  </paragraphs>
   
   <exercise xml:id="inv2-2-g" label="I6-2-7">
     <title>Log transformation analysis</title>
@@ -385,7 +388,7 @@ lnresponsetime = log(responsetime)
   <exercise xml:id="inv2-2-i" label="I6-2-9">
     <title>Compare prediction to observed data</title>
     <statement>
-      <p>How does this prediction in <xref ref="inv2-2-h" text="custom">Question 12</xref> compare to the observed percentage honking within the first 2 seconds in the data set?</p>
+      <p>How does this prediction in <xref ref="inv2-2-h" text="custom">Question 10</xref> compare to the observed percentage honking within the first 2 seconds in the data set?</p>
     </statement>
     <solution>
       <p>In the original distribution, 6 of the 57 observations are below 2 (10.5%).</p>
@@ -399,9 +402,8 @@ lnresponsetime = log(responsetime)
     <p>Another approach is to fit a different mathematical model to the original data. Use technology to overlay an exponential probability model (often used to model wait times) to these data and/or create a probability plot using the exponential distribution as the reference distribution.</p>
   </paragraphs>
   
-  <exercise xml:id="tech-detour-exponential-distribution">
+  <paragraphs xml:id="tech-detour-exponential-distribution">
     <title>Technology Detour <mdash/> Exponential Distribution</title>
-    <statement>
       <p>Overlay an exponential probability model to the honking response time data.</p>
     <hint>
       <title>R Instructions</title>
@@ -421,8 +423,7 @@ iscamaddexp(responsetime)          # overlay exponential model
       <p>In the Distribution window, use the hot spot to select 
       <term index="no">Continuous Fit &gt; Exponential</term>.</p>
     </hint>
-    </statement>
-  </exercise>
+  </paragraphs>
 
   <exercise xml:id="inv2-2-j" label="I6-2-10">
     <title>Exponential probability model</title>
@@ -441,9 +442,8 @@ iscamaddexp(responsetime)          # overlay exponential model
     <response/>
   </exercise>
   
-  <exercise xml:id="tech-detour-exponential-probability">
+  <paragraphs xml:id="tech-detour-exponential-probability">
     <title>Technology Detour <mdash/> Exponential Probability Calculation</title>
-    <statement>
       <p>Use technology to calculate the probability of a wait time under 2 seconds using the exponential distribution with mean 4.25 sec</p>
     <hint>
       <title>R Instructions</title>
@@ -465,13 +465,12 @@ pexp(2, rate = 1/4.25)
       <term index="no">Exponential</term> distribution. Specify a scale parameter of 1/4.25. 
       Choose <term index="no">X &lt;= Qa</term> and enter 2 for Qa (we don't need to worry about strict vs. non-strict inequalities here)</p>
     </hint>
-    </statement>
-  </exercise>
+  </paragraphs>
   
   <exercise xml:id="inv2-2-k" label="I6-2-11">
     <title>Compare exponential probability to previous estimates</title>
     <statement>
-      <p>How does it compare to your estimate in <xref ref="inv2-2-h" text="custom">Question 12</xref> and the result in <xref ref="inv2-2-i" text="custom">Question 13</xref>?</p>
+      <p>How does it compare to your estimate in <xref ref="inv2-2-h" text="custom">Question 10</xref> and the result in <xref ref="inv2-2-i" text="custom">Question 11</xref>?</p>
     </statement>
     <solution>
       <p>This way overpredicts how often we will get a response time less than 2 seconds (0.3754).</p>
@@ -485,7 +484,7 @@ pexp(2, rate = 1/4.25)
   <exercise xml:id="inv2-2-l" label="I6-2-12">
     <title>Lognormal distribution</title>
     <statement>
-      <p>Repeat <xref ref="inv2-2-h" text="custom">Question 12</xref> and <xref ref="inv2-2-i" text="custom">Question 13</xref> with a "lognormal" distribution.</p>
+      <p>Repeat <xref ref="inv2-2-j" text="custom">Question 12</xref> and <xref ref="inv2-2-k" text="custom">Question 13</xref> with a "lognormal" distribution.</p>
       <p><em>Note:</em> This is equivalent to fitting the normal distribution on the log-transformed data!</p>
     <hint>
       <title>In R</title>
@@ -579,7 +578,7 @@ plnorm(2, meanlog = 1.292, sdlog = 0.5238)
     <exercise xml:id="practice-2-2a-c" label="PP2-2A-3">
       <title>Evaluate log transformation</title>
       <statement>
-        <p>Does a log transformation succeed in creating a normal distribution? Explain how you might have predicted this answer based on the first graph you looked at in Checkpoint  8.2.1.</p>
+        <p>Does a log transformation succeed in creating a normal distribution? Explain how you might have predicted this answer based on the first graph you looked at in <xref ref="practice-2-2a-a" text="custom">Question 1</xref>.</p>
       </statement>
       <response/>
     </exercise>
