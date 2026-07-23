@@ -154,12 +154,8 @@
 
 
 
-  <exercise xml:id="tech-detour-loading-1-1">
+  <paragraphs xml:id="tech-detour-loading-1-1">
     <title>Technology Detour <mdash/> Loading in a Data File</title>
-    <statement>
-      <p>Use technology (R or JMP) to load the <url href="https://www.rossmanchance.com/iscam3/data/InfantData.txt">InfantData.txt</url> data file. Choose one set of instructions below by clicking on a hint.
-       See also <xref ref="using-technology" text="custom">Using Technology with This Book</xref>.</p>
- 
       <hint>
         <title>R Instructions</title>
         <p><alert>In RStudio</alert></p>
@@ -204,13 +200,10 @@ attach(InfantData)    # Now R knows what the "choice" variable is
           <li><p>Or if the .txt file is saved on your computer, you can choose <alert>File &gt; Open</alert> and use the pull-down menu to change the file type.</p></li>
         </ul>
       </hint>
-    </statement>
-  </exercise>
+  </paragraphs>
 
-  <exercise xml:id="tech-detour-tallying-1-1">
+  <paragraphs xml:id="tech-detour-tallying-1-1">
     <title>Technology Detour <mdash/> Tallying the Outcomes</title>
-    <statement>
-      <p>Use technology (R or JMP) to tally the outcomes. Choose one set of instructions below by clicking on a hint.</p>
       <hint>
         <title>R Instructions</title>
         <p>To count the number of correct and incorrect responses, type:</p>
@@ -231,8 +224,7 @@ invisible(print(table(InfantData)))
           <li><p>Choose <alert>Analyze &gt; Tabulate</alert>. In the new window, drag the <c>choice</c> column to either the Drop Zone for columns or for rows. Press <alert>Done</alert>.</p></li>
         </ul>
       </hint>
-    </statement>
-  </exercise>
+  </paragraphs>
 
   <paragraphs>
     <title>Summarizing the Observed Data</title>
@@ -262,10 +254,8 @@ invisible(print(table(InfantData)))
       <p><alert>In JMP</alert>: Remember to look under "hot spots" and that options will change across menu items.</p>
     </aside>
   </paragraphs>  
-    <exercise xml:id="tech-detour-bargraph-new" label="I1-1-6b">
-      <title>Create Bar Graph with Technology</title>
-      <statement>
-        <p>Use technology (R or JMP) to create a bar graph of these data. Choose one set of instructions below by clicking on a hint below.</p>
+    <paragraphs xml:id="tech-detour-bargraph-new">
+      <title>Technology Detour <mdash/> Bar Graphs</title>
       <hint>
         <title>R Instructions (summary data)</title>
         <p>If you already (or only) have the summarized data (the number of successes and failures), type:</p>
@@ -319,14 +309,14 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
           <li><p>OR choose <alert>Analyze &gt; Distribution</alert>. With the <c>choice</c> column highlighted, press the <alert>Y, Columns</alert> button (or drag to the white box). Press <alert>OK</alert>. You can then use hot spot options (for example: horizontal bars, axis placement, labels, and bar separation).</p></li>
         </ul>
       </hint>
-      </statement>
-      <solution>
+      <hint>
+        <title>JMP Output</title>
         <p>JMP "thumbnail" graph:</p>
         <image source="images/inv1.1JMPbargraph.png" width="50%">
           <description>A bar chart for the infant data showing 14 Helper and 2 Hinderer choices</description>
         </image>
-      </solution>
-    </exercise>
+      </hint>
+    </paragraphs>
 
   
   <paragraphs>
@@ -654,7 +644,7 @@ barplot(table(InfantData$choice), xlab="Choice", ylab="Frequency")
     <exercise xml:id="inv1-1-s" label="I1-1-19">
       <title>Draw Conclusion</title>
       <statement>
-        <p>Now that we have a better picture of the long-run behavior of this process, discuss whether you would consider option 2 before Question 12: <q>Infants choose equally between the two toys in the long run and we happened to get 'lucky' and find most of the infants in our sample picking the helper toy</q> to be a plausible conclusion for this study. Explain your reasoning as if to a skeptic.</p>
+        <p>Now that we have a better picture of the long-run behavior of this process, discuss whether you would consider option 2 before <xref ref="inv1-1-h" text="custom">Question 9</xref>: <q>Infants choose equally between the two toys in the long run and we happened to get 'lucky' and find most of the infants in our sample picking the helper toy</q> to be a plausible conclusion for this study. Explain your reasoning as if to a skeptic.</p>
       <hint>
         <p>Look at how often 14 or more heads occurred in your 2,000 simulated repetitions. Is this common or rare? What does this tell you about the plausibility of the "no preference" assumption?</p>
       </hint>
