@@ -450,36 +450,6 @@
 <paragraphs xml:id="tech-detour-two-sided">
   <title>Technology Detour – Two-sided p-values</title>
   
-  <exercise xml:id="tech-detour-two-sided-tech" label="tech-detour-two-sided">
-    <title>Calculate Two-Sided p-values with Technology</title>
-    <statement>
-      <p>Use technology (R or JMP) to calculate the two-sided p-value for the buttered toast study (19 successes in 48 trials with probability 0.5). Choose one set of instructions below by clicking on a hint.</p>
-      <p>Two-sided p-value = <var width="10" /> (four decimal places)</p>
-    </statement>
-    <setup>
-      <var>
-        <condition number="0.1934" tolerance="0.001">
-          <feedback>
-            <p>Correct! The two-sided p-value is 0.1934 for 19 successes in 48 trials with <m>\pi</m> = 0.5.</p>
-          </feedback>
-        </condition>
-        <condition number="0.193" tolerance="0.002">
-          <feedback>
-            <p>Correct! The two-sided p-value is approximately 0.193 for 19 successes in 48 trials with <m>\pi</m> = 0.5.</p>
-          </feedback>
-        </condition>
-        <condition number="0.19" tolerance="0.01">
-          <feedback>
-            <p>Close! You've rounded the p-value. The more precise value is 0.1934.</p>
-          </feedback>
-        </condition>
-        <condition string=".*">
-          <feedback>
-            <p>Not quite. Use technology to find the two-sided p-value for 19 successes in 48 trials when <m>\pi</m> = 0.5. The p-value should be around 0.19.</p>
-          </feedback>
-        </condition>
-      </var>
-    </setup>
     <hint>
       <title>Applet Instructions</title>
       <p>In the <url href="https://www.rossmanchance.com/applets/2021/oneprop/OneProp.htm" visual="new">One Proportion Inference applet</url>:</p>
@@ -505,13 +475,6 @@ source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/I
 iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
 ]]> </input>
       </sage>
-      <p>The output will show:</p>
-      <ul>
-        <li><p>The observed number of successes (19) and sample size (48)</p></li>
-        <li><p>The hypothesized probability (0.5)</p></li>
-        <li><p>The two-sided p-value: 0.1934</p></li>
-        <li><p>A graph showing the binomial distribution with both tails shaded</p></li>
-      </ul>
     </hint>
     <hint>
       <title>JMP Instructions</title>
@@ -520,10 +483,6 @@ iscambinomtest(observed=19, n=48, hyp=0.5, alt="two.sided")
           <description>Use radio button to create JMP two-sided binomial test output</description>
         </image>
     </hint>
-    <solution>
-      <p>The two-sided p-value is 0.1934. The output table will show the two-sided p-value for the exact binomial test. For the buttered toast example with 19 successes out of 48 trials and hypothesized probability of 0.5, the two-sided p-value should be approximately 0.1934.</p>
-    </solution>
-  </exercise>
 </paragraphs>
 </exercises>
   <subsection xml:id="practice1-5">

@@ -402,10 +402,6 @@
   
   <p>Different software packages use different confidence interval methods, but you shouldn't see much distinction when the sample size is large.</p>
   
-  <exercise xml:id="tech-detour-ci-tech" label="tech-detour-ci">
-    <title>Calculate Confidence Intervals with Technology</title>
-    <statement>
-      <p>Use technology (R or JMP) to calculate confidence intervals for the kissing couples study (80 successes in 124 trials). Choose one set of instructions below by clicking on a hint.</p>
       <hint>
       <title>R Instructions (Clopper-Pearson)</title>
       <p>The <c>iscambinomtest</c> function calculates confidence intervals using the Clopper-Pearson method (tail probability &lt; (1-confidence)/2).</p>
@@ -421,15 +417,6 @@ source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/I
 iscambinomtest(80, 124, conf.level = 0.95)
         </input>
       </sage>
-      <p>This produces a 95% Clopper-Pearson confidence interval of approximately (0.556, 0.725).</p>
-      <p>For a 99% confidence interval:</p>
-      <sage language="r">
-        <input>
-# Calculate 99% confidence interval
-iscambinomtest(observed = 80, n = 124, conf.level = 0.99)
-        </input>
-      </sage>
-      <p>This produces a 99% confidence interval of approximately (0.528, 0.751).</p>
     </hint>
     <hint>
       <title>JMP Instructions (Clopper-Pearson)</title>
@@ -440,24 +427,7 @@ iscambinomtest(observed = 80, n = 124, conf.level = 0.99)
         <li><p>(The raw data option does not give an exact binomial confidence interval.)</p></li>
         <li><p>With summarized data, specify the count and sample size, and select the Binomial radio button</p></li>
       </ul>
-      <p>For the kissing couples example:</p>
-      <ul>
-        <li><p>Enter Number of successes: 80</p></li>
-        <li><p>Enter Sample size: 124</p></li>
-        <li><p>Select the Binomial radio button</p></li>
-        <li><p>The default confidence level is 95%</p></li>
-      </ul>
-      <p>The output will show a 95% Clopper-Pearson confidence interval of approximately (0.556, 0.725).</p>
-      <p>You can change the confidence level to 99% in the dialog box to obtain the 99% confidence interval of approximately (0.528, 0.751).</p>
     </hint>
-    </statement>
-    <solution>
-      <p>Using technology (e.g., R with <c>iscambinomtest(80, 124, conf.level=0.95)</c>):</p>
-      <p>95% CI: approximately 0.556 to 0.725</p>
-      <p>99% CI: approximately 0.528 to 0.751</p>
-      <p>The 99% interval is wider (width ≈ 0.223 vs. 0.169 for 95%) but has a similar midpoint (approximately 0.64).</p>
-    </solution>
-  </exercise>
 </paragraphs>
 
 <p class="horizontal-rule"> </p>
