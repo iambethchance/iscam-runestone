@@ -75,12 +75,12 @@
     </exercise>
     
     <p>Our next step is to look at the data! As in Chapter 1, we will want to consider which graphical and numerical summaries reveal the most information about the distribution.</p>
-  </paragraphs>
+  <p>Access the <url href="http://www.rossmanchance.com/iscam4/data/USbirthsJan2024.txt">USbirthsJan2024.txt</url> data file.</p>
+      </paragraphs>
   
   <paragraphs xml:id="tech-detour-access-quantitative">
     <title>Technology Detour <mdash/> Loading in a Data File</title>
-      <p><alert>Accessing quantitative data:</alert> See the <xref ref="tech-detour-loading-1-1" text="custom">Technology Detour in Investigation 1.1</xref> for instructions on how to load data into your software. You may be able to copy and paste from the webpage (but not if too large), or download the file to your computer and open as tab delimited. Remember to search the help menus for more information if you have more complicated data files in the future.</p>
-      <p>Access the <url href="http://www.rossmanchance.com/iscam4/data/USbirthsJan2024.txt">USbirthsJan2024.txt</url> data file.</p>
+      <p>See the <xref ref="tech-detour-loading-1-1" text="custom">Technology Detour in Investigation 1.1</xref> for instructions on how to load data into your software. You may be able to copy and paste from the webpage (but not if too large), or download the file to your computer and open as tab delimited. Remember to search the help menus for more information if you have more complicated data files in the future.</p>
           <hint>
       <title>R Instructions</title>
       <p><alert>R Notes:</alert> In the instructions below, recall that the + sign comes up in R after you hit Enter when R is expecting the next line to be a continuation of the previous line. You can alternatively continue the command on the same line. In the instructions below, some steps are optional.</p>
@@ -188,13 +188,13 @@ attach(births)    # Now R knows what the "birthweight" variable is
     </solution>
   </exercise>
   
-  <p>Now use technology to create a dotplot of the birth weights.</p>
+  <p>  A <term>dotplot</term> shows each numerical value individually (and is best with smaller datasets). Some packages may actually "bin" the values if the data set is large. If the dataset includes many distinct (non-repeated) values, this can make it more difficult to see the "clumping" in the data.</p>
+ <p>  Now use technology to create a dotplot of the birth weights.</p>
   
   <paragraphs xml:id="tech-detour-dotplots">
     <title>Technology Detour <mdash/> Creating Dotplots</title>
-      <p>Use technology to create a dotplot of the birth weights. Assuming you imported the data into "births".</p>
-      <p>A dotplot shows each numerical value individually (and is best with smaller datasets). Some packages may actually "bin" the values if the data set is large. If the dataset includes many distinct (non-repeated) values, this can make it more difficult to see the "clumping" in the data.</p>
-    <hint>
+      <p> Assuming you imported the data into "births".</p>
+     <hint>
       <title>R Instructions</title>
       <p>Use the <c>iscamdotplot</c> function to create a dotplot:</p>
       <program language="r">
@@ -245,7 +245,7 @@ iscamdotplot(births$birthweight,     # Use file name $ variable name
   </exercise>
   
   <paragraphs>
-    <title>Handling Missing Data</title>
+    <title>Discussion</title>
     
     <p>The observations at 9999 don't seem to belong. The User Guide or "codebook" for these data states that the largest birth weight is 8165 grams and for other variables it lists 99, 999, or 9999 as values for "not stated" or unknown.</p>
 
@@ -332,7 +332,7 @@ nrow(births2)
   <paragraphs>
     <title>Using Histograms</title>
     
-    <p>It may still be difficult to see much in the dotplot with such a large data set, especially if there are many distinct (non-repeated) values. One solution is to "bin" the observations. Some software packages (e.g., Minitab) will do that automatically even with a dotplot. Another approach is to use a different type of graph, a histogram, that groups the data into intervals of equal width (e.g., 1000-2000, 2000-3000, …) and then construct a bar for each interval with the height of the bar representing the number or proportion of observations in that interval. Notice these bars will be touching, unlike in a bar graph, to represent the continuous rather than categorical nature of the data.</p>
+    <p>It may still be difficult to see much in the dotplot with such a large data set, especially if there are many distinct (non-repeated) values. One solution is to "bin" the observations. Some software packages (e.g., Minitab) will do that automatically even with a dotplot. Another approach is to use a different type of graph, a <term>histogram</term>, that groups the data into intervals of equal width (e.g., 1000-2000, 2000-3000, …) and then construct a bar for each interval with the height of the bar representing the number or proportion of observations in that interval. Notice these bars will be touching, unlike in a bar graph, to represent the continuous rather than categorical nature of the data.</p>
   </paragraphs>
   
   <paragraphs xml:id="tech-detour-histograms">
@@ -379,7 +379,7 @@ hist(births2$birthweight, xlab="birth weight")
   <exercise xml:id="inv2-1-e" label="I2-1e">
     <title>Compare dotplot and histogram</title>
     <statement>
-      <p>Create a histogram for the subsetted data (<c>births2</c>) and compare the information revealed by the dotplots and the histograms. Do you feel one display is more effective at displaying information about birth weights than the other? Explain.</p>
+      <p>Compare the information revealed by the dotplots and the histograms. Do you feel one display is more effective at displaying information about birth weights than the other? Explain.</p>
     </statement>
     <solution>
       <p>The histogram is more effective; the dataset is too large to show individual dots.</p>
@@ -713,9 +713,12 @@ iscamaddnorm(births3$birthweight)
     <response/>
   </exercise>
   
+  <paragraphs><p>Another method for comparing your data to a theoretical normal distribution is to see whether certain properties of a normal distribution hold true. In Chapter 1, you learned that 95% of observations in a normal distribution should fall within two standard deviations of the mean.</p>
+  </paragraphs>
+  
   <paragraphs xml:id="tech-detour-within-2sd">
     <title>Technology Detour <mdash/> Checking Normal Distribution Properties</title>
-      <p>Another method for comparing your data to a theoretical normal distribution is to see whether certain properties of a normal distribution hold true. In Chapter 1, you learned that 95% of observations in a normal distribution should fall within two standard deviations of the mean.</p>
+      
       <p>Calculate the percentage of the birthweights (in <c>births3</c>) that fall within 2 standard deviations of the mean.</p>
     <hint>
       <title>R Instructions</title>
