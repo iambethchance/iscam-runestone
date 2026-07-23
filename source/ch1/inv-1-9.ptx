@@ -244,16 +244,6 @@
       Use technology to more precisely determine the number of standard deviations that capture the middle 95% of the normal distribution with mean = 0 and standard deviation = 1. [<em>Hint:</em> In other words, how many standard deviations do you need to go on each side of zero to capture the middle 95% of the standard normal distribution?] Keep in mind that the <m>z</m>-value corresponding to probability <m>C</m> in the middle of the distribution, also corresponds to having probability <m>(1-C)/2</m> in each tail.
     </p>
 
-    <exercise xml:id="tech-detour-critical-values-ex" label="Critical-Values-Tech-Detour">
-      <title>Find the 95% Critical Value</title>
-      <statement>
-        <p>
-          Find the critical value for 95% confidence. Choose one set of instructions below by clicking on a hint.
-        </p>
-        <p>
-          Critical value for 95% confidence: <m>z^* =</m> <var width="10"/>
-        </p>
-      </statement>
       <hint>
         <title>Normal Probability Calculator</title>
         <p>
@@ -299,6 +289,15 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
         </ol>
  <!--       <p>The critical value should be approximately 1.96.</p>-->
       </hint>
+  </paragraphs>
+
+    <exercise xml:id="tech-detour-critical-values-ex" label="Critical-Values-Tech-Detour">
+      <title>Find the 95% Critical Value</title>
+      <statement>
+        <p>
+          Critical value for 95% confidence: <m>z^* =</m> <var width="10"/>
+        </p>
+      </statement>
       <setup>
         <var>
           <condition number="1.96" tolerance="0.01">
@@ -315,11 +314,10 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
       </setup>
       <solution>
         <p>
-          <m>z^* = 1.96</m> 
+          <m>z^* = 1.96</m>
         </p>
       </solution>
     </exercise>
-  </paragraphs>
 
     <exercise xml:id="I1-9-g" label="I1-9g">
       <title>Determine 95% confidence interval</title>
@@ -515,16 +513,6 @@ Putting these together, we have a <alert>one-sample z-interval</alert> (aka Wald
   <paragraphs xml:id="tech-detour-z-intervals">
     <title>Technology Detour <mdash/> One Proportion <em>z</em>-Confidence Intervals</title>
 
-    <exercise xml:id="tech-detour-z-intervals-ex" label="z-interval-Tech-Detour">
-      <title>One Proportion <em>z</em>-interval with Technology</title>
-      <statement>
-        <p>
-          Use technology (Applet, R, or JMP) to find one proportion <em>z</em>-confidence intervals for the kissing study (<m>n</m> = 124, 80 successes). Report the results for the 95% confidence interval. 
-        </p>
-        <p>
-          (Lower bound: <var width="10"/>, Upper bound: <var width="10"/>)
-        </p>
-      </statement>
       <hint>
         <title>R/Sage Instructions</title>
         <p>
@@ -571,56 +559,6 @@ iscamonepropztest(observed = 80, n = 124, conf.level = 95)
          <li><p>Press the <term index="no">Calculate CI</term> button</p></li>
          </ul>
       </hint>
-      <setup>
-        <var>
-          <condition number="0.561" tolerance="0.003">
-            <feedback>
-              <p>Correct! The lower bound is 0.561.</p>
-            </feedback>
-          </condition>
-          <condition string=".*">
-            <feedback>
-              <p>Not quite. Use technology to calculate the 95% confidence interval.</p>
-            </feedback>
-          </condition>
-        </var>
-        <var>
-          <condition number="0.729" tolerance="0.003">
-            <feedback>
-              <p>Correct! The upper bound is 0.729.</p>
-            </feedback>
-          </condition>
-          <condition string=".*">
-            <feedback>
-              <p>Not quite. Use technology to calculate the 95% confidence interval.</p>
-            </feedback>
-          </condition>
-        </var>
-      </setup>
-      <solution>
-        <p>
-          Example output from R:
-        </p>
-        <image source="images/inv1.9ksolR.png" width="80%">
-          <description>R output showing z-confidence interval for kissing study</description>
-        </image>
-        <image source="images/Inv1.9soll.png" width="60%">
-          <description>R plots of the 90% and 95% confidence intervals for the process probability, both centered at 0.6452, with the 95% interval wider</description>
-        </image>
-        <p>
-          Example output from JMP:
-        </p>
-        <image source="images/inv1.9kJMP.jpg" width="80%">
-          <description>JMP output showing z-confidence interval for kissing study</description>
-        </image>
-        <p>
-          Example output from Theory-Based Inference applet:
-        </p>
-        <image source="images/inv1.9ksolApplet.jpg" width="60%">
-          <description>Theory-Based Inference applet output showing z-confidence interval for kissing study</description>
-        </image>
-      </solution>
-    </exercise>
   </paragraphs>
 
     <exercise xml:id="I1-9-l" label="I1-9l">

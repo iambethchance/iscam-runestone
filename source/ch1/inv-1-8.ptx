@@ -577,28 +577,6 @@
 
   <paragraphs xml:id="tech-detour-one-prop-z">
     <title>Technology Detour - One Proportion <em>z</em>-test</title>
-    <exercise xml:id="tech-detour-one-prop-z-combined" label="Tech1-8-combined">
-      <title>Conduct One Proportion <em>z</em>-test with Technology</title>
-      <statement>
-        <p>
-          Use technology (Applet, R, or JMP) to conduct a one proportion <em>z</em>-test for the Halloween study (<m>n</m> = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
-        </p>
-        <p>Enter the p-value you find: <var width="10"/></p>
-      </statement>
-      <setup>
-        <var>
-          <condition number="0.40" tolerance="0.02" correct="yes">
-            <feedback>
-              <p>Correct! For a two-sided test with <m>z = -0.84</m>, the p-value is approximately 0.40.</p>
-            </feedback>
-          </condition>
-          <condition string=".*" correct="no">
-            <feedback>
-              <p>Incorrect. For a two-sided test with <m>z = -0.84</m>, the p-value should be approximately 0.40.</p>
-            </feedback>
-          </condition>
-        </var>
-      </setup>
       <hint>
         <title><url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="new">Theory-Based Inference Applet</url></title>
         <sidebyside widths="55% 40%" valign="top">
@@ -658,13 +636,8 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
           </input>
         </program>
         <p>
-          The function will display a graph showing the standard normal distribution with the test statistic and shaded p-value region, along with:
+          The function will display a graph showing the standard normal distribution with the test statistic and shaded p-value region.
         </p>
-        <ul>
-          <li>Sample proportion: 0.4754</li>
-          <li><em>z</em>-statistic: -0.84</li>
-          <li>Two-sided p-value: 0.40</li>
-        </ul>
       </hint>
       <hint>
         <title>JMP Instructions</title>
@@ -685,29 +658,7 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
           <li>Select "not equal" for two-sided test</li>
           <li>Significance level = 0.05</li>
         </ul>
-        <p>
-          JMP will display a comprehensive output including:
-        </p>
-        <ul>
-          <li>Sample proportion: 0.475</li>
-          <li>Standard error: 0.0297</li>
-          <li><em>z</em>-statistic: -0.84</li>
-          <li>Two-sided p-value: 0.40</li>
-          <li>A visual representation of the test</li>
-        </ul>
-        <p>
-          The output will indicate that we fail to reject the null hypothesis at the 0.05 significance level.
-        </p>
       </hint>
-      <solution>
-        <p>
-          The p-value should be approximately 0.40. The applet/technology confirms that there is not strong evidence against the null hypothesis that children choose equally between toys and candy.
-        </p>
-        <image source="images/inv1.8m.jpg" width="80%">
-          <description>Theory-Based Inference applet output for Halloween study showing z-statistic and p-value</description>
-        </image>
-      </solution>
-    </exercise>
   </paragraphs>
   
     <exercise xml:id="I1-8-n" label="I1-8n">
@@ -838,23 +789,6 @@ iscamonepropztest(0.475, 284, 0.5, "two.sided")
   
   <paragraphs xml:id="tech-detour-continuity-correction">
     <title>Technology Detour - Continuity Correction</title>
-    <exercise xml:id="tech-detour-continuity-correction-combined" label="Tech1-8-CC-combined">
-      <title>Apply Continuity Correction with Technology</title>
-      <statement>
-        <p>
-          Use technology (Applet or R) to apply a continuity correction to the Halloween study data (<m>n</m> = 284, 135 successes, hypothesized = 0.5, two-sided test). Choose one set of instructions below by clicking on a hint.
-        </p>
-        <p>Enter the corrected p-value you find: <var width="10"/></p>
-      </statement>
-      <setup>
-        <var>
-          <condition number="0.438" tolerance="0.001">
-            <feedback>
-              <p>Correct! With the continuity correction, the p-value is approximately 0.438.</p>
-            </feedback>
-          </condition>
-        </var>
-      </setup>
       <hint>
         <title>Theory-Based Inference Applet</title>
         <sidebyside widths="55% 40%" valign="top">
@@ -897,32 +831,9 @@ invisible(iscambinomnorm(135, 284, 0.5, "two.sided"))
           </input>
         </sage>
         <p>
-          This function creates a graph showing:
-        </p>
-        <ul>
-          <li>The binomial distribution (bars)</li>
-          <li>The normal approximation (curve)</li>
-          <li>The continuity correction boundaries at 135.5 and 148.5</li>
-          <li>The corrected p-value of approximately 0.4382</li>
-        </ul>
-        <p>
-          The visualization clearly shows how the continuity correction includes more area under the normal curve to better match the binomial probabilities.
+          The visualization shows how the continuity correction includes more area under the normal curve to better match the binomial probabilities.
         </p>
       </hint>
-      <solution>
-        <p>
-          With the continuity correction applied:
-        </p>
-        <ul>
-          <li>The p-value changes from approximately 0.4061 to 0.4382</li>
-          <li>This is much closer to the exact binomial p-value of 0.4405</li>
-          <li>The continuity correction adjusts for the fact that we're using a continuous distribution (normal) to approximate a discrete distribution (binomial)</li>
-        </ul>
-        <image source="images/inv1-8r-contcorr.jpg" width="80%">
-          <description>Theory-Based Inference applet showing continuity correction applied to Halloween study</description>
-        </image>
-      </solution>
-    </exercise>
   </paragraphs>
   
 
