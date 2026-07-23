@@ -582,14 +582,8 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
     <p>Keep in mind that the critical value <m>t^*</m> tells us how many standard errors we need to extend from the sample mean (in each direction) based on how confident we want to be. Our goal is to develop a <m>100 \times C\%</m> confidence interval method that will capture the population parameter <m>(100 \times C)\%</m> of the time in the long run.</p>
   </assemblage>
   
-  <paragraphs>
+  <paragraphs xml:id="tech-detour-finding-tstar">
     <title>Technology Detour - Finding <m>t^*</m></title>
-    <exercise xml:id="inv2-5-t-tech-combined" label="I7-2-20tech-combined">
-      <title>Find Critical <m>t^*</m> Value with Technology</title>
-      <statement>
-        <p>Use technology (Applet, R, or JMP) to find the <m>t^*</m> value corresponding to a 95% confidence level and a sample size of <m>n = 5</m>. Choose one set of instructions below by clicking on a hint.</p>
-        <p>Enter the <m>t^*</m> value you find: <var width="10"/></p>
-      </statement>
       <hint>
         <title><url href="https://www.rossmanchance.com/applets/2021/tcalc/tCalc.htm?hideExtras=1" visual="rossmanchance.com/applets/2021/tcalc/tCalc.htm">t Probability Calculator applet</url></title>
         <p>Use the <url href="https://www.rossmanchance.com/applets/2021/tcalc/tCalc.htm?hideExtras=1" visual="rossmanchance.com/applets/2021/tcalc/tCalc.htm">t Probability Calculator applet</url> to find critical <m>t^*</m> values:</p>
@@ -615,7 +609,6 @@ source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/I
 
 iscaminvt(0.95, 4, "between")</input>
         </sage>
-        <p>This should return <m>t^* = 2.776</m> </p>
       </hint>
       <hint>
         <title>JMP Instructions</title>
@@ -628,27 +621,6 @@ iscaminvt(0.95, 4, "between")</input>
         </ul>
         <p>For this problem, use df = 4 and confidence level = 0.95.</p>
       </hint>
-      <setup>
-        <var>
-          <condition number="2.776" tolerance="0.001">
-            <feedback>
-              <p>Correct! For 95% confidence with df = 4, <m>t^* = 2.776</m>.</p>
-            </feedback>
-          </condition>
-          <condition string=".*">
-            <feedback>
-              <p>Incorrect. Remember to use df = n - 1 = 4 for a sample size of 5.</p>
-            </feedback>
-          </condition>
-        </var>
-      </setup>
-      <solution>
-        <p><m>t_4^* = 2.776</m></p>
-        <image source="images/Inv2.5tsols.png" width="60%">
-          <description>t probability calculator showing t* value for df=4</description>
-        </image>
-      </solution>
-    </exercise>
   </paragraphs>
   
   <exercise xml:id="inv2-5-t" label="I7-2-20">
@@ -719,7 +691,7 @@ iscaminvt(0.95, 4, "between")</input>
       
       <p>How do the <m>t</m>-critical values compare for these different sample sizes?</p>
       
-      <p>Compared to the <m>t^*</m> value from <xref ref="inv2-5-t" text="custom">Question 21</xref> (for <m>n = 5</m>), the <m>t^*</m> value for <m>n = 13</m> is: <var width="15"/> (larger, smaller, essentially the same)</p>
+      <p>Compared to the <m>t^*</m> value from <xref ref="inv2-5-t" text="custom">Question 20</xref> (for <m>n = 5</m>), the <m>t^*</m> value for <m>n = 13</m> is: <var width="15"/> (larger, smaller, essentially the same)</p>
       
       <p>Compared to the <m>z^*</m> value of 1.96, the <m>t^*</m> value for <m>n = 13</m> is: <var width="15"/>(larger, smaller, essentially the same)</p>
     </statement>
@@ -907,14 +879,9 @@ iscaminvt(0.95, 4, "between")</input>
     <response/>
   </exercise>
   
-  <paragraphs>
+  <paragraphs xml:id="tech-detour-one-sample-t">
     <title>Technology Detour - One Sample <m>t</m>-procedures</title>
-    <exercise xml:id="inv2-5-y-tech-combined" label="I7-2-25tech-combined">
-      <title>Conduct One Sample <m>t</m>-test with Technology</title>
-      <statement>
-        <p>Use technology (Applet, R, or JMP) to verify your by-hand calculations for the body temperature study (<m>\bar{x} = 98.249</m>, <m>s = 0.733</m>, <m>n = 130</m>, hypothesized <m>\mu = 98.6</m>, two-sided test, 95% confidence). Choose one set of instructions below by clicking on a hint.</p>
-        <p>Enter the p-value you find: <var width="10"/></p>
-      </statement>
+      <p>Use technology (Applet, R, or JMP) to verify your by-hand calculations for the body temperature study (<m>\bar{x} = 98.249</m>, <m>s = 0.733</m>, <m>n = 130</m>, hypothesized <m>\mu = 98.6</m>, two-sided test, 95% confidence).</p>
       <hint>
         <title><url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html?hideExtras=1" visual="rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url></title>
         <sidebyside widths="55% 40%" valign="top">
@@ -968,12 +935,6 @@ body_temps &lt;- c(98.4, 98.6, 98.8, ...)
 t.test(body_temps, mu=98.6, alternative="two.sided", conf.level=0.95)
           </code>
         </program>
-        <p>The function will display:</p>
-        <ul>
-          <li><p><m>t</m>-statistic: -5.46</p></li>
-          <li><p>Two-sided p-value: &lt; 0.001</p></li>
-          <li><p>95% confidence interval: (98.122, 98.376)</p></li>
-        </ul>
       </hint>
       <hint>
         <title>JMP Instructions</title>
@@ -993,38 +954,6 @@ t.test(body_temps, mu=98.6, alternative="two.sided", conf.level=0.95)
           <li><p>Choose the <m>t</m> interval type and specify confidence level</p></li>
           </ul>
       </hint>
-      <setup>
-        <var>
-          <condition number="0.0001" tolerance="0.0002">
-            <feedback>
-              <p>Correct! For <m>t = -5.46</m> with df = 129, the two-sided p-value is less than 0.001.</p>
-            </feedback>
-          </condition>
-          <condition string=".*">
-            <feedback>
-              <p>Check your calculation. The <m>t</m>-statistic should be approximately -5.46.</p>
-            </feedback>
-          </condition>
-        </var>
-      </setup>
-      <solution>
-        <p>Using technology:</p>
-        <ul>
-          <li><p><m>t</m>-statistic = -5.46</p></li>
-          <li><p>Two-sided p-value &lt; 0.001</p></li>
-          <li><p>95% confidence interval: (98.122, 98.376)</p></li>
-        </ul>
-        <image source="images/Inv2.5ysolsApplet.png" width="60%">
-          <description>Theory-Based Inference applet output for one sample <m>t</m>-test and confidence interval</description>
-        </image>
-    <image source="images/inv2-5yR.jpg" width="90%">
-      <description>R output for one sample t-test and confidence interval</description>
-    </image>
-    <image source="images/inv2-5yJMP.jpg" width="40%">
-      <description>Theory-Based Inference applet output for one sample t-test and confidence interval</description>
-    </image>
-      </solution>
-    </exercise>
   </paragraphs>
   
   <exercise xml:id="inv2-5-y" label="I7-2-25">
