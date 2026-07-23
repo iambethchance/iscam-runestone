@@ -446,11 +446,9 @@ hist(births2$birthweight, xlab="birth weight")
     </solution>
     <response/>
   </exercise>
-  <p>Now, further subset the <c>births2</c> data based on whether or not the pregnancy lasted at least 37 weeks. </p>
-  <exercise xml:id="inv2-1-h" label="I2-1h">
-    <title>Subset by gestation period</title>
-    <statement>
-          <p>How many observations do you end up with? <var width="10"/></p>
+  <paragraphs xml:id="tech-detour-subset-gestation">
+    <title>Technology Detour <mdash/> Further Subsetting the Data</title>
+    <p>Now, further subset the <c>births2</c> data based on whether or not the pregnancy lasted at least 37 weeks. </p>
     <hint>
       <title>R Hints</title>
       <p>Edit the previous command <c>births2 = births[which(births$birthweight &lt; 9999), ] </c> to create <c>births3</c> from <c>births2</c>, using "==" for an equality comparison (i.e., <c>OEG == 2</c>).</p>
@@ -463,6 +461,12 @@ hist(births2$birthweight, xlab="birth weight")
           <description>JMP output showing selected rows</description>
         </image>
     </hint>
+  </paragraphs>
+
+  <exercise xml:id="inv2-1-h" label="I2-1h">
+    <title>Subset by gestation period</title>
+    <statement>
+          <p>How many observations do you end up with? <var width="10"/></p>
     </statement>
     <setup>
       <var>
@@ -952,6 +956,10 @@ qqline(birthweight, datax=TRUE)
       <title>Identify unusual cap price</title>
       <statement>
         <p>Examine and include a stemplot of the cap prices. We see one team with an unusual value. Identify this team by name and suggest an explanation for its unusual cap price.</p>
+      <hint>
+        <title>Stemplot Instructions</title>
+        <p>Create a column showing the stems (the leading digits) and then fill in the leaves (the next digit) for each observation in the appropriate row. Optional: sort the leaves within each row (stem).</p>
+      </hint>
       <hint>
         <p>We are not talking about the largest or smallest value this time!</p>
       </hint>
