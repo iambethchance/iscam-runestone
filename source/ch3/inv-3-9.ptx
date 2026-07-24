@@ -323,7 +323,7 @@
   
   <p>Statisticians have also derived a theoretical formula to estimate this standard deviation.</p>
 
-  <assemblage>
+  <assemblage xml:id="prob-detour-odds-ratio-theory">
     <title>Theoretical Result</title>
     <p>The sampling distribution of the sample odds ratio also follows a log-normal distribution like the relative risk. Thus, we can construct a confidence interval for the population log-odds ratio using the normal distribution. The standard error of the sample log-odds ratio (using the natural log) is given by the expression:</p>
     <p><m>SE(ln odds ratio) = \sqrt{\frac{1}{A} + \frac{1}{B} + \frac{1}{C} + \frac{1}{D}}</m></p>
@@ -416,7 +416,7 @@
   <exercise xml:id="inv3-9-j">
     <title>Interval Contains One?</title>
     <statement>
-      <p>Does the interval found in <xref ref="inv3-9-i" text="custom">Question 8</xref> contain the value one? Discuss the implications of whether or not the interval contains the value one.</p>
+      <p>Does the interval found in <xref ref="inv3-9-i" text="custom">Question 9</xref> contain the value one? Discuss the implications of whether or not the interval contains the value one.</p>
       <p><response/></p>
     </statement>
     <solution>
@@ -425,36 +425,34 @@
     <response/>
   </exercise>
 
-  <exercise xml:id="inv3-9-k">
-    <title>Verify with Technology</title>
-    <hint>
-      <title>In Two-way Tables applet</title>
-      <p>Choose Odds Ratio as statistic and check box for 95% CI</p>
-    </hint>
+  <paragraphs xml:id="tech-detour-odds-ratio-verify">
+    <title>Technology Detour <mdash/> Verify with Technology</title>
+    <p>Use technology to verify your calculations.</p>
     <hint>
       <title>In R</title>
       <p><c>fisher.test(matrix(c(a, c, b, d), nrow=2), alt = )</c></p>
     </hint>
     <hint>
+      <title>R Output</title>
+      <image source="images/Inv3.9solskR.jpg" width="80%">
+        <description>R output showing Fisher's exact test results for the odds ratio calculation</description>
+      </image>
+    </hint>
+    <hint>
       <title>In JMP</title>
       <p>From the Contingency Analysis hot spot, choose Odds Ratio</p>
     </hint>
-    <statement>
-      <p>Use technology to verify your calculations.</p>
-    </statement>
-    <solution>
-      <title>R output</title>
-        <image source="images/Inv3.9solskR.jpg" width="80%">
-          <description>R output showing Fisher's exact test results for the odds ratio calculation</description>
-        </image>
-    </solution>
-    <solution>
-      <title>JMP output</title>
-        <image source="images/Inv3.9solskJMP.jpg" width="60%">
-          <description>JMP output showing odds ratio calculation and confidence interval</description>
-        </image>
-    </solution>
-  </exercise>
+    <hint>
+      <title>JMP Output</title>
+      <image source="images/Inv3.9solskJMP.jpg" width="60%">
+        <description>JMP output showing odds ratio calculation and confidence interval</description>
+      </image>
+    </hint>
+    <hint>
+      <title>In Two-way Tables applet</title>
+      <p>Choose Odds Ratio as statistic and check box for 95% CI</p>
+    </hint>
+  </paragraphs>
 
   <exercise xml:id="inv3-9-l">
     <title>Study Conclusions</title>
