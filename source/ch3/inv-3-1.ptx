@@ -217,7 +217,7 @@
 
     <p>The next step is to examine an effective graphical summary for comparing the two groups.</p>
 
-    <paragraphs>
+    <paragraphs xml:id="tech-detour-segmented-bar">
       <title>Technology Detour – Segmented Bar Graphs</title>
       
       <p>Use technology to create numerical and graphical summaries for these summarized data.</p>
@@ -235,7 +235,7 @@ hearing
 ]]>
           </input>
         </sage>
-        <p>Convert to a matrix of conditional proportions (margin = 2 for column proportions):</p>
+        <p>Convert to a matrix of conditional proportions (margin = 1 for row proportions, margin = 2 for column proportions):</p>
         <sage language="r">
           <input>
 <![CDATA[
@@ -514,8 +514,6 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <response/>
     </exercise>
 <ul><li><p>Now determine the empirical p-value by counting how often the simulated difference in conditional proportions is at least as extreme as the actual value observed in the study by entering the observed value in the <alert>Count Samples</alert> box and pressing the <alert>Count</alert> button. (Make sure the direction matches the alternative hypothesis.)</p></li></ul>
-     ￼
-     ￼
     <exercise xml:id="inv3-1-o">
       <title>Empirical p-value</title>
       <statement><p>Report your empirical p-value and indicate what conclusion you would draw from it.</p></statement>
@@ -829,7 +827,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     
     </exercises>
 
- <paragraphs>
+ <paragraphs xml:id="tech-detour-two-prop-z">
       <title>Technology Detour – Two-sample <em>z</em>-procedures</title>
       
       <hint>
@@ -854,11 +852,10 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
           <li><p><c>n1</c> = sample size for first group</p></li>
           <li><p><c>observed2</c> = count or proportion for second group</p></li>
           <li><p><c>n2</c> = sample size for second group</p></li>
-          <li><p><c>hypothesized</c> = hypothesized difference (default is 0)</p></li>
-          <li><p><c>alternative</c> = "less", "greater", or "two.sided" for the direction of the alternative hypothesis</p></li>
-          <li><p><c>conf.level</c> = the confidence level (e.g., 0.95 for 95%)</p></li>
-        </ul>        
-        <p>For the hearing loss study:</p>
+          <li><p>Optional: <c>hypothesized</c> = hypothesized difference (default is 0) and <c>alternative</c> = "less", "greater", or "two.sided" for the direction of the alternative hypothesis</p></li>
+          <li><p>Optional: <c>conf.level</c> = the confidence level</p></li>
+        </ul>
+        <p>For example:</p>
         <sage language="r">
           <input>
 <![CDATA[
@@ -867,8 +864,7 @@ source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/I
 
 # Two-sample z-test: 480 successes out of 2928 in 1994, 333 out of 1771 in 2006
 # Testing if proportion in 1994 is less than proportion in 2006
-iscamtwopropztest(observed1=480, n1=2928, observed2=333, n2=1771, 
-                           hypothesized=0, alternative="less", conf.level=0.95)
+iscamtwopropztest(480, 2928, 333, 1771, 0, alt = "less", conf.level= 95)
 invisible()
 ]]>
           </input>
@@ -969,9 +965,8 @@ invisible()
   </subsection>
 
    
-    <assemblage xml:id="tech-detour-simulation-proportions">
+    <paragraphs xml:id="tech-detour-simulation-proportions">
       <title>Technology Detour – Simulating Proportions from Independent Random Samples</title>
-      <p></p>
       <p>Simulation Steps:</p>
       <p><ol>
         <li><p>Generate a random sample of 2928 observations from a binomial process with <m>\pi = .173</m></p></li>
@@ -981,9 +976,12 @@ invisible()
         <li><p>Repeat steps 1-4 a large number of times.</p></li>
       </ol></p>
       <p>You should explore the individual <m>\hat{p}</m> distributions but most focus on the distribution of <m>\hat{p}_1 - \hat{p}_2</m>, including the mean, standard deviation, and whether the distribution behaves like a normal distribution.</p>
-    </assemblage>
 
-    <hint>
+      <p>In Applet: <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions</url></p>
+      <p>In R: <url href="https://www.rossmanchance.com/iscam3/data/IndependentBinomialsR.html">IndependentBinomialsR.html</url></p>
+      <p>In JMP: <url href="https://www.rossmanchance.com/iscam3/data/IndependentBinomialsJMP.html">IndependentBinomialsJMP.html</url></p>
+
+      <hint>
         <title>R Instructions</title>
         <p>Generate a random sample for 1994:</p>
         <sage language="r">
@@ -1066,4 +1064,5 @@ invisible()  # Suppress any remaining output
           <li><p>Use the diff hot spot to select <term index="no">Continuous Distribution > Normal</term> and to select <term index="no">Normal Quantile Plot</term>.</p></li>
         </ul>
       </hint>
+    </paragraphs>
 </section>
