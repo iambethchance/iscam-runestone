@@ -462,7 +462,7 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
     </sidebyside>
   </assemblage>
 
-    <p>Theoretically, this approximation requires the population to follow a normal distribution. However, statisticians have found this approximation to also be reasonable for other population distributions whenever the sample size is large. As we saw with the Central Limit Theorem, how large the sample size needs to be depends on how skewed the population distribution is. However, we don't usually know the population skewness.  We can use the sample skewness statistic as a ballpark, but this is actually a biased estimator of the population skewness.  One approach is to use the formula
+    <p>Theoretically, this approximation requires the (infinite) population to follow a normal distribution. However, statisticians have found this approximation to also be reasonable for other population distributions whenever the sample size is large. As we saw with the Central Limit Theorem, how large the sample size needs to be depends on how skewed the population distribution is. However, we don't usually know the population skewness.  We can use the sample skewness statistic as a ballpark, but this is actually a biased estimator of the population skewness.  One approach is to use the formula
     <m>n \geq 4 + 19\,\lvert\text{skewness}\rvert + 27 \times \text{skewness}^2</m> to determine how large the sample size needs to be.  We will simplify this with the table shown below.</p>
 
   <assemblage xml:id="one-sample-t-test">
@@ -474,9 +474,9 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
 
     <p>to a <m>t</m>-distribution with <m>n - 1</m> degrees of freedom.</p>
 
-    <p><alert>Validity conditions:</alert>
+    <p><alert>Technical conditions:</alert>
     <ul>
-      <li><p>The sample is a simple random sample from the population or random process of interest.</p></li>
+      <li><p>The sample is a simple random sample from the (large) population or random process of interest.</p></li>
       <li><p>The population distribution is approximately normal, <alert>or</alert> the sample size is large</p></li>
     </ul></p>
     <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
