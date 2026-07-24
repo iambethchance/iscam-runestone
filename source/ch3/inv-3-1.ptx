@@ -220,8 +220,6 @@
     <paragraphs xml:id="tech-detour-segmented-bar">
       <title>Technology Detour – Segmented Bar Graphs</title>
       
-      <p>Use technology to create numerical and graphical summaries for these summarized data.</p>
-      
       <hint>
         <title>R Instructions</title>
         <p>Create (and view) a matrix in R to store the counts from the two-way table:</p>
@@ -259,16 +257,31 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <hint>
         <title>JMP Instructions</title>
         <p>You can specify the counts from the two-way table, but you have to do so in "column format" (each row is a combination of the two variables and the counts are all in one column)</p>
-        <ul>
-          <li><p>Select <term index="no">Analyze > Fit Y by X</term> .</p></li>
-          <li><p>Click Hearing Loss then click the <term index="no">Y, Response</term> button (or drag).</p></li>
-          <li><p>Click Year then click the <term index="no">X, Factor</term> button (or drag). (With raw data, you would be done here.)</p></li>
-          <li><p>Finally click <term index="no">Count</term> then the <term index="no">Freq</term> button. Click <term index="no">OK</term>.</p></li>
-          <li><p>Right-click on one of the bars and select <term index="no">Cell Labelling > Show Percents</term>.</p></li>
-        </ul>
+        <sidebyside widths="55% 40%" valign="top">
+          <stack>
+            <ul>
+              <li><p>Select <term index="no">Analyze > Fit Y by X</term> .</p></li>
+              <li><p>Click Hearing Loss then click the <term index="no">Y, Response</term> button (or drag).</p></li>
+              <li><p>Click Year then click the <term index="no">X, Factor</term> button (or drag). (With raw data, you would be done here.)</p></li>
+              <li><p>Finally click <term index="no">Count</term> then the <term index="no">Freq</term> button. Click <term index="no">OK</term>.</p></li>
+              <li><p>Right-click on one of the bars and select <term index="no">Cell Labelling > Show Percents</term>.</p></li>
+            </ul>
+          </stack>
+          <stack>
+            <image source="images/Inv3.1JMPtable.png" width="100%">
+              <description>JMP data table in column format with Year, Hearing Loss, and Count columns</description>
+            </image>
+            <image source="images/Inv3.1JMPfityx.png" width="100%">
+              <description>JMP Fit Y by X dialog with Hearing Loss as Y Response, Year as X Factor, and Count as Freq</description>
+            </image>
+          </stack>
+        </sidebyside>
         <p>JMP creates a "Mosaic Plot" (the column widths also reflect the relative sample sizes). An extended two-way table is shown below the Mosaic Plot although the rows and columns are reversed. Click the red Contingency Table arrow and uncheck Col% and Total% to see a less cluttered table.</p>
       </hint>
     </paragraphs>
+
+      <p>Use technology to create numerical and graphical summaries for these summarized data.</p>
+      
 
     <exercise xml:id="inv3-1-f">
       <title>Descriptive Statistics</title>
@@ -479,7 +492,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     <exercise xml:id="inv3-1-m">
       <title>Variability</title>
       <statement>
-        <p>Will everyone in the class get the same answers to <xref ref="inv3-1-l" text="custom">Question 12</xref>? Explain.</p>
+        <p>Will everyone in the class get the same answers to <xref ref="inv3-1-l" text="custom">Question 13</xref>? Explain.</p>
         <p><var width="60" height="3"/></p>
       </statement>
       <setup>
@@ -802,7 +815,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     <insight><p>It is technically incorrect to say there has been a 0.15% to 4.67% increase in hearing loss from 1994 to 2006, because "percentage change" implies a multiplication of values, not an addition or subtraction as we are considering here. It would be acceptable to say that the increase is between 0.15 and 4.67 <em>percentage points</em>.</p></insight>
 
     <assemblage>
-      <title>Technical Conditions</title>
+      <title>Validity Conditions</title>
       <p>The above Central Limit Theorem holds when the populations are much larger than the samples (e.g., more than 20 times the sample size) and when the sample size is large. We will consider the latter condition met when we have at least 5 successes and at least 5 failures in each sample (so there are four numbers to check).</p>
     </assemblage>
 
@@ -978,8 +991,6 @@ invisible()
       <p>You should explore the individual <m>\hat{p}</m> distributions but most focus on the distribution of <m>\hat{p}_1 - \hat{p}_2</m>, including the mean, standard deviation, and whether the distribution behaves like a normal distribution.</p>
 
       <p>In Applet: <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions</url></p>
-      <p>In R: <url href="https://www.rossmanchance.com/iscam3/data/IndependentBinomialsR.html">IndependentBinomialsR.html</url></p>
-      <p>In JMP: <url href="https://www.rossmanchance.com/iscam3/data/IndependentBinomialsJMP.html">IndependentBinomialsJMP.html</url></p>
 
       <hint>
         <title>R Instructions</title>

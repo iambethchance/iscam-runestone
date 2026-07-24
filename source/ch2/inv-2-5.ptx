@@ -461,16 +461,34 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
       </image>
     </sidebyside>
   </assemblage>
-  
+
+    <p>Theoretically, this approximation requires the population to follow a normal distribution. However, statisticians have found this approximation to also be reasonable for other population distributions whenever the sample size is large. As we saw with the Central Limit Theorem, how large the sample size needs to be depends on how skewed the population distribution is. However, we don't usually know the population skewness.  We can use the sample skewness statistic as a ballpark, but this is actually a biased estimator of the population skewness.  One approach is to use the formula
+    <m>n \geq 4 + 19\,\lvert\text{skewness}\rvert + 27 \times \text{skewness}^2</m> to determine how large the sample size needs to be.  We will simplify this with the table shown below.</p>
+
   <assemblage xml:id="one-sample-t-test">
     <title>One-sample <m>t</m>-test for <m>\mu</m></title>
-    
+
     <p>To test a null hypothesis about a population mean <m>H_0\!: \mu = \mu_0</m>, when we don't know the population standard deviation (pretty much always), we will use the sample standard deviation to calculate the standard error <m>SE(\bar{x})</m> and compare the standardized statistic</p>
-    
+
     <p><me>t = \frac{\bar{x} - \mu_0}{SE(\bar{x})} = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}</me></p>
-    
-    <p>to a <m>t</m>-distribution with <m>n - 1</m> degrees of freedom. Theoretically, this approximation requires the population to follow a normal distribution. However, statisticians have found this approximation to also be reasonable for other population distributions whenever the sample size is large. How large the sample size needs to be depends on how skewed the population distribution is. Consequently, we will consider the <m>t</m> procedures valid when either the population distribution is symmetric or the sample size is large (e.g., larger than 30).</p>
+
+    <p>to a <m>t</m>-distribution with <m>n - 1</m> degrees of freedom.</p>
+
+    <p><alert>Validity conditions:</alert></p>
+    <ul>
+      <li><p>The sample is a simple random sample from the population or random process of interest.</p></li>
+      <li><p>The population distribution is approximately normal, <alert>or</alert> the sample size is large</p></li>
+    </ul>
+    <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+      <row header="yes">
+        <cell>Population skewness</cell><cell>0.5</cell><cell>1</cell><cell>2</cell><cell>3</cell>
+      </row>
+      <row>
+        <cell>Sample size needed</cell><cell>20</cell><cell>50</cell><cell>150</cell><cell>300</cell>
+      </row>
+    </tabular>
   </assemblage>
+
   
   <assemblage xml:id="probability-detour-df">
     <title>Probability Detour – Degrees of Freedom</title>
