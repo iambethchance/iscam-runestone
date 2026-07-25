@@ -47,25 +47,20 @@
 # Load ISCAM functions from GitHub
 invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
-# Load elephant data from GitHub
+# Load and attach elephant data from GitHub
 elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/elephants.txt", header=TRUE)
+attach(elephants)
 
-# Create dotplot
-invisible(iscamdotplot(elephants$Distance, elephants$Species, xlab="Distance (km)"))
+# Input quantitative then categorical variable
+invisible(iscamdotplot(Distance, Species))
 
-# Boxplot
-invisible(boxplot(Distance ~ Species, data=elephants, horizontal=TRUE,
-        xlab="Distance (km)", ylab="Species"))
+# Remember to load lattice package; creates vertical layout, number of bins
+library(lattice)
+print(histogram(~Distance | Species, layout = c(1,2), nint=20))
 
-# Stacked histograms using base R
-par(mfrow=c(2,1))
-invisible(hist(elephants$Distance[elephants$Species=="African"],
-     main="African Elephants", xlab="Distance (km)",
-     xlim=c(0,15), breaks=20, col="lightblue"))
-invisible(hist(elephants$Distance[elephants$Species=="Asian"],
-     main="Asian Elephants", xlab="Distance (km)",
-     xlim=c(0,15), breaks=20, col="lightgreen"))
-par(mfrow=c(1,1))
+invisible(iscamboxplot(Distance, Species))
+# OR
+invisible(boxplot(Distance~Species, horizontal=TRUE, ylab="distance (km)"))
         </input>
       </sage>
     </hint>
