@@ -102,12 +102,9 @@ If we treat box office revenue as the response variable there is a moderate posi
       </solution>
     </exercise>
 
-    <paragraphs>
-      <title>Technology Detour</title>
-      <exercise xml:id="inv5-9-tech-detour-coded">
-        <title>Coded Scatterplot With Lines Instructions</title>
-        <statement>
-          <p>Create a coded scatterplot with a separate regression line for each MPAA rating category.</p>
+    <paragraphs xml:id="tech-detour-coded-scatterplot-lines">
+      <title>Technology Detour <mdash/> Creating a Coded Scatterplot (with Separate Lines)</title>
+      <p>Create a coded scatterplot with a separate regression line for each MPAA rating category.</p>
           <hint>
             <title>R Instructions</title>
             <p>Create the coded scatterplot: <c>plot(adjusted~imdb_rating, col=as.numeric(factor(MPAArating)))</c></p>
@@ -134,7 +131,7 @@ for (i in 1:4){
           </hint>
           <hint>
             <title>Applet Instructions</title>
-            <p>In <url href="http://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables</url> applet (or the <url href="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm">Two Quantitative Variables</url> applet for the color-coded graph alone)</p>
+            <p>In <url href="https://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables</url> applet (or the <url href="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm">Two Quantitative Variables</url> applet for the color-coded graph alone)</p>
             <ul>
               <li><p>Copy and paste the columns and press <alert>Use Data</alert>.</p></li>
               <li><p>Drag adjusted to the Response box and imdb_rating to the Explanatory box. Drag MPAArating to the Subset by box.</p></li>
@@ -142,17 +139,16 @@ for (i in 1:4){
               <li><p>You can also check the box for separate graphs.</p></li>
             </ul>
           </hint>
-        </statement>
-        <solution>
-          <p>R and applet output</p>
-          <image source="images/inv-5-9-sol-h1.jpg" width="48%">
-            <description><p>R coded scatterplot of adjusted revenue (millions) versus IMDB rating with separate regression lines and a legend for the G, PG, PG-13, and R rating categories.</p></description>
-          </image>
-          <image source="images/inv-5-9-sol-h2.jpg" width="48%">
-            <description><p>Applet Results with four separate scatterplots by MPAA rating (PG-13, PG, G, R), each with its own regression line, and the Show equation output listing the four fitted equations.</p></description>
-          </image>
-        </solution>
-      </exercise>
+          <hint>
+            <title>Example Output</title>
+            <p>R and applet output</p>
+            <image source="images/inv-5-9-sol-h1.jpg" width="48%">
+              <description><p>R coded scatterplot of adjusted revenue (millions) versus IMDB rating with separate regression lines and a legend for the G, PG, PG-13, and R rating categories.</p></description>
+            </image>
+            <image source="images/inv-5-9-sol-h2.jpg" width="48%">
+              <description><p>Applet Results with four separate scatterplots by MPAA rating (PG-13, PG, G, R), each with its own regression line, and the Show equation output listing the four fitted equations.</p></description>
+            </image>
+          </hint>
     </paragraphs>
 
     <exercise xml:id="inv5-9-h">
