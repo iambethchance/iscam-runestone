@@ -685,17 +685,43 @@ Players without a team affiliation or without a listed salary were not included 
         <response/>
       </exercise>
 
-      <assemblage xml:id="tech-detour-selecting-independent-random-samples">
-        <title>Technology Detour - Selecting Independent Random Samples</title>
-        
+      <paragraphs xml:id="tech-detour-selecting-independent-random-samples">
+        <title>Technology Detour <mdash/> Selecting Independent Random Samples</title>
+
         <p>Step 1: Take a random sample of <m>n_1</m> observations from first population.</p>
         <p>Step 2: Take a random sample of <m>n_2</m> observations from second population.</p>
         <p>Step 3: Compute difference in sample means or other statistic and create sampling distribution of statistic.</p>
         <p>You should also look at graphs of the individual samples as well as the final sampling distribution, find the mean and standard deviation, compare to a normal distribution.</p>
-        <p><alert>In Applet:</alert> <url href="http://www.rossmanchance.com/applets/TwoBoot5.html">Comparing Two Populations</url></p>
-        <p><alert>In R:</alert> <url href="https://www.rossmanchance.com/iscam3/data/IndependentSamplesR.html">IndependentSamplesR</url></p>
-        <p><alert>In JMP:</alert> <url href="https://www.rossmanchance.com/iscam3/data/IndependentSamplesJMP.html">IndependentSamplesJMP</url></p>
-      </assemblage>
+        <p><alert>In Applet:</alert> <url href="https://www.rossmanchance.com/applets/TwoBoot5.html">Comparing Two Populations</url></p>
+        <hint>
+          <title>R Instructions</title>
+          <p>Take a random sample from each division:</p>
+          <program language="r">
+            <code>
+westsample = sample(salary[which(conference == "western")], 20)
+eastsample = sample(salary[which(conference == "eastern")], 20)
+salary.sample = data.frame(westsample, eastsample)
+names(salary.sample) = c("western", "eastern")
+            </code>
+          </program>
+          <p>Run the <url href="https://www.rossmanchance.com/iscam3/data/NBASalarySamples.R">NBASalarySamples.R</url> script to generate 1000 repetitions. You can first reset the random number seed using <c>rm(".Random.seed")</c>.</p>
+        </hint>
+        <hint>
+          <title>JMP Instructions</title>
+          <p>Take a random sample from each conference:</p>
+          <ul>
+            <li><p>(Optional) Highlight the conference and salary columns in the data window</p></li>
+            <li><p>Select <term index="no">Tables &gt; Subset</term></p></li>
+            <li><p>Select <term index="no">Random - sample size</term></p></li>
+            <li><p>Specify a sample size of 20</p></li>
+            <li><p>Check that you want to <term index="no">Stratify</term> and select conference.</p></li>
+            <li><p>(Optional) Choose selected columns</p></li>
+            <li><p>Press <term index="no">OK</term>.</p></li>
+          </ul>
+          <p>A new data window will be created with 40 observations, 20 from each conference.</p>
+          <p>Open the <url href="https://www.rossmanchance.com/iscam3/data/NBASalarySamples.jmp">NBASalarySamples.jmp</url> file. Use the Random Sampling hot spot and select Run Script. Then use the hot spot menu to select Edit. Change the number of trials (ntrials) from 2 to 100. Scroll down and comment out the wait command by putting // in front: //wait(1). Press Run.</p>
+        </hint>
+      </paragraphs>
       
       <paragraphs>
         <title>Discussion</title>
@@ -741,86 +767,46 @@ with only the summary data is one advantage the <m>t</m>-test has over the simul
 <p>This <q>pooled <m>t</m>-test</q> has some advantages (namely higher power), when the population standard deviations are equal. However, this additional condition can be difficult to assess from your sample data. The benefits do not appear to outweigh the risks of applying this assumption when you shouldn't. So in this text we will focus on <q>unpooled <m>t</m>-tests</q> only.</p>
 </paragraphs>
       
-      <exercise xml:id="inv4-2-tech" label="I4-2-TECH">
-        <title>Technology Detours</title>
-        <statement>
-          <p>Expand the hints below for instructions for different software tools.</p>
+      <paragraphs xml:id="tech-detour-two-sample-t-summary">
+        <title>Technology Detour <mdash/> Two-Sample <m>t</m>-Test (unpooled, summary data)</title>
 
         <hint>
-          <title>In Applet - Theory-Based Inference (Summary Data)</title>
-          <p>Using the <url href="https://www.rossmanchance.com/applets/2021/rbia/TBIA.html">Theory-Based Inference applet</url> to conduct a two-sample <m>t</m>-test</p>
-          <p>For example:</p>
+          <title>Applet Instructions</title>
+          <p>In the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url>:</p>
+          <ul>
+            <li><p>Use the pull-down menu to select <q>Two means.</q></p></li>
+            <li><p>Specify the summary statistics. Press <term index="no">Calculate</term>. (You will see a visual representation of the sample means and standard deviations.)</p></li>
+            <li><p>Check the box for <term index="no">Test of Significance</term>. Specify the hypothesized difference and the direction of the alternative hypothesis. Press <term index="no">Calculate</term>.</p></li>
+          </ul>
           <image source="images/Inv4.2TBIA.png" width="60%">
             <description>Theory-Based Inference applet for unpooled two-sample t-test with summary data</description>
           </image>
-          <ul>
-            <li><p>Select "Two Means" from the <term index="no">Scenario</term> pull-down menu</p></li>
-            <li><p>Enter the sample sizes, means, and standard deviations for each group. Press <term index="no">Calculate</term> to see a visual representation of the means and standard deviations.</p></li>
-            <li><p>Check the <term index="no">Test of Significance</term> box</p></li>
-            <li><p>Choose the alternative hypothesis</p></li>
-            <li><p>Press <term index="no">Calculate</term> to get the test statistic, degrees of freedom, and p-value</p></li>
-          </ul>
         </hint>
 
         <hint>
-          <title>In Applet - Theory-Based Inference (Raw Data)</title>
-          <p>Use the Theory-Based Inference applet with raw data:</p>
-          <image source="images/Inv4.2TBIA2.png" width="40%">
-            <description>Theory-Based Inference applet for unpooled two-sample t-test with raw data</description>
-          </image>
-          <ul>
-            <li><p>Select "Two Means" from the <term index="no">Scenario</term> pull-down menu</p></li>
-            <li><p>Copy the data to the clipboard, check the <term index="no">Paste data</term>
-             box, select the <term index="no">Stacked</term> box if that’s the data format
-             (explanatory variable in first column), press <term index="no">Clear</term>,
-             click in the data window and paste the data. Press <term index="no">Use Data</term>.</p></li>
-            <li><p>Check the <term index="no">Test of Significance</term> box.</p></li>
-            <li><p>Specify the hypothesized difference and direction of the alternative.</p></li>
-            <li><p>Press <term index="no">Calculate</term></p></li>
-          </ul>
-        </hint>
-
-        <hint>
-          <title>In R (summary data)</title>
+          <title>R Instructions</title>
           <p>The <c>iscamtwosamplet</c> function takes the following inputs:</p>
           <ul>
             <li><p>Group 1 mean, standard deviation, sample size (in that order)</p></li>
             <li><p>Group 2 mean, standard deviation, sample size (in that order)</p></li>
             <li><p>Optional: hypothesized difference (default is zero)</p></li>
-            <li><p>Optional: alternative ("less", "greater", or "two.sided")</p></li>
+            <li><p>Optional: alternative (<q>less</q>, <q>greater</q>, or <q>two.sided</q>)</p></li>
             <li><p>Optional: conf.level</p></li>
           </ul>
+          <p>For example:</p>
           <sage language="r">
             <input>
 # Load ISCAM functions from GitHub
 invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
-# Two-sample t-test (unpooled - Welch's t-test) with summary data
-# Example: Group 1 (mean=5.4, sd=1.47, n=33) vs Group 2 (mean=5.3, sd=3.41, n=23)
-invisible(iscamtwosamplet(x1=5.4, sd1=1.47, n1=33, x2=5.3, sd2=3.41, n2=23, 
-                          alternative="two.sided", conf.level=0.95))
-                          invisible()
+# Two-sample t-test (unpooled) with summary data
+invisible(iscamtwosamplet(x1=75, sd1=15, n1=888, x2=66, sd2=15, n2=99, alt="greater"))
             </input>
           </sage>
         </hint>
 
         <hint>
-          <title>In R (raw data)</title>
-          <p>Use R to conduct a two-sample <m>t</m>-test:</p>
-          <program language="r">
-            <code>
-# For example, with NBA data, you would use something like 
-t.test(salary~conference, alt="two.sided", var.equal=FALSE)
-
-# Note: var.equal=FALSE uses the unpooled (Welch) version
-# This is the default and recommended when variances may differ
-            </code>
-          </program>
-        </hint>
-
-        <hint>
-          <title>In JMP (summary data)</title>
-          <p>Use JMP to conduct a two-sample <m>t</m>-test with summary statistics:</p>
+          <title>JMP Instructions</title>
           <sidebyside widths="60% 35%" valign="top">
             <stack>
               <ul>
@@ -837,32 +823,62 @@ t.test(salary~conference, alt="two.sided", var.equal=FALSE)
             </stack>
           </sidebyside>
         </hint>
+      </paragraphs>
+
+      <paragraphs xml:id="tech-detour-two-sample-t-raw">
+        <title>Technology Detour <mdash/> Two-Sample <m>t</m>-Test (unpooled, raw data)</title>
 
         <hint>
-          <title>In JMP (raw data)</title>
-          <p>Use JMP to conduct a two-sample <m>t</m>-test with stacked data:</p>
+          <title>Applet Instructions</title>
+          <p>In the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url>:</p>
           <ul>
-            <li><p>Choose <term index="no">Analyze > Fit Y by X</term></p></li>
-            <li><p>Put the quantitative variable in <term index="no">Y, Response</term> and the categorical variable in <term index="no">X, Factor</term></p></li>
-            <li><p>Press <term index="no">OK</term></p></li>
-            <li><p>Click on the red triangle next to <term index="no">Oneway Analysis</term>
-                and select <term index="no"><m>t</m> Test</term>. The output will include the 95% confidence interval, the t standardized statistic (and df), and 3 p-values. Pick the p-value that matches your alternative hypothesis.</p>
+            <li><p>Use the pull-down menu to select <q>Two means.</q></p></li>
+            <li><p>Copy the data to the clipboard, check the <term index="no">Paste data</term> box, select the <term index="no">Stacked</term> box if that's the data format (explanatory variable in first column), press <term index="no">Clear</term>, click in the data window and paste the data. Press <term index="no">Use data</term>.</p></li>
+            <li><p>Check the <term index="no">Test of Significance</term> box.</p></li>
+            <li><p>Specify the hypothesized difference and the direction of the alternative hypothesis.</p></li>
+            <li><p>Press <term index="no">Calculate</term>.</p></li>
+          </ul>
+          <image source="images/Inv4.2TBIA2.png" width="40%">
+            <description>Theory-Based Inference applet for unpooled two-sample t-test with raw data</description>
+          </image>
+        </hint>
+
+        <hint>
+          <title>R Instructions</title>
+          <p>(note, if you have attached the data, you don't need the <q>with</q>)</p>
+          <program language="r">
+            <code>
+with(NBASalaries2026,
+  t.test(salary~conference, alt="two.sided", var.equal=FALSE))
+            </code>
+          </program>
+        </hint>
+
+        <hint>
+          <title>JMP Instructions (stacked data)</title>
+          <ul>
+            <li><p>Choose <term index="no">Analyze &gt; Fit Y by X</term></p></li>
+            <li><p>Specify the response variable (<term index="no">Y, Response</term>) and the explanatory variable (<term index="no">X, Factor</term>), press <term index="no">OK</term>.</p></li>
+            <li><p>Use the hot spot to select <term index="no"><m>t</m> Test</term>. The output will include the 95% confidence interval, the <m>t</m> standardized statistic (and df), and 3 p-values. Pick the p-value that matches your alternative hypothesis.</p>
                 <ul>
                   <li><p>To change the confidence level, use the hot spot to select <term index="no">Set <m>\alpha</m> level</term> to <m>1-C</m>.</p></li>
                 </ul>
             </li>
           </ul>
         </hint>
+      </paragraphs>
+
+      <paragraphs xml:id="tech-detour-unstacked-data">
+        <title>Technology Detour <mdash/> Unstacked data (each column is a group)</title>
 
         <hint>
-          <title>Technology Detour - Unstacked data (each column is a group)</title>
+          <title>Applet Instructions</title>
+          <p>In the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url>: Press <term index="no">Clear</term> and don't check the <term index="no">Stacked</term> button before pasting the data in.</p>
+        </hint>
 
-          <p><alert>In <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url>:</alert></p>
-          <ul>
-            <li><p>Press <term index="no">Clear</term> and do not check the <term index="no">Stacked</term> box before pasting the data.</p></li>
-          </ul>
-
-          <p><alert>In R (for NBA data first stack the data because each column is a variable):</alert></p>
+        <hint>
+          <title>R Instructions</title>
+          <p>Have to first stack the data (each column is a variable):</p>
           <program language="r">
             <code>
 StackedData = stack(salary.sample[, c("western", "eastern")])
@@ -871,13 +887,13 @@ iscamdotplot(StackedData$salary, StackedData$division)
 iscamsummary(StackedData$salary, StackedData$division)
             </code>
           </program>
-          <p><alert>In JMP:</alert></p>
-          <ul>
-            <li><p>Choose <term index="no">Analyze &gt; Distribution</term> and use <term index="no">By</term> Conference.</p></li>
-          </ul>
         </hint>
-        </statement>
-      </exercise>
+
+        <hint>
+          <title>JMP Instructions</title>
+          <p><term index="no">Analyze &gt; Distribution</term> and use <term index="no">By</term> Conference.</p>
+        </hint>
+      </paragraphs>
 
 </exercises>
     

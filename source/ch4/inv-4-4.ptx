@@ -540,20 +540,54 @@ abline(v=15.92, col=2)
         <p>The exact randomization distribution consists of every possible random assignment and calculates the statistic of interest (e.g., difference in means) for each one. Then we simply count how many of the configurations result in a value of the statistic at least as extreme (as defined by the alternative hypothesis) as the actual observed result. As you might expect, it can be extremely tedious, even with computers, to list out all of these possible random assignments. And these group sizes are relatively small! One shortcut is to only count how many assignments give results more extreme than the one observed, but as you will see we can often appeal to a mathematical model as well.</p>
       </paragraphs>
       
-      <assemblage xml:id="tech-detour-4-4">
+      <paragraphs xml:id="tech-detour-4-4">
         <title>Technology Detour <mdash/> Simulating a Randomization Test for a Quantitative Response</title>
-        
+
         <p><alert>Step 1:</alert> Randomly reorder the group membership labels (keeping the same number in each group)</p>
         <p><alert>Step 2:</alert> Calculate the new difference in means (or other statistic) using the reordered group labels</p>
         <p><alert>Step 3:</alert> Repeat Steps 1 and 2 many times.</p>
         <p>Look at the distribution of the statistic, including the mean and standard deviation, and count how many of the simulated statistics are as or more extreme as the observed.</p>
-        
-        <p><alert>Applet:</alert> <url href="http://www.rossmanchance.com/applets/AnovaShuffle.htm">Comparing Groups (Quantitative)</url></p>
-        
-        <p><alert>In R:</alert> See <url href="https://www.rossmanchance.com/iscam3/data/RandomizationTestQuantR.html">RandomizationTestQuantR.html</url> (with Sleep Deprivation file loaded and attached)</p>
-        
-        <p><alert>In JMP:</alert> See <url href="https://www.rossmanchance.com/iscam3/data/RandomizationTestQuantJMP.html">RandomizationTestQuantJMP.html</url></p>
-      </assemblage>
+
+        <p><alert>Applet:</alert> <url href="https://www.rossmanchance.com/applets/2021/anovashuffle/AnovaShuffle.htm">Comparing Groups (Quantitative)</url></p>
+        <hint>
+          <title>R Instructions</title>
+          <p>(with Sleep Deprivation file loaded and attached)</p>
+          <p>In the R Console, set the number of repetitions and initialize the vector that will store the differences.</p>
+          <program language="r">
+            <code>
+I = 10000    # use upper case
+diff = 0     # initializes the vector
+            </code>
+          </program>
+          <p>Then create a loop that will mix up the order of the response variable values and calculate a difference in means with each new random assignment:</p>
+          <program language="r">
+            <code>
+for (i in 1:I){                                           # the loop for I iterations
+  rerandom = sample(improvement)                          # mixes up response values
+  boxplot(rerandom~condition, horizontal=TRUE)
+  diff[i] = mean(rerandom[1:10]) - mean(rerandom[11:21])  # match up the explanatory variable group sizes
+}
+            </code>
+          </program>
+          <p>Then you can examine a histogram of <c>diff</c> and compute the empirical p-value as before.</p>
+          <program language="r">
+            <code>
+hist(diff); abline(v=15.92, col=2)   # adds vertical line
+sum(diff >= 15.92)/I                 # p-value
+            </code>
+          </program>
+        </hint>
+        <hint>
+          <title>JMP Instructions</title>
+          <ul>
+            <li><p>Open <url href="https://www.rossmanchance.com/iscam3/data/SleepDeprivationRandomize.jmp">SleepDeprivationRandomize.jmp</url></p></li>
+            <li><p>Open the RandomAssignment hotspot and select <term index="no">Run script</term>.</p>
+              <ul><li><p>This will reassign the improvement scores to the two groups, find the resulting group means, and create a column of the difference.</p></li></ul>
+            </li>
+            <li><p>You can comment out the <q>wait</q> command and increase the number of trials.</p></li>
+          </ul>
+        </hint>
+      </paragraphs>
     
   <assemblage xml:id="inv-4-4-study-conclusions">
     <title>Study Conclusions</title>
