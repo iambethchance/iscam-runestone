@@ -43,11 +43,30 @@
       <p>Describe a completely randomized design for conducting this study. </p>
       <p>Design:</p>
       <var width="60"/>
-      <p>Identify the experimental units and variables of interest. Classify the variables as explanatory and response, as well as quantitative or categorical.</p>
+      <p>Identify the experimental units <var width="40"/> </p>
+      <p>Identify the variables of interest. Classify the variables as explanatory and response, as well as quantitative or categorical.</p>
       <p>Explanatory variable: <var width="40"/> </p><p>Type: <var width="20"/></p>
       <p>Response variable: <var width="40"/> </p><p>Type: <var width="20"/></p>
     </statement>
     <setup>
+      <!-- Design -->
+      <var>
+        <condition string=".*[Rr]andom.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>A completely randomized design randomly assigns the participants to the music or no-music condition and then compares typing speeds.</p></feedback>
+        </condition>
+      </var>
+      <!-- Experimental units -->
+      <var>
+        <condition string=".*[Pp]articipant.*|.*[Tt]ypist.*|.*[Pp]eople.*|.*[Pp]erson.*|.*[Ss]tudent.*|.*[Ss]ubject.*|.*[Vv]olunteer.*">
+          <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>The experimental units are the participants (the people whose typing speeds are measured).</p></feedback>
+        </condition>
+      </var>
       <!-- EV -->
       <var>
         <condition string=".*[Mm]usic.*">

@@ -539,7 +539,9 @@ abline(v=15.92, col=2)
         
         <p>The exact randomization distribution consists of every possible random assignment and calculates the statistic of interest (e.g., difference in means) for each one. Then we simply count how many of the configurations result in a value of the statistic at least as extreme (as defined by the alternative hypothesis) as the actual observed result. As you might expect, it can be extremely tedious, even with computers, to list out all of these possible random assignments. And these group sizes are relatively small! One shortcut is to only count how many assignments give results more extreme than the one observed, but as you will see we can often appeal to a mathematical model as well.</p>
       </paragraphs>
-      
+
+      <p><alert>Note:</alert> You can carry out these simulations in software as well, see the Technology Detour below.</p>
+
       <paragraphs xml:id="tech-detour-4-4">
         <title>Technology Detour <mdash/> Simulating a Randomization Test for a Quantitative Response</title>
 
@@ -592,7 +594,7 @@ sum(diff >= 15.92)/I                 # p-value
   <assemblage xml:id="inv-4-4-study-conclusions">
     <title>Study Conclusions</title>
       
-      <p>These data come from a randomized, comparative experiment. The dotplots and descriptive statistics reveal that, even three days later, the sleep-deprived subjects tended (on average) to have lower improvements than those permitted unrestricted sleep. To investigate whether this difference is larger than could be expected from random assignment alone (assuming no real difference between the two treatment conditions, our null hypothesis), you simulated a <strong>randomization test</strong> by assigning the 21 measurements (improvement scores) to the two groups at random. You should have found that random assignment alone rarely produced differences in group means as extreme as in the actual study (the <q>exact</q> p-value is less than 0.01). Thus, we have fairly strong evidence that the average learning improvement is genuinely lower for the sleep deprived subjects. Moreover, because this was a randomized comparative experiment and not an observational study, we can draw a causal conclusion that the sleep deprivation was the cause of the lower learning improvements. However, the subjects were college-aged volunteers, so we may not want to generalize these results to a much different population.</p>
+      <p>These data come from a randomized, comparative experiment. The dotplots and descriptive statistics reveal that, even three days later, the sleep-deprived subjects tended (on average) to have lower improvements than those permitted unrestricted sleep. To investigate whether this difference is larger than could be expected from random assignment alone (assuming no real difference between the two treatment conditions, our null hypothesis), you simulated a <term>randomization test</term> by assigning the 21 measurements (improvement scores) to the two groups at random. You should have found that random assignment alone rarely produced differences in group means as extreme as in the actual study (the <q>exact</q> p-value is less than 0.01). Thus, we have fairly strong evidence that the average learning improvement is genuinely lower for the sleep deprived subjects. Moreover, because this was a randomized comparative experiment and not an observational study, we can draw a causal conclusion that the sleep deprivation was the cause of the lower learning improvements. However, the subjects were college-aged volunteers, so we may not want to generalize these results to a much different population.</p>
   </assemblage>
   
   </exercises>
