@@ -52,13 +52,13 @@ elephants = read.table("https://raw.githubusercontent.com/iambethchance/iscam-ru
 attach(elephants)
 
 # Input quantitative then categorical variable
-invisible(iscamdotplot(Distance, Species))
+iscamdotplot(Distance, Species)
 
 # Remember to load lattice package; creates vertical layout, number of bins
 library(lattice)
 print(histogram(~Distance | Species, layout = c(1,2), nint=20))
 
-invisible(iscamboxplot(Distance, Species))
+iscamboxplot(Distance, Species)
 # OR
 # boxplot(Distance~Species, horizontal=TRUE, ylab="distance (km)")
 invisible()
@@ -808,7 +808,7 @@ with only the summary data is one advantage the <m>t</m>-test has over the simul
 invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
 # Two-sample t-test (unpooled) with summary data
-invisible(iscamtwosamplet(x1=75, sd1=15, n1=888, x2=66, sd2=15, n2=99, alt="greater"))
+iscamtwosamplet(x1=75, sd1=15, n1=888, x2=66, sd2=15, n2=99, alt="greater")
 invisible()
             </input>
           </sage>
