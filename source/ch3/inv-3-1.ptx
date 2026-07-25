@@ -203,7 +203,7 @@
 
     <exercise xml:id="inv3-1-e">
       <title>Comparing Proportions</title>
-      <statement><p>Suggest a better way to compare the prevalence of hearing loss between the two studies. Calculate <em>one number</em> as the statistic for this study (what symbols are you using?). Does your statistic seem large enough to convince you that there has been an increase in hearing loss?</p></statement>
+      <statement><p>Suggest a better way to compare the likelihood of hearing loss between the two time periods. Calculate <em>one number</em> as the statistic for this study (what symbols are you using?). Does your statistic seem large enough to convince you that there has been an increase in hearing loss?</p></statement>
       <solution><p><m>\hat{p}_{88} - \hat{p}_{05}</m> = 480/2928 - 333/1771 = -0.024 (judgements of the impressiveness of this number will vary; it seems on the small side but the sample sizes are large)</p></solution>
       <response/>
     </exercise>
@@ -323,7 +323,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     <exercise xml:id="inv3-1-h">
       <title>Hypotheses</title>
       <statement>
-        <p>Let <m>\pi_{94}</m> represent the proportion of all American teenagers in 1994 with at least some hearing loss, and similarly for <m>\pi_{06}</m>. Define the parameter of interest to be <m>\pi_{94} - \pi_{06}</m>, the difference in the population proportions between these two years. State appropriate null and alternative hypotheses about this parameter to reflect the researchers' conjecture that hearing loss by teens is becoming more prevalent.</p>
+        <p>Let <m>\pi_{94}</m> represent the proportion of all American teenagers in 1994 with at least some hearing loss, and similarly for <m>\pi_{06}</m>. Define the parameter of interest to be <m>\pi_{94} - \pi_{06}</m>, the difference in the population proportions between these two years. State appropriate null and alternative hypotheses about this parameter to reflect the researchers' conjecture that hearing loss by teens is becoming more common.</p>
         <p><m>H_0\!: </m> <var width="15"/> <var width="5"/> <var width="10"/></p>
         <p><m>H_a\!: </m> <var width="15"/> <var width="5"/> <var width="10"/></p>
       </statement>
@@ -815,7 +815,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     <insight><p>It is technically incorrect to say there has been a 0.15% to 4.67% increase in hearing loss from 1994 to 2006, because "percentage change" implies a multiplication of values, not an addition or subtraction as we are considering here. It would be acceptable to say that the increase is between 0.15 and 4.67 <em>percentage points</em>.</p></insight>
 
     <assemblage>
-      <title>Validity Conditions</title>
+      <title>Technical Conditions</title>
       <p>The above Central Limit Theorem holds when the populations are much larger than the samples (e.g., more than 20 times the sample size) and when the sample size is large. We will consider the latter condition met when we have at least 5 successes and at least 5 failures in each sample (so there are four numbers to check).</p>
     </assemblage>
 
@@ -823,7 +823,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
 
     <exercise xml:id="inv3-1-aa">
       <title>Conclusion</title>
-      <statement><p>Summarize your conclusions from this study. Be sure to address statistical significance, statistical confidence, and the populations you are willing to generalize the results to. Also, are you willing to conclude that the change in the <em>prevalence</em> of hearing loss is due to the increased use of ear buds among teenagers between 1994 and 2006? Explain why or why not.</p></statement>
+      <statement><p>Summarize your conclusions from this study. Be sure to address statistical significance, statistical confidence, and the populations you are willing to generalize the results to. Also, are you willing to conclude that the change in the likelihood of hearing loss is due to the increased use of ear buds among teenagers between 1994 and 2006? Explain why or why not.</p></statement>
       <solution>
         <p>The change in the likelihood of some hearing loss in these two samples is statistically significant (p-value = 0.017 from z-test) and we are 95% confident that the population proportion is 0.001 to 0.047 higher "now" than before among all American teenagers (representative samples by NHANES).</p>
         <p><alert>NOTE</alert>: The adjective "statistically significant" (didn't happen by chance alone) applies to the sample data, not the population data.</p>
@@ -920,7 +920,7 @@ invisible()
   <subsection xml:id="practice3-1A">
     <title>Practice Problem 3.1A</title>
 
-    <p>In a follow-up study, <url href="https://jamanetwork.com/journals/jamapediatrics/fullarticle/2606596">Su &amp; Chan (2017)</url> examined hearing loss data for 1165 participants from the 2009-2010 National Health and Nutrition Examination Survey to see whether this trend has continued. They estimate the prevalence (after adjusting for a non-simple random sample and weighting the data to be representative of the population) of some hearing loss to be 0.152. If we treat this as a sample proportion, is this significantly different from the 2005-6 data?</p>
+    <p>In a follow-up study, <url href="https://jamanetwork.com/journals/jamapediatrics/fullarticle/2606596">Su &amp; Chan (2017)</url> examined hearing loss data for 1165 participants from the 2009-2010 National Health and Nutrition Examination Survey to see whether this trend has continued. They estimate the <em>prevalence</em> (after adjusting for a non-simple random sample and weighting the data to be representative of the population) of some hearing loss to be 0.152. If we treat this as a sample proportion, is this significantly different from the 2005-6 data?</p>
 
     <exercise xml:id="practice-3-1-a">
       <statement>
