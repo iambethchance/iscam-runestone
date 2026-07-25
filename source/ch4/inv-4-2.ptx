@@ -349,7 +349,7 @@ Players without a team affiliation or without a listed salary were not included 
       <exercise xml:id="prob-detour-2means-c" label="PD4-2-3">
         <title>Population Parameters</title>
         <statement>
-<p>      Record the population sizes, means, and standard deviations for the Western and Eastern conferences.</p>
+<p>      Record the population sizes, means, standard deviations, and skewness values for the Western and Eastern conferences.</p>
             <title>Population Parameters for NBA Salaries by Conference</title>
             <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
               <row header="yes">
@@ -410,6 +410,15 @@ Players without a team affiliation or without a listed salary were not included 
               <feedback><p>The SD for Western salaries is approximately 15.5 million.</p></feedback>
             </condition>
           </var>
+          <!-- Western skew -->
+          <var>
+            <condition number="1.22" tolerance="0.1">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The skewness for Western salaries is approximately 1.22.</p></feedback>
+            </condition>
+          </var>
           <!-- Eastern N -->
           <var>
             <condition number="176" tolerance="2">
@@ -435,6 +444,15 @@ Players without a team affiliation or without a listed salary were not included 
             </condition>
             <condition string=".*">
               <feedback><p>The SD for Eastern salaries is approximately 15.9 million.</p></feedback>
+            </condition>
+          </var>
+          <!-- Eastern skew -->
+          <var>
+            <condition number="1.35" tolerance="0.1">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The skewness for Eastern salaries is approximately 1.35.</p></feedback>
             </condition>
           </var>
           <!-- Symbols -->
