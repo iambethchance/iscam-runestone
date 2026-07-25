@@ -560,17 +560,12 @@
       </assemblage>
 
 <p>For large sample sizes, we will use the chi-squared distribution to approximate the p-value.</p>
-      <paragraphs>
-        <title>Technology Detour </title>
-
-        <exercise xml:id="inv5-1-tech-detour-chi-squared-probabilities">
-          <title>Chi-squared Probabilities</title>
-          <statement>
-            <p>Use technology to calculate probabilities from a chi-squared distribution. </p>
+      <paragraphs xml:id="tech-detour-chisq-probabilities">
+        <title>Technology Detour <mdash/> Chi-squared Probabilities</title>
 
             <hint>
               <title>Applet Instructions</title>
-              <p>In <url href="http://www.rossmanchance.com/applets/2021/test/chiCalc.htm"><m>\chi^2</m> Probability Calculator</url> applet: Specify the degrees of freedom, the observed value, and the direction of interest for the value.</p>
+              <p>In <url href="https://www.rossmanchance.com/applets/2021/test/chiCalc.htm"><m>\chi^2</m> Probability Calculator</url> applet: Specify the degrees of freedom, the observed value, and the direction of interest for the value.</p>
             </hint>
 
             <hint>
@@ -586,17 +581,15 @@
               <title>JMP Instructions</title>
               <p>Use the <alert>Distribution Calculator</alert> and select the <alert>Chi Square</alert> distribution. Enter 6 as the degrees of freedom (DF) and press Enter. Leave the type of calculation to <alert>Input quantiles…</alert>. You want <alert>X &gt; Qa</alert> and specify 62.68 for Qa.</p>
             </hint>
-          </statement>
-          <solution>
-            <p>Example output:</p>
-            <image source="images/inv-5-1s1-v2.png" width="48%">
-              <description>First example output for chi-squared probabilities technology detour</description>
-            </image>
-            <image source="images/inv-5-1s2-v2.png" width="48%">
-              <description>Second example output for chi-squared probabilities technology detour</description>
-            </image>
-          </solution>
-        </exercise>
+            <hint>
+              <title>Example Output</title>
+              <image source="images/inv-5-1s1-v2.png" width="48%">
+                <description>First example output for chi-squared probabilities technology detour</description>
+              </image>
+              <image source="images/inv-5-1s2-v2.png" width="48%">
+                <description>Second example output for chi-squared probabilities technology detour</description>
+              </image>
+            </hint>
       </paragraphs>
 
       <exercise xml:id="inv5-1-s">
@@ -630,7 +623,7 @@
       <exercise xml:id="inv5-1-u">
         <title>Direction of Largest Discrepancies</title>
         <statement>
-          <p>For the cells identified in <xref ref="inv5-1-t" text="custom">Question 20</xref>, which is larger, the observed counts or the expected counts? Explain the implications of this comparison.</p>
+          <p>For the cells identified in <xref ref="inv5-1-t" text="custom">Question 19</xref>, which is larger, the observed counts or the expected counts? Explain the implications of this comparison.</p>
         </statement>
         <response/>
         <solution>
@@ -695,12 +688,9 @@
     </exercise>
   </subsection>
 
-  <paragraphs>
-    <title>Technology Detour</title>
+  <paragraphs xml:id="tech-detour-simulating-two-way">
+    <title>Technology Detour <mdash/> Simulating Randomization Test for Two-Way Tables</title>
 
-    <exercise xml:id="inv5-1-tech-detour-chi-square-sim">
-      <title>Simulating Randomization Test for Two-Way Tables</title>
-      <statement>
         <hint>
           <title>Applet Instructions</title>
           <p>Use the <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqSample.htm">Analyzing Two-way Tables - Sampling</url> applet.</p>
@@ -723,37 +713,22 @@
             <li><p>The chi-square distribution is equivalent to a Gamma distribution with parameters shape = 6/2 = 3 and scale = 2. Use the hot spot to select <alert>Continuous Fit &gt; Gamma</alert>.</p></li>
           </ul>
         </hint>
-      </statement>
-      <solution>
-          <paragraphs>
-            <title>Applet</title>
-            <p>The normal quantile plot shows noticeable curvature rather than a straight-line pattern, so the simulated chi-squared values do not appear to follow a normal distribution well.</p>
-          </paragraphs>
-
-          <paragraphs>
-            <title>R</title>
-            <p>The R output leads to the same conclusion: the normal probability plot bends upward in the right tail, which indicates right skew and suggests that a normal model is not appropriate for this null distribution.</p>
-            <image source="images/inv5-1TD1.jpg" width="35%">
-             <description>Applet solution screenshot for chi-squared simulation</description>
-            </image>
-            <image source="images/inv5-1TD2.jpg" width="35%">
-              <description>R solution screenshot for chi-squared simulation</description>
-            </image>
-          </paragraphs>
-
-          <paragraphs>
-            <title>JMP</title>
-            <p>In JMP, the normal quantile plot again shows clear departure from linearity, reinforcing that the null distribution is not approximately normal.</p>
-            <image source="images/inv5-1TD4.jpg" width="55%">
-              <description>JMP solution screenshot showing gamma fit workflow</description>
-            </image>
-            <p>Fitting the corresponding gamma distribution produces a much better match, which is consistent with using a chi-squared model for this statistic.</p>
-                        <image source="images/inv5-1TD3.jpg" width="55%">
-              <description>JMP solution screenshot showing normal quantile plot workflow</description>
-            </image>
-
-          </paragraphs>
-      </solution>
-    </exercise>
+        <hint>
+          <title>Example Output</title>
+          <p><alert>Applet and R:</alert></p>
+          <image source="images/inv5-1TD1.jpg" width="35%">
+           <description>Applet output for chi-squared simulation</description>
+          </image>
+          <image source="images/inv5-1TD2.jpg" width="35%">
+            <description>R output for chi-squared simulation</description>
+          </image>
+          <p><alert>JMP:</alert></p>
+          <image source="images/inv5-1TD4.jpg" width="55%">
+            <description>JMP output showing gamma fit workflow</description>
+          </image>
+          <image source="images/inv5-1TD3.jpg" width="55%">
+            <description>JMP output showing normal quantile plot workflow</description>
+          </image>
+        </hint>
   </paragraphs>
 </section>
