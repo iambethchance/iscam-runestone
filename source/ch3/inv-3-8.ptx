@@ -437,8 +437,26 @@
 
   <assemblage>
     <title>Theoretical Result</title>
-    <p>It can be shown that the standard error of the ln relative risk is approximated by:</p>
-    <p><me>SE(\ln(RR)) = \sqrt{\left(\frac{1}{A} - \frac{1}{A+C}\right) + \left(\frac{1}{B} - \frac{1}{B+D}\right)}</me></p>
+    <sidebyside widths="72% 22%" margins="0% 3%" valign="middle">
+      <stack>
+        <p>It can be shown that the standard error of the ln relative risk is approximated by:</p>
+        <p><me>SE(\ln(RR)) = \sqrt{\left(\frac{1}{A} - \frac{1}{A+C}\right) + \left(\frac{1}{B} - \frac{1}{B+D}\right)}</me></p>
+      </stack>
+      <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
+        <row>
+          <cell><m>A</m></cell>
+          <cell><m>B</m></cell>
+        </row>
+        <row>
+          <cell><m>C</m></cell>
+          <cell><m>D</m></cell>
+        </row>
+        <row left="none" bottom="none">
+          <cell right="none"><m>A+C</m></cell>
+          <cell right="none"><m>B+D</m></cell>
+        </row>
+      </tabular>
+    </sidebyside>
     <p>where <m>A</m>, <m>B</m>, <m>C</m>, and <m>D</m> are the observed counts in the 2×2 table of data, with <m>A</m> and <m>B</m> representing the number of "successes" in the two groups. Having this formula allows us to determine the variability from sample to sample without conducting the simulation first.</p>
   </assemblage>
 
