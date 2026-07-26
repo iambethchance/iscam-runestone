@@ -138,7 +138,7 @@
   
   <assemblage xml:id="definition-standard-error">
     <title>Definition: Standard Error of the Sample Mean</title>
-    <p>The <term>standard error of the sample mean</term><idx><h>standard error of the sample mean</h></idx>, denoted by <m>SE(\bar{x})</m>, is an estimate of the standard deviation of <m>\bar{x}</m> (the sample to sample variability in sample means from repeated random samples) calculated by substituting the sample standard deviation <m>s</m> for the population standard deviation <m>\sigma</m>:</p>
+    <p>The <term>standard error of the sample mean</term><idx><h>Standard error</h><h>sample mean</h></idx>, denoted by <m>SE(\bar{x})</m>, is an estimate of the standard deviation of <m>\bar{x}</m> (the sample to sample variability in sample means from repeated random samples) calculated by substituting the sample standard deviation <m>s</m> for the population standard deviation <m>\sigma</m>:</p>
     <p><me>SE(\bar{x}) = \frac{s}{\sqrt{n}}</me></p>
   </assemblage>
   
@@ -468,7 +468,7 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
   <assemblage xml:id="one-sample-t-test">
     <title>One-sample <m>t</m>-test for <m>\mu</m></title>
 
-    <p>To test a null hypothesis about a population mean <m>H_0\!: \mu = \mu_0</m>, when we don't know the population standard deviation (pretty much always), we will use the sample standard deviation to calculate the standard error <m>SE(\bar{x})</m> and compare the standardized statistic</p>
+    <p><idx><h>One sample t-test</h></idx>To test a null hypothesis about a population mean <m>H_0\!: \mu = \mu_0</m>, when we don't know the population standard deviation (pretty much always), we will use the sample standard deviation to calculate the standard error <m>SE(\bar{x})</m> and compare the standardized statistic</p>
 
     <p><me>t = \frac{\bar{x} - \mu_0}{SE(\bar{x})} = \frac{\bar{x} - \mu_0}{s/\sqrt{n}}</me></p>
 
@@ -598,14 +598,14 @@ Use the <url href="https://www.rossmanchance.com/applets/2021/sampling/OneSample
     
     <p><me>\bar{x} \pm t_{n-1}^* \times \frac{s}{\sqrt{n}}</me></p>
     
-    <p>Keep in mind that the critical value <m>t^*</m> tells us how many standard errors we need to extend from the sample mean (in each direction) based on how confident we want to be. Our goal is to develop a <m>100 \times C\%</m> confidence interval method that will capture the population parameter <m>(100 \times C)\%</m> of the time in the long run.</p>
+    <p>Keep in mind that the critical value <m>t^*</m><idx><h>t critical value</h></idx> tells us how many standard errors we need to extend from the sample mean (in each direction) based on how confident we want to be. Our goal is to develop a <m>100 \times C\%</m> confidence interval method that will capture the population parameter <m>(100 \times C)\%</m> of the time in the long run.</p>
   </assemblage>
   
   <paragraphs xml:id="tech-detour-finding-tstar">
     <title>Technology Detour - Finding <m>t^*</m></title>
       <hint>
         <title><url href="https://www.rossmanchance.com/applets/2021/tcalc/tCalc.htm?hideExtras=1" visual="rossmanchance.com/applets/2021/tcalc/tCalc.htm">t Probability Calculator applet</url></title>
-        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/tcalc/tCalc.htm?hideExtras=1" visual="rossmanchance.com/applets/2021/tcalc/tCalc.htm">t Probability Calculator applet</url> to find critical <m>t^*</m> values:</p>
+        <p>Use the <url href="https://www.rossmanchance.com/applets/2021/tcalc/tCalc.htm?hideExtras=1" visual="rossmanchance.com/applets/2021/tcalc/tCalc.htm">t Probability Calculator applet</url><idx><h>Applet</h><h>t probability calculator</h></idx> to find critical <m>t^*</m> values:</p>
         <ul>
           <li><p>Specify the degrees of freedom (df = <m>n - 1</m>)</p></li>
           <li><p>Check the box next to the less than symbol and then enter <m>(1-C)/2</m> (e.g., 0.025 for 95% confidence) in the probability box and press Return. The <m>t</m>-value box should fill in.</p></li>

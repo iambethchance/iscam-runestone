@@ -95,7 +95,7 @@
     <p>One approach is to use a <xref ref="def-mean-group-difference" text="custom">Mean Group Difference</xref>, similar to what we discussed in Section 5.1, and to simulate the re-assigning of the given employment rating scores to the five types of disabilities.</p>
 
     <ul>
-      <li><p>Use the <url href="https://www.rossmanchance.com/applets/2021/anovashuffle/AnovaShuffle.htm">Comparing Groups (Quantitative)</url> applet.</p></li>
+      <li><p>Use the <url href="https://www.rossmanchance.com/applets/2021/anovashuffle/AnovaShuffle.htm">Comparing Groups (Quantitative)</url> applet.<idx><h>Applet</h><h>Comparing groups (quantitative)</h></idx></p></li>
       <li><p>Copy and paste the raw data (<url href="https://www.rossmanchance.com/iscam2/data/DisabilityEmployment.txt">DisabilityEmployment.txt</url>) or type <code>DisabilityEmployment</code> in the data window, being sure to clarify which is the explanatory variable, and press <alert>Use Data</alert>.</p></li>
       <li><p>Check the <alert>Show Shuffle Options</alert> box.</p></li>
       <li><p>Select the <alert>Plot</alert> radio button and press <alert>Shuffle Responses</alert>.</p></li>
@@ -135,6 +135,7 @@
       </solution>
     </exercise>
 
+<paragraphs><title>A New Statistic</title>
     <p>Consider the following sets of boxplots.</p>
 
     <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
@@ -162,7 +163,7 @@
         <p>The means (and sample sizes) are the same but the "within group" variability (spread of the individual distributions) differs. The observations in B are more consistent (smaller sample standard deviations). This should provide stronger evidence that the difference in group means is not just by random chance alone. The Mean Group Diff statistic is the same in both cases because it only examines the differences in means.</p>
       </solution>
     </exercise>
-
+</paragraphs>
 <paragraphs><title>Discussion</title>
     <p> In the above boxplots, the sample mean scores are roughly the same for graphs A and B (6.2, 4.4, 7.1, 3.1, 7.0), but the variability within each group is much larger for the distributions in graph A. This larger amount of “within-sample” variation makes the differences in sample means seem not as extreme compared to graph B. Graph B displays less within-sample variability and so the differences in the sample means appear more extreme and provide more evidence that the crutches scores and the hearing scores did not come from the same population with the same population mean. So rather than reporting only the Mean Group Difference statistic, we will now explore another “standardized” statistic that is more meaningful on its own and, turns out, has more power. Our goal will be for this statistic to reflect not only the differences in the sample means, but to also reflect the “natural variation” in the data themselves.</p>
 </paragraphs>
@@ -400,7 +401,7 @@
       <title>Compute Variability Ratio</title>
       <statement>
         <p>Calculate the ratio of your result from <xref ref="inv5-4-m" text="custom">Question 14</xref> divided by your result from <xref ref="inv5-4-o" text="custom">Question 16</xref>.
-        </p><p><em>F = between-group variability / within-group variability</em></p>
+        </p><p><em>F = between-group variability / within-group variability</em><idx><h>F statistic</h></idx></p>
         <p>How many times larger is the between-group variability compared to the within-group variability?</p>
       </statement>
       <response/>
@@ -509,7 +510,7 @@
       <hint>
         <title>R Instructions</title>
         <p>If you have the data in a response vector and an explanatory vector, you can use <c>summary(aov(response~explanatory))</c></p>
-        <p>This will output the Mean Square values in the Mean Sq column, first for the treatment group (the disability row) and then for the error term (Residuals).</p>
+        <p>This will output the Mean Square values in the Mean Sq column, first for the treatment group (the disability row) and then for the error term (Residuals).<idx><h>Residual</h></idx></p>
       </hint>
 
       <hint>
@@ -579,14 +580,14 @@
        <me>F = MS_{groups}/MSE</me>
        <sidebyside widths="62% 33%" margins="0% 0%" valign="top">
          <stack>
-           <p>When the null hypothesis is true, this test statistic should be close to 1. So larger values of <em>F</em> provide evidence against the null hypothesis. The corresponding p-value comes from a probability distribution called the <em>F</em> distribution<idx><h>F distribution</h><h>reference distribution for ANOVA test statistic</h></idx> with <m>I - 1</m> and <m>n - I</m> degrees of freedom.</p>
+           <p>When the null hypothesis is true, this test statistic should be close to 1. So larger values of <em>F</em> provide evidence against the null hypothesis. The corresponding p-value comes from a probability distribution called the <em>F</em> distribution<idx><h>F distribution</h></idx> with <m>I - 1</m> and <m>n - I</m> degrees of freedom.</p>
          </stack>
          <image source="images/fdist.png" width="100%">
            <description>F distribution reference graphic for Investigation 5.4</description>
          </image>
        </sidebyside>
        <p> We will use this <em>F</em> distribution to approximate both the sampling distribution of this test statistic in repeated samples from the same population (<m>H_0\!: \mu_1 = … = \mu_I</m>) and the randomization distribution for a randomized experiment (<m>H_0\!:</m> no treatment effect) as long as the technical conditions (above) are met.</p>
-       <p>Because we are focusing on the variance of group means, this procedure is termed Analysis of Variance (ANOVA)<idx><h>analysis of variance (ANOVA)</h><h>comparing several group means</h></idx>. With one explanatory variable, this is called <em>one-way ANOVA</em>.</p>
+       <p>Because we are focusing on the variance of group means, this procedure is termed Analysis of Variance (ANOVA)<idx><h>ANOVA</h></idx>. With one explanatory variable, this is called <em>one-way ANOVA</em>.</p>
     </assemblage>
 
     <assemblage xml:id="study-conclusions-5-4">

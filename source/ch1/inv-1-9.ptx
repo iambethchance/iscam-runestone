@@ -120,7 +120,7 @@
     <assemblage xml:id="standard-error-definition">
       <title>Definition</title>
       <p>
-        The <term>standard error of the sample proportion</term><idx><h>standard error of the sample proportion</h></idx>, <m>SE(\hat{p})</m>, is an estimate for the standard deviation of <m>\hat{p}</m> (i.e., <m>SD(\hat{p})</m>) based on the sample data, found by substituting the sample proportion for <m>\pi</m>: 
+        The <term>standard error of the sample proportion</term><idx><h>Standard error</h><h>sample proportion</h></idx>, <m>SE(\hat{p})</m>, is an estimate for the standard deviation of <m>\hat{p}</m> (i.e., <m>SD(\hat{p})</m>) based on the sample data, found by substituting the sample proportion for <m>\pi</m>: 
         <me>SE(\hat{p}) = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</me>
       </p>
     </assemblage>
@@ -226,7 +226,7 @@
       <title>Definition</title>
       <sidebyside widths="65% 30%">
         <p>
-          The <term><m>\boldsymbol{(100 \times C)}</m>% critical value</term><idx><h>critical value</h></idx>, <m>z^*</m>, is the <m>z</m>-score value such that <m>P(-z^* \leq Z \leq z^*) = C</m> where <m>C</m> is any specified probability value, and <m>Z</m> represents a normal distribution with mean 0 and SD 1.
+          The <term><m>\boldsymbol{(100 \times C)}</m>% critical value</term><idx><h>Critical value</h></idx>, <m>z^*</m>, is the <m>z</m>-score value such that <m>P(-z^* \leq Z \leq z^*) = C</m> where <m>C</m> is any specified probability value, and <m>Z</m> represents a normal distribution with mean 0 and SD 1.
         </p>
         <image source="images/Inv1.9cv.png" width="100%">
           <description>Critical value illustration showing shaded middle area under normal curve</description>
@@ -238,7 +238,7 @@
     </assemblage>
 
 <paragraphs> <p>
-      Use technology to more precisely determine the number of standard deviations that capture the middle 95% of the normal distribution with mean = 0 and standard deviation = 1. [<em>Hint:</em> In other words, how many standard deviations do you need to go on each side of zero to capture the middle 95% of the standard normal distribution?] Keep in mind that the <m>z</m>-value corresponding to probability <m>C</m> in the middle of the distribution, also corresponds to having probability <m>(1-C)/2</m> in each tail.
+      Use technology to more precisely determine the number of standard deviations that capture the middle 95% of the normal distribution with mean = 0 and standard deviation = 1. [<em>Hint:</em> In other words, how many standard deviations do you need to go on each side of zero to capture the middle 95% of the standard normal distribution?] Keep in mind that the <m>z</m>-value corresponding to probability <m>C</m> in the middle of the distribution, also corresponds to having probability <m>(1-C)/2</m> in each tail.<idx><h>Percentiles</h></idx><idx><h>Standard normal distribution</h></idx>
     </p>
     </paragraphs>
   <paragraphs xml:id="tech-detour-critical-values">
@@ -249,7 +249,7 @@
       <hint>
         <title>Normal Probability Calculator</title>
         <p>
-          In <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="new">Normal Probability Calculator</url> applet:
+          In <url href="https://www.rossmanchance.com/applets/2021/normcalc/NormCalc.html" visual="new">Normal Probability Calculator</url> applet:<idx><h>Applet</h><h>Normal probability calculator</h></idx>
         </p>
         <ul>
           <li><p>You can leave the mean set to zero and the standard deviation to 1 and the variable is "<em>z</em>-scores."</p></li>
@@ -374,7 +374,7 @@ iscaminvnorm(prob1 = 0.95, direction = 'between')
     </exercise>
 
 <paragraphs><p>
-Putting these together, we have a <alert>one-sample z-interval</alert> (aka Wald interval) for a process probability:</p>
+Putting these together, we have a <alert>one-sample z-interval</alert> (aka Wald interval)<idx><h>One sample z-interval</h></idx><idx><h>Wald interval</h></idx> for a process probability:</p>
 </paragraphs>
     <assemblage xml:id="one-sample-z-interval">
       <title>One Sample <m>z</m>-Confidence Interval (Wald Interval) for <m>\pi</m></title>
@@ -485,7 +485,7 @@ Putting these together, we have a <alert>one-sample z-interval</alert> (aka Wald
     <assemblage xml:id="margin-of-error-definition">
       <title>Definition</title>
       <p>
-        The half-width of a confidence interval is also referred to as the <term>margin of error</term><idx><h>margin of error</h></idx>.
+        The half-width of a confidence interval is also referred to as the <term>margin of error</term><idx><h>Margin-of-error</h></idx>.
       </p>
       <p>
         So the above interval formula is of the common form: statistic <m>\pm</m> margin of error, where margin of error = critical value <m>\times</m> standard error of statistic. Here, margin of error = <m>z^* \sqrt{\hat{p}(1-\hat{p})/n}</m>.
@@ -518,7 +518,7 @@ Putting these together, we have a <alert>one-sample z-interval</alert> (aka Wald
       <hint>
         <title>R/Sage Instructions</title>
         <p>
- The <c>iscamonepropztest</c> function takes the following inputs:
+ The <c>iscamonepropztest</c> function<idx><h>One proportion z-intervals</h></idx> takes the following inputs:
         </p>
         <ul>
           <li><p><c>observed</c> = number of successes or the sample proportion (<m>\hat{p}</m>)</p></li>

@@ -49,7 +49,7 @@
 
       <assemblage>
         <title>Definition: Residual</title>
-        <p>A <term>residual</term><idx><h>residual</h><h>difference between observed and predicted value</h></idx> is the difference between the predicted value and the observed value. If we let <m>y_i</m> represent the <m>i</m>th observed value and <m>\hat{y}_i</m> represent the predicted or <q>fitted</q> value, then</p>
+        <p>A <term>residual</term><idx><h>Residual</h></idx> is the difference between the predicted value and the observed value. If we let <m>y_i</m> represent the <m>i</m>th observed value and <m>\hat{y}_i</m> represent the predicted or <q>fitted</q> value, then</p>
         <p><me>\text{residual}_i = y_i - \hat{y}_i</me></p>
       </assemblage>
 
@@ -199,7 +199,7 @@
         <solution><p>There is a fairly strong (<m>r = 0.711</m>), positive, linear association between <em>height</em> and <em>footlength</em>. As expected, people with larger (above average) feet tend to also be taller (above average height).</p></solution>
       </exercise>
 
-      <p>Use the Analyzing Two Quantitative Variables applet (below) to see the scatterplot of the 20 students' height and foot measurements. Check the <alert>Show Movable Line</alert> box to add a blue line to the scatterplot. The equation for this initial line, <m>\hat{height} = 67.75 + 0 \cdot footlength</m>, predicts the same height for all 20 students as you did in <xref ref="inv5-8-d" text="custom">Question 4</xref>. (Note: the <q>hat</q> over height indicates that the equation gives values for predicted height.)</p>
+      <p>Use the Analyzing Two Quantitative Variables applet<idx><h>Applet</h><h>Analyzing two quantitative variables</h></idx> (below) to see the scatterplot of the 20 students' height and foot measurements. Check the <alert>Show Movable Line</alert> box to add a blue line to the scatterplot. The equation for this initial line, <m>\hat{height} = 67.75 + 0 \cdot footlength</m>, predicts the same height for all 20 students as you did in <xref ref="inv5-8-d" text="custom">Question 4</xref>. (Note: the <q>hat</q> over height indicates that the equation gives values for predicted height.)</p>
 
       <interactive iframe="https://www.rossmanchance.com/applets/RegShuffle.htm?hideExtras=1" width="100%" aspect="3:2"/>
 
@@ -235,7 +235,7 @@
         <solution><p>Suggestions will vary.</p></solution>
       </exercise>
 
-      <ul><li><p>Check the <alert>Show Residuals</alert> box to visually represent these residuals for your line on the scatterplot. The applet also reports the sum of the absolute residuals (or SAE, the sum of absolute errors).</p></li></ul>
+      <ul><li><p>Check the <alert>Show Residuals</alert> box to visually represent these residuals for your line on the scatterplot. The applet also reports the sum of the absolute residuals (or SAE, the sum of absolute errors).<idx><h>Sum of absolute errors (SAE)</h></idx></p></li></ul>
       <exercise xml:id="inv5-8-o">
         <title>Absolute Error Criterion</title>
         <statement>
@@ -244,7 +244,7 @@
         <response/>
         <solution><p>The best (smallest) SAE will vary.</p></solution>
       </exercise>
-<paragraphs><p>A more common criterion for determining the <q>best</q> line is to instead look at the sum of the squared residuals (or sum of squared errors, SSError). </p></paragraphs>
+<paragraphs><p>A more common criterion for determining the <q>best</q> line is to instead look at the sum of the squared residuals (or sum of squared errors, SSError).<idx><h>Squared residuals</h></idx><idx><h>Sum of squared residuals</h></idx> </p></paragraphs>
       <ul><li><p>Check the <alert>Show Squared Residuals</alert> box to visually represent them and to determine the SSError value for your line.</p></li></ul>
       <exercise xml:id="inv5-8-p">
         <title>Squared Error Criterion</title>
@@ -281,7 +281,7 @@
 
       <assemblage>
         <title>Definition: Least Squares Line</title>
-        <p>The line that minimizes the sum of squared residuals is called the <term>least squares line</term><idx><h>least squares line</h><h>line minimizing sum of squared residuals</h></idx><idx><h>regression line</h></idx>, or simply the <term>regression line</term><idx><h>regression line</h></idx>, or even the <term>least squares regression line</term><idx><h>least squares regression line</h></idx>.</p>
+        <p>The line that minimizes the sum of squared residuals is called the <term>least squares line</term><idx><h>Least squares line</h></idx><idx><h>Regression line</h></idx>, or simply the <term>regression line</term><idx><h>Regression line</h></idx>, or even the <term>least squares regression line</term><idx><h>Least squares regression line</h></idx>.</p>
       </assemblage>
 
       <exercise xml:id="inv5-8-s">
@@ -329,7 +329,7 @@
 
       <p>You should have found expressions equivalent to the following:</p>
       <p><me>b_0 = \frac{\sum_{i=1}^{n} y_i - b_1 \sum_{i=1}^{n} x_i}{n} \qquad \text{and} \qquad b_1 = \frac{n\sum_{i=1}^{n} x_i y_i - \sum_{i=1}^{n} x_i \sum_{i=1}^{n} y_i}{n\sum_{i=1}^{n} x_i^2 - \left(\sum_{i=1}^{n} x_i\right)^2}</me></p>
-      <p>With a little bit more algebra, you can show that the formulas for the least squares estimates of the intercept coefficient <m>b_0</m> and slope coefficient <m>b_1</m> simplify to:</p>
+      <p>With a little bit more algebra, you can show that the formulas for the least squares estimates of the intercept coefficient<idx><h>Intercept coefficient</h></idx> <m>b_0</m> and slope coefficient<idx><h>Slope coefficient</h></idx> <m>b_1</m> simplify to:</p>
       <p><me>b_0 = \bar{y} - b_1 \bar{x} \qquad\qquad b_1 = r\,\frac{s_y}{s_x}</me></p>
 
       <exercise xml:id="inv5-8-v">
@@ -396,7 +396,7 @@
 
       <assemblage>
         <title>Definition: Extrapolation</title>
-        <p><term>Extrapolation</term><idx><h>extrapolation</h><h>predicting outside the range of the data</h></idx> refers to making predictions outside the range of the explanatory variable values in the data set used to determine the regression line. It is generally ill-advised.</p>
+        <p><term>Extrapolation</term><idx><h>Extrapolation</h></idx> refers to making predictions outside the range of the explanatory variable values in the data set used to determine the regression line. It is generally ill-advised.</p>
       </assemblage>
     </paragraphs>
 
@@ -427,7 +427,7 @@
 
       <assemblage>
         <title>Definition: Coefficient of Determination</title>
-        <p>The preceding expression indicates the reduction in the prediction errors from using the least squares line instead of the <m>\bar{y}</m> line. This is referred to as the <term>coefficient of determination</term><idx><h>coefficient of determination (r-squared)</h><h>percentage of variability explained by the regression</h></idx>, interpreted as the percentage of the variability in the response variable that is explained by the least-squares regression line with the explanatory variable. This provides us with a measure of how accurate our predictions will be and is most useful for comparing different models (e.g., different choices of explanatory variable). The coefficient of determination is equal to the square of the correlation coefficient and so is denoted by <m>r^2</m> or <m>R^2</m> (and is often pronounced <q>r-squared</q>).</p>
+        <p>The preceding expression indicates the reduction in the prediction errors from using the least squares line instead of the <m>\bar{y}</m> line. This is referred to as the <term>coefficient of determination</term><idx><h>Coefficient of determination</h></idx>, interpreted as the percentage of the variability in the response variable that is explained by the least-squares regression line with the explanatory variable. This provides us with a measure of how accurate our predictions will be and is most useful for comparing different models (e.g., different choices of explanatory variable). The coefficient of determination is equal to the square of the correlation coefficient and so is denoted by <m>r^2</m> or <m>R^2</m> (and is often pronounced <q>r-squared</q>).</p>
       </assemblage>
 
       <p>Another measure of the quality of the fit is <m>s</m>, the standard deviation of the residuals. This is a measure of the unexplained variability about the regression line and gives us an idea of how accurate our predictions should be (the actual response should be within <m>2s</m> of the predicted response). If <m>s</m> is much smaller than the variability in the response variable (<m>s_y</m>) then we have explained a good amount of variability in <m>y</m>. Most statistical packages report <m>s</m>, or it can be found from <m>\sqrt{SSError/(n-2)}</m>.</p>

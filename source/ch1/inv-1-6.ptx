@@ -1,7 +1,7 @@
 <section xml:id="investigation-1-6">
 <title>Investigation 1.6: Kissing the Right Way</title>
 <introduction>
-<p><em>In the previous investigation, you learned how to decide whether a hypothesized value of the parameter is plausible based on a two-sided p-value. The two-sided p-value is used when you do not have a prior suspicion or interest in whether the hypothesized value is too large or too small. In fact, in many studies we may not even really have a hypothesized value, but are more interested in using the sample data to estimate the value of the parameter. What are all the plausible values for the parameter?</em></p>
+<p><em>In the previous investigation, you learned how to decide whether a hypothesized value<idx><h>Hypothesized value</h></idx> of the parameter is plausible based on a two-sided p-value. The two-sided p-value is used when you do not have a prior suspicion or interest in whether the hypothesized value is too large or too small. In fact, in many studies we may not even really have a hypothesized value, but are more interested in using the sample data to estimate the value of the parameter. What are all the plausible values for the parameter?</em></p>
 </introduction>
 <exercises xml:id="investigation1-6" hidden-label="yes">
   <title>The Study</title>
@@ -207,7 +207,7 @@
   
   <assemblage xml:id="def-confidence-interval">
     <title>Definition: Confidence Interval</title>
-    <p>A <term>confidence interval (CI)</term><idx><h>confidence interval (CI)</h></idx> specifies the plausible values of the parameter based on the sample result.</p>
+    <p>A <term>confidence interval (CI)</term><idx><h>Confidence interval</h></idx> specifies the plausible values of the parameter based on the sample result.</p>
   </assemblage>
   
   <p>What you found in the previous exercise will be called a "95% confidence interval" as it was derived using the <m>1 - 0.95 = 0.05</m> cut-off value/significance level.</p>
@@ -380,7 +380,7 @@
     
     <p>Another approach would be to use the "smallest p-value" approach for the two-sided p-value, switching to using P(X = x) to find values of x more extreme than observed in finding the two-sided p-value. This method, attributed to <term>Sterne</term><idx><h>Sterne</h></idx> (<em>Biometrika</em>, 1954), has the disadvantage that the interval produced can have holes! For example, a value like 0.12 may be in the interval of plausible values, the value 0.13 may not, and the value 0.14 may be again.</p>
     
-    <p>Many prefer the Blaker method to the holes of the Sterne method, and Blaker's method is now gaining favor over Clopper-Pearson because the intervals tend to be shorter. We will see some other methods later in this text as well. For now, keep in mind the likely duality between confidence intervals and tests of significance: The confidence interval is the set of values for which we would fail to reject the null hypothesis in favor of the two-sided alternative. So we can interpret the confidence interval as the set of plausible values for the parameter in that they are the values such that our observed sample result would not be surprising. Keep in mind that saying a value is <em>plausible</em> is not the same as saying a value is <em>probable</em>. We won't make probability statements about parameter values in this text.</p>
+    <p>Many prefer the Blaker method to the holes of the Sterne method, and Blaker's method is now gaining favor over Clopper-Pearson because the intervals tend to be shorter. We will see some other methods later in this text as well. For now, keep in mind the likely duality<idx><h>Duality</h></idx> between confidence intervals and tests of significance: The confidence interval is the set of values for which we would fail to reject the null hypothesis in favor of the two-sided alternative. So we can interpret the confidence interval as the set of plausible values for the parameter in that they are the values such that our observed sample result would not be surprising. Keep in mind that saying a value is <em>plausible</em> is not the same as saying a value is <em>probable</em>. We won't make probability statements about parameter values in this text.</p>
   </assemblage>
   
   <exercise xml:id="I1-6-11" label="I1-6-11">
@@ -400,7 +400,7 @@
 <paragraphs xml:id="tech-detour-exact-ci">
   <title>Technology Detour – Exact Confidence Intervals</title>
   
-  <p>Different software packages use different confidence interval methods, but you shouldn't see much distinction when the sample size is large.</p>
+  <p><idx><h>Exact confidence intervals</h></idx>Different software packages use different confidence interval methods, but you shouldn't see much distinction when the sample size is large.</p>
   
       <hint>
       <title>R Instructions (Clopper-Pearson)</title>

@@ -67,7 +67,7 @@
       <exercise xml:id="inv5-1-a">
         <title>Compare Sample Proportions</title>
         <statement>
-          <p>Calculate the proportion of women on the jury list for each judge. Also create a <term>segmented bar graph</term><idx><h>segmented bar graph</h></idx> or <term>mosaic plot</term><idx><h>mosaic plot</h></idx> to compare these distributions. How do the judges compare?</p>
+          <p>Calculate the proportion of women on the jury list for each judge. Also create a <term>segmented bar graph</term><idx><h>Segmented bar graphs</h></idx> or <term>mosaic plot</term><idx><h>mosaic plot</h></idx> to compare these distributions. How do the judges compare?</p>
   <!--        <aside>
             <title>Analyzing Two-way Tables Applet</title>
             <p>Option: Enter the two-way table of counts into the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm">Analyzing Two-way Tables applet</url> data window and press <strong>Use Table</strong>.</p>
@@ -144,7 +144,7 @@
         </solution>
       </exercise>
         
-      <p>Although we could consider using the Mean Group Difference statistic here, a more common choice of statistic is the <term>chi-squared statistic</term><idx><h>chi-squared statistic</h></idx>. Rather than looking at all the differences among the groups, it focuses on how each cell count differs from the <q>expected value</q> for that cell under the null hypothesis, and sums this up across all the cells. This statistic generally has more power than the Mean Group Difference statistic and a nice predictable theoretical distribution.</p>
+      <p>Although we could consider using the Mean Group Difference statistic here, a more common choice of statistic is the <term>chi-squared statistic</term><idx><h>Chi-squared test statistic</h></idx>. Rather than looking at all the differences among the groups, it focuses on how each cell count differs from the <q>expected value</q> for that cell under the null hypothesis, and sums this up across all the cells. This statistic generally has more power than the Mean Group Difference statistic and a nice predictable theoretical distribution.</p>
 
       <exercise xml:id="inv5-1-f">
         <title>Estimate Common Probability</title>
@@ -367,7 +367,7 @@
 
       <assemblage>
         <title>Chi-squared Test Statistic</title>
-        <p>The <term>Chi-squared test statistic</term><idx><h>chi-squared test statistic</h></idx> is used to compare the observed and expected counts in a two-way table:</p>
+        <p>The <term>Chi-squared test statistic</term><idx><h>Chi-squared test statistic</h></idx> is used to compare the observed and expected counts in a two-way table:</p>
         <p><me>\chi^2 = \sum_{i=1}^{r} \sum_{j=1}^{c} \frac{(observed_{ij} - expected_{ij})^2}{expected_{ij}}</me></p>
         <p>where <m>r</m> = number of rows and <m>c</m> = number of columns. This standardized statistic looks at the discrepancy between the observed and expected counts for each cell, squares the difference to ensure a positive contribution, <q>standardizes</q> by dividing by the expected count, and then sums across all cells.</p>
       </assemblage>
@@ -572,7 +572,7 @@
         </solution>
       </exercise>
 
-      <assemblage><p>The <term>Chi-squared distribution</term><idx><h>chi-squared distribution</h></idx> is skewed to the right and provides a reasonable model to the above test statistic for large sample sizes. We will consider the chi-squared distribution model appropriate if all of the expected counts are at least 1 and if at least 80% of the expected counts are at least 5.</p>
+      <assemblage><p>The <term>Chi-squared distribution</term><idx><h>Chi-squared distribution</h></idx> is skewed to the right and provides a reasonable model to the above test statistic for large sample sizes. We will consider the chi-squared distribution model appropriate if all of the expected counts are at least 1 and if at least 80% of the expected counts are at least 5.</p>
 
       <p>When comparing several population proportions, the chi-squared <term>degrees of freedom</term><idx><h>degrees of freedom</h></idx> are equal to the number of explanatory variable categories minus 1, <m>c - 1</m>. This makes sense because once we specify the number of observations in <m>c - 1</m> of the categories, the last category is forced to assume the value that allows the observed counts to sum to the sample size.</p>
       </assemblage>
@@ -583,7 +583,7 @@
 
             <hint>
               <title>Applet Instructions</title>
-              <p>In <url href="https://www.rossmanchance.com/applets/2021/tcalc/chiCalc.htm"><m>\chi^2</m> Probability Calculator</url> applet: Specify the degrees of freedom, the observed value, and the direction of interest for the value.</p>
+              <p>In <url href="https://www.rossmanchance.com/applets/2021/tcalc/chiCalc.htm"><m>\chi^2</m> Probability Calculator</url> applet:<idx><h>Applet</h><h>X2 probability calculator</h></idx> Specify the degrees of freedom, the observed value, and the direction of interest for the value.</p>
               <interactive iframe="https://www.rossmanchance.com/applets/2021/tcalc/chiCalc.htm?hideExtras=1" width="100%" aspect="3:2"/>
             </hint>
 

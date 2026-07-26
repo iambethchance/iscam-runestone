@@ -66,7 +66,7 @@
 
   <paragraphs>
     <title>Descriptive Statistics</title>
-           <p>When we have two samples for a binary categorical variable, it is often useful to organize the data using a <alert>two-way table</alert>.</p> 
+           <p>When we have two samples for a binary categorical variable, it is often useful to organize the data using a <alert>two-way table</alert><idx><h>Two-way table</h></idx>.</p> 
     <exercise xml:id="inv3-1-c">
       <title>Two-Way Table</title>
       <statement>
@@ -210,7 +210,7 @@
 
     <assemblage>
       <title>Definition: Conditional Proportions</title>
-      <p>The simplest statistic for comparing a binary variable between two groups is the difference in the proportion of "successes" for each group. These proportions, calculated separately for each group rather than looking at the overall proportion, are called <term>conditional proportions</term><idx><h>conditional proportions</h></idx>.</p>
+      <p>The simplest statistic for comparing a binary variable between two groups is the difference in the proportion of "successes" for each group. These proportions, calculated separately for each group rather than looking at the overall proportion, are called <term>conditional proportions</term><idx><h>Conditional proportions</h></idx>.</p>
     </assemblage>
 
     <p>In this case, we compute the difference in the <em>proportion</em> of teens with some level of hearing loss between the two years <m>(\hat{p}_{94} - \hat{p}_{06} = 480/2928 - 333/1771)</m>.</p>
@@ -222,7 +222,7 @@
       
       <hint>
         <title>R Instructions</title>
-        <p>Create (and view) a matrix in R to store the counts from the two-way table:</p>
+        <p><idx><h>Segmented bar graphs</h></idx>Create (and view) a matrix in R to store the counts from the two-way table:</p>
         <sage language="r">
           <input>
 <![CDATA[
@@ -437,7 +437,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
 
     <p>We will begin our simulation analysis by assuming the (common) population proportion is actually 
     this value (<m>\pi = 0.173</m>). We simulate the drawing of two different random samples from this population, one to represent the 1994 study and the other for the 2006 study. Then we examine the distribution of the difference in the conditional proportions with some hearing loss between these two years. Finally, we repeat this random sampling process for many trials. [Note: We can assume <m>\pi = 0.173</m> without loss of generality, but you might want to verify this with other values for <m>\pi</m> as well.]</p>
-     <p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url> to randomly sample one "could have been" difference in conditional proportions <em>assuming the null hypothesis is true</em>.</p>
+     <p>Use the <url href="https://www.rossmanchance.com/applets/2021/twopopprop/twopopprop.html">Comparing Two Population Proportions applet</url><idx><h>Applet</h><h>Two population proportions</h></idx> to randomly sample one "could have been" difference in conditional proportions <em>assuming the null hypothesis is true</em>.</p>
         <ul>
           <li><p>Specify .173 as the process probability for both populations.</p></li>
           <li><p>Specify 2928 and 1771 as the two sample sizes.</p></li>
@@ -629,7 +629,7 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
 
     <assemblage>
       <title>Central Limit Theorem for the difference in two sample proportions</title>
-      <p>When taking two independent samples (of sizes <m>n_1</m> and <m>n_2</m>) from large populations, the distribution of the difference in the sample proportions <m>(\hat{p}_1 - \hat{p}_2)</m> is approximately normal with mean equal to <m>\pi_1 - \pi_2</m> and standard deviation equal to <m>SD(\hat{p}_1 - \hat{p}_2) = \sqrt{\frac{\pi_1(1-\pi_1)}{n_1} + \frac{\pi_2(1-\pi_2)}{n_2}}</m>.</p>
+      <p><idx><h>Central Limit Theorem</h><h>difference in proportions</h></idx>When taking two independent samples (of sizes <m>n_1</m> and <m>n_2</m>) from large populations, the distribution of the difference in the sample proportions <m>(\hat{p}_1 - \hat{p}_2)</m> is approximately normal with mean equal to <m>\pi_1 - \pi_2</m> and standard deviation equal to <m>SD(\hat{p}_1 - \hat{p}_2) = \sqrt{\frac{\pi_1(1-\pi_1)}{n_1} + \frac{\pi_2(1-\pi_2)}{n_2}}</m>.</p>
       <p>Under the null hypothesis <m>H_0\!: \pi_1 - \pi_2 = 0</m>, the standard deviation simplifies to <m>\sqrt{\pi(1-\pi)(\frac{1}{n_1} + \frac{1}{n_2})}</m> where <m>\pi</m> is the common population proportion.</p>
       <p><term>Technical Conditions:</term> We will consider the normal model appropriate if the sample sizes are large, namely <m>n_1\pi_1 > 5</m>, <m>n_1(1 - \pi_1) > 5</m>, <m>n_2\pi_2 > 5</m>, <m>n_2(1 - \pi_2) > 5</m>, and the populations are large compared to the sample sizes.</p>
       <p>Note: The variability in the differences in sample proportions is larger than the variability of individual sample proportions. In fact, the <em>variances</em> (standard deviation squared) add, and then we take the square root of the sum of variances to find the standard deviation.</p>
@@ -642,10 +642,10 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
     <p>When testing whether the null hypothesis is true, we are assuming the samples come from the same population, so we "pool" the two samples together to estimate the common population proportion of successes. That is, we estimate <m>\pi</m> by looking at the ratio of the total number of successes to the total sample size:</p>
     <p><m>\hat{p} = \frac{X_1+X_2}{n_1+n_2} = \frac{n_1\hat{p}_1+n_2\hat{p}_2}{n_1+n_2} = \frac{\text{total number of successes}}{\text{total sample size}}</m></p>
 
-    <p>Then use we use this value to calculate the standard error of <m>\hat{p}_1 - \hat{p}_2</m> to be:</p>
+    <p>Then use we use this value to calculate the standard error of <m>\hat{p}_1 - \hat{p}_2</m><idx><h>Standard error</h><h>difference in proportions</h></idx> to be:</p>
     <p><m>SE(\hat{p}_1 - \hat{p}_2) = \sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_1} + \frac{1}{n_2})}</m></p>
 
-<p>Use these theoretical results to suggest the general <em>formula</em> for a standardized statistic and a method for calculating a p-value to test <m>H_0\!: \pi_1 - \pi_2 = 0</m> (also expressed as <m>H_0\!: \pi_1 = \pi_2</m>) versus the alternative <m>H_a\!: \pi_1 - \pi_2 &lt; 0</m> (or <m>H_a\!: \pi_1 &lt; \pi_2</m>). (This is referred to as the <term>two-sample z-test</term><idx><h>two-sample z-test</h></idx> or <term>two proportion z-test</term><idx><h>two proportion z-test</h></idx>.)</p>
+<p>Use these theoretical results to suggest the general <em>formula</em> for a standardized statistic and a method for calculating a p-value to test <m>H_0\!: \pi_1 - \pi_2 = 0</m> (also expressed as <m>H_0\!: \pi_1 = \pi_2</m>) versus the alternative <m>H_a\!: \pi_1 - \pi_2 &lt; 0</m> (or <m>H_a\!: \pi_1 &lt; \pi_2</m>). (This is referred to as the <term>two-sample z-test</term><idx><h>Two-sample z-test</h></idx> or <term>two proportion z-test</term><idx><h>two proportion z-test</h></idx>.)</p>
 
     <exercise xml:id="inv3-1-u">
       <title>Standardized Statistic Formula</title>
@@ -812,14 +812,14 @@ barplot(hearingprop, legend=TRUE, ylab="proportion")
       <response/>
     </exercise>
 
-    <insight><p>It is technically incorrect to say there has been a 0.15% to 4.67% increase in hearing loss from 1994 to 2006, because "percentage change" implies a multiplication of values, not an addition or subtraction as we are considering here. It would be acceptable to say that the increase is between 0.15 and 4.67 <em>percentage points</em>.</p></insight>
+    <insight><p>It is technically incorrect to say there has been a 0.15% to 4.67% increase in hearing loss from 1994 to 2006, because "percentage change"<idx><h>Percentage change</h></idx> implies a multiplication of values, not an addition or subtraction as we are considering here. It would be acceptable to say that the increase is between 0.15 and 4.67 <em>percentage points</em>.</p></insight>
 
     <assemblage>
       <title>Technical Conditions</title>
       <p>The above Central Limit Theorem holds when the populations are much larger than the samples (e.g., more than 20 times the sample size) and when the sample size is large. We will consider the latter condition met when we have at least 5 successes and at least 5 failures in each sample (so there are four numbers to check).</p>
     </assemblage>
 
-    <p><alert>Note:</alert> A "Wilson adjustment" can be used with this confidence interval similar to the Plus Four Method from Chapter 1, this time putting one additional success and one additional failure in each sample. This adjustment will be most useful when the sample proportions are close to 0 or 1 (that is when the sample size conditions above are not met).</p>
+    <p><alert>Note:</alert> A "Wilson adjustment"<idx><h>Wilson adjustment</h></idx> can be used with this confidence interval similar to the Plus Four Method from Chapter 1, this time putting one additional success and one additional failure in each sample. This adjustment will be most useful when the sample proportions are close to 0 or 1 (that is when the sample size conditions above are not met).</p>
 
     <exercise xml:id="inv3-1-aa">
       <title>Conclusion</title>
