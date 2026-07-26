@@ -70,10 +70,10 @@
         <title>Compare Sample Proportions</title>
         <statement>
           <p>Calculate the proportion of women on the jury list for each judge. Also create a <url href="http://www.rossmanchance.com/iscam3/glossary.html#segmented">segmented bar graph</url> or mosaic plot to compare these distributions. How do the judges compare?</p>
-          <aside>
+  <!--        <aside>
             <title>Analyzing Two-way Tables Applet</title>
             <p>Option: Enter the two-way table of counts into the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm">Analyzing Two-way Tables applet</url> data window and press <strong>Use Table</strong>.</p>
-          </aside>
+          </aside>-->
         </statement>
         <response/>
         <solution>
@@ -572,18 +572,7 @@
             <hint>
               <title>Applet Instructions</title>
               <p>In <url href="https://www.rossmanchance.com/applets/2021/test/chiCalc.htm"><m>\chi^2</m> Probability Calculator</url> applet: Specify the degrees of freedom, the observed value, and the direction of interest for the value.</p>
-            </hint>
-
-            <hint>
-              <title>Applet Output</title>
-              <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
-                <image source="images/inv-5-1s1-v2.png" width="100%">
-                  <description>Applet histogram of sampled chi-squared values with chi-squared distribution overlaid</description>
-                </image>
-                <image source="images/inv-5-1s2-v2.png" width="100%">
-                  <description>Applet Count Samples output showing the theory-based p-value</description>
-                </image>
-              </sidebyside>
+              <interactive iframe="https://www.rossmanchance.com/applets/2021/test/chiCalc.htm" width="100%" aspect="3:2"/>
             </hint>
 
             <hint>
@@ -593,6 +582,16 @@
                 <li><p><c>xval</c> = the observed value of the standardized statistic</p></li>
                 <li><p><c>df</c> = degrees of freedom for the chi-squared distribution</p></li>
               </ul>
+              <sage language="r">
+                <input>
+# Load the ISCAM functions
+load(url("https://www.rossmanchance.com/iscam4/ISCAM.RData"))
+
+# Chi-squared probability: observed value, degrees of freedom
+iscamchisqprob(62.68, 6)
+invisible()
+                </input>
+              </sage>
             </hint>
 
             <hint>
@@ -701,15 +700,15 @@
     <title>Technology Detour <mdash/> Simulating Randomization Test for Two-Way Tables</title>
 
         <hint>
-          <title>Applet Instructions</title>
-          <p>Use the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqSample.htm">Analyzing Two-way Tables - Sampling</url> applet.</p>
-        </hint>
-
-        <hint>
           <title>Applet Output</title>
-          <image source="images/inv5-1TD1.jpg" width="55%">
-           <description>Applet output for chi-squared simulation</description>
-          </image>
+          <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
+            <image source="images/inv-5-1s1-v2.png" width="100%">
+              <description>Applet distribution of 10000 sampled chi-squared statistics with mean 6.064 and SD 3.466</description>
+            </image>
+            <image source="images/inv-5-1s2-v2.png" width="100%">
+              <description>Applet Count Samples output showing the theory-based p-value</description>
+            </image>
+          </sidebyside>
         </hint>
 
         <hint>
@@ -722,13 +721,6 @@
         </hint>
 
         <hint>
-          <title>R Output</title>
-          <image source="images/inv5-1TD2.jpg" width="55%">
-            <description>R output for chi-squared simulation</description>
-          </image>
-        </hint>
-
-        <hint>
           <title>JMP Instructions</title>
           <p>Open the <url href="http://www.rossmanchance.com/iscam3/data/Spock.jmp">Spock.jmp</url> file. Open the <alert>RandomBinomials</alert> hot spot and select <alert>Run Script</alert> to generate 100 chi-squared values.</p>
           <ul>
@@ -737,16 +729,5 @@
           </ul>
         </hint>
 
-        <hint>
-          <title>JMP Output</title>
-          <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
-            <image source="images/inv5-1TD4.jpg" width="100%">
-              <description>JMP output showing gamma fit workflow</description>
-            </image>
-            <image source="images/inv5-1TD3.jpg" width="100%">
-              <description>JMP output showing normal quantile plot workflow</description>
-            </image>
-          </sidebyside>
-        </hint>
   </paragraphs>
 </section>
