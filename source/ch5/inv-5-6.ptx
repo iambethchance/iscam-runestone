@@ -79,7 +79,27 @@
           <description><p>R histogram of takeoff velocity with bins from 280 to 420 cm/sec; tallest bar between 300 and 320, roughly mound-shaped with single observations in the 280, 380, and 400 bins.</p></description>
         </image>
         <p>The distribution is pretty symmetric or slightly skewed to the right (though depending on bin choices might see a visual outlier in the 420 bin). Most cats had a velocity around 320-380 cm/sec but one was as small as 286.30 cm/sec and the high outlier was at 410.80 cm/sec.</p><p>Note: 300 cm/sec corresponds to about 6.7 miles per hour.</p></solution></exercise>
-      <exercise xml:id="inv5-6-c" label="I5-6-c"><title>Single-Value Prediction</title><statement><p>Based on your analysis in <xref ref="inv5-6-b" text="custom">Question 2</xref>, if you were going to randomly select a domestic cat, what is your best prediction of its takeoff velocity?</p></statement><response/><solution><p>Might pick the mean of 343.28 cm/sec.</p></solution></exercise>
+      <exercise xml:id="inv5-6-c" label="I5-6-c"><title>Single-Value Prediction</title>
+        <statement>
+          <p>Based on your analysis in <xref ref="inv5-6-b" text="custom">Question 2</xref>, if you were going to randomly select a domestic cat, what is your best prediction of its takeoff velocity?</p>
+          <p>Prediction: <var width="10"/> cm/sec</p>
+        </statement>
+        <setup>
+          <var>
+            <condition number="343.28" tolerance="0.5">
+              <feedback><p>Correct! The sample mean of 343.28 cm/sec is a natural single-value prediction.</p></feedback>
+            </condition>
+            <condition number="339.55" tolerance="0.5">
+              <feedback><p>Correct! The sample median of 339.55 cm/sec is also a reasonable single-value prediction.</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>Consider using a measure of center from your summaries, such as the mean (343.28 cm/sec).</p></feedback>
+            </condition>
+          </var>
+        </setup>
+        <response/>
+        <solution><p>Might pick the mean of 343.28 cm/sec.</p></solution>
+      </exercise>
       <exercise xml:id="inv5-6-d" label="I5-6-d"><title>Body Mass Conjecture</title><statement><p>Do you think there will be a relationship between a cat’s takeoff velocity and its body mass? If so, do you think heavier cats will tend to have larger or smaller takeoff velocities than lighter cats?</p></statement><response/><solution><p>Heavier cats might tend to have lower velocities.</p></solution></exercise>
 
       <p> We will need a new graphical summary to visually explore the relationship between two quantitative variables, the <term>scatterplot</term><idx><h>scatterplot</h></idx>. </p>
