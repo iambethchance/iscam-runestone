@@ -188,7 +188,7 @@ attach(births)    # Now R knows what the "birthweight" variable is
     </solution>
   </exercise>
   
-  <p>  A <term>dotplot</term> shows each numerical value individually (and is best with smaller datasets). Some packages may actually "bin" the values if the data set is large. If the dataset includes many distinct (non-repeated) values, this can make it more difficult to see the "clumping" in the data.</p>
+  <p>  A <term>dotplot</term><idx><h>dotplot</h></idx> shows each numerical value individually (and is best with smaller datasets). Some packages may actually "bin" the values if the data set is large. If the dataset includes many distinct (non-repeated) values, this can make it more difficult to see the "clumping" in the data.</p>
  <p>  Now use technology to create a dotplot of the birth weights.</p>
   
   <paragraphs xml:id="tech-detour-dotplots">
@@ -333,7 +333,7 @@ nrow(births2)
   <paragraphs>
     <title>Histograms</title>
     
-    <p>It may still be difficult to see much in the dotplot with such a large data set, especially if there are many distinct (non-repeated) values. One solution is to "bin" the observations. Some software packages (e.g., Minitab) will do that automatically even with a dotplot. Another approach is to use a different type of graph, a <term>histogram</term>, that groups the data into intervals of equal width (e.g., 1000-2000, 2000-3000, …) and then construct a bar for each interval with the height of the bar representing the number or proportion of observations in that interval. Notice these bars will be touching, unlike in a bar graph, to represent the continuous rather than categorical nature of the data.</p>
+    <p>It may still be difficult to see much in the dotplot with such a large data set, especially if there are many distinct (non-repeated) values. One solution is to "bin" the observations. Some software packages (e.g., Minitab) will do that automatically even with a dotplot. Another approach is to use a different type of graph, a <term>histogram</term><idx><h>histogram</h></idx>, that groups the data into intervals of equal width (e.g., 1000-2000, 2000-3000, …) and then construct a bar for each interval with the height of the bar representing the number or proportion of observations in that interval. Notice these bars will be touching, unlike in a bar graph, to represent the continuous rather than categorical nature of the data.</p>
   </paragraphs>
   
   <paragraphs xml:id="tech-detour-histograms">
@@ -530,7 +530,7 @@ hist(births2$birthweight, xlab="birth weight")
   <paragraphs>
     <title>Numerical Summaries</title>
     
-    <p>Let's use this as our final dataset and use technology to calculate some helpful numerical summaries of the distribution, namely ones that describe the center (e.g., mean, median), variability (e.g., standard deviation), and skewness. The <term>skewness statistic</term> involves <m>\Sigma((y_i-\bar{y})/s)^3</m>, so positive values indicate a distribution that is skewed right, negative values indicate a distribution that is skewed left, and values near zero indicate a symmetric distribution.</p>
+    <p>Let's use this as our final dataset and use technology to calculate some helpful numerical summaries of the distribution, namely ones that describe the center (e.g., mean, median), variability (e.g., standard deviation), and skewness. The <term>skewness statistic</term><idx><h>skewness statistic</h></idx> involves <m>\Sigma((y_i-\bar{y})/s)^3</m>, so positive values indicate a distribution that is skewed right, negative values indicate a distribution that is skewed left, and values near zero indicate a symmetric distribution.</p>
   </paragraphs>
   
   <paragraphs xml:id="tech-detour-numerical-summaries">
@@ -793,7 +793,7 @@ table(within2sd)/length(births3$birthweight)
   </exercise>
   
   <paragraphs><p>
-  Another way to assess the “fit” of a probability model to the data is with a <term> probability plot</term> (aka quantile plot). Probability plots work roughly like this: The computer determines how many observations are in the data set, and then reports the <em>z</em>-scores it would expect for the <m>1/n^{th}</m> percentiles (also called quantiles) for the probability model. The plot compares these z-scores to the observed data; if the z-scores “line up” with the observed data, then the probability plot supports that the data are behaving like the candidate distribution. The theory is that whether or not the observations follow a line can be easier to judge than whether a histogram follows a curve.</p></paragraphs>
+  Another way to assess the “fit” of a probability model to the data is with a <term> probability plot</term><idx><h>probability plot</h></idx> (aka quantile plot). Probability plots work roughly like this: The computer determines how many observations are in the data set, and then reports the <em>z</em>-scores it would expect for the <m>1/n^{th}</m> percentiles (also called quantiles) for the probability model. The plot compares these z-scores to the observed data; if the z-scores “line up” with the observed data, then the probability plot supports that the data are behaving like the candidate distribution. The theory is that whether or not the observations follow a line can be easier to judge than whether a histogram follows a curve.</p></paragraphs>
 
   <paragraphs xml:id="tech-detour-normal-probability-plot">
     <title>Technology Detour <mdash/> Normal Probability Plots</title>
@@ -959,7 +959,7 @@ qqline(birthweight, datax=TRUE)
     <exercise xml:id="practice-2-1a-e" label="PP2-1A-5">
       <title>Identify unusual cap price</title>
       <statement>
-        <p>Examine and include a <term>stemplot</term> of the cap prices. We see one team with an unusual value. Identify this team by name and suggest an explanation for its unusual cap price.</p>
+        <p>Examine and include a <term>stemplot</term><idx><h>stemplot</h></idx> of the cap prices. We see one team with an unusual value. Identify this team by name and suggest an explanation for its unusual cap price.</p>
       <hint>
         <title>Stemplot Instructions</title>
         <p>Create a column showing the stems (the leading digits) and then fill in the leaves (the next digit) for each observation in the appropriate row. Optional: sort the leaves within each row (stem).</p>

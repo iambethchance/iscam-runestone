@@ -8,9 +8,11 @@
     <introduction>
       <p>The well-known pediatrician and child development author Dr. Benjamin Spock was also an anti-Vietnam War activist. In 1968 he was put on trial and convicted on charges of conspiracy to violate the Selective Service Act (encouraging young men to avoid the draft). The case was tried by Judge Ford in Boston's Federal court house. A peculiar aspect of this case was that his jury contained no women.</p>
       <p>A lawyer writing about the case that same year in the Chicago Law Review said, "Of all defendants at such trials, Dr. Spock, who had given wise and welcome advice on child-bearing to millions of mothers, would have liked women on his jury" (see <url href="https://chicagounbound.uchicago.edu/cgi/viewcontent.cgi?article=12016&amp;context=journal_articles">Ziesel, 1969</url>). The opinion polls also showed that women were generally more opposed to the Vietnam War than men.</p>
-<p>      
-    <image source="images/SpockJury.jpg" width="100%"/>
-</p>
+      <tabular top="minor" bottom="minor" left="minor" right="minor">
+        <row>
+          <cell><image source="images/SpockJury.jpg" width="100%"/></cell>
+        </row>
+      </tabular>
     <p>In the Boston District Court, jurors are selected in three stages. The Clerk of the Court is supposed to select 300 names at random from the City Directory and put a slip with each of these names into a box. The City Directory is renewed annually by a census of households visited by the police, and it lists all adult individuals in the Boston area. In Dr. Spock's trial, this sample included only 102 women, even though 53% of the eligible jurors in the district were female. At the next stage, the judge selects 30 or more names from those in the box which will constitute the <q>venire.</q> Judge Ford chose 100 potential jurors out of these 300 people. His choices included only 9 women. Finally, 12 actual jurors are selected after interrogation by both the prosecutor and the defense counsel. Only one potential female juror came before the court and she was dismissed by the prosecution.</p>
 
       <p>In filing his appeal, Spock's lawyers argued that Judge Ford had a history of venires in which women were systematically underrepresented. They compared the gender breakdown of this judge's venires with the venires of six other judges in the same Boston court from a recent sample of court cases. Records revealed the following data:</p>
@@ -69,7 +71,7 @@
       <exercise xml:id="inv5-1-a">
         <title>Compare Sample Proportions</title>
         <statement>
-          <p>Calculate the proportion of women on the jury list for each judge. Also create a <term>segmented bar graph</term> or <term>mosaic plot</term> to compare these distributions. How do the judges compare?</p>
+          <p>Calculate the proportion of women on the jury list for each judge. Also create a <term>segmented bar graph</term><idx><h>segmented bar graph</h></idx> or <term>mosaic plot</term><idx><h>mosaic plot</h></idx> to compare these distributions. How do the judges compare?</p>
   <!--        <aside>
             <title>Analyzing Two-way Tables Applet</title>
             <p>Option: Enter the two-way table of counts into the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm">Analyzing Two-way Tables applet</url> data window and press <strong>Use Table</strong>.</p>
@@ -133,7 +135,7 @@
 
   <assemblage>
             <title>Definition: Mean Group Difference</title>
-            <p>One possible statistic for measuring how much the sample proportions differ from each other is the <term><url href="http://www.rossmanchance.com/iscam3/glossary.html#MeanAbsDiff">Mean Group Difference</url></term><idx><h>mean group difference</h><h>statistic comparing several sample proportions</h></idx>, which finds the absolute value of each pairwise difference <m>|\hat{p}_i - \hat{p}_j|</m>, sums these up, and divides by the number of differences.</p>
+            <p>One possible statistic for measuring how much the sample proportions differ from each other is the <term>Mean Group Difference</term><idx><h>mean group difference</h><h>statistic comparing several sample proportions</h></idx>, which finds the absolute value of each pairwise difference <m>|\hat{p}_i - \hat{p}_j|</m>, sums these up, and divides by the number of differences.</p>
           </assemblage>
       <exercise xml:id="inv5-1-e">
         <title>Interpret Statistic Values</title>
@@ -146,7 +148,7 @@
         </solution>
       </exercise>
         
-      <p>Although we could consider using the Mean Group Difference statistic here, a more common choice of statistic is the <term>chi-squared statistic</term>. Rather than looking at all the differences among the groups, it focuses on how each cell count differs from the <q>expected value</q> for that cell under the null hypothesis, and sums this up across all the cells. This statistic generally has more power than the Mean Group Difference statistic and a nice predictable theoretical distribution.</p>
+      <p>Although we could consider using the Mean Group Difference statistic here, a more common choice of statistic is the <term>chi-squared statistic</term><idx><h>chi-squared statistic</h></idx>. Rather than looking at all the differences among the groups, it focuses on how each cell count differs from the <q>expected value</q> for that cell under the null hypothesis, and sums this up across all the cells. This statistic generally has more power than the Mean Group Difference statistic and a nice predictable theoretical distribution.</p>
 
       <exercise xml:id="inv5-1-f">
         <title>Estimate Common Probability</title>
@@ -369,7 +371,7 @@
 
       <assemblage>
         <title>Chi-squared Test Statistic</title>
-        <p>The <url href="http://www.rossmanchance.com/iscam3/glossary.html#chisqteststat">Chi-squared test statistic</url> is used to compare the observed and expected counts in a two-way table:</p>
+        <p>The <term>Chi-squared test statistic</term><idx><h>chi-squared test statistic</h></idx> is used to compare the observed and expected counts in a two-way table:</p>
         <p><me>\chi^2 = \sum_{i=1}^{r} \sum_{j=1}^{c} \frac{(observed_{ij} - expected_{ij})^2}{expected_{ij}}</me></p>
         <p>where <m>r</m> = number of rows and <m>c</m> = number of columns. This standardized statistic looks at the discrepancy between the observed and expected counts for each cell, squares the difference to ensure a positive contribution, <q>standardizes</q> by dividing by the expected count, and then sums across all cells.</p>
       </assemblage>
@@ -511,14 +513,9 @@
 
       <hint>
           <title>Example Applet Output</title>
-          <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
-            <image source="images/inv-5-1s1-v2.png" width="100%">
-              <description>Applet distribution of 10000 sampled chi-squared statistics with mean 6.064 and SD 3.466</description>
-            </image>
-            <image source="images/inv-5-1s2-v2.png" width="100%">
-              <description>Applet Count Samples output showing the theory-based p-value</description>
-            </image>
-          </sidebyside>
+          <image source="images/inv-5-1s2-v2.png" width="48%">
+            <description>Applet Count Samples output showing the theory-based p-value</description>
+          </image>
         </hint>
 
       <exercise xml:id="inv5-1-o">
@@ -569,12 +566,15 @@
         <response/>
         <solution>
           <p>Yes. The chi-squared distribution appears to be a reasonable model for this null distribution.</p>
+          <image source="images/inv-5-1s1-v2.png" width="55%">
+            <description>Applet distribution of 10000 sampled chi-squared statistics with the chi-squared distribution overlaid, mean 6.064 and SD 3.466</description>
+          </image>
         </solution>
       </exercise>
 
-      <assemblage><p>The <url href="http://www.rossmanchance.com/iscam3/glossary.html#chisqdist">Chi-squared distribution</url> is skewed to the right and provides a reasonable model to the above test statistic for large sample sizes. We will consider the chi-squared distribution model appropriate if all of the expected counts are at least 1 and if at least 80% of the expected counts are at least 5.</p>
+      <assemblage><p>The <term>Chi-squared distribution</term><idx><h>chi-squared distribution</h></idx> is skewed to the right and provides a reasonable model to the above test statistic for large sample sizes. We will consider the chi-squared distribution model appropriate if all of the expected counts are at least 1 and if at least 80% of the expected counts are at least 5.</p>
 
-      <p>When comparing several population proportions, the chi-squared <url href="http://www.rossmanchance.com/iscam3/glossary.html#df">degrees of freedom</url> are equal to the number of explanatory variable categories minus 1, <m>c - 1</m>. This makes sense because once we specify the number of observations in <m>c - 1</m> of the categories, the last category is forced to assume the value that allows the observed counts to sum to the sample size.</p>
+      <p>When comparing several population proportions, the chi-squared <term>degrees of freedom</term><idx><h>degrees of freedom</h></idx> are equal to the number of explanatory variable categories minus 1, <m>c - 1</m>. This makes sense because once we specify the number of observations in <m>c - 1</m> of the categories, the last category is forced to assume the value that allows the observed counts to sum to the sample size.</p>
       </assemblage>
 
 <p>For large sample sizes, we will use the chi-squared distribution to approximate the p-value.</p>
@@ -583,8 +583,8 @@
 
             <hint>
               <title>Applet Instructions</title>
-              <p>In <url href="https://www.rossmanchance.com/applets/2021/test/chiCalc.htm?hideExtras=1"><m>\chi^2</m> Probability Calculator</url> applet: Specify the degrees of freedom, the observed value, and the direction of interest for the value.</p>
-              <interactive iframe="https://www.rossmanchance.com/applets/2021/test/chiCalc.htm" width="100%" aspect="3:2"/>
+              <p>In <url href="https://www.rossmanchance.com/applets/2021/test/chiCalc.htm"><m>\chi^2</m> Probability Calculator</url> applet: Specify the degrees of freedom, the observed value, and the direction of interest for the value.</p>
+              <interactive iframe="https://www.rossmanchance.com/applets/2021/test/chiCalc.htm?hideExtras=1" width="100%" aspect="3:2"/>
             </hint>
 
             <hint>
@@ -722,12 +722,36 @@ invisible()
         </hint>
 
         <hint>
+          <title>R Solutions</title>
+          <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
+            <image source="images/inv5-1TD1.jpg" width="100%">
+              <description>R normal probability plot of the simulated chi-squared values, showing curvature</description>
+            </image>
+            <image source="images/inv5-1TD2.jpg" width="100%">
+              <description>R qqplot of simulated chi-squared values against a chi-squared distribution with 6 df, showing a linear pattern</description>
+            </image>
+          </sidebyside>
+        </hint>
+
+        <hint>
           <title>JMP Instructions</title>
           <p>Open the <url href="http://www.rossmanchance.com/iscam3/data/Spock.jmp">Spock.jmp</url> file. Open the <alert>RandomBinomials</alert> hot spot and select <alert>Run Script</alert> to generate 100 chi-squared values.</p>
           <ul>
             <li><p>To create a normal probability plot: Choose <alert>Analyze &gt; Distribution</alert> and select the <c>chisqstat</c> column. Use the hot spot to select <alert>Normal Quantile Plot</alert>.</p></li>
             <li><p>The chi-square distribution is equivalent to a Gamma distribution with parameters shape = 6/2 = 3 and scale = 2. Use the hot spot to select <alert>Continuous Fit &gt; Gamma</alert>.</p></li>
           </ul>
+        </hint>
+
+        <hint>
+          <title>JMP Solutions</title>
+          <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
+            <image source="images/inv5-1TD3.jpg" width="100%">
+              <description>JMP normal quantile plot of the simulated chi-squared statistics, departing from linearity</description>
+            </image>
+            <image source="images/inv5-1TD4.jpg" width="100%">
+              <description>JMP histogram of simulated chi-square statistics with the fitted gamma curve</description>
+            </image>
+          </sidebyside>
         </hint>
 
   </paragraphs>

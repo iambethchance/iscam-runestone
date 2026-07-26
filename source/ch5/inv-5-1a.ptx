@@ -109,35 +109,82 @@
           <row>
             <cell halign="left">Believe almost all - 4</cell>
             <cell>265</cell>
-            <cell></cell>
+            <cell><var width="6"/></cell>
             <cell>183</cell>
           </row>
           <row>
             <cell halign="left">3</cell>
             <cell>353</cell>
-            <cell></cell>
+            <cell><var width="6"/></cell>
             <cell>342</cell>
           </row>
           <row>
             <cell halign="left">2</cell>
             <cell>235</cell>
-            <cell></cell>
+            <cell><var width="6"/></cell>
             <cell>268</cell>
           </row>
           <row>
             <cell halign="left">Believe almost nothing - 1</cell>
             <cell>69</cell>
-            <cell></cell>
+            <cell><var width="6"/></cell>
             <cell>129</cell>
           </row>
           <row>
             <cell halign="left">Total</cell>
             <cell>922</cell>
-            <cell></cell>
+            <cell><var width="6"/></cell>
             <cell>922</cell>
           </row>
         </tabular>
       </statement>
+      <setup>
+        <!-- 2006 rating 4 -->
+        <var>
+          <condition number="181" tolerance="2">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The 2006 count for rating 4 is approximately 181.</p></feedback>
+          </condition>
+        </var>
+        <!-- 2006 rating 3 -->
+        <var>
+          <condition number="371" tolerance="2">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The 2006 count for rating 3 is approximately 371.</p></feedback>
+          </condition>
+        </var>
+        <!-- 2006 rating 2 -->
+        <var>
+          <condition number="261" tolerance="2">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The 2006 count for rating 2 is approximately 261.</p></feedback>
+          </condition>
+        </var>
+        <!-- 2006 rating 1 -->
+        <var>
+          <condition number="120" tolerance="2">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The 2006 count for rating 1 is approximately 120.</p></feedback>
+          </condition>
+        </var>
+        <!-- 2006 total -->
+        <var>
+          <condition number="933" tolerance="2">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The 2006 total is 933 (the number able to rate their daily newspaper).</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
       <solution>
         <p>The completed 2006 column is 181, 371, 261, and 120, with total 933.</p>
@@ -190,7 +237,7 @@
 
     <assemblage xml:id="expected-count-definition-5-1a">
       <title>Definition: Expected Count</title>
-      <p>In general, we can calculate the <url href="http://www.rossmanchance.com/iscam3/glossary.html#expected">expected count</url><idx><h>expected count</h><h>count expected in each cell under the null hypothesis</h></idx> for each cell by considering the row and column totals corresponding to that cell. This ensures that the conditional distribution of the response variable is the same in each category of the explanatory variable.</p>
+      <p>In general, we can calculate the <term>expected count</term><idx><h>expected count</h><h>count expected in each cell under the null hypothesis</h></idx> for each cell by considering the row and column totals corresponding to that cell. This ensures that the conditional distribution of the response variable is the same in each category of the explanatory variable.</p>
       <p><m>\text{Expected count} = \frac{\text{Row total} \times \text{Column total}}{\text{Table total}}</m></p>
     </assemblage>
 
@@ -337,6 +384,10 @@
         <title>Two-proportion <m>z</m>-test Comparison</title>
         <statement>
           <p>Now carry out a two-sided two-proportion <m>z</m>-test for this table. Report the standardized statistic and p-value. How do the p-values compare? What do you think is the relationship between the standardized statistics?</p>
+          <aside>
+            <title>Theory-Based Inference Applet</title>
+            <p>Use the <url href="https://www.rossmanchance.com/applets/2021/tbia/TBIA.html">Theory-Based Inference applet</url>.</p>
+          </aside>
         </statement>
         <response/>
         <solution>
