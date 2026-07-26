@@ -8,7 +8,7 @@
     <introduction>
       <sidebyside widths="63% 34%" margins="0% 0%" valign="top">
         <stack>
-          <p>Is there a tendency for movies that garner better audience reviews to also earn more money at the box office? The <url href="https://www.rossmanchance.com/iscam3/data/TopTenMovies.txt">TopTenMovies.txt</url> data file contains the world-wide movie gross, adjusted to be in 2015 dollars, for each movie, along with the IMDB rating (Source: <url href="https://www.crowdflower.com/data-for-everyone/">https://www.crowdflower.com/data-for-everyone/</url>).</p>
+          <p>Is there a tendency for movies that garner better audience reviews to also earn more money at the box office? The <url href="https://www.rossmanchance.com/iscam3/data/TopTenMovies.txt">TopTenMovies.txt</url> data file contains the world-wide movie gross, adjusted to be in 2015 dollars, for each movie, along with the IMDb rating (Source: <url href="https://www.crowdflower.com/data-for-everyone/">https://www.crowdflower.com/data-for-everyone/</url>).</p>
         </stack>
         <image source="images/imdb.jpeg" width="100%" decorative="yes"/>
       </sidebyside>
@@ -20,19 +20,19 @@
         <p>Identify the observational units in this study. Also identify the explanatory and response variables, and classify them as categorical or quantitative.</p>
       </statement>
       <response/>
-      <solution><p>The observational units are the Top Ten movies, the explanatory variable is the IMDB ratings (quantitative) and the response variable is the box office revenue (quantitative).</p></solution>
+      <solution><p>The observational units are the Top Ten movies, the explanatory variable is the IMDb ratings (quantitative) and the response variable is the box office revenue (quantitative).</p></solution>
     </exercise>
 
     <exercise xml:id="inv5-9-b">
       <title>Initial Scatterplot</title>
       <statement>
-        <p>Produce a scatterplot to determine whether the IMDB rating appears to help predict the box office income (adjusted). Describe the relationship between the two variables as exhibited in the scatterplot.</p>
+        <p>Produce a scatterplot to determine whether the IMDb rating appears to help predict the box office income (adjusted). Describe the relationship between the two variables as exhibited in the scatterplot.</p>
       </statement>
       <response/>
       <solution><p>        <image source="images/inv5-9-scatter.png" width="65%">
-          <description><p>Scatterplot of adjusted box office revenue (in dollars) versus IMDB rating, showing a weak positive association with two very high revenue outliers.</p></description>
+          <description><p>Scatterplot of adjusted box office revenue (in dollars) versus IMDb rating, showing a weak positive association with two very high revenue outliers.</p></description>
         </image>
-If we treat box office revenue as the response variable there is a moderate positive linear relationship between box office revenue and the IMDB ratings.</p></solution>
+If we treat box office revenue as the response variable there is a moderate positive linear relationship between box office revenue and the IMDb ratings.</p></solution>
     </exercise>
 
     <exercise xml:id="inv5-9-c">
@@ -54,7 +54,7 @@ If we treat box office revenue as the response variable there is a moderate posi
         <p>What does it mean for these movies to have such large residuals?</p>
       </statement>
       <response/>
-      <solution><p>The movies with the largest residuals are <em>Titanic</em> and <em>Avatar</em>. These movies had much higher box office revenues than we would have predicted based on the IMDB ratings.</p></solution>
+      <solution><p>The movies with the largest residuals are <em>Titanic</em> and <em>Avatar</em>. These movies had much higher box office revenues than we would have predicted based on the IMDb ratings.</p></solution>
     </exercise>
 
     <exercise xml:id="inv5-9-d">
@@ -69,13 +69,13 @@ If we treat box office revenue as the response variable there is a moderate posi
     <exercise xml:id="inv5-9-e">
       <title>Regression Equation</title>
       <statement>
-        <p>Use technology to determine the least squares regression line for predicting the box office gross from the IMDB rating. Report the equation for this line. Also interpret the slope and intercept of this line in context.</p>
+        <p>Use technology to determine the least squares regression line for predicting the box office gross from the IMDb rating. Report the equation for this line. Also interpret the slope and intercept of this line in context.</p>
       </statement>
       <response/>
       <solution>
         <p>The regression equation is <m>\hat{income} = -232431603 + 109913810 \cdot imdb\_rating</m>.</p>
-        <p>The intercept is the predicted revenue (2015 dollars) if the IMDB rating is 0 (way below the minimum in our dataset).</p>
-        <p>The slope is the predicted increase in box office revenues (2015 dollars) associated with a 1 point increase in the IMDB rating.</p>
+        <p>The intercept is the predicted revenue (2015 dollars) if the IMDb rating is 0 (way below the minimum in our dataset).</p>
+        <p>The slope is the predicted increase in box office revenues (2015 dollars) associated with a 1 point increase in the IMDb rating.</p>
       </solution>
     </exercise>
 
@@ -97,7 +97,7 @@ If we treat box office revenue as the response variable there is a moderate posi
       </statement>
       <response/>
       <solution>
-        <p><m>r^2 = 7.25\%</m> indicating that the regression on the IMDB rating explains about 7% of the variation in the box office revenues.</p>
+        <p><m>r^2 = 7.25\%</m> indicating that the regression on the IMDb rating explains about 7% of the variation in the box office revenues.</p>
         <p><m>s = 328.5</m> indicating that this model predicts the box office revenue with a typical prediction error of about 328 million dollars.</p>
       </solution>
     </exercise>
@@ -145,7 +145,7 @@ for (i in 1:4){
               <stack>
                 <p>R output:</p>
                 <image source="images/inv-5-9-sol-h1.jpg" width="100%">
-                  <description><p>R coded scatterplot of adjusted revenue (millions) versus IMDB rating with separate regression lines and a legend for the G, PG, PG-13, and R rating categories.</p></description>
+                  <description><p>R coded scatterplot of adjusted revenue (millions) versus IMDb rating with separate regression lines and a legend for the G, PG, PG-13, and R rating categories.</p></description>
                 </image>
               </stack>
               <stack>
@@ -161,11 +161,11 @@ for (i in 1:4){
     <exercise xml:id="inv5-9-h">
       <title>Coded Scatterplot by MPAA Rating</title>
       <statement>
-        <p>Describe what this coded scatterplot reveals about whether the relationship between box office income and IMDB ratings differs across the various MPAA rating categories. In particular, does any rating category tend to have higher box office values than you would expect for the score they received from IMDB reviewers? Is there a rating category tending toward lower box office revenues than expected? Explain.</p>
+        <p>Describe what this coded scatterplot reveals about whether the relationship between box office income and IMDb ratings differs across the various MPAA rating categories. In particular, does any rating category tend to have higher box office values than you would expect for the score they received from IMDb reviewers? Is there a rating category tending toward lower box office revenues than expected? Explain.</p>
       </statement>
       <response/>
       <solution>
-        <p>Most of the R movies are below the overall. The PG movies tend to be above the others with the same IMDB ratings. (Observations may vary a bit).</p>
+        <p>Most of the R movies are below the overall. The PG movies tend to be above the others with the same IMDb ratings. (Observations may vary a bit).</p>
       </solution>
     </exercise>
 
@@ -177,21 +177,21 @@ for (i in 1:4){
       <response/>
       <solution>
         <image source="images/inv-5-9-sol-i.jpg" width="55%">
-          <description><p>Applet scatterplot of adjusted revenue versus IMDB rating with a separate regression line for each of the many Genre_1 categories, with a legend listing the genres.</p></description>
+          <description><p>Applet scatterplot of adjusted revenue versus IMDb rating with a separate regression line for each of the many Genre_1 categories, with a legend listing the genres.</p></description>
         </image>
-        <p>Most of the Fantasy movies appear to earn more than predicted based on the IMDB ratings. (Observations may vary a bit). Would be fruitful to collapse the variable to a smaller number of categories.</p>
+        <p>Most of the Fantasy movies appear to earn more than predicted based on the IMDb ratings. (Observations may vary a bit). Would be fruitful to collapse the variable to a smaller number of categories.</p>
       </solution>
     </exercise>
 
     <exercise xml:id="inv5-9-j">
       <title>Remove Two Highest-Revenue Movies</title>
       <statement>
-        <p>In analyzing these movies, the researchers also looked at the data set after removing the 2 movies that earned more than $2 billion. Subset the data (e.g., <xref ref="inv-2-1" text="custom">Investigation 2.1</xref>) and then examine the scatterplot, correlation coefficient, and least-squares regression line for predicting the movie income from the IMDB ratings for these data.</p>
+        <p>In analyzing these movies, the researchers also looked at the data set after removing the 2 movies that earned more than $2 billion. Subset the data (e.g., <xref ref="inv-2-1" text="custom">Investigation 2.1</xref>) and then examine the scatterplot, correlation coefficient, and least-squares regression line for predicting the movie income from the IMDb ratings for these data.</p>
       </statement>
       <response/>
       <solution>
         <image source="images/inv-5-9-sol-j1.jpg" width="48%">
-          <description><p>Coded scatterplot of adjusted revenue (millions) versus IMDB rating after removing the two movies that earned more than 2 billion dollars.</p></description>
+          <description><p>Coded scatterplot of adjusted revenue (millions) versus IMDb rating after removing the two movies that earned more than 2 billion dollars.</p></description>
         </image>
         <image source="images/inv-5-9-sol-j2.png" width="30%">
           <description><p>R coefficients output for the subset data: Intercept -156.84 and imdb_rating slope 97.58.</p></description>
@@ -205,7 +205,7 @@ for (i in 1:4){
         <p>Describe the effect of removing these 2 movies from the analysis.</p>
       </statement>
       <response/>
-      <solution><p>The slope is a little smaller and the correlation coefficient is a little larger (<m>R^2 = .075</m>), but overall, not much change. This is not a huge surprise given the size of the dataset and that the two observations did not have extreme values for the IMDB ratings.</p></solution>
+      <solution><p>The slope is a little smaller and the correlation coefficient is a little larger (<m>R^2 = .075</m>), but overall, not much change. This is not a huge surprise given the size of the dataset and that the two observations did not have extreme values for the IMDb ratings.</p></solution>
     </exercise>
 
     <assemblage>
@@ -216,7 +216,7 @@ for (i in 1:4){
 
     <assemblage xml:id="study-conclusions-5-9">
       <title>Study Conclusions</title>
-      <p>There does appear to be a weak relationship between the IMDB ratings and the amount of money the movie makes at the box office, with higher rated movies tending to make more money. If the IMDB rating increases by 1 point (out of 10), we predict the movie will make about 110 million more dollars. There are 2 clear outliers in terms of revenue (<em>Avatar</em> and <em>Titanic</em>) but they are not influential in the regression analysis. It is interesting that this model tends to underpredict revenues for PG-13 movies and overpredict revenues for R-rated movies, and that R-rating movies don't seem as <q>impacted</q> by IMDB review scores. A next step in this analysis might be to collapse the number of Genre categories (e.g., combining Adventure, Animation, Fantasy categories, to see whether there is a tendency to underpredict their revenues).</p>
+      <p>There does appear to be a weak relationship between the IMDb ratings and the amount of money the movie makes at the box office, with higher rated movies tending to make more money. If the IMDb rating increases by 1 point (out of 10), we predict the movie will make about 110 million more dollars. There are 2 clear outliers in terms of revenue (<em>Avatar</em> and <em>Titanic</em>) but they are not influential in the regression analysis. It is interesting that this model tends to underpredict revenues for PG-13 movies and overpredict revenues for R-rated movies, and that R-rating movies don't seem as <q>impacted</q> by IMDb review scores. A next step in this analysis might be to collapse the number of Genre categories (e.g., combining Adventure, Animation, Fantasy categories, to see whether there is a tendency to underpredict their revenues).</p>
     </assemblage>
   </exercises>
 
