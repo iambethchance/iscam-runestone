@@ -531,13 +531,7 @@
           <p>Based on your simulation, determine the proportion of simulated standardized statistic values that are as large or larger than the standardized statistic value you computed in <xref ref="inv5-1-k" text="custom"> Question 11</xref>. Does this empirical p-value provide convincing evidence that the difference between observed and expected counts that you observed is larger than we would expect by chance? What do you conclude about whether the seven judges all had the same long-run probability of a juror being female? Explain.</p>
         </statement>
         <response/>
-        <solution><p>Example output:</p>
-        <image source="images/inv-5-1s1-v2.png" width="48%">
-            <description>Agreement between simulation results and chi-square distribution</description>
-          </image>
-        <image source="images/inv-5-1s2-v2.png" width="48%">
-            <description>Applet Count Samples output showing the empirical and theory-based p-value</description>
-          </image>
+        <solution>
           <p>None of the simulated chi-squared values should be anywhere near <m>62.68</m>, so the empirical p-value is approximately 0.</p>
           <p>This provides very strong evidence that the observed discrepancy is too large to attribute to random chance alone, so we conclude that the seven judges did not all have the same long-run probability of selecting a female juror.</p>
         </solution>
@@ -571,6 +565,10 @@
           <image source="images/inv-5-1s1-v2.png" width="55%">
             <description>Applet distribution of 10000 sampled chi-squared statistics with the chi-squared distribution overlaid, mean 6.064 and SD 3.466</description>
           </image>
+                  <image source="images/inv-5-1s2-v2.png" width="45%">
+            <description>Applet Count Samples output showing the empirical and theory-based p-value</description>
+          </image>
+
         </solution>
       </exercise>
 
@@ -725,6 +723,7 @@ invisible()
 
         <hint>
           <title>R Solutions</title>
+          <p>Example normal probability plot from R (simulated statistics on y-axis) and example gamma probability plot </p>
           <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
             <image source="images/inv5-1TD1.jpg" width="100%">
               <description>R normal probability plot of the simulated chi-squared values, showing curvature</description>
@@ -746,6 +745,7 @@ invisible()
 
         <hint>
           <title>JMP Solutions</title>
+          <p>Example normal probability plot from JMP (simulated statistics on x-axis) and histogram with Gamma distribution overlaid.</p>
           <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
             <image source="images/inv5-1TD3.jpg" width="100%">
               <description>JMP normal quantile plot of the simulated chi-squared statistics, departing from linearity</description>
