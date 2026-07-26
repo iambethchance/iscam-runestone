@@ -128,36 +128,50 @@
 
     <p>We see that the observed counts are not always equal to the expected counts, but perhaps the random assignment created groups that were slightly different prior to the start of the study, and these differences merely reflect those random variations. Of course we can investigate this by simulating binomial random sample as in <xref ref="inv-5-1" text="custom">Investigation 5.1</xref>, but this time we want to model the random assignment process rather than the random sampling process. In other words, we will assume whether or not a child confesses is not influenced by which story they are read, and we will shuffle and redistribute these outcomes among the explanatory variable groups.</p>
 
+    <ul>
+      <li><p>Enter the two-way table (without totals and using only one-word variable names) into the Sample Data box and press <alert>Use Table</alert>.</p></li>
+      <li><p>Make sure the story is being used as the explanatory variable or press the <alert>(explanatory, response)</alert> button.</p></li>
+      <li><p>Check the <alert>Show Shuffle Options</alert> box, enter a large number of shuffles, and press <alert>Shuffle</alert>.</p></li>
+      <li><p>Use the pull-down menu to set the Statistic choice to the Chi-squared (<m>\chi^2</m>) statistic. Compute an empirical p-value based on the simulated chi-squared values.</p></li>
+    </ul>
+
     <interactive iframe="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?FET=1&amp;hideExtras=1" width="160%" aspect="3:2"/>
+
+    <hint>
+      <title>Example Output</title>
+      <image source="images/inv-5-2d.jpeg" width="60%">
+        <description>Analyzing Two-way Tables applet with the story data entered and the shuffled chi-squared statistics displayed</description>
+      </image>
+    </hint>
 
     <exercise xml:id="inv5-2-d">
       <title>Simulation with Applet</title>
       <statement>
         <p>Use the applet to generate a randomization distribution and compute an empirical p-value for this study.</p>
-        <hint>
-          <title>Applet Instructions</title>
-          <sidebyside widths="66% 29%" margins="0% 0%" valign="top">
-            <stack>
-              <p>Enter the two-way table (without totals and using only one-word variable names) into the Sample Data box and press <alert>Use Table</alert>.</p>
-            </stack>
-            <image source="images/inv-5-2d.jpeg" width="100%">
-              <description>Analyzing Two-way Tables applet setup for Investigation 5.2</description>
-            </image>
-          </sidebyside>
-          <p>Make sure the story is being used as the explanatory variable or press the <alert>(explanatory, response)</alert> button. Check the <alert>Show Shuffle Options</alert> box, enter a large number of shuffles, and press <alert>Shuffle</alert>.</p>
-          <p>Use the pull-down menu to set the Statistic choice to the Chi-squared (<m>\chi^2</m>) statistic. Compute an empirical p-value based on the simulated chi-squared values.</p>
-        </hint>
+        <p>Empirical p-value: <var width="8"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition number="0.16" tolerance="0.04">
+            <feedback><p>Correct! Answers will vary slightly by simulation run, but with many shuffles the empirical p-value should be around 0.16.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>With a large number of shuffles, the empirical p-value should be around 0.16.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
       <solution>
         <p>Answers will vary slightly by simulation run, but with many shuffles the empirical p-value should be around 0.16.</p>
       </solution>
     </exercise>
 
+    <ul><li><p>Check the box to <alert>Overlay Chi-square distribution</alert>.</p></li></ul>
+
     <exercise xml:id="inv5-2-e">
       <title>Overlay Chi-square Model</title>
       <statement>
-        <p>Check the box to Overlay Chi-square distribution. Does the theoretical chi-squared distribution (with <m>df=3</m>) appear to be a reasonable model for the simulated null distribution? How are you deciding?</p>
+        <p>Does the theoretical chi-squared distribution (with <m>df=3</m>) appear to be a reasonable model for the simulated null distribution? How are you deciding?</p>
       </statement>
       <response/>
       <solution>
@@ -167,11 +181,42 @@
 
     <p>When the two-way table arises from a randomized experiment, we can apply the chi-squared distribution to predict the randomization distribution of the chi-squared statistic as long as at least 80% of the expected cell counts are at least 5 and all of the individual expected cell counts are at least one.</p>
 
+    <ul><li><p>Use technology to carry out the chi-squared test as before.</p></li></ul>
+
     <exercise xml:id="inv5-2-f">
       <title>Technology Output</title>
       <statement>
-        <p>Use technology to carry out the chi-squared test as before. What are the values of the chi-squared statistic, degrees of freedom, and p-value?</p>
+        <p>What are the values of the chi-squared statistic, degrees of freedom, and p-value?</p>
+        <p>Chi-squared statistic: <var width="8"/></p>
+        <p>Degrees of freedom: <var width="5"/></p>
+        <p>p-value: <var width="8"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition number="5.20" tolerance="0.05">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The chi-squared statistic is approximately 5.20.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="3" tolerance="0">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The degrees of freedom are <m>c - 1 = 4 - 1 = 3</m>.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="0.16" tolerance="0.01">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The p-value is approximately 0.158.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
       <solution>
         <p>A representative output is <m>\chi^2 \approx 5.20</m> with <m>df=3</m> and <m>p\approx 0.16</m>.</p>
