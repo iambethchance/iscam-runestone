@@ -509,6 +509,18 @@
 
           <interactive iframe="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqSample.htm?hideExtras=1" width="160%" aspect="3:2"/>
 
+      <hint>
+          <title>Example Applet Output</title>
+          <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
+            <image source="images/inv-5-1s1-v2.png" width="100%">
+              <description>Applet distribution of 10000 sampled chi-squared statistics with mean 6.064 and SD 3.466</description>
+            </image>
+            <image source="images/inv-5-1s2-v2.png" width="100%">
+              <description>Applet Count Samples output showing the theory-based p-value</description>
+            </image>
+          </sidebyside>
+        </hint>
+
       <exercise xml:id="inv5-1-o">
         <title>Describe Null Distribution</title>
         <statement>
@@ -584,8 +596,8 @@
               </ul>
               <sage language="r">
                 <input>
-# Load the ISCAM functions
-load(url("https://www.rossmanchance.com/iscam4/ISCAM.RData"))
+# Load ISCAM functions from GitHub
+invisible(capture.output(source("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/ISCAM-functions.R")))
 
 # Chi-squared probability: observed value, degrees of freedom
 iscamchisqprob(62.68, 6)

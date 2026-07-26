@@ -2019,3 +2019,24 @@ iscamtwosamplet <- function(
     ))
   }
 }
+
+iscamchisqprob <- function(xval, df) {
+  max_x <- max(qchisq(0.999, df), xval * 1.1)
+  x_seq <- seq(0.001, max_x, length.out = 500)
+  y_max <- max(dchisq(x_seq, df))
+
+  plot(x_seq, dchisq(x_seq, df), type = "l",
+       xlab = "chi-squared values", ylab = "",
+       main = paste0("Chi-squared(df = ", df, ")"),
+       panel.first = grid())
+  abline(h = 0, col = "gray")
+
+  answer <- pchisq(xval, df, lower.tail = FALSE)
+  prob_seq <- seq(xval, max_x, length.out = 100)
+  polygon(c(xval, prob_seq, max_x), c(0, dchisq(prob_seq, df), 0),
+          col = "pink", border = "red")
+  text(max_x, y_max * 0.8, labels = paste0("P(X >= ", xval, ") = ", signif(answer, 4)),
+       pos = 2, col = "red")
+  cat("probability:", signif(answer, 4), "\n")
+  invisible(answer)
+}
