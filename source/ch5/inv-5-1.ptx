@@ -249,7 +249,7 @@
           <p>Enter your expected counts below the observed counts in the following table.</p>
           <tabular halign="center" top="minor" bottom="minor" left="minor" right="minor">
             <row header="yes">
-              <cell></cell>
+              <cell>Jury list</cell>
               <cell>Judge 1</cell>
               <cell>Judge 2</cell>
               <cell>Judge 3</cell>
@@ -259,7 +259,7 @@
               <cell>Judge 7</cell>
             </row>
             <row>
-              <cell halign="left">Women on jury list (Observed)</cell>
+              <cell halign="left">Women (Observed)</cell>
               <cell>119</cell>
               <cell>197</cell>
               <cell>118</cell>
@@ -269,7 +269,7 @@
               <cell>86</cell>
             </row>
             <row>
-              <cell halign="left">Women on jury list (Expected)</cell>
+              <cell halign="left">Women (Expected)</cell>
               <cell><var width="2"/></cell>
               <cell><var width="2"/></cell>
               <cell>105.71</cell>
@@ -279,7 +279,7 @@
               <cell>155.82</cell>
             </row>
             <row>
-              <cell halign="left">Men on jury list (Observed)</cell>
+              <cell halign="left">Men (Observed)</cell>
               <cell>235</cell>
               <cell>533</cell>
               <cell>287</cell>
@@ -289,7 +289,7 @@
               <cell>511</cell>
             </row>
             <row>
-              <cell halign="left">Men on jury list (Expected)</cell>
+              <cell halign="left">Men (Expected)</cell>
               <cell><var width="2"/></cell>
               <cell><var width="2"/></cell>
               <cell>299.30</cell>
@@ -495,7 +495,7 @@
         </solution>
       </exercise>
 
-          <p>Use the <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqSample.htm">Analyzing Two-Way Tables - Samples applet</url>. [See the Technology Detour for instructions on carrying out this simulation using other packages.]</p>
+          <p>Use the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqSample.htm">Analyzing Two-Way Tables - Samples applet</url>. [See the <xref ref="tech-detour-simulating-two-way" text="custom">Technology Detour</xref> for instructions on carrying out this simulation using other packages.]</p>
           <ul>
             <li><p>In the data window type: <c>Spock.txt</c></p></li>
             <li><p>Press <alert>Use Data</alert>. Notice that the data loads in the two-way table format.</p></li>
@@ -506,6 +506,8 @@
             </li>
             <li><p>Specify 1000 for the Number of Samples and press <alert>Draw Samples</alert>. Use the pull-down menu to switch the Statistic to the <m>\chi^2</m> value.</p></li>
           </ul>
+
+          <interactive iframe="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqSample.htm?hideExtras=1" width="160%" aspect="3:2"/>
 
       <exercise xml:id="inv5-1-o">
         <title>Describe Null Distribution</title>
@@ -573,6 +575,18 @@
             </hint>
 
             <hint>
+              <title>Applet Output</title>
+              <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
+                <image source="images/inv-5-1s1-v2.png" width="100%">
+                  <description>Applet histogram of sampled chi-squared values with chi-squared distribution overlaid</description>
+                </image>
+                <image source="images/inv-5-1s2-v2.png" width="100%">
+                  <description>Applet Count Samples output showing the theory-based p-value</description>
+                </image>
+              </sidebyside>
+            </hint>
+
+            <hint>
               <title>R Instructions</title>
               <p>The <c>iscamchisqprob</c> function takes the following inputs</p>
               <ul>
@@ -584,17 +598,6 @@
             <hint>
               <title>JMP Instructions</title>
               <p>Use the <alert>Distribution Calculator</alert> and select the <alert>Chi Square</alert> distribution. Enter 6 as the degrees of freedom (DF) and press Enter. Leave the type of calculation to <alert>Input quantiles…</alert>. You want <alert>X &gt; Qa</alert> and specify 62.68 for Qa.</p>
-            </hint>
-            <hint>
-              <title>Example Output</title>
-              <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
-                <image source="images/inv-5-1s1-v2.png" width="100%">
-                  <description>First example output for chi-squared probabilities technology detour</description>
-                </image>
-                <image source="images/inv-5-1s2-v2.png" width="100%">
-                  <description>Second example output for chi-squared probabilities technology detour</description>
-                </image>
-              </sidebyside>
             </hint>
       </paragraphs>
 
@@ -699,7 +702,14 @@
 
         <hint>
           <title>Applet Instructions</title>
-          <p>Use the <url href="https://www.rossmanchance.com/applets/2021/test/ChiSqSample.htm">Analyzing Two-way Tables - Sampling</url> applet.</p>
+          <p>Use the <url href="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqSample.htm">Analyzing Two-way Tables - Sampling</url> applet.</p>
+        </hint>
+
+        <hint>
+          <title>Applet Output</title>
+          <image source="images/inv5-1TD1.jpg" width="55%">
+           <description>Applet output for chi-squared simulation</description>
+          </image>
         </hint>
 
         <hint>
@@ -712,6 +722,13 @@
         </hint>
 
         <hint>
+          <title>R Output</title>
+          <image source="images/inv5-1TD2.jpg" width="55%">
+            <description>R output for chi-squared simulation</description>
+          </image>
+        </hint>
+
+        <hint>
           <title>JMP Instructions</title>
           <p>Open the <url href="http://www.rossmanchance.com/iscam3/data/Spock.jmp">Spock.jmp</url> file. Open the <alert>RandomBinomials</alert> hot spot and select <alert>Run Script</alert> to generate 100 chi-squared values.</p>
           <ul>
@@ -719,23 +736,9 @@
             <li><p>The chi-square distribution is equivalent to a Gamma distribution with parameters shape = 6/2 = 3 and scale = 2. Use the hot spot to select <alert>Continuous Fit &gt; Gamma</alert>.</p></li>
           </ul>
         </hint>
+
         <hint>
-          <title>Example Output</title>
-          <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
-            <stack>
-              <p><alert>Applet:</alert></p>
-              <image source="images/inv5-1TD1.jpg" width="100%">
-               <description>Applet output for chi-squared simulation</description>
-              </image>
-            </stack>
-            <stack>
-              <p><alert>R:</alert></p>
-              <image source="images/inv5-1TD2.jpg" width="100%">
-                <description>R output for chi-squared simulation</description>
-              </image>
-            </stack>
-          </sidebyside>
-          <p><alert>JMP:</alert></p>
+          <title>JMP Output</title>
           <sidebyside widths="48% 48%" margins="0% 0%" valign="top">
             <image source="images/inv5-1TD4.jpg" width="100%">
               <description>JMP output showing gamma fit workflow</description>
