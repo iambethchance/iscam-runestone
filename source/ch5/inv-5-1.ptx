@@ -8,11 +8,7 @@
     <introduction>
       <p>The well-known pediatrician and child development author Dr. Benjamin Spock was also an anti-Vietnam War activist. In 1968 he was put on trial and convicted on charges of conspiracy to violate the Selective Service Act (encouraging young men to avoid the draft). The case was tried by Judge Ford in Boston's Federal court house. A peculiar aspect of this case was that his jury contained no women.</p>
       <p>A lawyer writing about the case that same year in the Chicago Law Review said, "Of all defendants at such trials, Dr. Spock, who had given wise and welcome advice on child-bearing to millions of mothers, would have liked women on his jury" (see <url href="https://chicagounbound.uchicago.edu/cgi/viewcontent.cgi?article=12016&amp;context=journal_articles">Ziesel, 1969</url>). The opinion polls also showed that women were generally more opposed to the Vietnam War than men.</p>
-      <tabular top="minor" bottom="minor" left="minor" right="minor">
-        <row>
-          <cell><image source="images/SpockJury.jpg" width="100%"/></cell>
-        </row>
-      </tabular>
+      <image source="images/SpockJury.jpg" width="100%" decorative="yes"/>
     <p>In the Boston District Court, jurors are selected in three stages. The Clerk of the Court is supposed to select 300 names at random from the City Directory and put a slip with each of these names into a box. The City Directory is renewed annually by a census of households visited by the police, and it lists all adult individuals in the Boston area. In Dr. Spock's trial, this sample included only 102 women, even though 53% of the eligible jurors in the district were female. At the next stage, the judge selects 30 or more names from those in the box which will constitute the <q>venire.</q> Judge Ford chose 100 potential jurors out of these 300 people. His choices included only 9 women. Finally, 12 actual jurors are selected after interrogation by both the prosecutor and the defense counsel. Only one potential female juror came before the court and she was dismissed by the prosecution.</p>
 
       <p>In filing his appeal, Spock's lawyers argued that Judge Ford had a history of venires in which women were systematically underrepresented. They compared the gender breakdown of this judge's venires with the venires of six other judges in the same Boston court from a recent sample of court cases. Records revealed the following data:</p>
@@ -513,8 +509,8 @@
 
       <hint>
           <title>Example Applet Output</title>
-          <image source="images/inv-5-1s2-v2.png" width="48%">
-            <description>Applet Count Samples output showing the theory-based p-value</description>
+          <image source="images/inv-5-1s.png" width="48%">
+            <description>Null distribution of chi-square statistics</description>
           </image>
         </hint>
 
@@ -535,7 +531,13 @@
           <p>Based on your simulation, determine the proportion of simulated standardized statistic values that are as large or larger than the standardized statistic value you computed in <xref ref="inv5-1-k" text="custom"> Question 11</xref>. Does this empirical p-value provide convincing evidence that the difference between observed and expected counts that you observed is larger than we would expect by chance? What do you conclude about whether the seven judges all had the same long-run probability of a juror being female? Explain.</p>
         </statement>
         <response/>
-        <solution>
+        <solution><p>Example output:</p>
+        <image source="images/inv-5-1s1-v2.png" width="48%">
+            <description>Agreement between simulation results and chi-square distribution</description>
+          </image>
+        <image source="images/inv-5-1s2-v2.png" width="48%">
+            <description>Applet Count Samples output showing the empirical and theory-based p-value</description>
+          </image>
           <p>None of the simulated chi-squared values should be anywhere near <m>62.68</m>, so the empirical p-value is approximately 0.</p>
           <p>This provides very strong evidence that the observed discrepancy is too large to attribute to random chance alone, so we conclude that the seven judges did not all have the same long-run probability of selecting a female juror.</p>
         </solution>
@@ -588,7 +590,7 @@
             </hint>
 
             <hint>
-              <title>R Instructions</title>
+              <title>R/Sage Instructions</title>
               <p>The <c>iscamchisqprob</c> function takes the following inputs</p>
               <ul>
                 <li><p><c>xval</c> = the observed value of the standardized statistic</p></li>
