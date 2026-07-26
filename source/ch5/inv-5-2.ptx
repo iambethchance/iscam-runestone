@@ -127,9 +127,18 @@
     </tabular>
 
     <p>We see that the observed counts are not always equal to the expected counts, but perhaps the random assignment created groups that were slightly different prior to the start of the study, and these differences merely reflect those random variations. Of course we can investigate this by simulating binomial random sample as in <xref ref="inv-5-1" text="custom">Investigation 5.1</xref>, but this time we want to model the random assignment process rather than the random sampling process. In other words, we will assume whether or not a child confesses is not influenced by which story they are read, and we will shuffle and redistribute these outcomes among the explanatory variable groups.</p>
-
+        <p>Use the applet to generate a randomization distribution and compute an empirical p-value for this study.</p>
     <ul>
-      <li><p>Enter the two-way table (without totals and using only one-word variable names) into the Sample Data box and press <alert>Use Table</alert>.</p></li>
+      <li>
+        <sidebyside widths="64% 32%" margins="0% 0%" valign="top">
+          <stack>
+            <p>Enter the two-way table (without totals and using only one-word variable names) into the Sample Data box and press <alert>Use Table</alert>.</p>
+          </stack>
+          <image source="images/inv-5-2d.jpeg" width="100%">
+            <description>Analyzing Two-way Tables applet Sample Data window with the story two-way table entered</description>
+          </image>
+        </sidebyside>
+      </li>
       <li><p>Make sure the story is being used as the explanatory variable or press the <alert>(explanatory, response)</alert> button.</p></li>
       <li><p>Check the <alert>Show Shuffle Options</alert> box, enter a large number of shuffles, and press <alert>Shuffle</alert>.</p></li>
       <li><p>Use the pull-down menu to set the Statistic choice to the Chi-squared (<m>\chi^2</m>) statistic. Compute an empirical p-value based on the simulated chi-squared values.</p></li>
@@ -137,18 +146,11 @@
 
     <interactive iframe="https://www.rossmanchance.com/applets/2021/chisqshuffle/ChiSqShuffle.htm?FET=1&amp;hideExtras=1" width="160%" aspect="3:2"/>
 
-    <hint>
-      <title>Example Output</title>
-      <image source="images/inv-5-2d.jpeg" width="60%">
-        <description>Analyzing Two-way Tables applet with the story data entered and the shuffled chi-squared statistics displayed</description>
-      </image>
-    </hint>
-
+   
     <exercise xml:id="inv5-2-d">
       <title>Simulation with Applet</title>
       <statement>
-        <p>Use the applet to generate a randomization distribution and compute an empirical p-value for this study.</p>
-        <p>Empirical p-value: <var width="8"/></p>
+        <p>Report your simulation-based p-value: <var width="8"/></p>
       </statement>
       <setup>
         <var>
@@ -181,7 +183,7 @@
 
     <p>When the two-way table arises from a randomized experiment, we can apply the chi-squared distribution to predict the randomization distribution of the chi-squared statistic as long as at least 80% of the expected cell counts are at least 5 and all of the individual expected cell counts are at least one.</p>
 
-    <ul><li><p>Use technology to carry out the chi-squared test as before.</p></li></ul>
+    <ul><li><p>Use technology to carry out the chi-squared test <xref ref="tech-detour-chisq-tests" text="custom">as before</xref>.</p></li></ul>
 
     <exercise xml:id="inv5-2-f">
       <title>Technology Output</title>
