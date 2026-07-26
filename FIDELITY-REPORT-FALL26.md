@@ -5,20 +5,11 @@
 
 **Status: COMPLETE** — all chapters compared.
 
+> **Update (2026-07-25) — Chapter 3 re-audit.** A fresh two-agent comparison of all Chapter 3 files against PDF pp. 179–246 after the fix rounds. **Resolved and verified:** Section 3.4 restructure matches the PDF's SECTION 4; Inv 3.1's margin parenthetical, Optional markers, literal example call, applet pointer, FFFC characters, and JMP screenshots; summary-3-1's −z\*; Inv 3.5's dev applet URL; Inv 3.8's 2×2 margin table; inv-3-9-summary's fisher.test restoration; the two-way detour's RAHyper links (its R/JMP content verified verbatim against those live pages — the "unknown provenance" concern is closed; note the source pages use the *old* numbering "Investigation 3.8" for the CPR study). **Fixed during this re-audit (mechanical):** Inv 3.6's and Inv 3.8's remaining `/applets/2021/test/` dev URLs; "conduting" typo; Inv 3.8's intro framing error ("quantitative" → categorical); Inv 3.1's off-by-one "Question 23"→24 label; Inv 3.9's broken "either Odds Ratio" sentence (now Question 5/6 xrefs); the two-way detour's stale "For Investigation 3.8" → 3.7 and http→https CPRvCC link; Inv 3.10's (b) column header "Total" → "Sample sizes"; Inv 3.3's "One Repetitions" title typo. **Flagged for author judgment (not changed):** Inv 3.1's new "prevalence → likelihood/common" wording pass (differs from PDF; looks deliberate); Inv 3.7 (g)'s reworked hint (re-edited recently, looks deliberate); still-missing PDF sub-questions — Inv 3.3 (a) identify-variables sentence and (o) second half, Inv 3.5 (j) pooling box, Inv 3.6 (e) randomization bullet, Inv 3.8 (j) "Describe the shape", Inv 3.10 (c) "and interpret"; summary-3-1's "plus four" vs PDF "Wilson or Wald" and ≥5 vs >5; inv-3-9's Widom/applet link targets vs PDF annotations; inv-3-9-summary's dropped simulation clause and added invariance table (arithmetic verified correct); Inv 3.3's "roughly roughly"; Inv 3.2's NormCalc visual-text mismatch; various small drift items unchanged from the original report.
+
 > **Update (2026-07-18):** Per the author, Investigations 5.1, 5.1A, 5.2, 5.3, 5.4, 5.5 (+ ANOVA applet page), and 5.6 have been **restored to PDF-verbatim wording** (scaffolding/MC conversions kept; answer-revealing content removed; the chi-square summary's "at least one πᵢ" fixed). Their findings below are retained as the historical record. Still open by design: Inv 5.1A's collapsed 2×2 table keeps the corrected 701/1844 (PDF prints 645/1854, which is arithmetically inconsistent — author decision pending), and the "Follow-up analysis" paragraph added to `chi-square-test-summary.ptx` is left in place pending author decision.
 
 *PDF page numbers below are file pages (printed page + 1).*
-
-## Consolidated findings: Inv 5.1 and Inv 5.1A (all in one place)
-
-This section lists only still-open items for source/ch5/inv-5-1.ptx and source/ch5/inv-5-1a.ptx.
-
-### source/ch5/inv-5-1.ptx
-- No still-open items.
-
-### source/ch5/inv-5-1a.ptx
-- Collapsed 2x2 table values differ from PDF print (PDF 645/1854 vs PTX 701/1844).
-  - Still open by design: the PDF printed values appear arithmetically inconsistent with row data; PTX appears silently corrected; author decision pending.
 
 ## Top-priority findings (author attention first)
 
@@ -777,3 +768,204 @@ This section lists only still-open items for source/ch5/inv-5-1.ptx and source/c
 ---
 
 *End of report. Also noted during the pass: `source/iscam4_RJMPFall26.pdf` is newer than the `Win26` PDF that CLAUDE.md names as gold source — CLAUDE.md should be updated to point at Fall26 (not done in this pass, which was report-only).*
+
+---
+
+# Chapter 4 re-audit — 2026-07-25 (vs PDF updated 2026-07-25 20:06)
+
+Two-agent full pass over ch-4-intro, ch-sec-4-1..4-4, inv-4-1..4-11, applet-4-3-exploration,
+summary-paired-differences, examples 4.1-4.4, summary-chapter. Approved conversions (tech detours,
+checkpoints, MC/var formats, added hints, no letter prefixes) excluded.
+
+## Material findings
+
+### Clear fixes (mechanical)
+- **inv-4-2.ptx:324** — season year "2025-26" vs PDF "2026-27".
+- **inv-4-2.ptx PD4-2-3 (~349-457)** — BROKEN GRADING: statement has 10 `<var>`s (table rows include a
+  Skew column + two free-text boxes) but `<setup>` defines only 8 conditions — feedback misaligns from the
+  Western Skew box onward. Also prose asks for "population sizes, means, and standard deviations" while
+  PDF asks means/SDs/skewness. (Population skewness values per solution text: West 1.22, East 1.35.)
+- **inv-4-1.ptx:278** — "these dotplots" should be "these stemplots" (PDF p.250 (b)).
+- **inv-4-4.ptx** — missing PDF transition before the detour: "Note: You can carry out these simulations in
+  software as well, see the Technology Detour below."
+- **inv-4-4.ptx:595** — `<strong>` is not PreTeXt (silently dropped); "randomization test" in Study
+  Conclusions needs `<term>`/`<alert>`.
+- **inv-4-8.ptx inv4-8-b (~43-48)** — "Experimental units:" answer blank (and setup var) missing; PDF (b)
+  has five fields.
+- **inv-4-9.ptx inv4-9-e (~86-105)** — dropped sub-question "What does this tell you about the
+  effectiveness of the pairing in this context?" (survives only in feedback text).
+- **inv-4-5.ptx PP4-5-a (237-255) and inv-4-6.ptx inv4-6-c (111-132)** — malformed exercises: two
+  `<statement>` blocks in one `<exercise>` with orphan `<var>`/no setup; need restructure.
+- **inv-4-11.ptx:4** — bare text in `<introduction>` (silently dropped; wrap in `<p><em>`).
+- **inv-4-9.ptx:178** — exercise has `label="inv4-9-example-results"` and no `xml:id`.
+- **inv-4-5.ptx:134** — http:// rossmanchance link (https standard).
+- **inv-4-3.ptx (a, b-split), inv-4-5.ptx (a, f)** — MC choices missing per-choice `<feedback>`.
+- **inv-4-5.ptx:150** — xref "similar code to that in Investigation 4.4" targets tech-detour-4-4, but the
+  PDF means the exact-distribution `combn` code block before inv4-4-v.
+
+### Author judgment items
+- **inv-4-2 Probability Detour** — PDF's (e) "pool with the rest of your class" dropped (self-paced);
+  1,000-samples instruction moved BEFORE questions (f)-(i) (students describe the 1,000-sample rather than
+  class-pooled distribution); (j) reworded and moved after the Key Result box; block title "Probability
+  Detour: Sampling Distribution..." vs PDF "Probability Exploration: Simulation of Distribution of
+  Difference in Sample Means" (ch-4-intro's link text follows the PDF).
+- **inv-4-1 stemplot** — PTX uses nine split 5-year stems vs PDF's five decade stems, drops PDF's worked
+  example ("add a 3 and a 5 to the 3 stem..."); (a)'s second half replaced (see original audit). Also the
+  `<solution>` stemplot (246-256) is misaligned — ages on wrong stems throughout (plainly wrong, not
+  instructor-key disagreement).
+- **inv-4-2 detour applet URL** — "Comparing Two Populations" label points at TwoBoot5.html (bootstrap
+  family); TwoPopSampling.html may be intended. Confirm.
+- **inv-4-8 (g)** — PDF's "Sketch curves illustrating this power calculation." dropped; PTX shows the
+  answer (power-curve images + explanatory paragraph) as body content instead.
+- **example-4-3:169** — PTX "(-65.628, 159.878)" vs PDF "(-64.628, ...)": the PDF is the typo
+  (47.125-112.753 = -65.628, and its own interpretation says 65 ms); keep PTX, fix Word doc.
+- **summary-chapter Choice-of-Procedures table** — "Exact p-value" row: PDF has ONE merged cell "All
+  possible random assignments"; PTX splits into three with invented "All possible sign assignments"
+  (paired) and "N/A" (medians). Medians/paired cells add tilde-mu / mu_d notation not in the PDF table.
+  Statistically defensible; author's call.
+- **summary-chapter drift** — "groups"→"treatments/populations"; bullet-list hierarchy shuffles;
+  "interchange" vs PDF "flip"; col-1 header drops "random" from "independent random samples".
+
+## Drift (meaning preserved, listed for the record)
+- House-style framing sentences added to intros of inv-4-1, 4-3, 4-5, 4-6, 4-7, 4-8, 4-9, 4-10, 4-11,
+  applet-4-3-exploration; added section headers in inv-4-8; added Investigation 2.8 cross-links in inv-4-7;
+  Martin v. Westvaco link in inv-4-1; driving.txt data links in example-4-3.
+- inv-4-2: "conference" vs PDF "league" (458); "Press Sample" vs PDF "999... Draw Samples" (555); PD4-2-8
+  drops "(part (c))"; applet workflow uses menu selection vs PDF's paste-two-columns (applet update?).
+- inv-4-4: intro duplicates ch-sec-4-3 landing text (seen twice); "the observed value" vs PDF "15.92"
+  (218); adds "What do you learn?" (279).
+- inv-4-9: (h) merged sentences + "(fastest typers)" gloss; PDF typos fixed ("seed"→"speed",
+  "among"→"amount").
+- ch-sec-4-1 title wording; inv-4-3 matching-exercise lead-ins pre-state the comparison, drop "Explain
+  briefly."; inv-4-6:5 nested `<em>`.
+
+## Clean files
+ch-4-intro, ch-sec-4-2, ch-sec-4-3, ch-sec-4-4, inv-4-3 (body), inv-4-6 (body), inv-4-10, inv-4-11
+(body), applet-4-3-exploration, summary-paired-differences, example-4-1, example-4-2, example-4-4
+(restructured form). All referenced images exist.
+
+### Resolution pass — 2026-07-26 (item-by-item with author)
+All material findings resolved or dispositioned: PD4-2-3 skew grading fixed; PP4-5-a rewritten as
+free-response ("Describe how..."); inv4-6-c cleaned to Yes/No+feedback; season year, stemplots wording
+(author edits); inv-4-4 note restored, strong->term, duplicate intro dropped, "15.92" restored; inv-4-8
+Design/Experimental-units setup added; inv-4-9 label/id fixed; nested em fixed; detour applet ->
+TwoPopSampling; probability block retitled per PDF; stemplot solution rebuilt; summary-chapter bullet
+hierarchy + "random" header per PDF, colspans merged per PDF. Kept-as-is by author decision: inv-4-9(e)
+sub-question, inv-4-3 feedback/lead-ins, inv-4-8(g) sketch question (no drawing tools), probability-
+exploration flow, inv-4-9(h) PTX wording, section 4.1 title, house-style additions, summary prose
+(PTX kept; Word doc to be updated). WORD-DOC TO-DOS for author: (1) example-4-3 interval typo
+-64.628 -> -65.628; (2) ch4 summary prose "groups" -> "treatments/populations" + "main advantage ...
+for these other statistics".
+
+---
+
+# Chapter 5, Section 5.1 verbatim audit — 2026-07-26
+
+## Material
+- **ch-5-intro.ptx:7** — chapter opener heavily condensed: PDF's full paragraph (recurring-theme,
+  same-techniques-both-designs, categorical+quantitative procedures, association, new summaries) replaced
+  by a two-sentence rewrite; ~5 sentences of source content dropped (classic early-LLM-pass compression).
+- **ch-5-intro.ptx TOC list** — missing PDF entries: "Applet Exploration: Exploring ANOVA", "Correlation
+  guessing game", "Behavior of regression lines - Resistance", "Excel Exploration: Minimization criteria",
+  "Technology Exploration: The regression effect"; two bare "Applet Exploration" lines lack descriptors.
+- **chi-square-test-summary.ptx:30** — invented "Follow-up analysis:..." paragraph not in the PDF summary box.
+- **inv-5-3.ptx:175** — `\Chi^2` (capital) is not a LaTeX macro; every other use is `\chi^2`/`X^2`;
+  possible MathJax error on the built page.
+- **chi-square-test-summary.ptx:39** — old http `applets/ChisqShuffle.htm` URL (other files use the
+  https /2021/chisqshuffle/ path).
+
+## Verified fine
+- All Inv 5.1 expected counts/fraction terms match the rendered PDF; Inv 5.2's "31 (29.22)" matches the
+  PDF's own typo (left verbatim, correctly); all inv-5-1/5-1a links match PDF annotations; detour
+  instruction content verbatim; images all exist.
+
+## Drift (minor)
+- ch-5-1 "expand those techniques"; inv-5-1 "(see Ziesel, 1969)" + unquoted "standardizes"; inv-5-1a
+  "new organizations" typo fixed; inv-5-2 added framing sentence on (d), stray paren cleanup; inv-5-3
+  comma-splice fix; chi-square-test-summary small paraphrases + conversion boilerplate sentence.
+
+---
+
+# Chapter 5, Section 5.2 verbatim audit — 2026-07-26
+
+## Material
+- **inv-5-5 Study Conclusions (line ~174)** — wrong F-statistic: PTX "F = 31.48" vs PDF "F = 29.2"
+  (29.2 also matches the investigation's own computation 226/7.73; 31.48 is a stale holdover).
+- **inv-5-5 (c) split** — "(by hand)" directive dropped; connective sentences invented (hint content
+  itself verbatim).
+- **inv-5-5 summary table** — "n = 393" margin entry dropped from table; lead-in reworded to
+  "the 393 total bills" instead of PDF's verbatim sentence.
+- **inv-5-5-applet.ptx:4** — invalid <intro> element (should be <introduction>); currently renders by
+  luck, schema-invalid.
+
+## Observations
+- PP 5.4A "boxplots from part (e)" faithfully mirrors a probable PDF erratum (boxplots are at (h));
+  confirm which the source should say.
+- http URLs: inv-5-4:98-99 (AnovaShuffle + data), inv-5-5:183 (SpockPers.txt), inv-5-5-applet:11 (AnovaSim).
+- ch-5-2 landing page lacks the investigation xref list other section landings have.
+
+## Drift
+- inv-5-4: "Recall: Squaring..." sentence moved out of (k) to after the exercise; pooled-variance display
+  omits the "s_p^2 =" left-hand side; (e) reformatted as three bullets (verbatim text).
+- inv-5-5 PP5-5B: xref parenthetical expanded ("see the pooled t-test discussion in Investigation 4.2").
+
+## Clean
+- ch-5-2 intro, section5-2-summary verbatim; inv-5-4 otherwise verbatim throughout (formulas verified
+  visually); inv-5-5-applet verbatim apart from the tag issue.
+
+---
+
+# Chapter 5, Section 5.4 verbatim audit — 2026-07-26
+
+## Material
+- **inv-5-10.ptx:371** — invented transition paragraph after Study Conclusions ("The above simulation
+  approach is a very intuitive way... In the next investigation, we will explore a more formal approach...")
+  — not in PDF and substantively off (the t-based approach arrives within Inv 5.10 at (y)-(aa), not in
+  5.11). Delete or author-approve.
+- Both special-attention detours accounted for: Coded Scatterplot w/ Separate Lines = inv-5-9 (verbatim,
+  now purple); Prediction Intervals (and Confidence Intervals) = verbatim hints in inv-5-13 (j)/(l).
+
+## Drift
+- inv-5-11 (a): "and confirm the equation" dropped, stem rewritten "Report the regression equation.";
+  (e): added stem "Report your estimated p-value."
+- inv-5-10 (v): SD(b1) formula rendered as sqrt(sigma^2/...) vs PDF's sigma*sqrt(1/...) (equivalent);
+  PP5.10B "here" -> "online".
+- inv-5-14 (a): "housing" -> "housing.txt", r^2 -> R^2 case change.
+- inv-5-9: PDF's repeated "IMBD" typo silently corrected to "IMDB" (author call; recommend keep + fix Word).
+
+## Clean
+ch-5-4 landing (no xref list though), inv-5-12, inv-5-13, inv-5-14 (except 2.5), summary-5-4-inference,
+tech-5-4-regression-effect, section5-4-summary — all verbatim incl. formulas verified visually.
+
+---
+
+# Chapter 5, Section 5.3 verbatim audit — 2026-07-26
+
+## Material
+- **ch-5-3.ptx:4-5** — landing intro is bare unwrapped text in <chapter> (render risk); wording verbatim.
+- **inv-5-8** — NO applet link/embed anywhere; the movable-line sequence (l-r, aa) says "Open the
+  Analyzing Two Quantitative Variables applet" but nothing links/embeds it (PDF links RegShuffle.htm).
+- **inv-5-7:87** — "Notice that..." paragraph shows standardized product (x-xbar)/sx * (y-ybar)/sy where
+  PDF has plain product (x_i-xbar)(y_i-ybar).
+- **inv-5-7** — quadrant labels I-IV missing from the mean-line scatterplot images; (d) and the Notice
+  paragraph depend on them.
+- **inv-5-8** — systematic SSE -> "SSError" renaming vs PDF, internally inconsistent (aa bullet still
+  says SSE).
+- **Glossary links dropped across all 5.3 files** (scatterplot, correlation, residual, least squares,
+  extrapolation, r^2, influential) — inv-5-1 gold standard retains its glossary links.
+- **excel-5-8 (c)** — dropped "Reproduce a rough sketch of this graph below," instruction.
+- **PP 5.7A/5.7B placement** — PDF puts them after the Correlation Guessing applet exploration; PTX has
+  them at the end of inv-5-7.
+- inv-5-8 (k) scatterplot image lacks the PDF's "r = .711" label (low severity).
+- URLs verified clean throughout (incl. KYDerby26.txt oddity matching the PDF annotation).
+
+## Drift
+- inv-5-6: "whether and how" vs "whether/how"; coded-scatterplot action sentence reworded into detour;
+  inv5-6-i starts mid-sentence with stray leading space.
+- inv-5-7: insight box title "Points to keep in mind" added; "1 or -1 ... (positive or negative...)"
+  order swapped vs PDF; PP5.7A bracketed hint folded into intro parenthetical instead of hint reveal.
+- applet-5-7: "below or open in a new window" (embed-driven). applet-5-8: intro reordered + "data have
+  been preloaded" added. excel-5-8: (g) "note"->"Describe"; (k) PDF "height"->"highlight" typo fixed.
+- inv-5-9: detour lead-in drops "(rating)"; (e) drops "(see below)"; "if"->"whether"; PDF typos fixed
+  (IMBD->IMDB, Titantic->Titanic, "r2 and s provide").
+- section5-3-summary: verbatim (adds paren the PDF omits).
