@@ -121,6 +121,18 @@
             <title>R Instructions</title>
             <p><c>plot(bodymass, velocity)</c> or <c>plot(velocity~bodymass)</c></p>
             <p><c>scatterplot(bodymass, velocity)</c> (the <c>scatterplot</c> function is in the <url href="https://cran.r-project.org/web/packages/car/index.html">car</url> package)</p>
+            <sage language="r">
+              <input>
+# Load and attach the cat jumping data from GitHub
+cats = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/CatJumping.txt", header=TRUE)
+attach(cats)
+
+plot(bodymass, velocity)
+# or plot(velocity~bodymass)
+# or, with the car package: scatterplot(bodymass, velocity)
+invisible()
+              </input>
+            </sage>
           </hint>
 
           <hint>
@@ -149,6 +161,8 @@
             </sidebyside>
           </hint>
     </paragraphs>
+
+    <interactive iframe="https://www.rossmanchance.com/applets/2021/multreg/multreg.html" width="160%" aspect="3:2"/>
 
     <paragraphs>
       <exercise xml:id="inv5-6-e" label="I5-6-e"><title>Describe Body Mass Relationship</title><statement><p>Describe the relationship between a cat’s takeoff velocity and its body mass, as displayed in this scatterplot. Does this pattern confirm your expectation in <xref ref="inv5-6-d" text="custom">Question 4</xref>?</p></statement><response/><solution><p>Overall, heavier cats tend to have lower velocity (though one of the heaviest cats had the largest velocity).</p></solution></exercise>
