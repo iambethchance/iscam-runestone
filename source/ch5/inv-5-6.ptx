@@ -56,15 +56,21 @@
     <paragraphs>
       <title>Collecting the Data</title>
       <exercise xml:id="inv5-6-a" label="I5-6-a"><title>Identify Units and Response</title><statement><p>Identify the observational units and the primary response variable of interest here. Also classify this variable as quantitative or categorical.</p></statement><response/><solution><p>The observational units are the 18 cats and the primary response variable is takeoff velocity which is quantitative.</p></solution></exercise>
-      <exercise xml:id="inv5-6-b" label="I5-6-b"><title>Univariate Summary of Velocity</title><statement><p>Open the <url href="https://www.rossmanchance.com/iscam2/data/CatJumping.txt">CatJumping.txt</url> data file and produce numerical and graphical summaries of the takeoff velocity variable. Describe the distribution of takeoff velocities in this sample (shape, center, variability, unusual observations).</p>
+
+<ul><li><p>Load the data into the Multiple Variables applet</p></li>
+            <li><p>Use the pull-down menu to select the <em>Cat jumping</em> data. Press <alert>Use Data</alert>.</p></li>
+          </ul>
+
+         <interactive iframe="https://www.rossmanchance.com/applets/2021/multreg/multreg.html?hideExtras=1" width="160%" aspect="3:2"/>
+
+<ul><li>Drag the <em>velocity</em> variable to the <alert>Response</alert> box.</li>
+<li>Check the <alert>Show descriptive</alert> box.</li>
+</ul>
+
+      <exercise xml:id="inv5-6-b" label="I5-6-b"><title>Univariate Summary of Velocity</title><statement><p>Describe the distribution of takeoff velocities in this sample (shape, center, variability, unusual observations).</p>
         <hint>
           <title>Applet Instructions</title>
           <p>In the <url href="https://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables applet</url><idx><h>Applet</h><h>Multiple variables</h></idx>:</p>
-          <ul>
-            <li><p>Use the pull-down menu to select the <em>Cat jumping</em> data. Press <alert>Use Data</alert>.</p></li>
-            <li><p>Drag the <em>velocity</em> variable to the Response box.</p></li>
-            <li><p>Check the <alert>Show descriptive</alert> box.</p></li>
-          </ul>
         </hint>
       </statement><response/><solution>
         <p>JMP output:</p>
@@ -162,8 +168,7 @@ invisible()
           </hint>
     </paragraphs>
 
-    <interactive iframe="https://www.rossmanchance.com/applets/2021/multreg/multreg.html" width="160%" aspect="3:2"/>
-
+ 
     <paragraphs>
       <exercise xml:id="inv5-6-e" label="I5-6-e"><title>Describe Body Mass Relationship</title><statement><p>Describe the relationship between a cat’s takeoff velocity and its body mass, as displayed in this scatterplot. Does this pattern confirm your expectation in <xref ref="inv5-6-d" text="custom">Question 4</xref>?</p></statement><response/><solution><p>Overall, heavier cats tend to have lower velocity (though one of the heaviest cats had the largest velocity).</p></solution></exercise>
       <exercise xml:id="inv5-6-f" label="I5-6-f"><title>Identify Outlier Cats</title><statement><p>Do any of these cats appear to be outliers in the sense that its pair of values (body mass, takeoff velocity) does not fit the pattern of the majority of cats? If so, identify the ID for that cat and describe what’s different about this cat (in context).</p></statement><response/><solution><p>ID: C</p><p>This cat has a much larger velocity than we would expect overall and for its weight.</p></solution></exercise>
