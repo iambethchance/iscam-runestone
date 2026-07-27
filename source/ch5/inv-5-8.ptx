@@ -222,6 +222,16 @@
         <statement>
           <p>Did everyone in your class obtain the same line/equation?</p>
         </statement>
+        <choices randomize="yes">
+          <choice>
+            <statement><p>Yes</p></statement>
+            <feedback><p>Lines fit by eye typically vary from student to student.</p></feedback>
+          </choice>
+          <choice correct="yes">
+            <statement><p>No</p></statement>
+            <feedback><p>Correct! Lines fit by eye will vary across the class.</p></feedback>
+          </choice>
+        </choices>
         <response/>
         <solution><p>Lines will vary.</p></solution>
       </exercise>
@@ -250,7 +260,18 @@
         <title>Squared Error Criterion</title>
         <statement>
           <p>What is the best SSError in the class?</p>
+          <p>Best SSError: <var width="10"/></p>
         </statement>
+        <setup>
+          <var>
+            <condition number="235" tolerance="15">
+              <feedback><p>That is essentially the smallest possible value!</p></feedback>
+            </condition>
+            <condition string=".+">
+              <feedback><p>Response recorded. The best value will vary by class.</p></feedback>
+            </condition>
+          </var>
+        </setup>
         <response/>
         <solution><p>The smallest SSError will vary.</p></solution>
       </exercise>
@@ -336,7 +357,36 @@
         <title>Compute Coefficients from Summaries</title>
         <statement>
           <p>For the sample data on students' foot lengths (<m>x</m>) and heights (<m>y</m>), we can calculate these summary statistics: <m>\bar{x} = 28.5</m> cm, <m>s_x = 3.45</m> cm, <m>\bar{y} = 67.75</m> in and <m>s_y = 5.00</m> in, with <m>r = 0.711</m>. Use these statistics and the formulas above to calculate the coefficients of the least-squares regression line. Confirm that these agree with what the applet reported for the equation of the least squares line.</p>
+          <p>Intercept <m>b_0</m>: <var width="8"/></p>
+          <p>Slope <m>b_1</m>: <var width="8"/></p>
+          <p>Do these agree with the applet's least squares line? <var width="12"/></p>
         </statement>
+        <setup>
+          <var>
+            <condition number="38.4" tolerance="0.3">
+              <feedback><p>Correct! (about 38.3-38.4 depending on rounding)</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>Use <m>b_0 = \bar{y} - b_1\bar{x} \approx 38.4</m>.</p></feedback>
+            </condition>
+          </var>
+          <var>
+            <condition number="1.03" tolerance="0.01">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>Use <m>b_1 = r(s_y/s_x) = 0.711(5.00/3.45) \approx 1.03</m>.</p></feedback>
+            </condition>
+          </var>
+          <var>
+            <condition string=".*[Aa]gree.*|.*[Yy]es.*">
+              <feedback><p>Correct! The coefficients agree with the applet's least squares line (up to rounding).</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>The coefficients should agree with the applet's least squares line, up to rounding discrepancies.</p></feedback>
+            </condition>
+          </var>
+        </setup>
         <response/>
         <solution>
           <p><m>b_1 = 0.711(5.00/3.45) = 1.03</m></p>
@@ -410,7 +460,18 @@
         <title>SSError from Mean Line</title>
         <statement>
           <p>Record this value.</p>
+          <p><m>SSError(\bar{y}) =</m> <var width="10"/></p>
         </statement>
+        <setup>
+          <var>
+            <condition number="475.75" tolerance="0.5">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>With the movable line at <m>\bar{y} = 67.75</m>, the applet reports SSError = 475.75.</p></feedback>
+            </condition>
+          </var>
+        </setup>
         <response/>
         <solution><p><m>SSError(\bar{y}) = 475.75</m></p></solution>
       </exercise>
@@ -420,7 +481,21 @@
         <statement>
           <p>Recall the SSError value for the regression line. Determine the percentage change in the SSError between the <m>\bar{y}</m> line and the regression line:</p>
           <p><me>100\%\left[\frac{SSError(\bar{y}) - SSError(\text{least-squares})}{SSError(\bar{y})}\right] =</me></p>
+          <p><var width="8"/>%</p>
         </statement>
+        <setup>
+          <var>
+            <condition number="50.6" tolerance="0.5">
+              <feedback><p>Correct!</p></feedback>
+            </condition>
+            <condition number="0.506" tolerance="0.005">
+              <feedback><p>Express your answer as a percentage: about 50.6%.</p></feedback>
+            </condition>
+            <condition string=".*">
+              <feedback><p>Compute <m>100(475.75 - 235)/475.75 \approx 50.6</m>%.</p></feedback>
+            </condition>
+          </var>
+        </setup>
         <response/>
         <solution><p><m>100\% \times (475.75 - 235)/475.75 = 50.6\%</m></p></solution>
       </exercise>
@@ -456,6 +531,18 @@
             <title>R Instructions</title>
             <p>To calculate intercept and slope: <c>lm(response~explanatory)</c></p>
             <p>To then superimpose regression line on scatterplot: <c>abline(lm(response~explanatory))</c></p>
+            <sage language="r">
+              <input>
+# Load and attach the class height and foot length data from GitHub
+HF = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/heightfoot.txt", header=TRUE)
+attach(HF)
+
+plot(footlength, height)
+print(lm(height~footlength))
+abline(lm(height~footlength))
+invisible()
+              </input>
+            </sage>
           </hint>
           <hint>
             <title>JMP Instructions</title>
