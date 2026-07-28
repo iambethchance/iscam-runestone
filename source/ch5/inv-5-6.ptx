@@ -216,6 +216,17 @@ invisible()
           <hint>
             <title>R Instructions</title>
             <p>Create the scatterplot as before, but pass a categorical variable as a color vector. For example: <c>plot(velocity~bodymass, col=sex)</c></p>
+            <sage language="r">
+              <input>
+# Load and attach the cat jumping data from GitHub (from earlier)
+cats = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/CatJumping.txt", header=TRUE)
+attach(cats)
+
+# Coded scatterplot: color the points by sex
+plot(velocity~bodymass, col=as.factor(Sex))
+invisible()
+              </input>
+            </sage>
           </hint>
 
           <hint>
