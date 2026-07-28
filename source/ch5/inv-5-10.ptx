@@ -16,7 +16,29 @@
 
     <exercise xml:id="inv5-10-a">
       <title>Identify Variables</title>
-      <statement><p>Identify the explanatory and response variables for this research question.</p></statement>
+      <statement>
+        <p>Identify the explanatory and response variables for this research question.</p>
+        <p>Explanatory variable: <var width="30"/></p>
+        <p>Response variable: <var width="30"/></p>
+      </statement>
+      <setup>
+        <var>
+          <condition string=".*[Aa]ge.*">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The explanatory variable is the runner's age.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string=".*[Tt]ime.*|.*[Ff]inish.*">
+            <feedback><p>Correct!</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>The response variable is the finish time (in minutes).</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
       <solution><p>The explanatory variable of interest here is age and the response variable is finishing time.</p></solution>
     </exercise>
