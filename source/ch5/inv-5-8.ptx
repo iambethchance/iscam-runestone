@@ -35,7 +35,7 @@
           <p>If you were trying to predict the height of a statistics student based on these observations, what value would you report?</p>
         </statement>
         <response/>
-        <solution><p>The mean height of the 20 students: 67.75 inches.</p></solution>
+        <solution><p>Perhaps the mean height of the 20 students: 67.75 inches.</p></solution>
       </exercise>
 
       <exercise xml:id="inv5-8-c">
@@ -534,12 +534,12 @@
             <sage language="r">
               <input>
 # Load and attach the class height and foot length data from GitHub
-HF = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/heightfoot.txt", header=TRUE)
+HF = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/HeightFoot.txt", header=TRUE)
 attach(HF)
 
-plot(footlength, height)
-print(lm(height~footlength))
-abline(lm(height~footlength))
+plot(foot, height)
+print(lm(height~foot))
+abline(lm(height~foot))
 invisible()
               </input>
             </sage>
