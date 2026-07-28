@@ -3,13 +3,13 @@
   <title>Investigation 5.11: Running Out of Time (cont.)</title>
 
   <exercises xml:id="exercises5-11" hidden-label="yes">
-    <title>The Study</title>
+    <title>The Data Cont.</title>
 
     <introduction>
       <p>In the previous investigation, we analyzed the statistical significance of our sample data by replicating how often we might get a <em>random sample</em> of 247 runners (after removing an extreme outlier) with a slope this extreme from a larger population of runners that did not have an association between <em>finishing time</em> and <em>age</em>. In other words, we assumed there was no association between <em>finishing time</em> and <em>age</em> and the pairing of these values for our runners was just arbitrary. This suggests another way of assessing the statistical significance of our results.</p>
     </introduction>
 
-<ul><li>Paste the <url href="https://www.rossmanchance.com/iscam3/data/Talley5K2013.txt">Talley5K2013.txt</url> data file into the <url href="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm?hideExtras=1">Analyzing Two Quantitative Variables</url> applet.<idx><h>Applet</h><h>Analyzing two quantitative variables</h></idx></li><li>Press <alert>Use Data</alert> and make sure <em>age</em> is used as the explanatory variable (if not press the <alert>(response, explanatory)</alert> button to toggle their roles). </li><li>Remove the outlier and check the <alert>Show Regression Line</alert> box.</li></ul>
+<ul><li>Copy the url for the <url href="https://www.rossmanchance.com/iscam3/data/Talley5K2013.txt">Talley5K2013.txt</url> data. Paste this in the data window of the <url href="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm?hideExtras=1">Analyzing Two Quantitative Variables</url> applet.<idx><h>Applet</h><h>Analyzing two quantitative variables</h></idx></li><li>Press <alert>Use Data</alert> (twice). This applet can now handle the multiple columns and text fields within double quotes, but change the explanatory variable to <em>Age</em> and the response variable to <em>Time</em>. </li><li>Remove the outlier and check the <alert>Show Regression Line</alert> box.</li></ul>
 
     <interactive iframe="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm?hideExtras=1" width="160%" aspect="3:2"/>
 
@@ -70,7 +70,18 @@
       <title>Empirical p-value</title>
       <statement>
         <p>Report your estimated p-value.</p>
+        <p>Estimated p-value: <var width="8"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition number="0" tolerance="0.005">
+            <feedback><p>Correct! None (or almost none) of the 1000 shuffled slopes should be as extreme as the observed slope of 0.1403, giving an estimated p-value of about 0/1000 = 0.0000.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Count the shuffles beyond the observed slope (0.1403) and divide by the number of shuffles. Very few, if any, of the shuffled slopes should be this extreme.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
       <solution>
         <p>Example results</p>
@@ -91,10 +102,6 @@
       <response/>
       <solution>
         <p>If we standardize, we again get something like <m>(0.14-0)/.03 \approx 4.67</m>.</p>
-        <p>Using an observed t statistic of 4.49, we are again on the right edge of the distribution.</p>
-        <image source="images/inv-5-11-sol-f.jpg" width="45%">
-          <description><p>Histogram of 1000 shuffled t-statistics with mean = -0.058 and SD = 0.993; counting shuffles Beyond 4.49 gives Count = 0/1000 (0.0000).</p></description>
-        </image>
       </solution>
     </exercise>
 
@@ -106,10 +113,11 @@
       </statement>
       <response/>
       <solution>
-        <p>The results are very similar to the previous investigation.</p>
-        <image source="images/inv-5-11-sol-g.jpg" width="45%">
-          <description><p>Histogram of 1000 shuffled t-statistics with an overlaid <em>t</em>-distribution curve; the simulated count beyond 4.49 is 0/1000 and the theory-based p-value is less than 0.0001.</p></description>
+        <p>Using an observed t statistic of 4.49, we are again on the right edge of the distribution.</p>
+        <image source="images/inv-5-11-sol-f.jpg" width="45%">
+          <description><p>Histogram of 1000 shuffled t-statistics with mean = -0.058 and SD = 0.993; counting shuffles Beyond 4.49 gives Count = 0/1000 (0.0000).</p></description>
         </image>
+        <p>The results are very similar to the previous investigation.</p>
       </solution>
     </exercise>
 
@@ -120,14 +128,19 @@
         <p>Does it appear to be a reasonable model of the shuffled <em>t</em>-statistics distribution?</p>
       </statement>
       <response/>
-      <solution><p>The <em>t</em>-distribution appears to be a good model for this randomization distribution.</p></solution>
+      <solution>
+        <p>The <em>t</em>-distribution appears to be a good model for this randomization distribution.</p>
+        <image source="images/inv-5-11-sol-g.jpg" width="45%">
+          <description><p>Histogram of 1000 shuffled t-statistics with an overlaid <em>t</em>-distribution curve; the simulated count beyond 4.49 is 0/1000 and the theory-based p-value is less than 0.0001.</p></description>
+        </image>
+      </solution>
     </exercise>
 
 <ul><li><p>Check the <alert>Regression Table</alert> box.</p></li></ul>
     <exercise xml:id="inv5-11-i">
       <title>Regression Table Comparison</title>
       <statement>
-        <p>Compare your calculations (e.g., what value does the table use for <m>SE(\hat{\beta})</m>?</p>
+        <p>Compare your calculations (e.g., what value does the table use for <m>SE(\hat{\beta})</m>)?</p>
       </statement>
       <response/>
       <solution>
