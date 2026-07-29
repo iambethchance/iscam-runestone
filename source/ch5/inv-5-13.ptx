@@ -6,13 +6,15 @@
     <title>The Study</title>
 
     <introduction>
-      <p>Reconsider the data from <xref ref="inv-5-6" text="custom">Investigation 5.6</xref> about factors that are related to a cat's jumping ability (<url href="http://www.rossmanchance.com/iscam2/data/CatJumping.txt">CatJumping.txt</url>).</p>
+      <p>Reconsider the data from <xref ref="inv-5-6" text="custom">Investigation 5.6</xref> about factors that are related to a cat's jumping ability (<url href="https://www.rossmanchance.com/iscam2/data/CatJumping.txt">CatJumping.txt</url>).</p>
     </introduction>
+
+    <interactive iframe="https://www.rossmanchance.com/applets/2021/multreg/multreg.html?hideExtras=1" width="160%" aspect="3:2"/>
 
     <exercise xml:id="inv5-13-a">
       <title>Least Squares Line</title>
       <statement>
-        <p>Use technology (e.g., <url href="http://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables</url> applet) to determine the equation of the least squares line for predicting a cat's takeoff <em>velocity</em> from its percentage of body fat (<em>PctBodyFat</em>). Record the equation of this line, using good statistical notation.</p>
+        <p>Use technology (e.g., <url href="https://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables</url> applet<idx><h>Applet</h><h>Multiple variables</h></idx>) to determine the equation of the least squares line for predicting a cat's takeoff <em>velocity</em> from its percentage of body fat (<em>PctBodyFat</em>). Record the equation of this line, using good statistical notation.</p>
       </statement>
       <response/>
       <solution>
@@ -26,15 +28,15 @@
         <p>Produce a histogram and a normal probability plot of the residuals of this regression.</p>
         <hint>
           <title>Multiple Variables Applet</title>
-          <p>Check <alert>Show Residuals</alert> box.</p>
+          <p>Check <term index="no">Show Residuals</term> box.</p>
         </hint>
         <hint>
           <title>R Instructions</title>
-          <p>You can access the residuals by using <c>lm(price~sqft)$residuals</c></p>
+          <p>You can access the residuals by using <c>lm(velocity~percentbodyfat)$residuals</c></p>
         </hint>
         <hint>
           <title>JMP Instructions</title>
-          <p>Use the <alert>linear fit</alert> hot spot to <alert>Plot Residuals</alert></p>
+          <p>Use the <term index="no">linear fit</term> hot spot to <term index="no">Plot Residuals</term></p>
         </hint>
         <p>Does the normality condition appear to be satisfied?</p>
       </statement>
@@ -55,7 +57,27 @@
       <title>Equal Variance and Linearity</title>
       <statement>
         <p>Examine a graph of the residuals vs. the percentage of body fat variable (or vs. the predicted values). Does the equal variance condition appear to be met? Does the linearity condition appear to be met?</p>
+        <p>Equal variance (Yes/No): <var width="5"/></p>
+        <p>Linearity (Yes/No): <var width="5"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition string="^\s*[Yy]">
+            <feedback><p>Correct. Apart from the one large outlier, the residuals stay in a consistent band with no major <q>fanning</q>.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Look again: apart from the one large outlier, the residuals stay in a band of roughly constant width, so the equal variance condition appears to be met.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string="^\s*[Yy]">
+            <feedback><p>Correct. The residual plot shows no strong curvature.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Look again: the lack of any strong curvature in the residual plot indicates the linearity condition is reasonable.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
       <solution>
         <image source="images/inv-5-13-sol-c.jpg" width="45%">
@@ -68,7 +90,7 @@
     <exercise xml:id="inv5-13-d">
       <title>Test the Association</title>
       <statement>
-        <p>Consider testing whether the sample data provide strong evidence that percentage of body fat has a negative association with takeoff velocity in the population. State the hypotheses to be tested, and report (from the output) the value of the appropriate standardized statistic and p-value. (In the applet, check the <alert>Statistical model</alert> box.) Summarize your conclusion.</p>
+        <p>Consider testing whether the sample data provide strong evidence that percentage of body fat has a negative association with takeoff velocity in the population. State the hypotheses to be tested, and report (from the output) the value of the appropriate standardized statistic and p-value. (In the applet, check the <term index="no">Statistical model</term> box.) Summarize your conclusion.</p>
       </statement>
       <response/>
       <solution>
@@ -87,7 +109,6 @@
       <statement>
         <p>Confirm that the <em>t</em>-test statistic for the hypotheses in <xref ref="inv5-13-d" text="custom">Question 4</xref> is equal to <m>b_1/SE(b_1)</m>.</p>
       </statement>
-      <response/>
       <solution><p><m>t = -1.9534/.5688 \approx -3.43</m>.</p></solution>
     </exercise>
 
@@ -116,7 +137,27 @@
       <title>Two Predictions</title>
       <statement>
         <p>Use the equation of the least squares line to predict the takeoff velocity for a cat with 25 percent body fat. Then do the same for a cat with 50 percent body fat.</p>
+        <p>Predicted takeoff velocity with 25% body fat: <var width="10"/></p>
+        <p>Predicted takeoff velocity with 50% body fat: <var width="10"/></p>
       </statement>
+      <setup>
+        <var>
+          <condition number="348.82" tolerance="0.5">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Substitute 25 into the least squares equation: <m>397.65 - 1.9534(25)</m>.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="299.98" tolerance="0.5">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Substitute 50 into the least squares equation: <m>397.65 - 1.9534(50)</m>.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
       <solution>
         <p>25%: <m>\hat{velocity} = 397.65 - 1.9534(25) \approx 348.82</m> cm/sec.</p>
@@ -133,12 +174,14 @@
       <solution><p>Should have more faith in the prediction for 25% body fat as that value is in the main part of our data but we don't have a lot of information for cats with body fat percentages around 50%.</p></solution>
     </exercise>
 
-    <p>Rather than only report one number as our prediction, we would like specify a confidence interval that indicates our <q>accurate</q> or precise we believe our prediction to be. The following procedure is valid if the basic regression model conditions are met.</p>
+    <p>Rather than only report one number as our prediction, we would like to specify a confidence interval that indicates how <q>accurate</q> or precise we believe our prediction to be. The following procedure is valid if the basic regression model conditions are met.</p>
 
     <exercise xml:id="inv5-13-j">
       <title>Prediction Interval</title>
       <statement>
         <p>Report the 95% <term>prediction interval</term><idx><h>Prediction interval</h></idx> for the takeoff velocity of a cat with 25% body fat. Also determine the midpoint of this interval; does its value look familiar? Also interpret what this interval reveals.</p>
+        <p>Prediction interval: ( <var width="8"/> , <var width="8"/> )</p>
+        <p>Midpoint: <var width="8"/></p>
         <hint>
           <title>R Instructions</title>
           <p>Use the <c>predict</c> command, passing in the variables for the linear model but also a <q>new data</q> data frame for the value(s) you want predictions for (but giving them the same name as your explanatory variable). For example:</p>
@@ -147,11 +190,37 @@
         <hint>
           <title>JMP Instructions</title>
           <ul>
-            <li><p>From the <alert>Linear Fit</alert> hot spot select <alert>Indiv Confidence Interval Formula</alert>.</p></li>
-            <li><p>JMP will add two columns to your table that use a <alert>Formula</alert> to compute the upper and lower endpoints of prediction intervals for all <m>x</m>-values of your data. Add new rows and enter new values for the explanatory variable to calculate prediction intervals for data other than those in the given dataset.</p></li>
+            <li><p>From the <term index="no">Linear Fit</term> hot spot select <term index="no">Indiv Confidence Interval Formula</term>.</p></li>
+            <li><p>JMP will add two columns to your table that use a <term index="no">Formula</term> to compute the upper and lower endpoints of prediction intervals for all <m>x</m>-values of your data. Add new rows and enter new values for the explanatory variable to calculate prediction intervals for data other than those in the given dataset.</p></li>
           </ul>
         </hint>
       </statement>
+      <setup>
+        <var>
+          <condition number="292.374" tolerance="0.5">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use <c>interval="prediction"</c> with 25% body fat; the lower endpoint is around 292.4.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="405.262" tolerance="0.5">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use <c>interval="prediction"</c> with 25% body fat; the upper endpoint is around 405.3.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="348.82" tolerance="0.5">
+            <feedback><p>Correct! The midpoint is the predicted value from <xref ref="inv5-13-h" text="custom">Question 8</xref>.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Average the two endpoints; the midpoint should match your prediction for 25% body fat from <xref ref="inv5-13-h" text="custom">Question 8</xref>.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
       <solution>
         <p>Example output:</p>
@@ -188,15 +257,43 @@
       <title>Confidence Interval for the Mean Response</title>
       <statement>
         <p>What does your technology report for the 95% confidence interval for the average takeoff velocity among all cats that have 25% body fat? Also determine the midpoint of this interval; does its value look familiar? Also interpret what this interval reveals.</p>
+        <p>Confidence interval: ( <var width="8"/> , <var width="8"/> )</p>
+        <p>Midpoint: <var width="8"/></p>
         <hint>
           <title>R Instructions</title>
           <p>use <c>interval="confidence"</c></p>
         </hint>
         <hint>
           <title>JMP Instructions</title>
-          <p>From the <alert>Linear Fit</alert> hot spot select <alert>Mean Confidence Interval Formula</alert>.</p>
+          <p>From the <term index="no">Linear Fit</term> hot spot select <term index="no">Mean Confidence Interval Formula</term>.</p>
         </hint>
       </statement>
+      <setup>
+        <var>
+          <condition number="335.449" tolerance="0.5">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use <c>interval="confidence"</c> with 25% body fat; the lower endpoint is around 335.4.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="362.187" tolerance="0.5">
+            <feedback><p>Correct.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Use <c>interval="confidence"</c> with 25% body fat; the upper endpoint is around 362.2.</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition number="348.82" tolerance="0.5">
+            <feedback><p>Correct! The same midpoint as the prediction interval <mdash/> our predicted value at 25% body fat.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Average the two endpoints; the midpoint should again match your prediction for 25% body fat.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
       <solution>
         <p>Example output:</p>
@@ -227,7 +324,7 @@
   <subsection xml:id="practice-5-13">
     <title>Practice Problem 5.13</title>
     <introduction>
-      <p>Reconsider the 5K race results (<url href="http://www.rossmanchance.com/iscam3/data/Talley5K2013.txt">Talley5K2013.txt</url>) from <xref ref="inv-5-10" text="custom">Investigation 5.10</xref>.</p>
+      <p>Reconsider the 5K race results (<url href="https://www.rossmanchance.com/iscam3/data/Talley5K2013.txt">Talley5K2013.txt</url>) from <xref ref="inv-5-10" text="custom">Investigation 5.10</xref>.</p>
     </introduction>
 
     <exercise xml:id="practice-5-13-1" label="P5-13-1">
