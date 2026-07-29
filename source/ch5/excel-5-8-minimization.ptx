@@ -85,7 +85,7 @@
     </exercise>
 
     <exercise xml:id="excel5-8-e">
-      <title>Connect to Median</title>
+      <title>Which statistic?</title>
       <statement>
         <p>Look through the sorted heights in column A. What do you notice about where this optimal value of <m>m</m> is located in the list of sorted heights? Does this remind you of a familiar statistic?</p>
       </statement>
@@ -154,33 +154,33 @@
       <solution><p>This was the mean, here 67.75 in.</p></solution>
     </exercise>
 
-<ul><li>Make sure that the data values in column A are back to their original values. Then click on cell D2 in the Excel spreadsheet, and notice that it gives the formula for the SSE (sum of squared errors) function. </li><li> Fill this formula down the column and create a second graph to display the behavior of this function. [<em>Hints</em>: Click on column B and then hold the mouse down when you click on column D to highlight just those two columns before you insert the graph. You will probably want to double click on the y-axis scale to change its minimum value.]</li></ul>
+<ul><li>Make sure that the data values in column A are back to their original values. Then click on cell D2 in the Excel spreadsheet, and notice that it gives the formula for the SSError (sum of squared errors) function. </li><li> Fill this formula down the column and create a second graph to display the behavior of this function. [<em>Hints</em>: Click on column B and then hold the mouse down when you click on column D to highlight just those two columns before you insert the graph. You will probably want to double click on the y-axis scale to change its minimum value.]</li></ul>
     <exercise xml:id="excel5-8-k">
-      <title>Graph SSE(m)</title>
+      <title>Graph <em>SSError(m)</em></title>
       <statement>
         <p> Does this function have a recognizable form, such as a polynomial? What is its shape? At what value of <m>m</m> is the function minimized? Does this value look familiar?</p>
       </statement>
       <response/>
       <solution>
         <image source="images/excel-5-8-sol-k1.png" width="45%">
-          <description><p>Excel graph of SSE versus m: a smooth parabola with its minimum near m = 67.75, SSE about 476.</p></description>
+          <description><p>Excel graph of SSError versus m: a smooth parabola with its minimum near m = 67.75, SSError about 476.</p></description>
         </image>
         <image source="images/excel-5-8-sol-k2.png" width="25%">
-          <description><p>Excel columns B, C, and D with the row m = 67.75, SAE = 80.5, SSE = 475.75 highlighted.</p></description>
+          <description><p>Excel columns B, C, and D with the row m = 67.75, SAE = 80.5, SSError = 475.75 highlighted.</p></description>
         </image>
-        <p>This is now a parabola, minimized at <m>m = 67.75</m> in (the sample mean) with an SSE value of 475.75.</p>
+        <p>This is now a parabola, minimized at <m>m = 67.75</m> in (the sample mean) with an SSError value of 475.75.</p>
       </solution>
     </exercise>
 
     <exercise xml:id="excel5-8-l">
       <title>Outlier Sensitivity Comparison</title>
       <statement>
-        <p>Suppose there had been a clerical error in entering the height of the tallest student. Change the height of the tallest student from 77 inches to 770 and investigate the effect on the SSE function. Has the value of <m>m</m> that minimizes SSE changed? By how much? How does this compare to the effect of this clerical error on the SAE function and where it is minimized?</p>
+        <p>Suppose there had been a clerical error in entering the height of the tallest student. Change the height of the tallest student from 77 inches to 770 and investigate the effect on the SSError function. Has the value of <m>m</m> that minimizes SSError changed? By how much? How does this compare to the effect of this clerical error on the SAE function and where it is minimized?</p>
       </statement>
       <response/>
       <solution>
         <image source="images/excel-5-8-sol-l.png" width="45%">
-          <description><p>Excel graph of SSE versus m after changing 77 to 770: a steadily decreasing line from about 497,500 down to 490,500 with no minimum visible in the window.</p></description>
+          <description><p>Excel graph of SSError versus m after changing 77 to 770: a steadily decreasing line from about 497,500 down to 490,500 with no minimum visible in the window.</p></description>
         </image>
         <p>This changes the function quite a bit and the optimal <m>m</m> is no longer displayed in the graph.</p>
       </solution>
@@ -188,7 +188,7 @@
 
     <paragraphs>
       <title>Discussion</title>
-      <p>Although the SAE criteria would be more resistant to outliers, it does not always lead to a unique minimum (e.g., an even number of data values where the values of the middle pair are not equal). This has led to the more common criterion of least squares.</p>
+      <p>Although the SAE criteria would be more resistant to outliers, it does not always lead to a unique minimum (e.g., an even number of data values where the values of the middle pair are not equal). This has led to the more common criterion of <em>least squares</em>.</p>
       <p>See the exercises for investigating additional minimization criteria, such as the median of absolute errors and maximum of absolute errors.</p>
     </paragraphs>
   </exercises>
