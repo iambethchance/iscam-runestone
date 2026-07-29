@@ -54,22 +54,12 @@ invisible()
       <solution><p>Yes</p></solution>
     </exercise>
 
-<p>Produce a histogram and a normal probability plot of the residuals of this regression.</p>
+<ul><li>Check the <alert>Show residual plots</alert> box (under <alert>Explore models</alert>) in the applet to produce a histogram of the residuals, a normal probability plot of the residuals, and a scatterplot of the residuals vs. the explanatory variable.</li></ul>
 
     <exercise xml:id="inv5-14-c">
       <title>Residual Normality</title>
       <statement>
         <p> Is it reasonable to consider the residuals as following the normal distribution? Explain.</p>
-        <aside>
-          <title>Residual Plots</title>
-          <p>The <url href="https://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables</url> applet (but not the Two Quantitative Variables applet) can display residual plots. For this regression:</p>
-          <image source="images/inv-5-14-sol-c1.jpg" width="100%">
-            <description><p>Histogram of the residuals, skewed to the right with a peak just below zero.</p></description>
-          </image>
-          <image source="images/inv-5-14-sol-c2.jpg" width="100%">
-            <description><p>Normal probability plot of the residuals with 95 percent confidence bands; the points bend away from the line in both tails.</p></description>
-          </image>
-        </aside>
         <hint>
           <title>R Instructions</title>
           <p>Access the residuals with <c>lm(price~sqft)$residuals</c>:</p>
@@ -99,7 +89,7 @@ invisible()
         <p>The residuals appear to be skewed to the right and not following a normal distribution.</p>
       </solution>
     </exercise>
-        <p>Produce a scatterplot of the residuals vs. the square footage.</p>
+<ul><li>Examine the scatterplot of the residuals vs. the square footage (also shown by <alert>Show residual plots</alert>).</li></ul>
 
     <exercise xml:id="inv5-14-d">
       <title>Residual Pattern Checks</title>
@@ -108,13 +98,6 @@ invisible()
         <p>Curvature (Yes/No): <var width="5"/></p>
         <p>Does the variability in the residuals appear to be roughly constant across the graph?</p>
         <p>Roughly constant (Yes/No): <var width="5"/></p>
-        <aside>
-          <title>Residuals vs. Square Footage</title>
-          <p>From the <url href="https://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables</url> applet:</p>
-          <image source="images/inv-5-14-sol-d.jpg" width="100%">
-            <description><p>Scatterplot of residuals versus square footage; the residuals cluster closer to zero for smaller houses and spread out more for larger houses.</p></description>
-          </image>
-        </aside>
         <hint>
           <title>R Instructions</title>
           <sage language="r">
@@ -165,7 +148,7 @@ invisible()
     </assemblage>
 
     <ul><li>Check the <alert>Show transformations</alert> box (under <alert>Explore models</alert>) in the applet.</li>
-    <li>Check the <alert>log10</alert> (log base ten) radio button for both the response variable and the explanatory variable. This will take the log base 10 of both the price and square footage variables.</li></ul>
+    <li>Check the <alert>log10</alert> (log base ten) radio button for both the response variable and the explanatory variable. This will take the log base 10 of both the price and square footage variables. (If <alert>Show residual plots</alert> is still checked, the residual plots update to the transformed model.)</li></ul>
 
     <exercise xml:id="inv5-14-e">
       <title>Log Transformation</title>
