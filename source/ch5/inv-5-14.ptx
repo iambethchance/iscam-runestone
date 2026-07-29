@@ -8,19 +8,38 @@
     <introduction>
       <sidebyside widths="63% 34%" margins="0% 0%" valign="top">
         <stack>
-          <p>A group of students wanted to investigate which factors influence the price of a house (Koester, Davis, and Ross, 2003). They used <url href="http://www.househunt.com/">http://www.househunt.com</url>, limiting their search to single family homes in California. They collected a stratified sample by stratifying on three different regions in CA (northern, southern, and central), and then randomly selecting a sample from within each strata. They decided to focus on homes that were less than 5000 square feet and sold for less than $1.5 million. The file <url href="https://www.rossmanchance.com/iscam2/data/housing.txt">housing.txt</url> contains data for their final sample of 83 houses. Below is a scatterplot of the size vs. selling price for this sample.</p>
+          <p>A group of students wanted to investigate which factors influence the price of a house (Koester, Davis, and Ross, 2003). They used <url href="http://www.househunt.com/">http://www.househunt.com</url>, limiting their search to single family homes in California. They collected a stratified sample by stratifying on three different regions in CA (northern, southern, and central), and then randomly selecting a sample from within each strata. They decided to focus on homes that were less than 5000 square feet and sold for less than $1.5 million. The file <url href="https://www.rossmanchance.com/iscam2/data/housing.txt">housing.txt</url> contains data for their final sample of 83 houses.</p>
         </stack>
         <image source="images/housesale.jpeg" width="100%" decorative="yes"/>
       </sidebyside>
-      <image source="images/inv-5-14-scatter.png" width="60%">
-        <description><p>Scatterplot of price (in hundreds of thousands of dollars) versus square footage (in thousands) for 83 California houses, showing a positive association with more spread in prices for larger houses.</p></description>
-      </image>
     </introduction>
+<ul><li>
+Copy and paste the url for <url href="https://www.rossmanchance.com/iscam2/data/housing.txt">housing.txt</url> into the data window of the <url href="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm?hideExtras=1">Analyzing Two Quantitative Variables</url> applet<idx><h>Applet</h><h>Analyzing two quantitative variables</h></idx> (below) and press <alert>Use Data</alert> (twice), being sure to put <em>price</em> on the <em>y</em>-axis and <em>squarefoot</em> on the <em>x</em>-axis (use the <alert>Change variable selections</alert> pull-down menus) to create a scatterplot of the size vs. selling price for this sample. </li>
+<li>Use the applet to determine the least-squares regression line. (Check the <alert>Show Regression Line</alert> and <alert>R-squared</alert> boxes.)</li></ul>
 
+    <interactive iframe="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm?hideExtras=1" width="160%" aspect="3:2"/>
     <exercise xml:id="inv5-14-a">
       <title>Least Squares Line and <m>R^2</m></title>
       <statement>
-        <p>Open the <url href="https://www.rossmanchance.com/iscam2/data/housing.txt">housing.txt</url> file and determine the least-squares regression line for these data. Also report and interpret the value of <m>r^2</m> for these data.</p>
+        <p>Report the least-squares regression line for these data. Also report and interpret the value of <m>r^2</m> for these data.</p>
+        <hint>
+          <title>R Instructions</title>
+          <p>Use <c>lm</c> for the regression line and <c>summary</c> for <m>r^2</m>:</p>
+          <sage language="r">
+            <input>
+# Load and attach the housing data from GitHub
+HP = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/housing.txt", header=TRUE)
+attach(HP)
+
+plot(sqft, price)
+model = lm(price~sqft)
+abline(model)
+print(model)
+cat("r-squared:", summary(model)$r.squared)
+invisible()
+            </input>
+          </sage>
+        </hint>
       </statement>
       <response/>
       <solution><p>The regression equation is <m>\hat{price} = 65930 + 202\,squarefoot</m>. <m>r^2 = 0.421</m></p></solution>
@@ -35,10 +54,39 @@
       <solution><p>Yes</p></solution>
     </exercise>
 
+<p>Produce a histogram and a normal probability plot of the residuals of this regression.</p>
+
     <exercise xml:id="inv5-14-c">
       <title>Residual Normality</title>
       <statement>
-        <p>Produce a histogram and a normal probability plot of the residuals of this regression. Is it reasonable to consider the residuals as following the normal distribution? Explain.</p>
+        <p> Is it reasonable to consider the residuals as following the normal distribution? Explain.</p>
+        <aside>
+          <title>Residual Plots</title>
+          <p>The <url href="https://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables</url> applet (but not the Two Quantitative Variables applet) can display residual plots. For this regression:</p>
+          <image source="images/inv-5-14-sol-c1.jpg" width="100%">
+            <description><p>Histogram of the residuals, skewed to the right with a peak just below zero.</p></description>
+          </image>
+          <image source="images/inv-5-14-sol-c2.jpg" width="100%">
+            <description><p>Normal probability plot of the residuals with 95 percent confidence bands; the points bend away from the line in both tails.</p></description>
+          </image>
+        </aside>
+        <hint>
+          <title>R Instructions</title>
+          <p>Access the residuals with <c>lm(price~sqft)$residuals</c>:</p>
+          <sage language="r">
+            <input>
+# Load and attach the housing data from GitHub (from earlier)
+HP = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/housing.txt", header=TRUE)
+attach(HP)
+model = lm(price~sqft)
+
+hist(model$residuals)
+qqnorm(model$residuals)
+qqline(model$residuals)
+invisible()
+            </input>
+          </sage>
+        </hint>
       </statement>
       <response/>
       <solution>
@@ -51,14 +99,56 @@
         <p>The residuals appear to be skewed to the right and not following a normal distribution.</p>
       </solution>
     </exercise>
+        <p>Produce a scatterplot of the residuals vs. the square footage.</p>
 
     <exercise xml:id="inv5-14-d">
       <title>Residual Pattern Checks</title>
       <statement>
-        <p>Produce a scatterplot of the residuals vs. the square footage.</p>
         <p>Does there appear to be curvature in this graph?</p>
+        <p>Curvature (Yes/No): <var width="5"/></p>
         <p>Does the variability in the residuals appear to be roughly constant across the graph?</p>
+        <p>Roughly constant (Yes/No): <var width="5"/></p>
+        <aside>
+          <title>Residuals vs. Square Footage</title>
+          <p>From the <url href="https://www.rossmanchance.com/applets/2021/multreg/multreg.html">Multiple Variables</url> applet:</p>
+          <image source="images/inv-5-14-sol-d.jpg" width="100%">
+            <description><p>Scatterplot of residuals versus square footage; the residuals cluster closer to zero for smaller houses and spread out more for larger houses.</p></description>
+          </image>
+        </aside>
+        <hint>
+          <title>R Instructions</title>
+          <sage language="r">
+            <input>
+# Load and attach the housing data from GitHub (from earlier)
+HP = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/housing.txt", header=TRUE)
+attach(HP)
+model = lm(price~sqft)
+
+plot(sqft, model$residuals)
+abline(h=0)
+invisible()
+            </input>
+          </sage>
+        </hint>
       </statement>
+      <setup>
+        <var>
+          <condition string="^\s*[Nn]">
+            <feedback><p>Correct. There is at most a very slight hint of curvature <mdash/> nothing strong.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Look again: the pattern does not show strong curvature (though there is a very slight hint of some).</p></feedback>
+          </condition>
+        </var>
+        <var>
+          <condition string="^\s*[Nn]">
+            <feedback><p>Correct. The residuals cluster closer to zero for the smaller houses and spread out more for the larger houses.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Look again: the spread of the residuals increases with square footage, so the variability is not roughly constant.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
       <solution>
         <image source="images/inv-5-14-sol-d.jpg" width="45%">
@@ -74,12 +164,37 @@
       <p>When the regression model conditions are violated, we can often <em>transform</em><idx><h>Transformation</h></idx> the data in the hopes that the new variables do meet the conditions.</p>
     </assemblage>
 
+    <ul><li>Check the <alert>Show transformations</alert> box (under <alert>Explore models</alert>) in the applet.</li>
+    <li>Check the <alert>log10</alert> (log base ten) radio button for both the response variable and the explanatory variable. This will take the log base 10 of both the price and square footage variables.</li></ul>
+
     <exercise xml:id="inv5-14-e">
       <title>Log Transformation</title>
       <statement>
-        <p>Take the log base 10 of both the house prices and sizes, storing the results as <em>logprice</em> and <em>logsqft</em>. Produce the scatterplot and determine the regression equation to model the relationship between these two variables, storing the residuals. Examine the residual plots (histogram of residuals and residuals versus explanatory variable). Do these transformed variables appear to be more suitable for the basic regression model? Explain.</p>
+        <p>Examine the scatterplot of the transformed variables. Do these transformed variables appear to be more suitable for the basic regression model? Explain.</p>
         <hint>
           <p>Keep in mind that R and JMP use <q>log</q> for natural log. Use <q>logten</q> in R and JMP for log base 10.</p>
+        </hint>
+        <hint>
+          <title>R Instructions</title>
+          <p>Create the transformed variables with <c>log10</c>, then refit and examine the residual plots:</p>
+          <sage language="r">
+            <input>
+# Load and attach the housing data from GitHub (from earlier)
+HP = read.table("https://raw.githubusercontent.com/iambethchance/iscam-runestone/master/data/housing.txt", header=TRUE)
+attach(HP)
+
+logprice = log10(price)
+logsqft = log10(sqft)
+plot(logsqft, logprice)
+model2 = lm(logprice~logsqft)
+abline(model2)
+print(model2)
+hist(model2$residuals)
+plot(logsqft, model2$residuals)
+abline(h=0)
+invisible()
+            </input>
+          </sage>
         </hint>
       </statement>
       <response/>
@@ -116,10 +231,21 @@
       <title>Back-Transformed Prediction</title>
       <statement>
         <p>Use the least squares regression line to predict the cost of a 3,000 square foot house.</p>
+        <p>Predicted price: $<var width="12"/></p>
         <hint>
           <p>Substitute <m>\log_{10}(3000)</m> into the right-hand side of the equation to obtain a prediction for the <m>\log_{10}(\text{price})</m>, and then raise 10 to this power to determine the predicted price. Similarly, you can back transform the endpoints of the confidence and prediction intervals from R.</p>
         </hint>
       </statement>
+      <setup>
+        <var>
+          <condition number="623215" tolerance="15000">
+            <feedback><p>Correct! <m>10^{2.70 + 0.890\,\log_{10}(3000)} \approx \$623{,}215</m>.</p></feedback>
+          </condition>
+          <condition string=".*">
+            <feedback><p>Predict the log price first: <m>2.70 + 0.890\,\log_{10}(3000) \approx 5.79</m>, then raise 10 to that power. Enter the price in dollars without commas.</p></feedback>
+          </condition>
+        </var>
+      </setup>
       <response/>
       <solution>
         <p><m>\hat{logprice} = 2.70 + .890\,\text{logten}(3000) = 5.79</m></p>
@@ -133,7 +259,7 @@
   <subsection xml:id="practice-5-14">
     <title>Practice Problem 5.14</title>
     <introduction>
-      <p>The datafile <url href="http://www.rossmanchance.com/iscam2/data/walmart.txt">walmart.txt</url> contains data on the number of stores and the number of SuperCenters that Wal-Mart had in operation between 1989 and 2002.</p>
+      <p>The datafile <url href="https://www.rossmanchance.com/iscam2/data/walmart.txt">walmart.txt</url> contains data on the number of stores and the number of SuperCenters that Wal-Mart had in operation between 1989 and 2002.</p>
     </introduction>
 
     <exercise xml:id="practice-5-14-1" label="P5-14-1">
