@@ -969,3 +969,122 @@ tech-5-4-regression-effect, section5-4-summary — all verbatim incl. formulas v
 - inv-5-9: detour lead-in drops "(rating)"; (e) drops "(see below)"; "if"->"whether"; PDF typos fixed
   (IMBD->IMDB, Titantic->Titanic, "r2 and s provide").
 - section5-3-summary: verbatim (adds paren the PDF omits).
+
+---
+
+# Master-PDF typo sweep, pages 9-390 - 2026-07-30
+
+Three report-only proofreading passes over source/iscam4_RJMPFall26.pdf (2026-07-30 build), covering
+everything BEFORE the already-audited tail (pages 391-425; see the 34-finding reconciliation above).
+181 suspected typos total: 60 (pp. 9-130), 68 (pp. 131-260), 53 (pp. 261-390). These are PDF/Word-side
+findings; many are likely faithfully transcribed in the PTX and will need the same reconciliation
+workflow after the author's Word pass (fix Word -> regenerate PDF -> verify -> sync PTX).
+Minitab output attributions and Checkpoint labels excluded per author policy.
+
+## Pages 9-130 (Preliminaries + Chapter 1) - 60 items
+
+P1. p9 "measures the lack of asymmetry" -> lack of symmetry. P2. p9 "(due values above" -> due to.
+P3. p10 "all four mothers ... her own baby" -> their (borderline). P4. p16 stray "how" in "determine how
+the probability". P5. p16 "the balls lands" -> ball. P6. p17 "the model valid" -> model is valid.
+P7. p21 "realizations a random process" -> of a. P8. p25 "infants ... picking" -> picked. P9. p26 stray
+"(" after part (q). P10. p27 "choosing blindly when presenting the toys" -> when presented (borderline).
+P11. p29 "quantitative or a categorical" -> stray a. P12. p30 "need agree" -> need to agree. P13. p33
+"Sate the null" -> State. P14. p35 "keeping tracking" -> keeping track. P15. p39 (b)-parallel question
+ends with period not ? (minor). P16. p44 "new hire new hire" doubled. P17. p44 "then proportion" -> then
+the proportion. P18. p47 "hypothesis is words" -> in words. P19. p48 "to testing" -> to test. P20. p52
+"from 0.529 and 0.749" -> to; "confidence Interval" stray capital. P21. p52 "allows to you test" ->
+allows you to test. P22. p53 "Canadien Journal" -> Canadian. P23. p53 "likely duality" (borderline).
+P24. p58 "(l) Repeat (i) and (j)" -> likely (j) and (k) (borderline). P25. p59 "a ... distributions"
+number disagreement. P26. p59 "father or the child" -> of the child. P27. p60 stray "at" in "instead of
+candy at when". P28. p65 "choosing toy" -> choosing the toy (minor). P29. p65 "a = 0.05 ... p = 0.60" ->
+alpha / pi (matches the PP1-8B-6 fix already made in Runestone inv-1-8). P30. p70 "is midpoint" -> is
+the midpoint (minor). P31. p73 "Determine and compare to the margin of error change if with" - garbled.
+P32. p74 "iscamoneproptest" -> iscamonepropztest. P33. p76 "confidence interval confidence interval"
+doubled. P34. p77 unmatched ")" + missing "they" in "though are more computationally efficient".
+P35. p77 "Blaker method discussed in Investigation 1.10" -> Inv 1.6. P36. p83 "(Alterative Proportion)"
+-> Alternative. P37. p89 "an observational units" -> unit. P38. p90 "You may can random.org" - garbled.
+P39. p93 "systematic sample" -> sampling. P40. p94 unmatched ")" after E(p-hat) = pi. P41. p94 "the
+second one will be is 110/267" -> will be short is. P42. p95 "compare the standard deviation" -> compare
+to. P43. p99 "Let pi the ... and given that" - missing verb, garbled. P44. p99 "in the sample an the
+normal" -> and. P45. pp100-104 hypothesis 0.15 vs 0.155 switch unexplained (borderline). P46. p101 last
+product "(17/110)(17/109)" impossible - visually verified. P47. p101 "C(33,21)" with exponent 12 - reads
+as transposition of C(33,12) (borderline). P48. p105 unmatched ")" after "quarter million postcards per
+day)". P49. p106 "sample appear" -> appears. P50. p106 "unrepresented" -> underrepresented. P51. p109
+stray "(" before "[Hint:". P52. p112 "Mandisodka" -> Mandisodza. P53. p117 "appropriate power" ->
+approximate power. P54. p119 "both telephone interviews with online" -> and. P55. p124 "Simulating
+Power applet" vs "Power Simulation applet" p80 (borderline). P56. p126 Mac paste code: stray quote +
+missing paren in read.table(pipe("pbpaste")...). P57. p126 "iscaminvnormprob" vs "iscaminvnorm" Inv 1.9
+(borderline). P58. p127 "in each group" x2 leftover in one-proportion summary table. P59. p128
+"Chapters 1" -> Chapter 1. P60. p129 "2023 datafile" fragment vs 2024 file (borderline).
+
+## Pages 131-260 (Ch1 tail, Ch2, Ch3, Ch4 start) - 68 items
+
+Q1. p131 "is equals 9999". Q2. p133 "standard deviations values". Q3. p139 "conditions the CLT" - missing
+of. Q4. p140 "Using ... and select" verb mismatch (borderline). Q5. p143 "Determine median" - missing the.
+Q6. p152 "Is that still true that" -> Is it still true. Q7. p156 "uncertainly" -> uncertainty. Q8. p160
+"when prediction one person's" -> predicting. Q9. p161 "interpretation on the interval" -> of. Q10. p162
+"this 3context" stray 3 (verified). Q11. p166 "and of the median ... tended to below" - stray of, missing
+be. Q12. p167 "a normal probability is not reasonable" - missing model. Q13. p171 "beyond of the scope".
+Q14. p171 "(75% percentile)" -> 75th. Q15. p174 "Ha; mu != 20" semicolon -> colon. Q16. p175 interval
+labels say 95%/99% but values are the 99%/99.9% intervals (verified visually). Q17. p175 "population 7th
+graders" - missing of. Q18. p176 "assigned as to use" garbled (borderline). Q19. p187 "rules ... is" ->
+are. Q20. p187 "Then use we use". Q21. p187 "(v) ... specified in (t)" -> (u). Q22. p189 "1998 and 2002"
+wrong-context years (borderline). Q23. p190 unclosed paren after "first group". Q24. p190 "change with
+outcome" -> which. Q25. p191 "most focus" -> mostly (borderline). Q26. p194 "explanation in (d)" -> (e).
+Q27. p197 "generator select" - missing to. Q28. p197 "to see compare". Q29. p197 stray "grade". Q30. p198
+"(for 2000 total," unclosed paren. Q31. p198 "2.000 repetitions" -> 2,000. Q32. p198 "or ended up" ->
+ending. Q33. p200 "A groups of study units". Q34. p200 "Selection units" -> Selecting (borderline).
+Q35. p203 "had 1-day session" - missing a. Q36. p204 Quick Check "who were given ... and improved?"
+garbled (borderline). Q37. p210 "two-table table" -> two-way table. Q38. p211 "Investigations 3.6
+(Dolphin Therapy)" -> 3.5. Q39. p212 "N!/[n!(N - n!)]" -> N!/[n!(N-n)!] (verified). Q40. p214 "P(X >= X)"
+threshold should be lowercase x (borderline). Q41. p216 "non-yawners yawners" doubled. Q42. p222 "(w)
+... 1,000 simulated" vs (f) 10,000. Q43. p224 "that ratio" - missing the. Q44. p225 "provided" ->
+provide. Q45. p225 "that those receiving" -> than. Q46. p225 stray comma "group, reported". Q47. p226
+"number of success" -> successes. Q48. p226 "as an at least a moderate" garbled. Q49. p228 "odds are
+being" -> odds of being. Q50. p234 "Though cluster sampling" -> Through. Q51. p239 "distribution ...
+look" -> looks. Q52. p243 Example 3.2 (a) subscripts "white - hispanic" but text compares White and
+Black. Q53. p243 "government survey" -> surveys. Q54. p243 "proportions ... is" -> are; missing the.
+Q55. p243 "Not that the imbalance" -> Note that. Q56. p246 "(JMP. Applet)" period -> comma; also
+"Creating segmented bar graphs (R, Minitab, Excel)" still names Minitab (borderline/consistency).
+Q57. p248 "matrixname = (matrix, (c(A, C, B, D)" garbled R -> matrix(c(...)). Q58. p248 "fisher.text" ->
+fisher.test. Q59. p248 rhyper args copied from rbinom (borderline). Q60. p249 "Comparing for two
+treatment means" stray for. Q61. p250 banner "QUANTITATIVE REPONSE" -> RESPONSE. Q62. p250 "(e.g., add a
+3 and a 5 ..." unclosed paren. Q63. p250 "to layoff" -> lay off. Q64. p254 "and then we then discuss".
+Q65. p257 detour applet "Comparing Two Populations" vs "Sampling from Two Populations" p254 (borderline).
+Q66. p258 inline SE formula has n2 in BOTH denominators - first should be n1 (verified; summary box
+below is correct). Q67. p258 "two samples sizes" -> sample sizes. Q68. p260 R stacking example
+"salary/division" vs "conference" used everywhere else on page (borderline).
+
+## Pages 261-390 (Chapter 4 + Chapter 5 front) - 53 items
+
+R1. p261 "its plausible" -> it's. R2. p261 "t-tests only tells" -> tell. R3. p261 "help us analysis" ->
+analyze. R4. p265 "Halpren" -> Halpern (correct on p263). R5. p266 "Both before the curriculum
+intervention, all children" garbled (verified). R6. p270 axis label subscript "restricted" -> unrestricted
+(verified). R7. p271 "represents the dotplot" - missing in. R8. p274 detour "or as or more extreme as"
+garbled (verified). R9. p277 "faster that the long-run" -> than. R10. p282 "combinations values" -
+missing of. R11. p284 "typing seed" -> speed. R12. p285 "treatment difference in treatment means"
+doubled (borderline). R13. p287 "and order them" -> orders. R14. p289 "(f) ... whether comparing typing
+speeds" garbled/incomplete. R15. p292 "give a one-sided p-value" -> gives. R16. p293 "the among of" ->
+amount. R17. p293 "and other not" - missing the. R18. pp294/297 "Luckys" vs "Lucky's" (borderline).
+R19. p297 "Practice Problem 4.9" -> 4.9B (borderline). R20. p299 "each children" -> child; "whether or
+not woke up" missing subject. R21. p300 "distribution number of successes" - missing of the. R22. p302
+Example 4.1(c) duplicated/incomplete sentence (borderline). R23. p304 "conditions appears" -> appear.
+R24. p311 "need to a make a few". R25. p311 "one item from each of 30 pages" vs Inv 4.10's 32 sheets of
+30 items (borderline). R26. p311 "$0.79" vs "$0.80" two sentences apart (borderline). R27. p313 "One
+solution is to this embarrassingly lower power is to" garbled. R28. p316 "Matched paired design" ->
+Matched pairs (borderline). R29. p318 "child-bearing" -> child-rearing; "(Ziesel" -> Zeisel (borderline,
+quoted material). R30. p324 "does provides" -> does provide. R31. pp321/324 applet name "- Sampling" vs
+"- Samples" (borderline). R32. p325 "USA Today(cedilla)" -> comma. R33. p325 "Believes almost nothing"
+vs "Believe all" header (borderline). R34. p326 "How has the percentages" -> have. R35. p327 "you can a
+column of counts" - missing add. R36. p330 Pinocchio expected count "31 (29.22)" -> (28.22): as printed
+the column expecteds sum to 45 not 44; matches George Washington 28.22 (verified visually). R37. p331
+"simulating binomial random sample" (borderline). R38. p345 Practice 5.4A "boxplots from part (e)" ->
+(h). R39. p348 "would you be led" scrambled -> you would be led. R40. p351 "evolution history" ->
+evolutionary (borderline). R41. p352 "(f) ... its pair of values" -> their pairs (borderline). R42. p353
+"heavier cats ... than larger cats" -> than lighter cats. R43. p355 "through the September 2018" stray
+the. R44. p358 "varable" -> variable. R45. p359 "only for only" doubled. R46. p364 "sum of residual" ->
+residuals. R47. p371 "(e) ... as dramatic as in (c)?" -> (d) (borderline). R48. p374 "SAE criteria ...
+it" -> criterion (borderline). R49. p378 "Practice Problem 5.9" -> 5.9A (borderline). R50. p384
+"generalizing ... to a larger sample" -> population (borderline). R51. p387 "(e.g., what value ..." paren
+never closed. R52. p387 "and random shuffling)." stray paren. R53. p390 "the similarly variability" ->
+similar.
