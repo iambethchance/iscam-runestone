@@ -75,7 +75,7 @@ Zone        26  4.88   6.92    3.40  8.63  (all in kilograms)</pre>
         <description><p>Segmented bar graph of completed versus dropped out by diet; completion rates are near 52 percent for Atkins, 50 percent for Ornish, and 65 percent for Weight Watchers and Zone.</p></description>
       </image>
 
-      <p>This preliminary analysis appears to reveal that the completion rates are very similar across the four diet plans. Weight Watchers and Zone tied for the highest completion rate (62.5%), with Ornish having the lowest completion rate (50%), but these do not seem to differ substantially.</p>
+      <p>This preliminary analysis appears to reveal that the completion rates are very similar across the four diet plans. Weight Watchers and Zone tied for the highest completion rate (65%), with Ornish having the lowest completion rate (50%), but these do not seem to differ substantially.</p>
 
       <p>To test whether these differences in the distributions of the categorical response variable are statistically significant, we can apply a chi-squared test of the hypotheses:</p>
       <p><m>H_0</m>: <m>\pi_A = \pi_O = \pi_W = \pi_Z</m>, where <m>\pi_i</m> represents the underlying completion rate after 12 months with diet <m>i</m> (diet does not have an effect on completion rate)</p>
@@ -125,7 +125,7 @@ adherence level 2.388    0.397     6.01    0.000</pre>
       <image source="images/eoc-5-4-residplots.png" width="95%">
         <description><p>Two plots: residuals versus adherence level showing random scatter with a slight suggestion of increasing variability at larger values, and a normal probability plot of the residuals (RESI1) with points close to the line, bending slightly at the right tail.</p></description>
       </image>
-      <p>The plot of residuals vs. the explanatory variable does not reveal any serious problems, although there is a (slight?) suggestion of increasing variability with larger values. The normal probability plots suggests a bit of a skew to the right but not too much. This last condition is a bit less problematic with the large sample size in this study. We could consider a transformation to account for the increasing variability, but the increase does not seem substantial enough to warrant a transformation here. These technical conditions seem to be fairly well met.</p>
+      <p>The plot of residuals vs. the explanatory variable does not reveal any serious problems, although there is a (slight?) suggestion of increasing variability with larger values. The normal probability plot suggests a bit of a skew to the right but not too much. This last condition is a bit less problematic with the large sample size in this study. We could consider a transformation to account for the increasing variability, but the increase does not seem substantial enough to warrant a transformation here. These technical conditions seem to be fairly well met.</p>
 
       <p>The standardized statistic is very large (<m>t = 6.01</m>) and the p-value very small (0.000 to three decimal places), and so we can conclude that the experimental data provide extremely strong evidence that there is an association between adherence level and weight loss. The p-value reveals that it would be almost impossible to obtain such large sample correlation and slope coefficients from random sampling variation alone. At any reasonable significance level, we conclude that this association is statistically significant.</p>
 
@@ -142,7 +142,7 @@ adherence level 2.388    0.397     6.01    0.000</pre>
     </statement>
     <response/>
     <solution>
-      <p>Mean weight loss: To address the question of whether dieters who complete 12 months on one of these popular diet plans actually tend to lose weight, we can begin by combining the weight loss diet across all four diet plans. This step seems reasonable because of our conclusion in <xref ref="eoc5-4-a" text="custom">Question 1</xref> that the there is no evidence of an effect of diet plan on weight loss. Although the adherence level does appear to be related to amount of weight lost, the completion rate did not vary significantly across the diets, providing further justification for pooling across the diets. A histogram of the weight loss amounts (in kilograms) for the 93 subjects who completed the 12-month study follows:</p>
+      <p>Mean weight loss: To address the question of whether dieters who complete 12 months on one of these popular diet plans actually tend to lose weight, we can begin by combining the weight loss data across all four diet plans. This step seems reasonable because of our conclusion in <xref ref="eoc5-4-a" text="custom">Question 1</xref> that there is no evidence of an effect of diet plan on weight loss. Although the adherence level does appear to be related to amount of weight lost, the completion rate did not vary significantly across the diets, providing further justification for pooling across the diets. A histogram of the weight loss amounts (in kilograms) for the 93 subjects who completed the 12-month study follows:</p>
       <image source="images/eoc-5-4-hist.png" width="55%">
         <description><p>Histogram of weight loss (kilograms) for the 93 subjects, a bit skewed to the right, with most values between -5 and 15 and a few values above 20.</p></description>
       </image>
@@ -158,9 +158,9 @@ adherence level 2.388    0.397     6.01    0.000</pre>
 
       <p>We can cautiously follow this up with a 95% prediction interval for the weight loss of an individual dieter: <m>4.95 \pm 1.986(6.89)\sqrt{1 + \dfrac{1}{93}}</m>, which is <m>4.95 \pm 13.76</m>, which is <m>(-8.81, 18.71)</m>. This interval implies that, with 95% confidence, we can assert only that an individual dieter is predicted to see a weight change anywhere between a gain of 8.8 kilograms and a loss of 18.7 kilograms. However, the slight skewness in the sample data leads us to question the validity of this prediction interval because the normality condition is essential for this procedure.</p>
 
-      <p>We could also perform a <q>sign test</q><idx><h>Sign test</h></idx> of the hypotheses. A sign test reduces the analysis to counting how many <q>positive</q> and <q>negative</q> differences there are and determining whether we have significantly more of one that then other.</p>
+      <p>We could also perform a <q>sign test</q><idx><h>Sign test</h></idx> of the hypotheses. A sign test reduces the analysis to counting how many <q>positive</q> and <q>negative</q> differences there are and determining whether we have significantly more of one than the other.</p>
       <p><m>H_0</m>: <m>\pi = 0.5</m> (half of the population of all potential dieters would lose positive weight on one of these diet plans)</p>
-      <p><m>H_a</m>: <m>\pi &gt; 0.5</m> (more than half of the population of all potential dieters would lose positive weight on one of these diet plans)</p>
+      <p><m>H_a</m>: <m>\pi &gt; 0.5</m> (more than half of the population of all potential dieters would lose weight<mdash/>positive weight change<mdash/>on one of these diet plans)</p>
       <p>The data reveal that 71 of 93 subjects had positive weight loss. The binomial distribution (with parameters <m>n = 93</m> and <m>\pi = 0.5</m>) reveals that the p-value of <m>P(X \geq 71)</m> equals essentially zero (<m>z \approx 5.08</m>). Thus, this sign test leads to a similar conclusion: overwhelming evidence that more than half of the population would lose positive weight.</p>
 
       <p>Because of the volunteer nature of the sample, it is not completely clear to what population we can generalize these results. Moreover, even though we concluded that the mean weight loss is significantly larger than zero, we cannot attribute the cause to the diet. Without the use of a comparison group of people who did not participate in a diet plan, we cannot conclude that the diet alone is responsible for the tendency to lose weight. Perhaps even the power of suggestion from being in the study was a sufficient cause for these individuals to lose weight on average.</p>
@@ -178,7 +178,7 @@ adherence level 2.388    0.397     6.01    0.000</pre>
       <ul>
         <li><p>We do not have convincing evidence to suggest that one of these popular diet plans produces more weight loss on average than another.</p></li>
         <li><p>We do not have convincing evidence to suggest that completion rates differ among the four diet plans.</p></li>
-        <li><p>We do have very strong evidence to suggest that dieters on one of these plans will lose weight, between 3.5 and 6.5 kg on average, subject to the caveat that the dieters in this study may not be representative of a larger population of overweight people.</p></li>
+        <li><p>We do have very strong evidence to suggest that dieters on one of these plans will lose weight, between 3.5 and 6.4 kg on average, subject to the caveat that the dieters in this study may not be representative of a larger population of overweight people.</p></li>
         <li><p>We do have significant evidence that those who adhere to a diet more closely do tend to lose more weight (subject to the same caveat).</p></li>
       </ul></p>
     </solution>

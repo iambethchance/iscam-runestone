@@ -47,7 +47,7 @@
 
       <p>We notice that the proportions of internet users do not vary too much across these four regions. The west has the highest proportion, with about 63% internet use, and the south has the smallest with only 55% internet use.</p>
 
-      <p>To see whether at least one of these regions is statistically significant different from the others, we use technology to determine the expected counts, chi-squared test statistic, and p-value. Below is software output:</p>
+      <p>To see whether at least one of these regions is statistically significantly different from the others, we use technology to determine the expected counts, chi-squared test statistic, and p-value. Below is software output:</p>
       <p>R</p>
       <pre>&gt; mydata = matrix(c(2417, 1556, 2372, 1960, 2831, 2098, 3259, 1878), ncol=4)
 &gt; chisq.test(mydata, correct=FALSE)
@@ -65,7 +65,7 @@ X-squared = 84.46, df = 3, p-value &lt; 2.2e-16</pre>
 
       <p>The p-value is extremely small (0.000 to three decimal places), indicating that the differences observed in the sample proportions would almost never occur by chance if the population proportions were really equal across the four regions. Thus, we have overwhelming evidence to reject the null hypothesis and conclude that the proportions of internet users are not the same in these four regions.</p>
 
-      <p>In an effort to say a little bit more, we can examine the cell contributions. We see that the largest contributions occur in the West and South. The West had more internet users, 3259, (and so fewer non-internet users) than would have been expected if the proportions were all the same, 3042.05, and the South had fewer internet users, 2372, (and so more non-users) than would have been expected, 1766.66. The observed counts in the Northeast and Midwest regions were fairly close to the expected counts.</p>
+      <p>In an effort to say a little bit more, we can examine the cell contributions. We see that the largest contributions occur in the West and South. The West had more internet users, 3259, (and so fewer non-internet users) than would have been expected if the proportions were all the same, 3042.05, and the South had fewer internet users, 2372, (and so more non-users) than would have been expected, 2565.4. The observed counts in the Northeast and Midwest regions were fairly close to the expected counts.</p>
 
       <p>In conclusion, the sample data provide very strong evidence that the population proportions of internet users differ across regions of the United States. The differences in the sample proportions are larger than can reasonably be explained by random sampling variation. The large sample sizes in this study help to render the differences among the samples statistically significant even though the sample proportions seem to be fairly similar in practical terms.</p>
     </solution>
