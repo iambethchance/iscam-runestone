@@ -11,22 +11,22 @@
 
     <p>An approximate <m>100 \times C\%</m> confidence interval formula is <m>b_1 \pm t_{n-2}\,SE(b_1)</m> where <m>-t_{n-2}</m> is the <m>100 \times (1 - C)/2</m> percentile of the student <em>t</em>-distribution with <m>n - 2</m> degrees of freedom.</p>
 
-    <p>These procedures are valid as long as
+    <p>These procedures are valid as long as</p>
     <ul>
       <li><p>L: There is a linear relationship between the response and explanatory variable.</p></li>
       <li><p>I: The observations are independent.</p></li>
       <li><p>N: The response follows a normal distribution for each value of <m>x</m>.</p></li>
       <li><p>E: The standard deviation of the responses is the same at each value of <m>x</m>.</p></li>
-    </ul></p>
+    </ul>
 
     <p>These conditions are checked by examining the residual plots: residuals vs. explanatory variable and histogram/normal probability plot of the residuals.</p>
 
-    <p><term>Technology:</term> Most packages automatically report the <em>two-sided</em> p-value. This p-value can be divided in half to obtain a one-sided p-value (assuming the observed slope is in the direction conjectured).
+    <p><term>Technology:</term> Most packages automatically report the <em>two-sided</em> p-value. This p-value can be divided in half to obtain a one-sided p-value (assuming the observed slope is in the direction conjectured).</p>
     <ul>
       <li><p><url href="https://www.rossmanchance.com/applets/2021/regshuffle/regshuffle.htm"><alert>Analyzing Two Quantitative Variables</alert></url> applet or <url href="https://www.rossmanchance.com/applets/2021/multreg/multreg.html"><alert>Multiple Variables</alert></url> applet</p></li>
       <li><p><term>R:</term> <c>summary(lm(response~explanatory))</c></p></li>
       <li><p><term>JMP:</term> Analyze &gt; Fit Y by X</p></li>
-    </ul></p>
+    </ul>
   </assemblage>
 
   <paragraphs><title>Discussion</title><p> Typically, we are most interested in testing whether the population slope coefficient equals zero, as that would suggest that the population regression line is flat and so the explanatory variable is of no use in predicting the response variable. Because testing whether the slope coefficient is zero tests whether the regression model with this explanatory variable is of any use, it is sometimes called a <em>model utility test</em><idx><h>model utility test</h><h>test of whether the population slope is zero</h></idx>.</p>

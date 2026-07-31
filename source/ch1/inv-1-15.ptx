@@ -259,10 +259,10 @@
     <title>Probability Detour <mdash/> Hypergeometric Random Variables</title>
     
     <p>To be a <term>Hypergeometric random variable</term><idx><h>Hypergeometric random variable</h></idx>, a random process must have the following properties:</p>
-    <p><ul>
+    <ul>
       <li><p><m>n</m> observations are drawn without replacement from a population of <m>N</m> objects.</p></li>
       <li><p>There are two distinct types of objects in the population, <m>M</m> successes and <m>N - M</m> failures.</p></li>
-    </ul></p>
+    </ul>
     
     <p>The main distinction between a hypergeometric random variable and a binomial random variable is the trials are no longer independent. The probability of drawing a success for the first object is <m>M/N</m>. But if we do draw a success, then the probability of success for the second object is <m>(M - 1)/(N - 1)</m>. If we replaced the item, then we would be back to a binomial process.</p>
     
@@ -282,13 +282,13 @@
     <hint>
       <title>R Instructions</title>
       <p>The <c>iscamhyperprob</c> function takes the following inputs:</p>
-      <p><ul>
+      <ul>
         <li><p><c>k</c>, the observed value of interest (or the difference in conditional proportions, assumed if value is less than one, including negative)</p></li>
         <li><p><c>total</c>, the total number of observations in the population</p></li>
         <li><p><c>succ</c>, the overall number of successes in the population</p></li>
         <li><p><c>n</c>, the sample size</p></li>
         <li><p><c>lower.tail</c>, a Boolean which is TRUE or FALSE</p></li>
-      </ul></p>
+      </ul>
       <p>For example:</p>
       <sage language="r">
         <input>
@@ -303,11 +303,11 @@ iscamhyperprob(k=12, total=110, succ=17, n=33, lower.tail=FALSE)
     <hint>
       <title>JMP Instructions</title>
       <p>Using the Distribution Calculator in the <url href="http://www.rossmanchance.com/iscam3/data/ISCAM_Journal.jrn" download="ISCAM_Journal.jrn" target="_blank">ISCAM Journal File</url>:</p>
-      <p><ul>
+      <ul>
         <li><p>Select <term index="no">Hypergeometric</term> from the Distribution menu.</p></li>
         <li><p>Specify the Population Size, the number of successes in the population (Number of items) and the sample size.</p></li>
         <li><p>Choose the tail probability and specify the number of interest (e.g., 12)</p></li>
-      </ul></p>
+      </ul>
       <p>Note: To find <m>P(X \geq 12)</m>, we use <m>P(X > 11)</m>.</p>
       <sidebyside widths="45% 45%">
         <image source="images/Inv1.15JMP1.png">
