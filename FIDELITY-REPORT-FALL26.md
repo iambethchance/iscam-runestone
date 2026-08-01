@@ -974,6 +974,33 @@ tech-5-4-regression-effect, section5-4-summary — all verbatim incl. formulas v
 
 # Master-PDF typo sweep, pages 9-390 - 2026-07-30
 
+> **Verification update (2026-08-02):** The author's Word fix pass was verified against the regenerated
+> PDF (2026-08-02 build, synced from Dropbox into `source/`) via a full-text word diff of old vs new
+> builds (270 changed regions). **Result: 165 of 181 items fixed.**
+> **Two fixes introduced new typos (both visually confirmed, need a Word touch-up):**
+> (1) p59 Empirical Rule box now reads "for **amound-shaped**, symmetric distribution" — space lost
+> fixing P25; should be "a mound-shaped". (2) p94 (P41) the word "short" was inserted in the wrong spot:
+> "the probability the second one will **short be is** 110/267" — should be "will be short is" (the
+> Runestone `inv-1-13.ptx` has it correctly); same sentence now also says "is a *short*" / "is not a
+> *short*" (stray "a" unless the noun usage is intentional).
+> **Not fixed (16):** P15 (p39 period vs ?), P23 (p53 "likely duality"), P34-partial (p77 "though are
+> more" still missing "they"), P40 (p94 unmatched paren), P60 (p129 2023 datafile), Q22 (p189 years —
+> author added a source-URL comment instead), Q38 (p211 "Investigations 3.6" should be 3.5), Q48 (p226
+> "as an at least a moderate"), Q52 (p243 Ex 3.2(a) subscripts white-hispanic vs White/Black), Q54
+> (p243 "proportions … is"), R6 (p270 axis-label subscript "restricted" — figure edit), R20-partial
+> (p299 "whether or not woke up" still missing subject), R22 (p302 Ex 4.1(c) duplicated sentence),
+> R31 (p321/324 applet name — author left a "be consistent!" comment), R32 (p325 USA Today cedilla),
+> R41 (p352 "its pair of values"). P47 resolved as no-change-needed (C(33,21) = C(33,12)).
+> **Author fixes beyond the list:** running headers on Example 3.1 pages corrected (were "Investigation
+> 3.10"); Practice Problem renumbers 4.9→4.9B and 4.10D→4.10C; p104 0.155→0.151; "Lucky's"/"Luckys" →
+> "Lucky (Supermarkets)". **Note:** the 2026-08-02 PDF was exported *with Word markup showing* — a gray
+> comments pane on every page and ~60 "Commented [BLC/BC…]" balloons are in the file (fine for a working
+> copy; re-export without markup before distributing). Grep confirmed none of the fixed function-name
+> typos (iscamoneproptest, iscaminvnormprob, fisher.text) exist in the PTX. PTX sync items: inv-a's new
+> "(do values … on average)" parenthetical matches Word (consider adding "?" to both); Word's new
+> wordings for P24 ("Repeat (j) and (k)"), Q21 ("the previous question"), and the PP renumbers should be
+> matched against the PTX during the Section-1 reconciliation pass.
+
 Three report-only proofreading passes over source/iscam4_RJMPFall26.pdf (2026-07-30 build), covering
 everything BEFORE the already-audited tail (pages 391-425; see the 34-finding reconciliation above).
 181 suspected typos total: 60 (pp. 9-130), 68 (pp. 131-260), 53 (pp. 261-390). These are PDF/Word-side
