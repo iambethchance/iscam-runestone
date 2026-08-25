@@ -226,11 +226,11 @@ just learned to a study comparing different ways of responding to a heart attack
     </statement>
     <setup>
       <var>
+        <condition string="(?!.*-\s*0?\.04).*0?\.04\d*.*">
+          <feedback><p>Correct! The difference is approximately 0.042.</p></feedback>
+        </condition>
         <condition string=".*-\s*0?\.04\d*.*">
           <feedback><p>Check the direction of subtraction. The question asks for CC – CPR, so the difference should be positive.</p></feedback>
-        </condition>
-        <condition string=".*0?\.04\d*.*">
-          <feedback><p>Correct! The difference is approximately 0.042.</p></feedback>
         </condition>
         <condition string=".+">
           <feedback><p>Response recorded. The difference should be 35/240 - 29/278 ≈ 0.042.</p></feedback>

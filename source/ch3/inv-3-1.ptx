@@ -27,7 +27,12 @@
     </statement>
     <setup>
       <var>
-        <condition string=".*"/>
+        <condition string=".+">
+          <feedback><p>Response recorded.</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Please enter a response.</p></feedback>
+        </condition>
       </var>
       <var>
         <condition string="^\s*([Ww]hether\s+or\s+not\s+([Hh]as|[Hh]ave)\s+[Hh]earing\s+[Ll]oss|[Hh]earing\s+[Ll]oss\s*([Yy]es/[Nn]o|[Yy]es-[Nn]o)|[Ss]ome\s+[Hh]earing\s+[Ll]oss)\s*$">

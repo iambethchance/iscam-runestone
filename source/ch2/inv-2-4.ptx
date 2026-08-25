@@ -59,10 +59,16 @@
         <condition string="boats|boat trips|trips|samples|sample|tour boats" correct="yes">
           <feedback><p>Correct!</p></feedback>
         </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. The probability of interest does not pertain to individual passengers.</p></feedback>
+        </condition>
       </var>
       <var case="insensitive">
         <condition string="average weight|mean weight|average weight of passengers|mean weight of passengers|average weight of 47 passengers" correct="yes">
           <feedback><p>Correct!</p></feedback>
+        </condition>
+        <condition string=".*">
+          <feedback><p>Not quite. Consider what is measured for each boat trip.</p></feedback>
         </condition>
       </var>
     </setup>
