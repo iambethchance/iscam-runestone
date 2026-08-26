@@ -12,7 +12,10 @@ be caught BEFORE committing/pushing to Runestone:
     * xi:include of a missing file
     * <image source> file missing
     * <image source> case mismatch    -> works on Windows/Mac, BREAKS on Runestone's Linux
-    * <p> directly wrapping a block list (<ul>/<ol>) -> deprecated block-in-inline
+    * <p> directly wrapping a block list (<ul>/<ol>) OUTSIDE an assemblage -> deprecated
+      block-in-inline. INSIDE an <assemblage> the rule inverts: the schema only allows
+      <p> children there, so a BARE <ul>/<ol> is silently DROPPED from the rendered page
+      (the empty-assemblage bug of Aug 2026) — lists in assemblages must be <p>-wrapped.
 
   WARN-level (worth a look, not necessarily wrong):
     * .ptx files under source/ not reachable from main.ptx (orphans/backups)
@@ -88,6 +91,28 @@ def resolve_includes(start: str) -> list[str]:
     return seen
 
 
+def check_bare_lists_in_assemblages(path: str) -> None:
+    """Flag <ul>/<ol> that are direct children of an <assemblage> (not inside a <p>).
+
+    The PreTeXt schema only allows Paragraph/BlockQuote/Image/Tabular/... as assemblage
+    children; a bare list there is silently DROPPED by the HTML conversion, leaving the
+    rendered box empty. Lists in assemblages must be wrapped in a <p>.
+    """
+    text = open(path, encoding="utf-8").read()
+    for am in re.finditer(r'<assemblage\b.*?</assemblage>', text, re.S):
+        body = am.group(0)
+        for lm in re.finditer(r'<(ul|ol)\b', body):
+            before = body[:lm.start()]
+            in_p = len(re.findall(r'<p[ >]', before)) > len(re.findall(r'</p>', before))
+            in_list = (len(re.findall(r'<(?:ul|ol)\b', before))
+                       > len(re.findall(r'</(?:ul|ol)>', before)))
+            if not in_p and not in_list:
+                lineno = text.count("\n", 0, am.start() + lm.start()) + 1
+                errors.append(f"[bare-list-in-assemblage] {rel(path)}:{lineno}  <{lm.group(1)}> is a "
+                              f"direct child of <assemblage> — pretext silently drops it (empty box); "
+                              f"wrap the list in a <p>")
+
+
 def main() -> int:
     if not os.path.exists(MAIN):
         print(f"FATAL: {rel(MAIN)} not found — run from repo root.", file=sys.stderr)
@@ -99,6 +124,16 @@ def main() -> int:
     ids: dict[str, list[str]] = defaultdict(list)   # id -> [locations]
     labels: dict[str, list[str]] = defaultdict(list)
     xrefs: list[tuple[str, str]] = []               # (ref, location)
+
+    # (path, lineno) -> how many <assemblage> blocks are open at the START of that line.
+    # Inside an assemblage the p-wraps-list rule inverts (see module docstring).
+    assemblage_depth_at: dict[tuple[str, int], int] = {}
+    for path in included:
+        depth = 0
+        for lineno, line in enumerate(lines_of(path), 1):
+            assemblage_depth_at[(path, lineno)] = depth
+            depth += line.count("<assemblage") - line.count("</assemblage>")
+        check_bare_lists_in_assemblages(path)
 
     for path in included:
         for lineno, line in enumerate(lines_of(path), 1):
@@ -115,9 +150,9 @@ def main() -> int:
                 xrefs.append((m.group(1), loc))
             for m in RE_IMAGE.finditer(line):
                 check_image(m.group(1), loc)
-            if RE_P_BLOCKLIST.search(line):
+            if RE_P_BLOCKLIST.search(line) and assemblage_depth_at.get((path, lineno), 0) == 0:
                 errors.append(f"[p-wraps-list] {loc}  a <p> directly wraps a <ul>/<ol> block "
-                              f"(deprecated; the list should not be inside <p>)")
+                              f"(deprecated outside assemblages; the list should not be inside <p>)")
 
     # duplicate ids
     for _id, locs in sorted(ids.items()):

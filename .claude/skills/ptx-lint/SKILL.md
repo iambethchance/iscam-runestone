@@ -38,9 +38,15 @@ Exit code 1 = ERROR-level findings exist. What it catches and how to treat each:
   ADD new dotted labels, and flag it if the user wants a dedicated cleanup pass (labels →
   hyphens/underscores). Cross-references use `xml:id`, not `label`, so a careful global
   `.`→`-` rewrite of label values is low-risk but should be its own reviewed commit.
-- **`[p-wraps-list]`** — a `<p>` directly wrapping a `<ul>`/`<ol>` (deprecated block-in-inline;
-  the list must be a sibling of `<p>`, not a child). Same defect earlier sessions cleaned up in
-  ch2. Fix by unwrapping the list.
+- **`[p-wraps-list]`** — a `<p>` directly wrapping a `<ul>`/`<ol>` **outside an assemblage**
+  (deprecated block-in-inline; the list should be a sibling of `<p>`). Fix by unwrapping the list —
+  but ONLY outside assemblages; see the next finding for why.
+- **`[bare-list-in-assemblage]`** — a `<ul>`/`<ol>` as a direct child of `<assemblage>`. The
+  PreTeXt schema only allows `<p>`-and-friends as assemblage children, and the HTML conversion
+  **silently drops** a bare list there — the box renders with a title and no content (this emptied
+  17+ definition/summary boxes book-wide in Aug 2026, introduced by a blanket list-unwrap pass).
+  Fix by wrapping the list in a `<p>`: `<p><ul>…</ul></p>`. Inside assemblages the p-wrap is
+  *required*, which is why `[p-wraps-list]` skips assemblage content.
 - **`[orphan-file]` (warn)** — `.ptx` under `source/` not reachable from `main.ptx`. Mostly
   intentional backups (`*-backup.ptx`, `*-old.ptx`, `main-*.ptx`) — but this list is also how you
   notice a genuinely-finished investigation that was never wired in (e.g. `inv-5-7/8/9` exist but
